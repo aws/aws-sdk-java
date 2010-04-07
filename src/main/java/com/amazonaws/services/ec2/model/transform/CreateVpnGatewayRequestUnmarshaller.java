@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Vpn Gateway Request Unmarshaller
- */        
+ */
 public class CreateVpnGatewayRequestUnmarshaller implements Unmarshaller<CreateVpnGatewayRequest, Node> {
 
     public CreateVpnGatewayRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVpnGatewayRequest createVpnGatewayRequest = new CreateVpnGatewayRequest();
-        
+
         
         Node typeNode = XpathUtils.asNode("Type", node);
         createVpnGatewayRequest.setType(new StringUnmarshaller().unmarshall(typeNode));
@@ -38,6 +40,6 @@ public class CreateVpnGatewayRequestUnmarshaller implements Unmarshaller<CreateV
     
 
         return createVpnGatewayRequest;
-    }  
+    }
 }
     

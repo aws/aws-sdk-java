@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeRegionsResult {
-        
+
     /**
      * The list of described Amazon EC2 regions.
      */

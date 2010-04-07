@@ -48,7 +48,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RunInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
      */

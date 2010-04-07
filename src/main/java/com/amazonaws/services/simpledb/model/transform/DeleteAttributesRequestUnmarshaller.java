@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Attributes Request Unmarshaller
- */        
+ */
 public class DeleteAttributesRequestUnmarshaller implements Unmarshaller<DeleteAttributesRequest, Node> {
 
     public DeleteAttributesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteAttributesRequest deleteAttributesRequest = new DeleteAttributesRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         deleteAttributesRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
@@ -48,6 +50,6 @@ public class DeleteAttributesRequestUnmarshaller implements Unmarshaller<DeleteA
     
 
         return deleteAttributesRequest;
-    }  
+    }
 }
     

@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeVolumesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of EBS volumes to describe.
      */

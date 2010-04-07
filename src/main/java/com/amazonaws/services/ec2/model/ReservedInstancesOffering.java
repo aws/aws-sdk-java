@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class ReservedInstancesOffering {
-        
+
     /**
      * The unique ID of this Reserved Instances offering.
      */

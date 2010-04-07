@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * List Metrics Request Unmarshaller
- */        
+ */
 public class ListMetricsRequestUnmarshaller implements Unmarshaller<ListMetricsRequest, Node> {
 
     public ListMetricsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ListMetricsRequest listMetricsRequest = new ListMetricsRequest();
-        
+
         
         Node nextTokenNode = XpathUtils.asNode("NextToken", node);
         listMetricsRequest.setNextToken(new StringUnmarshaller().unmarshall(nextTokenNode));
     
 
         return listMetricsRequest;
-    }  
+    }
 }
     

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Customer Gateway Request
  */
 public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String type;
 
     private String publicIp;

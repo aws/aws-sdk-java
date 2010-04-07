@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeAddressesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of Elastic IP addresses to describe.
      */

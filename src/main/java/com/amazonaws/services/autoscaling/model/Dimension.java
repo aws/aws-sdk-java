@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class Dimension {
-        
+
     /**
      * Specifies the name of the Dimension.
      * <p>

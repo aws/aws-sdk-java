@@ -135,7 +135,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         }
         if (runInstancesRequest != null) {
             if (runInstancesRequest.isMonitoring() != null) {
-                request.addParameter("Monitoring", StringUtils.fromBoolean(runInstancesRequest.isMonitoring()));
+                request.addParameter("Monitoring.Enabled", StringUtils.fromBoolean(runInstancesRequest.isMonitoring()));
             }
         }
         if (runInstancesRequest != null) {

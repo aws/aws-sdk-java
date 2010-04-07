@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class IPRange {
-        
+
     /**
      * Specifies the status of the IP range.
      */

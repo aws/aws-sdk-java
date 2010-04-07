@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the instance whose instance attribute is being described.
      */

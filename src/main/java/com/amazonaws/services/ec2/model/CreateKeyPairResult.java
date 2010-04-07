@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class CreateKeyPairResult {
-        
+
     /**
      * The newly created EC2 key pair.
      */

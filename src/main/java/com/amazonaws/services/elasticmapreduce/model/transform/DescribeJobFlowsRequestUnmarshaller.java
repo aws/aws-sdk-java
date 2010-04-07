@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Job Flows Request Unmarshaller
- */        
+ */
 public class DescribeJobFlowsRequestUnmarshaller implements Unmarshaller<DescribeJobFlowsRequest, Node> {
 
     public DescribeJobFlowsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeJobFlowsRequest describeJobFlowsRequest = new DescribeJobFlowsRequest();
-        
+
         
         Node createdAfterNode = XpathUtils.asNode("CreatedAfter", node);
         describeJobFlowsRequest.setCreatedAfter(new DateUnmarshaller().unmarshall(createdAfterNode));
@@ -52,6 +54,6 @@ public class DescribeJobFlowsRequestUnmarshaller implements Unmarshaller<Describ
     
 
         return describeJobFlowsRequest;
-    }  
+    }
 }
     

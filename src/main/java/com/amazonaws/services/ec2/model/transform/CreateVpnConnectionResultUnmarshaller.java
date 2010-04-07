@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Vpn Connection Result Unmarshaller
- */        
+ */
 public class CreateVpnConnectionResultUnmarshaller implements Unmarshaller<CreateVpnConnectionResult, Node> {
 
     public CreateVpnConnectionResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVpnConnectionResult createVpnConnectionResult = new CreateVpnConnectionResult();
-        
+
         
         Node vpnConnectionNode = XpathUtils.asNode("vpnConnection", node);
         createVpnConnectionResult.setVpnConnection(new VpnConnectionUnmarshaller().unmarshall(vpnConnectionNode));
     
 
         return createVpnConnectionResult;
-    }  
+    }
 }
     

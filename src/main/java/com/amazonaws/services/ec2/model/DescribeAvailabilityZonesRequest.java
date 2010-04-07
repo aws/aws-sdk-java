@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * A list of the availability zone names to describe.
      */

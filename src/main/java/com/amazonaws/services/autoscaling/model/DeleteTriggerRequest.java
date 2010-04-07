@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteTriggerRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the <a>AutoScalingGroup</a> associated with the trigger.
      * The AutoScalingGroup must exist within the scope of the caller's AWS

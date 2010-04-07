@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class Reservation {
-        
+
     /**
      * The unique ID of this reservation.
      */

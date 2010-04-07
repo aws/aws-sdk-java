@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class MonitorInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The list of Amazon EC2 instances on which to enable monitoring.
      */

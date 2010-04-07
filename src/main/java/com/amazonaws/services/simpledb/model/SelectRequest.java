@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Select Request
  */
 public class SelectRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The expression used to query the domain.
      */
@@ -40,6 +40,23 @@ public class SelectRequest extends AmazonWebServiceRequest {
      */
     private Boolean consistentRead;
 
+    /**
+     * Default constructor for a new SelectRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public SelectRequest() {}
+    
+    /**
+     * Constructs a new SelectRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param selectExpression The expression used to query the domain.
+     */
+    public SelectRequest(String selectExpression) {
+        this.selectExpression = selectExpression;
+    }
+    
     /**
      * The expression used to query the domain.
      *

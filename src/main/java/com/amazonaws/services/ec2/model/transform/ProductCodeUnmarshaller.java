@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Product Code Unmarshaller
- */        
+ */
 public class ProductCodeUnmarshaller implements Unmarshaller<ProductCode, Node> {
 
     public ProductCode unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ProductCode productCode = new ProductCode();
-        
+
         
         Node productCodeIdNode = XpathUtils.asNode("productCode", node);
         productCode.setProductCodeId(new StringUnmarshaller().unmarshall(productCodeIdNode));
     
 
         return productCode;
-    }  
+    }
 }
     

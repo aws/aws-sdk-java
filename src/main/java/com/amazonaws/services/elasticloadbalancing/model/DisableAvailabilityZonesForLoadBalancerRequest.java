@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name associated with the LoadBalancer. The name must be unique
      * within the client AWS account.

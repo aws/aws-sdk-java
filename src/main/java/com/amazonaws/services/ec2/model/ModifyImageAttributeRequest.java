@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the AMI whose attribute you want to modify.
      */

@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Domain Metadata Result
  */
 public class DomainMetadataResult {
-        
+
     /**
      * The number of all items in the domain.
      */

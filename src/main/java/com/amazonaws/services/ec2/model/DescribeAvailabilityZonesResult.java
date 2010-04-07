@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeAvailabilityZonesResult {
-        
+
     /**
      * The list of described Amazon EC2 availability zones.
      */

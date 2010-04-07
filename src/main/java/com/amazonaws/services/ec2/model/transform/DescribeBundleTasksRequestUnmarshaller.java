@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Bundle Tasks Request Unmarshaller
- */        
+ */
 public class DescribeBundleTasksRequestUnmarshaller implements Unmarshaller<DescribeBundleTasksRequest, Node> {
 
     public DescribeBundleTasksRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeBundleTasksRequest describeBundleTasksRequest = new DescribeBundleTasksRequest();
-        
+
         
         NodeList bundleIdsNodes = XpathUtils.asNodeList("BundleId/BundleId", node);
         for (int bundleIdsIndex = 0; bundleIdsIndex < XpathUtils.nodeLength(bundleIdsNodes); ++bundleIdsIndex) {
@@ -39,6 +41,6 @@ public class DescribeBundleTasksRequestUnmarshaller implements Unmarshaller<Desc
     
 
         return describeBundleTasksRequest;
-    }  
+    }
 }
     

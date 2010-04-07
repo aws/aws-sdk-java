@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Restore D B Instance To Point In Time Request Unmarshaller
- */        
+ */
 public class RestoreDBInstanceToPointInTimeRequestUnmarshaller implements Unmarshaller<RestoreDBInstanceToPointInTimeRequest, Node> {
 
     public RestoreDBInstanceToPointInTimeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest = new RestoreDBInstanceToPointInTimeRequest();
-        
+
         
         Node sourceDBInstanceIdentifierNode = XpathUtils.asNode("SourceDBInstanceIdentifier", node);
         restoreDBInstanceToPointInTimeRequest.setSourceDBInstanceIdentifier(new StringUnmarshaller().unmarshall(sourceDBInstanceIdentifierNode));
@@ -53,6 +55,6 @@ public class RestoreDBInstanceToPointInTimeRequestUnmarshaller implements Unmars
     
 
         return restoreDBInstanceToPointInTimeRequest;
-    }  
+    }
 }
     

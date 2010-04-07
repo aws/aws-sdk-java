@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Key Pair Request Unmarshaller
- */        
+ */
 public class DeleteKeyPairRequestUnmarshaller implements Unmarshaller<DeleteKeyPairRequest, Node> {
 
     public DeleteKeyPairRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteKeyPairRequest deleteKeyPairRequest = new DeleteKeyPairRequest();
-        
+
         
         Node keyNameNode = XpathUtils.asNode("KeyName", node);
         deleteKeyPairRequest.setKeyName(new StringUnmarshaller().unmarshall(keyNameNode));
     
 
         return deleteKeyPairRequest;
-    }  
+    }
 }
     

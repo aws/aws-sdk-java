@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class EC2SecurityGroup {
-        
+
     /**
      * Provides the status of the EC2 security group.
      */

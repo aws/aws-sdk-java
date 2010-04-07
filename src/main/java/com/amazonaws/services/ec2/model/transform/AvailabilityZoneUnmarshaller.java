@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Availability Zone Unmarshaller
- */        
+ */
 public class AvailabilityZoneUnmarshaller implements Unmarshaller<AvailabilityZone, Node> {
 
     public AvailabilityZone unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AvailabilityZone availabilityZone = new AvailabilityZone();
-        
+
         
         Node zoneNameNode = XpathUtils.asNode("zoneName", node);
         availabilityZone.setZoneName(new StringUnmarshaller().unmarshall(zoneNameNode));
@@ -41,6 +43,6 @@ public class AvailabilityZoneUnmarshaller implements Unmarshaller<AvailabilityZo
     
 
         return availabilityZone;
-    }  
+    }
 }
     

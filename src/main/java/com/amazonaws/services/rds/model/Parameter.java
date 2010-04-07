@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class Parameter {
-        
+
     /**
      * Specifies the name of the parameter.
      */

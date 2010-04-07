@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class LaunchPermission {
-        
+
     /**
      * The AWS user ID of the user involved in this launch permission.
      */

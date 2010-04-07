@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class StopInstancesResult {
-        
+
     /**
      * The list of the stopping instances and details on how their state has
      * changed.

@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeReservedInstancesOfferingsResult {
-        
+
     /**
      * The list of described Reserved Instance offerings.
      */

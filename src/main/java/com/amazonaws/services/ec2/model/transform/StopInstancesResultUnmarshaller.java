@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Stop Instances Result Unmarshaller
- */        
+ */
 public class StopInstancesResultUnmarshaller implements Unmarshaller<StopInstancesResult, Node> {
 
     public StopInstancesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         StopInstancesResult stopInstancesResult = new StopInstancesResult();
-        
+
         
         NodeList stoppingInstancesNodes = XpathUtils.asNodeList("instancesSet/item", node);
         for (int stoppingInstancesIndex = 0; stoppingInstancesIndex < XpathUtils.nodeLength(stoppingInstancesNodes); ++stoppingInstancesIndex) {
@@ -39,6 +41,6 @@ public class StopInstancesResultUnmarshaller implements Unmarshaller<StopInstanc
     
 
         return stopInstancesResult;
-    }  
+    }
 }
     

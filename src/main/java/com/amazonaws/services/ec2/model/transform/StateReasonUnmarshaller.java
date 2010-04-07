@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * State Reason Unmarshaller
- */        
+ */
 public class StateReasonUnmarshaller implements Unmarshaller<StateReason, Node> {
 
     public StateReason unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         StateReason stateReason = new StateReason();
-        
+
         
         Node codeNode = XpathUtils.asNode("code", node);
         stateReason.setCode(new StringUnmarshaller().unmarshall(codeNode));
@@ -38,6 +40,6 @@ public class StateReasonUnmarshaller implements Unmarshaller<StateReason, Node> 
     
 
         return stateReason;
-    }  
+    }
 }
     

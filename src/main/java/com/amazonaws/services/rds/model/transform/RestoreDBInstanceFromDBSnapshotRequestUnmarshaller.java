@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Restore D B Instance From D B Snapshot Request Unmarshaller
- */        
+ */
 public class RestoreDBInstanceFromDBSnapshotRequestUnmarshaller implements Unmarshaller<RestoreDBInstanceFromDBSnapshotRequest, Node> {
 
     public RestoreDBInstanceFromDBSnapshotRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest = new RestoreDBInstanceFromDBSnapshotRequest();
-        
+
         
         Node dBInstanceIdentifierNode = XpathUtils.asNode("DBInstanceIdentifier", node);
         restoreDBInstanceFromDBSnapshotRequest.setDBInstanceIdentifier(new StringUnmarshaller().unmarshall(dBInstanceIdentifierNode));
@@ -47,6 +49,6 @@ public class RestoreDBInstanceFromDBSnapshotRequestUnmarshaller implements Unmar
     
 
         return restoreDBInstanceFromDBSnapshotRequest;
-    }  
+    }
 }
     

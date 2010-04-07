@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Put Attributes Request Unmarshaller
- */        
+ */
 public class PutAttributesRequestUnmarshaller implements Unmarshaller<PutAttributesRequest, Node> {
 
     public PutAttributesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         PutAttributesRequest putAttributesRequest = new PutAttributesRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         putAttributesRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
@@ -48,6 +50,6 @@ public class PutAttributesRequestUnmarshaller implements Unmarshaller<PutAttribu
     
 
         return putAttributesRequest;
-    }  
+    }
 }
     

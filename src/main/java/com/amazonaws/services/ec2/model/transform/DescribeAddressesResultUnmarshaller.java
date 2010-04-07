@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Addresses Result Unmarshaller
- */        
+ */
 public class DescribeAddressesResultUnmarshaller implements Unmarshaller<DescribeAddressesResult, Node> {
 
     public DescribeAddressesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeAddressesResult describeAddressesResult = new DescribeAddressesResult();
-        
+
         
         NodeList addressesNodes = XpathUtils.asNodeList("addressesSet/item", node);
         for (int addressesIndex = 0; addressesIndex < XpathUtils.nodeLength(addressesNodes); ++addressesIndex) {
@@ -39,6 +41,6 @@ public class DescribeAddressesResultUnmarshaller implements Unmarshaller<Describ
     
 
         return describeAddressesResult;
-    }  
+    }
 }
     

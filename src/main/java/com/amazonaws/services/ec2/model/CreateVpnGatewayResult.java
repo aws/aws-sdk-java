@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Vpn Gateway Result
  */
 public class CreateVpnGatewayResult {
-        
+
     private VpnGateway vpnGateway;
 
     /**

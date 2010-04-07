@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create D B Instance Request Unmarshaller
- */        
+ */
 public class CreateDBInstanceRequestUnmarshaller implements Unmarshaller<CreateDBInstanceRequest, Node> {
 
     public CreateDBInstanceRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateDBInstanceRequest createDBInstanceRequest = new CreateDBInstanceRequest();
-        
+
         
         Node dBNameNode = XpathUtils.asNode("DBName", node);
         createDBInstanceRequest.setDBName(new StringUnmarshaller().unmarshall(dBNameNode));
@@ -78,6 +80,6 @@ public class CreateDBInstanceRequestUnmarshaller implements Unmarshaller<CreateD
     
 
         return createDBInstanceRequest;
-    }  
+    }
 }
     

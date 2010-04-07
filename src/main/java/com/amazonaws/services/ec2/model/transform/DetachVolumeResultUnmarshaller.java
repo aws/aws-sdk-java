@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Detach Volume Result Unmarshaller
- */        
+ */
 public class DetachVolumeResultUnmarshaller implements Unmarshaller<DetachVolumeResult, Node> {
 
     public DetachVolumeResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DetachVolumeResult detachVolumeResult = new DetachVolumeResult();
-        
+
         
         Node attachmentNode = XpathUtils.asNode(".", node);
         detachVolumeResult.setAttachment(new VolumeAttachmentUnmarshaller().unmarshall(attachmentNode));
     
 
         return detachVolumeResult;
-    }  
+    }
 }
     

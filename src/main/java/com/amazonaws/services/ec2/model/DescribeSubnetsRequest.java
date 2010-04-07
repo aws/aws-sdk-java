@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Subnets Request
  */
 public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> subnetIds;
 
     private java.util.List<Filter> filters;

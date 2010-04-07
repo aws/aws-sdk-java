@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Vpn Gateway Request
  */
 public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String vpnGatewayId;
 
     /**

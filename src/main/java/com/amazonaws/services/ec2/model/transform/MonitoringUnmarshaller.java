@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Monitoring Unmarshaller
- */        
+ */
 public class MonitoringUnmarshaller implements Unmarshaller<Monitoring, Node> {
 
     public Monitoring unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Monitoring monitoring = new Monitoring();
-        
+
         
         Node stateNode = XpathUtils.asNode("state", node);
         monitoring.setState(new StringUnmarshaller().unmarshall(stateNode));
     
 
         return monitoring;
-    }  
+    }
 }
     

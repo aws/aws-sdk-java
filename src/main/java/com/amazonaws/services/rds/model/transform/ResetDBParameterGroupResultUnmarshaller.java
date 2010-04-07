@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reset D B Parameter Group Result Unmarshaller
- */        
+ */
 public class ResetDBParameterGroupResultUnmarshaller implements Unmarshaller<ResetDBParameterGroupResult, Node> {
 
     public ResetDBParameterGroupResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ResetDBParameterGroupResult resetDBParameterGroupResult = new ResetDBParameterGroupResult();
-        
+
         
         Node dBParameterGroupNameNode = XpathUtils.asNode("DBParameterGroupName", node);
         resetDBParameterGroupResult.setDBParameterGroupName(new StringUnmarshaller().unmarshall(dBParameterGroupNameNode));
     
 
         return resetDBParameterGroupResult;
-    }  
+    }
 }
     

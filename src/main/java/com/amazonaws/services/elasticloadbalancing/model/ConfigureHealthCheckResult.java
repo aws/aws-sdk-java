@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class ConfigureHealthCheckResult {
-        
+
     /**
      * The updated healthcheck for the instances.
      */

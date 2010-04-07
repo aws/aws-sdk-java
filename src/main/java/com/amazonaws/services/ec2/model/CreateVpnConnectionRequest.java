@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Vpn Connection Request
  */
 public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
-        
+
     private String type;
 
     private String customerGatewayId;

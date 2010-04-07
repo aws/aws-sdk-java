@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Run Instances Result Unmarshaller
- */        
+ */
 public class RunInstancesResultUnmarshaller implements Unmarshaller<RunInstancesResult, Node> {
 
     public RunInstancesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RunInstancesResult runInstancesResult = new RunInstancesResult();
-        
+
         
         Node reservationNode = XpathUtils.asNode(".", node);
         runInstancesResult.setReservation(new ReservationUnmarshaller().unmarshall(reservationNode));
     
 
         return runInstancesResult;
-    }  
+    }
 }
     

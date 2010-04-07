@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class RunInstancesResult {
-        
+
     /**
      * The newly created reservation, containing the new instances.
      */

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * E C2 Security Group Unmarshaller
- */        
+ */
 public class EC2SecurityGroupUnmarshaller implements Unmarshaller<EC2SecurityGroup, Node> {
 
     public EC2SecurityGroup unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         EC2SecurityGroup eC2SecurityGroup = new EC2SecurityGroup();
-        
+
         
         Node statusNode = XpathUtils.asNode("Status", node);
         eC2SecurityGroup.setStatus(new StringUnmarshaller().unmarshall(statusNode));
@@ -41,6 +43,6 @@ public class EC2SecurityGroupUnmarshaller implements Unmarshaller<EC2SecurityGro
     
 
         return eC2SecurityGroup;
-    }  
+    }
 }
     

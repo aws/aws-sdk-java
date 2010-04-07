@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Customer Gateways Request Unmarshaller
- */        
+ */
 public class DescribeCustomerGatewaysRequestUnmarshaller implements Unmarshaller<DescribeCustomerGatewaysRequest, Node> {
 
     public DescribeCustomerGatewaysRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest = new DescribeCustomerGatewaysRequest();
-        
+
         
         NodeList customerGatewayIdsNodes = XpathUtils.asNodeList("CustomerGatewayId/CustomerGatewayId", node);
         for (int customerGatewayIdsIndex = 0; customerGatewayIdsIndex < XpathUtils.nodeLength(customerGatewayIdsNodes); ++customerGatewayIdsIndex) {
@@ -46,6 +48,6 @@ public class DescribeCustomerGatewaysRequestUnmarshaller implements Unmarshaller
     
 
         return describeCustomerGatewaysRequest;
-    }  
+    }
 }
     

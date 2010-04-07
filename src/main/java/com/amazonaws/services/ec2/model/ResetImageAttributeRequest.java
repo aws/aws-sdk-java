@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the AMI whose attribute is being reset.
      */

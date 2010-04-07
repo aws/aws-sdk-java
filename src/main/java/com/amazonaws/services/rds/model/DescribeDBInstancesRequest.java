@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeDBInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB Instance is returned. This

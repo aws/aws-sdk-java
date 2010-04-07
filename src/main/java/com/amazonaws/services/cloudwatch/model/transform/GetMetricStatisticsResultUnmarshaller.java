@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Metric Statistics Result Unmarshaller
- */        
+ */
 public class GetMetricStatisticsResultUnmarshaller implements Unmarshaller<GetMetricStatisticsResult, Node> {
 
     public GetMetricStatisticsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetMetricStatisticsResult getMetricStatisticsResult = new GetMetricStatisticsResult();
-        
+
         
         Node labelNode = XpathUtils.asNode("Label", node);
         getMetricStatisticsResult.setLabel(new StringUnmarshaller().unmarshall(labelNode));
@@ -42,6 +44,6 @@ public class GetMetricStatisticsResultUnmarshaller implements Unmarshaller<GetMe
     
 
         return getMetricStatisticsResult;
-    }  
+    }
 }
     

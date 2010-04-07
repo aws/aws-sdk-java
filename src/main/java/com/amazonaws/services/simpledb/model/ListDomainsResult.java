@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * List Domains Result
  */
 public class ListDomainsResult {
-        
+
     /**
      * Domain names that match the expression.
      */

@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class DeregisterInstancesFromLoadBalancerResult {
-        
+
     /**
      * An updated list of remaining instances registered with the
      * LoadBalancer.

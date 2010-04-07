@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Terminate Instance In Auto Scaling Group Result Unmarshaller
- */        
+ */
 public class TerminateInstanceInAutoScalingGroupResultUnmarshaller implements Unmarshaller<TerminateInstanceInAutoScalingGroupResult, Node> {
 
     public TerminateInstanceInAutoScalingGroupResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
-        
+
         
         Node activityNode = XpathUtils.asNode("Activity", node);
         terminateInstanceInAutoScalingGroupResult.setActivity(new ActivityUnmarshaller().unmarshall(activityNode));
     
 
         return terminateInstanceInAutoScalingGroupResult;
-    }  
+    }
 }
     

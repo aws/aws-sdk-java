@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Metric Unmarshaller
- */        
+ */
 public class MetricUnmarshaller implements Unmarshaller<Metric, Node> {
 
     public Metric unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Metric metric = new Metric();
-        
+
         
         Node measureNameNode = XpathUtils.asNode("MeasureName", node);
         metric.setMeasureName(new StringUnmarshaller().unmarshall(measureNameNode));
@@ -45,6 +47,6 @@ public class MetricUnmarshaller implements Unmarshaller<Metric, Node> {
     
 
         return metric;
-    }  
+    }
 }
     

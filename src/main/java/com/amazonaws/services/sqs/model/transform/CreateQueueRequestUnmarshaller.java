@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Queue Request Unmarshaller
- */        
+ */
 public class CreateQueueRequestUnmarshaller implements Unmarshaller<CreateQueueRequest, Node> {
 
     public CreateQueueRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateQueueRequest createQueueRequest = new CreateQueueRequest();
-        
+
         
         Node queueNameNode = XpathUtils.asNode("QueueName", node);
         createQueueRequest.setQueueName(new StringUnmarshaller().unmarshall(queueNameNode));
@@ -38,6 +40,6 @@ public class CreateQueueRequestUnmarshaller implements Unmarshaller<CreateQueueR
     
 
         return createQueueRequest;
-    }  
+    }
 }
     

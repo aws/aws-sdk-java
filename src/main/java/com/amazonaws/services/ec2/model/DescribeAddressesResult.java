@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeAddressesResult {
-        
+
     /**
      * The list of Elastic IPs.
      */

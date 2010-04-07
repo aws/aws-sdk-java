@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Associate Dhcp Options Request Unmarshaller
- */        
+ */
 public class AssociateDhcpOptionsRequestUnmarshaller implements Unmarshaller<AssociateDhcpOptionsRequest, Node> {
 
     public AssociateDhcpOptionsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AssociateDhcpOptionsRequest associateDhcpOptionsRequest = new AssociateDhcpOptionsRequest();
-        
+
         
         Node dhcpOptionsIdNode = XpathUtils.asNode("DhcpOptionsId", node);
         associateDhcpOptionsRequest.setDhcpOptionsId(new StringUnmarshaller().unmarshall(dhcpOptionsIdNode));
@@ -38,6 +40,6 @@ public class AssociateDhcpOptionsRequestUnmarshaller implements Unmarshaller<Ass
     
 
         return associateDhcpOptionsRequest;
-    }  
+    }
 }
     

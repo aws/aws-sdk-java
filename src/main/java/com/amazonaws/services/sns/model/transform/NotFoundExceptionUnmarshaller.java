@@ -12,7 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancing.model.transform;
+package com.amazonaws.services.sns.model.transform;
 
 import org.w3c.dom.Node;
 
@@ -20,22 +20,22 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
-import com.amazonaws.services.elasticloadbalancing.model.InvalidEndPointException;
+import com.amazonaws.services.sns.model.NotFoundException;
 
-public class InvalidEndPointExceptionUnmarshaller extends StandardErrorUnmarshaller {
+public class NotFoundExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
-    public InvalidEndPointExceptionUnmarshaller() {
-        super(InvalidEndPointException.class);
+    public NotFoundExceptionUnmarshaller() {
+        super(NotFoundException.class);
     }
 
     public AmazonServiceException unmarshall(Node node) throws Exception {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidEndPoint")) 
+        if (errorCode == null || !errorCode.equals("NotFound")) 
             return null;
         
-        InvalidEndPointException e = (InvalidEndPointException)super.unmarshall(node);
+        NotFoundException e = (NotFoundException)super.unmarshall(node);
                
         return e;
     }

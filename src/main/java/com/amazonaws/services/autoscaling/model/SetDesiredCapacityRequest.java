@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class SetDesiredCapacityRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the AutoScalingGroup.
      * <p>

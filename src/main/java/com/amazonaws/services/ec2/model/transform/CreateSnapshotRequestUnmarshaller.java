@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Snapshot Request Unmarshaller
- */        
+ */
 public class CreateSnapshotRequestUnmarshaller implements Unmarshaller<CreateSnapshotRequest, Node> {
 
     public CreateSnapshotRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateSnapshotRequest createSnapshotRequest = new CreateSnapshotRequest();
-        
+
         
         Node volumeIdNode = XpathUtils.asNode("VolumeId", node);
         createSnapshotRequest.setVolumeId(new StringUnmarshaller().unmarshall(volumeIdNode));
@@ -38,6 +40,6 @@ public class CreateSnapshotRequestUnmarshaller implements Unmarshaller<CreateSna
     
 
         return createSnapshotRequest;
-    }  
+    }
 }
     

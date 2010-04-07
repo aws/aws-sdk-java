@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Key Pairs Result Unmarshaller
- */        
+ */
 public class DescribeKeyPairsResultUnmarshaller implements Unmarshaller<DescribeKeyPairsResult, Node> {
 
     public DescribeKeyPairsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeKeyPairsResult describeKeyPairsResult = new DescribeKeyPairsResult();
-        
+
         
         NodeList keyPairsNodes = XpathUtils.asNodeList("keySet/item", node);
         for (int keyPairsIndex = 0; keyPairsIndex < XpathUtils.nodeLength(keyPairsNodes); ++keyPairsIndex) {
@@ -39,6 +41,6 @@ public class DescribeKeyPairsResultUnmarshaller implements Unmarshaller<Describe
     
 
         return describeKeyPairsResult;
-    }  
+    }
 }
     

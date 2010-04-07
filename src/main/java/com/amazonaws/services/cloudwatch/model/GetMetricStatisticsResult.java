@@ -18,7 +18,7 @@ package com.amazonaws.services.cloudwatch.model;
  * Get Metric Statistics Result
  */
 public class GetMetricStatisticsResult {
-        
+
     private String label;
 
     private java.util.List<Datapoint> datapoints;

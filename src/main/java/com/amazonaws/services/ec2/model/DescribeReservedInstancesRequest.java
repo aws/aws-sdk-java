@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of Reserved Instance IDs to describe.
      */

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Ebs Instance Block Device Specification Unmarshaller
- */        
+ */
 public class EbsInstanceBlockDeviceSpecificationUnmarshaller implements Unmarshaller<EbsInstanceBlockDeviceSpecification, Node> {
 
     public EbsInstanceBlockDeviceSpecification unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         EbsInstanceBlockDeviceSpecification ebsInstanceBlockDeviceSpecification = new EbsInstanceBlockDeviceSpecification();
-        
+
         
         Node volumeIdNode = XpathUtils.asNode("volumeId", node);
         ebsInstanceBlockDeviceSpecification.setVolumeId(new StringUnmarshaller().unmarshall(volumeIdNode));
@@ -38,6 +40,6 @@ public class EbsInstanceBlockDeviceSpecificationUnmarshaller implements Unmarsha
     
 
         return ebsInstanceBlockDeviceSpecification;
-    }  
+    }
 }
     

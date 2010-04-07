@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Item
  */
 public class Item {
-        
+
     /**
      * Item Name.
      */

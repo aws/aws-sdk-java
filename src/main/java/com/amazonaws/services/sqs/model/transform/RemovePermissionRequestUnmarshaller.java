@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Remove Permission Request Unmarshaller
- */        
+ */
 public class RemovePermissionRequestUnmarshaller implements Unmarshaller<RemovePermissionRequest, Node> {
 
     public RemovePermissionRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RemovePermissionRequest removePermissionRequest = new RemovePermissionRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         removePermissionRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -38,6 +40,6 @@ public class RemovePermissionRequestUnmarshaller implements Unmarshaller<RemoveP
     
 
         return removePermissionRequest;
-    }  
+    }
 }
     

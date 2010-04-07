@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class Endpoint {
-        
+
     /**
      * Specifies the DNS address of the DB Instance.
      */

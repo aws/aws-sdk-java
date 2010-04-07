@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Step Execution Status Detail Unmarshaller
- */        
+ */
 public class StepExecutionStatusDetailUnmarshaller implements Unmarshaller<StepExecutionStatusDetail, Node> {
 
     public StepExecutionStatusDetail unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         StepExecutionStatusDetail stepExecutionStatusDetail = new StepExecutionStatusDetail();
-        
+
         
         Node stateNode = XpathUtils.asNode("State", node);
         stepExecutionStatusDetail.setState(new StringUnmarshaller().unmarshall(stateNode));
@@ -47,6 +49,6 @@ public class StepExecutionStatusDetailUnmarshaller implements Unmarshaller<StepE
     
 
         return stepExecutionStatusDetail;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Availability Zones Request Unmarshaller
- */        
+ */
 public class DescribeAvailabilityZonesRequestUnmarshaller implements Unmarshaller<DescribeAvailabilityZonesRequest, Node> {
 
     public DescribeAvailabilityZonesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest = new DescribeAvailabilityZonesRequest();
-        
+
         
         NodeList zoneNamesNodes = XpathUtils.asNodeList("ZoneName/ZoneName", node);
         for (int zoneNamesIndex = 0; zoneNamesIndex < XpathUtils.nodeLength(zoneNamesNodes); ++zoneNamesIndex) {
@@ -39,6 +41,6 @@ public class DescribeAvailabilityZonesRequestUnmarshaller implements Unmarshalle
     
 
         return describeAvailabilityZonesRequest;
-    }  
+    }
 }
     

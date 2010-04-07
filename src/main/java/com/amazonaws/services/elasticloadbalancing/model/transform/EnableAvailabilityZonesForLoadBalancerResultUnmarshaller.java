@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Enable Availability Zones For Load Balancer Result Unmarshaller
- */        
+ */
 public class EnableAvailabilityZonesForLoadBalancerResultUnmarshaller implements Unmarshaller<EnableAvailabilityZonesForLoadBalancerResult, Node> {
 
     public EnableAvailabilityZonesForLoadBalancerResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancerResult = new EnableAvailabilityZonesForLoadBalancerResult();
-        
+
         
         NodeList availabilityZonesNodes = XpathUtils.asNodeList("AvailabilityZones/member", node);
         for (int availabilityZonesIndex = 0; availabilityZonesIndex < XpathUtils.nodeLength(availabilityZonesNodes); ++availabilityZonesIndex) {
@@ -39,6 +41,6 @@ public class EnableAvailabilityZonesForLoadBalancerResultUnmarshaller implements
     
 
         return enableAvailabilityZonesForLoadBalancerResult;
-    }  
+    }
 }
     

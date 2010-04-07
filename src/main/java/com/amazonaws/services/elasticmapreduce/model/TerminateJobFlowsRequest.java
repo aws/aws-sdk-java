@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Terminate Job Flows Request
  */
 public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> jobFlowIds;
 
     /**

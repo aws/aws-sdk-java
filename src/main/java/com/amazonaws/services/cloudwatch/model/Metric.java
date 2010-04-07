@@ -18,7 +18,7 @@ package com.amazonaws.services.cloudwatch.model;
  * Metric
  */
 public class Metric {
-        
+
     private String measureName;
 
     private java.util.List<Dimension> dimensions;

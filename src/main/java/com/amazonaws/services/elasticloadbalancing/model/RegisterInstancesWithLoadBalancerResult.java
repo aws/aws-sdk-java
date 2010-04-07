@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class RegisterInstancesWithLoadBalancerResult {
-        
+
     /**
      * An updated list of instances for the LoadBalancer.
      */

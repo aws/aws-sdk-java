@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class Instance {
-        
+
     /**
      * Provides an EC2 instance ID.
      */

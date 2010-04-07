@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Message Request Unmarshaller
- */        
+ */
 public class DeleteMessageRequestUnmarshaller implements Unmarshaller<DeleteMessageRequest, Node> {
 
     public DeleteMessageRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteMessageRequest deleteMessageRequest = new DeleteMessageRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         deleteMessageRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -38,6 +40,6 @@ public class DeleteMessageRequestUnmarshaller implements Unmarshaller<DeleteMess
     
 
         return deleteMessageRequest;
-    }  
+    }
 }
     

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateKeyPairRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The unique name for the new key pair.
      */

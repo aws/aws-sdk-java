@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Key Value
  */
 public class KeyValue {
-        
+
     private String key;
 
     private String value;

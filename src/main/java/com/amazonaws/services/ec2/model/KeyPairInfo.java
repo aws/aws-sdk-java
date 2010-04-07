@@ -25,7 +25,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class KeyPairInfo {
-        
+
     /**
      * The name of the key pair.
      */

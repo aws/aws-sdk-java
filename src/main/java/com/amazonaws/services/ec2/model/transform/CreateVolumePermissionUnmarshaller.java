@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Volume Permission Unmarshaller
- */        
+ */
 public class CreateVolumePermissionUnmarshaller implements Unmarshaller<CreateVolumePermission, Node> {
 
     public CreateVolumePermission unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVolumePermission createVolumePermission = new CreateVolumePermission();
-        
+
         
         Node userIdNode = XpathUtils.asNode("userId", node);
         createVolumePermission.setUserId(new StringUnmarshaller().unmarshall(userIdNode));
@@ -38,6 +40,6 @@ public class CreateVolumePermissionUnmarshaller implements Unmarshaller<CreateVo
     
 
         return createVolumePermission;
-    }  
+    }
 }
     

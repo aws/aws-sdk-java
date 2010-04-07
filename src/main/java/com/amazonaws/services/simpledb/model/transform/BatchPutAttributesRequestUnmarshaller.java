@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Batch Put Attributes Request Unmarshaller
- */        
+ */
 public class BatchPutAttributesRequestUnmarshaller implements Unmarshaller<BatchPutAttributesRequest, Node> {
 
     public BatchPutAttributesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         BatchPutAttributesRequest batchPutAttributesRequest = new BatchPutAttributesRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         batchPutAttributesRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
@@ -42,6 +44,6 @@ public class BatchPutAttributesRequestUnmarshaller implements Unmarshaller<Batch
     
 
         return batchPutAttributesRequest;
-    }  
+    }
 }
     

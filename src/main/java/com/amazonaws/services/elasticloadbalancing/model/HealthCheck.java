@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class HealthCheck {
-        
+
     /**
      * Specifies the instance being checked. The protocol is either TCP or
      * HTTP. The range of valid ports is one (1) through 65535. <note> <p>

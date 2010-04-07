@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Register Image Request Unmarshaller
- */        
+ */
 public class RegisterImageRequestUnmarshaller implements Unmarshaller<RegisterImageRequest, Node> {
 
     public RegisterImageRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RegisterImageRequest registerImageRequest = new RegisterImageRequest();
-        
+
         
         Node imageLocationNode = XpathUtils.asNode("ImageLocation", node);
         registerImageRequest.setImageLocation(new StringUnmarshaller().unmarshall(imageLocationNode));
@@ -60,6 +62,6 @@ public class RegisterImageRequestUnmarshaller implements Unmarshaller<RegisterIm
     
 
         return registerImageRequest;
-    }  
+    }
 }
     

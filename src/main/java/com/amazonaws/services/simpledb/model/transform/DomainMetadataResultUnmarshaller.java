@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Domain Metadata Result Unmarshaller
- */        
+ */
 public class DomainMetadataResultUnmarshaller implements Unmarshaller<DomainMetadataResult, Node> {
 
     public DomainMetadataResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DomainMetadataResult domainMetadataResult = new DomainMetadataResult();
-        
+
         
         Node itemCountNode = XpathUtils.asNode("ItemCount", node);
         domainMetadataResult.setItemCount(new IntegerUnmarshaller().unmarshall(itemCountNode));
@@ -53,6 +55,6 @@ public class DomainMetadataResultUnmarshaller implements Unmarshaller<DomainMeta
     
 
         return domainMetadataResult;
-    }  
+    }
 }
     

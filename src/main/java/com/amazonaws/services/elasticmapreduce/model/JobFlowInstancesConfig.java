@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Job Flow Instances Config
  */
 public class JobFlowInstancesConfig {
-        
+
     private String masterInstanceType;
 
     private String slaveInstanceType;

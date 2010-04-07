@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -38,6 +38,29 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest {
      */
     private Integer visibilityTimeout;
 
+    /**
+     * Default constructor for a new ChangeMessageVisibilityRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ChangeMessageVisibilityRequest() {}
+    
+    /**
+     * Constructs a new ChangeMessageVisibilityRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     * @param receiptHandle The receipt handle associated with the message
+     * whose visibility timeout the client wants to change.
+     * @param visibilityTimeout The new value (in seconds) for the message's
+     * visibility timeout.
+     */
+    public ChangeMessageVisibilityRequest(String queueUrl, String receiptHandle, Integer visibilityTimeout) {
+        this.queueUrl = queueUrl;
+        this.receiptHandle = receiptHandle;
+        this.visibilityTimeout = visibilityTimeout;
+    }
+    
     /**
      * 
      *

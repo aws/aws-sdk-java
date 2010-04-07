@@ -24,7 +24,7 @@ package com.amazonaws.services.simpledb.model;
  * </p>
  */
 public class UpdateCondition {
-        
+
     /**
      * The name of the attribute involved in the condition.
      */

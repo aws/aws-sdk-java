@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class StartInstancesResult {
-        
+
     /**
      * The list of the starting instances and details on how their state has
      * changed.

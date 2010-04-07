@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Put Attributes Request
  */
 public class PutAttributesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -43,6 +43,28 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
      */
     private UpdateCondition expected;
 
+    /**
+     * Default constructor for a new PutAttributesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PutAttributesRequest() {}
+    
+    /**
+     * Constructs a new PutAttributesRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item.
+     * @param attributes List of attributes.
+     */
+    public PutAttributesRequest(String domainName, String itemName, java.util.List<ReplaceableAttribute> attributes) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+        this.attributes = attributes;
+    }
+    
     /**
      * The name of the domain in which to perform the operation.
      *

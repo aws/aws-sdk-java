@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeTriggersRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the AutoScalingGroup.
      * <p>

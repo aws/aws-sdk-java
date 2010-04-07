@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Metric Statistics Request Unmarshaller
- */        
+ */
 public class GetMetricStatisticsRequestUnmarshaller implements Unmarshaller<GetMetricStatisticsRequest, Node> {
 
     public GetMetricStatisticsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetMetricStatisticsRequest getMetricStatisticsRequest = new GetMetricStatisticsRequest();
-        
+
         
         NodeList statisticsNodes = XpathUtils.asNodeList("Statistics/member", node);
         for (int statisticsIndex = 0; statisticsIndex < XpathUtils.nodeLength(statisticsNodes); ++statisticsIndex) {
@@ -67,6 +69,6 @@ public class GetMetricStatisticsRequestUnmarshaller implements Unmarshaller<GetM
     
 
         return getMetricStatisticsRequest;
-    }  
+    }
 }
     

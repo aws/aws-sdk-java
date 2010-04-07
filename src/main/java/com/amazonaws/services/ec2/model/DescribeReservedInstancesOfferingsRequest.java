@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * An optional list of the unique IDs of the Reserved Instance offerings
      * to describe.

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The identifier of the source DB Instance from which to restore.
      */

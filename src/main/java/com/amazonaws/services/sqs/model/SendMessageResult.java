@@ -20,7 +20,7 @@ package com.amazonaws.services.sqs.model;
  * </p>
  */
 public class SendMessageResult {
-        
+
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be
      * used to verify that SQS received the message correctly. SQS first URL

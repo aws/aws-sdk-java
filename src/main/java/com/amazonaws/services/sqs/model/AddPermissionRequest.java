@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -44,6 +44,32 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> actions;
 
+    /**
+     * Default constructor for a new AddPermissionRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AddPermissionRequest() {}
+    
+    /**
+     * Constructs a new AddPermissionRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     * @param label
+     * @param aWSAccountIds The AWS account number of the principal who will
+     * be given permission. The principal must have an AWS account, but does
+     * not need to be signed up for Amazon SQS.
+     * @param actions The action the client wants to allow for the specified
+     * principal.
+     */
+    public AddPermissionRequest(String queueUrl, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
+        this.queueUrl = queueUrl;
+        this.label = label;
+        this.aWSAccountIds = aWSAccountIds;
+        this.actions = actions;
+    }
+    
     /**
      * 
      *

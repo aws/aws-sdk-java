@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeSnapshotAttributeResult {
-        
+
     /**
      * The ID of the snapshot whose attribute is being described.
      */

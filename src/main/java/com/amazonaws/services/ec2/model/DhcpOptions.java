@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Dhcp Options
  */
 public class DhcpOptions {
-        
+
     private String dhcpOptionsId;
 
     private java.util.List<DhcpConfiguration> dhcpConfigurations;

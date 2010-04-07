@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class UserIdGroupPair {
-        
+
     /**
      * The AWS user ID of an account.
      */

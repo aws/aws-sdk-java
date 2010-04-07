@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Engine Defaults Unmarshaller
- */        
+ */
 public class EngineDefaultsUnmarshaller implements Unmarshaller<EngineDefaults, Node> {
 
     public EngineDefaults unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         EngineDefaults engineDefaults = new EngineDefaults();
-        
+
         
         Node engineNode = XpathUtils.asNode("Engine", node);
         engineDefaults.setEngine(new StringUnmarshaller().unmarshall(engineNode));
@@ -45,6 +47,6 @@ public class EngineDefaultsUnmarshaller implements Unmarshaller<EngineDefaults, 
     
 
         return engineDefaults;
-    }  
+    }
 }
     

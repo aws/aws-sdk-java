@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Job Flows Request
  */
 public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.Date createdAfter;
 
     private java.util.Date createdBefore;

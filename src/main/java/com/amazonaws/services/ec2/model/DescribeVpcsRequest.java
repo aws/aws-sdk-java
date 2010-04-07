@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Vpcs Request
  */
 public class DescribeVpcsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> vpcIds;
 
     private java.util.List<Filter> filters;

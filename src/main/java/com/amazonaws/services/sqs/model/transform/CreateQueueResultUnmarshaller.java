@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Queue Result Unmarshaller
- */        
+ */
 public class CreateQueueResultUnmarshaller implements Unmarshaller<CreateQueueResult, Node> {
 
     public CreateQueueResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateQueueResult createQueueResult = new CreateQueueResult();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         createQueueResult.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
     
 
         return createQueueResult;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Update Condition Unmarshaller
- */        
+ */
 public class UpdateConditionUnmarshaller implements Unmarshaller<UpdateCondition, Node> {
 
     public UpdateCondition unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         UpdateCondition updateCondition = new UpdateCondition();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         updateCondition.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -41,6 +43,6 @@ public class UpdateConditionUnmarshaller implements Unmarshaller<UpdateCondition
     
 
         return updateCondition;
-    }  
+    }
 }
     

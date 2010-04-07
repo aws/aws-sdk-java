@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Register Image Result Unmarshaller
- */        
+ */
 public class RegisterImageResultUnmarshaller implements Unmarshaller<RegisterImageResult, Node> {
 
     public RegisterImageResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RegisterImageResult registerImageResult = new RegisterImageResult();
-        
+
         
         Node imageIdNode = XpathUtils.asNode("imageId", node);
         registerImageResult.setImageId(new StringUnmarshaller().unmarshall(imageIdNode));
     
 
         return registerImageResult;
-    }  
+    }
 }
     

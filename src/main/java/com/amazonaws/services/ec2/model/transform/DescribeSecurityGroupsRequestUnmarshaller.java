@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Security Groups Request Unmarshaller
- */        
+ */
 public class DescribeSecurityGroupsRequestUnmarshaller implements Unmarshaller<DescribeSecurityGroupsRequest, Node> {
 
     public DescribeSecurityGroupsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeSecurityGroupsRequest describeSecurityGroupsRequest = new DescribeSecurityGroupsRequest();
-        
+
         
         NodeList groupNamesNodes = XpathUtils.asNodeList("GroupName/GroupName", node);
         for (int groupNamesIndex = 0; groupNamesIndex < XpathUtils.nodeLength(groupNamesNodes); ++groupNamesIndex) {
@@ -39,6 +41,6 @@ public class DescribeSecurityGroupsRequestUnmarshaller implements Unmarshaller<D
     
 
         return describeSecurityGroupsRequest;
-    }  
+    }
 }
     

@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class InstanceState {
-        
+
     /**
      * A 16-bit unsigned integer. The high byte is an opaque internal value
      * and should be ignored. The low byte is set based on the state

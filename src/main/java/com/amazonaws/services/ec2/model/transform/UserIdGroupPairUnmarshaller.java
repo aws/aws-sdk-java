@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * User Id Group Pair Unmarshaller
- */        
+ */
 public class UserIdGroupPairUnmarshaller implements Unmarshaller<UserIdGroupPair, Node> {
 
     public UserIdGroupPair unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         UserIdGroupPair userIdGroupPair = new UserIdGroupPair();
-        
+
         
         Node userIdNode = XpathUtils.asNode("userId", node);
         userIdGroupPair.setUserId(new StringUnmarshaller().unmarshall(userIdNode));
@@ -38,6 +40,6 @@ public class UserIdGroupPairUnmarshaller implements Unmarshaller<UserIdGroupPair
     
 
         return userIdGroupPair;
-    }  
+    }
 }
     

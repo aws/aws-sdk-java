@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Domain Request Unmarshaller
- */        
+ */
 public class CreateDomainRequestUnmarshaller implements Unmarshaller<CreateDomainRequest, Node> {
 
     public CreateDomainRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateDomainRequest createDomainRequest = new CreateDomainRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         createDomainRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
     
 
         return createDomainRequest;
-    }  
+    }
 }
     

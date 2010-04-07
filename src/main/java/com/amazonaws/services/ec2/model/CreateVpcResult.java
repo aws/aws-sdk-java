@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Vpc Result
  */
 public class CreateVpcResult {
-        
+
     private Vpc vpc;
 
     /**

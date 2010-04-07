@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DetachVolumeResult {
-        
+
     /**
      * The updated EBS volume attachment information after trying to detach
      * the volume from the specified instance.

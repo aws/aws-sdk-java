@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Image Request Unmarshaller
- */        
+ */
 public class CreateImageRequestUnmarshaller implements Unmarshaller<CreateImageRequest, Node> {
 
     public CreateImageRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateImageRequest createImageRequest = new CreateImageRequest();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         createImageRequest.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -44,6 +46,6 @@ public class CreateImageRequestUnmarshaller implements Unmarshaller<CreateImageR
     
 
         return createImageRequest;
-    }  
+    }
 }
     

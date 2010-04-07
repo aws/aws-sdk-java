@@ -21,16 +21,16 @@ import com.amazonaws.AmazonServiceException;
  * 
  * </p>
  */        
-public class AccessPointNotFoundException extends AmazonServiceException {
+public class LoadBalancerNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new AccessPointNotFoundException with the specified error
+     * Constructs a new LoadBalancerNotFoundException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public AccessPointNotFoundException(String message) {
+    public LoadBalancerNotFoundException(String message) {
         super(message);
     }
     

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the launch configuration to create.
      * <p>

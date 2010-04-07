@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Step Execution Status Detail
  */
 public class StepExecutionStatusDetail {
-        
+
     private String state;
 
     private java.util.Date creationDateTime;

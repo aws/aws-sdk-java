@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * A list of names associated with the LoadBalancers at creation time.
      */

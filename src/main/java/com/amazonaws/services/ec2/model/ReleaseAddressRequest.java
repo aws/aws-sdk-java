@@ -38,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ReleaseAddressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The elastic IP address that you are releasing from your account.
      */

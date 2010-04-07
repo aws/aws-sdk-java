@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Vpn Connection Result
  */
 public class CreateVpnConnectionResult {
-        
+
     private VpnConnection vpnConnection;
 
     /**

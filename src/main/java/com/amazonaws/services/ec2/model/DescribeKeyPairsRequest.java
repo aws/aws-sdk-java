@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of key pair names to describe.
      */

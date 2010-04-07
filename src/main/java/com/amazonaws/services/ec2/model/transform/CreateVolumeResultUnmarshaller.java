@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Volume Result Unmarshaller
- */        
+ */
 public class CreateVolumeResultUnmarshaller implements Unmarshaller<CreateVolumeResult, Node> {
 
     public CreateVolumeResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVolumeResult createVolumeResult = new CreateVolumeResult();
-        
+
         
         Node volumeNode = XpathUtils.asNode(".", node);
         createVolumeResult.setVolume(new VolumeUnmarshaller().unmarshall(volumeNode));
     
 
         return createVolumeResult;
-    }  
+    }
 }
     

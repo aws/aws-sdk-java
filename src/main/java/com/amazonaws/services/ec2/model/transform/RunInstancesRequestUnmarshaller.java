@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Run Instances Request Unmarshaller
- */        
+ */
 public class RunInstancesRequestUnmarshaller implements Unmarshaller<RunInstancesRequest, Node> {
 
     public RunInstancesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RunInstancesRequest runInstancesRequest = new RunInstancesRequest();
-        
+
         
         Node imageIdNode = XpathUtils.asNode("ImageId", node);
         runInstancesRequest.setImageId(new StringUnmarshaller().unmarshall(imageIdNode));
@@ -85,6 +87,6 @@ public class RunInstancesRequestUnmarshaller implements Unmarshaller<RunInstance
     
 
         return runInstancesRequest;
-    }  
+    }
 }
     

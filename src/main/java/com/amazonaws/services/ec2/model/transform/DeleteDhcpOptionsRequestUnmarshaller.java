@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Dhcp Options Request Unmarshaller
- */        
+ */
 public class DeleteDhcpOptionsRequestUnmarshaller implements Unmarshaller<DeleteDhcpOptionsRequest, Node> {
 
     public DeleteDhcpOptionsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteDhcpOptionsRequest deleteDhcpOptionsRequest = new DeleteDhcpOptionsRequest();
-        
+
         
         Node dhcpOptionsIdNode = XpathUtils.asNode("DhcpOptionsId", node);
         deleteDhcpOptionsRequest.setDhcpOptionsId(new StringUnmarshaller().unmarshall(dhcpOptionsIdNode));
     
 
         return deleteDhcpOptionsRequest;
-    }  
+    }
 }
     

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * Name of the group to modify. The name must be valid and belong to the
      * account.

@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Address
  */
 public class Address {
-        
+
     private String instanceId;
 
     private String publicIp;

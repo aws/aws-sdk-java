@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reset Instance Attribute Request Unmarshaller
- */        
+ */
 public class ResetInstanceAttributeRequestUnmarshaller implements Unmarshaller<ResetInstanceAttributeRequest, Node> {
 
     public ResetInstanceAttributeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ResetInstanceAttributeRequest resetInstanceAttributeRequest = new ResetInstanceAttributeRequest();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         resetInstanceAttributeRequest.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -38,6 +40,6 @@ public class ResetInstanceAttributeRequestUnmarshaller implements Unmarshaller<R
     
 
         return resetInstanceAttributeRequest;
-    }  
+    }
 }
     

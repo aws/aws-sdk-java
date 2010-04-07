@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the DB Security Group to return details for.
      */

@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Attach Vpn Gateway Result Unmarshaller
- */        
+ */
 public class AttachVpnGatewayResultUnmarshaller implements Unmarshaller<AttachVpnGatewayResult, Node> {
 
     public AttachVpnGatewayResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AttachVpnGatewayResult attachVpnGatewayResult = new AttachVpnGatewayResult();
-        
+
         
         Node vpcAttachementNode = XpathUtils.asNode("attachment", node);
         attachVpnGatewayResult.setVpcAttachement(new VpcAttachmentUnmarshaller().unmarshall(vpcAttachementNode));
     
 
         return attachVpnGatewayResult;
-    }  
+    }
 }
     

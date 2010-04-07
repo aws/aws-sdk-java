@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Events Request Unmarshaller
- */        
+ */
 public class DescribeEventsRequestUnmarshaller implements Unmarshaller<DescribeEventsRequest, Node> {
 
     public DescribeEventsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeEventsRequest describeEventsRequest = new DescribeEventsRequest();
-        
+
         
         Node sourceIdentifierNode = XpathUtils.asNode("SourceIdentifier", node);
         describeEventsRequest.setSourceIdentifier(new StringUnmarshaller().unmarshall(sourceIdentifierNode));
@@ -53,6 +55,6 @@ public class DescribeEventsRequestUnmarshaller implements Unmarshaller<DescribeE
     
 
         return describeEventsRequest;
-    }  
+    }
 }
     

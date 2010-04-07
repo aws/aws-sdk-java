@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Placement Unmarshaller
- */        
+ */
 public class PlacementUnmarshaller implements Unmarshaller<Placement, Node> {
 
     public Placement unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Placement placement = new Placement();
-        
+
         
         Node availabilityZoneNode = XpathUtils.asNode("availabilityZone", node);
         placement.setAvailabilityZone(new StringUnmarshaller().unmarshall(availabilityZoneNode));
     
 
         return placement;
-    }  
+    }
 }
     

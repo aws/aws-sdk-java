@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class S3Storage {
-        
+
     /**
      * The bucket in which to store the AMI. You can specify a bucket that
      * you already own or a new bucket that Amazon EC2 creates on your

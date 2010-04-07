@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Set Queue Attributes Request Unmarshaller
- */        
+ */
 public class SetQueueAttributesRequestUnmarshaller implements Unmarshaller<SetQueueAttributesRequest, Node> {
 
     public SetQueueAttributesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SetQueueAttributesRequest setQueueAttributesRequest = new SetQueueAttributesRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         setQueueAttributesRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -37,11 +39,11 @@ public class SetQueueAttributesRequestUnmarshaller implements Unmarshaller<SetQu
         for (int attributesIndex = 0; attributesIndex < XpathUtils.nodeLength(attributesNodes); ++attributesIndex) {
             String attributesMapKey = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Name", attributesNodes.item(attributesIndex)));
             String attributesMapValue = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Value", attributesNodes.item(attributesIndex)));
-            setQueueAttributesRequest.getAttributes().put(attributesMapKey, attributesMapValue); 
+            setQueueAttributesRequest.getAttributes().put(attributesMapKey, attributesMapValue);
         }
     
 
         return setQueueAttributesRequest;
-    }  
+    }
 }
     

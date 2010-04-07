@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Placement Type
  */
 public class PlacementType {
-        
+
     private String availabilityZone;
 
     /**

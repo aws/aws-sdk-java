@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteKeyPairRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the Amazon EC2 key pair to delete.
      */

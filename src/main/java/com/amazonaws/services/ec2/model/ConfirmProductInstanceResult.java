@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class ConfirmProductInstanceResult {
-        
+
     /**
      * The instance owner's account ID. Only present if the product code is
      * attached to the instance.

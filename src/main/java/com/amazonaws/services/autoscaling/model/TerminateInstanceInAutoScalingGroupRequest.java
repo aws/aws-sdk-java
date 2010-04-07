@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the EC2 instance to be terminated.
      * <p>

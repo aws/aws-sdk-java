@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeSecurityGroupsResult {
-        
+
     /**
      * The list of described Amazon EC2 security groups.
      */

@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Subnet Result Unmarshaller
- */        
+ */
 public class CreateSubnetResultUnmarshaller implements Unmarshaller<CreateSubnetResult, Node> {
 
     public CreateSubnetResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateSubnetResult createSubnetResult = new CreateSubnetResult();
-        
+
         
         Node subnetNode = XpathUtils.asNode("subnet", node);
         createSubnetResult.setSubnet(new SubnetUnmarshaller().unmarshall(subnetNode));
     
 
         return createSubnetResult;
-    }  
+    }
 }
     

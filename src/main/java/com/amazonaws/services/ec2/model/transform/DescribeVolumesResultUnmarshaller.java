@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Volumes Result Unmarshaller
- */        
+ */
 public class DescribeVolumesResultUnmarshaller implements Unmarshaller<DescribeVolumesResult, Node> {
 
     public DescribeVolumesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeVolumesResult describeVolumesResult = new DescribeVolumesResult();
-        
+
         
         NodeList volumesNodes = XpathUtils.asNodeList("volumeSet/item", node);
         for (int volumesIndex = 0; volumesIndex < XpathUtils.nodeLength(volumesNodes); ++volumesIndex) {
@@ -39,6 +41,6 @@ public class DescribeVolumesResultUnmarshaller implements Unmarshaller<DescribeV
     
 
         return describeVolumesResult;
-    }  
+    }
 }
     

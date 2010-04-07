@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Scaling Activities Result Unmarshaller
- */        
+ */
 public class DescribeScalingActivitiesResultUnmarshaller implements Unmarshaller<DescribeScalingActivitiesResult, Node> {
 
     public DescribeScalingActivitiesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeScalingActivitiesResult describeScalingActivitiesResult = new DescribeScalingActivitiesResult();
-        
+
         
         NodeList activitiesNodes = XpathUtils.asNodeList("Activities/member", node);
         for (int activitiesIndex = 0; activitiesIndex < XpathUtils.nodeLength(activitiesNodes); ++activitiesIndex) {
@@ -42,6 +44,6 @@ public class DescribeScalingActivitiesResultUnmarshaller implements Unmarshaller
     
 
         return describeScalingActivitiesResult;
-    }  
+    }
 }
     

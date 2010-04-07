@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class DescribeInstanceHealthResult {
-        
+
     /**
      * A list containing health information for the specified instances.
      */

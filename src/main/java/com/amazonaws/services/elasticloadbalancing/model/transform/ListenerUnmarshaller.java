@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Listener Unmarshaller
- */        
+ */
 public class ListenerUnmarshaller implements Unmarshaller<Listener, Node> {
 
     public Listener unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Listener listener = new Listener();
-        
+
         
         Node protocolNode = XpathUtils.asNode("Protocol", node);
         listener.setProtocol(new StringUnmarshaller().unmarshall(protocolNode));
@@ -41,6 +43,6 @@ public class ListenerUnmarshaller implements Unmarshaller<Listener, Node> {
     
 
         return listener;
-    }  
+    }
 }
     

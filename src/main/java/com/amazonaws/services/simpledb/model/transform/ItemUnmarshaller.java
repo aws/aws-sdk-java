@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Item Unmarshaller
- */        
+ */
 public class ItemUnmarshaller implements Unmarshaller<Item, Node> {
 
     public Item unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Item item = new Item();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         item.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -45,6 +47,6 @@ public class ItemUnmarshaller implements Unmarshaller<Item, Node> {
     
 
         return item;
-    }  
+    }
 }
     

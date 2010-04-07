@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Or Update Scaling Trigger Request Unmarshaller
- */        
+ */
 public class CreateOrUpdateScalingTriggerRequestUnmarshaller implements Unmarshaller<CreateOrUpdateScalingTriggerRequest, Node> {
 
     public CreateOrUpdateScalingTriggerRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateOrUpdateScalingTriggerRequest createOrUpdateScalingTriggerRequest = new CreateOrUpdateScalingTriggerRequest();
-        
+
         
         Node triggerNameNode = XpathUtils.asNode("TriggerName", node);
         createOrUpdateScalingTriggerRequest.setTriggerName(new StringUnmarshaller().unmarshall(triggerNameNode));
@@ -78,6 +80,6 @@ public class CreateOrUpdateScalingTriggerRequestUnmarshaller implements Unmarsha
     
 
         return createOrUpdateScalingTriggerRequest;
-    }  
+    }
 }
     

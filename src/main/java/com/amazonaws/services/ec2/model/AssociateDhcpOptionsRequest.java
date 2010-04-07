@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Associate Dhcp Options Request
  */
 public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
-        
+
     private String dhcpOptionsId;
 
     private String vpcId;

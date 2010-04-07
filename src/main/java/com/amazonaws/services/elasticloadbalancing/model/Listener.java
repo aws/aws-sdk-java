@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class Listener {
-        
+
     /**
      * Specifies the LoadBalancer transport protocol to use for routing - TCP
      * or HTTP. This property cannot be modified for the life of the

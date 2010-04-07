@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of EBS snapshot IDs to describe.
      */

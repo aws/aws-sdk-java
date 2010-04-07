@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Add Job Flow Steps Request
  */
 public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
-        
+
     private String jobFlowId;
 
     private java.util.List<StepConfig> steps;

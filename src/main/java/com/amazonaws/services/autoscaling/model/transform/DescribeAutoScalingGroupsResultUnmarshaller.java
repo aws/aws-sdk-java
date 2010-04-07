@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Auto Scaling Groups Result Unmarshaller
- */        
+ */
 public class DescribeAutoScalingGroupsResultUnmarshaller implements Unmarshaller<DescribeAutoScalingGroupsResult, Node> {
 
     public DescribeAutoScalingGroupsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeAutoScalingGroupsResult describeAutoScalingGroupsResult = new DescribeAutoScalingGroupsResult();
-        
+
         
         NodeList autoScalingGroupsNodes = XpathUtils.asNodeList("AutoScalingGroups/member", node);
         for (int autoScalingGroupsIndex = 0; autoScalingGroupsIndex < XpathUtils.nodeLength(autoScalingGroupsNodes); ++autoScalingGroupsIndex) {
@@ -39,6 +41,6 @@ public class DescribeAutoScalingGroupsResultUnmarshaller implements Unmarshaller
     
 
         return describeAutoScalingGroupsResult;
-    }  
+    }
 }
     

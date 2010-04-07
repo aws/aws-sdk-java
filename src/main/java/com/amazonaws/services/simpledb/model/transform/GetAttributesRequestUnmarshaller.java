@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Attributes Request Unmarshaller
- */        
+ */
 public class GetAttributesRequestUnmarshaller implements Unmarshaller<GetAttributesRequest, Node> {
 
     public GetAttributesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetAttributesRequest getAttributesRequest = new GetAttributesRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         getAttributesRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
@@ -48,6 +50,6 @@ public class GetAttributesRequestUnmarshaller implements Unmarshaller<GetAttribu
     
 
         return getAttributesRequest;
-    }  
+    }
 }
     

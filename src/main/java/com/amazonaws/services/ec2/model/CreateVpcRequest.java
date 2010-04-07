@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Vpc Request
  */
 public class CreateVpcRequest extends AmazonWebServiceRequest {
-        
+
     private String cidrBlock;
 
     /**

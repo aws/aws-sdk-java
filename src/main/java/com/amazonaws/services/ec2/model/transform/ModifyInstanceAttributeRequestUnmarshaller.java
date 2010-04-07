@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Modify Instance Attribute Request Unmarshaller
- */        
+ */
 public class ModifyInstanceAttributeRequestUnmarshaller implements Unmarshaller<ModifyInstanceAttributeRequest, Node> {
 
     public ModifyInstanceAttributeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ModifyInstanceAttributeRequest modifyInstanceAttributeRequest = new ModifyInstanceAttributeRequest();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         modifyInstanceAttributeRequest.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -48,6 +50,6 @@ public class ModifyInstanceAttributeRequestUnmarshaller implements Unmarshaller<
     
 
         return modifyInstanceAttributeRequest;
-    }  
+    }
 }
     

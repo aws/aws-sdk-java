@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class InstanceBlockDeviceMapping {
-        
+
     /**
      * The device name (e.g., /dev/sdh) at which the block device is exposed
      * on the instance.

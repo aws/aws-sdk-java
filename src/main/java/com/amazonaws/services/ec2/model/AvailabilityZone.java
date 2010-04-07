@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class AvailabilityZone {
-        
+
     /**
      * Name of the Availability Zone.
      */

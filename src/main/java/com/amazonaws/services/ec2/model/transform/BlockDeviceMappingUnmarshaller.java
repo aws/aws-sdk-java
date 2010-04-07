@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Block Device Mapping Unmarshaller
- */        
+ */
 public class BlockDeviceMappingUnmarshaller implements Unmarshaller<BlockDeviceMapping, Node> {
 
     public BlockDeviceMapping unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
-        
+
         
         Node virtualNameNode = XpathUtils.asNode("virtualName", node);
         blockDeviceMapping.setVirtualName(new StringUnmarshaller().unmarshall(virtualNameNode));
@@ -44,6 +46,6 @@ public class BlockDeviceMappingUnmarshaller implements Unmarshaller<BlockDeviceM
     
 
         return blockDeviceMapping;
-    }  
+    }
 }
     

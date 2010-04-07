@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of Amazon EC2 security groups to describe.
      */

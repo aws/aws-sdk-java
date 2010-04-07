@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Addresses Request Unmarshaller
- */        
+ */
 public class DescribeAddressesRequestUnmarshaller implements Unmarshaller<DescribeAddressesRequest, Node> {
 
     public DescribeAddressesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeAddressesRequest describeAddressesRequest = new DescribeAddressesRequest();
-        
+
         
         NodeList publicIpsNodes = XpathUtils.asNodeList("PublicIp/PublicIp", node);
         for (int publicIpsIndex = 0; publicIpsIndex < XpathUtils.nodeLength(publicIpsNodes); ++publicIpsIndex) {
@@ -39,6 +41,6 @@ public class DescribeAddressesRequestUnmarshaller implements Unmarshaller<Descri
     
 
         return describeAddressesRequest;
-    }  
+    }
 }
     

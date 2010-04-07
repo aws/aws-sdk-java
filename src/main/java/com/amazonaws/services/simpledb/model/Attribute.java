@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Attribute
  */
 public class Attribute {
-        
+
     /**
      * Attribute Name.
      */

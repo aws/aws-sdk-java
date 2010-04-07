@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeRegionsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The optional list of regions to describe.
      */

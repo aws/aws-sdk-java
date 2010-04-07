@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Dhcp Options Request
  */
 public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
-        
+
     private String dhcpOptionsId;
 
     /**

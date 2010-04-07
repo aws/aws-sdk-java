@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Vpcs Request Unmarshaller
- */        
+ */
 public class DescribeVpcsRequestUnmarshaller implements Unmarshaller<DescribeVpcsRequest, Node> {
 
     public DescribeVpcsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeVpcsRequest describeVpcsRequest = new DescribeVpcsRequest();
-        
+
         
         NodeList vpcIdsNodes = XpathUtils.asNodeList("VpcId/VpcId", node);
         for (int vpcIdsIndex = 0; vpcIdsIndex < XpathUtils.nodeLength(vpcIdsNodes); ++vpcIdsIndex) {
@@ -46,6 +48,6 @@ public class DescribeVpcsRequestUnmarshaller implements Unmarshaller<DescribeVpc
     
 
         return describeVpcsRequest;
-    }  
+    }
 }
     

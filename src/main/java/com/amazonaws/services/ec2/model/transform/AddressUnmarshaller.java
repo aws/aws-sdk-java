@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Address Unmarshaller
- */        
+ */
 public class AddressUnmarshaller implements Unmarshaller<Address, Node> {
 
     public Address unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Address address = new Address();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         address.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -38,6 +40,6 @@ public class AddressUnmarshaller implements Unmarshaller<Address, Node> {
     
 
         return address;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Auto Scaling Group Unmarshaller
- */        
+ */
 public class AutoScalingGroupUnmarshaller implements Unmarshaller<AutoScalingGroup, Node> {
 
     public AutoScalingGroup unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AutoScalingGroup autoScalingGroup = new AutoScalingGroup();
-        
+
         
         Node autoScalingGroupNameNode = XpathUtils.asNode("AutoScalingGroupName", node);
         autoScalingGroup.setAutoScalingGroupName(new StringUnmarshaller().unmarshall(autoScalingGroupNameNode));
@@ -74,6 +76,6 @@ public class AutoScalingGroupUnmarshaller implements Unmarshaller<AutoScalingGro
     
 
         return autoScalingGroup;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Vpn Connection Unmarshaller
- */        
+ */
 public class VpnConnectionUnmarshaller implements Unmarshaller<VpnConnection, Node> {
 
     public VpnConnection unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         VpnConnection vpnConnection = new VpnConnection();
-        
+
         
         Node vpnConnectionIdNode = XpathUtils.asNode("vpnConnectionId", node);
         vpnConnection.setVpnConnectionId(new StringUnmarshaller().unmarshall(vpnConnectionIdNode));
@@ -50,6 +52,6 @@ public class VpnConnectionUnmarshaller implements Unmarshaller<VpnConnection, No
     
 
         return vpnConnection;
-    }  
+    }
 }
     

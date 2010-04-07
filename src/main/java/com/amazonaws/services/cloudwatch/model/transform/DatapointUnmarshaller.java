@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Datapoint Unmarshaller
- */        
+ */
 public class DatapointUnmarshaller implements Unmarshaller<Datapoint, Node> {
 
     public Datapoint unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Datapoint datapoint = new Datapoint();
-        
+
         
         Node timestampNode = XpathUtils.asNode("Timestamp", node);
         datapoint.setTimestamp(new DateUnmarshaller().unmarshall(timestampNode));
@@ -56,6 +58,6 @@ public class DatapointUnmarshaller implements Unmarshaller<Datapoint, Node> {
     
 
         return datapoint;
-    }  
+    }
 }
     

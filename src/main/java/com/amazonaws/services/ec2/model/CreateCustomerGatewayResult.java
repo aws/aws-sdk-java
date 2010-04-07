@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Customer Gateway Result
  */
 public class CreateCustomerGatewayResult {
-        
+
     private CustomerGateway customerGateway;
 
     /**

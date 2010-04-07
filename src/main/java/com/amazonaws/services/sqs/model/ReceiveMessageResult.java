@@ -20,7 +20,7 @@ package com.amazonaws.services.sqs.model;
  * </p>
  */
 public class ReceiveMessageResult {
-        
+
     /**
      * A list of messages.
      */

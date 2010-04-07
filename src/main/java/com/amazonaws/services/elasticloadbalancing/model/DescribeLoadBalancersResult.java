@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class DescribeLoadBalancersResult {
-        
+
     /**
      * A list of LoadBalancer description structures.
      */

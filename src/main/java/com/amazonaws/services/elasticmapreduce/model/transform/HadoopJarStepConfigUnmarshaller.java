@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Hadoop Jar Step Config Unmarshaller
- */        
+ */
 public class HadoopJarStepConfigUnmarshaller implements Unmarshaller<HadoopJarStepConfig, Node> {
 
     public HadoopJarStepConfig unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
-        
+
         
         NodeList propertiesNodes = XpathUtils.asNodeList("Properties/member", node);
         for (int propertiesIndex = 0; propertiesIndex < XpathUtils.nodeLength(propertiesNodes); ++propertiesIndex) {
@@ -52,6 +54,6 @@ public class HadoopJarStepConfigUnmarshaller implements Unmarshaller<HadoopJarSt
     
 
         return hadoopJarStepConfig;
-    }  
+    }
 }
     

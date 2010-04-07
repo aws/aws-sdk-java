@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Subnet Unmarshaller
- */        
+ */
 public class SubnetUnmarshaller implements Unmarshaller<Subnet, Node> {
 
     public Subnet unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Subnet subnet = new Subnet();
-        
+
         
         Node subnetIdNode = XpathUtils.asNode("subnetId", node);
         subnet.setSubnetId(new StringUnmarshaller().unmarshall(subnetIdNode));
@@ -50,6 +52,6 @@ public class SubnetUnmarshaller implements Unmarshaller<Subnet, Node> {
     
 
         return subnet;
-    }  
+    }
 }
     

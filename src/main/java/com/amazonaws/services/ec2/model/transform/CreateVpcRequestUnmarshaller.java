@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Vpc Request Unmarshaller
- */        
+ */
 public class CreateVpcRequestUnmarshaller implements Unmarshaller<CreateVpcRequest, Node> {
 
     public CreateVpcRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVpcRequest createVpcRequest = new CreateVpcRequest();
-        
+
         
         Node cidrBlockNode = XpathUtils.asNode("CidrBlock", node);
         createVpcRequest.setCidrBlock(new StringUnmarshaller().unmarshall(cidrBlockNode));
     
 
         return createVpcRequest;
-    }  
+    }
 }
     

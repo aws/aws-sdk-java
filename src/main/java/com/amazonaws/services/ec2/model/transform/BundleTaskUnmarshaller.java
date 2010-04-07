@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Bundle Task Unmarshaller
- */        
+ */
 public class BundleTaskUnmarshaller implements Unmarshaller<BundleTask, Node> {
 
     public BundleTask unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         BundleTask bundleTask = new BundleTask();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         bundleTask.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -56,6 +58,6 @@ public class BundleTaskUnmarshaller implements Unmarshaller<BundleTask, Node> {
     
 
         return bundleTask;
-    }  
+    }
 }
     

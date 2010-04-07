@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Key Pair Request Unmarshaller
- */        
+ */
 public class CreateKeyPairRequestUnmarshaller implements Unmarshaller<CreateKeyPairRequest, Node> {
 
     public CreateKeyPairRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateKeyPairRequest createKeyPairRequest = new CreateKeyPairRequest();
-        
+
         
         Node keyNameNode = XpathUtils.asNode("KeyName", node);
         createKeyPairRequest.setKeyName(new StringUnmarshaller().unmarshall(keyNameNode));
     
 
         return createKeyPairRequest;
-    }  
+    }
 }
     

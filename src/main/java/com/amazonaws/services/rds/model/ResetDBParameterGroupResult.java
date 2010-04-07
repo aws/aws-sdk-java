@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class ResetDBParameterGroupResult {
-        
+
     /**
      * The name of the DP Parameter Group.
      */

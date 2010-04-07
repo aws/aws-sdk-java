@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Detach Vpn Gateway Request
  */
 public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String vpnGatewayId;
 
     private String vpcId;

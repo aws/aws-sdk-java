@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Describe Vpcs Result
  */
 public class DescribeVpcsResult {
-        
+
     private java.util.List<Vpc> vpcs;
 
     /**

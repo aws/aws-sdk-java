@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Hadoop Jar Step Config
  */
 public class HadoopJarStepConfig {
-        
+
     private java.util.List<KeyValue> properties;
 
     private String jar;

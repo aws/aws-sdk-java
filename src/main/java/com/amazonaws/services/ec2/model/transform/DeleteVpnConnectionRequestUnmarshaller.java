@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Vpn Connection Request Unmarshaller
- */        
+ */
 public class DeleteVpnConnectionRequestUnmarshaller implements Unmarshaller<DeleteVpnConnectionRequest, Node> {
 
     public DeleteVpnConnectionRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteVpnConnectionRequest deleteVpnConnectionRequest = new DeleteVpnConnectionRequest();
-        
+
         
         Node vpnConnectionIdNode = XpathUtils.asNode("VpnConnectionId", node);
         deleteVpnConnectionRequest.setVpnConnectionId(new StringUnmarshaller().unmarshall(vpnConnectionIdNode));
     
 
         return deleteVpnConnectionRequest;
-    }  
+    }
 }
     

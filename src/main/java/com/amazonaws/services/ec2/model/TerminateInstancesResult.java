@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class TerminateInstancesResult {
-        
+
     /**
      * The list of the terminating instances and details on how their state
      * has changed.

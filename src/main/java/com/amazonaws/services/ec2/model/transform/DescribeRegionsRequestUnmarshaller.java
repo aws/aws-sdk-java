@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Regions Request Unmarshaller
- */        
+ */
 public class DescribeRegionsRequestUnmarshaller implements Unmarshaller<DescribeRegionsRequest, Node> {
 
     public DescribeRegionsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeRegionsRequest describeRegionsRequest = new DescribeRegionsRequest();
-        
+
         
         NodeList regionNamesNodes = XpathUtils.asNodeList("RegionName/RegionName", node);
         for (int regionNamesIndex = 0; regionNamesIndex < XpathUtils.nodeLength(regionNamesNodes); ++regionNamesIndex) {
@@ -39,6 +41,6 @@ public class DescribeRegionsRequestUnmarshaller implements Unmarshaller<Describe
     
 
         return describeRegionsRequest;
-    }  
+    }
 }
     

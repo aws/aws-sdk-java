@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Send Message Request Unmarshaller
- */        
+ */
 public class SendMessageRequestUnmarshaller implements Unmarshaller<SendMessageRequest, Node> {
 
     public SendMessageRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SendMessageRequest sendMessageRequest = new SendMessageRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         sendMessageRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -38,6 +40,6 @@ public class SendMessageRequestUnmarshaller implements Unmarshaller<SendMessageR
     
 
         return sendMessageRequest;
-    }  
+    }
 }
     

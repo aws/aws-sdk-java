@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Register Instances With Load Balancer Result Unmarshaller
- */        
+ */
 public class RegisterInstancesWithLoadBalancerResultUnmarshaller implements Unmarshaller<RegisterInstancesWithLoadBalancerResult, Node> {
 
     public RegisterInstancesWithLoadBalancerResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancerResult = new RegisterInstancesWithLoadBalancerResult();
-        
+
         
         NodeList instancesNodes = XpathUtils.asNodeList("Instances/member", node);
         for (int instancesIndex = 0; instancesIndex < XpathUtils.nodeLength(instancesNodes); ++instancesIndex) {
@@ -39,6 +41,6 @@ public class RegisterInstancesWithLoadBalancerResultUnmarshaller implements Unma
     
 
         return registerInstancesWithLoadBalancerResult;
-    }  
+    }
 }
     

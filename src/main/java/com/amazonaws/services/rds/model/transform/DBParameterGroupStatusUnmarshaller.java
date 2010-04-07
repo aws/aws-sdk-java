@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * D B Parameter Group Status Unmarshaller
- */        
+ */
 public class DBParameterGroupStatusUnmarshaller implements Unmarshaller<DBParameterGroupStatus, Node> {
 
     public DBParameterGroupStatus unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DBParameterGroupStatus dBParameterGroupStatus = new DBParameterGroupStatus();
-        
+
         
         Node dBParameterGroupNameNode = XpathUtils.asNode("DBParameterGroupName", node);
         dBParameterGroupStatus.setDBParameterGroupName(new StringUnmarshaller().unmarshall(dBParameterGroupNameNode));
@@ -38,6 +40,6 @@ public class DBParameterGroupStatusUnmarshaller implements Unmarshaller<DBParame
     
 
         return dBParameterGroupStatus;
-    }  
+    }
 }
     

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string.

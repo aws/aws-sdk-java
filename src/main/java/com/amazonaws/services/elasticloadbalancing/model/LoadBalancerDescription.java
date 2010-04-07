@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class LoadBalancerDescription {
-        
+
     /**
      * Specifies the name associated with the LoadBalancer.
      */

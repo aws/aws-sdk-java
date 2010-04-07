@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * image and register the new image.
  */
 public class RegisterImageRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The full path to your AMI manifest in Amazon S3 storage.
      */

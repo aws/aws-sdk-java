@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Bundle Instance Request
  */
 public class BundleInstanceRequest extends AmazonWebServiceRequest {
-        
+
     private String instanceId;
 
     private Storage storage;

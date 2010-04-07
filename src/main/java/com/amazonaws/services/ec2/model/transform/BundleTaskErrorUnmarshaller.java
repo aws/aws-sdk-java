@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Bundle Task Error Unmarshaller
- */        
+ */
 public class BundleTaskErrorUnmarshaller implements Unmarshaller<BundleTaskError, Node> {
 
     public BundleTaskError unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         BundleTaskError bundleTaskError = new BundleTaskError();
-        
+
         
         Node codeNode = XpathUtils.asNode("code", node);
         bundleTaskError.setCode(new StringUnmarshaller().unmarshall(codeNode));
@@ -38,6 +40,6 @@ public class BundleTaskErrorUnmarshaller implements Unmarshaller<BundleTaskError
     
 
         return bundleTaskError;
-    }  
+    }
 }
     

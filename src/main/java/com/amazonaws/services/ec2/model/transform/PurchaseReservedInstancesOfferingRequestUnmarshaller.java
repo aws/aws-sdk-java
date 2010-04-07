@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Purchase Reserved Instances Offering Request Unmarshaller
- */        
+ */
 public class PurchaseReservedInstancesOfferingRequestUnmarshaller implements Unmarshaller<PurchaseReservedInstancesOfferingRequest, Node> {
 
     public PurchaseReservedInstancesOfferingRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest = new PurchaseReservedInstancesOfferingRequest();
-        
+
         
         Node reservedInstancesOfferingIdNode = XpathUtils.asNode("ReservedInstancesOfferingId", node);
         purchaseReservedInstancesOfferingRequest.setReservedInstancesOfferingId(new StringUnmarshaller().unmarshall(reservedInstancesOfferingIdNode));
@@ -38,6 +40,6 @@ public class PurchaseReservedInstancesOfferingRequestUnmarshaller implements Unm
     
 
         return purchaseReservedInstancesOfferingRequest;
-    }  
+    }
 }
     

@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class TerminateInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The list of instances to terminate.
      */

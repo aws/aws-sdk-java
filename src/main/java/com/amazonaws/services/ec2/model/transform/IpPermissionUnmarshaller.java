@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Ip Permission Unmarshaller
- */        
+ */
 public class IpPermissionUnmarshaller implements Unmarshaller<IpPermission, Node> {
 
     public IpPermission unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         IpPermission ipPermission = new IpPermission();
-        
+
         
         Node ipProtocolNode = XpathUtils.asNode("ipProtocol", node);
         ipPermission.setIpProtocol(new StringUnmarshaller().unmarshall(ipProtocolNode));
@@ -55,6 +57,6 @@ public class IpPermissionUnmarshaller implements Unmarshaller<IpPermission, Node
     
 
         return ipPermission;
-    }  
+    }
 }
     

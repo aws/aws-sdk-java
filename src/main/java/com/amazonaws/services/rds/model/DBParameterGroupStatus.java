@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DBParameterGroupStatus {
-        
+
     /**
      * The name of the DP Parameter Group.
      */

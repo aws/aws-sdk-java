@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteMessageRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -32,6 +32,26 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
      */
     private String receiptHandle;
 
+    /**
+     * Default constructor for a new DeleteMessageRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteMessageRequest() {}
+    
+    /**
+     * Constructs a new DeleteMessageRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     * @param receiptHandle The receipt handle associated with the message to
+     * delete.
+     */
+    public DeleteMessageRequest(String queueUrl, String receiptHandle) {
+        this.queueUrl = queueUrl;
+        this.receiptHandle = receiptHandle;
+    }
+    
     /**
      * 
      *

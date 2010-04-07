@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Launch Configuration Request Unmarshaller
- */        
+ */
 public class CreateLaunchConfigurationRequestUnmarshaller implements Unmarshaller<CreateLaunchConfigurationRequest, Node> {
 
     public CreateLaunchConfigurationRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateLaunchConfigurationRequest createLaunchConfigurationRequest = new CreateLaunchConfigurationRequest();
-        
+
         
         Node launchConfigurationNameNode = XpathUtils.asNode("LaunchConfigurationName", node);
         createLaunchConfigurationRequest.setLaunchConfigurationName(new StringUnmarshaller().unmarshall(launchConfigurationNameNode));
@@ -67,6 +69,6 @@ public class CreateLaunchConfigurationRequestUnmarshaller implements Unmarshalle
     
 
         return createLaunchConfigurationRequest;
-    }  
+    }
 }
     

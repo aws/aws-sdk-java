@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class Trigger {
-        
+
     /**
      * Contains the name of the trigger.
      * <p>

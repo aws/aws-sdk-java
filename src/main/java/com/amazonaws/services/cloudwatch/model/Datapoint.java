@@ -18,7 +18,7 @@ package com.amazonaws.services.cloudwatch.model;
  * Datapoint
  */
 public class Datapoint {
-        
+
     private java.util.Date timestamp;
 
     private String unit;

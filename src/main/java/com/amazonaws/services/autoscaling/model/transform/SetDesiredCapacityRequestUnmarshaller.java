@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Set Desired Capacity Request Unmarshaller
- */        
+ */
 public class SetDesiredCapacityRequestUnmarshaller implements Unmarshaller<SetDesiredCapacityRequest, Node> {
 
     public SetDesiredCapacityRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SetDesiredCapacityRequest setDesiredCapacityRequest = new SetDesiredCapacityRequest();
-        
+
         
         Node autoScalingGroupNameNode = XpathUtils.asNode("AutoScalingGroupName", node);
         setDesiredCapacityRequest.setAutoScalingGroupName(new StringUnmarshaller().unmarshall(autoScalingGroupNameNode));
@@ -38,6 +40,6 @@ public class SetDesiredCapacityRequestUnmarshaller implements Unmarshaller<SetDe
     
 
         return setDesiredCapacityRequest;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * List Domains Result Unmarshaller
- */        
+ */
 public class ListDomainsResultUnmarshaller implements Unmarshaller<ListDomainsResult, Node> {
 
     public ListDomainsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ListDomainsResult listDomainsResult = new ListDomainsResult();
-        
+
         
         NodeList domainNamesNodes = XpathUtils.asNodeList("DomainName", node);
         for (int domainNamesIndex = 0; domainNamesIndex < XpathUtils.nodeLength(domainNamesNodes); ++domainNamesIndex) {
@@ -42,6 +44,6 @@ public class ListDomainsResultUnmarshaller implements Unmarshaller<ListDomainsRe
     
 
         return listDomainsResult;
-    }  
+    }
 }
     

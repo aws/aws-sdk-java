@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Filter
  */
 public class Filter {
-        
+
     private String name;
 
     private java.util.List<String> values;

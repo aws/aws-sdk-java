@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -33,6 +33,26 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
      */
     private String label;
 
+    /**
+     * Default constructor for a new RemovePermissionRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RemovePermissionRequest() {}
+    
+    /**
+     * Constructs a new RemovePermissionRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     * @param label The identfication of the permission to remove. This is
+     * the label added with the <a>AddPermission</a> operation.
+     */
+    public RemovePermissionRequest(String queueUrl, String label) {
+        this.queueUrl = queueUrl;
+        this.label = label;
+    }
+    
     /**
      * 
      *

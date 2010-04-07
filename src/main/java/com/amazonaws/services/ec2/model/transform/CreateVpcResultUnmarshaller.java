@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Vpc Result Unmarshaller
- */        
+ */
 public class CreateVpcResultUnmarshaller implements Unmarshaller<CreateVpcResult, Node> {
 
     public CreateVpcResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVpcResult createVpcResult = new CreateVpcResult();
-        
+
         
         Node vpcNode = XpathUtils.asNode("vpc", node);
         createVpcResult.setVpc(new VpcUnmarshaller().unmarshall(vpcNode));
     
 
         return createVpcResult;
-    }  
+    }
 }
     

@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Triggers Request Unmarshaller
- */        
+ */
 public class DescribeTriggersRequestUnmarshaller implements Unmarshaller<DescribeTriggersRequest, Node> {
 
     public DescribeTriggersRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeTriggersRequest describeTriggersRequest = new DescribeTriggersRequest();
-        
+
         
         Node autoScalingGroupNameNode = XpathUtils.asNode("AutoScalingGroupName", node);
         describeTriggersRequest.setAutoScalingGroupName(new StringUnmarshaller().unmarshall(autoScalingGroupNameNode));
     
 
         return describeTriggersRequest;
-    }  
+    }
 }
     

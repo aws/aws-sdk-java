@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Image Attribute Unmarshaller
- */        
+ */
 public class ImageAttributeUnmarshaller implements Unmarshaller<ImageAttribute, Node> {
 
     public ImageAttribute unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ImageAttribute imageAttribute = new ImageAttribute();
-        
+
         
         Node imageIdNode = XpathUtils.asNode("imageId", node);
         imageAttribute.setImageId(new StringUnmarshaller().unmarshall(imageIdNode));
@@ -65,6 +67,6 @@ public class ImageAttributeUnmarshaller implements Unmarshaller<ImageAttribute, 
     
 
         return imageAttribute;
-    }  
+    }
 }
     

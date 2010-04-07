@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The unique ID of the Reserved Instances offering being purchased.
      */

@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class AllocateAddressResult {
-        
+
     /**
      * IP address for use with your account.
      */

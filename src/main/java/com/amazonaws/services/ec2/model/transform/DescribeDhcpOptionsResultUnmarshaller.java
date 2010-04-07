@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Dhcp Options Result Unmarshaller
- */        
+ */
 public class DescribeDhcpOptionsResultUnmarshaller implements Unmarshaller<DescribeDhcpOptionsResult, Node> {
 
     public DescribeDhcpOptionsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeDhcpOptionsResult describeDhcpOptionsResult = new DescribeDhcpOptionsResult();
-        
+
         
         NodeList dhcpOptionsNodes = XpathUtils.asNodeList("dhcpOptionsSet/item", node);
         for (int dhcpOptionsIndex = 0; dhcpOptionsIndex < XpathUtils.nodeLength(dhcpOptionsNodes); ++dhcpOptionsIndex) {
@@ -39,6 +41,6 @@ public class DescribeDhcpOptionsResultUnmarshaller implements Unmarshaller<Descr
     
 
         return describeDhcpOptionsResult;
-    }  
+    }
 }
     

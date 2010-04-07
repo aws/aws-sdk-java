@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Cancel Bundle Task Request Unmarshaller
- */        
+ */
 public class CancelBundleTaskRequestUnmarshaller implements Unmarshaller<CancelBundleTaskRequest, Node> {
 
     public CancelBundleTaskRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CancelBundleTaskRequest cancelBundleTaskRequest = new CancelBundleTaskRequest();
-        
+
         
         Node bundleIdNode = XpathUtils.asNode("BundleId", node);
         cancelBundleTaskRequest.setBundleId(new StringUnmarshaller().unmarshall(bundleIdNode));
     
 
         return cancelBundleTaskRequest;
-    }  
+    }
 }
     

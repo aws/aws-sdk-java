@@ -19,12 +19,30 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Domain Metadata Request
  */
 public class DomainMetadataRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain for which to display metadata.
      */
     private String domainName;
 
+    /**
+     * Default constructor for a new DomainMetadataRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DomainMetadataRequest() {}
+    
+    /**
+     * Constructs a new DomainMetadataRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain for which to display
+     * metadata.
+     */
+    public DomainMetadataRequest(String domainName) {
+        this.domainName = domainName;
+    }
+    
     /**
      * The name of the domain for which to display metadata.
      *

@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Describe Customer Gateways Result
  */
 public class DescribeCustomerGatewaysResult {
-        
+
     private java.util.List<CustomerGateway> customerGateways;
 
     /**

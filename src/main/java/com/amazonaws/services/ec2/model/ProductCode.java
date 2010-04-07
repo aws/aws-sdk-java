@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class ProductCode {
-        
+
     /**
      * The unique ID of an AWS DevPay product code.
      */

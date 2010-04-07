@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Dhcp Configuration
  */
 public class DhcpConfiguration {
-        
+
     private String key;
 
     private java.util.List<String> values;

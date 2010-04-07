@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Subnets Request Unmarshaller
- */        
+ */
 public class DescribeSubnetsRequestUnmarshaller implements Unmarshaller<DescribeSubnetsRequest, Node> {
 
     public DescribeSubnetsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeSubnetsRequest describeSubnetsRequest = new DescribeSubnetsRequest();
-        
+
         
         NodeList subnetIdsNodes = XpathUtils.asNodeList("SubnetId/SubnetId", node);
         for (int subnetIdsIndex = 0; subnetIdsIndex < XpathUtils.nodeLength(subnetIdsNodes); ++subnetIdsIndex) {
@@ -46,6 +48,6 @@ public class DescribeSubnetsRequestUnmarshaller implements Unmarshaller<Describe
     
 
         return describeSubnetsRequest;
-    }  
+    }
 }
     

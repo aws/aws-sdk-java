@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Storage Unmarshaller
- */        
+ */
 public class StorageUnmarshaller implements Unmarshaller<Storage, Node> {
 
     public Storage unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Storage storage = new Storage();
-        
+
         
         Node s3Node = XpathUtils.asNode("S3", node);
         storage.setS3(new S3StorageUnmarshaller().unmarshall(s3Node));
     
 
         return storage;
-    }  
+    }
 }
     

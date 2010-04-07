@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Describe Subnets Result
  */
 public class DescribeSubnetsResult {
-        
+
     private java.util.List<Subnet> subnets;
 
     /**

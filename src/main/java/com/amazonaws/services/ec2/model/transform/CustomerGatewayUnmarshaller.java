@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Customer Gateway Unmarshaller
- */        
+ */
 public class CustomerGatewayUnmarshaller implements Unmarshaller<CustomerGateway, Node> {
 
     public CustomerGateway unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CustomerGateway customerGateway = new CustomerGateway();
-        
+
         
         Node customerGatewayIdNode = XpathUtils.asNode("customerGatewayId", node);
         customerGateway.setCustomerGatewayId(new StringUnmarshaller().unmarshall(customerGatewayIdNode));
@@ -47,6 +49,6 @@ public class CustomerGatewayUnmarshaller implements Unmarshaller<CustomerGateway
     
 
         return customerGateway;
-    }  
+    }
 }
     

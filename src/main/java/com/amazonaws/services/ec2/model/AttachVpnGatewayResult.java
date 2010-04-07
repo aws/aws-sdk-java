@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Attach Vpn Gateway Result
  */
 public class AttachVpnGatewayResult {
-        
+
     private VpcAttachment vpcAttachement;
 
     /**

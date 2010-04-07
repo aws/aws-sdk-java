@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Snapshot Request Unmarshaller
- */        
+ */
 public class DeleteSnapshotRequestUnmarshaller implements Unmarshaller<DeleteSnapshotRequest, Node> {
 
     public DeleteSnapshotRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteSnapshotRequest deleteSnapshotRequest = new DeleteSnapshotRequest();
-        
+
         
         Node snapshotIdNode = XpathUtils.asNode("SnapshotId", node);
         deleteSnapshotRequest.setSnapshotId(new StringUnmarshaller().unmarshall(snapshotIdNode));
     
 
         return deleteSnapshotRequest;
-    }  
+    }
 }
     

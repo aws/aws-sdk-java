@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class EbsInstanceBlockDevice {
-        
+
     /**
      * The ID of the EBS volume.
      */

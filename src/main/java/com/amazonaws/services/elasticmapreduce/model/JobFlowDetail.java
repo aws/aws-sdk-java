@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Job Flow Detail
  */
 public class JobFlowDetail {
-        
+
     private String jobFlowId;
 
     private String name;

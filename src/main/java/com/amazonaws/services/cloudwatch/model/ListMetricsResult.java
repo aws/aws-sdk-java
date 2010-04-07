@@ -18,7 +18,7 @@ package com.amazonaws.services.cloudwatch.model;
  * List Metrics Result
  */
 public class ListMetricsResult {
-        
+
     private java.util.List<Metric> metrics;
 
     private String nextToken;

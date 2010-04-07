@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Instance Health Result Unmarshaller
- */        
+ */
 public class DescribeInstanceHealthResultUnmarshaller implements Unmarshaller<DescribeInstanceHealthResult, Node> {
 
     public DescribeInstanceHealthResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeInstanceHealthResult describeInstanceHealthResult = new DescribeInstanceHealthResult();
-        
+
         
         NodeList instanceStatesNodes = XpathUtils.asNodeList("InstanceStates/member", node);
         for (int instanceStatesIndex = 0; instanceStatesIndex < XpathUtils.nodeLength(instanceStatesNodes); ++instanceStatesIndex) {
@@ -39,6 +41,6 @@ public class DescribeInstanceHealthResultUnmarshaller implements Unmarshaller<De
     
 
         return describeInstanceHealthResult;
-    }  
+    }
 }
     

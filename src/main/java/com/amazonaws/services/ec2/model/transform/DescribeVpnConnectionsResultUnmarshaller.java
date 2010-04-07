@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Vpn Connections Result Unmarshaller
- */        
+ */
 public class DescribeVpnConnectionsResultUnmarshaller implements Unmarshaller<DescribeVpnConnectionsResult, Node> {
 
     public DescribeVpnConnectionsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeVpnConnectionsResult describeVpnConnectionsResult = new DescribeVpnConnectionsResult();
-        
+
         
         NodeList vpnConnectionsNodes = XpathUtils.asNodeList("vpnConnectionSet/item", node);
         for (int vpnConnectionsIndex = 0; vpnConnectionsIndex < XpathUtils.nodeLength(vpnConnectionsNodes); ++vpnConnectionsIndex) {
@@ -39,6 +41,6 @@ public class DescribeVpnConnectionsResultUnmarshaller implements Unmarshaller<De
     
 
         return describeVpnConnectionsResult;
-    }  
+    }
 }
     

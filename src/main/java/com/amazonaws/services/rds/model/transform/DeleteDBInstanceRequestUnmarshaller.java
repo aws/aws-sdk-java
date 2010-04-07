@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete D B Instance Request Unmarshaller
- */        
+ */
 public class DeleteDBInstanceRequestUnmarshaller implements Unmarshaller<DeleteDBInstanceRequest, Node> {
 
     public DeleteDBInstanceRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteDBInstanceRequest deleteDBInstanceRequest = new DeleteDBInstanceRequest();
-        
+
         
         Node dBInstanceIdentifierNode = XpathUtils.asNode("DBInstanceIdentifier", node);
         deleteDBInstanceRequest.setDBInstanceIdentifier(new StringUnmarshaller().unmarshall(dBInstanceIdentifierNode));
@@ -41,6 +43,6 @@ public class DeleteDBInstanceRequestUnmarshaller implements Unmarshaller<DeleteD
     
 
         return deleteDBInstanceRequest;
-    }  
+    }
 }
     

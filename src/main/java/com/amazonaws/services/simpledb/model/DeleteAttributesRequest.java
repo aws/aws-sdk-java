@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Attributes Request
  */
 public class DeleteAttributesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -46,6 +46,28 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
      */
     private UpdateCondition expected;
 
+    /**
+     * Default constructor for a new DeleteAttributesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteAttributesRequest() {}
+    
+    /**
+     * Constructs a new DeleteAttributesRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item. Similar to rows on a
+     * spreadsheet, items represent individual objects that contain one or
+     * more value-attribute pairs.
+     */
+    public DeleteAttributesRequest(String domainName, String itemName) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+    }
+    
     /**
      * The name of the domain in which to perform the operation.
      *

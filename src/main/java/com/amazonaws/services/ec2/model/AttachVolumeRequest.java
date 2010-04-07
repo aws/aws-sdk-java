@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AttachVolumeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be
      * within the same Availability Zone and the instance must be running.

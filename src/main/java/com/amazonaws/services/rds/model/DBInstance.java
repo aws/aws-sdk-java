@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DBInstance {
-        
+
     /**
      * Specifies a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.

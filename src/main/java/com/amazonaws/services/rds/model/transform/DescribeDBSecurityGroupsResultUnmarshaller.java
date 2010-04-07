@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe D B Security Groups Result Unmarshaller
- */        
+ */
 public class DescribeDBSecurityGroupsResultUnmarshaller implements Unmarshaller<DescribeDBSecurityGroupsResult, Node> {
 
     public DescribeDBSecurityGroupsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeDBSecurityGroupsResult describeDBSecurityGroupsResult = new DescribeDBSecurityGroupsResult();
-        
+
         
         Node markerNode = XpathUtils.asNode("Marker", node);
         describeDBSecurityGroupsResult.setMarker(new StringUnmarshaller().unmarshall(markerNode));
@@ -42,6 +44,6 @@ public class DescribeDBSecurityGroupsResultUnmarshaller implements Unmarshaller<
     
 
         return describeDBSecurityGroupsResult;
-    }  
+    }
 }
     

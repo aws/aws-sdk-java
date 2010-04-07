@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DBSecurityGroupMembership {
-        
+
     /**
      * The name of the DB Security Group.
      */

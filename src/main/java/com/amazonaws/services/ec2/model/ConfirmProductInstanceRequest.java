@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The product code to confirm.
      */

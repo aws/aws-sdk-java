@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Run Job Flow Request Unmarshaller
- */        
+ */
 public class RunJobFlowRequestUnmarshaller implements Unmarshaller<RunJobFlowRequest, Node> {
 
     public RunJobFlowRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RunJobFlowRequest runJobFlowRequest = new RunJobFlowRequest();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         runJobFlowRequest.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -48,6 +50,6 @@ public class RunJobFlowRequestUnmarshaller implements Unmarshaller<RunJobFlowReq
     
 
         return runJobFlowRequest;
-    }  
+    }
 }
     

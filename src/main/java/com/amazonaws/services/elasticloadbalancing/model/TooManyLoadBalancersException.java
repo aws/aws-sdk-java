@@ -18,20 +18,19 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * LoadBalancer name already exists for this account. Please choose
- * another name.
+ * 
  * </p>
  */        
-public class DuplicateAccessPointNameException extends AmazonServiceException {
+public class TooManyLoadBalancersException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new DuplicateAccessPointNameException with the specified error
+     * Constructs a new TooManyLoadBalancersException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public DuplicateAccessPointNameException(String message) {
+    public TooManyLoadBalancersException(String message) {
         super(message);
     }
     

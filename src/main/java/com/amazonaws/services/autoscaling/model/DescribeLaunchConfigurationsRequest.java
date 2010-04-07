@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */

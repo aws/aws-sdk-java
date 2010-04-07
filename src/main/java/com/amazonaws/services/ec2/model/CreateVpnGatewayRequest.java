@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Vpn Gateway Request
  */
 public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String type;
 
     private String availabilityZone;

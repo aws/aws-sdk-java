@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the database engine.
      */

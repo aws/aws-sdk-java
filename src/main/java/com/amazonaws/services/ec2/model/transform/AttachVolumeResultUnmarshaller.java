@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Attach Volume Result Unmarshaller
- */        
+ */
 public class AttachVolumeResultUnmarshaller implements Unmarshaller<AttachVolumeResult, Node> {
 
     public AttachVolumeResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AttachVolumeResult attachVolumeResult = new AttachVolumeResult();
-        
+
         
         Node attachmentNode = XpathUtils.asNode(".", node);
         attachVolumeResult.setAttachment(new VolumeAttachmentUnmarshaller().unmarshall(attachmentNode));
     
 
         return attachVolumeResult;
-    }  
+    }
 }
     

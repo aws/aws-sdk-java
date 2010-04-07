@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class ModifyDBParameterGroupResult {
-        
+
     /**
      * The name of the DP Parameter Group.
      */

@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Dhcp Options Result Unmarshaller
- */        
+ */
 public class CreateDhcpOptionsResultUnmarshaller implements Unmarshaller<CreateDhcpOptionsResult, Node> {
 
     public CreateDhcpOptionsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateDhcpOptionsResult createDhcpOptionsResult = new CreateDhcpOptionsResult();
-        
+
         
         Node dhcpOptionsNode = XpathUtils.asNode("dhcpOptions", node);
         createDhcpOptionsResult.setDhcpOptions(new DhcpOptionsUnmarshaller().unmarshall(dhcpOptionsNode));
     
 
         return createDhcpOptionsResult;
-    }  
+    }
 }
     

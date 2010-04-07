@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DescribeDBParametersResult {
-        
+
     /**
      * A list of <a>Parameter</a> instances.
      */

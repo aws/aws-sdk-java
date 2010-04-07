@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the instance whose attribute is being modified.
      */

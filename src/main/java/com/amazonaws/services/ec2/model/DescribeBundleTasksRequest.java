@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The list of bundle task IDs to describe.
      */

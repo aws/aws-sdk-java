@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reset Image Attribute Request Unmarshaller
- */        
+ */
 public class ResetImageAttributeRequestUnmarshaller implements Unmarshaller<ResetImageAttributeRequest, Node> {
 
     public ResetImageAttributeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ResetImageAttributeRequest resetImageAttributeRequest = new ResetImageAttributeRequest();
-        
+
         
         Node imageIdNode = XpathUtils.asNode("ImageId", node);
         resetImageAttributeRequest.setImageId(new StringUnmarshaller().unmarshall(imageIdNode));
@@ -38,6 +40,6 @@ public class ResetImageAttributeRequestUnmarshaller implements Unmarshaller<Rese
     
 
         return resetImageAttributeRequest;
-    }  
+    }
 }
     

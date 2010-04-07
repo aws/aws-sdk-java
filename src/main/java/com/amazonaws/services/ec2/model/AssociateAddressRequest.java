@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AssociateAddressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The instance to associate with the IP address.
      */

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * Name of the security group.
      */

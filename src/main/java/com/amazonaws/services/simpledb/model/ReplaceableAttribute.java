@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Replaceable Attribute
  */
 public class ReplaceableAttribute {
-        
+
     /**
      * Attribute Name.
      */

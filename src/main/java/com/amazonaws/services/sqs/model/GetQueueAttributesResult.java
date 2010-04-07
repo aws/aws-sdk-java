@@ -20,7 +20,7 @@ package com.amazonaws.services.sqs.model;
  * </p>
  */
 public class GetQueueAttributesResult {
-        
+
     /**
      * A list of attributes.
      */

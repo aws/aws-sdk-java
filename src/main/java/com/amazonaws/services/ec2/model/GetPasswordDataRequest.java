@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class GetPasswordDataRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the instance for which you want the Windows administrator
      * password.

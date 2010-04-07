@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Describe Vpn Connections Result
  */
 public class DescribeVpnConnectionsResult {
-        
+
     private java.util.List<VpnConnection> vpnConnections;
 
     /**

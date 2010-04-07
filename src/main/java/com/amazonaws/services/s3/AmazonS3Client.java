@@ -576,7 +576,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting an object's metadata");
         assertParameterNotNull(key, "The key parameter must be specified when requesting an object's metadata");
 
-        Request<Void> request = createRequest(bucketName, key, null);
+        Request<Void> request = createRequest(bucketName, key, getObjectMetadataRequest);
         if (versionId != null) request.addParameter("versionId", versionId);
 
         signRequest(request, HttpMethodName.HEAD, bucketName, key);

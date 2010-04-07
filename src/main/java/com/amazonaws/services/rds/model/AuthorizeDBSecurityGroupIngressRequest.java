@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the DB Security Group to authorize.
      */

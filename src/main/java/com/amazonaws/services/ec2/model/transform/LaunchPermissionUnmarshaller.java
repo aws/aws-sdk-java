@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Launch Permission Unmarshaller
- */        
+ */
 public class LaunchPermissionUnmarshaller implements Unmarshaller<LaunchPermission, Node> {
 
     public LaunchPermission unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         LaunchPermission launchPermission = new LaunchPermission();
-        
+
         
         Node userIdNode = XpathUtils.asNode("userId", node);
         launchPermission.setUserId(new StringUnmarshaller().unmarshall(userIdNode));
@@ -38,6 +40,6 @@ public class LaunchPermissionUnmarshaller implements Unmarshaller<LaunchPermissi
     
 
         return launchPermission;
-    }  
+    }
 }
     

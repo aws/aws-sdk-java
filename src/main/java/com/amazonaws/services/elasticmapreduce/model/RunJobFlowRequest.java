@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Run Job Flow Request
  */
 public class RunJobFlowRequest extends AmazonWebServiceRequest {
-        
+
     private String name;
 
     private String logUri;

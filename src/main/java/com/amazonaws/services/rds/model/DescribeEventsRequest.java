@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeEventsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.

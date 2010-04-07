@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Vpn Connections Request
  */
 public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> vpnConnectionIds;
 
     /**

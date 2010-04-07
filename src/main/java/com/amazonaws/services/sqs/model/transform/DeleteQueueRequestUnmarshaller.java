@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Queue Request Unmarshaller
- */        
+ */
 public class DeleteQueueRequestUnmarshaller implements Unmarshaller<DeleteQueueRequest, Node> {
 
     public DeleteQueueRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteQueueRequest deleteQueueRequest = new DeleteQueueRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         deleteQueueRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
     
 
         return deleteQueueRequest;
-    }  
+    }
 }
     

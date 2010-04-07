@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Vpc Attachment Unmarshaller
- */        
+ */
 public class VpcAttachmentUnmarshaller implements Unmarshaller<VpcAttachment, Node> {
 
     public VpcAttachment unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         VpcAttachment vpcAttachment = new VpcAttachment();
-        
+
         
         Node vpcIdNode = XpathUtils.asNode("vpcId", node);
         vpcAttachment.setVpcId(new StringUnmarshaller().unmarshall(vpcIdNode));
@@ -38,6 +40,6 @@ public class VpcAttachmentUnmarshaller implements Unmarshaller<VpcAttachment, No
     
 
         return vpcAttachment;
-    }  
+    }
 }
     

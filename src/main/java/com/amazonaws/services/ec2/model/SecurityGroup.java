@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class SecurityGroup {
-        
+
     /**
      * The AWS Access Key ID of the owner of the security group.
      */

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Change Message Visibility Request Unmarshaller
- */        
+ */
 public class ChangeMessageVisibilityRequestUnmarshaller implements Unmarshaller<ChangeMessageVisibilityRequest, Node> {
 
     public ChangeMessageVisibilityRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ChangeMessageVisibilityRequest changeMessageVisibilityRequest = new ChangeMessageVisibilityRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         changeMessageVisibilityRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -41,6 +43,6 @@ public class ChangeMessageVisibilityRequestUnmarshaller implements Unmarshaller<
     
 
         return changeMessageVisibilityRequest;
-    }  
+    }
 }
     

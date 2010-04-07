@@ -18,7 +18,7 @@ package com.amazonaws.services.cloudwatch.model;
  * Dimension
  */
 public class Dimension {
-        
+
     private String name;
 
     private String value;

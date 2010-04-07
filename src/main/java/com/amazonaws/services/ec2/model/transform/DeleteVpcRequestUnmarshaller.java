@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Vpc Request Unmarshaller
- */        
+ */
 public class DeleteVpcRequestUnmarshaller implements Unmarshaller<DeleteVpcRequest, Node> {
 
     public DeleteVpcRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteVpcRequest deleteVpcRequest = new DeleteVpcRequest();
-        
+
         
         Node vpcIdNode = XpathUtils.asNode("VpcId", node);
         deleteVpcRequest.setVpcId(new StringUnmarshaller().unmarshall(vpcIdNode));
     
 
         return deleteVpcRequest;
-    }  
+    }
 }
     

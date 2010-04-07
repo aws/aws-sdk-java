@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Receive Message Result Unmarshaller
- */        
+ */
 public class ReceiveMessageResultUnmarshaller implements Unmarshaller<ReceiveMessageResult, Node> {
 
     public ReceiveMessageResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ReceiveMessageResult receiveMessageResult = new ReceiveMessageResult();
-        
+
         
         NodeList messagesNodes = XpathUtils.asNodeList("Message", node);
         for (int messagesIndex = 0; messagesIndex < XpathUtils.nodeLength(messagesNodes); ++messagesIndex) {
@@ -39,6 +41,6 @@ public class ReceiveMessageResultUnmarshaller implements Unmarshaller<ReceiveMes
     
 
         return receiveMessageResult;
-    }  
+    }
 }
     

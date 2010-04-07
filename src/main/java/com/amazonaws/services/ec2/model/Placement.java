@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class Placement {
-        
+
     /**
      * The availability zone in which an Amazon EC2 instance runs.
      */

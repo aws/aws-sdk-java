@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Load Balancer Request Unmarshaller
- */        
+ */
 public class CreateLoadBalancerRequestUnmarshaller implements Unmarshaller<CreateLoadBalancerRequest, Node> {
 
     public CreateLoadBalancerRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateLoadBalancerRequest createLoadBalancerRequest = new CreateLoadBalancerRequest();
-        
+
         
         Node loadBalancerNameNode = XpathUtils.asNode("LoadBalancerName", node);
         createLoadBalancerRequest.setLoadBalancerName(new StringUnmarshaller().unmarshall(loadBalancerNameNode));
@@ -49,6 +51,6 @@ public class CreateLoadBalancerRequestUnmarshaller implements Unmarshaller<Creat
     
 
         return createLoadBalancerRequest;
-    }  
+    }
 }
     

@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Job Flow Instances Detail
  */
 public class JobFlowInstancesDetail {
-        
+
     private String masterInstanceType;
 
     private String masterPublicDnsName;

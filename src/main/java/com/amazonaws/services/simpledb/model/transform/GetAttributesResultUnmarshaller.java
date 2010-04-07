@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Attributes Result Unmarshaller
- */        
+ */
 public class GetAttributesResultUnmarshaller implements Unmarshaller<GetAttributesResult, Node> {
 
     public GetAttributesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetAttributesResult getAttributesResult = new GetAttributesResult();
-        
+
         
         NodeList attributesNodes = XpathUtils.asNodeList("Attribute", node);
         for (int attributesIndex = 0; attributesIndex < XpathUtils.nodeLength(attributesNodes); ++attributesIndex) {
@@ -39,6 +41,6 @@ public class GetAttributesResultUnmarshaller implements Unmarshaller<GetAttribut
     
 
         return getAttributesResult;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * D B Instance Unmarshaller
- */        
+ */
 public class DBInstanceUnmarshaller implements Unmarshaller<DBInstance, Node> {
 
     public DBInstance unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DBInstance dBInstance = new DBInstance();
-        
+
         
         Node dBInstanceIdentifierNode = XpathUtils.asNode("DBInstanceIdentifier", node);
         dBInstance.setDBInstanceIdentifier(new StringUnmarshaller().unmarshall(dBInstanceIdentifierNode));
@@ -91,6 +93,6 @@ public class DBInstanceUnmarshaller implements Unmarshaller<DBInstance, Node> {
     
 
         return dBInstance;
-    }  
+    }
 }
     

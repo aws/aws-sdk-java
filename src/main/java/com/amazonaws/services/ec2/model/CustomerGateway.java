@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Customer Gateway
  */
 public class CustomerGateway {
-        
+
     private String customerGatewayId;
 
     private String state;

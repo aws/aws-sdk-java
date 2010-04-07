@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the EBS snapshot whose attribute is being described.
      */

@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the security group from which to remove permissions.
      */

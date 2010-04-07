@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Instance Unmarshaller
- */        
+ */
 public class InstanceUnmarshaller implements Unmarshaller<Instance, Node> {
 
     public Instance unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Instance instance = new Instance();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("InstanceId", node);
         instance.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
     
 
         return instance;
-    }  
+    }
 }
     

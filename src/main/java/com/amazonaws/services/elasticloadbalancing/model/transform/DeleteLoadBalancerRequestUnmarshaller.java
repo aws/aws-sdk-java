@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Load Balancer Request Unmarshaller
- */        
+ */
 public class DeleteLoadBalancerRequestUnmarshaller implements Unmarshaller<DeleteLoadBalancerRequest, Node> {
 
     public DeleteLoadBalancerRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteLoadBalancerRequest deleteLoadBalancerRequest = new DeleteLoadBalancerRequest();
-        
+
         
         Node loadBalancerNameNode = XpathUtils.asNode("LoadBalancerName", node);
         deleteLoadBalancerRequest.setLoadBalancerName(new StringUnmarshaller().unmarshall(loadBalancerNameNode));
     
 
         return deleteLoadBalancerRequest;
-    }  
+    }
 }
     

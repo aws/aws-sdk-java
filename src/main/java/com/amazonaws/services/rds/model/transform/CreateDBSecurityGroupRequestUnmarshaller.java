@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create D B Security Group Request Unmarshaller
- */        
+ */
 public class CreateDBSecurityGroupRequestUnmarshaller implements Unmarshaller<CreateDBSecurityGroupRequest, Node> {
 
     public CreateDBSecurityGroupRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateDBSecurityGroupRequest createDBSecurityGroupRequest = new CreateDBSecurityGroupRequest();
-        
+
         
         Node dBSecurityGroupNameNode = XpathUtils.asNode("DBSecurityGroupName", node);
         createDBSecurityGroupRequest.setDBSecurityGroupName(new StringUnmarshaller().unmarshall(dBSecurityGroupNameNode));
@@ -38,6 +40,6 @@ public class CreateDBSecurityGroupRequestUnmarshaller implements Unmarshaller<Cr
     
 
         return createDBSecurityGroupRequest;
-    }  
+    }
 }
     

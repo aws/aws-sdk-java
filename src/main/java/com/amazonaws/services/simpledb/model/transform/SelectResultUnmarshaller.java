@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Select Result Unmarshaller
- */        
+ */
 public class SelectResultUnmarshaller implements Unmarshaller<SelectResult, Node> {
 
     public SelectResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SelectResult selectResult = new SelectResult();
-        
+
         
         NodeList itemsNodes = XpathUtils.asNodeList("Item", node);
         for (int itemsIndex = 0; itemsIndex < XpathUtils.nodeLength(itemsNodes); ++itemsIndex) {
@@ -42,6 +44,6 @@ public class SelectResultUnmarshaller implements Unmarshaller<SelectResult, Node
     
 
         return selectResult;
-    }  
+    }
 }
     

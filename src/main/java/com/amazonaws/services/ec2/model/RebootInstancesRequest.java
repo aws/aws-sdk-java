@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RebootInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The list of instances to terminate.
      */

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * List Domains Request
  */
 public class ListDomainsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The maximum number of domain names you want returned. The range is 1
      * to 100. The default setting is 100.
@@ -32,6 +32,12 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
      */
     private String nextToken;
 
+    /**
+     * Default constructor for a new ListDomainsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListDomainsRequest() {}
+    
     /**
      * The maximum number of domain names you want returned. The range is 1
      * to 100. The default setting is 100.

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Attach Volume Request Unmarshaller
- */        
+ */
 public class AttachVolumeRequestUnmarshaller implements Unmarshaller<AttachVolumeRequest, Node> {
 
     public AttachVolumeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AttachVolumeRequest attachVolumeRequest = new AttachVolumeRequest();
-        
+
         
         Node volumeIdNode = XpathUtils.asNode("VolumeId", node);
         attachVolumeRequest.setVolumeId(new StringUnmarshaller().unmarshall(volumeIdNode));
@@ -41,6 +43,6 @@ public class AttachVolumeRequestUnmarshaller implements Unmarshaller<AttachVolum
     
 
         return attachVolumeRequest;
-    }  
+    }
 }
     

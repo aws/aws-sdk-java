@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the AMI whose attribute is to be described.
      */

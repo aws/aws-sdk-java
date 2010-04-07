@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Reserved Instances Offerings Result Unmarshaller
- */        
+ */
 public class DescribeReservedInstancesOfferingsResultUnmarshaller implements Unmarshaller<DescribeReservedInstancesOfferingsResult, Node> {
 
     public DescribeReservedInstancesOfferingsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeReservedInstancesOfferingsResult describeReservedInstancesOfferingsResult = new DescribeReservedInstancesOfferingsResult();
-        
+
         
         NodeList reservedInstancesOfferingsNodes = XpathUtils.asNodeList("reservedInstancesOfferingsSet/item", node);
         for (int reservedInstancesOfferingsIndex = 0; reservedInstancesOfferingsIndex < XpathUtils.nodeLength(reservedInstancesOfferingsNodes); ++reservedInstancesOfferingsIndex) {
@@ -39,6 +41,6 @@ public class DescribeReservedInstancesOfferingsResultUnmarshaller implements Unm
     
 
         return describeReservedInstancesOfferingsResult;
-    }  
+    }
 }
     

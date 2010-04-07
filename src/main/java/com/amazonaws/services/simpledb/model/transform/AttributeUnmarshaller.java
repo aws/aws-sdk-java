@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Attribute Unmarshaller
- */        
+ */
 public class AttributeUnmarshaller implements Unmarshaller<Attribute, Node> {
 
     public Attribute unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Attribute attribute = new Attribute();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         attribute.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -44,6 +46,6 @@ public class AttributeUnmarshaller implements Unmarshaller<Attribute, Node> {
     
 
         return attribute;
-    }  
+    }
 }
     

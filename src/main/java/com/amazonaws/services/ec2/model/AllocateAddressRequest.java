@@ -19,6 +19,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Allocate Address Request
  */
 public class AllocateAddressRequest extends AmazonWebServiceRequest {
-        
+
 }
     

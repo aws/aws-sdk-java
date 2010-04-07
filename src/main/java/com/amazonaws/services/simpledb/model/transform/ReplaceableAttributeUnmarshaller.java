@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Replaceable Attribute Unmarshaller
- */        
+ */
 public class ReplaceableAttributeUnmarshaller implements Unmarshaller<ReplaceableAttribute, Node> {
 
     public ReplaceableAttribute unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ReplaceableAttribute replaceableAttribute = new ReplaceableAttribute();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         replaceableAttribute.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -41,6 +43,6 @@ public class ReplaceableAttributeUnmarshaller implements Unmarshaller<Replaceabl
     
 
         return replaceableAttribute;
-    }  
+    }
 }
     

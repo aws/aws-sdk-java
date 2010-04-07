@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteVolumeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the EBS volume to delete.
      */

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Trigger Unmarshaller
- */        
+ */
 public class TriggerUnmarshaller implements Unmarshaller<Trigger, Node> {
 
     public Trigger unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Trigger trigger = new Trigger();
-        
+
         
         Node triggerNameNode = XpathUtils.asNode("TriggerName", node);
         trigger.setTriggerName(new StringUnmarshaller().unmarshall(triggerNameNode));
@@ -84,6 +86,6 @@ public class TriggerUnmarshaller implements Unmarshaller<Trigger, Node> {
     
 
         return trigger;
-    }  
+    }
 }
     

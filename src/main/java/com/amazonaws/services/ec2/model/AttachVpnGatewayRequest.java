@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Attach Vpn Gateway Request
  */
 public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String vpnGatewayId;
 
     private String vpcId;

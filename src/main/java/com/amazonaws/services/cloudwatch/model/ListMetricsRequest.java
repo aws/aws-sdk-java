@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * List Metrics Request
  */
 public class ListMetricsRequest extends AmazonWebServiceRequest {
-        
+
     private String nextToken;
 
     /**

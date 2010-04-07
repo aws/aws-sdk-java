@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class DisableAvailabilityZonesForLoadBalancerResult {
-        
+
     /**
      * A list of updated Availability Zones for the LoadBalancer.
      */

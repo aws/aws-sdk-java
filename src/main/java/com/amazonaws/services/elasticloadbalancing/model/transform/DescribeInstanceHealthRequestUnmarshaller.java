@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Instance Health Request Unmarshaller
- */        
+ */
 public class DescribeInstanceHealthRequestUnmarshaller implements Unmarshaller<DescribeInstanceHealthRequest, Node> {
 
     public DescribeInstanceHealthRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeInstanceHealthRequest describeInstanceHealthRequest = new DescribeInstanceHealthRequest();
-        
+
         
         Node loadBalancerNameNode = XpathUtils.asNode("LoadBalancerName", node);
         describeInstanceHealthRequest.setLoadBalancerName(new StringUnmarshaller().unmarshall(loadBalancerNameNode));
@@ -42,6 +44,6 @@ public class DescribeInstanceHealthRequestUnmarshaller implements Unmarshaller<D
     
 
         return describeInstanceHealthRequest;
-    }  
+    }
 }
     

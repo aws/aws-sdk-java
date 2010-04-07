@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Vpc Attachment
  */
 public class VpcAttachment {
-        
+
     private String vpcId;
 
     private String state;

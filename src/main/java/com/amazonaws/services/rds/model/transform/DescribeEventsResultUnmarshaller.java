@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Events Result Unmarshaller
- */        
+ */
 public class DescribeEventsResultUnmarshaller implements Unmarshaller<DescribeEventsResult, Node> {
 
     public DescribeEventsResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeEventsResult describeEventsResult = new DescribeEventsResult();
-        
+
         
         Node markerNode = XpathUtils.asNode("Marker", node);
         describeEventsResult.setMarker(new StringUnmarshaller().unmarshall(markerNode));
@@ -42,6 +44,6 @@ public class DescribeEventsResultUnmarshaller implements Unmarshaller<DescribeEv
     
 
         return describeEventsResult;
-    }  
+    }
 }
     

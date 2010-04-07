@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The DB Instance identifier. This value is stored as a lowercase
      * string.

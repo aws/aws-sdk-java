@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Job Flow Instances Detail Unmarshaller
- */        
+ */
 public class JobFlowInstancesDetailUnmarshaller implements Unmarshaller<JobFlowInstancesDetail, Node> {
 
     public JobFlowInstancesDetail unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         JobFlowInstancesDetail jobFlowInstancesDetail = new JobFlowInstancesDetail();
-        
+
         
         Node masterInstanceTypeNode = XpathUtils.asNode("MasterInstanceType", node);
         jobFlowInstancesDetail.setMasterInstanceType(new StringUnmarshaller().unmarshall(masterInstanceTypeNode));
@@ -56,6 +58,6 @@ public class JobFlowInstancesDetailUnmarshaller implements Unmarshaller<JobFlowI
     
 
         return jobFlowInstancesDetail;
-    }  
+    }
 }
     

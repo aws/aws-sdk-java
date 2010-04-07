@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * An optional list of the instances to describe.
      */

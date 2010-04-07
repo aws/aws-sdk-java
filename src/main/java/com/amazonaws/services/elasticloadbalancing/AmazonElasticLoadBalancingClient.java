@@ -112,10 +112,10 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
         exceptionUnmarshallers.add(new InvalidConfigurationRequestExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new TooManyAccessPointsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DuplicateAccessPointNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AccessPointNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidEndPointExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyLoadBalancersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DuplicateLoadBalancerNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new LoadBalancerNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidInstanceExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("elasticloadbalancing.amazonaws.com");
@@ -144,8 +144,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the DeregisterInstancesFromLoadBalancer
      *         service method, as returned by AmazonElasticLoadBalancing.
      * 
-     * @throws InvalidEndPointException
-     * @throws AccessPointNotFoundException
+     * @throws InvalidInstanceException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -174,7 +174,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the ConfigureHealthCheck service method, as
      *         returned by AmazonElasticLoadBalancing.
      * 
-     * @throws AccessPointNotFoundException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -261,8 +261,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the RegisterInstancesWithLoadBalancer
      *         service method, as returned by AmazonElasticLoadBalancing.
      * 
-     * @throws InvalidEndPointException
-     * @throws AccessPointNotFoundException
+     * @throws InvalidInstanceException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -311,8 +311,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the CreateLoadBalancer service method, as
      *         returned by AmazonElasticLoadBalancing.
      * 
-     * @throws TooManyAccessPointsException
-     * @throws DuplicateAccessPointNameException
+     * @throws TooManyLoadBalancersException
+     * @throws DuplicateLoadBalancerNameException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -352,7 +352,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the EnableAvailabilityZonesForLoadBalancer
      *         service method, as returned by AmazonElasticLoadBalancing.
      * 
-     * @throws AccessPointNotFoundException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -400,7 +400,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      *         service method, as returned by AmazonElasticLoadBalancing.
      * 
      * @throws InvalidConfigurationRequestException
-     * @throws AccessPointNotFoundException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -436,8 +436,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the DescribeInstanceHealth service method,
      *         as returned by AmazonElasticLoadBalancing.
      * 
-     * @throws InvalidEndPointException
-     * @throws AccessPointNotFoundException
+     * @throws InvalidInstanceException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -474,7 +474,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the DescribeLoadBalancers service method, as
      *         returned by AmazonElasticLoadBalancing.
      * 
-     * @throws AccessPointNotFoundException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -507,7 +507,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * @return The response from the DescribeLoadBalancers service method, as
      *         returned by AmazonElasticLoadBalancing.
      * 
-     * @throws AccessPointNotFoundException
+     * @throws LoadBalancerNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

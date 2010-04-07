@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class Monitoring {
-        
+
     /**
      * The state of monitoring on an Amazon EC2 instance (ex: enabled,
      * disabled).

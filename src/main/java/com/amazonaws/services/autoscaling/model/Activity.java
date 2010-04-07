@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class Activity {
-        
+
     /**
      * Specifies the ID of the activity.
      * <p>

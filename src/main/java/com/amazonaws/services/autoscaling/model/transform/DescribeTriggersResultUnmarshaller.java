@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Triggers Result Unmarshaller
- */        
+ */
 public class DescribeTriggersResultUnmarshaller implements Unmarshaller<DescribeTriggersResult, Node> {
 
     public DescribeTriggersResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeTriggersResult describeTriggersResult = new DescribeTriggersResult();
-        
+
         
         NodeList triggersNodes = XpathUtils.asNodeList("Triggers/member", node);
         for (int triggersIndex = 0; triggersIndex < XpathUtils.nodeLength(triggersNodes); ++triggersIndex) {
@@ -39,6 +41,6 @@ public class DescribeTriggersResultUnmarshaller implements Unmarshaller<Describe
     
 
         return describeTriggersResult;
-    }  
+    }
 }
     

@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The identifier for the DB Snapshot to restore from.
      */

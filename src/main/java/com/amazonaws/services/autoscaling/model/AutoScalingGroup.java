@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class AutoScalingGroup {
-        
+
     /**
      * Specifies the name of the group.
      * <p>

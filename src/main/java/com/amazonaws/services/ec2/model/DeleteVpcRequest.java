@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Vpc Request
  */
 public class DeleteVpcRequest extends AmazonWebServiceRequest {
-        
+
     private String vpcId;
 
     /**

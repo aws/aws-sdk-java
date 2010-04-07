@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DetachVolumeRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the volume to detach.
      */

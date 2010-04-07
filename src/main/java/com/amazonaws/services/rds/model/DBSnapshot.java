@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DBSnapshot {
-        
+
     /**
      * Specifies the identifier for the DB Snapshot.
      */

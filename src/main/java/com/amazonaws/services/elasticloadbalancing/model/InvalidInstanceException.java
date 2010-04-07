@@ -21,16 +21,16 @@ import com.amazonaws.AmazonServiceException;
  * 
  * </p>
  */        
-public class TooManyAccessPointsException extends AmazonServiceException {
+public class InvalidInstanceException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new TooManyAccessPointsException with the specified error
+     * Constructs a new InvalidInstanceException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public TooManyAccessPointsException(String message) {
+    public InvalidInstanceException(String message) {
         super(message);
     }
     

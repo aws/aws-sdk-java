@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Customer Gateway Request Unmarshaller
- */        
+ */
 public class DeleteCustomerGatewayRequestUnmarshaller implements Unmarshaller<DeleteCustomerGatewayRequest, Node> {
 
     public DeleteCustomerGatewayRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteCustomerGatewayRequest deleteCustomerGatewayRequest = new DeleteCustomerGatewayRequest();
-        
+
         
         Node customerGatewayIdNode = XpathUtils.asNode("CustomerGatewayId", node);
         deleteCustomerGatewayRequest.setCustomerGatewayId(new StringUnmarshaller().unmarshall(customerGatewayIdNode));
     
 
         return deleteCustomerGatewayRequest;
-    }  
+    }
 }
     

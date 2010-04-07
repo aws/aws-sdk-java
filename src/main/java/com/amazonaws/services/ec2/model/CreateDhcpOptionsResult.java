@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Dhcp Options Result
  */
 public class CreateDhcpOptionsResult {
-        
+
     private DhcpOptions dhcpOptions;
 
     /**

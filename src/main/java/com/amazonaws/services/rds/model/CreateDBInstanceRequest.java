@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the database to create when the DB Instance is created. If
      * this parameter is not specified, no database is created in the DB

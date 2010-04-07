@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class EbsInstanceBlockDeviceSpecification {
-        
+
     /**
      * The ID of the EBS volume that should be mounted as a block device on
      * an Amazon EC2 instance.

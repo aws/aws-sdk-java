@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Disassociate Address Request Unmarshaller
- */        
+ */
 public class DisassociateAddressRequestUnmarshaller implements Unmarshaller<DisassociateAddressRequest, Node> {
 
     public DisassociateAddressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DisassociateAddressRequest disassociateAddressRequest = new DisassociateAddressRequest();
-        
+
         
         Node publicIpNode = XpathUtils.asNode("PublicIp", node);
         disassociateAddressRequest.setPublicIp(new StringUnmarshaller().unmarshall(publicIpNode));
     
 
         return disassociateAddressRequest;
-    }  
+    }
 }
     

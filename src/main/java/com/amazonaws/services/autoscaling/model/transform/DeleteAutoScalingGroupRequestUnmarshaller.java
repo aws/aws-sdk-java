@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Auto Scaling Group Request Unmarshaller
- */        
+ */
 public class DeleteAutoScalingGroupRequestUnmarshaller implements Unmarshaller<DeleteAutoScalingGroupRequest, Node> {
 
     public DeleteAutoScalingGroupRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest = new DeleteAutoScalingGroupRequest();
-        
+
         
         Node autoScalingGroupNameNode = XpathUtils.asNode("AutoScalingGroupName", node);
         deleteAutoScalingGroupRequest.setAutoScalingGroupName(new StringUnmarshaller().unmarshall(autoScalingGroupNameNode));
     
 
         return deleteAutoScalingGroupRequest;
-    }  
+    }
 }
     

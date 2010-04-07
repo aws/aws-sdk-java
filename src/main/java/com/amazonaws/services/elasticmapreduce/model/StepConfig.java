@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Step Config
  */
 public class StepConfig {
-        
+
     private String name;
 
     private String actionOnFailure;

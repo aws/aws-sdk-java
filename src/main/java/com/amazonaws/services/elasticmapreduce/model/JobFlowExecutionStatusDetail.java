@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Job Flow Execution Status Detail
  */
 public class JobFlowExecutionStatusDetail {
-        
+
     private String state;
 
     private java.util.Date creationDateTime;

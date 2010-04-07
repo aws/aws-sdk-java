@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Key Pair Info Unmarshaller
- */        
+ */
 public class KeyPairInfoUnmarshaller implements Unmarshaller<KeyPairInfo, Node> {
 
     public KeyPairInfo unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         KeyPairInfo keyPairInfo = new KeyPairInfo();
-        
+
         
         Node keyNameNode = XpathUtils.asNode("keyName", node);
         keyPairInfo.setKeyName(new StringUnmarshaller().unmarshall(keyNameNode));
@@ -38,6 +40,6 @@ public class KeyPairInfoUnmarshaller implements Unmarshaller<KeyPairInfo, Node> 
     
 
         return keyPairInfo;
-    }  
+    }
 }
     

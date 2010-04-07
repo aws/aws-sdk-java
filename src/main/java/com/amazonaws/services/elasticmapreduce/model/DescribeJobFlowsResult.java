@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Describe Job Flows Result
  */
 public class DescribeJobFlowsResult {
-        
+
     private java.util.List<JobFlowDetail> jobFlows;
 
     /**

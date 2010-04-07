@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Subnet
  */
 public class Subnet {
-        
+
     private String subnetId;
 
     private String state;

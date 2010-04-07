@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class Instance {
-        
+
     /**
      * Specifies EC2 instance ID.
      * <p>

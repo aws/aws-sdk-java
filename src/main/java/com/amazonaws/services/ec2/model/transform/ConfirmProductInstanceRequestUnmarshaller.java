@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Confirm Product Instance Request Unmarshaller
- */        
+ */
 public class ConfirmProductInstanceRequestUnmarshaller implements Unmarshaller<ConfirmProductInstanceRequest, Node> {
 
     public ConfirmProductInstanceRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ConfirmProductInstanceRequest confirmProductInstanceRequest = new ConfirmProductInstanceRequest();
-        
+
         
         Node productCodeNode = XpathUtils.asNode("ProductCode", node);
         confirmProductInstanceRequest.setProductCode(new StringUnmarshaller().unmarshall(productCodeNode));
@@ -38,6 +40,6 @@ public class ConfirmProductInstanceRequestUnmarshaller implements Unmarshaller<C
     
 
         return confirmProductInstanceRequest;
-    }  
+    }
 }
     

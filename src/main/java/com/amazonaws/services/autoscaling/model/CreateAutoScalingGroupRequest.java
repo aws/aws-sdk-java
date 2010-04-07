@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the Auto Scaling group.
      * <p>

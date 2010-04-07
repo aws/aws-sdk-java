@@ -20,7 +20,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * </p>
  */
 public class CreateLoadBalancerResult {
-        
+
     /**
      * The DNS name for the LoadBalancer.
      */

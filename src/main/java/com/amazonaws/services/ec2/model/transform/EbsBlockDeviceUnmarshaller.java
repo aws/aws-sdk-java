@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Ebs Block Device Unmarshaller
- */        
+ */
 public class EbsBlockDeviceUnmarshaller implements Unmarshaller<EbsBlockDevice, Node> {
 
     public EbsBlockDevice unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         EbsBlockDevice ebsBlockDevice = new EbsBlockDevice();
-        
+
         
         Node snapshotIdNode = XpathUtils.asNode("snapshotId", node);
         ebsBlockDevice.setSnapshotId(new StringUnmarshaller().unmarshall(snapshotIdNode));
@@ -41,6 +43,6 @@ public class EbsBlockDeviceUnmarshaller implements Unmarshaller<EbsBlockDevice, 
     
 
         return ebsBlockDevice;
-    }  
+    }
 }
     

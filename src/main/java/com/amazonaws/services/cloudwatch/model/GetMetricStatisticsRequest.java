@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Get Metric Statistics Request
  */
 public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> statistics;
 
     private Integer period;

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Batch Put Attributes Request
  */
 public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9,
@@ -32,6 +32,27 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<ReplaceableItem> items;
 
+    /**
+     * Default constructor for a new BatchPutAttributesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public BatchPutAttributesRequest() {}
+    
+    /**
+     * Constructs a new BatchPutAttributesRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain to create. The name can range
+     * between 3 and 255 characters and can contain the following characters:
+     * a-z, A-Z, 0-9, '_', '-', and '.'.
+     * @param items List of Items
+     */
+    public BatchPutAttributesRequest(String domainName, java.util.List<ReplaceableItem> items) {
+        this.domainName = domainName;
+        this.items = items;
+    }
+    
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9,

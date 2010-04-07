@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Instance Block Device Mapping Unmarshaller
- */        
+ */
 public class InstanceBlockDeviceMappingUnmarshaller implements Unmarshaller<InstanceBlockDeviceMapping, Node> {
 
     public InstanceBlockDeviceMapping unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         InstanceBlockDeviceMapping instanceBlockDeviceMapping = new InstanceBlockDeviceMapping();
-        
+
         
         Node deviceNameNode = XpathUtils.asNode("deviceName", node);
         instanceBlockDeviceMapping.setDeviceName(new StringUnmarshaller().unmarshall(deviceNameNode));
@@ -38,6 +40,6 @@ public class InstanceBlockDeviceMappingUnmarshaller implements Unmarshaller<Inst
     
 
         return instanceBlockDeviceMapping;
-    }  
+    }
 }
     

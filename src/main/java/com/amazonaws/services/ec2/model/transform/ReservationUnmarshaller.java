@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reservation Unmarshaller
- */        
+ */
 public class ReservationUnmarshaller implements Unmarshaller<Reservation, Node> {
 
     public Reservation unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Reservation reservation = new Reservation();
-        
+
         
         Node reservationIdNode = XpathUtils.asNode("reservationId", node);
         reservation.setReservationId(new StringUnmarshaller().unmarshall(reservationIdNode));
@@ -55,6 +57,6 @@ public class ReservationUnmarshaller implements Unmarshaller<Reservation, Node> 
     
 
         return reservation;
-    }  
+    }
 }
     

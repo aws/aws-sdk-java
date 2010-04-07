@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Domain Metadata Request Unmarshaller
- */        
+ */
 public class DomainMetadataRequestUnmarshaller implements Unmarshaller<DomainMetadataRequest, Node> {
 
     public DomainMetadataRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DomainMetadataRequest domainMetadataRequest = new DomainMetadataRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         domainMetadataRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
     
 
         return domainMetadataRequest;
-    }  
+    }
 }
     

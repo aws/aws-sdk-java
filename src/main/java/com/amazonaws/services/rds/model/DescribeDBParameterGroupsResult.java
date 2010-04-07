@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DescribeDBParameterGroupsResult {
-        
+
     /**
      * The marker obtained from a previous operation response.
      */

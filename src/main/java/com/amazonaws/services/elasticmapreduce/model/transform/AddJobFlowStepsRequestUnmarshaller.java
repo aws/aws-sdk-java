@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Add Job Flow Steps Request Unmarshaller
- */        
+ */
 public class AddJobFlowStepsRequestUnmarshaller implements Unmarshaller<AddJobFlowStepsRequest, Node> {
 
     public AddJobFlowStepsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AddJobFlowStepsRequest addJobFlowStepsRequest = new AddJobFlowStepsRequest();
-        
+
         
         Node jobFlowIdNode = XpathUtils.asNode("JobFlowId", node);
         addJobFlowStepsRequest.setJobFlowId(new StringUnmarshaller().unmarshall(jobFlowIdNode));
@@ -42,6 +44,6 @@ public class AddJobFlowStepsRequestUnmarshaller implements Unmarshaller<AddJobFl
     
 
         return addJobFlowStepsRequest;
-    }  
+    }
 }
     

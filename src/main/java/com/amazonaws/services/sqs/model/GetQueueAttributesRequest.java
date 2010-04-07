@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -32,6 +32,23 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> attributeNames;
 
+    /**
+     * Default constructor for a new GetQueueAttributesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetQueueAttributesRequest() {}
+    
+    /**
+     * Constructs a new GetQueueAttributesRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     */
+    public GetQueueAttributesRequest(String queueUrl) {
+        this.queueUrl = queueUrl;
+    }
+    
     /**
      * 
      *

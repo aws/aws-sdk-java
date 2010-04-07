@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * List Queues Request Unmarshaller
- */        
+ */
 public class ListQueuesRequestUnmarshaller implements Unmarshaller<ListQueuesRequest, Node> {
 
     public ListQueuesRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ListQueuesRequest listQueuesRequest = new ListQueuesRequest();
-        
+
         
         Node queueNamePrefixNode = XpathUtils.asNode("QueueNamePrefix", node);
         listQueuesRequest.setQueueNamePrefix(new StringUnmarshaller().unmarshall(queueNamePrefixNode));
     
 
         return listQueuesRequest;
-    }  
+    }
 }
     

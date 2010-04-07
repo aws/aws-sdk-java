@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Release Address Request Unmarshaller
- */        
+ */
 public class ReleaseAddressRequestUnmarshaller implements Unmarshaller<ReleaseAddressRequest, Node> {
 
     public ReleaseAddressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ReleaseAddressRequest releaseAddressRequest = new ReleaseAddressRequest();
-        
+
         
         Node publicIpNode = XpathUtils.asNode("PublicIp", node);
         releaseAddressRequest.setPublicIp(new StringUnmarshaller().unmarshall(publicIpNode));
     
 
         return releaseAddressRequest;
-    }  
+    }
 }
     

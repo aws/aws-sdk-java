@@ -21,12 +21,29 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteQueueRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
     private String queueUrl;
 
+    /**
+     * Default constructor for a new DeleteQueueRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteQueueRequest() {}
+    
+    /**
+     * Constructs a new DeleteQueueRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     */
+    public DeleteQueueRequest(String queueUrl) {
+        this.queueUrl = queueUrl;
+    }
+    
     /**
      * 
      *

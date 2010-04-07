@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the DB Parameter Group. <note> The specified database
      * security group must not be associated with any DB instances. </note>

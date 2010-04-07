@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Vpc
  */
 public class Vpc {
-        
+
     private String vpcId;
 
     private String state;

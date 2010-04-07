@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeImagesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * An optional list of the AMI IDs to describe. If not specified, all
      * AMIs will be described.

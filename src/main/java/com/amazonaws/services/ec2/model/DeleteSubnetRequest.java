@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Subnet Request
  */
 public class DeleteSubnetRequest extends AmazonWebServiceRequest {
-        
+
     private String subnetId;
 
     /**

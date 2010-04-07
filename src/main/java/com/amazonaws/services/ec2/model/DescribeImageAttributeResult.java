@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeImageAttributeResult {
-        
+
     /**
      * The described image attribute of the associated AMI.
      */

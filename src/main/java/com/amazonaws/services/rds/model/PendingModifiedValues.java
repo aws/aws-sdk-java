@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class PendingModifiedValues {
-        
+
     /**
      * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
      * be applied or is in progress.

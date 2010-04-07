@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DescribeDBInstancesResult {
-        
+
     /**
      * The marker obtained from a previous operation response.
      */

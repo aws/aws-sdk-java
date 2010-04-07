@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Volume Unmarshaller
- */        
+ */
 public class VolumeUnmarshaller implements Unmarshaller<Volume, Node> {
 
     public Volume unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Volume volume = new Volume();
-        
+
         
         Node volumeIdNode = XpathUtils.asNode("volumeId", node);
         volume.setVolumeId(new StringUnmarshaller().unmarshall(volumeIdNode));
@@ -57,6 +59,6 @@ public class VolumeUnmarshaller implements Unmarshaller<Volume, Node> {
     
 
         return volume;
-    }  
+    }
 }
     

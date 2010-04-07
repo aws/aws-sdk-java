@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Deregister Image Request Unmarshaller
- */        
+ */
 public class DeregisterImageRequestUnmarshaller implements Unmarshaller<DeregisterImageRequest, Node> {
 
     public DeregisterImageRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeregisterImageRequest deregisterImageRequest = new DeregisterImageRequest();
-        
+
         
         Node imageIdNode = XpathUtils.asNode("ImageId", node);
         deregisterImageRequest.setImageId(new StringUnmarshaller().unmarshall(imageIdNode));
     
 
         return deregisterImageRequest;
-    }  
+    }
 }
     

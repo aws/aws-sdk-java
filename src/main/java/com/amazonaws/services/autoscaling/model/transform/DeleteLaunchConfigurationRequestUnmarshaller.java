@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Launch Configuration Request Unmarshaller
- */        
+ */
 public class DeleteLaunchConfigurationRequestUnmarshaller implements Unmarshaller<DeleteLaunchConfigurationRequest, Node> {
 
     public DeleteLaunchConfigurationRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest = new DeleteLaunchConfigurationRequest();
-        
+
         
         Node launchConfigurationNameNode = XpathUtils.asNode("LaunchConfigurationName", node);
         deleteLaunchConfigurationRequest.setLaunchConfigurationName(new StringUnmarshaller().unmarshall(launchConfigurationNameNode));
     
 
         return deleteLaunchConfigurationRequest;
-    }  
+    }
 }
     

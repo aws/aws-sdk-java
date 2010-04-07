@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Bundle Instance Result
  */
 public class BundleInstanceResult {
-        
+
     private BundleTask bundleTask;
 
     /**

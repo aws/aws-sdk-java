@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Region Unmarshaller
- */        
+ */
 public class RegionUnmarshaller implements Unmarshaller<Region, Node> {
 
     public Region unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Region region = new Region();
-        
+
         
         Node regionNameNode = XpathUtils.asNode("regionName", node);
         region.setRegionName(new StringUnmarshaller().unmarshall(regionNameNode));
@@ -38,6 +40,6 @@ public class RegionUnmarshaller implements Unmarshaller<Region, Node> {
     
 
         return region;
-    }  
+    }
 }
     

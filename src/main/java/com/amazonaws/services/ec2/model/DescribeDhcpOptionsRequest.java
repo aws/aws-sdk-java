@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Dhcp Options Request
  */
 public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> dhcpOptionsIds;
 
     /**

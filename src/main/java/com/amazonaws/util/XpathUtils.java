@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -95,7 +95,7 @@ public class XpathUtils {
     public static Double asDouble(String expression, Node node)
             throws XPathExpressionException {
         String doubleString = evaluateAsString(expression, node);
-        return (doubleString == null) ? null : Double.parseDouble(doubleString);
+        return (isEmptyString(doubleString)) ? null : Double.parseDouble(doubleString);
     }
 
     /**
@@ -136,7 +136,7 @@ public class XpathUtils {
     public static Integer asInteger(String expression, Node node)
             throws XPathExpressionException {
         String intString = evaluateAsString(expression, node);
-        return (intString == null) ? null : Integer.parseInt(intString);
+        return (isEmptyString(intString)) ? null : Integer.parseInt(intString);
     }
 
     /**
@@ -157,7 +157,7 @@ public class XpathUtils {
     public static Boolean asBoolean(String expression, Node node)
             throws XPathExpressionException {
         String booleanString = evaluateAsString(expression, node);
-        return (booleanString == null) ? null : Boolean.parseBoolean(booleanString);
+        return (isEmptyString(booleanString)) ? null : Boolean.parseBoolean(booleanString);
     }
 
     /**
@@ -178,7 +178,7 @@ public class XpathUtils {
     public static Float asFloat(String expression, Node node)
             throws XPathExpressionException {
         String floatString = evaluateAsString(expression, node);
-        return (floatString == null) ? null : Float.valueOf(floatString);
+        return (isEmptyString(floatString)) ? null : Float.valueOf(floatString);
     }
 
     /**
@@ -199,7 +199,7 @@ public class XpathUtils {
     public static Long asLong(String expression, Node node)
             throws XPathExpressionException {
         String longString = evaluateAsString(expression, node);
-        return (longString == null) ? null : Long.parseLong(longString);
+        return (isEmptyString(longString)) ? null : Long.parseLong(longString);
     }
 
     /**
@@ -220,7 +220,7 @@ public class XpathUtils {
     public static Byte asByte(String expression, Node node)
             throws XPathExpressionException {
         String byteString = evaluateAsString(expression, node);
-        return (byteString == null) ? null : Byte.valueOf(byteString);
+        return (isEmptyString(byteString)) ? null : Byte.valueOf(byteString);
     }
 
     /**
@@ -242,7 +242,7 @@ public class XpathUtils {
     public static Date asDate(String expression, Node node)
             throws XPathExpressionException {
         String dateString = evaluateAsString(expression, node);
-        if (dateString == null) return null;
+        if (isEmptyString(dateString)) return null;
 
         try {
             return dateUtils.parseIso8601Date(dateString);
@@ -270,7 +270,7 @@ public class XpathUtils {
     public static ByteBuffer asByteBuffer(String expression, Node node)
             throws XPathExpressionException {
         String base64EncodedString = evaluateAsString(expression, node);
-        if (base64EncodedString == null) return null;
+        if (isEmptyString(base64EncodedString)) return null;
 
         if (!isEmpty(node)) {
             try {
@@ -293,7 +293,7 @@ public class XpathUtils {
      * @return True if the specified node is null or has no children.
      */
     public static boolean isEmpty(Node node) {
-        return (node == null || !node.hasChildNodes());
+        return (node == null);
     }
 
     /**
@@ -388,10 +388,37 @@ public class XpathUtils {
     private static String evaluateAsString(String expression, Node node) throws XPathExpressionException {
         if (isEmpty(node)) return null;
 
+        if (expression != ".") {
+            /*
+             * If the expression being evaluated doesn't select a node, we want
+             * to return null to distinguish between cases where a node isn't
+             * present (which should be represented as null) and when a node is
+             * present, but empty (which should be represented as the empty
+             * string).
+             *
+             * We skip this test if the expression is "." since we've already
+             * checked that the node exists.
+             */
+            if (asNode(expression, node) == null) return null;
+        }
+
         String s = xpath.evaluate(expression, node);
-        if (s.trim().equals("")) return null;
 
         return s.trim();
+    }
+
+    /**
+     * Returns true if the specified string is null or empty.
+     *
+     * @param s
+     *            The string to test.
+     * @return True if the specified string is null or empty.
+     */
+    private static boolean isEmptyString(String s) {
+        if (s == null) return true;
+        if (s.trim().equals("")) return true;
+
+        return false;
     }
 
 }

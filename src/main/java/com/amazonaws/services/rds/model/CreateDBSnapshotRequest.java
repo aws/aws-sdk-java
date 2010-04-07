@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateDBSnapshotRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The identifier for the DB Snapshot.
      */

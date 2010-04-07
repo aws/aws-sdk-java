@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Block Device Mapping
  */
 public class BlockDeviceMapping {
-        
+
     private String virtualName;
 
     private String deviceName;

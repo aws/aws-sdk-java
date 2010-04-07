@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Subnet Request Unmarshaller
- */        
+ */
 public class CreateSubnetRequestUnmarshaller implements Unmarshaller<CreateSubnetRequest, Node> {
 
     public CreateSubnetRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateSubnetRequest createSubnetRequest = new CreateSubnetRequest();
-        
+
         
         Node vpcIdNode = XpathUtils.asNode("VpcId", node);
         createSubnetRequest.setVpcId(new StringUnmarshaller().unmarshall(vpcIdNode));
@@ -41,6 +43,6 @@ public class CreateSubnetRequestUnmarshaller implements Unmarshaller<CreateSubne
     
 
         return createSubnetRequest;
-    }  
+    }
 }
     

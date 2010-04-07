@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Dhcp Options Request
  */
 public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
-        
+
     private DhcpConfiguration dhcpConfiguration;
 
     /**

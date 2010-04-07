@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DisassociateAddressRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The elastic IP address that you are disassociating from the instance.
      */

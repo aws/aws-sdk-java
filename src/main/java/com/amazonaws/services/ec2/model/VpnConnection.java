@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Vpn Connection
  */
 public class VpnConnection {
-        
+
     private String vpnConnectionId;
 
     private String state;

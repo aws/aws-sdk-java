@@ -21,13 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ListQueuesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * A string to use for filtering the list results. Only those queues
      * whose name begins with the specified string are returned.
      */
     private String queueNamePrefix;
 
+    /**
+     * Default constructor for a new ListQueuesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListQueuesRequest() {}
+    
     /**
      * A string to use for filtering the list results. Only those queues
      * whose name begins with the specified string are returned.

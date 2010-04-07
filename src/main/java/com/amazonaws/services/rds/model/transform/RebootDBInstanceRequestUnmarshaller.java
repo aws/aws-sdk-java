@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reboot D B Instance Request Unmarshaller
- */        
+ */
 public class RebootDBInstanceRequestUnmarshaller implements Unmarshaller<RebootDBInstanceRequest, Node> {
 
     public RebootDBInstanceRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RebootDBInstanceRequest rebootDBInstanceRequest = new RebootDBInstanceRequest();
-        
+
         
         Node dBInstanceIdentifierNode = XpathUtils.asNode("DBInstanceIdentifier", node);
         rebootDBInstanceRequest.setDBInstanceIdentifier(new StringUnmarshaller().unmarshall(dBInstanceIdentifierNode));
     
 
         return rebootDBInstanceRequest;
-    }  
+    }
 }
     

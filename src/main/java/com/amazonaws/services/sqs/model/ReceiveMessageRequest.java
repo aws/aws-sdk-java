@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class ReceiveMessageRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * 
      */
@@ -46,6 +46,23 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
      */
     private Integer visibilityTimeout;
 
+    /**
+     * Default constructor for a new ReceiveMessageRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ReceiveMessageRequest() {}
+    
+    /**
+     * Constructs a new ReceiveMessageRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueUrl
+     */
+    public ReceiveMessageRequest(String queueUrl) {
+        this.queueUrl = queueUrl;
+    }
+    
     /**
      * 
      *

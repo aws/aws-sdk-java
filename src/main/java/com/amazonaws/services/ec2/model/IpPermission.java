@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class IpPermission {
-        
+
     /**
      * The IP protocol of this permission. <p> Valid protocol values: tpc,
      * upd, icmp

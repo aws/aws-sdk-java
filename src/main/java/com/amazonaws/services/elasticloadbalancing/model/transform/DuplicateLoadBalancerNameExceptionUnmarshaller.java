@@ -20,22 +20,22 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
-import com.amazonaws.services.elasticloadbalancing.model.AccessPointNotFoundException;
+import com.amazonaws.services.elasticloadbalancing.model.DuplicateLoadBalancerNameException;
 
-public class AccessPointNotFoundExceptionUnmarshaller extends StandardErrorUnmarshaller {
+public class DuplicateLoadBalancerNameExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
-    public AccessPointNotFoundExceptionUnmarshaller() {
-        super(AccessPointNotFoundException.class);
+    public DuplicateLoadBalancerNameExceptionUnmarshaller() {
+        super(DuplicateLoadBalancerNameException.class);
     }
 
     public AmazonServiceException unmarshall(Node node) throws Exception {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("AccessPointNotFound")) 
+        if (errorCode == null || !errorCode.equals("DuplicateLoadBalancerName")) 
             return null;
         
-        AccessPointNotFoundException e = (AccessPointNotFoundException)super.unmarshall(node);
+        DuplicateLoadBalancerNameException e = (DuplicateLoadBalancerNameException)super.unmarshall(node);
                
         return e;
     }

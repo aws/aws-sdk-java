@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class Storage {
-        
+
     /**
      * The details of S3 storage for bundling a Windows instance.
      */

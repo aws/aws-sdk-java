@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of a specific database parameter group to return details for.
      */

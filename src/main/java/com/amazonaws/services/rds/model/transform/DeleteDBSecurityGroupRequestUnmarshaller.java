@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete D B Security Group Request Unmarshaller
- */        
+ */
 public class DeleteDBSecurityGroupRequestUnmarshaller implements Unmarshaller<DeleteDBSecurityGroupRequest, Node> {
 
     public DeleteDBSecurityGroupRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest = new DeleteDBSecurityGroupRequest();
-        
+
         
         Node dBSecurityGroupNameNode = XpathUtils.asNode("DBSecurityGroupName", node);
         deleteDBSecurityGroupRequest.setDBSecurityGroupName(new StringUnmarshaller().unmarshall(dBSecurityGroupNameNode));
     
 
         return deleteDBSecurityGroupRequest;
-    }  
+    }
 }
     

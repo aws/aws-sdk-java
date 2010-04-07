@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Event Unmarshaller
- */        
+ */
 public class EventUnmarshaller implements Unmarshaller<Event, Node> {
 
     public Event unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Event event = new Event();
-        
+
         
         Node sourceIdentifierNode = XpathUtils.asNode("SourceIdentifier", node);
         event.setSourceIdentifier(new StringUnmarshaller().unmarshall(sourceIdentifierNode));
@@ -44,6 +46,6 @@ public class EventUnmarshaller implements Unmarshaller<Event, Node> {
     
 
         return event;
-    }  
+    }
 }
     

@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Create Subnet Result
  */
 public class CreateSubnetResult {
-        
+
     private Subnet subnet;
 
     /**

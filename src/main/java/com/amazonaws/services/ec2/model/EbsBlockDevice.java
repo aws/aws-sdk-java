@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class EbsBlockDevice {
-        
+
     /**
      * The ID of the snapshot from which the volume will be created.
      */

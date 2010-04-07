@@ -23,15 +23,17 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Allocate Address Request Unmarshaller
- */        
+ */
 public class AllocateAddressRequestUnmarshaller implements Unmarshaller<AllocateAddressRequest, Node> {
 
     public AllocateAddressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AllocateAddressRequest allocateAddressRequest = new AllocateAddressRequest();
-        
+
         
 
         return allocateAddressRequest;
-    }  
+    }
 }
     

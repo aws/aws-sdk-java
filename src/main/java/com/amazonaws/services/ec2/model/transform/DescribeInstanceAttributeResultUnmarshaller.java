@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Instance Attribute Result Unmarshaller
- */        
+ */
 public class DescribeInstanceAttributeResultUnmarshaller implements Unmarshaller<DescribeInstanceAttributeResult, Node> {
 
     public DescribeInstanceAttributeResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeInstanceAttributeResult describeInstanceAttributeResult = new DescribeInstanceAttributeResult();
-        
+
         
         Node instanceAttributeNode = XpathUtils.asNode(".", node);
         describeInstanceAttributeResult.setInstanceAttribute(new InstanceAttributeUnmarshaller().unmarshall(instanceAttributeNode));
     
 
         return describeInstanceAttributeResult;
-    }  
+    }
 }
     

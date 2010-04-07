@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Terminate Job Flows Request Unmarshaller
- */        
+ */
 public class TerminateJobFlowsRequestUnmarshaller implements Unmarshaller<TerminateJobFlowsRequest, Node> {
 
     public TerminateJobFlowsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         TerminateJobFlowsRequest terminateJobFlowsRequest = new TerminateJobFlowsRequest();
-        
+
         
         NodeList jobFlowIdsNodes = XpathUtils.asNodeList("JobFlowIds/member", node);
         for (int jobFlowIdsIndex = 0; jobFlowIdsIndex < XpathUtils.nodeLength(jobFlowIdsNodes); ++jobFlowIdsIndex) {
@@ -39,6 +41,6 @@ public class TerminateJobFlowsRequestUnmarshaller implements Unmarshaller<Termin
     
 
         return terminateJobFlowsRequest;
-    }  
+    }
 }
     

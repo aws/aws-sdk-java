@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Customer Gateway Request
  */
 public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
-        
+
     private String customerGatewayId;
 
     /**

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Modify D B Parameter Group Request Unmarshaller
- */        
+ */
 public class ModifyDBParameterGroupRequestUnmarshaller implements Unmarshaller<ModifyDBParameterGroupRequest, Node> {
 
     public ModifyDBParameterGroupRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ModifyDBParameterGroupRequest modifyDBParameterGroupRequest = new ModifyDBParameterGroupRequest();
-        
+
         
         Node dBParameterGroupNameNode = XpathUtils.asNode("DBParameterGroupName", node);
         modifyDBParameterGroupRequest.setDBParameterGroupName(new StringUnmarshaller().unmarshall(dBParameterGroupNameNode));
@@ -42,6 +44,6 @@ public class ModifyDBParameterGroupRequestUnmarshaller implements Unmarshaller<M
     
 
         return modifyDBParameterGroupRequest;
-    }  
+    }
 }
     

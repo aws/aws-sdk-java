@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Password Data Request Unmarshaller
- */        
+ */
 public class GetPasswordDataRequestUnmarshaller implements Unmarshaller<GetPasswordDataRequest, Node> {
 
     public GetPasswordDataRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetPasswordDataRequest getPasswordDataRequest = new GetPasswordDataRequest();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("InstanceId", node);
         getPasswordDataRequest.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
     
 
         return getPasswordDataRequest;
-    }  
+    }
 }
     

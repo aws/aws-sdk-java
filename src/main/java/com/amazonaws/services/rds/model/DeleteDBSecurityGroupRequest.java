@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the database security group to delete.
      */

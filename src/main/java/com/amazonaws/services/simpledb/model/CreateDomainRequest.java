@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Domain Request
  */
 public class CreateDomainRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9,
@@ -27,6 +27,25 @@ public class CreateDomainRequest extends AmazonWebServiceRequest {
      */
     private String domainName;
 
+    /**
+     * Default constructor for a new CreateDomainRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateDomainRequest() {}
+    
+    /**
+     * Constructs a new CreateDomainRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain to create. The name can range
+     * between 3 and 255 characters and can contain the following characters:
+     * a-z, A-Z, 0-9, '_', '-', and '.'.
+     */
+    public CreateDomainRequest(String domainName) {
+        this.domainName = domainName;
+    }
+    
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9,

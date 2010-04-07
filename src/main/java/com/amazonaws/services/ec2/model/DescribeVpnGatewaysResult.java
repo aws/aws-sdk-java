@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Describe Vpn Gateways Result
  */
 public class DescribeVpnGatewaysResult {
-        
+
     private java.util.List<VpnGateway> vpnGateways;
 
     /**

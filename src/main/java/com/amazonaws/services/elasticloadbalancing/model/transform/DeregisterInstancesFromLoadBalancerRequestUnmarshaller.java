@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Deregister Instances From Load Balancer Request Unmarshaller
- */        
+ */
 public class DeregisterInstancesFromLoadBalancerRequestUnmarshaller implements Unmarshaller<DeregisterInstancesFromLoadBalancerRequest, Node> {
 
     public DeregisterInstancesFromLoadBalancerRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest = new DeregisterInstancesFromLoadBalancerRequest();
-        
+
         
         Node loadBalancerNameNode = XpathUtils.asNode("LoadBalancerName", node);
         deregisterInstancesFromLoadBalancerRequest.setLoadBalancerName(new StringUnmarshaller().unmarshall(loadBalancerNameNode));
@@ -42,6 +44,6 @@ public class DeregisterInstancesFromLoadBalancerRequestUnmarshaller implements U
     
 
         return deregisterInstancesFromLoadBalancerRequest;
-    }  
+    }
 }
     

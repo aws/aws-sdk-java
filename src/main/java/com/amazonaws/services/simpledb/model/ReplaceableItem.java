@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Replaceable Item
  */
 public class ReplaceableItem {
-        
+
     /**
      * Item Name.
      */

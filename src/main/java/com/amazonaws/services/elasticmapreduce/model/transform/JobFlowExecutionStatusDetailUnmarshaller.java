@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Job Flow Execution Status Detail Unmarshaller
- */        
+ */
 public class JobFlowExecutionStatusDetailUnmarshaller implements Unmarshaller<JobFlowExecutionStatusDetail, Node> {
 
     public JobFlowExecutionStatusDetail unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         JobFlowExecutionStatusDetail jobFlowExecutionStatusDetail = new JobFlowExecutionStatusDetail();
-        
+
         
         Node stateNode = XpathUtils.asNode("State", node);
         jobFlowExecutionStatusDetail.setState(new StringUnmarshaller().unmarshall(stateNode));
@@ -47,6 +49,6 @@ public class JobFlowExecutionStatusDetailUnmarshaller implements Unmarshaller<Jo
     
 
         return jobFlowExecutionStatusDetail;
-    }  
+    }
 }
     

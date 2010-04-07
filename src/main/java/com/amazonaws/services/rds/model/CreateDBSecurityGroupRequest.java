@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name for the DB Security Group. This value is stored as a
      * lowercase string.

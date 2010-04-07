@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Snapshot Unmarshaller
- */        
+ */
 public class SnapshotUnmarshaller implements Unmarshaller<Snapshot, Node> {
 
     public Snapshot unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Snapshot snapshot = new Snapshot();
-        
+
         
         Node snapshotIdNode = XpathUtils.asNode("snapshotId", node);
         snapshot.setSnapshotId(new StringUnmarshaller().unmarshall(snapshotIdNode));
@@ -59,6 +61,6 @@ public class SnapshotUnmarshaller implements Unmarshaller<Snapshot, Node> {
     
 
         return snapshot;
-    }  
+    }
 }
     

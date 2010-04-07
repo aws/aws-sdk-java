@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class EngineDefaults {
-        
+
     /**
      * Specifies the name of the database engine which the engine default
      * parameters apply to.

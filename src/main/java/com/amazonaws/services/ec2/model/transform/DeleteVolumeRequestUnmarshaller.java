@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Volume Request Unmarshaller
- */        
+ */
 public class DeleteVolumeRequestUnmarshaller implements Unmarshaller<DeleteVolumeRequest, Node> {
 
     public DeleteVolumeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteVolumeRequest deleteVolumeRequest = new DeleteVolumeRequest();
-        
+
         
         Node volumeIdNode = XpathUtils.asNode("VolumeId", node);
         deleteVolumeRequest.setVolumeId(new StringUnmarshaller().unmarshall(volumeIdNode));
     
 
         return deleteVolumeRequest;
-    }  
+    }
 }
     

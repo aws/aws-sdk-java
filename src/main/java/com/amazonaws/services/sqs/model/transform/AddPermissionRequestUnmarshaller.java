@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Add Permission Request Unmarshaller
- */        
+ */
 public class AddPermissionRequestUnmarshaller implements Unmarshaller<AddPermissionRequest, Node> {
 
     public AddPermissionRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AddPermissionRequest addPermissionRequest = new AddPermissionRequest();
-        
+
         
         Node queueUrlNode = XpathUtils.asNode("QueueUrl", node);
         addPermissionRequest.setQueueUrl(new StringUnmarshaller().unmarshall(queueUrlNode));
@@ -52,6 +54,6 @@ public class AddPermissionRequestUnmarshaller implements Unmarshaller<AddPermiss
     
 
         return addPermissionRequest;
-    }  
+    }
 }
     

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Vpn Gateways Request
  */
 public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> vpnGatewayIds;
 
     private java.util.List<Filter> filters;

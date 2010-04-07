@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Authorize Security Group Ingress Request Unmarshaller
- */        
+ */
 public class AuthorizeSecurityGroupIngressRequestUnmarshaller implements Unmarshaller<AuthorizeSecurityGroupIngressRequest, Node> {
 
     public AuthorizeSecurityGroupIngressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest = new AuthorizeSecurityGroupIngressRequest();
-        
+
         
         Node groupNameNode = XpathUtils.asNode("GroupName", node);
         authorizeSecurityGroupIngressRequest.setGroupName(new StringUnmarshaller().unmarshall(groupNameNode));
@@ -53,6 +55,6 @@ public class AuthorizeSecurityGroupIngressRequestUnmarshaller implements Unmarsh
     
 
         return authorizeSecurityGroupIngressRequest;
-    }  
+    }
 }
     

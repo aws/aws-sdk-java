@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Configure Health Check Result Unmarshaller
- */        
+ */
 public class ConfigureHealthCheckResultUnmarshaller implements Unmarshaller<ConfigureHealthCheckResult, Node> {
 
     public ConfigureHealthCheckResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ConfigureHealthCheckResult configureHealthCheckResult = new ConfigureHealthCheckResult();
-        
+
         
         Node healthCheckNode = XpathUtils.asNode("HealthCheck", node);
         configureHealthCheckResult.setHealthCheck(new HealthCheckUnmarshaller().unmarshall(healthCheckNode));
     
 
         return configureHealthCheckResult;
-    }  
+    }
 }
     

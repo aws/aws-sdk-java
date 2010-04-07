@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create D B Snapshot Request Unmarshaller
- */        
+ */
 public class CreateDBSnapshotRequestUnmarshaller implements Unmarshaller<CreateDBSnapshotRequest, Node> {
 
     public CreateDBSnapshotRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateDBSnapshotRequest createDBSnapshotRequest = new CreateDBSnapshotRequest();
-        
+
         
         Node dBSnapshotIdentifierNode = XpathUtils.asNode("DBSnapshotIdentifier", node);
         createDBSnapshotRequest.setDBSnapshotIdentifier(new StringUnmarshaller().unmarshall(dBSnapshotIdentifierNode));
@@ -38,6 +40,6 @@ public class CreateDBSnapshotRequestUnmarshaller implements Unmarshaller<CreateD
     
 
         return createDBSnapshotRequest;
-    }  
+    }
 }
     

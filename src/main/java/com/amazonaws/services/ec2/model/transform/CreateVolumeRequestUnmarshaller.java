@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Volume Request Unmarshaller
- */        
+ */
 public class CreateVolumeRequestUnmarshaller implements Unmarshaller<CreateVolumeRequest, Node> {
 
     public CreateVolumeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateVolumeRequest createVolumeRequest = new CreateVolumeRequest();
-        
+
         
         Node sizeNode = XpathUtils.asNode("Size", node);
         createVolumeRequest.setSize(new IntegerUnmarshaller().unmarshall(sizeNode));
@@ -41,6 +43,6 @@ public class CreateVolumeRequestUnmarshaller implements Unmarshaller<CreateVolum
     
 
         return createVolumeRequest;
-    }  
+    }
 }
     

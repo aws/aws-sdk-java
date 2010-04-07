@@ -21,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class CreateVolumePermission {
-        
+
     /**
      * The user ID of the user that can create volumes from the snapshot.
      */

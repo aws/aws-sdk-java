@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The unique identifier for the Amazon RDS DB snapshot. This value is
      * stored as a lowercase string.

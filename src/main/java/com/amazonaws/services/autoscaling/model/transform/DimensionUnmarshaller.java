@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Dimension Unmarshaller
- */        
+ */
 public class DimensionUnmarshaller implements Unmarshaller<Dimension, Node> {
 
     public Dimension unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Dimension dimension = new Dimension();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         dimension.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -38,6 +40,6 @@ public class DimensionUnmarshaller implements Unmarshaller<Dimension, Node> {
     
 
         return dimension;
-    }  
+    }
 }
     

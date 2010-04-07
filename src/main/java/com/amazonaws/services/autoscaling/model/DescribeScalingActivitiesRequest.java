@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * A list containing the activity IDs of the desired scaling activities.
      */

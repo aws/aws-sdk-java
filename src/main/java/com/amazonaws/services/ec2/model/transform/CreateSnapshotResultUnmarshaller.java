@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Snapshot Result Unmarshaller
- */        
+ */
 public class CreateSnapshotResultUnmarshaller implements Unmarshaller<CreateSnapshotResult, Node> {
 
     public CreateSnapshotResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateSnapshotResult createSnapshotResult = new CreateSnapshotResult();
-        
+
         
         Node snapshotNode = XpathUtils.asNode(".", node);
         createSnapshotResult.setSnapshot(new SnapshotUnmarshaller().unmarshall(snapshotNode));
     
 
         return createSnapshotResult;
-    }  
+    }
 }
     

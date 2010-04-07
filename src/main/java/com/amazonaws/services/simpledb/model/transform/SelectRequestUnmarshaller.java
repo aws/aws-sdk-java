@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Select Request Unmarshaller
- */        
+ */
 public class SelectRequestUnmarshaller implements Unmarshaller<SelectRequest, Node> {
 
     public SelectRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SelectRequest selectRequest = new SelectRequest();
-        
+
         
         Node selectExpressionNode = XpathUtils.asNode("SelectExpression", node);
         selectRequest.setSelectExpression(new StringUnmarshaller().unmarshall(selectExpressionNode));
@@ -41,6 +43,6 @@ public class SelectRequestUnmarshaller implements Unmarshaller<SelectRequest, No
     
 
         return selectRequest;
-    }  
+    }
 }
     

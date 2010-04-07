@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
      * parameter isn't case sensitive.

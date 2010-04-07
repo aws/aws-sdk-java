@@ -20,7 +20,7 @@ package com.amazonaws.services.sqs.model;
  * </p>
  */
 public class CreateQueueResult {
-        
+
     /**
      * The queue URL for the created queue.
      */

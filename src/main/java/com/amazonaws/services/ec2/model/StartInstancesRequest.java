@@ -35,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class StartInstancesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The list of Amazon EC2 instances to start.
      */

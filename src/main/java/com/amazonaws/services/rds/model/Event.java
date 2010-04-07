@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class Event {
-        
+
     /**
      * Provides the identifier for the source of the event.
      */

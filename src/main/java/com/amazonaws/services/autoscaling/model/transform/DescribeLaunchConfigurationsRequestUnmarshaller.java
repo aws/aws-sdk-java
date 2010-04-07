@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Launch Configurations Request Unmarshaller
- */        
+ */
 public class DescribeLaunchConfigurationsRequestUnmarshaller implements Unmarshaller<DescribeLaunchConfigurationsRequest, Node> {
 
     public DescribeLaunchConfigurationsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest = new DescribeLaunchConfigurationsRequest();
-        
+
         
         NodeList launchConfigurationNamesNodes = XpathUtils.asNodeList("LaunchConfigurationNames/member", node);
         for (int launchConfigurationNamesIndex = 0; launchConfigurationNamesIndex < XpathUtils.nodeLength(launchConfigurationNamesNodes); ++launchConfigurationNamesIndex) {
@@ -45,6 +47,6 @@ public class DescribeLaunchConfigurationsRequestUnmarshaller implements Unmarsha
     
 
         return describeLaunchConfigurationsRequest;
-    }  
+    }
 }
     

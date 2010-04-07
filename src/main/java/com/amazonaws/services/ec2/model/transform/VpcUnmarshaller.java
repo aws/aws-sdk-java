@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Vpc Unmarshaller
- */        
+ */
 public class VpcUnmarshaller implements Unmarshaller<Vpc, Node> {
 
     public Vpc unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Vpc vpc = new Vpc();
-        
+
         
         Node vpcIdNode = XpathUtils.asNode("vpcId", node);
         vpc.setVpcId(new StringUnmarshaller().unmarshall(vpcIdNode));
@@ -44,6 +46,6 @@ public class VpcUnmarshaller implements Unmarshaller<Vpc, Node> {
     
 
         return vpc;
-    }  
+    }
 }
     

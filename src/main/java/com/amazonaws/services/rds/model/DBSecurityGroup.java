@@ -20,7 +20,7 @@ package com.amazonaws.services.rds.model;
  * </p>
  */
 public class DBSecurityGroup {
-        
+
     /**
      * Provides the AWS ID of the owner of a specific DB Security Group.
      */

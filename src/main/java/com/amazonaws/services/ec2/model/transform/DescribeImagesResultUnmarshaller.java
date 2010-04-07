@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Images Result Unmarshaller
- */        
+ */
 public class DescribeImagesResultUnmarshaller implements Unmarshaller<DescribeImagesResult, Node> {
 
     public DescribeImagesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeImagesResult describeImagesResult = new DescribeImagesResult();
-        
+
         
         NodeList imagesNodes = XpathUtils.asNodeList("imagesSet/item", node);
         for (int imagesIndex = 0; imagesIndex < XpathUtils.nodeLength(imagesNodes); ++imagesIndex) {
@@ -39,6 +41,6 @@ public class DescribeImagesResultUnmarshaller implements Unmarshaller<DescribeIm
     
 
         return describeImagesResult;
-    }  
+    }
 }
     

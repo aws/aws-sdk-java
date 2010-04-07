@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Dhcp Configuration Unmarshaller
- */        
+ */
 public class DhcpConfigurationUnmarshaller implements Unmarshaller<DhcpConfiguration, Node> {
 
     public DhcpConfiguration unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DhcpConfiguration dhcpConfiguration = new DhcpConfiguration();
-        
+
         
         Node keyNode = XpathUtils.asNode("key", node);
         dhcpConfiguration.setKey(new StringUnmarshaller().unmarshall(keyNode));
@@ -42,6 +44,6 @@ public class DhcpConfigurationUnmarshaller implements Unmarshaller<DhcpConfigura
     
 
         return dhcpConfiguration;
-    }  
+    }
 }
     

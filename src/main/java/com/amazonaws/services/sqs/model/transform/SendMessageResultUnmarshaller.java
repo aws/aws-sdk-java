@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Send Message Result Unmarshaller
- */        
+ */
 public class SendMessageResultUnmarshaller implements Unmarshaller<SendMessageResult, Node> {
 
     public SendMessageResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         SendMessageResult sendMessageResult = new SendMessageResult();
-        
+
         
         Node mD5OfMessageBodyNode = XpathUtils.asNode("MD5OfMessageBody", node);
         sendMessageResult.setMD5OfMessageBody(new StringUnmarshaller().unmarshall(mD5OfMessageBodyNode));
@@ -38,6 +40,6 @@ public class SendMessageResultUnmarshaller implements Unmarshaller<SendMessageRe
     
 
         return sendMessageResult;
-    }  
+    }
 }
     

@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete D B Parameter Group Request Unmarshaller
- */        
+ */
 public class DeleteDBParameterGroupRequestUnmarshaller implements Unmarshaller<DeleteDBParameterGroupRequest, Node> {
 
     public DeleteDBParameterGroupRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteDBParameterGroupRequest deleteDBParameterGroupRequest = new DeleteDBParameterGroupRequest();
-        
+
         
         Node dBParameterGroupNameNode = XpathUtils.asNode("DBParameterGroupName", node);
         deleteDBParameterGroupRequest.setDBParameterGroupName(new StringUnmarshaller().unmarshall(dBParameterGroupNameNode));
     
 
         return deleteDBParameterGroupRequest;
-    }  
+    }
 }
     

@@ -18,7 +18,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * Step Detail
  */
 public class StepDetail {
-        
+
     private StepConfig stepConfig;
 
     private StepExecutionStatusDetail executionStatusDetail;

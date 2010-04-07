@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Domain Request Unmarshaller
- */        
+ */
 public class DeleteDomainRequestUnmarshaller implements Unmarshaller<DeleteDomainRequest, Node> {
 
     public DeleteDomainRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteDomainRequest deleteDomainRequest = new DeleteDomainRequest();
-        
+
         
         Node domainNameNode = XpathUtils.asNode("DomainName", node);
         deleteDomainRequest.setDomainName(new StringUnmarshaller().unmarshall(domainNameNode));
     
 
         return deleteDomainRequest;
-    }  
+    }
 }
     

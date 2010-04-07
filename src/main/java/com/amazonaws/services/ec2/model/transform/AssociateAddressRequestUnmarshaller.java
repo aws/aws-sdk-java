@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Associate Address Request Unmarshaller
- */        
+ */
 public class AssociateAddressRequestUnmarshaller implements Unmarshaller<AssociateAddressRequest, Node> {
 
     public AssociateAddressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AssociateAddressRequest associateAddressRequest = new AssociateAddressRequest();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("InstanceId", node);
         associateAddressRequest.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -38,6 +40,6 @@ public class AssociateAddressRequestUnmarshaller implements Unmarshaller<Associa
     
 
         return associateAddressRequest;
-    }  
+    }
 }
     

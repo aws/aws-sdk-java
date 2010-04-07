@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class BlockDeviceMapping {
-        
+
     /**
      * Specifies the virtual name associated with the device.
      * <p>

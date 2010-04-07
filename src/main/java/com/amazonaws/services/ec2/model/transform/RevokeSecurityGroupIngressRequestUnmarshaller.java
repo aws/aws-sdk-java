@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Revoke Security Group Ingress Request Unmarshaller
- */        
+ */
 public class RevokeSecurityGroupIngressRequestUnmarshaller implements Unmarshaller<RevokeSecurityGroupIngressRequest, Node> {
 
     public RevokeSecurityGroupIngressRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest = new RevokeSecurityGroupIngressRequest();
-        
+
         
         Node groupNameNode = XpathUtils.asNode("GroupName", node);
         revokeSecurityGroupIngressRequest.setGroupName(new StringUnmarshaller().unmarshall(groupNameNode));
@@ -53,6 +55,6 @@ public class RevokeSecurityGroupIngressRequestUnmarshaller implements Unmarshall
     
 
         return revokeSecurityGroupIngressRequest;
-    }  
+    }
 }
     

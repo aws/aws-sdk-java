@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * D B Security Group Membership Unmarshaller
- */        
+ */
 public class DBSecurityGroupMembershipUnmarshaller implements Unmarshaller<DBSecurityGroupMembership, Node> {
 
     public DBSecurityGroupMembership unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DBSecurityGroupMembership dBSecurityGroupMembership = new DBSecurityGroupMembership();
-        
+
         
         Node dBSecurityGroupNameNode = XpathUtils.asNode("DBSecurityGroupName", node);
         dBSecurityGroupMembership.setDBSecurityGroupName(new StringUnmarshaller().unmarshall(dBSecurityGroupNameNode));
@@ -38,6 +40,6 @@ public class DBSecurityGroupMembershipUnmarshaller implements Unmarshaller<DBSec
     
 
         return dBSecurityGroupMembership;
-    }  
+    }
 }
     

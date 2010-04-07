@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Instance State Unmarshaller
- */        
+ */
 public class InstanceStateUnmarshaller implements Unmarshaller<InstanceState, Node> {
 
     public InstanceState unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         InstanceState instanceState = new InstanceState();
-        
+
         
         Node codeNode = XpathUtils.asNode("code", node);
         instanceState.setCode(new IntegerUnmarshaller().unmarshall(codeNode));
@@ -38,6 +40,6 @@ public class InstanceStateUnmarshaller implements Unmarshaller<InstanceState, No
     
 
         return instanceState;
-    }  
+    }
 }
     

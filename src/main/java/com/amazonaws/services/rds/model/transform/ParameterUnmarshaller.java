@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Parameter Unmarshaller
- */        
+ */
 public class ParameterUnmarshaller implements Unmarshaller<Parameter, Node> {
 
     public Parameter unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Parameter parameter = new Parameter();
-        
+
         
         Node parameterNameNode = XpathUtils.asNode("ParameterName", node);
         parameter.setParameterName(new StringUnmarshaller().unmarshall(parameterNameNode));
@@ -59,6 +61,6 @@ public class ParameterUnmarshaller implements Unmarshaller<Parameter, Node> {
     
 
         return parameter;
-    }  
+    }
 }
     

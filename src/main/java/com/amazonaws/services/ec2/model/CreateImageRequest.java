@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateImageRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the instance from which to create the new image.
      */

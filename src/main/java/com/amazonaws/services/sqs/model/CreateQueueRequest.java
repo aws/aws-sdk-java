@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateQueueRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name to use for the created queue.
      */
@@ -32,6 +32,23 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
      */
     private Integer defaultVisibilityTimeout;
 
+    /**
+     * Default constructor for a new CreateQueueRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateQueueRequest() {}
+    
+    /**
+     * Constructs a new CreateQueueRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueName The name to use for the created queue.
+     */
+    public CreateQueueRequest(String queueName) {
+        this.queueName = queueName;
+    }
+    
     /**
      * The name to use for the created queue.
      *

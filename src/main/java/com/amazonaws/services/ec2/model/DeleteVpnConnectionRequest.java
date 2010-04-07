@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Delete Vpn Connection Request
  */
 public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
-        
+
     private String vpnConnectionId;
 
     /**

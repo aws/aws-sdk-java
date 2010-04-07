@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Confirm Product Instance Result Unmarshaller
- */        
+ */
 public class ConfirmProductInstanceResultUnmarshaller implements Unmarshaller<ConfirmProductInstanceResult, Node> {
 
     public ConfirmProductInstanceResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ConfirmProductInstanceResult confirmProductInstanceResult = new ConfirmProductInstanceResult();
-        
+
         
         Node ownerIdNode = XpathUtils.asNode("ownerId", node);
         confirmProductInstanceResult.setOwnerId(new StringUnmarshaller().unmarshall(ownerIdNode));
     
 
         return confirmProductInstanceResult;
-    }  
+    }
 }
     

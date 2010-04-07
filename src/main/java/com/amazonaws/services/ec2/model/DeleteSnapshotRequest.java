@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteSnapshotRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the snapshot to delete.
      */

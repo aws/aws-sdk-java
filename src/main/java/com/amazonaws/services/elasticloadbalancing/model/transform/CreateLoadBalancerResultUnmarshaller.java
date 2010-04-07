@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Create Load Balancer Result Unmarshaller
- */        
+ */
 public class CreateLoadBalancerResultUnmarshaller implements Unmarshaller<CreateLoadBalancerResult, Node> {
 
     public CreateLoadBalancerResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         CreateLoadBalancerResult createLoadBalancerResult = new CreateLoadBalancerResult();
-        
+
         
         Node dNSNameNode = XpathUtils.asNode("DNSName", node);
         createLoadBalancerResult.setDNSName(new StringUnmarshaller().unmarshall(dNSNameNode));
     
 
         return createLoadBalancerResult;
-    }  
+    }
 }
     

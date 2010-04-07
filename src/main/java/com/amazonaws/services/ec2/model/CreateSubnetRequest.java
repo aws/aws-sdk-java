@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Create Subnet Request
  */
 public class CreateSubnetRequest extends AmazonWebServiceRequest {
-        
+
     private String vpcId;
 
     private String cidrBlock;

@@ -22,7 +22,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class MonitorInstancesResult {
-        
+
     /**
      * A list of updated monitoring information for the instances specified
      * in the request.

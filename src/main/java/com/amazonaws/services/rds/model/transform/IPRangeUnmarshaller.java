@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * I P Range Unmarshaller
- */        
+ */
 public class IPRangeUnmarshaller implements Unmarshaller<IPRange, Node> {
 
     public IPRange unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         IPRange iPRange = new IPRange();
-        
+
         
         Node statusNode = XpathUtils.asNode("Status", node);
         iPRange.setStatus(new StringUnmarshaller().unmarshall(statusNode));
@@ -38,6 +40,6 @@ public class IPRangeUnmarshaller implements Unmarshaller<IPRange, Node> {
     
 
         return iPRange;
-    }  
+    }
 }
     

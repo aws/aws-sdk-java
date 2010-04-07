@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * List Queues Result Unmarshaller
- */        
+ */
 public class ListQueuesResultUnmarshaller implements Unmarshaller<ListQueuesResult, Node> {
 
     public ListQueuesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ListQueuesResult listQueuesResult = new ListQueuesResult();
-        
+
         
         NodeList queueUrlsNodes = XpathUtils.asNodeList("QueueUrl", node);
         for (int queueUrlsIndex = 0; queueUrlsIndex < XpathUtils.nodeLength(queueUrlsNodes); ++queueUrlsIndex) {
@@ -39,6 +41,6 @@ public class ListQueuesResultUnmarshaller implements Unmarshaller<ListQueuesResu
     
 
         return listQueuesResult;
-    }  
+    }
 }
     

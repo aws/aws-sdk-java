@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Message Unmarshaller
- */        
+ */
 public class MessageUnmarshaller implements Unmarshaller<Message, Node> {
 
     public Message unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         Message message = new Message();
-        
+
         
         Node messageIdNode = XpathUtils.asNode("MessageId", node);
         message.setMessageId(new StringUnmarshaller().unmarshall(messageIdNode));
@@ -46,11 +48,11 @@ public class MessageUnmarshaller implements Unmarshaller<Message, Node> {
         for (int attributesIndex = 0; attributesIndex < XpathUtils.nodeLength(attributesNodes); ++attributesIndex) {
             String attributesMapKey = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Name", attributesNodes.item(attributesIndex)));
             String attributesMapValue = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Value", attributesNodes.item(attributesIndex)));
-            message.getAttributes().put(attributesMapKey, attributesMapValue); 
+            message.getAttributes().put(attributesMapKey, attributesMapValue);
         }
     
 
         return message;
-    }  
+    }
 }
     

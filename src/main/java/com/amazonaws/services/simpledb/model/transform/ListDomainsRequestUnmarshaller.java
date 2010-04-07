@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * List Domains Request Unmarshaller
- */        
+ */
 public class ListDomainsRequestUnmarshaller implements Unmarshaller<ListDomainsRequest, Node> {
 
     public ListDomainsRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ListDomainsRequest listDomainsRequest = new ListDomainsRequest();
-        
+
         
         Node maxNumberOfDomainsNode = XpathUtils.asNode("MaxNumberOfDomains", node);
         listDomainsRequest.setMaxNumberOfDomains(new IntegerUnmarshaller().unmarshall(maxNumberOfDomainsNode));
@@ -38,6 +40,6 @@ public class ListDomainsRequestUnmarshaller implements Unmarshaller<ListDomainsR
     
 
         return listDomainsRequest;
-    }  
+    }
 }
     

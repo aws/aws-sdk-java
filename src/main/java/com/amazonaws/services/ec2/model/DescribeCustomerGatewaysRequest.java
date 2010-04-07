@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Describe Customer Gateways Request
  */
 public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
-        
+
     private java.util.List<String> customerGatewayIds;
 
     private java.util.List<Filter> filters;

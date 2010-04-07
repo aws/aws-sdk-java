@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Subnet Request Unmarshaller
- */        
+ */
 public class DeleteSubnetRequestUnmarshaller implements Unmarshaller<DeleteSubnetRequest, Node> {
 
     public DeleteSubnetRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteSubnetRequest deleteSubnetRequest = new DeleteSubnetRequest();
-        
+
         
         Node subnetIdNode = XpathUtils.asNode("SubnetId", node);
         deleteSubnetRequest.setSubnetId(new StringUnmarshaller().unmarshall(subnetIdNode));
     
 
         return deleteSubnetRequest;
-    }  
+    }
 }
     

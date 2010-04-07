@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateSnapshotRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the volume from which to create the snapshot.
      */

@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class GetConsoleOutputRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The ID of the instance for which you want console output.
      */

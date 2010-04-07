@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Get Attributes Request
  */
 public class GetAttributesRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name of the domain in which to perform the operation.
      */
@@ -44,6 +44,26 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
      */
     private Boolean consistentRead;
 
+    /**
+     * Default constructor for a new GetAttributesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetAttributesRequest() {}
+    
+    /**
+     * Constructs a new GetAttributesRequest object and initializes the specified
+     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item.
+     */
+    public GetAttributesRequest(String domainName, String itemName) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+    }
+    
     /**
      * The name of the domain in which to perform the operation.
      *

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Console Output Result Unmarshaller
- */        
+ */
 public class GetConsoleOutputResultUnmarshaller implements Unmarshaller<GetConsoleOutputResult, Node> {
 
     public GetConsoleOutputResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetConsoleOutputResult getConsoleOutputResult = new GetConsoleOutputResult();
-        
+
         
         Node instanceIdNode = XpathUtils.asNode("instanceId", node);
         getConsoleOutputResult.setInstanceId(new StringUnmarshaller().unmarshall(instanceIdNode));
@@ -41,6 +43,6 @@ public class GetConsoleOutputResultUnmarshaller implements Unmarshaller<GetConso
     
 
         return getConsoleOutputResult;
-    }  
+    }
 }
     

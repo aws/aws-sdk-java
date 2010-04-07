@@ -20,7 +20,7 @@ package com.amazonaws.services.autoscaling.model;
  * </p>
  */
 public class DescribeScalingActivitiesResult {
-        
+
     /**
      * A list of the requested scaling activities.
      */

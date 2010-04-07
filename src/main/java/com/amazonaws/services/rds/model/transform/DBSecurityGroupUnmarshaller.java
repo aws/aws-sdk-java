@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * D B Security Group Unmarshaller
- */        
+ */
 public class DBSecurityGroupUnmarshaller implements Unmarshaller<DBSecurityGroup, Node> {
 
     public DBSecurityGroup unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DBSecurityGroup dBSecurityGroup = new DBSecurityGroup();
-        
+
         
         Node ownerIdNode = XpathUtils.asNode("OwnerId", node);
         dBSecurityGroup.setOwnerId(new StringUnmarshaller().unmarshall(ownerIdNode));
@@ -55,6 +57,6 @@ public class DBSecurityGroupUnmarshaller implements Unmarshaller<DBSecurityGroup
     
 
         return dBSecurityGroup;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * S3 Storage Unmarshaller
- */        
+ */
 public class S3StorageUnmarshaller implements Unmarshaller<S3Storage, Node> {
 
     public S3Storage unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         S3Storage s3Storage = new S3Storage();
-        
+
         
         Node bucketNode = XpathUtils.asNode("bucket", node);
         s3Storage.setBucket(new StringUnmarshaller().unmarshall(bucketNode));
@@ -47,6 +49,6 @@ public class S3StorageUnmarshaller implements Unmarshaller<S3Storage, Node> {
     
 
         return s3Storage;
-    }  
+    }
 }
     

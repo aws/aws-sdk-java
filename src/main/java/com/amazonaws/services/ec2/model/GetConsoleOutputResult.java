@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class GetConsoleOutputResult {
-        
+
     /**
      * The ID of the instance whose console output was requested.
      */

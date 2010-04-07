@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Delete Trigger Request Unmarshaller
- */        
+ */
 public class DeleteTriggerRequestUnmarshaller implements Unmarshaller<DeleteTriggerRequest, Node> {
 
     public DeleteTriggerRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DeleteTriggerRequest deleteTriggerRequest = new DeleteTriggerRequest();
-        
+
         
         Node autoScalingGroupNameNode = XpathUtils.asNode("AutoScalingGroupName", node);
         deleteTriggerRequest.setAutoScalingGroupName(new StringUnmarshaller().unmarshall(autoScalingGroupNameNode));
@@ -38,6 +40,6 @@ public class DeleteTriggerRequestUnmarshaller implements Unmarshaller<DeleteTrig
     
 
         return deleteTriggerRequest;
-    }  
+    }
 }
     

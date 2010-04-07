@@ -23,18 +23,20 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Allocate Address Result Unmarshaller
- */        
+ */
 public class AllocateAddressResultUnmarshaller implements Unmarshaller<AllocateAddressResult, Node> {
 
     public AllocateAddressResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         AllocateAddressResult allocateAddressResult = new AllocateAddressResult();
-        
+
         
         Node publicIpNode = XpathUtils.asNode("publicIp", node);
         allocateAddressResult.setPublicIp(new StringUnmarshaller().unmarshall(publicIpNode));
     
 
         return allocateAddressResult;
-    }  
+    }
 }
     

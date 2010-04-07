@@ -18,7 +18,7 @@ package com.amazonaws.services.ec2.model;
  * Vpn Gateway
  */
 public class VpnGateway {
-        
+
     private String vpnGatewayId;
 
     private String state;

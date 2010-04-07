@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class GetPasswordDataResult {
-        
+
     /**
      * The ID of the instance whose Windows administrator password was
      * requested.

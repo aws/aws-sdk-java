@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Reserved Instances Unmarshaller
- */        
+ */
 public class ReservedInstancesUnmarshaller implements Unmarshaller<ReservedInstances, Node> {
 
     public ReservedInstances unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         ReservedInstances reservedInstances = new ReservedInstances();
-        
+
         
         Node reservedInstancesIdNode = XpathUtils.asNode("reservedInstancesId", node);
         reservedInstances.setReservedInstancesId(new StringUnmarshaller().unmarshall(reservedInstancesIdNode));
@@ -62,6 +64,6 @@ public class ReservedInstancesUnmarshaller implements Unmarshaller<ReservedInsta
     
 
         return reservedInstances;
-    }  
+    }
 }
     

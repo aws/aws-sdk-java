@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * </p>
  */
 public class DescribeInstancesResult {
-        
+
     /**
      * The list of reservations containing the describes instances.
      */

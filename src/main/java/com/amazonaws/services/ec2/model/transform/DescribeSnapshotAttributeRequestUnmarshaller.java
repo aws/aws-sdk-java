@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Describe Snapshot Attribute Request Unmarshaller
- */        
+ */
 public class DescribeSnapshotAttributeRequestUnmarshaller implements Unmarshaller<DescribeSnapshotAttributeRequest, Node> {
 
     public DescribeSnapshotAttributeRequest unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest = new DescribeSnapshotAttributeRequest();
-        
+
         
         Node snapshotIdNode = XpathUtils.asNode("SnapshotId", node);
         describeSnapshotAttributeRequest.setSnapshotId(new StringUnmarshaller().unmarshall(snapshotIdNode));
@@ -38,6 +40,6 @@ public class DescribeSnapshotAttributeRequestUnmarshaller implements Unmarshalle
     
 
         return describeSnapshotAttributeRequest;
-    }  
+    }
 }
     

@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Pending Modified Values Unmarshaller
- */        
+ */
 public class PendingModifiedValuesUnmarshaller implements Unmarshaller<PendingModifiedValues, Node> {
 
     public PendingModifiedValues unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
-        
+
         
         Node dBInstanceClassNode = XpathUtils.asNode("DBInstanceClass", node);
         pendingModifiedValues.setDBInstanceClass(new StringUnmarshaller().unmarshall(dBInstanceClassNode));
@@ -47,6 +49,6 @@ public class PendingModifiedValuesUnmarshaller implements Unmarshaller<PendingMo
     
 
         return pendingModifiedValues;
-    }  
+    }
 }
     

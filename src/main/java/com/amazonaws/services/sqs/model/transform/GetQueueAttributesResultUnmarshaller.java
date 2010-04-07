@@ -23,22 +23,24 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Get Queue Attributes Result Unmarshaller
- */        
+ */
 public class GetQueueAttributesResultUnmarshaller implements Unmarshaller<GetQueueAttributesResult, Node> {
 
     public GetQueueAttributesResult unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         GetQueueAttributesResult getQueueAttributesResult = new GetQueueAttributesResult();
-        
+
         
         NodeList attributesNodes = XpathUtils.asNodeList("Attribute", node);
         for (int attributesIndex = 0; attributesIndex < XpathUtils.nodeLength(attributesNodes); ++attributesIndex) {
             String attributesMapKey = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Name", attributesNodes.item(attributesIndex)));
             String attributesMapValue = new StringUnmarshaller().unmarshall(XpathUtils.asNode("Value", attributesNodes.item(attributesIndex)));
-            getQueueAttributesResult.getAttributes().put(attributesMapKey, attributesMapValue); 
+            getQueueAttributesResult.getAttributes().put(attributesMapKey, attributesMapValue);
         }
     
 
         return getQueueAttributesResult;
-    }  
+    }
 }
     

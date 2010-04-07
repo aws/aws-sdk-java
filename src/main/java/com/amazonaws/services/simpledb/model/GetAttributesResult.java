@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Get Attributes Result
  */
 public class GetAttributesResult {
-        
+
     /**
      * Attributes list.
      */

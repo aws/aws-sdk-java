@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Step Config Unmarshaller
- */        
+ */
 public class StepConfigUnmarshaller implements Unmarshaller<StepConfig, Node> {
 
     public StepConfig unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         StepConfig stepConfig = new StepConfig();
-        
+
         
         Node nameNode = XpathUtils.asNode("Name", node);
         stepConfig.setName(new StringUnmarshaller().unmarshall(nameNode));
@@ -41,6 +43,6 @@ public class StepConfigUnmarshaller implements Unmarshaller<StepConfig, Node> {
     
 
         return stepConfig;
-    }  
+    }
 }
     

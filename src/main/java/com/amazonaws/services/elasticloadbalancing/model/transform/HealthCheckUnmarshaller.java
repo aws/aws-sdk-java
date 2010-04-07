@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Health Check Unmarshaller
- */        
+ */
 public class HealthCheckUnmarshaller implements Unmarshaller<HealthCheck, Node> {
 
     public HealthCheck unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         HealthCheck healthCheck = new HealthCheck();
-        
+
         
         Node targetNode = XpathUtils.asNode("Target", node);
         healthCheck.setTarget(new StringUnmarshaller().unmarshall(targetNode));
@@ -47,6 +49,6 @@ public class HealthCheckUnmarshaller implements Unmarshaller<HealthCheck, Node> 
     
 
         return healthCheck;
-    }  
+    }
 }
     

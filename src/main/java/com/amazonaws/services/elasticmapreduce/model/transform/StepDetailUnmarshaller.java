@@ -23,12 +23,14 @@ import com.amazonaws.util.XpathUtils;
 
 /**
  * Step Detail Unmarshaller
- */        
+ */
 public class StepDetailUnmarshaller implements Unmarshaller<StepDetail, Node> {
 
     public StepDetail unmarshall(Node node) throws Exception {
+        if (node == null) return null;
+
         StepDetail stepDetail = new StepDetail();
-        
+
         
         Node stepConfigNode = XpathUtils.asNode("StepConfig", node);
         stepDetail.setStepConfig(new StepConfigUnmarshaller().unmarshall(stepConfigNode));
@@ -38,6 +40,6 @@ public class StepDetailUnmarshaller implements Unmarshaller<StepDetail, Node> {
     
 
         return stepDetail;
-    }  
+    }
 }
     

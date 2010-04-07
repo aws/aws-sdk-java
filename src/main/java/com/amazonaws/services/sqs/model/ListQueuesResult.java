@@ -20,7 +20,7 @@ package com.amazonaws.services.sqs.model;
  * </p>
  */
 public class ListQueuesResult {
-        
+
     /**
      * A list of queue URLs for queues. The response can contain up to 1000
      * QueueUrl elements.

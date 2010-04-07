@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class CreateOrUpdateScalingTriggerRequest extends AmazonWebServiceRequest {
-        
+
     /**
      * The name for the trigger.
      * <p>

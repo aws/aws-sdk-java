@@ -18,7 +18,7 @@ package com.amazonaws.services.simpledb.model;
  * Select Result
  */
 public class SelectResult {
-        
+
     /**
      * Items that match the select expression.
      */
