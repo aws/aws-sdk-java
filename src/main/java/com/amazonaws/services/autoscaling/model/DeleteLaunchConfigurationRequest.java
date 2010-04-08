@@ -77,5 +77,15 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

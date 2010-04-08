@@ -15,16 +15,21 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Describe Vpcs Result
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeVpcsResult {
 
+    /**
+     * 
+     */
     private java.util.List<Vpc> vpcs;
 
     /**
-     * Returns the value of the Vpcs property for this object.
+     * 
      *
-     * @return The value of the Vpcs property for this object.
+     * @return 
      */
     public java.util.List<Vpc> getVpcs() {
         if (vpcs == null) {
@@ -34,9 +39,9 @@ public class DescribeVpcsResult {
     }
     
     /**
-     * Sets the value of the Vpcs property for this object.
+     * 
      *
-     * @param vpcs The new value for the Vpcs property for this object.
+     * @param vpcs 
      */
     public void setVpcs(java.util.Collection<Vpc> vpcs) {
         java.util.List<Vpc> vpcsCopy = new java.util.ArrayList<Vpc>();
@@ -47,11 +52,11 @@ public class DescribeVpcsResult {
     }
     
     /**
-     * Sets the value of the Vpcs property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcs The new value for the Vpcs property for this object.
+     * @param vpcs 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +69,11 @@ public class DescribeVpcsResult {
     }
     
     /**
-     * Sets the value of the Vpcs property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcs The new value for the Vpcs property for this object.
+     * @param vpcs 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +86,16 @@ public class DescribeVpcsResult {
         this.vpcs = vpcsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Vpcs: " + vpcs + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

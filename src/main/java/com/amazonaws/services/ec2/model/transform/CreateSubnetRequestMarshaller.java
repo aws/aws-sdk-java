@@ -32,7 +32,7 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
     public Request<CreateSubnetRequest> marshall(CreateSubnetRequest createSubnetRequest) {
         Request<CreateSubnetRequest> request = new DefaultRequest<CreateSubnetRequest>(createSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSubnet");
-        request.addParameter("Version", "2009-10-31");
+        request.addParameter("Version", "2009-11-30");
         if (createSubnetRequest != null) {
             if (createSubnetRequest.getVpcId() != null) {
                 request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));

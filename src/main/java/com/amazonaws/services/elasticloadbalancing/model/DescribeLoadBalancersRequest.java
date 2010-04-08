@@ -16,21 +16,16 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * 
- * </p>
+ * Describe Load Balancers Request
  */
 public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
 
-    /**
-     * A list of names associated with the LoadBalancers at creation time.
-     */
     private java.util.List<String> loadBalancerNames;
 
     /**
-     * A list of names associated with the LoadBalancers at creation time.
+     * Returns the value of the LoadBalancerNames property for this object.
      *
-     * @return A list of names associated with the LoadBalancers at creation time.
+     * @return The value of the LoadBalancerNames property for this object.
      */
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
@@ -40,9 +35,9 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names associated with the LoadBalancers at creation time.
+     * Sets the value of the LoadBalancerNames property for this object.
      *
-     * @param loadBalancerNames A list of names associated with the LoadBalancers at creation time.
+     * @param loadBalancerNames The new value for the LoadBalancerNames property for this object.
      */
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>();
@@ -53,11 +48,11 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names associated with the LoadBalancers at creation time.
+     * Sets the value of the LoadBalancerNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames A list of names associated with the LoadBalancers at creation time.
+     * @param loadBalancerNames The new value for the LoadBalancerNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -70,11 +65,11 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names associated with the LoadBalancers at creation time.
+     * Sets the value of the LoadBalancerNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames A list of names associated with the LoadBalancers at creation time.
+     * @param loadBalancerNames The new value for the LoadBalancerNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,6 +82,16 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
         this.loadBalancerNames = loadBalancerNamesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

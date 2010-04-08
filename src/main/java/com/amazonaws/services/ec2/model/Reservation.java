@@ -288,5 +288,19 @@ public class Reservation {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservationId: " + reservationId + ", ");
+        sb.append("OwnerId: " + ownerId + ", ");
+        sb.append("RequesterId: " + requesterId + ", ");
+        sb.append("GroupNames: " + groupNames + ", ");
+        sb.append("Instances: " + instances + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

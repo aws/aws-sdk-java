@@ -143,5 +143,16 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
         return shouldDecrementDesiredCapacity;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("ShouldDecrementDesiredCapacity: " + shouldDecrementDesiredCapacity + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

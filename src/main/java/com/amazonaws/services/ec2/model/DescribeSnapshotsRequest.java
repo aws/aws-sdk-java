@@ -240,5 +240,17 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotIds: " + snapshotIds + ", ");
+        sb.append("OwnerIds: " + ownerIds + ", ");
+        sb.append("RestorableByUserIds: " + restorableByUserIds + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

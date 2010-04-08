@@ -91,5 +91,16 @@ public class Dimension {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

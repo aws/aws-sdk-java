@@ -865,5 +865,32 @@ public class Image {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("ImageLocation: " + imageLocation + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("OwnerId: " + ownerId + ", ");
+        sb.append("Public: " + publicValue + ", ");
+        sb.append("ProductCodes: " + productCodes + ", ");
+        sb.append("Architecture: " + architecture + ", ");
+        sb.append("ImageType: " + imageType + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("Platform: " + platform + ", ");
+        sb.append("StateReason: " + stateReason + ", ");
+        sb.append("ImageOwnerAlias: " + imageOwnerAlias + ", ");
+        sb.append("Name: " + name + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("RootDeviceType: " + rootDeviceType + ", ");
+        sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

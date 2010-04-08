@@ -245,5 +245,19 @@ public class S3Storage {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Bucket: " + bucket + ", ");
+        sb.append("Prefix: " + prefix + ", ");
+        sb.append("AWSAccessKeyId: " + aWSAccessKeyId + ", ");
+        sb.append("UploadPolicy: " + uploadPolicy + ", ");
+        sb.append("UploadPolicySignature: " + uploadPolicySignature + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

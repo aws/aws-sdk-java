@@ -61,5 +61,15 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("GroupName: " + groupName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

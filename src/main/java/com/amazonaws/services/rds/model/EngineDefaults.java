@@ -173,5 +173,17 @@ public class EngineDefaults {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Engine: " + engine + ", ");
+        sb.append("Marker: " + marker + ", ");
+        sb.append("Parameters: " + parameters + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

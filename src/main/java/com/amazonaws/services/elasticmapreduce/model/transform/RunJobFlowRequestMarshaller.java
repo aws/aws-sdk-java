@@ -44,6 +44,11 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             }
         }
         if (runJobFlowRequest != null) {
+            if (runJobFlowRequest.getAdditionalInfo() != null) {
+                request.addParameter("AdditionalInfo", StringUtils.fromString(runJobFlowRequest.getAdditionalInfo()));
+            }
+        }
+        if (runJobFlowRequest != null) {
             JobFlowInstancesConfig instances = runJobFlowRequest.getInstances();
             if (instances != null) {
                 if (instances.getMasterInstanceType() != null) {
@@ -76,6 +81,11 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             if (instances != null) {
                 if (instances.isKeepJobFlowAliveWhenNoSteps() != null) {
                     request.addParameter("Instances.KeepJobFlowAliveWhenNoSteps", StringUtils.fromBoolean(instances.isKeepJobFlowAliveWhenNoSteps()));
+                }
+            }
+            if (instances != null) {
+                if (instances.getHadoopVersion() != null) {
+                    request.addParameter("Instances.HadoopVersion", StringUtils.fromString(instances.getHadoopVersion()));
                 }
             }
         }
@@ -138,6 +148,38 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                 }
 
                 stepsListIndex++;
+            }
+        }
+
+        if (runJobFlowRequest != null) {
+            java.util.List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.getBootstrapActions();
+            int bootstrapActionsListIndex = 1;
+            for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) { 
+                if (bootstrapActionsListValue != null) {
+                    if (bootstrapActionsListValue.getName() != null) {
+                        request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.fromString(bootstrapActionsListValue.getName()));
+                    }
+                }
+                if (bootstrapActionsListValue != null) {
+                    ScriptBootstrapActionConfig scriptBootstrapAction = bootstrapActionsListValue.getScriptBootstrapAction();
+                    if (scriptBootstrapAction != null) {
+                        if (scriptBootstrapAction.getPath() != null) {
+                            request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Path", StringUtils.fromString(scriptBootstrapAction.getPath()));
+                        }
+                    }
+                    if (scriptBootstrapAction != null) {
+                        java.util.List<String> argsList = scriptBootstrapAction.getArgs();
+                        int argsListIndex = 1;
+                        for (String argsListValue : argsList) { 
+                            if (argsListValue != null) {
+                                request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
+                            }
+                            argsListIndex++;
+                        }
+                    }
+                }
+
+                bootstrapActionsListIndex++;
             }
         }
 

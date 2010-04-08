@@ -186,5 +186,17 @@ public class Instance {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("LifecycleState: " + lifecycleState + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

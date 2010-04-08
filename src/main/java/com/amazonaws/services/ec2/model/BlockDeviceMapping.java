@@ -15,42 +15,57 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Block Device Mapping
+ * <p>
+ * The BlockDeviceMappingItemType data type.
+ * </p>
  */
 public class BlockDeviceMapping {
 
+    /**
+     * Specifies the virtual device name.
+     */
     private String virtualName;
 
+    /**
+     * Specifies the device name (e.g., /dev/sdh).
+     */
     private String deviceName;
 
+    /**
+     * Specifies parameters used to automatically setup Amazon EBS volumes
+     * when the instance is launched.
+     */
     private EbsBlockDevice ebs;
 
+    /**
+     * Specifies the device name to suppress during instance launch.
+     */
     private String noDevice;
 
     /**
-     * Returns the value of the VirtualName property for this object.
+     * Specifies the virtual device name.
      *
-     * @return The value of the VirtualName property for this object.
+     * @return Specifies the virtual device name.
      */
     public String getVirtualName() {
         return virtualName;
     }
     
     /**
-     * Sets the value of the VirtualName property for this object.
+     * Specifies the virtual device name.
      *
-     * @param virtualName The new value for the VirtualName property for this object.
+     * @param virtualName Specifies the virtual device name.
      */
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
     
     /**
-     * Sets the value of the VirtualName property for this object.
+     * Specifies the virtual device name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param virtualName The new value for the VirtualName property for this object.
+     * @param virtualName Specifies the virtual device name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,29 +77,29 @@ public class BlockDeviceMapping {
     
     
     /**
-     * Returns the value of the DeviceName property for this object.
+     * Specifies the device name (e.g., /dev/sdh).
      *
-     * @return The value of the DeviceName property for this object.
+     * @return Specifies the device name (e.g., /dev/sdh).
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * Sets the value of the DeviceName property for this object.
+     * Specifies the device name (e.g., /dev/sdh).
      *
-     * @param deviceName The new value for the DeviceName property for this object.
+     * @param deviceName Specifies the device name (e.g., /dev/sdh).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * Sets the value of the DeviceName property for this object.
+     * Specifies the device name (e.g., /dev/sdh).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName The new value for the DeviceName property for this object.
+     * @param deviceName Specifies the device name (e.g., /dev/sdh).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -96,29 +111,35 @@ public class BlockDeviceMapping {
     
     
     /**
-     * Returns the value of the Ebs property for this object.
+     * Specifies parameters used to automatically setup Amazon EBS volumes
+     * when the instance is launched.
      *
-     * @return The value of the Ebs property for this object.
+     * @return Specifies parameters used to automatically setup Amazon EBS volumes
+     *         when the instance is launched.
      */
     public EbsBlockDevice getEbs() {
         return ebs;
     }
     
     /**
-     * Sets the value of the Ebs property for this object.
+     * Specifies parameters used to automatically setup Amazon EBS volumes
+     * when the instance is launched.
      *
-     * @param ebs The new value for the Ebs property for this object.
+     * @param ebs Specifies parameters used to automatically setup Amazon EBS volumes
+     *         when the instance is launched.
      */
     public void setEbs(EbsBlockDevice ebs) {
         this.ebs = ebs;
     }
     
     /**
-     * Sets the value of the Ebs property for this object.
+     * Specifies parameters used to automatically setup Amazon EBS volumes
+     * when the instance is launched.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ebs The new value for the Ebs property for this object.
+     * @param ebs Specifies parameters used to automatically setup Amazon EBS volumes
+     *         when the instance is launched.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -130,29 +151,29 @@ public class BlockDeviceMapping {
     
     
     /**
-     * Returns the value of the NoDevice property for this object.
+     * Specifies the device name to suppress during instance launch.
      *
-     * @return The value of the NoDevice property for this object.
+     * @return Specifies the device name to suppress during instance launch.
      */
     public String getNoDevice() {
         return noDevice;
     }
     
     /**
-     * Sets the value of the NoDevice property for this object.
+     * Specifies the device name to suppress during instance launch.
      *
-     * @param noDevice The new value for the NoDevice property for this object.
+     * @param noDevice Specifies the device name to suppress during instance launch.
      */
     public void setNoDevice(String noDevice) {
         this.noDevice = noDevice;
     }
     
     /**
-     * Sets the value of the NoDevice property for this object.
+     * Specifies the device name to suppress during instance launch.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param noDevice The new value for the NoDevice property for this object.
+     * @param noDevice Specifies the device name to suppress during instance launch.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -162,6 +183,19 @@ public class BlockDeviceMapping {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VirtualName: " + virtualName + ", ");
+        sb.append("DeviceName: " + deviceName + ", ");
+        sb.append("Ebs: " + ebs + ", ");
+        sb.append("NoDevice: " + noDevice + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

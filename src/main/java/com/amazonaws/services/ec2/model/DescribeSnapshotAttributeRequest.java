@@ -108,5 +108,16 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("Attribute: " + attribute + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

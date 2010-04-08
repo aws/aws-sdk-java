@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Vpn Connection Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpnConnectionResult {
 
+    /**
+     * 
+     */
     private VpnConnection vpnConnection;
 
     /**
-     * Returns the value of the VpnConnection property for this object.
+     * 
      *
-     * @return The value of the VpnConnection property for this object.
+     * @return 
      */
     public VpnConnection getVpnConnection() {
         return vpnConnection;
     }
     
     /**
-     * Sets the value of the VpnConnection property for this object.
+     * 
      *
-     * @param vpnConnection The new value for the VpnConnection property for this object.
+     * @param vpnConnection 
      */
     public void setVpnConnection(VpnConnection vpnConnection) {
         this.vpnConnection = vpnConnection;
     }
     
     /**
-     * Sets the value of the VpnConnection property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnection The new value for the VpnConnection property for this object.
+     * @param vpnConnection 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateVpnConnectionResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnConnection: " + vpnConnection + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

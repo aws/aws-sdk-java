@@ -342,5 +342,19 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("Attribute: " + attribute + ", ");
+        sb.append("OperationType: " + operationType + ", ");
+        sb.append("UserIds: " + userIds + ", ");
+        sb.append("GroupNames: " + groupNames + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

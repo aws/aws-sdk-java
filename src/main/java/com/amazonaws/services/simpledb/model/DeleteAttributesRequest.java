@@ -270,5 +270,18 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DomainName: " + domainName + ", ");
+        sb.append("ItemName: " + itemName + ", ");
+        sb.append("Attributes: " + attributes + ", ");
+        sb.append("Expected: " + expected + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

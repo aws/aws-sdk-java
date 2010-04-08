@@ -418,5 +418,23 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Statistics: " + statistics + ", ");
+        sb.append("Period: " + period + ", ");
+        sb.append("MeasureName: " + measureName + ", ");
+        sb.append("Dimensions: " + dimensions + ", ");
+        sb.append("StartTime: " + startTime + ", ");
+        sb.append("EndTime: " + endTime + ", ");
+        sb.append("Unit: " + unit + ", ");
+        sb.append("CustomUnit: " + customUnit + ", ");
+        sb.append("Namespace: " + namespace + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

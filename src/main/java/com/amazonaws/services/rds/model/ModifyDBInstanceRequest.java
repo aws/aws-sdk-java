@@ -673,5 +673,24 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
+        sb.append("ApplyImmediately: " + applyImmediately + ", ");
+        sb.append("MasterUserPassword: " + masterUserPassword + ", ");
+        sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
+        sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
+        sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
+        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

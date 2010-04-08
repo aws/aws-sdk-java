@@ -16,40 +16,51 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Subnet Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateSubnetRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the VPC to create the subnet in.
+     */
     private String vpcId;
 
+    /**
+     * The CIDR block the subnet is to cover.
+     */
     private String cidrBlock;
 
+    /**
+     * The Availability Zone to create the subnet in.
+     */
     private String availabilityZone;
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * The ID of the VPC to create the subnet in.
      *
-     * @return The value of the VpcId property for this object.
+     * @return The ID of the VPC to create the subnet in.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to create the subnet in.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to create the subnet in.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to create the subnet in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to create the subnet in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -61,29 +72,29 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the CidrBlock property for this object.
+     * The CIDR block the subnet is to cover.
      *
-     * @return The value of the CidrBlock property for this object.
+     * @return The CIDR block the subnet is to cover.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * The CIDR block the subnet is to cover.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock The CIDR block the subnet is to cover.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * The CIDR block the subnet is to cover.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock The CIDR block the subnet is to cover.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,29 +106,29 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The Availability Zone to create the subnet in.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The Availability Zone to create the subnet in.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone to create the subnet in.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone to create the subnet in.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone to create the subnet in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone to create the subnet in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,6 +138,18 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("CidrBlock: " + cidrBlock + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

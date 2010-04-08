@@ -156,5 +156,17 @@ public class EbsBlockDevice {
         return deleteOnTermination;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("VolumeSize: " + volumeSize + ", ");
+        sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

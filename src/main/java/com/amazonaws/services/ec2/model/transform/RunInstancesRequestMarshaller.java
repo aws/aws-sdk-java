@@ -32,7 +32,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2009-10-31");
+        request.addParameter("Version", "2009-11-30");
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));

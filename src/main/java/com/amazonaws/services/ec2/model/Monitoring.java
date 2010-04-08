@@ -67,5 +67,15 @@ public class Monitoring {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("State: " + state + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

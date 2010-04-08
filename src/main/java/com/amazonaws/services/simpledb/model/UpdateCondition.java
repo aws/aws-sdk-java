@@ -185,5 +185,17 @@ public class UpdateCondition {
         return exists;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("Exists: " + exists + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

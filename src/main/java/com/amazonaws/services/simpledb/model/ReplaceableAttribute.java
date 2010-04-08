@@ -154,5 +154,17 @@ public class ReplaceableAttribute {
         return replace;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("Replace: " + replace + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

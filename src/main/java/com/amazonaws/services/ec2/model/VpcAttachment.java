@@ -15,38 +15,46 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Vpc Attachment
+ * <p>
+ * 
+ * </p>
  */
 public class VpcAttachment {
 
+    /**
+     * 
+     */
     private String vpcId;
 
+    /**
+     * 
+     */
     private String state;
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * 
      *
-     * @return The value of the VpcId property for this object.
+     * @return 
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * 
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId 
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,29 +66,29 @@ public class VpcAttachment {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * 
      *
-     * @return The value of the State property for this object.
+     * @return 
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * 
      *
-     * @param state The new value for the State property for this object.
+     * @param state 
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,6 +98,17 @@ public class VpcAttachment {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

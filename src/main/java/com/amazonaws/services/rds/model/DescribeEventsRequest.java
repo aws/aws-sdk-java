@@ -383,5 +383,21 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SourceIdentifier: " + sourceIdentifier + ", ");
+        sb.append("SourceType: " + sourceType + ", ");
+        sb.append("StartTime: " + startTime + ", ");
+        sb.append("EndTime: " + endTime + ", ");
+        sb.append("Duration: " + duration + ", ");
+        sb.append("MaxRecords: " + maxRecords + ", ");
+        sb.append("Marker: " + marker + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

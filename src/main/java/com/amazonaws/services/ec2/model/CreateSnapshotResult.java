@@ -60,5 +60,15 @@ public class CreateSnapshotResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Snapshot: " + snapshot + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

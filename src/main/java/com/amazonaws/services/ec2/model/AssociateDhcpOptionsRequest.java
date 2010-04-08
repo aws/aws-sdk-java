@@ -16,38 +16,53 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Associate Dhcp Options Request
+ * <p>
+ * 
+ * </p>
  */
 public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the DHCP options to associate with the VPC. Specify
+     * "default" to associate the default DHCP options with the VPC.
+     */
     private String dhcpOptionsId;
 
+    /**
+     * The ID of the VPC to associate the DHCP options with.
+     */
     private String vpcId;
 
     /**
-     * Returns the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options to associate with the VPC. Specify
+     * "default" to associate the default DHCP options with the VPC.
      *
-     * @return The value of the DhcpOptionsId property for this object.
+     * @return The ID of the DHCP options to associate with the VPC. Specify
+     *         "default" to associate the default DHCP options with the VPC.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options to associate with the VPC. Specify
+     * "default" to associate the default DHCP options with the VPC.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId The ID of the DHCP options to associate with the VPC. Specify
+     *         "default" to associate the default DHCP options with the VPC.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options to associate with the VPC. Specify
+     * "default" to associate the default DHCP options with the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId The ID of the DHCP options to associate with the VPC. Specify
+     *         "default" to associate the default DHCP options with the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,29 +74,29 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the VpcId property for this object.
+     * The ID of the VPC to associate the DHCP options with.
      *
-     * @return The value of the VpcId property for this object.
+     * @return The ID of the VPC to associate the DHCP options with.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to associate the DHCP options with.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to associate the DHCP options with.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to associate the DHCP options with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to associate the DHCP options with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,6 +106,17 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Subnet Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateSubnetResult {
 
+    /**
+     * 
+     */
     private Subnet subnet;
 
     /**
-     * Returns the value of the Subnet property for this object.
+     * 
      *
-     * @return The value of the Subnet property for this object.
+     * @return 
      */
     public Subnet getSubnet() {
         return subnet;
     }
     
     /**
-     * Sets the value of the Subnet property for this object.
+     * 
      *
-     * @param subnet The new value for the Subnet property for this object.
+     * @param subnet 
      */
     public void setSubnet(Subnet subnet) {
         this.subnet = subnet;
     }
     
     /**
-     * Sets the value of the Subnet property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnet The new value for the Subnet property for this object.
+     * @param subnet 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateSubnetResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Subnet: " + subnet + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

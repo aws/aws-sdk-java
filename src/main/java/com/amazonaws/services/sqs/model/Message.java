@@ -218,5 +218,19 @@ public class Message {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("MessageId: " + messageId + ", ");
+        sb.append("ReceiptHandle: " + receiptHandle + ", ");
+        sb.append("MD5OfBody: " + mD5OfBody + ", ");
+        sb.append("Body: " + body + ", ");
+        sb.append("Attributes: " + attributes + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

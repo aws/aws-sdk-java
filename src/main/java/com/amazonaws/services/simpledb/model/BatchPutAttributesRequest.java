@@ -161,5 +161,16 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DomainName: " + domainName + ", ");
+        sb.append("Items: " + items + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

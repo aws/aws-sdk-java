@@ -20,34 +20,48 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A string that uniquely identifies a job flow. This value is returned
+     * as part of the <a>RunJobFlow</a> response.
+     */
     private String jobFlowId;
 
+    /**
+     * A list of <a>Step</a> instances containing information about the steps
+     * to be added.
+     */
     private java.util.List<StepConfig> steps;
 
     /**
-     * Returns the value of the JobFlowId property for this object.
+     * A string that uniquely identifies a job flow. This value is returned
+     * as part of the <a>RunJobFlow</a> response.
      *
-     * @return The value of the JobFlowId property for this object.
+     * @return A string that uniquely identifies a job flow. This value is returned
+     *         as part of the <a>RunJobFlow</a> response.
      */
     public String getJobFlowId() {
         return jobFlowId;
     }
     
     /**
-     * Sets the value of the JobFlowId property for this object.
+     * A string that uniquely identifies a job flow. This value is returned
+     * as part of the <a>RunJobFlow</a> response.
      *
-     * @param jobFlowId The new value for the JobFlowId property for this object.
+     * @param jobFlowId A string that uniquely identifies a job flow. This value is returned
+     *         as part of the <a>RunJobFlow</a> response.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
     
     /**
-     * Sets the value of the JobFlowId property for this object.
+     * A string that uniquely identifies a job flow. This value is returned
+     * as part of the <a>RunJobFlow</a> response.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowId The new value for the JobFlowId property for this object.
+     * @param jobFlowId A string that uniquely identifies a job flow. This value is returned
+     *         as part of the <a>RunJobFlow</a> response.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,9 +73,11 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Steps property for this object.
+     * A list of <a>Step</a> instances containing information about the steps
+     * to be added.
      *
-     * @return The value of the Steps property for this object.
+     * @return A list of <a>Step</a> instances containing information about the steps
+     *         to be added.
      */
     public java.util.List<StepConfig> getSteps() {
         if (steps == null) {
@@ -71,9 +87,11 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Steps property for this object.
+     * A list of <a>Step</a> instances containing information about the steps
+     * to be added.
      *
-     * @param steps The new value for the Steps property for this object.
+     * @param steps A list of <a>Step</a> instances containing information about the steps
+     *         to be added.
      */
     public void setSteps(java.util.Collection<StepConfig> steps) {
         java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
@@ -84,11 +102,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Steps property for this object.
+     * A list of <a>Step</a> instances containing information about the steps
+     * to be added.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps The new value for the Steps property for this object.
+     * @param steps A list of <a>Step</a> instances containing information about the steps
+     *         to be added.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -101,11 +121,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Steps property for this object.
+     * A list of <a>Step</a> instances containing information about the steps
+     * to be added.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps The new value for the Steps property for this object.
+     * @param steps A list of <a>Step</a> instances containing information about the steps
+     *         to be added.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,6 +140,17 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
         this.steps = stepsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("JobFlowId: " + jobFlowId + ", ");
+        sb.append("Steps: " + steps + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

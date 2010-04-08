@@ -549,5 +549,24 @@ public class AutoScalingGroup {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        sb.append("MinSize: " + minSize + ", ");
+        sb.append("MaxSize: " + maxSize + ", ");
+        sb.append("DesiredCapacity: " + desiredCapacity + ", ");
+        sb.append("Cooldown: " + cooldown + ", ");
+        sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        sb.append("Instances: " + instances + ", ");
+        sb.append("CreatedTime: " + createdTime + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

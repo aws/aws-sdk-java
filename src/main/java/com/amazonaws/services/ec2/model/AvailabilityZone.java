@@ -139,5 +139,17 @@ public class AvailabilityZone {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ZoneName: " + zoneName + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("RegionName: " + regionName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -34,7 +34,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     private String reservedInstancesOfferingId;
 
     /**
-     * 
+     * The number of Reserved Instances to purchase.
      */
     private Integer instanceCount;
 
@@ -73,29 +73,29 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     
     
     /**
-     * 
+     * The number of Reserved Instances to purchase.
      *
-     * @return 
+     * @return The number of Reserved Instances to purchase.
      */
     public Integer getInstanceCount() {
         return instanceCount;
     }
     
     /**
-     * 
+     * The number of Reserved Instances to purchase.
      *
-     * @param instanceCount 
+     * @param instanceCount The number of Reserved Instances to purchase.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
     }
     
     /**
-     * 
+     * The number of Reserved Instances to purchase.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceCount 
+     * @param instanceCount The number of Reserved Instances to purchase.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -105,6 +105,17 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
+        sb.append("InstanceCount: " + instanceCount + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

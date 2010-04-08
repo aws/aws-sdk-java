@@ -15,73 +15,50 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * The LoadBalancerDescription data type.
- * </p>
+ * Load Balancer Description
  */
 public class LoadBalancerDescription {
 
-    /**
-     * Specifies the name associated with the LoadBalancer.
-     */
     private String loadBalancerName;
 
-    /**
-     * Specifies the external DNS name associated with the LoadBalancer.
-     */
     private String dNSName;
 
-    /**
-     * LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     * tuples in the Listeners element.
-     */
-    private java.util.List<Listener> listeners;
+    private java.util.List<ListenerDescription> listenerDescriptions;
 
-    /**
-     * Specifies a list of Availability Zones.
-     */
+    private Policies policies;
+
     private java.util.List<String> availabilityZones;
 
-    /**
-     * Provides a list of EC2 instance IDs for the LoadBalancer.
-     */
     private java.util.List<Instance> instances;
 
-    /**
-     * Specifies information regarding the the various health probes
-     * conducted on the LoadBalancer.
-     */
     private HealthCheck healthCheck;
 
-    /**
-     * Provides the date and time the LoadBalancer was created.
-     */
     private java.util.Date createdTime;
 
     /**
-     * Specifies the name associated with the LoadBalancer.
+     * Returns the value of the LoadBalancerName property for this object.
      *
-     * @return Specifies the name associated with the LoadBalancer.
+     * @return The value of the LoadBalancerName property for this object.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Specifies the name associated with the LoadBalancer.
+     * Sets the value of the LoadBalancerName property for this object.
      *
-     * @param loadBalancerName Specifies the name associated with the LoadBalancer.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Specifies the name associated with the LoadBalancer.
+     * Sets the value of the LoadBalancerName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName Specifies the name associated with the LoadBalancer.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,29 +70,29 @@ public class LoadBalancerDescription {
     
     
     /**
-     * Specifies the external DNS name associated with the LoadBalancer.
+     * Returns the value of the DNSName property for this object.
      *
-     * @return Specifies the external DNS name associated with the LoadBalancer.
+     * @return The value of the DNSName property for this object.
      */
     public String getDNSName() {
         return dNSName;
     }
     
     /**
-     * Specifies the external DNS name associated with the LoadBalancer.
+     * Sets the value of the DNSName property for this object.
      *
-     * @param dNSName Specifies the external DNS name associated with the LoadBalancer.
+     * @param dNSName The new value for the DNSName property for this object.
      */
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
     
     /**
-     * Specifies the external DNS name associated with the LoadBalancer.
+     * Sets the value of the DNSName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dNSName Specifies the external DNS name associated with the LoadBalancer.
+     * @param dNSName The new value for the DNSName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,79 +104,106 @@ public class LoadBalancerDescription {
     
     
     /**
-     * LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     * tuples in the Listeners element.
+     * Returns the value of the ListenerDescriptions property for this
+     * object.
      *
-     * @return LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     *         tuples in the Listeners element.
+     * @return The value of the ListenerDescriptions property for this object.
      */
-    public java.util.List<Listener> getListeners() {
-        if (listeners == null) {
-            listeners = new java.util.ArrayList<Listener>();
+    public java.util.List<ListenerDescription> getListenerDescriptions() {
+        if (listenerDescriptions == null) {
+            listenerDescriptions = new java.util.ArrayList<ListenerDescription>();
         }
-        return listeners;
+        return listenerDescriptions;
     }
     
     /**
-     * LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     * tuples in the Listeners element.
+     * Sets the value of the ListenerDescriptions property for this object.
      *
-     * @param listeners LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     *         tuples in the Listeners element.
+     * @param listenerDescriptions The new value for the ListenerDescriptions property for this object.
      */
-    public void setListeners(java.util.Collection<Listener> listeners) {
-        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>();
-        if (listeners != null) {
-            listenersCopy.addAll(listeners);
+    public void setListenerDescriptions(java.util.Collection<ListenerDescription> listenerDescriptions) {
+        java.util.List<ListenerDescription> listenerDescriptionsCopy = new java.util.ArrayList<ListenerDescription>();
+        if (listenerDescriptions != null) {
+            listenerDescriptionsCopy.addAll(listenerDescriptions);
         }
-        this.listeners = listenersCopy;
+        this.listenerDescriptions = listenerDescriptionsCopy;
     }
     
     /**
-     * LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     * tuples in the Listeners element.
+     * Sets the value of the ListenerDescriptions property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     *         tuples in the Listeners element.
+     * @param listenerDescriptions The new value for the ListenerDescriptions property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public LoadBalancerDescription withListeners(Listener... listeners) {
-        for (Listener value : listeners) {
-            getListeners().add(value);
+    public LoadBalancerDescription withListenerDescriptions(ListenerDescription... listenerDescriptions) {
+        for (ListenerDescription value : listenerDescriptions) {
+            getListenerDescriptions().add(value);
         }
         return this;
     }
     
     /**
-     * LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     * tuples in the Listeners element.
+     * Sets the value of the ListenerDescriptions property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners LoadBalancerPort, InstancePort, and Protocol are returned in a list of
-     *         tuples in the Listeners element.
+     * @param listenerDescriptions The new value for the ListenerDescriptions property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public LoadBalancerDescription withListeners(java.util.Collection<Listener> listeners) {
-        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>();
-        if (listeners != null) {
-            listenersCopy.addAll(listeners);
+    public LoadBalancerDescription withListenerDescriptions(java.util.Collection<ListenerDescription> listenerDescriptions) {
+        java.util.List<ListenerDescription> listenerDescriptionsCopy = new java.util.ArrayList<ListenerDescription>();
+        if (listenerDescriptions != null) {
+            listenerDescriptionsCopy.addAll(listenerDescriptions);
         }
-        this.listeners = listenersCopy;
+        this.listenerDescriptions = listenerDescriptionsCopy;
 
         return this;
     }
     
     /**
-     * Specifies a list of Availability Zones.
+     * Returns the value of the Policies property for this object.
      *
-     * @return Specifies a list of Availability Zones.
+     * @return The value of the Policies property for this object.
+     */
+    public Policies getPolicies() {
+        return policies;
+    }
+    
+    /**
+     * Sets the value of the Policies property for this object.
+     *
+     * @param policies The new value for the Policies property for this object.
+     */
+    public void setPolicies(Policies policies) {
+        this.policies = policies;
+    }
+    
+    /**
+     * Sets the value of the Policies property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param policies The new value for the Policies property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withPolicies(Policies policies) {
+        this.policies = policies;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AvailabilityZones property for this object.
+     *
+     * @return The value of the AvailabilityZones property for this object.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -209,9 +213,9 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Specifies a list of Availability Zones.
+     * Sets the value of the AvailabilityZones property for this object.
      *
-     * @param availabilityZones Specifies a list of Availability Zones.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
@@ -222,11 +226,11 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Specifies a list of Availability Zones.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones Specifies a list of Availability Zones.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -239,11 +243,11 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Specifies a list of Availability Zones.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones Specifies a list of Availability Zones.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -259,9 +263,9 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Provides a list of EC2 instance IDs for the LoadBalancer.
+     * Returns the value of the Instances property for this object.
      *
-     * @return Provides a list of EC2 instance IDs for the LoadBalancer.
+     * @return The value of the Instances property for this object.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -271,9 +275,9 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Provides a list of EC2 instance IDs for the LoadBalancer.
+     * Sets the value of the Instances property for this object.
      *
-     * @param instances Provides a list of EC2 instance IDs for the LoadBalancer.
+     * @param instances The new value for the Instances property for this object.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -284,11 +288,11 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Provides a list of EC2 instance IDs for the LoadBalancer.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances Provides a list of EC2 instance IDs for the LoadBalancer.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -301,11 +305,11 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Provides a list of EC2 instance IDs for the LoadBalancer.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances Provides a list of EC2 instance IDs for the LoadBalancer.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -321,35 +325,29 @@ public class LoadBalancerDescription {
     }
     
     /**
-     * Specifies information regarding the the various health probes
-     * conducted on the LoadBalancer.
+     * Returns the value of the HealthCheck property for this object.
      *
-     * @return Specifies information regarding the the various health probes
-     *         conducted on the LoadBalancer.
+     * @return The value of the HealthCheck property for this object.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * Specifies information regarding the the various health probes
-     * conducted on the LoadBalancer.
+     * Sets the value of the HealthCheck property for this object.
      *
-     * @param healthCheck Specifies information regarding the the various health probes
-     *         conducted on the LoadBalancer.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * Specifies information regarding the the various health probes
-     * conducted on the LoadBalancer.
+     * Sets the value of the HealthCheck property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck Specifies information regarding the the various health probes
-     *         conducted on the LoadBalancer.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -361,29 +359,29 @@ public class LoadBalancerDescription {
     
     
     /**
-     * Provides the date and time the LoadBalancer was created.
+     * Returns the value of the CreatedTime property for this object.
      *
-     * @return Provides the date and time the LoadBalancer was created.
+     * @return The value of the CreatedTime property for this object.
      */
     public java.util.Date getCreatedTime() {
         return createdTime;
     }
     
     /**
-     * Provides the date and time the LoadBalancer was created.
+     * Sets the value of the CreatedTime property for this object.
      *
-     * @param createdTime Provides the date and time the LoadBalancer was created.
+     * @param createdTime The new value for the CreatedTime property for this object.
      */
     public void setCreatedTime(java.util.Date createdTime) {
         this.createdTime = createdTime;
     }
     
     /**
-     * Provides the date and time the LoadBalancer was created.
+     * Sets the value of the CreatedTime property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdTime Provides the date and time the LoadBalancer was created.
+     * @param createdTime The new value for the CreatedTime property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -393,6 +391,23 @@ public class LoadBalancerDescription {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        sb.append("DNSName: " + dNSName + ", ");
+        sb.append("ListenerDescriptions: " + listenerDescriptions + ", ");
+        sb.append("Policies: " + policies + ", ");
+        sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("Instances: " + instances + ", ");
+        sb.append("HealthCheck: " + healthCheck + ", ");
+        sb.append("CreatedTime: " + createdTime + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

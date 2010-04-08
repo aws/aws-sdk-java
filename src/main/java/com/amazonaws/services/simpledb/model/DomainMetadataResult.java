@@ -292,5 +292,21 @@ public class DomainMetadataResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ItemCount: " + itemCount + ", ");
+        sb.append("ItemNamesSizeBytes: " + itemNamesSizeBytes + ", ");
+        sb.append("AttributeNameCount: " + attributeNameCount + ", ");
+        sb.append("AttributeNamesSizeBytes: " + attributeNamesSizeBytes + ", ");
+        sb.append("AttributeValueCount: " + attributeValueCount + ", ");
+        sb.append("AttributeValuesSizeBytes: " + attributeValuesSizeBytes + ", ");
+        sb.append("Timestamp: " + timestamp + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

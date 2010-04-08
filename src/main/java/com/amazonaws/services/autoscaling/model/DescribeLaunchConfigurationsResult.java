@@ -139,5 +139,16 @@ public class DescribeLaunchConfigurationsResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LaunchConfigurations: " + launchConfigurations + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

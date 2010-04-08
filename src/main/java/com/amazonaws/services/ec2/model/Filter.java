@@ -15,38 +15,46 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Filter
+ * <p>
+ * The Filter data type.
+ * </p>
  */
 public class Filter {
 
+    /**
+     * Specifies the name of the filter.
+     */
     private String name;
 
+    /**
+     * Contains one or more values for the filter.
+     */
     private java.util.List<String> values;
 
     /**
-     * Returns the value of the Name property for this object.
+     * Specifies the name of the filter.
      *
-     * @return The value of the Name property for this object.
+     * @return Specifies the name of the filter.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * Specifies the name of the filter.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name Specifies the name of the filter.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * Specifies the name of the filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The new value for the Name property for this object.
+     * @param name Specifies the name of the filter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +66,9 @@ public class Filter {
     
     
     /**
-     * Returns the value of the Values property for this object.
+     * Contains one or more values for the filter.
      *
-     * @return The value of the Values property for this object.
+     * @return Contains one or more values for the filter.
      */
     public java.util.List<String> getValues() {
         if (values == null) {
@@ -70,9 +78,9 @@ public class Filter {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains one or more values for the filter.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains one or more values for the filter.
      */
     public void setValues(java.util.Collection<String> values) {
         java.util.List<String> valuesCopy = new java.util.ArrayList<String>();
@@ -83,11 +91,11 @@ public class Filter {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains one or more values for the filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains one or more values for the filter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +108,11 @@ public class Filter {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains one or more values for the filter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains one or more values for the filter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,6 +125,17 @@ public class Filter {
         this.values = valuesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("Values: " + values + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

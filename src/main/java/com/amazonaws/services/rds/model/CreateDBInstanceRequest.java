@@ -680,5 +680,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBName: " + dBName + ", ");
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        sb.append("Engine: " + engine + ", ");
+        sb.append("MasterUsername: " + masterUsername + ", ");
+        sb.append("MasterUserPassword: " + masterUserPassword + ", ");
+        sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
+        sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
+        sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
+        sb.append("Port: " + port + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

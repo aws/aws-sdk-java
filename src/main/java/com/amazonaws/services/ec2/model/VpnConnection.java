@@ -15,46 +15,80 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Vpn Connection
+ * <p>
+ * The VpnConnection data type.
+ * </p>
  */
 public class VpnConnection {
 
+    /**
+     * Specifies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
+     */
     private String vpnConnectionId;
 
+    /**
+     * Describes the current state of the VPN connection. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
+     */
     private String state;
 
+    /**
+     * Contains configuration information in the native XML format for the
+     * VPN connection's customer gateway. <p> This element is always present
+     * in the CreateVpnConnection response; however, it's present in the
+     * DescribeVpnConnections response only if the VPN connection is in the
+     * <code>pending</code> or <code>available</code> state.
+     */
     private String customerGatewayConfiguration;
 
+    /**
+     * Specifies the type of VPN connection.
+     */
     private String type;
 
+    /**
+     * Specifies ID of the customer gateway at the end of the VPN connection.
+     */
     private String customerGatewayId;
 
+    /**
+     * Specfies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
+     */
     private String vpnGatewayId;
 
     /**
-     * Returns the value of the VpnConnectionId property for this object.
+     * Specifies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      *
-     * @return The value of the VpnConnectionId property for this object.
+     * @return Specifies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      */
     public String getVpnConnectionId() {
         return vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * Specifies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId Specifies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      */
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * Specifies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId Specifies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,29 +100,41 @@ public class VpnConnection {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Describes the current state of the VPN connection. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @return The value of the State property for this object.
+     * @return Describes the current state of the VPN connection. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPN connection. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPN connection. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPN connection. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPN connection. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,35 +146,53 @@ public class VpnConnection {
     
     
     /**
-     * Returns the value of the CustomerGatewayConfiguration property for
-     * this object.
+     * Contains configuration information in the native XML format for the
+     * VPN connection's customer gateway. <p> This element is always present
+     * in the CreateVpnConnection response; however, it's present in the
+     * DescribeVpnConnections response only if the VPN connection is in the
+     * <code>pending</code> or <code>available</code> state.
      *
-     * @return The value of the CustomerGatewayConfiguration property for this
-     *         object.
+     * @return Contains configuration information in the native XML format for the
+     *         VPN connection's customer gateway. <p> This element is always present
+     *         in the CreateVpnConnection response; however, it's present in the
+     *         DescribeVpnConnections response only if the VPN connection is in the
+     *         <code>pending</code> or <code>available</code> state.
      */
     public String getCustomerGatewayConfiguration() {
         return customerGatewayConfiguration;
     }
     
     /**
-     * Sets the value of the CustomerGatewayConfiguration property for this
-     * object.
+     * Contains configuration information in the native XML format for the
+     * VPN connection's customer gateway. <p> This element is always present
+     * in the CreateVpnConnection response; however, it's present in the
+     * DescribeVpnConnections response only if the VPN connection is in the
+     * <code>pending</code> or <code>available</code> state.
      *
-     * @param customerGatewayConfiguration The new value for the CustomerGatewayConfiguration property for this
-     *         object.
+     * @param customerGatewayConfiguration Contains configuration information in the native XML format for the
+     *         VPN connection's customer gateway. <p> This element is always present
+     *         in the CreateVpnConnection response; however, it's present in the
+     *         DescribeVpnConnections response only if the VPN connection is in the
+     *         <code>pending</code> or <code>available</code> state.
      */
     public void setCustomerGatewayConfiguration(String customerGatewayConfiguration) {
         this.customerGatewayConfiguration = customerGatewayConfiguration;
     }
     
     /**
-     * Sets the value of the CustomerGatewayConfiguration property for this
-     * object.
+     * Contains configuration information in the native XML format for the
+     * VPN connection's customer gateway. <p> This element is always present
+     * in the CreateVpnConnection response; however, it's present in the
+     * DescribeVpnConnections response only if the VPN connection is in the
+     * <code>pending</code> or <code>available</code> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayConfiguration The new value for the CustomerGatewayConfiguration property for this
-     *         object.
+     * @param customerGatewayConfiguration Contains configuration information in the native XML format for the
+     *         VPN connection's customer gateway. <p> This element is always present
+     *         in the CreateVpnConnection response; however, it's present in the
+     *         DescribeVpnConnections response only if the VPN connection is in the
+     *         <code>pending</code> or <code>available</code> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -140,29 +204,29 @@ public class VpnConnection {
     
     
     /**
-     * Returns the value of the Type property for this object.
+     * Specifies the type of VPN connection.
      *
-     * @return The value of the Type property for this object.
+     * @return Specifies the type of VPN connection.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -174,29 +238,29 @@ public class VpnConnection {
     
     
     /**
-     * Returns the value of the CustomerGatewayId property for this object.
+     * Specifies ID of the customer gateway at the end of the VPN connection.
      *
-     * @return The value of the CustomerGatewayId property for this object.
+     * @return Specifies ID of the customer gateway at the end of the VPN connection.
      */
     public String getCustomerGatewayId() {
         return customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * Specifies ID of the customer gateway at the end of the VPN connection.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId Specifies ID of the customer gateway at the end of the VPN connection.
      */
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * Specifies ID of the customer gateway at the end of the VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId Specifies ID of the customer gateway at the end of the VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -208,29 +272,35 @@ public class VpnConnection {
     
     
     /**
-     * Returns the value of the VpnGatewayId property for this object.
+     * Specfies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      *
-     * @return The value of the VpnGatewayId property for this object.
+     * @return Specfies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * Specfies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId Specfies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * Specfies the ID of the VPN gateway at the VPC end of the VPN
+     * connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId Specfies the ID of the VPN gateway at the VPC end of the VPN
+     *         connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -240,6 +310,21 @@ public class VpnConnection {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("CustomerGatewayConfiguration: " + customerGatewayConfiguration + ", ");
+        sb.append("Type: " + type + ", ");
+        sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

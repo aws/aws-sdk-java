@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Vpn Gateway Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the VPN gateway to delete.
+     */
     private String vpnGatewayId;
 
     /**
-     * Returns the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to delete.
      *
-     * @return The value of the VpnGatewayId property for this object.
+     * @return The ID of the VPN gateway to delete.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to delete.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway to delete.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

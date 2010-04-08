@@ -432,5 +432,24 @@ public class DBSnapshot {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("SnapshotCreateTime: " + snapshotCreateTime + ", ");
+        sb.append("Engine: " + engine + ", ");
+        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        sb.append("Status: " + status + ", ");
+        sb.append("Port: " + port + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
+        sb.append("MasterUsername: " + masterUsername + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

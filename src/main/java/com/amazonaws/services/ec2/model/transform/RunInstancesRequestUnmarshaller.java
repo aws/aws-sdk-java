@@ -73,7 +73,7 @@ public class RunInstancesRequestUnmarshaller implements Unmarshaller<RunInstance
             blockDeviceMappingsNode.getParentNode().removeChild(blockDeviceMappingsNode);
         }
     
-        Node monitoringNode = XpathUtils.asNode("Monitoring", node);
+        Node monitoringNode = XpathUtils.asNode("monitoring/enabled", node);
         runInstancesRequest.setMonitoring(new BooleanUnmarshaller().unmarshall(monitoringNode));
     
         Node subnetIdNode = XpathUtils.asNode("SubnetId", node);

@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Dhcp Options Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the DHCP options set to delete.
+     */
     private String dhcpOptionsId;
 
     /**
-     * Returns the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options set to delete.
      *
-     * @return The value of the DhcpOptionsId property for this object.
+     * @return The ID of the DHCP options set to delete.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options set to delete.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId The ID of the DHCP options set to delete.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * The ID of the DHCP options set to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId The ID of the DHCP options set to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

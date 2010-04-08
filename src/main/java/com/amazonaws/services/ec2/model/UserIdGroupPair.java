@@ -100,5 +100,16 @@ public class UserIdGroupPair {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("UserId: " + userId + ", ");
+        sb.append("GroupName: " + groupName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

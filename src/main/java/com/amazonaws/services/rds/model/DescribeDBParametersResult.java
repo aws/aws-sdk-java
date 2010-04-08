@@ -127,5 +127,16 @@ public class DescribeDBParametersResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Parameters: " + parameters + ", ");
+        sb.append("Marker: " + marker + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

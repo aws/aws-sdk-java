@@ -88,5 +88,15 @@ public class DescribeRegionsResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Regions: " + regions + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

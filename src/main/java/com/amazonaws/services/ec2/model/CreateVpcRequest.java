@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Vpc Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpcRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A valid CIDR block.
+     */
     private String cidrBlock;
 
     /**
-     * Returns the value of the CidrBlock property for this object.
+     * A valid CIDR block.
      *
-     * @return The value of the CidrBlock property for this object.
+     * @return A valid CIDR block.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * A valid CIDR block.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock A valid CIDR block.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * A valid CIDR block.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock A valid CIDR block.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CidrBlock: " + cidrBlock + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

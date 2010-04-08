@@ -32,7 +32,7 @@ public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements Mar
     public Request<DeregisterInstancesFromLoadBalancerRequest> marshall(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) {
         Request<DeregisterInstancesFromLoadBalancerRequest> request = new DefaultRequest<DeregisterInstancesFromLoadBalancerRequest>(deregisterInstancesFromLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DeregisterInstancesFromLoadBalancer");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2009-11-25");
         if (deregisterInstancesFromLoadBalancerRequest != null) {
             if (deregisterInstancesFromLoadBalancerRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(deregisterInstancesFromLoadBalancerRequest.getLoadBalancerName()));

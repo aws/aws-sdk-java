@@ -195,5 +195,17 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("MaxRecords: " + maxRecords + ", ");
+        sb.append("Marker: " + marker + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

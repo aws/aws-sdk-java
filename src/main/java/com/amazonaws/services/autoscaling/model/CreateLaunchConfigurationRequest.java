@@ -667,5 +667,23 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("KeyName: " + keyName + ", ");
+        sb.append("SecurityGroups: " + securityGroups + ", ");
+        sb.append("UserData: " + userData + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

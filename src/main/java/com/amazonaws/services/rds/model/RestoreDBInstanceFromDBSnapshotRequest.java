@@ -231,5 +231,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        sb.append("Port: " + port + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

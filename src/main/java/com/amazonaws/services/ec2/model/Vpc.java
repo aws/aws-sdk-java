@@ -15,42 +15,59 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Vpc
+ * <p>
+ * The Vpc data type.
+ * </p>
  */
 public class Vpc {
 
+    /**
+     * Specifies the ID of the VPC.
+     */
     private String vpcId;
 
+    /**
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
+     */
     private String state;
 
+    /**
+     * Specifies the CIDR block the VPC covers.
+     */
     private String cidrBlock;
 
+    /**
+     * Specifies the ID of the set of DHCP options associated with the VPC.
+     * Contains a value of <code>default</code> if the default options are
+     * associated with the VPC.
+     */
     private String dhcpOptionsId;
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * Specifies the ID of the VPC.
      *
-     * @return The value of the VpcId property for this object.
+     * @return Specifies the ID of the VPC.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * Specifies the ID of the VPC.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId Specifies the ID of the VPC.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * Specifies the ID of the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId Specifies the ID of the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,29 +79,35 @@ public class Vpc {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
      *
-     * @return The value of the State property for this object.
+     * @return Describes the current state of the VPC. The state of the subnet may be
+     *         either <code>pending</code> or <code>available</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPC. The state of the subnet may be
+     *         either <code>pending</code> or <code>available</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPC. The state of the subnet may be
+     * either <code>pending</code> or <code>available</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPC. The state of the subnet may be
+     *         either <code>pending</code> or <code>available</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -96,29 +119,29 @@ public class Vpc {
     
     
     /**
-     * Returns the value of the CidrBlock property for this object.
+     * Specifies the CIDR block the VPC covers.
      *
-     * @return The value of the CidrBlock property for this object.
+     * @return Specifies the CIDR block the VPC covers.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * Specifies the CIDR block the VPC covers.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock Specifies the CIDR block the VPC covers.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * Specifies the CIDR block the VPC covers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock Specifies the CIDR block the VPC covers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -130,29 +153,41 @@ public class Vpc {
     
     
     /**
-     * Returns the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options associated with the VPC.
+     * Contains a value of <code>default</code> if the default options are
+     * associated with the VPC.
      *
-     * @return The value of the DhcpOptionsId property for this object.
+     * @return Specifies the ID of the set of DHCP options associated with the VPC.
+     *         Contains a value of <code>default</code> if the default options are
+     *         associated with the VPC.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options associated with the VPC.
+     * Contains a value of <code>default</code> if the default options are
+     * associated with the VPC.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId Specifies the ID of the set of DHCP options associated with the VPC.
+     *         Contains a value of <code>default</code> if the default options are
+     *         associated with the VPC.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options associated with the VPC.
+     * Contains a value of <code>default</code> if the default options are
+     * associated with the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId Specifies the ID of the set of DHCP options associated with the VPC.
+     *         Contains a value of <code>default</code> if the default options are
+     *         associated with the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -162,6 +197,19 @@ public class Vpc {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("CidrBlock: " + cidrBlock + ", ");
+        sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -216,5 +216,19 @@ public class Subscription {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SubscriptionArn: " + subscriptionArn + ", ");
+        sb.append("Owner: " + owner + ", ");
+        sb.append("Protocol: " + protocol + ", ");
+        sb.append("Endpoint: " + endpoint + ", ");
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

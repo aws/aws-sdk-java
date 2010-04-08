@@ -333,5 +333,22 @@ public class BundleTask {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("BundleId: " + bundleId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("StartTime: " + startTime + ", ");
+        sb.append("UpdateTime: " + updateTime + ", ");
+        sb.append("Storage: " + storage + ", ");
+        sb.append("Progress: " + progress + ", ");
+        sb.append("BundleTaskError: " + bundleTaskError + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

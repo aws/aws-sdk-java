@@ -61,5 +61,15 @@ public class PurchaseReservedInstancesOfferingResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

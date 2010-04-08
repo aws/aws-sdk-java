@@ -120,5 +120,16 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueUrl: " + queueUrl + ", ");
+        sb.append("ReceiptHandle: " + receiptHandle + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -15,41 +15,36 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Create Load Balancer Result
  */
 public class CreateLoadBalancerResult {
 
-    /**
-     * The DNS name for the LoadBalancer.
-     */
     private String dNSName;
 
     /**
-     * The DNS name for the LoadBalancer.
+     * Returns the value of the DNSName property for this object.
      *
-     * @return The DNS name for the LoadBalancer.
+     * @return The value of the DNSName property for this object.
      */
     public String getDNSName() {
         return dNSName;
     }
     
     /**
-     * The DNS name for the LoadBalancer.
+     * Sets the value of the DNSName property for this object.
      *
-     * @param dNSName The DNS name for the LoadBalancer.
+     * @param dNSName The new value for the DNSName property for this object.
      */
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
     
     /**
-     * The DNS name for the LoadBalancer.
+     * Sets the value of the DNSName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dNSName The DNS name for the LoadBalancer.
+     * @param dNSName The new value for the DNSName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,6 +54,16 @@ public class CreateLoadBalancerResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DNSName: " + dNSName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

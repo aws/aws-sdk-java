@@ -16,54 +16,38 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * 
- * </p>
+ * Enable Availability Zones For Load Balancer Request
  */
 public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServiceRequest {
 
-    /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
-     */
     private String loadBalancerName;
 
-    /**
-     * A list of new Availability Zones for the LoadBalancer. Each
-     * Availability Zone must be in the same Region as the LoadBalancer.
-     */
     private java.util.List<String> availabilityZones;
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Returns the value of the LoadBalancerName property for this object.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The value of the LoadBalancerName property for this object.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,11 +59,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     
     
     /**
-     * A list of new Availability Zones for the LoadBalancer. Each
-     * Availability Zone must be in the same Region as the LoadBalancer.
+     * Returns the value of the AvailabilityZones property for this object.
      *
-     * @return A list of new Availability Zones for the LoadBalancer. Each
-     *         Availability Zone must be in the same Region as the LoadBalancer.
+     * @return The value of the AvailabilityZones property for this object.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -89,11 +71,9 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     }
     
     /**
-     * A list of new Availability Zones for the LoadBalancer. Each
-     * Availability Zone must be in the same Region as the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      *
-     * @param availabilityZones A list of new Availability Zones for the LoadBalancer. Each
-     *         Availability Zone must be in the same Region as the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
@@ -104,13 +84,11 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     }
     
     /**
-     * A list of new Availability Zones for the LoadBalancer. Each
-     * Availability Zone must be in the same Region as the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of new Availability Zones for the LoadBalancer. Each
-     *         Availability Zone must be in the same Region as the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -123,13 +101,11 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     }
     
     /**
-     * A list of new Availability Zones for the LoadBalancer. Each
-     * Availability Zone must be in the same Region as the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of new Availability Zones for the LoadBalancer. Each
-     *         Availability Zone must be in the same Region as the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -142,6 +118,17 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
         this.availabilityZones = availabilityZonesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

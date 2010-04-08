@@ -32,7 +32,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
     public Request<DescribeSecurityGroupsRequest> marshall(DescribeSecurityGroupsRequest describeSecurityGroupsRequest) {
         Request<DescribeSecurityGroupsRequest> request = new DefaultRequest<DescribeSecurityGroupsRequest>(describeSecurityGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSecurityGroups");
-        request.addParameter("Version", "2009-10-31");
+        request.addParameter("Version", "2009-11-30");
         if (describeSecurityGroupsRequest != null) {
             java.util.List<String> groupNamesList = describeSecurityGroupsRequest.getGroupNames();
             int groupNamesListIndex = 1;

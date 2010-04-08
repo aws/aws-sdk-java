@@ -161,6 +161,16 @@ public class Instance {
     private java.util.List<InstanceBlockDeviceMapping> blockDeviceMappings;
 
     /**
+     * 
+     */
+    private String instanceLifecycle;
+
+    /**
+     * 
+     */
+    private String spotInstanceRequestId;
+
+    /**
      * Unique ID of the instance launched.
      *
      * @return Unique ID of the instance launched.
@@ -1145,6 +1155,110 @@ public class Instance {
         this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
+    }
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public String getInstanceLifecycle() {
+        return instanceLifecycle;
+    }
+    
+    /**
+     * 
+     *
+     * @param instanceLifecycle 
+     */
+    public void setInstanceLifecycle(String instanceLifecycle) {
+        this.instanceLifecycle = instanceLifecycle;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceLifecycle 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withInstanceLifecycle(String instanceLifecycle) {
+        this.instanceLifecycle = instanceLifecycle;
+        return this;
+    }
+    
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public String getSpotInstanceRequestId() {
+        return spotInstanceRequestId;
+    }
+    
+    /**
+     * 
+     *
+     * @param spotInstanceRequestId 
+     */
+    public void setSpotInstanceRequestId(String spotInstanceRequestId) {
+        this.spotInstanceRequestId = spotInstanceRequestId;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param spotInstanceRequestId 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withSpotInstanceRequestId(String spotInstanceRequestId) {
+        this.spotInstanceRequestId = spotInstanceRequestId;
+        return this;
+    }
+    
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("PrivateDnsName: " + privateDnsName + ", ");
+        sb.append("PublicDnsName: " + publicDnsName + ", ");
+        sb.append("StateTransitionReason: " + stateTransitionReason + ", ");
+        sb.append("KeyName: " + keyName + ", ");
+        sb.append("AmiLaunchIndex: " + amiLaunchIndex + ", ");
+        sb.append("ProductCodes: " + productCodes + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("LaunchTime: " + launchTime + ", ");
+        sb.append("Placement: " + placement + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("Platform: " + platform + ", ");
+        sb.append("Monitoring: " + monitoring + ", ");
+        sb.append("SubnetId: " + subnetId + ", ");
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
+        sb.append("PublicIpAddress: " + publicIpAddress + ", ");
+        sb.append("StateReason: " + stateReason + ", ");
+        sb.append("Architecture: " + architecture + ", ");
+        sb.append("RootDeviceType: " + rootDeviceType + ", ");
+        sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("InstanceLifecycle: " + instanceLifecycle + ", ");
+        sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

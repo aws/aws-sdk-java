@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Customer Gateway Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateCustomerGatewayResult {
 
+    /**
+     * Information about the customer gateway.
+     */
     private CustomerGateway customerGateway;
 
     /**
-     * Returns the value of the CustomerGateway property for this object.
+     * Information about the customer gateway.
      *
-     * @return The value of the CustomerGateway property for this object.
+     * @return Information about the customer gateway.
      */
     public CustomerGateway getCustomerGateway() {
         return customerGateway;
     }
     
     /**
-     * Sets the value of the CustomerGateway property for this object.
+     * Information about the customer gateway.
      *
-     * @param customerGateway The new value for the CustomerGateway property for this object.
+     * @param customerGateway Information about the customer gateway.
      */
     public void setCustomerGateway(CustomerGateway customerGateway) {
         this.customerGateway = customerGateway;
     }
     
     /**
-     * Sets the value of the CustomerGateway property for this object.
+     * Information about the customer gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGateway The new value for the CustomerGateway property for this object.
+     * @param customerGateway Information about the customer gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateCustomerGatewayResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CustomerGateway: " + customerGateway + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

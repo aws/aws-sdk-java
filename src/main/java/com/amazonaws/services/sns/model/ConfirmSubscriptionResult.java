@@ -58,5 +58,15 @@ public class ConfirmSubscriptionResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SubscriptionArn: " + subscriptionArn + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

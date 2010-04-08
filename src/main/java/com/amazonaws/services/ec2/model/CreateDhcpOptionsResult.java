@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Dhcp Options Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateDhcpOptionsResult {
 
+    /**
+     * A set of one or more DHCP options.
+     */
     private DhcpOptions dhcpOptions;
 
     /**
-     * Returns the value of the DhcpOptions property for this object.
+     * A set of one or more DHCP options.
      *
-     * @return The value of the DhcpOptions property for this object.
+     * @return A set of one or more DHCP options.
      */
     public DhcpOptions getDhcpOptions() {
         return dhcpOptions;
     }
     
     /**
-     * Sets the value of the DhcpOptions property for this object.
+     * A set of one or more DHCP options.
      *
-     * @param dhcpOptions The new value for the DhcpOptions property for this object.
+     * @param dhcpOptions A set of one or more DHCP options.
      */
     public void setDhcpOptions(DhcpOptions dhcpOptions) {
         this.dhcpOptions = dhcpOptions;
     }
     
     /**
-     * Sets the value of the DhcpOptions property for this object.
+     * A set of one or more DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptions The new value for the DhcpOptions property for this object.
+     * @param dhcpOptions A set of one or more DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateDhcpOptionsResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpOptions: " + dhcpOptions + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

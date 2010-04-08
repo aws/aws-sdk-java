@@ -56,6 +56,9 @@ public class JobFlowInstancesDetailUnmarshaller implements Unmarshaller<JobFlowI
         Node keepJobFlowAliveWhenNoStepsNode = XpathUtils.asNode("KeepJobFlowAliveWhenNoSteps", node);
         jobFlowInstancesDetail.setKeepJobFlowAliveWhenNoSteps(new BooleanUnmarshaller().unmarshall(keepJobFlowAliveWhenNoStepsNode));
     
+        Node hadoopVersionNode = XpathUtils.asNode("HadoopVersion", node);
+        jobFlowInstancesDetail.setHadoopVersion(new StringUnmarshaller().unmarshall(hadoopVersionNode));
+    
 
         return jobFlowInstancesDetail;
     }

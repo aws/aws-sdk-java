@@ -223,5 +223,18 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
         return noReboot;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("Name: " + name + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("NoReboot: " + noReboot + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

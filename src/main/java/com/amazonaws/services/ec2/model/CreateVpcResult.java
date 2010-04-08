@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Vpc Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpcResult {
 
+    /**
+     * Information about the VPC.
+     */
     private Vpc vpc;
 
     /**
-     * Returns the value of the Vpc property for this object.
+     * Information about the VPC.
      *
-     * @return The value of the Vpc property for this object.
+     * @return Information about the VPC.
      */
     public Vpc getVpc() {
         return vpc;
     }
     
     /**
-     * Sets the value of the Vpc property for this object.
+     * Information about the VPC.
      *
-     * @param vpc The new value for the Vpc property for this object.
+     * @param vpc Information about the VPC.
      */
     public void setVpc(Vpc vpc) {
         this.vpc = vpc;
     }
     
     /**
-     * Sets the value of the Vpc property for this object.
+     * Information about the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpc The new value for the Vpc property for this object.
+     * @param vpc Information about the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateVpcResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Vpc: " + vpc + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

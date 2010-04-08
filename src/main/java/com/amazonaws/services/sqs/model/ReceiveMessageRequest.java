@@ -251,5 +251,18 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueUrl: " + queueUrl + ", ");
+        sb.append("AttributeNames: " + attributeNames + ", ");
+        sb.append("MaxNumberOfMessages: " + maxNumberOfMessages + ", ");
+        sb.append("VisibilityTimeout: " + visibilityTimeout + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

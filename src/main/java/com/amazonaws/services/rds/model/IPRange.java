@@ -99,5 +99,16 @@ public class IPRange {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Status: " + status + ", ");
+        sb.append("CIDRIP: " + cIDRIP + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

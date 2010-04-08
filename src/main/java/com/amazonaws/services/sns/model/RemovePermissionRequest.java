@@ -118,5 +118,16 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("Label: " + label + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

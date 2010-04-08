@@ -88,5 +88,15 @@ public class DescribeReservedInstancesOfferingsResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesOfferings: " + reservedInstancesOfferings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -378,5 +378,21 @@ public class ImageAttribute {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("LaunchPermissions: " + launchPermissions + ", ");
+        sb.append("ProductCodes: " + productCodes + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

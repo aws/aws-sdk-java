@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Vpc Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteVpcRequest extends AmazonWebServiceRequest {
 
+    /**
+     * 
+     */
     private String vpcId;
 
     /**
-     * Returns the value of the VpcId property for this object.
+     * 
      *
-     * @return The value of the VpcId property for this object.
+     * @return 
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * 
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId 
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -16,6 +16,7 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
  * A request to register an AMI with Amazon EC2. Images must be
  * registered before they can be launched. To launch instances, use the
  * RunInstances operation. <p>
@@ -31,6 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Any modifications to an AMI backed by Amazon S3 invalidates this
  * registration. If you make changes to an image, deregister the previous
  * image and register the new image.
+ * </p>
  */
 public class RegisterImageRequest extends AmazonWebServiceRequest {
 
@@ -40,9 +42,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String imageLocation;
 
     /**
-     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     * (/), dashes (-), or underscores(_)
      */
     private String name;
 
@@ -52,7 +54,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
      */
     private String architecture;
 
@@ -116,41 +118,41 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     * (/), dashes (-), or underscores(_)
      *
-     * @return The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     * @return The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     *         (/), dashes (-), or underscores(_)
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     * (/), dashes (-), or underscores(_)
      *
-     * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     * @param name The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     *         (/), dashes (-), or underscores(_)
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     * (/), dashes (-), or underscores(_)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     * @param name The name to give the new Amazon Machine Image. &lt;p> Constraints:
+     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
+     *         (/), dashes (-), or underscores(_)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -196,29 +198,29 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
      *
-     * @return The architecture of the image. <p> Valid Values: i386, x86_64
+     * @return The architecture of the image. &lt;p> Valid Values: i386, x86_64
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
      *
-     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. &lt;p> Valid Values: i386, x86_64
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. &lt;p> Valid Values: i386, x86_64
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -425,6 +427,23 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
         this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageLocation: " + imageLocation + ", ");
+        sb.append("Name: " + name + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("Architecture: " + architecture + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

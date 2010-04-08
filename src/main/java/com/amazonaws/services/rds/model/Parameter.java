@@ -417,5 +417,23 @@ public class Parameter {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ParameterName: " + parameterName + ", ");
+        sb.append("ParameterValue: " + parameterValue + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("Source: " + source + ", ");
+        sb.append("ApplyType: " + applyType + ", ");
+        sb.append("DataType: " + dataType + ", ");
+        sb.append("AllowedValues: " + allowedValues + ", ");
+        sb.append("IsModifiable: " + isModifiable + ", ");
+        sb.append("ApplyMethod: " + applyMethod + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

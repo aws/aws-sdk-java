@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Bundle Instance Result
+ * <p>
+ * 
+ * </p>
  */
 public class BundleInstanceResult {
 
+    /**
+     * 
+     */
     private BundleTask bundleTask;
 
     /**
-     * Returns the value of the BundleTask property for this object.
+     * 
      *
-     * @return The value of the BundleTask property for this object.
+     * @return 
      */
     public BundleTask getBundleTask() {
         return bundleTask;
     }
     
     /**
-     * Sets the value of the BundleTask property for this object.
+     * 
      *
-     * @param bundleTask The new value for the BundleTask property for this object.
+     * @param bundleTask 
      */
     public void setBundleTask(BundleTask bundleTask) {
         this.bundleTask = bundleTask;
     }
     
     /**
-     * Sets the value of the BundleTask property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bundleTask The new value for the BundleTask property for this object.
+     * @param bundleTask 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class BundleInstanceResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("BundleTask: " + bundleTask + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

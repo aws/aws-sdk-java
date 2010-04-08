@@ -147,5 +147,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Size: " + size + ", ");
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

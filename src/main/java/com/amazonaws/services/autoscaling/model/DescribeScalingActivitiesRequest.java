@@ -246,5 +246,18 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ActivityIds: " + activityIds + ", ");
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("MaxRecords: " + maxRecords + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -214,5 +214,17 @@ public class PublishRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("Message: " + message + ", ");
+        sb.append("Subject: " + subject + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -19,32 +19,35 @@ package com.amazonaws.services.elasticmapreduce.model;
  */
 public class RunJobFlowResult {
 
+    /**
+     * A string uniquely identifying the created job flow.
+     */
     private String jobFlowId;
 
     /**
-     * Returns the value of the JobFlowId property for this object.
+     * A string uniquely identifying the created job flow.
      *
-     * @return The value of the JobFlowId property for this object.
+     * @return A string uniquely identifying the created job flow.
      */
     public String getJobFlowId() {
         return jobFlowId;
     }
     
     /**
-     * Sets the value of the JobFlowId property for this object.
+     * A string uniquely identifying the created job flow.
      *
-     * @param jobFlowId The new value for the JobFlowId property for this object.
+     * @param jobFlowId A string uniquely identifying the created job flow.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
     
     /**
-     * Sets the value of the JobFlowId property for this object.
+     * A string uniquely identifying the created job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowId The new value for the JobFlowId property for this object.
+     * @param jobFlowId A string uniquely identifying the created job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +57,16 @@ public class RunJobFlowResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("JobFlowId: " + jobFlowId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

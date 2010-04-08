@@ -16,40 +16,52 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Customer Gateway Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The type of VPN connection this customer gateway supports.
+     */
     private String type;
 
+    /**
+     * 
+     */
     private String publicIp;
 
+    /**
+     * The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).
+     */
     private Integer bgpAsn;
 
     /**
-     * Returns the value of the Type property for this object.
+     * The type of VPN connection this customer gateway supports.
      *
-     * @return The value of the Type property for this object.
+     * @return The type of VPN connection this customer gateway supports.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection this customer gateway supports.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection this customer gateway supports.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection this customer gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection this customer gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -61,29 +73,29 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the PublicIp property for this object.
+     * 
      *
-     * @return The value of the PublicIp property for this object.
+     * @return 
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * 
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp 
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,29 +107,35 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the BgpAsn property for this object.
+     * The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).
      *
-     * @return The value of the BgpAsn property for this object.
+     * @return The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     *         Number (ASN).
      */
     public Integer getBgpAsn() {
         return bgpAsn;
     }
     
     /**
-     * Sets the value of the BgpAsn property for this object.
+     * The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).
      *
-     * @param bgpAsn The new value for the BgpAsn property for this object.
+     * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     *         Number (ASN).
      */
     public void setBgpAsn(Integer bgpAsn) {
         this.bgpAsn = bgpAsn;
     }
     
     /**
-     * Sets the value of the BgpAsn property for this object.
+     * The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     * Number (ASN).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bgpAsn The new value for the BgpAsn property for this object.
+     * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP) Autonomous System
+     *         Number (ASN).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,6 +145,18 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Type: " + type + ", ");
+        sb.append("PublicIp: " + publicIp + ", ");
+        sb.append("BgpAsn: " + bgpAsn + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

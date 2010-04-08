@@ -17,9 +17,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * 
- * </p>
+ * AmazonElasticLoadBalancing exception
  */        
 public class InvalidInstanceException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

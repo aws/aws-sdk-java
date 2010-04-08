@@ -89,5 +89,15 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("BundleIds: " + bundleIds + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

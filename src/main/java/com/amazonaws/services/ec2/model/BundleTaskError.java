@@ -99,5 +99,16 @@ public class BundleTaskError {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Code: " + code + ", ");
+        sb.append("Message: " + message + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

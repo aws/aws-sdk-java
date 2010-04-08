@@ -286,5 +286,17 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageIds: " + imageIds + ", ");
+        sb.append("Owners: " + owners + ", ");
+        sb.append("ExecutableUsers: " + executableUsers + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -193,5 +193,17 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("Token: " + token + ", ");
+        sb.append("AuthenticateOnUnsubscribe: " + authenticateOnUnsubscribe + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -15,53 +15,77 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Job Flow Execution Status Detail
+ * 
  */
 public class JobFlowExecutionStatusDetail {
 
+    /**
+     * The state of the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
+     */
     private String state;
 
+    /**
+     * The date and time the job flow was created.
+     */
     private java.util.Date creationDateTime;
 
+    /**
+     * The date and time the job flow started.
+     */
     private java.util.Date startDateTime;
 
+    private java.util.Date readyDateTime;
+
+    /**
+     * The date and time the job flow ended.
+     */
     private java.util.Date endDateTime;
 
+    /**
+     * Contains a description explaining the reason for the last Amazon EC2
+     * status change.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
+     */
     private String lastStateChangeReason;
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING<br/>
+     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
      *
-     * @return The value of the State property for this object.
+     * @return The state of the job flow.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING<br/>
+     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the job flow.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING<br/>
+     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -73,29 +97,29 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the CreationDateTime property for this object.
+     * The date and time the job flow was created.
      *
-     * @return The value of the CreationDateTime property for this object.
+     * @return The date and time the job flow was created.
      */
     public java.util.Date getCreationDateTime() {
         return creationDateTime;
     }
     
     /**
-     * Sets the value of the CreationDateTime property for this object.
+     * The date and time the job flow was created.
      *
-     * @param creationDateTime The new value for the CreationDateTime property for this object.
+     * @param creationDateTime The date and time the job flow was created.
      */
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
     
     /**
-     * Sets the value of the CreationDateTime property for this object.
+     * The date and time the job flow was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDateTime The new value for the CreationDateTime property for this object.
+     * @param creationDateTime The date and time the job flow was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,29 +131,29 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the StartDateTime property for this object.
+     * The date and time the job flow started.
      *
-     * @return The value of the StartDateTime property for this object.
+     * @return The date and time the job flow started.
      */
     public java.util.Date getStartDateTime() {
         return startDateTime;
     }
     
     /**
-     * Sets the value of the StartDateTime property for this object.
+     * The date and time the job flow started.
      *
-     * @param startDateTime The new value for the StartDateTime property for this object.
+     * @param startDateTime The date and time the job flow started.
      */
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
     
     /**
-     * Sets the value of the StartDateTime property for this object.
+     * The date and time the job flow started.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDateTime The new value for the StartDateTime property for this object.
+     * @param startDateTime The date and time the job flow started.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -141,29 +165,63 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the EndDateTime property for this object.
+     * Returns the value of the ReadyDateTime property for this object.
      *
-     * @return The value of the EndDateTime property for this object.
+     * @return The value of the ReadyDateTime property for this object.
+     */
+    public java.util.Date getReadyDateTime() {
+        return readyDateTime;
+    }
+    
+    /**
+     * Sets the value of the ReadyDateTime property for this object.
+     *
+     * @param readyDateTime The new value for the ReadyDateTime property for this object.
+     */
+    public void setReadyDateTime(java.util.Date readyDateTime) {
+        this.readyDateTime = readyDateTime;
+    }
+    
+    /**
+     * Sets the value of the ReadyDateTime property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param readyDateTime The new value for the ReadyDateTime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowExecutionStatusDetail withReadyDateTime(java.util.Date readyDateTime) {
+        this.readyDateTime = readyDateTime;
+        return this;
+    }
+    
+    
+    /**
+     * The date and time the job flow ended.
+     *
+     * @return The date and time the job flow ended.
      */
     public java.util.Date getEndDateTime() {
         return endDateTime;
     }
     
     /**
-     * Sets the value of the EndDateTime property for this object.
+     * The date and time the job flow ended.
      *
-     * @param endDateTime The new value for the EndDateTime property for this object.
+     * @param endDateTime The date and time the job flow ended.
      */
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
     
     /**
-     * Sets the value of the EndDateTime property for this object.
+     * The date and time the job flow ended.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endDateTime The new value for the EndDateTime property for this object.
+     * @param endDateTime The date and time the job flow ended.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -175,39 +233,44 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the LastStateChangeReason property for this
-     * object.
+     * Contains a description explaining the reason for the last Amazon EC2
+     * status change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @return The value of the LastStateChangeReason property for this object.
+     * @return Contains a description explaining the reason for the last Amazon EC2
+     *         status change.
      */
     public String getLastStateChangeReason() {
         return lastStateChangeReason;
     }
     
     /**
-     * Sets the value of the LastStateChangeReason property for this object.
+     * Contains a description explaining the reason for the last Amazon EC2
+     * status change.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @param lastStateChangeReason The new value for the LastStateChangeReason property for this object.
+     * @param lastStateChangeReason Contains a description explaining the reason for the last Amazon EC2
+     *         status change.
      */
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
     
     /**
-     * Sets the value of the LastStateChangeReason property for this object.
+     * Contains a description explaining the reason for the last Amazon EC2
+     * status change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @param lastStateChangeReason The new value for the LastStateChangeReason property for this object.
+     * @param lastStateChangeReason Contains a description explaining the reason for the last Amazon EC2
+     *         status change.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -217,6 +280,21 @@ public class JobFlowExecutionStatusDetail {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("State: " + state + ", ");
+        sb.append("CreationDateTime: " + creationDateTime + ", ");
+        sb.append("StartDateTime: " + startDateTime + ", ");
+        sb.append("ReadyDateTime: " + readyDateTime + ", ");
+        sb.append("EndDateTime: " + endDateTime + ", ");
+        sb.append("LastStateChangeReason: " + lastStateChangeReason + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

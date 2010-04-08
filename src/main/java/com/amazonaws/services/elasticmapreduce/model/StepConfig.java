@@ -15,49 +15,66 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Step Config
+ * <p>
+ * </p>
  */
 public class StepConfig {
 
+    /**
+     * The name of the step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
     private String name;
 
+    /**
+     * Specifies what happens to the Amazon EC2 cluster when the job flow
+     * results in an error.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
+     */
     private String actionOnFailure;
 
+    /**
+     * Specifies a Hadoop step.
+     */
     private HadoopJarStepConfig hadoopJarStep;
 
     /**
-     * Returns the value of the Name property for this object.
+     * The name of the step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The value of the Name property for this object.
+     * @return The name of the step.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the step.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,38 +86,44 @@ public class StepConfig {
     
     
     /**
-     * Returns the value of the ActionOnFailure property for this object.
+     * Specifies what happens to the Amazon EC2 cluster when the job flow
+     * results in an error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @return The value of the ActionOnFailure property for this object.
+     * @return Specifies what happens to the Amazon EC2 cluster when the job flow
+     *         results in an error.
      */
     public String getActionOnFailure() {
         return actionOnFailure;
     }
     
     /**
-     * Sets the value of the ActionOnFailure property for this object.
+     * Specifies what happens to the Amazon EC2 cluster when the job flow
+     * results in an error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @param actionOnFailure The new value for the ActionOnFailure property for this object.
+     * @param actionOnFailure Specifies what happens to the Amazon EC2 cluster when the job flow
+     *         results in an error.
      */
     public void setActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;
     }
     
     /**
-     * Sets the value of the ActionOnFailure property for this object.
+     * Specifies what happens to the Amazon EC2 cluster when the job flow
+     * results in an error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @param actionOnFailure The new value for the ActionOnFailure property for this object.
+     * @param actionOnFailure Specifies what happens to the Amazon EC2 cluster when the job flow
+     *         results in an error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -112,29 +135,29 @@ public class StepConfig {
     
     
     /**
-     * Returns the value of the HadoopJarStep property for this object.
+     * Specifies a Hadoop step.
      *
-     * @return The value of the HadoopJarStep property for this object.
+     * @return Specifies a Hadoop step.
      */
     public HadoopJarStepConfig getHadoopJarStep() {
         return hadoopJarStep;
     }
     
     /**
-     * Sets the value of the HadoopJarStep property for this object.
+     * Specifies a Hadoop step.
      *
-     * @param hadoopJarStep The new value for the HadoopJarStep property for this object.
+     * @param hadoopJarStep Specifies a Hadoop step.
      */
     public void setHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
         this.hadoopJarStep = hadoopJarStep;
     }
     
     /**
-     * Sets the value of the HadoopJarStep property for this object.
+     * Specifies a Hadoop step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hadoopJarStep The new value for the HadoopJarStep property for this object.
+     * @param hadoopJarStep Specifies a Hadoop step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -144,6 +167,18 @@ public class StepConfig {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("ActionOnFailure: " + actionOnFailure + ", ");
+        sb.append("HadoopJarStep: " + hadoopJarStep + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

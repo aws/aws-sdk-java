@@ -240,5 +240,18 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesOfferingIds: " + reservedInstancesOfferingIds + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("ProductDescription: " + productDescription + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

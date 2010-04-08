@@ -16,9 +16,20 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Allocate Address Request
+ * <p>
+ * 
+ * </p>
  */
 public class AllocateAddressRequest extends AmazonWebServiceRequest {
 
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -121,5 +121,16 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueUrl: " + queueUrl + ", ");
+        sb.append("Attributes: " + attributes + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

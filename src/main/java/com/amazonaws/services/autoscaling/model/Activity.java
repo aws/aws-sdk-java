@@ -404,5 +404,22 @@ public class Activity {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ActivityId: " + activityId + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("Cause: " + cause + ", ");
+        sb.append("StartTime: " + startTime + ", ");
+        sb.append("EndTime: " + endTime + ", ");
+        sb.append("StatusCode: " + statusCode + ", ");
+        sb.append("StatusMessage: " + statusMessage + ", ");
+        sb.append("Progress: " + progress + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

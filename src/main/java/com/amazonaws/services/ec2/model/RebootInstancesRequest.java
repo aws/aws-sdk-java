@@ -99,5 +99,15 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceIds: " + instanceIds + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

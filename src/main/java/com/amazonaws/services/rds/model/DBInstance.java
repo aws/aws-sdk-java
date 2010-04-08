@@ -849,5 +849,31 @@ public class DBInstance {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        sb.append("Engine: " + engine + ", ");
+        sb.append("DBInstanceStatus: " + dBInstanceStatus + ", ");
+        sb.append("MasterUsername: " + masterUsername + ", ");
+        sb.append("DBName: " + dBName + ", ");
+        sb.append("Endpoint: " + endpoint + ", ");
+        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
+        sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
+        sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
+        sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
+        sb.append("DBParameterGroups: " + dBParameterGroups + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
+        sb.append("LatestRestorableTime: " + latestRestorableTime + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -908,5 +908,28 @@ public class CreateOrUpdateScalingTriggerRequest extends AmazonWebServiceRequest
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TriggerName: " + triggerName + ", ");
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("MeasureName: " + measureName + ", ");
+        sb.append("Statistic: " + statistic + ", ");
+        sb.append("Dimensions: " + dimensions + ", ");
+        sb.append("Period: " + period + ", ");
+        sb.append("Unit: " + unit + ", ");
+        sb.append("CustomUnit: " + customUnit + ", ");
+        sb.append("Namespace: " + namespace + ", ");
+        sb.append("LowerThreshold: " + lowerThreshold + ", ");
+        sb.append("LowerBreachScaleIncrement: " + lowerBreachScaleIncrement + ", ");
+        sb.append("UpperThreshold: " + upperThreshold + ", ");
+        sb.append("UpperBreachScaleIncrement: " + upperBreachScaleIncrement + ", ");
+        sb.append("BreachDuration: " + breachDuration + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

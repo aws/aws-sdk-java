@@ -88,5 +88,15 @@ public class DescribeAddressesResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Addresses: " + addresses + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -15,22 +15,34 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Hadoop Jar Step Config
+ * 
  */
 public class HadoopJarStepConfig {
 
+    /**
+     * A list of <a>KeyValue</a> instances.
+     */
     private java.util.List<KeyValue> properties;
 
+    /**
+     * <p/>
+     */
     private String jar;
 
+    /**
+     * The name of the main class in the specified Java file.
+     */
     private String mainClass;
 
+    /**
+     * A list of arguments for the job flow's steps.
+     */
     private java.util.List<String> args;
 
     /**
-     * Returns the value of the Properties property for this object.
+     * A list of <a>KeyValue</a> instances.
      *
-     * @return The value of the Properties property for this object.
+     * @return A list of <a>KeyValue</a> instances.
      */
     public java.util.List<KeyValue> getProperties() {
         if (properties == null) {
@@ -40,9 +52,9 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Properties property for this object.
+     * A list of <a>KeyValue</a> instances.
      *
-     * @param properties The new value for the Properties property for this object.
+     * @param properties A list of <a>KeyValue</a> instances.
      */
     public void setProperties(java.util.Collection<KeyValue> properties) {
         java.util.List<KeyValue> propertiesCopy = new java.util.ArrayList<KeyValue>();
@@ -53,11 +65,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Properties property for this object.
+     * A list of <a>KeyValue</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param properties The new value for the Properties property for this object.
+     * @param properties A list of <a>KeyValue</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -70,11 +82,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Properties property for this object.
+     * A list of <a>KeyValue</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param properties The new value for the Properties property for this object.
+     * @param properties A list of <a>KeyValue</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,29 +102,29 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Returns the value of the Jar property for this object.
+     * <p/>
      *
-     * @return The value of the Jar property for this object.
+     * @return <p/>
      */
     public String getJar() {
         return jar;
     }
     
     /**
-     * Sets the value of the Jar property for this object.
+     * <p/>
      *
-     * @param jar The new value for the Jar property for this object.
+     * @param jar <p/>
      */
     public void setJar(String jar) {
         this.jar = jar;
     }
     
     /**
-     * Sets the value of the Jar property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jar The new value for the Jar property for this object.
+     * @param jar <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -124,29 +136,29 @@ public class HadoopJarStepConfig {
     
     
     /**
-     * Returns the value of the MainClass property for this object.
+     * The name of the main class in the specified Java file.
      *
-     * @return The value of the MainClass property for this object.
+     * @return The name of the main class in the specified Java file.
      */
     public String getMainClass() {
         return mainClass;
     }
     
     /**
-     * Sets the value of the MainClass property for this object.
+     * The name of the main class in the specified Java file.
      *
-     * @param mainClass The new value for the MainClass property for this object.
+     * @param mainClass The name of the main class in the specified Java file.
      */
     public void setMainClass(String mainClass) {
         this.mainClass = mainClass;
     }
     
     /**
-     * Sets the value of the MainClass property for this object.
+     * The name of the main class in the specified Java file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mainClass The new value for the MainClass property for this object.
+     * @param mainClass The name of the main class in the specified Java file.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -158,9 +170,9 @@ public class HadoopJarStepConfig {
     
     
     /**
-     * Returns the value of the Args property for this object.
+     * A list of arguments for the job flow's steps.
      *
-     * @return The value of the Args property for this object.
+     * @return A list of arguments for the job flow's steps.
      */
     public java.util.List<String> getArgs() {
         if (args == null) {
@@ -170,9 +182,9 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Args property for this object.
+     * A list of arguments for the job flow's steps.
      *
-     * @param args The new value for the Args property for this object.
+     * @param args A list of arguments for the job flow's steps.
      */
     public void setArgs(java.util.Collection<String> args) {
         java.util.List<String> argsCopy = new java.util.ArrayList<String>();
@@ -183,11 +195,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Args property for this object.
+     * A list of arguments for the job flow's steps.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param args The new value for the Args property for this object.
+     * @param args A list of arguments for the job flow's steps.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -200,11 +212,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * Sets the value of the Args property for this object.
+     * A list of arguments for the job flow's steps.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param args The new value for the Args property for this object.
+     * @param args A list of arguments for the job flow's steps.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -217,6 +229,19 @@ public class HadoopJarStepConfig {
         this.args = argsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Properties: " + properties + ", ");
+        sb.append("Jar: " + jar + ", ");
+        sb.append("MainClass: " + mainClass + ", ");
+        sb.append("Args: " + args + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

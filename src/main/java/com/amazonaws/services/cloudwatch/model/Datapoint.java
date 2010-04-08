@@ -316,5 +316,22 @@ public class Datapoint {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Timestamp: " + timestamp + ", ");
+        sb.append("Unit: " + unit + ", ");
+        sb.append("CustomUnit: " + customUnit + ", ");
+        sb.append("Samples: " + samples + ", ");
+        sb.append("Average: " + average + ", ");
+        sb.append("Sum: " + sum + ", ");
+        sb.append("Minimum: " + minimum + ", ");
+        sb.append("Maximum: " + maximum + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -107,5 +107,16 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

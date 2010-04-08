@@ -152,5 +152,17 @@ public class DBParameterGroup {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
+        sb.append("Engine: " + engine + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

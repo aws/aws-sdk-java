@@ -278,5 +278,18 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueUrl: " + queueUrl + ", ");
+        sb.append("Label: " + label + ", ");
+        sb.append("AWSAccountIds: " + aWSAccountIds + ", ");
+        sb.append("Actions: " + actions + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

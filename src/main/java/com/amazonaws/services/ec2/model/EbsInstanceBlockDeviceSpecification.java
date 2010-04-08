@@ -125,5 +125,16 @@ public class EbsInstanceBlockDeviceSpecification {
         return deleteOnTermination;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VolumeId: " + volumeId + ", ");
+        sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -92,5 +92,15 @@ public class CreateDomainRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DomainName: " + domainName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

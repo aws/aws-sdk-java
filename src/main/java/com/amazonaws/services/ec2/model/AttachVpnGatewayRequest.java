@@ -16,38 +16,46 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Attach Vpn Gateway Request
+ * <p>
+ * 
+ * </p>
  */
 public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the VPN gateway to attach to the VPC.
+     */
     private String vpnGatewayId;
 
+    /**
+     * The ID of the VPC to attach to the VPN gateway.
+     */
     private String vpcId;
 
     /**
-     * Returns the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to attach to the VPC.
      *
-     * @return The value of the VpnGatewayId property for this object.
+     * @return The ID of the VPN gateway to attach to the VPC.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to attach to the VPC.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway to attach to the VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,29 +67,29 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the VpcId property for this object.
+     * The ID of the VPC to attach to the VPN gateway.
      *
-     * @return The value of the VpcId property for this object.
+     * @return The ID of the VPC to attach to the VPN gateway.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to attach to the VPN gateway.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to attach to the VPN gateway.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * The ID of the VPC to attach to the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId The ID of the VPC to attach to the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,6 +99,17 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

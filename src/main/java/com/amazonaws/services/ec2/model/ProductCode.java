@@ -60,5 +60,15 @@ public class ProductCode {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ProductCodeId: " + productCodeId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

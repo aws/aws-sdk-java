@@ -142,5 +142,17 @@ public class KeyPair {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("KeyName: " + keyName + ", ");
+        sb.append("KeyFingerprint: " + keyFingerprint + ", ");
+        sb.append("KeyMaterial: " + keyMaterial + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

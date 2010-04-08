@@ -192,5 +192,18 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
+        sb.append("CIDRIP: " + cIDRIP + ", ");
+        sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
+        sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -61,5 +61,15 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

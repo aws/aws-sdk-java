@@ -202,5 +202,18 @@ public class EbsInstanceBlockDevice {
         return deleteOnTermination;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VolumeId: " + volumeId + ", ");
+        sb.append("Status: " + status + ", ");
+        sb.append("AttachTime: " + attachTime + ", ");
+        sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -436,5 +436,24 @@ public class ReservedInstances {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("Start: " + start + ", ");
+        sb.append("Duration: " + duration + ", ");
+        sb.append("UsagePrice: " + usagePrice + ", ");
+        sb.append("FixedPrice: " + fixedPrice + ", ");
+        sb.append("InstanceCount: " + instanceCount + ", ");
+        sb.append("ProductDescription: " + productDescription + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

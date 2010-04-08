@@ -292,5 +292,20 @@ public class VolumeAttachment {
         return deleteOnTermination;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VolumeId: " + volumeId + ", ");
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("Device: " + device + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("AttachTime: " + attachTime + ", ");
+        sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

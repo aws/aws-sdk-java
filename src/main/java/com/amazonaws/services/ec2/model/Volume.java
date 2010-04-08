@@ -340,5 +340,21 @@ public class Volume {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VolumeId: " + volumeId + ", ");
+        sb.append("Size: " + size + ", ");
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("CreateTime: " + createTime + ", ");
+        sb.append("Attachments: " + attachments + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

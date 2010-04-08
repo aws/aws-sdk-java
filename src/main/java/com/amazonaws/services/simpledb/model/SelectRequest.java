@@ -206,5 +206,17 @@ public class SelectRequest extends AmazonWebServiceRequest {
         return consistentRead;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SelectExpression: " + selectExpression + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
+        sb.append("ConsistentRead: " + consistentRead + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

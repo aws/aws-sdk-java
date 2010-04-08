@@ -63,8 +63,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     /**
      * Maximum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, the largest possible number above minCount will
-     * be launched instead. Between 1 and the maximum number allowed for your
-     * account (default: 20).
+     * be launched instead. <p> Between 1 and the maximum number allowed for
+     * your account (default: 20).
      */
     private Integer maxCount;
 
@@ -218,13 +218,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     /**
      * Maximum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, the largest possible number above minCount will
-     * be launched instead. Between 1 and the maximum number allowed for your
-     * account (default: 20).
+     * be launched instead. <p> Between 1 and the maximum number allowed for
+     * your account (default: 20).
      *
      * @return Maximum number of instances to launch. If the value is more than
      *         Amazon EC2 can launch, the largest possible number above minCount will
-     *         be launched instead. Between 1 and the maximum number allowed for your
-     *         account (default: 20).
+     *         be launched instead. <p> Between 1 and the maximum number allowed for
+     *         your account (default: 20).
      */
     public Integer getMaxCount() {
         return maxCount;
@@ -233,13 +233,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     /**
      * Maximum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, the largest possible number above minCount will
-     * be launched instead. Between 1 and the maximum number allowed for your
-     * account (default: 20).
+     * be launched instead. <p> Between 1 and the maximum number allowed for
+     * your account (default: 20).
      *
      * @param maxCount Maximum number of instances to launch. If the value is more than
      *         Amazon EC2 can launch, the largest possible number above minCount will
-     *         be launched instead. Between 1 and the maximum number allowed for your
-     *         account (default: 20).
+     *         be launched instead. <p> Between 1 and the maximum number allowed for
+     *         your account (default: 20).
      */
     public void setMaxCount(Integer maxCount) {
         this.maxCount = maxCount;
@@ -248,15 +248,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     /**
      * Maximum number of instances to launch. If the value is more than
      * Amazon EC2 can launch, the largest possible number above minCount will
-     * be launched instead. Between 1 and the maximum number allowed for your
-     * account (default: 20).
+     * be launched instead. <p> Between 1 and the maximum number allowed for
+     * your account (default: 20).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxCount Maximum number of instances to launch. If the value is more than
      *         Amazon EC2 can launch, the largest possible number above minCount will
-     *         be launched instead. Between 1 and the maximum number allowed for your
-     *         account (default: 20).
+     *         be launched instead. <p> Between 1 and the maximum number allowed for
+     *         your account (default: 20).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -829,6 +829,30 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("MinCount: " + minCount + ", ");
+        sb.append("MaxCount: " + maxCount + ", ");
+        sb.append("KeyName: " + keyName + ", ");
+        sb.append("SecurityGroups: " + securityGroups + ", ");
+        sb.append("UserData: " + userData + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("Placement: " + placement + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("Monitoring: " + monitoring + ", ");
+        sb.append("SubnetId: " + subnetId + ", ");
+        sb.append("DisableApiTermination: " + disableApiTermination + ", ");
+        sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -15,16 +15,21 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Describe Subnets Result
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeSubnetsResult {
 
+    /**
+     * Contains a set of one or more <a>Subnet</a> instances.
+     */
     private java.util.List<Subnet> subnets;
 
     /**
-     * Returns the value of the Subnets property for this object.
+     * Contains a set of one or more <a>Subnet</a> instances.
      *
-     * @return The value of the Subnets property for this object.
+     * @return Contains a set of one or more <a>Subnet</a> instances.
      */
     public java.util.List<Subnet> getSubnets() {
         if (subnets == null) {
@@ -34,9 +39,9 @@ public class DescribeSubnetsResult {
     }
     
     /**
-     * Sets the value of the Subnets property for this object.
+     * Contains a set of one or more <a>Subnet</a> instances.
      *
-     * @param subnets The new value for the Subnets property for this object.
+     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
      */
     public void setSubnets(java.util.Collection<Subnet> subnets) {
         java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>();
@@ -47,11 +52,11 @@ public class DescribeSubnetsResult {
     }
     
     /**
-     * Sets the value of the Subnets property for this object.
+     * Contains a set of one or more <a>Subnet</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets The new value for the Subnets property for this object.
+     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +69,11 @@ public class DescribeSubnetsResult {
     }
     
     /**
-     * Sets the value of the Subnets property for this object.
+     * Contains a set of one or more <a>Subnet</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets The new value for the Subnets property for this object.
+     * @param subnets Contains a set of one or more <a>Subnet</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +86,16 @@ public class DescribeSubnetsResult {
         this.subnets = subnetsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Subnets: " + subnets + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

@@ -16,54 +16,38 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * 
- * </p>
+ * Deregister Instances From Load Balancer Request
  */
 public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebServiceRequest {
 
-    /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
-     */
     private String loadBalancerName;
 
-    /**
-     * A list of EC2 instance IDs consisting of all instances to be
-     * deregistered.
-     */
     private java.util.List<Instance> instances;
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Returns the value of the LoadBalancerName property for this object.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The value of the LoadBalancerName property for this object.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,11 +59,9 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
     
     
     /**
-     * A list of EC2 instance IDs consisting of all instances to be
-     * deregistered.
+     * Returns the value of the Instances property for this object.
      *
-     * @return A list of EC2 instance IDs consisting of all instances to be
-     *         deregistered.
+     * @return The value of the Instances property for this object.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -89,11 +71,9 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
     }
     
     /**
-     * A list of EC2 instance IDs consisting of all instances to be
-     * deregistered.
+     * Sets the value of the Instances property for this object.
      *
-     * @param instances A list of EC2 instance IDs consisting of all instances to be
-     *         deregistered.
+     * @param instances The new value for the Instances property for this object.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -104,13 +84,11 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
     }
     
     /**
-     * A list of EC2 instance IDs consisting of all instances to be
-     * deregistered.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of EC2 instance IDs consisting of all instances to be
-     *         deregistered.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -123,13 +101,11 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
     }
     
     /**
-     * A list of EC2 instance IDs consisting of all instances to be
-     * deregistered.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of EC2 instance IDs consisting of all instances to be
-     *         deregistered.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -142,6 +118,17 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
         this.instances = instancesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        sb.append("Instances: " + instances + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

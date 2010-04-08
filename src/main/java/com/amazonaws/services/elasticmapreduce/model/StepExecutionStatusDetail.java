@@ -15,53 +15,73 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Step Execution Status Detail
+ * <p>
+ * </p>
  */
 public class StepExecutionStatusDetail {
 
+    /**
+     * The state of the step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
+     */
     private String state;
 
+    /**
+     * The date and time the step was created.
+     */
     private java.util.Date creationDateTime;
 
+    /**
+     * The date and time the step was started.
+     */
     private java.util.Date startDateTime;
 
+    /**
+     * The date and time the step ended.
+     */
     private java.util.Date endDateTime;
 
+    /**
+     * A description explaining the reason for the last Amazon EC2 status
+     * change.
+     */
     private String lastStateChangeReason;
 
     /**
-     * Returns the value of the State property for this object.
+     * The state of the step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @return The value of the State property for this object.
+     * @return The state of the step.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the step.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -73,29 +93,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the CreationDateTime property for this object.
+     * The date and time the step was created.
      *
-     * @return The value of the CreationDateTime property for this object.
+     * @return The date and time the step was created.
      */
     public java.util.Date getCreationDateTime() {
         return creationDateTime;
     }
     
     /**
-     * Sets the value of the CreationDateTime property for this object.
+     * The date and time the step was created.
      *
-     * @param creationDateTime The new value for the CreationDateTime property for this object.
+     * @param creationDateTime The date and time the step was created.
      */
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
     
     /**
-     * Sets the value of the CreationDateTime property for this object.
+     * The date and time the step was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDateTime The new value for the CreationDateTime property for this object.
+     * @param creationDateTime The date and time the step was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,29 +127,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the StartDateTime property for this object.
+     * The date and time the step was started.
      *
-     * @return The value of the StartDateTime property for this object.
+     * @return The date and time the step was started.
      */
     public java.util.Date getStartDateTime() {
         return startDateTime;
     }
     
     /**
-     * Sets the value of the StartDateTime property for this object.
+     * The date and time the step was started.
      *
-     * @param startDateTime The new value for the StartDateTime property for this object.
+     * @param startDateTime The date and time the step was started.
      */
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
     
     /**
-     * Sets the value of the StartDateTime property for this object.
+     * The date and time the step was started.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDateTime The new value for the StartDateTime property for this object.
+     * @param startDateTime The date and time the step was started.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -141,29 +161,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the EndDateTime property for this object.
+     * The date and time the step ended.
      *
-     * @return The value of the EndDateTime property for this object.
+     * @return The date and time the step ended.
      */
     public java.util.Date getEndDateTime() {
         return endDateTime;
     }
     
     /**
-     * Sets the value of the EndDateTime property for this object.
+     * The date and time the step ended.
      *
-     * @param endDateTime The new value for the EndDateTime property for this object.
+     * @param endDateTime The date and time the step ended.
      */
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
     
     /**
-     * Sets the value of the EndDateTime property for this object.
+     * The date and time the step ended.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endDateTime The new value for the EndDateTime property for this object.
+     * @param endDateTime The date and time the step ended.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -175,30 +195,35 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the LastStateChangeReason property for this
-     * object.
+     * A description explaining the reason for the last Amazon EC2 status
+     * change.
      *
-     * @return The value of the LastStateChangeReason property for this object.
+     * @return A description explaining the reason for the last Amazon EC2 status
+     *         change.
      */
     public String getLastStateChangeReason() {
         return lastStateChangeReason;
     }
     
     /**
-     * Sets the value of the LastStateChangeReason property for this object.
+     * A description explaining the reason for the last Amazon EC2 status
+     * change.
      *
-     * @param lastStateChangeReason The new value for the LastStateChangeReason property for this object.
+     * @param lastStateChangeReason A description explaining the reason for the last Amazon EC2 status
+     *         change.
      */
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
     
     /**
-     * Sets the value of the LastStateChangeReason property for this object.
+     * A description explaining the reason for the last Amazon EC2 status
+     * change.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastStateChangeReason The new value for the LastStateChangeReason property for this object.
+     * @param lastStateChangeReason A description explaining the reason for the last Amazon EC2 status
+     *         change.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -208,6 +233,20 @@ public class StepExecutionStatusDetail {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("State: " + state + ", ");
+        sb.append("CreationDateTime: " + creationDateTime + ", ");
+        sb.append("StartDateTime: " + startDateTime + ", ");
+        sb.append("EndDateTime: " + endDateTime + ", ");
+        sb.append("LastStateChangeReason: " + lastStateChangeReason + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

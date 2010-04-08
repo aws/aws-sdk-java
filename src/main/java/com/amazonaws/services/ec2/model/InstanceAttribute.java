@@ -434,5 +434,23 @@ public class InstanceAttribute {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("KernelId: " + kernelId + ", ");
+        sb.append("RamdiskId: " + ramdiskId + ", ");
+        sb.append("UserData: " + userData + ", ");
+        sb.append("DisableApiTermination: " + disableApiTermination + ", ");
+        sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
+        sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

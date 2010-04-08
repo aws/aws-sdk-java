@@ -16,40 +16,51 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Vpn Connection Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The type of VPN connection.
+     */
     private String type;
 
+    /**
+     * The ID of the customer gateway.
+     */
     private String customerGatewayId;
 
+    /**
+     * The ID of the VPN gateway.
+     */
     private String vpnGatewayId;
 
     /**
-     * Returns the value of the Type property for this object.
+     * The type of VPN connection.
      *
-     * @return The value of the Type property for this object.
+     * @return The type of VPN connection.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -61,29 +72,29 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway.
      *
-     * @return The value of the CustomerGatewayId property for this object.
+     * @return The ID of the customer gateway.
      */
     public String getCustomerGatewayId() {
         return customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId The ID of the customer gateway.
      */
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId The ID of the customer gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,29 +106,29 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway.
      *
-     * @return The value of the VpnGatewayId property for this object.
+     * @return The ID of the VPN gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * The ID of the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId The ID of the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,6 +138,18 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Type: " + type + ", ");
+        sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

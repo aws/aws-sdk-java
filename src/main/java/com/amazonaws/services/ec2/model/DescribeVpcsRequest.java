@@ -16,18 +16,26 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Describe Vpcs Request
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeVpcsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A set of one or more IDs of VPCs to describe.
+     */
     private java.util.List<String> vpcIds;
 
+    /**
+     * 
+     */
     private java.util.List<Filter> filters;
 
     /**
-     * Returns the value of the VpcIds property for this object.
+     * A set of one or more IDs of VPCs to describe.
      *
-     * @return The value of the VpcIds property for this object.
+     * @return A set of one or more IDs of VPCs to describe.
      */
     public java.util.List<String> getVpcIds() {
         if (vpcIds == null) {
@@ -37,9 +45,9 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpcIds property for this object.
+     * A set of one or more IDs of VPCs to describe.
      *
-     * @param vpcIds The new value for the VpcIds property for this object.
+     * @param vpcIds A set of one or more IDs of VPCs to describe.
      */
     public void setVpcIds(java.util.Collection<String> vpcIds) {
         java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>();
@@ -50,11 +58,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpcIds property for this object.
+     * A set of one or more IDs of VPCs to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds The new value for the VpcIds property for this object.
+     * @param vpcIds A set of one or more IDs of VPCs to describe.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -67,11 +75,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpcIds property for this object.
+     * A set of one or more IDs of VPCs to describe.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds The new value for the VpcIds property for this object.
+     * @param vpcIds A set of one or more IDs of VPCs to describe.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,9 +95,9 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the value of the Filters property for this object.
+     * 
      *
-     * @return The value of the Filters property for this object.
+     * @return 
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -99,9 +107,9 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * 
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters 
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -112,11 +120,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -129,11 +137,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -146,6 +154,17 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
         this.filters = filtersCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcIds: " + vpcIds + ", ");
+        sb.append("Filters: " + filters + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

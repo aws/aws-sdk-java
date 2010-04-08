@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Vpn Connection Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the VPN connection to delete
+     */
     private String vpnConnectionId;
 
     /**
-     * Returns the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection to delete
      *
-     * @return The value of the VpnConnectionId property for this object.
+     * @return The ID of the VPN connection to delete
      */
     public String getVpnConnectionId() {
         return vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection to delete
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId The ID of the VPN connection to delete
      */
     public void setVpnConnectionId(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
     
     /**
-     * Sets the value of the VpnConnectionId property for this object.
+     * The ID of the VPN connection to delete
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionId The new value for the VpnConnectionId property for this object.
+     * @param vpnConnectionId The ID of the VPN connection to delete
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

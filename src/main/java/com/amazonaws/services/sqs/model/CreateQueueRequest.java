@@ -117,5 +117,16 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueName: " + queueName + ", ");
+        sb.append("DefaultVisibilityTimeout: " + defaultVisibilityTimeout + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

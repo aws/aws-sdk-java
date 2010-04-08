@@ -272,5 +272,19 @@ public class DBSecurityGroup {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("OwnerId: " + ownerId + ", ");
+        sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
+        sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
+        sb.append("EC2SecurityGroups: " + eC2SecurityGroups + ", ");
+        sb.append("IPRanges: " + iPRanges + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

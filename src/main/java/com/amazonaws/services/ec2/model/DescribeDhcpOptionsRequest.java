@@ -84,5 +84,15 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpOptionsIds: " + dhcpOptionsIds + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

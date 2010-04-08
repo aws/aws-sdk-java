@@ -171,5 +171,18 @@ public class Attribute {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Name: " + name + ", ");
+        sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("AlternateValueEncoding: " + alternateValueEncoding + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

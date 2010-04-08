@@ -32,9 +32,12 @@ import com.amazonaws.services.ec2.model.*;
  * using this client are non-blocking and will immediately return a Java Future.
  * Callers must use the Future object to determine when the service call has actually
  * completed.
+ * <p>
  * Amazon Elastic Compute Cloud (Amazon EC2) is a web service that
  * provides resizable compute capacity in the cloud. It is designed to
- * make web-scale computing easier for developers. <p>
+ * make web-scale computing easier for developers.
+ * </p>
+ * <p>
  * Amazon EC2's simple web service interface allows you to obtain and
  * configure capacity with minimal friction. It provides you with
  * complete control of your computing resources and lets you run on
@@ -44,10 +47,12 @@ import com.amazonaws.services.ec2.model.*;
  * requirements change. Amazon EC2 changes the economics of computing by
  * allowing you to pay only for capacity that you actually use. Amazon
  * EC2 provides developers the tools to build failure resilient
- * applications and isolate themselves from common failure scenarios. <p>
- * Visit <a
- * href="http://aws.amazon.com/ec2/">http://aws.amazon.com/ec2/</a> for
- * more information. 
+ * applications and isolate themselves from common failure scenarios.
+ * </p>
+ * <p>
+ * Visit <a href="http://aws.amazon.com/ec2/">
+ * http://aws.amazon.com/ec2/ </a> for more information.
+ * </p> 
  */       
 public class AmazonEC2AsyncClient extends AmazonEC2Client
         implements AmazonEC2Async { 
@@ -171,38 +176,55 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The RunInstances operation launches a specified number of instances.
+     * </p>
+     * <p>
      * If Amazon EC2 cannot launch the minimum number AMIs you request, no
      * instances launch. If there is insufficient capacity to launch the
      * maximum number of AMIs you request, Amazon EC2 launches as many as
-     * possible to satisfy the requested maximum values. Every instance is
-     * launched in a security group. If you do not specify a security group
-     * at launch, the instances start in your default security group. For
-     * more information on creating security groups, see CreateSecurityGroup.
+     * possible to satisfy the requested maximum values.
+     * </p>
+     * <p>
+     * Every instance is launched in a security group. If you do not specify
+     * a security group at launch, the instances start in your default
+     * security group. For more information on creating security groups, see
+     * CreateSecurityGroup.
+     * </p>
+     * <p>
      * An optional instance type can be specified. For information about
-     * instance types, see Instance Types. You can provide an optional key
-     * pair ID for each image in the launch request (for more information,
-     * see CreateKeyPair). All instances that are created from images that
-     * use this key pair will have access to the associated public key at
-     * boot. You can use this key to provide secure access to an instance of
-     * an image on a per-instance basis. Amazon EC2 public images use this
-     * feature to provide secure access without passwords. Important:
-     * Launching public images without a key pair ID will leave them
-     * inaccessible. The public key material is made available to the
-     * instance at boot time by placing it in the openssh_id.pub file on a
-     * logical device that is exposed to the instance as /dev/sda2 (the
+     * instance types, see Instance Types.
+     * </p>
+     * <p>
+     * You can provide an optional key pair ID for each image in the launch
+     * request (for more information, see CreateKeyPair). All instances that
+     * are created from images that use this key pair will have access to the
+     * associated public key at boot. You can use this key to provide secure
+     * access to an instance of an image on a per-instance basis. Amazon EC2
+     * public images use this feature to provide secure access without
+     * passwords.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Launching public images without a key pair ID will
+     * leave them inaccessible. The public key material is made available to
+     * the instance at boot time by placing it in the openssh_id.pub file on
+     * a logical device that is exposed to the instance as /dev/sda2 (the
      * ephemeral store). The format of this file is suitable for use as an
      * entry within ~/.ssh/authorized_keys (the OpenSSH format). This can be
      * done at boot (e.g., as part of rc.local) allowing for secure access
      * without passwords. Optional user data can be provided in the launch
      * request. All instances that collectively comprise the launch request
      * have access to this data For more information, see Instance Metadata.
-     * Note: If any of the AMIs have a product code attached for which the
-     * user has not subscribed, the RunInstances call will fail. Important:
-     * We strongly recommend using the 2.6.18 Xen stock kernel with the
-     * c1.medium and c1.xlarge instances. Although the default Amazon EC2
-     * kernels will work, the new kernels provide greater stability and
-     * performance for these instance types. For more information about
-     * kernels, see Kernels, RAM Disks, and Block Device Mappings.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If any of the AMIs have a product code attached for which
+     * the user has not subscribed, the RunInstances call will fail.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> We strongly recommend using the 2.6.18 Xen stock
+     * kernel with the c1.medium and c1.xlarge instances. Although the
+     * default Amazon EC2 kernels will work, the new kernels provide greater
+     * stability and performance for these instance types. For more
+     * information about kernels, see Kernels, RAM Disks, and Block Device
+     * Mappings.
      * </p>
      *
      * @param runInstancesRequest Container for the necessary parameters to
@@ -299,6 +321,8 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The DescribeAvailabilityZones operation describes availability zones
      * that are currently available to the account and their states.
+     * </p>
+     * <p>
      * Availability zones are not the same across accounts. The availability
      * zone us-east-1a for account A is not necessarily the same as
      * us-east-1a for account B. Zone assignments are mapped independently
@@ -389,14 +413,19 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The DescribeInstances operation returns information about instances
-     * that you own. If you specify one or more instance IDs, Amazon EC2
-     * returns information for those instances. If you do not specify
-     * instance IDs, Amazon EC2 returns information for all relevant
-     * instances. If you specify an invalid instance ID, a fault is returned.
-     * If you specify an instance that you do not own, it will not be
-     * included in the returned results. Recently terminated instances might
-     * appear in the returned results. This interval is usually less than one
-     * hour.
+     * that you own.
+     * </p>
+     * <p>
+     * If you specify one or more instance IDs, Amazon EC2 returns
+     * information for those instances. If you do not specify instance IDs,
+     * Amazon EC2 returns information for all relevant instances. If you
+     * specify an invalid instance ID, a fault is returned. If you specify an
+     * instance that you do not own, it will not be included in the returned
+     * results.
+     * </p>
+     * <p>
+     * Recently terminated instances might appear in the returned results.
+     * This interval is usually less than one hour.
      * </p>
      *
      * @param describeInstancesRequest Container for the necessary parameters
@@ -430,27 +459,48 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * available to the user include public images available for any user to
      * launch, private images owned by the user making the request, and
      * private images owned by other users for which the user has explicit
-     * launch permissions. Launch permissions fall into three categories:
-     * Public: The owner of the AMI granted launch permissions for the AMI to
-     * the all group. All users have launch permissions for these AMIs.
-     * Explicit: The owner of the AMI granted launch permissions to a
-     * specific user. Implicit: A user has implicit launch permissions for
-     * all AMIs he or she owns. The list of AMIs returned can be modified by
-     * specifying AMI IDs, AMI owners, or users with launch permissions. If
-     * no options are specified, Amazon EC2 returns all AMIs for which the
-     * user has launch permissions. If you specify one or more AMI IDs, only
-     * AMIs that have the specified IDs are returned. If you specify an
-     * invalid AMI ID, a fault is returned. If you specify an AMI ID for
-     * which you do not have access, it will not be included in the returned
-     * results. If you specify one or more AMI owners, only AMIs from the
-     * specified owners and for which you have access are returned. The
-     * results can include the account IDs of the specified owners, amazon
-     * for AMIs owned by Amazon or self for AMIs that you own. If you specify
-     * a list of executable users, only users that have launch permissions
-     * for the AMIs are returned. You can specify account IDs (if you own the
-     * AMI(s)), self for AMIs for which you own or have explicit permissions,
-     * or all for public AMIs. Note: Deregistered images are included in the
-     * returned results for an unspecified interval after deregistration.
+     * launch permissions.
+     * </p>
+     * <p>
+     * Launch permissions fall into three categories:
+     * </p>
+     * 
+     * <ul>
+     * <li> Public: The owner of the AMI granted launch permissions for the
+     * AMI to the all group. All users have launch permissions for these
+     * AMIs. </li>
+     * <li> Explicit: The owner of the AMI granted launch permissions to a
+     * specific user. </li>
+     * <li> Implicit: A user has implicit launch permissions for all AMIs he
+     * or she owns. </li>
+     * 
+     * </ul>
+     * <p>
+     * The list of AMIs returned can be modified by specifying AMI IDs, AMI
+     * owners, or users with launch permissions. If no options are specified,
+     * Amazon EC2 returns all AMIs for which the user has launch permissions.
+     * </p>
+     * <p>
+     * If you specify one or more AMI IDs, only AMIs that have the specified
+     * IDs are returned. If you specify an invalid AMI ID, a fault is
+     * returned. If you specify an AMI ID for which you do not have access,
+     * it will not be included in the returned results.
+     * </p>
+     * <p>
+     * If you specify one or more AMI owners, only AMIs from the specified
+     * owners and for which you have access are returned. The results can
+     * include the account IDs of the specified owners, amazon for AMIs owned
+     * by Amazon or self for AMIs that you own.
+     * </p>
+     * <p>
+     * If you specify a list of executable users, only users that have
+     * launch permissions for the AMIs are returned. You can specify account
+     * IDs (if you own the AMI(s)), self for AMIs for which you own or have
+     * explicit permissions, or all for public AMIs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Deregistered images are included in the returned results
+     * for an unspecified interval after deregistration.
      * </p>
      *
      * @param describeImagesRequest Container for the necessary parameters to
@@ -484,11 +534,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * resources are released and you are not billed for hourly instance
      * usage. However, your root partition Amazon EBS volume remains,
      * continues to persist your data, and you are charged for Amazon EBS
-     * volume usage. You can restart your instance at any time. Note: Before
-     * stopping an instance, make sure it is in a state from which it can be
-     * restarted. Stopping an instance does not preserve data stored in RAM.
-     * Performing this operation on an instance that uses an instance store
-     * as its root device returns an error.
+     * volume usage. You can restart your instance at any time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Before stopping an instance, make sure it is in a state
+     * from which it can be restarted. Stopping an instance does not preserve
+     * data stored in RAM. Performing this operation on an instance that uses
+     * an instance store as its root device returns an error.
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -637,13 +689,15 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * The DeleteSecurityGroup operation deletes a security group. Note: If
-     * you attempt to delete a security group that contains instances, a
-     * fault is returned. If you attempt to delete a security group that is
-     * referenced by another security group, a fault is returned. For
-     * example, if security group B has a rule that allows access from
-     * security group A, security group A cannot be deleted until the allow
-     * rule is removed.
+     * The DeleteSecurityGroup operation deletes a security group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you attempt to delete a security group that contains
+     * instances, a fault is returned. If you attempt to delete a security
+     * group that is referenced by another security group, a fault is
+     * returned. For example, if security group B has a rule that allows
+     * access from security group A, security group A cannot be deleted until
+     * the allow rule is removed.
      * </p>
      *
      * @param deleteSecurityGroupRequest Container for the necessary
@@ -705,18 +759,26 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The AuthorizeSecurityGroupIngress operation adds permissions to a
-     * security group. Permissions are specified by the IP protocol (TCP, UDP
-     * or ICMP), the source of the request (by IP range or an Amazon EC2
-     * user-group pair), the source and destination port ranges (for TCP and
-     * UDP), and the ICMP codes and types (for ICMP). When authorizing ICMP,
-     * -1 can be used as a wildcard in the type and code fields. Permission
-     * changes are propagated to instances within the security group as
-     * quickly as possible. However, depending on the number of instances, a
-     * small delay might occur. When authorizing a user/group pair
-     * permission, GroupName, SourceSecurityGroupName and
-     * SourceSecurityGroupOwnerId must be specified. When authorizing a CIDR
-     * IP permission, GroupName, IpProtocol, FromPort, ToPort and CidrIp must
-     * be specified. Mixing these two types of parameters is not allowed.
+     * security group.
+     * </p>
+     * <p>
+     * Permissions are specified by the IP protocol (TCP, UDP or ICMP), the
+     * source of the request (by IP range or an Amazon EC2 user-group pair),
+     * the source and destination port ranges (for TCP and UDP), and the ICMP
+     * codes and types (for ICMP). When authorizing ICMP, -1 can be used as a
+     * wildcard in the type and code fields.
+     * </p>
+     * <p>
+     * Permission changes are propagated to instances within the security
+     * group as quickly as possible. However, depending on the number of
+     * instances, a small delay might occur.
+     * </p>
+     * <p>
+     * When authorizing a user/group pair permission, GroupName,
+     * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
+     * specified. When authorizing a CIDR IP permission, GroupName,
+     * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
+     * these two types of parameters is not allowed.
      * </p>
      *
      * @param authorizeSecurityGroupIngressRequest Container for the
@@ -741,6 +803,35 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 authorizeSecurityGroupIngress(authorizeSecurityGroupIngressRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * 
+     * </p>
+     *
+     * @param describeSpotInstanceRequestsRequest Container for the necessary
+     *           parameters to execute the DescribeSpotInstanceRequests operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotInstanceRequests service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotInstanceRequestsResult> describeSpotInstanceRequestsAsync(final DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotInstanceRequestsResult>() {
+            public DescribeSpotInstanceRequestsResult call() throws Exception {
+                return describeSpotInstanceRequests(describeSpotInstanceRequestsRequest);
 		    }
 		});
     }
@@ -823,10 +914,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * can create uses a /28 netmask (16 IP addresses), and the largest uses
      * a /18 netmask (16,384 IP addresses). To help you decide how big to
      * make your VPC, go to the topic about creating VPCs in the Amazon
-     * Virtual Private Cloud Developer Guide. By default, each instance you
-     * launch in the VPC has the default DHCP options (the standard EC2 host
-     * name, no domain name, no DNS server, no NTP server, and no NetBIOS
-     * server or node type).
+     * Virtual Private Cloud Developer Guide.
+     * </p>
+     * <p>
+     * By default, each instance you launch in the VPC has the default DHCP
+     * options (the standard EC2 host name, no domain name, no DNS server, no
+     * NTP server, and no NetBIOS server or node type).
      * </p>
      *
      * @param createVpcRequest Container for the necessary parameters to
@@ -860,11 +953,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * resources are released and you are not billed for hourly instance
      * usage. However, your root partition Amazon EBS volume remains,
      * continues to persist your data, and you are charged for Amazon EBS
-     * volume usage. You can restart your instance at any time. Note: Before
-     * stopping an instance, make sure it is in a state from which it can be
-     * restarted. Stopping an instance does not preserve data stored in RAM.
-     * Performing this operation on an instance that uses an instance store
-     * as its root device returns an error.
+     * volume usage. You can restart your instance at any time.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Before stopping an instance, make sure it is in a state
+     * from which it can be restarted. Stopping an instance does not preserve
+     * data stored in RAM. Performing this operation on an instance that uses
+     * an instance store as its root device returns an error.
      * </p>
      *
      * @param stopInstancesRequest Container for the necessary parameters to
@@ -932,9 +1027,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * The CreateSecurityGroup operation creates a new security group. Every
-     * instance is launched in a security group. If no security group is
-     * specified during launch, the instances are launched in the default
+     * The CreateSecurityGroup operation creates a new security group.
+     * </p>
+     * <p>
+     * Every instance is launched in a security group. If no security group
+     * is specified during launch, the instances are launched in the default
      * security group. Instances within the same security group have
      * unrestricted network access to each other. Instances will reject
      * network access attempts from other instances in a different security
@@ -963,6 +1060,47 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 createSecurityGroup(createSecurityGroupRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Describes the Spot Price history.
+     * </p>
+     * <p>
+     * Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot
+     * Price. Amazon EC2 periodically sets the Spot Price based on available
+     * Spot Instance capacity and current spot instance requests.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide .
+     * 
+     * </p>
+     *
+     * @param describeSpotPriceHistoryRequest Container for the necessary
+     *           parameters to execute the DescribeSpotPriceHistory operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotPriceHistory service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotPriceHistoryResult> describeSpotPriceHistoryAsync(final DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
+            public DescribeSpotPriceHistoryResult call() throws Exception {
+                return describeSpotPriceHistory(describeSpotPriceHistoryRequest);
 		    }
 		});
     }
@@ -1061,10 +1199,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The DescribeSecurityGroups operation returns information about
-     * security groups that you own. If you specify security group names,
-     * information about those security group is returned. Otherwise,
-     * information for all security group is returned. If you specify a group
-     * that does not exist, a fault is returned.
+     * security groups that you own.
+     * </p>
+     * <p>
+     * If you specify security group names, information about those security
+     * group is returned. Otherwise, information for all security group is
+     * returned. If you specify a group that does not exist, a fault is
+     * returned.
      * </p>
      *
      * @param describeSecurityGroupsRequest Container for the necessary
@@ -1093,12 +1234,53 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Creates a Spot Instance request.
+     * </p>
+     * <p>
+     * Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot
+     * Price. Amazon EC2 periodically sets the Spot Price based on available
+     * Spot Instance capacity and current spot instance requests.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide.
+     * </p>
+     *
+     * @param requestSpotInstancesRequest Container for the necessary
+     *           parameters to execute the RequestSpotInstances operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RequestSpotInstances service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RequestSpotInstancesResult> requestSpotInstancesAsync(final RequestSpotInstancesRequest requestSpotInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RequestSpotInstancesResult>() {
+            public RequestSpotInstancesResult call() throws Exception {
+                return requestSpotInstances(requestSpotInstancesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Detaches a VPN gateway from a VPC. You do this if you're planning to
      * turn off the VPC and not use it anymore. You can confirm a VPN gateway
      * has been completely detached from a VPC by describing the VPN gateway
-     * (any attachments to the VPN gateway are also described). You must wait
-     * for the attachment's state to switch to detached before you can delete
-     * the VPC or attach a different VPC to the VPN gateway.
+     * (any attachments to the VPN gateway are also described).
+     * </p>
+     * <p>
+     * You must wait for the attachment's state to switch to detached before
+     * you can delete the VPC or attach a different VPC to the VPN gateway.
      * </p>
      *
      * @param detachVpnGatewayRequest Container for the necessary parameters
@@ -1151,6 +1333,42 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deregisterImage(deregisterImageRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Describes the data feed for Spot Instances.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide .
+     * 
+     * </p>
+     *
+     * @param describeSpotDatafeedSubscriptionRequest Container for the
+     *           necessary parameters to execute the DescribeSpotDatafeedSubscription
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeSpotDatafeedSubscription service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeSpotDatafeedSubscriptionResult> describeSpotDatafeedSubscriptionAsync(final DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeSpotDatafeedSubscriptionResult>() {
+            public DescribeSpotDatafeedSubscriptionResult call() throws Exception {
+                return describeSpotDatafeedSubscription(describeSpotDatafeedSubscriptionRequest);
 		    }
 		});
     }
@@ -1220,9 +1438,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * CancelBundleTask operation cancels a pending or in-progress bundling
      * task. This is an asynchronous call and it make take a while for the
-     * task to be cancelled. If a task is cancelled while it is storing
-     * items, there may be parts of the incomplete AMI stored in S3. It is up
-     * to the caller to clean up these parts from S3.
+     * task to be canceled. If a task is canceled while it is storing items,
+     * there may be parts of the incomplete AMI stored in S3. It is up to the
+     * caller to clean up these parts from S3.
      * </p>
      *
      * @param cancelBundleTaskRequest Container for the necessary parameters
@@ -1278,6 +1496,47 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 deleteVpnGateway(deleteVpnGatewayRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Cancels one or more Spot Instance requests.
+     * </p>
+     * <p>
+     * Spot Instances are instances that Amazon EC2 starts on your behalf
+     * when the maximum price that you specify exceeds the current Spot
+     * Price. Amazon EC2 periodically sets the Spot Price based on available
+     * Spot Instance capacity and current spot instance requests.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide .
+     * 
+     * </p>
+     *
+     * @param cancelSpotInstanceRequestsRequest Container for the necessary
+     *           parameters to execute the CancelSpotInstanceRequests operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelSpotInstanceRequests service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelSpotInstanceRequestsResult> cancelSpotInstanceRequestsAsync(final CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CancelSpotInstanceRequestsResult>() {
+            public CancelSpotInstanceRequestsResult call() throws Exception {
+                return cancelSpotInstanceRequests(cancelSpotInstanceRequestsRequest);
 		    }
 		});
     }
@@ -1347,7 +1606,10 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The ResetImageAttribute operation resets an attribute of an AMI to
-     * its default value. Note: The productCodes attribute cannot be reset.
+     * its default value.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The productCodes attribute cannot be reset.
      * </p>
      *
      * @param resetImageAttributeRequest Container for the necessary
@@ -1376,14 +1638,16 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Gives you information about your VPN connections. Important We
-     * strongly recommend you use HTTPS when calling this operation because
-     * the response contains sensitive cryptographic information for
-     * configuring your customer gateway. You can filter the results to
-     * return information only about VPN connections that match criteria you
-     * specify. For example, you could ask to get information about a
-     * particular VPN connection (or all) only if the VPN's state is pending
-     * or available. You can specify multiple filters (e.g., the VPN
+     * Gives you information about your VPN connections.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
+     * this operation because the response contains sensitive cryptographic
+     * information for configuring your customer gateway. You can filter the
+     * results to return information only about VPN connections that match
+     * criteria you specify. For example, you could ask to get information
+     * about a particular VPN connection (or all) only if the VPN's state is
+     * pending or available. You can specify multiple filters (e.g., the VPN
      * connection is associated with a particular VPN gateway, and the
      * gateway's state is pending or available). The result includes
      * information for a particular VPN connection only if the VPN connection
@@ -1420,7 +1684,9 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Create a snapshot of the volume identified by volume ID. A volume
      * does not have to be detached at the time the snapshot is taken.
-     * Important Note: Snapshot creation requires that the system is in a
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Snapshot creation requires that the system is in a
      * consistent state. For instance, this means that if taking a snapshot
      * of a database, the tables must be read-only locked to ensure that the
      * snapshot will not contain a corrupted version of the database.
@@ -1516,8 +1782,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The TerminateInstances operation shuts down one or more instances.
      * This operation is idempotent; if you terminate an instance more than
-     * once, each call will succeed. Terminated instances will remain visible
-     * after termination (approximately one hour).
+     * once, each call will succeed.
+     * </p>
+     * <p>
+     * Terminated instances will remain visible after termination
+     * (approximately one hour).
      * </p>
      *
      * @param terminateInstancesRequest Container for the necessary
@@ -1539,6 +1808,43 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<TerminateInstancesResult>() {
             public TerminateInstancesResult call() throws Exception {
                 return terminateInstances(terminateInstancesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes the data feed for Spot Instances.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide .
+     * 
+     * </p>
+     *
+     * @param deleteSpotDatafeedSubscriptionRequest Container for the
+     *           necessary parameters to execute the DeleteSpotDatafeedSubscription
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteSpotDatafeedSubscription service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteSpotDatafeedSubscriptionAsync(final DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteSpotDatafeedSubscription(deleteSpotDatafeedSubscriptionRequest);
+                return null;
 		    }
 		});
     }
@@ -1583,10 +1889,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The AssociateAddress operation associates an elastic IP address with
-     * an instance. If the IP address is currently assigned to another
-     * instance, the IP address is assigned to the new instance. This is an
-     * idempotent operation. If you enter it more than once, Amazon EC2 does
-     * not return an error.
+     * an instance.
+     * </p>
+     * <p>
+     * If the IP address is currently assigned to another instance, the IP
+     * address is assigned to the new instance. This is an idempotent
+     * operation. If you enter it more than once, Amazon EC2 does not return
+     * an error.
      * </p>
      *
      * @param associateAddressRequest Container for the necessary parameters
@@ -1608,40 +1917,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
                 associateAddress(associateAddressRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes a customer gateway. You must delete the VPN connection before
-     * deleting the customer gateway. You can have a single active customer
-     * gateway per AWS account (active means that you've created a VPN
-     * connection with that customer gateway). AWS might delete any customer
-     * gateway you leave inactive for an extended period of time.
-     * </p>
-     *
-     * @param deleteCustomerGatewayRequest Container for the necessary
-     *           parameters to execute the DeleteCustomerGateway operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteCustomerGateway service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteCustomerGatewayAsync(final DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteCustomerGateway(deleteCustomerGatewayRequest);
                 return null;
 		    }
 		});
@@ -1679,6 +1954,43 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Deletes a customer gateway. You must delete the VPN connection before
+     * deleting the customer gateway.
+     * </p>
+     * <p>
+     * You can have a single active customer gateway per AWS account (active
+     * means that you've created a VPN connection with that customer
+     * gateway). AWS might delete any customer gateway you leave inactive for
+     * an extended period of time.
+     * </p>
+     *
+     * @param deleteCustomerGatewayRequest Container for the necessary
+     *           parameters to execute the DeleteCustomerGateway operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteCustomerGateway service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteCustomerGatewayAsync(final DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteCustomerGateway(deleteCustomerGatewayRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The DescribeAddresses operation lists elastic IP addresses assigned
      * to your account.
      * </p>
@@ -1702,36 +2014,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeAddressesResult>() {
             public DescribeAddressesResult call() throws Exception {
                 return describeAddresses(describeAddressesRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * The DescribeImageAttribute operation returns information about an
-     * attribute of an AMI. Only one attribute can be specified per call.
-     * </p>
-     *
-     * @param describeImageAttributeRequest Container for the necessary
-     *           parameters to execute the DescribeImageAttribute operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeImageAttribute service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeImageAttributeResult> describeImageAttributeAsync(final DescribeImageAttributeRequest describeImageAttributeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeImageAttributeResult>() {
-            public DescribeImageAttributeResult call() throws Exception {
-                return describeImageAttribute(describeImageAttributeRequest);
 		    }
 		});
     }
@@ -1769,12 +2051,45 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * The DescribeImageAttribute operation returns information about an
+     * attribute of an AMI. Only one attribute can be specified per call.
+     * </p>
+     *
+     * @param describeImageAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeImageAttribute operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeImageAttribute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeImageAttributeResult> describeImageAttributeAsync(final DescribeImageAttributeRequest describeImageAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeImageAttributeResult>() {
+            public DescribeImageAttributeResult call() throws Exception {
+                return describeImageAttribute(describeImageAttributeRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The ConfirmProductInstance operation returns true if the specified
      * product code is attached to the specified instance. The operation
-     * returns false if the product code is not attached to the instance. The
-     * ConfirmProductInstance operation can only be executed by the owner of
-     * the AMI. This feature is useful when an AMI owner is providing support
-     * and wants to verify whether a user's instance is eligible.
+     * returns false if the product code is not attached to the instance.
+     * </p>
+     * <p>
+     * The ConfirmProductInstance operation can only be executed by the
+     * owner of the AMI. This feature is useful when an AMI owner is
+     * providing support and wants to verify whether a user's instance is
+     * eligible.
      * </p>
      *
      * @param confirmProductInstanceRequest Container for the necessary
@@ -1803,7 +2118,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Initializes an empty volume of a given size
+     * Initializes an empty volume of a given size.
      * </p>
      *
      * @param createVolumeRequest Container for the necessary parameters to
@@ -1878,9 +2193,11 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * the VPC's CIDR block. If you create more than one subnet in a VPC, the
      * subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
      * you can create uses a /28 netmask (16 IP addresses), and the largest
-     * uses a /18 netmask (16,384 IP addresses). Important: AWS reserves both
-     * the first four and the last IP address in each subnet's CIDR block.
-     * They're not available for use.
+     * uses a /18 netmask (16,384 IP addresses).
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP
+     * address in each subnet's CIDR block. They're not available for use.
      * </p>
      *
      * @param createSubnetRequest Container for the necessary parameters to
@@ -1972,7 +2289,7 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * Deletes the snapshot identitied by snapshotId.
+     * Deletes the snapshot identified by snapshotId.
      * </p>
      *
      * @param deleteSnapshotRequest Container for the necessary parameters to
@@ -2003,9 +2320,14 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * Gives you information about one or more sets of DHCP options. You can
      * specify one or more DHCP options set IDs, or no IDs (to describe all
-     * your sets of DHCP options). The returned information consists of: -
-     * The DHCP options set ID - The options
+     * your sets of DHCP options). The returned information consists of:
      * </p>
+     * 
+     * <ul>
+     * <li> The DHCP options set ID </li>
+     * <li> The options </li>
+     * 
+     * </ul>
      *
      * @param describeDhcpOptionsRequest Container for the necessary
      *           parameters to execute the DescribeDhcpOptions operation on AmazonEC2.
@@ -2157,14 +2479,21 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The RevokeSecurityGroupIngress operation revokes permissions from a
      * security group. The permissions used to revoke must be specified using
-     * the same values used to grant the permissions. Permissions are
-     * specified by IP protocol (TCP, UDP, or ICMP), the source of the
-     * request (by IP range or an Amazon EC2 user-group pair), the source and
-     * destination port ranges (for TCP and UDP), and the ICMP codes and
-     * types (for ICMP). Permission changes are quickly propagated to
-     * instances within the security group. However, depending on the number
-     * of instances in the group, a small delay is might occur, . When
-     * revoking a user/group pair permission, GroupName,
+     * the same values used to grant the permissions.
+     * </p>
+     * <p>
+     * Permissions are specified by IP protocol (TCP, UDP, or ICMP), the
+     * source of the request (by IP range or an Amazon EC2 user-group pair),
+     * the source and destination port ranges (for TCP and UDP), and the ICMP
+     * codes and types (for ICMP).
+     * </p>
+     * <p>
+     * Permission changes are quickly propagated to instances within the
+     * security group. However, depending on the number of instances in the
+     * group, a small delay is might occur, .
+     * </p>
+     * <p>
+     * When revoking a user/group pair permission, GroupName,
      * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
      * specified. When authorizing a CIDR IP permission, GroupName,
      * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
@@ -2230,10 +2559,13 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The GetConsoleOutput operation retrieves console output for the
-     * specified instance. Instance console output is buffered and posted
-     * shortly after instance boot, reboot, and termination. Amazon EC2
-     * preserves the most recent 64 KB output which will be available for at
-     * least one hour after the most recent post.
+     * specified instance.
+     * </p>
+     * <p>
+     * Instance console output is buffered and posted shortly after instance
+     * boot, reboot, and termination. Amazon EC2 preserves the most recent 64
+     * KB output which will be available for at least one hour after the most
+     * recent post.
      * </p>
      *
      * @param getConsoleOutputRequest Container for the necessary parameters
@@ -2320,15 +2652,21 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * The ReleaseAddress operation releases an elastic IP address
-     * associated with your account. Note: Releasing an IP address
-     * automatically disassociates it from any instance with which it is
-     * associated. For more information, see DisassociateAddress. Important:
-     * After releasing an elastic IP address, it is released to the IP
-     * address pool and might no longer be available to your account. Make
-     * sure to update your DNS records and any servers or devices that
-     * communicate with the address. If you run this operation on an elastic
-     * IP address that is already released, the address might be assigned to
-     * another account which will cause Amazon EC2 to return an error.
+     * associated with your account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Releasing an IP address automatically disassociates it
+     * from any instance with which it is associated. For more information,
+     * see DisassociateAddress.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> After releasing an elastic IP address, it is
+     * released to the IP address pool and might no longer be available to
+     * your account. Make sure to update your DNS records and any servers or
+     * devices that communicate with the address. If you run this operation
+     * on an elastic IP address that is already released, the address might
+     * be assigned to another account which will cause Amazon EC2 to return
+     * an error.
      * </p>
      *
      * @param releaseAddressRequest Container for the necessary parameters to
@@ -2364,14 +2702,20 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * AWS account (active means that you've created a VPN connection to use
      * with the customer gateway). AWS might delete any customer gateway that
      * you create with this operation if you leave it inactive for an
-     * extended period of time. You must provide the Internet-routable IP
-     * address of the customer gateway's external interface. The IP address
-     * must be static. You must also provide the device's Border Gateway
-     * Protocol (BGP) Autonomous System Number (ASN). You can use an existing
-     * ASN assigned to your network. If you don't have an ASN already, you
-     * can use a private ASN (in the 64512 - 65534 range). For more
-     * information about ASNs, go to
-     * http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.
+     * extended period of time.
+     * </p>
+     * <p>
+     * You must provide the Internet-routable IP address of the customer
+     * gateway's external interface. The IP address must be static.
+     * </p>
+     * <p>
+     * You must also provide the device's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN). You can use an existing ASN assigned
+     * to your network. If you don't have an ASN already, you can use a
+     * private ASN (in the 64512 - 65534 range). For more information about
+     * ASNs, go to <a
+     * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.">
+     * http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29 </a> .
      * </p>
      *
      * @param createCustomerGatewayRequest Container for the necessary
@@ -2424,6 +2768,43 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
             public Void call() throws Exception {
                 resetInstanceAttribute(resetInstanceAttributeRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates the data feed for Spot Instances, enabling you to view Spot
+     * Instance usage logs. You can create one data feed per account.
+     * </p>
+     * <p>
+     * For conceptual information about Spot Instances, refer to the Amazon
+     * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+     * User Guide .
+     * 
+     * </p>
+     *
+     * @param createSpotDatafeedSubscriptionRequest Container for the
+     *           necessary parameters to execute the CreateSpotDatafeedSubscription
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateSpotDatafeedSubscription service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateSpotDatafeedSubscriptionResult> createSpotDatafeedSubscriptionAsync(final CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateSpotDatafeedSubscriptionResult>() {
+            public CreateSpotDatafeedSubscriptionResult call() throws Exception {
+                return createSpotDatafeedSubscription(createSpotDatafeedSubscriptionRequest);
 		    }
 		});
     }
@@ -2491,15 +2872,21 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * <p>
      * The RegisterImage operation registers an AMI with Amazon EC2. Images
      * must be registered before they can be launched. For more information,
-     * see RunInstances. Each AMI is associated with an unique ID which is
-     * provided by the Amazon EC2 service through the RegisterImage
-     * operation. During registration, Amazon EC2 retrieves the specified
-     * image manifest from Amazon S3 and verifies that the image is owned by
-     * the user registering the image. The image manifest is retrieved once
-     * and stored within the Amazon EC2. Any modifications to an image in
-     * Amazon S3 invalidates this registration. If you make changes to an
-     * image, deregister the previous image and register the new image. For
-     * more information, see DeregisterImage.
+     * see RunInstances.
+     * </p>
+     * <p>
+     * Each AMI is associated with an unique ID which is provided by the
+     * Amazon EC2 service through the RegisterImage operation. During
+     * registration, Amazon EC2 retrieves the specified image manifest from
+     * Amazon S3 and verifies that the image is owned by the user registering
+     * the image.
+     * </p>
+     * <p>
+     * The image manifest is retrieved once and stored within the Amazon
+     * EC2. Any modifications to an image in Amazon S3 invalidates this
+     * registration. If you make changes to an image, deregister the previous
+     * image and register the new image. For more information, see
+     * DeregisterImage.
      * </p>
      *
      * @param registerImageRequest Container for the necessary parameters to
@@ -2534,10 +2921,12 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
      * and create a new one that has new keys, without needing to delete the
      * VPC or VPN gateway. If you create a new VPN connection, you must
      * reconfigure the customer gateway using the new configuration
-     * information returned with the new VPN connection ID. If you're
-     * deleting the VPC and all its associated parts, we recommend you detach
-     * the VPN gateway from the VPC and delete the VPC before deleting the
-     * VPN connection.
+     * information returned with the new VPN connection ID.
+     * </p>
+     * <p>
+     * If you're deleting the VPC and all its associated parts, we recommend
+     * you detach the VPN gateway from the VPC and delete the VPC before
+     * deleting the VPN connection.
      * </p>
      *
      * @param deleteVpnConnectionRequest Container for the necessary
@@ -2567,20 +2956,25 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     /**
      * <p>
      * Creates a new VPN connection between an existing VPN gateway and
-     * customer gateway. The only supported connection type is ipsec.1. The
-     * response includes information that you need to configure your customer
-     * gateway, in XML format. We recommend you use the command line version
-     * of this operation (ec2-create-vpn-connection), which takes an -f
-     * option (for format) and returns configuration information formatted as
-     * expected by the vendor you specified, or in a generic, human readable
-     * format. For information about the command, go to
+     * customer gateway. The only supported connection type is ipsec.1.
+     * </p>
+     * <p>
+     * The response includes information that you need to configure your
+     * customer gateway, in XML format. We recommend you use the command line
+     * version of this operation (ec2-create-vpn-connection), which takes an
+     * -f option (for format) and returns configuration information formatted
+     * as expected by the vendor you specified, or in a generic, human
+     * readable format. For information about the command, go to
      * ec2-create-vpn-connection in the Amazon Virtual Private Cloud Command
-     * Line Reference. Important We strongly recommend you use HTTPS when
-     * calling this operation because the response contains sensitive
-     * cryptographic information for configuring your customer gateway. If
-     * you decide to shut down your VPN connection for any reason and then
-     * create a new one, you must re-configure your customer gateway with the
-     * new information returned from this call.
+     * Line Reference.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
+     * this operation because the response contains sensitive cryptographic
+     * information for configuring your customer gateway. If you decide to
+     * shut down your VPN connection for any reason and then create a new
+     * one, you must re-configure your customer gateway with the new
+     * information returned from this call.
      * </p>
      *
      * @param createVpnConnectionRequest Container for the necessary

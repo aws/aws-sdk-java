@@ -312,5 +312,21 @@ public class ReservedInstancesOffering {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("Duration: " + duration + ", ");
+        sb.append("UsagePrice: " + usagePrice + ", ");
+        sb.append("FixedPrice: " + fixedPrice + ", ");
+        sb.append("ProductDescription: " + productDescription + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

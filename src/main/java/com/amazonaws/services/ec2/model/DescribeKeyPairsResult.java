@@ -88,5 +88,15 @@ public class DescribeKeyPairsResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("KeyPairs: " + keyPairs + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -115,6 +115,12 @@ public class InstanceUnmarshaller implements Unmarshaller<Instance, Node> {
             blockDeviceMappingsNode.getParentNode().removeChild(blockDeviceMappingsNode);
         }
     
+        Node instanceLifecycleNode = XpathUtils.asNode("instanceLifecycle", node);
+        instance.setInstanceLifecycle(new StringUnmarshaller().unmarshall(instanceLifecycleNode));
+    
+        Node spotInstanceRequestIdNode = XpathUtils.asNode("spotInstanceRequestId", node);
+        instance.setSpotInstanceRequestId(new StringUnmarshaller().unmarshall(spotInstanceRequestIdNode));
+    
 
         return instance;
     }

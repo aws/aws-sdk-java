@@ -454,5 +454,21 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("ImageId: " + imageId + ", ");
+        sb.append("Attribute: " + attribute + ", ");
+        sb.append("OperationType: " + operationType + ", ");
+        sb.append("UserIds: " + userIds + ", ");
+        sb.append("UserGroups: " + userGroups + ", ");
+        sb.append("ProductCodes: " + productCodes + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

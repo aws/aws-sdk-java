@@ -227,5 +227,18 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        sb.append("MaxRecords: " + maxRecords + ", ");
+        sb.append("Marker: " + marker + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

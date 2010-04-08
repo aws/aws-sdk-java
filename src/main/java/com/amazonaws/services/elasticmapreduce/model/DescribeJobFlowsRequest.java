@@ -20,38 +20,59 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A date specifying that descriptions of job flows created after this
+     * date should be returned.
+     */
     private java.util.Date createdAfter;
 
+    /**
+     * A date specifying that descriptions of job flows created before this
+     * date should be returned.
+     */
     private java.util.Date createdBefore;
 
+    /**
+     * A list of job flow IDs used to specify which job flow descriptions
+     * should be returned.
+     */
     private java.util.List<String> jobFlowIds;
 
+    /**
+     * <p/>
+     */
     private java.util.List<String> jobFlowStates;
 
     /**
-     * Returns the value of the CreatedAfter property for this object.
+     * A date specifying that descriptions of job flows created after this
+     * date should be returned.
      *
-     * @return The value of the CreatedAfter property for this object.
+     * @return A date specifying that descriptions of job flows created after this
+     *         date should be returned.
      */
     public java.util.Date getCreatedAfter() {
         return createdAfter;
     }
     
     /**
-     * Sets the value of the CreatedAfter property for this object.
+     * A date specifying that descriptions of job flows created after this
+     * date should be returned.
      *
-     * @param createdAfter The new value for the CreatedAfter property for this object.
+     * @param createdAfter A date specifying that descriptions of job flows created after this
+     *         date should be returned.
      */
     public void setCreatedAfter(java.util.Date createdAfter) {
         this.createdAfter = createdAfter;
     }
     
     /**
-     * Sets the value of the CreatedAfter property for this object.
+     * A date specifying that descriptions of job flows created after this
+     * date should be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdAfter The new value for the CreatedAfter property for this object.
+     * @param createdAfter A date specifying that descriptions of job flows created after this
+     *         date should be returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -63,29 +84,35 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the CreatedBefore property for this object.
+     * A date specifying that descriptions of job flows created before this
+     * date should be returned.
      *
-     * @return The value of the CreatedBefore property for this object.
+     * @return A date specifying that descriptions of job flows created before this
+     *         date should be returned.
      */
     public java.util.Date getCreatedBefore() {
         return createdBefore;
     }
     
     /**
-     * Sets the value of the CreatedBefore property for this object.
+     * A date specifying that descriptions of job flows created before this
+     * date should be returned.
      *
-     * @param createdBefore The new value for the CreatedBefore property for this object.
+     * @param createdBefore A date specifying that descriptions of job flows created before this
+     *         date should be returned.
      */
     public void setCreatedBefore(java.util.Date createdBefore) {
         this.createdBefore = createdBefore;
     }
     
     /**
-     * Sets the value of the CreatedBefore property for this object.
+     * A date specifying that descriptions of job flows created before this
+     * date should be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createdBefore The new value for the CreatedBefore property for this object.
+     * @param createdBefore A date specifying that descriptions of job flows created before this
+     *         date should be returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -97,9 +124,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the JobFlowIds property for this object.
+     * A list of job flow IDs used to specify which job flow descriptions
+     * should be returned.
      *
-     * @return The value of the JobFlowIds property for this object.
+     * @return A list of job flow IDs used to specify which job flow descriptions
+     *         should be returned.
      */
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
@@ -109,9 +138,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs used to specify which job flow descriptions
+     * should be returned.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs used to specify which job flow descriptions
+     *         should be returned.
      */
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>();
@@ -122,11 +153,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs used to specify which job flow descriptions
+     * should be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs used to specify which job flow descriptions
+     *         should be returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -139,11 +172,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs used to specify which job flow descriptions
+     * should be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs used to specify which job flow descriptions
+     *         should be returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -159,9 +194,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the value of the JobFlowStates property for this object.
+     * <p/>
      *
-     * @return The value of the JobFlowStates property for this object.
+     * @return <p/>
      */
     public java.util.List<String> getJobFlowStates() {
         if (jobFlowStates == null) {
@@ -171,9 +206,9 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowStates property for this object.
+     * <p/>
      *
-     * @param jobFlowStates The new value for the JobFlowStates property for this object.
+     * @param jobFlowStates <p/>
      */
     public void setJobFlowStates(java.util.Collection<String> jobFlowStates) {
         java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>();
@@ -184,11 +219,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowStates property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowStates The new value for the JobFlowStates property for this object.
+     * @param jobFlowStates <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -201,11 +236,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowStates property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowStates The new value for the JobFlowStates property for this object.
+     * @param jobFlowStates <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -218,6 +253,19 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
         this.jobFlowStates = jobFlowStatesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CreatedAfter: " + createdAfter + ", ");
+        sb.append("CreatedBefore: " + createdBefore + ", ");
+        sb.append("JobFlowIds: " + jobFlowIds + ", ");
+        sb.append("JobFlowStates: " + jobFlowStates + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

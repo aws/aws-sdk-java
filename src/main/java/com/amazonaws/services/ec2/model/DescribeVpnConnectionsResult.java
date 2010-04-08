@@ -15,16 +15,21 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Describe Vpn Connections Result
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeVpnConnectionsResult {
 
+    /**
+     * 
+     */
     private java.util.List<VpnConnection> vpnConnections;
 
     /**
-     * Returns the value of the VpnConnections property for this object.
+     * 
      *
-     * @return The value of the VpnConnections property for this object.
+     * @return 
      */
     public java.util.List<VpnConnection> getVpnConnections() {
         if (vpnConnections == null) {
@@ -34,9 +39,9 @@ public class DescribeVpnConnectionsResult {
     }
     
     /**
-     * Sets the value of the VpnConnections property for this object.
+     * 
      *
-     * @param vpnConnections The new value for the VpnConnections property for this object.
+     * @param vpnConnections 
      */
     public void setVpnConnections(java.util.Collection<VpnConnection> vpnConnections) {
         java.util.List<VpnConnection> vpnConnectionsCopy = new java.util.ArrayList<VpnConnection>();
@@ -47,11 +52,11 @@ public class DescribeVpnConnectionsResult {
     }
     
     /**
-     * Sets the value of the VpnConnections property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnections The new value for the VpnConnections property for this object.
+     * @param vpnConnections 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +69,11 @@ public class DescribeVpnConnectionsResult {
     }
     
     /**
-     * Sets the value of the VpnConnections property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnections The new value for the VpnConnections property for this object.
+     * @param vpnConnections 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +86,16 @@ public class DescribeVpnConnectionsResult {
         this.vpnConnections = vpnConnectionsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnConnections: " + vpnConnections + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

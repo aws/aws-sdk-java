@@ -15,44 +15,65 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Customer Gateway
+ * <p>
+ * The CustomerGateway data type.
+ * </p>
  */
 public class CustomerGateway {
 
+    /**
+     * Specifies the ID of the customer gateway.
+     */
     private String customerGatewayId;
 
+    /**
+     * Describes the current state of the customer gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
+     */
     private String state;
 
+    /**
+     * Specifies the type of VPN connection the customer gateway supports.
+     */
     private String type;
 
+    /**
+     * Contains the Internet-routable IP address of the customer gateway's
+     * outside interface.
+     */
     private String ipAddress;
 
+    /**
+     * Specifies the customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
+     */
     private String bgpAsn;
 
     /**
-     * Returns the value of the CustomerGatewayId property for this object.
+     * Specifies the ID of the customer gateway.
      *
-     * @return The value of the CustomerGatewayId property for this object.
+     * @return Specifies the ID of the customer gateway.
      */
     public String getCustomerGatewayId() {
         return customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * Specifies the ID of the customer gateway.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId Specifies the ID of the customer gateway.
      */
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * Specifies the ID of the customer gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId Specifies the ID of the customer gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,29 +85,41 @@ public class CustomerGateway {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Describes the current state of the customer gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @return The value of the State property for this object.
+     * @return Describes the current state of the customer gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the customer gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the customer gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the customer gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the customer gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,29 +131,29 @@ public class CustomerGateway {
     
     
     /**
-     * Returns the value of the Type property for this object.
+     * Specifies the type of VPN connection the customer gateway supports.
      *
-     * @return The value of the Type property for this object.
+     * @return Specifies the type of VPN connection the customer gateway supports.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection the customer gateway supports.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection the customer gateway supports.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection the customer gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection the customer gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -132,29 +165,35 @@ public class CustomerGateway {
     
     
     /**
-     * Returns the value of the IpAddress property for this object.
+     * Contains the Internet-routable IP address of the customer gateway's
+     * outside interface.
      *
-     * @return The value of the IpAddress property for this object.
+     * @return Contains the Internet-routable IP address of the customer gateway's
+     *         outside interface.
      */
     public String getIpAddress() {
         return ipAddress;
     }
     
     /**
-     * Sets the value of the IpAddress property for this object.
+     * Contains the Internet-routable IP address of the customer gateway's
+     * outside interface.
      *
-     * @param ipAddress The new value for the IpAddress property for this object.
+     * @param ipAddress Contains the Internet-routable IP address of the customer gateway's
+     *         outside interface.
      */
     public void setIpAddress(String ipAddress) {
         this.ipAddress = ipAddress;
     }
     
     /**
-     * Sets the value of the IpAddress property for this object.
+     * Contains the Internet-routable IP address of the customer gateway's
+     * outside interface.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipAddress The new value for the IpAddress property for this object.
+     * @param ipAddress Contains the Internet-routable IP address of the customer gateway's
+     *         outside interface.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -166,29 +205,35 @@ public class CustomerGateway {
     
     
     /**
-     * Returns the value of the BgpAsn property for this object.
+     * Specifies the customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
      *
-     * @return The value of the BgpAsn property for this object.
+     * @return Specifies the customer gateway's Border Gateway Protocol (BGP)
+     *         Autonomous System Number (ASN).
      */
     public String getBgpAsn() {
         return bgpAsn;
     }
     
     /**
-     * Sets the value of the BgpAsn property for this object.
+     * Specifies the customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
      *
-     * @param bgpAsn The new value for the BgpAsn property for this object.
+     * @param bgpAsn Specifies the customer gateway's Border Gateway Protocol (BGP)
+     *         Autonomous System Number (ASN).
      */
     public void setBgpAsn(String bgpAsn) {
         this.bgpAsn = bgpAsn;
     }
     
     /**
-     * Sets the value of the BgpAsn property for this object.
+     * Specifies the customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bgpAsn The new value for the BgpAsn property for this object.
+     * @param bgpAsn Specifies the customer gateway's Border Gateway Protocol (BGP)
+     *         Autonomous System Number (ASN).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -198,6 +243,20 @@ public class CustomerGateway {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("Type: " + type + ", ");
+        sb.append("IpAddress: " + ipAddress + ", ");
+        sb.append("BgpAsn: " + bgpAsn + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

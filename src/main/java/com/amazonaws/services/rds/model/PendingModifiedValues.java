@@ -244,5 +244,19 @@ public class PendingModifiedValues {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        sb.append("MasterUserPassword: " + masterUserPassword + ", ");
+        sb.append("Port: " + port + ", ");
+        sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

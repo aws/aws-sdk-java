@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Attach Vpn Gateway Result
+ * <p>
+ * 
+ * </p>
  */
 public class AttachVpnGatewayResult {
 
+    /**
+     * 
+     */
     private VpcAttachment vpcAttachement;
 
     /**
-     * Returns the value of the VpcAttachement property for this object.
+     * 
      *
-     * @return The value of the VpcAttachement property for this object.
+     * @return 
      */
     public VpcAttachment getVpcAttachement() {
         return vpcAttachement;
     }
     
     /**
-     * Sets the value of the VpcAttachement property for this object.
+     * 
      *
-     * @param vpcAttachement The new value for the VpcAttachement property for this object.
+     * @param vpcAttachement 
      */
     public void setVpcAttachement(VpcAttachment vpcAttachement) {
         this.vpcAttachement = vpcAttachement;
     }
     
     /**
-     * Sets the value of the VpcAttachement property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachement The new value for the VpcAttachement property for this object.
+     * @param vpcAttachement 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class AttachVpnGatewayResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpcAttachement: " + vpcAttachement + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

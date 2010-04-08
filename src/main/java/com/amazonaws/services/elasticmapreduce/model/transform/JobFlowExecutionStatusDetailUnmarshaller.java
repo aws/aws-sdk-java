@@ -41,6 +41,9 @@ public class JobFlowExecutionStatusDetailUnmarshaller implements Unmarshaller<Jo
         Node startDateTimeNode = XpathUtils.asNode("StartDateTime", node);
         jobFlowExecutionStatusDetail.setStartDateTime(new DateUnmarshaller().unmarshall(startDateTimeNode));
     
+        Node readyDateTimeNode = XpathUtils.asNode("ReadyDateTime", node);
+        jobFlowExecutionStatusDetail.setReadyDateTime(new DateUnmarshaller().unmarshall(readyDateTimeNode));
+    
         Node endDateTimeNode = XpathUtils.asNode("EndDateTime", node);
         jobFlowExecutionStatusDetail.setEndDateTime(new DateUnmarshaller().unmarshall(endDateTimeNode));
     

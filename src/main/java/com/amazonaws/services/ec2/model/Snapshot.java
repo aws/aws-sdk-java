@@ -397,5 +397,23 @@ public class Snapshot {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("VolumeId: " + volumeId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("StartTime: " + startTime + ", ");
+        sb.append("Progress: " + progress + ", ");
+        sb.append("OwnerId: " + ownerId + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("VolumeSize: " + volumeSize + ", ");
+        sb.append("OwnerAlias: " + ownerAlias + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

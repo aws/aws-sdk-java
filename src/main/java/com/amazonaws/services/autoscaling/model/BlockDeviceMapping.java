@@ -131,5 +131,16 @@ public class BlockDeviceMapping {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VirtualName: " + virtualName + ", ");
+        sb.append("DeviceName: " + deviceName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

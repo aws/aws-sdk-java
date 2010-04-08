@@ -15,41 +15,36 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Configure Health Check Result
  */
 public class ConfigureHealthCheckResult {
 
-    /**
-     * The updated healthcheck for the instances.
-     */
     private HealthCheck healthCheck;
 
     /**
-     * The updated healthcheck for the instances.
+     * Returns the value of the HealthCheck property for this object.
      *
-     * @return The updated healthcheck for the instances.
+     * @return The value of the HealthCheck property for this object.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * The updated healthcheck for the instances.
+     * Sets the value of the HealthCheck property for this object.
      *
-     * @param healthCheck The updated healthcheck for the instances.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * The updated healthcheck for the instances.
+     * Sets the value of the HealthCheck property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck The updated healthcheck for the instances.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,6 +54,16 @@ public class ConfigureHealthCheckResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("HealthCheck: " + healthCheck + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

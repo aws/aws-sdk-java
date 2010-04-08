@@ -107,5 +107,16 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
+        sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

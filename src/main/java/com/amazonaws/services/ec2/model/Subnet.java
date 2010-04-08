@@ -15,46 +15,69 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Subnet
+ * <p>
+ * The Subnet data type.
+ * </p>
  */
 public class Subnet {
 
+    /**
+     * Specifies the ID of the subnet.
+     */
     private String subnetId;
 
+    /**
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
+     */
     private String state;
 
+    /**
+     * Contains the ID of the VPC the subnet is in.
+     */
     private String vpcId;
 
+    /**
+     * Specifies the CIDR block assigned to the subnet.
+     */
     private String cidrBlock;
 
+    /**
+     * Specifies the number of unused IP addresses in the subnet. <note> <p>
+     * The IP addresses for any stopped instances are considered unavailable.
+     * </note>
+     */
     private Integer availableIpAddressCount;
 
+    /**
+     * Specifies the Availability Zone the subnet is in.
+     */
     private String availabilityZone;
 
     /**
-     * Returns the value of the SubnetId property for this object.
+     * Specifies the ID of the subnet.
      *
-     * @return The value of the SubnetId property for this object.
+     * @return Specifies the ID of the subnet.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * Specifies the ID of the subnet.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId Specifies the ID of the subnet.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * Specifies the ID of the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId Specifies the ID of the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,29 +89,35 @@ public class Subnet {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
      *
-     * @return The value of the State property for this object.
+     * @return Describes the current state of the subnet. The state of the subnet may
+     *         be either <code>pending</code> or <code>available</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the subnet. The state of the subnet may
+     *         be either <code>pending</code> or <code>available</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the subnet. The state of the subnet may
+     * be either <code>pending</code> or <code>available</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the subnet. The state of the subnet may
+     *         be either <code>pending</code> or <code>available</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,29 +129,29 @@ public class Subnet {
     
     
     /**
-     * Returns the value of the VpcId property for this object.
+     * Contains the ID of the VPC the subnet is in.
      *
-     * @return The value of the VpcId property for this object.
+     * @return Contains the ID of the VPC the subnet is in.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * Contains the ID of the VPC the subnet is in.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId Contains the ID of the VPC the subnet is in.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * Sets the value of the VpcId property for this object.
+     * Contains the ID of the VPC the subnet is in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId The new value for the VpcId property for this object.
+     * @param vpcId Contains the ID of the VPC the subnet is in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -134,29 +163,29 @@ public class Subnet {
     
     
     /**
-     * Returns the value of the CidrBlock property for this object.
+     * Specifies the CIDR block assigned to the subnet.
      *
-     * @return The value of the CidrBlock property for this object.
+     * @return Specifies the CIDR block assigned to the subnet.
      */
     public String getCidrBlock() {
         return cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * Specifies the CIDR block assigned to the subnet.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock Specifies the CIDR block assigned to the subnet.
      */
     public void setCidrBlock(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
     
     /**
-     * Sets the value of the CidrBlock property for this object.
+     * Specifies the CIDR block assigned to the subnet.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cidrBlock The new value for the CidrBlock property for this object.
+     * @param cidrBlock Specifies the CIDR block assigned to the subnet.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -168,34 +197,41 @@ public class Subnet {
     
     
     /**
-     * Returns the value of the AvailableIpAddressCount property for this
-     * object.
+     * Specifies the number of unused IP addresses in the subnet. <note> <p>
+     * The IP addresses for any stopped instances are considered unavailable.
+     * </note>
      *
-     * @return The value of the AvailableIpAddressCount property for this object.
+     * @return Specifies the number of unused IP addresses in the subnet. <note> <p>
+     *         The IP addresses for any stopped instances are considered unavailable.
+     *         </note>
      */
     public Integer getAvailableIpAddressCount() {
         return availableIpAddressCount;
     }
     
     /**
-     * Sets the value of the AvailableIpAddressCount property for this
-     * object.
+     * Specifies the number of unused IP addresses in the subnet. <note> <p>
+     * The IP addresses for any stopped instances are considered unavailable.
+     * </note>
      *
-     * @param availableIpAddressCount The new value for the AvailableIpAddressCount property for this
-     *         object.
+     * @param availableIpAddressCount Specifies the number of unused IP addresses in the subnet. <note> <p>
+     *         The IP addresses for any stopped instances are considered unavailable.
+     *         </note>
      */
     public void setAvailableIpAddressCount(Integer availableIpAddressCount) {
         this.availableIpAddressCount = availableIpAddressCount;
     }
     
     /**
-     * Sets the value of the AvailableIpAddressCount property for this
-     * object.
+     * Specifies the number of unused IP addresses in the subnet. <note> <p>
+     * The IP addresses for any stopped instances are considered unavailable.
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availableIpAddressCount The new value for the AvailableIpAddressCount property for this
-     *         object.
+     * @param availableIpAddressCount Specifies the number of unused IP addresses in the subnet. <note> <p>
+     *         The IP addresses for any stopped instances are considered unavailable.
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -207,29 +243,29 @@ public class Subnet {
     
     
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone the subnet is in.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return Specifies the Availability Zone the subnet is in.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone the subnet is in.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone Specifies the Availability Zone the subnet is in.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone the subnet is in.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone Specifies the Availability Zone the subnet is in.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -239,6 +275,21 @@ public class Subnet {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SubnetId: " + subnetId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("VpcId: " + vpcId + ", ");
+        sb.append("CidrBlock: " + cidrBlock + ", ");
+        sb.append("AvailableIpAddressCount: " + availableIpAddressCount + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

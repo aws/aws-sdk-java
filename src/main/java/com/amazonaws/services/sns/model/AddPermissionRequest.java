@@ -277,5 +277,18 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("Label: " + label + ", ");
+        sb.append("AWSAccountIds: " + aWSAccountIds + ", ");
+        sb.append("ActionNames: " + actionNames + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

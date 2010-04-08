@@ -19,12 +19,15 @@ package com.amazonaws.services.elasticmapreduce.model;
  */
 public class DescribeJobFlowsResult {
 
+    /**
+     * <p/>
+     */
     private java.util.List<JobFlowDetail> jobFlows;
 
     /**
-     * Returns the value of the JobFlows property for this object.
+     * <p/>
      *
-     * @return The value of the JobFlows property for this object.
+     * @return <p/>
      */
     public java.util.List<JobFlowDetail> getJobFlows() {
         if (jobFlows == null) {
@@ -34,9 +37,9 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * Sets the value of the JobFlows property for this object.
+     * <p/>
      *
-     * @param jobFlows The new value for the JobFlows property for this object.
+     * @param jobFlows <p/>
      */
     public void setJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {
         java.util.List<JobFlowDetail> jobFlowsCopy = new java.util.ArrayList<JobFlowDetail>();
@@ -47,11 +50,11 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * Sets the value of the JobFlows property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlows The new value for the JobFlows property for this object.
+     * @param jobFlows <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +67,11 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * Sets the value of the JobFlows property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlows The new value for the JobFlows property for this object.
+     * @param jobFlows <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +84,16 @@ public class DescribeJobFlowsResult {
         this.jobFlows = jobFlowsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("JobFlows: " + jobFlows + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

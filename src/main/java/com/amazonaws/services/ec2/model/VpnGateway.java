@@ -15,44 +15,63 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Vpn Gateway
+ * <p>
+ * The VpnGateway data type.
+ * </p>
  */
 public class VpnGateway {
 
+    /**
+     * Specifies the ID of the VPN gateway.
+     */
     private String vpnGatewayId;
 
+    /**
+     * Describes the current state of the VPN gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
+     */
     private String state;
 
+    /**
+     * Specifies the type of VPN connection the VPN gateway supports.
+     */
     private String type;
 
+    /**
+     * Specifies the Availability Zone where the VPN gateway was created.
+     */
     private String availabilityZone;
 
+    /**
+     * Contains information about the VPCs attached to the VPN gateway.
+     */
     private java.util.List<VpcAttachment> vpcAttachments;
 
     /**
-     * Returns the value of the VpnGatewayId property for this object.
+     * Specifies the ID of the VPN gateway.
      *
-     * @return The value of the VpnGatewayId property for this object.
+     * @return Specifies the ID of the VPN gateway.
      */
     public String getVpnGatewayId() {
         return vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * Specifies the ID of the VPN gateway.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId Specifies the ID of the VPN gateway.
      */
     public void setVpnGatewayId(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
     
     /**
-     * Sets the value of the VpnGatewayId property for this object.
+     * Specifies the ID of the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayId The new value for the VpnGatewayId property for this object.
+     * @param vpnGatewayId Specifies the ID of the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,29 +83,41 @@ public class VpnGateway {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Describes the current state of the VPN gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @return The value of the State property for this object.
+     * @return Describes the current state of the VPN gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPN gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPN gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Describes the current state of the VPN gateway. Valid values are
+     * <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     * and <code>deleted</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Describes the current state of the VPN gateway. Valid values are
+     *         <code>pending</code>, <code>available</code>, <code>deleting</code>,
+     *         and <code>deleted</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,29 +129,29 @@ public class VpnGateway {
     
     
     /**
-     * Returns the value of the Type property for this object.
+     * Specifies the type of VPN connection the VPN gateway supports.
      *
-     * @return The value of the Type property for this object.
+     * @return Specifies the type of VPN connection the VPN gateway supports.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection the VPN gateway supports.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection the VPN gateway supports.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * Specifies the type of VPN connection the VPN gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type Specifies the type of VPN connection the VPN gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -132,29 +163,29 @@ public class VpnGateway {
     
     
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone where the VPN gateway was created.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return Specifies the Availability Zone where the VPN gateway was created.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone where the VPN gateway was created.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone Specifies the Availability Zone where the VPN gateway was created.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * Specifies the Availability Zone where the VPN gateway was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone Specifies the Availability Zone where the VPN gateway was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -166,9 +197,9 @@ public class VpnGateway {
     
     
     /**
-     * Returns the value of the VpcAttachments property for this object.
+     * Contains information about the VPCs attached to the VPN gateway.
      *
-     * @return The value of the VpcAttachments property for this object.
+     * @return Contains information about the VPCs attached to the VPN gateway.
      */
     public java.util.List<VpcAttachment> getVpcAttachments() {
         if (vpcAttachments == null) {
@@ -178,9 +209,9 @@ public class VpnGateway {
     }
     
     /**
-     * Sets the value of the VpcAttachments property for this object.
+     * Contains information about the VPCs attached to the VPN gateway.
      *
-     * @param vpcAttachments The new value for the VpcAttachments property for this object.
+     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
      */
     public void setVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
         java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>();
@@ -191,11 +222,11 @@ public class VpnGateway {
     }
     
     /**
-     * Sets the value of the VpcAttachments property for this object.
+     * Contains information about the VPCs attached to the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachments The new value for the VpcAttachments property for this object.
+     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -208,11 +239,11 @@ public class VpnGateway {
     }
     
     /**
-     * Sets the value of the VpcAttachments property for this object.
+     * Contains information about the VPCs attached to the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcAttachments The new value for the VpcAttachments property for this object.
+     * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -225,6 +256,20 @@ public class VpnGateway {
         this.vpcAttachments = vpcAttachmentsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        sb.append("State: " + state + ", ");
+        sb.append("Type: " + type + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("VpcAttachments: " + vpcAttachments + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

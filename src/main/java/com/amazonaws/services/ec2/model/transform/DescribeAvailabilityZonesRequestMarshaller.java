@@ -32,7 +32,7 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
     public Request<DescribeAvailabilityZonesRequest> marshall(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest) {
         Request<DescribeAvailabilityZonesRequest> request = new DefaultRequest<DescribeAvailabilityZonesRequest>(describeAvailabilityZonesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAvailabilityZones");
-        request.addParameter("Version", "2009-10-31");
+        request.addParameter("Version", "2009-11-30");
         if (describeAvailabilityZonesRequest != null) {
             java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
             int zoneNamesListIndex = 1;

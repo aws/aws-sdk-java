@@ -15,36 +15,40 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Placement Type
+ * <p>
+ * </p>
  */
 public class PlacementType {
 
+    /**
+     * The geographical location of the Amazon EC2 instances.
+     */
     private String availabilityZone;
 
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The geographical location of the Amazon EC2 instances.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The geographical location of the Amazon EC2 instances.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The geographical location of the Amazon EC2 instances.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The geographical location of the Amazon EC2 instances.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The geographical location of the Amazon EC2 instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The geographical location of the Amazon EC2 instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +58,16 @@ public class PlacementType {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

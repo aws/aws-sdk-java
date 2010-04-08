@@ -145,5 +145,16 @@ public class DescribeSnapshotAttributeResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SnapshotId: " + snapshotId + ", ");
+        sb.append("CreateVolumePermissions: " + createVolumePermissions + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

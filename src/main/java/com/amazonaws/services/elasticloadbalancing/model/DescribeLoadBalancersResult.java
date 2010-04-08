@@ -15,21 +15,17 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Describe Load Balancers Result
  */
 public class DescribeLoadBalancersResult {
 
-    /**
-     * A list of LoadBalancer description structures.
-     */
     private java.util.List<LoadBalancerDescription> loadBalancerDescriptions;
 
     /**
-     * A list of LoadBalancer description structures.
+     * Returns the value of the LoadBalancerDescriptions property for this
+     * object.
      *
-     * @return A list of LoadBalancer description structures.
+     * @return The value of the LoadBalancerDescriptions property for this object.
      */
     public java.util.List<LoadBalancerDescription> getLoadBalancerDescriptions() {
         if (loadBalancerDescriptions == null) {
@@ -39,9 +35,11 @@ public class DescribeLoadBalancersResult {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * Sets the value of the LoadBalancerDescriptions property for this
+     * object.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions The new value for the LoadBalancerDescriptions property for this
+     *         object.
      */
     public void setLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
         java.util.List<LoadBalancerDescription> loadBalancerDescriptionsCopy = new java.util.ArrayList<LoadBalancerDescription>();
@@ -52,11 +50,13 @@ public class DescribeLoadBalancersResult {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * Sets the value of the LoadBalancerDescriptions property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions The new value for the LoadBalancerDescriptions property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +69,13 @@ public class DescribeLoadBalancersResult {
     }
     
     /**
-     * A list of LoadBalancer description structures.
+     * Sets the value of the LoadBalancerDescriptions property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerDescriptions A list of LoadBalancer description structures.
+     * @param loadBalancerDescriptions The new value for the LoadBalancerDescriptions property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -86,6 +88,16 @@ public class DescribeLoadBalancersResult {
         this.loadBalancerDescriptions = loadBalancerDescriptionsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

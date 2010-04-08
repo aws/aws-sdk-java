@@ -61,5 +61,15 @@ public class Topic {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("TopicArn: " + topicArn + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

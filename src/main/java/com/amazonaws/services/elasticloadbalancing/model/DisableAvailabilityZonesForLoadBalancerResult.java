@@ -15,21 +15,16 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Disable Availability Zones For Load Balancer Result
  */
 public class DisableAvailabilityZonesForLoadBalancerResult {
 
-    /**
-     * A list of updated Availability Zones for the LoadBalancer.
-     */
     private java.util.List<String> availabilityZones;
 
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * Returns the value of the AvailabilityZones property for this object.
      *
-     * @return A list of updated Availability Zones for the LoadBalancer.
+     * @return The value of the AvailabilityZones property for this object.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -39,9 +34,9 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
@@ -52,11 +47,11 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +64,11 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
     }
     
     /**
-     * A list of updated Availability Zones for the LoadBalancer.
+     * Sets the value of the AvailabilityZones property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones A list of updated Availability Zones for the LoadBalancer.
+     * @param availabilityZones The new value for the AvailabilityZones property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -86,6 +81,16 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
         this.availabilityZones = availabilityZonesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

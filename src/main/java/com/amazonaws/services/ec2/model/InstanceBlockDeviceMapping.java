@@ -106,5 +106,16 @@ public class InstanceBlockDeviceMapping {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DeviceName: " + deviceName + ", ");
+        sb.append("Ebs: " + ebs + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

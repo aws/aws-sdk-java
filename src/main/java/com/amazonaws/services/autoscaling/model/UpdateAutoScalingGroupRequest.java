@@ -331,5 +331,20 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        sb.append("MinSize: " + minSize + ", ");
+        sb.append("MaxSize: " + maxSize + ", ");
+        sb.append("Cooldown: " + cooldown + ", ");
+        sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

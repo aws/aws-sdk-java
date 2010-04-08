@@ -21,32 +21,35 @@ package com.amazonaws.services.ec2.model;
  */
 public class AttachVolumeResult {
 
+    /**
+     * 
+     */
     private VolumeAttachment attachment;
 
     /**
-     * Returns the value of the Attachment property for this object.
+     * 
      *
-     * @return The value of the Attachment property for this object.
+     * @return 
      */
     public VolumeAttachment getAttachment() {
         return attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * 
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment 
      */
     public void setAttachment(VolumeAttachment attachment) {
         this.attachment = attachment;
     }
     
     /**
-     * Sets the value of the Attachment property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attachment The new value for the Attachment property for this object.
+     * @param attachment 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -56,6 +59,16 @@ public class AttachVolumeResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Attachment: " + attachment + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

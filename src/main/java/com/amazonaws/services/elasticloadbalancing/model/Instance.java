@@ -15,41 +15,36 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * <p>
- * The Instance data type.
- * </p>
+ * Instance
  */
 public class Instance {
 
-    /**
-     * Provides an EC2 instance ID.
-     */
     private String instanceId;
 
     /**
-     * Provides an EC2 instance ID.
+     * Returns the value of the InstanceId property for this object.
      *
-     * @return Provides an EC2 instance ID.
+     * @return The value of the InstanceId property for this object.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * Sets the value of the InstanceId property for this object.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The new value for the InstanceId property for this object.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Provides an EC2 instance ID.
+     * Sets the value of the InstanceId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId Provides an EC2 instance ID.
+     * @param instanceId The new value for the InstanceId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,6 +54,16 @@ public class Instance {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

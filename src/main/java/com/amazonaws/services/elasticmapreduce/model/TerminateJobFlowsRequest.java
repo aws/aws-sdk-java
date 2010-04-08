@@ -20,12 +20,24 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A list of job flow IDs specifying the job flows to terminate. Each
+     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     * operation. To terminate more than one job flow, set this parameter to
+     * a comma-seperate list of <code>JobFlowID</code>s.
+     */
     private java.util.List<String> jobFlowIds;
 
     /**
-     * Returns the value of the JobFlowIds property for this object.
+     * A list of job flow IDs specifying the job flows to terminate. Each
+     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     * operation. To terminate more than one job flow, set this parameter to
+     * a comma-seperate list of <code>JobFlowID</code>s.
      *
-     * @return The value of the JobFlowIds property for this object.
+     * @return A list of job flow IDs specifying the job flows to terminate. Each
+     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     *         operation. To terminate more than one job flow, set this parameter to
+     *         a comma-seperate list of <code>JobFlowID</code>s.
      */
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
@@ -35,9 +47,15 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs specifying the job flows to terminate. Each
+     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     * operation. To terminate more than one job flow, set this parameter to
+     * a comma-seperate list of <code>JobFlowID</code>s.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
+     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     *         operation. To terminate more than one job flow, set this parameter to
+     *         a comma-seperate list of <code>JobFlowID</code>s.
      */
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>();
@@ -48,11 +66,17 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs specifying the job flows to terminate. Each
+     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     * operation. To terminate more than one job flow, set this parameter to
+     * a comma-seperate list of <code>JobFlowID</code>s.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
+     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     *         operation. To terminate more than one job flow, set this parameter to
+     *         a comma-seperate list of <code>JobFlowID</code>s.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -65,11 +89,17 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the JobFlowIds property for this object.
+     * A list of job flow IDs specifying the job flows to terminate. Each
+     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     * operation. To terminate more than one job flow, set this parameter to
+     * a comma-seperate list of <code>JobFlowID</code>s.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds The new value for the JobFlowIds property for this object.
+     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
+     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
+     *         operation. To terminate more than one job flow, set this parameter to
+     *         a comma-seperate list of <code>JobFlowID</code>s.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -82,6 +112,16 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
         this.jobFlowIds = jobFlowIdsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("JobFlowIds: " + jobFlowIds + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

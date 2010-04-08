@@ -90,5 +90,15 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("GroupNames: " + groupNames + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

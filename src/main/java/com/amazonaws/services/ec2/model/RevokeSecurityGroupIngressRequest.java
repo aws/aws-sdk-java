@@ -343,5 +343,21 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("GroupName: " + groupName + ", ");
+        sb.append("SourceSecurityGroupName: " + sourceSecurityGroupName + ", ");
+        sb.append("SourceSecurityGroupOwnerId: " + sourceSecurityGroupOwnerId + ", ");
+        sb.append("IpProtocol: " + ipProtocol + ", ");
+        sb.append("FromPort: " + fromPort + ", ");
+        sb.append("ToPort: " + toPort + ", ");
+        sb.append("CidrIp: " + cidrIp + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

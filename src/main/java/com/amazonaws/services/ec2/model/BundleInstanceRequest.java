@@ -16,38 +16,46 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Bundle Instance Request
+ * <p>
+ * 
+ * </p>
  */
 public class BundleInstanceRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the instance to bundle.
+     */
     private String instanceId;
 
+    /**
+     * 
+     */
     private Storage storage;
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * The ID of the instance to bundle.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return The ID of the instance to bundle.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of the instance to bundle.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of the instance to bundle.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * The ID of the instance to bundle.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId The ID of the instance to bundle.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,29 +67,29 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Storage property for this object.
+     * 
      *
-     * @return The value of the Storage property for this object.
+     * @return 
      */
     public Storage getStorage() {
         return storage;
     }
     
     /**
-     * Sets the value of the Storage property for this object.
+     * 
      *
-     * @param storage The new value for the Storage property for this object.
+     * @param storage 
      */
     public void setStorage(Storage storage) {
         this.storage = storage;
     }
     
     /**
-     * Sets the value of the Storage property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storage The new value for the Storage property for this object.
+     * @param storage 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,6 +99,17 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("Storage: " + storage + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

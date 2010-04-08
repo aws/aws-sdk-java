@@ -32,7 +32,7 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
     public Request<AllocateAddressRequest> marshall(AllocateAddressRequest allocateAddressRequest) {
         Request<AllocateAddressRequest> request = new DefaultRequest<AllocateAddressRequest>(allocateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AllocateAddress");
-        request.addParameter("Version", "2009-10-31");
+        request.addParameter("Version", "2009-11-30");
 
 
         return request;

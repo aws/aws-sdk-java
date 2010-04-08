@@ -60,5 +60,15 @@ public class TerminateInstanceInAutoScalingGroupResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Activity: " + activity + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

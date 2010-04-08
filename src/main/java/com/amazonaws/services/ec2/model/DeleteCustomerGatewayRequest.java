@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Customer Gateway Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the customer gateway to delete.
+     */
     private String customerGatewayId;
 
     /**
-     * Returns the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway to delete.
      *
-     * @return The value of the CustomerGatewayId property for this object.
+     * @return The ID of the customer gateway to delete.
      */
     public String getCustomerGatewayId() {
         return customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway to delete.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId The ID of the customer gateway to delete.
      */
     public void setCustomerGatewayId(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
     
     /**
-     * Sets the value of the CustomerGatewayId property for this object.
+     * The ID of the customer gateway to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGatewayId The new value for the CustomerGatewayId property for this object.
+     * @param customerGatewayId The ID of the customer gateway to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -15,38 +15,46 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Dhcp Configuration
+ * <p>
+ * The DhcpConfiguration data type
+ * </p>
  */
 public class DhcpConfiguration {
 
+    /**
+     * Contains the name of a DHCP option.
+     */
     private String key;
 
+    /**
+     * Contains a set of values for a DHCP option.
+     */
     private java.util.List<String> values;
 
     /**
-     * Returns the value of the Key property for this object.
+     * Contains the name of a DHCP option.
      *
-     * @return The value of the Key property for this object.
+     * @return Contains the name of a DHCP option.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * Sets the value of the Key property for this object.
+     * Contains the name of a DHCP option.
      *
-     * @param key The new value for the Key property for this object.
+     * @param key Contains the name of a DHCP option.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * Sets the value of the Key property for this object.
+     * Contains the name of a DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The new value for the Key property for this object.
+     * @param key Contains the name of a DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +66,9 @@ public class DhcpConfiguration {
     
     
     /**
-     * Returns the value of the Values property for this object.
+     * Contains a set of values for a DHCP option.
      *
-     * @return The value of the Values property for this object.
+     * @return Contains a set of values for a DHCP option.
      */
     public java.util.List<String> getValues() {
         if (values == null) {
@@ -70,9 +78,9 @@ public class DhcpConfiguration {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains a set of values for a DHCP option.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains a set of values for a DHCP option.
      */
     public void setValues(java.util.Collection<String> values) {
         java.util.List<String> valuesCopy = new java.util.ArrayList<String>();
@@ -83,11 +91,11 @@ public class DhcpConfiguration {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains a set of values for a DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains a set of values for a DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +108,11 @@ public class DhcpConfiguration {
     }
     
     /**
-     * Sets the value of the Values property for this object.
+     * Contains a set of values for a DHCP option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param values The new value for the Values property for this object.
+     * @param values Contains a set of values for a DHCP option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,6 +125,17 @@ public class DhcpConfiguration {
         this.values = valuesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Key: " + key + ", ");
+        sb.append("Values: " + values + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

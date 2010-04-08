@@ -15,38 +15,46 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Dhcp Options
+ * <p>
+ * The DhcpOptions data type.
+ * </p>
  */
 public class DhcpOptions {
 
+    /**
+     * Specifies the ID of the set of DHCP options.
+     */
     private String dhcpOptionsId;
 
+    /**
+     * Contains information about the set of DHCP options.
+     */
     private java.util.List<DhcpConfiguration> dhcpConfigurations;
 
     /**
-     * Returns the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options.
      *
-     * @return The value of the DhcpOptionsId property for this object.
+     * @return Specifies the ID of the set of DHCP options.
      */
     public String getDhcpOptionsId() {
         return dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId Specifies the ID of the set of DHCP options.
      */
     public void setDhcpOptionsId(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
     
     /**
-     * Sets the value of the DhcpOptionsId property for this object.
+     * Specifies the ID of the set of DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpOptionsId The new value for the DhcpOptionsId property for this object.
+     * @param dhcpOptionsId Specifies the ID of the set of DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +66,9 @@ public class DhcpOptions {
     
     
     /**
-     * Returns the value of the DhcpConfigurations property for this object.
+     * Contains information about the set of DHCP options.
      *
-     * @return The value of the DhcpConfigurations property for this object.
+     * @return Contains information about the set of DHCP options.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         if (dhcpConfigurations == null) {
@@ -70,9 +78,9 @@ public class DhcpOptions {
     }
     
     /**
-     * Sets the value of the DhcpConfigurations property for this object.
+     * Contains information about the set of DHCP options.
      *
-     * @param dhcpConfigurations The new value for the DhcpConfigurations property for this object.
+     * @param dhcpConfigurations Contains information about the set of DHCP options.
      */
     public void setDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
         java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>();
@@ -83,11 +91,11 @@ public class DhcpOptions {
     }
     
     /**
-     * Sets the value of the DhcpConfigurations property for this object.
+     * Contains information about the set of DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations The new value for the DhcpConfigurations property for this object.
+     * @param dhcpConfigurations Contains information about the set of DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +108,11 @@ public class DhcpOptions {
     }
     
     /**
-     * Sets the value of the DhcpConfigurations property for this object.
+     * Contains information about the set of DHCP options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfigurations The new value for the DhcpConfigurations property for this object.
+     * @param dhcpConfigurations Contains information about the set of DHCP options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,6 +125,17 @@ public class DhcpOptions {
         this.dhcpConfigurations = dhcpConfigurationsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
+        sb.append("DhcpConfigurations: " + dhcpConfigurations + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

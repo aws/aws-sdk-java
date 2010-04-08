@@ -90,5 +90,15 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VolumeIds: " + volumeIds + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

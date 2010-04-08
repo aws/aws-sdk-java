@@ -15,36 +15,41 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Create Vpn Gateway Result
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpnGatewayResult {
 
+    /**
+     * 
+     */
     private VpnGateway vpnGateway;
 
     /**
-     * Returns the value of the VpnGateway property for this object.
+     * 
      *
-     * @return The value of the VpnGateway property for this object.
+     * @return 
      */
     public VpnGateway getVpnGateway() {
         return vpnGateway;
     }
     
     /**
-     * Sets the value of the VpnGateway property for this object.
+     * 
      *
-     * @param vpnGateway The new value for the VpnGateway property for this object.
+     * @param vpnGateway 
      */
     public void setVpnGateway(VpnGateway vpnGateway) {
         this.vpnGateway = vpnGateway;
     }
     
     /**
-     * Sets the value of the VpnGateway property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGateway The new value for the VpnGateway property for this object.
+     * @param vpnGateway 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -54,6 +59,16 @@ public class CreateVpnGatewayResult {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnGateway: " + vpnGateway + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

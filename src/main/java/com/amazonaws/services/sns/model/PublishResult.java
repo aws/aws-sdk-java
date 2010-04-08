@@ -58,5 +58,15 @@ public class PublishResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("MessageId: " + messageId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

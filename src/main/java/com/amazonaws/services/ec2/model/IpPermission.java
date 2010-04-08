@@ -301,5 +301,19 @@ public class IpPermission {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("IpProtocol: " + ipProtocol + ", ");
+        sb.append("FromPort: " + fromPort + ", ");
+        sb.append("ToPort: " + toPort + ", ");
+        sb.append("UserIdGroupPairs: " + userIdGroupPairs + ", ");
+        sb.append("IpRanges: " + ipRanges + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -94,5 +94,15 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("KeyNames: " + keyNames + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

@@ -16,55 +16,38 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Returns the current state of the instances of the specified
- * LoadBalancer. If no instances are specified, the state of all the
- * instances for the LoadBalancer is returned.
- * </p>
+ * Describe Instance Health Request
  */
 public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
 
-    /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
-     */
     private String loadBalancerName;
 
-    /**
-     * A list of instance IDs whose states are being queried.
-     */
     private java.util.List<Instance> instances;
 
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Returns the value of the LoadBalancerName property for this object.
      *
-     * @return The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @return The value of the LoadBalancerName property for this object.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The name associated with the LoadBalancer. The name must be unique
-     * within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,9 +59,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * Returns the value of the Instances property for this object.
      *
-     * @return A list of instance IDs whose states are being queried.
+     * @return The value of the Instances property for this object.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -88,9 +71,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * Sets the value of the Instances property for this object.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The new value for the Instances property for this object.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -101,11 +84,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,11 +101,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of instance IDs whose states are being queried.
+     * Sets the value of the Instances property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A list of instance IDs whose states are being queried.
+     * @param instances The new value for the Instances property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -135,6 +118,17 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
         this.instances = instancesCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        sb.append("Instances: " + instances + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

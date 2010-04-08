@@ -38,6 +38,9 @@ public class RunJobFlowRequestUnmarshaller implements Unmarshaller<RunJobFlowReq
         Node logUriNode = XpathUtils.asNode("LogUri", node);
         runJobFlowRequest.setLogUri(new StringUnmarshaller().unmarshall(logUriNode));
     
+        Node additionalInfoNode = XpathUtils.asNode("AdditionalInfo", node);
+        runJobFlowRequest.setAdditionalInfo(new StringUnmarshaller().unmarshall(additionalInfoNode));
+    
         Node instancesNode = XpathUtils.asNode("Instances", node);
         runJobFlowRequest.setInstances(new JobFlowInstancesConfigUnmarshaller().unmarshall(instancesNode));
     
@@ -46,6 +49,13 @@ public class RunJobFlowRequestUnmarshaller implements Unmarshaller<RunJobFlowReq
             Node stepsNode = stepsNodes.item(stepsIndex);
             runJobFlowRequest.getSteps().add(new StepConfigUnmarshaller().unmarshall(stepsNode));
             stepsNode.getParentNode().removeChild(stepsNode);
+        }
+    
+        NodeList bootstrapActionsNodes = XpathUtils.asNodeList("BootstrapActions/member", node);
+        for (int bootstrapActionsIndex = 0; bootstrapActionsIndex < XpathUtils.nodeLength(bootstrapActionsNodes); ++bootstrapActionsIndex) {
+            Node bootstrapActionsNode = bootstrapActionsNodes.item(bootstrapActionsIndex);
+            runJobFlowRequest.getBootstrapActions().add(new BootstrapActionConfigUnmarshaller().unmarshall(bootstrapActionsNode));
+            bootstrapActionsNode.getParentNode().removeChild(bootstrapActionsNode);
         }
     
 

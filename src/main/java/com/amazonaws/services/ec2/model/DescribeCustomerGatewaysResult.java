@@ -15,16 +15,21 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Describe Customer Gateways Result
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeCustomerGatewaysResult {
 
+    /**
+     * 
+     */
     private java.util.List<CustomerGateway> customerGateways;
 
     /**
-     * Returns the value of the CustomerGateways property for this object.
+     * 
      *
-     * @return The value of the CustomerGateways property for this object.
+     * @return 
      */
     public java.util.List<CustomerGateway> getCustomerGateways() {
         if (customerGateways == null) {
@@ -34,9 +39,9 @@ public class DescribeCustomerGatewaysResult {
     }
     
     /**
-     * Sets the value of the CustomerGateways property for this object.
+     * 
      *
-     * @param customerGateways The new value for the CustomerGateways property for this object.
+     * @param customerGateways 
      */
     public void setCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
         java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>();
@@ -47,11 +52,11 @@ public class DescribeCustomerGatewaysResult {
     }
     
     /**
-     * Sets the value of the CustomerGateways property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGateways The new value for the CustomerGateways property for this object.
+     * @param customerGateways 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +69,11 @@ public class DescribeCustomerGatewaysResult {
     }
     
     /**
-     * Sets the value of the CustomerGateways property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param customerGateways The new value for the CustomerGateways property for this object.
+     * @param customerGateways 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +86,16 @@ public class DescribeCustomerGatewaysResult {
         this.customerGateways = customerGatewaysCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("CustomerGateways: " + customerGateways + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

@@ -15,38 +15,45 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Key Value
+ * <p>
+ * </p>
  */
 public class KeyValue {
 
+    /**
+     * The key that is paired with a value in a KeyValue pair.
+     */
     private String key;
 
+    /**
+     * The value paired with a key in a KeyValue pair.
+     */
     private String value;
 
     /**
-     * Returns the value of the Key property for this object.
+     * The key that is paired with a value in a KeyValue pair.
      *
-     * @return The value of the Key property for this object.
+     * @return The key that is paired with a value in a KeyValue pair.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * Sets the value of the Key property for this object.
+     * The key that is paired with a value in a KeyValue pair.
      *
-     * @param key The new value for the Key property for this object.
+     * @param key The key that is paired with a value in a KeyValue pair.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * Sets the value of the Key property for this object.
+     * The key that is paired with a value in a KeyValue pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The new value for the Key property for this object.
+     * @param key The key that is paired with a value in a KeyValue pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,29 +65,29 @@ public class KeyValue {
     
     
     /**
-     * Returns the value of the Value property for this object.
+     * The value paired with a key in a KeyValue pair.
      *
-     * @return The value of the Value property for this object.
+     * @return The value paired with a key in a KeyValue pair.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * Sets the value of the Value property for this object.
+     * The value paired with a key in a KeyValue pair.
      *
-     * @param value The new value for the Value property for this object.
+     * @param value The value paired with a key in a KeyValue pair.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * Sets the value of the Value property for this object.
+     * The value paired with a key in a KeyValue pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The new value for the Value property for this object.
+     * @param value The value paired with a key in a KeyValue pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,6 +97,17 @@ public class KeyValue {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Key: " + key + ", ");
+        sb.append("Value: " + value + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

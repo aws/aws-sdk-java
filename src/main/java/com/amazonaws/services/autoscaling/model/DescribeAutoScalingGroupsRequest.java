@@ -89,5 +89,15 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AutoScalingGroupNames: " + autoScalingGroupNames + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

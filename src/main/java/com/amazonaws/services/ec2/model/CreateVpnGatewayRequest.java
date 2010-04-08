@@ -16,38 +16,46 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Vpn Gateway Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The type of VPN connection this VPN gateway supports.
+     */
     private String type;
 
+    /**
+     * The Availability Zone in which to create the VPN gateway.
+     */
     private String availabilityZone;
 
     /**
-     * Returns the value of the Type property for this object.
+     * The type of VPN connection this VPN gateway supports.
      *
-     * @return The value of the Type property for this object.
+     * @return The type of VPN connection this VPN gateway supports.
      */
     public String getType() {
         return type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection this VPN gateway supports.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection this VPN gateway supports.
      */
     public void setType(String type) {
         this.type = type;
     }
     
     /**
-     * Sets the value of the Type property for this object.
+     * The type of VPN connection this VPN gateway supports.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The new value for the Type property for this object.
+     * @param type The type of VPN connection this VPN gateway supports.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -59,29 +67,29 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AvailabilityZone property for this object.
+     * The Availability Zone in which to create the VPN gateway.
      *
-     * @return The value of the AvailabilityZone property for this object.
+     * @return The Availability Zone in which to create the VPN gateway.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone in which to create the VPN gateway.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone in which to create the VPN gateway.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Sets the value of the AvailabilityZone property for this object.
+     * The Availability Zone in which to create the VPN gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The new value for the AvailabilityZone property for this object.
+     * @param availabilityZone The Availability Zone in which to create the VPN gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,6 +99,17 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("Type: " + type + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

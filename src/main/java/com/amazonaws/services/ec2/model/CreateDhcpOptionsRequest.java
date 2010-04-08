@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Dhcp Options Request
+ * <p>
+ * 
+ * </p>
  */
 public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A set of one or more DHCP configurations.
+     */
     private DhcpConfiguration dhcpConfiguration;
 
     /**
-     * Returns the value of the DhcpConfiguration property for this object.
+     * A set of one or more DHCP configurations.
      *
-     * @return The value of the DhcpConfiguration property for this object.
+     * @return A set of one or more DHCP configurations.
      */
     public DhcpConfiguration getDhcpConfiguration() {
         return dhcpConfiguration;
     }
     
     /**
-     * Sets the value of the DhcpConfiguration property for this object.
+     * A set of one or more DHCP configurations.
      *
-     * @param dhcpConfiguration The new value for the DhcpConfiguration property for this object.
+     * @param dhcpConfiguration A set of one or more DHCP configurations.
      */
     public void setDhcpConfiguration(DhcpConfiguration dhcpConfiguration) {
         this.dhcpConfiguration = dhcpConfiguration;
     }
     
     /**
-     * Sets the value of the DhcpConfiguration property for this object.
+     * A set of one or more DHCP configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfiguration The new value for the DhcpConfiguration property for this object.
+     * @param dhcpConfiguration A set of one or more DHCP configurations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DhcpConfiguration: " + dhcpConfiguration + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

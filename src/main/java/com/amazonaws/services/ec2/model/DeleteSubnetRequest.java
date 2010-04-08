@@ -16,36 +16,41 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Subnet Request
+ * <p>
+ * 
+ * </p>
  */
 public class DeleteSubnetRequest extends AmazonWebServiceRequest {
 
+    /**
+     * 
+     */
     private String subnetId;
 
     /**
-     * Returns the value of the SubnetId property for this object.
+     * 
      *
-     * @return The value of the SubnetId property for this object.
+     * @return 
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * 
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId 
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * Sets the value of the SubnetId property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId The new value for the SubnetId property for this object.
+     * @param subnetId 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -55,6 +60,16 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("SubnetId: " + subnetId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -269,5 +269,18 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
         return consistentRead;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("DomainName: " + domainName + ", ");
+        sb.append("ItemName: " + itemName + ", ");
+        sb.append("AttributeNames: " + attributeNames + ", ");
+        sb.append("ConsistentRead: " + consistentRead + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

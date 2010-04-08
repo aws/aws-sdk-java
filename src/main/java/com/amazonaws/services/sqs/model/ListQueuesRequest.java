@@ -74,5 +74,15 @@ public class ListQueuesRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("QueueNamePrefix: " + queueNamePrefix + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

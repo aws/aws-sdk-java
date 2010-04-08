@@ -160,5 +160,16 @@ public class DeleteTriggerRequest extends AmazonWebServiceRequest {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("TriggerName: " + triggerName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

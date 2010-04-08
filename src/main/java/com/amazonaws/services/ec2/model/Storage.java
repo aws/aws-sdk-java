@@ -61,5 +61,15 @@ public class Storage {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("S3: " + s3 + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

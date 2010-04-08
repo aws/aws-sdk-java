@@ -15,38 +15,45 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Step Detail
+ * <p>
+ * </p>
  */
 public class StepDetail {
 
+    /**
+     * The step configuration.
+     */
     private StepConfig stepConfig;
 
+    /**
+     * The description of the execution status.
+     */
     private StepExecutionStatusDetail executionStatusDetail;
 
     /**
-     * Returns the value of the StepConfig property for this object.
+     * The step configuration.
      *
-     * @return The value of the StepConfig property for this object.
+     * @return The step configuration.
      */
     public StepConfig getStepConfig() {
         return stepConfig;
     }
     
     /**
-     * Sets the value of the StepConfig property for this object.
+     * The step configuration.
      *
-     * @param stepConfig The new value for the StepConfig property for this object.
+     * @param stepConfig The step configuration.
      */
     public void setStepConfig(StepConfig stepConfig) {
         this.stepConfig = stepConfig;
     }
     
     /**
-     * Sets the value of the StepConfig property for this object.
+     * The step configuration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stepConfig The new value for the StepConfig property for this object.
+     * @param stepConfig The step configuration.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,30 +65,29 @@ public class StepDetail {
     
     
     /**
-     * Returns the value of the ExecutionStatusDetail property for this
-     * object.
+     * The description of the execution status.
      *
-     * @return The value of the ExecutionStatusDetail property for this object.
+     * @return The description of the execution status.
      */
     public StepExecutionStatusDetail getExecutionStatusDetail() {
         return executionStatusDetail;
     }
     
     /**
-     * Sets the value of the ExecutionStatusDetail property for this object.
+     * The description of the execution status.
      *
-     * @param executionStatusDetail The new value for the ExecutionStatusDetail property for this object.
+     * @param executionStatusDetail The description of the execution status.
      */
     public void setExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
     }
     
     /**
-     * Sets the value of the ExecutionStatusDetail property for this object.
+     * The description of the execution status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param executionStatusDetail The new value for the ExecutionStatusDetail property for this object.
+     * @param executionStatusDetail The description of the execution status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,6 +97,17 @@ public class StepDetail {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("StepConfig: " + stepConfig + ", ");
+        sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

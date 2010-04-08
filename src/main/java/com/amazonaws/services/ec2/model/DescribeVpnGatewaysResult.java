@@ -15,16 +15,21 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Describe Vpn Gateways Result
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeVpnGatewaysResult {
 
+    /**
+     * 
+     */
     private java.util.List<VpnGateway> vpnGateways;
 
     /**
-     * Returns the value of the VpnGateways property for this object.
+     * 
      *
-     * @return The value of the VpnGateways property for this object.
+     * @return 
      */
     public java.util.List<VpnGateway> getVpnGateways() {
         if (vpnGateways == null) {
@@ -34,9 +39,9 @@ public class DescribeVpnGatewaysResult {
     }
     
     /**
-     * Sets the value of the VpnGateways property for this object.
+     * 
      *
-     * @param vpnGateways The new value for the VpnGateways property for this object.
+     * @param vpnGateways 
      */
     public void setVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
         java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>();
@@ -47,11 +52,11 @@ public class DescribeVpnGatewaysResult {
     }
     
     /**
-     * Sets the value of the VpnGateways property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGateways The new value for the VpnGateways property for this object.
+     * @param vpnGateways 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +69,11 @@ public class DescribeVpnGatewaysResult {
     }
     
     /**
-     * Sets the value of the VpnGateways property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGateways The new value for the VpnGateways property for this object.
+     * @param vpnGateways 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,6 +86,16 @@ public class DescribeVpnGatewaysResult {
         this.vpnGateways = vpnGatewaysCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnGateways: " + vpnGateways + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }

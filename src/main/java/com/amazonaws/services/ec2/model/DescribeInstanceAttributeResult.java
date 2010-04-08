@@ -60,5 +60,15 @@ public class DescribeInstanceAttributeResult {
     }
     
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceAttribute: " + instanceAttribute + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

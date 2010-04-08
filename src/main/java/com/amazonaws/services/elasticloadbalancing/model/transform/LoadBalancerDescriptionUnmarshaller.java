@@ -38,12 +38,15 @@ public class LoadBalancerDescriptionUnmarshaller implements Unmarshaller<LoadBal
         Node dNSNameNode = XpathUtils.asNode("DNSName", node);
         loadBalancerDescription.setDNSName(new StringUnmarshaller().unmarshall(dNSNameNode));
     
-        NodeList listenersNodes = XpathUtils.asNodeList("Listeners/member", node);
-        for (int listenersIndex = 0; listenersIndex < XpathUtils.nodeLength(listenersNodes); ++listenersIndex) {
-            Node listenersNode = listenersNodes.item(listenersIndex);
-            loadBalancerDescription.getListeners().add(new ListenerUnmarshaller().unmarshall(listenersNode));
-            listenersNode.getParentNode().removeChild(listenersNode);
+        NodeList listenerDescriptionsNodes = XpathUtils.asNodeList("ListenerDescriptions/member", node);
+        for (int listenerDescriptionsIndex = 0; listenerDescriptionsIndex < XpathUtils.nodeLength(listenerDescriptionsNodes); ++listenerDescriptionsIndex) {
+            Node listenerDescriptionsNode = listenerDescriptionsNodes.item(listenerDescriptionsIndex);
+            loadBalancerDescription.getListenerDescriptions().add(new ListenerDescriptionUnmarshaller().unmarshall(listenerDescriptionsNode));
+            listenerDescriptionsNode.getParentNode().removeChild(listenerDescriptionsNode);
         }
+    
+        Node policiesNode = XpathUtils.asNode("Policies", node);
+        loadBalancerDescription.setPolicies(new PoliciesUnmarshaller().unmarshall(policiesNode));
     
         NodeList availabilityZonesNodes = XpathUtils.asNodeList("AvailabilityZones/member", node);
         for (int availabilityZonesIndex = 0; availabilityZonesIndex < XpathUtils.nodeLength(availabilityZonesNodes); ++availabilityZonesIndex) {

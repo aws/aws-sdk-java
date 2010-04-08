@@ -15,38 +15,46 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * Address
+ * <p>
+ * 
+ * </p>
  */
 public class Address {
 
+    /**
+     * 
+     */
     private String instanceId;
 
+    /**
+     * 
+     */
     private String publicIp;
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * 
      *
-     * @return The value of the InstanceId property for this object.
+     * @return 
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * 
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId 
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,29 +66,29 @@ public class Address {
     
     
     /**
-     * Returns the value of the PublicIp property for this object.
+     * 
      *
-     * @return The value of the PublicIp property for this object.
+     * @return 
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * 
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp 
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * Sets the value of the PublicIp property for this object.
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp The new value for the PublicIp property for this object.
+     * @param publicIp 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,6 +98,17 @@ public class Address {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceId: " + instanceId + ", ");
+        sb.append("PublicIp: " + publicIp + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

@@ -16,54 +16,38 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * 
- * </p>
+ * Configure Health Check Request
  */
 public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
 
-    /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
-     */
     private String loadBalancerName;
 
-    /**
-     * A structure containing the configuration information for the new
-     * healthcheck.
-     */
     private HealthCheck healthCheck;
 
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * Returns the value of the LoadBalancerName property for this object.
      *
-     * @return The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @return The value of the LoadBalancerName property for this object.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * The mnemonic name associated with the LoadBalancer. This name must be
-     * unique within the client AWS account.
+     * Sets the value of the LoadBalancerName property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
-     *         unique within the client AWS account.
+     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,35 +59,29 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A structure containing the configuration information for the new
-     * healthcheck.
+     * Returns the value of the HealthCheck property for this object.
      *
-     * @return A structure containing the configuration information for the new
-     *         healthcheck.
+     * @return The value of the HealthCheck property for this object.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * A structure containing the configuration information for the new
-     * healthcheck.
+     * Sets the value of the HealthCheck property for this object.
      *
-     * @param healthCheck A structure containing the configuration information for the new
-     *         healthcheck.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * A structure containing the configuration information for the new
-     * healthcheck.
+     * Sets the value of the HealthCheck property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck A structure containing the configuration information for the new
-     *         healthcheck.
+     * @param healthCheck The new value for the HealthCheck property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -113,6 +91,17 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        sb.append("HealthCheck: " + healthCheck + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
     
 }
     

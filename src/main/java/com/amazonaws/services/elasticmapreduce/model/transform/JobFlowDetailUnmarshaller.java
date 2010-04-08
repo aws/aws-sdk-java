@@ -54,6 +54,13 @@ public class JobFlowDetailUnmarshaller implements Unmarshaller<JobFlowDetail, No
             stepsNode.getParentNode().removeChild(stepsNode);
         }
     
+        NodeList bootstrapActionsNodes = XpathUtils.asNodeList("BootstrapActions/member", node);
+        for (int bootstrapActionsIndex = 0; bootstrapActionsIndex < XpathUtils.nodeLength(bootstrapActionsNodes); ++bootstrapActionsIndex) {
+            Node bootstrapActionsNode = bootstrapActionsNodes.item(bootstrapActionsIndex);
+            jobFlowDetail.getBootstrapActions().add(new BootstrapActionDetailUnmarshaller().unmarshall(bootstrapActionsNode));
+            bootstrapActionsNode.getParentNode().removeChild(bootstrapActionsNode);
+        }
+    
 
         return jobFlowDetail;
     }

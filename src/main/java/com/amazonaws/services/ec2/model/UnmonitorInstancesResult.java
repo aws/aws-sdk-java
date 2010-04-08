@@ -98,5 +98,15 @@ public class UnmonitorInstancesResult {
         return this;
     }
     
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("InstanceMonitorings: " + instanceMonitorings + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
 }
     

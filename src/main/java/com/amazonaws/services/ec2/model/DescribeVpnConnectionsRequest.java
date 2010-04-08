@@ -16,16 +16,21 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Describe Vpn Connections Request
+ * <p>
+ * 
+ * </p>
  */
 public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * A VPN connection ID. More than one may be specified per request.
+     */
     private java.util.List<String> vpnConnectionIds;
 
     /**
-     * Returns the value of the VpnConnectionIds property for this object.
+     * A VPN connection ID. More than one may be specified per request.
      *
-     * @return The value of the VpnConnectionIds property for this object.
+     * @return A VPN connection ID. More than one may be specified per request.
      */
     public java.util.List<String> getVpnConnectionIds() {
         if (vpnConnectionIds == null) {
@@ -35,9 +40,9 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpnConnectionIds property for this object.
+     * A VPN connection ID. More than one may be specified per request.
      *
-     * @param vpnConnectionIds The new value for the VpnConnectionIds property for this object.
+     * @param vpnConnectionIds A VPN connection ID. More than one may be specified per request.
      */
     public void setVpnConnectionIds(java.util.Collection<String> vpnConnectionIds) {
         java.util.List<String> vpnConnectionIdsCopy = new java.util.ArrayList<String>();
@@ -48,11 +53,11 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpnConnectionIds property for this object.
+     * A VPN connection ID. More than one may be specified per request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionIds The new value for the VpnConnectionIds property for this object.
+     * @param vpnConnectionIds A VPN connection ID. More than one may be specified per request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -65,11 +70,11 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the VpnConnectionIds property for this object.
+     * A VPN connection ID. More than one may be specified per request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnConnectionIds The new value for the VpnConnectionIds property for this object.
+     * @param vpnConnectionIds A VPN connection ID. More than one may be specified per request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -82,6 +87,16 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
         this.vpnConnectionIds = vpnConnectionIdsCopy;
 
         return this;
+    }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("VpnConnectionIds: " + vpnConnectionIds + ", ");
+        sb.append("}");
+        return sb.toString();
     }
     
 }
