@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -46,6 +46,8 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.util.CountingInputStream;
+import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.VersionInfoUtils;
 
 public class HttpClient {
@@ -62,7 +64,9 @@ public class HttpClient {
      * useful for end users (ex: HTTP client configuration, etc).
      */
     private static final Log log = LogFactory.getLog(HttpClient.class);
-    
+
+    private static final Log unmarshallerPerformanceLog = LogFactory.getLog("com.amazonaws.unmarshaller.performance");
+
     /** Internal client for sending HTTP requests */
     private org.apache.commons.httpclient.HttpClient httpClient;
 
@@ -71,11 +75,11 @@ public class HttpClient {
     /** Client configuration options, such as proxy settings, max retries, etc. */
     private final ClientConfiguration config;
 
-    
+
     /**
      * Constructs a new AWS client using the specified client configuration
      * options (ex: max retry attempts, proxy settings, etc).
-     * 
+     *
      * @param clientConfiguration
      *            Configuration options specifying how this client will
      *            communicate with AWS (ex: proxy settings, retry count, etc.).
@@ -87,7 +91,7 @@ public class HttpClient {
 
     public <T> T execute(HttpRequest request,
             HttpResponseHandler<ResponseMetadata<T>> responseHandler,
-            HttpResponseHandler<AmazonServiceException> errorResponseHandler) 
+            HttpResponseHandler<AmazonServiceException> errorResponseHandler)
             throws AmazonServiceException {
 
         URI endpoint = request.getEndpoint();
@@ -112,17 +116,31 @@ public class HttpClient {
          * any of the content until after a response is returned to the caller.
          */
         boolean leaveHttpConnectionOpen = false;
-        
+
+        /*
+         * Apache HttpClient omits the port number in the Host header (even if
+         * we explicitly specify it) if it's the default port for the protocol
+         * in use. To ensure that we use the same Host header in the request and
+         * in the calculated string to sign (even if Apache HttpClient changed
+         * and started honoring our explicit host with endpoint), we follow this
+         * same behavior here and in the QueryString signer.
+         */
         String hostHeader = endpoint.getHost();
-        if (endpoint.getPort() != -1)
+        if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
             hostHeader += ":" + endpoint.getPort();
+        }
         method.addRequestHeader("Host", hostHeader);
+
+        // When we release connections, the connection manager leaves them
+        // open so they can be reused.  We want to close out any idle
+        // connections so that they don't sit around in CLOSE_WAIT.
+        httpClient.getHttpConnectionManager().closeIdleConnections(1000 * 30);
 
         int retries = 0;
         while (true) {
             try {
                 requestLog.info("Sending Request: " + request.toString());
-                
+
                 retries++;
                 int status = httpClient.executeMethod(method);
 
@@ -165,14 +183,14 @@ public class HttpClient {
                         handleErrorResponse(request, errorResponseHandler, method);
                     }
 
-                    requestLog.info("Received retryable error response: " + status 
+                    requestLog.info("Received retryable error response: " + status
                             + ", retrying request...");
                     pauseExponentially(retries);
                 } else {
                     /*
                      * Any other errors are interpreted as a service specific
                      * error (when possible) and thrown.
-                     * 
+                     *
                      * We don't want to retry on these errors, since it's likely
                      * that retries will fail in exactly the same way.
                      */
@@ -181,7 +199,7 @@ public class HttpClient {
                 }
             } catch (IOException ioe) {
                 log.error("Unable to execute HTTP request: " + ioe.getMessage());
-                
+
                 throw new AmazonClientException("Unable to execute HTTP request: "
                         + ioe.getMessage(), ioe);
             } finally {
@@ -202,10 +220,10 @@ public class HttpClient {
     /**
      * Creates an HttpClient method object based on the specified request and
      * populates any parameters, headers, etc. from the original request.
-     * 
+     *
      * @param request
      *            The request to convert to an HttpClient method object.
-     * 
+     *
      * @return The converted HttpClient method object with any parameters,
      *         headers, etc. from the original request set.
      */
@@ -227,7 +245,7 @@ public class HttpClient {
                 nameValuePairs[i++] = new NameValuePair(entry.getKey(), entry.getValue());
             }
         }
-        
+
         HttpMethodBase method;
         if (request.getMethodName() == HttpMethodName.POST) {
             PostMethod postMethod = new PostMethod(uri);
@@ -241,7 +259,7 @@ public class HttpClient {
             PutMethod putMethod = new PutMethod(uri);
             if (nameValuePairs != null) putMethod.setQueryString(nameValuePairs);
             method = putMethod;
-            
+
             /*
              * Enable 100-continue support for PUT operations, since this is
              * where we're potentially uploading large amounts of data and want
@@ -250,7 +268,7 @@ public class HttpClient {
              * extra latency in the network interaction.
              */
             putMethod.getParams().setBooleanParameter(HttpClientParams.USE_EXPECT_CONTINUE, true);
-            
+
             if (request.getContent() != null) {
                 putMethod.setRequestEntity(new RepeatableInputStreamRequestEntity(request));
             }
@@ -261,7 +279,7 @@ public class HttpClient {
         } else if (request.getMethodName() == HttpMethodName.HEAD) {
             HeadMethod headMethod = new HeadMethod(uri);
             if (nameValuePairs != null) headMethod.setQueryString(nameValuePairs);
-            method = headMethod; 
+            method = headMethod;
         } else {
             throw new AmazonClientException("Unknown HTTP method name: " + request.getMethodName());
         }
@@ -274,14 +292,14 @@ public class HttpClient {
 
         return method;
     }
-    
+
     /**
      * Handles a successful response from a service call by unmarshalling the
      * results using the specified response handler.
-     * 
+     *
      * @param <T>
      *            The type of object expected in the response.
-     * 
+     *
      * @param request
      *            The original request that generated the response being
      *            handled.
@@ -291,10 +309,10 @@ public class HttpClient {
      * @param method
      *            The HTTP method that was invoked, and contains the contents of
      *            the response.
-     * 
+     *
      * @return The contents of the response, unmarshalled using the specified
      *         response handler.
-     * 
+     *
      * @throws IOException
      *             If any problems were encountered reading the response
      *             contents from the HTTP method object.
@@ -302,20 +320,34 @@ public class HttpClient {
     private <T> T handleResponse(HttpRequest request,
             HttpResponseHandler<ResponseMetadata<T>> responseHandler, HttpMethodBase method)
             throws IOException {
-        
+
         HttpResponse httpResponse = createResponse(method, request);
         if (responseHandler.needsConnectionLeftOpen()) {
             httpResponse.setContent(new HttpMethodReleaseInputStream(method));
         }
-        
+
         try {
+            CountingInputStream countingInputStream = null;
+            if (unmarshallerPerformanceLog.isTraceEnabled()) {
+                countingInputStream = new CountingInputStream(httpResponse.getContent());
+                httpResponse.setContent(countingInputStream);
+            }
+
+            long startTime = System.currentTimeMillis();
             ResponseMetadata<? extends T> responseMetadata = responseHandler.handle(httpResponse);
+            long endTime = System.currentTimeMillis();
+
+            if (unmarshallerPerformanceLog.isTraceEnabled()) {
+                unmarshallerPerformanceLog.trace(
+                        countingInputStream.getByteCount() + ", " + (endTime - startTime));
+            }
+
             if (responseMetadata == null)
                 throw new RuntimeException("Unable to unmarshall response metadata");
 
-            requestLog.info("Received successful response: " + method.getStatusCode() 
+            requestLog.info("Received successful response: " + method.getStatusCode()
                     + ", AWS Request ID: " + responseMetadata.getRequestId());
-        
+
             return responseMetadata.getResult();
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "): "
@@ -329,7 +361,7 @@ public class HttpClient {
      * Responsible for handling an error response, including unmarshalling the
      * error response into the most specific exception type possible, and
      * throwing the exception.
-     * 
+     *
      * @param request
      *            The request that generated the error response being handled.
      * @param errorResponseHandler
@@ -337,14 +369,14 @@ public class HttpClient {
      *            response.
      * @param method
      *            The HTTP method containing the actual response content.
-     * 
+     *
      * @throws IOException
      *             If any problems are encountering reading the error response.
      */
     private void handleErrorResponse(HttpRequest request,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             HttpMethodBase method) throws IOException {
-        
+
         int status = method.getStatusCode();
         HttpResponse response = createResponse(method, request);
         if (errorResponseHandler.needsConnectionLeftOpen()) {
@@ -352,7 +384,7 @@ public class HttpClient {
         }
 
         AmazonServiceException exception = null;
-        
+
         try {
             exception = errorResponseHandler.handle(response);
             requestLog.info("Received error response: " + exception.toString());
@@ -372,50 +404,50 @@ public class HttpClient {
     /**
      * Creates and initializes an HttpResponse object suitable to be passed to
      * an HTTP response handler object.
-     * 
+     *
      * @param method
      *            The HTTP method that was invoked to get the response.
      * @param request
      *            The HTTP request associated with the response.
-     * 
+     *
      * @return The new, initialized HttpResponse object ready to be passed to an
      *         HTTP response handler object.
-     * 
+     *
      * @throws IOException
      *             If there were any problems getting any response information
      *             from the HttpClient method object.
      */
     private HttpResponse createResponse(HttpMethodBase method, HttpRequest request) throws IOException {
         HttpResponse httpResponse = new HttpResponse(request);
-        
+
         httpResponse.setContent(method.getResponseBodyAsStream());
         httpResponse.setStatusCode(method.getStatusCode());
         httpResponse.setStatusText(method.getStatusText());
         for (Header header : method.getResponseHeaders()) {
             httpResponse.addHeader(header.getName(), header.getValue());
         }
-        
+
         return httpResponse;
     }
 
     /**
      * Exponential sleep on failed request to avoid flooding a service with
      * retries.
-     * 
+     *
      * @param retries
      *            Current retry count.
      */
     private void pauseExponentially(int retries) {
         long delay = (long) (Math.pow(4, retries) * 100L);
         log.debug("Retriable error detected, will retry in " + delay + "ms, attempt numer: " + retries);
-        
+
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             // Nothing we need to do here
         }
     }
-    
+
     /**
      * Configure HttpClient with set of defaults as well as configuration.
      */
@@ -426,7 +458,7 @@ public class HttpClient {
             userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
         }
         userAgent += "-" + VersionInfoUtils.getVersion();
-        
+
         /* Set HTTP client parameters */
         HttpClientParams httpClientParams = new HttpClientParams();
         httpClientParams.setParameter(HttpMethodParams.USER_AGENT, userAgent);
@@ -448,12 +480,12 @@ public class HttpClient {
         if (socketSendBufferSizeHint > 0) {
             connectionManagerParams.setSendBufferSize(socketSendBufferSizeHint);
         }
-        
+
         int socketReceiveBufferSizeHint = config.getSocketBufferSizeHints()[1];
         if (socketReceiveBufferSizeHint > 0) {
             connectionManagerParams.setReceiveBufferSize(socketReceiveBufferSizeHint);
         }
-        
+
         /* Set connection manager */
         MultiThreadedHttpConnectionManager connectionManager = new MultiThreadedHttpConnectionManager();
         connectionManager.setParams(connectionManagerParams);
@@ -465,15 +497,15 @@ public class HttpClient {
         String proxyHost = config.getProxyHost();
         int proxyPort = config.getProxyPort();
         if (proxyHost != null && proxyPort > 0) {
-            log.info("Configuring Proxy. Proxy Host: " + proxyHost + " " 
+            log.info("Configuring Proxy. Proxy Host: " + proxyHost + " "
                     + "Proxy Port: " + proxyPort);
             hostConfiguration.setProxy(proxyHost, proxyPort);
-            
+
             String proxyUsername = config.getProxyUsername();
             String proxyPassword = config.getProxyPassword();
             if (proxyUsername != null && proxyPassword != null) {
                 AuthScope authScope = new AuthScope(proxyHost, proxyPort);
-                UsernamePasswordCredentials credentials = 
+                UsernamePasswordCredentials credentials =
                     new UsernamePasswordCredentials(proxyUsername, proxyPassword);
 
                 httpClient.getState().setProxyCredentials(authScope, credentials);
@@ -493,28 +525,28 @@ public class HttpClient {
                 log.debug("Maximum Number of Retry attempts reached, will not retry");
                 return false;
             }
-            
+
             log.debug("Retrying request. Attempt " + executionCount);
             if (exception instanceof NoHttpResponseException) {
                 log.debug("Retrying on NoHttpResponseException");
                 return true;
             }
-            
+
             if (exception instanceof InterruptedIOException) {
                 log.debug("Will not retry on InterruptedIOException", exception);
                 return false;
             }
-            
+
             if (exception instanceof UnknownHostException) {
                 log.debug("Will not retry on UnknownHostException", exception);
                 return false;
             }
-            
+
             if (!method.isRequestSent()) {
                 log.debug("Retrying on failed sent request");
                 return true;
             }
-            
+
             return false;
         }
     }

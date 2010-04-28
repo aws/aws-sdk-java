@@ -62,7 +62,17 @@ public enum Region {
      * consistency for PUTS of new objects in your Amazon S3 bucket and eventual
      * consistency for overwrite PUTS and DELETES.
      */
-    EU_Ireland("EU");
+    EU_Ireland("EU"),
+
+    /**
+     * The Asia Pacific (Singapore) region uses Amazon S3 servers in Singapore.
+     * <p>
+     * When using buckets in this region, you can optionally set the client
+     * endpoint to s3-ap-southeast-1.amazonaws.com on all requests to these buckets
+     * to reduce the latency you might experience after the first hour of
+     * creating a bucket in this region.
+     */
+    AP_Singapore("ap-southeast-1");
 
 
     /** The unique ID representing each region. */

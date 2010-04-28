@@ -133,7 +133,7 @@ public class VersionListing {
      * Each common prefix represents a set of keys in the S3 bucket that have
      * been condensed and omitted from the version summary results. This allows
      * applications to organize and browse their keys hierarchically, much like
-     * how you would organize your files into directories in a file system.
+     * how a file system organizes files into directories.
      * <p>
      * For example, consider a bucket that contains the keys:
      * <ul>

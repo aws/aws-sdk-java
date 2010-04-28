@@ -100,10 +100,14 @@ import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 
 /**
- * Client for accessing Amazon S3.
  * <p>
- * For more information about Amazon S3, see <a
- * href="http://aws.amazon.com/s3">http://aws.amazon.com/s3</a>
+ * Provides the client for accessing the Amazon S3 web service.
+ * </p>
+ * <p>
+ * For more information about Amazon S3, please see 
+ * <a href="http://aws.amazon.com/s3">
+ * http://aws.amazon.com/s3</a>
+ * </p>
  */
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
@@ -146,33 +150,38 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
 
     /**
+     * <p>
      * Constructs a new Amazon S3 client that will make <b>anonymous</b>
      * requests to Amazon S3.
+     * </p>
      * <p>
      * Only a subset of the Amazon S3 API will work with anonymous
-     * <i>(i.e. unsigned)</i> requests, but it can be useful in some situations. For
-     * example:
+     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations. 
+     * For example:
      * <ul>
-     * <li>if an Amazon S3 bucket has {@link Permission#Read} permission for the
-     * {@link GroupGrantee#AllUsers} group, anonymous clients can call
-     * {@link #listObjects(String)} to see what objects are stored in a bucket
-     * <li>if an object has {@link Permission#Read} permission for the
-     * {@link GroupGrantee#AllUsers} group, anonymous clients can call
-     * {@link #getObject(String, String)} and
-     * {@link #getObjectMetadata(String, String)} to pull object content and
-     * metadata
-     * <li>if a bucket has {@link Permission#Write} permission for the
-     * {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
-     * to the bucket
+     * 	<li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
+     * 	{@link GroupGrantee#AllUsers} group, anonymous clients can call
+     * 	{@link #listObjects(String)} to see what objects are stored in a bucket.</li>
+     * 	<li>If an object has {@link Permission#Read} permission for the
+     * 	{@link GroupGrantee#AllUsers} group, anonymous clients can call
+     * 	{@link #getObject(String, String)} and
+     * 	{@link #getObjectMetadata(String, String)} to pull object content and
+     * 	metadata.</li>
+     * 	<li>If a bucket has {@link Permission#Write} permission for the
+     * 	{@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
+     * 	to the bucket.</li>
      * </ul>
+     * </p>
      */
     public AmazonS3Client() {
         this(null);
     }
 
     /**
+     * <p>
      * Constructs a new Amazon S3 client using the specified AWS credentials to
      * access Amazon S3.
+     * </p>
      *
      * @param awsCredentials
      *            The AWS credentials to use when making requests to Amazon S3
@@ -183,8 +192,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
+     * <p>
      * Constructs a new Amazon S3 client using the specified AWS credentials and
      * client configuration to access Amazon S3.
+     * </p>
      *
      * @param awsCredentials
      *            The AWS credentials to use when making requests to Amazon S3
@@ -592,6 +603,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     public S3Object getObject(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException {
         return getObject(new GetObjectRequest(bucketName, key));
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#doesBucketExist(java.lang.String)
+     */
+    public boolean doesBucketExist(String bucketName)
+        throws AmazonClientException, AmazonServiceException {
+
+        try {
+            listObjects(new ListObjectsRequest(bucketName, null, null, null, 0));
+
+            // it exists and the current account owns it
+            return true;
+        } catch (AmazonServiceException ase) {
+            switch (ase.getStatusCode()) {
+            case 403:
+                /*
+                 * A permissions error means the bucket exists, but is owned by
+                 * another account.
+                 */
+                return true;
+            case 404:
+                return false;
+            default:
+                throw ase;
+            }
+        }
     }
 
     /* (non-Javadoc)

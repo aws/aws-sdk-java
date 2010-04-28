@@ -32,7 +32,7 @@ import org.codehaus.jackson.JsonToken;
 import org.apache.commons.codec.binary.Base64;
 
 /**
- * Utility for validating signatures on a Simple Notification Service message.
+ * Utility for validating signatures on a Simple Notification Service JSON message.
  */
 public class SignatureChecker {
 
@@ -43,6 +43,7 @@ public class SignatureChecker {
     private final String UNSUBSCRIBE_TYPE = "UnsubscriptionConfirmation";
 
     private final String TYPE = "Type";
+    private final String SUBSCRIBE_URL = "SubscribeURL";
     private final String MESSAGE = "Message";
     private final String TIMESTAMP = "Timestamp";
     private final String SIGNATURE_VERSION = "SignatureVersion";
@@ -68,7 +69,7 @@ public class SignatureChecker {
      */
     public boolean verifyMessageSignature(String message, PublicKey publicKey) {
         boolean valid = false;
-        //extract the type and signature parameters
+        // extract the type and signature parameters
         Map<String, String> parsed = parseJSON(message);
         String version = parsed.get(SIGNATURE_VERSION);
         if (version.equals("1")) {
@@ -105,23 +106,23 @@ public class SignatureChecker {
         boolean result = false;
         byte[] sigbytes = null;
         try {
-            //really, we need to decode the Base64 encoded string to bytes
             sigbytes = Base64.decodeBase64(signature.getBytes());
             sigChecker = Signature.getInstance("SHA1withRSA"); //check the signature
             sigChecker.initVerify(publicKey);
             sigChecker.update(message.getBytes());
             result = sigChecker.verify(sigbytes);
         } catch (NoSuchAlgorithmException e) {
-            //JVM does not support SHA1 with RSA
+            // Rare exception: JVM does not support SHA1 with RSA
         } catch (InvalidKeyException e) {
-            //The private key was incorrectly formatted
+            // Rare exception: The private key was incorrectly formatted
         } catch (SignatureException e) {
-            // Catch-all exception for the signature checker
+            // Rare exception: Catch-all exception for the signature checker
         }
         return result;
     }
 
     protected String stringToSign(SortedMap<String, String> signables) {
+        // each key and value is followed by a newline
         StringBuilder sb = new StringBuilder();
         for(String k: signables.keySet()){
             sb.append(k).append("\n");
@@ -147,8 +148,7 @@ public class SignatureChecker {
             // JSON could not be parsed
             e.printStackTrace();
         } catch (IOException e) {
-            // Unfortunate consequence of Java's checked exceptions
-            e.printStackTrace();
+            // Rare exception
         }
         return parsed;
     }
@@ -166,7 +166,7 @@ public class SignatureChecker {
 
     private TreeMap<String, String> subscribeMessageValues(Map<String, String> parsedMessage){
         TreeMap<String, String> signables = new TreeMap<String, String>();
-        String[] keys = { MESSAGE, MESSAGE_ID, TYPE, TIMESTAMP, TOKEN, TOPIC };
+        String[] keys = { SUBSCRIBE_URL, MESSAGE, MESSAGE_ID, TYPE, TIMESTAMP, TOKEN, TOPIC };
         for(String key: keys){
             if(parsedMessage.containsKey(key)){
                 signables.put(key, parsedMessage.get(key));

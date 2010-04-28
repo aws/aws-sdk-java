@@ -22,8 +22,8 @@ import java.util.Map;
 import com.amazonaws.services.s3.Headers;
 
 /**
- * Represents the metadata that Amazon S3 stores for an object, including custom
- * user supplied metadata, as well as the standard HTTP headers that Amazon S3
+ * Represents the metadata that Amazon S3 stores for an object. This includes custom
+ * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
 public class ObjectMetadata {
@@ -48,7 +48,9 @@ public class ObjectMetadata {
     private Map<String, Object> metadata = new HashMap<String, Object>();
 
     /**
-     * Returns all the custom user metadata for the associated object.
+     * <p>
+     * Gets all the custom user metadata for the associated object.
+     * </p>
      * <p>
      * Amazon S3 can store additional metadata on objects by internally
      * representing it as HTTP headers prefixed with "x-amz-meta-". Callers can
@@ -57,10 +59,12 @@ public class ObjectMetadata {
      * the internal "x-amz-meta-" prefix, as this library will handle that for
      * them. Likewise, when callers retrieve custom user metadata, they will not
      * see the "x-amz-meta-" header prefix.
+     * </p>
      * <p>
      * Note that user metadata for an object is limited by the HTTP request
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
+     * </p>
      * 
      * @return All the custom user metadata for the associated object.
      */

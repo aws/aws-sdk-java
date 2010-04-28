@@ -38,7 +38,7 @@ public class S3Object {
 
 
     /**
-     * Returns the metadata stored by Amazon S3 for this object. The
+     * Gets the metadata stored by Amazon S3 for this object. The
      * S3ObjectMetadata object includes any custom user metadata supplied by the
      * caller when the object was uploaded, as well as HTTP metadata such as
      * Content-Length and Content-Type.
@@ -50,7 +50,7 @@ public class S3Object {
     }
 
     /**
-     * Returns an input stream containing the contents of this object. Callers
+     * Gets an input stream containing the contents of this object. Callers
      * should be sure to close this input stream as soon as possible, since the
      * object contents aren't buffered in memory and stream directly from Amazon
      * S3.
@@ -72,7 +72,7 @@ public class S3Object {
     }
 
     /**
-     * The name of the bucket in which this object is contained.
+     * Gets the name of the bucket in which this object is contained.
      * 
      * @return The name of the bucket in which this object is contained.
      */
@@ -81,7 +81,7 @@ public class S3Object {
     }
 
     /**
-     * Set the name of the bucket in which this object is contained.
+     * Sets the name of the bucket in which this object is contained.
      * 
      * @param bucketName
      *            The name of the bucket containing this object.
@@ -91,7 +91,7 @@ public class S3Object {
     }
 
     /**
-     * Returns the key under which this object is stored.
+     * Gets the key under which this object is stored.
      * 
      * @return The key under which this object is stored.
      */

@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -49,7 +49,7 @@ public class QueryStringSigner<T> implements Signer<T> {
      * Constructs a new QueryStringSigner to sign requests based on the
      * specified service endpoint (ex: "s3.amazonaws.com") and AWS secret access
      * key.
-     * 
+     *
      * @param credentials
      *            AWS Credentials
      */
@@ -60,12 +60,12 @@ public class QueryStringSigner<T> implements Signer<T> {
     /**
      * This signer will add "Signature" parameter to the request. Default
      * signature version is "2" and default signing algorithm is "HmacSHA256".
-     * 
+     *
      * AWSAccessKeyId SignatureVersion SignatureMethod Timestamp Signature
-     * 
+     *
      * @param request
      *            request to be signed.
-     * 
+     *
      * @throws SignatureException
      */
     public void sign(Request<T> request) throws SignatureException {
@@ -74,18 +74,18 @@ public class QueryStringSigner<T> implements Signer<T> {
 
     /**
      * This signer will add following authentication parameters to the request:
-     * 
+     *
      * AWSAccessKeyId SignatureVersion SignatureMethod Timestamp Signature
-     * 
+     *
      * @param request
      *            request to be signed.
-     * 
+     *
      * @param version
      *            signature version. "2" is recommended.
-     * 
+     *
      * @param algorithm
      *            signature algorithm. "HmacSHA256" is recommended.
-     * 
+     *
      * @throws SignatureException
      */
     public void sign(Request<T> request, SignatureVersion version,
@@ -134,10 +134,10 @@ public class QueryStringSigner<T> implements Signer<T> {
 
     /**
      * Calculates string to sign for signature version 1.
-     * 
+     *
      * @param parameters
      *            request parameters
-     * 
+     *
      * @return String to sign
      */
     private String calculateStringToSignV1(Map<String, String> parameters) {
@@ -156,15 +156,15 @@ public class QueryStringSigner<T> implements Signer<T> {
 
     /**
      * Calculate string to sign for signature version 2.
-     * 
+     *
      * @param parameters
      *            request parameters
-     * 
+     *
      * @param serviceUrl
      *            service url
-     * 
+     *
      * @return String to sign
-     * 
+     *
      * @throws SignatureException
      *             If the string to sign cannot be calculated.
      */
@@ -173,7 +173,17 @@ public class QueryStringSigner<T> implements Signer<T> {
         StringBuilder data = new StringBuilder();
         data.append("POST");
         data.append("\n");
-        data.append(endpoint.getAuthority().toLowerCase());
+        data.append(endpoint.getHost().toLowerCase());
+        /*
+         * Apache HttpClient will omit the port in the Host header for default
+         * port values (i.e. 80 for HTTP and 443 for HTTPS) even if we
+         * explicitly specify it, so we need to be careful that we use the same
+         * value here when we calculate the string to sign and in the Host
+         * header we send in the HTTP request.
+         */
+        if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
+            data.append(":" + endpoint.getPort());
+        }
         data.append("\n");
         String uri = endpoint.getPath();
         if (uri == null || uri.length() == 0) {

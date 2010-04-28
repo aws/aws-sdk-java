@@ -20,11 +20,12 @@ import java.util.List;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
- * Contains the results of listing the objects in an Amazon S3 bucket, including
+ * Contains the results of listing the objects in an Amazon S3 bucket.
+ * This includes
  * a list of {@link S3ObjectSummary} objects describing the objects stored in
- * the bucket, a list of common prefixes (if a delimiter was specified in the
- * request), as well as information describing if this is a complete or partial
- * listing and the the original request parameters.
+ * the bucket, a list of common prefixes if a delimiter was specified in the
+ * request, information describing if this is a complete or partial
+ * listing, and the the original request parameters.
  * 
  * @see AmazonS3#listObjects(String, String)
  * @see AmazonS3#listObjects(ListObjectsRequest)
@@ -86,14 +87,15 @@ public class ObjectListing {
     private String delimiter;
 
     /**
-     * Returns the list of object summaries describing the objects stored in the
-     * S3 bucket. Callers should remember that listings for large buckets can be
-     * truncated for performance reasons, so callers might need to make
+     * Gets the list of object summaries describing the objects stored in the
+     * S3 bucket. Listings for large buckets can be
+     * truncated for performance reasons.  Always check the
+     * {@link ObjectListing#isTruncated()} method to see if the returned
+     * listing is complete, or if additional calls are needed to get
+     * more results. Callers might need to make
      * additional calls to
      * {@link AmazonS3#listNextBatchOfObjects(ObjectListing)} to get
-     * additional results. Callers should always check the
-     * {@link #isTruncated()} method to determine if a listing is truncated or
-     * not.
+     * additional results.
      * 
      * @return A list of the object summaries describing the objects stored in
      *         the S3 bucket.
@@ -103,24 +105,29 @@ public class ObjectListing {
     }
 
     /**
-     * Returns the common prefixes included in this object listing. Common
+     * <p>
+     * Gets the common prefixes included in this object listing. Common
      * prefixes are only present if a delimiter was specified in the original
      * request.
+     * </p>
      * <p>
      * Each common prefix represents a set of keys in the S3 bucket that have
      * been condensed and omitted from the object summary results. This allows
-     * applications to organize and browse their keys hierarchically, much like
-     * how you would organize your files into directories in a file system.
+     * applications to organize and browse their keys hierarchically, 
+     * similar to how a file system organizes files
+     * into directories. 
+     * </p>
      * <p>
-     * For example, consider a bucket that contains the keys:
+     * For example, consider a bucket that contains the following keys:
      * <ul>
-     * <li>"foo/bar/baz"</li>
-     * <li>"foo/bar/bash"</li>
-     * <li>"foo/bar/bang"</li>
-     * <li>"foo/boo"</li>
+     *  <li>"foo/bar/baz"</li>
+     *  <li>"foo/bar/bash"</li>
+     *  <li>"foo/bar/bang"</li>
+     *  <li>"foo/boo"</li>
      * </ul>
-     * If you call listObjects with prefix="foo/" and delimiter="/" on this
-     * bucket, the returned S3ObjectListing will contain one entry in the common
+     * If calling <code>listObjects</code> with the prefix="foo/" and the delimiter="/" on 
+     * this bucket, the returned <code>S3ObjectListing</code> 
+     * will contain one entry in the common
      * prefixes list ("foo/bar/") and none of the keys beginning with that
      * common prefix will be included in the object summaries list.
      * 
@@ -144,15 +151,16 @@ public class ObjectListing {
     }
 
     /**
-     * For truncated object listings (see {@link ObjectListing#isTruncated()})
-     * returns the marker to use in the next listObjects request in order to see
-     * the next page of results. If an object listing is not truncated, this
-     * method will return null since there is no need for a next marker. For
+     * Gets the marker to use in the next <code>listObjects</code>
+     * request in order to see
+     * the next page of results. 
+     * If an object listing is not truncated, this
+     * method will return <code>null</code>. For
      * truncated requests, this value is equal to the greatest
-     * (lexicographically) value of the object keys and common prefixes included
+     * lexicographical value of the object keys and common prefixes included
      * in this listing.
      * 
-     * @return The marker to use in the next listObjects request in order to see
+     * @return The marker to use in the next <code>listObjects</code> request in order to see
      *         the next page of results if this object listing is truncated,
      *         otherwise null if this object listing isn't truncated.
      */
@@ -174,11 +182,11 @@ public class ObjectListing {
     }
 
     /**
-     * Returns the name of the Amazon S3 bucket containing the objects listed in
-     * this S3ObjectListing.
+     * Gets the name of the Amazon S3 bucket containing the objects listed in
+     * this <code>S3ObjectListing</code>.
      * 
      * @return The name of the Amazon S3 bucket containing the objects listed in
-     *         this S3ObjectListing.
+     *         this <code>S3ObjectListing</code>.
      */
     public String getBucketName() {
         return bucketName;
@@ -197,8 +205,9 @@ public class ObjectListing {
     }
 
     /**
-     * The prefix parameter originally used to request this object listing, or
-     * null if no prefix was specified. All objects and common prefixes included
+     * Gets the prefix parameter originally used to request this object listing, or
+     * <code>null</code> if no prefix was specified.
+     * All objects and common prefixes included
      * in this object listing start with the specified prefix.
      * 
      * @return The prefix parameter originally used to request this object
@@ -221,10 +230,11 @@ public class ObjectListing {
     }
 
     /**
-     * The marker parameter originally used to request this object listing, or
-     * null if no marker was specified. If specified, all objects and common
-     * prefixes included in this object listing will occur lexically
-     * (alphabetically) after the specified marker.
+     * Gets the marker parameter originally used to request this object listing, or
+     * <code>null</code> if no marker was specified. 
+     * If specified, all objects and common
+     * prefixes included in this object listing will occur
+     * alphabetically after the specified marker.
      * 
      * @return The marker parameter originally used to request this object
      *         listing, or null if no marker was specified.
@@ -246,15 +256,15 @@ public class ObjectListing {
     }
 
     /**
-     * Returns the maxKeys parameter originally used to request this object
-     * listing, or the default maxKeys value provided by Amazon S3 if the
-     * requester didn't specify a value. The maxKeys parameter limits the
+     * Gets the <code>maxKeys</code> parameter originally used to request this object
+     * listing, or the default <code>maxKeys</code> value provided by Amazon S3 if the
+     * requester didn't specify a value. The <code>maxKeys</code> parameter limits the
      * combined number of objects and common prefixes included in this object
      * listing. An object listing will never contain more objects plus common
-     * prefixes than indicated by the maxKeys, but can of course contain less.
+     * prefixes than indicated by the <code>maxKeys</code>, but can of course contain less.
      * 
-     * @return The maxKeys parameter originally used to request this object
-     *         listing, or the default maxKeys value applied by Amazon S3 if
+     * @return The <code>maxKeys</code parameter originally used to request this object
+     *         listing, or the default <code>maxKeys</code value applied by Amazon S3 if
      *         the requester didn't specify a value.
      */
     public int getMaxKeys() {
@@ -267,7 +277,7 @@ public class ObjectListing {
      * applied by Amazon S3 if the requester didn't specify a value.
      * 
      * @param maxKeys
-     *            he maxKeys parameter originally used to request this object
+     *            The maxKeys parameter originally used to request this object
      *            listing, or the default maxKeys value applied by Amazon S3 if
      *            the requester didn't specify a value.
      */
@@ -276,17 +286,17 @@ public class ObjectListing {
     }
 
     /**
-     * Returns the delimiter parameter originally used to request this object
-     * listing, or null if none was specified. The delimiter value allows
+     * Gets the delimiter parameter originally used to request this object
+     * listing, or <code>null</code> if none was specified. The delimiter value allows
      * callers to condense S3 keys into common prefix listings. For example, if
      * a caller specifies a delimiter of "/" (a common used value for
      * delimiter), then any keys that contain a common prefix between the start
      * of the key and the first occurrence of "/" will not be included in the
-     * list of object summaries, but instead, the common prefixes list will have
+     * list of object summaries. Instead the common prefixes list will have
      * one entry for the common prefix.
      * 
      * @return The delimiter parameter originally used to request this object
-     *         listing, or null if none was specified.
+     *         listing, or <code>null</code> if none was specified.
      */
     public String getDelimiter() {
         return delimiter;
@@ -305,13 +315,12 @@ public class ObjectListing {
     }
 
     /**
-     * Returns true if this object listing is <b>not complete</b> and indicates
-     * that the caller needs to make additional calls to Amazon S3 to get more
-     * results.
+     * Gets whether or not this object listing is complete.
      * 
-     * @return True if this object listing is <b>not complete</b> and indicates
-     *         that the caller needs to make additional calls to Amazon S3 to
-     *         get additional object summaries or common prefixes.
+     * @return Returns <code>true</code> if the object listing is <i>not complete</i>;
+     *         returns <code>false</code> if otherwise.  When returning <code>true</code>,
+     *         the caller may need to make additional calls to Amazon S3 in order to
+     *         get more results.
      */
     public boolean isTruncated() {
         return isTruncated;
