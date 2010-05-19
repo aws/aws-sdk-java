@@ -15,46 +15,50 @@
 package com.amazonaws.services.simpledb.model;
 
 /**
- * Item
+ * <p>
+ * </p>
  */
 public class Item {
 
     /**
-     * Item Name.
+     * The name of the item.
      */
     private String name;
 
+    /**
+     * <p/>
+     */
     private String alternateNameEncoding;
 
     /**
-     * List of Attributes.
+     * A list of attributes.
      */
     private java.util.List<Attribute> attributes;
 
     /**
-     * Item Name.
+     * The name of the item.
      *
-     * @return Item Name.
+     * @return The name of the item.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Item Name.
+     * The name of the item.
      *
-     * @param name Item Name.
+     * @param name The name of the item.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Item Name.
+     * The name of the item.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Item Name.
+     * @param name The name of the item.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,30 +70,29 @@ public class Item {
     
     
     /**
-     * Returns the value of the AlternateNameEncoding property for this
-     * object.
+     * <p/>
      *
-     * @return The value of the AlternateNameEncoding property for this object.
+     * @return <p/>
      */
     public String getAlternateNameEncoding() {
         return alternateNameEncoding;
     }
     
     /**
-     * Sets the value of the AlternateNameEncoding property for this object.
+     * <p/>
      *
-     * @param alternateNameEncoding The new value for the AlternateNameEncoding property for this object.
+     * @param alternateNameEncoding <p/>
      */
     public void setAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
     }
     
     /**
-     * Sets the value of the AlternateNameEncoding property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateNameEncoding The new value for the AlternateNameEncoding property for this object.
+     * @param alternateNameEncoding <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -101,9 +104,9 @@ public class Item {
     
     
     /**
-     * List of Attributes.
+     * A list of attributes.
      *
-     * @return List of Attributes.
+     * @return A list of attributes.
      */
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
@@ -113,9 +116,9 @@ public class Item {
     }
     
     /**
-     * List of Attributes.
+     * A list of attributes.
      *
-     * @param attributes List of Attributes.
+     * @param attributes A list of attributes.
      */
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>();
@@ -126,11 +129,11 @@ public class Item {
     }
     
     /**
-     * List of Attributes.
+     * A list of attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of Attributes.
+     * @param attributes A list of attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -143,11 +146,11 @@ public class Item {
     }
     
     /**
-     * List of Attributes.
+     * A list of attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of Attributes.
+     * @param attributes A list of attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

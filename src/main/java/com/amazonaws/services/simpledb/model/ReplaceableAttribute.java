@@ -15,50 +15,52 @@
 package com.amazonaws.services.simpledb.model;
 
 /**
- * Replaceable Attribute
+ * <p>
+ * </p>
  */
 public class ReplaceableAttribute {
 
     /**
-     * Attribute Name.
+     * The name of the replaceable attribute.
      */
     private String name;
 
     /**
-     * Attribute Value.
+     * The value of the replaceable attribute.
      */
     private String value;
 
     /**
-     * Flag to specify whether to replace the Attribute/Value or to add a new
-     * Attribute/Value. The default setting is false.
+     * A flag specifying whether or not to replace the attribute/value pair
+     * or to add a new attribute/value pair. The default setting is
+     * <code>false</code>.
      */
     private Boolean replace;
 
     /**
-     * Attribute Name.
+     * The name of the replaceable attribute.
      *
-     * @return Attribute Name.
+     * @return The name of the replaceable attribute.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Attribute Name.
+     * The name of the replaceable attribute.
      *
-     * @param name Attribute Name.
+     * @param name The name of the replaceable attribute.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Attribute Name.
+     * The name of the replaceable attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Attribute Name.
+     * @param name The name of the replaceable attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -70,29 +72,29 @@ public class ReplaceableAttribute {
     
     
     /**
-     * Attribute Value.
+     * The value of the replaceable attribute.
      *
-     * @return Attribute Value.
+     * @return The value of the replaceable attribute.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * Attribute Value.
+     * The value of the replaceable attribute.
      *
-     * @param value Attribute Value.
+     * @param value The value of the replaceable attribute.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * Attribute Value.
+     * The value of the replaceable attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value Attribute Value.
+     * @param value The value of the replaceable attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -104,35 +106,41 @@ public class ReplaceableAttribute {
     
     
     /**
-     * Flag to specify whether to replace the Attribute/Value or to add a new
-     * Attribute/Value. The default setting is false.
+     * A flag specifying whether or not to replace the attribute/value pair
+     * or to add a new attribute/value pair. The default setting is
+     * <code>false</code>.
      *
-     * @return Flag to specify whether to replace the Attribute/Value or to add a new
-     *         Attribute/Value. The default setting is false.
+     * @return A flag specifying whether or not to replace the attribute/value pair
+     *         or to add a new attribute/value pair. The default setting is
+     *         <code>false</code>.
      */
     public Boolean isReplace() {
         return replace;
     }
     
     /**
-     * Flag to specify whether to replace the Attribute/Value or to add a new
-     * Attribute/Value. The default setting is false.
+     * A flag specifying whether or not to replace the attribute/value pair
+     * or to add a new attribute/value pair. The default setting is
+     * <code>false</code>.
      *
-     * @param replace Flag to specify whether to replace the Attribute/Value or to add a new
-     *         Attribute/Value. The default setting is false.
+     * @param replace A flag specifying whether or not to replace the attribute/value pair
+     *         or to add a new attribute/value pair. The default setting is
+     *         <code>false</code>.
      */
     public void setReplace(Boolean replace) {
         this.replace = replace;
     }
     
     /**
-     * Flag to specify whether to replace the Attribute/Value or to add a new
-     * Attribute/Value. The default setting is false.
+     * A flag specifying whether or not to replace the attribute/value pair
+     * or to add a new attribute/value pair. The default setting is
+     * <code>false</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param replace Flag to specify whether to replace the Attribute/Value or to add a new
-     *         Attribute/Value. The default setting is false.
+     * @param replace A flag specifying whether or not to replace the attribute/value pair
+     *         or to add a new attribute/value pair. The default setting is
+     *         <code>false</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -144,11 +152,13 @@ public class ReplaceableAttribute {
     
     
     /**
-     * Flag to specify whether to replace the Attribute/Value or to add a new
-     * Attribute/Value. The default setting is false.
+     * A flag specifying whether or not to replace the attribute/value pair
+     * or to add a new attribute/value pair. The default setting is
+     * <code>false</code>.
      *
-     * @return Flag to specify whether to replace the Attribute/Value or to add a new
-     *         Attribute/Value. The default setting is false.
+     * @return A flag specifying whether or not to replace the attribute/value pair
+     *         or to add a new attribute/value pair. The default setting is
+     *         <code>false</code>.
      */
     public Boolean getReplace() {
         return replace;

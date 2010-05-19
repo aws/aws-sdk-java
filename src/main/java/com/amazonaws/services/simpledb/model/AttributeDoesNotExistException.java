@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * The specified attribute does not exist.
+ * </p>
  */        
 public class AttributeDoesNotExistException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

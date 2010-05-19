@@ -32,11 +32,11 @@ public class DBSnapshotNotFoundExceptionUnmarshaller extends StandardErrorUnmars
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBSnapshotNotFound")) 
+        if (errorCode == null || !errorCode.equals("DBSnapshotNotFound"))
             return null;
-        
+
         DBSnapshotNotFoundException e = (DBSnapshotNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

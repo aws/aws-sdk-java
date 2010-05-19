@@ -16,7 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents an attribute of an Amazon Machine Image (AMI).
+ * Represents an attribute of an <i>Amazon Machine Image</i> (AMI).
  * </p>
  */
 public class ImageAttribute {

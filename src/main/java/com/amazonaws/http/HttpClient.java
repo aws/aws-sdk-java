@@ -211,6 +211,7 @@ public class HttpClient {
                  * up resources.
                  */
                 if (!leaveHttpConnectionOpen) {
+                    try {method.getResponseBodyAsStream().close();} catch (Throwable t) {}
                     method.releaseConnection();
                 }
             }

@@ -16,12 +16,13 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * Specifies the execution state of a step.
  * </p>
  */
 public class StepExecutionStatusDetail {
 
     /**
-     * The state of the step.
+     * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
@@ -29,59 +30,58 @@ public class StepExecutionStatusDetail {
     private String state;
 
     /**
-     * The date and time the step was created.
+     * The creation date and time of the step.
      */
     private java.util.Date creationDateTime;
 
     /**
-     * The date and time the step was started.
+     * The start date and time of the step.
      */
     private java.util.Date startDateTime;
 
     /**
-     * The date and time the step ended.
+     * The completion date and time of the step.
      */
     private java.util.Date endDateTime;
 
     /**
-     * A description explaining the reason for the last Amazon EC2 status
-     * change.
+     * A description of the step's current state.
      */
     private String lastStateChangeReason;
 
     /**
-     * The state of the step.
+     * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @return The state of the step.
+     * @return The state of the job flow step.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * The state of the step.
+     * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @param state The state of the step.
+     * @param state The state of the job flow step.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * The state of the step.
+     * The state of the job flow step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
      *
-     * @param state The state of the step.
+     * @param state The state of the job flow step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,29 +93,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * The date and time the step was created.
+     * The creation date and time of the step.
      *
-     * @return The date and time the step was created.
+     * @return The creation date and time of the step.
      */
     public java.util.Date getCreationDateTime() {
         return creationDateTime;
     }
     
     /**
-     * The date and time the step was created.
+     * The creation date and time of the step.
      *
-     * @param creationDateTime The date and time the step was created.
+     * @param creationDateTime The creation date and time of the step.
      */
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
     
     /**
-     * The date and time the step was created.
+     * The creation date and time of the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDateTime The date and time the step was created.
+     * @param creationDateTime The creation date and time of the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,29 +127,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * The date and time the step was started.
+     * The start date and time of the step.
      *
-     * @return The date and time the step was started.
+     * @return The start date and time of the step.
      */
     public java.util.Date getStartDateTime() {
         return startDateTime;
     }
     
     /**
-     * The date and time the step was started.
+     * The start date and time of the step.
      *
-     * @param startDateTime The date and time the step was started.
+     * @param startDateTime The start date and time of the step.
      */
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
     
     /**
-     * The date and time the step was started.
+     * The start date and time of the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDateTime The date and time the step was started.
+     * @param startDateTime The start date and time of the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -161,29 +161,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * The date and time the step ended.
+     * The completion date and time of the step.
      *
-     * @return The date and time the step ended.
+     * @return The completion date and time of the step.
      */
     public java.util.Date getEndDateTime() {
         return endDateTime;
     }
     
     /**
-     * The date and time the step ended.
+     * The completion date and time of the step.
      *
-     * @param endDateTime The date and time the step ended.
+     * @param endDateTime The completion date and time of the step.
      */
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
     
     /**
-     * The date and time the step ended.
+     * The completion date and time of the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endDateTime The date and time the step ended.
+     * @param endDateTime The completion date and time of the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -195,35 +195,29 @@ public class StepExecutionStatusDetail {
     
     
     /**
-     * A description explaining the reason for the last Amazon EC2 status
-     * change.
+     * A description of the step's current state.
      *
-     * @return A description explaining the reason for the last Amazon EC2 status
-     *         change.
+     * @return A description of the step's current state.
      */
     public String getLastStateChangeReason() {
         return lastStateChangeReason;
     }
     
     /**
-     * A description explaining the reason for the last Amazon EC2 status
-     * change.
+     * A description of the step's current state.
      *
-     * @param lastStateChangeReason A description explaining the reason for the last Amazon EC2 status
-     *         change.
+     * @param lastStateChangeReason A description of the step's current state.
      */
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
     
     /**
-     * A description explaining the reason for the last Amazon EC2 status
-     * change.
+     * A description of the step's current state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastStateChangeReason A description explaining the reason for the last Amazon EC2 status
-     *         change.
+     * @param lastStateChangeReason A description of the step's current state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

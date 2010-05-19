@@ -20,20 +20,20 @@ package com.amazonaws.services.simpledb.model;
 public class ListDomainsResult {
 
     /**
-     * Domain names that match the expression.
+     * A list of domain names that match the expression.
      */
     private java.util.List<String> domainNames;
 
     /**
-     * An opaque token indicating that there are more than MaxNumberOfDomains
-     * domains still available.
+     * An opaque token indicating that there are more domains than the
+     * specified <code>MaxNumberOfDomains</code> still available.
      */
     private String nextToken;
 
     /**
-     * Domain names that match the expression.
+     * A list of domain names that match the expression.
      *
-     * @return Domain names that match the expression.
+     * @return A list of domain names that match the expression.
      */
     public java.util.List<String> getDomainNames() {
         if (domainNames == null) {
@@ -43,9 +43,9 @@ public class ListDomainsResult {
     }
     
     /**
-     * Domain names that match the expression.
+     * A list of domain names that match the expression.
      *
-     * @param domainNames Domain names that match the expression.
+     * @param domainNames A list of domain names that match the expression.
      */
     public void setDomainNames(java.util.Collection<String> domainNames) {
         java.util.List<String> domainNamesCopy = new java.util.ArrayList<String>();
@@ -56,11 +56,11 @@ public class ListDomainsResult {
     }
     
     /**
-     * Domain names that match the expression.
+     * A list of domain names that match the expression.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domainNames Domain names that match the expression.
+     * @param domainNames A list of domain names that match the expression.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -73,11 +73,11 @@ public class ListDomainsResult {
     }
     
     /**
-     * Domain names that match the expression.
+     * A list of domain names that match the expression.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domainNames Domain names that match the expression.
+     * @param domainNames A list of domain names that match the expression.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,35 +93,35 @@ public class ListDomainsResult {
     }
     
     /**
-     * An opaque token indicating that there are more than MaxNumberOfDomains
-     * domains still available.
+     * An opaque token indicating that there are more domains than the
+     * specified <code>MaxNumberOfDomains</code> still available.
      *
-     * @return An opaque token indicating that there are more than MaxNumberOfDomains
-     *         domains still available.
+     * @return An opaque token indicating that there are more domains than the
+     *         specified <code>MaxNumberOfDomains</code> still available.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * An opaque token indicating that there are more than MaxNumberOfDomains
-     * domains still available.
+     * An opaque token indicating that there are more domains than the
+     * specified <code>MaxNumberOfDomains</code> still available.
      *
-     * @param nextToken An opaque token indicating that there are more than MaxNumberOfDomains
-     *         domains still available.
+     * @param nextToken An opaque token indicating that there are more domains than the
+     *         specified <code>MaxNumberOfDomains</code> still available.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * An opaque token indicating that there are more than MaxNumberOfDomains
-     * domains still available.
+     * An opaque token indicating that there are more domains than the
+     * specified <code>MaxNumberOfDomains</code> still available.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken An opaque token indicating that there are more than MaxNumberOfDomains
-     *         domains still available.
+     * @param nextToken An opaque token indicating that there are more domains than the
+     *         specified <code>MaxNumberOfDomains</code> still available.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

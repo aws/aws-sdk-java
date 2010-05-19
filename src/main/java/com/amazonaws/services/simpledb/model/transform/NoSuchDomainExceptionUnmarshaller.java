@@ -32,13 +32,13 @@ public class NoSuchDomainExceptionUnmarshaller extends LegacyErrorUnmarshaller {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NoSuchDomain")) 
+        if (errorCode == null || !errorCode.equals("NoSuchDomain"))
             return null;
-        
+
         NoSuchDomainException e = (NoSuchDomainException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

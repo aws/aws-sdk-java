@@ -32,11 +32,11 @@ public class TopicLimitExceededExceptionUnmarshaller extends StandardErrorUnmars
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("TopicLimitExceeded")) 
+        if (errorCode == null || !errorCode.equals("TopicLimitExceeded"))
             return null;
-        
+
         TopicLimitExceededException e = (TopicLimitExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

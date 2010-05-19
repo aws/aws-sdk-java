@@ -32,11 +32,11 @@ public class SubscriptionLimitExceededExceptionUnmarshaller extends StandardErro
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("SubscriptionLimitExceeded")) 
+        if (errorCode == null || !errorCode.equals("SubscriptionLimitExceeded"))
             return null;
-        
+
         SubscriptionLimitExceededException e = (SubscriptionLimitExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -111,8 +111,8 @@ public class AccessControlList implements Serializable {
      * @param grants
      *            a collection of {@link Grant} objects
      */
-    public void grantAllPermissions(Grant... grants) {
-        for (Grant gap : grants) {
+    public void grantAllPermissions(Grant... grantsVarArg) {
+        for (Grant gap : grantsVarArg) {
             grantPermission(gap.getGrantee(), gap.getPermission());
         }
     }

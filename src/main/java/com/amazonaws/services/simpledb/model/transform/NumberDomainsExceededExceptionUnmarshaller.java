@@ -32,13 +32,13 @@ public class NumberDomainsExceededExceptionUnmarshaller extends LegacyErrorUnmar
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NumberDomainsExceeded")) 
+        if (errorCode == null || !errorCode.equals("NumberDomainsExceeded"))
             return null;
-        
+
         NumberDomainsExceededException e = (NumberDomainsExceededException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

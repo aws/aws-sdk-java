@@ -32,11 +32,11 @@ public class InvalidConfigurationRequestExceptionUnmarshaller extends StandardEr
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidConfigurationRequest")) 
+        if (errorCode == null || !errorCode.equals("InvalidConfigurationRequest"))
             return null;
-        
+
         InvalidConfigurationRequestException e = (InvalidConfigurationRequestException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

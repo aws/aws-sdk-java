@@ -27,6 +27,8 @@ import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
+import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -45,6 +47,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
@@ -54,12 +57,12 @@ import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
  * Provides the client for accessing the Amazon S3 web service.
  * </p>
  * <p>
- * For more information about Amazon S3, please see 
+ * For more information about Amazon S3, please see
  * <a href="http://aws.amazon.com/s3">
  * http://aws.amazon.com/s3</a>
  * </p>
  */
-public interface AmazonS3 { 
+public interface AmazonS3 {
 
     /**
      * <p>
@@ -82,6 +85,32 @@ public interface AmazonS3 {
      *             If the specified endpoint is not a valid URL endpoint.
      */
     public abstract void setEndpoint(String endpoint);
+
+    /**
+     * Changes the Amazon S3 storage class for a specified object. Amazon S3
+     * offers multiple storage classes for customer's different needs.
+     * <p>
+     * Note that when changing the storage class for an object in a bucket with
+     * versioning enabled, the current version of the object will persist in its
+     * current storage class, and a new, latest version will be created and
+     * stored in the new storage class.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the object.
+     * @param key
+     *            The key of the object within the specified bucket.
+     * @param newStorageClass
+     *            The new storage class for the specified object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
+        throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
@@ -118,7 +147,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3Client#listObjects(String bucketName, String prefix)}
      * @see {@link AmazonS3Client#listObjects(ListObjectsRequest listObjectsRequest)}
      */
@@ -152,9 +181,9 @@ public interface AmazonS3 {
      * 	<li>"foo/boo"</li>
      * </ul>
      * If calling <code>listObjects</code> with
-     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/" 
+     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/"
      * on this bucket, an <code>ObjectListing</code> is returned that contains one key
-     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").      
+     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").
      * To see deeper into the virtual hierarchy, make another
      * call to <code>listObjects</code> setting the prefix parameter to any interesting
      * common prefix to list the individual keys under that prefix.
@@ -170,9 +199,9 @@ public interface AmazonS3 {
      * @param prefix
      *            An optional parameter restricting the response to keys
      *            beginning with the specified prefix. Use prefixes to
-     *            separate a bucket into different sets of keys, 
+     *            separate a bucket into different sets of keys,
      *            similar to how a file system organizes files
-     * 		      into directories. 
+     * 		      into directories.
      *
      * @return A listing of the objects in the specified bucket, along with any
      *         other associated information such as common prefixes (if a
@@ -184,9 +213,9 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3Client#listObjects(String bucketName)}
-     * @see {@link AmazonS3Client#listObjects(ListObjectsRequest listObjectsRequest)}           
+     * @see {@link AmazonS3Client#listObjects(ListObjectsRequest listObjectsRequest)}
      */
     public abstract ObjectListing listObjects(String bucketName, String prefix)
             throws AmazonClientException, AmazonServiceException;
@@ -211,7 +240,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * Calling {@link ListObjectsRequest#setDelimiter(String)}
-     * sets the delimiter, allowing groups of keys that share the 
+     * sets the delimiter, allowing groups of keys that share the
      * delimiter-terminated prefix to be included
      * in the returned listing. This allows applications to organize and browse
      * their keys hierarchically, similar to how a file system organizes files
@@ -227,9 +256,9 @@ public interface AmazonS3 {
      * 	<li>"foo/boo"</li>
      * </ul>
      * If calling <code>listObjects</code> with
-     * a prefix value of "foo/" and a delimiter value of "/" 
+     * a prefix value of "foo/" and a delimiter value of "/"
      * on this bucket, an <code>ObjectListing</code> is returned that contains one key
-     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").      
+     * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").
      * To see deeper into the virtual hierarchy, make another
      * call to <code>listObjects</code> setting the prefix parameter to any interesting
      * common prefix to list the individual keys under that prefix.
@@ -254,10 +283,9 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     *             
+     *
      * @see {@link AmazonS3Client#listObjects(String bucketName)}
-     * @see {@link AmazonS3Client#listObjects(String bucketName, String prefix)}           
+     * @see {@link AmazonS3Client#listObjects(String bucketName, String prefix)}
      */
     public abstract ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -265,19 +293,19 @@ public interface AmazonS3 {
     /**
      * <p>
      * Provides an easy way to continue a truncated object listing and retrieve
-     * the next page of results. 
+     * the next page of results.
      * </p>
      * <p>
-     * To continue the object listing and retrieve the next page of results, 
-     * call the initial {@link ObjectListing} from one of the 
+     * To continue the object listing and retrieve the next page of results,
+     * call the initial {@link ObjectListing} from one of the
      * <code>listObjects</code> methods.
-     * If truncated 
-     * (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>), 
-     * pass the <code>ObjectListing</code> back into this method 
+     * If truncated
+     * (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>),
+     * pass the <code>ObjectListing</code> back into this method
      * in order to retrieve the
      * next page of results. Continue using this method to
      * retrieve more results until the returned <code>ObjectListing</code> indicates that
-     * it is not truncated.  
+     * it is not truncated.
      * </p>
      * @param previousObjectListing
      *            The previous truncated <code>ObjectListing</code>.
@@ -311,11 +339,8 @@ public interface AmazonS3 {
      * <p>
      * The returned version summaries are ordered first by key and then by
      * version. Keys are sorted lexicographically (alphabetically)
-     * while versions are sorted from most recent to least recent. 
-     * 
-     * Both versions
-     * with data and delete markers are included in the results.
-     * 
+     * while versions are sorted from most recent to least recent.
+     * Both versions with data and delete markers are included in the results.
      * </p>
      * <p>
      * Since buckets can contain a virtually unlimited number of versions, the
@@ -323,7 +348,7 @@ public interface AmazonS3 {
      * result sets, Amazon S3 uses pagination to split them into multiple
      * responses. Always check the
      * {@link VersionListing#isTruncated()} method to determine if the
-     * returned listing is complete, or if additional calls are needed to get 
+     * returned listing is complete, or if additional calls are needed to get
      * more results. Callers are
      * encouraged to use
      * {@link AmazonS3#listNextBatchOfVersions(VersionListing)} as an easy way
@@ -343,7 +368,7 @@ public interface AmazonS3 {
      *            beginning with the specified prefix. Use prefixes to
      *            separate a bucket into different sets of keys,
      *            similar to how a file system organizes files
-     * 		      into directories. 
+     * 		      into directories.
      *
      * @return A listing of the versions in the specified bucket, along with any
      *         other associated information and original request parameters.
@@ -361,12 +386,12 @@ public interface AmazonS3 {
     /**
      * <p>
      * Provides an easy way to continue a truncated {@link VersionListing} and retrieve
-     * the next page of results. 
+     * the next page of results.
      * </p>
      * <p>
      * Obtain the initial
      * <code>VersionListing</code> from one of the <code>listVersions</code> methods. If the result
-     * is truncated (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>), 
+     * is truncated (indicated when {@link ObjectListing#isTruncated()} returns <code>true</code>),
      * pass the <code>VersionListing</code> back into this method in order to retrieve the
      * next page of results. From there, continue using this method to
      * retrieve more results until the returned <code>VersionListing</code> indicates that
@@ -378,7 +403,7 @@ public interface AmazonS3 {
      * for more information about enabling versioning for a bucket.
      *
      * @param previousVersionListing
-     *            The previous truncated <code>VersionListing</code>. 
+     *            The previous truncated <code>VersionListing</code>.
      *            If a
      *            non-truncated <code>VersionListing</code> is passed in, an empty
      *            <code>VersionListing</code> will be returned without ever contacting
@@ -408,7 +433,7 @@ public interface AmazonS3 {
      * <p>
      * The returned version summaries are ordered first by key and then by
      * version. Keys are sorted lexicographically (alphabetically)
-     * and versions are sorted from most recent to least recent. 
+     * and versions are sorted from most recent to least recent.
      * Versions
      * with data and delete markers are included in the results.
      * </p>
@@ -419,7 +444,7 @@ public interface AmazonS3 {
      * responses. Always check the
      * {@link VersionListing#isTruncated()} method to determine if the
      * returned listing is complete, or if callers additional calls are needed
-     * to get more results. 
+     * to get more results.
      * Callers are
      * encouraged to use
      * {@link AmazonS3#listNextBatchOfVersions(VersionListing)} as an easy way
@@ -427,13 +452,13 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * The <code>keyMarker</code> and <code>versionIdMarker</code> parameters allow
-     * callers to specify where to start the version listing. 
+     * callers to specify where to start the version listing.
      * </p>
      * <p>
-     * The <code>delimiter</code> parameter allows groups of keys that share a 
+     * The <code>delimiter</code> parameter allows groups of keys that share a
      * delimiter-terminated prefix to be included
      * in the returned listing. This allows applications to organize and browse
-     * their keys hierarchically, much like how a file system organizes 
+     * their keys hierarchically, much like how a file system organizes
      * files into directories. These common prefixes can be retrieved
      * by calling the {@link VersionListing#getCommonPrefixes()} method.
      * </p>
@@ -445,8 +470,8 @@ public interface AmazonS3 {
      * 	<li>"foo/bar/bang"</li>
      * 	<li>"foo/boo"</li>
      * </ul>
-     * If calling <code>listVersions</code> with 
-     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/" 
+     * If calling <code>listVersions</code> with
+     * a <code>prefix</code> value of "foo/" and a <code>delimiter</code> value of "/"
      * on this bucket, a <code>VersionListing</code> is returned that contains:
      * 	<ul>
      * 		<li>all the versions for one key ("foo/boo")</li>
@@ -471,9 +496,9 @@ public interface AmazonS3 {
      * @param prefix
      *            An optional parameter restricting the response to keys which
      *            begin with the specified prefix. Use prefixes to
-     *            separate a bucket into different sets of keys, 
+     *            separate a bucket into different sets of keys,
      *            similar to how a file system organizes files
-     * 		      into directories. 
+     * 		      into directories.
      * @param keyMarker
      *            Optional parameter indicating where in the sorted list of all
      *            versions in the specified bucket to begin returning results.
@@ -611,7 +636,7 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Returns the current owner of the AWS account being used 
+     * Returns the current owner of the AWS account being used
      * by the authenticated sender of
      * the request.
      * </p>
@@ -715,6 +740,75 @@ public interface AmazonS3 {
      */
     public abstract String getBucketLocation(String bucketName) throws AmazonClientException,
             AmazonServiceException;
+
+    /**
+     * Creates a new Amazon S3 bucket with the specified name, in the default
+     * (US) region - {@link Region#US_Standard}.
+     * <p>
+     * Every object stored in Amazon S3 is contained in a bucket. Buckets
+     * partition the namespace of objects stored in Amazon S3 at the top level.
+     * Within a bucket, you can use any names for your objects, but bucket names
+     * must be unique across all of Amazon S3.
+     * <p>
+     * Buckets are similar to Internet domain names. Just as Amazon is the only
+     * owner of the domain name Amazon.com, only one person or organization can
+     * own a bucket within Amazon S3. Once you create a uniquely named bucket in
+     * Amazon S3, you can organize and name the objects within the bucket in any
+     * way you like and the bucket will remain yours for as long as you like and
+     * as long as you have the Amazon S3 account.
+     * <p>
+     * The similarities between buckets and domain names is not a coincidence -
+     * there is a direct mapping between Amazon S3 buckets and subdomains of
+     * s3.amazonaws.com. Objects stored in Amazon S3 are addressable using the
+     * REST API under the domain bucketname.s3.amazonaws.com. For example, if
+     * the object homepage.html is stored in the Amazon S3 bucket mybucket its
+     * address would be http://mybucket.s3.amazonaws.com/homepage.html.
+     * <p>
+     * To conform with DNS requirements, the following constraints apply:
+     * <ul>
+     * <li>Bucket names should not contain underscores (_)
+     * <li>Bucket names should be between 3 and 63 characters long
+     * <li>Bucket names should not end with a dash
+     * <li>Bucket names cannot contain two, adjacent periods
+     * <li>Bucket names cannot contain dashes next to periods (e.g.,
+     * "my-.bucket.com" and "my.-bucket" are invalid)
+     * <li>Bucket names cannot contain uppercase characters
+     * </ul>
+     * <p>
+     * There is no limit to the number of objects that can be stored in a bucket
+     * and no variation in performance when using many buckets or just a few.
+     * You can store all of your objects in a single bucket or organize them
+     * across several buckets.
+     * <p>
+     * Buckets cannot be nested, meaning buckets cannot be created within
+     * buckets.
+     * <p>
+     * The high availability engineering of Amazon S3 is focused on get, put,
+     * list, and delete operations. Because bucket operations work against a
+     * centralized, global resource space, it is not appropriate to make bucket
+     * create or delete calls on the high availability code path of your
+     * application. It is better to create or delete buckets in a separate
+     * initialization or setup routine that you run less often.
+     * <p>
+     * To create a bucket, you must authenticate with an account that has a
+     * valid AWS Access Key ID and is registered with Amazon S3. Anonymous
+     * requests are never allowed to create buckets.
+     *
+     * @param createBucketRequest
+     *            The request object containing all options for creating an S3
+     *            bucket.
+     * @return The newly created bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public abstract Bucket createBucket(CreateBucketRequest createBucketRequest)
+            throws AmazonClientException, AmazonServiceException;
+
 
     /**
      * Creates a new Amazon S3 bucket with the specified name, in the default
@@ -1234,8 +1328,8 @@ public interface AmazonS3 {
     /**
      * <p>
      * Gets the metadata for the specified Amazon S3 object without
-     * actually fetching the object itself. 
-     * This is useful in obtaining only the object metadata, 
+     * actually fetching the object itself.
+     * This is useful in obtaining only the object metadata,
      * and avoids wasting bandwidth on fetching
      * the object data.
      * </p>
@@ -1259,7 +1353,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     * 
+     *
      * @see {@link AmazonS3#getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)}
      */
     public abstract ObjectMetadata getObjectMetadata(String bucketName, String key)
@@ -1268,8 +1362,8 @@ public interface AmazonS3 {
     /**
      * <p>
      * Gets the metadata for the specified Amazon S3 object without
-     * actually fetching the object itself. 
-     * This is useful in obtaining only the object metadata, 
+     * actually fetching the object itself.
+     * This is useful in obtaining only the object metadata,
      * and avoids wasting bandwidth on fetching
      * the object data.
      * </p>
@@ -1296,8 +1390,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see {@link AmazonS3#getObjectMetadata(String bucketName, String key)}             
+     *
+     * @see {@link AmazonS3#getObjectMetadata(String bucketName, String key)}
      */
     public abstract ObjectMetadata getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -1309,7 +1403,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * Callers should be very careful when using this method; the returned
-     * S3Object contains a direct stream of data from the HTTP connection. 
+     * S3Object contains a direct stream of data from the HTTP connection.
      * The underlying HTTP connection cannot be closed until the user
      * finishes reading the data and closes the stream. Callers should
      * therefore:
@@ -1348,7 +1442,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     * 
+     *
      * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest)}
      * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest, File destinationFile)}
      */
@@ -1363,7 +1457,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * Callers should be very careful when using this method; the returned
-     * S3Object contains a direct stream of data from the HTTP connection. 
+     * S3Object contains a direct stream of data from the HTTP connection.
      * The underlying HTTP connection cannot be closed until the user
      * finishes reading the data and closes the stream. Callers should
      * therefore:
@@ -1386,7 +1480,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * When specifying constraints in the request object, the client needs to be
-     * prepared to handle this method returning <code>null</code> 
+     * prepared to handle this method returning <code>null</code>
      * if the provided constraints aren't met when Amazon S3 receives the request.
      * </p>
      * <p>
@@ -1408,15 +1502,15 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      * @see {@link AmazonS3#getObject(String bucketName, String key)}
-     * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest, File destinationFile)}             
+     * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest, File destinationFile)}
      */
     public abstract S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
-     * Gets the object metadata for the object stored 
-     * in Amazon S3 under the specified bucket and key, 
+     * Gets the object metadata for the object stored
+     * in Amazon S3 under the specified bucket and key,
      * and saves the object contents to the
      * specified file.
      * Returns <code>null</code> if the specified constraints weren't met.
@@ -1438,7 +1532,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * When specifying constraints in the request object, the client needs to be
-     * prepared to handle this method returning <code>null</code> 
+     * prepared to handle this method returning <code>null</code>
      * if the provided constraints aren't met when Amazon S3 receives the request.
      * </p>
      *
@@ -1459,12 +1553,34 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3#getObject(String bucketName, String key)}
-     * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest)}                 
+     * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest)}
      */
     public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
             throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Deletes the specified bucket. All objects (and all versions if versioning
+     * was ever enabled) in the bucket must be deleted before the bucket itself
+     * can be deleted.
+     * <p>
+     * Only the owner of a bucket can delete it, regardless of the bucket's
+     * access control policy.
+     *
+     * @param deleteBucketRequest
+     *            The request object containing all options for delete an S3
+     *            bucket.
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public abstract void deleteBucket(DeleteBucketRequest deleteBucketRequest)
+            throws AmazonClientException, AmazonServiceException;
+
 
     /**
      * Deletes the specified bucket. All objects (and all versions if versioning
@@ -1489,14 +1605,14 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Uploads a new object to the specified Amazon S3 bucket. 
+     * Uploads a new object to the specified Amazon S3 bucket.
      * The <code>PutObjectRequest</code> contains all the
      * details of the request, including the bucket to upload to, the key the
      * object will be uploaded under, and the file or input stream containing the data
      * to upload.
      * </p>
      * <p>
-     * Amazon S3 never stores partial objects; if during this call 
+     * Amazon S3 never stores partial objects; if during this call
      * an exception wasn't thrown, the entire object was stored.
      * </p>
      * <p>
@@ -1507,7 +1623,7 @@ public interface AmazonS3 {
      * When uploading a file:
      * </p>
      * <ul>
-     *  <li>The client automatically computes 
+     *  <li>The client automatically computes
      *  a checksum of the file. This checksum is verified against another checksum
      *  that is calculated once the data reaches Amazon S3, ensuring the data
      *  has not corrupted in transit over the network.</li>
@@ -1570,7 +1686,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     * @see {@link AmazonS3#putObject(String bucketName, String key, File file)}              
+     * @see {@link AmazonS3#putObject(String bucketName, String key, File file)}
      */
     public abstract PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -1581,11 +1697,11 @@ public interface AmazonS3 {
      * key name.
      * </p>
      * <p>
-     * Amazon S3 never stores partial objects; if during this call 
+     * Amazon S3 never stores partial objects; if during this call
      * an exception wasn't thrown, the entire object was stored.
      * </p>
      * <p>
-     * The client automatically computes 
+     * The client automatically computes
      * a checksum of the file. This checksum is verified against another checksum
      * that is calculated once the data reaches Amazon S3, ensuring the data
      * has not corrupted in transit over the network.
@@ -1638,8 +1754,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see {@link AmazonS3#putObject(PutObjectRequest putObjectRequest)}      
+     *
+     * @see {@link AmazonS3#putObject(PutObjectRequest putObjectRequest)}
      */
     public abstract PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException;
@@ -1717,7 +1833,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * By default, all object metadata for the source object will be copied to
-     * the new destination object. The Amazon S3 Acccess Control List (ACL) 
+     * the new destination object. The Amazon S3 Acccess Control List (ACL)
      * is <b>not</b> copied to the new
      * object; the new object will have the default Amazon S3 ACL,
      * {@link CannedAccessControlList#Private}.
@@ -1754,8 +1870,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see {@link AmazonS3Client#copyObject(CopyObjectRequest copyObjectRequest)} 
+     *
+     * @see {@link AmazonS3Client#copyObject(CopyObjectRequest copyObjectRequest)}
      */
     public abstract CopyObjectResult copyObject(String sourceBucketName, String sourceKey,
             String destinationBucketName, String destinationKey) throws AmazonClientException,
@@ -1771,7 +1887,7 @@ public interface AmazonS3 {
      * specified {@link CopyObjectRequest} is provided.
      * </p>
      * <p>
-     * The Amazon S3 Acccess Control List (ACL) 
+     * The Amazon S3 Acccess Control List (ACL)
      * is <b>not</b> copied to the new object. The new object will have
      * the default Amazon S3 ACL, {@link CannedAccessControlList#Private},
      * unless one is explicitly provided in the specified
@@ -1782,11 +1898,11 @@ public interface AmazonS3 {
      * write access to the destination bucket.
      * </p>
      * <p>
-     * If constraints are specified in the <code>CopyObjectRequest</code> 
+     * If constraints are specified in the <code>CopyObjectRequest</code>
      * (ex:
      * {@link CopyObjectRequest#setMatchingETagConstraints(List)})
      * and are not satisfied when Amazon S3 receives the
-     * request, this method returns null 
+     * request, this method returns null
      * This method returns a non-null result under all other
      * circumstances.
      * </p>
@@ -1812,7 +1928,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3Client#copyObject(String sourceBucketName, String sourceKey, String destinationBucketName, String destinationKey)}
      */
     public abstract CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
@@ -1824,7 +1940,7 @@ public interface AmazonS3 {
      * can only be restored if versioning was enabled when the object was deleted.
      * </p>
      * <p>
-     * If attempting to delete an object that does not exist, 
+     * If attempting to delete an object that does not exist,
      * Amazon S3 will return
      * a success message instead of an error message.
      * </p>
@@ -1841,7 +1957,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3Client#deleteObject(DeleteObjectRequest deleteObjectRequest)}
      */
     public abstract void deleteObject(String bucketName, String key)
@@ -1854,11 +1970,11 @@ public interface AmazonS3 {
      * deleted.
      * </p>
      * <p>
-     * If attempting to delete an object that does not exist, 
+     * If attempting to delete an object that does not exist,
      * Amazon S3 will return
      * a success message instead of an error message.
      * </p>
-     * 
+     *
      * @param deleteObjectRequest
      *            The request object containing all options for deleting an S3
      *            object.
@@ -1869,7 +1985,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see {@link AmazonS3Client#deleteObject(String bucketName, String key)}
      */
     public void deleteObject(DeleteObjectRequest deleteObjectRequest)

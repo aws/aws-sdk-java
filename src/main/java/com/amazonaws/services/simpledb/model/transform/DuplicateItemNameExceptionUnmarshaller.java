@@ -32,13 +32,13 @@ public class DuplicateItemNameExceptionUnmarshaller extends LegacyErrorUnmarshal
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DuplicateItemName")) 
+        if (errorCode == null || !errorCode.equals("DuplicateItemName"))
             return null;
-        
+
         DuplicateItemNameException e = (DuplicateItemNameException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

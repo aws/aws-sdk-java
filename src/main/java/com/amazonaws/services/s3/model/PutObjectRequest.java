@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -103,12 +103,21 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      */
     private CannedAccessControlList cannedAcl;
 
+    /**
+     * The optional Amazon S3 storage class to use when storing the new object.
+     * If not specified, the default, standard storage class will be used.
+     * <p>
+     * For more information on Amazon S3 storage classes and available values,
+     * see the {@link StorageClass} enumeration.
+     */
+    private String storageClass;
+
 
     /**
      * Constructs a new PutObjectRequest object to upload a file to the
      * specified bucket and key. After constructing the request, you can
      * optionally specify object metadata or a canned ACL as well.
-     * 
+     *
      * @param bucketName
      *            The name of an existing bucket to which the new object will be
      *            uploaded.
@@ -134,7 +143,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * length will cause the entire contents of the input stream to be buffered
      * locally in memory so that the content length can be calculated, which can
      * result in negative performance problems.
-     * 
+     *
      * @param bucketName
      *            The name of an existing bucket to which the new object will be
      *            uploaded.
@@ -157,7 +166,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Returns the name of an existing bucket, to which this request will upload
      * a new object. You must have {@link Permission#Write} permission granted
      * to you in order to upload new objects to a bucket.
-     * 
+     *
      * @return The name of an existing bucket, to which this request will upload
      *         a new object.
      */
@@ -169,7 +178,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Sets the name of the bucket, to which this request will upload a new
      * object. You must have {@link Permission#Write} permission granted to you
      * in order to upload new objects to a bucket.
-     * 
+     *
      * @param bucketName
      *            The name of an existing bucket, to which this request will
      *            upload a new object. You must have {@link Permission#Write}
@@ -187,13 +196,13 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * <p>
      * You must have {@link Permission#Write} permission granted to you in order
      * to upload new objects to a bucket.
-     * 
+     *
      * @param bucketName
      *            The name of an existing bucket, to which this request will
      *            upload a new object. You must have {@link Permission#Write}
      *            permission granted to you in order to upload new objects to a
      *            bucket.
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */
@@ -204,7 +213,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
 
     /**
      * Returns the key under which to store the new object.
-     * 
+     *
      * @return The key under which to store the new object.
      */
     public String getKey() {
@@ -213,7 +222,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the key under which to store the new object.
-     * 
+     *
      * @param key
      *            The key under which to store the new object.
      */
@@ -224,10 +233,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     /**
      * Sets the key under which to store the new object, and returns this object
      * so that additional method calls may be chained together.
-     * 
+     *
      * @param key
      *            The key under which to store the new object.
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */
@@ -237,10 +246,89 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     }
 
     /**
+     * Gets the optional Amazon S3 storage class to use when storing the new
+     * object. If not specified, the default, standard storage class will be
+     * used.
+     * <p>
+     * For more information on available Amazon S3 storage classes, see the
+     * {@link StorageClass} enumeration.
+     *
+     * @return The Amazon S3 storage class to use when storing the newly copied
+     *         object.
+     */
+    public String getStorageClass() {
+        return storageClass;
+    }
+
+    /**
+     * Sets the optional Amazon S3 storage class to use when storing the new
+     * object. If not specified, the default, standard storage class will be
+     * used.
+     * <p>
+     * For more information on Amazon S3 storage classes and available values,
+     * see the {@link StorageClass} enumeration.
+     *
+     * @return The Amazon S3 storage class to use when storing the newly copied
+     *         object.
+     */
+    public void setStorageClass(String storageClass) {
+        this.storageClass = storageClass;
+    }
+
+    /**
+     * Sets the optional Amazon S3 storage class to use when storing the new
+     * object, and returns this PutObjectRequest so that additional method
+     * calls can be chained together. If not specified, the default, standard
+     * storage class will be used.
+     * <p>
+     * For more information on Amazon S3 storage classes and available values,
+     * see the {@link StorageClass} enumeration.
+     *
+     * @return This PutObjectRequest, so that additional method calls can be
+     *         chained together.
+     */
+    public PutObjectRequest withStorageClass(String storageClass) {
+        setStorageClass(storageClass);
+        return this;
+    }
+
+    /**
+     * Sets the optional Amazon S3 storage class to use when storing the new
+     * object. If not specified, the default, standard storage class will be
+     * used.
+     * <p>
+     * For more information on Amazon S3 storage classes and available values,
+     * see the {@link StorageClass} enumeration.
+     *
+     * @return The Amazon S3 storage class to use when storing the newly copied
+     *         object.
+     */
+    public void setStorageClass(StorageClass storageClass) {
+        this.storageClass = storageClass.toString();
+    }
+
+    /**
+     * Sets the optional Amazon S3 storage class to use when storing the new
+     * object, and returns this PutObjectRequest so that additional method
+     * calls can be chained together. If not specified, the default, standard
+     * storage class will be used.
+     * <p>
+     * For more information on Amazon S3 storage classes and available values,
+     * see the {@link StorageClass} enumeration.
+     *
+     * @return This PutObjectRequest, so that additional method calls can be
+     *         chained together.
+     */
+    public PutObjectRequest withStorageClass(StorageClass storageClass) {
+        setStorageClass(storageClass);
+        return this;
+    }
+
+    /**
      * Returns the file containing the data to be uploaded to Amazon S3. You
      * must either specify a file or an InputStream containing the data to be
      * uploaded to Amazon S3.  You cannot specify both.
-     * 
+     *
      * @return The file containing the data to be uploaded to Amazon S3.
      */
     public File getFile() {
@@ -251,7 +339,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Sets the file containing the data to be uploaded to Amazon S3. You must
      * either specify a file or an InputStream containing the data to be
      * uploaded to Amazon S3. You cannot specify both.
-     * 
+     *
      * @param file
      *            The file containing the data to be uploaded to Amazon S3.
      */
@@ -266,10 +354,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * <p>
      * You must either specify a file or an InputStream containing the data to
      * be uploaded to Amazon S3.  You cannot specify both.
-     * 
+     *
      * @param file
      *            The file containing the data to be uploaded to Amazon S3.
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */
@@ -286,7 +374,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * contents of the InputStream will have to be buffered in memory before
      * they can be sent to Amazon S3, which can have very negative performance
      * impacts.
-     * 
+     *
      * @return the optional metadata instructing Amazon S3 how to handle the
      *         uploaded data (ex: custom user metadata, hooks for specifying
      *         content type, etc.).
@@ -303,7 +391,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * contents of the InputStream will have to be buffered in memory before
      * they can be sent to Amazon S3, which can have very negative performance
      * impacts.
-     * 
+     *
      * @param metadata
      *            The optional metadata instructing Amazon S3 how to handle the
      *            uploaded data (ex: custom user metadata, hooks for specifying
@@ -323,12 +411,12 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * specify metadata with the content size set, otherwise the contents of the
      * InputStream will have to be buffered in memory before they can be sent to
      * Amazon S3, which can have very negative performance impacts.
-     * 
+     *
      * @param metadata
      *            The optional metadata instructing Amazon S3 how to handle the
      *            uploaded data (ex: custom user metadata, hooks for specifying
      *            content type, etc.).
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */
@@ -340,7 +428,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     /**
      * Returns the optional pre-configured access control policy to use for the
      * new object.
-     * 
+     *
      * @return The optional pre-configured access control policy to use for the
      *         new object.
      */
@@ -351,7 +439,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     /**
      * Sets the optional pre-configured access control policy to use for the new
      * object.
-     * 
+     *
      * @param cannedAcl
      *            The optional pre-configured access control policy to use for
      *            the new object.
@@ -364,11 +452,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Sets the optional pre-configured access control policy to use for the new
      * object, and returns this object so that additional method calls may be
      * chained together.
-     * 
+     *
      * @param cannedAcl
      *            The optional pre-configured access control policy to use for
      *            the new object.
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */
@@ -381,7 +469,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Returns the InputStream containing the data to be uploaded to Amazon S3.
      * You must either specify a file or an InputStream containing the data to
      * be uploaded to Amazon S3.  You cannot specify both.
-     * 
+     *
      * @return The InputStream containing the data to be uploaded to Amazon S3.
      *         You must either specify a file or an InputStream containing the
      *         data to be uploaded to Amazon S3.
@@ -394,7 +482,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Sets the InputStream containing the data to be uploaded to Amazon S3. You
      * must either specify a file or an InputStream containing the data to be
      * uploaded to Amazon S3.  You cannot specify both.
-     * 
+     *
      * @param inputStream
      *            The InputStream containing the data to be uploaded to Amazon
      *            S3. You must either specify a file or an InputStream
@@ -411,11 +499,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * <p>
      * You must either specify a file or an InputStream containing the data to
      * be uploaded to Amazon S3.  You cannot specify both.
-     * 
+     *
      * @param inputStream
      *            The InputStream containing the data to be uploaded to Amazon
      *            S3.
-     * 
+     *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
      */

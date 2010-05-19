@@ -32,11 +32,11 @@ public class TooManyPoliciesExceptionUnmarshaller extends StandardErrorUnmarshal
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("TooManyPolicies")) 
+        if (errorCode == null || !errorCode.equals("TooManyPolicies"))
             return null;
-        
+
         TooManyPoliciesException e = (TooManyPoliciesException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

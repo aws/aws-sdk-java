@@ -32,11 +32,11 @@ public class InvalidDBInstanceStateExceptionUnmarshaller extends StandardErrorUn
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidDBInstanceState")) 
+        if (errorCode == null || !errorCode.equals("InvalidDBInstanceState"))
             return null;
-        
+
         InvalidDBInstanceStateException e = (InvalidDBInstanceStateException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

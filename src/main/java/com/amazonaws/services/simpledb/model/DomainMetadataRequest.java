@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DomainMetadataRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the domain for which to display metadata.
+     * The name of the domain for which to display the metadata of.
      */
     private String domainName;
 
@@ -36,37 +36,37 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest {
      * object members.  Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param domainName The name of the domain for which to display
-     * metadata.
+     * @param domainName The name of the domain for which to display the
+     * metadata of.
      */
     public DomainMetadataRequest(String domainName) {
         this.domainName = domainName;
     }
     
     /**
-     * The name of the domain for which to display metadata.
+     * The name of the domain for which to display the metadata of.
      *
-     * @return The name of the domain for which to display metadata.
+     * @return The name of the domain for which to display the metadata of.
      */
     public String getDomainName() {
         return domainName;
     }
     
     /**
-     * The name of the domain for which to display metadata.
+     * The name of the domain for which to display the metadata of.
      *
-     * @param domainName The name of the domain for which to display metadata.
+     * @param domainName The name of the domain for which to display the metadata of.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
     
     /**
-     * The name of the domain for which to display metadata.
+     * The name of the domain for which to display the metadata of.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domainName The name of the domain for which to display metadata.
+     * @param domainName The name of the domain for which to display the metadata of.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

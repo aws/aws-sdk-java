@@ -32,11 +32,11 @@ public class LoadBalancerNotFoundExceptionUnmarshaller extends StandardErrorUnma
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("LoadBalancerNotFound")) 
+        if (errorCode == null || !errorCode.equals("LoadBalancerNotFound"))
             return null;
-        
+
         LoadBalancerNotFoundException e = (LoadBalancerNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

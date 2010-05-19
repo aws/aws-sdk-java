@@ -15,12 +15,14 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * 
+ * <p>
+ * A description of a job flow.
+ * </p>
  */
 public class JobFlowDetail {
 
     /**
-     * An ID that uniquely identifies the job flow.
+     * The job flow identifier.
      */
     private String jobFlowId;
 
@@ -30,51 +32,54 @@ public class JobFlowDetail {
     private String name;
 
     /**
-     * The URI for the location of the log files on Amazon S3.
+     * The location in Amazon S3 where log files for the job are stored.
      */
     private String logUri;
 
     /**
-     * A container for the execution status description of the job flow.
+     * Describes the execution status of the job flow.
      */
     private JobFlowExecutionStatusDetail executionStatusDetail;
 
     /**
-     * A container for the instances detail of the job flow.
+     * Describes the Amazon EC2 instances of the job flow.
      */
     private JobFlowInstancesDetail instances;
 
     /**
-     * A list of <a>Step</a> instances applied to data in the job flow.
+     * A list of steps run by the job flow.
      */
     private java.util.List<StepDetail> steps;
 
+    /**
+     * A list of the bootstrap actions run by the job flow.
+     */
     private java.util.List<BootstrapActionDetail> bootstrapActions;
 
     /**
-     * An ID that uniquely identifies the job flow.
+     * The job flow identifier.
      *
-     * @return An ID that uniquely identifies the job flow.
+     * @return The job flow identifier.
      */
     public String getJobFlowId() {
         return jobFlowId;
     }
     
     /**
-     * An ID that uniquely identifies the job flow.
+     * The job flow identifier.
      *
-     * @param jobFlowId An ID that uniquely identifies the job flow.
+     * @param jobFlowId The job flow identifier.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
     
     /**
-     * An ID that uniquely identifies the job flow.
+     * The job flow identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowId An ID that uniquely identifies the job flow.
+     * @param jobFlowId The job flow identifier.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -120,29 +125,29 @@ public class JobFlowDetail {
     
     
     /**
-     * The URI for the location of the log files on Amazon S3.
+     * The location in Amazon S3 where log files for the job are stored.
      *
-     * @return The URI for the location of the log files on Amazon S3.
+     * @return The location in Amazon S3 where log files for the job are stored.
      */
     public String getLogUri() {
         return logUri;
     }
     
     /**
-     * The URI for the location of the log files on Amazon S3.
+     * The location in Amazon S3 where log files for the job are stored.
      *
-     * @param logUri The URI for the location of the log files on Amazon S3.
+     * @param logUri The location in Amazon S3 where log files for the job are stored.
      */
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
     
     /**
-     * The URI for the location of the log files on Amazon S3.
+     * The location in Amazon S3 where log files for the job are stored.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param logUri The URI for the location of the log files on Amazon S3.
+     * @param logUri The location in Amazon S3 where log files for the job are stored.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -154,29 +159,29 @@ public class JobFlowDetail {
     
     
     /**
-     * A container for the execution status description of the job flow.
+     * Describes the execution status of the job flow.
      *
-     * @return A container for the execution status description of the job flow.
+     * @return Describes the execution status of the job flow.
      */
     public JobFlowExecutionStatusDetail getExecutionStatusDetail() {
         return executionStatusDetail;
     }
     
     /**
-     * A container for the execution status description of the job flow.
+     * Describes the execution status of the job flow.
      *
-     * @param executionStatusDetail A container for the execution status description of the job flow.
+     * @param executionStatusDetail Describes the execution status of the job flow.
      */
     public void setExecutionStatusDetail(JobFlowExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
     }
     
     /**
-     * A container for the execution status description of the job flow.
+     * Describes the execution status of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param executionStatusDetail A container for the execution status description of the job flow.
+     * @param executionStatusDetail Describes the execution status of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -188,29 +193,29 @@ public class JobFlowDetail {
     
     
     /**
-     * A container for the instances detail of the job flow.
+     * Describes the Amazon EC2 instances of the job flow.
      *
-     * @return A container for the instances detail of the job flow.
+     * @return Describes the Amazon EC2 instances of the job flow.
      */
     public JobFlowInstancesDetail getInstances() {
         return instances;
     }
     
     /**
-     * A container for the instances detail of the job flow.
+     * Describes the Amazon EC2 instances of the job flow.
      *
-     * @param instances A container for the instances detail of the job flow.
+     * @param instances Describes the Amazon EC2 instances of the job flow.
      */
     public void setInstances(JobFlowInstancesDetail instances) {
         this.instances = instances;
     }
     
     /**
-     * A container for the instances detail of the job flow.
+     * Describes the Amazon EC2 instances of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances A container for the instances detail of the job flow.
+     * @param instances Describes the Amazon EC2 instances of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -222,9 +227,9 @@ public class JobFlowDetail {
     
     
     /**
-     * A list of <a>Step</a> instances applied to data in the job flow.
+     * A list of steps run by the job flow.
      *
-     * @return A list of <a>Step</a> instances applied to data in the job flow.
+     * @return A list of steps run by the job flow.
      */
     public java.util.List<StepDetail> getSteps() {
         if (steps == null) {
@@ -234,9 +239,9 @@ public class JobFlowDetail {
     }
     
     /**
-     * A list of <a>Step</a> instances applied to data in the job flow.
+     * A list of steps run by the job flow.
      *
-     * @param steps A list of <a>Step</a> instances applied to data in the job flow.
+     * @param steps A list of steps run by the job flow.
      */
     public void setSteps(java.util.Collection<StepDetail> steps) {
         java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>();
@@ -247,11 +252,11 @@ public class JobFlowDetail {
     }
     
     /**
-     * A list of <a>Step</a> instances applied to data in the job flow.
+     * A list of steps run by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps A list of <a>Step</a> instances applied to data in the job flow.
+     * @param steps A list of steps run by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -264,11 +269,11 @@ public class JobFlowDetail {
     }
     
     /**
-     * A list of <a>Step</a> instances applied to data in the job flow.
+     * A list of steps run by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps A list of <a>Step</a> instances applied to data in the job flow.
+     * @param steps A list of steps run by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -284,9 +289,9 @@ public class JobFlowDetail {
     }
     
     /**
-     * Returns the value of the BootstrapActions property for this object.
+     * A list of the bootstrap actions run by the job flow.
      *
-     * @return The value of the BootstrapActions property for this object.
+     * @return A list of the bootstrap actions run by the job flow.
      */
     public java.util.List<BootstrapActionDetail> getBootstrapActions() {
         if (bootstrapActions == null) {
@@ -296,9 +301,9 @@ public class JobFlowDetail {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of the bootstrap actions run by the job flow.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      */
     public void setBootstrapActions(java.util.Collection<BootstrapActionDetail> bootstrapActions) {
         java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>();
@@ -309,11 +314,11 @@ public class JobFlowDetail {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of the bootstrap actions run by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -326,11 +331,11 @@ public class JobFlowDetail {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of the bootstrap actions run by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -15,34 +15,44 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * 
+ * <p>
+ * A job flow step consisting of a JAR file whose main function will be
+ * executed. The main function submits a job for Hadoop to execute and
+ * waits for the job to finish or fail.
+ * </p>
  */
 public class HadoopJarStepConfig {
 
     /**
-     * A list of <a>KeyValue</a> instances.
+     * A list of Java properties that are set when the step runs. You can use
+     * these properties to pass key-value pairs to your main function.
      */
     private java.util.List<KeyValue> properties;
 
     /**
-     * <p/>
+     * A path to a JAR file run during the step.
      */
     private String jar;
 
     /**
-     * The name of the main class in the specified Java file.
+     * The name of the main class in the specified Java file. If not
+     * specified, the JAR file should specify a Main-Class in its manifest
+     * file.
      */
     private String mainClass;
 
     /**
-     * A list of arguments for the job flow's steps.
+     * A list of command line arguments passed to the JAR file's main
+     * function when executed.
      */
     private java.util.List<String> args;
 
     /**
-     * A list of <a>KeyValue</a> instances.
+     * A list of Java properties that are set when the step runs. You can use
+     * these properties to pass key-value pairs to your main function.
      *
-     * @return A list of <a>KeyValue</a> instances.
+     * @return A list of Java properties that are set when the step runs. You can use
+     *         these properties to pass key-value pairs to your main function.
      */
     public java.util.List<KeyValue> getProperties() {
         if (properties == null) {
@@ -52,9 +62,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of <a>KeyValue</a> instances.
+     * A list of Java properties that are set when the step runs. You can use
+     * these properties to pass key-value pairs to your main function.
      *
-     * @param properties A list of <a>KeyValue</a> instances.
+     * @param properties A list of Java properties that are set when the step runs. You can use
+     *         these properties to pass key-value pairs to your main function.
      */
     public void setProperties(java.util.Collection<KeyValue> properties) {
         java.util.List<KeyValue> propertiesCopy = new java.util.ArrayList<KeyValue>();
@@ -65,11 +77,13 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of <a>KeyValue</a> instances.
+     * A list of Java properties that are set when the step runs. You can use
+     * these properties to pass key-value pairs to your main function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param properties A list of <a>KeyValue</a> instances.
+     * @param properties A list of Java properties that are set when the step runs. You can use
+     *         these properties to pass key-value pairs to your main function.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -82,11 +96,13 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of <a>KeyValue</a> instances.
+     * A list of Java properties that are set when the step runs. You can use
+     * these properties to pass key-value pairs to your main function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param properties A list of <a>KeyValue</a> instances.
+     * @param properties A list of Java properties that are set when the step runs. You can use
+     *         these properties to pass key-value pairs to your main function.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -102,29 +118,29 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * <p/>
+     * A path to a JAR file run during the step.
      *
-     * @return <p/>
+     * @return A path to a JAR file run during the step.
      */
     public String getJar() {
         return jar;
     }
     
     /**
-     * <p/>
+     * A path to a JAR file run during the step.
      *
-     * @param jar <p/>
+     * @param jar A path to a JAR file run during the step.
      */
     public void setJar(String jar) {
         this.jar = jar;
     }
     
     /**
-     * <p/>
+     * A path to a JAR file run during the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jar <p/>
+     * @param jar A path to a JAR file run during the step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -136,29 +152,41 @@ public class HadoopJarStepConfig {
     
     
     /**
-     * The name of the main class in the specified Java file.
+     * The name of the main class in the specified Java file. If not
+     * specified, the JAR file should specify a Main-Class in its manifest
+     * file.
      *
-     * @return The name of the main class in the specified Java file.
+     * @return The name of the main class in the specified Java file. If not
+     *         specified, the JAR file should specify a Main-Class in its manifest
+     *         file.
      */
     public String getMainClass() {
         return mainClass;
     }
     
     /**
-     * The name of the main class in the specified Java file.
+     * The name of the main class in the specified Java file. If not
+     * specified, the JAR file should specify a Main-Class in its manifest
+     * file.
      *
-     * @param mainClass The name of the main class in the specified Java file.
+     * @param mainClass The name of the main class in the specified Java file. If not
+     *         specified, the JAR file should specify a Main-Class in its manifest
+     *         file.
      */
     public void setMainClass(String mainClass) {
         this.mainClass = mainClass;
     }
     
     /**
-     * The name of the main class in the specified Java file.
+     * The name of the main class in the specified Java file. If not
+     * specified, the JAR file should specify a Main-Class in its manifest
+     * file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mainClass The name of the main class in the specified Java file.
+     * @param mainClass The name of the main class in the specified Java file. If not
+     *         specified, the JAR file should specify a Main-Class in its manifest
+     *         file.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -170,9 +198,11 @@ public class HadoopJarStepConfig {
     
     
     /**
-     * A list of arguments for the job flow's steps.
+     * A list of command line arguments passed to the JAR file's main
+     * function when executed.
      *
-     * @return A list of arguments for the job flow's steps.
+     * @return A list of command line arguments passed to the JAR file's main
+     *         function when executed.
      */
     public java.util.List<String> getArgs() {
         if (args == null) {
@@ -182,9 +212,11 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of arguments for the job flow's steps.
+     * A list of command line arguments passed to the JAR file's main
+     * function when executed.
      *
-     * @param args A list of arguments for the job flow's steps.
+     * @param args A list of command line arguments passed to the JAR file's main
+     *         function when executed.
      */
     public void setArgs(java.util.Collection<String> args) {
         java.util.List<String> argsCopy = new java.util.ArrayList<String>();
@@ -195,11 +227,13 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of arguments for the job flow's steps.
+     * A list of command line arguments passed to the JAR file's main
+     * function when executed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param args A list of arguments for the job flow's steps.
+     * @param args A list of command line arguments passed to the JAR file's main
+     *         function when executed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -212,11 +246,13 @@ public class HadoopJarStepConfig {
     }
     
     /**
-     * A list of arguments for the job flow's steps.
+     * A list of command line arguments passed to the JAR file's main
+     * function when executed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param args A list of arguments for the job flow's steps.
+     * @param args A list of command line arguments passed to the JAR file's main
+     *         function when executed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

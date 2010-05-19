@@ -32,11 +32,11 @@ public class DuplicateLoadBalancerNameExceptionUnmarshaller extends StandardErro
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DuplicateLoadBalancerName")) 
+        if (errorCode == null || !errorCode.equals("DuplicateLoadBalancerName"))
             return null;
-        
+
         DuplicateLoadBalancerNameException e = (DuplicateLoadBalancerNameException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

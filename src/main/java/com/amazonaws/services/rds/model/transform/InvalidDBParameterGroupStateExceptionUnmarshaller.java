@@ -32,11 +32,11 @@ public class InvalidDBParameterGroupStateExceptionUnmarshaller extends StandardE
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidDBParameterGroupState")) 
+        if (errorCode == null || !errorCode.equals("InvalidDBParameterGroupState"))
             return null;
-        
+
         InvalidDBParameterGroupStateException e = (InvalidDBParameterGroupStateException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

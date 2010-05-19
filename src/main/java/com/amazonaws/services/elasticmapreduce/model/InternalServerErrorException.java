@@ -17,7 +17,10 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticMapReduce exception
+ * <p>
+ * Indicates that an error occurred while processing the request and that
+ * the request was not completed.
+ * </p>
  */        
 public class InternalServerErrorException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

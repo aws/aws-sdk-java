@@ -32,13 +32,13 @@ public class TooManyRequestedAttributesExceptionUnmarshaller extends LegacyError
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("TooManyRequestedAttributes")) 
+        if (errorCode == null || !errorCode.equals("TooManyRequestedAttributes"))
             return null;
-        
+
         TooManyRequestedAttributesException e = (TooManyRequestedAttributesException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

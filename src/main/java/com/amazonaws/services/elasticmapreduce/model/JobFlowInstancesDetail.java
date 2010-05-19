@@ -16,6 +16,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * Specify the type of Amazon EC2 instances to run the job flow on.
  * </p>
  */
 public class JobFlowInstancesDetail {
@@ -31,7 +32,7 @@ public class JobFlowInstancesDetail {
     private String masterPublicDnsName;
 
     /**
-     * The ID that uniquely identifies the master node instance.
+     * The Amazon EC2 instance identifier of the master node.
      */
     private String masterInstanceId;
 
@@ -42,31 +43,32 @@ public class JobFlowInstancesDetail {
 
     /**
      * The number of Amazon EC2 instances in the cluster. If the value is 1,
-     * one instance serves as the master and slave node. If the value is
-     * greater than one, one instance is the master node and the remainder
-     * are slave nodes.
+     * the same instance serves as both the master and slave node. If the
+     * value is greater than 1, one instance is the master node and all
+     * others are slave nodes.
      */
     private Integer instanceCount;
 
     /**
-     * A KeyName that maps to a public key-private key pair, which is
-     * required to launch the master node. The private key is used by SSH to
-     * authenticate the tunneling connection between the client and the EC2
-     * master node that was launched using the KeyName.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the
+     * master node of job flow.
      */
     private String ec2KeyName;
 
     /**
-     * A container for the placement type of the job flow instance.
+     * Specifies the Amazon EC2 Availability Zone for the job flow.
      */
     private PlacementType placement;
 
     /**
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     * keep the EC2 cluster engaged after all steps in the job flow complete.
+     * Specifies whether or not the job flow should terminate after
+     * completing all steps.
      */
     private Boolean keepJobFlowAliveWhenNoSteps;
 
+    /**
+     * Specifies the Hadoop version for the job flow.
+     */
     private String hadoopVersion;
 
     /**
@@ -138,29 +140,29 @@ public class JobFlowInstancesDetail {
     
     
     /**
-     * The ID that uniquely identifies the master node instance.
+     * The Amazon EC2 instance identifier of the master node.
      *
-     * @return The ID that uniquely identifies the master node instance.
+     * @return The Amazon EC2 instance identifier of the master node.
      */
     public String getMasterInstanceId() {
         return masterInstanceId;
     }
     
     /**
-     * The ID that uniquely identifies the master node instance.
+     * The Amazon EC2 instance identifier of the master node.
      *
-     * @param masterInstanceId The ID that uniquely identifies the master node instance.
+     * @param masterInstanceId The Amazon EC2 instance identifier of the master node.
      */
     public void setMasterInstanceId(String masterInstanceId) {
         this.masterInstanceId = masterInstanceId;
     }
     
     /**
-     * The ID that uniquely identifies the master node instance.
+     * The Amazon EC2 instance identifier of the master node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterInstanceId The ID that uniquely identifies the master node instance.
+     * @param masterInstanceId The Amazon EC2 instance identifier of the master node.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -207,14 +209,14 @@ public class JobFlowInstancesDetail {
     
     /**
      * The number of Amazon EC2 instances in the cluster. If the value is 1,
-     * one instance serves as the master and slave node. If the value is
-     * greater than one, one instance is the master node and the remainder
-     * are slave nodes.
+     * the same instance serves as both the master and slave node. If the
+     * value is greater than 1, one instance is the master node and all
+     * others are slave nodes.
      *
      * @return The number of Amazon EC2 instances in the cluster. If the value is 1,
-     *         one instance serves as the master and slave node. If the value is
-     *         greater than one, one instance is the master node and the remainder
-     *         are slave nodes.
+     *         the same instance serves as both the master and slave node. If the
+     *         value is greater than 1, one instance is the master node and all
+     *         others are slave nodes.
      */
     public Integer getInstanceCount() {
         return instanceCount;
@@ -222,14 +224,14 @@ public class JobFlowInstancesDetail {
     
     /**
      * The number of Amazon EC2 instances in the cluster. If the value is 1,
-     * one instance serves as the master and slave node. If the value is
-     * greater than one, one instance is the master node and the remainder
-     * are slave nodes.
+     * the same instance serves as both the master and slave node. If the
+     * value is greater than 1, one instance is the master node and all
+     * others are slave nodes.
      *
      * @param instanceCount The number of Amazon EC2 instances in the cluster. If the value is 1,
-     *         one instance serves as the master and slave node. If the value is
-     *         greater than one, one instance is the master node and the remainder
-     *         are slave nodes.
+     *         the same instance serves as both the master and slave node. If the
+     *         value is greater than 1, one instance is the master node and all
+     *         others are slave nodes.
      */
     public void setInstanceCount(Integer instanceCount) {
         this.instanceCount = instanceCount;
@@ -237,16 +239,16 @@ public class JobFlowInstancesDetail {
     
     /**
      * The number of Amazon EC2 instances in the cluster. If the value is 1,
-     * one instance serves as the master and slave node. If the value is
-     * greater than one, one instance is the master node and the remainder
-     * are slave nodes.
+     * the same instance serves as both the master and slave node. If the
+     * value is greater than 1, one instance is the master node and all
+     * others are slave nodes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceCount The number of Amazon EC2 instances in the cluster. If the value is 1,
-     *         one instance serves as the master and slave node. If the value is
-     *         greater than one, one instance is the master node and the remainder
-     *         are slave nodes.
+     *         the same instance serves as both the master and slave node. If the
+     *         value is greater than 1, one instance is the master node and all
+     *         others are slave nodes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -258,47 +260,35 @@ public class JobFlowInstancesDetail {
     
     
     /**
-     * A KeyName that maps to a public key-private key pair, which is
-     * required to launch the master node. The private key is used by SSH to
-     * authenticate the tunneling connection between the client and the EC2
-     * master node that was launched using the KeyName.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the
+     * master node of job flow.
      *
-     * @return A KeyName that maps to a public key-private key pair, which is
-     *         required to launch the master node. The private key is used by SSH to
-     *         authenticate the tunneling connection between the client and the EC2
-     *         master node that was launched using the KeyName.
+     * @return The name of an Amazon EC2 key pair that can be used to ssh to the
+     *         master node of job flow.
      */
     public String getEc2KeyName() {
         return ec2KeyName;
     }
     
     /**
-     * A KeyName that maps to a public key-private key pair, which is
-     * required to launch the master node. The private key is used by SSH to
-     * authenticate the tunneling connection between the client and the EC2
-     * master node that was launched using the KeyName.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the
+     * master node of job flow.
      *
-     * @param ec2KeyName A KeyName that maps to a public key-private key pair, which is
-     *         required to launch the master node. The private key is used by SSH to
-     *         authenticate the tunneling connection between the client and the EC2
-     *         master node that was launched using the KeyName.
+     * @param ec2KeyName The name of an Amazon EC2 key pair that can be used to ssh to the
+     *         master node of job flow.
      */
     public void setEc2KeyName(String ec2KeyName) {
         this.ec2KeyName = ec2KeyName;
     }
     
     /**
-     * A KeyName that maps to a public key-private key pair, which is
-     * required to launch the master node. The private key is used by SSH to
-     * authenticate the tunneling connection between the client and the EC2
-     * master node that was launched using the KeyName.
+     * The name of an Amazon EC2 key pair that can be used to ssh to the
+     * master node of job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ec2KeyName A KeyName that maps to a public key-private key pair, which is
-     *         required to launch the master node. The private key is used by SSH to
-     *         authenticate the tunneling connection between the client and the EC2
-     *         master node that was launched using the KeyName.
+     * @param ec2KeyName The name of an Amazon EC2 key pair that can be used to ssh to the
+     *         master node of job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -310,29 +300,29 @@ public class JobFlowInstancesDetail {
     
     
     /**
-     * A container for the placement type of the job flow instance.
+     * Specifies the Amazon EC2 Availability Zone for the job flow.
      *
-     * @return A container for the placement type of the job flow instance.
+     * @return Specifies the Amazon EC2 Availability Zone for the job flow.
      */
     public PlacementType getPlacement() {
         return placement;
     }
     
     /**
-     * A container for the placement type of the job flow instance.
+     * Specifies the Amazon EC2 Availability Zone for the job flow.
      *
-     * @param placement A container for the placement type of the job flow instance.
+     * @param placement Specifies the Amazon EC2 Availability Zone for the job flow.
      */
     public void setPlacement(PlacementType placement) {
         this.placement = placement;
     }
     
     /**
-     * A container for the placement type of the job flow instance.
+     * Specifies the Amazon EC2 Availability Zone for the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param placement A container for the placement type of the job flow instance.
+     * @param placement Specifies the Amazon EC2 Availability Zone for the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -344,35 +334,35 @@ public class JobFlowInstancesDetail {
     
     
     /**
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     * keep the EC2 cluster engaged after all steps in the job flow complete.
+     * Specifies whether or not the job flow should terminate after
+     * completing all steps.
      *
-     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     *         keep the EC2 cluster engaged after all steps in the job flow complete.
+     * @return Specifies whether or not the job flow should terminate after
+     *         completing all steps.
      */
     public Boolean isKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
     }
     
     /**
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     * keep the EC2 cluster engaged after all steps in the job flow complete.
+     * Specifies whether or not the job flow should terminate after
+     * completing all steps.
      *
-     * @param keepJobFlowAliveWhenNoSteps Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     *         keep the EC2 cluster engaged after all steps in the job flow complete.
+     * @param keepJobFlowAliveWhenNoSteps Specifies whether or not the job flow should terminate after
+     *         completing all steps.
      */
     public void setKeepJobFlowAliveWhenNoSteps(Boolean keepJobFlowAliveWhenNoSteps) {
         this.keepJobFlowAliveWhenNoSteps = keepJobFlowAliveWhenNoSteps;
     }
     
     /**
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     * keep the EC2 cluster engaged after all steps in the job flow complete.
+     * Specifies whether or not the job flow should terminate after
+     * completing all steps.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keepJobFlowAliveWhenNoSteps Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     *         keep the EC2 cluster engaged after all steps in the job flow complete.
+     * @param keepJobFlowAliveWhenNoSteps Specifies whether or not the job flow should terminate after
+     *         completing all steps.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -384,40 +374,40 @@ public class JobFlowInstancesDetail {
     
     
     /**
-     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     * keep the EC2 cluster engaged after all steps in the job flow complete.
+     * Specifies whether or not the job flow should terminate after
+     * completing all steps.
      *
-     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to
-     *         keep the EC2 cluster engaged after all steps in the job flow complete.
+     * @return Specifies whether or not the job flow should terminate after
+     *         completing all steps.
      */
     public Boolean getKeepJobFlowAliveWhenNoSteps() {
         return keepJobFlowAliveWhenNoSteps;
     }
     
     /**
-     * Returns the value of the HadoopVersion property for this object.
+     * Specifies the Hadoop version for the job flow.
      *
-     * @return The value of the HadoopVersion property for this object.
+     * @return Specifies the Hadoop version for the job flow.
      */
     public String getHadoopVersion() {
         return hadoopVersion;
     }
     
     /**
-     * Sets the value of the HadoopVersion property for this object.
+     * Specifies the Hadoop version for the job flow.
      *
-     * @param hadoopVersion The new value for the HadoopVersion property for this object.
+     * @param hadoopVersion Specifies the Hadoop version for the job flow.
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
     
     /**
-     * Sets the value of the HadoopVersion property for this object.
+     * Specifies the Hadoop version for the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hadoopVersion The new value for the HadoopVersion property for this object.
+     * @param hadoopVersion Specifies the Hadoop version for the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

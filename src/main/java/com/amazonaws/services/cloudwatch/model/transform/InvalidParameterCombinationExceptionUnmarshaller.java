@@ -32,11 +32,11 @@ public class InvalidParameterCombinationExceptionUnmarshaller extends StandardEr
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidParameterCombination")) 
+        if (errorCode == null || !errorCode.equals("InvalidParameterCombination"))
             return null;
-        
+
         InvalidParameterCombinationException e = (InvalidParameterCombinationException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

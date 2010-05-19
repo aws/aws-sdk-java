@@ -16,7 +16,9 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Run Job Flow Request
+ * <p>
+ * Input to the RunJobFlow operation.
+ * </p>
  */
 public class RunJobFlowRequest extends AmazonWebServiceRequest {
 
@@ -29,24 +31,34 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     private String name;
 
     /**
-     * The URI for the log files. If a value is not provided, logs are not
-     * generated.
+     * Specifies the location in Amazon S3 to write the log files of the job
+     * flow. If a value is not provided, logs are not created.
      */
     private String logUri;
 
+    /**
+     * A JSON string for selecting additional features.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
     private String additionalInfo;
 
     /**
-     * <p/>
+     * A specification of the number and type of Amazon EC2 instances on
+     * which to run the job flow.
      */
     private JobFlowInstancesConfig instances;
 
     /**
-     * A list of <a>Step</a> instances containing information about the steps
-     * to be executed.
+     * A list of steps to be executed by the job flow.
      */
     private java.util.List<StepConfig> steps;
 
+    /**
+     * A list of bootstrap actions that will be run before Hadoop is started
+     * on the job flow.
+     */
     private java.util.List<BootstrapActionConfig> bootstrapActions;
 
     /**
@@ -93,35 +105,35 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The URI for the log files. If a value is not provided, logs are not
-     * generated.
+     * Specifies the location in Amazon S3 to write the log files of the job
+     * flow. If a value is not provided, logs are not created.
      *
-     * @return The URI for the log files. If a value is not provided, logs are not
-     *         generated.
+     * @return Specifies the location in Amazon S3 to write the log files of the job
+     *         flow. If a value is not provided, logs are not created.
      */
     public String getLogUri() {
         return logUri;
     }
     
     /**
-     * The URI for the log files. If a value is not provided, logs are not
-     * generated.
+     * Specifies the location in Amazon S3 to write the log files of the job
+     * flow. If a value is not provided, logs are not created.
      *
-     * @param logUri The URI for the log files. If a value is not provided, logs are not
-     *         generated.
+     * @param logUri Specifies the location in Amazon S3 to write the log files of the job
+     *         flow. If a value is not provided, logs are not created.
      */
     public void setLogUri(String logUri) {
         this.logUri = logUri;
     }
     
     /**
-     * The URI for the log files. If a value is not provided, logs are not
-     * generated.
+     * Specifies the location in Amazon S3 to write the log files of the job
+     * flow. If a value is not provided, logs are not created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param logUri The URI for the log files. If a value is not provided, logs are not
-     *         generated.
+     * @param logUri Specifies the location in Amazon S3 to write the log files of the job
+     *         flow. If a value is not provided, logs are not created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -133,38 +145,38 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AdditionalInfo property for this object.
+     * A JSON string for selecting additional features.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The value of the AdditionalInfo property for this object.
+     * @return A JSON string for selecting additional features.
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * A JSON string for selecting additional features.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo A JSON string for selecting additional features.
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * A JSON string for selecting additional features.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo A JSON string for selecting additional features.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -176,29 +188,35 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * <p/>
+     * A specification of the number and type of Amazon EC2 instances on
+     * which to run the job flow.
      *
-     * @return <p/>
+     * @return A specification of the number and type of Amazon EC2 instances on
+     *         which to run the job flow.
      */
     public JobFlowInstancesConfig getInstances() {
         return instances;
     }
     
     /**
-     * <p/>
+     * A specification of the number and type of Amazon EC2 instances on
+     * which to run the job flow.
      *
-     * @param instances <p/>
+     * @param instances A specification of the number and type of Amazon EC2 instances on
+     *         which to run the job flow.
      */
     public void setInstances(JobFlowInstancesConfig instances) {
         this.instances = instances;
     }
     
     /**
-     * <p/>
+     * A specification of the number and type of Amazon EC2 instances on
+     * which to run the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances <p/>
+     * @param instances A specification of the number and type of Amazon EC2 instances on
+     *         which to run the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -210,11 +228,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of <a>Step</a> instances containing information about the steps
-     * to be executed.
+     * A list of steps to be executed by the job flow.
      *
-     * @return A list of <a>Step</a> instances containing information about the steps
-     *         to be executed.
+     * @return A list of steps to be executed by the job flow.
      */
     public java.util.List<StepConfig> getSteps() {
         if (steps == null) {
@@ -224,11 +240,9 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <a>Step</a> instances containing information about the steps
-     * to be executed.
+     * A list of steps to be executed by the job flow.
      *
-     * @param steps A list of <a>Step</a> instances containing information about the steps
-     *         to be executed.
+     * @param steps A list of steps to be executed by the job flow.
      */
     public void setSteps(java.util.Collection<StepConfig> steps) {
         java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
@@ -239,13 +253,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <a>Step</a> instances containing information about the steps
-     * to be executed.
+     * A list of steps to be executed by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps A list of <a>Step</a> instances containing information about the steps
-     *         to be executed.
+     * @param steps A list of steps to be executed by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -258,13 +270,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <a>Step</a> instances containing information about the steps
-     * to be executed.
+     * A list of steps to be executed by the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param steps A list of <a>Step</a> instances containing information about the steps
-     *         to be executed.
+     * @param steps A list of steps to be executed by the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -280,9 +290,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the value of the BootstrapActions property for this object.
+     * A list of bootstrap actions that will be run before Hadoop is started
+     * on the job flow.
      *
-     * @return The value of the BootstrapActions property for this object.
+     * @return A list of bootstrap actions that will be run before Hadoop is started
+     *         on the job flow.
      */
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
         if (bootstrapActions == null) {
@@ -292,9 +304,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of bootstrap actions that will be run before Hadoop is started
+     * on the job flow.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
+     *         on the job flow.
      */
     public void setBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>();
@@ -305,11 +319,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of bootstrap actions that will be run before Hadoop is started
+     * on the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
+     *         on the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -322,11 +338,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the BootstrapActions property for this object.
+     * A list of bootstrap actions that will be run before Hadoop is started
+     * on the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bootstrapActions The new value for the BootstrapActions property for this object.
+     * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
+     *         on the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

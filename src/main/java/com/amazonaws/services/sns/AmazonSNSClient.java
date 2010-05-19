@@ -16,10 +16,14 @@ package com.amazonaws.services.sns;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,11 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -43,6 +49,7 @@ import com.amazonaws.services.sns.model.transform.*;
  * Client for accessing AmazonSNS.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * Amazon Simple Notification Service
  */
 public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS {
@@ -154,7 +161,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public ConfirmSubscriptionResult confirmSubscription(ConfirmSubscriptionRequest confirmSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ConfirmSubscriptionRequest> request = new ConfirmSubscriptionRequestMarshaller().marshall(confirmSubscriptionRequest);
-        return invoke(request, "//ConfirmSubscriptionResult", new ConfirmSubscriptionResultUnmarshaller());
+        return invoke(request, new ConfirmSubscriptionResultStaxUnmarshaller());
     }
     
     /**
@@ -187,7 +194,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public GetTopicAttributesResult getTopicAttributes(GetTopicAttributesRequest getTopicAttributesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetTopicAttributesRequest> request = new GetTopicAttributesRequestMarshaller().marshall(getTopicAttributesRequest);
-        return invoke(request, "//GetTopicAttributesResult", new GetTopicAttributesResultUnmarshaller());
+        return invoke(request, new GetTopicAttributesResultStaxUnmarshaller());
     }
     
     /**
@@ -222,7 +229,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public SubscribeResult subscribe(SubscribeRequest subscribeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SubscribeRequest> request = new SubscribeRequestMarshaller().marshall(subscribeRequest);
-        return invoke(request, "//SubscribeResult", new SubscribeResultUnmarshaller());
+        return invoke(request, new SubscribeResultStaxUnmarshaller());
     }
     
     /**
@@ -251,7 +258,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public void setTopicAttributes(SetTopicAttributesRequest setTopicAttributesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SetTopicAttributesRequest> request = new SetTopicAttributesRequestMarshaller().marshall(setTopicAttributesRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -281,7 +288,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public void deleteTopic(DeleteTopicRequest deleteTopicRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteTopicRequest> request = new DeleteTopicRequestMarshaller().marshall(deleteTopicRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -309,7 +316,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public void removePermission(RemovePermissionRequest removePermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RemovePermissionRequest> request = new RemovePermissionRequestMarshaller().marshall(removePermissionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -342,7 +349,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public ListSubscriptionsResult listSubscriptions(ListSubscriptionsRequest listSubscriptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListSubscriptionsRequest> request = new ListSubscriptionsRequestMarshaller().marshall(listSubscriptionsRequest);
-        return invoke(request, "//ListSubscriptionsResult", new ListSubscriptionsResultUnmarshaller());
+        return invoke(request, new ListSubscriptionsResultStaxUnmarshaller());
     }
     
     /**
@@ -371,7 +378,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public void addPermission(AddPermissionRequest addPermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AddPermissionRequest> request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -405,7 +412,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public CreateTopicResult createTopic(CreateTopicRequest createTopicRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateTopicRequest> request = new CreateTopicRequestMarshaller().marshall(createTopicRequest);
-        return invoke(request, "//CreateTopicResult", new CreateTopicResultUnmarshaller());
+        return invoke(request, new CreateTopicResultStaxUnmarshaller());
     }
     
     /**
@@ -437,7 +444,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public ListTopicsResult listTopics(ListTopicsRequest listTopicsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListTopicsRequest> request = new ListTopicsRequestMarshaller().marshall(listTopicsRequest);
-        return invoke(request, "//ListTopicsResult", new ListTopicsResultUnmarshaller());
+        return invoke(request, new ListTopicsResultStaxUnmarshaller());
     }
     
     /**
@@ -471,7 +478,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public void unsubscribe(UnsubscribeRequest unsubscribeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UnsubscribeRequest> request = new UnsubscribeRequestMarshaller().marshall(unsubscribeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -506,7 +513,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public ListSubscriptionsByTopicResult listSubscriptionsByTopic(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListSubscriptionsByTopicRequest> request = new ListSubscriptionsByTopicRequestMarshaller().marshall(listSubscriptionsByTopicRequest);
-        return invoke(request, "//ListSubscriptionsByTopicResult", new ListSubscriptionsByTopicResultUnmarshaller());
+        return invoke(request, new ListSubscriptionsByTopicResultStaxUnmarshaller());
     }
     
     /**
@@ -540,7 +547,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     public PublishResult publish(PublishRequest publishRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<PublishRequest> request = new PublishRequestMarshaller().marshall(publishRequest);
-        return invoke(request, "//PublishResult", new PublishResultUnmarshaller());
+        return invoke(request, new PublishResultStaxUnmarshaller());
     }
     
     /**
@@ -599,7 +606,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -628,7 +635,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

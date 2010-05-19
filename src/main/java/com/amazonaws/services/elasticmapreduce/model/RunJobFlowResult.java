@@ -15,39 +15,41 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Run Job Flow Result
+ * <p>
+ * The result of the RunJobFlow operation.
+ * </p>
  */
 public class RunJobFlowResult {
 
     /**
-     * A string uniquely identifying the created job flow.
+     * An unique identifier for the job flow.
      */
     private String jobFlowId;
 
     /**
-     * A string uniquely identifying the created job flow.
+     * An unique identifier for the job flow.
      *
-     * @return A string uniquely identifying the created job flow.
+     * @return An unique identifier for the job flow.
      */
     public String getJobFlowId() {
         return jobFlowId;
     }
     
     /**
-     * A string uniquely identifying the created job flow.
+     * An unique identifier for the job flow.
      *
-     * @param jobFlowId A string uniquely identifying the created job flow.
+     * @param jobFlowId An unique identifier for the job flow.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
     
     /**
-     * A string uniquely identifying the created job flow.
+     * An unique identifier for the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowId A string uniquely identifying the created job flow.
+     * @param jobFlowId An unique identifier for the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

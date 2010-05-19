@@ -15,44 +15,45 @@
 package com.amazonaws.services.simpledb.model;
 
 /**
- * Replaceable Item
+ * <p>
+ * </p>
  */
 public class ReplaceableItem {
 
     /**
-     * Item Name.
+     * The name of the replaceable item.
      */
     private String name;
 
     /**
-     * List of Replaceable Attributes.
+     * The list of attributes for a replaceable item.
      */
     private java.util.List<ReplaceableAttribute> attributes;
 
     /**
-     * Item Name.
+     * The name of the replaceable item.
      *
-     * @return Item Name.
+     * @return The name of the replaceable item.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Item Name.
+     * The name of the replaceable item.
      *
-     * @param name Item Name.
+     * @param name The name of the replaceable item.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Item Name.
+     * The name of the replaceable item.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Item Name.
+     * @param name The name of the replaceable item.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,9 +65,9 @@ public class ReplaceableItem {
     
     
     /**
-     * List of Replaceable Attributes.
+     * The list of attributes for a replaceable item.
      *
-     * @return List of Replaceable Attributes.
+     * @return The list of attributes for a replaceable item.
      */
     public java.util.List<ReplaceableAttribute> getAttributes() {
         if (attributes == null) {
@@ -76,9 +77,9 @@ public class ReplaceableItem {
     }
     
     /**
-     * List of Replaceable Attributes.
+     * The list of attributes for a replaceable item.
      *
-     * @param attributes List of Replaceable Attributes.
+     * @param attributes The list of attributes for a replaceable item.
      */
     public void setAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
         java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>();
@@ -89,11 +90,11 @@ public class ReplaceableItem {
     }
     
     /**
-     * List of Replaceable Attributes.
+     * The list of attributes for a replaceable item.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of Replaceable Attributes.
+     * @param attributes The list of attributes for a replaceable item.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -106,11 +107,11 @@ public class ReplaceableItem {
     }
     
     /**
-     * List of Replaceable Attributes.
+     * The list of attributes for a replaceable item.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of Replaceable Attributes.
+     * @param attributes The list of attributes for a replaceable item.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,11 +32,11 @@ public class InvalidAttributeNameExceptionUnmarshaller extends StandardErrorUnma
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidAttributeName")) 
+        if (errorCode == null || !errorCode.equals("InvalidAttributeName"))
             return null;
-        
+
         InvalidAttributeNameException e = (InvalidAttributeNameException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

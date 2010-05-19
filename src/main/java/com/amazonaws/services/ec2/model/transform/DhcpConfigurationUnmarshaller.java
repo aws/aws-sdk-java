@@ -35,7 +35,7 @@ public class DhcpConfigurationUnmarshaller implements Unmarshaller<DhcpConfigura
         Node keyNode = XpathUtils.asNode("key", node);
         dhcpConfiguration.setKey(new StringUnmarshaller().unmarshall(keyNode));
     
-        NodeList valuesNodes = XpathUtils.asNodeList("valueSet/item", node);
+        NodeList valuesNodes = XpathUtils.asNodeList("valueSet/item/value", node);
         for (int valuesIndex = 0; valuesIndex < XpathUtils.nodeLength(valuesNodes); ++valuesIndex) {
             Node valuesNode = valuesNodes.item(valuesIndex);
             dhcpConfiguration.getValues().add(new StringUnmarshaller().unmarshall(valuesNode));

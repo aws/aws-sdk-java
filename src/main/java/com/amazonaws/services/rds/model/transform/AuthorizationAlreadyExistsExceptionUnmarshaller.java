@@ -32,11 +32,11 @@ public class AuthorizationAlreadyExistsExceptionUnmarshaller extends StandardErr
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("AuthorizationAlreadyExists")) 
+        if (errorCode == null || !errorCode.equals("AuthorizationAlreadyExists"))
             return null;
-        
+
         AuthorizationAlreadyExistsException e = (AuthorizationAlreadyExistsException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -32,11 +32,11 @@ public class AuthorizationNotFoundExceptionUnmarshaller extends StandardErrorUnm
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("AuthorizationNotFound")) 
+        if (errorCode == null || !errorCode.equals("AuthorizationNotFound"))
             return null;
-        
+
         AuthorizationNotFoundException e = (AuthorizationNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -32,11 +32,11 @@ public class InvalidInstanceExceptionUnmarshaller extends StandardErrorUnmarshal
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidInstance")) 
+        if (errorCode == null || !errorCode.equals("InvalidInstance"))
             return null;
-        
+
         InvalidInstanceException e = (InvalidInstanceException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

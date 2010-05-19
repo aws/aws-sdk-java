@@ -15,47 +15,58 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Bootstrap Action Config
+ * <p>
+ * Configuration of a bootstrap action.
+ * </p>
  */
 public class BootstrapActionConfig {
 
+    /**
+     * The name of the bootstrap action.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     */
     private String name;
 
+    /**
+     * The script run by the bootstrap action.
+     */
     private ScriptBootstrapActionConfig scriptBootstrapAction;
 
     /**
-     * Returns the value of the Name property for this object.
+     * The name of the bootstrap action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The value of the Name property for this object.
+     * @return The name of the bootstrap action.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the bootstrap action.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the bootstrap action.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the bootstrap action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the bootstrap action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -67,30 +78,29 @@ public class BootstrapActionConfig {
     
     
     /**
-     * Returns the value of the ScriptBootstrapAction property for this
-     * object.
+     * The script run by the bootstrap action.
      *
-     * @return The value of the ScriptBootstrapAction property for this object.
+     * @return The script run by the bootstrap action.
      */
     public ScriptBootstrapActionConfig getScriptBootstrapAction() {
         return scriptBootstrapAction;
     }
     
     /**
-     * Sets the value of the ScriptBootstrapAction property for this object.
+     * The script run by the bootstrap action.
      *
-     * @param scriptBootstrapAction The new value for the ScriptBootstrapAction property for this object.
+     * @param scriptBootstrapAction The script run by the bootstrap action.
      */
     public void setScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction) {
         this.scriptBootstrapAction = scriptBootstrapAction;
     }
     
     /**
-     * Sets the value of the ScriptBootstrapAction property for this object.
+     * The script run by the bootstrap action.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scriptBootstrapAction The new value for the ScriptBootstrapAction property for this object.
+     * @param scriptBootstrapAction The script run by the bootstrap action.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

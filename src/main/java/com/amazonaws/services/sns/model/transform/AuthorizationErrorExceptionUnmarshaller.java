@@ -32,11 +32,11 @@ public class AuthorizationErrorExceptionUnmarshaller extends StandardErrorUnmars
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("AuthorizationError")) 
+        if (errorCode == null || !errorCode.equals("AuthorizationError"))
             return null;
-        
+
         AuthorizationErrorException e = (AuthorizationErrorException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

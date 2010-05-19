@@ -32,11 +32,11 @@ public class DBParameterGroupAlreadyExistsExceptionUnmarshaller extends Standard
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBParameterGroupAlreadyExists")) 
+        if (errorCode == null || !errorCode.equals("DBParameterGroupAlreadyExists"))
             return null;
-        
+
         DBParameterGroupAlreadyExistsException e = (DBParameterGroupAlreadyExistsException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

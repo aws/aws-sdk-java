@@ -32,11 +32,11 @@ public class DBSecurityGroupNotFoundExceptionUnmarshaller extends StandardErrorU
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBSecurityGroupNotFound")) 
+        if (errorCode == null || !errorCode.equals("DBSecurityGroupNotFound"))
             return null;
-        
+
         DBSecurityGroupNotFoundException e = (DBSecurityGroupNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -32,11 +32,11 @@ public class InvalidMessageContentsExceptionUnmarshaller extends StandardErrorUn
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidMessageContents")) 
+        if (errorCode == null || !errorCode.equals("InvalidMessageContents"))
             return null;
-        
+
         InvalidMessageContentsException e = (InvalidMessageContentsException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

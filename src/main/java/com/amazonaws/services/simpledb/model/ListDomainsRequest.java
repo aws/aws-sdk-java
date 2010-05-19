@@ -27,7 +27,7 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
     private Integer maxNumberOfDomains;
 
     /**
-     * String that tells Amazon SimpleDB where to start the next list of
+     * A string informing Amazon SimpleDB where to start the next list of
      * domain names.
      */
     private String nextToken;
@@ -79,10 +79,10 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of
+     * A string informing Amazon SimpleDB where to start the next list of
      * domain names.
      *
-     * @return String that tells Amazon SimpleDB where to start the next list of
+     * @return A string informing Amazon SimpleDB where to start the next list of
      *         domain names.
      */
     public String getNextToken() {
@@ -90,10 +90,10 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of
+     * A string informing Amazon SimpleDB where to start the next list of
      * domain names.
      *
-     * @param nextToken String that tells Amazon SimpleDB where to start the next list of
+     * @param nextToken A string informing Amazon SimpleDB where to start the next list of
      *         domain names.
      */
     public void setNextToken(String nextToken) {
@@ -101,12 +101,12 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of
+     * A string informing Amazon SimpleDB where to start the next list of
      * domain names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken String that tells Amazon SimpleDB where to start the next list of
+     * @param nextToken A string informing Amazon SimpleDB where to start the next list of
      *         domain names.
      *
      * @return A reference to this updated object so that method calls can be chained 

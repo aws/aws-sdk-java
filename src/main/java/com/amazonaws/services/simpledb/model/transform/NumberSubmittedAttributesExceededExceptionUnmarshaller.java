@@ -32,13 +32,13 @@ public class NumberSubmittedAttributesExceededExceptionUnmarshaller extends Lega
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NumberSubmittedAttributesExceeded")) 
+        if (errorCode == null || !errorCode.equals("NumberSubmittedAttributesExceeded"))
             return null;
-        
+
         NumberSubmittedAttributesExceededException e = (NumberSubmittedAttributesExceededException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

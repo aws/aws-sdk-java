@@ -27,7 +27,7 @@ public class DomainMetadataResult {
     /**
      * The total size of all item names in the domain, in bytes.
      */
-    private Integer itemNamesSizeBytes;
+    private Long itemNamesSizeBytes;
 
     /**
      * The number of unique attribute names in the domain.
@@ -35,9 +35,9 @@ public class DomainMetadataResult {
     private Integer attributeNameCount;
 
     /**
-     * The total size of all unique attribute names, in bytes.
+     * The total size of all unique attribute names in the domain, in bytes.
      */
-    private Integer attributeNamesSizeBytes;
+    private Long attributeNamesSizeBytes;
 
     /**
      * The number of all attribute name/value pairs in the domain.
@@ -45,9 +45,9 @@ public class DomainMetadataResult {
     private Integer attributeValueCount;
 
     /**
-     * The total size of all attribute values, in bytes.
+     * The total size of all attribute values in the domain, in bytes.
      */
-    private Integer attributeValuesSizeBytes;
+    private Long attributeValuesSizeBytes;
 
     /**
      * The data and time when metadata was calculated in Epoch (UNIX) time.
@@ -93,7 +93,7 @@ public class DomainMetadataResult {
      *
      * @return The total size of all item names in the domain, in bytes.
      */
-    public Integer getItemNamesSizeBytes() {
+    public Long getItemNamesSizeBytes() {
         return itemNamesSizeBytes;
     }
     
@@ -102,7 +102,7 @@ public class DomainMetadataResult {
      *
      * @param itemNamesSizeBytes The total size of all item names in the domain, in bytes.
      */
-    public void setItemNamesSizeBytes(Integer itemNamesSizeBytes) {
+    public void setItemNamesSizeBytes(Long itemNamesSizeBytes) {
         this.itemNamesSizeBytes = itemNamesSizeBytes;
     }
     
@@ -116,7 +116,7 @@ public class DomainMetadataResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DomainMetadataResult withItemNamesSizeBytes(Integer itemNamesSizeBytes) {
+    public DomainMetadataResult withItemNamesSizeBytes(Long itemNamesSizeBytes) {
         this.itemNamesSizeBytes = itemNamesSizeBytes;
         return this;
     }
@@ -157,34 +157,34 @@ public class DomainMetadataResult {
     
     
     /**
-     * The total size of all unique attribute names, in bytes.
+     * The total size of all unique attribute names in the domain, in bytes.
      *
-     * @return The total size of all unique attribute names, in bytes.
+     * @return The total size of all unique attribute names in the domain, in bytes.
      */
-    public Integer getAttributeNamesSizeBytes() {
+    public Long getAttributeNamesSizeBytes() {
         return attributeNamesSizeBytes;
     }
     
     /**
-     * The total size of all unique attribute names, in bytes.
+     * The total size of all unique attribute names in the domain, in bytes.
      *
-     * @param attributeNamesSizeBytes The total size of all unique attribute names, in bytes.
+     * @param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.
      */
-    public void setAttributeNamesSizeBytes(Integer attributeNamesSizeBytes) {
+    public void setAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
         this.attributeNamesSizeBytes = attributeNamesSizeBytes;
     }
     
     /**
-     * The total size of all unique attribute names, in bytes.
+     * The total size of all unique attribute names in the domain, in bytes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNamesSizeBytes The total size of all unique attribute names, in bytes.
+     * @param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DomainMetadataResult withAttributeNamesSizeBytes(Integer attributeNamesSizeBytes) {
+    public DomainMetadataResult withAttributeNamesSizeBytes(Long attributeNamesSizeBytes) {
         this.attributeNamesSizeBytes = attributeNamesSizeBytes;
         return this;
     }
@@ -225,34 +225,34 @@ public class DomainMetadataResult {
     
     
     /**
-     * The total size of all attribute values, in bytes.
+     * The total size of all attribute values in the domain, in bytes.
      *
-     * @return The total size of all attribute values, in bytes.
+     * @return The total size of all attribute values in the domain, in bytes.
      */
-    public Integer getAttributeValuesSizeBytes() {
+    public Long getAttributeValuesSizeBytes() {
         return attributeValuesSizeBytes;
     }
     
     /**
-     * The total size of all attribute values, in bytes.
+     * The total size of all attribute values in the domain, in bytes.
      *
-     * @param attributeValuesSizeBytes The total size of all attribute values, in bytes.
+     * @param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.
      */
-    public void setAttributeValuesSizeBytes(Integer attributeValuesSizeBytes) {
+    public void setAttributeValuesSizeBytes(Long attributeValuesSizeBytes) {
         this.attributeValuesSizeBytes = attributeValuesSizeBytes;
     }
     
     /**
-     * The total size of all attribute values, in bytes.
+     * The total size of all attribute values in the domain, in bytes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeValuesSizeBytes The total size of all attribute values, in bytes.
+     * @param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DomainMetadataResult withAttributeValuesSizeBytes(Integer attributeValuesSizeBytes) {
+    public DomainMetadataResult withAttributeValuesSizeBytes(Long attributeValuesSizeBytes) {
         this.attributeValuesSizeBytes = attributeValuesSizeBytes;
         return this;
     }

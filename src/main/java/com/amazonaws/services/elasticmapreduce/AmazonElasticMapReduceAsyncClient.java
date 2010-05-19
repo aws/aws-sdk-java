@@ -33,13 +33,12 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * <p>
- * Elastic MapReduce is a web service that makes it easy to process vast
- * amounts of data using Amazon Simple Storage Service (Amazon S3), where
- * data is stored, and a cluster of Amazon Elastic Compute Cloud (EC2)
- * instances, where that data is processed. Elastic MapReduce uses Hadoop
- * processing to do such things as web indexing, data mining, log file
- * analysis, machine learning, scientific simulation, and bioinformatics
- * research.
+ * This is the Amazon Elastic MapReduce API Reference Guide. This guide
+ * is for programmers that need detailed information about the Amazon
+ * Elastic MapReduce SOAP and Query APIs.
+ * </p>
+ * <p>
+ * This document was last updated on May 5, 2010.
  * </p> 
  */       
 public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceClient
@@ -130,11 +129,25 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             
     /**
      * <p>
-     * Adds new steps to a job flow already loaded on an EC2 cluster. Each
-     * step applies an algorithm to the data set, for the first step, or to
-     * the data returned by the previous step in the job flow. If the job
-     * flow isn't executing any other steps, execution begins from the first
-     * added step. The maximum number of steps in a job flow is 256.
+     * AddJobFlowSteps adds new steps to a running job flow. The maximum
+     * number of steps in a job flow is 256.
+     * </p>
+     * <p>
+     * A step specifies the location of a JAR file stored either on the
+     * master node of the job flow or in Amazon S3. Each step is performed by
+     * the main function of the main class of the JAR file. The main class
+     * can be specified either in the manifest of the JAR or by using the
+     * MainFunction parameter of the step.
+     * </p>
+     * <p>
+     * SElastic MapReduce executes each step in the order listed. For a step
+     * to be considered complete, the main function must exit with a zero
+     * exit code and all Hadoop jobs started while the step was running must
+     * have completed and run successfully.
+     * </p>
+     * <p>
+     * You can only add steps to a job flow that is in one of the following
+     * states: STARTING, BOOTSTAPPING, RUNNING or WAITING.
      * </p>
      *
      * @param addJobFlowStepsRequest Container for the necessary parameters
@@ -163,12 +176,11 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     
     /**
      * <p>
-     * Terminates job flow processing, uploads data from EC2 to Amazon S3,
-     * and terminates the EC2 cluster. Use this action to terminate a single
-     * job flow or list of job flows. Job flows that complete successfully
-     * terminate automatically unless the job flow's
-     * <code>KeepJobFlowAliveWhenNoSteps</code> field is set to
-     * <code>true</code> when provided to the RunJobFlows operation.
+     * TerminateJobFlows shuts a list of job flows down. When a job flow is
+     * shut down, any step not yet completed is canceled and the EC2
+     * instances on which the job flow is running are stopped. Any log files
+     * not already saved are uploaded to Amazon S3 if a LogUri was specified
+     * when the job flow was created.
      * </p>
      *
      * @param terminateJobFlowsRequest Container for the necessary parameters
@@ -198,32 +210,37 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     
     /**
      * <p>
-     * Returns extensive details about specified job flows. The client
-     * specifies job flows by their ID, creation date, or state. Elastic
-     * MapReduce returns descriptions of job flows that are up to two months
-     * old. Specifying a date older than two months returns an error. The
-     * maximum number of job flow descriptions that are returned is 512.
+     * DescribeJobFlows returns a list of job flows that match all of the
+     * supplied parameters. The parameters can include a list of job flow
+     * IDs, job flow states, and restrictions on job flow creation date and
+     * time.
      * </p>
      * <p>
-     * Each input parameter acts as a filter so that Elastic MapReduce
-     * returns information about a more precise set of job flows with each
-     * parameter that is used in the request. If parameters are not included
-     * in a request, Elastic MapReduce returns descriptions of all job flows
-     * that have:
+     * Regardless of supplied parameters, only job flows created within the
+     * last two months are returned.
+     * </p>
+     * <p>
+     * If no parameters are supplied, then job flows matching either the
+     * following criteria are returned:
      * </p>
      * 
      * <ul>
-     * <li>Been created and completed in the last two weeks,</li>
-     * <li>Not ended within the last two months. These jobs have one of the
-     * following job flow states: <code>RUNNING</code> ,
+     * <li>Job flows created and completed in the last two weeks.</li>
+     * <li> Job flows created within the last two months that are in one of
+     * the following states: <code>RUNNING</code> ,
      * 
      * <code>WAITING</code> ,
      * 
      * <code>SHUTTING_DOWN</code> ,
      * 
-     * <code>STARTING</code> .</li>
+     * <code>STARTING</code> .
+     * </li>
      * 
      * </ul>
+     * <p>
+     * Amazon Elastic MapReduce can return a maximum of 512 job flow
+     * descriptions.
+     * </p>
      *
      * @param describeJobFlowsRequest Container for the necessary parameters
      *           to execute the DescribeJobFlows operation on AmazonElasticMapReduce.
@@ -251,15 +268,20 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
     
     /**
      * <p>
-     * Creates a new job flow and EC2 cluster, and then executes the job flow
-     * steps on the cluster. When the job flow finishes, depending on the
-     * specified parameter values, RunJobFlow terminates the EC2 cluster and
-     * uploads results to a specified Amazon S3 bucket.
+     * RunJobFlow creates and starts running a new job flow. The job flow
+     * will run the steps specified. Once the job flow completes, the EC2
+     * cluster is stopped and the HDFS partition is lost. To prevent loss of
+     * data, configure the last step of the job flow to store results in
+     * Amazon S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+     * parameter is set to TRUE, the job flow will transition to the WAITING
+     * state rather than shutting down once the steps have completed.
      * </p>
      * <p>
-     * <b>NOTE:</b> When running a new job flow, the following restrictions
-     * apply: The maximum lifetime of a job flow is 2 weeks. The maximum
-     * number of steps allowed in a job flow is 256.
+     * A maximum of 256 steps are allowed in each job flow.
+     * </p>
+     * <p>
+     * For long running job flows, we recommended that you periodically store
+     * your results.
      * </p>
      *
      * @param runJobFlowRequest Container for the necessary parameters to

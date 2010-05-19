@@ -16,12 +16,13 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * Specification of a job flow step.
  * </p>
  */
 public class StepConfig {
 
     /**
-     * The name of the step.
+     * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
@@ -29,8 +30,7 @@ public class StepConfig {
     private String name;
 
     /**
-     * Specifies what happens to the Amazon EC2 cluster when the job flow
-     * results in an error.
+     * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
@@ -38,43 +38,43 @@ public class StepConfig {
     private String actionOnFailure;
 
     /**
-     * Specifies a Hadoop step.
+     * Specifies the JAR file used for the job flow step.
      */
     private HadoopJarStepConfig hadoopJarStep;
 
     /**
-     * The name of the step.
+     * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @return The name of the step.
+     * @return The name of the job flow step.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name of the step.
+     * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The name of the step.
+     * @param name The name of the job flow step.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name of the step.
+     * The name of the job flow step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 256<br/>
      *
-     * @param name The name of the step.
+     * @param name The name of the job flow step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -86,44 +86,38 @@ public class StepConfig {
     
     
     /**
-     * Specifies what happens to the Amazon EC2 cluster when the job flow
-     * results in an error.
+     * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @return Specifies what happens to the Amazon EC2 cluster when the job flow
-     *         results in an error.
+     * @return Specifies the action to take if the job flow step fails.
      */
     public String getActionOnFailure() {
         return actionOnFailure;
     }
     
     /**
-     * Specifies what happens to the Amazon EC2 cluster when the job flow
-     * results in an error.
+     * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @param actionOnFailure Specifies what happens to the Amazon EC2 cluster when the job flow
-     *         results in an error.
+     * @param actionOnFailure Specifies the action to take if the job flow step fails.
      */
     public void setActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;
     }
     
     /**
-     * Specifies what happens to the Amazon EC2 cluster when the job flow
-     * results in an error.
+     * Specifies the action to take if the job flow step fails.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
      *
-     * @param actionOnFailure Specifies what happens to the Amazon EC2 cluster when the job flow
-     *         results in an error.
+     * @param actionOnFailure Specifies the action to take if the job flow step fails.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -135,29 +129,29 @@ public class StepConfig {
     
     
     /**
-     * Specifies a Hadoop step.
+     * Specifies the JAR file used for the job flow step.
      *
-     * @return Specifies a Hadoop step.
+     * @return Specifies the JAR file used for the job flow step.
      */
     public HadoopJarStepConfig getHadoopJarStep() {
         return hadoopJarStep;
     }
     
     /**
-     * Specifies a Hadoop step.
+     * Specifies the JAR file used for the job flow step.
      *
-     * @param hadoopJarStep Specifies a Hadoop step.
+     * @param hadoopJarStep Specifies the JAR file used for the job flow step.
      */
     public void setHadoopJarStep(HadoopJarStepConfig hadoopJarStep) {
         this.hadoopJarStep = hadoopJarStep;
     }
     
     /**
-     * Specifies a Hadoop step.
+     * Specifies the JAR file used for the job flow step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param hadoopJarStep Specifies a Hadoop step.
+     * @param hadoopJarStep Specifies the JAR file used for the job flow step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

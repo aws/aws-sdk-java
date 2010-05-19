@@ -19,16 +19,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * A request to register an AMI with Amazon EC2. Images must be
  * registered before they can be launched. To launch instances, use the
- * RunInstances operation. <p>
+ * RunInstances operation.
+ * </p>
+ * <p>
  * Each AMI is associated with an unique ID which is provided by the
  * Amazon EC2 service through this operation. If needed, you can
- * deregister an AMI at any time. <p>
- * Note: AMIs backed by Amazon EBS are automatically registered when you
- * create the image. However, you can use this to register a snapshot of
- * an instance backed by Amazon EBS. Amazon EBS snapshots are not
- * guaranteed to be bootable. For information on creating AMIs backed by
- * Amazon EBS, go to the Amazon Elastic Compute Cloud Developer Guide or
- * Amazon Elastic Compute Cloud User Guide. <p>
+ * deregister an AMI at any time.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> AMIs backed by Amazon EBS are automatically registered
+ * when you create the image. However, you can use this to register a
+ * snapshot of an instance backed by Amazon EBS. Amazon EBS snapshots are
+ * not guaranteed to be bootable. For information on creating AMIs backed
+ * by Amazon EBS, go to the Amazon Elastic Compute Cloud Developer Guide
+ * or Amazon Elastic Compute Cloud User Guide.
+ * </p>
+ * <p>
  * Any modifications to an AMI backed by Amazon S3 invalidates this
  * registration. If you make changes to an image, deregister the previous
  * image and register the new image.
@@ -42,9 +48,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String imageLocation;
 
     /**
-     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     * (/), dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     * dashes (-), or underscores(_)
      */
     private String name;
 
@@ -54,7 +60,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
-     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: i386, x86_64
      */
     private String architecture;
 
@@ -118,41 +124,41 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     * (/), dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     * dashes (-), or underscores(_)
      *
-     * @return The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     *         (/), dashes (-), or underscores(_)
+     * @return The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     *         dashes (-), or underscores(_)
      */
     public String getName() {
         return name;
     }
     
     /**
-     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     * (/), dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     * dashes (-), or underscores(_)
      *
-     * @param name The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     *         (/), dashes (-), or underscores(_)
+     * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     *         dashes (-), or underscores(_)
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     * 3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     * (/), dashes (-), or underscores(_)
+     * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     * dashes (-), or underscores(_)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name The name to give the new Amazon Machine Image. &lt;p> Constraints:
-     *         3-128 alphanumeric characters, parenthesis (()), commas (,), slashes
-     *         (/), dashes (-), or underscores(_)
+     * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
+     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
+     *         dashes (-), or underscores(_)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -198,29 +204,29 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: i386, x86_64
      *
-     * @return The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * @return The architecture of the image. <p> Valid Values: i386, x86_64
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: i386, x86_64
      *
-     * @param architecture The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: i386, x86_64
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture The architecture of the image. &lt;p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

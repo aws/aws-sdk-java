@@ -32,11 +32,11 @@ public class InvalidDBSnapshotStateExceptionUnmarshaller extends StandardErrorUn
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidDBSnapshotState")) 
+        if (errorCode == null || !errorCode.equals("InvalidDBSnapshotState"))
             return null;
-        
+
         InvalidDBSnapshotStateException e = (InvalidDBSnapshotStateException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

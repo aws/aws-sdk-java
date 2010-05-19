@@ -26,17 +26,17 @@ public class SelectRequest extends AmazonWebServiceRequest {
     private String selectExpression;
 
     /**
-     * String that tells Amazon SimpleDB where to start the next list of Item
-     * Names.
+     * A string informing Amazon SimpleDB where to start the next list of
+     * <code>ItemNames</code>.
      */
     private String nextToken;
 
     /**
-     * True if strong consistency should be enforced when data is read from
-     * SimpleDB, meaning that any data previously written to SimpleDB will be
-     * returned. Without specifying this parameter, results will be
-     * eventually consistent, and you may not see data that was written
-     * immediately before your read.
+     * Determines whether or not strong consistency should be enforced when
+     * data is read from SimpleDB. If <code>true</code>, any data previously
+     * written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was
+     * written immediately before your read.
      */
     private Boolean consistentRead;
 
@@ -92,35 +92,35 @@ public class SelectRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of Item
-     * Names.
+     * A string informing Amazon SimpleDB where to start the next list of
+     * <code>ItemNames</code>.
      *
-     * @return String that tells Amazon SimpleDB where to start the next list of Item
-     *         Names.
+     * @return A string informing Amazon SimpleDB where to start the next list of
+     *         <code>ItemNames</code>.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of Item
-     * Names.
+     * A string informing Amazon SimpleDB where to start the next list of
+     * <code>ItemNames</code>.
      *
-     * @param nextToken String that tells Amazon SimpleDB where to start the next list of Item
-     *         Names.
+     * @param nextToken A string informing Amazon SimpleDB where to start the next list of
+     *         <code>ItemNames</code>.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * String that tells Amazon SimpleDB where to start the next list of Item
-     * Names.
+     * A string informing Amazon SimpleDB where to start the next list of
+     * <code>ItemNames</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken String that tells Amazon SimpleDB where to start the next list of Item
-     *         Names.
+     * @param nextToken A string informing Amazon SimpleDB where to start the next list of
+     *         <code>ItemNames</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -132,53 +132,53 @@ public class SelectRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * True if strong consistency should be enforced when data is read from
-     * SimpleDB, meaning that any data previously written to SimpleDB will be
-     * returned. Without specifying this parameter, results will be
-     * eventually consistent, and you may not see data that was written
-     * immediately before your read.
+     * Determines whether or not strong consistency should be enforced when
+     * data is read from SimpleDB. If <code>true</code>, any data previously
+     * written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was
+     * written immediately before your read.
      *
-     * @return True if strong consistency should be enforced when data is read from
-     *         SimpleDB, meaning that any data previously written to SimpleDB will be
-     *         returned. Without specifying this parameter, results will be
-     *         eventually consistent, and you may not see data that was written
-     *         immediately before your read.
+     * @return Determines whether or not strong consistency should be enforced when
+     *         data is read from SimpleDB. If <code>true</code>, any data previously
+     *         written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was
+     *         written immediately before your read.
      */
     public Boolean isConsistentRead() {
         return consistentRead;
     }
     
     /**
-     * True if strong consistency should be enforced when data is read from
-     * SimpleDB, meaning that any data previously written to SimpleDB will be
-     * returned. Without specifying this parameter, results will be
-     * eventually consistent, and you may not see data that was written
-     * immediately before your read.
+     * Determines whether or not strong consistency should be enforced when
+     * data is read from SimpleDB. If <code>true</code>, any data previously
+     * written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was
+     * written immediately before your read.
      *
-     * @param consistentRead True if strong consistency should be enforced when data is read from
-     *         SimpleDB, meaning that any data previously written to SimpleDB will be
-     *         returned. Without specifying this parameter, results will be
-     *         eventually consistent, and you may not see data that was written
-     *         immediately before your read.
+     * @param consistentRead Determines whether or not strong consistency should be enforced when
+     *         data is read from SimpleDB. If <code>true</code>, any data previously
+     *         written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was
+     *         written immediately before your read.
      */
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
     
     /**
-     * True if strong consistency should be enforced when data is read from
-     * SimpleDB, meaning that any data previously written to SimpleDB will be
-     * returned. Without specifying this parameter, results will be
-     * eventually consistent, and you may not see data that was written
-     * immediately before your read.
+     * Determines whether or not strong consistency should be enforced when
+     * data is read from SimpleDB. If <code>true</code>, any data previously
+     * written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was
+     * written immediately before your read.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consistentRead True if strong consistency should be enforced when data is read from
-     *         SimpleDB, meaning that any data previously written to SimpleDB will be
-     *         returned. Without specifying this parameter, results will be
-     *         eventually consistent, and you may not see data that was written
-     *         immediately before your read.
+     * @param consistentRead Determines whether or not strong consistency should be enforced when
+     *         data is read from SimpleDB. If <code>true</code>, any data previously
+     *         written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was
+     *         written immediately before your read.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -190,17 +190,17 @@ public class SelectRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * True if strong consistency should be enforced when data is read from
-     * SimpleDB, meaning that any data previously written to SimpleDB will be
-     * returned. Without specifying this parameter, results will be
-     * eventually consistent, and you may not see data that was written
-     * immediately before your read.
+     * Determines whether or not strong consistency should be enforced when
+     * data is read from SimpleDB. If <code>true</code>, any data previously
+     * written to SimpleDB will be returned. Otherwise, results will be
+     * consistent eventually, and the client may not see data that was
+     * written immediately before your read.
      *
-     * @return True if strong consistency should be enforced when data is read from
-     *         SimpleDB, meaning that any data previously written to SimpleDB will be
-     *         returned. Without specifying this parameter, results will be
-     *         eventually consistent, and you may not see data that was written
-     *         immediately before your read.
+     * @return Determines whether or not strong consistency should be enforced when
+     *         data is read from SimpleDB. If <code>true</code>, any data previously
+     *         written to SimpleDB will be returned. Otherwise, results will be
+     *         consistent eventually, and the client may not see data that was
+     *         written immediately before your read.
      */
     public Boolean getConsistentRead() {
         return consistentRead;

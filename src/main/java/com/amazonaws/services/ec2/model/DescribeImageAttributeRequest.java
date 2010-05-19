@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to describe an Amazon Machine Image's (AMI) attribute. Only
+ * A request to describe an Amazon Machine Image (AMI) attribute. Only
  * one attribute may be described per request.
  * </p>
  */

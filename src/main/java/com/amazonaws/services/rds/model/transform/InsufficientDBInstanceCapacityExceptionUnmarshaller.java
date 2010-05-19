@@ -32,11 +32,11 @@ public class InsufficientDBInstanceCapacityExceptionUnmarshaller extends Standar
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InsufficientDBInstanceCapacity")) 
+        if (errorCode == null || !errorCode.equals("InsufficientDBInstanceCapacity"))
             return null;
-        
+
         InsufficientDBInstanceCapacityException e = (InsufficientDBInstanceCapacityException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -28,7 +28,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     private String domainName;
 
     /**
-     * List of Items
+     * A list of items on which to perform the operation.
      */
     private java.util.List<ReplaceableItem> items;
 
@@ -46,7 +46,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
      * @param domainName The name of the domain to create. The name can range
      * between 3 and 255 characters and can contain the following characters:
      * a-z, A-Z, 0-9, '_', '-', and '.'.
-     * @param items List of Items
+     * @param items A list of items on which to perform the operation.
      */
     public BatchPutAttributesRequest(String domainName, java.util.List<ReplaceableItem> items) {
         this.domainName = domainName;
@@ -100,9 +100,9 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * List of Items
+     * A list of items on which to perform the operation.
      *
-     * @return List of Items
+     * @return A list of items on which to perform the operation.
      */
     public java.util.List<ReplaceableItem> getItems() {
         if (items == null) {
@@ -112,9 +112,9 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of Items
+     * A list of items on which to perform the operation.
      *
-     * @param items List of Items
+     * @param items A list of items on which to perform the operation.
      */
     public void setItems(java.util.Collection<ReplaceableItem> items) {
         java.util.List<ReplaceableItem> itemsCopy = new java.util.ArrayList<ReplaceableItem>();
@@ -125,11 +125,11 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of Items
+     * A list of items on which to perform the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param items List of Items
+     * @param items A list of items on which to perform the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -142,11 +142,11 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of Items
+     * A list of items on which to perform the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param items List of Items
+     * @param items A list of items on which to perform the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,11 +32,11 @@ public class DBInstanceNotFoundExceptionUnmarshaller extends StandardErrorUnmars
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBInstanceNotFound")) 
+        if (errorCode == null || !errorCode.equals("DBInstanceNotFound"))
             return null;
-        
+
         DBInstanceNotFoundException e = (DBInstanceNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

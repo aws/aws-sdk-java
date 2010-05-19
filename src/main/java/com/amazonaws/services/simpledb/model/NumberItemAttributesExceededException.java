@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * Too many attributes in this item.
+ * </p>
  */        
 public class NumberItemAttributesExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

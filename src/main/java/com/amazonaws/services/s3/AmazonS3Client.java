@@ -75,6 +75,8 @@ import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
+import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -93,6 +95,7 @@ import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
+import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
@@ -104,7 +107,7 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjec
  * Provides the client for accessing the Amazon S3 web service.
  * </p>
  * <p>
- * For more information about Amazon S3, please see 
+ * For more information about Amazon S3, please see
  * <a href="http://aws.amazon.com/s3">
  * http://aws.amazon.com/s3</a>
  * </p>
@@ -149,6 +152,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** Shared factory for converting configuration objects to XML */
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
 
+
     /**
      * <p>
      * Constructs a new Amazon S3 client that will make <b>anonymous</b>
@@ -156,7 +160,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * </p>
      * <p>
      * Only a subset of the Amazon S3 API will work with anonymous
-     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations. 
+     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations.
      * For example:
      * <ul>
      * 	<li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
@@ -242,7 +246,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 previousVersionListing.getNextKeyMarker(),
                 previousVersionListing.getNextVersionIdMarker(),
                 previousVersionListing.getDelimiter(),
-                previousVersionListing.getMaxKeys()));
+                new Integer( previousVersionListing.getMaxKeys() ) ));
     }
 
     /* (non-Javadoc)
@@ -290,7 +294,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (keyMarker != null) request.addParameter("key-marker", keyMarker);
         if (versionIdMarker != null) request.addParameter("version-id-marker", versionIdMarker);
         if (delimiter != null) request.addParameter("delimiter", delimiter);
-        if (maxResults != null && maxResults >= 0) request.addParameter("max-keys", maxResults.toString());
+        if (maxResults != null && maxResults.intValue() >= 0) request.addParameter("max-keys", maxResults.toString());
 
         signRequest(request, HttpMethodName.GET, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
@@ -298,7 +302,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<VersionListing> responseHandler =
             new S3XmlResponseHandler<VersionListing>(new Unmarshallers.VersionListUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (VersionListing)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -334,7 +338,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (prefix != null) request.addParameter("prefix", prefix);
         if (marker != null) request.addParameter("marker", marker);
         if (delimiter != null) request.addParameter("delimiter", delimiter);
-        if (maxKeys != null && maxKeys > 0) request.addParameter("max-keys", maxKeys.toString());
+        if (maxKeys != null && maxKeys.intValue() > 0) request.addParameter("max-keys", maxKeys.toString());
 
         signRequest(request, HttpMethodName.GET, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
@@ -342,7 +346,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<ObjectListing> responseHandler =
             new S3XmlResponseHandler<ObjectListing>(new Unmarshallers.ListObjectsUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (ObjectListing)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -370,7 +374,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 previousObjectListing.getPrefix(),
                 previousObjectListing.getNextMarker(),
                 previousObjectListing.getDelimiter(),
-                previousObjectListing.getMaxKeys()));
+                new Integer( previousObjectListing.getMaxKeys() ) ));
     }
 
 
@@ -387,7 +391,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<Owner> responseHandler =
             new S3XmlResponseHandler<Owner>(new Unmarshallers.ListBucketsOwnerUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (Owner)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -403,7 +407,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<List<Bucket>> responseHandler =
             new S3XmlResponseHandler<List<Bucket>>(new Unmarshallers.ListBucketsUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (List<Bucket>)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -422,7 +426,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<String> responseHandler =
             new S3XmlResponseHandler<String>(new Unmarshallers.BucketLocationUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (String)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -430,7 +434,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        return createBucket(bucketName, Region.US_Standard);
+        return createBucket(new CreateBucketRequest(bucketName));
     }
 
     /* (non-Javadoc)
@@ -438,8 +442,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public Bucket createBucket(String bucketName, Region region)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(region, "The location parameter must be specified when creating a bucket");
-        return createBucket(bucketName, region.toString());
+        return createBucket(new CreateBucketRequest(bucketName, region));
     }
 
     /* (non-Javadoc)
@@ -447,12 +450,25 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public Bucket createBucket(String bucketName, String region)
             throws AmazonClientException, AmazonServiceException {
+        return createBucket(new CreateBucketRequest(bucketName, region));
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#createBucket(com.amazonaws.services.s3.model.CreateBucketRequest)
+     */
+    public Bucket createBucket(CreateBucketRequest createBucketRequest)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(createBucketRequest, "The CreateBucketRequest parameter must be specified when creating a bucket");
+
+        String bucketName = createBucketRequest.getBucketName();
+        String region = createBucketRequest.getRegion();
+
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when creating a bucket");
 
         if (bucketName != null) bucketName = bucketName.trim();
         bucketNameUtils.validateBucketName(bucketName);
 
-        Request<Void> request = createRequest(bucketName, null, null);
+        Request<Void> request = createRequest(bucketName, null, createBucketRequest);
         signRequest(request, HttpMethodName.PUT, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.PUT);
 
@@ -594,7 +610,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.HEAD);
 
         S3MetadataResponseHandler responseHandler = new S3MetadataResponseHandler();
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (ObjectMetadata)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -630,6 +646,22 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 throw ase;
             }
         }
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#changeStorageClass(java.lang.String, java.lang.String, java.lang.String)
+     */
+    public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
+        throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+            "The bucketName parameter must be specified when changing an object's storage class");
+        assertParameterNotNull(key,
+            "The key parameter must be specified when changing an object's storage class");
+        assertParameterNotNull(newStorageClass,
+            "The newStorageClass parameter must be specified when changing an object's storage class");
+
+        copyObject(new CopyObjectRequest(bucketName, key, bucketName, key)
+            .withStorageClass(newStorageClass.toString()));
     }
 
     /* (non-Javadoc)
@@ -673,7 +705,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         try {
             S3ObjectResponseHandler responseHandler = new S3ObjectResponseHandler();
-            S3Object s3Object = client.execute(httpRequest, responseHandler, errorResponseHandler);
+            S3Object s3Object = (S3Object)client.execute(httpRequest, responseHandler, errorResponseHandler);
 
             /*
              * TODO: For now, it's easiest to set there here in the client, but
@@ -759,9 +791,21 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public void deleteBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException {
+        deleteBucket(new DeleteBucketRequest(bucketName));
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#deleteBucket(com.amazonaws.services.s3.model.DeleteBucketRequest)
+     */
+    public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(deleteBucketRequest, "The DeleteBucketRequest parameter must be specified when deleting a bucket");
+
+        String bucketName = deleteBucketRequest.getBucketName();
+
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when deleting a bucket");
 
-        Request<Void> request = createRequest(bucketName, null, null);
+        Request<Void> request = createRequest(bucketName, null, deleteBucketRequest);
 
         signRequest(request, HttpMethodName.DELETE, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.DELETE);
@@ -836,6 +880,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.S3_CANNED_ACL, putObjectRequest.getCannedAcl().toString());
         }
 
+        if (putObjectRequest.getStorageClass() != null) {
+            request.addHeader(Headers.STORAGE_CLASS, putObjectRequest.getStorageClass());
+        }
+
         if (metadata.getContentLength() <= 0) {
             /*
              * There's nothing we can do except for let the HTTP client buffer
@@ -884,7 +932,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         ObjectMetadata returnedMetadata = null;
         try {
             S3MetadataResponseHandler responseHandler = new S3MetadataResponseHandler();
-            returnedMetadata = client.execute(httpRequest, responseHandler, errorResponseHandler);
+            returnedMetadata = (ObjectMetadata)client.execute(httpRequest, responseHandler, errorResponseHandler);
         } finally {
             try {input.close();} catch (Exception e) {
                 log.warn("Unable to cleanly close input stream: " + e.getMessage(), e);
@@ -960,7 +1008,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             //       For example, detecting the different failure modes?
             CopyObjectResponseHandler responseHandler = new CopyObjectResponseHandler();
             copyObjectResultHandler =
-                client.execute(httpRequest, responseHandler, errorResponseHandler);
+                (CopyObjectResultHandler)client.execute(httpRequest, responseHandler, errorResponseHandler);
         } catch (AmazonS3Exception ase) {
             /*
              * If the request failed because one of the specified constraints
@@ -1137,7 +1185,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<BucketVersioningConfiguration> responseHandler =
             new S3XmlResponseHandler<BucketVersioningConfiguration>(new Unmarshallers.BucketVersioningConfigurationUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (BucketVersioningConfiguration)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -1157,7 +1205,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<BucketLoggingConfiguration> responseHandler =
             new S3XmlResponseHandler<BucketLoggingConfiguration>(new Unmarshallers.BucketLoggingConfigurationnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (BucketLoggingConfiguration)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -1252,7 +1300,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<AccessControlList> responseHandler =
             new S3XmlResponseHandler<AccessControlList>(new Unmarshallers.AccessControlListUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (AccessControlList)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /**
@@ -1279,7 +1327,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     private Request<Void> createRequest(String bucketName, String key, AmazonWebServiceRequest originalRequest) {
         Request<Void> request = new DefaultRequest<Void>(originalRequest, Constants.S3_SERVICE_NAME);
-
         if (bucketNameUtils.isValidV2BucketName(bucketName)) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             request.setResourcePath(ServiceUtils.urlEncode(key));
@@ -1579,6 +1626,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (copyObjectRequest.getCannedAccessControlList() != null) {
             request.addHeader(Headers.S3_CANNED_ACL,
                     copyObjectRequest.getCannedAccessControlList().toString());
+        }
+
+        if (copyObjectRequest.getStorageClass() != null) {
+            request.addHeader(Headers.STORAGE_CLASS, copyObjectRequest.getStorageClass());
         }
 
         ObjectMetadata newObjectMetadata = copyObjectRequest.getNewObjectMetadata();

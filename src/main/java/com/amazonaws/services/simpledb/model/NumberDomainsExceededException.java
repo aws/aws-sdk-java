@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * Too many domains exist per this account.
+ * </p>
  */        
 public class NumberDomainsExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

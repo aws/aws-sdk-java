@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * Too many attributes exist in a single call.
+ * </p>
  */        
 public class NumberSubmittedAttributesExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

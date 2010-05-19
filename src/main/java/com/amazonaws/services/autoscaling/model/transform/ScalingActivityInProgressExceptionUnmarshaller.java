@@ -32,11 +32,11 @@ public class ScalingActivityInProgressExceptionUnmarshaller extends StandardErro
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ScalingActivityInProgress")) 
+        if (errorCode == null || !errorCode.equals("ScalingActivityInProgress"))
             return null;
-        
+
         ScalingActivityInProgressException e = (ScalingActivityInProgressException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

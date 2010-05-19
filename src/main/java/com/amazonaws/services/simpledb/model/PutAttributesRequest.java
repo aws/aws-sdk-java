@@ -31,15 +31,15 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     private String itemName;
 
     /**
-     * List of attributes.
+     * The list of attributes.
      */
     private java.util.List<ReplaceableAttribute> attributes;
 
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be updated or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be updated.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be updated or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be updated.
      */
     private UpdateCondition expected;
 
@@ -57,7 +57,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
      * @param domainName The name of the domain in which to perform the
      * operation.
      * @param itemName The name of the item.
-     * @param attributes List of attributes.
+     * @param attributes The list of attributes.
      */
     public PutAttributesRequest(String domainName, String itemName, java.util.List<ReplaceableAttribute> attributes) {
         this.domainName = domainName;
@@ -134,9 +134,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * List of attributes.
+     * The list of attributes.
      *
-     * @return List of attributes.
+     * @return The list of attributes.
      */
     public java.util.List<ReplaceableAttribute> getAttributes() {
         if (attributes == null) {
@@ -146,9 +146,9 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of attributes.
+     * The list of attributes.
      *
-     * @param attributes List of attributes.
+     * @param attributes The list of attributes.
      */
     public void setAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
         java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>();
@@ -159,11 +159,11 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of attributes.
+     * The list of attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of attributes.
+     * @param attributes The list of attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -176,11 +176,11 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * List of attributes.
+     * The list of attributes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes List of attributes.
+     * @param attributes The list of attributes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -196,47 +196,47 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be updated or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be updated.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be updated or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be updated.
      *
-     * @return The update condition which, if specified, determines if the specified
-     *         attributes will be updated or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be updated.
+     * @return The update condition which, if specified, determines whether the
+     *         specified attributes will be updated or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be updated.
      */
     public UpdateCondition getExpected() {
         return expected;
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be updated or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be updated.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be updated or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be updated.
      *
-     * @param expected The update condition which, if specified, determines if the specified
-     *         attributes will be updated or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be updated.
+     * @param expected The update condition which, if specified, determines whether the
+     *         specified attributes will be updated or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be updated.
      */
     public void setExpected(UpdateCondition expected) {
         this.expected = expected;
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be updated or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be updated.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be updated or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be updated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expected The update condition which, if specified, determines if the specified
-     *         attributes will be updated or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be updated.
+     * @param expected The update condition which, if specified, determines whether the
+     *         specified attributes will be updated or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be updated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

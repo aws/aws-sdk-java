@@ -32,11 +32,11 @@ public class ReceiptHandleIsInvalidExceptionUnmarshaller extends StandardErrorUn
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ReceiptHandleIsInvalid")) 
+        if (errorCode == null || !errorCode.equals("ReceiptHandleIsInvalid"))
             return null;
-        
+
         ReceiptHandleIsInvalidException e = (ReceiptHandleIsInvalidException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

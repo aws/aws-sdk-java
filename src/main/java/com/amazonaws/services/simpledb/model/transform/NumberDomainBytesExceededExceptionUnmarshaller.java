@@ -32,13 +32,13 @@ public class NumberDomainBytesExceededExceptionUnmarshaller extends LegacyErrorU
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NumberDomainBytesExceeded")) 
+        if (errorCode == null || !errorCode.equals("NumberDomainBytesExceeded"))
             return null;
-        
+
         NumberDomainBytesExceededException e = (NumberDomainBytesExceededException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

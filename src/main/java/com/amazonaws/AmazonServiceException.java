@@ -42,7 +42,7 @@ public class AmazonServiceException extends AmazonClientException {
      * the caller must take some action to correct the request before it should
      * be resent. Client errors are typically associated an HTTP error code in
      * the 4xx range.
-     * 
+     *
      * <p>The Service ErrorType indicates that although the request the
      * caller sent was valid, the service was unable to fulfill the request
      * because of problems on the service's side. These types of errors can be

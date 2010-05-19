@@ -32,11 +32,11 @@ public class TooManyLoadBalancersExceptionUnmarshaller extends StandardErrorUnma
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("TooManyLoadBalancers")) 
+        if (errorCode == null || !errorCode.equals("TooManyLoadBalancers"))
             return null;
-        
+
         TooManyLoadBalancersException e = (TooManyLoadBalancersException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -32,11 +32,11 @@ public class SnapshotQuotaExceededExceptionUnmarshaller extends StandardErrorUnm
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("SnapshotQuotaExceeded")) 
+        if (errorCode == null || !errorCode.equals("SnapshotQuotaExceeded"))
             return null;
-        
+
         SnapshotQuotaExceededException e = (SnapshotQuotaExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

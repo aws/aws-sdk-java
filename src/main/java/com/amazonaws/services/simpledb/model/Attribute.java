@@ -15,48 +15,55 @@
 package com.amazonaws.services.simpledb.model;
 
 /**
- * Attribute
+ * <p>
+ * </p>
  */
 public class Attribute {
 
     /**
-     * Attribute Name.
+     * The name of the attribute.
      */
     private String name;
 
+    /**
+     * <p/>
+     */
     private String alternateNameEncoding;
 
     /**
-     * Attribute Value.
+     * The value of the attribute.
      */
     private String value;
 
+    /**
+     * <p/>
+     */
     private String alternateValueEncoding;
 
     /**
-     * Attribute Name.
+     * The name of the attribute.
      *
-     * @return Attribute Name.
+     * @return The name of the attribute.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Attribute Name.
+     * The name of the attribute.
      *
-     * @param name Attribute Name.
+     * @param name The name of the attribute.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Attribute Name.
+     * The name of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param name Attribute Name.
+     * @param name The name of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -68,30 +75,29 @@ public class Attribute {
     
     
     /**
-     * Returns the value of the AlternateNameEncoding property for this
-     * object.
+     * <p/>
      *
-     * @return The value of the AlternateNameEncoding property for this object.
+     * @return <p/>
      */
     public String getAlternateNameEncoding() {
         return alternateNameEncoding;
     }
     
     /**
-     * Sets the value of the AlternateNameEncoding property for this object.
+     * <p/>
      *
-     * @param alternateNameEncoding The new value for the AlternateNameEncoding property for this object.
+     * @param alternateNameEncoding <p/>
      */
     public void setAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
     }
     
     /**
-     * Sets the value of the AlternateNameEncoding property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateNameEncoding The new value for the AlternateNameEncoding property for this object.
+     * @param alternateNameEncoding <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -103,29 +109,29 @@ public class Attribute {
     
     
     /**
-     * Attribute Value.
+     * The value of the attribute.
      *
-     * @return Attribute Value.
+     * @return The value of the attribute.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * Attribute Value.
+     * The value of the attribute.
      *
-     * @param value Attribute Value.
+     * @param value The value of the attribute.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * Attribute Value.
+     * The value of the attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value Attribute Value.
+     * @param value The value of the attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -137,30 +143,29 @@ public class Attribute {
     
     
     /**
-     * Returns the value of the AlternateValueEncoding property for this
-     * object.
+     * <p/>
      *
-     * @return The value of the AlternateValueEncoding property for this object.
+     * @return <p/>
      */
     public String getAlternateValueEncoding() {
         return alternateValueEncoding;
     }
     
     /**
-     * Sets the value of the AlternateValueEncoding property for this object.
+     * <p/>
      *
-     * @param alternateValueEncoding The new value for the AlternateValueEncoding property for this object.
+     * @param alternateValueEncoding <p/>
      */
     public void setAlternateValueEncoding(String alternateValueEncoding) {
         this.alternateValueEncoding = alternateValueEncoding;
     }
     
     /**
-     * Sets the value of the AlternateValueEncoding property for this object.
+     * <p/>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateValueEncoding The new value for the AlternateValueEncoding property for this object.
+     * @param alternateValueEncoding <p/>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

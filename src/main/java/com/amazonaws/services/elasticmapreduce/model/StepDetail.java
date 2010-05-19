@@ -16,6 +16,7 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * Combines the execution state and configuration of a step.
  * </p>
  */
 public class StepDetail {
@@ -26,7 +27,7 @@ public class StepDetail {
     private StepConfig stepConfig;
 
     /**
-     * The description of the execution status.
+     * The description of the step status.
      */
     private StepExecutionStatusDetail executionStatusDetail;
 
@@ -65,29 +66,29 @@ public class StepDetail {
     
     
     /**
-     * The description of the execution status.
+     * The description of the step status.
      *
-     * @return The description of the execution status.
+     * @return The description of the step status.
      */
     public StepExecutionStatusDetail getExecutionStatusDetail() {
         return executionStatusDetail;
     }
     
     /**
-     * The description of the execution status.
+     * The description of the step status.
      *
-     * @param executionStatusDetail The description of the execution status.
+     * @param executionStatusDetail The description of the step status.
      */
     public void setExecutionStatusDetail(StepExecutionStatusDetail executionStatusDetail) {
         this.executionStatusDetail = executionStatusDetail;
     }
     
     /**
-     * The description of the execution status.
+     * The description of the step status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param executionStatusDetail The description of the execution status.
+     * @param executionStatusDetail The description of the step status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

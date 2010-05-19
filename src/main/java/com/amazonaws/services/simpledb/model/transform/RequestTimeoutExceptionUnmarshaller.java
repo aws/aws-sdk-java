@@ -32,13 +32,13 @@ public class RequestTimeoutExceptionUnmarshaller extends LegacyErrorUnmarshaller
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("RequestTimeout")) 
+        if (errorCode == null || !errorCode.equals("RequestTimeout"))
             return null;
-        
+
         RequestTimeoutException e = (RequestTimeoutException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

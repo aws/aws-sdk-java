@@ -32,13 +32,13 @@ public class InvalidNumberPredicatesExceptionUnmarshaller extends LegacyErrorUnm
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidNumberPredicates")) 
+        if (errorCode == null || !errorCode.equals("InvalidNumberPredicates"))
             return null;
-        
+
         InvalidNumberPredicatesException e = (InvalidNumberPredicatesException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

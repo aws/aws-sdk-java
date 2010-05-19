@@ -32,13 +32,13 @@ public class NumberItemAttributesExceededExceptionUnmarshaller extends LegacyErr
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NumberItemAttributesExceeded")) 
+        if (errorCode == null || !errorCode.equals("NumberItemAttributesExceeded"))
             return null;
-        
+
         NumberItemAttributesExceededException e = (NumberItemAttributesExceededException)super.unmarshall(node);
         
         e.setBoxUsage(XpathUtils.asFloat(getErrorPropertyPath("BoxUsage"), node));
-               
+        
         return e;
     }
 }

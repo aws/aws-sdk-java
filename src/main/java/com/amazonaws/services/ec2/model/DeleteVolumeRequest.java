@@ -17,7 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to delete an Elastic Block Storage (EBS) volume.
+ * Represents a request to delete an <i>Elastic Block Storage</i> (EBS)
+ * volume.
  * </p>
  */
 public class DeleteVolumeRequest extends AmazonWebServiceRequest {

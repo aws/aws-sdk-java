@@ -32,15 +32,17 @@ public class UpdateCondition {
 
     /**
      * The value of an attribute. This value can only be specified when the
-     * exists parameter is equal to true.
+     * <code>Exists</code> parameter is equal to <code>true</code>.
      */
     private String value;
 
     /**
-     * True if the specified attribute must exist with the specified value in
-     * order for this update condition to be satisfied, otherwise false if
-     * the specified attribute should not exist in order for this update
-     * condition to be satisfied.
+     * A value specifying whether or not the specified attribute must exist
+     * with the specified value in order for the update condition to be
+     * satisfied. Specify <code>true</code> if the attribute must exist for
+     * the update condition to be satisfied. Specify <code>false</code> if
+     * the attribute should not exist in order for the update condition to be
+     * satisfied.
      */
     private Boolean exists;
 
@@ -80,10 +82,10 @@ public class UpdateCondition {
     
     /**
      * The value of an attribute. This value can only be specified when the
-     * exists parameter is equal to true.
+     * <code>Exists</code> parameter is equal to <code>true</code>.
      *
      * @return The value of an attribute. This value can only be specified when the
-     *         exists parameter is equal to true.
+     *         <code>Exists</code> parameter is equal to <code>true</code>.
      */
     public String getValue() {
         return value;
@@ -91,10 +93,10 @@ public class UpdateCondition {
     
     /**
      * The value of an attribute. This value can only be specified when the
-     * exists parameter is equal to true.
+     * <code>Exists</code> parameter is equal to <code>true</code>.
      *
      * @param value The value of an attribute. This value can only be specified when the
-     *         exists parameter is equal to true.
+     *         <code>Exists</code> parameter is equal to <code>true</code>.
      */
     public void setValue(String value) {
         this.value = value;
@@ -102,12 +104,12 @@ public class UpdateCondition {
     
     /**
      * The value of an attribute. This value can only be specified when the
-     * exists parameter is equal to true.
+     * <code>Exists</code> parameter is equal to <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param value The value of an attribute. This value can only be specified when the
-     *         exists parameter is equal to true.
+     *         <code>Exists</code> parameter is equal to <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -119,47 +121,59 @@ public class UpdateCondition {
     
     
     /**
-     * True if the specified attribute must exist with the specified value in
-     * order for this update condition to be satisfied, otherwise false if
-     * the specified attribute should not exist in order for this update
-     * condition to be satisfied.
+     * A value specifying whether or not the specified attribute must exist
+     * with the specified value in order for the update condition to be
+     * satisfied. Specify <code>true</code> if the attribute must exist for
+     * the update condition to be satisfied. Specify <code>false</code> if
+     * the attribute should not exist in order for the update condition to be
+     * satisfied.
      *
-     * @return True if the specified attribute must exist with the specified value in
-     *         order for this update condition to be satisfied, otherwise false if
-     *         the specified attribute should not exist in order for this update
-     *         condition to be satisfied.
+     * @return A value specifying whether or not the specified attribute must exist
+     *         with the specified value in order for the update condition to be
+     *         satisfied. Specify <code>true</code> if the attribute must exist for
+     *         the update condition to be satisfied. Specify <code>false</code> if
+     *         the attribute should not exist in order for the update condition to be
+     *         satisfied.
      */
     public Boolean isExists() {
         return exists;
     }
     
     /**
-     * True if the specified attribute must exist with the specified value in
-     * order for this update condition to be satisfied, otherwise false if
-     * the specified attribute should not exist in order for this update
-     * condition to be satisfied.
+     * A value specifying whether or not the specified attribute must exist
+     * with the specified value in order for the update condition to be
+     * satisfied. Specify <code>true</code> if the attribute must exist for
+     * the update condition to be satisfied. Specify <code>false</code> if
+     * the attribute should not exist in order for the update condition to be
+     * satisfied.
      *
-     * @param exists True if the specified attribute must exist with the specified value in
-     *         order for this update condition to be satisfied, otherwise false if
-     *         the specified attribute should not exist in order for this update
-     *         condition to be satisfied.
+     * @param exists A value specifying whether or not the specified attribute must exist
+     *         with the specified value in order for the update condition to be
+     *         satisfied. Specify <code>true</code> if the attribute must exist for
+     *         the update condition to be satisfied. Specify <code>false</code> if
+     *         the attribute should not exist in order for the update condition to be
+     *         satisfied.
      */
     public void setExists(Boolean exists) {
         this.exists = exists;
     }
     
     /**
-     * True if the specified attribute must exist with the specified value in
-     * order for this update condition to be satisfied, otherwise false if
-     * the specified attribute should not exist in order for this update
-     * condition to be satisfied.
+     * A value specifying whether or not the specified attribute must exist
+     * with the specified value in order for the update condition to be
+     * satisfied. Specify <code>true</code> if the attribute must exist for
+     * the update condition to be satisfied. Specify <code>false</code> if
+     * the attribute should not exist in order for the update condition to be
+     * satisfied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exists True if the specified attribute must exist with the specified value in
-     *         order for this update condition to be satisfied, otherwise false if
-     *         the specified attribute should not exist in order for this update
-     *         condition to be satisfied.
+     * @param exists A value specifying whether or not the specified attribute must exist
+     *         with the specified value in order for the update condition to be
+     *         satisfied. Specify <code>true</code> if the attribute must exist for
+     *         the update condition to be satisfied. Specify <code>false</code> if
+     *         the attribute should not exist in order for the update condition to be
+     *         satisfied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -171,15 +185,19 @@ public class UpdateCondition {
     
     
     /**
-     * True if the specified attribute must exist with the specified value in
-     * order for this update condition to be satisfied, otherwise false if
-     * the specified attribute should not exist in order for this update
-     * condition to be satisfied.
+     * A value specifying whether or not the specified attribute must exist
+     * with the specified value in order for the update condition to be
+     * satisfied. Specify <code>true</code> if the attribute must exist for
+     * the update condition to be satisfied. Specify <code>false</code> if
+     * the attribute should not exist in order for the update condition to be
+     * satisfied.
      *
-     * @return True if the specified attribute must exist with the specified value in
-     *         order for this update condition to be satisfied, otherwise false if
-     *         the specified attribute should not exist in order for this update
-     *         condition to be satisfied.
+     * @return A value specifying whether or not the specified attribute must exist
+     *         with the specified value in order for the update condition to be
+     *         satisfied. Specify <code>true</code> if the attribute must exist for
+     *         the update condition to be satisfied. Specify <code>false</code> if
+     *         the attribute should not exist in order for the update condition to be
+     *         satisfied.
      */
     public Boolean getExists() {
         return exists;

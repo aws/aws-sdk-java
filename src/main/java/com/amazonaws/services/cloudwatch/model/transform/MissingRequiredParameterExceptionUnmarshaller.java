@@ -32,11 +32,11 @@ public class MissingRequiredParameterExceptionUnmarshaller extends StandardError
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("MissingRequiredParameter")) 
+        if (errorCode == null || !errorCode.equals("MissingParameter"))
             return null;
-        
+
         MissingRequiredParameterException e = (MissingRequiredParameterException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

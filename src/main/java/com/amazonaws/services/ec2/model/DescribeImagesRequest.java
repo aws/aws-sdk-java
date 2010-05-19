@@ -17,7 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to describe the available Amazon Machine Images (AMIs).
+ * A request to describe the available <i>Amazon Machine Images</i>
+ * (AMIs).
  * </p>
  */
 public class DescribeImagesRequest extends AmazonWebServiceRequest {

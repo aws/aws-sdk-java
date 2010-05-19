@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * 
+ * <p>
+ * Describes the status of the job flow.
+ * </p>
  */
 public class JobFlowExecutionStatusDetail {
 
@@ -28,25 +30,28 @@ public class JobFlowExecutionStatusDetail {
     private String state;
 
     /**
-     * The date and time the job flow was created.
+     * The creation date and time of the job flow.
      */
     private java.util.Date creationDateTime;
 
     /**
-     * The date and time the job flow started.
+     * The start date and time of the job flow.
      */
     private java.util.Date startDateTime;
 
+    /**
+     * The date and time when the job flow was ready to start running
+     * bootstrap actions.
+     */
     private java.util.Date readyDateTime;
 
     /**
-     * The date and time the job flow ended.
+     * The completion date and time of the job flow.
      */
     private java.util.Date endDateTime;
 
     /**
-     * Contains a description explaining the reason for the last Amazon EC2
-     * status change.
+     * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
@@ -97,29 +102,29 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * The date and time the job flow was created.
+     * The creation date and time of the job flow.
      *
-     * @return The date and time the job flow was created.
+     * @return The creation date and time of the job flow.
      */
     public java.util.Date getCreationDateTime() {
         return creationDateTime;
     }
     
     /**
-     * The date and time the job flow was created.
+     * The creation date and time of the job flow.
      *
-     * @param creationDateTime The date and time the job flow was created.
+     * @param creationDateTime The creation date and time of the job flow.
      */
     public void setCreationDateTime(java.util.Date creationDateTime) {
         this.creationDateTime = creationDateTime;
     }
     
     /**
-     * The date and time the job flow was created.
+     * The creation date and time of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param creationDateTime The date and time the job flow was created.
+     * @param creationDateTime The creation date and time of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -131,29 +136,29 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * The date and time the job flow started.
+     * The start date and time of the job flow.
      *
-     * @return The date and time the job flow started.
+     * @return The start date and time of the job flow.
      */
     public java.util.Date getStartDateTime() {
         return startDateTime;
     }
     
     /**
-     * The date and time the job flow started.
+     * The start date and time of the job flow.
      *
-     * @param startDateTime The date and time the job flow started.
+     * @param startDateTime The start date and time of the job flow.
      */
     public void setStartDateTime(java.util.Date startDateTime) {
         this.startDateTime = startDateTime;
     }
     
     /**
-     * The date and time the job flow started.
+     * The start date and time of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startDateTime The date and time the job flow started.
+     * @param startDateTime The start date and time of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -165,29 +170,35 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Returns the value of the ReadyDateTime property for this object.
+     * The date and time when the job flow was ready to start running
+     * bootstrap actions.
      *
-     * @return The value of the ReadyDateTime property for this object.
+     * @return The date and time when the job flow was ready to start running
+     *         bootstrap actions.
      */
     public java.util.Date getReadyDateTime() {
         return readyDateTime;
     }
     
     /**
-     * Sets the value of the ReadyDateTime property for this object.
+     * The date and time when the job flow was ready to start running
+     * bootstrap actions.
      *
-     * @param readyDateTime The new value for the ReadyDateTime property for this object.
+     * @param readyDateTime The date and time when the job flow was ready to start running
+     *         bootstrap actions.
      */
     public void setReadyDateTime(java.util.Date readyDateTime) {
         this.readyDateTime = readyDateTime;
     }
     
     /**
-     * Sets the value of the ReadyDateTime property for this object.
+     * The date and time when the job flow was ready to start running
+     * bootstrap actions.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param readyDateTime The new value for the ReadyDateTime property for this object.
+     * @param readyDateTime The date and time when the job flow was ready to start running
+     *         bootstrap actions.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -199,29 +210,29 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * The date and time the job flow ended.
+     * The completion date and time of the job flow.
      *
-     * @return The date and time the job flow ended.
+     * @return The completion date and time of the job flow.
      */
     public java.util.Date getEndDateTime() {
         return endDateTime;
     }
     
     /**
-     * The date and time the job flow ended.
+     * The completion date and time of the job flow.
      *
-     * @param endDateTime The date and time the job flow ended.
+     * @param endDateTime The completion date and time of the job flow.
      */
     public void setEndDateTime(java.util.Date endDateTime) {
         this.endDateTime = endDateTime;
     }
     
     /**
-     * The date and time the job flow ended.
+     * The completion date and time of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endDateTime The date and time the job flow ended.
+     * @param endDateTime The completion date and time of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -233,44 +244,38 @@ public class JobFlowExecutionStatusDetail {
     
     
     /**
-     * Contains a description explaining the reason for the last Amazon EC2
-     * status change.
+     * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @return Contains a description explaining the reason for the last Amazon EC2
-     *         status change.
+     * @return Description of the job flow last changed state.
      */
     public String getLastStateChangeReason() {
         return lastStateChangeReason;
     }
     
     /**
-     * Contains a description explaining the reason for the last Amazon EC2
-     * status change.
+     * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @param lastStateChangeReason Contains a description explaining the reason for the last Amazon EC2
-     *         status change.
+     * @param lastStateChangeReason Description of the job flow last changed state.
      */
     public void setLastStateChangeReason(String lastStateChangeReason) {
         this.lastStateChangeReason = lastStateChangeReason;
     }
     
     /**
-     * Contains a description explaining the reason for the last Amazon EC2
-     * status change.
+     * Description of the job flow last changed state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
      *
-     * @param lastStateChangeReason Contains a description explaining the reason for the last Amazon EC2
-     *         status change.
+     * @param lastStateChangeReason Description of the job flow last changed state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

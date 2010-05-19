@@ -16,8 +16,8 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents an Amazon Machine Image (AMI) that can be run on an Amazon
- * EC2 instance.
+ * Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an
+ * Amazon EC2 instance.
  * </p>
  */
 public class Image {

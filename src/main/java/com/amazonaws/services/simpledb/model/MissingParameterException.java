@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * The request must contain the specified missing parameter.
+ * </p>
  */        
 public class MissingParameterException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

@@ -74,9 +74,10 @@ public class Instance {
     private java.util.List<ProductCode> productCodes;
 
     /**
-     * The instance type. For more information on instance types, go to the
-     * Amazon Elastic Compute Cloud Developer Guide -
-     * http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
@@ -547,16 +548,18 @@ public class Instance {
     }
     
     /**
-     * The instance type. For more information on instance types, go to the
-     * Amazon Elastic Compute Cloud Developer Guide -
-     * http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
      *
-     * @return The instance type. For more information on instance types, go to the
-     *         Amazon Elastic Compute Cloud Developer Guide -
-     *         http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * @return The instance type. For more information on instance types, please see
+     *         the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @see InstanceType
      */
@@ -565,16 +568,18 @@ public class Instance {
     }
     
     /**
-     * The instance type. For more information on instance types, go to the
-     * Amazon Elastic Compute Cloud Developer Guide -
-     * http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
      *
-     * @param instanceType The instance type. For more information on instance types, go to the
-     *         Amazon Elastic Compute Cloud Developer Guide -
-     *         http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * @param instanceType The instance type. For more information on instance types, please see
+     *         the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @see InstanceType
      */
@@ -583,18 +588,20 @@ public class Instance {
     }
     
     /**
-     * The instance type. For more information on instance types, go to the
-     * Amazon Elastic Compute Cloud Developer Guide -
-     * http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
      *
-     * @param instanceType The instance type. For more information on instance types, go to the
-     *         Amazon Elastic Compute Cloud Developer Guide -
-     *         http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/ .
+     * @param instanceType The instance type. For more information on instance types, please see
+     *         the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

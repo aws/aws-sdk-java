@@ -67,7 +67,8 @@ public class BucketNameUtils {
         if (bucketName.contains(".."))
             throw new IllegalArgumentException("Bucket name should not contain two adjacent periods");
 
-        if (bucketName.contains("-.") || bucketName.contains(".-"))
+        if ( bucketName.contains("-.") || 
+             bucketName.contains(".-") )
             throw new IllegalArgumentException("Bucket name should not contain dashes next to periods");
     }
 

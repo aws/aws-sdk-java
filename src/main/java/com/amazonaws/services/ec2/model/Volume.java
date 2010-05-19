@@ -16,7 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents an Amazon Elastic Block Storage (EBS) volume.
+ * Represents an Amazon <i>Elastic Block Storage</i> (EBS) volume.
  * </p>
  */
 public class Volume {

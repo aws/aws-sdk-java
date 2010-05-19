@@ -93,8 +93,7 @@ public class Unmarshallers {
      */
     public static final class BucketLoggingConfigurationnmarshaller implements
             Unmarshaller<BucketLoggingConfiguration, InputStream> {
-        public BucketLoggingConfiguration unmarshall(InputStream in)
-                throws Exception {
+        public BucketLoggingConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseLoggingStatusResponse(in).getBucketLoggingConfiguration();
         }
@@ -105,8 +104,7 @@ public class Unmarshallers {
      */
     public static final class BucketLocationUnmarshaller implements
             Unmarshaller<String, InputStream> {
-        public String unmarshall(InputStream in)
-                throws Exception {
+        public String unmarshall(InputStream in) throws Exception {
             String location = new XmlResponsesSaxParser()
                     .parseBucketLocationResponse(in);
     
@@ -125,8 +123,7 @@ public class Unmarshallers {
      */
     public static final class BucketVersioningConfigurationUnmarshaller implements
             Unmarshaller<BucketVersioningConfiguration, InputStream> {
-        public BucketVersioningConfiguration unmarshall(InputStream in)
-                throws Exception {
+        public BucketVersioningConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseVersioningConfigurationResponse(in).getConfiguration();
         }
@@ -137,8 +134,7 @@ public class Unmarshallers {
      */
     public static final class InputStreamUnmarshaller implements
            Unmarshaller<InputStream, InputStream> {
-        public InputStream unmarshall(InputStream in) 
-                throws Exception {
+        public InputStream unmarshall(InputStream in) throws Exception {
             return in;
         }
     }

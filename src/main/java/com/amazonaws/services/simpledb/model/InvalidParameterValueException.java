@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * The value for a parameter is invalid.
+ * </p>
  */        
 public class InvalidParameterValueException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

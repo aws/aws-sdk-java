@@ -32,11 +32,11 @@ public class PointInTimeRestoreNotEnabledExceptionUnmarshaller extends StandardE
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("PointInTimeRestoreNotEnabled")) 
+        if (errorCode == null || !errorCode.equals("PointInTimeRestoreNotEnabled"))
             return null;
-        
+
         PointInTimeRestoreNotEnabledException e = (PointInTimeRestoreNotEnabledException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -32,11 +32,11 @@ public class InvalidParameterValueExceptionUnmarshaller extends StandardErrorUnm
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidParameterValue")) 
+        if (errorCode == null || !errorCode.equals("InvalidParameterValue"))
             return null;
-        
+
         InvalidParameterValueException e = (InvalidParameterValueException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

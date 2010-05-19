@@ -32,11 +32,11 @@ public class LimitExceededExceptionUnmarshaller extends StandardErrorUnmarshalle
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("LimitExceeded")) 
+        if (errorCode == null || !errorCode.equals("LimitExceeded"))
             return null;
-        
+
         LimitExceededException e = (LimitExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

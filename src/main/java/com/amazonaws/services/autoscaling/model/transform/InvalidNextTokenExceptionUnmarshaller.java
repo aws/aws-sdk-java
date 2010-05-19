@@ -32,11 +32,11 @@ public class InvalidNextTokenExceptionUnmarshaller extends StandardErrorUnmarsha
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InvalidNextToken")) 
+        if (errorCode == null || !errorCode.equals("InvalidNextToken"))
             return null;
-        
+
         InvalidNextTokenException e = (InvalidNextTokenException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

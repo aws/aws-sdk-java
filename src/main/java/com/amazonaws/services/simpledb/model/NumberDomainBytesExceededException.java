@@ -17,7 +17,9 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * Too many bytes in this domain.
+ * </p>
  */        
 public class NumberDomainBytesExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

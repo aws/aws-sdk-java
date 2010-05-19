@@ -20,21 +20,21 @@ package com.amazonaws.services.simpledb.model;
 public class SelectResult {
 
     /**
-     * Items that match the select expression.
+     * A list of items that match the select expression.
      */
     private java.util.List<Item> items;
 
     /**
-     * An opaque token indicating that more than MaxNumberOfItems matched,
-     * the response size exceeded 1 megabyte, or the execution time exceeded
-     * 5 seconds.
+     * An opaque token indicating that more items than
+     * <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     * 1 megabyte, or the execution time exceeded 5 seconds.
      */
     private String nextToken;
 
     /**
-     * Items that match the select expression.
+     * A list of items that match the select expression.
      *
-     * @return Items that match the select expression.
+     * @return A list of items that match the select expression.
      */
     public java.util.List<Item> getItems() {
         if (items == null) {
@@ -44,9 +44,9 @@ public class SelectResult {
     }
     
     /**
-     * Items that match the select expression.
+     * A list of items that match the select expression.
      *
-     * @param items Items that match the select expression.
+     * @param items A list of items that match the select expression.
      */
     public void setItems(java.util.Collection<Item> items) {
         java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>();
@@ -57,11 +57,11 @@ public class SelectResult {
     }
     
     /**
-     * Items that match the select expression.
+     * A list of items that match the select expression.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param items Items that match the select expression.
+     * @param items A list of items that match the select expression.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -74,11 +74,11 @@ public class SelectResult {
     }
     
     /**
-     * Items that match the select expression.
+     * A list of items that match the select expression.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param items Items that match the select expression.
+     * @param items A list of items that match the select expression.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -94,41 +94,41 @@ public class SelectResult {
     }
     
     /**
-     * An opaque token indicating that more than MaxNumberOfItems matched,
-     * the response size exceeded 1 megabyte, or the execution time exceeded
-     * 5 seconds.
+     * An opaque token indicating that more items than
+     * <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     * 1 megabyte, or the execution time exceeded 5 seconds.
      *
-     * @return An opaque token indicating that more than MaxNumberOfItems matched,
-     *         the response size exceeded 1 megabyte, or the execution time exceeded
-     *         5 seconds.
+     * @return An opaque token indicating that more items than
+     *         <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     *         1 megabyte, or the execution time exceeded 5 seconds.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * An opaque token indicating that more than MaxNumberOfItems matched,
-     * the response size exceeded 1 megabyte, or the execution time exceeded
-     * 5 seconds.
+     * An opaque token indicating that more items than
+     * <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     * 1 megabyte, or the execution time exceeded 5 seconds.
      *
-     * @param nextToken An opaque token indicating that more than MaxNumberOfItems matched,
-     *         the response size exceeded 1 megabyte, or the execution time exceeded
-     *         5 seconds.
+     * @param nextToken An opaque token indicating that more items than
+     *         <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     *         1 megabyte, or the execution time exceeded 5 seconds.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * An opaque token indicating that more than MaxNumberOfItems matched,
-     * the response size exceeded 1 megabyte, or the execution time exceeded
-     * 5 seconds.
+     * An opaque token indicating that more items than
+     * <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     * 1 megabyte, or the execution time exceeded 5 seconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken An opaque token indicating that more than MaxNumberOfItems matched,
-     *         the response size exceeded 1 megabyte, or the execution time exceeded
-     *         5 seconds.
+     * @param nextToken An opaque token indicating that more items than
+     *         <code>MaxNumberOfItems</code> were matched, the response size exceeded
+     *         1 megabyte, or the execution time exceeded 5 seconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

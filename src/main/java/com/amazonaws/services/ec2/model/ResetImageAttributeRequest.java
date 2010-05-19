@@ -17,8 +17,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to reset an attribute on an Amazon Machine Image (AMI) back
- * to its default value. Only one attribute can be reset per request.
+ * A request to reset an attribute on an <i>Amazon Machine Image</i>
+ * (AMI) back to its default value. Only one attribute can be reset per
+ * request.
  * </p>
  */
 public class ResetImageAttributeRequest extends AmazonWebServiceRequest {

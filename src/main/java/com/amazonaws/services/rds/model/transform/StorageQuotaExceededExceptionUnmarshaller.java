@@ -32,11 +32,11 @@ public class StorageQuotaExceededExceptionUnmarshaller extends StandardErrorUnma
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("StorageQuotaExceeded")) 
+        if (errorCode == null || !errorCode.equals("StorageQuotaExceeded"))
             return null;
-        
+
         StorageQuotaExceededException e = (StorageQuotaExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

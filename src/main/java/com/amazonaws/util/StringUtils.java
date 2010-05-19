@@ -113,4 +113,16 @@ public class StringUtils {
         return new String(encodedBytes);
     }
 
+    public static String replace( String originalString, String partToMatch, String replacement ) {
+        StringBuffer buffer = new StringBuffer( originalString.length() );
+        buffer.append( originalString );
+    
+        int indexOf = buffer.indexOf( partToMatch );
+        while ( indexOf != -1 ) {
+            buffer = buffer.replace( indexOf, indexOf + partToMatch.length(), replacement );
+            indexOf = buffer.indexOf( partToMatch );
+        }
+        
+        return buffer.toString();
+    }
 }

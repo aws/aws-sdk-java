@@ -95,21 +95,19 @@ public class QueryStringSigner<T> implements Signer<T> {
         request.addParameter("Timestamp", getFormattedTimestamp());
 
         String stringToSign = null;
-        switch (version) {
-        case V1:
+        
+        if ( version.equals( SignatureVersion.V1 ) ) {
             stringToSign = calculateStringToSignV1(request.getParameters());
-            break;
-
-        case V2:
+        }
+        else if ( version.equals( SignatureVersion.V2 ) ) {
             request.addParameter("SignatureMethod", algorithm.toString());
             stringToSign = calculateStringToSignV2(request.getEndpoint(),
-                    request.getParameters());
-            break;
-
-        default:
+            request.getParameters());
+        }
+        else {
             throw new SignatureException("Invalid Signature Version specified");
         }
-
+                
         String signatureValue = sign(stringToSign, credentials
                 .getAWSSecretKey(), algorithm);
         request.addParameter("Signature", signatureValue);
@@ -127,8 +125,7 @@ public class QueryStringSigner<T> implements Signer<T> {
                     .getBytes(DEFAULT_ENCODING)));
             return new String(signature);
         } catch (Exception e) {
-            throw new SignatureException("Failed to generate signature: "
-                    + e.getMessage(), e);
+            throw new SignatureException("Failed to generate signature: " + e.getMessage(), e);
         }
     }
 

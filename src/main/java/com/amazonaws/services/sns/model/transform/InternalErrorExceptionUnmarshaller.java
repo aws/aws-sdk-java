@@ -32,11 +32,11 @@ public class InternalErrorExceptionUnmarshaller extends StandardErrorUnmarshalle
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("InternalError")) 
+        if (errorCode == null || !errorCode.equals("InternalError"))
             return null;
-        
+
         InternalErrorException e = (InternalErrorException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

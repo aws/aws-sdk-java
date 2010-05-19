@@ -16,44 +16,45 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * A key-value pair.
  * </p>
  */
 public class KeyValue {
 
     /**
-     * The key that is paired with a value in a KeyValue pair.
+     * The unique identifier of a key-value pair.
      */
     private String key;
 
     /**
-     * The value paired with a key in a KeyValue pair.
+     * The value part of the identified key.
      */
     private String value;
 
     /**
-     * The key that is paired with a value in a KeyValue pair.
+     * The unique identifier of a key-value pair.
      *
-     * @return The key that is paired with a value in a KeyValue pair.
+     * @return The unique identifier of a key-value pair.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * The key that is paired with a value in a KeyValue pair.
+     * The unique identifier of a key-value pair.
      *
-     * @param key The key that is paired with a value in a KeyValue pair.
+     * @param key The unique identifier of a key-value pair.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * The key that is paired with a value in a KeyValue pair.
+     * The unique identifier of a key-value pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param key The key that is paired with a value in a KeyValue pair.
+     * @param key The unique identifier of a key-value pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -65,29 +66,29 @@ public class KeyValue {
     
     
     /**
-     * The value paired with a key in a KeyValue pair.
+     * The value part of the identified key.
      *
-     * @return The value paired with a key in a KeyValue pair.
+     * @return The value part of the identified key.
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * The value paired with a key in a KeyValue pair.
+     * The value part of the identified key.
      *
-     * @param value The value paired with a key in a KeyValue pair.
+     * @param value The value part of the identified key.
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * The value paired with a key in a KeyValue pair.
+     * The value part of the identified key.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value The value paired with a key in a KeyValue pair.
+     * @param value The value part of the identified key.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,11 +32,11 @@ public class ResourceInUseExceptionUnmarshaller extends StandardErrorUnmarshalle
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ResourceInUse")) 
+        if (errorCode == null || !errorCode.equals("ResourceInUse"))
             return null;
-        
+
         ResourceInUseException e = (ResourceInUseException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

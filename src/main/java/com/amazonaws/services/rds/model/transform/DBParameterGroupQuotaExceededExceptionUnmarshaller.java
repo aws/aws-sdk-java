@@ -32,11 +32,11 @@ public class DBParameterGroupQuotaExceededExceptionUnmarshaller extends Standard
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBParameterGroupQuotaExceeded")) 
+        if (errorCode == null || !errorCode.equals("DBParameterGroupQuotaExceeded"))
             return null;
-        
+
         DBParameterGroupQuotaExceededException e = (DBParameterGroupQuotaExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

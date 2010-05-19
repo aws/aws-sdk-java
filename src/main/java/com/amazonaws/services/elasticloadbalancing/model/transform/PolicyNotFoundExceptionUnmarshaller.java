@@ -32,11 +32,11 @@ public class PolicyNotFoundExceptionUnmarshaller extends StandardErrorUnmarshall
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("PolicyNotFound")) 
+        if (errorCode == null || !errorCode.equals("PolicyNotFound"))
             return null;
-        
+
         PolicyNotFoundException e = (PolicyNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

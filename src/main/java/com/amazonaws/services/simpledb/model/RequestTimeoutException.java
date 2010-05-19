@@ -17,7 +17,10 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonSimpleDB exception
+ * <p>
+ * A timeout occurred when attempting to query the specified domain with
+ * specified query expression.
+ * </p>
  */        
 public class RequestTimeoutException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

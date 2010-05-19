@@ -32,11 +32,11 @@ public class NotFoundExceptionUnmarshaller extends StandardErrorUnmarshaller {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("NotFound")) 
+        if (errorCode == null || !errorCode.equals("NotFound"))
             return null;
-        
+
         NotFoundException e = (NotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

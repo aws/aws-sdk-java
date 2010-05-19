@@ -32,11 +32,11 @@ public class DBSecurityGroupAlreadyExistsExceptionUnmarshaller extends StandardE
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBSecurityGroupAlreadyExists")) 
+        if (errorCode == null || !errorCode.equals("DBSecurityGroupAlreadyExists"))
             return null;
-        
+
         DBSecurityGroupAlreadyExistsException e = (DBSecurityGroupAlreadyExistsException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

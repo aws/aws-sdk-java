@@ -52,7 +52,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
      * Currently supports "all". <note> Only valid when the
-     * createVolumePermission attribute is being modified. </note>
+     * <code>createVolumePermission</code> attribute is being modified.
+     * </note>
      */
     private java.util.List<String> groupNames;
 
@@ -260,12 +261,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
      * Currently supports "all". <note> Only valid when the
-     * createVolumePermission attribute is being modified. </note>
+     * <code>createVolumePermission</code> attribute is being modified.
+     * </note>
      *
      * @return The AWS group names to add to or remove from the list of groups that
      *         have permission to create EBS volumes from the specified snapshot.
      *         Currently supports "all". <note> Only valid when the
-     *         createVolumePermission attribute is being modified. </note>
+     *         <code>createVolumePermission</code> attribute is being modified.
+     *         </note>
      */
     public java.util.List<String> getGroupNames() {
         if (groupNames == null) {
@@ -278,12 +281,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
      * Currently supports "all". <note> Only valid when the
-     * createVolumePermission attribute is being modified. </note>
+     * <code>createVolumePermission</code> attribute is being modified.
+     * </note>
      *
      * @param groupNames The AWS group names to add to or remove from the list of groups that
      *         have permission to create EBS volumes from the specified snapshot.
      *         Currently supports "all". <note> Only valid when the
-     *         createVolumePermission attribute is being modified. </note>
+     *         <code>createVolumePermission</code> attribute is being modified.
+     *         </note>
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
         java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>();
@@ -297,14 +302,16 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
      * Currently supports "all". <note> Only valid when the
-     * createVolumePermission attribute is being modified. </note>
+     * <code>createVolumePermission</code> attribute is being modified.
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames The AWS group names to add to or remove from the list of groups that
      *         have permission to create EBS volumes from the specified snapshot.
      *         Currently supports "all". <note> Only valid when the
-     *         createVolumePermission attribute is being modified. </note>
+     *         <code>createVolumePermission</code> attribute is being modified.
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -320,14 +327,16 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * The AWS group names to add to or remove from the list of groups that
      * have permission to create EBS volumes from the specified snapshot.
      * Currently supports "all". <note> Only valid when the
-     * createVolumePermission attribute is being modified. </note>
+     * <code>createVolumePermission</code> attribute is being modified.
+     * </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param groupNames The AWS group names to add to or remove from the list of groups that
      *         have permission to create EBS volumes from the specified snapshot.
      *         Currently supports "all". <note> Only valid when the
-     *         createVolumePermission attribute is being modified. </note>
+     *         <code>createVolumePermission</code> attribute is being modified.
+     *         </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

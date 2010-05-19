@@ -16,10 +16,14 @@ package com.amazonaws.services.sqs;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,11 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -43,6 +49,7 @@ import com.amazonaws.services.sqs.model.transform.*;
  * Client for accessing AmazonSQS.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * <p>
  * Amazon Simple Queue Service (Amazon SQS) offers a reliable, highly
  * scalable, hosted queue for storing messages as they travel between
@@ -163,7 +170,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListQueuesRequest> request = new ListQueuesRequestMarshaller().marshall(listQueuesRequest);
-        return invoke(request, "//ListQueuesResult", new ListQueuesResultUnmarshaller());
+        return invoke(request, new ListQueuesResultStaxUnmarshaller());
     }
     
     /**
@@ -189,7 +196,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void setQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SetQueueAttributesRequest> request = new SetQueueAttributesRequestMarshaller().marshall(setQueueAttributesRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -242,7 +249,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void changeMessageVisibility(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ChangeMessageVisibilityRequest> request = new ChangeMessageVisibilityRequestMarshaller().marshall(changeMessageVisibilityRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -281,7 +288,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateQueueRequest> request = new CreateQueueRequestMarshaller().marshall(createQueueRequest);
-        return invoke(request, "//CreateQueueResult", new CreateQueueResultUnmarshaller());
+        return invoke(request, new CreateQueueResultStaxUnmarshaller());
     }
     
     /**
@@ -306,7 +313,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void removePermission(RemovePermissionRequest removePermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RemovePermissionRequest> request = new RemovePermissionRequestMarshaller().marshall(removePermissionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -336,7 +343,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public GetQueueAttributesResult getQueueAttributes(GetQueueAttributesRequest getQueueAttributesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetQueueAttributesRequest> request = new GetQueueAttributesRequestMarshaller().marshall(getQueueAttributesRequest);
-        return invoke(request, "//GetQueueAttributesResult", new GetQueueAttributesResultUnmarshaller());
+        return invoke(request, new GetQueueAttributesResultStaxUnmarshaller());
     }
     
     /**
@@ -366,7 +373,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void addPermission(AddPermissionRequest addPermissionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AddPermissionRequest> request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -391,7 +398,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void deleteQueue(DeleteQueueRequest deleteQueueRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteQueueRequest> request = new DeleteQueueRequestMarshaller().marshall(deleteQueueRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -418,7 +425,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void deleteMessage(DeleteMessageRequest deleteMessageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteMessageRequest> request = new DeleteMessageRequestMarshaller().marshall(deleteMessageRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -445,7 +452,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public SendMessageResult sendMessage(SendMessageRequest sendMessageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SendMessageRequest> request = new SendMessageRequestMarshaller().marshall(sendMessageRequest);
-        return invoke(request, "//SendMessageResult", new SendMessageResultUnmarshaller());
+        return invoke(request, new SendMessageResultStaxUnmarshaller());
     }
     
     /**
@@ -478,7 +485,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public ReceiveMessageResult receiveMessage(ReceiveMessageRequest receiveMessageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ReceiveMessageRequest> request = new ReceiveMessageRequestMarshaller().marshall(receiveMessageRequest);
-        return invoke(request, "//ReceiveMessageResult", new ReceiveMessageResultUnmarshaller());
+        return invoke(request, new ReceiveMessageResultStaxUnmarshaller());
     }
     
     /**
@@ -503,7 +510,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -532,7 +539,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

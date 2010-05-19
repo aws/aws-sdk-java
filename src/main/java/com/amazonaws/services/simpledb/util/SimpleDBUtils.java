@@ -53,6 +53,27 @@ public class SimpleDBUtils {
     }
 
     /**
+     * Encodes positive long value into a string by zero-padding the value up to
+     * the specified number of digits.
+     *
+     * @param number
+     *            positive long to be encoded
+     * @param maxNumDigits
+     *            maximum number of digits in the largest value in the data set
+     * @return string representation of the zero-padded long
+     */
+    public static String encodeZeroPadding(long number, int maxNumDigits) {
+        String longString = Long.toString(number);
+        int numZeroes = maxNumDigits - longString.length();
+        StringBuffer strBuffer = new StringBuffer(numZeroes + longString.length());
+        for (int i = 0; i < numZeroes; i++) {
+            strBuffer.insert(i, '0');
+        }
+        strBuffer.append(longString);
+        return strBuffer.toString();
+    }
+
+    /**
      * Encodes positive float value into a string by zero-padding number up to
      * the specified number of digits
      *
@@ -88,6 +109,17 @@ public class SimpleDBUtils {
     }
 
     /**
+     * Decodes a zero-padded positive long value from the string representation
+     *
+     * @param value
+     *            zero-padded string representation of the long
+     * @return original long value
+     */
+    public static long decodeZeroPaddingLong(String value) {
+        return Long.parseLong(value, 10);
+    }
+
+    /**
      * Decodes zero-padded positive float value from the string representation
      *
      * @param value
@@ -115,6 +147,35 @@ public class SimpleDBUtils {
      */
     public static String encodeRealNumberRange(int number, int maxNumDigits,
             int offsetValue) {
+        long offsetNumber = number + offsetValue;
+        String longString = Long.toString(offsetNumber);
+        int numZeroes = maxNumDigits - longString.length();
+        StringBuffer strBuffer = new StringBuffer(numZeroes + longString.length());
+        for (int i = 0; i < numZeroes; i++) {
+            strBuffer.insert(i, '0');
+        }
+        strBuffer.append(longString);
+        return strBuffer.toString();
+    }
+
+    /**
+     * Encodes a positive or negative long value into a string by offsetting and
+     * zero-padding the number up to the specified number of digits. Use this
+     * encoding method if the data set includes both positive and negative
+     * values.
+     *
+     * @param number
+     *            positive or negative long value to be encoded
+     * @param maxNumDigits
+     *            maximum number of digits in the largest absolute value in the
+     *            data set
+     * @param offsetValue
+     *            offset value, has to be greater than absolute value of any
+     *            negative number in the data set.
+     * @return string representation of the long
+     */
+    public static String encodeRealNumberRange(long number, int maxNumDigits,
+            long offsetValue) {
         long offsetNumber = number + offsetValue;
         String longString = Long.toString(offsetNumber);
         int numZeroes = maxNumDigits - longString.length();
@@ -174,6 +235,21 @@ public class SimpleDBUtils {
     public static int decodeRealNumberRangeInt(String value, int offsetValue) {
         long offsetNumber = Long.parseLong(value, 10);
         return (int) (offsetNumber - offsetValue);
+    }
+
+    /**
+     * Decodes a long value from the string representation that was created by
+     * using encodeRealNumberRange(..) function.
+     *
+     * @param value
+     *            string representation of the long value
+     * @param offsetValue
+     *            offset value that was used in the original encoding
+     * @return original long value
+     */
+    public static long decodeRealNumberRangeLong(String value, long offsetValue) {
+        long offsetNumber = Long.parseLong(value, 10);
+        return (long) (offsetNumber - offsetValue);
     }
 
     /**

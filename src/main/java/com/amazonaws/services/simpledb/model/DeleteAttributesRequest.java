@@ -33,16 +33,16 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     private String itemName;
 
     /**
-     * Attributes. Similar to columns on a spreadsheet, attributes represent
-     * categories of data that can be assigned to items.
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes
+     * represent categories of data that can be assigned to items.
      */
     private java.util.List<Attribute> attributes;
 
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be deleted or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be deleted.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be deleted or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be deleted.
      */
     private UpdateCondition expected;
 
@@ -149,11 +149,11 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Attributes. Similar to columns on a spreadsheet, attributes represent
-     * categories of data that can be assigned to items.
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes
+     * represent categories of data that can be assigned to items.
      *
-     * @return Attributes. Similar to columns on a spreadsheet, attributes represent
-     *         categories of data that can be assigned to items.
+     * @return A list of Attributes. Similar to columns on a spreadsheet, attributes
+     *         represent categories of data that can be assigned to items.
      */
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
@@ -163,11 +163,11 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Attributes. Similar to columns on a spreadsheet, attributes represent
-     * categories of data that can be assigned to items.
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes
+     * represent categories of data that can be assigned to items.
      *
-     * @param attributes Attributes. Similar to columns on a spreadsheet, attributes represent
-     *         categories of data that can be assigned to items.
+     * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
+     *         represent categories of data that can be assigned to items.
      */
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>();
@@ -178,13 +178,13 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Attributes. Similar to columns on a spreadsheet, attributes represent
-     * categories of data that can be assigned to items.
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes
+     * represent categories of data that can be assigned to items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes Attributes. Similar to columns on a spreadsheet, attributes represent
-     *         categories of data that can be assigned to items.
+     * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
+     *         represent categories of data that can be assigned to items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -197,13 +197,13 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Attributes. Similar to columns on a spreadsheet, attributes represent
-     * categories of data that can be assigned to items.
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes
+     * represent categories of data that can be assigned to items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes Attributes. Similar to columns on a spreadsheet, attributes represent
-     *         categories of data that can be assigned to items.
+     * @param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes
+     *         represent categories of data that can be assigned to items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -219,47 +219,47 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be deleted or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be deleted.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be deleted or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be deleted.
      *
-     * @return The update condition which, if specified, determines if the specified
-     *         attributes will be deleted or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be deleted.
+     * @return The update condition which, if specified, determines whether the
+     *         specified attributes will be deleted or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be deleted.
      */
     public UpdateCondition getExpected() {
         return expected;
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be deleted or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be deleted.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be deleted or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be deleted.
      *
-     * @param expected The update condition which, if specified, determines if the specified
-     *         attributes will be deleted or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be deleted.
+     * @param expected The update condition which, if specified, determines whether the
+     *         specified attributes will be deleted or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be deleted.
      */
     public void setExpected(UpdateCondition expected) {
         this.expected = expected;
     }
     
     /**
-     * The update condition which, if specified, determines if the specified
-     * attributes will be deleted or not. The update condition must be
-     * satisfied in order for this request to be processed and the attributes
-     * to be deleted.
+     * The update condition which, if specified, determines whether the
+     * specified attributes will be deleted or not. The update condition must
+     * be satisfied in order for this request to be processed and the
+     * attributes to be deleted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expected The update condition which, if specified, determines if the specified
-     *         attributes will be deleted or not. The update condition must be
-     *         satisfied in order for this request to be processed and the attributes
-     *         to be deleted.
+     * @param expected The update condition which, if specified, determines whether the
+     *         specified attributes will be deleted or not. The update condition must
+     *         be satisfied in order for this request to be processed and the
+     *         attributes to be deleted.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

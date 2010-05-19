@@ -32,11 +32,11 @@ public class DBSecurityGroupQuotaExceededExceptionUnmarshaller extends StandardE
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBSecurityGroupQuotaExceeded")) 
+        if (errorCode == null || !errorCode.equals("QuotaExceeded.DBSecurityGroup"))
             return null;
-        
+
         DBSecurityGroupQuotaExceededException e = (DBSecurityGroupQuotaExceededException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

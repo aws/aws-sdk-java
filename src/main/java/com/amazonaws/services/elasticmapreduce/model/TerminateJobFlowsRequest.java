@@ -16,28 +16,21 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Terminate Job Flows Request
+ * <p>
+ * Input to the TerminateJobFlows operation.
+ * </p>
  */
 public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
 
     /**
-     * A list of job flow IDs specifying the job flows to terminate. Each
-     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     * operation. To terminate more than one job flow, set this parameter to
-     * a comma-seperate list of <code>JobFlowID</code>s.
+     * A list of job flows to be shutdown.
      */
     private java.util.List<String> jobFlowIds;
 
     /**
-     * A list of job flow IDs specifying the job flows to terminate. Each
-     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     * operation. To terminate more than one job flow, set this parameter to
-     * a comma-seperate list of <code>JobFlowID</code>s.
+     * A list of job flows to be shutdown.
      *
-     * @return A list of job flow IDs specifying the job flows to terminate. Each
-     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     *         operation. To terminate more than one job flow, set this parameter to
-     *         a comma-seperate list of <code>JobFlowID</code>s.
+     * @return A list of job flows to be shutdown.
      */
     public java.util.List<String> getJobFlowIds() {
         if (jobFlowIds == null) {
@@ -47,15 +40,9 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of job flow IDs specifying the job flows to terminate. Each
-     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     * operation. To terminate more than one job flow, set this parameter to
-     * a comma-seperate list of <code>JobFlowID</code>s.
+     * A list of job flows to be shutdown.
      *
-     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
-     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     *         operation. To terminate more than one job flow, set this parameter to
-     *         a comma-seperate list of <code>JobFlowID</code>s.
+     * @param jobFlowIds A list of job flows to be shutdown.
      */
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
         java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>();
@@ -66,17 +53,11 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of job flow IDs specifying the job flows to terminate. Each
-     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     * operation. To terminate more than one job flow, set this parameter to
-     * a comma-seperate list of <code>JobFlowID</code>s.
+     * A list of job flows to be shutdown.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
-     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     *         operation. To terminate more than one job flow, set this parameter to
-     *         a comma-seperate list of <code>JobFlowID</code>s.
+     * @param jobFlowIds A list of job flows to be shutdown.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,17 +70,11 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of job flow IDs specifying the job flows to terminate. Each
-     * <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     * operation. To terminate more than one job flow, set this parameter to
-     * a comma-seperate list of <code>JobFlowID</code>s.
+     * A list of job flows to be shutdown.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlowIds A list of job flow IDs specifying the job flows to terminate. Each
-     *         <code>JobFlowId</code> is a string returned by the <a>RunJobFlows</a>
-     *         operation. To terminate more than one job flow, set this parameter to
-     *         a comma-seperate list of <code>JobFlowID</code>s.
+     * @param jobFlowIds A list of job flows to be shutdown.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

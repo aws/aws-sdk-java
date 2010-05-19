@@ -16,7 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of describing Amazon Machine Images (AMIs).
+ * The result of describing <i>Amazon Machine Images</i> (AMIs).
  * </p>
  */
 public class DescribeImagesResult {

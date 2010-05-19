@@ -16,39 +16,40 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
+ * Specifies the Amazon EC2 location for the job flow.
  * </p>
  */
 public class PlacementType {
 
     /**
-     * The geographical location of the Amazon EC2 instances.
+     * The Amazon EC2 Availability Zone for the job flow.
      */
     private String availabilityZone;
 
     /**
-     * The geographical location of the Amazon EC2 instances.
+     * The Amazon EC2 Availability Zone for the job flow.
      *
-     * @return The geographical location of the Amazon EC2 instances.
+     * @return The Amazon EC2 Availability Zone for the job flow.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The geographical location of the Amazon EC2 instances.
+     * The Amazon EC2 Availability Zone for the job flow.
      *
-     * @param availabilityZone The geographical location of the Amazon EC2 instances.
+     * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The geographical location of the Amazon EC2 instances.
+     * The Amazon EC2 Availability Zone for the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The geographical location of the Amazon EC2 instances.
+     * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

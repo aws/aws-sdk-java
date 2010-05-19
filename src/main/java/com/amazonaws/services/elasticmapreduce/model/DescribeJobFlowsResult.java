@@ -15,19 +15,21 @@
 package com.amazonaws.services.elasticmapreduce.model;
 
 /**
- * Describe Job Flows Result
+ * <p>
+ * The output for the DescribeJobFlows operation.
+ * </p>
  */
 public class DescribeJobFlowsResult {
 
     /**
-     * <p/>
+     * A list of job flows matching the parameters supplied.
      */
     private java.util.List<JobFlowDetail> jobFlows;
 
     /**
-     * <p/>
+     * A list of job flows matching the parameters supplied.
      *
-     * @return <p/>
+     * @return A list of job flows matching the parameters supplied.
      */
     public java.util.List<JobFlowDetail> getJobFlows() {
         if (jobFlows == null) {
@@ -37,9 +39,9 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * <p/>
+     * A list of job flows matching the parameters supplied.
      *
-     * @param jobFlows <p/>
+     * @param jobFlows A list of job flows matching the parameters supplied.
      */
     public void setJobFlows(java.util.Collection<JobFlowDetail> jobFlows) {
         java.util.List<JobFlowDetail> jobFlowsCopy = new java.util.ArrayList<JobFlowDetail>();
@@ -50,11 +52,11 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * <p/>
+     * A list of job flows matching the parameters supplied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlows <p/>
+     * @param jobFlows A list of job flows matching the parameters supplied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -67,11 +69,11 @@ public class DescribeJobFlowsResult {
     }
     
     /**
-     * <p/>
+     * A list of job flows matching the parameters supplied.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param jobFlows <p/>
+     * @param jobFlows A list of job flows matching the parameters supplied.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

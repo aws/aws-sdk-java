@@ -32,11 +32,11 @@ public class ListenerNotFoundExceptionUnmarshaller extends StandardErrorUnmarsha
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("ListenerNotFound")) 
+        if (errorCode == null || !errorCode.equals("ListenerNotFound"))
             return null;
-        
+
         ListenerNotFoundException e = (ListenerNotFoundException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

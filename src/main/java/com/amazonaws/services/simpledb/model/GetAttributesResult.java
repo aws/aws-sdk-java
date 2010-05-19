@@ -20,14 +20,14 @@ package com.amazonaws.services.simpledb.model;
 public class GetAttributesResult {
 
     /**
-     * Attributes list.
+     * The list of attributes returned by the operation.
      */
     private java.util.List<Attribute> attributes;
 
     /**
-     * Attributes list.
+     * The list of attributes returned by the operation.
      *
-     * @return Attributes list.
+     * @return The list of attributes returned by the operation.
      */
     public java.util.List<Attribute> getAttributes() {
         if (attributes == null) {
@@ -37,9 +37,9 @@ public class GetAttributesResult {
     }
     
     /**
-     * Attributes list.
+     * The list of attributes returned by the operation.
      *
-     * @param attributes Attributes list.
+     * @param attributes The list of attributes returned by the operation.
      */
     public void setAttributes(java.util.Collection<Attribute> attributes) {
         java.util.List<Attribute> attributesCopy = new java.util.ArrayList<Attribute>();
@@ -50,11 +50,11 @@ public class GetAttributesResult {
     }
     
     /**
-     * Attributes list.
+     * The list of attributes returned by the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes Attributes list.
+     * @param attributes The list of attributes returned by the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -67,11 +67,11 @@ public class GetAttributesResult {
     }
     
     /**
-     * Attributes list.
+     * The list of attributes returned by the operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes Attributes list.
+     * @param attributes The list of attributes returned by the operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

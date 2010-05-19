@@ -32,11 +32,11 @@ public class DBInstanceAlreadyExistsExceptionUnmarshaller extends StandardErrorU
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBInstanceAlreadyExists")) 
+        if (errorCode == null || !errorCode.equals("DBInstanceAlreadyExists"))
             return null;
-        
+
         DBInstanceAlreadyExistsException e = (DBInstanceAlreadyExistsException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

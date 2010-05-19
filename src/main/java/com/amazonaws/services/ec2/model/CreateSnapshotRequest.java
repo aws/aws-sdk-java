@@ -17,8 +17,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents a request to create a snapshot from an Elastic Block
- * Storage (EBS) volume.
+ * Represents a request to create a snapshot from an <i>Elastic Block
+ * Storage</i> (EBS) volume.
  * </p>
  */
 public class CreateSnapshotRequest extends AmazonWebServiceRequest {

@@ -32,11 +32,11 @@ public class DuplicatePolicyNameExceptionUnmarshaller extends StandardErrorUnmar
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DuplicatePolicyName")) 
+        if (errorCode == null || !errorCode.equals("DuplicatePolicyName"))
             return null;
-        
+
         DuplicatePolicyNameException e = (DuplicatePolicyNameException)super.unmarshall(node);
-               
+        
         return e;
     }
 }

@@ -17,7 +17,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to deregister an Amazon Machine Image (AMI).
+ * A request to deregister an <i>Amazon Machine Image</i> (AMI).
  * </p>
  */
 public class DeregisterImageRequest extends AmazonWebServiceRequest {
