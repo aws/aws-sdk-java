@@ -16,9 +16,17 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest) DeleteDBInstance operation}.
  * <p>
- * 
+ * The DeleteDBInstance API deletes a previously provisioned RDS
+ * instance. A successful response from the web service indicates the
+ * request was received correctly. If a final DBSnapshot is requested the
+ * status of the RDS instance will be "deleting" until the DBSnapshot is
+ * created. DescribeDBInstance is used to monitor the status of this
+ * operation. This cannot be canceled or reverted once submitted.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)
  */
 public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
 
@@ -176,6 +184,14 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,16 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest) DescribeReservedInstancesOfferings operation}.
  * <p>
- * Request to describe the Reserved Instance offerings that are
- * available for purchase.
+ * The DescribeReservedInstancesOfferings operation describes Reserved
+ * Instance offerings that are available for purchase. With Amazon EC2
+ * Reserved Instances, you purchase the right to launch Amazon EC2
+ * instances for a period of time (without getting insufficient capacity
+ * errors) and pay a lower usage rate for the actual time used.
  * </p>
- * <p>
- * With Amazon EC2 Reserved Instances, you purchase the right to launch
- * Amazon EC2 instances for a period of time (without getting
- * insufficient capacity errors) and pay a lower usage rate for the
- * actual time used.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest)
  */
 public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceRequest {
 
@@ -240,6 +240,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

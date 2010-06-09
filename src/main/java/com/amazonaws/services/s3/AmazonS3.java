@@ -22,8 +22,12 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.model.AccessControlList;
+import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
@@ -31,26 +35,25 @@ import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
+import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
+import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
-import com.amazonaws.services.s3.model.Permission;
-import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.PutObjectResult;
-import com.amazonaws.services.s3.model.Bucket;
-import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.Region;
-import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
-import com.amazonaws.services.s3.model.StorageClass;
-import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.PutObjectResult;
+import com.amazonaws.services.s3.model.Region;
+import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
+import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.model.VersionListing;
 
 /**
  * <p>
@@ -703,6 +706,35 @@ public interface AmazonS3 {
      */
     public abstract List<Bucket> listBuckets() throws AmazonClientException,
             AmazonServiceException;
+
+    /**
+     * <p>
+     * Returns a list of all Amazon S3 buckets owned by the authenticated
+     * sender of the request.
+     * </p>
+     * <p>
+     * You must authenticate with a valid AWS Access Key ID that is registered
+     * with Amazon S3. Anonymous requests cannot list buckets, and you cannot
+     * list buckets that you did not create.
+     * </p>
+     *
+     * @param request
+     *          The request containing all of the options regating the listing
+     *          of buckets.
+     *
+     * @return A list of all of the Amazon S3 buckets owned by the authenticated
+     *         sender of the request.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public abstract List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
+            throws AmazonClientException, AmazonServiceException;
+
 
     /**
      * Returns the geographical region where Amazon S3 stores the specified
@@ -2217,7 +2249,7 @@ public interface AmazonS3 {
         throws AmazonClientException, AmazonServiceException;
 
     /**
-     * Returns a pre-signed URL to download the S3 object in the specified
+     * Returns a pre-signed GET URL to download the S3 object in the specified
      * bucket under the specified key.
      * <p>
      * Pre-signed URLs are useful for enabling direct third-party browser access
@@ -2245,6 +2277,74 @@ public interface AmazonS3 {
      *             specified S3 object.
      */
     public abstract URL generatePresignedUrl(String bucketName, String key, Date expiration)
+            throws AmazonClientException;
+
+    /**
+     * Returns a pre-signed GET URL to download the S3 object in the specified
+     * bucket under the specified key.
+     * <p>
+     * Pre-signed URLs are useful for enabling direct third-party browser access
+     * to your private Amazon S3 data, without proxying the request, or exposing
+     * your AWS secret access key. The pre-signed request is encoded as a URL
+     * that any end-user's browser can retrieve.
+     * <p>
+     * Pre-signed requests are limited by the specified expiration time. Once
+     * the expiration time passes, the pre-signed URL will stop working.
+     *
+     * @param bucketName
+     *            The name of the bucket containing the desired object.
+     * @param key
+     *            The key in the specified bucket under which the desired object
+     *            is stored.
+     * @param expiration
+     *            The time at which the returned pre-signed URL will expire.
+     * @param method
+     *            The HTTP method verb to use for this URL
+     *
+     * @return A pre-signed URL which expires at the specified time, and can be
+     *         used to allow anyone to download the specified object from S3,
+     *         without exposing the owner's AWS secret access key.
+     *
+     * @throws AmazonClientException
+     *             If there were any problems pre-signing the request for the
+     *             specified S3 object.
+     */
+    public abstract URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
+            throws AmazonClientException;
+
+
+    /**
+     * Returns a pre-signed URL for accessing an Amazon S3 resource.
+     * <p>
+     * Pre-signed URLs allow clients to form a URL for an Amazon S3 resource,
+     * and sign it with the current AWS security credentials, then pass that
+     * pre-signed URL around for other people to access the resource without
+     * providing them access to an account's AWS security credentials.
+     * <p>
+     * Pre-signed URLs can be useful in many situations where AWS security
+     * credentials aren't available from the client that needs to make the
+     * actual request to Amazon S3.
+     * <p>
+     * For example, an application may need remote users to upload files to the
+     * application owner's Amazon S3 bucket, but doesn't want to ship the
+     * owner's AWS security credentials with the application. A pre-signed URL
+     * to PUT an object into the owner's bucket can be generated from a remote
+     * location with the owner's AWS security credentials, then the pre-signed
+     * URL can be passed to the end user's application to use.
+     *
+     * @param generatePresignedUrlRequest
+     *            The request object containing all the options for generating a
+     *            pre-signed URL (bucket name, key, expiration date, etc).
+     *
+     * @return A pre-signed URL that can be used to access an Amazon S3 resource
+     *         without requiring the user of the URL to know the account's AWS
+     *         security credentials.
+     *
+     * @throws AmazonClientException
+     *             If there were any problems pre-signing the request for the
+     *             Amazon S3 resource.
+     */
+    public abstract URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
             throws AmazonClientException;
 
 }

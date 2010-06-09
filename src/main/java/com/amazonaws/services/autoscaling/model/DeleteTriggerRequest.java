@@ -16,9 +16,16 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTrigger(DeleteTriggerRequest) DeleteTrigger operation}.
  * <p>
- * 
+ * Deletes the specified trigger.
  * </p>
+ * <p>
+ * If a trigger is currently in progress, the trigger continues to run
+ * until its activities complete.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTrigger(DeleteTriggerRequest)
  */
 public class DeleteTriggerRequest extends AmazonWebServiceRequest {
 
@@ -160,6 +167,14 @@ public class DeleteTriggerRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

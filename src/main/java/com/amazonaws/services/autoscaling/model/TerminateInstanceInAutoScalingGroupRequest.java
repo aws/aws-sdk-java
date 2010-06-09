@@ -16,9 +16,17 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest) TerminateInstanceInAutoScalingGroup operation}.
  * <p>
- * 
+ * Terminates the specified instance. Optionally, the desired group size
+ * can be adjusted.
  * </p>
+ * <p>
+ * <b>NOTE:</b> This call simply registers a termination request. The
+ * termination of the instance cannot happen immediately.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest)
  */
 public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
@@ -143,6 +151,14 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
         return shouldDecrementDesiredCapacity;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

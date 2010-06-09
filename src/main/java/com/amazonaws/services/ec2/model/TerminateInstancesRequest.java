@@ -16,17 +16,18 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest) TerminateInstances operation}.
  * <p>
- * A request to shut down one or more instances. This operation is
- * idempotent; if you terminate an instance more than once, each call
- * will succeed. Terminated instances will remain visible after
- * termination (for approximately one hour).
+ * The TerminateInstances operation shuts down one or more instances.
+ * This operation is idempotent; if you terminate an instance more than
+ * once, each call will succeed.
  * </p>
  * <p>
- * <b>NOTE:</b> By default, Amazon EC2 deletes all Amazon EBS volumes
- * that were attached when the instance launched. Amazon EBS volumes
- * attached after instance launch continue running.
+ * Terminated instances will remain visible after termination
+ * (approximately one hour).
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)
  */
 public class TerminateInstancesRequest extends AmazonWebServiceRequest {
 
@@ -97,6 +98,14 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

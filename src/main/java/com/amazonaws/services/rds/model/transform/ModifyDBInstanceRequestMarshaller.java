@@ -32,7 +32,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
     public Request<ModifyDBInstanceRequest> marshall(ModifyDBInstanceRequest modifyDBInstanceRequest) {
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
-        request.addParameter("Version", "2009-10-16");
+        request.addParameter("Version", "2010-01-01");
         if (modifyDBInstanceRequest != null) {
             if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
                 request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
@@ -86,6 +86,11 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest != null) {
             if (modifyDBInstanceRequest.getPreferredMaintenanceWindow() != null) {
                 request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyDBInstanceRequest.getPreferredMaintenanceWindow()));
+            }
+        }
+        if (modifyDBInstanceRequest != null) {
+            if (modifyDBInstanceRequest.isMultiAZ() != null) {
+                request.addParameter("MultiAZ", StringUtils.fromBoolean(modifyDBInstanceRequest.isMultiAZ()));
             }
         }
 

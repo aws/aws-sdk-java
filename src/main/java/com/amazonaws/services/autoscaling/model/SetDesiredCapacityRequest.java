@@ -16,9 +16,16 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest) SetDesiredCapacity operation}.
  * <p>
- * 
+ * Adjusts the desired size of the AutoScalingGroup by initiating
+ * scaling activities. When reducing the size of the group, it is not
+ * possible to define which EC2 instances will be terminated. This
+ * applies to any auto-scaling decisions that might result in the
+ * termination of instances.
  * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest)
  */
 public class SetDesiredCapacityRequest extends AmazonWebServiceRequest {
 
@@ -116,6 +123,14 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

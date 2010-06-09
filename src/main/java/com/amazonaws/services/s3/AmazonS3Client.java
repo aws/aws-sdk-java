@@ -44,6 +44,7 @@ import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
 import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.auth.AWSCredentials;
@@ -79,9 +80,11 @@ import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
+import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
+import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
 import com.amazonaws.services.s3.model.MultiFactorAuthentication;
@@ -397,9 +400,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listBuckets()
      */
-    public List<Bucket> listBuckets()
+    public List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
             throws AmazonClientException, AmazonServiceException {
-        Request<Void> request = createRequest(null, null, null);
+        Request<Void> request = createRequest(null, null, listBucketsRequest);
 
         signRequest(request, HttpMethodName.GET, null, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
@@ -408,6 +411,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             new S3XmlResponseHandler<List<Bucket>>(new Unmarshallers.ListBucketsUnmarshaller());
 
         return (List<Bucket>)client.execute(httpRequest, responseHandler, errorResponseHandler);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#listBuckets()
+     */
+    public List<Bucket> listBuckets()
+            throws AmazonClientException, AmazonServiceException {
+        return listBuckets(new ListBucketsRequest());
     }
 
     /* (non-Javadoc)
@@ -458,12 +469,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public Bucket createBucket(CreateBucketRequest createBucketRequest)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(createBucketRequest, "The CreateBucketRequest parameter must be specified when creating a bucket");
+        assertParameterNotNull(createBucketRequest,
+                "The CreateBucketRequest parameter must be specified when creating a bucket");
 
         String bucketName = createBucketRequest.getBucketName();
         String region = createBucketRequest.getRegion();
 
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when creating a bucket");
+        assertParameterNotNull(bucketName,
+                "The bucket name parameter must be specified when creating a bucket");
 
         if (bucketName != null) bucketName = bucketName.trim();
         bucketNameUtils.validateBucketName(bucketName);
@@ -799,17 +812,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(deleteBucketRequest, "The DeleteBucketRequest parameter must be specified when deleting a bucket");
+        assertParameterNotNull(deleteBucketRequest,
+                "The DeleteBucketRequest parameter must be specified when deleting a bucket");
 
         String bucketName = deleteBucketRequest.getBucketName();
-
-        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when deleting a bucket");
+        assertParameterNotNull(bucketName,
+                "The bucket name parameter must be specified when deleting a bucket");
 
         Request<Void> request = createRequest(bucketName, null, deleteBucketRequest);
-
         signRequest(request, HttpMethodName.DELETE, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.DELETE);
-
         client.execute(httpRequest, voidResponseHandler, errorResponseHandler);
     }
 
@@ -829,6 +841,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throws AmazonClientException, AmazonServiceException {
         return putObject(new PutObjectRequest(bucketName, key, input, metadata));
     }
+
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(com.amazonaws.services.s3.model.PutObjectRequest)
@@ -1241,13 +1254,48 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws AmazonClientException {
-        assertParameterNotNull(bucketName,
-                "The bucket name parameter must be specified when generating a pre-signed URL");
-        assertParameterNotNull(expiration,
-                "The expiration parameter must be specified when generating a pre-signed URL");
+        return generatePresignedUrl(bucketName, key, expiration, HttpMethod.GET);
+    }
 
-        Request<Void> request = createRequest(bucketName, key, null);
-        presignRequest(request, HttpMethodName.GET, bucketName, key, expiration, null);
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#generatePresignedUrl(java.lang.String, java.lang.String, java.util.Date, com.amazonaws.HttpMethod)
+     */
+    public URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
+            throws AmazonClientException {
+        GeneratePresignedUrlRequest request = new GeneratePresignedUrlRequest(bucketName, key, method);
+        request.setExpiration(expiration);
+
+        return generatePresignedUrl(request);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#generatePresignedUrl(com.amazonaws.services.s3.model.GeneratePresignedUrlRequest)
+     */
+    public URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
+            throws AmazonClientException {
+        assertParameterNotNull(generatePresignedUrlRequest,
+            "The request parameter must be specified when generating a pre-signed URL");
+
+        String bucketName = generatePresignedUrlRequest.getBucketName();
+        String key = generatePresignedUrlRequest.getKey();
+
+        assertParameterNotNull(bucketName,
+            "The bucket name parameter must be specified when generating a pre-signed URL");
+        assertParameterNotNull(generatePresignedUrlRequest.getMethod(),
+            "The HTTP method request parameter must be specified when generating a pre-signed URL");
+
+        if (generatePresignedUrlRequest.getExpiration() == null) {
+            generatePresignedUrlRequest.setExpiration(
+                    new Date(System.currentTimeMillis() + 1000 * 60 * 15));
+        }
+
+        Request<Void> request = createRequest(bucketName, key, generatePresignedUrlRequest);
+        for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
+            request.addParameter(entry.getKey(), entry.getValue());
+        }
+
+        presignRequest(request, generatePresignedUrlRequest.getMethod(),
+                bucketName, key, generatePresignedUrlRequest.getExpiration(), null);
 
         return ServiceUtils.convertRequestToUrl(request);
     }
@@ -1476,8 +1524,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The optional sub-resource being requested as part of the
      *            request (ex: "location", "acl", "logging", or "torrent".
      */
-    private <T> void presignRequest(Request<T> request, HttpMethodName methodName,
+    private <T> void presignRequest(Request<T> request, HttpMethod methodName,
             String bucketName, String key, Date expiration, String subResource) {
+        // Run any additional request handlers if necessary
+        if (requestHandlers != null) {
+            for (RequestHandler requestHandler : requestHandlers) {
+                request = requestHandler.handleRequest(request);
+            }
+        }
+
         try {
             String resourcePath =
                 "/" +
@@ -1487,6 +1542,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             new S3QueryStringSigner<T>(awsCredentials, methodName.toString(), resourcePath, expiration).sign(request);
         } catch (SignatureException e) {
             throw new AmazonClientException("Unable to sign request: " + e.getMessage(), e);
+        }
+
+        // The Amazon S3 DevPay token header is a special exception and can be safely moved
+        // from the request's headers into the query string to ensure that it travels along
+        // with the pre-signed URL when it's sent back to Amazon S3.
+        if (request.getHeaders().containsKey(Headers.SECURITY_TOKEN)) {
+            String value = request.getHeaders().get(Headers.SECURITY_TOKEN);
+            request.addParameter(Headers.SECURITY_TOKEN, value);
+            request.getHeaders().remove(Headers.SECURITY_TOKEN);
         }
     }
 

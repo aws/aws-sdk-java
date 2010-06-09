@@ -16,9 +16,13 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest) DeleteDBParameterGroup operation}.
  * <p>
- * 
+ * This API deletes a particular DBParameterGroup. The DBParameterGroup
+ * cannot be associated with any RDS instances to be deleted.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */
 public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
 
@@ -68,6 +72,14 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

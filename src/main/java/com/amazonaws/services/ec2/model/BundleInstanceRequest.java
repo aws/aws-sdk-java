@@ -16,9 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest) BundleInstance operation}.
  * <p>
- * 
+ * The BundleInstance operation request that an instance is bundled the
+ * next time it boots. The bundling process creates a new image from a
+ * running instance and stores the AMI data in S3. Once bundled, the
+ * image must be registered in the normal way using the RegisterImage
+ * API.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#bundleInstance(BundleInstanceRequest)
  */
 public class BundleInstanceRequest extends AmazonWebServiceRequest {
 
@@ -100,6 +107,14 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

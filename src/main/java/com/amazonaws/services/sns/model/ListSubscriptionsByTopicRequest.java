@@ -16,7 +16,16 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * List Subscriptions By Topic Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest) ListSubscriptionsByTopic operation}.
+ * <p>
+ * The ListSubscriptionsByTopic action returns a list of the
+ * subscriptions to a specific topic. Each call returns a limited list of
+ * subscriptions. If there are more subscriptions, a NextToken is also
+ * returned. Use the NextToken parameter in a new
+ * ListSubscriptionsByTopic call to get further results.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptionsByTopic(ListSubscriptionsByTopicRequest)
  */
 public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
 
@@ -116,6 +125,14 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

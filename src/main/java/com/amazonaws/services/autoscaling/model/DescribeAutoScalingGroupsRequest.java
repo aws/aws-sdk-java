@@ -16,9 +16,15 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest) DescribeAutoScalingGroups operation}.
  * <p>
- * 
+ * Returns a full description of the AutoScalingGroup instances
+ * specified in the given list. This includes all Amazon EC2 instances
+ * that are members of the Auto Scaling group. If a list of names is not
+ * provided, then the full details of all AutoScalingGroups is returned.
  * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)
  */
 public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest {
 
@@ -89,6 +95,14 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

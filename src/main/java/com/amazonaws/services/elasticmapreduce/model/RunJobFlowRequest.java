@@ -16,9 +16,25 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#runJobFlow(RunJobFlowRequest) RunJobFlow operation}.
  * <p>
- * Input to the RunJobFlow operation.
+ * RunJobFlow creates and starts running a new job flow. The job flow
+ * will run the steps specified. Once the job flow completes, the EC2
+ * cluster is stopped and the HDFS partition is lost. To prevent loss of
+ * data, configure the last step of the job flow to store results in
+ * Amazon S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+ * parameter is set to TRUE, the job flow will transition to the WAITING
+ * state rather than shutting down once the steps have completed.
  * </p>
+ * <p>
+ * A maximum of 256 steps are allowed in each job flow.
+ * </p>
+ * <p>
+ * For long running job flows, we recommended that you periodically store
+ * your results.
+ * </p>
+ *
+ * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#runJobFlow(RunJobFlowRequest)
  */
 public class RunJobFlowRequest extends AmazonWebServiceRequest {
 
@@ -359,6 +375,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,17 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest) DescribeLaunchConfigurations operation}.
  * <p>
- * 
+ * Returns a full description of the launch configurations given the
+ * specified names.
  * </p>
+ * <p>
+ * If no names are specified, then the full details of all launch
+ * configurations are returned.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest)
  */
 public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest {
 
@@ -191,6 +199,14 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

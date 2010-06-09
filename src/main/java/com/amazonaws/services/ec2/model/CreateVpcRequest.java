@@ -16,9 +16,21 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest) CreateVpc operation}.
  * <p>
- * 
+ * Creates a VPC with the CIDR block you specify. The smallest VPC you
+ * can create uses a /28 netmask (16 IP addresses), and the largest uses
+ * a /18 netmask (16,384 IP addresses). To help you decide how big to
+ * make your VPC, go to the topic about creating VPCs in the Amazon
+ * Virtual Private Cloud Developer Guide.
  * </p>
+ * <p>
+ * By default, each instance you launch in the VPC has the default DHCP
+ * options (the standard EC2 host name, no domain name, no DNS server, no
+ * NTP server, and no NetBIOS server or node type).
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)
  */
 public class CreateVpcRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +73,14 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

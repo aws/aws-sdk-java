@@ -16,10 +16,14 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
  * <p>
- * A request to describe the Amazon EBS volumes that you own. If you do
- * not specify any volume IDs, all the volumes you own will be described.
+ * Describes the status of the indicated or, in lieu of any specified,
+ * all volumes belonging to the caller. Volumes that have been deleted
+ * are not described.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)
  */
 public class DescribeVolumesRequest extends AmazonWebServiceRequest {
 
@@ -90,6 +94,14 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

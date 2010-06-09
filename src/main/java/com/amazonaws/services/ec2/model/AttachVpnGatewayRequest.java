@@ -16,9 +16,15 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest) AttachVpnGateway operation}.
  * <p>
- * 
+ * Attaches a VPN gateway to a VPC. This is the last step required to
+ * get your VPC fully connected to your data center before launching
+ * instances in it. For more information, go to Process for Using Amazon
+ * VPC in the Amazon Virtual Private Cloud Developer Guide.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)
  */
 public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
 
@@ -100,6 +106,14 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

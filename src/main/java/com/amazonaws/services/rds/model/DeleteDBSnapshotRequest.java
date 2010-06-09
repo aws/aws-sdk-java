@@ -16,9 +16,13 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest) DeleteDBSnapshot operation}.
  * <p>
- * 
+ * This API is used to delete a DBSnapshot. The DBSnapshot must be in
+ * the "available" state to be deleted.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)
  */
 public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +65,14 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

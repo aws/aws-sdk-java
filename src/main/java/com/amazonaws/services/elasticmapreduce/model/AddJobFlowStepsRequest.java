@@ -16,9 +16,30 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest) AddJobFlowSteps operation}.
  * <p>
- * The input argument to the AddJobFlow operation.
+ * AddJobFlowSteps adds new steps to a running job flow. The maximum
+ * number of steps in a job flow is 256.
  * </p>
+ * <p>
+ * A step specifies the location of a JAR file stored either on the
+ * master node of the job flow or in Amazon S3. Each step is performed by
+ * the main function of the main class of the JAR file. The main class
+ * can be specified either in the manifest of the JAR or by using the
+ * MainFunction parameter of the step.
+ * </p>
+ * <p>
+ * SElastic MapReduce executes each step in the order listed. For a step
+ * to be considered complete, the main function must exit with a zero
+ * exit code and all Hadoop jobs started while the step was running must
+ * have completed and run successfully.
+ * </p>
+ * <p>
+ * You can only add steps to a job flow that is in one of the following
+ * states: STARTING, BOOTSTAPPING, RUNNING or WAITING.
+ * </p>
+ *
+ * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)
  */
 public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
 
@@ -142,6 +163,14 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

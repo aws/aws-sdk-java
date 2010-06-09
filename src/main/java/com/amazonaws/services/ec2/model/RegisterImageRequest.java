@@ -16,29 +16,28 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest) RegisterImage operation}.
  * <p>
- * A request to register an AMI with Amazon EC2. Images must be
- * registered before they can be launched. To launch instances, use the
- * RunInstances operation.
+ * The RegisterImage operation registers an AMI with Amazon EC2. Images
+ * must be registered before they can be launched. For more information,
+ * see RunInstances.
  * </p>
  * <p>
  * Each AMI is associated with an unique ID which is provided by the
- * Amazon EC2 service through this operation. If needed, you can
- * deregister an AMI at any time.
+ * Amazon EC2 service through the RegisterImage operation. During
+ * registration, Amazon EC2 retrieves the specified image manifest from
+ * Amazon S3 and verifies that the image is owned by the user registering
+ * the image.
  * </p>
  * <p>
- * <b>NOTE:</b> AMIs backed by Amazon EBS are automatically registered
- * when you create the image. However, you can use this to register a
- * snapshot of an instance backed by Amazon EBS. Amazon EBS snapshots are
- * not guaranteed to be bootable. For information on creating AMIs backed
- * by Amazon EBS, go to the Amazon Elastic Compute Cloud Developer Guide
- * or Amazon Elastic Compute Cloud User Guide.
- * </p>
- * <p>
- * Any modifications to an AMI backed by Amazon S3 invalidates this
+ * The image manifest is retrieved once and stored within the Amazon
+ * EC2. Any modifications to an image in Amazon S3 invalidates this
  * registration. If you make changes to an image, deregister the previous
- * image and register the new image.
+ * image and register the new image. For more information, see
+ * DeregisterImage.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest)
  */
 public class RegisterImageRequest extends AmazonWebServiceRequest {
 
@@ -435,6 +434,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

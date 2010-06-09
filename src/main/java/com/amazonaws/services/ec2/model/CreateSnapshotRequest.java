@@ -16,10 +16,22 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
  * <p>
- * Represents a request to create a snapshot from an <i>Elastic Block
- * Storage</i> (EBS) volume.
+ * Create a snapshot of the volume identified by volume ID. A volume
+ * does not have to be detached at the time the snapshot is taken.
  * </p>
+ * <p>
+ * <b>NOTE:</b> Snapshot creation requires that the system is in a
+ * consistent state. For instance, this means that if taking a snapshot
+ * of a database, the tables must be read-only locked to ensure that the
+ * snapshot will not contain a corrupted version of the database.
+ * Therefore, be careful when using this API to ensure that the system
+ * remains in the consistent state until the create snapshot status has
+ * returned.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest)
  */
 public class CreateSnapshotRequest extends AmazonWebServiceRequest {
 
@@ -101,6 +113,14 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,14 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest) CreateKeyPair operation}.
  * <p>
- * Represents a request to create a new EC2 key pair.
+ * The CreateKeyPair operation creates a new 2048 bit RSA key pair and
+ * returns a unique ID that can be used to reference this key pair when
+ * launching new instances. For more information, see RunInstances.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)
  */
 public class CreateKeyPairRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +66,14 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

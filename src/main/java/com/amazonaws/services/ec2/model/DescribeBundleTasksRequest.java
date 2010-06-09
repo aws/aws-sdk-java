@@ -16,9 +16,15 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest) DescribeBundleTasks operation}.
  * <p>
- * A request to describe the bundle tasks for the user's account.
+ * The DescribeBundleTasks operation describes in-progress and recent
+ * bundle tasks. Complete and failed tasks are removed from the list a
+ * short time after completion. If no bundle ids are given, all bundle
+ * tasks are returned.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest)
  */
 public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
 
@@ -89,6 +95,14 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

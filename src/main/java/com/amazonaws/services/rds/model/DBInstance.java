@@ -121,6 +121,8 @@ public class DBInstance {
      */
     private java.util.Date latestRestorableTime;
 
+    private Boolean multiAZ;
+
     /**
      * Specifies a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
@@ -849,6 +851,57 @@ public class DBInstance {
     }
     
     
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean isMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     */
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean getMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -871,6 +924,7 @@ public class DBInstance {
         sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
         sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
         sb.append("LatestRestorableTime: " + latestRestorableTime + ", ");
+        sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("}");
         return sb.toString();
     }

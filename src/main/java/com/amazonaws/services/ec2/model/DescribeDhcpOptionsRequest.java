@@ -16,7 +16,20 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Describe Dhcp Options Request
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest) DescribeDhcpOptions operation}.
+ * <p>
+ * Gives you information about one or more sets of DHCP options. You can
+ * specify one or more DHCP options set IDs, or no IDs (to describe all
+ * your sets of DHCP options). The returned information consists of:
+ * </p>
+ * 
+ * <ul>
+ * <li> The DHCP options set ID </li>
+ * <li> The options </li>
+ * 
+ * </ul>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest)
  */
 public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
 
@@ -84,6 +97,14 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

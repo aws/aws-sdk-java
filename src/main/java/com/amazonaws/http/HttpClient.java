@@ -22,6 +22,7 @@ import java.util.Map.Entry;
 
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HostConfiguration;
+import org.apache.commons.httpclient.HttpConnectionManager;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.httpclient.HttpMethodRetryHandler;
@@ -215,6 +216,19 @@ public class HttpClient {
                     method.releaseConnection();
                 }
             }
+        }
+    }
+
+    /**
+     * Shuts down this HTTP client object, releasing any resources that might be
+     * held open. This is an optional method, and callers are not expected to
+     * call it, but can if they want to explicitly release any open resources.
+     * Once a client has been shutdown, it cannot be used to make more requests.
+     */
+    public void shutdown() {
+        HttpConnectionManager connectionManager = httpClient.getHttpConnectionManager();
+        if (connectionManager instanceof MultiThreadedHttpConnectionManager) {
+            ((MultiThreadedHttpConnectionManager)connectionManager).shutdown();
         }
     }
 

@@ -16,9 +16,15 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest) DeleteDhcpOptions operation}.
  * <p>
- * 
+ * Deletes a set of DHCP options that you specify. Amazon VPC returns an
+ * error if the set of options you specify is currently associated with a
+ * VPC. You can disassociate the set of options by associating either a
+ * new set of options or the default options with the VPC.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#deleteDhcpOptions(DeleteDhcpOptionsRequest)
  */
 public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +67,14 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

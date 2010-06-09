@@ -16,7 +16,13 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Set Topic Attributes Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest) SetTopicAttributes operation}.
+ * <p>
+ * The SetTopicAttributes action allows a topic owner to set an attribute
+ * of the topic to a new value.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)
  */
 public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
 
@@ -166,6 +172,14 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

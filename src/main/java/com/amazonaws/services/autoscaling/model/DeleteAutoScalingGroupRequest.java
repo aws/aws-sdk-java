@@ -16,9 +16,28 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest) DeleteAutoScalingGroup operation}.
  * <p>
- * 
+ * Deletes all configuration for the specified AutoScalingGroup and
+ * deletes the group.
  * </p>
+ * <p>
+ * In order to successfully call this API, no triggers can be currently
+ * in progress. Once this call successfully executes, no further triggers
+ * will begin, and the specified AutoScalingGroup will not be available
+ * for use in other API calls.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> The client cannot delete an AutoScalingGroup if it
+ * contains instances or if there are scaling activities in progress.
+ * Before attempting to delete an AutoScalingGroup, call the
+ * UpdateAutoScalingGroup operation to set the minimum and maximum size
+ * of the AutoScalingGroup to zero. This will remove all instances and
+ * avoid problems with a previously set trigger preventing the deletion
+ * of the AutoScalingGroup.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest)
  */
 public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
@@ -77,6 +96,14 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

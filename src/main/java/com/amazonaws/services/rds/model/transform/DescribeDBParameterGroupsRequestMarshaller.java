@@ -32,7 +32,7 @@ public class DescribeDBParameterGroupsRequestMarshaller implements Marshaller<Re
     public Request<DescribeDBParameterGroupsRequest> marshall(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
         Request<DescribeDBParameterGroupsRequest> request = new DefaultRequest<DescribeDBParameterGroupsRequest>(describeDBParameterGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBParameterGroups");
-        request.addParameter("Version", "2009-10-16");
+        request.addParameter("Version", "2010-01-01");
         if (describeDBParameterGroupsRequest != null) {
             if (describeDBParameterGroupsRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(describeDBParameterGroupsRequest.getDBParameterGroupName()));

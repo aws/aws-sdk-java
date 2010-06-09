@@ -16,9 +16,23 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest) RequestSpotInstances operation}.
  * <p>
- * The RequestSpotInstances data type.
+ * Creates a Spot Instance request.
  * </p>
+ * <p>
+ * Spot Instances are instances that Amazon EC2 starts on your behalf
+ * when the maximum price that you specify exceeds the current Spot
+ * Price. Amazon EC2 periodically sets the Spot Price based on available
+ * Spot Instance capacity and current spot instance requests.
+ * </p>
+ * <p>
+ * For conceptual information about Spot Instances, refer to the Amazon
+ * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+ * User Guide.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
  */
 public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
 
@@ -436,6 +450,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,10 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest) ResetSnapshotAttribute operation}.
  * <p>
- * A request to reset an attribute on a snapshot back to its default
- * value. Only one attribute can be reset per request.
+ * Resets permission settings for the specified snapshot.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#resetSnapshotAttribute(ResetSnapshotAttributeRequest)
  */
 public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
 
@@ -108,6 +110,14 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

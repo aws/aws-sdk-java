@@ -16,9 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest) DescribeAddresses operation}.
  * <p>
- * A request to describe a user's available Elasitc IPs.
+ * The DescribeAddresses operation lists elastic IP addresses assigned
+ * to your account.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest)
  */
 public class DescribeAddressesRequest extends AmazonWebServiceRequest {
 
@@ -89,6 +93,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

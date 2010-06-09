@@ -16,9 +16,13 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
  * <p>
- * 
+ * This API returns the default engine and system parameter information
+ * for the specified database engine.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
  */
 public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest {
 
@@ -181,6 +185,14 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

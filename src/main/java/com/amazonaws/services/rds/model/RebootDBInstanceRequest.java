@@ -16,9 +16,18 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest) RebootDBInstance operation}.
  * <p>
- * 
+ * The RebootDBInstance API reboots a previously provisioned RDS
+ * instance. This API results in the application of modified
+ * DBParameterGroup parameters with ApplyStatus of pending-reboot to the
+ * RDS instance. This action is taken as soon as possible, and results in
+ * a momentary outage to the RDS instance during which the RDS instance
+ * status is set to rebooting. A DBInstance event is created when the
+ * reboot is completed.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest)
  */
 public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
 
@@ -68,6 +77,14 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

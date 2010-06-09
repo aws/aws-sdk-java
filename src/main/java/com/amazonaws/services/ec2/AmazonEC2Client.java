@@ -16,10 +16,14 @@ package com.amazonaws.services.ec2;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,11 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.LegacyErrorUnmarshaller;
 
@@ -43,6 +49,7 @@ import com.amazonaws.services.ec2.model.transform.*;
  * Client for accessing AmazonEC2.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * <p>
  * Amazon Elastic Compute Cloud (Amazon EC2) is a web service that
  * provides resizable compute capacity in the cloud. It is designed to
@@ -158,7 +165,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void rebootInstances(RebootInstancesRequest rebootInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RebootInstancesRequest> request = new RebootInstancesRequestMarshaller().marshall(rebootInstancesRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -233,7 +240,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public RunInstancesResult runInstances(RunInstancesRequest runInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RunInstancesRequest> request = new RunInstancesRequestMarshaller().marshall(runInstancesRequest);
-        return invoke(request, "//RunInstancesResponse", new RunInstancesResultUnmarshaller());
+        return invoke(request, new RunInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -261,7 +268,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeReservedInstancesResult describeReservedInstances(DescribeReservedInstancesRequest describeReservedInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeReservedInstancesRequest> request = new DescribeReservedInstancesRequestMarshaller().marshall(describeReservedInstancesRequest);
-        return invoke(request, "//DescribeReservedInstancesResponse", new DescribeReservedInstancesResultUnmarshaller());
+        return invoke(request, new DescribeReservedInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -296,7 +303,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSubnetsResult describeSubnets(DescribeSubnetsRequest describeSubnetsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSubnetsRequest> request = new DescribeSubnetsRequestMarshaller().marshall(describeSubnetsRequest);
-        return invoke(request, "//DescribeSubnetsResponse", new DescribeSubnetsResultUnmarshaller());
+        return invoke(request, new DescribeSubnetsResultStaxUnmarshaller());
     }
     
     /**
@@ -330,7 +337,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeAvailabilityZonesResult describeAvailabilityZones(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeAvailabilityZonesRequest> request = new DescribeAvailabilityZonesRequestMarshaller().marshall(describeAvailabilityZonesRequest);
-        return invoke(request, "//DescribeAvailabilityZonesResponse", new DescribeAvailabilityZonesResultUnmarshaller());
+        return invoke(request, new DescribeAvailabilityZonesResultStaxUnmarshaller());
     }
     
     /**
@@ -356,7 +363,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DetachVolumeResult detachVolume(DetachVolumeRequest detachVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DetachVolumeRequest> request = new DetachVolumeRequestMarshaller().marshall(detachVolumeRequest);
-        return invoke(request, "//DetachVolumeResponse", new DetachVolumeResultUnmarshaller());
+        return invoke(request, new DetachVolumeResultStaxUnmarshaller());
     }
     
     /**
@@ -379,7 +386,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteKeyPair(DeleteKeyPairRequest deleteKeyPairRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteKeyPairRequest> request = new DeleteKeyPairRequestMarshaller().marshall(deleteKeyPairRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -418,7 +425,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeInstancesResult describeInstances(DescribeInstancesRequest describeInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeInstancesRequest> request = new DescribeInstancesRequestMarshaller().marshall(describeInstancesRequest);
-        return invoke(request, "//DescribeInstancesResponse", new DescribeInstancesResultUnmarshaller());
+        return invoke(request, new DescribeInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -491,7 +498,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeImagesResult describeImages(DescribeImagesRequest describeImagesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeImagesRequest> request = new DescribeImagesRequestMarshaller().marshall(describeImagesRequest);
-        return invoke(request, "//DescribeImagesResponse", new DescribeImagesResultUnmarshaller());
+        return invoke(request, new DescribeImagesResultStaxUnmarshaller());
     }
     
     /**
@@ -529,7 +536,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public StartInstancesResult startInstances(StartInstancesRequest startInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<StartInstancesRequest> request = new StartInstancesRequestMarshaller().marshall(startInstancesRequest);
-        return invoke(request, "//StartInstancesResponse", new StartInstancesResultUnmarshaller());
+        return invoke(request, new StartInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -556,7 +563,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public UnmonitorInstancesResult unmonitorInstances(UnmonitorInstancesRequest unmonitorInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UnmonitorInstancesRequest> request = new UnmonitorInstancesRequestMarshaller().marshall(unmonitorInstancesRequest);
-        return invoke(request, "//UnmonitorInstancesResponse", new UnmonitorInstancesResultUnmarshaller());
+        return invoke(request, new UnmonitorInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -585,7 +592,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public AttachVpnGatewayResult attachVpnGateway(AttachVpnGatewayRequest attachVpnGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AttachVpnGatewayRequest> request = new AttachVpnGatewayRequestMarshaller().marshall(attachVpnGatewayRequest);
-        return invoke(request, "//AttachVpnGatewayResponse", new AttachVpnGatewayResultUnmarshaller());
+        return invoke(request, new AttachVpnGatewayResultStaxUnmarshaller());
     }
     
     /**
@@ -609,7 +616,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void modifyInstanceAttribute(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ModifyInstanceAttributeRequest> request = new ModifyInstanceAttributeRequestMarshaller().marshall(modifyInstanceAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -635,7 +642,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteDhcpOptions(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteDhcpOptionsRequest> request = new DeleteDhcpOptionsRequestMarshaller().marshall(deleteDhcpOptionsRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -667,7 +674,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteSecurityGroup(DeleteSecurityGroupRequest deleteSecurityGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteSecurityGroupRequest> request = new DeleteSecurityGroupRequestMarshaller().marshall(deleteSecurityGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -697,7 +704,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateImageResult createImage(CreateImageRequest createImageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateImageRequest> request = new CreateImageRequestMarshaller().marshall(createImageRequest);
-        return invoke(request, "//CreateImageResponse", new CreateImageResultUnmarshaller());
+        return invoke(request, new CreateImageResultStaxUnmarshaller());
     }
     
     /**
@@ -741,7 +748,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AuthorizeSecurityGroupIngressRequest> request = new AuthorizeSecurityGroupIngressRequestMarshaller().marshall(authorizeSecurityGroupIngressRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -768,7 +775,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSpotInstanceRequestsResult describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSpotInstanceRequestsRequest> request = new DescribeSpotInstanceRequestsRequestMarshaller().marshall(describeSpotInstanceRequestsRequest);
-        return invoke(request, "//DescribeSpotInstanceRequestsResponse", new DescribeSpotInstanceRequestsResultUnmarshaller());
+        return invoke(request, new DescribeSpotInstanceRequestsResultStaxUnmarshaller());
     }
     
     /**
@@ -800,7 +807,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void associateDhcpOptions(AssociateDhcpOptionsRequest associateDhcpOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AssociateDhcpOptionsRequest> request = new AssociateDhcpOptionsRequestMarshaller().marshall(associateDhcpOptionsRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -833,7 +840,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public GetPasswordDataResult getPasswordData(GetPasswordDataRequest getPasswordDataRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetPasswordDataRequest> request = new GetPasswordDataRequestMarshaller().marshall(getPasswordDataRequest);
-        return invoke(request, "//GetPasswordDataResponse", new GetPasswordDataResultUnmarshaller());
+        return invoke(request, new GetPasswordDataResultStaxUnmarshaller());
     }
     
     /**
@@ -868,7 +875,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateVpcResult createVpc(CreateVpcRequest createVpcRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateVpcRequest> request = new CreateVpcRequestMarshaller().marshall(createVpcRequest);
-        return invoke(request, "//CreateVpcResponse", new CreateVpcResultUnmarshaller());
+        return invoke(request, new CreateVpcResultStaxUnmarshaller());
     }
     
     /**
@@ -906,7 +913,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public StopInstancesResult stopInstances(StopInstancesRequest stopInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<StopInstancesRequest> request = new StopInstancesRequestMarshaller().marshall(stopInstancesRequest);
-        return invoke(request, "//StopInstancesResponse", new StopInstancesResultUnmarshaller());
+        return invoke(request, new StopInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -944,7 +951,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeCustomerGatewaysResult describeCustomerGateways(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeCustomerGatewaysRequest> request = new DescribeCustomerGatewaysRequestMarshaller().marshall(describeCustomerGatewaysRequest);
-        return invoke(request, "//DescribeCustomerGatewaysResponse", new DescribeCustomerGatewaysResultUnmarshaller());
+        return invoke(request, new DescribeCustomerGatewaysResultStaxUnmarshaller());
     }
     
     /**
@@ -978,7 +985,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void createSecurityGroup(CreateSecurityGroupRequest createSecurityGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateSecurityGroupRequest> request = new CreateSecurityGroupRequestMarshaller().marshall(createSecurityGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1017,7 +1024,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSpotPriceHistoryResult describeSpotPriceHistory(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSpotPriceHistoryRequest> request = new DescribeSpotPriceHistoryRequestMarshaller().marshall(describeSpotPriceHistoryRequest);
-        return invoke(request, "//DescribeSpotPriceHistoryResponse", new DescribeSpotPriceHistoryResultUnmarshaller());
+        return invoke(request, new DescribeSpotPriceHistoryResultStaxUnmarshaller());
     }
     
     /**
@@ -1044,7 +1051,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeRegionsResult describeRegions(DescribeRegionsRequest describeRegionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeRegionsRequest> request = new DescribeRegionsRequestMarshaller().marshall(describeRegionsRequest);
-        return invoke(request, "//DescribeRegionsResponse", new DescribeRegionsResultUnmarshaller());
+        return invoke(request, new DescribeRegionsResultStaxUnmarshaller());
     }
     
     /**
@@ -1074,7 +1081,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateDhcpOptionsResult createDhcpOptions(CreateDhcpOptionsRequest createDhcpOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDhcpOptionsRequest> request = new CreateDhcpOptionsRequestMarshaller().marshall(createDhcpOptionsRequest);
-        return invoke(request, "//CreateDhcpOptionsResponse", new CreateDhcpOptionsResultUnmarshaller());
+        return invoke(request, new CreateDhcpOptionsResultStaxUnmarshaller());
     }
     
     /**
@@ -1098,7 +1105,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void resetSnapshotAttribute(ResetSnapshotAttributeRequest resetSnapshotAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ResetSnapshotAttributeRequest> request = new ResetSnapshotAttributeRequestMarshaller().marshall(resetSnapshotAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1132,7 +1139,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSecurityGroupsResult describeSecurityGroups(DescribeSecurityGroupsRequest describeSecurityGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSecurityGroupsRequest> request = new DescribeSecurityGroupsRequestMarshaller().marshall(describeSecurityGroupsRequest);
-        return invoke(request, "//DescribeSecurityGroupsResponse", new DescribeSecurityGroupsResultUnmarshaller());
+        return invoke(request, new DescribeSecurityGroupsResultStaxUnmarshaller());
     }
     
     /**
@@ -1170,7 +1177,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public RequestSpotInstancesResult requestSpotInstances(RequestSpotInstancesRequest requestSpotInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RequestSpotInstancesRequest> request = new RequestSpotInstancesRequestMarshaller().marshall(requestSpotInstancesRequest);
-        return invoke(request, "//RequestSpotInstancesResponse", new RequestSpotInstancesResultUnmarshaller());
+        return invoke(request, new RequestSpotInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -1200,7 +1207,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void detachVpnGateway(DetachVpnGatewayRequest detachVpnGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DetachVpnGatewayRequest> request = new DetachVpnGatewayRequestMarshaller().marshall(detachVpnGatewayRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1224,7 +1231,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deregisterImage(DeregisterImageRequest deregisterImageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeregisterImageRequest> request = new DeregisterImageRequestMarshaller().marshall(deregisterImageRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1257,7 +1264,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSpotDatafeedSubscriptionRequest> request = new DescribeSpotDatafeedSubscriptionRequestMarshaller().marshall(describeSpotDatafeedSubscriptionRequest);
-        return invoke(request, "//DescribeSpotDatafeedSubscriptionResponse", new DescribeSpotDatafeedSubscriptionResultUnmarshaller());
+        return invoke(request, new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller());
     }
     
     /**
@@ -1282,7 +1289,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteSubnet(DeleteSubnetRequest deleteSubnetRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteSubnetRequest> request = new DeleteSubnetRequestMarshaller().marshall(deleteSubnetRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1310,7 +1317,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateVpnGatewayResult createVpnGateway(CreateVpnGatewayRequest createVpnGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateVpnGatewayRequest> request = new CreateVpnGatewayRequestMarshaller().marshall(createVpnGatewayRequest);
-        return invoke(request, "//CreateVpnGatewayResponse", new CreateVpnGatewayResultUnmarshaller());
+        return invoke(request, new CreateVpnGatewayResultStaxUnmarshaller());
     }
     
     /**
@@ -1340,7 +1347,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CancelBundleTaskResult cancelBundleTask(CancelBundleTaskRequest cancelBundleTaskRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CancelBundleTaskRequest> request = new CancelBundleTaskRequestMarshaller().marshall(cancelBundleTaskRequest);
-        return invoke(request, "//CancelBundleTaskResponse", new CancelBundleTaskResultUnmarshaller());
+        return invoke(request, new CancelBundleTaskResultStaxUnmarshaller());
     }
     
     /**
@@ -1368,7 +1375,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteVpnGateway(DeleteVpnGatewayRequest deleteVpnGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteVpnGatewayRequest> request = new DeleteVpnGatewayRequestMarshaller().marshall(deleteVpnGatewayRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1407,7 +1414,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CancelSpotInstanceRequestsResult cancelSpotInstanceRequests(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CancelSpotInstanceRequestsRequest> request = new CancelSpotInstanceRequestsRequestMarshaller().marshall(cancelSpotInstanceRequestsRequest);
-        return invoke(request, "//CancelSpotInstanceRequestsResponse", new CancelSpotInstanceRequestsResultUnmarshaller());
+        return invoke(request, new CancelSpotInstanceRequestsResultStaxUnmarshaller());
     }
     
     /**
@@ -1433,7 +1440,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public AttachVolumeResult attachVolume(AttachVolumeRequest attachVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AttachVolumeRequest> request = new AttachVolumeRequestMarshaller().marshall(attachVolumeRequest);
-        return invoke(request, "//AttachVolumeResponse", new AttachVolumeResultUnmarshaller());
+        return invoke(request, new AttachVolumeResultStaxUnmarshaller());
     }
     
     /**
@@ -1464,7 +1471,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public PurchaseReservedInstancesOfferingResult purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<PurchaseReservedInstancesOfferingRequest> request = new PurchaseReservedInstancesOfferingRequestMarshaller().marshall(purchaseReservedInstancesOfferingRequest);
-        return invoke(request, "//PurchaseReservedInstancesOfferingResponse", new PurchaseReservedInstancesOfferingResultUnmarshaller());
+        return invoke(request, new PurchaseReservedInstancesOfferingResultStaxUnmarshaller());
     }
     
     /**
@@ -1492,7 +1499,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void resetImageAttribute(ResetImageAttributeRequest resetImageAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ResetImageAttributeRequest> request = new ResetImageAttributeRequestMarshaller().marshall(resetImageAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1534,7 +1541,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeVpnConnectionsResult describeVpnConnections(DescribeVpnConnectionsRequest describeVpnConnectionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVpnConnectionsRequest> request = new DescribeVpnConnectionsRequestMarshaller().marshall(describeVpnConnectionsRequest);
-        return invoke(request, "//DescribeVpnConnectionsResponse", new DescribeVpnConnectionsResultUnmarshaller());
+        return invoke(request, new DescribeVpnConnectionsResultStaxUnmarshaller());
     }
     
     /**
@@ -1570,7 +1577,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateSnapshotResult createSnapshot(CreateSnapshotRequest createSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateSnapshotRequest> request = new CreateSnapshotRequestMarshaller().marshall(createSnapshotRequest);
-        return invoke(request, "//CreateSnapshotResponse", new CreateSnapshotResultUnmarshaller());
+        return invoke(request, new CreateSnapshotResultStaxUnmarshaller());
     }
     
     /**
@@ -1594,7 +1601,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteVolume(DeleteVolumeRequest deleteVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteVolumeRequest> request = new DeleteVolumeRequestMarshaller().marshall(deleteVolumeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1618,7 +1625,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void modifySnapshotAttribute(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ModifySnapshotAttributeRequest> request = new ModifySnapshotAttributeRequestMarshaller().marshall(modifySnapshotAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1651,7 +1658,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public TerminateInstancesResult terminateInstances(TerminateInstancesRequest terminateInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<TerminateInstancesRequest> request = new TerminateInstancesRequestMarshaller().marshall(terminateInstancesRequest);
-        return invoke(request, "//TerminateInstancesResponse", new TerminateInstancesResultUnmarshaller());
+        return invoke(request, new TerminateInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -1681,7 +1688,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteSpotDatafeedSubscription(DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteSpotDatafeedSubscriptionRequest> request = new DeleteSpotDatafeedSubscriptionRequestMarshaller().marshall(deleteSpotDatafeedSubscriptionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1716,7 +1723,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeVpcsResult describeVpcs(DescribeVpcsRequest describeVpcsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVpcsRequest> request = new DescribeVpcsRequestMarshaller().marshall(describeVpcsRequest);
-        return invoke(request, "//DescribeVpcsResponse", new DescribeVpcsResultUnmarshaller());
+        return invoke(request, new DescribeVpcsResultStaxUnmarshaller());
     }
     
     /**
@@ -1746,7 +1753,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void associateAddress(AssociateAddressRequest associateAddressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AssociateAddressRequest> request = new AssociateAddressRequestMarshaller().marshall(associateAddressRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1774,7 +1781,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSnapshotAttributeResult describeSnapshotAttribute(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSnapshotAttributeRequest> request = new DescribeSnapshotAttributeRequestMarshaller().marshall(describeSnapshotAttributeRequest);
-        return invoke(request, "//DescribeSnapshotAttributeResponse", new DescribeSnapshotAttributeResultUnmarshaller());
+        return invoke(request, new DescribeSnapshotAttributeResultStaxUnmarshaller());
     }
     
     /**
@@ -1805,7 +1812,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteCustomerGateway(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteCustomerGatewayRequest> request = new DeleteCustomerGatewayRequestMarshaller().marshall(deleteCustomerGatewayRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -1832,7 +1839,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeAddressesResult describeAddresses(DescribeAddressesRequest describeAddressesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeAddressesRequest> request = new DescribeAddressesRequestMarshaller().marshall(describeAddressesRequest);
-        return invoke(request, "//DescribeAddressesResponse", new DescribeAddressesResultUnmarshaller());
+        return invoke(request, new DescribeAddressesResultStaxUnmarshaller());
     }
     
     /**
@@ -1861,7 +1868,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeKeyPairsResult describeKeyPairs(DescribeKeyPairsRequest describeKeyPairsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeKeyPairsRequest> request = new DescribeKeyPairsRequestMarshaller().marshall(describeKeyPairsRequest);
-        return invoke(request, "//DescribeKeyPairsResponse", new DescribeKeyPairsResultUnmarshaller());
+        return invoke(request, new DescribeKeyPairsResultStaxUnmarshaller());
     }
     
     /**
@@ -1889,7 +1896,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeImageAttributeResult describeImageAttribute(DescribeImageAttributeRequest describeImageAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeImageAttributeRequest> request = new DescribeImageAttributeRequestMarshaller().marshall(describeImageAttributeRequest);
-        return invoke(request, "//DescribeImageAttributeResponse", new DescribeImageAttributeResultUnmarshaller());
+        return invoke(request, new DescribeImageAttributeResultStaxUnmarshaller());
     }
     
     /**
@@ -1924,7 +1931,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public ConfirmProductInstanceResult confirmProductInstance(ConfirmProductInstanceRequest confirmProductInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ConfirmProductInstanceRequest> request = new ConfirmProductInstanceRequestMarshaller().marshall(confirmProductInstanceRequest);
-        return invoke(request, "//ConfirmProductInstanceResponse", new ConfirmProductInstanceResultUnmarshaller());
+        return invoke(request, new ConfirmProductInstanceResultStaxUnmarshaller());
     }
     
     /**
@@ -1950,7 +1957,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateVolumeResult createVolume(CreateVolumeRequest createVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateVolumeRequest> request = new CreateVolumeRequestMarshaller().marshall(createVolumeRequest);
-        return invoke(request, "//CreateVolumeResponse", new CreateVolumeResultUnmarshaller());
+        return invoke(request, new CreateVolumeResultStaxUnmarshaller());
     }
     
     /**
@@ -1986,7 +1993,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeVpnGatewaysResult describeVpnGateways(DescribeVpnGatewaysRequest describeVpnGatewaysRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVpnGatewaysRequest> request = new DescribeVpnGatewaysRequestMarshaller().marshall(describeVpnGatewaysRequest);
-        return invoke(request, "//DescribeVpnGatewaysResponse", new DescribeVpnGatewaysResultUnmarshaller());
+        return invoke(request, new DescribeVpnGatewaysResultStaxUnmarshaller());
     }
     
     /**
@@ -2026,7 +2033,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateSubnetResult createSubnet(CreateSubnetRequest createSubnetRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateSubnetRequest> request = new CreateSubnetRequestMarshaller().marshall(createSubnetRequest);
-        return invoke(request, "//CreateSubnetResponse", new CreateSubnetResultUnmarshaller());
+        return invoke(request, new CreateSubnetResultStaxUnmarshaller());
     }
     
     /**
@@ -2057,7 +2064,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeReservedInstancesOfferingsResult describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeReservedInstancesOfferingsRequest> request = new DescribeReservedInstancesOfferingsRequestMarshaller().marshall(describeReservedInstancesOfferingsRequest);
-        return invoke(request, "//DescribeReservedInstancesOfferingsResponse", new DescribeReservedInstancesOfferingsResultUnmarshaller());
+        return invoke(request, new DescribeReservedInstancesOfferingsResultStaxUnmarshaller());
     }
     
     /**
@@ -2085,7 +2092,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeVolumesResult describeVolumes(DescribeVolumesRequest describeVolumesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVolumesRequest> request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
-        return invoke(request, "//DescribeVolumesResponse", new DescribeVolumesResultUnmarshaller());
+        return invoke(request, new DescribeVolumesResultStaxUnmarshaller());
     }
     
     /**
@@ -2108,7 +2115,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteSnapshot(DeleteSnapshotRequest deleteSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteSnapshotRequest> request = new DeleteSnapshotRequestMarshaller().marshall(deleteSnapshotRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2143,7 +2150,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeDhcpOptionsResult describeDhcpOptions(DescribeDhcpOptionsRequest describeDhcpOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDhcpOptionsRequest> request = new DescribeDhcpOptionsRequestMarshaller().marshall(describeDhcpOptionsRequest);
-        return invoke(request, "//DescribeDhcpOptionsResponse", new DescribeDhcpOptionsResultUnmarshaller());
+        return invoke(request, new DescribeDhcpOptionsResultStaxUnmarshaller());
     }
     
     /**
@@ -2169,7 +2176,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public MonitorInstancesResult monitorInstances(MonitorInstancesRequest monitorInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<MonitorInstancesRequest> request = new MonitorInstancesRequestMarshaller().marshall(monitorInstancesRequest);
-        return invoke(request, "//MonitorInstancesResponse", new MonitorInstancesResultUnmarshaller());
+        return invoke(request, new MonitorInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -2196,7 +2203,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void disassociateAddress(DisassociateAddressRequest disassociateAddressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DisassociateAddressRequest> request = new DisassociateAddressRequestMarshaller().marshall(disassociateAddressRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2226,7 +2233,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeBundleTasksResult describeBundleTasks(DescribeBundleTasksRequest describeBundleTasksRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeBundleTasksRequest> request = new DescribeBundleTasksRequestMarshaller().marshall(describeBundleTasksRequest);
-        return invoke(request, "//DescribeBundleTasksResponse", new DescribeBundleTasksResultUnmarshaller());
+        return invoke(request, new DescribeBundleTasksResultStaxUnmarshaller());
     }
     
     /**
@@ -2256,7 +2263,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public BundleInstanceResult bundleInstance(BundleInstanceRequest bundleInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<BundleInstanceRequest> request = new BundleInstanceRequestMarshaller().marshall(bundleInstanceRequest);
-        return invoke(request, "//BundleInstanceResponse", new BundleInstanceResultUnmarshaller());
+        return invoke(request, new BundleInstanceResultStaxUnmarshaller());
     }
     
     /**
@@ -2300,7 +2307,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RevokeSecurityGroupIngressRequest> request = new RevokeSecurityGroupIngressRequestMarshaller().marshall(revokeSecurityGroupIngressRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2325,7 +2332,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteVpc(DeleteVpcRequest deleteVpcRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteVpcRequest> request = new DeleteVpcRequestMarshaller().marshall(deleteVpcRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2358,7 +2365,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public GetConsoleOutputResult getConsoleOutput(GetConsoleOutputRequest getConsoleOutputRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetConsoleOutputRequest> request = new GetConsoleOutputRequestMarshaller().marshall(getConsoleOutputRequest);
-        return invoke(request, "//GetConsoleOutputResponse", new GetConsoleOutputResultUnmarshaller());
+        return invoke(request, new GetConsoleOutputResultStaxUnmarshaller());
     }
     
     /**
@@ -2385,7 +2392,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public AllocateAddressResult allocateAddress(AllocateAddressRequest allocateAddressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AllocateAddressRequest> request = new AllocateAddressRequestMarshaller().marshall(allocateAddressRequest);
-        return invoke(request, "//AllocateAddressResponse", new AllocateAddressResultUnmarshaller());
+        return invoke(request, new AllocateAddressResultStaxUnmarshaller());
     }
     
     /**
@@ -2409,7 +2416,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void modifyImageAttribute(ModifyImageAttributeRequest modifyImageAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ModifyImageAttributeRequest> request = new ModifyImageAttributeRequestMarshaller().marshall(modifyImageAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2447,7 +2454,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void releaseAddress(ReleaseAddressRequest releaseAddressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ReleaseAddressRequest> request = new ReleaseAddressRequestMarshaller().marshall(releaseAddressRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2494,7 +2501,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateCustomerGatewayResult createCustomerGateway(CreateCustomerGatewayRequest createCustomerGatewayRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateCustomerGatewayRequest> request = new CreateCustomerGatewayRequestMarshaller().marshall(createCustomerGatewayRequest);
-        return invoke(request, "//CreateCustomerGatewayResponse", new CreateCustomerGatewayResultUnmarshaller());
+        return invoke(request, new CreateCustomerGatewayResultStaxUnmarshaller());
     }
     
     /**
@@ -2518,7 +2525,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void resetInstanceAttribute(ResetInstanceAttributeRequest resetInstanceAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ResetInstanceAttributeRequest> request = new ResetInstanceAttributeRequestMarshaller().marshall(resetInstanceAttributeRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2552,7 +2559,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateSpotDatafeedSubscriptionResult createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateSpotDatafeedSubscriptionRequest> request = new CreateSpotDatafeedSubscriptionRequestMarshaller().marshall(createSpotDatafeedSubscriptionRequest);
-        return invoke(request, "//CreateSpotDatafeedSubscriptionResponse", new CreateSpotDatafeedSubscriptionResultUnmarshaller());
+        return invoke(request, new CreateSpotDatafeedSubscriptionResultStaxUnmarshaller());
     }
     
     /**
@@ -2580,7 +2587,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateKeyPairResult createKeyPair(CreateKeyPairRequest createKeyPairRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateKeyPairRequest> request = new CreateKeyPairRequestMarshaller().marshall(createKeyPairRequest);
-        return invoke(request, "//CreateKeyPairResponse", new CreateKeyPairResultUnmarshaller());
+        return invoke(request, new CreateKeyPairResultStaxUnmarshaller());
     }
     
     /**
@@ -2607,7 +2614,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeSnapshotsResult describeSnapshots(DescribeSnapshotsRequest describeSnapshotsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSnapshotsRequest> request = new DescribeSnapshotsRequestMarshaller().marshall(describeSnapshotsRequest);
-        return invoke(request, "//DescribeSnapshotsResponse", new DescribeSnapshotsResultUnmarshaller());
+        return invoke(request, new DescribeSnapshotsResultStaxUnmarshaller());
     }
     
     /**
@@ -2649,7 +2656,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public RegisterImageResult registerImage(RegisterImageRequest registerImageRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RegisterImageRequest> request = new RegisterImageRequestMarshaller().marshall(registerImageRequest);
-        return invoke(request, "//RegisterImageResponse", new RegisterImageResultUnmarshaller());
+        return invoke(request, new RegisterImageResultStaxUnmarshaller());
     }
     
     /**
@@ -2685,7 +2692,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteVpnConnection(DeleteVpnConnectionRequest deleteVpnConnectionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteVpnConnectionRequest> request = new DeleteVpnConnectionRequestMarshaller().marshall(deleteVpnConnectionRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -2731,7 +2738,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public CreateVpnConnectionResult createVpnConnection(CreateVpnConnectionRequest createVpnConnectionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateVpnConnectionRequest> request = new CreateVpnConnectionRequestMarshaller().marshall(createVpnConnectionRequest);
-        return invoke(request, "//CreateVpnConnectionResponse", new CreateVpnConnectionResultUnmarshaller());
+        return invoke(request, new CreateVpnConnectionResultStaxUnmarshaller());
     }
     
     /**
@@ -2759,7 +2766,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public DescribeInstanceAttributeResult describeInstanceAttribute(DescribeInstanceAttributeRequest describeInstanceAttributeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeInstanceAttributeRequest> request = new DescribeInstanceAttributeRequestMarshaller().marshall(describeInstanceAttributeRequest);
-        return invoke(request, "//DescribeInstanceAttributeResponse", new DescribeInstanceAttributeResultUnmarshaller());
+        return invoke(request, new DescribeInstanceAttributeResultStaxUnmarshaller());
     }
     
     /**
@@ -3396,7 +3403,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -3425,7 +3432,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement, "requestId");
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller, "requestId");
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

@@ -16,7 +16,16 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Publish Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
+ * <p>
+ * The Publish action sends a message to all of a topic's subscribed
+ * endpoints. When a messageId is returned, the message has been saved
+ * and Amazon SNS will attempt to deliver it to the topic's subscribers
+ * shortly. The format of the outgoing message to each subscribed
+ * endpoint depends on the notification protocol selected.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)
  */
 public class PublishRequest extends AmazonWebServiceRequest {
 
@@ -214,6 +223,14 @@ public class PublishRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

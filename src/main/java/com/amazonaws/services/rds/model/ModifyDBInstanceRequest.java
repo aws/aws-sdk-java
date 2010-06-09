@@ -16,9 +16,15 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest) ModifyDBInstance operation}.
  * <p>
- * 
+ * This API is used to change RDS Instance settings. Users call the
+ * ModifyDBInstance API to change one or more database configuration
+ * parameters by specifying these parameters and the new values in the
+ * request.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest)
  */
 public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
 
@@ -101,6 +107,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * pending changes are applied.
      */
     private String preferredMaintenanceWindow;
+
+    private Boolean multiAZ;
 
     /**
      * The DB Instance identifier. This value is stored as a lowercase
@@ -673,6 +681,57 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean isMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     */
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyDBInstanceRequest withMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean getMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -688,6 +747,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
         sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
         sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
         sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("}");
         return sb.toString();
     }

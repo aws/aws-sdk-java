@@ -16,10 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest) CreateVolume operation}.
  * <p>
- * A request to create a new Amazon EC2 Elastic Block Storage (EBS)
- * volume.
+ * Initializes an empty volume of a given size.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest)
  */
 public class CreateVolumeRequest extends AmazonWebServiceRequest {
 
@@ -147,6 +149,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

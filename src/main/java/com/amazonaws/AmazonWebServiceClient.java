@@ -17,6 +17,8 @@ package com.amazonaws;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import com.amazonaws.http.HttpClient;
+
 /**
  * Abstract base class for Amazon Web Service Java clients.
  * <p>
@@ -34,6 +36,11 @@ public abstract class AmazonWebServiceClient {
     protected final ClientConfiguration clientConfiguration;
 
     /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
+
+    /**
      * Constructs a new AmazonWebServiceClient object using the specified
      * configuration.
      *
@@ -42,6 +49,7 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;
+        client = new HttpClient(clientConfiguration);
     }
 
     /**
@@ -73,10 +81,21 @@ public abstract class AmazonWebServiceClient {
         }
 
         try {
-            this.endpoint = new URI(endpoint.toLowerCase());
+            this.endpoint = new URI(endpoint);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
+    }
+
+    /**
+     * Shuts down this client object, releasing any resources that might be held
+     * open. This is an optional method, and callers are not expected to call
+     * it, but can if they want to explicitly release any open resources. Once a
+     * client has been shutdown, it should not be used to make any more
+     * requests.
+     */
+    public void shutdown() {
+        client.shutdown();
     }
 
 }

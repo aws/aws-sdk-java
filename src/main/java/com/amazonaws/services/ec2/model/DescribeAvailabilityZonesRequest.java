@@ -16,10 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest) DescribeAvailabilityZones operation}.
  * <p>
- * A request to describe the Amazon EC2 availability zones in the
- * current region.
+ * The DescribeAvailabilityZones operation describes availability zones
+ * that are currently available to the account and their states.
  * </p>
+ * <p>
+ * Availability zones are not the same across accounts. The availability
+ * zone us-east-1a for account A is not necessarily the same as
+ * us-east-1a for account B. Zone assignments are mapped independently
+ * for each account.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest)
  */
 public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
 
@@ -90,6 +99,14 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

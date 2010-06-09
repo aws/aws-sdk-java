@@ -16,9 +16,13 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest) CreateOrUpdateScalingTrigger operation}.
  * <p>
- * 
+ * Sets the parameters that govern how and when to scale an AutoScaling
+ * group.
  * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest)
  */
 public class CreateOrUpdateScalingTriggerRequest extends AmazonWebServiceRequest {
 
@@ -908,6 +912,14 @@ public class CreateOrUpdateScalingTriggerRequest extends AmazonWebServiceRequest
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

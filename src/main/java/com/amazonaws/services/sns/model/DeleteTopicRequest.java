@@ -16,7 +16,15 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Delete Topic Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest) DeleteTopic operation}.
+ * <p>
+ * The DeleteTopic action deletes a topic and all its subscriptions.
+ * Deleting a topic might prevent some messages previously sent to the
+ * topic from being delivered to subscribers. This action is idempotent,
+ * so deleting a topic that does not exist will not result in an error.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest)
  */
 public class DeleteTopicRequest extends AmazonWebServiceRequest {
 
@@ -180,6 +188,14 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

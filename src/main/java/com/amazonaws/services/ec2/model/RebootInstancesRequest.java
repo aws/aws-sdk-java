@@ -16,19 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest) RebootInstances operation}.
  * <p>
- * A request to reboot one or more instances.
+ * The RebootInstances operation requests a reboot of one or more
+ * instances. This operation is asynchronous; it only queues a request to
+ * reboot the specified instance(s). The operation will succeed if the
+ * instances are valid and belong to the user. Requests to reboot
+ * terminated instances are ignored.
  * </p>
- * <p>
- * This operation is asynchronous; it only queues a request to reboot
- * the specified instances. The operation will succeed if the instances
- * are valid and belong to you. Requests to reboot terminated instances
- * are ignored.
- * </p>
- * <p>
- * <b>NOTE:</b> If a Linux/UNIX instance does not cleanly shut down
- * within four minutes, Amazon EC2 will perform a hard reboot.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)
  */
 public class RebootInstancesRequest extends AmazonWebServiceRequest {
 
@@ -99,6 +96,14 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -32,7 +32,7 @@ public class DeleteDBSnapshotRequestMarshaller implements Marshaller<Request<Del
     public Request<DeleteDBSnapshotRequest> marshall(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
         Request<DeleteDBSnapshotRequest> request = new DefaultRequest<DeleteDBSnapshotRequest>(deleteDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSnapshot");
-        request.addParameter("Version", "2009-10-16");
+        request.addParameter("Version", "2010-01-01");
         if (deleteDBSnapshotRequest != null) {
             if (deleteDBSnapshotRequest.getDBSnapshotIdentifier() != null) {
                 request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(deleteDBSnapshotRequest.getDBSnapshotIdentifier()));

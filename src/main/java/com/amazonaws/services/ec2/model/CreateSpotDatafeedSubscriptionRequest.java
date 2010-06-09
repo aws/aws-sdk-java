@@ -16,9 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest) CreateSpotDatafeedSubscription operation}.
  * <p>
+ * Creates the data feed for Spot Instances, enabling you to view Spot
+ * Instance usage logs. You can create one data feed per account.
+ * </p>
+ * <p>
+ * For conceptual information about Spot Instances, refer to the Amazon
+ * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
+ * User Guide .
  * 
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)
  */
 public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest {
 
@@ -100,6 +110,14 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

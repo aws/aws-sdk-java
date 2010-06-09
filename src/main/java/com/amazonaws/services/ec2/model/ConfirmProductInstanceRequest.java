@@ -16,15 +16,20 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest) ConfirmProductInstance operation}.
  * <p>
- * A request to verify whether an Amazon DevPay product code is
- * associated with an instance.
+ * The ConfirmProductInstance operation returns true if the specified
+ * product code is attached to the specified instance. The operation
+ * returns false if the product code is not attached to the instance.
  * </p>
  * <p>
- * This can only be executed by the owner of the AMI and is useful when
- * an AMI owner wants to verify whether a user's instance is eligible for
- * support.
+ * The ConfirmProductInstance operation can only be executed by the
+ * owner of the AMI. This feature is useful when an AMI owner is
+ * providing support and wants to verify whether a user's instance is
+ * eligible.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest)
  */
 public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
 
@@ -106,6 +111,14 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

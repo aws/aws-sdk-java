@@ -16,10 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest) DescribeSnapshotAttribute operation}.
  * <p>
- * A request to describe an attribute of an EBS snapshot. Only one
- * attribute can be specified per request.
+ * Returns information about an attribute of a snapshot. Only one
+ * attribute can be specified per call.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshotAttribute(DescribeSnapshotAttributeRequest)
  */
 public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
 
@@ -108,6 +111,14 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

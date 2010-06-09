@@ -16,16 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest) GetPasswordData operation}.
  * <p>
- * A request to retrieve the encrypted administrator password for the
- * instances running Windows.
+ * Retrieves the encrypted administrator password for the instances
+ * running Windows.
  * </p>
  * <p>
- * The Windows password is only generated the first time an AMI is
- * launched. It is not generated for rebundled AMIs or after the password
- * is changed on an instance. The password is encrypted using the key
- * pair that you provided.
+ * <b>NOTE:</b> The Windows password is only generated the first time an
+ * AMI is launched. It is not generated for rebundled AMIs or after the
+ * password is changed on an instance. The password is encrypted using
+ * the key pair that you provided.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest)
  */
 public class GetPasswordDataRequest extends AmazonWebServiceRequest {
 
@@ -75,6 +78,14 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

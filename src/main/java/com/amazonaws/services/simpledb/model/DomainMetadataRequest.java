@@ -16,7 +16,14 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Domain Metadata Request
+ * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest) DomainMetadata operation}.
+ * <p>
+ * Returns information about the domain, including when the domain was
+ * created, the number of items and attributes in the domain, and the
+ * size of the attribute names and values.
+ * </p>
+ *
+ * @see com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest)
  */
 public class DomainMetadataRequest extends AmazonWebServiceRequest {
 
@@ -77,6 +84,14 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

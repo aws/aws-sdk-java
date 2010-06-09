@@ -16,9 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest) DeregisterImage operation}.
  * <p>
- * A request to deregister an <i>Amazon Machine Image</i> (AMI).
+ * The DeregisterImage operation deregisters an AMI. Once deregistered,
+ * instances of the AMI can no longer be launched.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest)
  */
 public class DeregisterImageRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +65,14 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,7 +16,13 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Remove Permission Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest) RemovePermission operation}.
+ * <p>
+ * The RemovePermission action removes a statement from a topic's access
+ * control policy.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest {
 
@@ -118,6 +124,14 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

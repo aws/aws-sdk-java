@@ -16,9 +16,14 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest) DeleteVpc operation}.
  * <p>
- * 
+ * Deletes a VPC. You must terminate all running instances and delete
+ * all subnets before deleting the VPC, otherwise Amazon VPC returns an
+ * error.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)
  */
 public class DeleteVpcRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +66,14 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

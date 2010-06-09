@@ -16,7 +16,14 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Add Permission Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest) AddPermission operation}.
+ * <p>
+ * The AddPermission action adds a statement to a topic's access control
+ * policy, granting access for the specified AWS accounts to the
+ * specified actions.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#addPermission(AddPermissionRequest)
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest {
 
@@ -277,6 +284,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -66,6 +66,9 @@ public class ModifyDBInstanceRequestUnmarshaller implements Unmarshaller<ModifyD
         Node preferredMaintenanceWindowNode = XpathUtils.asNode("PreferredMaintenanceWindow", node);
         modifyDBInstanceRequest.setPreferredMaintenanceWindow(new StringUnmarshaller().unmarshall(preferredMaintenanceWindowNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        modifyDBInstanceRequest.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return modifyDBInstanceRequest;
     }

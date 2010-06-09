@@ -16,9 +16,21 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSubnets(DescribeSubnetsRequest) DescribeSubnets operation}.
  * <p>
- * 
+ * Gives you information about your subnets. You can filter the results
+ * to return information only about subnets that match criteria you
+ * specify. For example, you could ask to get information about a
+ * particular subnet (or all) only if the subnet's state is available.
+ * You can specify multiple filters (e.g., the subnet is in a particular
+ * VPC, and the subnet's state is available). The result includes
+ * information for a particular subnet only if the subnet matches all
+ * your filters. If there's no match, no special message is returned; the
+ * response is simply empty. The following table shows the available
+ * filters.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeSubnets(DescribeSubnetsRequest)
  */
 public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
 
@@ -156,6 +168,14 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

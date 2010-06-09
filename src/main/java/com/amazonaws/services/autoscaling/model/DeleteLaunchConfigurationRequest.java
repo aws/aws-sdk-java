@@ -16,9 +16,17 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest) DeleteLaunchConfiguration operation}.
  * <p>
- * 
+ * Deletes the specified LaunchConfiguration.
  * </p>
+ * <p>
+ * The specified LaunchConfiguration must not be currently attached to
+ * any Auto Scaling group. Once this call completes, the launch
+ * configuration is no longer available for use.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)
  */
 public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest {
 
@@ -77,6 +85,14 @@ public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

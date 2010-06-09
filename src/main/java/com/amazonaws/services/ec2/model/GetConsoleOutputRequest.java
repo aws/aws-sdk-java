@@ -16,8 +16,10 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest) GetConsoleOutput operation}.
  * <p>
- * A request to retrieve the console output for the specified instance.
+ * The GetConsoleOutput operation retrieves console output for the
+ * specified instance.
  * </p>
  * <p>
  * Instance console output is buffered and posted shortly after instance
@@ -25,6 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * KB output which will be available for at least one hour after the most
  * recent post.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest)
  */
 public class GetConsoleOutputRequest extends AmazonWebServiceRequest {
 
@@ -67,6 +71,14 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,20 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest) DeleteSecurityGroup operation}.
  * <p>
- * Represents a request to delete an Amazon EC2 security group.
+ * The DeleteSecurityGroup operation deletes a security group.
  * </p>
+ * <p>
+ * <b>NOTE:</b> If you attempt to delete a security group that contains
+ * instances, a fault is returned. If you attempt to delete a security
+ * group that is referenced by another security group, a fault is
+ * returned. For example, if security group B has a rule that allows
+ * access from security group A, security group A cannot be deleted until
+ * the allow rule is removed.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#deleteSecurityGroup(DeleteSecurityGroupRequest)
  */
 public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +72,14 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,7 +16,28 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Domain Request
+ * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#createDomain(CreateDomainRequest) CreateDomain operation}.
+ * <p>
+ * The <code>CreateDomain</code> operation creates a new domain. The
+ * domain name should be unique among the domains associated with the
+ * Access Key ID provided in the request. The <code>CreateDomain</code>
+ * operation may take 10 or more seconds to complete.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> CreateDomain is an idempotent operation; running it
+ * multiple times using the same domain name will not result in an error
+ * response.
+ * </p>
+ * <p>
+ * The client can create up to 100 domains per account.
+ * </p>
+ * <p>
+ * If the client requires additional domains, go to <a
+ * href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
+ * http://aws.amazon.com/contact-us/simpledb-limit-request/ </a> .
+ * </p>
+ *
+ * @see com.amazonaws.services.simpledb.AmazonSimpleDB#createDomain(CreateDomainRequest)
  */
 public class CreateDomainRequest extends AmazonWebServiceRequest {
 
@@ -92,6 +113,14 @@ public class CreateDomainRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

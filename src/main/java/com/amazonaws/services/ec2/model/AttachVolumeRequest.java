@@ -16,10 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest) AttachVolume operation}.
  * <p>
- * Request to attach an Amazon EBS volume to a running instance and
- * expose it as the specified device.
+ * Attach a previously created volume to a running instance.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest)
  */
 public class AttachVolumeRequest extends AmazonWebServiceRequest {
 
@@ -161,6 +163,14 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

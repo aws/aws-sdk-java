@@ -16,9 +16,14 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * 
+ * The RemovePermission action revokes any permissions in the queue
+ * policy that matches the specified <i>Label</i> parameter. Only the
+ * owner of the queue can remove permissions.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest)
  */
 public class RemovePermissionRequest extends AmazonWebServiceRequest {
 
@@ -127,6 +132,14 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

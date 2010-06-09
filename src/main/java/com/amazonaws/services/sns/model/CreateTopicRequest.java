@@ -16,7 +16,16 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Create Topic Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest) CreateTopic operation}.
+ * <p>
+ * The CreateTopic action creates a topic to which notifications can be
+ * published. Users can create at most 25 topics. This action is
+ * idempotent, so if the requester already owns a topic with the
+ * specified name, that topic's ARN will be returned without creating a
+ * new topic.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest)
  */
 public class CreateTopicRequest extends AmazonWebServiceRequest {
 
@@ -93,6 +102,14 @@ public class CreateTopicRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

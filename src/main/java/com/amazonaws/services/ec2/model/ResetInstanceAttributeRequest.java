@@ -16,10 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest) ResetInstanceAttribute operation}.
  * <p>
- * A request to reset an attribute on an Amazon EC2 instance back to its
- * default value. Only one attribute can be reset per request.
+ * Resets an attribute of an instance to its default value.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest)
  */
 public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
 
@@ -108,6 +110,14 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

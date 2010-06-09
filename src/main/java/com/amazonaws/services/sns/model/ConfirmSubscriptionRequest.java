@@ -16,7 +16,17 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Confirm Subscription Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
+ * <p>
+ * The ConfirmSubscription action verifies an endpoint owner's intent to
+ * receive messages by validating the token sent to the endpoint by an
+ * earlier Subscribe action. If the token is valid, the action creates a
+ * new subscription and returns its Amazon Resource Name (ARN). This call
+ * requires an AWS signature only when the AuthenticateOnUnsubscribe flag
+ * is set to "true".
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
  */
 public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
 
@@ -193,6 +203,14 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

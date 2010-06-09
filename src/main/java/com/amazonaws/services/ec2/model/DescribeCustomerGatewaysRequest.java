@@ -16,9 +16,23 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest) DescribeCustomerGateways operation}.
  * <p>
- * 
+ * Gives you information about your customer gateways. You can filter
+ * the results to return information only about customer gateways that
+ * match criteria you specify. For example, you could ask to get
+ * information about a particular customer gateway (or all) only if the
+ * gateway's state is pending or available. You can specify multiple
+ * filters (e.g., the customer gateway has a particular IP address for
+ * the Internet-routable external interface, and the gateway's state is
+ * pending or available). The result includes information for a
+ * particular customer gateway only if the gateway matches all your
+ * filters. If there's no match, no special message is returned; the
+ * response is simply empty. The following table shows the available
+ * filters.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest)
  */
 public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
 
@@ -156,6 +170,14 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

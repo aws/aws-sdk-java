@@ -16,15 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest) DetachVolume operation}.
  * <p>
- * A request to detaches an Amazon EBS volume from an instance.
+ * Detach a previously attached volume from a running instance.
  * </p>
- * <p>
- * Make sure to unmount any file systems on the device within your
- * operating system before detaching the volume. Failure to unmount file
- * systems, or otherwise properly release the device from use, can result
- * in lost data and will corrupt the file system.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#detachVolume(DetachVolumeRequest)
  */
 public class DetachVolumeRequest extends AmazonWebServiceRequest {
 
@@ -263,6 +260,14 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest {
         return force;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

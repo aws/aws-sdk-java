@@ -16,9 +16,18 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest) AuthorizeDBSecurityGroupIngress operation}.
  * <p>
- * 
+ * This API allows for ingress to a DBSecurityGroup using one of two
+ * forms of authorization. First, EC2 Security Groups can be added to the
+ * DBSecurityGroup if the application using the database is running on
+ * EC2 instances. Second, IP ranges are available if the application
+ * accessing your database is running on the Internet. Required
+ * parameters for this API are one of CIDR range or (EC2SecurityGroupName
+ * AND EC2SecurityGroupOwnerId).
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest)
  */
 public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest {
 
@@ -192,6 +201,14 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

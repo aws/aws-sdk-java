@@ -16,9 +16,23 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest) CreateQueue operation}.
  * <p>
- * 
+ * The CreateQueue action creates a new queue, or returns the URL of an
+ * existing one. When you request CreateQueue, you provide a name for the
+ * queue. To successfully create a new queue, you must provide a name
+ * that is unique within the scope of your own queues. If you provide the
+ * name of an existing queue, a new queue isn't created and an error
+ * isn't returned. Instead, the request succeeds and the queue URL for
+ * the existing queue is returned.
  * </p>
+ * <p>
+ * <b>IMPORTANT:</b> If you provide a value for DefaultVisibilityTimeout
+ * that is different from the value for the existing queue, you receive
+ * an error.
+ * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest)
  */
 public class CreateQueueRequest extends AmazonWebServiceRequest {
 
@@ -117,6 +131,14 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

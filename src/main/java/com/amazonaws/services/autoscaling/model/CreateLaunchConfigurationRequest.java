@@ -16,9 +16,18 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest) CreateLaunchConfiguration operation}.
  * <p>
- * 
+ * Creates a new launch configuration. Once created, the new launch
+ * configuration is available for immediate use.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The launch configuration name used must be unique, within
+ * the scope of the client's AWS account, and the maximum limit of launch
+ * configurations must not yet have been met, or else the call will fail.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)
  */
 public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
 
@@ -667,6 +676,14 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,7 +16,19 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * List Domains Request
+ * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest) ListDomains operation}.
+ * <p>
+ * The <code>ListDomains</code> operation lists all domains associated
+ * with the Access Key ID. It returns domain names up to the limit set by
+ * MaxNumberOfDomains. A NextToken is returned if there are more than
+ * <code>MaxNumberOfDomains</code> domains. Calling
+ * <code>ListDomains</code> successive times with the
+ * <code>NextToken</code> provided by the operation returns up to
+ * <code>MaxNumberOfDomains</code> more domain names with each successive
+ * operation call.
+ * </p>
+ *
+ * @see com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest)
  */
 public class ListDomainsRequest extends AmazonWebServiceRequest {
 
@@ -118,6 +130,14 @@ public class ListDomainsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,19 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
  * <p>
- * 
+ * Retrieves one or more messages from the specified queue, including
+ * the message body and message ID of each message. Messages returned by
+ * this action stay in the queue until you delete them. However, once a
+ * message is returned to a ReceiveMessage request, it is not returned on
+ * subsequent ReceiveMessage requests for the duration of the
+ * VisibilityTimeout. If you do not specify a VisibilityTimeout in the
+ * request, the overall visibility timeout for the queue is used for the
+ * returned messages.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)
  */
 public class ReceiveMessageRequest extends AmazonWebServiceRequest {
 
@@ -251,6 +261,14 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,15 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest) AssociateAddress operation}.
  * <p>
- * Associates an elastic IP address with an instance. If the IP address
- * is currently assigned to another instance, the IP address is assigned
- * to the new instance.
+ * The AssociateAddress operation associates an elastic IP address with
+ * an instance.
  * </p>
  * <p>
- * This is an idempotent operation. If you enter it more than once,
- * Amazon EC2 does not return an error.
+ * If the IP address is currently assigned to another instance, the IP
+ * address is assigned to the new instance. This is an idempotent
+ * operation. If you enter it more than once, Amazon EC2 does not return
+ * an error.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)
  */
 public class AssociateAddressRequest extends AmazonWebServiceRequest {
 
@@ -106,6 +110,14 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

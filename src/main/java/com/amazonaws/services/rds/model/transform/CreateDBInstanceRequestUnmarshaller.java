@@ -78,6 +78,9 @@ public class CreateDBInstanceRequestUnmarshaller implements Unmarshaller<CreateD
         Node portNode = XpathUtils.asNode("Port", node);
         createDBInstanceRequest.setPort(new IntegerUnmarshaller().unmarshall(portNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        createDBInstanceRequest.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return createDBInstanceRequest;
     }

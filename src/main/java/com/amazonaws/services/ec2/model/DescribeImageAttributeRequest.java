@@ -16,10 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest) DescribeImageAttribute operation}.
  * <p>
- * A request to describe an Amazon Machine Image (AMI) attribute. Only
- * one attribute may be described per request.
+ * The DescribeImageAttribute operation returns information about an
+ * attribute of an AMI. Only one attribute can be specified per call.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest)
  */
 public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
 
@@ -108,6 +111,14 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

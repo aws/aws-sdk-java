@@ -16,7 +16,24 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Get Attributes Request
+ * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest) GetAttributes operation}.
+ * <p>
+ * Returns all of the attributes associated with the specified item.
+ * Optionally, the attributes returned can be limited to one or more
+ * attributes by specifying an attribute name parameter.
+ * </p>
+ * <p>
+ * If the item does not exist on the replica that was accessed for this
+ * operation, an empty set is returned. The system does not return an
+ * error as it cannot guarantee the item does not exist on other
+ * replicas.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> If GetAttributes is called without being passed any
+ * attribute names, all the attributes for the item are returned.
+ * </p>
+ *
+ * @see com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest)
  */
 public class GetAttributesRequest extends AmazonWebServiceRequest {
 
@@ -269,6 +286,14 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
         return consistentRead;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

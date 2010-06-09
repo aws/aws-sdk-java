@@ -16,10 +16,11 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest) RevokeSecurityGroupIngress operation}.
  * <p>
- * A request to revoke permissions from a security group. The
- * permissions used to revoke must be specified using the same values
- * used to grant the permissions.
+ * The RevokeSecurityGroupIngress operation revokes permissions from a
+ * security group. The permissions used to revoke must be specified using
+ * the same values used to grant the permissions.
  * </p>
  * <p>
  * Permissions are specified by IP protocol (TCP, UDP, or ICMP), the
@@ -30,8 +31,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Permission changes are quickly propagated to instances within the
  * security group. However, depending on the number of instances in the
- * group, a small delay might occur.
+ * group, a small delay is might occur, .
  * </p>
+ * <p>
+ * When revoking a user/group pair permission, GroupName,
+ * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
+ * specified. When authorizing a CIDR IP permission, GroupName,
+ * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
+ * these two types of parameters is not allowed.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest)
  */
 public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
 
@@ -343,6 +353,14 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

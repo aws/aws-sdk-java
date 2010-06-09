@@ -16,9 +16,18 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest) CreateAutoScalingGroup operation}.
  * <p>
- * 
+ * Creates a new Auto Scaling group with the specified name. Once the
+ * creation request is completed, the AutoScalingGroup is ready to be
+ * used in other calls.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The client must not have already used up their entire
+ * quota of AutoScaling groups in order for this call to be successful.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)
  */
 public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
@@ -412,6 +421,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,31 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest) CreateVpnConnection operation}.
  * <p>
- * 
+ * Creates a new VPN connection between an existing VPN gateway and
+ * customer gateway. The only supported connection type is ipsec.1.
  * </p>
+ * <p>
+ * The response includes information that you need to configure your
+ * customer gateway, in XML format. We recommend you use the command line
+ * version of this operation (ec2-create-vpn-connection), which takes an
+ * -f option (for format) and returns configuration information formatted
+ * as expected by the vendor you specified, or in a generic, human
+ * readable format. For information about the command, go to
+ * ec2-create-vpn-connection in the Amazon Virtual Private Cloud Command
+ * Line Reference.
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
+ * this operation because the response contains sensitive cryptographic
+ * information for configuring your customer gateway. If you decide to
+ * shut down your VPN connection for any reason and then create a new
+ * one, you must re-configure your customer gateway with the new
+ * information returned from this call.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest)
  */
 public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
 
@@ -139,6 +161,14 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

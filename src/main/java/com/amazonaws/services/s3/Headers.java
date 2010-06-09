@@ -66,6 +66,9 @@ public interface Headers {
     /** S3 request header indicating how to handle metadata when copying an object */
     public static final String METADATA_DIRECTIVE = "x-amz-metadata-directive";
 
+    /** DevPay token header */
+    public static final String SECURITY_TOKEN = "x-amz-security-token";
+
     /** Header describing what class of storage a user wants */
     public static final String STORAGE_CLASS = "x-amz-storage-class";
 

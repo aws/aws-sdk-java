@@ -16,9 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest) DetachVpnGateway operation}.
  * <p>
- * 
+ * Detaches a VPN gateway from a VPC. You do this if you're planning to
+ * turn off the VPC and not use it anymore. You can confirm a VPN gateway
+ * has been completely detached from a VPC by describing the VPN gateway
+ * (any attachments to the VPN gateway are also described).
  * </p>
+ * <p>
+ * You must wait for the attachment's state to switch to detached before
+ * you can delete the VPC or attach a different VPC to the VPN gateway.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest)
  */
 public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
 
@@ -100,6 +110,14 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

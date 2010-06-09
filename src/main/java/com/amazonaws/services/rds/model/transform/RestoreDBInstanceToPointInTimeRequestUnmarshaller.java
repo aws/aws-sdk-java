@@ -53,6 +53,9 @@ public class RestoreDBInstanceToPointInTimeRequestUnmarshaller implements Unmars
         Node availabilityZoneNode = XpathUtils.asNode("AvailabilityZone", node);
         restoreDBInstanceToPointInTimeRequest.setAvailabilityZone(new StringUnmarshaller().unmarshall(availabilityZoneNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        restoreDBInstanceToPointInTimeRequest.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return restoreDBInstanceToPointInTimeRequest;
     }

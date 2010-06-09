@@ -16,10 +16,9 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest) StopInstances operation}.
  * <p>
  * Stops an instance that uses an Amazon EBS volume as its root device.
- * </p>
- * <p>
  * Instances that use Amazon EBS volumes as their root devices can be
  * quickly stopped and started. When an instance is stopped, the compute
  * resources are released and you are not billed for hourly instance
@@ -33,6 +32,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * data stored in RAM. Performing this operation on an instance that uses
  * an instance store as its root device returns an error.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
 public class StopInstancesRequest extends AmazonWebServiceRequest {
 
@@ -178,6 +179,14 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
         return force;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

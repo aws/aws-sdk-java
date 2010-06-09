@@ -16,7 +16,16 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * List Subscriptions Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
+ * <p>
+ * The ListSubscriptions action returns a list of the requester's
+ * subscriptions. Each call returns a limited list of subscriptions. If
+ * there are more subscriptions, a NextToken is also returned. Use the
+ * NextToken parameter in a new ListSubscriptions call to get further
+ * results.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)
  */
 public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
 
@@ -65,6 +74,14 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

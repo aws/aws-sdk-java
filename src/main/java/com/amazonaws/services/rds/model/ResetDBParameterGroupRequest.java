@@ -16,9 +16,19 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest) ResetDBParameterGroup operation}.
  * <p>
- * 
+ * This API modifies the parameters of a DBParameterGroup to the
+ * engine/system default value. To reset specific parameters submit a
+ * list of the following: ParameterName and ApplyMethod. To reset the
+ * entire DBParameterGroup specify the DBParameterGroup name and
+ * ResetAllParameters parameters. When resetting the entire group,
+ * dynamic parameters are updated immediately and static parameters are
+ * set to pending-reboot to take effect on the next MySQL reboot or
+ * RebootDBInstance request.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest)
  */
 public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
 
@@ -212,6 +222,14 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

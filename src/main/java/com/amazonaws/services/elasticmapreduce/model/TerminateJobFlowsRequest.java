@@ -16,9 +16,16 @@ package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest) TerminateJobFlows operation}.
  * <p>
- * Input to the TerminateJobFlows operation.
+ * TerminateJobFlows shuts a list of job flows down. When a job flow is
+ * shut down, any step not yet completed is canceled and the EC2
+ * instances on which the job flow is running are stopped. Any log files
+ * not already saved are uploaded to Amazon S3 if a LogUri was specified
+ * when the job flow was created.
  * </p>
+ *
+ * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)
  */
 public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
 
@@ -89,6 +96,14 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

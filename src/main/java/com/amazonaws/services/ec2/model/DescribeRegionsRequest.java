@@ -16,9 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest) DescribeRegions operation}.
  * <p>
- * Request to describe the available Amazon EC2 regions.
+ * The DescribeRegions operation describes regions zones that are
+ * currently available to the account.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest)
  */
 public class DescribeRegionsRequest extends AmazonWebServiceRequest {
 
@@ -89,6 +93,14 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

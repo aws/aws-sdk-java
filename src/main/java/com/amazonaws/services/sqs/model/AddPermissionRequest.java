@@ -16,9 +16,19 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * 
+ * The AddPermission action adds a permission to a queue for a specific
+ * principal. This allows for sharing access to the queue.
  * </p>
+ * <p>
+ * When you create a queue, you have full control access rights for the
+ * queue. Only you (as owner of the queue) can grant or deny permissions
+ * to the queue. For more information about these permissions, see Shared
+ * Queues in the Amazon SQS Developer Guide.
+ * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest)
  */
 public class AddPermissionRequest extends AmazonWebServiceRequest {
 
@@ -278,6 +288,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

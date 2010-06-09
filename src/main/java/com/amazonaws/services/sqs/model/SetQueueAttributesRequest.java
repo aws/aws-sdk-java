@@ -16,9 +16,13 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
  * <p>
- * 
+ * Sets an attribute of a queue. Currently, you can set only the
+ * VisibilityTimeout attribute for a queue.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)
  */
 public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
 
@@ -121,6 +125,14 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

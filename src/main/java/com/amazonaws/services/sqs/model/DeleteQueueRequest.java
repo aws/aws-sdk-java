@@ -16,9 +16,14 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest) DeleteQueue operation}.
  * <p>
- * 
+ * This action unconditionally deletes the queue specified by the queue
+ * URL. Use this operation WITH CARE! The queue is deleted even if it is
+ * NOT empty.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest)
  */
 public class DeleteQueueRequest extends AmazonWebServiceRequest {
 
@@ -78,6 +83,14 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

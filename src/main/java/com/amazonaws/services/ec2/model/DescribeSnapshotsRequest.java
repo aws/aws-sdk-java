@@ -16,17 +16,13 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest) DescribeSnapshots operation}.
  * <p>
- * A request to describe Amazon EBS snapshots available to your account.
- * Information returned includes volume ID, status, start time, progress,
- * owner ID, volume size, and description.
+ * Describes the indicated snapshots, or in lieu of that, all snapshots
+ * owned by the caller.
  * </p>
- * <p>
- * Snapshots available to your account include public snapshots
- * available for any user to launch, private snapshots owned by the user
- * making the request, and private snapshots owned by other users for
- * which the user granted explicit create volume permissions.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)
  */
 public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
 
@@ -240,6 +236,14 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

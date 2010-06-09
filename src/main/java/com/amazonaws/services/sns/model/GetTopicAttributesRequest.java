@@ -16,7 +16,14 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Get Topic Attributes Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
+ * <p>
+ * The GetTopicAttribtues action returns all of the properties of a topic
+ * customers have created. Topic properties returned might differ based
+ * on the authorization of the user.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)
  */
 public class GetTopicAttributesRequest extends AmazonWebServiceRequest {
 
@@ -76,6 +83,14 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

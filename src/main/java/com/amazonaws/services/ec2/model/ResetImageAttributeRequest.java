@@ -16,11 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest) ResetImageAttribute operation}.
  * <p>
- * A request to reset an attribute on an <i>Amazon Machine Image</i>
- * (AMI) back to its default value. Only one attribute can be reset per
- * request.
+ * The ResetImageAttribute operation resets an attribute of an AMI to
+ * its default value.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The productCodes attribute cannot be reset.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest)
  */
 public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
 
@@ -109,6 +114,14 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

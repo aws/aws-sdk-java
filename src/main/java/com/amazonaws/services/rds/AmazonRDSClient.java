@@ -28,7 +28,6 @@ import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
@@ -77,11 +76,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
 
     /**
-     * Low level client for sending requests to AWS services.
-     */
-    protected final HttpClient client;
-
-    /**
      * Optional request handlers for additional request processing.
      */
     private List<RequestHandler> requestHandlers = new ArrayList<RequestHandler>();
@@ -123,20 +117,20 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
         exceptionUnmarshallers.add(new DBParameterGroupNotFoundExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSecurityGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupQuotaExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InsufficientDBInstanceCapacityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new AuthorizationAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PointInTimeRestoreNotEnabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SnapshotQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupAlreadyExistsExceptionUnmarshaller());
@@ -149,386 +143,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/rds/request.handlers");
-        client = new HttpClient(clientConfiguration);
     }
 
-    
-    /**
-     * <p>
-     * This API is used to change RDS Instance settings. Users call the
-     * ModifyDBInstance API to change one or more database configuration
-     * parameters by specifying these parameters and the new values in the
-     * request.
-     * </p>
-     *
-     * @param modifyDBInstanceRequest Container for the necessary parameters
-     *           to execute the ModifyDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the ModifyDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InvalidDBSecurityGroupStateException
-     * @throws InsufficientDBInstanceCapacityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
-        return invoke(request, "//ModifyDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API modifies the parameters of a DBParameterGroup to the
-     * engine/system default value. To reset specific parameters submit a
-     * list of the following: ParameterName and ApplyMethod. To reset the
-     * entire DBParameterGroup specify the DBParameterGroup name and
-     * ResetAllParameters parameters. When resetting the entire group,
-     * dynamic parameters are updated immediately and static parameters are
-     * set to pending-reboot to take effect on the next MySQL reboot or
-     * RebootDBInstance request.
-     * </p>
-     *
-     * @param resetDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetDBParameterGroup service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the ResetDBParameterGroup service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InvalidDBParameterGroupStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ResetDBParameterGroupRequest> request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
-        return invoke(request, "//ResetDBParameterGroupResult", new ResetDBParameterGroupResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API modifies the parameters of a DBParameterGroup. To modify
-     * more than one parameter submit a list of the following: ParameterName,
-     * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
-     * modified in a single request.
-     * </p>
-     *
-     * @param modifyDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ModifyDBParameterGroup service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the ModifyDBParameterGroup service method,
-     *         as returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InvalidDBParameterGroupStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
-        return invoke(request, "//ModifyDBParameterGroupResult", new ModifyDBParameterGroupResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API returns events related to DB Instances, DB Security Groups,
-     * DB Snapshots and DB Parameter Groups for the past 14 das. Events
-     * specific to a particular DB Instance, database security group,
-     * database snapshot or database parameter group can be obtained by
-     * providing the name as a parameter. By default, the past hour of events
-     * are returned.
-     * </p>
-     *
-     * @param describeEventsRequest Container for the necessary parameters to
-     *           execute the DescribeEvents service method on AmazonRDS.
-     * 
-     * @return The response from the DescribeEvents service method, as
-     *         returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
-        return invoke(request, "//DescribeEventsResult", new DescribeEventsResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API returns the default engine and system parameter information
-     * for the specified database engine.
-     * </p>
-     *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           service method on AmazonRDS.
-     * 
-     * @return The response from the DescribeEngineDefaultParameters service
-     *         method, as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
-        return invoke(request, "//DescribeEngineDefaultParametersResult/EngineDefaults", new EngineDefaultsUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API creates a new RDS instance from a point-in-time system
-     * snapshot. The target database is created from the source database
-     * restore point with the same configuration as the original source
-     * database, except that the new RDS instance is created with the default
-     * security group.
-     * </p>
-     *
-     * @param restoreDBInstanceToPointInTimeRequest Container for the
-     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
-     *           service method on AmazonRDS.
-     * 
-     * @return The response from the RestoreDBInstanceToPointInTime service
-     *         method, as returned by AmazonRDS.
-     * 
-     * @throws PointInTimeRestoreNotEnabledException
-     * @throws InstanceQuotaExceededException
-     * @throws DBInstanceAlreadyExistsException
-     * @throws DBInstanceNotFoundException
-     * @throws StorageQuotaExceededException
-     * @throws InvalidDBInstanceStateException
-     * @throws InsufficientDBInstanceCapacityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
-        return invoke(request, "//RestoreDBInstanceToPointInTimeResult/DBInstance", new DBInstanceUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API is used to retrieve information about DBSnapshots. This API
-     * supports pagination.
-     * </p>
-     *
-     * @param describeDBSnapshotsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSnapshots service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBSnapshots service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBSnapshotNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBSnapshotsRequest> request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
-        return invoke(request, "//DescribeDBSnapshotsResult", new DescribeDBSnapshotsResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API deletes a database security group. Database security group
-     * must not be associated with any RDS Instances.
-     * </p>
-     *
-     * @param deleteDBSecurityGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBSecurityGroup service method on
-     *           AmazonRDS.
-     * 
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InvalidDBSecurityGroupStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
-        invoke(request, null, null);
-    }
-    
-    /**
-     * <p>
-     * This API deletes a particular DBParameterGroup. The DBParameterGroup
-     * cannot be associated with any RDS instances to be deleted.
-     * </p>
-     *
-     * @param deleteDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBParameterGroup service method on
-     *           AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InvalidDBParameterGroupStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
-        invoke(request, null, null);
-    }
-    
-    /**
-     * <p>
-     * This API returns a list of DBParameterGroup descriptions. If a
-     * DBParameterGroupName is specified, the list will contain only the
-     * descriptions of the specified DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameterGroups service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBParameterGroups service
-     *         method, as returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
-        return invoke(request, "//DescribeDBParameterGroupsResult", new DescribeDBParameterGroupsResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * The DeleteDBInstance API deletes a previously provisioned RDS
-     * instance. A successful response from the web service indicates the
-     * request was received correctly. If a final DBSnapshot is requested the
-     * status of the RDS instance will be "deleting" until the DBSnapshot is
-     * created. DescribeDBInstance is used to monitor the status of this
-     * operation. This cannot be canceled or reverted once submitted.
-     * </p>
-     *
-     * @param deleteDBInstanceRequest Container for the necessary parameters
-     *           to execute the DeleteDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the DeleteDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
-     * @throws SnapshotQuotaExceededException
-     * @throws DBSnapshotAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
-        return invoke(request, "//DeleteDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API is used to delete a DBSnapshot. The DBSnapshot must be in
-     * the "available" state to be deleted.
-     * </p>
-     *
-     * @param deleteDBSnapshotRequest Container for the necessary parameters
-     *           to execute the DeleteDBSnapshot service method on AmazonRDS.
-     * 
-     * @return The response from the DeleteDBSnapshot service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws InvalidDBSnapshotStateException
-     * @throws DBSnapshotNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
-        return invoke(request, "//DeleteDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
-    }
     
     /**
      * <p>
@@ -558,160 +174,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBSecurityGroupsRequest> request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(describeDBSecurityGroupsRequest);
         return invoke(request, "//DescribeDBSecurityGroupsResult", new DescribeDBSecurityGroupsResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API revokes ingress from a DBSecurityGroup for previously
-     * authorized IP ranges or EC2 Security Groups. Required parameters for
-     * this API are one of CIDRIP or (EC2SecurityGroupName AND
-     * EC2SecurityGroupOwnerId).
-     * </p>
-     *
-     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
-     *           parameters to execute the RevokeDBSecurityGroupIngress service method
-     *           on AmazonRDS.
-     * 
-     * @return The response from the RevokeDBSecurityGroupIngress service
-     *         method, as returned by AmazonRDS.
-     * 
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InvalidDBSecurityGroupStateException
-     * @throws AuthorizationNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
-        return invoke(request, "//RevokeDBSecurityGroupIngressResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API is used to retrieve information about provisioned RDS
-     * instances. DescribeDBInstances supports pagination.
-     * </p>
-     *
-     * @param describeDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeDBInstances service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBInstances service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
-        return invoke(request, "//DescribeDBInstancesResult", new DescribeDBInstancesResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API is used to create a DBSnapshot. The source DBInstance must
-     * be in "available" state.
-     * </p>
-     *
-     * @param createDBSnapshotRequest Container for the necessary parameters
-     *           to execute the CreateDBSnapshot service method on AmazonRDS.
-     * 
-     * @return The response from the CreateDBSnapshot service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
-     * @throws SnapshotQuotaExceededException
-     * @throws DBSnapshotAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
-        return invoke(request, "//CreateDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API returns the detailed parameter list for a particular
-     * DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParametersRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameters service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBParameters service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
-        return invoke(request, "//DescribeDBParametersResult", new DescribeDBParametersResultUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * This API creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the CreateDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InstanceQuotaExceededException
-     * @throws DBInstanceAlreadyExistsException
-     * @throws StorageQuotaExceededException
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InsufficientDBInstanceCapacityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
-        return invoke(request, "//CreateDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
     }
     
     /**
@@ -754,19 +216,24 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
-     * This API creates a new database security group. Database Security
-     * groups control access to a database instance.
+     * This API is used to change RDS Instance settings. Users call the
+     * ModifyDBInstance API to change one or more database configuration
+     * parameters by specifying these parameters and the new values in the
+     * request.
      * </p>
      *
-     * @param createDBSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSecurityGroup service method on
-     *           AmazonRDS.
+     * @param modifyDBInstanceRequest Container for the necessary parameters
+     *           to execute the ModifyDBInstance service method on AmazonRDS.
      * 
-     * @return The response from the CreateDBSecurityGroup service method, as
+     * @return The response from the ModifyDBInstance service method, as
      *         returned by AmazonRDS.
      * 
-     * @throws DBSecurityGroupQuotaExceededException
-     * @throws DBSecurityGroupAlreadyExistsException
+     * @throws DBParameterGroupNotFoundException
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InvalidDBSecurityGroupStateException
+     * @throws InsufficientDBInstanceCapacityException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -776,10 +243,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
+    public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
-        return invoke(request, "//CreateDBSecurityGroupResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
+        Request<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
+        return invoke(request, "//ModifyDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
     }
     
     /**
@@ -809,6 +276,95 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDBParameterGroupRequest> request = new CreateDBParameterGroupRequestMarshaller().marshall(createDBParameterGroupRequest);
         return invoke(request, "//CreateDBParameterGroupResult/DBParameterGroup", new DBParameterGroupUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API deletes a database security group. Database security group
+     * must not be associated with any RDS Instances.
+     * </p>
+     *
+     * @param deleteDBSecurityGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBSecurityGroup service method on
+     *           AmazonRDS.
+     * 
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InvalidDBSecurityGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
+        invoke(request, null, null);
+    }
+    
+    /**
+     * <p>
+     * This API creates a new DB instance.
+     * </p>
+     *
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance service method on AmazonRDS.
+     * 
+     * @return The response from the CreateDBInstance service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InstanceQuotaExceededException
+     * @throws DBInstanceAlreadyExistsException
+     * @throws StorageQuotaExceededException
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InsufficientDBInstanceCapacityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
+        return invoke(request, "//CreateDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API creates a new database security group. Database Security
+     * groups control access to a database instance.
+     * </p>
+     *
+     * @param createDBSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSecurityGroup service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the CreateDBSecurityGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSecurityGroupQuotaExceededException
+     * @throws DBSecurityGroupAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
+        return invoke(request, "//CreateDBSecurityGroupResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
     }
     
     /**
@@ -883,6 +439,62 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
+     * This API is used to delete a DBSnapshot. The DBSnapshot must be in
+     * the "available" state to be deleted.
+     * </p>
+     *
+     * @param deleteDBSnapshotRequest Container for the necessary parameters
+     *           to execute the DeleteDBSnapshot service method on AmazonRDS.
+     * 
+     * @return The response from the DeleteDBSnapshot service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws InvalidDBSnapshotStateException
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
+        return invoke(request, "//DeleteDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API deletes a particular DBParameterGroup. The DBParameterGroup
+     * cannot be associated with any RDS instances to be deleted.
+     * </p>
+     *
+     * @param deleteDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBParameterGroup service method on
+     *           AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
+        invoke(request, null, null);
+    }
+    
+    /**
+     * <p>
      * This API returns events related to DB Instances, DB Security Groups,
      * DB Snapshots and DB Parameter Groups for the past 14 das. Events
      * specific to a particular DB Instance, database security group,
@@ -890,6 +502,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * providing the name as a parameter. By default, the past hour of events
      * are returned.
      * </p>
+     *
+     * @param describeEventsRequest Container for the necessary parameters to
+     *           execute the DescribeEvents service method on AmazonRDS.
      * 
      * @return The response from the DescribeEvents service method, as
      *         returned by AmazonRDS.
@@ -903,20 +518,26 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException {
-        return describeEvents(new DescribeEventsRequest());
+    public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
+        return invoke(request, "//DescribeEventsResult", new DescribeEventsResultUnmarshaller());
     }
     
     /**
      * <p>
-     * This API is used to retrieve information about DBSnapshots. This API
-     * supports pagination.
+     * This API is used to retrieve information about provisioned RDS
+     * instances. DescribeDBInstances supports pagination.
      * </p>
+     *
+     * @param describeDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeDBInstances service method on
+     *           AmazonRDS.
      * 
-     * @return The response from the DescribeDBSnapshots service method, as
+     * @return The response from the DescribeDBInstances service method, as
      *         returned by AmazonRDS.
      * 
-     * @throws DBSnapshotNotFoundException
+     * @throws DBInstanceNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -926,8 +547,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBSnapshotsResult describeDBSnapshots() throws AmazonServiceException, AmazonClientException {
-        return describeDBSnapshots(new DescribeDBSnapshotsRequest());
+    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
+        return invoke(request, "//DescribeDBInstancesResult", new DescribeDBInstancesResultUnmarshaller());
     }
     
     /**
@@ -936,6 +559,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * DBParameterGroupName is specified, the list will contain only the
      * descriptions of the specified DBParameterGroup.
      * </p>
+     *
+     * @param describeDBParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameterGroups service method on
+     *           AmazonRDS.
      * 
      * @return The response from the DescribeDBParameterGroups service
      *         method, as returned by AmazonRDS.
@@ -950,8 +577,301 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeDBParameterGroupsResult describeDBParameterGroups() throws AmazonServiceException, AmazonClientException {
-        return describeDBParameterGroups(new DescribeDBParameterGroupsRequest());
+    public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
+        return invoke(request, "//DescribeDBParameterGroupsResult", new DescribeDBParameterGroupsResultUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API returns the default engine and system parameter information
+     * for the specified database engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the DescribeEngineDefaultParameters service
+     *         method, as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
+        return invoke(request, "//DescribeEngineDefaultParametersResult/EngineDefaults", new EngineDefaultsUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API modifies the parameters of a DBParameterGroup. To modify
+     * more than one parameter submit a list of the following: ParameterName,
+     * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
+     * modified in a single request.
+     * </p>
+     *
+     * @param modifyDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ModifyDBParameterGroup service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the ModifyDBParameterGroup service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
+        return invoke(request, "//ModifyDBParameterGroupResult", new ModifyDBParameterGroupResultUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API is used to retrieve information about DBSnapshots. This API
+     * supports pagination.
+     * </p>
+     *
+     * @param describeDBSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshots service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBSnapshots service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeDBSnapshotsRequest> request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
+        return invoke(request, "//DescribeDBSnapshotsResult", new DescribeDBSnapshotsResultUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API modifies the parameters of a DBParameterGroup to the
+     * engine/system default value. To reset specific parameters submit a
+     * list of the following: ParameterName and ApplyMethod. To reset the
+     * entire DBParameterGroup specify the DBParameterGroup name and
+     * ResetAllParameters parameters. When resetting the entire group,
+     * dynamic parameters are updated immediately and static parameters are
+     * set to pending-reboot to take effect on the next MySQL reboot or
+     * RebootDBInstance request.
+     * </p>
+     *
+     * @param resetDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBParameterGroup service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the ResetDBParameterGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ResetDBParameterGroupRequest> request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
+        return invoke(request, "//ResetDBParameterGroupResult", new ResetDBParameterGroupResultUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API returns the detailed parameter list for a particular
+     * DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameters service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBParameters service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
+        return invoke(request, "//DescribeDBParametersResult", new DescribeDBParametersResultUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * The DeleteDBInstance API deletes a previously provisioned RDS
+     * instance. A successful response from the web service indicates the
+     * request was received correctly. If a final DBSnapshot is requested the
+     * status of the RDS instance will be "deleting" until the DBSnapshot is
+     * created. DescribeDBInstance is used to monitor the status of this
+     * operation. This cannot be canceled or reverted once submitted.
+     * </p>
+     *
+     * @param deleteDBInstanceRequest Container for the necessary parameters
+     *           to execute the DeleteDBInstance service method on AmazonRDS.
+     * 
+     * @return The response from the DeleteDBInstance service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws SnapshotQuotaExceededException
+     * @throws DBSnapshotAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
+        return invoke(request, "//DeleteDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API creates a new RDS instance from a point-in-time system
+     * snapshot. The target database is created from the source database
+     * restore point with the same configuration as the original source
+     * database, except that the new RDS instance is created with the default
+     * security group.
+     * </p>
+     *
+     * @param restoreDBInstanceToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the RestoreDBInstanceToPointInTime service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws PointInTimeRestoreNotEnabledException
+     * @throws InstanceQuotaExceededException
+     * @throws DBInstanceAlreadyExistsException
+     * @throws DBInstanceNotFoundException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidDBInstanceStateException
+     * @throws InsufficientDBInstanceCapacityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
+        return invoke(request, "//RestoreDBInstanceToPointInTimeResult/DBInstance", new DBInstanceUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API is used to create a DBSnapshot. The source DBInstance must
+     * be in "available" state.
+     * </p>
+     *
+     * @param createDBSnapshotRequest Container for the necessary parameters
+     *           to execute the CreateDBSnapshot service method on AmazonRDS.
+     * 
+     * @return The response from the CreateDBSnapshot service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws SnapshotQuotaExceededException
+     * @throws DBSnapshotAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
+        return invoke(request, "//CreateDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This API revokes ingress from a DBSecurityGroup for previously
+     * authorized IP ranges or EC2 Security Groups. Required parameters for
+     * this API are one of CIDRIP or (EC2SecurityGroupName AND
+     * EC2SecurityGroupOwnerId).
+     * </p>
+     *
+     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
+     *           parameters to execute the RevokeDBSecurityGroupIngress service method
+     *           on AmazonRDS.
+     * 
+     * @return The response from the RevokeDBSecurityGroupIngress service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InvalidDBSecurityGroupStateException
+     * @throws AuthorizationNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
+        return invoke(request, "//RevokeDBSecurityGroupIngressResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
     }
     
     /**
@@ -980,6 +900,32 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     
     /**
      * <p>
+     * This API returns events related to DB Instances, DB Security Groups,
+     * DB Snapshots and DB Parameter Groups for the past 14 das. Events
+     * specific to a particular DB Instance, database security group,
+     * database snapshot or database parameter group can be obtained by
+     * providing the name as a parameter. By default, the past hour of events
+     * are returned.
+     * </p>
+     * 
+     * @return The response from the DescribeEvents service method, as
+     *         returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException {
+        return describeEvents(new DescribeEventsRequest());
+    }
+    
+    /**
+     * <p>
      * This API is used to retrieve information about provisioned RDS
      * instances. DescribeDBInstances supports pagination.
      * </p>
@@ -999,6 +945,53 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      */
     public DescribeDBInstancesResult describeDBInstances() throws AmazonServiceException, AmazonClientException {
         return describeDBInstances(new DescribeDBInstancesRequest());
+    }
+    
+    /**
+     * <p>
+     * This API returns a list of DBParameterGroup descriptions. If a
+     * DBParameterGroupName is specified, the list will contain only the
+     * descriptions of the specified DBParameterGroup.
+     * </p>
+     * 
+     * @return The response from the DescribeDBParameterGroups service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBParameterGroupsResult describeDBParameterGroups() throws AmazonServiceException, AmazonClientException {
+        return describeDBParameterGroups(new DescribeDBParameterGroupsRequest());
+    }
+    
+    /**
+     * <p>
+     * This API is used to retrieve information about DBSnapshots. This API
+     * supports pagination.
+     * </p>
+     * 
+     * @return The response from the DescribeDBSnapshots service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBSnapshotsResult describeDBSnapshots() throws AmazonServiceException, AmazonClientException {
+        return describeDBSnapshots(new DescribeDBSnapshotsRequest());
     }
     
 

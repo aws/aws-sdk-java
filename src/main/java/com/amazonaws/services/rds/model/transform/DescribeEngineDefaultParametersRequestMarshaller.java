@@ -32,7 +32,7 @@ public class DescribeEngineDefaultParametersRequestMarshaller implements Marshal
     public Request<DescribeEngineDefaultParametersRequest> marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
-        request.addParameter("Version", "2009-10-16");
+        request.addParameter("Version", "2010-01-01");
         if (describeEngineDefaultParametersRequest != null) {
             if (describeEngineDefaultParametersRequest.getEngine() != null) {
                 request.addParameter("Engine", StringUtils.fromString(describeEngineDefaultParametersRequest.getEngine()));

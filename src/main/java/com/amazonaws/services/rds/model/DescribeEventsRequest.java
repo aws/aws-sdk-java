@@ -16,9 +16,17 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * 
+ * This API returns events related to DB Instances, DB Security Groups,
+ * DB Snapshots and DB Parameter Groups for the past 14 das. Events
+ * specific to a particular DB Instance, database security group,
+ * database snapshot or database parameter group can be obtained by
+ * providing the name as a parameter. By default, the past hour of events
+ * are returned.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)
  */
 public class DescribeEventsRequest extends AmazonWebServiceRequest {
 
@@ -383,6 +391,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

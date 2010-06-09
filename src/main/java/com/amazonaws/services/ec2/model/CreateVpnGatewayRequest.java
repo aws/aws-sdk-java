@@ -16,9 +16,14 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest) CreateVpnGateway operation}.
  * <p>
- * 
+ * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
+ * your VPN connection. You can create a VPN gateway before creating the
+ * VPC itself.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest)
  */
 public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
 
@@ -100,6 +105,14 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

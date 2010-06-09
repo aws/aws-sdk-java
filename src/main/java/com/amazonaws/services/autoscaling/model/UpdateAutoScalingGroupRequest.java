@@ -16,9 +16,23 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest) UpdateAutoScalingGroup operation}.
  * <p>
- * 
+ * Updates the configuration for the specified AutoScalingGroup.
  * </p>
+ * <p>
+ * The new settings are registered upon the completion of this call. Any
+ * launch configuration settings take effect on any triggers after this
+ * call returns. Triggers that are currently in progress aren't affected.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> If the new values are specified for the MinSize or
+ * MaxSize parameters, then there will be an implicit call to
+ * SetDesiredCapacity to set the group to the new MaxSize. All optional
+ * parameters are left unchanged if not passed in the request.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)
  */
 public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
@@ -331,6 +345,14 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

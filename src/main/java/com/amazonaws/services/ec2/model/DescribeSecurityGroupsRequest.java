@@ -16,10 +16,19 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest) DescribeSecurityGroups operation}.
  * <p>
- * A request to describe the Amazon EC2 security groups for your
- * account.
+ * The DescribeSecurityGroups operation returns information about
+ * security groups that you own.
  * </p>
+ * <p>
+ * If you specify security group names, information about those security
+ * group is returned. Otherwise, information for all security group is
+ * returned. If you specify a group that does not exist, a fault is
+ * returned.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest)
  */
 public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
 
@@ -90,6 +99,14 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

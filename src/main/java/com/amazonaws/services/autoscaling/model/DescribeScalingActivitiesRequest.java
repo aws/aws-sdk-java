@@ -16,9 +16,18 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest) DescribeScalingActivities operation}.
  * <p>
- * 
+ * Returns the scaling activities for the specified Auto Scaling group.
  * </p>
+ * <p>
+ * If the specified <i>ActivityIds</i> list is empty, all the activities
+ * from the past six weeks are returned. Activities will be sorted by
+ * completion time. Activities that have no completion time are
+ * considered as using the most recent possible time.
+ * </p>
+ *
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest)
  */
 public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
 
@@ -246,6 +255,14 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

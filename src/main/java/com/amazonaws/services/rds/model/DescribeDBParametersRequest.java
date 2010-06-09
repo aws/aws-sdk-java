@@ -16,7 +16,13 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest) DescribeDBParameters operation}.
+ * <p>
+ * This API returns the detailed parameter list for a particular
+ * DBParameterGroup.
+ * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest)
  */
 public class DescribeDBParametersRequest extends AmazonWebServiceRequest {
 
@@ -218,6 +224,14 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

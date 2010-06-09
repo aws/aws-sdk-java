@@ -16,9 +16,12 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstance(CreateDBInstanceRequest) CreateDBInstance operation}.
  * <p>
- * 
+ * This API creates a new DB instance.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#createDBInstance(CreateDBInstanceRequest)
  */
 public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
@@ -103,6 +106,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The port number on which the database accepts connections.
      */
     private Integer port;
+
+    private Boolean multiAZ;
 
     /**
      * The name of the database to create when the DB Instance is created. If
@@ -680,6 +685,57 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean isMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     */
+    public void setMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+    }
+    
+    /**
+     * Sets the value of the MultiAZ property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param multiAZ The new value for the MultiAZ property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withMultiAZ(Boolean multiAZ) {
+        this.multiAZ = multiAZ;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the MultiAZ property for this object.
+     *
+     * @return The value of the MultiAZ property for this object.
+     */
+    public Boolean getMultiAZ() {
+        return multiAZ;
+    }
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -699,6 +755,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
         sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
         sb.append("Port: " + port + ", ");
+        sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -16,14 +16,15 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest) DisassociateAddress operation}.
  * <p>
- * A request to disassociate an elastic IP address from the instance to
- * which it is assigned.
+ * The DisassociateAddress operation disassociates the specified elastic
+ * IP address from the instance to which it is assigned. This is an
+ * idempotent operation. If you enter it more than once, Amazon EC2 does
+ * not return an error.
  * </p>
- * <p>
- * This is an idempotent operation. If you enter it more than once,
- * Amazon EC2 will not return an error.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest)
  */
 public class DisassociateAddressRequest extends AmazonWebServiceRequest {
 
@@ -66,6 +67,14 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

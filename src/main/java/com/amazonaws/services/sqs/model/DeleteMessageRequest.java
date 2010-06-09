@@ -16,9 +16,15 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest) DeleteMessage operation}.
  * <p>
- * 
+ * The DeleteMessage action unconditionally removes the specified
+ * message from the specified queue. Even if the message is locked by
+ * another reader due to the visibility timeout setting, it is still
+ * deleted from the queue.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest)
  */
 public class DeleteMessageRequest extends AmazonWebServiceRequest {
 
@@ -120,6 +126,14 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

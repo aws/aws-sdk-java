@@ -47,6 +47,9 @@ public class PendingModifiedValuesUnmarshaller implements Unmarshaller<PendingMo
         Node backupRetentionPeriodNode = XpathUtils.asNode("BackupRetentionPeriod", node);
         pendingModifiedValues.setBackupRetentionPeriod(new IntegerUnmarshaller().unmarshall(backupRetentionPeriodNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        pendingModifiedValues.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return pendingModifiedValues;
     }

@@ -16,10 +16,59 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest) DescribeImages operation}.
  * <p>
- * A request to describe the available <i>Amazon Machine Images</i>
- * (AMIs).
+ * The DescribeImages operation returns information about AMIs, AKIs,
+ * and ARIs available to the user. Information returned includes image
+ * type, product codes, architecture, and kernel and RAM disk IDs. Images
+ * available to the user include public images available for any user to
+ * launch, private images owned by the user making the request, and
+ * private images owned by other users for which the user has explicit
+ * launch permissions.
  * </p>
+ * <p>
+ * Launch permissions fall into three categories:
+ * </p>
+ * 
+ * <ul>
+ * <li> Public: The owner of the AMI granted launch permissions for the
+ * AMI to the all group. All users have launch permissions for these
+ * AMIs. </li>
+ * <li> Explicit: The owner of the AMI granted launch permissions to a
+ * specific user. </li>
+ * <li> Implicit: A user has implicit launch permissions for all AMIs he
+ * or she owns. </li>
+ * 
+ * </ul>
+ * <p>
+ * The list of AMIs returned can be modified by specifying AMI IDs, AMI
+ * owners, or users with launch permissions. If no options are specified,
+ * Amazon EC2 returns all AMIs for which the user has launch permissions.
+ * </p>
+ * <p>
+ * If you specify one or more AMI IDs, only AMIs that have the specified
+ * IDs are returned. If you specify an invalid AMI ID, a fault is
+ * returned. If you specify an AMI ID for which you do not have access,
+ * it will not be included in the returned results.
+ * </p>
+ * <p>
+ * If you specify one or more AMI owners, only AMIs from the specified
+ * owners and for which you have access are returned. The results can
+ * include the account IDs of the specified owners, amazon for AMIs owned
+ * by Amazon or self for AMIs that you own.
+ * </p>
+ * <p>
+ * If you specify a list of executable users, only users that have
+ * launch permissions for the AMIs are returned. You can specify account
+ * IDs (if you own the AMI(s)), self for AMIs for which you own or have
+ * explicit permissions, or all for public AMIs.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Deregistered images are included in the returned results
+ * for an unspecified interval after deregistration.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest)
  */
 public class DescribeImagesRequest extends AmazonWebServiceRequest {
 
@@ -287,6 +336,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

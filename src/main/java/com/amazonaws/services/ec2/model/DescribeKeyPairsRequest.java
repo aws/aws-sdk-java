@@ -16,14 +16,15 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest) DescribeKeyPairs operation}.
  * <p>
- * Request to describe information about key pairs available to you.
+ * The DescribeKeyPairs operation returns information about key pairs
+ * available to you. If you specify key pairs, information about those
+ * key pairs is returned. Otherwise, information for all registered key
+ * pairs is returned.
  * </p>
- * <p>
- * If you specify key pairs, information about those key pairs is
- * returned. Otherwise, information for all your registered key pairs is
- * returned.
- * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)
  */
 public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
 
@@ -94,6 +95,14 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

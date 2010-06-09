@@ -16,9 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest) ModifyImageAttribute operation}.
  * <p>
- * A request to modify an attribute of an Amazon Machine Image (AMI).
+ * The ModifyImageAttribute operation modifies an attribute of an AMI.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest)
  */
 public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
 
@@ -454,6 +457,14 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

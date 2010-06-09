@@ -47,6 +47,9 @@ public class RestoreDBInstanceFromDBSnapshotRequestUnmarshaller implements Unmar
         Node availabilityZoneNode = XpathUtils.asNode("AvailabilityZone", node);
         restoreDBInstanceFromDBSnapshotRequest.setAvailabilityZone(new StringUnmarshaller().unmarshall(availabilityZoneNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        restoreDBInstanceFromDBSnapshotRequest.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return restoreDBInstanceFromDBSnapshotRequest;
     }

@@ -16,9 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest) CreateDhcpOptions operation}.
  * <p>
- * 
+ * Creates a set of DHCP options that you can then associate with one or
+ * more VPCs, causing all existing and new instances that you launch in
+ * those VPCs to use the set of DHCP options. The following table lists
+ * the individual DHCP options you can specify. For more information
+ * about the options, go to http://www.ietf.org/rfc/rfc2132.txt
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)
  */
 public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
 
@@ -61,6 +68,14 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,15 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest) ModifyDBParameterGroup operation}.
  * <p>
- * 
+ * This API modifies the parameters of a DBParameterGroup. To modify
+ * more than one parameter submit a list of the following: ParameterName,
+ * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
+ * modified in a single request.
  * </p>
+ *
+ * @see com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest)
  */
 public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
 
@@ -155,6 +161,14 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

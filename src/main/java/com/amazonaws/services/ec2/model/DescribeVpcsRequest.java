@@ -16,9 +16,21 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest) DescribeVpcs operation}.
  * <p>
- * 
+ * Gives you information about your VPCs. You can filter the results to
+ * return information only about VPCs that match criteria you specify.
+ * For example, you could ask to get information about a particular VPC
+ * or VPCs (or all your VPCs) only if the VPC's state is available. You
+ * can specify multiple filters (e.g., the VPC uses one of several sets
+ * of DHCP options, and the VPC's state is available). The result
+ * includes information for a particular VPC only if the VPC matches all
+ * your filters. If there's no match, no special message is returned; the
+ * response is simply empty. The following table shows the available
+ * filters.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
  */
 public class DescribeVpcsRequest extends AmazonWebServiceRequest {
 
@@ -156,6 +168,14 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

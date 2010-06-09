@@ -16,9 +16,16 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest) CreateImage operation}.
  * <p>
- * Represents a request to create a new EC2 image.
+ * Creates an AMI that uses an Amazon EBS root device from a "running"
+ * or "stopped" instance. AMIs that use an Amazon EBS root device boot
+ * faster than AMIs that use instance stores. They can be up to 1 TiB in
+ * size, use storage that persists on instance failure, and can be
+ * stopped and started.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)
  */
 public class CreateImageRequest extends AmazonWebServiceRequest {
 
@@ -232,6 +239,14 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
         return noReboot;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

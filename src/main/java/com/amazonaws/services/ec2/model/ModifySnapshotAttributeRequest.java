@@ -16,10 +16,12 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest) ModifySnapshotAttribute operation}.
  * <p>
- * A request to modify an EBS snapshot's attributes. Only one attribute
- * can be changed per request.
+ * Adds or remove permission settings for the specified snapshot.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#modifySnapshotAttribute(ModifySnapshotAttributeRequest)
  */
 public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
 
@@ -351,6 +353,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,7 +16,63 @@ package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Put Attributes Request
+ * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest) PutAttributes operation}.
+ * <p>
+ * The PutAttributes operation creates or replaces attributes in an
+ * item. The client may specify new attributes using a combination of the
+ * <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code>
+ * parameters. The client specifies the first attribute by the parameters
+ * <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code> ,
+ * the second attribute by the parameters <code>Attribute.1.Name</code>
+ * and <code>Attribute.1.Value</code> , and so on.
+ * </p>
+ * <p>
+ * Attributes are uniquely identified in an item by their name/value
+ * combination. For example, a single item can have the attributes
+ * <code>{ "first_name", "first_value" }</code> and <code>{ "first_name",
+ * second_value" }</code> . However, it cannot have two attribute
+ * instances where both the <code>Attribute.X.Name</code> and
+ * <code>Attribute.X.Value</code> are the same.
+ * </p>
+ * <p>
+ * Optionally, the requestor can supply the <code>Replace</code>
+ * parameter for each individual attribute. Setting this value to
+ * <code>true</code> causes the new attribute value to replace the
+ * existing attribute value(s). For example, if an item has the
+ * attributes <code>{ 'a', '1' }</code> ,
+ * 
+ * <code>{ 'b', '2'}</code> and <code>{ 'b', '3'
+ * }</code> and the requestor calls <code>PutAttributes</code> using the
+ * attributes <code>{ 'b', '4' }</code> with the <code>Replace</code>
+ * parameter set to true, the final attributes of the item are changed to
+ * <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code> , which
+ * replaces the previous values of the 'b' attribute with the new value.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Using PutAttributes to replace attribute values that do
+ * not exist will not result in an error response.
+ * </p>
+ * <p>
+ * You cannot specify an empty string as an attribute name.
+ * </p>
+ * <p>
+ * Because Amazon SimpleDB makes multiple copies of client data and uses
+ * an eventual consistency update model, an immediate GetAttributes or
+ * Select operation (read) immediately after a DeleteAttributes operation
+ * (write) might not return the updated data.
+ * </p>
+ * <p>
+ * The following limitations are enforced for this operation:
+ * <ul>
+ * <li>256 total attribute name-value pairs per item</li>
+ * <li>One billion attributes per domain</li>
+ * <li>10 GB of total user data storage per domain</li>
+ * 
+ * </ul>
+ * 
+ * </p>
+ *
+ * @see com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest)
  */
 public class PutAttributesRequest extends AmazonWebServiceRequest {
 
@@ -247,6 +303,14 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -16,9 +16,14 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest) GetQueueAttributes operation}.
  * <p>
- * 
+ * Gets one or all attributes of a queue. Queues currently have two
+ * attributes you can get: ApproximateNumberOfMessages and
+ * VisibilityTimeout.
  * </p>
+ *
+ * @see com.amazonaws.services.sqs.AmazonSQS#getQueueAttributes(GetQueueAttributesRequest)
  */
 public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
 
@@ -145,6 +150,14 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

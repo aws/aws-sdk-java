@@ -28,7 +28,6 @@ import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
-import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
@@ -64,11 +63,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * List of exception unmarshallers for all AmazonElasticMapReduce exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
-
-    /**
-     * Low level client for sending requests to AWS services.
-     */
-    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -118,7 +112,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/elasticmapreduce/request.handlers");
-        client = new HttpClient(clientConfiguration);
     }
 
     

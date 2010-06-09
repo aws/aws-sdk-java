@@ -16,7 +16,15 @@ package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * List Topics Request
+ * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest) ListTopics operation}.
+ * <p>
+ * The ListTopics action returns a list of the requester's topics. Each
+ * call returns a limited list of topics. If there are more topics, a
+ * NextToken is also returned. Use the NextToken parameter in a new
+ * ListTopics call to get further results.
+ * </p>
+ *
+ * @see com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest)
  */
 public class ListTopicsRequest extends AmazonWebServiceRequest {
 
@@ -65,6 +73,14 @@ public class ListTopicsRequest extends AmazonWebServiceRequest {
     }
     
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

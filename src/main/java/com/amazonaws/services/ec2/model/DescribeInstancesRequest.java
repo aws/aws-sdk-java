@@ -16,8 +16,10 @@ package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest) DescribeInstances operation}.
  * <p>
- * A request to describe the Amazon EC2 instances in a user's account.
+ * The DescribeInstances operation returns information about instances
+ * that you own.
  * </p>
  * <p>
  * If you specify one or more instance IDs, Amazon EC2 returns
@@ -31,6 +33,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Recently terminated instances might appear in the returned results.
  * This interval is usually less than one hour.
  * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)
  */
 public class DescribeInstancesRequest extends AmazonWebServiceRequest {
 
@@ -101,6 +105,14 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

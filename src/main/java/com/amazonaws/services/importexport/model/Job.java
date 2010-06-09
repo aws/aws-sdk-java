@@ -1,0 +1,236 @@
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.importexport.model;
+
+/**
+ * <p>
+ * Representation of a job returned by the ListJobs operation.
+ * </p>
+ */
+public class Job {
+
+    /**
+     * A unique identifier which refers to a particular job.
+     */
+    private String jobId;
+
+    /**
+     * Timestamp of the CreateJob request in ISO8601 date format. For example
+     * "2010-03-28T20:27:35Z".
+     */
+    private java.util.Date creationDate;
+
+    /**
+     * Indicates whether the job was canceled.
+     */
+    private Boolean isCanceled;
+
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     */
+    private String jobType;
+
+    /**
+     * A unique identifier which refers to a particular job.
+     *
+     * @return A unique identifier which refers to a particular job.
+     */
+    public String getJobId() {
+        return jobId;
+    }
+    
+    /**
+     * A unique identifier which refers to a particular job.
+     *
+     * @param jobId A unique identifier which refers to a particular job.
+     */
+    public void setJobId(String jobId) {
+        this.jobId = jobId;
+    }
+    
+    /**
+     * A unique identifier which refers to a particular job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param jobId A unique identifier which refers to a particular job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withJobId(String jobId) {
+        this.jobId = jobId;
+        return this;
+    }
+    
+    
+    /**
+     * Timestamp of the CreateJob request in ISO8601 date format. For example
+     * "2010-03-28T20:27:35Z".
+     *
+     * @return Timestamp of the CreateJob request in ISO8601 date format. For example
+     *         "2010-03-28T20:27:35Z".
+     */
+    public java.util.Date getCreationDate() {
+        return creationDate;
+    }
+    
+    /**
+     * Timestamp of the CreateJob request in ISO8601 date format. For example
+     * "2010-03-28T20:27:35Z".
+     *
+     * @param creationDate Timestamp of the CreateJob request in ISO8601 date format. For example
+     *         "2010-03-28T20:27:35Z".
+     */
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+    
+    /**
+     * Timestamp of the CreateJob request in ISO8601 date format. For example
+     * "2010-03-28T20:27:35Z".
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param creationDate Timestamp of the CreateJob request in ISO8601 date format. For example
+     *         "2010-03-28T20:27:35Z".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether the job was canceled.
+     *
+     * @return Indicates whether the job was canceled.
+     */
+    public Boolean isIsCanceled() {
+        return isCanceled;
+    }
+    
+    /**
+     * Indicates whether the job was canceled.
+     *
+     * @param isCanceled Indicates whether the job was canceled.
+     */
+    public void setIsCanceled(Boolean isCanceled) {
+        this.isCanceled = isCanceled;
+    }
+    
+    /**
+     * Indicates whether the job was canceled.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param isCanceled Indicates whether the job was canceled.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withIsCanceled(Boolean isCanceled) {
+        this.isCanceled = isCanceled;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether the job was canceled.
+     *
+     * @return Indicates whether the job was canceled.
+     */
+    public Boolean getIsCanceled() {
+        return isCanceled;
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @return Specifies whether the job to initiate is an import or export job.
+     *
+     * @see JobType
+     */
+    public String getJobType() {
+        return jobType;
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @see JobType
+     */
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see JobType
+     */
+    public Job withJobType(String jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+    
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        
+        sb.append("JobId: " + jobId + ", ");
+        sb.append("CreationDate: " + creationDate + ", ");
+        sb.append("IsCanceled: " + isCanceled + ", ");
+        sb.append("JobType: " + jobType + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
+}
+    

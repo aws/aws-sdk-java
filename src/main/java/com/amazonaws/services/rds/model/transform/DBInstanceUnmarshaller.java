@@ -91,6 +91,9 @@ public class DBInstanceUnmarshaller implements Unmarshaller<DBInstance, Node> {
         Node latestRestorableTimeNode = XpathUtils.asNode("LatestRestorableTime", node);
         dBInstance.setLatestRestorableTime(new DateUnmarshaller().unmarshall(latestRestorableTimeNode));
     
+        Node multiAZNode = XpathUtils.asNode("MultiAZ", node);
+        dBInstance.setMultiAZ(new BooleanUnmarshaller().unmarshall(multiAZNode));
+    
 
         return dBInstance;
     }
