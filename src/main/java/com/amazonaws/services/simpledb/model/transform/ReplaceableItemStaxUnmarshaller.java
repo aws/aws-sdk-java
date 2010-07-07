@@ -40,12 +40,13 @@ public class ReplaceableItemStaxUnmarshaller implements Unmarshaller<Replaceable
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return replaceableItem;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return replaceableItem;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("ItemName", targetDepth)) {
                     replaceableItem.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class ReplaceableItemStaxUnmarshaller implements Unmarshaller<Replaceable
                     replaceableItem.getAttributes().add(ReplaceableAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return replaceableItem;
                 }

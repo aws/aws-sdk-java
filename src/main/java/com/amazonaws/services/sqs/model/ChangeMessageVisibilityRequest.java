@@ -77,8 +77,8 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest {
     public ChangeMessageVisibilityRequest() {}
     
     /**
-     * Constructs a new ChangeMessageVisibilityRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new ChangeMessageVisibilityRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param queueUrl
@@ -213,7 +213,6 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("QueueUrl: " + queueUrl + ", ");
         sb.append("ReceiptHandle: " + receiptHandle + ", ");
         sb.append("VisibilityTimeout: " + visibilityTimeout + ", ");

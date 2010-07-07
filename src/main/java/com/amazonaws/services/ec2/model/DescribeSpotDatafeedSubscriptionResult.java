@@ -72,7 +72,6 @@ public class DescribeSpotDatafeedSubscriptionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SpotDatafeedSubscription: " + spotDatafeedSubscription + ", ");
         sb.append("}");
         return sb.toString();

@@ -47,6 +47,12 @@ public class Message {
     private java.util.Map<String,String> attributes;
 
     /**
+     * Default constructor for a new Message object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Message() {}
+    
+    /**
      * 
      *
      * @return 
@@ -230,7 +236,6 @@ public class Message {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("MessageId: " + messageId + ", ");
         sb.append("ReceiptHandle: " + receiptHandle + ", ");
         sb.append("MD5OfBody: " + mD5OfBody + ", ");

@@ -157,7 +157,6 @@ public class ListJobsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Jobs: " + jobs + ", ");
         sb.append("IsTruncated: " + isTruncated + ", ");
         sb.append("}");

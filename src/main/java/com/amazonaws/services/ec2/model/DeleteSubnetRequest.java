@@ -78,7 +78,6 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SubnetId: " + subnetId + ", ");
         sb.append("}");
         return sb.toString();

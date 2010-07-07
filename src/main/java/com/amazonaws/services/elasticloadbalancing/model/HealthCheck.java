@@ -247,7 +247,6 @@ public class HealthCheck {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Target: " + target + ", ");
         sb.append("Interval: " + interval + ", ");
         sb.append("Timeout: " + timeout + ", ");

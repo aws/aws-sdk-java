@@ -111,7 +111,6 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ZoneNames: " + zoneNames + ", ");
         sb.append("}");
         return sb.toString();

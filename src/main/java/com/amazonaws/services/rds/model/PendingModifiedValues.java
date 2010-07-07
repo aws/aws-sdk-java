@@ -301,7 +301,6 @@ public class PendingModifiedValues {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
         sb.append("AllocatedStorage: " + allocatedStorage + ", ");
         sb.append("MasterUserPassword: " + masterUserPassword + ", ");

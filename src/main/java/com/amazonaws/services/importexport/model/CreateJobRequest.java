@@ -234,7 +234,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobType: " + jobType + ", ");
         sb.append("Manifest: " + manifest + ", ");
         sb.append("ManifestAddendum: " + manifestAddendum + ", ");

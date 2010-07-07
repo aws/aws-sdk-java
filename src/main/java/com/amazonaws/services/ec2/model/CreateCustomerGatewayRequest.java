@@ -181,7 +181,6 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Type: " + type + ", ");
         sb.append("PublicIp: " + publicIp + ", ");
         sb.append("BgpAsn: " + bgpAsn + ", ");

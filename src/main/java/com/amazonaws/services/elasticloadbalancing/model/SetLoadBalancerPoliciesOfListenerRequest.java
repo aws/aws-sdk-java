@@ -171,7 +171,6 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
         sb.append("PolicyNames: " + policyNames + ", ");

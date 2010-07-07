@@ -72,7 +72,6 @@ public class CreateDhcpOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DhcpOptions: " + dhcpOptions + ", ");
         sb.append("}");
         return sb.toString();

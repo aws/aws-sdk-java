@@ -107,7 +107,6 @@ public class GetTopicAttributesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Attributes: " + attributes + ", ");
         sb.append("}");
         return sb.toString();

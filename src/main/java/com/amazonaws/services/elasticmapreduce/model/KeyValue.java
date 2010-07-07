@@ -111,7 +111,6 @@ public class KeyValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Key: " + key + ", ");
         sb.append("Value: " + value + ", ");
         sb.append("}");

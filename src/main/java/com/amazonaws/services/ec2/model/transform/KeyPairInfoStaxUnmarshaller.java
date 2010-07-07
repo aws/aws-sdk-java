@@ -40,12 +40,13 @@ public class KeyPairInfoStaxUnmarshaller implements Unmarshaller<KeyPairInfo, St
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return keyPairInfo;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return keyPairInfo;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("keyName", targetDepth)) {
                     keyPairInfo.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class KeyPairInfoStaxUnmarshaller implements Unmarshaller<KeyPairInfo, St
                     keyPairInfo.setKeyFingerprint(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return keyPairInfo;
                 }

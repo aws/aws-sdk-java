@@ -404,7 +404,6 @@ public class LoadBalancerDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("DNSName: " + dNSName + ", ");
         sb.append("ListenerDescriptions: " + listenerDescriptions + ", ");

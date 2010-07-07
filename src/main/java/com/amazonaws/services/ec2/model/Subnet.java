@@ -288,7 +288,6 @@ public class Subnet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SubnetId: " + subnetId + ", ");
         sb.append("State: " + state + ", ");
         sb.append("VpcId: " + vpcId + ", ");

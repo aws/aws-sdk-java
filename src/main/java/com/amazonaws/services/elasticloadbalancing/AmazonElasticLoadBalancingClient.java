@@ -16,10 +16,14 @@ package com.amazonaws.services.elasticloadbalancing;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,10 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
+import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -42,6 +49,7 @@ import com.amazonaws.services.elasticloadbalancing.model.transform.*;
  * Client for accessing AmazonElasticLoadBalancing.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * 
  */
 public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient implements AmazonElasticLoadBalancing {
@@ -56,6 +64,11 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * List of exception unmarshallers for all AmazonElasticLoadBalancing exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
+
+    /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -113,6 +126,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/elasticloadbalancing/request.handlers");
+        client = new HttpClient(clientConfiguration);
     }
 
     
@@ -141,7 +155,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SetLoadBalancerPoliciesOfListenerRequest> request = new SetLoadBalancerPoliciesOfListenerRequestMarshaller().marshall(setLoadBalancerPoliciesOfListenerRequest);
-        return invoke(request, "//SetLoadBalancerPoliciesOfListenerResult", new SetLoadBalancerPoliciesOfListenerResultUnmarshaller());
+        return invoke(request, new SetLoadBalancerPoliciesOfListenerResultStaxUnmarshaller());
     }
     
     /**
@@ -166,7 +180,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public DescribeLoadBalancersResult describeLoadBalancers(DescribeLoadBalancersRequest describeLoadBalancersRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeLoadBalancersRequest> request = new DescribeLoadBalancersRequestMarshaller().marshall(describeLoadBalancersRequest);
-        return invoke(request, "//DescribeLoadBalancersResult", new DescribeLoadBalancersResultUnmarshaller());
+        return invoke(request, new DescribeLoadBalancersResultStaxUnmarshaller());
     }
     
     /**
@@ -194,7 +208,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateAppCookieStickinessPolicyRequest> request = new CreateAppCookieStickinessPolicyRequestMarshaller().marshall(createAppCookieStickinessPolicyRequest);
-        return invoke(request, "//CreateAppCookieStickinessPolicyResult", new CreateAppCookieStickinessPolicyResultUnmarshaller());
+        return invoke(request, new CreateAppCookieStickinessPolicyResultStaxUnmarshaller());
     }
     
     /**
@@ -221,7 +235,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancer(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DisableAvailabilityZonesForLoadBalancerRequest> request = new DisableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(disableAvailabilityZonesForLoadBalancerRequest);
-        return invoke(request, "//DisableAvailabilityZonesForLoadBalancerResult", new DisableAvailabilityZonesForLoadBalancerResultUnmarshaller());
+        return invoke(request, new DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
     }
     
     /**
@@ -247,7 +261,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public DescribeInstanceHealthResult describeInstanceHealth(DescribeInstanceHealthRequest describeInstanceHealthRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeInstanceHealthRequest> request = new DescribeInstanceHealthRequestMarshaller().marshall(describeInstanceHealthRequest);
-        return invoke(request, "//DescribeInstanceHealthResult", new DescribeInstanceHealthResultUnmarshaller());
+        return invoke(request, new DescribeInstanceHealthResultStaxUnmarshaller());
     }
     
     /**
@@ -273,7 +287,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public CreateLoadBalancerResult createLoadBalancer(CreateLoadBalancerRequest createLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateLoadBalancerRequest> request = new CreateLoadBalancerRequestMarshaller().marshall(createLoadBalancerRequest);
-        return invoke(request, "//CreateLoadBalancerResult", new CreateLoadBalancerResultUnmarshaller());
+        return invoke(request, new CreateLoadBalancerResultStaxUnmarshaller());
     }
     
     /**
@@ -299,7 +313,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public RegisterInstancesWithLoadBalancerResult registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RegisterInstancesWithLoadBalancerRequest> request = new RegisterInstancesWithLoadBalancerRequestMarshaller().marshall(registerInstancesWithLoadBalancerRequest);
-        return invoke(request, "//RegisterInstancesWithLoadBalancerResult", new RegisterInstancesWithLoadBalancerResultUnmarshaller());
+        return invoke(request, new RegisterInstancesWithLoadBalancerResultStaxUnmarshaller());
     }
     
     /**
@@ -326,7 +340,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public DeregisterInstancesFromLoadBalancerResult deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeregisterInstancesFromLoadBalancerRequest> request = new DeregisterInstancesFromLoadBalancerRequestMarshaller().marshall(deregisterInstancesFromLoadBalancerRequest);
-        return invoke(request, "//DeregisterInstancesFromLoadBalancerResult", new DeregisterInstancesFromLoadBalancerResultUnmarshaller());
+        return invoke(request, new DeregisterInstancesFromLoadBalancerResultStaxUnmarshaller());
     }
     
     /**
@@ -347,7 +361,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public void deleteLoadBalancer(DeleteLoadBalancerRequest deleteLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteLoadBalancerRequest> request = new DeleteLoadBalancerRequestMarshaller().marshall(deleteLoadBalancerRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -372,7 +386,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public ConfigureHealthCheckResult configureHealthCheck(ConfigureHealthCheckRequest configureHealthCheckRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ConfigureHealthCheckRequest> request = new ConfigureHealthCheckRequestMarshaller().marshall(configureHealthCheckRequest);
-        return invoke(request, "//ConfigureHealthCheckResult", new ConfigureHealthCheckResultUnmarshaller());
+        return invoke(request, new ConfigureHealthCheckResultStaxUnmarshaller());
     }
     
     /**
@@ -398,7 +412,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public EnableAvailabilityZonesForLoadBalancerResult enableAvailabilityZonesForLoadBalancer(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<EnableAvailabilityZonesForLoadBalancerRequest> request = new EnableAvailabilityZonesForLoadBalancerRequestMarshaller().marshall(enableAvailabilityZonesForLoadBalancerRequest);
-        return invoke(request, "//EnableAvailabilityZonesForLoadBalancerResult", new EnableAvailabilityZonesForLoadBalancerResultUnmarshaller());
+        return invoke(request, new EnableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller());
     }
     
     /**
@@ -426,7 +440,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public CreateLBCookieStickinessPolicyResult createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateLBCookieStickinessPolicyRequest> request = new CreateLBCookieStickinessPolicyRequestMarshaller().marshall(createLBCookieStickinessPolicyRequest);
-        return invoke(request, "//CreateLBCookieStickinessPolicyResult", new CreateLBCookieStickinessPolicyResultUnmarshaller());
+        return invoke(request, new CreateLBCookieStickinessPolicyResultStaxUnmarshaller());
     }
     
     /**
@@ -452,7 +466,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     public DeleteLoadBalancerPolicyResult deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteLoadBalancerPolicyRequest> request = new DeleteLoadBalancerPolicyRequestMarshaller().marshall(deleteLoadBalancerPolicyRequest);
-        return invoke(request, "//DeleteLoadBalancerPolicyResult", new DeleteLoadBalancerPolicyResultUnmarshaller());
+        return invoke(request, new DeleteLoadBalancerPolicyResultStaxUnmarshaller());
     }
     
     /**
@@ -475,7 +489,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -504,7 +518,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

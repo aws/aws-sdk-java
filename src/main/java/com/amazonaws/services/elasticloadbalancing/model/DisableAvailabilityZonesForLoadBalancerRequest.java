@@ -135,7 +135,6 @@ public class DisableAvailabilityZonesForLoadBalancerRequest extends AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
         sb.append("}");

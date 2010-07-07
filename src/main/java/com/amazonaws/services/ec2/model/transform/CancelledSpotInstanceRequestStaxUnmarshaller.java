@@ -40,12 +40,13 @@ public class CancelledSpotInstanceRequestStaxUnmarshaller implements Unmarshalle
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return cancelledSpotInstanceRequest;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return cancelledSpotInstanceRequest;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("spotInstanceRequestId", targetDepth)) {
                     cancelledSpotInstanceRequest.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class CancelledSpotInstanceRequestStaxUnmarshaller implements Unmarshalle
                     cancelledSpotInstanceRequest.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cancelledSpotInstanceRequest;
                 }

@@ -122,7 +122,6 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SnapshotId: " + snapshotId + ", ");
         sb.append("Attribute: " + attribute + ", ");
         sb.append("}");

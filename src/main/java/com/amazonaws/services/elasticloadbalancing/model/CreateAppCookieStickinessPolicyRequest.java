@@ -143,7 +143,6 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("PolicyName: " + policyName + ", ");
         sb.append("CookieName: " + cookieName + ", ");

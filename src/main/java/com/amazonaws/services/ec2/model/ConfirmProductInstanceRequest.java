@@ -123,7 +123,6 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ProductCode: " + productCode + ", ");
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("}");

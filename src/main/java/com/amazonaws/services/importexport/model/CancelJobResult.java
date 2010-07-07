@@ -90,7 +90,6 @@ public class CancelJobResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Success: " + success + ", ");
         sb.append("}");
         return sb.toString();

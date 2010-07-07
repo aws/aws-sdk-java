@@ -143,7 +143,6 @@ public class Dimension {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("Value: " + value + ", ");
         sb.append("}");

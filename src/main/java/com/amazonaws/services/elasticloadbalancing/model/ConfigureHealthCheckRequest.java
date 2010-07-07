@@ -107,7 +107,6 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("HealthCheck: " + healthCheck + ", ");
         sb.append("}");

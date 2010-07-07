@@ -180,7 +180,6 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SubnetIds: " + subnetIds + ", ");
         sb.append("Filters: " + filters + ", ");
         sb.append("}");

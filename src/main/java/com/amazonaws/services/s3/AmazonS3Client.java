@@ -40,13 +40,13 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
-import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -65,6 +65,7 @@ import com.amazonaws.services.s3.internal.S3MetadataResponseHandler;
 import com.amazonaws.services.s3.internal.S3ObjectResponseHandler;
 import com.amazonaws.services.s3.internal.S3QueryStringSigner;
 import com.amazonaws.services.s3.internal.S3Signer;
+import com.amazonaws.services.s3.internal.S3StringResponseHandler;
 import com.amazonaws.services.s3.internal.S3XmlResponseHandler;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
@@ -81,6 +82,7 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.BucketPolicy;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -710,7 +712,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 getObjectRequest.getUnmodifiedSinceConstraint());
         addStringListHeader(request, Headers.GET_OBJECT_IF_MATCH,
                 getObjectRequest.getMatchingETagConstraints());
-        addStringListHeader(request, Headers.GET_OBJECT_IT_NONE_MATCH,
+        addStringListHeader(request, Headers.GET_OBJECT_IF_NONE_MATCH,
                 getObjectRequest.getNonmatchingETagConstraints());
 
         signRequest(request, HttpMethodName.GET, bucketName, key);
@@ -1247,6 +1249,71 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         httpRequest.setContent(new ByteArrayInputStream(bytes));
 
         client.execute(httpRequest, voidResponseHandler, errorResponseHandler);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketPolicy(java.lang.String)
+     */
+    public BucketPolicy getBucketPolicy(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+            "The bucket name must be specified when getting a bucket policy");
+
+        Request<Void> request = createRequest(bucketName, null, null);
+        request.addParameter("policy", null);
+        signRequest(request, HttpMethodName.GET, bucketName, null);
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
+
+        BucketPolicy result = new BucketPolicy();
+        try {
+            String policyText = client.execute(httpRequest, new S3StringResponseHandler(), errorResponseHandler);
+            result.setPolicyText(policyText);
+            return result;
+        } catch (AmazonServiceException ase) {
+            /*
+             * If we receive an error response telling us that no policy has
+             * been set for this bucket, then instead of forcing the user to
+             * deal with the exception, we'll just return an empty result. Any
+             * other exceptions will be rethrown for the user to handle.
+             */
+            if (ase.getErrorCode().equals("NoSuchBucketPolicy")) return result;
+            throw ase;
+        }
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#setBucketPolicy(java.lang.String, java.lang.String)
+     */
+    public void setBucketPolicy(String bucketName, String policyText)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+            "The bucket name must be specified when setting a bucket policy");
+        assertParameterNotNull(policyText,
+            "The policy text must be specified when setting a bucket policy");
+
+        Request<Void> request = createRequest(bucketName, null, null);
+        request.addParameter("policy", null);
+        signRequest(request, HttpMethodName.PUT, bucketName, null);
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.PUT);
+        httpRequest.setContent(new ByteArrayInputStream(ServiceUtils.toByteArray(policyText)));
+
+        client.execute(httpRequest, voidResponseHandler, errorResponseHandler);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#deleteBucketPolicy(java.lang.String)
+     */
+    public void deleteBucketPolicy(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+                "The bucket name must be specified when deleting a bucket policy");
+
+        Request<Void> request = createRequest(bucketName, null, null);
+        request.addParameter("policy", null);
+        signRequest(request, HttpMethodName.DELETE, bucketName, null);
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.DELETE);
+
+        client.execute(httpRequest, this.voidResponseHandler, this.errorResponseHandler);
     }
 
     /* (non-Javadoc)

@@ -218,7 +218,6 @@ public class SecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("OwnerId: " + ownerId + ", ");
         sb.append("GroupName: " + groupName + ", ");
         sb.append("Description: " + description + ", ");

@@ -324,7 +324,6 @@ public class ReservedInstancesOffering {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
         sb.append("InstanceType: " + instanceType + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");

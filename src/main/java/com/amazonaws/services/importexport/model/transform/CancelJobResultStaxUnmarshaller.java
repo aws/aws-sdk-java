@@ -40,17 +40,18 @@ public class CancelJobResultStaxUnmarshaller implements Unmarshaller<CancelJobRe
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return cancelJobResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return cancelJobResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("Success", targetDepth)) {
                     cancelJobResult.setSuccess(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cancelJobResult;
                 }

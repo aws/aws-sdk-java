@@ -119,7 +119,6 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");
         sb.append("}");

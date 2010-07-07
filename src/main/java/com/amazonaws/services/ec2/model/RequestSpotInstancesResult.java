@@ -100,7 +100,6 @@ public class RequestSpotInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SpotInstanceRequests: " + spotInstanceRequests + ", ");
         sb.append("}");
         return sb.toString();

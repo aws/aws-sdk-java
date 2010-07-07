@@ -95,7 +95,6 @@ public class DescribeInstanceHealthResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceStates: " + instanceStates + ", ");
         sb.append("}");
         return sb.toString();

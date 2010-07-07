@@ -251,7 +251,6 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("Name: " + name + ", ");
         sb.append("Description: " + description + ", ");

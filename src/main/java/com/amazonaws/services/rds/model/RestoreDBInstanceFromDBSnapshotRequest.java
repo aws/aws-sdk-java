@@ -296,7 +296,6 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
         sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
         sb.append("DBInstanceClass: " + dBInstanceClass + ", ");

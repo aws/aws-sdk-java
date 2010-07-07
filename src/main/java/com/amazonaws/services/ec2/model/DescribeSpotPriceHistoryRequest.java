@@ -261,7 +261,6 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("StartTime: " + startTime + ", ");
         sb.append("EndTime: " + endTime + ", ");
         sb.append("InstanceTypes: " + instanceTypes + ", ");

@@ -279,7 +279,6 @@ public class HadoopJarStepConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Properties: " + properties + ", ");
         sb.append("Jar: " + jar + ", ");
         sb.append("MainClass: " + mainClass + ", ");

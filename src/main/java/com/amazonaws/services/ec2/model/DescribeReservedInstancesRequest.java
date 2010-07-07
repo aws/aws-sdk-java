@@ -105,7 +105,6 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ReservedInstancesIds: " + reservedInstancesIds + ", ");
         sb.append("}");
         return sb.toString();

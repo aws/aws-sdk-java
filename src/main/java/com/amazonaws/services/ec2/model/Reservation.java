@@ -300,7 +300,6 @@ public class Reservation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ReservationId: " + reservationId + ", ");
         sb.append("OwnerId: " + ownerId + ", ");
         sb.append("RequesterId: " + requesterId + ", ");

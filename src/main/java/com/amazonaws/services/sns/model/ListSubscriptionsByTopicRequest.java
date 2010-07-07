@@ -46,8 +46,8 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
     public ListSubscriptionsByTopicRequest() {}
     
     /**
-     * Constructs a new ListSubscriptionsByTopicRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new ListSubscriptionsByTopicRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param topicArn The ARN of the topic for which you wish to find
@@ -55,6 +55,21 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
      */
     public ListSubscriptionsByTopicRequest(String topicArn) {
         this.topicArn = topicArn;
+    }
+    
+    /**
+     * Constructs a new ListSubscriptionsByTopicRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param topicArn The ARN of the topic for which you wish to find
+     * subscriptions.
+     * @param nextToken Token returned by the previous
+     * ListSubscriptionsByTopic request.
+     */
+    public ListSubscriptionsByTopicRequest(String topicArn, String nextToken) {
+        this.topicArn = topicArn;
+        this.nextToken = nextToken;
     }
     
     /**
@@ -137,7 +152,6 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");

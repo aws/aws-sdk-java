@@ -40,12 +40,13 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return snapshot;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return snapshot;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("snapshotId", targetDepth)) {
                     snapshot.setSnapshotId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -82,7 +83,7 @@ public class SnapshotStaxUnmarshaller implements Unmarshaller<Snapshot, StaxUnma
                     snapshot.setOwnerAlias(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshot;
                 }

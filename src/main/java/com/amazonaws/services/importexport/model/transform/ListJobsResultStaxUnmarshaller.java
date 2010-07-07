@@ -40,12 +40,13 @@ public class ListJobsResultStaxUnmarshaller implements Unmarshaller<ListJobsResu
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return listJobsResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return listJobsResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("Jobs/member", targetDepth)) {
                     listJobsResult.getJobs().add(JobStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class ListJobsResultStaxUnmarshaller implements Unmarshaller<ListJobsResu
                     listJobsResult.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listJobsResult;
                 }

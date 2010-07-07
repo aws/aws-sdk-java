@@ -462,7 +462,6 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SpotPrice: " + spotPrice + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");
         sb.append("Type: " + type + ", ");

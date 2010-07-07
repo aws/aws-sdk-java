@@ -114,8 +114,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     public BatchPutAttributesRequest() {}
     
     /**
-     * Constructs a new BatchPutAttributesRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new BatchPutAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param domainName The name of the domain to create. The name can range
@@ -248,7 +248,6 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainName: " + domainName + ", ");
         sb.append("Items: " + items + ", ");
         sb.append("}");

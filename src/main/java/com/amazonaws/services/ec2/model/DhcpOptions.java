@@ -139,7 +139,6 @@ public class DhcpOptions {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
         sb.append("DhcpConfigurations: " + dhcpConfigurations + ", ");
         sb.append("}");

@@ -207,7 +207,6 @@ public class Event {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SourceIdentifier: " + sourceIdentifier + ", ");
         sb.append("SourceType: " + sourceType + ", ");
         sb.append("Message: " + message + ", ");

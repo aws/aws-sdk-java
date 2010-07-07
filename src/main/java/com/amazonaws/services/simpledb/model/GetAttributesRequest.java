@@ -68,8 +68,8 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
     public GetAttributesRequest() {}
     
     /**
-     * Constructs a new GetAttributesRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new GetAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param domainName The name of the domain in which to perform the
@@ -298,7 +298,6 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainName: " + domainName + ", ");
         sb.append("ItemName: " + itemName + ", ");
         sb.append("AttributeNames: " + attributeNames + ", ");

@@ -40,17 +40,18 @@ public class DescribeVpcsResultStaxUnmarshaller implements Unmarshaller<Describe
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return describeVpcsResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return describeVpcsResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("vpcSet/item", targetDepth)) {
                     describeVpcsResult.getVpcs().add(VpcStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVpcsResult;
                 }

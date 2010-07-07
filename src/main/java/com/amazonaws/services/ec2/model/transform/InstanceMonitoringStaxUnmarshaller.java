@@ -40,12 +40,13 @@ public class InstanceMonitoringStaxUnmarshaller implements Unmarshaller<Instance
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return instanceMonitoring;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return instanceMonitoring;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("instanceId", targetDepth)) {
                     instanceMonitoring.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class InstanceMonitoringStaxUnmarshaller implements Unmarshaller<Instance
                     instanceMonitoring.setMonitoring(MonitoringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceMonitoring;
                 }

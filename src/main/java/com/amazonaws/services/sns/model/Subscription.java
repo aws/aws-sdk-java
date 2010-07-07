@@ -47,6 +47,12 @@ public class Subscription {
     private String topicArn;
 
     /**
+     * Default constructor for a new Subscription object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Subscription() {}
+    
+    /**
      * The subscription's ARN.
      *
      * @return The subscription's ARN.
@@ -228,7 +234,6 @@ public class Subscription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SubscriptionArn: " + subscriptionArn + ", ");
         sb.append("Owner: " + owner + ", ");
         sb.append("Protocol: " + protocol + ", ");

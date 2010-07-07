@@ -42,8 +42,8 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
     public SendMessageRequest() {}
     
     /**
-     * Constructs a new SendMessageRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new SendMessageRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param queueUrl
@@ -134,7 +134,6 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("QueueUrl: " + queueUrl + ", ");
         sb.append("MessageBody: " + messageBody + ", ");
         sb.append("}");

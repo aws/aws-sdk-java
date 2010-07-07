@@ -110,7 +110,6 @@ public class TerminateInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TerminatingInstances: " + terminatingInstances + ", ");
         sb.append("}");
         return sb.toString();

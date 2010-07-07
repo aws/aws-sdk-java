@@ -122,7 +122,6 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
         sb.append("VpcId: " + vpcId + ", ");
         sb.append("}");

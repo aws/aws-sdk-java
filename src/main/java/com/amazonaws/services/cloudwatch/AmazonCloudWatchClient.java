@@ -16,10 +16,14 @@ package com.amazonaws.services.cloudwatch;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,10 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
+import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -42,6 +49,7 @@ import com.amazonaws.services.cloudwatch.model.transform.*;
  * Client for accessing AmazonCloudWatch.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * 
  */
 public class AmazonCloudWatchClient extends AmazonWebServiceClient implements AmazonCloudWatch {
@@ -56,6 +64,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * List of exception unmarshallers for all AmazonCloudWatch exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
+
+    /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -108,6 +121,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/cloudwatch/request.handlers");
+        client = new HttpClient(clientConfiguration);
     }
 
     
@@ -133,7 +147,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     public ListMetricsResult listMetrics(ListMetricsRequest listMetricsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListMetricsRequest> request = new ListMetricsRequestMarshaller().marshall(listMetricsRequest);
-        return invoke(request, "//ListMetricsResult", new ListMetricsResultUnmarshaller());
+        return invoke(request, new ListMetricsResultStaxUnmarshaller());
     }
     
     /**
@@ -161,7 +175,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     public GetMetricStatisticsResult getMetricStatistics(GetMetricStatisticsRequest getMetricStatisticsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetMetricStatisticsRequest> request = new GetMetricStatisticsRequestMarshaller().marshall(getMetricStatisticsRequest);
-        return invoke(request, "//GetMetricStatisticsResult", new GetMetricStatisticsResultUnmarshaller());
+        return invoke(request, new GetMetricStatisticsResultStaxUnmarshaller());
     }
     
     /**
@@ -185,7 +199,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -214,7 +228,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

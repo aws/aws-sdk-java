@@ -40,17 +40,18 @@ public class DescribeBundleTasksResultStaxUnmarshaller implements Unmarshaller<D
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return describeBundleTasksResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return describeBundleTasksResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("bundleInstanceTasksSet/item", targetDepth)) {
                     describeBundleTasksResult.getBundleTasks().add(BundleTaskStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeBundleTasksResult;
                 }

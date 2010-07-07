@@ -51,6 +51,11 @@ public interface AmazonEC2 {
      * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
@@ -3037,5 +3042,14 @@ public interface AmazonEC2 {
      */
     public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException;
     
+
+    /**
+     * Shuts down this client object, releasing any resources that might be held
+     * open. This is an optional method, and callers are not expected to call
+     * it, but can if they want to explicitly release any open resources. Once a
+     * client has been shutdown, it should not be used to make any more
+     * requests.
+     */
+    public void shutdown();
 }
         

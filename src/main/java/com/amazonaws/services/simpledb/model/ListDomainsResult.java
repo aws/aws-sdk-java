@@ -144,7 +144,6 @@ public class ListDomainsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainNames: " + domainNames + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");

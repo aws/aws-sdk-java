@@ -101,7 +101,6 @@ public class DescribeReservedInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ReservedInstances: " + reservedInstances + ", ");
         sb.append("}");
         return sb.toString();

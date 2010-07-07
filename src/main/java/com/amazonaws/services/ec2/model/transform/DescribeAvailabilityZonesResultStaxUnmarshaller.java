@@ -40,17 +40,18 @@ public class DescribeAvailabilityZonesResultStaxUnmarshaller implements Unmarsha
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return describeAvailabilityZonesResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return describeAvailabilityZonesResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("availabilityZoneInfo/item", targetDepth)) {
                     describeAvailabilityZonesResult.getAvailabilityZones().add(AvailabilityZoneStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeAvailabilityZonesResult;
                 }

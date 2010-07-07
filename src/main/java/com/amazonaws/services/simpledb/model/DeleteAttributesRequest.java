@@ -76,8 +76,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     public DeleteAttributesRequest() {}
     
     /**
-     * Constructs a new DeleteAttributesRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new DeleteAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param domainName The name of the domain in which to perform the
@@ -89,6 +89,51 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     public DeleteAttributesRequest(String domainName, String itemName) {
         this.domainName = domainName;
         this.itemName = itemName;
+    }
+    
+    /**
+     * Constructs a new DeleteAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item. Similar to rows on a
+     * spreadsheet, items represent individual objects that contain one or
+     * more value-attribute pairs.
+     * @param attributes A list of Attributes. Similar to columns on a
+     * spreadsheet, attributes represent categories of data that can be
+     * assigned to items.
+     */
+    public DeleteAttributesRequest(String domainName, String itemName, java.util.List<Attribute> attributes) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+        this.attributes = attributes;
+    }
+    
+    /**
+     * Constructs a new DeleteAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item. Similar to rows on a
+     * spreadsheet, items represent individual objects that contain one or
+     * more value-attribute pairs.
+     * @param attributes A list of Attributes. Similar to columns on a
+     * spreadsheet, attributes represent categories of data that can be
+     * assigned to items.
+     * @param expected The update condition which, if specified, determines
+     * whether the specified attributes will be deleted or not. The update
+     * condition must be satisfied in order for this request to be processed
+     * and the attributes to be deleted.
+     */
+    public DeleteAttributesRequest(String domainName, String itemName, java.util.List<Attribute> attributes, UpdateCondition expected) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+        this.attributes = attributes;
+        this.expected = expected;
     }
     
     /**
@@ -305,7 +350,6 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainName: " + domainName + ", ");
         sb.append("ItemName: " + itemName + ", ");
         sb.append("Attributes: " + attributes + ", ");

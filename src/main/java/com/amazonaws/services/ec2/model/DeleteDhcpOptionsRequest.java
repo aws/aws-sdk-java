@@ -79,7 +79,6 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
         sb.append("}");
         return sb.toString();

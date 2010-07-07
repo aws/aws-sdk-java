@@ -43,10 +43,10 @@ public class GetTopicAttributesResultStaxUnmarshaller implements Unmarshaller<Ge
                 = new MapEntry<String, String>();
 
             while (true) {
-                XMLEvent event = context.nextEvent();
-                if (event.isEndDocument()) return entry;
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument()) return entry;
 
-                if (event.isAttribute() || event.isStartElement()) {
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                     if (context.testExpression("key", targetDepth)) {
                         entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
@@ -55,7 +55,7 @@ public class GetTopicAttributesResultStaxUnmarshaller implements Unmarshaller<Ge
                         entry.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
-                } else if (event.isEndElement()) {
+                } else if (xmlEvent.isEndElement()) {
                     if (context.getCurrentDepth() < originalDepth) return entry;
                 }
             }
@@ -76,18 +76,19 @@ public class GetTopicAttributesResultStaxUnmarshaller implements Unmarshaller<Ge
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return getTopicAttributesResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return getTopicAttributesResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("Attributes/entry", targetDepth)) {
                     Entry<String, String> entry = AttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
                     getTopicAttributesResult.getAttributes().put(entry.getKey(), entry.getValue());
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getTopicAttributesResult;
                 }

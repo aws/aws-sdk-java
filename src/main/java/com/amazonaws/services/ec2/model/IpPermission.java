@@ -313,7 +313,6 @@ public class IpPermission {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("IpProtocol: " + ipProtocol + ", ");
         sb.append("FromPort: " + fromPort + ", ");
         sb.append("ToPort: " + toPort + ", ");

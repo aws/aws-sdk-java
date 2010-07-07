@@ -867,7 +867,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ImageId: " + imageId + ", ");
         sb.append("MinCount: " + minCount + ", ");
         sb.append("MaxCount: " + maxCount + ", ");

@@ -201,6 +201,26 @@ public class ServiceUtils {
     }
 
     /**
+     * Safely converts a string to a byte array, first attempting to explicitly
+     * use our preferred encoding (UTF-8), and then falling back to the
+     * platform's default encoding if for some reason our preferred encoding
+     * isn't supported.
+     * 
+     * @param s
+     *            The string to convert to a byte array.
+     * 
+     * @return The byte array contents of the specified string.
+     */
+    public static byte[] toByteArray(String s) {
+        try {
+            return s.getBytes(Constants.DEFAULT_ENCODING);
+        } catch (UnsupportedEncodingException e) {
+            log.warn("Encoding " + Constants.DEFAULT_ENCODING + " is not supported", e);
+            return s.getBytes();
+        }
+    }
+
+    /**
      * Computes the MD5 hash of the data in the given input stream and returns
      * it as a hex string.
      *

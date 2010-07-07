@@ -36,6 +36,25 @@ public class Item {
     private java.util.List<Attribute> attributes;
 
     /**
+     * Default constructor for a new Item object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Item() {}
+    
+    /**
+     * Constructs a new Item object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the item.
+     * @param attributes A list of attributes.
+     */
+    public Item(String name, java.util.List<Attribute> attributes) {
+        this.name = name;
+        this.attributes = attributes;
+    }
+    
+    /**
      * The name of the item.
      *
      * @return The name of the item.
@@ -177,7 +196,6 @@ public class Item {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
         sb.append("Attributes: " + attributes + ", ");

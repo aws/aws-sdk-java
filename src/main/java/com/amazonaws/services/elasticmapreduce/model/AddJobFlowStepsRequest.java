@@ -175,7 +175,6 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobFlowId: " + jobFlowId + ", ");
         sb.append("Steps: " + steps + ", ");
         sb.append("}");

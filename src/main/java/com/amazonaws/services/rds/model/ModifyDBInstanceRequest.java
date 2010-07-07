@@ -736,7 +736,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
         sb.append("AllocatedStorage: " + allocatedStorage + ", ");
         sb.append("DBInstanceClass: " + dBInstanceClass + ", ");

@@ -40,12 +40,13 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return getStatusResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return getStatusResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("JobId", targetDepth)) {
                     getStatusResult.setJobId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -110,7 +111,7 @@ public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusRe
                     getStatusResult.setCreationDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getStatusResult;
                 }

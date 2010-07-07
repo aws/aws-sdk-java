@@ -36,6 +36,7 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.BucketPolicy;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -87,7 +88,7 @@ public interface AmazonS3 {
      * @throws IllegalArgumentException
      *             If the specified endpoint is not a valid URL endpoint.
      */
-    public abstract void setEndpoint(String endpoint);
+    public void setEndpoint(String endpoint);
 
     /**
      * Changes the Amazon S3 storage class for a specified object. Amazon S3
@@ -154,7 +155,7 @@ public interface AmazonS3 {
      * @see {@link AmazonS3Client#listObjects(String bucketName, String prefix)}
      * @see {@link AmazonS3Client#listObjects(ListObjectsRequest listObjectsRequest)}
      */
-    public abstract ObjectListing listObjects(String bucketName) throws AmazonClientException,
+    public ObjectListing listObjects(String bucketName) throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -220,7 +221,7 @@ public interface AmazonS3 {
      * @see {@link AmazonS3Client#listObjects(String bucketName)}
      * @see {@link AmazonS3Client#listObjects(ListObjectsRequest listObjectsRequest)}
      */
-    public abstract ObjectListing listObjects(String bucketName, String prefix)
+    public ObjectListing listObjects(String bucketName, String prefix)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -290,7 +291,7 @@ public interface AmazonS3 {
      * @see {@link AmazonS3Client#listObjects(String bucketName)}
      * @see {@link AmazonS3Client#listObjects(String bucketName, String prefix)}
      */
-    public abstract ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
+    public ObjectListing listObjects(ListObjectsRequest listObjectsRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -331,7 +332,7 @@ public interface AmazonS3 {
      * @see AmazonS3Client#listObjects(String, String)
      * @see AmazonS3Client#listObjects(ListObjectsRequest)
      */
-    public abstract ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
+    public ObjectListing listNextBatchOfObjects(ObjectListing previousObjectListing)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -383,7 +384,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract VersionListing listVersions(String bucketName, String prefix)
+    public VersionListing listVersions(String bucketName, String prefix)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -425,7 +426,7 @@ public interface AmazonS3 {
      * @see AmazonS3Client#listVersions(String, String)
      * @see AmazonS3Client#listVersions(ListVersionsRequest)
      */
-    public abstract VersionListing listNextBatchOfVersions(VersionListing previousVersionListing)
+    public VersionListing listNextBatchOfVersions(VersionListing previousVersionListing)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -563,7 +564,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract VersionListing listVersions(String bucketName, String prefix,
+    public VersionListing listVersions(String bucketName, String prefix,
             String keyMarker, String versionIdMarker, String delimiter, Integer maxResults)
             throws AmazonClientException, AmazonServiceException;
 
@@ -634,7 +635,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract VersionListing listVersions(ListVersionsRequest listVersionsRequest)
+    public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -657,7 +658,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract Owner getS3AccountOwner() throws AmazonClientException,
+    public Owner getS3AccountOwner() throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -704,7 +705,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract List<Bucket> listBuckets() throws AmazonClientException,
+    public List<Bucket> listBuckets() throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -732,7 +733,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
+    public List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
             throws AmazonClientException, AmazonServiceException;
 
 
@@ -770,7 +771,7 @@ public interface AmazonS3 {
      *
      * @see Region
      */
-    public abstract String getBucketLocation(String bucketName) throws AmazonClientException,
+    public String getBucketLocation(String bucketName) throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -838,7 +839,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract Bucket createBucket(CreateBucketRequest createBucketRequest)
+    public Bucket createBucket(CreateBucketRequest createBucketRequest)
             throws AmazonClientException, AmazonServiceException;
 
 
@@ -907,7 +908,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract Bucket createBucket(String bucketName)
+    public Bucket createBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1055,7 +1056,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract Bucket createBucket(String bucketName, String region)
+    public Bucket createBucket(String bucketName, String region)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1084,7 +1085,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract AccessControlList getObjectAcl(String bucketName, String key)
+    public AccessControlList getObjectAcl(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1122,7 +1123,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract AccessControlList getObjectAcl(String bucketName, String key, String versionId)
+    public AccessControlList getObjectAcl(String bucketName, String key, String versionId)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1156,7 +1157,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setObjectAcl(String bucketName, String key, AccessControlList acl)
+    public void setObjectAcl(String bucketName, String key, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1189,7 +1190,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
+    public void setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1231,7 +1232,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setObjectAcl(String bucketName, String key, String versionId, AccessControlList acl)
+    public void setObjectAcl(String bucketName, String key, String versionId, AccessControlList acl)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1270,7 +1271,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
+    public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1295,7 +1296,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract AccessControlList getBucketAcl(String bucketName) throws AmazonClientException,
+    public AccessControlList getBucketAcl(String bucketName) throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -1325,7 +1326,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setBucketAcl(String bucketName, AccessControlList acl)
+    public void setBucketAcl(String bucketName, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1354,7 +1355,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setBucketAcl(String bucketName, CannedAccessControlList acl)
+    public void setBucketAcl(String bucketName, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1388,7 +1389,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3#getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)}
      */
-    public abstract ObjectMetadata getObjectMetadata(String bucketName, String key)
+    public ObjectMetadata getObjectMetadata(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1425,7 +1426,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3#getObjectMetadata(String bucketName, String key)}
      */
-    public abstract ObjectMetadata getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)
+    public ObjectMetadata getObjectMetadata(GetObjectMetadataRequest getObjectMetadataRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1478,7 +1479,7 @@ public interface AmazonS3 {
      * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest)}
      * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest, File destinationFile)}
      */
-    public abstract S3Object getObject(String bucketName, String key) throws AmazonClientException,
+    public S3Object getObject(String bucketName, String key) throws AmazonClientException,
             AmazonServiceException;
 
     /**
@@ -1536,7 +1537,7 @@ public interface AmazonS3 {
      * @see {@link AmazonS3#getObject(String bucketName, String key)}
      * @see {@link AmazonS3#getObject(GetObjectRequest getObjectRequest, File destinationFile)}
      */
-    public abstract S3Object getObject(GetObjectRequest getObjectRequest)
+    public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1610,7 +1611,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void deleteBucket(DeleteBucketRequest deleteBucketRequest)
+    public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException;
 
 
@@ -1632,7 +1633,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void deleteBucket(String bucketName)
+    public void deleteBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1720,7 +1721,7 @@ public interface AmazonS3 {
      *             request.
      * @see {@link AmazonS3#putObject(String bucketName, String key, File file)}
      */
-    public abstract PutObjectResult putObject(PutObjectRequest putObjectRequest)
+    public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1789,7 +1790,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3#putObject(PutObjectRequest putObjectRequest)}
      */
-    public abstract PutObjectResult putObject(String bucketName, String key, File file)
+    public PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1855,7 +1856,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract PutObjectResult putObject(
+    public PutObjectResult putObject(
             String bucketName, String key, InputStream input, ObjectMetadata metadata)
             throws AmazonClientException, AmazonServiceException;
 
@@ -1905,7 +1906,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3Client#copyObject(CopyObjectRequest copyObjectRequest)}
      */
-    public abstract CopyObjectResult copyObject(String sourceBucketName, String sourceKey,
+    public CopyObjectResult copyObject(String sourceBucketName, String sourceKey,
             String destinationBucketName, String destinationKey) throws AmazonClientException,
             AmazonServiceException;
 
@@ -1963,7 +1964,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3Client#copyObject(String sourceBucketName, String sourceKey, String destinationBucketName, String destinationKey)}
      */
-    public abstract CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
+    public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -1992,7 +1993,7 @@ public interface AmazonS3 {
      *
      * @see {@link AmazonS3Client#deleteObject(DeleteObjectRequest deleteObjectRequest)}
      */
-    public abstract void deleteObject(String bucketName, String key)
+    public void deleteObject(String bucketName, String key)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2056,7 +2057,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void deleteVersion(String bucketName, String key, String versionId)
+    public void deleteVersion(String bucketName, String key, String versionId)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2088,7 +2089,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void deleteVersion(DeleteVersionRequest deleteVersionRequest)
+    public void deleteVersion(DeleteVersionRequest deleteVersionRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2110,7 +2111,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract BucketLoggingConfiguration getBucketLoggingConfiguration(String bucketName)
+    public BucketLoggingConfiguration getBucketLoggingConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2148,7 +2149,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest setBucketLoggingConfigurationRequest)
+    public void setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest setBucketLoggingConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2194,7 +2195,7 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
+    public BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2245,7 +2246,91 @@ public interface AmazonS3 {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public abstract void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
+    public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Retrieves the policy for the specified bucket. Only the owner of the
+     * bucket can retrieve the policy. If no policy has been set for the bucket,
+     * then an empty result object with a null policy text field will be
+     * returned.
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * can be specified per-bucket.
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     *
+     * @param bucketName
+     *            The name of the Amazon S3 bucket whose policy is being
+     *            retrieved.
+     *
+     * @return The Amazon S3 bucket policy for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public BucketPolicy getBucketPolicy(String bucketName)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Sets the policy associated with the specified bucket. Only the owner of
+     * the bucket can set a bucket policy. If a policy already exists for the
+     * specified bucket, the new policy will replace the existing policy.
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * may be specified per-bucket.
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     *
+     * @param bucketName
+     *            The name of the Amazon S3 bucket whose policy is being set.
+     * @param policyText
+     *            The policy to apply to the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void setBucketPolicy(String bucketName, String policyText)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Deletes the policy associated with the specified bucket. Only the owner
+     * of the bucket can delete the bucket policy.
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * may be specified per-bucket.
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     *
+     * @param bucketName
+     *            The name of the Amazon S3 bucket whose policy is being
+     *            deleted.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void deleteBucketPolicy(String bucketName)
         throws AmazonClientException, AmazonServiceException;
 
     /**
@@ -2276,7 +2361,7 @@ public interface AmazonS3 {
      *             If there were any problems pre-signing the request for the
      *             specified S3 object.
      */
-    public abstract URL generatePresignedUrl(String bucketName, String key, Date expiration)
+    public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws AmazonClientException;
 
     /**
@@ -2309,7 +2394,7 @@ public interface AmazonS3 {
      *             If there were any problems pre-signing the request for the
      *             specified S3 object.
      */
-    public abstract URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
+    public URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
             throws AmazonClientException;
 
 
@@ -2344,7 +2429,7 @@ public interface AmazonS3 {
      *             If there were any problems pre-signing the request for the
      *             Amazon S3 resource.
      */
-    public abstract URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
+    public URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
             throws AmazonClientException;
 
 }

@@ -352,7 +352,6 @@ public class Volume {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VolumeId: " + volumeId + ", ");
         sb.append("Size: " + size + ", ");
         sb.append("SnapshotId: " + snapshotId + ", ");

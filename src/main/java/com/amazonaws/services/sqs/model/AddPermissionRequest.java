@@ -61,8 +61,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     public AddPermissionRequest() {}
     
     /**
-     * Constructs a new AddPermissionRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new AddPermissionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param queueUrl
@@ -300,7 +300,6 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("QueueUrl: " + queueUrl + ", ");
         sb.append("Label: " + label + ", ");
         sb.append("AWSAccountIds: " + aWSAccountIds + ", ");

@@ -176,7 +176,6 @@ public class Metric {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("MeasureName: " + measureName + ", ");
         sb.append("Dimensions: " + dimensions + ", ");
         sb.append("Namespace: " + namespace + ", ");

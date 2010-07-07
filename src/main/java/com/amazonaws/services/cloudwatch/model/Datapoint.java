@@ -328,7 +328,6 @@ public class Datapoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Timestamp: " + timestamp + ", ");
         sb.append("Unit: " + unit + ", ");
         sb.append("CustomUnit: " + customUnit + ", ");

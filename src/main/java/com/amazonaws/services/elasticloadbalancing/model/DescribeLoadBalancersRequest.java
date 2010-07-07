@@ -99,7 +99,6 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
         sb.append("}");
         return sb.toString();

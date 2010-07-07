@@ -446,7 +446,6 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ImageLocation: " + imageLocation + ", ");
         sb.append("Name: " + name + ", ");
         sb.append("Description: " + description + ", ");

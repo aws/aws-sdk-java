@@ -118,7 +118,6 @@ public class LaunchPermission {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("UserId: " + userId + ", ");
         sb.append("Group: " + group + ", ");
         sb.append("}");

@@ -40,17 +40,18 @@ public class DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller implements U
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return describeSpotDatafeedSubscriptionResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return describeSpotDatafeedSubscriptionResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("spotDatafeedSubscription", targetDepth)) {
                     describeSpotDatafeedSubscriptionResult.setSpotDatafeedSubscription(SpotDatafeedSubscriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSpotDatafeedSubscriptionResult;
                 }

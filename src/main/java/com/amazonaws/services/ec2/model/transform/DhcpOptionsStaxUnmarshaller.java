@@ -40,12 +40,13 @@ public class DhcpOptionsStaxUnmarshaller implements Unmarshaller<DhcpOptions, St
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return dhcpOptions;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return dhcpOptions;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("dhcpOptionsId", targetDepth)) {
                     dhcpOptions.setDhcpOptionsId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class DhcpOptionsStaxUnmarshaller implements Unmarshaller<DhcpOptions, St
                     dhcpOptions.getDhcpConfigurations().add(DhcpConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dhcpOptions;
                 }

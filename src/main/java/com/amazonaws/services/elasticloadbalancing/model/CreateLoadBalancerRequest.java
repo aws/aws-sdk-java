@@ -199,7 +199,6 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("Listeners: " + listeners + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");

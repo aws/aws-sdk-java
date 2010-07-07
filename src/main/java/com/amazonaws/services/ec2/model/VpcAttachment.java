@@ -111,7 +111,6 @@ public class VpcAttachment {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpcId: " + vpcId + ", ");
         sb.append("State: " + state + ", ");
         sb.append("}");

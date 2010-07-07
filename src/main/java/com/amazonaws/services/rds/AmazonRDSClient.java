@@ -16,10 +16,14 @@ package com.amazonaws.services.rds;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,10 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
+import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -42,6 +49,7 @@ import com.amazonaws.services.rds.model.transform.*;
  * Client for accessing AmazonRDS.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that
  * makes it easier to set up, operate, and scale a relational database in
@@ -74,6 +82,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * List of exception unmarshallers for all AmazonRDS exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
+
+    /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -143,6 +156,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/rds/request.handlers");
+        client = new HttpClient(clientConfiguration);
     }
 
     
@@ -173,7 +187,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBSecurityGroupsRequest> request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(describeDBSecurityGroupsRequest);
-        return invoke(request, "//DescribeDBSecurityGroupsResult", new DescribeDBSecurityGroupsResultUnmarshaller());
+        return invoke(request, new DescribeDBSecurityGroupsResultStaxUnmarshaller());
     }
     
     /**
@@ -211,7 +225,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(restoreDBInstanceFromDBSnapshotRequest);
-        return invoke(request, "//RestoreDBInstanceFromDBSnapshotResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -246,7 +260,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance modifyDBInstance(ModifyDBInstanceRequest modifyDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ModifyDBInstanceRequest> request = new ModifyDBInstanceRequestMarshaller().marshall(modifyDBInstanceRequest);
-        return invoke(request, "//ModifyDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -275,7 +289,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBParameterGroup createDBParameterGroup(CreateDBParameterGroupRequest createDBParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDBParameterGroupRequest> request = new CreateDBParameterGroupRequestMarshaller().marshall(createDBParameterGroupRequest);
-        return invoke(request, "//CreateDBParameterGroupResult/DBParameterGroup", new DBParameterGroupUnmarshaller());
+        return invoke(request, new DBParameterGroupStaxUnmarshaller());
     }
     
     /**
@@ -302,7 +316,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteDBSecurityGroupRequest> request = new DeleteDBSecurityGroupRequestMarshaller().marshall(deleteDBSecurityGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -334,7 +348,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDBInstanceRequest> request = new CreateDBInstanceRequestMarshaller().marshall(createDBInstanceRequest);
-        return invoke(request, "//CreateDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -364,7 +378,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBSecurityGroup createDBSecurityGroup(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDBSecurityGroupRequest> request = new CreateDBSecurityGroupRequestMarshaller().marshall(createDBSecurityGroupRequest);
-        return invoke(request, "//CreateDBSecurityGroupResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
+        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
     }
     
     /**
@@ -398,7 +412,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RebootDBInstanceRequest> request = new RebootDBInstanceRequestMarshaller().marshall(rebootDBInstanceRequest);
-        return invoke(request, "//RebootDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -434,7 +448,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBSecurityGroup authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest authorizeDBSecurityGroupIngressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AuthorizeDBSecurityGroupIngressRequest> request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(authorizeDBSecurityGroupIngressRequest);
-        return invoke(request, "//AuthorizeDBSecurityGroupIngressResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
+        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
     }
     
     /**
@@ -463,7 +477,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteDBSnapshotRequest> request = new DeleteDBSnapshotRequestMarshaller().marshall(deleteDBSnapshotRequest);
-        return invoke(request, "//DeleteDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
+        return invoke(request, new DBSnapshotStaxUnmarshaller());
     }
     
     /**
@@ -490,7 +504,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public void deleteDBParameterGroup(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteDBParameterGroupRequest> request = new DeleteDBParameterGroupRequestMarshaller().marshall(deleteDBParameterGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -521,7 +535,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeEventsResult describeEvents(DescribeEventsRequest describeEventsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeEventsRequest> request = new DescribeEventsRequestMarshaller().marshall(describeEventsRequest);
-        return invoke(request, "//DescribeEventsResult", new DescribeEventsResultUnmarshaller());
+        return invoke(request, new DescribeEventsResultStaxUnmarshaller());
     }
     
     /**
@@ -550,7 +564,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBInstancesRequest> request = new DescribeDBInstancesRequestMarshaller().marshall(describeDBInstancesRequest);
-        return invoke(request, "//DescribeDBInstancesResult", new DescribeDBInstancesResultUnmarshaller());
+        return invoke(request, new DescribeDBInstancesResultStaxUnmarshaller());
     }
     
     /**
@@ -580,7 +594,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeDBParameterGroupsResult describeDBParameterGroups(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBParameterGroupsRequest> request = new DescribeDBParameterGroupsRequestMarshaller().marshall(describeDBParameterGroupsRequest);
-        return invoke(request, "//DescribeDBParameterGroupsResult", new DescribeDBParameterGroupsResultUnmarshaller());
+        return invoke(request, new DescribeDBParameterGroupsResultStaxUnmarshaller());
     }
     
     /**
@@ -608,7 +622,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeEngineDefaultParametersRequest> request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(describeEngineDefaultParametersRequest);
-        return invoke(request, "//DescribeEngineDefaultParametersResult/EngineDefaults", new EngineDefaultsUnmarshaller());
+        return invoke(request, new EngineDefaultsStaxUnmarshaller());
     }
     
     /**
@@ -640,7 +654,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public ModifyDBParameterGroupResult modifyDBParameterGroup(ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ModifyDBParameterGroupRequest> request = new ModifyDBParameterGroupRequestMarshaller().marshall(modifyDBParameterGroupRequest);
-        return invoke(request, "//ModifyDBParameterGroupResult", new ModifyDBParameterGroupResultUnmarshaller());
+        return invoke(request, new ModifyDBParameterGroupResultStaxUnmarshaller());
     }
     
     /**
@@ -669,7 +683,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBSnapshotsRequest> request = new DescribeDBSnapshotsRequestMarshaller().marshall(describeDBSnapshotsRequest);
-        return invoke(request, "//DescribeDBSnapshotsResult", new DescribeDBSnapshotsResultUnmarshaller());
+        return invoke(request, new DescribeDBSnapshotsResultStaxUnmarshaller());
     }
     
     /**
@@ -705,7 +719,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ResetDBParameterGroupRequest> request = new ResetDBParameterGroupRequestMarshaller().marshall(resetDBParameterGroupRequest);
-        return invoke(request, "//ResetDBParameterGroupResult", new ResetDBParameterGroupResultUnmarshaller());
+        return invoke(request, new ResetDBParameterGroupResultStaxUnmarshaller());
     }
     
     /**
@@ -734,7 +748,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDBParametersRequest> request = new DescribeDBParametersRequestMarshaller().marshall(describeDBParametersRequest);
-        return invoke(request, "//DescribeDBParametersResult", new DescribeDBParametersResultUnmarshaller());
+        return invoke(request, new DescribeDBParametersResultStaxUnmarshaller());
     }
     
     /**
@@ -769,7 +783,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteDBInstanceRequest> request = new DeleteDBInstanceRequestMarshaller().marshall(deleteDBInstanceRequest);
-        return invoke(request, "//DeleteDBInstanceResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -807,7 +821,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBInstance restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RestoreDBInstanceToPointInTimeRequest> request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(restoreDBInstanceToPointInTimeRequest);
-        return invoke(request, "//RestoreDBInstanceToPointInTimeResult/DBInstance", new DBInstanceUnmarshaller());
+        return invoke(request, new DBInstanceStaxUnmarshaller());
     }
     
     /**
@@ -838,7 +852,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateDBSnapshotRequest> request = new CreateDBSnapshotRequestMarshaller().marshall(createDBSnapshotRequest);
-        return invoke(request, "//CreateDBSnapshotResult/DBSnapshot", new DBSnapshotUnmarshaller());
+        return invoke(request, new DBSnapshotStaxUnmarshaller());
     }
     
     /**
@@ -871,7 +885,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     public DBSecurityGroup revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RevokeDBSecurityGroupIngressRequest> request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(revokeDBSecurityGroupIngressRequest);
-        return invoke(request, "//RevokeDBSecurityGroupIngressResult/DBSecurityGroup", new DBSecurityGroupUnmarshaller());
+        return invoke(request, new DBSecurityGroupStaxUnmarshaller());
     }
     
     /**
@@ -995,7 +1009,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -1024,7 +1038,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

@@ -139,7 +139,6 @@ public class SendMessageResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("MD5OfMessageBody: " + mD5OfMessageBody + ", ");
         sb.append("MessageId: " + messageId + ", ");
         sb.append("}");

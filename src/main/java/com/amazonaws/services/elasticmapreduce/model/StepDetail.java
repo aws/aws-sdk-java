@@ -111,7 +111,6 @@ public class StepDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("StepConfig: " + stepConfig + ", ");
         sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
         sb.append("}");

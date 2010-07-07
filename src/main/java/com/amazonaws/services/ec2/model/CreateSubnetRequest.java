@@ -168,7 +168,6 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpcId: " + vpcId + ", ");
         sb.append("CidrBlock: " + cidrBlock + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");

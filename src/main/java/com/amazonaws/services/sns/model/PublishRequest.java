@@ -59,8 +59,8 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public PublishRequest() {}
     
     /**
-     * Constructs a new PublishRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new PublishRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param topicArn The topic you want to publish to.
@@ -71,6 +71,29 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public PublishRequest(String topicArn, String message) {
         this.topicArn = topicArn;
         this.message = message;
+    }
+    
+    /**
+     * Constructs a new PublishRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param topicArn The topic you want to publish to.
+     * @param message The message you want to send to the topic.
+     * <p>Constraints: Messages must be UTF-8 encoded strings at most 8 KB in
+     * size (8192 bytes, not 8192 characters).
+     * @param subject Optional parameter to be used as the "Subject" line of
+     * when the message is delivered to e-mail endpoints. This field will
+     * also be included, if present, in the standard JSON messages delivered
+     * to other endpoints. <p>Constraints: Subjects must be ASCII text that
+     * begins with a letter, number or punctuation mark; must not include
+     * line breaks or control characters; and must be less than 100
+     * characters long.
+     */
+    public PublishRequest(String topicArn, String message, String subject) {
+        this.topicArn = topicArn;
+        this.message = message;
+        this.subject = subject;
     }
     
     /**
@@ -235,7 +258,6 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("Message: " + message + ", ");
         sb.append("Subject: " + subject + ", ");

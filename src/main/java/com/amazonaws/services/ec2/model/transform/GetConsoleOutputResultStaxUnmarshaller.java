@@ -40,12 +40,13 @@ public class GetConsoleOutputResultStaxUnmarshaller implements Unmarshaller<GetC
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return getConsoleOutputResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return getConsoleOutputResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("instanceId", targetDepth)) {
                     getConsoleOutputResult.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -58,7 +59,7 @@ public class GetConsoleOutputResultStaxUnmarshaller implements Unmarshaller<GetC
                     getConsoleOutputResult.setOutput(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getConsoleOutputResult;
                 }

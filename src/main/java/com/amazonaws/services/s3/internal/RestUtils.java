@@ -37,7 +37,7 @@ public class RestUtils {
      * string to sign.
      */
     private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[]{
-        "acl", "torrent", "logging", "location", "requestPayment",
+        "acl", "torrent", "logging", "location", "policy", "requestPayment",
         "versioning", "versions", "versionId"
     });
 

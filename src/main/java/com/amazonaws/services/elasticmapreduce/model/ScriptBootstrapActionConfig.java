@@ -155,7 +155,6 @@ public class ScriptBootstrapActionConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Path: " + path + ", ");
         sb.append("Args: " + args + ", ");
         sb.append("}");

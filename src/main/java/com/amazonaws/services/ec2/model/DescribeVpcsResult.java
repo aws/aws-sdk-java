@@ -100,7 +100,6 @@ public class DescribeVpcsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Vpcs: " + vpcs + ", ");
         sb.append("}");
         return sb.toString();

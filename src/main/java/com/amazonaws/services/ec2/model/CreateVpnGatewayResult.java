@@ -72,7 +72,6 @@ public class CreateVpnGatewayResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnGateway: " + vpnGateway + ", ");
         sb.append("}");
         return sb.toString();

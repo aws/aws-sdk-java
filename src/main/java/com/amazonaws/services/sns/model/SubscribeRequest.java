@@ -62,8 +62,8 @@ public class SubscribeRequest extends AmazonWebServiceRequest {
     public SubscribeRequest() {}
     
     /**
-     * Constructs a new SubscribeRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new SubscribeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param topicArn The ARN of topic you want to subscribe to.
@@ -269,7 +269,6 @@ public class SubscribeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("Protocol: " + protocol + ", ");
         sb.append("Endpoint: " + endpoint + ", ");

@@ -616,7 +616,6 @@ public class LaunchConfiguration {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
         sb.append("ImageId: " + imageId + ", ");
         sb.append("KeyName: " + keyName + ", ");

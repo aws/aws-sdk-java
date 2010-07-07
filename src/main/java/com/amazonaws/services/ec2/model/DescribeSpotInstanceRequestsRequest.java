@@ -104,7 +104,6 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
         sb.append("}");
         return sb.toString();

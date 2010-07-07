@@ -148,7 +148,6 @@ public class Listener {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Protocol: " + protocol + ", ");
         sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
         sb.append("InstancePort: " + instancePort + ", ");

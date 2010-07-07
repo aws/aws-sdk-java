@@ -642,7 +642,6 @@ public class LaunchSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ImageId: " + imageId + ", ");
         sb.append("KeyName: " + keyName + ", ");
         sb.append("SecurityGroups: " + securityGroups + ", ");

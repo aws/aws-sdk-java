@@ -112,7 +112,6 @@ public class Region {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("RegionName: " + regionName + ", ");
         sb.append("Endpoint: " + endpoint + ", ");
         sb.append("}");

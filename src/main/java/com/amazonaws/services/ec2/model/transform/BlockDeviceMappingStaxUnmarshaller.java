@@ -40,12 +40,13 @@ public class BlockDeviceMappingStaxUnmarshaller implements Unmarshaller<BlockDev
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return blockDeviceMapping;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return blockDeviceMapping;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("virtualName", targetDepth)) {
                     blockDeviceMapping.setVirtualName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -62,7 +63,7 @@ public class BlockDeviceMappingStaxUnmarshaller implements Unmarshaller<BlockDev
                     blockDeviceMapping.setNoDevice(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return blockDeviceMapping;
                 }

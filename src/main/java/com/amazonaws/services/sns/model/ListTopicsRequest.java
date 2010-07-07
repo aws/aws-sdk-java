@@ -40,6 +40,17 @@ public class ListTopicsRequest extends AmazonWebServiceRequest {
     public ListTopicsRequest() {}
     
     /**
+     * Constructs a new ListTopicsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param nextToken Token returned by the previous ListTopics request.
+     */
+    public ListTopicsRequest(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
      * Token returned by the previous ListTopics request.
      *
      * @return Token returned by the previous ListTopics request.
@@ -85,7 +96,6 @@ public class ListTopicsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();

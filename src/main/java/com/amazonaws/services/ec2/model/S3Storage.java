@@ -257,7 +257,6 @@ public class S3Storage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Bucket: " + bucket + ", ");
         sb.append("Prefix: " + prefix + ", ");
         sb.append("AWSAccessKeyId: " + aWSAccessKeyId + ", ");

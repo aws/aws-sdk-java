@@ -123,7 +123,6 @@ public class BootstrapActionConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("ScriptBootstrapAction: " + scriptBootstrapAction + ", ");
         sb.append("}");

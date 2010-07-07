@@ -131,7 +131,6 @@ public class ListenerDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Listener: " + listener + ", ");
         sb.append("PolicyNames: " + policyNames + ", ");
         sb.append("}");

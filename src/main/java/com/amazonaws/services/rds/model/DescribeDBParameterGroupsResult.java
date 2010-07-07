@@ -139,7 +139,6 @@ public class DescribeDBParameterGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Marker: " + marker + ", ");
         sb.append("DBParameterGroups: " + dBParameterGroups + ", ");
         sb.append("}");

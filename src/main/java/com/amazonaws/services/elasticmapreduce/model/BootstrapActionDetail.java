@@ -72,7 +72,6 @@ public class BootstrapActionDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("BootstrapActionConfig: " + bootstrapActionConfig + ", ");
         sb.append("}");
         return sb.toString();

@@ -40,12 +40,13 @@ public class SpotDatafeedSubscriptionStaxUnmarshaller implements Unmarshaller<Sp
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return spotDatafeedSubscription;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return spotDatafeedSubscription;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("ownerId", targetDepth)) {
                     spotDatafeedSubscription.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -66,7 +67,7 @@ public class SpotDatafeedSubscriptionStaxUnmarshaller implements Unmarshaller<Sp
                     spotDatafeedSubscription.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotDatafeedSubscription;
                 }

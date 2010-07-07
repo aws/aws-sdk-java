@@ -240,7 +240,6 @@ public class StepExecutionStatusDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("State: " + state + ", ");
         sb.append("CreationDateTime: " + creationDateTime + ", ");
         sb.append("StartDateTime: " + startDateTime + ", ");

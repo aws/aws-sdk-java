@@ -211,7 +211,6 @@ public class InstanceBlockDeviceMappingSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DeviceName: " + deviceName + ", ");
         sb.append("Ebs: " + ebs + ", ");
         sb.append("VirtualName: " + virtualName + ", ");

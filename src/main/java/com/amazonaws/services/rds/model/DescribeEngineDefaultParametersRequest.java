@@ -197,7 +197,6 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Engine: " + engine + ", ");
         sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("Marker: " + marker + ", ");

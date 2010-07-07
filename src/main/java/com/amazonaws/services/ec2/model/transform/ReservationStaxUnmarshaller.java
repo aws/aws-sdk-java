@@ -40,12 +40,13 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return reservation;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return reservation;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("reservationId", targetDepth)) {
                     reservation.setReservationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -66,7 +67,7 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
                     reservation.getInstances().add(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservation;
                 }

@@ -40,12 +40,13 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return availabilityZone;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return availabilityZone;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("zoneName", targetDepth)) {
                     availabilityZone.setZoneName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -58,7 +59,7 @@ public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<Availabili
                     availabilityZone.setRegionName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return availabilityZone;
                 }

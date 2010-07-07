@@ -106,8 +106,8 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     public PutAttributesRequest() {}
     
     /**
-     * Constructs a new PutAttributesRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new PutAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param domainName The name of the domain in which to perform the
@@ -119,6 +119,27 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
         this.domainName = domainName;
         this.itemName = itemName;
         this.attributes = attributes;
+    }
+    
+    /**
+     * Constructs a new PutAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param domainName The name of the domain in which to perform the
+     * operation.
+     * @param itemName The name of the item.
+     * @param attributes The list of attributes.
+     * @param expected The update condition which, if specified, determines
+     * whether the specified attributes will be updated or not. The update
+     * condition must be satisfied in order for this request to be processed
+     * and the attributes to be updated.
+     */
+    public PutAttributesRequest(String domainName, String itemName, java.util.List<ReplaceableAttribute> attributes, UpdateCondition expected) {
+        this.domainName = domainName;
+        this.itemName = itemName;
+        this.attributes = attributes;
+        this.expected = expected;
     }
     
     /**
@@ -315,7 +336,6 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainName: " + domainName + ", ");
         sb.append("ItemName: " + itemName + ", ");
         sb.append("Attributes: " + attributes + ", ");

@@ -416,7 +416,6 @@ public class Activity {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ActivityId: " + activityId + ", ");
         sb.append("Description: " + description + ", ");
         sb.append("Cause: " + cause + ", ");

@@ -88,7 +88,6 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
         sb.append("}");
         return sb.toString();

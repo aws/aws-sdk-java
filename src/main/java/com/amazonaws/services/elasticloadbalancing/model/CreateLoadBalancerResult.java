@@ -67,7 +67,6 @@ public class CreateLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DNSName: " + dNSName + ", ");
         sb.append("}");
         return sb.toString();

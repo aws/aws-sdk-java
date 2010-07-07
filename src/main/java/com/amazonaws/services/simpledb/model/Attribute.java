@@ -41,6 +41,25 @@ public class Attribute {
     private String alternateValueEncoding;
 
     /**
+     * Default constructor for a new Attribute object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Attribute() {}
+    
+    /**
+     * Constructs a new Attribute object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the attribute.
+     * @param value The value of the attribute.
+     */
+    public Attribute(String name, String value) {
+        this.name = name;
+        this.value = value;
+    }
+    
+    /**
      * The name of the attribute.
      *
      * @return The name of the attribute.
@@ -188,7 +207,6 @@ public class Attribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
         sb.append("Value: " + value + ", ");

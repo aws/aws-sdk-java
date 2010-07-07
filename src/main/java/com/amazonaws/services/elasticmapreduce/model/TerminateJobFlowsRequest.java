@@ -108,7 +108,6 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobFlowIds: " + jobFlowIds + ", ");
         sb.append("}");
         return sb.toString();

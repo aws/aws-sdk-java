@@ -16,10 +16,14 @@ package com.amazonaws.services.elasticmapreduce;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,10 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
+import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -42,6 +49,7 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
  * Client for accessing AmazonElasticMapReduce.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * <p>
  * This is the Amazon Elastic MapReduce API Reference Guide. This guide
  * is for programmers that need detailed information about the Amazon
@@ -63,6 +71,11 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * List of exception unmarshallers for all AmazonElasticMapReduce exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
+
+    /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -112,6 +125,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/elasticmapreduce/request.handlers");
+        client = new HttpClient(clientConfiguration);
     }
 
     
@@ -155,7 +169,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     public void addJobFlowSteps(AddJobFlowStepsRequest addJobFlowStepsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AddJobFlowStepsRequest> request = new AddJobFlowStepsRequestMarshaller().marshall(addJobFlowStepsRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -184,7 +198,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     public void terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<TerminateJobFlowsRequest> request = new TerminateJobFlowsRequestMarshaller().marshall(terminateJobFlowsRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -241,7 +255,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     public DescribeJobFlowsResult describeJobFlows(DescribeJobFlowsRequest describeJobFlowsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeJobFlowsRequest> request = new DescribeJobFlowsRequestMarshaller().marshall(describeJobFlowsRequest);
-        return invoke(request, "//DescribeJobFlowsResult", new DescribeJobFlowsResultUnmarshaller());
+        return invoke(request, new DescribeJobFlowsResultStaxUnmarshaller());
     }
     
     /**
@@ -281,7 +295,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     public RunJobFlowResult runJobFlow(RunJobFlowRequest runJobFlowRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RunJobFlowRequest> request = new RunJobFlowRequestMarshaller().marshall(runJobFlowRequest);
-        return invoke(request, "//RunJobFlowResult", new RunJobFlowResultUnmarshaller());
+        return invoke(request, new RunJobFlowResultStaxUnmarshaller());
     }
     
     /**
@@ -336,7 +350,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -365,7 +379,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

@@ -119,7 +119,6 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnConnectionIds: " + vpnConnectionIds + ", ");
         sb.append("}");
         return sb.toString();

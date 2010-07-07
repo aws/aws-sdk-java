@@ -97,6 +97,6 @@ public interface Headers {
     public static final String GET_OBJECT_IF_MATCH = "If-Match";
 
     /** ETag non-matching constraint header for the get object request */
-    public static final String GET_OBJECT_IT_NONE_MATCH = "If-None-Match";
+    public static final String GET_OBJECT_IF_NONE_MATCH = "If-None-Match";
 
 }

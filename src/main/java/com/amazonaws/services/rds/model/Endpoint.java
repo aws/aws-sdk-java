@@ -111,7 +111,6 @@ public class Endpoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Address: " + address + ", ");
         sb.append("Port: " + port + ", ");
         sb.append("}");

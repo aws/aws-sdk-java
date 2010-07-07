@@ -100,7 +100,6 @@ public class DescribeBundleTasksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("BundleTasks: " + bundleTasks + ", ");
         sb.append("}");
         return sb.toString();

@@ -119,7 +119,6 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("Storage: " + storage + ", ");
         sb.append("}");

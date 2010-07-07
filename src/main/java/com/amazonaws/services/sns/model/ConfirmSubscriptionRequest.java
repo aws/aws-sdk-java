@@ -57,8 +57,8 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
     public ConfirmSubscriptionRequest() {}
     
     /**
-     * Constructs a new ConfirmSubscriptionRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new ConfirmSubscriptionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param topicArn The ARN of the topic for which you wish to confirm a
@@ -69,6 +69,28 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
     public ConfirmSubscriptionRequest(String topicArn, String token) {
         this.topicArn = topicArn;
         this.token = token;
+    }
+    
+    /**
+     * Constructs a new ConfirmSubscriptionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param topicArn The ARN of the topic for which you wish to confirm a
+     * subscription.
+     * @param token Short-lived token sent to an endpoint during the
+     * Subscribe action.
+     * @param authenticateOnUnsubscribe Indicates that you want to disable
+     * unauthenticated unsubsciption of the subscription. If parameter is
+     * present in the request, the request has an AWS signature, and the
+     * value of this parameter is true, only the topic owner and the
+     * subscription owner will be permitted to unsubscribe the endopint, and
+     * the Unsubscribe action will require AWS authentication.
+     */
+    public ConfirmSubscriptionRequest(String topicArn, String token, String authenticateOnUnsubscribe) {
+        this.topicArn = topicArn;
+        this.token = token;
+        this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
     }
     
     /**
@@ -215,7 +237,6 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("Token: " + token + ", ");
         sb.append("AuthenticateOnUnsubscribe: " + authenticateOnUnsubscribe + ", ");

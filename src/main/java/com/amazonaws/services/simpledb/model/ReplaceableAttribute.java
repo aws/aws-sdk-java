@@ -38,6 +38,29 @@ public class ReplaceableAttribute {
     private Boolean replace;
 
     /**
+     * Default constructor for a new ReplaceableAttribute object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ReplaceableAttribute() {}
+    
+    /**
+     * Constructs a new ReplaceableAttribute object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the replaceable attribute.
+     * @param value The value of the replaceable attribute.
+     * @param replace A flag specifying whether or not to replace the
+     * attribute/value pair or to add a new attribute/value pair. The default
+     * setting is <code>false</code>.
+     */
+    public ReplaceableAttribute(String name, String value, Boolean replace) {
+        this.name = name;
+        this.value = value;
+        this.replace = replace;
+    }
+    
+    /**
      * The name of the replaceable attribute.
      *
      * @return The name of the replaceable attribute.
@@ -176,7 +199,6 @@ public class ReplaceableAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("Value: " + value + ", ");
         sb.append("Replace: " + replace + ", ");

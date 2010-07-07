@@ -40,12 +40,13 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return reservedInstances;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return reservedInstances;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("reservedInstancesId", targetDepth)) {
                     reservedInstances.setReservedInstancesId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -86,7 +87,7 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     reservedInstances.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;
                 }

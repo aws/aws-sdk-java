@@ -72,7 +72,6 @@ public class CreateVpcResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Vpc: " + vpc + ", ");
         sb.append("}");
         return sb.toString();

@@ -40,12 +40,13 @@ public class SpotInstanceStateFaultStaxUnmarshaller implements Unmarshaller<Spot
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return spotInstanceStateFault;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return spotInstanceStateFault;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("code", targetDepth)) {
                     spotInstanceStateFault.setCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class SpotInstanceStateFaultStaxUnmarshaller implements Unmarshaller<Spot
                     spotInstanceStateFault.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotInstanceStateFault;
                 }

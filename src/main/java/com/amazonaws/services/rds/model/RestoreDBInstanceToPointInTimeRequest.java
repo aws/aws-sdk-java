@@ -384,7 +384,6 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SourceDBInstanceIdentifier: " + sourceDBInstanceIdentifier + ", ");
         sb.append("TargetDBInstanceIdentifier: " + targetDBInstanceIdentifier + ", ");
         sb.append("RestoreTime: " + restoreTime + ", ");

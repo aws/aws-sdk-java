@@ -150,7 +150,6 @@ public class GetConsoleOutputResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("Timestamp: " + timestamp + ", ");
         sb.append("Output: " + output + ", ");

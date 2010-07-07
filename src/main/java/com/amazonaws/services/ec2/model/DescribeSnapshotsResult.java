@@ -100,7 +100,6 @@ public class DescribeSnapshotsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Snapshots: " + snapshots + ", ");
         sb.append("}");
         return sb.toString();

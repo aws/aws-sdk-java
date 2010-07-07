@@ -49,8 +49,8 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     public SetTopicAttributesRequest() {}
     
     /**
-     * Constructs a new SetTopicAttributesRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new SetTopicAttributesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param topicArn The ARN of the topic to modify.
@@ -184,7 +184,6 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("AttributeName: " + attributeName + ", ");
         sb.append("AttributeValue: " + attributeValue + ", ");

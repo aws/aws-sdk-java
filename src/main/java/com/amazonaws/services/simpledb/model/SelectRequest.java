@@ -66,14 +66,31 @@ public class SelectRequest extends AmazonWebServiceRequest {
     public SelectRequest() {}
     
     /**
-     * Constructs a new SelectRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new SelectRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param selectExpression The expression used to query the domain.
      */
     public SelectRequest(String selectExpression) {
         this.selectExpression = selectExpression;
+    }
+    
+    /**
+     * Constructs a new SelectRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param selectExpression The expression used to query the domain.
+     * @param consistentRead Determines whether or not strong consistency
+     * should be enforced when data is read from SimpleDB. If
+     * <code>true</code>, any data previously written to SimpleDB will be
+     * returned. Otherwise, results will be consistent eventually, and the
+     * client may not see data that was written immediately before your read.
+     */
+    public SelectRequest(String selectExpression, Boolean consistentRead) {
+        this.selectExpression = selectExpression;
+        this.consistentRead = consistentRead;
     }
     
     /**
@@ -237,7 +254,6 @@ public class SelectRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SelectExpression: " + selectExpression + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("ConsistentRead: " + consistentRead + ", ");

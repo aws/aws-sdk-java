@@ -323,7 +323,6 @@ public class VpnConnection {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
         sb.append("State: " + state + ", ");
         sb.append("CustomerGatewayConfiguration: " + customerGatewayConfiguration + ", ");

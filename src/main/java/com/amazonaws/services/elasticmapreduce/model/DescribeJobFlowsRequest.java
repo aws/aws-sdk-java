@@ -278,7 +278,6 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("CreatedAfter: " + createdAfter + ", ");
         sb.append("CreatedBefore: " + createdBefore + ", ");
         sb.append("JobFlowIds: " + jobFlowIds + ", ");

@@ -151,7 +151,6 @@ public class DescribeLaunchConfigurationsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LaunchConfigurations: " + launchConfigurations + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");

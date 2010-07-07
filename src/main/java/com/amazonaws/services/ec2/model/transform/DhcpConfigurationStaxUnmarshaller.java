@@ -40,12 +40,13 @@ public class DhcpConfigurationStaxUnmarshaller implements Unmarshaller<DhcpConfi
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return dhcpConfiguration;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return dhcpConfiguration;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("key", targetDepth)) {
                     dhcpConfiguration.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class DhcpConfigurationStaxUnmarshaller implements Unmarshaller<DhcpConfi
                     dhcpConfiguration.getValues().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dhcpConfiguration;
                 }

@@ -207,7 +207,6 @@ public class SpotPrice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceType: " + instanceType + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("SpotPrice: " + spotPrice + ", ");

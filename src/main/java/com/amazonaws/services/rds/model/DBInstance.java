@@ -906,7 +906,6 @@ public class DBInstance {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
         sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
         sb.append("Engine: " + engine + ", ");

@@ -117,7 +117,6 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Type: " + type + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("}");

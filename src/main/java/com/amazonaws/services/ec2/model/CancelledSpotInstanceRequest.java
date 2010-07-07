@@ -111,7 +111,6 @@ public class CancelledSpotInstanceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
         sb.append("State: " + state + ", ");
         sb.append("}");

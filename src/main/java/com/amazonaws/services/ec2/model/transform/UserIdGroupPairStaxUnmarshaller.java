@@ -40,12 +40,13 @@ public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroup
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return userIdGroupPair;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return userIdGroupPair;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("userId", targetDepth)) {
                     userIdGroupPair.setUserId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroup
                     userIdGroupPair.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userIdGroupPair;
                 }

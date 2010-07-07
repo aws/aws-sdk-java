@@ -53,14 +53,28 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     public CreateQueueRequest() {}
     
     /**
-     * Constructs a new CreateQueueRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new CreateQueueRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param queueName The name to use for the created queue.
      */
     public CreateQueueRequest(String queueName) {
         this.queueName = queueName;
+    }
+    
+    /**
+     * Constructs a new CreateQueueRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueName The name to use for the created queue.
+     * @param defaultVisibilityTimeout The visibility timeout (in seconds) to
+     * use for the created queue.
+     */
+    public CreateQueueRequest(String queueName, Integer defaultVisibilityTimeout) {
+        this.queueName = queueName;
+        this.defaultVisibilityTimeout = defaultVisibilityTimeout;
     }
     
     /**
@@ -143,7 +157,6 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("QueueName: " + queueName + ", ");
         sb.append("DefaultVisibilityTimeout: " + defaultVisibilityTimeout + ", ");
         sb.append("}");

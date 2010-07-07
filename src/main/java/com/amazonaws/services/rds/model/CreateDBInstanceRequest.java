@@ -740,7 +740,6 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBName: " + dBName + ", ");
         sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
         sb.append("AllocatedStorage: " + allocatedStorage + ", ");

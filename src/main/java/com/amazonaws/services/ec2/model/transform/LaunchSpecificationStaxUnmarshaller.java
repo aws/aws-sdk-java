@@ -40,12 +40,13 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return launchSpecification;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return launchSpecification;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("imageId", targetDepth)) {
                     launchSpecification.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -94,7 +95,7 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     launchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchSpecification;
                 }

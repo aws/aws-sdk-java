@@ -72,7 +72,6 @@ public class AllocateAddressResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("PublicIp: " + publicIp + ", ");
         sb.append("}");
         return sb.toString();

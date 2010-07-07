@@ -137,7 +137,6 @@ public class EbsInstanceBlockDeviceSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VolumeId: " + volumeId + ", ");
         sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
         sb.append("}");

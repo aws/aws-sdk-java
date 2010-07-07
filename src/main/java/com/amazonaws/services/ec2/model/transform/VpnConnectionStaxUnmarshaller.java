@@ -40,12 +40,13 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return vpnConnection;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return vpnConnection;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("vpnConnectionId", targetDepth)) {
                     vpnConnection.setVpnConnectionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -70,7 +71,7 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
                     vpnConnection.setVpnGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnection;
                 }

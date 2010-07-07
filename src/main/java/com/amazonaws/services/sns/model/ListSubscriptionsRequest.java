@@ -41,6 +41,18 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
     public ListSubscriptionsRequest() {}
     
     /**
+     * Constructs a new ListSubscriptionsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param nextToken Token returned by the previous ListSubscriptions
+     * request.
+     */
+    public ListSubscriptionsRequest(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
      * Token returned by the previous ListSubscriptions request.
      *
      * @return Token returned by the previous ListSubscriptions request.
@@ -86,7 +98,6 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();

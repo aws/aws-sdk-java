@@ -31,6 +31,36 @@ public class ReplaceableItem {
     private java.util.List<ReplaceableAttribute> attributes;
 
     /**
+     * Default constructor for a new ReplaceableItem object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ReplaceableItem() {}
+    
+    /**
+     * Constructs a new ReplaceableItem object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the replaceable item.
+     */
+    public ReplaceableItem(String name) {
+        this.name = name;
+    }
+    
+    /**
+     * Constructs a new ReplaceableItem object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the replaceable item.
+     * @param attributes The list of attributes for a replaceable item.
+     */
+    public ReplaceableItem(String name, java.util.List<ReplaceableAttribute> attributes) {
+        this.name = name;
+        this.attributes = attributes;
+    }
+    
+    /**
      * The name of the replaceable item.
      *
      * @return The name of the replaceable item.
@@ -138,7 +168,6 @@ public class ReplaceableItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("Attributes: " + attributes + ", ");
         sb.append("}");

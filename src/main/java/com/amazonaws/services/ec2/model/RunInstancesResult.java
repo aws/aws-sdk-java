@@ -73,7 +73,6 @@ public class RunInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Reservation: " + reservation + ", ");
         sb.append("}");
         return sb.toString();

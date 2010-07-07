@@ -6,7 +6,7 @@
     <artifactId>aws-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.0.005</version>
+    <version>1.0.006</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>http://aws.amazon.com/sdkforjava</url>
 
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>[1.0, 2.0)</version>
+            <version>[1.1, 2.0)</version>
         </dependency>
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -45,23 +45,18 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
-        <!-- SaxonHE isn't required for the AWS SDK for Java to run, but
-             it provides a *much* more performant JAXP implementation and
-             the AWS SDK for Java will run much better with it.  AWS strongly
-             recommends using SaxonHE with the AWS SDK for Java.
 
-             Unfortunately SaxonHE 9 isn't available through the Maven central
-             repo, but you can easily download it and manually install it into
-             your local m2 repo:
-                 mvn install:install-file -Dfile=saxon9he.jar -DgroupId=net.sf.saxon \
-                     -DartifactId=saxon9he -Dversion=9.0.2j -Dpackaging=jar
-
-             For more information on installing third party jars locally:
-             http://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html  -->
+        <!-- JDK 1.6 and above include StAX support by default, so these two dependencies
+             are only needed for compiling/running against a 1.5 JVM.  -->
         <dependency>
-            <groupId>net.sf.saxon</groupId>
-            <artifactId>saxon9he</artifactId>
-            <version>[9.0.0, 10.0.0)</version>
+            <groupId>stax</groupId>
+            <artifactId>stax-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>stax</groupId>
+            <artifactId>stax</artifactId>
+            <version>1.2.0</version>
             <optional>true</optional>
         </dependency>
     </dependencies>

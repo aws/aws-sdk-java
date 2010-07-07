@@ -40,12 +40,13 @@ public class GetPasswordDataResultStaxUnmarshaller implements Unmarshaller<GetPa
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return getPasswordDataResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return getPasswordDataResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("instanceId", targetDepth)) {
                     getPasswordDataResult.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -58,7 +59,7 @@ public class GetPasswordDataResultStaxUnmarshaller implements Unmarshaller<GetPa
                     getPasswordDataResult.setPasswordData(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return getPasswordDataResult;
                 }

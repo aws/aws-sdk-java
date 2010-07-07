@@ -196,7 +196,6 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
         sb.append("SkipFinalSnapshot: " + skipFinalSnapshot + ", ");
         sb.append("FinalDBSnapshotIdentifier: " + finalDBSnapshotIdentifier + ", ");

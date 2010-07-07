@@ -144,7 +144,6 @@ public class ListSubscriptionsByTopicResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Subscriptions: " + subscriptions + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");

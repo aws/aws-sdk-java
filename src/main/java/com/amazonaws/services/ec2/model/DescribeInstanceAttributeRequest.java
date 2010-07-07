@@ -130,7 +130,6 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("Attribute: " + attribute + ", ");
         sb.append("}");

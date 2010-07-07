@@ -105,7 +105,6 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("RegionNames: " + regionNames + ", ");
         sb.append("}");
         return sb.toString();

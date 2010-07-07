@@ -932,7 +932,6 @@ public class Trigger {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TriggerName: " + triggerName + ", ");
         sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
         sb.append("MeasureName: " + measureName + ", ");

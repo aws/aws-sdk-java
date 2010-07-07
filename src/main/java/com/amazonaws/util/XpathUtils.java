@@ -59,22 +59,9 @@ public class XpathUtils {
 
     private static DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 
-    private static boolean isUsingSaxon;
-
-    static {
-        String xpathClassName = xpath.getClass().getName();
-        isUsingSaxon = xpathClassName.contains("saxon");
-    }
 
     public static Document documentFrom(InputStream is)
             throws SAXException, IOException, ParserConfigurationException {
-        if (!isUsingSaxon) {
-            log.warn("You are using the built-in XPath processor. Performance will be degraded significantly. " +
-                    "Please ensure the Saxon library distributed with the AWS SDK for Java " +
-                    "(or another high performance XPath processor) is available on your classpath. " +
-                    "For more help, visit the AWS Java developer forum: " +
-                    "http://developer.amazonwebservices.com/connect/forum.jspa?forumID=70&start=0");
-        }
 
         is = new NamespaceRemovingInputStream(is);
         Document doc = factory.newDocumentBuilder().parse(is);

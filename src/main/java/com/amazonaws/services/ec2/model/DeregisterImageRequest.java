@@ -77,7 +77,6 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("ImageId: " + imageId + ", ");
         sb.append("}");
         return sb.toString();

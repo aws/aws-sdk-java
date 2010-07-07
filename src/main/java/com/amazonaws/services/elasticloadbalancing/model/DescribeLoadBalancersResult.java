@@ -102,7 +102,6 @@ public class DescribeLoadBalancersResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
         sb.append("}");
         return sb.toString();

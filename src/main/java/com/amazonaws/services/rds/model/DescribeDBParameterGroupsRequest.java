@@ -198,7 +198,6 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
         sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("Marker: " + marker + ", ");

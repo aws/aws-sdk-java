@@ -161,7 +161,6 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
         sb.append("Engine: " + engine + ", ");
         sb.append("Description: " + description + ", ");

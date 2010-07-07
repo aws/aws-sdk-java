@@ -362,7 +362,6 @@ public class JobFlowDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobFlowId: " + jobFlowId + ", ");
         sb.append("Name: " + name + ", ");
         sb.append("LogUri: " + logUri + ", ");

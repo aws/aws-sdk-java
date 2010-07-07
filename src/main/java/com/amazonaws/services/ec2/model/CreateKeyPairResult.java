@@ -72,7 +72,6 @@ public class CreateKeyPairResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("KeyPair: " + keyPair + ", ");
         sb.append("}");
         return sb.toString();

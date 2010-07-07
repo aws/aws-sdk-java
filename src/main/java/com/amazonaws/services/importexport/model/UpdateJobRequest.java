@@ -233,7 +233,6 @@ public class UpdateJobRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobId: " + jobId + ", ");
         sb.append("Manifest: " + manifest + ", ");
         sb.append("JobType: " + jobType + ", ");

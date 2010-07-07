@@ -766,7 +766,6 @@ public class GetStatusResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobId: " + jobId + ", ");
         sb.append("JobType: " + jobType + ", ");
         sb.append("AwsShippingAddress: " + awsShippingAddress + ", ");

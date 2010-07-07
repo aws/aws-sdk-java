@@ -223,7 +223,6 @@ public class Job {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("JobId: " + jobId + ", ");
         sb.append("CreationDate: " + creationDate + ", ");
         sb.append("IsCanceled: " + isCanceled + ", ");

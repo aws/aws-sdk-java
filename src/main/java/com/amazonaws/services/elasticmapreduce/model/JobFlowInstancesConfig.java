@@ -343,7 +343,6 @@ public class JobFlowInstancesConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("MasterInstanceType: " + masterInstanceType + ", ");
         sb.append("SlaveInstanceType: " + slaveInstanceType + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");

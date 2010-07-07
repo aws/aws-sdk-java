@@ -38,6 +38,19 @@ public class ListQueuesRequest extends AmazonWebServiceRequest {
     public ListQueuesRequest() {}
     
     /**
+     * Constructs a new ListQueuesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param queueNamePrefix A string to use for filtering the list results.
+     * Only those queues whose name begins with the specified string are
+     * returned.
+     */
+    public ListQueuesRequest(String queueNamePrefix) {
+        this.queueNamePrefix = queueNamePrefix;
+    }
+    
+    /**
      * A string to use for filtering the list results. Only those queues
      * whose name begins with the specified string are returned.
      *
@@ -89,7 +102,6 @@ public class ListQueuesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("QueueNamePrefix: " + queueNamePrefix + ", ");
         sb.append("}");
         return sb.toString();

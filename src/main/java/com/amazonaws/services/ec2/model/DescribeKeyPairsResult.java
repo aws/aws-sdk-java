@@ -100,7 +100,6 @@ public class DescribeKeyPairsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("KeyPairs: " + keyPairs + ", ");
         sb.append("}");
         return sb.toString();

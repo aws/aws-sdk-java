@@ -387,7 +387,6 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("LogUri: " + logUri + ", ");
         sb.append("AdditionalInfo: " + additionalInfo + ", ");

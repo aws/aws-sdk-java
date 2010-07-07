@@ -43,10 +43,10 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
                 = new MapEntry<String, String>();
 
             while (true) {
-                XMLEvent event = context.nextEvent();
-                if (event.isEndDocument()) return entry;
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument()) return entry;
 
-                if (event.isAttribute() || event.isStartElement()) {
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                     if (context.testExpression("Name", targetDepth)) {
                         entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
@@ -55,7 +55,7 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
                         entry.setValue(StringStaxUnmarshaller.getInstance().unmarshall(context));
                         continue;
                     }
-                } else if (event.isEndElement()) {
+                } else if (xmlEvent.isEndElement()) {
                     if (context.getCurrentDepth() < originalDepth) return entry;
                 }
             }
@@ -76,12 +76,13 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return message;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return message;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("MessageId", targetDepth)) {
                     message.setMessageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -103,7 +104,7 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
                     message.getAttributes().put(entry.getKey(), entry.getValue());
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return message;
                 }

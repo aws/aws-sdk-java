@@ -16,10 +16,14 @@ package com.amazonaws.services.autoscaling;
 
 import org.w3c.dom.Node;
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
+
+import javax.xml.stream.XMLEventReader;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -27,10 +31,13 @@ import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.DefaultResponseHandler;
+import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
+import com.amazonaws.http.HttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
@@ -42,6 +49,7 @@ import com.amazonaws.services.autoscaling.model.transform.*;
  * Client for accessing AmazonAutoScaling.  All service calls made
  * using this client are blocking, and will not return until the service call
  * completes.
+ * <p>
  * <p>
  * Amazon Auto Scaling is an easy-to-use web service designed to
  * automatically launch or terminate EC2 instances based on user defined
@@ -66,6 +74,11 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      * List of exception unmarshallers for all AmazonAutoScaling exceptions.
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
+
+    /**
+     * Low level client for sending requests to AWS services.
+     */
+    protected final HttpClient client;
 
     /**
      * Optional request handlers for additional request processing.
@@ -119,6 +132,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/autoscaling/request.handlers");
+        client = new HttpClient(clientConfiguration);
     }
 
     
@@ -149,7 +163,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void deleteLaunchConfiguration(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteLaunchConfigurationRequest> request = new DeleteLaunchConfigurationRequestMarshaller().marshall(deleteLaunchConfigurationRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -176,7 +190,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public DescribeTriggersResult describeTriggers(DescribeTriggersRequest describeTriggersRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeTriggersRequest> request = new DescribeTriggersRequestMarshaller().marshall(describeTriggersRequest);
-        return invoke(request, "//DescribeTriggersResult", new DescribeTriggersResultUnmarshaller());
+        return invoke(request, new DescribeTriggersResultStaxUnmarshaller());
     }
     
     /**
@@ -212,7 +226,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void updateAutoScalingGroup(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateAutoScalingGroupRequest> request = new UpdateAutoScalingGroupRequestMarshaller().marshall(updateAutoScalingGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -244,7 +258,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void createAutoScalingGroup(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateAutoScalingGroupRequest> request = new CreateAutoScalingGroupRequestMarshaller().marshall(createAutoScalingGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -271,7 +285,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void deleteTrigger(DeleteTriggerRequest deleteTriggerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteTriggerRequest> request = new DeleteTriggerRequestMarshaller().marshall(deleteTriggerRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -305,7 +319,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<TerminateInstanceInAutoScalingGroupRequest> request = new TerminateInstanceInAutoScalingGroupRequestMarshaller().marshall(terminateInstanceInAutoScalingGroupRequest);
-        return invoke(request, "//TerminateInstanceInAutoScalingGroupResult", new TerminateInstanceInAutoScalingGroupResultUnmarshaller());
+        return invoke(request, new TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller());
     }
     
     /**
@@ -331,7 +345,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void createOrUpdateScalingTrigger(CreateOrUpdateScalingTriggerRequest createOrUpdateScalingTriggerRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateOrUpdateScalingTriggerRequest> request = new CreateOrUpdateScalingTriggerRequestMarshaller().marshall(createOrUpdateScalingTriggerRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -361,7 +375,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public DescribeAutoScalingGroupsResult describeAutoScalingGroups(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeAutoScalingGroupsRequest> request = new DescribeAutoScalingGroupsRequestMarshaller().marshall(describeAutoScalingGroupsRequest);
-        return invoke(request, "//DescribeAutoScalingGroupsResult", new DescribeAutoScalingGroupsResultUnmarshaller());
+        return invoke(request, new DescribeAutoScalingGroupsResultStaxUnmarshaller());
     }
     
     /**
@@ -393,7 +407,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void createLaunchConfiguration(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateLaunchConfigurationRequest> request = new CreateLaunchConfigurationRequestMarshaller().marshall(createLaunchConfigurationRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -425,7 +439,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public DescribeLaunchConfigurationsResult describeLaunchConfigurations(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeLaunchConfigurationsRequest> request = new DescribeLaunchConfigurationsRequestMarshaller().marshall(describeLaunchConfigurationsRequest);
-        return invoke(request, "//DescribeLaunchConfigurationsResult", new DescribeLaunchConfigurationsResultUnmarshaller());
+        return invoke(request, new DescribeLaunchConfigurationsResultStaxUnmarshaller());
     }
     
     /**
@@ -459,7 +473,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public DescribeScalingActivitiesResult describeScalingActivities(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeScalingActivitiesRequest> request = new DescribeScalingActivitiesRequestMarshaller().marshall(describeScalingActivitiesRequest);
-        return invoke(request, "//DescribeScalingActivitiesResult", new DescribeScalingActivitiesResultUnmarshaller());
+        return invoke(request, new DescribeScalingActivitiesResultStaxUnmarshaller());
     }
     
     /**
@@ -488,7 +502,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void setDesiredCapacity(SetDesiredCapacityRequest setDesiredCapacityRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SetDesiredCapacityRequest> request = new SetDesiredCapacityRequestMarshaller().marshall(setDesiredCapacityRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -530,7 +544,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     public void deleteAutoScalingGroup(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteAutoScalingGroupRequest> request = new DeleteAutoScalingGroupRequestMarshaller().marshall(deleteAutoScalingGroupRequest);
-        invoke(request, null, null);
+        invoke(request, null);
     }
     
     /**
@@ -584,7 +598,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     }
     
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, String responseElement, Unmarshaller<X, Node> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
@@ -613,7 +627,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         httpRequest.setResourcePath(request.getResourcePath());
 
         
-        DefaultResponseHandler<X> responseHandler = new DefaultResponseHandler<X>(unmarshaller, responseElement);
+        StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);

@@ -180,7 +180,6 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnGatewayIds: " + vpnGatewayIds + ", ");
         sb.append("Filters: " + filters + ", ");
         sb.append("}");

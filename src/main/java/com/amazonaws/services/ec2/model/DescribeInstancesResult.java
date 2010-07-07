@@ -100,7 +100,6 @@ public class DescribeInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Reservations: " + reservations + ", ");
         sb.append("}");
         return sb.toString();

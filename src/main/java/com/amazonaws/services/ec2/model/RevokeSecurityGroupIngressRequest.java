@@ -365,7 +365,6 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("GroupName: " + groupName + ", ");
         sb.append("SourceSecurityGroupName: " + sourceSecurityGroupName + ", ");
         sb.append("SourceSecurityGroupOwnerId: " + sourceSecurityGroupOwnerId + ", ");

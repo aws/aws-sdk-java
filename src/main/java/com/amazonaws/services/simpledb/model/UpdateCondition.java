@@ -47,6 +47,34 @@ public class UpdateCondition {
     private Boolean exists;
 
     /**
+     * Default constructor for a new UpdateCondition object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateCondition() {}
+    
+    /**
+     * Constructs a new UpdateCondition object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the attribute involved in the condition.
+     * @param value The value of an attribute. This value can only be
+     * specified when the <code>Exists</code> parameter is equal to
+     * <code>true</code>.
+     * @param exists A value specifying whether or not the specified
+     * attribute must exist with the specified value in order for the update
+     * condition to be satisfied. Specify <code>true</code> if the attribute
+     * must exist for the update condition to be satisfied. Specify
+     * <code>false</code> if the attribute should not exist in order for the
+     * update condition to be satisfied.
+     */
+    public UpdateCondition(String name, String value, Boolean exists) {
+        this.name = name;
+        this.value = value;
+        this.exists = exists;
+    }
+    
+    /**
      * The name of the attribute involved in the condition.
      *
      * @return The name of the attribute involved in the condition.
@@ -215,7 +243,6 @@ public class UpdateCondition {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Name: " + name + ", ");
         sb.append("Value: " + value + ", ");
         sb.append("Exists: " + exists + ", ");

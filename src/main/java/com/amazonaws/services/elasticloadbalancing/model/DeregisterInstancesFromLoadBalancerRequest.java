@@ -135,7 +135,6 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("}");

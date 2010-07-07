@@ -93,7 +93,6 @@ public class DescribeTriggersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
         sb.append("}");
         return sb.toString();

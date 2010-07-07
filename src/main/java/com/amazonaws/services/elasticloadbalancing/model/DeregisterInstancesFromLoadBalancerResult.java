@@ -95,7 +95,6 @@ public class DeregisterInstancesFromLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Instances: " + instances + ", ");
         sb.append("}");
         return sb.toString();

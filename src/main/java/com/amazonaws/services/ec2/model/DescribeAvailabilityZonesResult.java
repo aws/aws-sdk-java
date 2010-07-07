@@ -101,7 +101,6 @@ public class DescribeAvailabilityZonesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
         sb.append("}");
         return sb.toString();

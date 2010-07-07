@@ -111,7 +111,6 @@ public class Address {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("PublicIp: " + publicIp + ", ");
         sb.append("}");

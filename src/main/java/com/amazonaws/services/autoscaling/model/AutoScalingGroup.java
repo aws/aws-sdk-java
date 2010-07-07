@@ -561,7 +561,6 @@ public class AutoScalingGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
         sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
         sb.append("MinSize: " + minSize + ", ");

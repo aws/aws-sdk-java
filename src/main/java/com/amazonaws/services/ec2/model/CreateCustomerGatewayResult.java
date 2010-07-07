@@ -72,7 +72,6 @@ public class CreateCustomerGatewayResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("CustomerGateway: " + customerGateway + ", ");
         sb.append("}");
         return sb.toString();

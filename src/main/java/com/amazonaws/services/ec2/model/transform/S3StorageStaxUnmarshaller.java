@@ -40,12 +40,13 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return s3Storage;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return s3Storage;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("bucket", targetDepth)) {
                     s3Storage.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -66,7 +67,7 @@ public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUn
                     s3Storage.setUploadPolicySignature(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return s3Storage;
                 }

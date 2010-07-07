@@ -144,7 +144,6 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("PolicyName: " + policyName + ", ");
         sb.append("CookieExpirationPeriod: " + cookieExpirationPeriod + ", ");

@@ -40,12 +40,13 @@ public class ListSubscriptionsResultStaxUnmarshaller implements Unmarshaller<Lis
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 2;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return listSubscriptionsResult;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return listSubscriptionsResult;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("Subscriptions/member", targetDepth)) {
                     listSubscriptionsResult.getSubscriptions().add(SubscriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -54,7 +55,7 @@ public class ListSubscriptionsResultStaxUnmarshaller implements Unmarshaller<Lis
                     listSubscriptionsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listSubscriptionsResult;
                 }

@@ -100,7 +100,6 @@ public class CancelSpotInstanceRequestsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("CancelledSpotInstanceRequests: " + cancelledSpotInstanceRequests + ", ");
         sb.append("}");
         return sb.toString();

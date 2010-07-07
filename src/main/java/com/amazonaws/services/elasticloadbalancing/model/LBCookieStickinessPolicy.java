@@ -104,7 +104,6 @@ public class LBCookieStickinessPolicy {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("PolicyName: " + policyName + ", ");
         sb.append("CookieExpirationPeriod: " + cookieExpirationPeriod + ", ");
         sb.append("}");

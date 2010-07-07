@@ -28,6 +28,12 @@ public class Topic {
     private String topicArn;
 
     /**
+     * Default constructor for a new Topic object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Topic() {}
+    
+    /**
      * The topic's ARN.
      *
      * @return The topic's ARN.
@@ -73,7 +79,6 @@ public class Topic {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("TopicArn: " + topicArn + ", ");
         sb.append("}");
         return sb.toString();

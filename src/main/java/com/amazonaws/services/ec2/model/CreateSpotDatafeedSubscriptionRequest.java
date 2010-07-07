@@ -122,7 +122,6 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Bucket: " + bucket + ", ");
         sb.append("Prefix: " + prefix + ", ");
         sb.append("}");

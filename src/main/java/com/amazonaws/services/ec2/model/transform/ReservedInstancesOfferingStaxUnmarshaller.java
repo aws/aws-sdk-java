@@ -40,12 +40,13 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
         int targetDepth = originalDepth + 1;
         
         if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
-            XMLEvent event = context.nextEvent();
-            if (event.isEndDocument()) return reservedInstancesOffering;
+            XMLEvent xmlEvent = context.nextEvent();
+            if (xmlEvent.isEndDocument()) return reservedInstancesOffering;
 
-            if (event.isAttribute() || event.isStartElement()) {
+            if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("reservedInstancesOfferingId", targetDepth)) {
                     reservedInstancesOffering.setReservedInstancesOfferingId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -74,7 +75,7 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     reservedInstancesOffering.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-            } else if (event.isEndElement()) {
+            } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstancesOffering;
                 }

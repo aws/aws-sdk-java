@@ -111,7 +111,6 @@ public class IPRange {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("Status: " + status + ", ");
         sb.append("CIDRIP: " + cIDRIP + ", ");
         sb.append("}");

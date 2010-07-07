@@ -100,7 +100,6 @@ public class DescribeVpnConnectionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("VpnConnections: " + vpnConnections + ", ");
         sb.append("}");
         return sb.toString();

@@ -39,8 +39,8 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest {
     public DomainMetadataRequest() {}
     
     /**
-     * Constructs a new DomainMetadataRequest object and initializes the specified
-     * object members.  Callers should use the setter or fluent setter (with...) methods to
+     * Constructs a new DomainMetadataRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param domainName The name of the domain for which to display the
@@ -96,7 +96,6 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("DomainName: " + domainName + ", ");
         sb.append("}");
         return sb.toString();

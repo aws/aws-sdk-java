@@ -173,7 +173,6 @@ public class Policies {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        
         sb.append("AppCookieStickinessPolicies: " + appCookieStickinessPolicies + ", ");
         sb.append("LBCookieStickinessPolicies: " + lBCookieStickinessPolicies + ", ");
         sb.append("}");
