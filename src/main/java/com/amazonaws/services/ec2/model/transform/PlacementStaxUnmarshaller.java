@@ -51,6 +51,10 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     placement.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("groupName", targetDepth)) {
+                    placement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return placement;

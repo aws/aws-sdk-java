@@ -74,6 +74,7 @@ import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
@@ -1203,6 +1204,48 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return (BucketVersioningConfiguration)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#setBucketNotificationConfiguration(java.lang.String,com.amazonaws.services.s3.model.BucketNotificationConfiguration)
+     */
+    public void setBucketNotificationConfiguration(String bucketName, BucketNotificationConfiguration bucketNotificationConfiguration)
+        throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+            "The bucket name parameter must be specified when setting notification configuration");
+        assertParameterNotNull(bucketNotificationConfiguration,
+            "The bucket notification parameter must be specified when setting notification configuration");
+
+        Request<Void> request = createRequest(bucketName, null, null);
+        request.addParameter("notification", null);
+
+        signRequest(request, HttpMethodName.PUT, bucketName, null);
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.PUT);
+
+        byte[] bytes = bucketConfigurationXmlFactory.convertToXmlByteArray(bucketNotificationConfiguration);
+        httpRequest.setContent(new ByteArrayInputStream(bytes));
+
+        client.execute(httpRequest, voidResponseHandler, errorResponseHandler);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketNotificationConfiguration(java.lang.String)
+     */
+    public BucketNotificationConfiguration getBucketNotificationConfiguration(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(bucketName,
+                "The bucket name parameter must be specified when querying notification configuration");
+
+        Request<Void> request = createRequest(bucketName, null, null);
+        request.addParameter("notification", null);
+
+        signRequest(request, HttpMethodName.GET, bucketName, null);
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
+
+        S3XmlResponseHandler<BucketNotificationConfiguration> responseHandler =
+            new S3XmlResponseHandler<BucketNotificationConfiguration>(new Unmarshallers.BucketNotificationConfigurationUnmarshaller());
+
+        return (BucketNotificationConfiguration)client.execute(httpRequest, responseHandler, errorResponseHandler);
+    }
+    
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLoggingConfiguration(java.lang.String)
      */

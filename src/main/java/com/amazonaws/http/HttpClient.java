@@ -73,6 +73,9 @@ public class HttpClient {
 
     private static final String DEFAULT_ENCODING = "UTF-8";
 
+    /** Maximum exponential back-off time before retrying a request */
+    private static final int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
+
     /** Client configuration options, such as proxy settings, max retries, etc. */
     private final ClientConfiguration config;
 
@@ -145,14 +148,14 @@ public class HttpClient {
                 retries++;
                 int status = httpClient.executeMethod(method);
 
-                if (status / 100 == HttpStatus.SC_OK / 100) {
+                if (isRequestSuccessful(status)) {
                     /*
                      * If we get back any 2xx status code, then we know we should
                      * treat the service call as successful.
                      */
                     leaveHttpConnectionOpen = responseHandler.needsConnectionLeftOpen();
                     return handleResponse(request, responseHandler, method);
-                } else if (status == HttpStatus.SC_TEMPORARY_REDIRECT) {
+                } else if (isTemporaryRedirect(method, status)) {
                     /*
                      * S3 sends 307 Temporary Redirects if you try to delete an
                      * EU bucket from the US endpoint. If we get a 307, we'll
@@ -160,43 +163,19 @@ public class HttpClient {
                      * the next retry deliver the request to the right location.
                      */
                     Header locationHeader = method.getResponseHeader("location");
-                    if (locationHeader != null) {
-                        String redirectedLocation = locationHeader.getValue();
-                        log.debug("Redirecting to: " + redirectedLocation);
-                        method.setURI(new org.apache.commons.httpclient.URI(
-                                redirectedLocation, false));
-                    } else {
-                        leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
-                        handleErrorResponse(request, errorResponseHandler, method);
-                    }
-                } else if (status == HttpStatus.SC_INTERNAL_SERVER_ERROR
-                        || status == HttpStatus.SC_SERVICE_UNAVAILABLE) {
-                    /*
-                     * For 500 internal server errors and 503 service
-                     * unavailable errors, we want to retry, but we need to use
-                     * an exponential back-off strategy so that we don't overload
-                     * a server with a flood of retries. If we've surpassed our
-                     * retry limit we handle the error response as a non-retryable
-                     * error and go ahead and throw it back to the user as an exception.
-                     */
-                    if (retries >= config.getMaxErrorRetry()) {
-                        leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
-                        handleErrorResponse(request, errorResponseHandler, method);
-                    }
-
-                    requestLog.info("Received retryable error response: " + status
-                            + ", retrying request...");
-                    pauseExponentially(retries);
+                    String redirectedLocation = locationHeader.getValue();
+                    log.debug("Redirecting to: " + redirectedLocation);
+                    method.setURI(new org.apache.commons.httpclient.URI(redirectedLocation, false));
                 } else {
-                    /*
-                     * Any other errors are interpreted as a service specific
-                     * error (when possible) and thrown.
-                     *
-                     * We don't want to retry on these errors, since it's likely
-                     * that retries will fail in exactly the same way.
-                     */
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
-                    handleErrorResponse(request, errorResponseHandler, method);
+                    AmazonServiceException exception = handleErrorResponse(request, errorResponseHandler, method);
+
+                    if (shouldRetry(exception, retries)) {
+                        requestLog.info("Received retryable error response: " + status + ", retrying request...");
+                        pauseExponentially(retries);
+                    } else {
+                        throw exception;
+                    }
                 }
             } catch (IOException ioe) {
                 log.error("Unable to execute HTTP request: " + ioe.getMessage());
@@ -230,6 +209,58 @@ public class HttpClient {
         if (connectionManager instanceof MultiThreadedHttpConnectionManager) {
             ((MultiThreadedHttpConnectionManager)connectionManager).shutdown();
         }
+    }
+
+    /**
+     * Returns true if a failed request should be retried.
+     *
+     * @param exception
+     *            The exception from the failed request.
+     * @param retries
+     *            The number of times the current request has been attempted.
+     *
+     * @return True if the failed request should be retried.
+     */
+    private boolean shouldRetry(AmazonServiceException exception, int retries) {
+        if (retries > config.getMaxErrorRetry()) {
+            return false;
+        }
+
+        /*
+         * For 500 internal server errors and 503 service
+         * unavailable errors, we want to retry, but we need to use
+         * an exponential back-off strategy so that we don't overload
+         * a server with a flood of retries. If we've surpassed our
+         * retry limit we handle the error response as a non-retryable
+         * error and go ahead and throw it back to the user as an exception.
+         */
+        int statusCode = exception.getStatusCode();
+        if (statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR ||
+            statusCode == HttpStatus.SC_SERVICE_UNAVAILABLE) {
+            return true;
+        }
+
+        /*
+         * Throttling is reported as a 400 error from newer services. To try and
+         * smooth out an occasional throttling error, we'll pause and retry,
+         * hoping that the pause is long enough for the request to get through
+         * the next time.
+         */
+        if (statusCode == HttpStatus.SC_BAD_REQUEST &&
+            exception.getErrorCode().equals("Throttling")) {
+            return true;
+        }
+
+        return false;
+    }
+
+    private boolean isTemporaryRedirect(HttpMethodBase method, int status) {
+        return status == HttpStatus.SC_TEMPORARY_REDIRECT &&
+                   method.getResponseHeader("location") != null;
+    }
+
+    private boolean isRequestSuccessful(int status) {
+        return status / 100 == HttpStatus.SC_OK / 100;
     }
 
     /**
@@ -388,7 +419,7 @@ public class HttpClient {
      * @throws IOException
      *             If any problems are encountering reading the error response.
      */
-    private void handleErrorResponse(HttpRequest request,
+    private AmazonServiceException handleErrorResponse(HttpRequest request,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             HttpMethodBase method) throws IOException {
 
@@ -413,7 +444,7 @@ public class HttpClient {
         exception.setStatusCode(status);
         exception.setServiceName(request.getServiceName());
         exception.fillInStackTrace();
-        throw exception;
+        return exception;
     }
 
     /**
@@ -454,7 +485,8 @@ public class HttpClient {
      */
     private void pauseExponentially(int retries) {
         long delay = (long) (Math.pow(4, retries) * 100L);
-        log.debug("Retriable error detected, will retry in " + delay + "ms, attempt numer: " + retries);
+        delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
+        log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);
 
         try {
             Thread.sleep(delay);

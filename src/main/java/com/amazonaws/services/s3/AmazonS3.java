@@ -28,6 +28,7 @@ import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
@@ -2247,6 +2248,74 @@ public interface AmazonS3 {
      *             request.
      */
     public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Returns the notification configuration for the specified bucket.
+     * <p>
+     * By default, new buckets have no notification configuration.
+     * <p>
+     * The notification configuration of a bucket provides near realtime notifications 
+     * of events the user is interested in, using SNS as the delivery service. 
+     * Notification is turned on by enabling configuration on a bucket, specifying 
+     * the events and the SNS topic. This configuration can only be turned 
+     * on by the bucket owner. If a notification configuration already exists for the
+     * specified bucket, the new notification configuration will replace the existing 
+     * notification configuration.  To remove the notification configuration pass in 
+     * an empty request.  Currently, buckets may only have a single event and topic 
+     * configuration.
+     * <p>
+     * S3 is eventually consistent. It may take time for the notification status
+     * of a bucket to be propagated throughout the system.
+     *
+     * @param bucketName
+     *            The bucket whose notification configuration will be retrieved.
+     *
+     * @return The bucket notification configuration for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public BucketNotificationConfiguration getBucketNotificationConfiguration(String bucketName)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Sets the notification configuration for the specified bucket.
+     * <p>
+     * By default, new buckets have no notification configuration set.
+     * <p>
+     * The notification configuration of a bucket provides near realtime notifications 
+     * of events the user is interested in, using SNS as the delivery service. 
+     * Notification is turned on by enabling configuration on a bucket, specifying 
+     * the events and the SNS topic. This configuration can only be turned 
+     * on by the bucket owner. If a notification configuration already exists for the
+     * specified bucket, the new notification configuration will replace the existing 
+     * notification configuration.  To remove the notification configuration pass in 
+     * an empty request.  Currently, buckets may only have a single event and topic 
+     * configuration.
+     * <p>
+     * S3 is eventually consistent. It may take time for the notification status
+     * of a bucket to be propagated throughout the system.
+     *
+     * @param bucketName
+     *            The name of the Amazon S3 bucket whose notification configuration is being set.
+     *
+     * @param bucketNotificationConfiguration
+     *            The request object containing all options for setting the
+     *            bucket notification configuration.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void setBucketNotificationConfiguration(String bucketName, BucketNotificationConfiguration bucketNotificationConfiguration)
         throws AmazonClientException, AmazonServiceException;
 
     /**

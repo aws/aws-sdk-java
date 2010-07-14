@@ -175,6 +175,36 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Returns information about one or more PlacementGroup instances in a
+     * user's account.
+     * </p>
+     *
+     * @param describePlacementGroupsRequest Container for the necessary
+     *           parameters to execute the DescribePlacementGroups operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribePlacementGroups service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribePlacementGroupsResult> describePlacementGroupsAsync(final DescribePlacementGroupsRequest describePlacementGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribePlacementGroupsResult>() {
+            public DescribePlacementGroupsResult call() throws Exception {
+                return describePlacementGroups(describePlacementGroupsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The RunInstances operation launches a specified number of instances.
      * </p>
      * <p>
@@ -1027,45 +1057,6 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
-     * The CreateSecurityGroup operation creates a new security group.
-     * </p>
-     * <p>
-     * Every instance is launched in a security group. If no security group
-     * is specified during launch, the instances are launched in the default
-     * security group. Instances within the same security group have
-     * unrestricted network access to each other. Instances will reject
-     * network access attempts from other instances in a different security
-     * group. As the owner of instances you can grant or revoke specific
-     * permissions using the AuthorizeSecurityGroupIngress and
-     * RevokeSecurityGroupIngress operations.
-     * </p>
-     *
-     * @param createSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateSecurityGroup operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateSecurityGroup service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createSecurityGroupAsync(final CreateSecurityGroupRequest createSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                createSecurityGroup(createSecurityGroupRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * Describes the Spot Price history.
      * </p>
      * <p>
@@ -1101,6 +1092,45 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeSpotPriceHistoryResult>() {
             public DescribeSpotPriceHistoryResult call() throws Exception {
                 return describeSpotPriceHistory(describeSpotPriceHistoryRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The CreateSecurityGroup operation creates a new security group.
+     * </p>
+     * <p>
+     * Every instance is launched in a security group. If no security group
+     * is specified during launch, the instances are launched in the default
+     * security group. Instances within the same security group have
+     * unrestricted network access to each other. Instances will reject
+     * network access attempts from other instances in a different security
+     * group. As the owner of instances you can grant or revoke specific
+     * permissions using the AuthorizeSecurityGroupIngress and
+     * RevokeSecurityGroupIngress operations.
+     * </p>
+     *
+     * @param createSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateSecurityGroup operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateSecurityGroup service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createSecurityGroupAsync(final CreateSecurityGroupRequest createSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                createSecurityGroup(createSecurityGroupRequest);
+                return null;
 		    }
 		});
     }
@@ -1571,6 +1601,36 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Provides details of a user's registered licenses. Zero or more IDs
+     * may be specified on the call. When one or more license IDs are
+     * specified, only data for the specified IDs are returned.
+     * </p>
+     *
+     * @param describeLicensesRequest Container for the necessary parameters
+     *           to execute the DescribeLicenses operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeLicenses service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeLicensesResult> describeLicensesAsync(final DescribeLicensesRequest describeLicensesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeLicensesResult>() {
+            public DescribeLicensesResult call() throws Exception {
+                return describeLicenses(describeLicensesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The PurchaseReservedInstancesOffering operation purchases a Reserved
      * Instance for use with your account. With Amazon EC2 Reserved
      * Instances, you purchase the right to launch Amazon EC2 instances for a
@@ -1599,6 +1659,36 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<PurchaseReservedInstancesOfferingResult>() {
             public PurchaseReservedInstancesOfferingResult call() throws Exception {
                 return purchaseReservedInstancesOffering(purchaseReservedInstancesOfferingRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Activates a specific number of licenses for a 90-day period.
+     * Activations can be done against a specific license ID.
+     * </p>
+     *
+     * @param activateLicenseRequest Container for the necessary parameters
+     *           to execute the ActivateLicense operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ActivateLicense service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> activateLicenseAsync(final ActivateLicenseRequest activateLicenseRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                activateLicense(activateLicenseRequest);
+                return null;
 		    }
 		});
     }
@@ -1917,6 +2007,37 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
                 associateAddress(associateAddressRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deactivates a specific number of licenses. Deactivations can be done
+     * against a specific license ID after they have persisted for at least a
+     * 90-day period.
+     * </p>
+     *
+     * @param deactivateLicenseRequest Container for the necessary parameters
+     *           to execute the DeactivateLicense operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeactivateLicense service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deactivateLicenseAsync(final DeactivateLicenseRequest deactivateLicenseRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deactivateLicense(deactivateLicenseRequest);
                 return null;
 		    }
 		});
@@ -2414,6 +2535,37 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     
     /**
      * <p>
+     * Creates a PlacementGroup into which multiple Amazon EC2 instances can
+     * be launched. Users must give the group a name unique within the scope
+     * of the user account.
+     * </p>
+     *
+     * @param createPlacementGroupRequest Container for the necessary
+     *           parameters to execute the CreatePlacementGroup operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreatePlacementGroup service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createPlacementGroupAsync(final CreatePlacementGroupRequest createPlacementGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                createPlacementGroup(createPlacementGroupRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The DescribeBundleTasks operation describes in-progress and recent
      * bundle tasks. Complete and failed tasks are removed from the list a
      * short time after completion. If no bundle ids are given, all bundle
@@ -2471,6 +2623,36 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<BundleInstanceResult>() {
             public BundleInstanceResult call() throws Exception {
                 return bundleInstance(bundleInstanceRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes a PlacementGroup from a user's account. Terminate all Amazon
+     * EC2 instances in the placement group before deletion.
+     * </p>
+     *
+     * @param deletePlacementGroupRequest Container for the necessary
+     *           parameters to execute the DeletePlacementGroup operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeletePlacementGroup service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deletePlacementGroupAsync(final DeletePlacementGroupRequest deletePlacementGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deletePlacementGroup(deletePlacementGroupRequest);
+                return null;
 		    }
 		});
     }

@@ -32,7 +32,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2009-11-30");
+        request.addParameter("Version", "2010-06-15");
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -78,6 +78,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             if (placement != null) {
                 if (placement.getAvailabilityZone() != null) {
                     request.addParameter("Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
+                }
+            }
+            if (placement != null) {
+                if (placement.getGroupName() != null) {
+                    request.addParameter("Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                 }
             }
         }
@@ -151,6 +156,19 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getInstanceInitiatedShutdownBehavior() != null) {
                 request.addParameter("InstanceInitiatedShutdownBehavior", StringUtils.fromString(runInstancesRequest.getInstanceInitiatedShutdownBehavior()));
+            }
+        }
+        if (runInstancesRequest != null) {
+            InstanceLicenseSpecification license = runInstancesRequest.getLicense();
+            if (license != null) {
+                if (license.getPool() != null) {
+                    request.addParameter("License.Pool", StringUtils.fromString(license.getPool()));
+                }
+            }
+        }
+        if (runInstancesRequest != null) {
+            if (runInstancesRequest.getPrivateIpAddress() != null) {
+                request.addParameter("PrivateIpAddress", StringUtils.fromString(runInstancesRequest.getPrivateIpAddress()));
             }
         }
 

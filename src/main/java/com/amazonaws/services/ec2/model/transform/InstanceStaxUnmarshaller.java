@@ -147,12 +147,20 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.getBlockDeviceMappings().add(InstanceBlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("virtualizationType", targetDepth)) {
+                    instance.setVirtualizationType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("instanceLifecycle", targetDepth)) {
                     instance.setInstanceLifecycle(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("spotInstanceRequestId", targetDepth)) {
                     instance.setSpotInstanceRequestId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("license", targetDepth)) {
+                    instance.setLicense(InstanceLicenseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

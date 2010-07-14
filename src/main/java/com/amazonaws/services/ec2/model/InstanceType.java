@@ -26,7 +26,8 @@ public enum InstanceType {
     M22xlarge("m2.2xlarge"),
     M24xlarge("m2.4xlarge"),
     C1Medium("c1.medium"),
-    C1Xlarge("c1.xlarge");
+    C1Xlarge("c1.xlarge"),
+    Cc14xlarge("cc1.4xlarge");
 
     private String value;
 
@@ -66,6 +67,8 @@ public enum InstanceType {
             return InstanceType.C1Medium;
         } else if ("c1.xlarge".equals(value)) {
             return InstanceType.C1Xlarge;
+        } else if ("cc1.4xlarge".equals(value)) {
+            return InstanceType.Cc14xlarge;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

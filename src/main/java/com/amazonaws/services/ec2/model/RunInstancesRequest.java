@@ -113,7 +113,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      */
     private String instanceType;
 
@@ -165,6 +165,19 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * terminated when the instance is shut down.
      */
     private String instanceInitiatedShutdownBehavior;
+
+    /**
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
+     */
+    private InstanceLicenseSpecification license;
+
+    /**
+     * If you're using Amazon Virtual Private Cloud, you can optionally use
+     * this parameter to assign the instance a specific available IP address
+     * from the subnet.
+     */
+    private String privateIpAddress;
 
     /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
@@ -434,7 +447,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @return Specifies the instance type for the launched instances.
      *
@@ -448,7 +461,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -464,7 +477,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -856,6 +869,92 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
+     *
+     * @return Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
+     */
+    public InstanceLicenseSpecification getLicense() {
+        return license;
+    }
+    
+    /**
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
+     *
+     * @param license Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
+     */
+    public void setLicense(InstanceLicenseSpecification license) {
+        this.license = license;
+    }
+    
+    /**
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param license Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withLicense(InstanceLicenseSpecification license) {
+        this.license = license;
+        return this;
+    }
+    
+    
+    /**
+     * If you're using Amazon Virtual Private Cloud, you can optionally use
+     * this parameter to assign the instance a specific available IP address
+     * from the subnet.
+     *
+     * @return If you're using Amazon Virtual Private Cloud, you can optionally use
+     *         this parameter to assign the instance a specific available IP address
+     *         from the subnet.
+     */
+    public String getPrivateIpAddress() {
+        return privateIpAddress;
+    }
+    
+    /**
+     * If you're using Amazon Virtual Private Cloud, you can optionally use
+     * this parameter to assign the instance a specific available IP address
+     * from the subnet.
+     *
+     * @param privateIpAddress If you're using Amazon Virtual Private Cloud, you can optionally use
+     *         this parameter to assign the instance a specific available IP address
+     *         from the subnet.
+     */
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+    
+    /**
+     * If you're using Amazon Virtual Private Cloud, you can optionally use
+     * this parameter to assign the instance a specific available IP address
+     * from the subnet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddress If you're using Amazon Virtual Private Cloud, you can optionally use
+     *         this parameter to assign the instance a specific available IP address
+     *         from the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -882,6 +981,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         sb.append("SubnetId: " + subnetId + ", ");
         sb.append("DisableApiTermination: " + disableApiTermination + ", ");
         sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
+        sb.append("License: " + license + ", ");
+        sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
         sb.append("}");
         return sb.toString();
     }

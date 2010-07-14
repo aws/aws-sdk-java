@@ -28,6 +28,11 @@ public class Placement {
     private String availabilityZone;
 
     /**
+     * The name of a <a>PlacementGroup</a>.
+     */
+    private String groupName;
+
+    /**
      * The availability zone in which an Amazon EC2 instance runs.
      *
      * @return The availability zone in which an Amazon EC2 instance runs.
@@ -62,6 +67,40 @@ public class Placement {
     
     
     /**
+     * The name of a <a>PlacementGroup</a>.
+     *
+     * @return The name of a <a>PlacementGroup</a>.
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+    
+    /**
+     * The name of a <a>PlacementGroup</a>.
+     *
+     * @param groupName The name of a <a>PlacementGroup</a>.
+     */
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
+     * The name of a <a>PlacementGroup</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupName The name of a <a>PlacementGroup</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Placement withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -74,6 +113,7 @@ public class Placement {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("GroupName: " + groupName + ", ");
         sb.append("}");
         return sb.toString();
     }

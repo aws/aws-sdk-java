@@ -20,6 +20,7 @@ import java.util.List;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.Owner;
@@ -119,13 +120,24 @@ public class Unmarshallers {
     }
 
     /**
-     * Unmarshaller for the BucketLoggingStatus XML response.
+     * Unmarshaller for the BucketVersionConfiguration XML response.
      */
     public static final class BucketVersioningConfigurationUnmarshaller implements
             Unmarshaller<BucketVersioningConfiguration, InputStream> {
         public BucketVersioningConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseVersioningConfigurationResponse(in).getConfiguration();
+        }
+    }
+
+    /**
+     * Unmarshaller for the BucketNotificationConfiguration XML response.
+     */
+    public static final class BucketNotificationConfigurationUnmarshaller implements
+            Unmarshaller<BucketNotificationConfiguration, InputStream> {
+        public BucketNotificationConfiguration unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser()
+                    .parseNotificationConfigurationResponse(in).getConfiguration();
         }
     }
 

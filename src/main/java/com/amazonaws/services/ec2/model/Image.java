@@ -123,6 +123,8 @@ public class Image {
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
 
+    private String virtualizationType;
+
     /**
      * The unique ID of the AMI.
      *
@@ -866,6 +868,55 @@ public class Image {
     }
     
     /**
+     * Returns the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @return The value of the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VirtualizationType
+     */
+    public Image withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -895,6 +946,7 @@ public class Image {
         sb.append("RootDeviceType: " + rootDeviceType + ", ");
         sb.append("RootDeviceName: " + rootDeviceName + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("VirtualizationType: " + virtualizationType + ", ");
         sb.append("}");
         return sb.toString();
     }

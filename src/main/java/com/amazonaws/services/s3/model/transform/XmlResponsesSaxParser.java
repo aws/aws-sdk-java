@@ -48,6 +48,8 @@ import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -334,6 +336,14 @@ public class XmlResponsesSaxParser {
         throws AmazonClientException
     {
         BucketVersioningConfigurationHandler handler = new BucketVersioningConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public BucketNotificationConfigurationHandler parseNotificationConfigurationResponse(InputStream inputStream)
+        throws AmazonClientException
+    {
+        BucketNotificationConfigurationHandler handler = new BucketNotificationConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -1187,6 +1197,62 @@ public class XmlResponsesSaxParser {
                 } else {
                     configuration.setMfaDeleteEnabled(null);
                 }
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+    
+    public class BucketNotificationConfigurationHandler extends DefaultHandler {
+        private BucketNotificationConfiguration configuration = new BucketNotificationConfiguration();
+        private StringBuilder text;
+        private List<TopicConfiguration> topicConfigurations;
+        private String topic;
+        private String event;
+
+        public BucketNotificationConfiguration getConfiguration() { return configuration; }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("NotificationConfiguration")) {
+                topicConfigurations = new ArrayList<BucketNotificationConfiguration.TopicConfiguration>(1);
+            }
+            else if (name.equals("TopicConfiguration")) {
+                topic = null;
+                event = null;
+            } else if (name.equals("Topic")) {
+                text.setLength(0);
+            } else if (name.equals("Event")) {
+                text.setLength(0);
+            } else {
+                log.error("Ignoring unexpected tag <"+name+">");
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("Topic")) {
+                topic = text.toString();
+            } 
+            else if (name.equals("Event")) {
+                event = text.toString();
+            }
+            else if (name.equals("TopicConfiguration")) {
+                if ( topic != null && event != null ) {           
+                    topicConfigurations.add( new TopicConfiguration( topic, event ) );
+                }
+            }
+            else if (name.equals("NotificationConfiguration")) {
+                configuration.setTopicConfigurations( topicConfigurations );
             }
             text.setLength(0);
         }

@@ -14,10 +14,14 @@
  */
 package com.amazonaws.services.s3.model.transform;
 
+import java.util.List;
+
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -78,4 +82,28 @@ public class BucketConfigurationXmlFactory {
         return xml.getBytes();
     }
 
+    /**
+     * Converts the specified notification configuration into an XML byte array.
+     *
+     * @param notificationConfiguration
+     *            The configuration to convert.
+     *
+     * @return The XML byte array representation.
+     */
+    public byte[] convertToXmlByteArray(BucketNotificationConfiguration notificationConfiguration) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("NotificationConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        
+        List<TopicConfiguration> topicConfigurations = notificationConfiguration.getTopicConfigurations();
+        for ( TopicConfiguration topicConfiguration : topicConfigurations ) {
+            xml.start( "TopicConfiguration" );
+            xml.start( "Topic" ).value( topicConfiguration.getTopic() ).end();
+            xml.start( "Event" ).value( topicConfiguration.getEvent() ).end();
+            xml.end();
+        }    
+        
+        xml.end();
+
+        return xml.getBytes();
+    }
 }

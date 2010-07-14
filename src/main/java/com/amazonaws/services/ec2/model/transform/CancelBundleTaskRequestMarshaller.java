@@ -32,7 +32,7 @@ public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<Can
     public Request<CancelBundleTaskRequest> marshall(CancelBundleTaskRequest cancelBundleTaskRequest) {
         Request<CancelBundleTaskRequest> request = new DefaultRequest<CancelBundleTaskRequest>(cancelBundleTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelBundleTask");
-        request.addParameter("Version", "2009-11-30");
+        request.addParameter("Version", "2010-06-15");
         if (cancelBundleTaskRequest != null) {
             if (cancelBundleTaskRequest.getBundleId() != null) {
                 request.addParameter("BundleId", StringUtils.fromString(cancelBundleTaskRequest.getBundleId()));

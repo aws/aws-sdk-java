@@ -80,7 +80,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      */
     private String instanceType;
 
@@ -161,6 +161,8 @@ public class Instance {
      */
     private java.util.List<InstanceBlockDeviceMapping> blockDeviceMappings;
 
+    private String virtualizationType;
+
     /**
      * 
      */
@@ -170,6 +172,12 @@ public class Instance {
      * 
      */
     private String spotInstanceRequestId;
+
+    /**
+     * Represents an active license in use and attached to an Amazon EC2
+     * instance.
+     */
+    private InstanceLicense license;
 
     /**
      * Unique ID of the instance launched.
@@ -554,7 +562,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @return The instance type. For more information on instance types, please see
      *         the <a
@@ -574,7 +582,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
@@ -596,7 +604,7 @@ public class Instance {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge
+     * <b>Allowed Values: </b>m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
@@ -1165,6 +1173,55 @@ public class Instance {
     }
     
     /**
+     * Returns the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @return The value of the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public String getVirtualizationType() {
+        return virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public void setVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VirtualizationType
+     */
+    public Instance withVirtualizationType(String virtualizationType) {
+        this.virtualizationType = virtualizationType;
+        return this;
+    }
+    
+    
+    /**
      * 
      *
      * @return 
@@ -1233,6 +1290,46 @@ public class Instance {
     
     
     /**
+     * Represents an active license in use and attached to an Amazon EC2
+     * instance.
+     *
+     * @return Represents an active license in use and attached to an Amazon EC2
+     *         instance.
+     */
+    public InstanceLicense getLicense() {
+        return license;
+    }
+    
+    /**
+     * Represents an active license in use and attached to an Amazon EC2
+     * instance.
+     *
+     * @param license Represents an active license in use and attached to an Amazon EC2
+     *         instance.
+     */
+    public void setLicense(InstanceLicense license) {
+        this.license = license;
+    }
+    
+    /**
+     * Represents an active license in use and attached to an Amazon EC2
+     * instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param license Represents an active license in use and attached to an Amazon EC2
+     *         instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withLicense(InstanceLicense license) {
+        this.license = license;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1269,8 +1366,10 @@ public class Instance {
         sb.append("RootDeviceType: " + rootDeviceType + ", ");
         sb.append("RootDeviceName: " + rootDeviceName + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("VirtualizationType: " + virtualizationType + ", ");
         sb.append("InstanceLifecycle: " + instanceLifecycle + ", ");
         sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
+        sb.append("License: " + license + ", ");
         sb.append("}");
         return sb.toString();
     }
