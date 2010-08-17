@@ -73,8 +73,9 @@ import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
@@ -83,7 +84,6 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
-import com.amazonaws.services.s3.model.BucketPolicy;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -913,6 +913,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                      "out of memory errors.");
         }
 
+        if (!input.markSupported()) {
+            input = new RepeatableInputStream(input, Constants.DEFAULT_STREAM_BUFFER_SIZE);
+        }
+
         if (metadata.getContentMD5() == null) {
             /*
              * If the user hasn't set the content MD5, then we don't want to
@@ -934,10 +938,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * specified a content type.
              */
             metadata.setContentType(Mimetypes.MIMETYPE_OCTET_STREAM);
-        }
-
-        if (!input.markSupported()) {
-            input = new RepeatableInputStream(input, Constants.DEFAULT_STREAM_BUFFER_SIZE);
         }
 
         populateRequestMetadata(request, metadata);
@@ -1245,7 +1245,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return (BucketNotificationConfiguration)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
-    
+
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getBucketLoggingConfiguration(java.lang.String)
      */
@@ -1408,6 +1408,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 bucketName, key, generatePresignedUrlRequest.getExpiration(), null);
 
         return ServiceUtils.convertRequestToUrl(request);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getResponseMetadataForRequest(com.amazonaws.AmazonWebServiceRequest)
+     */
+    public S3ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+        return (S3ResponseMetadata)client.getResponseMetadataForRequest(request);
     }
 
 
@@ -1606,7 +1613,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "/" +
                 ((bucketName != null) ? bucketName + "/" : "") +
                 ((key != null) ? ServiceUtils.urlEncode(key) : "");
-            new S3Signer<T>(awsCredentials, methodName.toString(), resourcePath).sign(request, null, null);
+            new S3Signer(awsCredentials, methodName.toString(), resourcePath).sign(request, null, null);
         } catch (SignatureException e) {
             throw new AmazonClientException("Unable to sign request: " + e.getMessage(), e);
         }
@@ -1682,36 +1689,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } catch (URISyntaxException e) {
             throw new AmazonClientException("Can't turn bucket name into a URI: " + e.getMessage(), e);
         }
-    }
-
-    /**
-     * Converts a Request<T> object into an HttpRequest object. Copies all the
-     * headers, parameters, etc. from the Request into the new HttpRequest.
-     *
-     * @param request
-     *            The request to convert.
-     * @param methodName
-     *            The HTTP method (GET, PUT, DELETE, HEAD) to use in the
-     *            converted HttpRequest object.
-     *
-     * @return A new HttpRequest object created from the details of the
-     *         specified Request<T> object.
-     */
-    protected <T> HttpRequest convertToHttpRequest(Request<T> request, HttpMethodName methodName) {
-        HttpRequest httpRequest = new HttpRequest(methodName);
-        for (Entry<String, String> parameter : request.getParameters().entrySet()) {
-            httpRequest.addParameter(parameter.getKey(), parameter.getValue());
-        }
-
-        for (Entry<String, String> parameter : request.getHeaders().entrySet()) {
-            httpRequest.addHeader(parameter.getKey(), parameter.getValue());
-        }
-
-        httpRequest.setServiceName(request.getServiceName());
-        httpRequest.setEndpoint(request.getEndpoint());
-        httpRequest.setResourcePath(request.getResourcePath());
-
-        return httpRequest;
     }
 
     /**

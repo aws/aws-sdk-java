@@ -89,6 +89,24 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
 
     /**
+     * Default constructor for a new RegisterImageRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RegisterImageRequest() {}
+    
+    /**
+     * Constructs a new RegisterImageRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageLocation The full path to your AMI manifest in Amazon S3
+     * storage.
+     */
+    public RegisterImageRequest(String imageLocation) {
+        this.imageLocation = imageLocation;
+    }
+    
+    /**
      * The full path to your AMI manifest in Amazon S3 storage.
      *
      * @return The full path to your AMI manifest in Amazon S3 storage.

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Set Load Balancer Policies Of Listener Request Marshaller
- */        
+ */
 public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marshaller<Request<SetLoadBalancerPoliciesOfListenerRequest>, SetLoadBalancerPoliciesOfListenerRequest> {
 
     public Request<SetLoadBalancerPoliciesOfListenerRequest> marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) {
@@ -46,7 +46,7 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
         if (setLoadBalancerPoliciesOfListenerRequest != null) {
             java.util.List<String> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.getPolicyNames();
             int policyNamesListIndex = 1;
-            for (String policyNamesListValue : policyNamesList) { 
+            for (String policyNamesListValue : policyNamesList) {
                 if (policyNamesListValue != null) {
                     request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));
                 }

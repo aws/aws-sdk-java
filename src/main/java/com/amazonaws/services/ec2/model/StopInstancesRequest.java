@@ -51,6 +51,23 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
     private Boolean force;
 
     /**
+     * Default constructor for a new StopInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public StopInstancesRequest() {}
+    
+    /**
+     * Constructs a new StopInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceIds The list of Amazon EC2 instances to stop.
+     */
+    public StopInstancesRequest(java.util.List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+    
+    /**
      * The list of Amazon EC2 instances to stop.
      *
      * @return The list of Amazon EC2 instances to stop.

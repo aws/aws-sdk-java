@@ -32,6 +32,12 @@ public class DBParameterGroupStatus {
     private String parameterApplyStatus;
 
     /**
+     * Default constructor for a new DBParameterGroupStatus object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DBParameterGroupStatus() {}
+    
+    /**
      * The name of the DP Parameter Group.
      *
      * @return The name of the DP Parameter Group.

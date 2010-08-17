@@ -92,6 +92,24 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     private LaunchSpecification launchSpecification;
 
     /**
+     * Default constructor for a new RequestSpotInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RequestSpotInstancesRequest() {}
+    
+    /**
+     * Constructs a new RequestSpotInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param spotPrice Specifies the maximum hourly price for any Spot
+     * Instance launched to fulfill the request.
+     */
+    public RequestSpotInstancesRequest(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+    
+    /**
      * Specifies the maximum hourly price for any Spot Instance launched to
      * fulfill the request.
      *

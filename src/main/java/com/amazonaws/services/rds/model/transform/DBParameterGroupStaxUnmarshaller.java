@@ -53,8 +53,8 @@ public class DBParameterGroupStaxUnmarshaller implements Unmarshaller<DBParamete
                     dBParameterGroup.setDBParameterGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Engine", targetDepth)) {
-                    dBParameterGroup.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("DBParameterGroupFamily", targetDepth)) {
+                    dBParameterGroup.setDBParameterGroupFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Description", targetDepth)) {

@@ -32,6 +32,23 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest {
     private String volumeId;
 
     /**
+     * Default constructor for a new DeleteVolumeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteVolumeRequest() {}
+    
+    /**
+     * Constructs a new DeleteVolumeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param volumeId The ID of the EBS volume to delete.
+     */
+    public DeleteVolumeRequest(String volumeId) {
+        this.volumeId = volumeId;
+    }
+    
+    /**
      * The ID of the EBS volume to delete.
      *
      * @return The ID of the EBS volume to delete.

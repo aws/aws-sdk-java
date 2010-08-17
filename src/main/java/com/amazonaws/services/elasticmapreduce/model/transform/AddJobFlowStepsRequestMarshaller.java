@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Add Job Flow Steps Request Marshaller
- */        
+ */
 public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJobFlowStepsRequest>, AddJobFlowStepsRequest> {
 
     public Request<AddJobFlowStepsRequest> marshall(AddJobFlowStepsRequest addJobFlowStepsRequest) {
@@ -42,7 +42,7 @@ public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJ
         if (addJobFlowStepsRequest != null) {
             java.util.List<StepConfig> stepsList = addJobFlowStepsRequest.getSteps();
             int stepsListIndex = 1;
-            for (StepConfig stepsListValue : stepsList) { 
+            for (StepConfig stepsListValue : stepsList) {
                 if (stepsListValue != null) {
                     if (stepsListValue.getName() != null) {
                         request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepsListValue.getName()));
@@ -59,7 +59,7 @@ public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJ
                     if (hadoopJarStep != null) {
                         java.util.List<KeyValue> propertiesList = hadoopJarStep.getProperties();
                         int propertiesListIndex = 1;
-                        for (KeyValue propertiesListValue : propertiesList) { 
+                        for (KeyValue propertiesListValue : propertiesList) {
                             if (propertiesListValue != null) {
                                 if (propertiesListValue.getKey() != null) {
                                     request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(propertiesListValue.getKey()));
@@ -87,7 +87,7 @@ public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJ
                     if (hadoopJarStep != null) {
                         java.util.List<String> argsList = hadoopJarStep.getArgs();
                         int argsListIndex = 1;
-                        for (String argsListValue : argsList) { 
+                        for (String argsListValue : argsList) {
                             if (argsListValue != null) {
                                 request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
                             }

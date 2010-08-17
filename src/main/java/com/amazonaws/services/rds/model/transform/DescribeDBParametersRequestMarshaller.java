@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe D B Parameters Request Marshaller
- */        
+ */
 public class DescribeDBParametersRequestMarshaller implements Marshaller<Request<DescribeDBParametersRequest>, DescribeDBParametersRequest> {
 
     public Request<DescribeDBParametersRequest> marshall(DescribeDBParametersRequest describeDBParametersRequest) {
         Request<DescribeDBParametersRequest> request = new DefaultRequest<DescribeDBParametersRequest>(describeDBParametersRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBParameters");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (describeDBParametersRequest != null) {
             if (describeDBParametersRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(describeDBParametersRequest.getDBParameterGroupName()));

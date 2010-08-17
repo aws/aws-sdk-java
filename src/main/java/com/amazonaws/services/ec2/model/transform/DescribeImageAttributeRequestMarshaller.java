@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Image Attribute Request Marshaller
- */        
+ */
 public class DescribeImageAttributeRequestMarshaller implements Marshaller<Request<DescribeImageAttributeRequest>, DescribeImageAttributeRequest> {
 
     public Request<DescribeImageAttributeRequest> marshall(DescribeImageAttributeRequest describeImageAttributeRequest) {

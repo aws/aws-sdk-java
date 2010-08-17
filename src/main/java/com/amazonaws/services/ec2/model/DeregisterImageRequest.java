@@ -32,6 +32,23 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest {
     private String imageId;
 
     /**
+     * Default constructor for a new DeregisterImageRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeregisterImageRequest() {}
+    
+    /**
+     * Constructs a new DeregisterImageRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI to deregister.
+     */
+    public DeregisterImageRequest(String imageId) {
+        this.imageId = imageId;
+    }
+    
+    /**
      * The ID of the AMI to deregister.
      *
      * @return The ID of the AMI to deregister.

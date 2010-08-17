@@ -31,6 +31,23 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest {
     private String snapshotId;
 
     /**
+     * Default constructor for a new DeleteSnapshotRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteSnapshotRequest() {}
+    
+    /**
+     * Constructs a new DeleteSnapshotRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the snapshot to delete.
+     */
+    public DeleteSnapshotRequest(String snapshotId) {
+        this.snapshotId = snapshotId;
+    }
+    
+    /**
      * The ID of the snapshot to delete.
      *
      * @return The ID of the snapshot to delete.

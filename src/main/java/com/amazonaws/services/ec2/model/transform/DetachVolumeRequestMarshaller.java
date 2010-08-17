@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Detach Volume Request Marshaller
- */        
+ */
 public class DetachVolumeRequestMarshaller implements Marshaller<Request<DetachVolumeRequest>, DetachVolumeRequest> {
 
     public Request<DetachVolumeRequest> marshall(DetachVolumeRequest detachVolumeRequest) {

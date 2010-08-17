@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe D B Instances Request Marshaller
- */        
+ */
 public class DescribeDBInstancesRequestMarshaller implements Marshaller<Request<DescribeDBInstancesRequest>, DescribeDBInstancesRequest> {
 
     public Request<DescribeDBInstancesRequest> marshall(DescribeDBInstancesRequest describeDBInstancesRequest) {
         Request<DescribeDBInstancesRequest> request = new DefaultRequest<DescribeDBInstancesRequest>(describeDBInstancesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBInstances");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (describeDBInstancesRequest != null) {
             if (describeDBInstancesRequest.getDBInstanceIdentifier() != null) {
                 request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBInstancesRequest.getDBInstanceIdentifier()));

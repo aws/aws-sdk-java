@@ -52,6 +52,14 @@ public class PendingModifiedValues {
 
     private Boolean multiAZ;
 
+    private String engineVersion;
+
+    /**
+     * Default constructor for a new PendingModifiedValues object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PendingModifiedValues() {}
+    
     /**
      * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
      * be applied or is in progress.
@@ -290,6 +298,40 @@ public class PendingModifiedValues {
     }
     
     /**
+     * Returns the value of the EngineVersion property for this object.
+     *
+     * @return The value of the EngineVersion property for this object.
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     */
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PendingModifiedValues withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -307,6 +349,7 @@ public class PendingModifiedValues {
         sb.append("Port: " + port + ", ");
         sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
+        sb.append("EngineVersion: " + engineVersion + ", ");
         sb.append("}");
         return sb.toString();
     }

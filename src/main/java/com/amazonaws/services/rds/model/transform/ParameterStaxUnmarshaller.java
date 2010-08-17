@@ -79,6 +79,10 @@ public class ParameterStaxUnmarshaller implements Unmarshaller<Parameter, StaxUn
                     parameter.setIsModifiable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MinimumEngineVersion", targetDepth)) {
+                    parameter.setMinimumEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ApplyMethod", targetDepth)) {
                     parameter.setApplyMethod(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

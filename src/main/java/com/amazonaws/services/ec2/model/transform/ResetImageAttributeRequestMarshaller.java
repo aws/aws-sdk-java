@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Reset Image Attribute Request Marshaller
- */        
+ */
 public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<ResetImageAttributeRequest>, ResetImageAttributeRequest> {
 
     public Request<ResetImageAttributeRequest> marshall(ResetImageAttributeRequest resetImageAttributeRequest) {

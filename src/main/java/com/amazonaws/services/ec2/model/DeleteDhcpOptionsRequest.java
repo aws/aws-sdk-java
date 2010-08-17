@@ -34,6 +34,23 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     private String dhcpOptionsId;
 
     /**
+     * Default constructor for a new DeleteDhcpOptionsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteDhcpOptionsRequest() {}
+    
+    /**
+     * Constructs a new DeleteDhcpOptionsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dhcpOptionsId The ID of the DHCP options set to delete.
+     */
+    public DeleteDhcpOptionsRequest(String dhcpOptionsId) {
+        this.dhcpOptionsId = dhcpOptionsId;
+    }
+    
+    /**
      * The ID of the DHCP options set to delete.
      *
      * @return The ID of the DHCP options set to delete.

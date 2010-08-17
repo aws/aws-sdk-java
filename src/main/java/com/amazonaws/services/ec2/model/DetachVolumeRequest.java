@@ -54,6 +54,23 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest {
     private Boolean force;
 
     /**
+     * Default constructor for a new DetachVolumeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DetachVolumeRequest() {}
+    
+    /**
+     * Constructs a new DetachVolumeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param volumeId The ID of the volume to detach.
+     */
+    public DetachVolumeRequest(String volumeId) {
+        this.volumeId = volumeId;
+    }
+    
+    /**
      * The ID of the volume to detach.
      *
      * @return The ID of the volume to detach.

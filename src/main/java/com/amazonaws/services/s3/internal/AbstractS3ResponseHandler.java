@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -15,29 +15,33 @@
 package com.amazonaws.services.s3.internal;
 
 import java.text.ParseException;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Set;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.S3ResponseMetadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 
 /**
  * Abstract HTTP response handler for Amazon S3 responses. Provides common
  * utilities that other specialized S3 response handlers need to share such as
  * pulling common response metadata (ex: request IDs) out of headers.
- * 
+ *
  * @param <T>
  *            The output type resulting from handling a response.
  */
-public abstract class AbstractS3ResponseHandler<T> 
-        implements HttpResponseHandler<ResponseMetadata<T>> {
+public abstract class AbstractS3ResponseHandler<T>
+        implements HttpResponseHandler<AmazonWebServiceResponse<T>> {
 
     /** Shared logger */
     private static final Log log = LogFactory.getLog(S3MetadataResponseHandler.class);
@@ -57,43 +61,41 @@ public abstract class AbstractS3ResponseHandler<T>
      * The majority of S3 response handlers read the complete response while
      * handling it, and don't need to manually manage the underlying HTTP
      * connection.
-     * 
+     *
      * @see com.amazonaws.http.HttpResponseHandler#needsConnectionLeftOpen()
      */
     public boolean needsConnectionLeftOpen() {
         return false;
     }
-    
+
     /**
      * Parses the S3 response metadata (ex: AWS request ID) from the specified
-     * response, and returns a ResponseMetadata<T> object ready for the result
-     * to be plugged in.
-     * 
+     * response, and returns a AmazonWebServiceResponse<T> object ready for the
+     * result to be plugged in.
+     *
      * @param response
      *            The response containing the response metadata to pull out.
-     * 
-     * @return A new, populated ResponseMetadata<T> object, ready for the result
-     *         to be plugged in.
+     *
+     * @return A new, populated AmazonWebServiceResponse<T> object, ready for
+     *         the result to be plugged in.
      */
-    protected ResponseMetadata<T> parseResponseMetadata(HttpResponse response) {
-        ResponseMetadata<T> responseMetadata = new ResponseMetadata<T>();
+    protected AmazonWebServiceResponse<T> parseResponseMetadata(HttpResponse response) {
+        AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
         String awsRequestId = response.getHeaders().get(Headers.REQUEST_ID);
-        responseMetadata.setRequestId(awsRequestId);
-        
-        /*
-         * TODO: S3 also uses the x-amz-id-2 header for more debugging information
-         *       on the request.  It'd be nice to display that with the AWS request
-         *       ID in the logs.
-         */
-        String id2 = response.getHeaders().get(Headers.EXTENDED_REQUEST_ID);
-        
-        return responseMetadata;
+        String hostId = response.getHeaders().get(Headers.EXTENDED_REQUEST_ID);
+
+        Map<String, String> metadataMap = new HashMap<String, String>();
+        metadataMap.put(ResponseMetadata.AWS_REQUEST_ID, awsRequestId);
+        metadataMap.put(S3ResponseMetadata.HOST_ID, hostId);
+        awsResponse.setResponseMetadata(new S3ResponseMetadata(metadataMap));
+
+        return awsResponse;
     }
 
     /**
      * Populates the specified S3ObjectMetadata object with all object metadata
      * pulled from the headers in the specified response.
-     * 
+     *
      * @param response
      *            The HTTP response containing the object metadata within the
      *            headers.
@@ -127,5 +129,5 @@ public abstract class AbstractS3ResponseHandler<T>
             }
         }
     }
-   
+
 }

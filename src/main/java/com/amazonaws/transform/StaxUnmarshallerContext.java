@@ -14,7 +14,11 @@
  */
 package com.amazonaws.transform;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 import java.util.Stack;
 
 import javax.xml.stream.XMLEventReader;
@@ -22,8 +26,6 @@ import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Attribute;
 import javax.xml.stream.events.XMLEvent;
-
-import com.amazonaws.ResponseMetadata;
 
 /**
  * Contains the unmarshalling state for the parsing of an XML response. The
@@ -41,12 +43,13 @@ public class StaxUnmarshallerContext {
     public final Stack<String> stack = new Stack<String>();
     private String stackString = "";
 
-    private final ResponseMetadata<?> responseMetadata;
+    private Map<String, String> metadata = new HashMap<String, String>();
+    private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
+
     private Iterator<?> attributeIterator;
 
-    public StaxUnmarshallerContext(XMLEventReader eventReader, ResponseMetadata<?> responseMetadata) {
+    public StaxUnmarshallerContext(XMLEventReader eventReader) {
         this.eventReader = eventReader;
-        this.responseMetadata = responseMetadata;
     }
 
     /**
@@ -62,7 +65,6 @@ public class StaxUnmarshallerContext {
         }
 
         XMLEvent event = eventReader.peek();
-
         if (event.getEventType() == XMLStreamConstants.CHARACTERS) {
             eventReader.nextEvent();
             return event.asCharacters().getData();
@@ -159,20 +161,67 @@ public class StaxUnmarshallerContext {
 
         updateContext(currentEvent);
 
-        if (testExpression("ResponseMetadata/RequestId", 2)
-            || testExpression("requestId", 2)) {
-            XMLEvent nextEvent = eventReader.peek();
-            if (nextEvent.isCharacters()) {
-                responseMetadata.setRequestId(nextEvent.asCharacters().getData());
+        XMLEvent nextEvent = eventReader.peek();
+        if (nextEvent != null && nextEvent.isCharacters()) {
+            for (MetadataExpression metadataExpression : metadataExpressions) {
+                if (testExpression(metadataExpression.expression, metadataExpression.targetDepth)) {
+                    metadata.put(metadataExpression.key, nextEvent.asCharacters().getData());
+                }
             }
         }
 
         return currentEvent;
     }
 
+    /**
+     * Returns any metadata collected through metadata expressions while this
+     * context was reading the XML events from the XML document.
+     *
+     * @return A map of any metadata collected through metadata expressions
+     *         while this context was reading the XML document.
+     */
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
+
+    /**
+     * Registers an expression, which if matched, will cause the data for the
+     * matching element to be stored in the metadata map under the specified
+     * key.
+     *
+     * @param expression
+     *            The expression an element must match in order for it's data to
+     *            be pulled out and stored in the metadata map.
+     * @param targetDepth
+     *            The depth in the XML document where the expression match must
+     *            start.
+     * @param storageKey
+     *            The key under which to store the matching element's data.
+     */
+    public void registerMetadataExpression(String expression, int targetDepth, String storageKey) {
+        metadataExpressions.add(new MetadataExpression(expression, targetDepth, storageKey));
+    }
+
+
     /*
      * Private Interface
      */
+
+    /**
+     * Simple container for the details of a metadata expression this
+     * unmarshaller context is looking for.
+     */
+    private class MetadataExpression {
+        public String expression;
+        public int targetDepth;
+        public String key;
+
+        public MetadataExpression(String expression, int targetDepth, String key) {
+            this.expression = expression;
+            this.targetDepth = targetDepth;
+            this.key = key;
+        }
+    }
 
     private void updateContext(XMLEvent event) {
         if (event == null) return;

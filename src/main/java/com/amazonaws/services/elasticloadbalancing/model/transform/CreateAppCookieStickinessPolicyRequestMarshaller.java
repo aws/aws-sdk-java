@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create App Cookie Stickiness Policy Request Marshaller
- */        
+ */
 public class CreateAppCookieStickinessPolicyRequestMarshaller implements Marshaller<Request<CreateAppCookieStickinessPolicyRequest>, CreateAppCookieStickinessPolicyRequest> {
 
     public Request<CreateAppCookieStickinessPolicyRequest> marshall(CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Attributes Request Marshaller
- */        
+ */
 public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAttributesRequest>, GetAttributesRequest> {
 
     public Request<GetAttributesRequest> marshall(GetAttributesRequest getAttributesRequest) {
@@ -46,7 +46,7 @@ public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAtt
         if (getAttributesRequest != null) {
             java.util.List<String> attributeNamesList = getAttributesRequest.getAttributeNames();
             int attributeNamesListIndex = 1;
-            for (String attributeNamesListValue : attributeNamesList) { 
+            for (String attributeNamesListValue : attributeNamesList) {
                 if (attributeNamesListValue != null) {
                     request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
                 }

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Subnets Request Marshaller
- */        
+ */
 public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<DescribeSubnetsRequest>, DescribeSubnetsRequest> {
 
     public Request<DescribeSubnetsRequest> marshall(DescribeSubnetsRequest describeSubnetsRequest) {
@@ -36,7 +36,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         if (describeSubnetsRequest != null) {
             java.util.List<String> subnetIdsList = describeSubnetsRequest.getSubnetIds();
             int subnetIdsListIndex = 1;
-            for (String subnetIdsListValue : subnetIdsList) { 
+            for (String subnetIdsListValue : subnetIdsList) {
                 if (subnetIdsListValue != null) {
                     request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(subnetIdsListValue));
                 }
@@ -47,7 +47,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         if (describeSubnetsRequest != null) {
             java.util.List<Filter> filtersList = describeSubnetsRequest.getFilters();
             int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) { 
+            for (Filter filtersListValue : filtersList) {
                 if (filtersListValue != null) {
                     if (filtersListValue.getName() != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
@@ -56,7 +56,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
-                    for (String valuesListValue : valuesList) { 
+                    for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                         }

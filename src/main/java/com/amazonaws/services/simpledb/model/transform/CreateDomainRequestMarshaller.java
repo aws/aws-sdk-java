@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Domain Request Marshaller
- */        
+ */
 public class CreateDomainRequestMarshaller implements Marshaller<Request<CreateDomainRequest>, CreateDomainRequest> {
 
     public Request<CreateDomainRequest> marshall(CreateDomainRequest createDomainRequest) {

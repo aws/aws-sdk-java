@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Request Spot Instances Request Marshaller
- */        
+ */
 public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request<RequestSpotInstancesRequest>, RequestSpotInstancesRequest> {
 
     public Request<RequestSpotInstancesRequest> marshall(RequestSpotInstancesRequest requestSpotInstancesRequest) {
@@ -83,7 +83,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             if (launchSpecification != null) {
                 java.util.List<String> securityGroupsList = launchSpecification.getSecurityGroups();
                 int securityGroupsListIndex = 1;
-                for (String securityGroupsListValue : securityGroupsList) { 
+                for (String securityGroupsListValue : securityGroupsList) {
                     if (securityGroupsListValue != null) {
                         request.addParameter("LaunchSpecification.SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                     }
@@ -132,7 +132,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             if (launchSpecification != null) {
                 java.util.List<BlockDeviceMapping> blockDeviceMappingsList = launchSpecification.getBlockDeviceMappings();
                 int blockDeviceMappingsListIndex = 1;
-                for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) { 
+                for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                     if (blockDeviceMappingsListValue != null) {
                         if (blockDeviceMappingsListValue.getVirtualName() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));

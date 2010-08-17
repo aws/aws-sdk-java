@@ -17,6 +17,7 @@ package com.amazonaws.services.simpledb;
 import com.amazonaws.*;
 import com.amazonaws.services.simpledb.model.*;
 
+
 /**
  * Interface for accessing AmazonSimpleDB.
  * <p>
@@ -529,13 +530,5 @@ public interface AmazonSimpleDB {
     public ListDomainsResult listDomains() throws AmazonServiceException, AmazonClientException;
     
 
-    /**
-     * Shuts down this client object, releasing any resources that might be held
-     * open. This is an optional method, and callers are not expected to call
-     * it, but can if they want to explicitly release any open resources. Once a
-     * client has been shutdown, it should not be used to make any more
-     * requests.
-     */
-    public void shutdown();
 }
         

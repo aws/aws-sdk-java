@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create D B Security Group Request Marshaller
- */        
+ */
 public class CreateDBSecurityGroupRequestMarshaller implements Marshaller<Request<CreateDBSecurityGroupRequest>, CreateDBSecurityGroupRequest> {
 
     public Request<CreateDBSecurityGroupRequest> marshall(CreateDBSecurityGroupRequest createDBSecurityGroupRequest) {
         Request<CreateDBSecurityGroupRequest> request = new DefaultRequest<CreateDBSecurityGroupRequest>(createDBSecurityGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBSecurityGroup");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (createDBSecurityGroupRequest != null) {
             if (createDBSecurityGroupRequest.getDBSecurityGroupName() != null) {
                 request.addParameter("DBSecurityGroupName", StringUtils.fromString(createDBSecurityGroupRequest.getDBSecurityGroupName()));

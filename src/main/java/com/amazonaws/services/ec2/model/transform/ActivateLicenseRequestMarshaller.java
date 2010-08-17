@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Activate License Request Marshaller
- */        
+ */
 public class ActivateLicenseRequestMarshaller implements Marshaller<Request<ActivateLicenseRequest>, ActivateLicenseRequest> {
 
     public Request<ActivateLicenseRequest> marshall(ActivateLicenseRequest activateLicenseRequest) {

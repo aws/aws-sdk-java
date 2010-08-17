@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Bundle Instance Request Marshaller
- */        
+ */
 public class BundleInstanceRequestMarshaller implements Marshaller<Request<BundleInstanceRequest>, BundleInstanceRequest> {
 
     public Request<BundleInstanceRequest> marshall(BundleInstanceRequest bundleInstanceRequest) {

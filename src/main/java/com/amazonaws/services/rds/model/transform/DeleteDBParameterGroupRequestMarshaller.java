@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete D B Parameter Group Request Marshaller
- */        
+ */
 public class DeleteDBParameterGroupRequestMarshaller implements Marshaller<Request<DeleteDBParameterGroupRequest>, DeleteDBParameterGroupRequest> {
 
     public Request<DeleteDBParameterGroupRequest> marshall(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) {
         Request<DeleteDBParameterGroupRequest> request = new DefaultRequest<DeleteDBParameterGroupRequest>(deleteDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBParameterGroup");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (deleteDBParameterGroupRequest != null) {
             if (deleteDBParameterGroupRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(deleteDBParameterGroupRequest.getDBParameterGroupName()));

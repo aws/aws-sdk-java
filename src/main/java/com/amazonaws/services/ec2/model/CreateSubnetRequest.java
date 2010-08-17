@@ -55,6 +55,25 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     private String availabilityZone;
 
     /**
+     * Default constructor for a new CreateSubnetRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateSubnetRequest() {}
+    
+    /**
+     * Constructs a new CreateSubnetRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpcId The ID of the VPC to create the subnet in.
+     * @param cidrBlock The CIDR block the subnet is to cover.
+     */
+    public CreateSubnetRequest(String vpcId, String cidrBlock) {
+        this.vpcId = vpcId;
+        this.cidrBlock = cidrBlock;
+    }
+    
+    /**
      * The ID of the VPC to create the subnet in.
      *
      * @return The ID of the VPC to create the subnet in.

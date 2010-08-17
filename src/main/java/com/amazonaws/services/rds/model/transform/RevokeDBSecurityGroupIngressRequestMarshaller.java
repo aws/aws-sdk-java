@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Revoke D B Security Group Ingress Request Marshaller
- */        
+ */
 public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller<Request<RevokeDBSecurityGroupIngressRequest>, RevokeDBSecurityGroupIngressRequest> {
 
     public Request<RevokeDBSecurityGroupIngressRequest> marshall(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {
         Request<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "RevokeDBSecurityGroupIngress");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (revokeDBSecurityGroupIngressRequest != null) {
             if (revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
                 request.addParameter("DBSecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));

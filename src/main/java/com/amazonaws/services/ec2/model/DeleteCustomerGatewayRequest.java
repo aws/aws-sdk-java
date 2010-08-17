@@ -38,6 +38,23 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
     private String customerGatewayId;
 
     /**
+     * Default constructor for a new DeleteCustomerGatewayRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteCustomerGatewayRequest() {}
+    
+    /**
+     * Constructs a new DeleteCustomerGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param customerGatewayId The ID of the customer gateway to delete.
+     */
+    public DeleteCustomerGatewayRequest(String customerGatewayId) {
+        this.customerGatewayId = customerGatewayId;
+    }
+    
+    /**
      * The ID of the customer gateway to delete.
      *
      * @return The ID of the customer gateway to delete.

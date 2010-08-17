@@ -22,10 +22,10 @@ package com.amazonaws.services.rds.model;
 public class EngineDefaults {
 
     /**
-     * Specifies the name of the database engine which the engine default
-     * parameters apply to.
+     * Specifies the name of the DB Parameter Group Family which the engine
+     * default parameters apply to.
      */
-    private String engine;
+    private String dBParameterGroupFamily;
 
     /**
      * Provides an identifier to allow retrieval of paginated results.
@@ -38,41 +38,41 @@ public class EngineDefaults {
     private java.util.List<Parameter> parameters;
 
     /**
-     * Specifies the name of the database engine which the engine default
-     * parameters apply to.
+     * Specifies the name of the DB Parameter Group Family which the engine
+     * default parameters apply to.
      *
-     * @return Specifies the name of the database engine which the engine default
-     *         parameters apply to.
+     * @return Specifies the name of the DB Parameter Group Family which the engine
+     *         default parameters apply to.
      */
-    public String getEngine() {
-        return engine;
+    public String getDBParameterGroupFamily() {
+        return dBParameterGroupFamily;
     }
     
     /**
-     * Specifies the name of the database engine which the engine default
-     * parameters apply to.
+     * Specifies the name of the DB Parameter Group Family which the engine
+     * default parameters apply to.
      *
-     * @param engine Specifies the name of the database engine which the engine default
-     *         parameters apply to.
+     * @param dBParameterGroupFamily Specifies the name of the DB Parameter Group Family which the engine
+     *         default parameters apply to.
      */
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * Specifies the name of the database engine which the engine default
-     * parameters apply to.
+     * Specifies the name of the DB Parameter Group Family which the engine
+     * default parameters apply to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine Specifies the name of the database engine which the engine default
-     *         parameters apply to.
+     * @param dBParameterGroupFamily Specifies the name of the DB Parameter Group Family which the engine
+     *         default parameters apply to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public EngineDefaults withEngine(String engine) {
-        this.engine = engine;
+    public EngineDefaults withDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
     
@@ -185,7 +185,7 @@ public class EngineDefaults {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Engine: " + engine + ", ");
+        sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
         sb.append("Marker: " + marker + ", ");
         sb.append("Parameters: " + parameters + ", ");
         sb.append("}");

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Terminate Instances Request Marshaller
- */        
+ */
 public class TerminateInstancesRequestMarshaller implements Marshaller<Request<TerminateInstancesRequest>, TerminateInstancesRequest> {
 
     public Request<TerminateInstancesRequest> marshall(TerminateInstancesRequest terminateInstancesRequest) {
@@ -36,7 +36,7 @@ public class TerminateInstancesRequestMarshaller implements Marshaller<Request<T
         if (terminateInstancesRequest != null) {
             java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
-            for (String instanceIdsListValue : instanceIdsList) { 
+            for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
                 }

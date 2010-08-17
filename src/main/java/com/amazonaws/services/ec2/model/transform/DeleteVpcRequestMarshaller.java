@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Vpc Request Marshaller
- */        
+ */
 public class DeleteVpcRequestMarshaller implements Marshaller<Request<DeleteVpcRequest>, DeleteVpcRequest> {
 
     public Request<DeleteVpcRequest> marshall(DeleteVpcRequest deleteVpcRequest) {

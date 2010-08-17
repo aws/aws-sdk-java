@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Allocate Address Request Marshaller
- */        
+ */
 public class AllocateAddressRequestMarshaller implements Marshaller<Request<AllocateAddressRequest>, AllocateAddressRequest> {
 
     public Request<AllocateAddressRequest> marshall(AllocateAddressRequest allocateAddressRequest) {

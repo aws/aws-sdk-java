@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Purchase Reserved Instances Offering Request Marshaller
- */        
+ */
 public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marshaller<Request<PurchaseReservedInstancesOfferingRequest>, PurchaseReservedInstancesOfferingRequest> {
 
     public Request<PurchaseReservedInstancesOfferingRequest> marshall(PurchaseReservedInstancesOfferingRequest purchaseReservedInstancesOfferingRequest) {

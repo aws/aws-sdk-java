@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Confirm Subscription Request Marshaller
- */        
+ */
 public class ConfirmSubscriptionRequestMarshaller implements Marshaller<Request<ConfirmSubscriptionRequest>, ConfirmSubscriptionRequest> {
 
     public Request<ConfirmSubscriptionRequest> marshall(ConfirmSubscriptionRequest confirmSubscriptionRequest) {

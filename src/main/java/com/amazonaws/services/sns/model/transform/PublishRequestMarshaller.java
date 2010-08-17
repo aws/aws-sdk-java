@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Publish Request Marshaller
- */        
+ */
 public class PublishRequestMarshaller implements Marshaller<Request<PublishRequest>, PublishRequest> {
 
     public Request<PublishRequest> marshall(PublishRequest publishRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Cancel Job Request Marshaller
- */        
+ */
 public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
 
     public Request<CancelJobRequest> marshall(CancelJobRequest cancelJobRequest) {

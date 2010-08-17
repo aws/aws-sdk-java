@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Auto Scaling Groups Request Marshaller
- */        
+ */
 public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Request<DescribeAutoScalingGroupsRequest>, DescribeAutoScalingGroupsRequest> {
 
     public Request<DescribeAutoScalingGroupsRequest> marshall(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
@@ -36,7 +36,7 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
         if (describeAutoScalingGroupsRequest != null) {
             java.util.List<String> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.getAutoScalingGroupNames();
             int autoScalingGroupNamesListIndex = 1;
-            for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) { 
+            for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
                 if (autoScalingGroupNamesListValue != null) {
                     request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));
                 }

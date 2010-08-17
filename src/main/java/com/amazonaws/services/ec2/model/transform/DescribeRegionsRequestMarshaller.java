@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Regions Request Marshaller
- */        
+ */
 public class DescribeRegionsRequestMarshaller implements Marshaller<Request<DescribeRegionsRequest>, DescribeRegionsRequest> {
 
     public Request<DescribeRegionsRequest> marshall(DescribeRegionsRequest describeRegionsRequest) {
@@ -36,7 +36,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         if (describeRegionsRequest != null) {
             java.util.List<String> regionNamesList = describeRegionsRequest.getRegionNames();
             int regionNamesListIndex = 1;
-            for (String regionNamesListValue : regionNamesList) { 
+            for (String regionNamesListValue : regionNamesList) {
                 if (regionNamesListValue != null) {
                     request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(regionNamesListValue));
                 }

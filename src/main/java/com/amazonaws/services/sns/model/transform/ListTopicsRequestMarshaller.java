@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * List Topics Request Marshaller
- */        
+ */
 public class ListTopicsRequestMarshaller implements Marshaller<Request<ListTopicsRequest>, ListTopicsRequest> {
 
     public Request<ListTopicsRequest> marshall(ListTopicsRequest listTopicsRequest) {

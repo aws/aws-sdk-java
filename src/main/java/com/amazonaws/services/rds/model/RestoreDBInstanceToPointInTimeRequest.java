@@ -68,6 +68,29 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     private Boolean multiAZ;
 
+    private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * Default constructor for a new RestoreDBInstanceToPointInTimeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RestoreDBInstanceToPointInTimeRequest() {}
+    
+    /**
+     * Constructs a new RestoreDBInstanceToPointInTimeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param sourceDBInstanceIdentifier The identifier of the source DB
+     * Instance from which to restore.
+     * @param targetDBInstanceIdentifier The name of the new database
+     * instance to be created.
+     */
+    public RestoreDBInstanceToPointInTimeRequest(String sourceDBInstanceIdentifier, String targetDBInstanceIdentifier) {
+        this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
+        this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
+    }
+    
     /**
      * The identifier of the source DB Instance from which to restore.
      *
@@ -373,6 +396,55 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
     
     /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean isAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     */
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean getAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -392,6 +464,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         sb.append("Port: " + port + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
+        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
     }

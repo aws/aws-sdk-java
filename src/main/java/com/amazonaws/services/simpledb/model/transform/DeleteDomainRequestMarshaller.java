@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Domain Request Marshaller
- */        
+ */
 public class DeleteDomainRequestMarshaller implements Marshaller<Request<DeleteDomainRequest>, DeleteDomainRequest> {
 
     public Request<DeleteDomainRequest> marshall(DeleteDomainRequest deleteDomainRequest) {

@@ -19,7 +19,7 @@ package com.amazonaws.services.s3.internal;
 
 import java.io.InputStream;
 
-import com.amazonaws.ResponseMetadata;
+import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
 
 /**
@@ -31,8 +31,8 @@ public class S3StringResponseHandler extends AbstractS3ResponseHandler<String> {
     /* (non-Javadoc)
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */
-    public ResponseMetadata<String> handle(HttpResponse response) throws Exception {
-        ResponseMetadata<String> responseMetadata = parseResponseMetadata(response);
+    public AmazonWebServiceResponse<String> handle(HttpResponse response) throws Exception {
+        AmazonWebServiceResponse<String> awsResponse = parseResponseMetadata(response);
 
         int bytesRead;
         byte[] buffer = new byte[1024];
@@ -41,9 +41,9 @@ public class S3StringResponseHandler extends AbstractS3ResponseHandler<String> {
         while ((bytesRead = content.read(buffer)) > 0) {
             builder.append(new String(buffer, 0, bytesRead));
         }
-        responseMetadata.setResult(builder.toString());
+        awsResponse.setResult(builder.toString());
 
-        return responseMetadata;
+        return awsResponse;
     }
 
 }

@@ -40,6 +40,26 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     private Integer instanceCount;
 
     /**
+     * Default constructor for a new PurchaseReservedInstancesOfferingRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PurchaseReservedInstancesOfferingRequest() {}
+    
+    /**
+     * Constructs a new PurchaseReservedInstancesOfferingRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param reservedInstancesOfferingId The unique ID of the Reserved
+     * Instances offering being purchased.
+     * @param instanceCount The number of Reserved Instances to purchase.
+     */
+    public PurchaseReservedInstancesOfferingRequest(String reservedInstancesOfferingId, Integer instanceCount) {
+        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
+        this.instanceCount = instanceCount;
+    }
+    
+    /**
      * The unique ID of the Reserved Instances offering being purchased.
      *
      * @return The unique ID of the Reserved Instances offering being purchased.

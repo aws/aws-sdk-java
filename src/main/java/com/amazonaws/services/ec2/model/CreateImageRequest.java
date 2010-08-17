@@ -55,6 +55,26 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
     private Boolean noReboot;
 
     /**
+     * Default constructor for a new CreateImageRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateImageRequest() {}
+    
+    /**
+     * Constructs a new CreateImageRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance from which to create the new
+     * image.
+     * @param name The name for the new AMI being created.
+     */
+    public CreateImageRequest(String instanceId, String name) {
+        this.instanceId = instanceId;
+        this.name = name;
+    }
+    
+    /**
      * The ID of the instance from which to create the new image.
      *
      * @return The ID of the instance from which to create the new image.

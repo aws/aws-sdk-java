@@ -27,9 +27,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the database engine.
+     * The name of the DB Parameter Group Family.
      */
-    private String engine;
+    private String dBParameterGroupFamily;
 
     /**
      * The maximum number of records to include in the response. If more
@@ -48,35 +48,53 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     private String marker;
 
     /**
-     * The name of the database engine.
-     *
-     * @return The name of the database engine.
+     * Default constructor for a new DescribeEngineDefaultParametersRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
-    public String getEngine() {
-        return engine;
+    public DescribeEngineDefaultParametersRequest() {}
+    
+    /**
+     * Constructs a new DescribeEngineDefaultParametersRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBParameterGroupFamily The name of the DB Parameter Group
+     * Family.
+     */
+    public DescribeEngineDefaultParametersRequest(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the database engine.
+     * The name of the DB Parameter Group Family.
      *
-     * @param engine The name of the database engine.
+     * @return The name of the DB Parameter Group Family.
      */
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public String getDBParameterGroupFamily() {
+        return dBParameterGroupFamily;
     }
     
     /**
-     * The name of the database engine.
+     * The name of the DB Parameter Group Family.
+     *
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family.
+     */
+    public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
+    }
+    
+    /**
+     * The name of the DB Parameter Group Family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The name of the database engine.
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeEngineDefaultParametersRequest withEngine(String engine) {
-        this.engine = engine;
+    public DescribeEngineDefaultParametersRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
     
@@ -197,7 +215,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Engine: " + engine + ", ");
+        sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
         sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("Marker: " + marker + ", ");
         sb.append("}");

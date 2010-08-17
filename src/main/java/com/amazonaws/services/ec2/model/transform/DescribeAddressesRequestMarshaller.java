@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Addresses Request Marshaller
- */        
+ */
 public class DescribeAddressesRequestMarshaller implements Marshaller<Request<DescribeAddressesRequest>, DescribeAddressesRequest> {
 
     public Request<DescribeAddressesRequest> marshall(DescribeAddressesRequest describeAddressesRequest) {
@@ -36,7 +36,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
         if (describeAddressesRequest != null) {
             java.util.List<String> publicIpsList = describeAddressesRequest.getPublicIps();
             int publicIpsListIndex = 1;
-            for (String publicIpsListValue : publicIpsList) { 
+            for (String publicIpsListValue : publicIpsList) {
                 if (publicIpsListValue != null) {
                     request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(publicIpsListValue));
                 }

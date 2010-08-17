@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.rds.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.rds.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,44 +28,44 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Ebs Instance Block Device Specification StAX Unmarshaller
+ * Describe Reserved D B Instances Result StAX Unmarshaller
  */
-public class EbsInstanceBlockDeviceSpecificationStaxUnmarshaller implements Unmarshaller<EbsInstanceBlockDeviceSpecification, StaxUnmarshallerContext> {
+public class DescribeReservedDBInstancesResultStaxUnmarshaller implements Unmarshaller<DescribeReservedDBInstancesResult, StaxUnmarshallerContext> {
 
     
 
-    public EbsInstanceBlockDeviceSpecification unmarshall(StaxUnmarshallerContext context) throws Exception {
-        EbsInstanceBlockDeviceSpecification ebsInstanceBlockDeviceSpecification = new EbsInstanceBlockDeviceSpecification();
+    public DescribeReservedDBInstancesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        DescribeReservedDBInstancesResult describeReservedDBInstancesResult = new DescribeReservedDBInstancesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument()) targetDepth += 2;
         
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return ebsInstanceBlockDeviceSpecification;
+            if (xmlEvent.isEndDocument()) return describeReservedDBInstancesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("volumeId", targetDepth)) {
-                    ebsInstanceBlockDeviceSpecification.setVolumeId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Marker", targetDepth)) {
+                    describeReservedDBInstancesResult.setMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("deleteOnTermination", targetDepth)) {
-                    ebsInstanceBlockDeviceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ReservedDBInstances/ReservedDBInstance", targetDepth)) {
+                    describeReservedDBInstancesResult.getReservedDBInstances().add(ReservedDBInstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return ebsInstanceBlockDeviceSpecification;
+                    return describeReservedDBInstancesResult;
                 }
             }
         }
     }
 
-    private static EbsInstanceBlockDeviceSpecificationStaxUnmarshaller instance;
-    public static EbsInstanceBlockDeviceSpecificationStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new EbsInstanceBlockDeviceSpecificationStaxUnmarshaller();
+    private static DescribeReservedDBInstancesResultStaxUnmarshaller instance;
+    public static DescribeReservedDBInstancesResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new DescribeReservedDBInstancesResultStaxUnmarshaller();
         return instance;
     }
 }

@@ -33,6 +33,23 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> volumeIds;
 
     /**
+     * Default constructor for a new DescribeVolumesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeVolumesRequest() {}
+    
+    /**
+     * Constructs a new DescribeVolumesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param volumeIds The optional list of EBS volumes to describe.
+     */
+    public DescribeVolumesRequest(java.util.List<String> volumeIds) {
+        this.volumeIds = volumeIds;
+    }
+    
+    /**
      * The optional list of EBS volumes to describe.
      *
      * @return The optional list of EBS volumes to describe.

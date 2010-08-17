@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Trigger Request Marshaller
- */        
+ */
 public class DeleteTriggerRequestMarshaller implements Marshaller<Request<DeleteTriggerRequest>, DeleteTriggerRequest> {
 
     public Request<DeleteTriggerRequest> marshall(DeleteTriggerRequest deleteTriggerRequest) {

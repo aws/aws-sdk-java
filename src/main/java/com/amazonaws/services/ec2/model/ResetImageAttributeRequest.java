@@ -41,6 +41,26 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new ResetImageAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResetImageAttributeRequest() {}
+    
+    /**
+     * Constructs a new ResetImageAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI whose attribute is being reset.
+     * @param attribute The name of the attribute being reset. <p> Available
+     * attribute names: launchPermission
+     */
+    public ResetImageAttributeRequest(String imageId, String attribute) {
+        this.imageId = imageId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the AMI whose attribute is being reset.
      *
      * @return The ID of the AMI whose attribute is being reset.

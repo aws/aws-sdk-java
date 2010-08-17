@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Set Desired Capacity Request Marshaller
- */        
+ */
 public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<SetDesiredCapacityRequest>, SetDesiredCapacityRequest> {
 
     public Request<SetDesiredCapacityRequest> marshall(SetDesiredCapacityRequest setDesiredCapacityRequest) {

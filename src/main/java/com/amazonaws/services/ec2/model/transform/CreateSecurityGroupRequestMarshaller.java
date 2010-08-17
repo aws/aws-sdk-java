@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Security Group Request Marshaller
- */        
+ */
 public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<CreateSecurityGroupRequest>, CreateSecurityGroupRequest> {
 
     public Request<CreateSecurityGroupRequest> marshall(CreateSecurityGroupRequest createSecurityGroupRequest) {

@@ -44,6 +44,32 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
     private String device;
 
     /**
+     * Default constructor for a new AttachVolumeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AttachVolumeRequest() {}
+    
+    /**
+     * Constructs a new AttachVolumeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param volumeId The ID of the Amazon EBS volume. The volume and
+     * instance must be within the same Availability Zone and the instance
+     * must be running.
+     * @param instanceId The ID of the instance to which the volume attaches.
+     * The volume and instance must be within the same Availability Zone and
+     * the instance must be running.
+     * @param device Specifies how the device is exposed to the instance
+     * (e.g., /dev/sdh).
+     */
+    public AttachVolumeRequest(String volumeId, String instanceId, String device) {
+        this.volumeId = volumeId;
+        this.instanceId = instanceId;
+        this.device = device;
+    }
+    
+    /**
      * The ID of the Amazon EBS volume. The volume and instance must be
      * within the same Availability Zone and the instance must be running.
      *

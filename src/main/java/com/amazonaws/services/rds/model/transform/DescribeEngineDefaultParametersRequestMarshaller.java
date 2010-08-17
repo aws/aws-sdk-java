@@ -26,16 +26,16 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Engine Default Parameters Request Marshaller
- */        
+ */
 public class DescribeEngineDefaultParametersRequestMarshaller implements Marshaller<Request<DescribeEngineDefaultParametersRequest>, DescribeEngineDefaultParametersRequest> {
 
     public Request<DescribeEngineDefaultParametersRequest> marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (describeEngineDefaultParametersRequest != null) {
-            if (describeEngineDefaultParametersRequest.getEngine() != null) {
-                request.addParameter("Engine", StringUtils.fromString(describeEngineDefaultParametersRequest.getEngine()));
+            if (describeEngineDefaultParametersRequest.getDBParameterGroupFamily() != null) {
+                request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getDBParameterGroupFamily()));
             }
         }
         if (describeEngineDefaultParametersRequest != null) {

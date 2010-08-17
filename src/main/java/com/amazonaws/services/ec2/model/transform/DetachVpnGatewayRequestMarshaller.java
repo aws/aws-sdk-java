@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Detach Vpn Gateway Request Marshaller
- */        
+ */
 public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<DetachVpnGatewayRequest>, DetachVpnGatewayRequest> {
 
     public Request<DetachVpnGatewayRequest> marshall(DetachVpnGatewayRequest detachVpnGatewayRequest) {

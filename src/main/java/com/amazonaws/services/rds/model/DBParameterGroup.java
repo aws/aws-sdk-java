@@ -27,10 +27,10 @@ public class DBParameterGroup {
     private String dBParameterGroupName;
 
     /**
-     * Provides the name of the database engine that is compatible with this
-     * DB Parameter Group.
+     * Provides the name of the DB Parameter Group Family that this DB
+     * Parameter Group is compatible with.
      */
-    private String engine;
+    private String dBParameterGroupFamily;
 
     /**
      * Provides the customer-specified description for this DB Parameter
@@ -73,41 +73,41 @@ public class DBParameterGroup {
     
     
     /**
-     * Provides the name of the database engine that is compatible with this
-     * DB Parameter Group.
+     * Provides the name of the DB Parameter Group Family that this DB
+     * Parameter Group is compatible with.
      *
-     * @return Provides the name of the database engine that is compatible with this
-     *         DB Parameter Group.
+     * @return Provides the name of the DB Parameter Group Family that this DB
+     *         Parameter Group is compatible with.
      */
-    public String getEngine() {
-        return engine;
+    public String getDBParameterGroupFamily() {
+        return dBParameterGroupFamily;
     }
     
     /**
-     * Provides the name of the database engine that is compatible with this
-     * DB Parameter Group.
+     * Provides the name of the DB Parameter Group Family that this DB
+     * Parameter Group is compatible with.
      *
-     * @param engine Provides the name of the database engine that is compatible with this
-     *         DB Parameter Group.
+     * @param dBParameterGroupFamily Provides the name of the DB Parameter Group Family that this DB
+     *         Parameter Group is compatible with.
      */
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * Provides the name of the database engine that is compatible with this
-     * DB Parameter Group.
+     * Provides the name of the DB Parameter Group Family that this DB
+     * Parameter Group is compatible with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine Provides the name of the database engine that is compatible with this
-     *         DB Parameter Group.
+     * @param dBParameterGroupFamily Provides the name of the DB Parameter Group Family that this DB
+     *         Parameter Group is compatible with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DBParameterGroup withEngine(String engine) {
-        this.engine = engine;
+    public DBParameterGroup withDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
     
@@ -165,7 +165,7 @@ public class DBParameterGroup {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
-        sb.append("Engine: " + engine + ", ");
+        sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
         sb.append("Description: " + description + ", ");
         sb.append("}");
         return sb.toString();

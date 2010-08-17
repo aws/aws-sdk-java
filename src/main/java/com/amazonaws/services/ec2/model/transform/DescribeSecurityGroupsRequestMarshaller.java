@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Security Groups Request Marshaller
- */        
+ */
 public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Request<DescribeSecurityGroupsRequest>, DescribeSecurityGroupsRequest> {
 
     public Request<DescribeSecurityGroupsRequest> marshall(DescribeSecurityGroupsRequest describeSecurityGroupsRequest) {
@@ -36,7 +36,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
         if (describeSecurityGroupsRequest != null) {
             java.util.List<String> groupNamesList = describeSecurityGroupsRequest.getGroupNames();
             int groupNamesListIndex = 1;
-            for (String groupNamesListValue : groupNamesList) { 
+            for (String groupNamesListValue : groupNamesList) {
                 if (groupNamesListValue != null) {
                     request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }

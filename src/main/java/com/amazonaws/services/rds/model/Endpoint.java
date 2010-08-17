@@ -32,6 +32,12 @@ public class Endpoint {
     private Integer port;
 
     /**
+     * Default constructor for a new Endpoint object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Endpoint() {}
+    
+    /**
      * Specifies the DNS address of the DB Instance.
      *
      * @return Specifies the DNS address of the DB Instance.

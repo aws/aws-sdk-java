@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Availability Zones Request Marshaller
- */        
+ */
 public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Request<DescribeAvailabilityZonesRequest>, DescribeAvailabilityZonesRequest> {
 
     public Request<DescribeAvailabilityZonesRequest> marshall(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest) {
@@ -36,7 +36,7 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
         if (describeAvailabilityZonesRequest != null) {
             java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
             int zoneNamesListIndex = 1;
-            for (String zoneNamesListValue : zoneNamesList) { 
+            for (String zoneNamesListValue : zoneNamesList) {
                 if (zoneNamesListValue != null) {
                     request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(zoneNamesListValue));
                 }

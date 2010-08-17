@@ -37,6 +37,27 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new ResetSnapshotAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResetSnapshotAttributeRequest() {}
+    
+    /**
+     * Constructs a new ResetSnapshotAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the snapshot whose attribute is being
+     * reset.
+     * @param attribute The name of the attribute being reset. <p> Available
+     * attribute names: createVolumePermission
+     */
+    public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
+        this.snapshotId = snapshotId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the snapshot whose attribute is being reset.
      *
      * @return The ID of the snapshot whose attribute is being reset.

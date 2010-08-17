@@ -42,6 +42,28 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
     private java.util.List<Parameter> parameters;
 
     /**
+     * Default constructor for a new ModifyDBParameterGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ModifyDBParameterGroupRequest() {}
+    
+    /**
+     * Constructs a new ModifyDBParameterGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBParameterGroupName The name of the database parameter group.
+     * @param parameters An array of parameter names, values, and the apply
+     * method for the parameter update. At least one parameter name, value,
+     * and apply method must be supplied; subsequent arguments are optional.
+     * A maximum of 20 parameters may be modified in a single request.
+     */
+    public ModifyDBParameterGroupRequest(String dBParameterGroupName, java.util.List<Parameter> parameters) {
+        this.dBParameterGroupName = dBParameterGroupName;
+        this.parameters = parameters;
+    }
+    
+    /**
      * The name of the database parameter group.
      *
      * @return The name of the database parameter group.

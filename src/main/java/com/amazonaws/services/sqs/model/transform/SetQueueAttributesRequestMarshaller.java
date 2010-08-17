@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Set Queue Attributes Request Marshaller
- */        
+ */
 public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<SetQueueAttributesRequest>, SetQueueAttributesRequest> {
 
     public Request<SetQueueAttributesRequest> marshall(SetQueueAttributesRequest setQueueAttributesRequest) {
@@ -42,7 +42,7 @@ public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<S
             if (setQueueAttributesRequest.getAttributes() != null) {
                 int attributesListIndex = 1;
                 for (Map.Entry<String, String> attributesListValue : setQueueAttributesRequest.getAttributes().entrySet()) {
- 
+
                     if (attributesListValue != null) {
                         if (attributesListValue.getKey() != null) {
                             request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getKey()));

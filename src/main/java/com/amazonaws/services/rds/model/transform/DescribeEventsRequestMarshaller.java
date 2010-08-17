@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Events Request Marshaller
- */        
+ */
 public class DescribeEventsRequestMarshaller implements Marshaller<Request<DescribeEventsRequest>, DescribeEventsRequest> {
 
     public Request<DescribeEventsRequest> marshall(DescribeEventsRequest describeEventsRequest) {
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEvents");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (describeEventsRequest != null) {
             if (describeEventsRequest.getSourceIdentifier() != null) {
                 request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));

@@ -21,17 +21,17 @@ package com.amazonaws.services.ec2.model;
 public class DescribeLicensesResult {
 
     /**
-     * Specifies active licenses in use and attached to an Amazon
-     * EC2instance.
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
      */
     private java.util.List<License> licenses;
 
     /**
-     * Specifies active licenses in use and attached to an Amazon
-     * EC2instance.
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
      *
-     * @return Specifies active licenses in use and attached to an Amazon
-     *         EC2instance.
+     * @return Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
      */
     public java.util.List<License> getLicenses() {
         if (licenses == null) {
@@ -41,11 +41,11 @@ public class DescribeLicensesResult {
     }
     
     /**
-     * Specifies active licenses in use and attached to an Amazon
-     * EC2instance.
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
      *
-     * @param licenses Specifies active licenses in use and attached to an Amazon
-     *         EC2instance.
+     * @param licenses Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
      */
     public void setLicenses(java.util.Collection<License> licenses) {
         java.util.List<License> licensesCopy = new java.util.ArrayList<License>();
@@ -56,13 +56,13 @@ public class DescribeLicensesResult {
     }
     
     /**
-     * Specifies active licenses in use and attached to an Amazon
-     * EC2instance.
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenses Specifies active licenses in use and attached to an Amazon
-     *         EC2instance.
+     * @param licenses Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,13 +75,13 @@ public class DescribeLicensesResult {
     }
     
     /**
-     * Specifies active licenses in use and attached to an Amazon
-     * EC2instance.
+     * Specifies active licenses in use and attached to an Amazon EC2
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenses Specifies active licenses in use and attached to an Amazon
-     *         EC2instance.
+     * @param licenses Specifies active licenses in use and attached to an Amazon EC2
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

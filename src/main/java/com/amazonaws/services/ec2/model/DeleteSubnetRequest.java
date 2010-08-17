@@ -33,6 +33,23 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
     private String subnetId;
 
     /**
+     * Default constructor for a new DeleteSubnetRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteSubnetRequest() {}
+    
+    /**
+     * Constructs a new DeleteSubnetRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param subnetId
+     */
+    public DeleteSubnetRequest(String subnetId) {
+        this.subnetId = subnetId;
+    }
+    
+    /**
      * 
      *
      * @return 

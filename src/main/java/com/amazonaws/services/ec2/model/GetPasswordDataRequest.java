@@ -39,6 +39,24 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest {
     private String instanceId;
 
     /**
+     * Default constructor for a new GetPasswordDataRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetPasswordDataRequest() {}
+    
+    /**
+     * Constructs a new GetPasswordDataRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance for which you want the
+     * Windows administrator password.
+     */
+    public GetPasswordDataRequest(String instanceId) {
+        this.instanceId = instanceId;
+    }
+    
+    /**
      * The ID of the instance for which you want the Windows administrator
      * password.
      *

@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.simpledb.model.transform;
+package com.amazonaws.services.rds.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.simpledb.model.*;
+import com.amazonaws.services.rds.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,14 +28,14 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Replaceable Item StAX Unmarshaller
+ * D B Engine Version StAX Unmarshaller
  */
-public class ReplaceableItemStaxUnmarshaller implements Unmarshaller<ReplaceableItem, StaxUnmarshallerContext> {
+public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVersion, StaxUnmarshallerContext> {
 
     
 
-    public ReplaceableItem unmarshall(StaxUnmarshallerContext context) throws Exception {
-        ReplaceableItem replaceableItem = new ReplaceableItem();
+    public DBEngineVersion unmarshall(StaxUnmarshallerContext context) throws Exception {
+        DBEngineVersion dBEngineVersion = new DBEngineVersion();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
@@ -44,28 +44,32 @@ public class ReplaceableItemStaxUnmarshaller implements Unmarshaller<Replaceable
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return replaceableItem;
+            if (xmlEvent.isEndDocument()) return dBEngineVersion;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("ItemName", targetDepth)) {
-                    replaceableItem.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Engine", targetDepth)) {
+                    dBEngineVersion.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Attribute", targetDepth)) {
-                    replaceableItem.getAttributes().add(ReplaceableAttributeStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("EngineVersion", targetDepth)) {
+                    dBEngineVersion.setEngineVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("DBParameterGroupFamily", targetDepth)) {
+                    dBEngineVersion.setDBParameterGroupFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return replaceableItem;
+                    return dBEngineVersion;
                 }
             }
         }
     }
 
-    private static ReplaceableItemStaxUnmarshaller instance;
-    public static ReplaceableItemStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ReplaceableItemStaxUnmarshaller();
+    private static DBEngineVersionStaxUnmarshaller instance;
+    public static DBEngineVersionStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new DBEngineVersionStaxUnmarshaller();
         return instance;
     }
 }

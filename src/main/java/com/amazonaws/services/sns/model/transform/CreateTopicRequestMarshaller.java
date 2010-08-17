@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Topic Request Marshaller
- */        
+ */
 public class CreateTopicRequestMarshaller implements Marshaller<Request<CreateTopicRequest>, CreateTopicRequest> {
 
     public Request<CreateTopicRequest> marshall(CreateTopicRequest createTopicRequest) {

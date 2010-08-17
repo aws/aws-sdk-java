@@ -39,6 +39,25 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
     private String vpcId;
 
     /**
+     * Default constructor for a new AttachVpnGatewayRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AttachVpnGatewayRequest() {}
+    
+    /**
+     * Constructs a new AttachVpnGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpnGatewayId The ID of the VPN gateway to attach to the VPC.
+     * @param vpcId The ID of the VPC to attach to the VPN gateway.
+     */
+    public AttachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
+        this.vpnGatewayId = vpnGatewayId;
+        this.vpcId = vpcId;
+    }
+    
+    /**
      * The ID of the VPN gateway to attach to the VPC.
      *
      * @return The ID of the VPN gateway to attach to the VPC.

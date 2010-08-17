@@ -43,6 +43,25 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
     private String publicIp;
 
     /**
+     * Default constructor for a new AssociateAddressRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AssociateAddressRequest() {}
+    
+    /**
+     * Constructs a new AssociateAddressRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The instance to associate with the IP address.
+     * @param publicIp IP address that you are assigning to the instance.
+     */
+    public AssociateAddressRequest(String instanceId, String publicIp) {
+        this.instanceId = instanceId;
+        this.publicIp = publicIp;
+    }
+    
+    /**
      * The instance to associate with the IP address.
      *
      * @return The instance to associate with the IP address.

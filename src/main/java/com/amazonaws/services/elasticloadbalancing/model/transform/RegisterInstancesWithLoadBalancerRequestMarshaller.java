@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Register Instances With Load Balancer Request Marshaller
- */        
+ */
 public class RegisterInstancesWithLoadBalancerRequestMarshaller implements Marshaller<Request<RegisterInstancesWithLoadBalancerRequest>, RegisterInstancesWithLoadBalancerRequest> {
 
     public Request<RegisterInstancesWithLoadBalancerRequest> marshall(RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) {
@@ -42,7 +42,7 @@ public class RegisterInstancesWithLoadBalancerRequestMarshaller implements Marsh
         if (registerInstancesWithLoadBalancerRequest != null) {
             java.util.List<Instance> instancesList = registerInstancesWithLoadBalancerRequest.getInstances();
             int instancesListIndex = 1;
-            for (Instance instancesListValue : instancesList) { 
+            for (Instance instancesListValue : instancesList) {
                 if (instancesListValue != null) {
                     if (instancesListValue.getInstanceId() != null) {
                         request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instancesListValue.getInstanceId()));

@@ -602,13 +602,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * group as quickly as possible. However, depending on the number of
      * instances, a small delay might occur.
      * </p>
-     * <p>
-     * When authorizing a user/group pair permission, GroupName,
-     * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
-     * specified. When authorizing a CIDR IP permission, GroupName,
-     * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
-     * these two types of parameters is not allowed.
-     * </p>
      *
      * @param authorizeSecurityGroupIngressRequest Container for the
      *           necessary parameters to execute the AuthorizeSecurityGroupIngress
@@ -2121,14 +2114,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Permission changes are quickly propagated to instances within the
      * security group. However, depending on the number of instances in the
-     * group, a small delay is might occur, .
-     * </p>
-     * <p>
-     * When revoking a user/group pair permission, GroupName,
-     * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
-     * specified. When authorizing a CIDR IP permission, GroupName,
-     * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
-     * these two types of parameters is not allowed.
+     * group, a small delay might occur.
      * </p>
      *
      * @param revokeSecurityGroupIngressRequest Container for the necessary

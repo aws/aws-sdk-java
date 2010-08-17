@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Launch Configurations Request Marshaller
- */        
+ */
 public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller<Request<DescribeLaunchConfigurationsRequest>, DescribeLaunchConfigurationsRequest> {
 
     public Request<DescribeLaunchConfigurationsRequest> marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
@@ -36,7 +36,7 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller
         if (describeLaunchConfigurationsRequest != null) {
             java.util.List<String> launchConfigurationNamesList = describeLaunchConfigurationsRequest.getLaunchConfigurationNames();
             int launchConfigurationNamesListIndex = 1;
-            for (String launchConfigurationNamesListValue : launchConfigurationNamesList) { 
+            for (String launchConfigurationNamesListValue : launchConfigurationNamesList) {
                 if (launchConfigurationNamesListValue != null) {
                     request.addParameter("LaunchConfigurationNames.member." + launchConfigurationNamesListIndex, StringUtils.fromString(launchConfigurationNamesListValue));
                 }

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Triggers Request Marshaller
- */        
+ */
 public class DescribeTriggersRequestMarshaller implements Marshaller<Request<DescribeTriggersRequest>, DescribeTriggersRequest> {
 
     public Request<DescribeTriggersRequest> marshall(DescribeTriggersRequest describeTriggersRequest) {

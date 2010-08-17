@@ -14,12 +14,15 @@
  */
 package com.amazonaws.http;
 
+import java.util.Map;
+
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
@@ -33,7 +36,7 @@ import com.amazonaws.transform.VoidStaxUnmarshaller;
  * @param <T>
  *            Indicates the type being unmarshalled by this response handler.
  */
-public class StaxResponseHandler<T> implements HttpResponseHandler<ResponseMetadata<T>> {
+public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServiceResponse<T>> {
 
     /** The StAX unmarshaller to use when handling the response */
     private Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller;
@@ -86,51 +89,42 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<ResponseMetad
         }
     }
 
-    /**
-     * Constructs a new response handler that will use the specified StAX
-     * unmarshaller to unmarshall the service response, uses the specified
-     * response element path to find the root of the business data in the
-     * service's response, and uses the request ID path to locate the AWS
-     * request ID in the response. This constructor should only be used if
-     * handling a response from a service that doesn't use the standard AWS
-     * response metadata format (i.e. EC2).
-     *
-     * @param responseUnmarshaller
-     *            The StAX unmarshaller to use on the response.
-     * @param requestIdPath
-     *            The path to locate the AWS request ID in the service's
-     *            response. This overrides the default location
-     *            ("./ResponseMetadata/requestId").
-     */
-    public StaxResponseHandler(Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller, String requestIdPath) {
-        this(responseUnmarshaller);
-        this.requestIdPath = requestIdPath;
-    }
 
     /**
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */
-    public ResponseMetadata<T> handle(HttpResponse response) throws Exception {
-        /*
-         * TODO: We need to configure how to pull out the request ID since it varies
-         *       Maybe by specifying rules based on depth, expressions, etc.
-         */
-        if (requestIdPath != null) {
-        }
-
+    public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
         XMLEventReader eventReader = xmlInputFactory.createXMLEventReader(response.getContent());
         try {
-            ResponseMetadata<T> responseMetadata = new ResponseMetadata<T>();
-            StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader, responseMetadata);
+            AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
+            StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader);
+            unmarshallerContext.registerMetadataExpression("ResponseMetadata/RequestId", 2, ResponseMetadata.AWS_REQUEST_ID);
+            unmarshallerContext.registerMetadataExpression("requestId", 2, ResponseMetadata.AWS_REQUEST_ID);
+            registerAdditionalMetadataExpressions(unmarshallerContext);
+            
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
-            responseMetadata.setResult(result);
+            awsResponse.setResult(result);
+
+            Map<String, String> metadata = unmarshallerContext.getMetadata();
+            awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
+
             log.trace("Done parsing service response");
-            return responseMetadata;
+            return awsResponse;
         } finally {
             try {eventReader.close();} catch (Exception e) {}
         }
     }
+
+    /**
+     * Hook for subclasses to override in order to collect additional metadata
+     * from service responses.
+     * 
+     * @param unmarshallerContext
+     *            The unmarshaller context used to process a service's response
+     *            data.
+     */
+    protected void registerAdditionalMetadataExpressions(StaxUnmarshallerContext unmarshallerContext) {}
 
     /**
      * Since this response handler completely consumes all the data from the

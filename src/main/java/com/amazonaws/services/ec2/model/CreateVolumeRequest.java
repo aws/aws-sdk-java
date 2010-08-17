@@ -42,6 +42,42 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest {
     private String availabilityZone;
 
     /**
+     * Default constructor for a new CreateVolumeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateVolumeRequest() {}
+    
+    /**
+     * Constructs a new CreateVolumeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param size The size of the volume, in gigabytes. Required if you are
+     * not creating a volume from a snapshot.
+     * @param availabilityZone The Availability Zone in which to create the
+     * new volume.
+     */
+    public CreateVolumeRequest(Integer size, String availabilityZone) {
+        this.size = size;
+        this.availabilityZone = availabilityZone;
+    }
+    
+    /**
+     * Constructs a new CreateVolumeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the snapshot from which to create the new
+     * volume.
+     * @param availabilityZone The Availability Zone in which to create the
+     * new volume.
+     */
+    public CreateVolumeRequest(String snapshotId, String availabilityZone) {
+        this.snapshotId = snapshotId;
+        this.availabilityZone = availabilityZone;
+    }
+    
+    /**
      * The size of the volume, in gigabytes. Required if you are not creating
      * a volume from a snapshot.
      *

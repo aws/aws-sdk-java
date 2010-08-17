@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Dhcp Options Request Marshaller
- */        
+ */
 public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<DescribeDhcpOptionsRequest>, DescribeDhcpOptionsRequest> {
 
     public Request<DescribeDhcpOptionsRequest> marshall(DescribeDhcpOptionsRequest describeDhcpOptionsRequest) {
@@ -36,7 +36,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
         if (describeDhcpOptionsRequest != null) {
             java.util.List<String> dhcpOptionsIdsList = describeDhcpOptionsRequest.getDhcpOptionsIds();
             int dhcpOptionsIdsListIndex = 1;
-            for (String dhcpOptionsIdsListValue : dhcpOptionsIdsList) { 
+            for (String dhcpOptionsIdsListValue : dhcpOptionsIdsList) {
                 if (dhcpOptionsIdsListValue != null) {
                     request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(dhcpOptionsIdsListValue));
                 }

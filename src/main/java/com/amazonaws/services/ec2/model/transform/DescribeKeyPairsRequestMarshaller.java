@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Key Pairs Request Marshaller
- */        
+ */
 public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<DescribeKeyPairsRequest>, DescribeKeyPairsRequest> {
 
     public Request<DescribeKeyPairsRequest> marshall(DescribeKeyPairsRequest describeKeyPairsRequest) {
@@ -36,7 +36,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
         if (describeKeyPairsRequest != null) {
             java.util.List<String> keyNamesList = describeKeyPairsRequest.getKeyNames();
             int keyNamesListIndex = 1;
-            for (String keyNamesListValue : keyNamesList) { 
+            for (String keyNamesListValue : keyNamesList) {
                 if (keyNamesListValue != null) {
                     request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(keyNamesListValue));
                 }

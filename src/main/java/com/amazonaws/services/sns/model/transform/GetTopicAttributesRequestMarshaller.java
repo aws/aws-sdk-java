@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Topic Attributes Request Marshaller
- */        
+ */
 public class GetTopicAttributesRequestMarshaller implements Marshaller<Request<GetTopicAttributesRequest>, GetTopicAttributesRequest> {
 
     public Request<GetTopicAttributesRequest> marshall(GetTopicAttributesRequest getTopicAttributesRequest) {

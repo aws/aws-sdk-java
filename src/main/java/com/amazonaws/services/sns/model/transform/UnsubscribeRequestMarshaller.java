@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Unsubscribe Request Marshaller
- */        
+ */
 public class UnsubscribeRequestMarshaller implements Marshaller<Request<UnsubscribeRequest>, UnsubscribeRequest> {
 
     public Request<UnsubscribeRequest> marshall(UnsubscribeRequest unsubscribeRequest) {

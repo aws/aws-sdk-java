@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Reboot Instances Request Marshaller
- */        
+ */
 public class RebootInstancesRequestMarshaller implements Marshaller<Request<RebootInstancesRequest>, RebootInstancesRequest> {
 
     public Request<RebootInstancesRequest> marshall(RebootInstancesRequest rebootInstancesRequest) {
@@ -36,7 +36,7 @@ public class RebootInstancesRequestMarshaller implements Marshaller<Request<Rebo
         if (rebootInstancesRequest != null) {
             java.util.List<String> instanceIdsList = rebootInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
-            for (String instanceIdsListValue : instanceIdsList) { 
+            for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
                 }

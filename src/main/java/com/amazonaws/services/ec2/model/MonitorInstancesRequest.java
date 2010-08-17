@@ -31,6 +31,24 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> instanceIds;
 
     /**
+     * Default constructor for a new MonitorInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public MonitorInstancesRequest() {}
+    
+    /**
+     * Constructs a new MonitorInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceIds The list of Amazon EC2 instances on which to enable
+     * monitoring.
+     */
+    public MonitorInstancesRequest(java.util.List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+    
+    /**
      * The list of Amazon EC2 instances on which to enable monitoring.
      *
      * @return The list of Amazon EC2 instances on which to enable monitoring.

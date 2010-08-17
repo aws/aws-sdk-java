@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Auto Scaling Group Request Marshaller
- */        
+ */
 public class DeleteAutoScalingGroupRequestMarshaller implements Marshaller<Request<DeleteAutoScalingGroupRequest>, DeleteAutoScalingGroupRequest> {
 
     public Request<DeleteAutoScalingGroupRequest> marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {

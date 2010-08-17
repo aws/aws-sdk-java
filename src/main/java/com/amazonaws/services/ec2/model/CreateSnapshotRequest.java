@@ -46,6 +46,26 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
+     * Default constructor for a new CreateSnapshotRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateSnapshotRequest() {}
+    
+    /**
+     * Constructs a new CreateSnapshotRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param volumeId The ID of the volume from which to create the
+     * snapshot.
+     * @param description The description for the new snapshot.
+     */
+    public CreateSnapshotRequest(String volumeId, String description) {
+        this.volumeId = volumeId;
+        this.description = description;
+    }
+    
+    /**
      * The ID of the volume from which to create the snapshot.
      *
      * @return The ID of the volume from which to create the snapshot.

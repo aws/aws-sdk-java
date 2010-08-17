@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Remove Permission Request Marshaller
- */        
+ */
 public class RemovePermissionRequestMarshaller implements Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
 
     public Request<RemovePermissionRequest> marshall(RemovePermissionRequest removePermissionRequest) {

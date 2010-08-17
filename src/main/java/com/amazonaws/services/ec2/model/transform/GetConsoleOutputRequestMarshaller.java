@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Console Output Request Marshaller
- */        
+ */
 public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<GetConsoleOutputRequest>, GetConsoleOutputRequest> {
 
     public Request<GetConsoleOutputRequest> marshall(GetConsoleOutputRequest getConsoleOutputRequest) {

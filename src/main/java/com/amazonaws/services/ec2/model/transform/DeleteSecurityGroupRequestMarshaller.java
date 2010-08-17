@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Security Group Request Marshaller
- */        
+ */
 public class DeleteSecurityGroupRequestMarshaller implements Marshaller<Request<DeleteSecurityGroupRequest>, DeleteSecurityGroupRequest> {
 
     public Request<DeleteSecurityGroupRequest> marshall(DeleteSecurityGroupRequest deleteSecurityGroupRequest) {

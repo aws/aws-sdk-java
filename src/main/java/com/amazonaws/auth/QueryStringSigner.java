@@ -18,27 +18,18 @@ import java.net.URI;
 import java.security.SignatureException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.SortedMap;
 import java.util.TimeZone;
 import java.util.TreeMap;
 
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
-
-import org.apache.commons.codec.binary.Base64;
-
 import com.amazonaws.Request;
-import com.amazonaws.util.HttpUtils;
 
 /**
  * Signer implementation responsible for signing an AWS query string request
  * according to the various signature versions and hashing algorithms.
  */
-public class QueryStringSigner<T> implements Signer<T> {
-
-    /** The default encoding to use when URL encoding */
-    private static final String DEFAULT_ENCODING = "UTF-8";
+public class QueryStringSigner extends AbstractAWSSigner implements Signer {
 
     /**
      * AWS Credentials
@@ -68,7 +59,7 @@ public class QueryStringSigner<T> implements Signer<T> {
      *
      * @throws SignatureException
      */
-    public void sign(Request<T> request) throws SignatureException {
+    public void sign(Request<?> request) throws SignatureException {
         sign(request, SignatureVersion.V2, SigningAlgorithm.HmacSHA256);
     }
 
@@ -88,14 +79,13 @@ public class QueryStringSigner<T> implements Signer<T> {
      *
      * @throws SignatureException
      */
-    public void sign(Request<T> request, SignatureVersion version,
+    public void sign(Request<?> request, SignatureVersion version,
             SigningAlgorithm algorithm) throws SignatureException {
         request.addParameter("AWSAccessKeyId", credentials.getAWSAccessKeyId());
         request.addParameter("SignatureVersion", version.toString());
         request.addParameter("Timestamp", getFormattedTimestamp());
 
         String stringToSign = null;
-        
         if ( version.equals( SignatureVersion.V1 ) ) {
             stringToSign = calculateStringToSignV1(request.getParameters());
         }
@@ -107,26 +97,10 @@ public class QueryStringSigner<T> implements Signer<T> {
         else {
             throw new SignatureException("Invalid Signature Version specified");
         }
-                
+
         String signatureValue = sign(stringToSign, credentials
                 .getAWSSecretKey(), algorithm);
         request.addParameter("Signature", signatureValue);
-    }
-
-    /**
-     * Computes RFC 2104-compliant HMAC signature.
-     */
-    private String sign(String data, String key, SigningAlgorithm algorithm)
-            throws SignatureException {
-        try {
-            Mac mac = Mac.getInstance(algorithm.toString());
-            mac.init(new SecretKeySpec(key.getBytes(), algorithm.toString()));
-            byte[] signature = Base64.encodeBase64(mac.doFinal(data
-                    .getBytes(DEFAULT_ENCODING)));
-            return new String(signature);
-        } catch (Exception e) {
-            throw new SignatureException("Failed to generate signature: " + e.getMessage(), e);
-        }
     }
 
     /**
@@ -139,8 +113,8 @@ public class QueryStringSigner<T> implements Signer<T> {
      */
     private String calculateStringToSignV1(Map<String, String> parameters) {
         StringBuilder data = new StringBuilder();
-        Map<String, String> sorted = new TreeMap<String, String>(
-                String.CASE_INSENSITIVE_ORDER);
+        SortedMap<String, String> sorted =
+            new TreeMap<String, String>(String.CASE_INSENSITIVE_ORDER);
         sorted.putAll(parameters);
 
         for (String key : sorted.keySet()) {
@@ -168,42 +142,10 @@ public class QueryStringSigner<T> implements Signer<T> {
     private String calculateStringToSignV2(URI endpoint,
             Map<String, String> parameters) throws SignatureException {
         StringBuilder data = new StringBuilder();
-        data.append("POST");
-        data.append("\n");
-        data.append(endpoint.getHost().toLowerCase());
-        /*
-         * Apache HttpClient will omit the port in the Host header for default
-         * port values (i.e. 80 for HTTP and 443 for HTTPS) even if we
-         * explicitly specify it, so we need to be careful that we use the same
-         * value here when we calculate the string to sign and in the Host
-         * header we send in the HTTP request.
-         */
-        if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
-            data.append(":" + endpoint.getPort());
-        }
-        data.append("\n");
-        String uri = endpoint.getPath();
-        if (uri == null || uri.length() == 0) {
-            uri = "/";
-        }
-        data.append(HttpUtils.urlEncode(uri, true));
-        data.append("\n");
-        Map<String, String> sorted = new TreeMap<String, String>();
-        sorted.putAll(parameters);
-
-        Iterator<Map.Entry<String, String>> pairs = sorted.entrySet()
-                .iterator();
-        while (pairs.hasNext()) {
-            Map.Entry<String, String> pair = pairs.next();
-            String key = pair.getKey();
-            String value = pair.getValue();
-            data.append(HttpUtils.urlEncode(key, false));
-            data.append("=");
-            data.append(HttpUtils.urlEncode(value, false));
-            if (pairs.hasNext()) {
-                data.append("&");
-            }
-        }
+        data.append("POST").append("\n");
+        data.append(getCanonicalizedEndpoint(endpoint)).append("\n");
+        data.append(getCanonicalizedResourcePath(endpoint)).append("\n");
+        data.append(getCanonicalizedQueryString(parameters));
         return data.toString();
     }
 

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Configure Health Check Request Marshaller
- */        
+ */
 public class ConfigureHealthCheckRequestMarshaller implements Marshaller<Request<ConfigureHealthCheckRequest>, ConfigureHealthCheckRequest> {
 
     public Request<ConfigureHealthCheckRequest> marshall(ConfigureHealthCheckRequest configureHealthCheckRequest) {

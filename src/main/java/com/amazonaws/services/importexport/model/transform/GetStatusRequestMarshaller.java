@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Status Request Marshaller
- */        
+ */
 public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusRequest>, GetStatusRequest> {
 
     public Request<GetStatusRequest> marshall(GetStatusRequest getStatusRequest) {

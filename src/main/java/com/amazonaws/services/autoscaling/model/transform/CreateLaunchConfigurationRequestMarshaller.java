@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Launch Configuration Request Marshaller
- */        
+ */
 public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Request<CreateLaunchConfigurationRequest>, CreateLaunchConfigurationRequest> {
 
     public Request<CreateLaunchConfigurationRequest> marshall(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
@@ -51,7 +51,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest != null) {
             java.util.List<String> securityGroupsList = createLaunchConfigurationRequest.getSecurityGroups();
             int securityGroupsListIndex = 1;
-            for (String securityGroupsListValue : securityGroupsList) { 
+            for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
                     request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                 }
@@ -82,7 +82,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest != null) {
             java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createLaunchConfigurationRequest.getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
-            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) { 
+            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                 if (blockDeviceMappingsListValue != null) {
                     if (blockDeviceMappingsListValue.getVirtualName() != null) {
                         request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));

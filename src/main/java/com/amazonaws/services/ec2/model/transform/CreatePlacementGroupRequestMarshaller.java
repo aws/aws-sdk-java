@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Placement Group Request Marshaller
- */        
+ */
 public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request<CreatePlacementGroupRequest>, CreatePlacementGroupRequest> {
 
     public Request<CreatePlacementGroupRequest> marshall(CreatePlacementGroupRequest createPlacementGroupRequest) {

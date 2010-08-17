@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Disassociate Address Request Marshaller
- */        
+ */
 public class DisassociateAddressRequestMarshaller implements Marshaller<Request<DisassociateAddressRequest>, DisassociateAddressRequest> {
 
     public Request<DisassociateAddressRequest> marshall(DisassociateAddressRequest disassociateAddressRequest) {

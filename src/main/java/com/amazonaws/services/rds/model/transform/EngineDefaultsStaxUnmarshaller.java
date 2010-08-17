@@ -49,8 +49,8 @@ public class EngineDefaultsStaxUnmarshaller implements Unmarshaller<EngineDefaul
             if (xmlEvent.isEndDocument()) return engineDefaults;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Engine", targetDepth)) {
-                    engineDefaults.setEngine(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("DBParameterGroupFamily", targetDepth)) {
+                    engineDefaults.setDBParameterGroupFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Marker", targetDepth)) {

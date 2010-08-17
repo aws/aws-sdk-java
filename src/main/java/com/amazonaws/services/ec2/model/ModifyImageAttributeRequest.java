@@ -70,6 +70,26 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     private String value;
 
     /**
+     * Default constructor for a new ModifyImageAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ModifyImageAttributeRequest() {}
+    
+    /**
+     * Constructs a new ModifyImageAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI whose attribute you want to modify.
+     * @param attribute The name of the AMI attribute you want to modify. <p>
+     * Available attributes: launchPermission, productCodes
+     */
+    public ModifyImageAttributeRequest(String imageId, String attribute) {
+        this.imageId = imageId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the AMI whose attribute you want to modify.
      *
      * @return The ID of the AMI whose attribute you want to modify.

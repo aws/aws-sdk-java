@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Metric Statistics Request Marshaller
- */        
+ */
 public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<GetMetricStatisticsRequest>, GetMetricStatisticsRequest> {
 
     public Request<GetMetricStatisticsRequest> marshall(GetMetricStatisticsRequest getMetricStatisticsRequest) {
@@ -36,7 +36,7 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
         if (getMetricStatisticsRequest != null) {
             java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
             int statisticsListIndex = 1;
-            for (String statisticsListValue : statisticsList) { 
+            for (String statisticsListValue : statisticsList) {
                 if (statisticsListValue != null) {
                     request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
                 }
@@ -57,7 +57,7 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
         if (getMetricStatisticsRequest != null) {
             java.util.List<Dimension> dimensionsList = getMetricStatisticsRequest.getDimensions();
             int dimensionsListIndex = 1;
-            for (Dimension dimensionsListValue : dimensionsList) { 
+            for (Dimension dimensionsListValue : dimensionsList) {
                 if (dimensionsListValue != null) {
                     if (dimensionsListValue.getName() != null) {
                         request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));

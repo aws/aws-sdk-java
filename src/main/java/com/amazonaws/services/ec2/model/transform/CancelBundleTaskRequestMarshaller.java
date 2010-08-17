@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Cancel Bundle Task Request Marshaller
- */        
+ */
 public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<CancelBundleTaskRequest>, CancelBundleTaskRequest> {
 
     public Request<CancelBundleTaskRequest> marshall(CancelBundleTaskRequest cancelBundleTaskRequest) {

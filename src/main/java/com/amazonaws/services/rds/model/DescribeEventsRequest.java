@@ -79,6 +79,12 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
+     * Default constructor for a new DescribeEventsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeEventsRequest() {}
+    
+    /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
      *

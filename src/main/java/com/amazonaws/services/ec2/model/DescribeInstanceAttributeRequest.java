@@ -39,6 +39,29 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new DescribeInstanceAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeInstanceAttributeRequest() {}
+    
+    /**
+     * Constructs a new DescribeInstanceAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance whose instance attribute is
+     * being described.
+     * @param attribute The name of the attribute to describe. <p> Available
+     * attribute names: instanceType, kernel, ramdisk, userData,
+     * disableApiTermination, instanceInitiatedShutdownBehavior,
+     * rootDeviceName, blockDeviceMapping
+     */
+    public DescribeInstanceAttributeRequest(String instanceId, String attribute) {
+        this.instanceId = instanceId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the instance whose instance attribute is being described.
      *
      * @return The ID of the instance whose instance attribute is being described.

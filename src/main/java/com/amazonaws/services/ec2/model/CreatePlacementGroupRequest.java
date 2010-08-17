@@ -41,6 +41,25 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest {
     private String strategy;
 
     /**
+     * Default constructor for a new CreatePlacementGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreatePlacementGroupRequest() {}
+    
+    /**
+     * Constructs a new CreatePlacementGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName The name of the <code>PlacementGroup</code>.
+     * @param strategy The <code>PlacementGroup</code> strategy.
+     */
+    public CreatePlacementGroupRequest(String groupName, String strategy) {
+        this.groupName = groupName;
+        this.strategy = strategy;
+    }
+    
+    /**
      * The name of the <code>PlacementGroup</code>.
      *
      * @return The name of the <code>PlacementGroup</code>.

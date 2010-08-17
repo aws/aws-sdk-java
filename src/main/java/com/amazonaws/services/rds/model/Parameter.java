@@ -63,6 +63,8 @@ public class Parameter {
      */
     private Boolean isModifiable;
 
+    private String minimumEngineVersion;
+
     /**
      * Indicates when to apply parameter updates.
      * <p>
@@ -71,6 +73,12 @@ public class Parameter {
      */
     private String applyMethod;
 
+    /**
+     * Default constructor for a new Parameter object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Parameter() {}
+    
     /**
      * Specifies the name of the parameter.
      *
@@ -369,6 +377,41 @@ public class Parameter {
     }
     
     /**
+     * Returns the value of the MinimumEngineVersion property for this
+     * object.
+     *
+     * @return The value of the MinimumEngineVersion property for this object.
+     */
+    public String getMinimumEngineVersion() {
+        return minimumEngineVersion;
+    }
+    
+    /**
+     * Sets the value of the MinimumEngineVersion property for this object.
+     *
+     * @param minimumEngineVersion The new value for the MinimumEngineVersion property for this object.
+     */
+    public void setMinimumEngineVersion(String minimumEngineVersion) {
+        this.minimumEngineVersion = minimumEngineVersion;
+    }
+    
+    /**
+     * Sets the value of the MinimumEngineVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param minimumEngineVersion The new value for the MinimumEngineVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Parameter withMinimumEngineVersion(String minimumEngineVersion) {
+        this.minimumEngineVersion = minimumEngineVersion;
+        return this;
+    }
+    
+    
+    /**
      * Indicates when to apply parameter updates.
      * <p>
      * <b>Constraints:</b><br/>
@@ -437,6 +480,7 @@ public class Parameter {
         sb.append("DataType: " + dataType + ", ");
         sb.append("AllowedValues: " + allowedValues + ", ");
         sb.append("IsModifiable: " + isModifiable + ", ");
+        sb.append("MinimumEngineVersion: " + minimumEngineVersion + ", ");
         sb.append("ApplyMethod: " + applyMethod + ", ");
         sb.append("}");
         return sb.toString();

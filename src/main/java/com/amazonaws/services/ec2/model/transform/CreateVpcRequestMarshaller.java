@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Vpc Request Marshaller
- */        
+ */
 public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcRequest>, CreateVpcRequest> {
 
     public Request<CreateVpcRequest> marshall(CreateVpcRequest createVpcRequest) {

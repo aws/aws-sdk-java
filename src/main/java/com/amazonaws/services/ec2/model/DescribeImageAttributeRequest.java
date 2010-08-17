@@ -38,6 +38,27 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new DescribeImageAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeImageAttributeRequest() {}
+    
+    /**
+     * Constructs a new DescribeImageAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId The ID of the AMI whose attribute is to be described.
+     * @param attribute The name of the attribute to describe. <p> Available
+     * attribute names: productCodes, kernel, ramdisk, launchPermisson,
+     * blockDeviceMapping
+     */
+    public DescribeImageAttributeRequest(String imageId, String attribute) {
+        this.imageId = imageId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the AMI whose attribute is to be described.
      *
      * @return The ID of the AMI whose attribute is to be described.

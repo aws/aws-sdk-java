@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Topic Request Marshaller
- */        
+ */
 public class DeleteTopicRequestMarshaller implements Marshaller<Request<DeleteTopicRequest>, DeleteTopicRequest> {
 
     public Request<DeleteTopicRequest> marshall(DeleteTopicRequest deleteTopicRequest) {

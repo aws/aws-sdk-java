@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Load Balancer Policy Request Marshaller
- */        
+ */
 public class DeleteLoadBalancerPolicyRequestMarshaller implements Marshaller<Request<DeleteLoadBalancerPolicyRequest>, DeleteLoadBalancerPolicyRequest> {
 
     public Request<DeleteLoadBalancerPolicyRequest> marshall(DeleteLoadBalancerPolicyRequest deleteLoadBalancerPolicyRequest) {

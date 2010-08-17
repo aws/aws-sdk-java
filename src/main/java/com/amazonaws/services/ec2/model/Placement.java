@@ -33,6 +33,24 @@ public class Placement {
     private String groupName;
 
     /**
+     * Default constructor for a new Placement object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Placement() {}
+    
+    /**
+     * Constructs a new Placement object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param availabilityZone The availability zone in which an Amazon EC2
+     * instance runs.
+     */
+    public Placement(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+    
+    /**
      * The availability zone in which an Amazon EC2 instance runs.
      *
      * @return The availability zone in which an Amazon EC2 instance runs.

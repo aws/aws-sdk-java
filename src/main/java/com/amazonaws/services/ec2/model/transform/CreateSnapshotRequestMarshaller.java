@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Snapshot Request Marshaller
- */        
+ */
 public class CreateSnapshotRequestMarshaller implements Marshaller<Request<CreateSnapshotRequest>, CreateSnapshotRequest> {
 
     public Request<CreateSnapshotRequest> marshall(CreateSnapshotRequest createSnapshotRequest) {

@@ -32,6 +32,23 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
     private String dBSnapshotIdentifier;
 
     /**
+     * Default constructor for a new DeleteDBSnapshotRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteDBSnapshotRequest() {}
+    
+    /**
+     * Constructs a new DeleteDBSnapshotRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBSnapshotIdentifier The DBSnapshot identifier.
+     */
+    public DeleteDBSnapshotRequest(String dBSnapshotIdentifier) {
+        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+    }
+    
+    /**
      * The DBSnapshot identifier.
      *
      * @return The DBSnapshot identifier.

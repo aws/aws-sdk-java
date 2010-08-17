@@ -43,6 +43,23 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
     private String vpnConnectionId;
 
     /**
+     * Default constructor for a new DeleteVpnConnectionRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteVpnConnectionRequest() {}
+    
+    /**
+     * Constructs a new DeleteVpnConnectionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpnConnectionId The ID of the VPN connection to delete
+     */
+    public DeleteVpnConnectionRequest(String vpnConnectionId) {
+        this.vpnConnectionId = vpnConnectionId;
+    }
+    
+    /**
      * The ID of the VPN connection to delete
      *
      * @return The ID of the VPN connection to delete

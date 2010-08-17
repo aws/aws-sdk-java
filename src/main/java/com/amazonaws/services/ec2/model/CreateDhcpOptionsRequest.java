@@ -32,24 +32,48 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
     /**
      * A set of one or more DHCP configurations.
      */
-    private DhcpConfiguration dhcpConfiguration;
+    private java.util.List<DhcpConfiguration> dhcpConfigurations;
 
     /**
-     * A set of one or more DHCP configurations.
-     *
-     * @return A set of one or more DHCP configurations.
+     * Default constructor for a new CreateDhcpOptionsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
-    public DhcpConfiguration getDhcpConfiguration() {
-        return dhcpConfiguration;
+    public CreateDhcpOptionsRequest() {}
+    
+    /**
+     * Constructs a new CreateDhcpOptionsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     */
+    public CreateDhcpOptionsRequest(java.util.List<DhcpConfiguration> dhcpConfigurations) {
+        this.dhcpConfigurations = dhcpConfigurations;
     }
     
     /**
      * A set of one or more DHCP configurations.
      *
-     * @param dhcpConfiguration A set of one or more DHCP configurations.
+     * @return A set of one or more DHCP configurations.
      */
-    public void setDhcpConfiguration(DhcpConfiguration dhcpConfiguration) {
-        this.dhcpConfiguration = dhcpConfiguration;
+    public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
+        if (dhcpConfigurations == null) {
+            dhcpConfigurations = new java.util.ArrayList<DhcpConfiguration>();
+        }
+        return dhcpConfigurations;
+    }
+    
+    /**
+     * A set of one or more DHCP configurations.
+     *
+     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     */
+    public void setDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
+        java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>();
+        if (dhcpConfigurations != null) {
+            dhcpConfigurationsCopy.addAll(dhcpConfigurations);
+        }
+        this.dhcpConfigurations = dhcpConfigurationsCopy;
     }
     
     /**
@@ -57,16 +81,37 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dhcpConfiguration A set of one or more DHCP configurations.
+     * @param dhcpConfigurations A set of one or more DHCP configurations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateDhcpOptionsRequest withDhcpConfiguration(DhcpConfiguration dhcpConfiguration) {
-        this.dhcpConfiguration = dhcpConfiguration;
+    public CreateDhcpOptionsRequest withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
+        for (DhcpConfiguration value : dhcpConfigurations) {
+            getDhcpConfigurations().add(value);
+        }
         return this;
     }
     
+    /**
+     * A set of one or more DHCP configurations.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dhcpConfigurations A set of one or more DHCP configurations.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDhcpOptionsRequest withDhcpConfigurations(java.util.Collection<DhcpConfiguration> dhcpConfigurations) {
+        java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>();
+        if (dhcpConfigurations != null) {
+            dhcpConfigurationsCopy.addAll(dhcpConfigurations);
+        }
+        this.dhcpConfigurations = dhcpConfigurationsCopy;
+
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -80,7 +125,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DhcpConfiguration: " + dhcpConfiguration + ", ");
+        sb.append("DhcpConfigurations: " + dhcpConfigurations + ", ");
         sb.append("}");
         return sb.toString();
     }

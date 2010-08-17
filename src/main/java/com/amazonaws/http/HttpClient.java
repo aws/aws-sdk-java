@@ -45,10 +45,13 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
+import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.VersionInfoUtils;
 
 public class HttpClient {
@@ -79,6 +82,9 @@ public class HttpClient {
     /** Client configuration options, such as proxy settings, max retries, etc. */
     private final ClientConfiguration config;
 
+    /** Cache of metadata for recently executed requests for diagnostic purposes */
+    private ResponseMetadataCache responseMetadataCache = new ResponseMetadataCache(50);
+
 
     /**
      * Constructs a new AWS client using the specified client configuration
@@ -93,8 +99,26 @@ public class HttpClient {
         configureHttpClient();
     }
 
+    /**
+     * Returns additional response metadata for an executed request. Response
+     * metadata isn't considered part of the standard results returned by an
+     * operation, so it's accessed instead through this diagnostic interface.
+     * Response metadata is typically used for troubleshooting issues with AWS
+     * support staff when services aren't acting as expected.
+     *
+     * @param request
+     *            A previously executed AmazonWebServiceRequest object, whose
+     *            response metadata is desired.
+     *
+     * @return The response metadata for the specified request, otherwise null
+     *         if there is no response metadata available for the request.
+     */
+    public ResponseMetadata getResponseMetadataForRequest(AmazonWebServiceRequest request) {
+        return responseMetadataCache.get(request);
+    }
+
     public <T> T execute(HttpRequest request,
-            HttpResponseHandler<ResponseMetadata<T>> responseHandler,
+            HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler)
             throws AmazonServiceException {
 
@@ -364,7 +388,7 @@ public class HttpClient {
      *             contents from the HTTP method object.
      */
     private <T> T handleResponse(HttpRequest request,
-            HttpResponseHandler<ResponseMetadata<T>> responseHandler, HttpMethodBase method)
+            HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler, HttpMethodBase method)
             throws IOException {
 
         HttpResponse httpResponse = createResponse(method, request);
@@ -380,7 +404,7 @@ public class HttpClient {
             }
 
             long startTime = System.currentTimeMillis();
-            ResponseMetadata<? extends T> responseMetadata = responseHandler.handle(httpResponse);
+            AmazonWebServiceResponse<? extends T> awsResponse = responseHandler.handle(httpResponse);
             long endTime = System.currentTimeMillis();
 
             if (unmarshallerPerformanceLog.isTraceEnabled()) {
@@ -388,13 +412,15 @@ public class HttpClient {
                         countingInputStream.getByteCount() + ", " + (endTime - startTime));
             }
 
-            if (responseMetadata == null)
+            if (awsResponse == null)
                 throw new RuntimeException("Unable to unmarshall response metadata");
 
-            requestLog.info("Received successful response: " + method.getStatusCode()
-                    + ", AWS Request ID: " + responseMetadata.getRequestId());
+            responseMetadataCache.add(request.getOriginalRequest(), awsResponse.getResponseMetadata());
 
-            return responseMetadata.getResult();
+            requestLog.info("Received successful response: " + method.getStatusCode()
+                    + ", AWS Request ID: " + awsResponse.getRequestId());
+
+            return awsResponse.getResult();
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + "): "
                                 + method.getResponseBodyAsString();

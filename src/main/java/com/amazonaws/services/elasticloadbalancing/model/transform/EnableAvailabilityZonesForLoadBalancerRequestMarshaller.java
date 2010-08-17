@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Enable Availability Zones For Load Balancer Request Marshaller
- */        
+ */
 public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements Marshaller<Request<EnableAvailabilityZonesForLoadBalancerRequest>, EnableAvailabilityZonesForLoadBalancerRequest> {
 
     public Request<EnableAvailabilityZonesForLoadBalancerRequest> marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) {
@@ -41,7 +41,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements 
         if (enableAvailabilityZonesForLoadBalancerRequest != null) {
             java.util.List<String> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
-            for (String availabilityZonesListValue : availabilityZonesList) { 
+            for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }

@@ -38,6 +38,27 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     private String dBSecurityGroupDescription;
 
     /**
+     * Default constructor for a new CreateDBSecurityGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateDBSecurityGroupRequest() {}
+    
+    /**
+     * Constructs a new CreateDBSecurityGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBSecurityGroupName The name for the DB Security Group. This
+     * value is stored as a lowercase string.
+     * @param dBSecurityGroupDescription The description for the DB Security
+     * Group.
+     */
+    public CreateDBSecurityGroupRequest(String dBSecurityGroupName, String dBSecurityGroupDescription) {
+        this.dBSecurityGroupName = dBSecurityGroupName;
+        this.dBSecurityGroupDescription = dBSecurityGroupDescription;
+    }
+    
+    /**
      * The name for the DB Security Group. This value is stored as a
      * lowercase string.
      *

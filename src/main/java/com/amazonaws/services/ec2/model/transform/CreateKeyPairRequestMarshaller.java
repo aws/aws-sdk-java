@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Key Pair Request Marshaller
- */        
+ */
 public class CreateKeyPairRequestMarshaller implements Marshaller<Request<CreateKeyPairRequest>, CreateKeyPairRequest> {
 
     public Request<CreateKeyPairRequest> marshall(CreateKeyPairRequest createKeyPairRequest) {

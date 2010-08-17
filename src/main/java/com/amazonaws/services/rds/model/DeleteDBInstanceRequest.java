@@ -50,6 +50,24 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     private String finalDBSnapshotIdentifier;
 
     /**
+     * Default constructor for a new DeleteDBInstanceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteDBInstanceRequest() {}
+    
+    /**
+     * Constructs a new DeleteDBInstanceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBInstanceIdentifier The DB Instance identifier for the DB
+     * Instance to be deleted. This parameter isn't case sensitive.
+     */
+    public DeleteDBInstanceRequest(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+    }
+    
+    /**
      * The DB Instance identifier for the DB Instance to be deleted. This
      * parameter isn't case sensitive.
      *

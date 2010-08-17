@@ -60,6 +60,27 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     private String vpnGatewayId;
 
     /**
+     * Default constructor for a new CreateVpnConnectionRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateVpnConnectionRequest() {}
+    
+    /**
+     * Constructs a new CreateVpnConnectionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param type The type of VPN connection.
+     * @param customerGatewayId The ID of the customer gateway.
+     * @param vpnGatewayId The ID of the VPN gateway.
+     */
+    public CreateVpnConnectionRequest(String type, String customerGatewayId, String vpnGatewayId) {
+        this.type = type;
+        this.customerGatewayId = customerGatewayId;
+        this.vpnGatewayId = vpnGatewayId;
+    }
+    
+    /**
      * The type of VPN connection.
      *
      * @return The type of VPN connection.

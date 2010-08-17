@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Run Instances Request Marshaller
- */        
+ */
 public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInstancesRequest>, RunInstancesRequest> {
 
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
@@ -56,7 +56,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest != null) {
             java.util.List<String> securityGroupsList = runInstancesRequest.getSecurityGroups();
             int securityGroupsListIndex = 1;
-            for (String securityGroupsListValue : securityGroupsList) { 
+            for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
                     request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                 }
@@ -100,7 +100,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest != null) {
             java.util.List<BlockDeviceMapping> blockDeviceMappingsList = runInstancesRequest.getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
-            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) { 
+            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                 if (blockDeviceMappingsListValue != null) {
                     if (blockDeviceMappingsListValue.getVirtualName() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));

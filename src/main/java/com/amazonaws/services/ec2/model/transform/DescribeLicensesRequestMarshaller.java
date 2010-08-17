@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Licenses Request Marshaller
- */        
+ */
 public class DescribeLicensesRequestMarshaller implements Marshaller<Request<DescribeLicensesRequest>, DescribeLicensesRequest> {
 
     public Request<DescribeLicensesRequest> marshall(DescribeLicensesRequest describeLicensesRequest) {
@@ -36,7 +36,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
         if (describeLicensesRequest != null) {
             java.util.List<String> licenseIdsList = describeLicensesRequest.getLicenseIds();
             int licenseIdsListIndex = 1;
-            for (String licenseIdsListValue : licenseIdsList) { 
+            for (String licenseIdsListValue : licenseIdsList) {
                 if (licenseIdsListValue != null) {
                     request.addParameter("LicenseId." + licenseIdsListIndex, StringUtils.fromString(licenseIdsListValue));
                 }

@@ -45,6 +45,12 @@ public class Event {
     private java.util.Date date;
 
     /**
+     * Default constructor for a new Event object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Event() {}
+    
+    /**
      * Provides the identifier for the source of the event.
      *
      * @return Provides the identifier for the source of the event.

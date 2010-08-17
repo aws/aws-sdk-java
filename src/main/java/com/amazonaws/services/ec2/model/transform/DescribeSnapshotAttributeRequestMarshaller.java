@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Snapshot Attribute Request Marshaller
- */        
+ */
 public class DescribeSnapshotAttributeRequestMarshaller implements Marshaller<Request<DescribeSnapshotAttributeRequest>, DescribeSnapshotAttributeRequest> {
 
     public Request<DescribeSnapshotAttributeRequest> marshall(DescribeSnapshotAttributeRequest describeSnapshotAttributeRequest) {

@@ -54,6 +54,12 @@ public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
+     * Default constructor for a new DescribeDBSnapshotsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeDBSnapshotsRequest() {}
+    
+    /**
      * The unique identifier for the Amazon RDS DB snapshot. This value is
      * stored as a lowercase string.
      *

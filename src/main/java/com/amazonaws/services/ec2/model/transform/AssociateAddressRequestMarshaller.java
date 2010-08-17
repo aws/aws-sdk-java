@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Associate Address Request Marshaller
- */        
+ */
 public class AssociateAddressRequestMarshaller implements Marshaller<Request<AssociateAddressRequest>, AssociateAddressRequest> {
 
     public Request<AssociateAddressRequest> marshall(AssociateAddressRequest associateAddressRequest) {

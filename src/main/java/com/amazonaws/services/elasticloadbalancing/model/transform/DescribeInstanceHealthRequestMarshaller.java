@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Instance Health Request Marshaller
- */        
+ */
 public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Request<DescribeInstanceHealthRequest>, DescribeInstanceHealthRequest> {
 
     public Request<DescribeInstanceHealthRequest> marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest) {
@@ -42,7 +42,7 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
         if (describeInstanceHealthRequest != null) {
             java.util.List<Instance> instancesList = describeInstanceHealthRequest.getInstances();
             int instancesListIndex = 1;
-            for (Instance instancesListValue : instancesList) { 
+            for (Instance instancesListValue : instancesList) {
                 if (instancesListValue != null) {
                     if (instancesListValue.getInstanceId() != null) {
                         request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instancesListValue.getInstanceId()));

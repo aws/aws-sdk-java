@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Vpcs Request Marshaller
- */        
+ */
 public class DescribeVpcsRequestMarshaller implements Marshaller<Request<DescribeVpcsRequest>, DescribeVpcsRequest> {
 
     public Request<DescribeVpcsRequest> marshall(DescribeVpcsRequest describeVpcsRequest) {
@@ -36,7 +36,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         if (describeVpcsRequest != null) {
             java.util.List<String> vpcIdsList = describeVpcsRequest.getVpcIds();
             int vpcIdsListIndex = 1;
-            for (String vpcIdsListValue : vpcIdsList) { 
+            for (String vpcIdsListValue : vpcIdsList) {
                 if (vpcIdsListValue != null) {
                     request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(vpcIdsListValue));
                 }
@@ -47,7 +47,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         if (describeVpcsRequest != null) {
             java.util.List<Filter> filtersList = describeVpcsRequest.getFilters();
             int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) { 
+            for (Filter filtersListValue : filtersList) {
                 if (filtersListValue != null) {
                     if (filtersListValue.getName() != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
@@ -56,7 +56,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
-                    for (String valuesListValue : valuesList) { 
+                    for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                         }

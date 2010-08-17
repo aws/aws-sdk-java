@@ -49,6 +49,12 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
+     * Default constructor for a new DescribeDBSecurityGroupsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeDBSecurityGroupsRequest() {}
+    
+    /**
      * The name of the DB Security Group to return details for.
      *
      * @return The name of the DB Security Group to return details for.

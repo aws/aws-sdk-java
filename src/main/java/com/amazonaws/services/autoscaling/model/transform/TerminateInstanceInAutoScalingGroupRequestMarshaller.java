@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Terminate Instance In Auto Scaling Group Request Marshaller
- */        
+ */
 public class TerminateInstanceInAutoScalingGroupRequestMarshaller implements Marshaller<Request<TerminateInstanceInAutoScalingGroupRequest>, TerminateInstanceInAutoScalingGroupRequest> {
 
     public Request<TerminateInstanceInAutoScalingGroupRequest> marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) {

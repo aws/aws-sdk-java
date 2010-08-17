@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Volumes Request Marshaller
- */        
+ */
 public class DescribeVolumesRequestMarshaller implements Marshaller<Request<DescribeVolumesRequest>, DescribeVolumesRequest> {
 
     public Request<DescribeVolumesRequest> marshall(DescribeVolumesRequest describeVolumesRequest) {
@@ -36,7 +36,7 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
         if (describeVolumesRequest != null) {
             java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
             int volumeIdsListIndex = 1;
-            for (String volumeIdsListValue : volumeIdsList) { 
+            for (String volumeIdsListValue : volumeIdsList) {
                 if (volumeIdsListValue != null) {
                     request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(volumeIdsListValue));
                 }

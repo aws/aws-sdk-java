@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Select Request Marshaller
- */        
+ */
 public class SelectRequestMarshaller implements Marshaller<Request<SelectRequest>, SelectRequest> {
 
     public Request<SelectRequest> marshall(SelectRequest selectRequest) {

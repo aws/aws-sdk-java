@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Load Balancers Request Marshaller
- */        
+ */
 public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Request<DescribeLoadBalancersRequest>, DescribeLoadBalancersRequest> {
 
     public Request<DescribeLoadBalancersRequest> marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
@@ -36,7 +36,7 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
         if (describeLoadBalancersRequest != null) {
             java.util.List<String> loadBalancerNamesList = describeLoadBalancersRequest.getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
-            for (String loadBalancerNamesListValue : loadBalancerNamesList) { 
+            for (String loadBalancerNamesListValue : loadBalancerNamesList) {
                 if (loadBalancerNamesListValue != null) {
                     request.addParameter("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.fromString(loadBalancerNamesListValue));
                 }

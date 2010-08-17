@@ -60,6 +60,30 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     private java.util.List<String> groupNames;
 
     /**
+     * Default constructor for a new ModifySnapshotAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ModifySnapshotAttributeRequest() {}
+    
+    /**
+     * Constructs a new ModifySnapshotAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the EBS snapshot whose attributes are
+     * being modified.
+     * @param attribute The name of the attribute being modified. <p>
+     * Available attribute names: createVolumePermission
+     * @param operationType The operation to perform on the attribute. <p>
+     * Available operation names: add, remove
+     */
+    public ModifySnapshotAttributeRequest(String snapshotId, String attribute, String operationType) {
+        this.snapshotId = snapshotId;
+        this.attribute = attribute;
+        this.operationType = operationType;
+    }
+    
+    /**
      * The ID of the EBS snapshot whose attributes are being modified.
      *
      * @return The ID of the EBS snapshot whose attributes are being modified.

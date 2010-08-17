@@ -581,6 +581,7 @@ video/mp4v-es
 video/mpv
 video/mpeg			mpeg mpg mpe
 video/nv
+video/ogv           ogv
 video/parityfec
 video/pointer
 video/quicktime			qt mov
@@ -592,8 +593,10 @@ video/vnd.mpegurl		mxu m4u
 video/vnd.nokia.interleaved-multimedia
 video/vnd.objectvideo
 video/vnd.vivo
+video/webm          webm
 video/x-dv			dv dif
 video/x-flv			flv
+video/x-m4v         m4v
 video/x-ms-wmv		wmv
 video/x-msvideo			avi
 video/x-sgi-movie		movie

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Launch Configuration Request Marshaller
- */        
+ */
 public class DeleteLaunchConfigurationRequestMarshaller implements Marshaller<Request<DeleteLaunchConfigurationRequest>, DeleteLaunchConfigurationRequest> {
 
     public Request<DeleteLaunchConfigurationRequest> marshall(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {

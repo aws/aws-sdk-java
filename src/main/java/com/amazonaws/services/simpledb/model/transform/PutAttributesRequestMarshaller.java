@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Put Attributes Request Marshaller
- */        
+ */
 public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAttributesRequest>, PutAttributesRequest> {
 
     public Request<PutAttributesRequest> marshall(PutAttributesRequest putAttributesRequest) {
@@ -47,7 +47,7 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
         if (putAttributesRequest != null) {
             java.util.List<ReplaceableAttribute> attributesList = putAttributesRequest.getAttributes();
             int attributesListIndex = 1;
-            for (ReplaceableAttribute attributesListValue : attributesList) { 
+            for (ReplaceableAttribute attributesListValue : attributesList) {
                 if (attributesListValue != null) {
                     if (attributesListValue.getName() != null) {
                         request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));

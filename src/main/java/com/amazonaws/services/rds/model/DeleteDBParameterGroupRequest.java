@@ -33,6 +33,25 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     private String dBParameterGroupName;
 
     /**
+     * Default constructor for a new DeleteDBParameterGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteDBParameterGroupRequest() {}
+    
+    /**
+     * Constructs a new DeleteDBParameterGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBParameterGroupName The name of the DB Parameter Group. <note>
+     * The specified database security group must not be associated with any
+     * DB instances. </note>
+     */
+    public DeleteDBParameterGroupRequest(String dBParameterGroupName) {
+        this.dBParameterGroupName = dBParameterGroupName;
+    }
+    
+    /**
      * The name of the DB Parameter Group. <note> The specified database
      * security group must not be associated with any DB instances. </note>
      *

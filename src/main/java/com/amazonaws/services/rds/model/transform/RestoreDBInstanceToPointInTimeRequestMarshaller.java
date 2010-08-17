@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Restore D B Instance To Point In Time Request Marshaller
- */        
+ */
 public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshaller<Request<RestoreDBInstanceToPointInTimeRequest>, RestoreDBInstanceToPointInTimeRequest> {
 
     public Request<RestoreDBInstanceToPointInTimeRequest> marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (restoreDBInstanceToPointInTimeRequest != null) {
             if (restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier() != null) {
                 request.addParameter("SourceDBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier()));
@@ -71,6 +71,11 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest != null) {
             if (restoreDBInstanceToPointInTimeRequest.isMultiAZ() != null) {
                 request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isMultiAZ()));
+            }
+        }
+        if (restoreDBInstanceToPointInTimeRequest != null) {
+            if (restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade() != null) {
+                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade()));
             }
         }
 

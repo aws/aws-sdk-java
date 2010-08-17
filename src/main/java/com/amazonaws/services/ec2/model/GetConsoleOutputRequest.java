@@ -38,6 +38,24 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest {
     private String instanceId;
 
     /**
+     * Default constructor for a new GetConsoleOutputRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetConsoleOutputRequest() {}
+    
+    /**
+     * Constructs a new GetConsoleOutputRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance for which you want console
+     * output.
+     */
+    public GetConsoleOutputRequest(String instanceId) {
+        this.instanceId = instanceId;
+    }
+    
+    /**
      * The ID of the instance for which you want console output.
      *
      * @return The ID of the instance for which you want console output.

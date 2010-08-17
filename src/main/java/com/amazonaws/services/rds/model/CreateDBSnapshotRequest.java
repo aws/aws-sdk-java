@@ -38,6 +38,27 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest {
     private String dBInstanceIdentifier;
 
     /**
+     * Default constructor for a new CreateDBSnapshotRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateDBSnapshotRequest() {}
+    
+    /**
+     * Constructs a new CreateDBSnapshotRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBSnapshotIdentifier The identifier for the DB Snapshot.
+     * @param dBInstanceIdentifier The DB Instance identifier. This is the
+     * unique key that identifies a DB Instance. This parameter isn't case
+     * sensitive.
+     */
+    public CreateDBSnapshotRequest(String dBSnapshotIdentifier, String dBInstanceIdentifier) {
+        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+    }
+    
+    /**
      * The identifier for the DB Snapshot.
      *
      * @return The identifier for the DB Snapshot.

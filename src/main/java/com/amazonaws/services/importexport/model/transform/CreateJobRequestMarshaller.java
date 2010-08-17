@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Job Request Marshaller
- */        
+ */
 public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobRequest>, CreateJobRequest> {
 
     public Request<CreateJobRequest> marshall(CreateJobRequest createJobRequest) {

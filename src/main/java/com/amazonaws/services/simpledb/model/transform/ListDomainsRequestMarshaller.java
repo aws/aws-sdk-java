@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * List Domains Request Marshaller
- */        
+ */
 public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDomainsRequest>, ListDomainsRequest> {
 
     public Request<ListDomainsRequest> marshall(ListDomainsRequest listDomainsRequest) {

@@ -62,6 +62,28 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     private Integer bgpAsn;
 
     /**
+     * Default constructor for a new CreateCustomerGatewayRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateCustomerGatewayRequest() {}
+    
+    /**
+     * Constructs a new CreateCustomerGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param type The type of VPN connection this customer gateway supports.
+     * @param publicIp
+     * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP)
+     * Autonomous System Number (ASN).
+     */
+    public CreateCustomerGatewayRequest(String type, String publicIp, Integer bgpAsn) {
+        this.type = type;
+        this.publicIp = publicIp;
+        this.bgpAsn = bgpAsn;
+    }
+    
+    /**
      * The type of VPN connection this customer gateway supports.
      *
      * @return The type of VPN connection this customer gateway supports.

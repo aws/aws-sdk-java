@@ -69,63 +69,6 @@ public class ServiceUtils {
     }
 
     /**
-     * Calculate the HMAC/SHA1 on a string.
-     *
-     * @param awsSecretKey
-     *            AWS secret key.
-     * @param canonicalString
-     *            canonical string representing the request to sign.
-     * @return Signature
-     * @throws AmazonClientException
-     */
-    public static String signWithHmacSha1(String awsSecretKey, String canonicalString)
-        throws AmazonClientException
-    {
-        if (awsSecretKey == null) {
-        	if (log.isDebugEnabled()) {
-        		log.debug("Canonical string will not be signed, as no AWS Secret Key was provided");
-        	}
-            return null;
-        }
-
-        // The following HMAC/SHA1 code for the signature is taken from the
-        // AWS Platform's implementation of RFC2104 (amazon.webservices.common.Signature)
-        //
-        // Acquire an HMAC/SHA1 from the raw key bytes.
-        SecretKeySpec signingKey = null;
-        try {
-            signingKey = new SecretKeySpec(awsSecretKey.getBytes(Constants.DEFAULT_ENCODING),
-                Constants.HMAC_SHA1_ALGORITHM);
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to get bytes from secret string", e);
-        }
-
-        // Acquire the MAC instance and initialize with the signing key.
-        Mac mac = null;
-        try {
-            mac = Mac.getInstance(Constants.HMAC_SHA1_ALGORITHM);
-        } catch (NoSuchAlgorithmException e) {
-            // should not happen
-            throw new RuntimeException("Could not find sha1 algorithm", e);
-        }
-        try {
-            mac.init(signingKey);
-        } catch (InvalidKeyException e) {
-            // also should not happen
-            throw new RuntimeException("Could not initialize the MAC algorithm", e);
-        }
-
-        // Compute the HMAC on the digest, and set it.
-        try {
-            byte[] b64 = Base64.encodeBase64(mac.doFinal(
-                canonicalString.getBytes(Constants.DEFAULT_ENCODING)));
-            return new String(b64);
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to get bytes from canonical string", e);
-        }
-    }
-
-    /**
      * Converts byte data to a Hex-encoded string.
      *
      * @param data
@@ -205,10 +148,10 @@ public class ServiceUtils {
      * use our preferred encoding (UTF-8), and then falling back to the
      * platform's default encoding if for some reason our preferred encoding
      * isn't supported.
-     * 
+     *
      * @param s
      *            The string to convert to a byte array.
-     * 
+     *
      * @return The byte array contents of the specified string.
      */
     public static byte[] toByteArray(String s) {

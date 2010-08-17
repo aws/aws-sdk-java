@@ -39,6 +39,23 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
+     * Default constructor for a new DeleteSecurityGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteSecurityGroupRequest() {}
+    
+    /**
+     * Constructs a new DeleteSecurityGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName The name of the Amazon EC2 security group to delete.
+     */
+    public DeleteSecurityGroupRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * The name of the Amazon EC2 security group to delete.
      *
      * @return The name of the Amazon EC2 security group to delete.

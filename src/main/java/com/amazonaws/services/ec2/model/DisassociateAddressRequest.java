@@ -34,6 +34,24 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
     private String publicIp;
 
     /**
+     * Default constructor for a new DisassociateAddressRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DisassociateAddressRequest() {}
+    
+    /**
+     * Constructs a new DisassociateAddressRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param publicIp The elastic IP address that you are disassociating
+     * from the instance.
+     */
+    public DisassociateAddressRequest(String publicIp) {
+        this.publicIp = publicIp;
+    }
+    
+    /**
      * The elastic IP address that you are disassociating from the instance.
      *
      * @return The elastic IP address that you are disassociating from the instance.

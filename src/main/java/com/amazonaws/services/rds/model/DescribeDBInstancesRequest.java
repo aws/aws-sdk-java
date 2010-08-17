@@ -50,6 +50,12 @@ public class DescribeDBInstancesRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
+     * Default constructor for a new DescribeDBInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeDBInstancesRequest() {}
+    
+    /**
      * The user-supplied instance identifier. If this parameter is specified,
      * information from only the specific DB Instance is returned. This
      * parameter isn't case sensitive.

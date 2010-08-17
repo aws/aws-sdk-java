@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Restore D B Instance From D B Snapshot Request Marshaller
- */        
+ */
 public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshaller<Request<RestoreDBInstanceFromDBSnapshotRequest>, RestoreDBInstanceFromDBSnapshotRequest> {
 
     public Request<RestoreDBInstanceFromDBSnapshotRequest> marshall(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (restoreDBInstanceFromDBSnapshotRequest != null) {
             if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
                 request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));
@@ -61,6 +61,11 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         if (restoreDBInstanceFromDBSnapshotRequest != null) {
             if (restoreDBInstanceFromDBSnapshotRequest.isMultiAZ() != null) {
                 request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.isMultiAZ()));
+            }
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest != null) {
+            if (restoreDBInstanceFromDBSnapshotRequest.isAutoMinorVersionUpgrade() != null) {
+                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.isAutoMinorVersionUpgrade()));
             }
         }
 

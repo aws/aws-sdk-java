@@ -31,6 +31,24 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> instanceIds;
 
     /**
+     * Default constructor for a new UnmonitorInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UnmonitorInstancesRequest() {}
+    
+    /**
+     * Constructs a new UnmonitorInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceIds The list of Amazon EC2 instances on which to
+     * disable monitoring.
+     */
+    public UnmonitorInstancesRequest(java.util.List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+    
+    /**
      * The list of Amazon EC2 instances on which to disable monitoring.
      *
      * @return The list of Amazon EC2 instances on which to disable monitoring.

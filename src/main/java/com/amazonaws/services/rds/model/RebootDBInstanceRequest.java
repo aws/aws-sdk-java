@@ -38,6 +38,24 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     private String dBInstanceIdentifier;
 
     /**
+     * Default constructor for a new RebootDBInstanceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RebootDBInstanceRequest() {}
+    
+    /**
+     * Constructs a new RebootDBInstanceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBInstanceIdentifier The DB Instance identifier. This parameter
+     * is stored as a lowercase string.
+     */
+    public RebootDBInstanceRequest(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+    }
+    
+    /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string.
      *

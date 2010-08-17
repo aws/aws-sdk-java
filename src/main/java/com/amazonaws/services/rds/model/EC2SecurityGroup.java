@@ -38,6 +38,12 @@ public class EC2SecurityGroup {
     private String eC2SecurityGroupOwnerId;
 
     /**
+     * Default constructor for a new EC2SecurityGroup object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public EC2SecurityGroup() {}
+    
+    /**
      * Provides the status of the EC2 security group.
      *
      * @return Provides the status of the EC2 security group.

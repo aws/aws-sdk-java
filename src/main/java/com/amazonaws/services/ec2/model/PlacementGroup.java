@@ -47,6 +47,23 @@ public class PlacementGroup {
     private String state;
 
     /**
+     * Default constructor for a new PlacementGroup object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PlacementGroup() {}
+    
+    /**
+     * Constructs a new PlacementGroup object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName The name of the <code>PlacementGroup</code>.
+     */
+    public PlacementGroup(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * The name of the <code>PlacementGroup</code>.
      *
      * @return The name of the <code>PlacementGroup</code>.

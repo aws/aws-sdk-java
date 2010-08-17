@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Reset Instance Attribute Request Marshaller
- */        
+ */
 public class ResetInstanceAttributeRequestMarshaller implements Marshaller<Request<ResetInstanceAttributeRequest>, ResetInstanceAttributeRequest> {
 
     public Request<ResetInstanceAttributeRequest> marshall(ResetInstanceAttributeRequest resetInstanceAttributeRequest) {

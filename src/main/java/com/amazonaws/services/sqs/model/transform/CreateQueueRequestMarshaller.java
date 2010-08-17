@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Queue Request Marshaller
- */        
+ */
 public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQueueRequest>, CreateQueueRequest> {
 
     public Request<CreateQueueRequest> marshall(CreateQueueRequest createQueueRequest) {

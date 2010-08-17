@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Domain Metadata Request Marshaller
- */        
+ */
 public class DomainMetadataRequestMarshaller implements Marshaller<Request<DomainMetadataRequest>, DomainMetadataRequest> {
 
     public Request<DomainMetadataRequest> marshall(DomainMetadataRequest domainMetadataRequest) {

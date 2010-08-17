@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Get Password Data Request Marshaller
- */        
+ */
 public class GetPasswordDataRequestMarshaller implements Marshaller<Request<GetPasswordDataRequest>, GetPasswordDataRequest> {
 
     public Request<GetPasswordDataRequest> marshall(GetPasswordDataRequest getPasswordDataRequest) {

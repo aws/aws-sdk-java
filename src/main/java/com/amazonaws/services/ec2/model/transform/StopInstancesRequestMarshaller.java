@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Stop Instances Request Marshaller
- */        
+ */
 public class StopInstancesRequestMarshaller implements Marshaller<Request<StopInstancesRequest>, StopInstancesRequest> {
 
     public Request<StopInstancesRequest> marshall(StopInstancesRequest stopInstancesRequest) {
@@ -36,7 +36,7 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
         if (stopInstancesRequest != null) {
             java.util.List<String> instanceIdsList = stopInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
-            for (String instanceIdsListValue : instanceIdsList) { 
+            for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
                 }

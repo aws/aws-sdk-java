@@ -46,6 +46,26 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
+     * Default constructor for a new CreateSecurityGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateSecurityGroupRequest() {}
+    
+    /**
+     * Constructs a new CreateSecurityGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the security group.
+     * @param description Description of the group. This is informational
+     * only.
+     */
+    public CreateSecurityGroupRequest(String groupName, String description) {
+        this.groupName = groupName;
+        this.description = description;
+    }
+    
+    /**
      * Name of the security group.
      *
      * @return Name of the security group.

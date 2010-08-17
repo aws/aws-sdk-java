@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Release Address Request Marshaller
- */        
+ */
 public class ReleaseAddressRequestMarshaller implements Marshaller<Request<ReleaseAddressRequest>, ReleaseAddressRequest> {
 
     public Request<ReleaseAddressRequest> marshall(ReleaseAddressRequest releaseAddressRequest) {

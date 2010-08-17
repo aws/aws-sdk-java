@@ -46,6 +46,24 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     private String publicIp;
 
     /**
+     * Default constructor for a new ReleaseAddressRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ReleaseAddressRequest() {}
+    
+    /**
+     * Constructs a new ReleaseAddressRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param publicIp The elastic IP address that you are releasing from
+     * your account.
+     */
+    public ReleaseAddressRequest(String publicIp) {
+        this.publicIp = publicIp;
+    }
+    
+    /**
      * The elastic IP address that you are releasing from your account.
      *
      * @return The elastic IP address that you are releasing from your account.

@@ -109,6 +109,43 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     private Boolean multiAZ;
 
+    private String engineVersion;
+
+    private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateDBInstanceRequest() {}
+    
+    /**
+     * Constructs a new CreateDBInstanceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBInstanceIdentifier The DB Instance identifier. This parameter
+     * is stored as a lowercase string.
+     * @param allocatedStorage The amount of storage (in gigabytes) to be
+     * initially allocated for the database instance.
+     * @param dBInstanceClass The compute and memory capacity of the DB
+     * Instance.
+     * @param engine The name of the database engine to be used for this
+     * instance.
+     * @param masterUsername The name of master user for the client DB
+     * Instance.
+     * @param masterUserPassword The password for the master DB Instance
+     * user.
+     */
+    public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername, String masterUserPassword) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        this.allocatedStorage = allocatedStorage;
+        this.dBInstanceClass = dBInstanceClass;
+        this.engine = engine;
+        this.masterUsername = masterUsername;
+        this.masterUserPassword = masterUserPassword;
+    }
+    
     /**
      * The name of the database to create when the DB Instance is created. If
      * this parameter is not specified, no database is created in the DB
@@ -729,6 +766,89 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the EngineVersion property for this object.
+     *
+     * @return The value of the EngineVersion property for this object.
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     */
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean isAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     */
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean getAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -755,6 +875,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
         sb.append("Port: " + port + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
+        sb.append("EngineVersion: " + engineVersion + ", ");
+        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
     }

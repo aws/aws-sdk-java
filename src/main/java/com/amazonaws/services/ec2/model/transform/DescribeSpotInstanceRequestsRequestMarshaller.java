@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Spot Instance Requests Request Marshaller
- */        
+ */
 public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller<Request<DescribeSpotInstanceRequestsRequest>, DescribeSpotInstanceRequestsRequest> {
 
     public Request<DescribeSpotInstanceRequestsRequest> marshall(DescribeSpotInstanceRequestsRequest describeSpotInstanceRequestsRequest) {
@@ -36,7 +36,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
         if (describeSpotInstanceRequestsRequest != null) {
             java.util.List<String> spotInstanceRequestIdsList = describeSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
             int spotInstanceRequestIdsListIndex = 1;
-            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) { 
+            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
                 if (spotInstanceRequestIdsListValue != null) {
                     request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
                 }

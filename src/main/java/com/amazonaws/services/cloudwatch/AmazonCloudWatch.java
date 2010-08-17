@@ -17,6 +17,7 @@ package com.amazonaws.services.cloudwatch;
 import com.amazonaws.*;
 import com.amazonaws.services.cloudwatch.model.*;
 
+
 /**
  * Interface for accessing AmazonCloudWatch.
  * 
@@ -113,7 +114,6 @@ public interface AmazonCloudWatch {
      */
     public ListMetricsResult listMetrics() throws AmazonServiceException, AmazonClientException;
     
-
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -122,5 +122,24 @@ public interface AmazonCloudWatch {
      * requests.
      */
     public void shutdown();
+    
+    /**
+     * Returns additional metadata for a previously executed successful request, typically used for
+     * debugging issues where a service isn't acting as expected.  This data isn't considered part
+     * of the result data returned by an operation, so it's available through this separate,
+     * diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access
+     * this extra diagnostic information for an executed request, you should use this method
+     * to retrieve it as soon as possible after executing a request.
+     *
+     * @param request
+     *            The originally executed request.
+     *
+     * @return The response metadata for the specified request, or null if none
+     *         is available.
+     */
+    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }
         

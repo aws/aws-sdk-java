@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Deregister Instances From Load Balancer Request Marshaller
- */        
+ */
 public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements Marshaller<Request<DeregisterInstancesFromLoadBalancerRequest>, DeregisterInstancesFromLoadBalancerRequest> {
 
     public Request<DeregisterInstancesFromLoadBalancerRequest> marshall(DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) {
@@ -42,7 +42,7 @@ public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements Mar
         if (deregisterInstancesFromLoadBalancerRequest != null) {
             java.util.List<Instance> instancesList = deregisterInstancesFromLoadBalancerRequest.getInstances();
             int instancesListIndex = 1;
-            for (Instance instancesListValue : instancesList) { 
+            for (Instance instancesListValue : instancesList) {
                 if (instancesListValue != null) {
                     if (instancesListValue.getInstanceId() != null) {
                         request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instancesListValue.getInstanceId()));

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Subnet Request Marshaller
- */        
+ */
 public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateSubnetRequest>, CreateSubnetRequest> {
 
     public Request<CreateSubnetRequest> marshall(CreateSubnetRequest createSubnetRequest) {

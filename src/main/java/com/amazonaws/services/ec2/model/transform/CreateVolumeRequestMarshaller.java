@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Volume Request Marshaller
- */        
+ */
 public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateVolumeRequest>, CreateVolumeRequest> {
 
     public Request<CreateVolumeRequest> marshall(CreateVolumeRequest createVolumeRequest) {

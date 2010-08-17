@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Cancel Spot Instance Requests Request Marshaller
- */        
+ */
 public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<Request<CancelSpotInstanceRequestsRequest>, CancelSpotInstanceRequestsRequest> {
 
     public Request<CancelSpotInstanceRequestsRequest> marshall(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) {
@@ -36,7 +36,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<R
         if (cancelSpotInstanceRequestsRequest != null) {
             java.util.List<String> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
             int spotInstanceRequestIdsListIndex = 1;
-            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) { 
+            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
                 if (spotInstanceRequestIdsListValue != null) {
                     request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
                 }

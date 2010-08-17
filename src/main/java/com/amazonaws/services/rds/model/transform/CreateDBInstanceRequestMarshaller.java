@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create D B Instance Request Marshaller
- */        
+ */
 public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<CreateDBInstanceRequest>, CreateDBInstanceRequest> {
 
     public Request<CreateDBInstanceRequest> marshall(CreateDBInstanceRequest createDBInstanceRequest) {
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (createDBInstanceRequest != null) {
             if (createDBInstanceRequest.getDBName() != null) {
                 request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
@@ -71,7 +71,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest != null) {
             java.util.List<String> dBSecurityGroupsList = createDBInstanceRequest.getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
-            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) { 
+            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
                 if (dBSecurityGroupsListValue != null) {
                     request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
                 }
@@ -111,6 +111,16 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest != null) {
             if (createDBInstanceRequest.isMultiAZ() != null) {
                 request.addParameter("MultiAZ", StringUtils.fromBoolean(createDBInstanceRequest.isMultiAZ()));
+            }
+        }
+        if (createDBInstanceRequest != null) {
+            if (createDBInstanceRequest.getEngineVersion() != null) {
+                request.addParameter("EngineVersion", StringUtils.fromString(createDBInstanceRequest.getEngineVersion()));
+            }
+        }
+        if (createDBInstanceRequest != null) {
+            if (createDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
+                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceRequest.isAutoMinorVersionUpgrade()));
             }
         }
 

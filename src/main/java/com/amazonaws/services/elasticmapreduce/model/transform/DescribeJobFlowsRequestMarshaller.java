@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Job Flows Request Marshaller
- */        
+ */
 public class DescribeJobFlowsRequestMarshaller implements Marshaller<Request<DescribeJobFlowsRequest>, DescribeJobFlowsRequest> {
 
     public Request<DescribeJobFlowsRequest> marshall(DescribeJobFlowsRequest describeJobFlowsRequest) {
@@ -46,7 +46,7 @@ public class DescribeJobFlowsRequestMarshaller implements Marshaller<Request<Des
         if (describeJobFlowsRequest != null) {
             java.util.List<String> jobFlowIdsList = describeJobFlowsRequest.getJobFlowIds();
             int jobFlowIdsListIndex = 1;
-            for (String jobFlowIdsListValue : jobFlowIdsList) { 
+            for (String jobFlowIdsListValue : jobFlowIdsList) {
                 if (jobFlowIdsListValue != null) {
                     request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
                 }
@@ -56,7 +56,7 @@ public class DescribeJobFlowsRequestMarshaller implements Marshaller<Request<Des
         if (describeJobFlowsRequest != null) {
             java.util.List<String> jobFlowStatesList = describeJobFlowsRequest.getJobFlowStates();
             int jobFlowStatesListIndex = 1;
-            for (String jobFlowStatesListValue : jobFlowStatesList) { 
+            for (String jobFlowStatesListValue : jobFlowStatesList) {
                 if (jobFlowStatesListValue != null) {
                     request.addParameter("JobFlowStates.member." + jobFlowStatesListIndex, StringUtils.fromString(jobFlowStatesListValue));
                 }

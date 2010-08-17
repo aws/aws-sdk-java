@@ -54,6 +54,24 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     private String eC2SecurityGroupOwnerId;
 
     /**
+     * Default constructor for a new AuthorizeDBSecurityGroupIngressRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AuthorizeDBSecurityGroupIngressRequest() {}
+    
+    /**
+     * Constructs a new AuthorizeDBSecurityGroupIngressRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBSecurityGroupName The name of the DB Security Group to
+     * authorize.
+     */
+    public AuthorizeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
+        this.dBSecurityGroupName = dBSecurityGroupName;
+    }
+    
+    /**
      * The name of the DB Security Group to authorize.
      *
      * @return The name of the DB Security Group to authorize.

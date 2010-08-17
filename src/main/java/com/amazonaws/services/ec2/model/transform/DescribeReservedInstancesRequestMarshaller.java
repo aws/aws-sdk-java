@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Reserved Instances Request Marshaller
- */        
+ */
 public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Request<DescribeReservedInstancesRequest>, DescribeReservedInstancesRequest> {
 
     public Request<DescribeReservedInstancesRequest> marshall(DescribeReservedInstancesRequest describeReservedInstancesRequest) {
@@ -36,7 +36,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
         if (describeReservedInstancesRequest != null) {
             java.util.List<String> reservedInstancesIdsList = describeReservedInstancesRequest.getReservedInstancesIds();
             int reservedInstancesIdsListIndex = 1;
-            for (String reservedInstancesIdsListValue : reservedInstancesIdsList) { 
+            for (String reservedInstancesIdsListValue : reservedInstancesIdsList) {
                 if (reservedInstancesIdsListValue != null) {
                     request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex, StringUtils.fromString(reservedInstancesIdsListValue));
                 }

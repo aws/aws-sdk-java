@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Terminate Job Flows Request Marshaller
- */        
+ */
 public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<TerminateJobFlowsRequest>, TerminateJobFlowsRequest> {
 
     public Request<TerminateJobFlowsRequest> marshall(TerminateJobFlowsRequest terminateJobFlowsRequest) {
@@ -36,7 +36,7 @@ public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<Te
         if (terminateJobFlowsRequest != null) {
             java.util.List<String> jobFlowIdsList = terminateJobFlowsRequest.getJobFlowIds();
             int jobFlowIdsListIndex = 1;
-            for (String jobFlowIdsListValue : jobFlowIdsList) { 
+            for (String jobFlowIdsListValue : jobFlowIdsList) {
                 if (jobFlowIdsListValue != null) {
                     request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
                 }

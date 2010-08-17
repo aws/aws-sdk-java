@@ -35,6 +35,23 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest {
     private String bundleId;
 
     /**
+     * Default constructor for a new CancelBundleTaskRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CancelBundleTaskRequest() {}
+    
+    /**
+     * Constructs a new CancelBundleTaskRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param bundleId The ID of the bundle task to cancel.
+     */
+    public CancelBundleTaskRequest(String bundleId) {
+        this.bundleId = bundleId;
+    }
+    
+    /**
      * The ID of the bundle task to cancel.
      *
      * @return The ID of the bundle task to cancel.

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Instance Attribute Request Marshaller
- */        
+ */
 public class DescribeInstanceAttributeRequestMarshaller implements Marshaller<Request<DescribeInstanceAttributeRequest>, DescribeInstanceAttributeRequest> {
 
     public Request<DescribeInstanceAttributeRequest> marshall(DescribeInstanceAttributeRequest describeInstanceAttributeRequest) {

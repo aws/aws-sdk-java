@@ -38,6 +38,23 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     private String availabilityZone;
 
     /**
+     * Default constructor for a new CreateVpnGatewayRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateVpnGatewayRequest() {}
+    
+    /**
+     * Constructs a new CreateVpnGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param type The type of VPN connection this VPN gateway supports.
+     */
+    public CreateVpnGatewayRequest(String type) {
+        this.type = type;
+    }
+    
+    /**
      * The type of VPN connection this VPN gateway supports.
      *
      * @return The type of VPN connection this VPN gateway supports.

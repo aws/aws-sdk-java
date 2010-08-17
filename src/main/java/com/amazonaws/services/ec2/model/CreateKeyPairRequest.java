@@ -33,6 +33,23 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest {
     private String keyName;
 
     /**
+     * Default constructor for a new CreateKeyPairRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateKeyPairRequest() {}
+    
+    /**
+     * Constructs a new CreateKeyPairRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param keyName The unique name for the new key pair.
+     */
+    public CreateKeyPairRequest(String keyName) {
+        this.keyName = keyName;
+    }
+    
+    /**
      * The unique name for the new key pair.
      *
      * @return The unique name for the new key pair.

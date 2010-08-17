@@ -43,6 +43,24 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
     private java.util.List<String> spotInstanceRequestIds;
 
     /**
+     * Default constructor for a new CancelSpotInstanceRequestsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CancelSpotInstanceRequestsRequest() {}
+    
+    /**
+     * Constructs a new CancelSpotInstanceRequestsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param spotInstanceRequestIds Specifies the ID of the Spot Instance
+     * request.
+     */
+    public CancelSpotInstanceRequestsRequest(java.util.List<String> spotInstanceRequestIds) {
+        this.spotInstanceRequestIds = spotInstanceRequestIds;
+    }
+    
+    /**
      * Specifies the ID of the Spot Instance request.
      *
      * @return Specifies the ID of the Spot Instance request.

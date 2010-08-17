@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Authorize Security Group Ingress Request Marshaller
- */        
+ */
 public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshaller<Request<AuthorizeSecurityGroupIngressRequest>, AuthorizeSecurityGroupIngressRequest> {
 
     public Request<AuthorizeSecurityGroupIngressRequest> marshall(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest) {
@@ -66,6 +66,59 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
         if (authorizeSecurityGroupIngressRequest != null) {
             if (authorizeSecurityGroupIngressRequest.getCidrIp() != null) {
                 request.addParameter("CidrIp", StringUtils.fromString(authorizeSecurityGroupIngressRequest.getCidrIp()));
+            }
+        }
+
+        if (authorizeSecurityGroupIngressRequest != null) {
+            java.util.List<IpPermission> ipPermissionsList = authorizeSecurityGroupIngressRequest.getIpPermissions();
+            int ipPermissionsListIndex = 1;
+            for (IpPermission ipPermissionsListValue : ipPermissionsList) {
+                if (ipPermissionsListValue != null) {
+                    if (ipPermissionsListValue.getIpProtocol() != null) {
+                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol", StringUtils.fromString(ipPermissionsListValue.getIpProtocol()));
+                    }
+                }
+                if (ipPermissionsListValue != null) {
+                    if (ipPermissionsListValue.getFromPort() != null) {
+                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort", StringUtils.fromInteger(ipPermissionsListValue.getFromPort()));
+                    }
+                }
+                if (ipPermissionsListValue != null) {
+                    if (ipPermissionsListValue.getToPort() != null) {
+                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort", StringUtils.fromInteger(ipPermissionsListValue.getToPort()));
+                    }
+                }
+
+                if (ipPermissionsListValue != null) {
+                    java.util.List<UserIdGroupPair> userIdGroupPairsList = ipPermissionsListValue.getUserIdGroupPairs();
+                    int userIdGroupPairsListIndex = 1;
+                    for (UserIdGroupPair userIdGroupPairsListValue : userIdGroupPairsList) {
+                        if (userIdGroupPairsListValue != null) {
+                            if (userIdGroupPairsListValue.getUserId() != null) {
+                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId", StringUtils.fromString(userIdGroupPairsListValue.getUserId()));
+                            }
+                        }
+                        if (userIdGroupPairsListValue != null) {
+                            if (userIdGroupPairsListValue.getGroupName() != null) {
+                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName", StringUtils.fromString(userIdGroupPairsListValue.getGroupName()));
+                            }
+                        }
+
+                        userIdGroupPairsListIndex++;
+                    }
+                }
+                if (ipPermissionsListValue != null) {
+                    java.util.List<String> ipRangesList = ipPermissionsListValue.getIpRanges();
+                    int ipRangesListIndex = 1;
+                    for (String ipRangesListValue : ipRangesList) {
+                        if (ipRangesListValue != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp", StringUtils.fromString(ipRangesListValue));
+                        }
+                        ipRangesListIndex++;
+                    }
+                }
+
+                ipPermissionsListIndex++;
             }
         }
 

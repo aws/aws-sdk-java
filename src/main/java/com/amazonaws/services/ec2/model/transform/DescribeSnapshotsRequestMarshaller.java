@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Snapshots Request Marshaller
- */        
+ */
 public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<DescribeSnapshotsRequest>, DescribeSnapshotsRequest> {
 
     public Request<DescribeSnapshotsRequest> marshall(DescribeSnapshotsRequest describeSnapshotsRequest) {
@@ -36,7 +36,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         if (describeSnapshotsRequest != null) {
             java.util.List<String> snapshotIdsList = describeSnapshotsRequest.getSnapshotIds();
             int snapshotIdsListIndex = 1;
-            for (String snapshotIdsListValue : snapshotIdsList) { 
+            for (String snapshotIdsListValue : snapshotIdsList) {
                 if (snapshotIdsListValue != null) {
                     request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(snapshotIdsListValue));
                 }
@@ -46,7 +46,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         if (describeSnapshotsRequest != null) {
             java.util.List<String> ownerIdsList = describeSnapshotsRequest.getOwnerIds();
             int ownerIdsListIndex = 1;
-            for (String ownerIdsListValue : ownerIdsList) { 
+            for (String ownerIdsListValue : ownerIdsList) {
                 if (ownerIdsListValue != null) {
                     request.addParameter("Owner." + ownerIdsListIndex, StringUtils.fromString(ownerIdsListValue));
                 }
@@ -56,7 +56,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         if (describeSnapshotsRequest != null) {
             java.util.List<String> restorableByUserIdsList = describeSnapshotsRequest.getRestorableByUserIds();
             int restorableByUserIdsListIndex = 1;
-            for (String restorableByUserIdsListValue : restorableByUserIdsList) { 
+            for (String restorableByUserIdsListValue : restorableByUserIdsList) {
                 if (restorableByUserIdsListValue != null) {
                     request.addParameter("RestorableBy." + restorableByUserIdsListIndex, StringUtils.fromString(restorableByUserIdsListValue));
                 }

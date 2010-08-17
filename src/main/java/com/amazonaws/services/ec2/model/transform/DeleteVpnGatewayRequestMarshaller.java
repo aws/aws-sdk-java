@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Vpn Gateway Request Marshaller
- */        
+ */
 public class DeleteVpnGatewayRequestMarshaller implements Marshaller<Request<DeleteVpnGatewayRequest>, DeleteVpnGatewayRequest> {
 
     public Request<DeleteVpnGatewayRequest> marshall(DeleteVpnGatewayRequest deleteVpnGatewayRequest) {

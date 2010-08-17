@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Send Message Request Marshaller
- */        
+ */
 public class SendMessageRequestMarshaller implements Marshaller<Request<SendMessageRequest>, SendMessageRequest> {
 
     public Request<SendMessageRequest> marshall(SendMessageRequest sendMessageRequest) {

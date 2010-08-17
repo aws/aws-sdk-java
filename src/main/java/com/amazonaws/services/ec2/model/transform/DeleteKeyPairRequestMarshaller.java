@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Key Pair Request Marshaller
- */        
+ */
 public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<DeleteKeyPairRequest>, DeleteKeyPairRequest> {
 
     public Request<DeleteKeyPairRequest> marshall(DeleteKeyPairRequest deleteKeyPairRequest) {

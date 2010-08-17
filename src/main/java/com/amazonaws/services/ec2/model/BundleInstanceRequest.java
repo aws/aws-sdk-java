@@ -40,6 +40,25 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
     private Storage storage;
 
     /**
+     * Default constructor for a new BundleInstanceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public BundleInstanceRequest() {}
+    
+    /**
+     * Constructs a new BundleInstanceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance to bundle.
+     * @param storage
+     */
+    public BundleInstanceRequest(String instanceId, Storage storage) {
+        this.instanceId = instanceId;
+        this.storage = storage;
+    }
+    
+    /**
      * The ID of the instance to bundle.
      *
      * @return The ID of the instance to bundle.

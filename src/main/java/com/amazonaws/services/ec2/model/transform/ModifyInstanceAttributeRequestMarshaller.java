@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Modify Instance Attribute Request Marshaller
- */        
+ */
 public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Request<ModifyInstanceAttributeRequest>, ModifyInstanceAttributeRequest> {
 
     public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
@@ -52,7 +52,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
         if (modifyInstanceAttributeRequest != null) {
             java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsList = modifyInstanceAttributeRequest.getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
-            for (InstanceBlockDeviceMappingSpecification blockDeviceMappingsListValue : blockDeviceMappingsList) { 
+            for (InstanceBlockDeviceMappingSpecification blockDeviceMappingsListValue : blockDeviceMappingsList) {
                 if (blockDeviceMappingsListValue != null) {
                     if (blockDeviceMappingsListValue.getDeviceName() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));

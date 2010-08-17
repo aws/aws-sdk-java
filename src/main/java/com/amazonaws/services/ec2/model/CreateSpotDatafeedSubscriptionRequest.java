@@ -43,6 +43,24 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     private String prefix;
 
     /**
+     * Default constructor for a new CreateSpotDatafeedSubscriptionRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateSpotDatafeedSubscriptionRequest() {}
+    
+    /**
+     * Constructs a new CreateSpotDatafeedSubscriptionRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param bucket The Amazon S3 bucket in which to store the Spot Instance
+     * datafeed.
+     */
+    public CreateSpotDatafeedSubscriptionRequest(String bucket) {
+        this.bucket = bucket;
+    }
+    
+    /**
      * The Amazon S3 bucket in which to store the Spot Instance datafeed.
      *
      * @return The Amazon S3 bucket in which to store the Spot Instance datafeed.

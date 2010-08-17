@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeactivateLicenseRequest extends AmazonWebServiceRequest {
 
     /**
-     * Specifies the ID for the specific license to deactivate against
+     * Specifies the ID for the specific license to deactivate against.
      */
     private String licenseId;
 
@@ -38,29 +38,50 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest {
     private Integer capacity;
 
     /**
-     * Specifies the ID for the specific license to deactivate against
+     * Default constructor for a new DeactivateLicenseRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeactivateLicenseRequest() {}
+    
+    /**
+     * Constructs a new DeactivateLicenseRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param licenseId Specifies the ID for the specific license to
+     * deactivate against.
+     * @param capacity Specifies the amount of capacity to deactivate against
+     * the license.
+     */
+    public DeactivateLicenseRequest(String licenseId, Integer capacity) {
+        this.licenseId = licenseId;
+        this.capacity = capacity;
+    }
+    
+    /**
+     * Specifies the ID for the specific license to deactivate against.
      *
-     * @return Specifies the ID for the specific license to deactivate against
+     * @return Specifies the ID for the specific license to deactivate against.
      */
     public String getLicenseId() {
         return licenseId;
     }
     
     /**
-     * Specifies the ID for the specific license to deactivate against
+     * Specifies the ID for the specific license to deactivate against.
      *
-     * @param licenseId Specifies the ID for the specific license to deactivate against
+     * @param licenseId Specifies the ID for the specific license to deactivate against.
      */
     public void setLicenseId(String licenseId) {
         this.licenseId = licenseId;
     }
     
     /**
-     * Specifies the ID for the specific license to deactivate against
+     * Specifies the ID for the specific license to deactivate against.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param licenseId Specifies the ID for the specific license to deactivate against
+     * @param licenseId Specifies the ID for the specific license to deactivate against.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

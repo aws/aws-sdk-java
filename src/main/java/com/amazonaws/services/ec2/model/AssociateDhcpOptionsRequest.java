@@ -45,6 +45,23 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
     private String vpcId;
 
     /**
+     * Default constructor for a new AssociateDhcpOptionsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AssociateDhcpOptionsRequest() {}
+    
+    /**
+     * Constructs a new AssociateDhcpOptionsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpcId The ID of the VPC to associate the DHCP options with.
+     */
+    public AssociateDhcpOptionsRequest(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
      * The ID of the DHCP options to associate with the VPC. Specify
      * "default" to associate the default DHCP options with the VPC.
      *

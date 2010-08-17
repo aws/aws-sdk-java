@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Reset D B Parameter Group Request Marshaller
- */        
+ */
 public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Request<ResetDBParameterGroupRequest>, ResetDBParameterGroupRequest> {
 
     public Request<ResetDBParameterGroupRequest> marshall(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
         Request<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ResetDBParameterGroup");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (resetDBParameterGroupRequest != null) {
             if (resetDBParameterGroupRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(resetDBParameterGroupRequest.getDBParameterGroupName()));
@@ -47,7 +47,7 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
         if (resetDBParameterGroupRequest != null) {
             java.util.List<Parameter> parametersList = resetDBParameterGroupRequest.getParameters();
             int parametersListIndex = 1;
-            for (Parameter parametersListValue : parametersList) { 
+            for (Parameter parametersListValue : parametersList) {
                 if (parametersListValue != null) {
                     if (parametersListValue.getParameterName() != null) {
                         request.addParameter("Parameters.member." + parametersListIndex + ".ParameterName", StringUtils.fromString(parametersListValue.getParameterName()));
@@ -86,6 +86,11 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
                 if (parametersListValue != null) {
                     if (parametersListValue.isIsModifiable() != null) {
                         request.addParameter("Parameters.member." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parametersListValue.isIsModifiable()));
+                    }
+                }
+                if (parametersListValue != null) {
+                    if (parametersListValue.getMinimumEngineVersion() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".MinimumEngineVersion", StringUtils.fromString(parametersListValue.getMinimumEngineVersion()));
                     }
                 }
                 if (parametersListValue != null) {

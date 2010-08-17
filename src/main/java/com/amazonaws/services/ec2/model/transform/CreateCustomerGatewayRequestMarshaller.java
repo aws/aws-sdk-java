@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Customer Gateway Request Marshaller
- */        
+ */
 public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Request<CreateCustomerGatewayRequest>, CreateCustomerGatewayRequest> {
 
     public Request<CreateCustomerGatewayRequest> marshall(CreateCustomerGatewayRequest createCustomerGatewayRequest) {

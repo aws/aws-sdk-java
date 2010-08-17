@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * List Subscriptions By Topic Request Marshaller
- */        
+ */
 public class ListSubscriptionsByTopicRequestMarshaller implements Marshaller<Request<ListSubscriptionsByTopicRequest>, ListSubscriptionsByTopicRequest> {
 
     public Request<ListSubscriptionsByTopicRequest> marshall(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {

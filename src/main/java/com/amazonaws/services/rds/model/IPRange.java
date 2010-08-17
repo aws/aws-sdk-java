@@ -32,6 +32,12 @@ public class IPRange {
     private String cIDRIP;
 
     /**
+     * Default constructor for a new IPRange object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public IPRange() {}
+    
+    /**
      * Specifies the status of the IP range.
      *
      * @return Specifies the status of the IP range.

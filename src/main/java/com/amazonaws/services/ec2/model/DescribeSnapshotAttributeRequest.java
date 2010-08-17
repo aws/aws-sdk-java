@@ -38,6 +38,27 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new DescribeSnapshotAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeSnapshotAttributeRequest() {}
+    
+    /**
+     * Constructs a new DescribeSnapshotAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the EBS snapshot whose attribute is being
+     * described.
+     * @param attribute The name of the EBS attribute to describe. <p>
+     * Available attribute names: createVolumePermission
+     */
+    public DescribeSnapshotAttributeRequest(String snapshotId, String attribute) {
+        this.snapshotId = snapshotId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the EBS snapshot whose attribute is being described.
      *
      * @return The ID of the EBS snapshot whose attribute is being described.

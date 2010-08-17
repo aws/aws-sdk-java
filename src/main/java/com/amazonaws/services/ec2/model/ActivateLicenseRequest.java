@@ -37,6 +37,27 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest {
     private Integer capacity;
 
     /**
+     * Default constructor for a new ActivateLicenseRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ActivateLicenseRequest() {}
+    
+    /**
+     * Constructs a new ActivateLicenseRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param licenseId Specifies the ID for the specific license to activate
+     * against.
+     * @param capacity Specifies the additional number of licenses to
+     * activate.
+     */
+    public ActivateLicenseRequest(String licenseId, Integer capacity) {
+        this.licenseId = licenseId;
+        this.capacity = capacity;
+    }
+    
+    /**
      * Specifies the ID for the specific license to activate against.
      *
      * @return Specifies the ID for the specific license to activate against.

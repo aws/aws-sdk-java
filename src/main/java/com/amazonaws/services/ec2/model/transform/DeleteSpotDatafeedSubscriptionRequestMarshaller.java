@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Spot Datafeed Subscription Request Marshaller
- */        
+ */
 public class DeleteSpotDatafeedSubscriptionRequestMarshaller implements Marshaller<Request<DeleteSpotDatafeedSubscriptionRequest>, DeleteSpotDatafeedSubscriptionRequest> {
 
     public Request<DeleteSpotDatafeedSubscriptionRequest> marshall(DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest) {

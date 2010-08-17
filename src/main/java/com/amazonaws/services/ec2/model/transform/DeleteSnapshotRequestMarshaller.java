@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Snapshot Request Marshaller
- */        
+ */
 public class DeleteSnapshotRequestMarshaller implements Marshaller<Request<DeleteSnapshotRequest>, DeleteSnapshotRequest> {
 
     public Request<DeleteSnapshotRequest> marshall(DeleteSnapshotRequest deleteSnapshotRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Load Balancer Request Marshaller
- */        
+ */
 public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<CreateLoadBalancerRequest>, CreateLoadBalancerRequest> {
 
     public Request<CreateLoadBalancerRequest> marshall(CreateLoadBalancerRequest createLoadBalancerRequest) {
@@ -42,7 +42,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
         if (createLoadBalancerRequest != null) {
             java.util.List<Listener> listenersList = createLoadBalancerRequest.getListeners();
             int listenersListIndex = 1;
-            for (Listener listenersListValue : listenersList) { 
+            for (Listener listenersListValue : listenersList) {
                 if (listenersListValue != null) {
                     if (listenersListValue.getProtocol() != null) {
                         request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
@@ -65,7 +65,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
         if (createLoadBalancerRequest != null) {
             java.util.List<String> availabilityZonesList = createLoadBalancerRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
-            for (String availabilityZonesListValue : availabilityZonesList) { 
+            for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }

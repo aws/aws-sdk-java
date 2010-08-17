@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Dhcp Options Request Marshaller
- */        
+ */
 public class DeleteDhcpOptionsRequestMarshaller implements Marshaller<Request<DeleteDhcpOptionsRequest>, DeleteDhcpOptionsRequest> {
 
     public Request<DeleteDhcpOptionsRequest> marshall(DeleteDhcpOptionsRequest deleteDhcpOptionsRequest) {

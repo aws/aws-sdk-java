@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Receive Message Request Marshaller
- */        
+ */
 public class ReceiveMessageRequestMarshaller implements Marshaller<Request<ReceiveMessageRequest>, ReceiveMessageRequest> {
 
     public Request<ReceiveMessageRequest> marshall(ReceiveMessageRequest receiveMessageRequest) {
@@ -41,7 +41,7 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
         if (receiveMessageRequest != null) {
             java.util.List<String> attributeNamesList = receiveMessageRequest.getAttributeNames();
             int attributeNamesListIndex = 1;
-            for (String attributeNamesListValue : attributeNamesList) { 
+            for (String attributeNamesListValue : attributeNamesList) {
                 if (attributeNamesListValue != null) {
                     request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
                 }

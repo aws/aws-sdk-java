@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Queue Request Marshaller
- */        
+ */
 public class DeleteQueueRequestMarshaller implements Marshaller<Request<DeleteQueueRequest>, DeleteQueueRequest> {
 
     public Request<DeleteQueueRequest> marshall(DeleteQueueRequest deleteQueueRequest) {

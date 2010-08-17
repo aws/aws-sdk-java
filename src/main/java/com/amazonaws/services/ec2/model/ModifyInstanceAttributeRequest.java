@@ -53,6 +53,29 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     private java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappings;
 
     /**
+     * Default constructor for a new ModifyInstanceAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ModifyInstanceAttributeRequest() {}
+    
+    /**
+     * Constructs a new ModifyInstanceAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance whose attribute is being
+     * modified.
+     * @param attribute The name of the attribute being modified. <p>
+     * Available attribute names: kernel, ramdisk, userData,
+     * blockDeviceMapping, disableApiTermination,
+     * instanceInitiatedShutdownBehavior
+     */
+    public ModifyInstanceAttributeRequest(String instanceId, String attribute) {
+        this.instanceId = instanceId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the instance whose attribute is being modified.
      *
      * @return The ID of the instance whose attribute is being modified.

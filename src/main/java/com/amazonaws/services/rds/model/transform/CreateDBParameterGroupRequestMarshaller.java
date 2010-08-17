@@ -26,21 +26,21 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create D B Parameter Group Request Marshaller
- */        
+ */
 public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Request<CreateDBParameterGroupRequest>, CreateDBParameterGroupRequest> {
 
     public Request<CreateDBParameterGroupRequest> marshall(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
         Request<CreateDBParameterGroupRequest> request = new DefaultRequest<CreateDBParameterGroupRequest>(createDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBParameterGroup");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (createDBParameterGroupRequest != null) {
             if (createDBParameterGroupRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupName()));
             }
         }
         if (createDBParameterGroupRequest != null) {
-            if (createDBParameterGroupRequest.getEngine() != null) {
-                request.addParameter("Engine", StringUtils.fromString(createDBParameterGroupRequest.getEngine()));
+            if (createDBParameterGroupRequest.getDBParameterGroupFamily() != null) {
+                request.addParameter("DBParameterGroupFamily", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupFamily()));
             }
         }
         if (createDBParameterGroupRequest != null) {

@@ -37,6 +37,27 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     private String attribute;
 
     /**
+     * Default constructor for a new ResetInstanceAttributeRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResetInstanceAttributeRequest() {}
+    
+    /**
+     * Constructs a new ResetInstanceAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the Amazon EC2 instance whose attribute is
+     * being reset.
+     * @param attribute The name of the attribute being reset. <p> Available
+     * attribute names: kernel, ramdisk
+     */
+    public ResetInstanceAttributeRequest(String instanceId, String attribute) {
+        this.instanceId = instanceId;
+        this.attribute = attribute;
+    }
+    
+    /**
      * The ID of the Amazon EC2 instance whose attribute is being reset.
      *
      * @return The ID of the Amazon EC2 instance whose attribute is being reset.

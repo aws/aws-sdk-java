@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Update Auto Scaling Group Request Marshaller
- */        
+ */
 public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Request<UpdateAutoScalingGroupRequest>, UpdateAutoScalingGroupRequest> {
 
     public Request<UpdateAutoScalingGroupRequest> marshall(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
@@ -61,7 +61,7 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
         if (updateAutoScalingGroupRequest != null) {
             java.util.List<String> availabilityZonesList = updateAutoScalingGroupRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
-            for (String availabilityZonesListValue : availabilityZonesList) { 
+            for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }

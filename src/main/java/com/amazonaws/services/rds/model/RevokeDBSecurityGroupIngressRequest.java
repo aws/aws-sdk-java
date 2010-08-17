@@ -51,6 +51,24 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     private String eC2SecurityGroupOwnerId;
 
     /**
+     * Default constructor for a new RevokeDBSecurityGroupIngressRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RevokeDBSecurityGroupIngressRequest() {}
+    
+    /**
+     * Constructs a new RevokeDBSecurityGroupIngressRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBSecurityGroupName The name of the DB Security Group to revoke
+     * ingress from.
+     */
+    public RevokeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
+        this.dBSecurityGroupName = dBSecurityGroupName;
+    }
+    
+    /**
      * The name of the DB Security Group to revoke ingress from.
      *
      * @return The name of the DB Security Group to revoke ingress from.

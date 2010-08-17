@@ -17,6 +17,7 @@ package com.amazonaws.services.ec2;
 import com.amazonaws.*;
 import com.amazonaws.services.ec2.model.*;
 
+
 /**
  * Interface for accessing AmazonEC2.
  * <p>
@@ -627,13 +628,6 @@ public interface AmazonEC2 {
      * Permission changes are propagated to instances within the security
      * group as quickly as possible. However, depending on the number of
      * instances, a small delay might occur.
-     * </p>
-     * <p>
-     * When authorizing a user/group pair permission, GroupName,
-     * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
-     * specified. When authorizing a CIDR IP permission, GroupName,
-     * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
-     * these two types of parameters is not allowed.
      * </p>
      *
      * @param authorizeSecurityGroupIngressRequest Container for the
@@ -2148,14 +2142,7 @@ public interface AmazonEC2 {
      * <p>
      * Permission changes are quickly propagated to instances within the
      * security group. However, depending on the number of instances in the
-     * group, a small delay is might occur, .
-     * </p>
-     * <p>
-     * When revoking a user/group pair permission, GroupName,
-     * SourceSecurityGroupName and SourceSecurityGroupOwnerId must be
-     * specified. When authorizing a CIDR IP permission, GroupName,
-     * IpProtocol, FromPort, ToPort and CidrIp must be specified. Mixing
-     * these two types of parameters is not allowed.
+     * group, a small delay might occur.
      * </p>
      *
      * @param revokeSecurityGroupIngressRequest Container for the necessary
@@ -3134,6 +3121,27 @@ public interface AmazonEC2 {
     
     /**
      * <p>
+     * Describes the status of the indicated or, in lieu of any specified,
+     * all volumes belonging to the caller. Volumes that have been deleted
+     * are not described.
+     * </p>
+     * 
+     * @return The response from the DescribeVolumes service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumesResult describeVolumes() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Gives you information about one or more sets of DHCP options. You can
      * specify one or more DHCP options set IDs, or no IDs (to describe all
      * your sets of DHCP options). The returned information consists of:
@@ -3221,7 +3229,6 @@ public interface AmazonEC2 {
      */
     public DescribeSnapshotsResult describeSnapshots() throws AmazonServiceException, AmazonClientException;
     
-
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -3230,5 +3237,24 @@ public interface AmazonEC2 {
      * requests.
      */
     public void shutdown();
+    
+    /**
+     * Returns additional metadata for a previously executed successful request, typically used for
+     * debugging issues where a service isn't acting as expected.  This data isn't considered part
+     * of the result data returned by an operation, so it's available through this separate,
+     * diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access
+     * this extra diagnostic information for an executed request, you should use this method
+     * to retrieve it as soon as possible after executing a request.
+     *
+     * @param request
+     *            The originally executed request.
+     *
+     * @return The response metadata for the specified request, or null if none
+     *         is available.
+     */
+    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
 }
         

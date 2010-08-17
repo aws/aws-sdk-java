@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Deactivate License Request Marshaller
- */        
+ */
 public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<DeactivateLicenseRequest>, DeactivateLicenseRequest> {
 
     public Request<DeactivateLicenseRequest> marshall(DeactivateLicenseRequest deactivateLicenseRequest) {

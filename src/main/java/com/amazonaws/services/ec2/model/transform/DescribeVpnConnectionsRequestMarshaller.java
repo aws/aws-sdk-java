@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Vpn Connections Request Marshaller
- */        
+ */
 public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Request<DescribeVpnConnectionsRequest>, DescribeVpnConnectionsRequest> {
 
     public Request<DescribeVpnConnectionsRequest> marshall(DescribeVpnConnectionsRequest describeVpnConnectionsRequest) {
@@ -36,7 +36,7 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
         if (describeVpnConnectionsRequest != null) {
             java.util.List<String> vpnConnectionIdsList = describeVpnConnectionsRequest.getVpnConnectionIds();
             int vpnConnectionIdsListIndex = 1;
-            for (String vpnConnectionIdsListValue : vpnConnectionIdsList) { 
+            for (String vpnConnectionIdsListValue : vpnConnectionIdsList) {
                 if (vpnConnectionIdsListValue != null) {
                     request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.fromString(vpnConnectionIdsListValue));
                 }

@@ -35,6 +35,23 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> instanceIds;
 
     /**
+     * Default constructor for a new RebootInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RebootInstancesRequest() {}
+    
+    /**
+     * Constructs a new RebootInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceIds The list of instances to terminate.
+     */
+    public RebootInstancesRequest(java.util.List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+    
+    /**
      * The list of instances to terminate.
      *
      * @return The list of instances to terminate.

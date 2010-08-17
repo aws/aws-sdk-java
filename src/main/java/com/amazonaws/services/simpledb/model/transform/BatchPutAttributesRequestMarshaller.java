@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Batch Put Attributes Request Marshaller
- */        
+ */
 public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<BatchPutAttributesRequest>, BatchPutAttributesRequest> {
 
     public Request<BatchPutAttributesRequest> marshall(BatchPutAttributesRequest batchPutAttributesRequest) {
@@ -42,7 +42,7 @@ public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<B
         if (batchPutAttributesRequest != null) {
             java.util.List<ReplaceableItem> itemsList = batchPutAttributesRequest.getItems();
             int itemsListIndex = 1;
-            for (ReplaceableItem itemsListValue : itemsList) { 
+            for (ReplaceableItem itemsListValue : itemsList) {
                 if (itemsListValue != null) {
                     if (itemsListValue.getName() != null) {
                         request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
@@ -52,7 +52,7 @@ public class BatchPutAttributesRequestMarshaller implements Marshaller<Request<B
                 if (itemsListValue != null) {
                     java.util.List<ReplaceableAttribute> attributesList = itemsListValue.getAttributes();
                     int attributesListIndex = 1;
-                    for (ReplaceableAttribute attributesListValue : attributesList) { 
+                    for (ReplaceableAttribute attributesListValue : attributesList) {
                         if (attributesListValue != null) {
                             if (attributesListValue.getName() != null) {
                                 request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));

@@ -32,6 +32,25 @@ public class Filter {
     private java.util.List<String> values;
 
     /**
+     * Default constructor for a new Filter object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Filter() {}
+    
+    /**
+     * Constructs a new Filter object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name Specifies the name of the filter.
+     * @param values Contains one or more values for the filter.
+     */
+    public Filter(String name, java.util.List<String> values) {
+        this.name = name;
+        this.values = values;
+    }
+    
+    /**
      * Specifies the name of the filter.
      *
      * @return Specifies the name of the filter.

@@ -26,13 +26,13 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Modify D B Instance Request Marshaller
- */        
+ */
 public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<ModifyDBInstanceRequest>, ModifyDBInstanceRequest> {
 
     public Request<ModifyDBInstanceRequest> marshall(ModifyDBInstanceRequest modifyDBInstanceRequest) {
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
-        request.addParameter("Version", "2010-01-01");
+        request.addParameter("Version", "2010-06-28");
         if (modifyDBInstanceRequest != null) {
             if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
                 request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
@@ -51,7 +51,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest != null) {
             java.util.List<String> dBSecurityGroupsList = modifyDBInstanceRequest.getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
-            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) { 
+            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
                 if (dBSecurityGroupsListValue != null) {
                     request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
                 }
@@ -91,6 +91,21 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest != null) {
             if (modifyDBInstanceRequest.isMultiAZ() != null) {
                 request.addParameter("MultiAZ", StringUtils.fromBoolean(modifyDBInstanceRequest.isMultiAZ()));
+            }
+        }
+        if (modifyDBInstanceRequest != null) {
+            if (modifyDBInstanceRequest.getEngineVersion() != null) {
+                request.addParameter("EngineVersion", StringUtils.fromString(modifyDBInstanceRequest.getEngineVersion()));
+            }
+        }
+        if (modifyDBInstanceRequest != null) {
+            if (modifyDBInstanceRequest.isAllowMajorVersionUpgrade() != null) {
+                request.addParameter("AllowMajorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAllowMajorVersionUpgrade()));
+            }
+        }
+        if (modifyDBInstanceRequest != null) {
+            if (modifyDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
+                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAutoMinorVersionUpgrade()));
             }
         }
 

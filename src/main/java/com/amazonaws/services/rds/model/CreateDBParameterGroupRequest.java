@@ -31,16 +31,38 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
     private String dBParameterGroupName;
 
     /**
-     * The name of the database engine the DB Parameter Group can be used
-     * with.
+     * The name of the DB Parameter Group Family the DB Parameter Group can
+     * be used with.
      */
-    private String engine;
+    private String dBParameterGroupFamily;
 
     /**
      * The description for the DB Parameter Group.
      */
     private String description;
 
+    /**
+     * Default constructor for a new CreateDBParameterGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateDBParameterGroupRequest() {}
+    
+    /**
+     * Constructs a new CreateDBParameterGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupFamily The name of the DB Parameter Group
+     * Family the DB Parameter Group can be used with.
+     * @param description The description for the DB Parameter Group.
+     */
+    public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
+        this.dBParameterGroupName = dBParameterGroupName;
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
+        this.description = description;
+    }
+    
     /**
      * The name of the DB Parameter Group.
      *
@@ -76,41 +98,41 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of the database engine the DB Parameter Group can be used
-     * with.
+     * The name of the DB Parameter Group Family the DB Parameter Group can
+     * be used with.
      *
-     * @return The name of the database engine the DB Parameter Group can be used
-     *         with.
+     * @return The name of the DB Parameter Group Family the DB Parameter Group can
+     *         be used with.
      */
-    public String getEngine() {
-        return engine;
+    public String getDBParameterGroupFamily() {
+        return dBParameterGroupFamily;
     }
     
     /**
-     * The name of the database engine the DB Parameter Group can be used
-     * with.
+     * The name of the DB Parameter Group Family the DB Parameter Group can
+     * be used with.
      *
-     * @param engine The name of the database engine the DB Parameter Group can be used
-     *         with.
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family the DB Parameter Group can
+     *         be used with.
      */
-    public void setEngine(String engine) {
-        this.engine = engine;
+    public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the database engine the DB Parameter Group can be used
-     * with.
+     * The name of the DB Parameter Group Family the DB Parameter Group can
+     * be used with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The name of the database engine the DB Parameter Group can be used
-     *         with.
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family the DB Parameter Group can
+     *         be used with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateDBParameterGroupRequest withEngine(String engine) {
-        this.engine = engine;
+    public CreateDBParameterGroupRequest withDBParameterGroupFamily(String dBParameterGroupFamily) {
+        this.dBParameterGroupFamily = dBParameterGroupFamily;
         return this;
     }
     
@@ -162,7 +184,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
-        sb.append("Engine: " + engine + ", ");
+        sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
         sb.append("Description: " + description + ", ");
         sb.append("}");
         return sb.toString();

@@ -16,8 +16,11 @@ package com.amazonaws;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Map.Entry;
 
 import com.amazonaws.http.HttpClient;
+import com.amazonaws.http.HttpMethodName;
+import com.amazonaws.http.HttpRequest;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -101,6 +104,37 @@ public abstract class AmazonWebServiceClient {
      */
     public void shutdown() {
         client.shutdown();
+    }
+
+    /**
+     * Converts a Request<T> object into an HttpRequest object. Copies all the
+     * headers, parameters, etc. from the Request into the new HttpRequest.
+     *
+     * @param request
+     *            The request to convert.
+     * @param methodName
+     *            The HTTP method (GET, PUT, DELETE, HEAD) to use in the
+     *            converted HttpRequest object.
+     *
+     * @return A new HttpRequest object created from the details of the
+     *         specified Request<T> object.
+     */
+    protected <T> HttpRequest convertToHttpRequest(Request<T> request, HttpMethodName methodName) {
+        HttpRequest httpRequest = new HttpRequest(methodName);
+        for (Entry<String, String> parameter : request.getParameters().entrySet()) {
+            httpRequest.addParameter(parameter.getKey(), parameter.getValue());
+        }
+
+        for (Entry<String, String> parameter : request.getHeaders().entrySet()) {
+            httpRequest.addHeader(parameter.getKey(), parameter.getValue());
+        }
+
+        httpRequest.setServiceName(request.getServiceName());
+        httpRequest.setEndpoint(request.getEndpoint());
+        httpRequest.setResourcePath(request.getResourcePath());
+        httpRequest.setOriginalRequest(request.getOriginalRequest());
+
+        return httpRequest;
     }
 
 }

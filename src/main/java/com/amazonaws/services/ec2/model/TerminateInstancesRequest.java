@@ -37,6 +37,23 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> instanceIds;
 
     /**
+     * Default constructor for a new TerminateInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public TerminateInstancesRequest() {}
+    
+    /**
+     * Constructs a new TerminateInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceIds The list of instances to terminate.
+     */
+    public TerminateInstancesRequest(java.util.List<String> instanceIds) {
+        this.instanceIds = instanceIds;
+    }
+    
+    /**
      * The list of instances to terminate.
      *
      * @return The list of instances to terminate.

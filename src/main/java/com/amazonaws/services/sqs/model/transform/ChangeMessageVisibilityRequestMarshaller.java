@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Change Message Visibility Request Marshaller
- */        
+ */
 public class ChangeMessageVisibilityRequestMarshaller implements Marshaller<Request<ChangeMessageVisibilityRequest>, ChangeMessageVisibilityRequest> {
 
     public Request<ChangeMessageVisibilityRequest> marshall(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {

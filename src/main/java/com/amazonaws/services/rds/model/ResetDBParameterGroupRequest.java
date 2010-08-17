@@ -52,6 +52,23 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
     private java.util.List<Parameter> parameters;
 
     /**
+     * Default constructor for a new ResetDBParameterGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResetDBParameterGroupRequest() {}
+    
+    /**
+     * Constructs a new ResetDBParameterGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBParameterGroupName The name of the DB Parameter Group.
+     */
+    public ResetDBParameterGroupRequest(String dBParameterGroupName) {
+        this.dBParameterGroupName = dBParameterGroupName;
+    }
+    
+    /**
      * The name of the DB Parameter Group.
      *
      * @return The name of the DB Parameter Group.

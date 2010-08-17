@@ -33,6 +33,23 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest {
     private String vpcId;
 
     /**
+     * Default constructor for a new DeleteVpcRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteVpcRequest() {}
+    
+    /**
+     * Constructs a new DeleteVpcRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpcId
+     */
+    public DeleteVpcRequest(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
      * 
      *
      * @return 

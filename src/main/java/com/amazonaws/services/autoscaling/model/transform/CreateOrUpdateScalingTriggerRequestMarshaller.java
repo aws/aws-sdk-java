@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Or Update Scaling Trigger Request Marshaller
- */        
+ */
 public class CreateOrUpdateScalingTriggerRequestMarshaller implements Marshaller<Request<CreateOrUpdateScalingTriggerRequest>, CreateOrUpdateScalingTriggerRequest> {
 
     public Request<CreateOrUpdateScalingTriggerRequest> marshall(CreateOrUpdateScalingTriggerRequest createOrUpdateScalingTriggerRequest) {
@@ -57,7 +57,7 @@ public class CreateOrUpdateScalingTriggerRequestMarshaller implements Marshaller
         if (createOrUpdateScalingTriggerRequest != null) {
             java.util.List<Dimension> dimensionsList = createOrUpdateScalingTriggerRequest.getDimensions();
             int dimensionsListIndex = 1;
-            for (Dimension dimensionsListValue : dimensionsList) { 
+            for (Dimension dimensionsListValue : dimensionsList) {
                 if (dimensionsListValue != null) {
                     if (dimensionsListValue.getName() != null) {
                         request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));

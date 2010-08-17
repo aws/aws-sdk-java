@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Scaling Activities Request Marshaller
- */        
+ */
 public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Request<DescribeScalingActivitiesRequest>, DescribeScalingActivitiesRequest> {
 
     public Request<DescribeScalingActivitiesRequest> marshall(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
@@ -36,7 +36,7 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
         if (describeScalingActivitiesRequest != null) {
             java.util.List<String> activityIdsList = describeScalingActivitiesRequest.getActivityIds();
             int activityIdsListIndex = 1;
-            for (String activityIdsListValue : activityIdsList) { 
+            for (String activityIdsListValue : activityIdsList) {
                 if (activityIdsListValue != null) {
                     request.addParameter("ActivityIds.member." + activityIdsListIndex, StringUtils.fromString(activityIdsListValue));
                 }

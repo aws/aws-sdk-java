@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Monitor Instances Request Marshaller
- */        
+ */
 public class MonitorInstancesRequestMarshaller implements Marshaller<Request<MonitorInstancesRequest>, MonitorInstancesRequest> {
 
     public Request<MonitorInstancesRequest> marshall(MonitorInstancesRequest monitorInstancesRequest) {
@@ -36,7 +36,7 @@ public class MonitorInstancesRequestMarshaller implements Marshaller<Request<Mon
         if (monitorInstancesRequest != null) {
             java.util.List<String> instanceIdsList = monitorInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
-            for (String instanceIdsListValue : instanceIdsList) { 
+            for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
                 }

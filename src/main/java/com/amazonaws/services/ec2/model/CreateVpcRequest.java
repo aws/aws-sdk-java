@@ -40,6 +40,23 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     private String cidrBlock;
 
     /**
+     * Default constructor for a new CreateVpcRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateVpcRequest() {}
+    
+    /**
+     * Constructs a new CreateVpcRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param cidrBlock A valid CIDR block.
+     */
+    public CreateVpcRequest(String cidrBlock) {
+        this.cidrBlock = cidrBlock;
+    }
+    
+    /**
      * A valid CIDR block.
      *
      * @return A valid CIDR block.

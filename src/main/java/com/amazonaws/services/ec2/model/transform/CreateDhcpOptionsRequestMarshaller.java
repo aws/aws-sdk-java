@@ -26,29 +26,35 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Dhcp Options Request Marshaller
- */        
+ */
 public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
 
     public Request<CreateDhcpOptionsRequest> marshall(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
         Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(createDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateDhcpOptions");
         request.addParameter("Version", "2010-06-15");
+
         if (createDhcpOptionsRequest != null) {
-            DhcpConfiguration dhcpConfiguration = createDhcpOptionsRequest.getDhcpConfiguration();
-            if (dhcpConfiguration != null) {
-                if (dhcpConfiguration.getKey() != null) {
-                    request.addParameter("DhcpConfiguration.Key", StringUtils.fromString(dhcpConfiguration.getKey()));
-                }
-            }
-            if (dhcpConfiguration != null) {
-                java.util.List<String> valuesList = dhcpConfiguration.getValues();
-                int valuesListIndex = 1;
-                for (String valuesListValue : valuesList) { 
-                    if (valuesListValue != null) {
-                        request.addParameter("DhcpConfiguration.Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+            java.util.List<DhcpConfiguration> dhcpConfigurationsList = createDhcpOptionsRequest.getDhcpConfigurations();
+            int dhcpConfigurationsListIndex = 1;
+            for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
+                if (dhcpConfigurationsListValue != null) {
+                    if (dhcpConfigurationsListValue.getKey() != null) {
+                        request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key", StringUtils.fromString(dhcpConfigurationsListValue.getKey()));
                     }
-                    valuesListIndex++;
                 }
+                if (dhcpConfigurationsListValue != null) {
+                    java.util.List<String> valuesList = dhcpConfigurationsListValue.getValues();
+                    int valuesListIndex = 1;
+                    for (String valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                dhcpConfigurationsListIndex++;
             }
         }
 

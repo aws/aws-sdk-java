@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Deregister Image Request Marshaller
- */        
+ */
 public class DeregisterImageRequestMarshaller implements Marshaller<Request<DeregisterImageRequest>, DeregisterImageRequest> {
 
     public Request<DeregisterImageRequest> marshall(DeregisterImageRequest deregisterImageRequest) {

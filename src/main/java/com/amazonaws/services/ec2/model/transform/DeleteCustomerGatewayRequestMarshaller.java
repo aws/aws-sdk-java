@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Customer Gateway Request Marshaller
- */        
+ */
 public class DeleteCustomerGatewayRequestMarshaller implements Marshaller<Request<DeleteCustomerGatewayRequest>, DeleteCustomerGatewayRequest> {
 
     public Request<DeleteCustomerGatewayRequest> marshall(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) {

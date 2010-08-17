@@ -123,6 +123,10 @@ public class DBInstance {
 
     private Boolean multiAZ;
 
+    private String engineVersion;
+
+    private Boolean autoMinorVersionUpgrade;
+
     /**
      * Specifies a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
@@ -895,6 +899,89 @@ public class DBInstance {
     }
     
     /**
+     * Returns the value of the EngineVersion property for this object.
+     *
+     * @return The value of the EngineVersion property for this object.
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     */
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean isAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     */
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean getAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -924,6 +1011,8 @@ public class DBInstance {
         sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
         sb.append("LatestRestorableTime: " + latestRestorableTime + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
+        sb.append("EngineVersion: " + engineVersion + ", ");
+        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
     }

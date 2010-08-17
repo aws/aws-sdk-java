@@ -53,7 +53,7 @@ public enum Region {
      * read-after-write consistency for PUTS of new objects in your Amazon
      * S3 bucket and eventual consistency for overwrite PUTS and DELETES.
      */
-    US_West("us-west"),
+    US_West("us-west-1"),
 
     /**
      * The EU (Ireland) Amazon S3 region used Amazon S3 servers in Ireland.
@@ -113,7 +113,9 @@ public enum Region {
      */
     public static Region fromValue(String s3RegionString) throws IllegalArgumentException {
         for (Region region : Region.values()) {
-            if (region.toString().equals(s3RegionString)) return region;
+            String regionString = region.toString();
+            if (regionString == null && s3RegionString == null) return region;
+            if (regionString != null && regionString.equals(s3RegionString)) return region;
         }
 
         throw new IllegalArgumentException(

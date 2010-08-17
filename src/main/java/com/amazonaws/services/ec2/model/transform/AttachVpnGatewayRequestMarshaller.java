@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Attach Vpn Gateway Request Marshaller
- */        
+ */
 public class AttachVpnGatewayRequestMarshaller implements Marshaller<Request<AttachVpnGatewayRequest>, AttachVpnGatewayRequest> {
 
     public Request<AttachVpnGatewayRequest> marshall(AttachVpnGatewayRequest attachVpnGatewayRequest) {

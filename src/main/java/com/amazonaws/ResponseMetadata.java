@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,63 +14,60 @@
  */
 package com.amazonaws;
 
+import java.util.Map;
+
 /**
- * Represents the metadata included in a response from an AWS service. AWS
- * response metadata consists primarily of the AWS request ID, which can be used
- * for debugging purposes when services aren't acting as expected.
- * 
- * @param <T>
- *            The result with which this metadata is associated.
+ * Represents additional metadata included with a response from AWS. Response
+ * metadata varies by service, but all services return an AWS request ID that
+ * can be used in the event a service call isn't working as expected and you
+ * need to work with AWS support to debug an issue.
+ * <p>
+ * Access to AWS request IDs is also available through the com.amazonaws.request
+ * logger in the AWS SDK for Java.
  */
-public class ResponseMetadata<T> {
-    
-    /** The AWS request ID included in the response */
-    private String requestId;
+public class ResponseMetadata {
+    public static final String AWS_REQUEST_ID = "AWS_REQUEST_ID";
 
-    /** The result with which this metadata is associated */
-    private T result;
+    protected final Map<String, String> metadata;
 
     /**
-     * Returns the result type from the response with which this metadata is
-     * associated.
+     * Creates a new ResponseMetadata object from a specified map of raw
+     * metadata information.
      * 
-     * @return The result type from the response with which this metadata is
-     *         associated.
+     * @param metadata
+     *            The raw metadata for the new ResponseMetadata object.
      */
-    public T getResult() {
-        return result;
+    public ResponseMetadata(Map<String, String> metadata) {
+        this.metadata = metadata;
     }
 
     /**
-     * Sets the result for the response with which this metadata is associated.
-     * 
-     * @param result
-     *            The result type from the response with which this metadata is
-     *            associated.
+     * Creates a new ResponseMetadata object from an existing ResponseMetadata
+     * object.
+     *
+     * @param originalResponseMetadata
+     *            The ResponseMetadata object from which to create the new
+     *            object.
      */
-    public void setResult(T result) {
-        this.result = result;
+    public ResponseMetadata(ResponseMetadata originalResponseMetadata) {
+        this(originalResponseMetadata.metadata);
     }
 
     /**
-     * Returns the AWS request ID from the response metadata section of an AWS
-     * response.
-     * 
-     * @return The AWS request ID from the response metadata section of an AWS
-     *         response.
+     * Returns the AWS request ID contained in this response metadata object.
+     * AWS request IDs can be used in the event a service call isn't working as
+     * expected and you need to work with AWS support to debug an issue.
+     *
+     * @return The AWS request ID contained in this response metadata object.
      */
     public String getRequestId() {
-        return requestId;
+        return metadata.get(AWS_REQUEST_ID);
     }
 
-    /**
-     * Sets the AWS request ID for this response metadata object.
-     * 
-     * @param requestId
-     *            The AWS request ID for this response metadata object.
-     */
-    public void setRequestId(String requestId) {
-        this.requestId = requestId;
+    @Override
+    public String toString() {
+        if (metadata == null) return "{}";
+        return metadata.toString();
     }
 
 }

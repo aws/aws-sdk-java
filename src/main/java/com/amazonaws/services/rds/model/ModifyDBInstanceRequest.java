@@ -110,6 +110,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
 
     private Boolean multiAZ;
 
+    private String engineVersion;
+
+    private Boolean allowMajorVersionUpgrade;
+
+    private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ModifyDBInstanceRequest() {}
+    
+    /**
+     * Constructs a new ModifyDBInstanceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dBInstanceIdentifier The DB Instance identifier. This value is
+     * stored as a lowercase string.
+     */
+    public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+    }
+    
     /**
      * The DB Instance identifier. This value is stored as a lowercase
      * string.
@@ -725,6 +749,138 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the EngineVersion property for this object.
+     *
+     * @return The value of the EngineVersion property for this object.
+     */
+    public String getEngineVersion() {
+        return engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     */
+    public void setEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+    
+    /**
+     * Sets the value of the EngineVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engineVersion The new value for the EngineVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyDBInstanceRequest withEngineVersion(String engineVersion) {
+        this.engineVersion = engineVersion;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AllowMajorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AllowMajorVersionUpgrade property for this object.
+     */
+    public Boolean isAllowMajorVersionUpgrade() {
+        return allowMajorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AllowMajorVersionUpgrade property for this
+     * object.
+     *
+     * @param allowMajorVersionUpgrade The new value for the AllowMajorVersionUpgrade property for this
+     *         object.
+     */
+    public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AllowMajorVersionUpgrade property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowMajorVersionUpgrade The new value for the AllowMajorVersionUpgrade property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyDBInstanceRequest withAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+        this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AllowMajorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AllowMajorVersionUpgrade property for this object.
+     */
+    public Boolean getAllowMajorVersionUpgrade() {
+        return allowMajorVersionUpgrade;
+    }
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean isAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     */
+    public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Sets the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyDBInstanceRequest withAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
+        this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AutoMinorVersionUpgrade property for this
+     * object.
+     *
+     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     */
+    public Boolean getAutoMinorVersionUpgrade() {
+        return autoMinorVersionUpgrade;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -747,6 +903,9 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
         sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
         sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
+        sb.append("EngineVersion: " + engineVersion + ", ");
+        sb.append("AllowMajorVersionUpgrade: " + allowMajorVersionUpgrade + ", ");
+        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
     }

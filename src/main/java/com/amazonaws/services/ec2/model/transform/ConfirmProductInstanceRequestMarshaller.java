@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Confirm Product Instance Request Marshaller
- */        
+ */
 public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Request<ConfirmProductInstanceRequest>, ConfirmProductInstanceRequest> {
 
     public Request<ConfirmProductInstanceRequest> marshall(ConfirmProductInstanceRequest confirmProductInstanceRequest) {

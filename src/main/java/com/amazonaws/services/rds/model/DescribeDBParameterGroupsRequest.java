@@ -49,6 +49,12 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
+     * Default constructor for a new DescribeDBParameterGroupsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeDBParameterGroupsRequest() {}
+    
+    /**
      * The name of a specific database parameter group to return details for.
      *
      * @return The name of a specific database parameter group to return details for.

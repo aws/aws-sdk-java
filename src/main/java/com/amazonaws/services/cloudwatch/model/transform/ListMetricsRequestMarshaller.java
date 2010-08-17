@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * List Metrics Request Marshaller
- */        
+ */
 public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetricsRequest>, ListMetricsRequest> {
 
     public Request<ListMetricsRequest> marshall(ListMetricsRequest listMetricsRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Run Job Flow Request Marshaller
- */        
+ */
 public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlowRequest>, RunJobFlowRequest> {
 
     public Request<RunJobFlowRequest> marshall(RunJobFlowRequest runJobFlowRequest) {
@@ -93,7 +93,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         if (runJobFlowRequest != null) {
             java.util.List<StepConfig> stepsList = runJobFlowRequest.getSteps();
             int stepsListIndex = 1;
-            for (StepConfig stepsListValue : stepsList) { 
+            for (StepConfig stepsListValue : stepsList) {
                 if (stepsListValue != null) {
                     if (stepsListValue.getName() != null) {
                         request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepsListValue.getName()));
@@ -110,7 +110,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     if (hadoopJarStep != null) {
                         java.util.List<KeyValue> propertiesList = hadoopJarStep.getProperties();
                         int propertiesListIndex = 1;
-                        for (KeyValue propertiesListValue : propertiesList) { 
+                        for (KeyValue propertiesListValue : propertiesList) {
                             if (propertiesListValue != null) {
                                 if (propertiesListValue.getKey() != null) {
                                     request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(propertiesListValue.getKey()));
@@ -138,7 +138,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     if (hadoopJarStep != null) {
                         java.util.List<String> argsList = hadoopJarStep.getArgs();
                         int argsListIndex = 1;
-                        for (String argsListValue : argsList) { 
+                        for (String argsListValue : argsList) {
                             if (argsListValue != null) {
                                 request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
                             }
@@ -154,7 +154,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         if (runJobFlowRequest != null) {
             java.util.List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.getBootstrapActions();
             int bootstrapActionsListIndex = 1;
-            for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) { 
+            for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
                 if (bootstrapActionsListValue != null) {
                     if (bootstrapActionsListValue.getName() != null) {
                         request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.fromString(bootstrapActionsListValue.getName()));
@@ -170,7 +170,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     if (scriptBootstrapAction != null) {
                         java.util.List<String> argsList = scriptBootstrapAction.getArgs();
                         int argsListIndex = 1;
-                        for (String argsListValue : argsList) { 
+                        for (String argsListValue : argsList) {
                             if (argsListValue != null) {
                                 request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
                             }

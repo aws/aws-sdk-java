@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Register Image Request Marshaller
- */        
+ */
 public class RegisterImageRequestMarshaller implements Marshaller<Request<RegisterImageRequest>, RegisterImageRequest> {
 
     public Request<RegisterImageRequest> marshall(RegisterImageRequest registerImageRequest) {
@@ -72,7 +72,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
         if (registerImageRequest != null) {
             java.util.List<BlockDeviceMapping> blockDeviceMappingsList = registerImageRequest.getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
-            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) { 
+            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                 if (blockDeviceMappingsListValue != null) {
                     if (blockDeviceMappingsListValue.getVirtualName() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));

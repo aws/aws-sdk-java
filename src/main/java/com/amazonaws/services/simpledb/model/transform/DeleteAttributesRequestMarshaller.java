@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Attributes Request Marshaller
- */        
+ */
 public class DeleteAttributesRequestMarshaller implements Marshaller<Request<DeleteAttributesRequest>, DeleteAttributesRequest> {
 
     public Request<DeleteAttributesRequest> marshall(DeleteAttributesRequest deleteAttributesRequest) {
@@ -47,7 +47,7 @@ public class DeleteAttributesRequestMarshaller implements Marshaller<Request<Del
         if (deleteAttributesRequest != null) {
             java.util.List<Attribute> attributesList = deleteAttributesRequest.getAttributes();
             int attributesListIndex = 1;
-            for (Attribute attributesListValue : attributesList) { 
+            for (Attribute attributesListValue : attributesList) {
                 if (attributesListValue != null) {
                     if (attributesListValue.getName() != null) {
                         request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));

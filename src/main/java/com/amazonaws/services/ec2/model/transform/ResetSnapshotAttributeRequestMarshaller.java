@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Reset Snapshot Attribute Request Marshaller
- */        
+ */
 public class ResetSnapshotAttributeRequestMarshaller implements Marshaller<Request<ResetSnapshotAttributeRequest>, ResetSnapshotAttributeRequest> {
 
     public Request<ResetSnapshotAttributeRequest> marshall(ResetSnapshotAttributeRequest resetSnapshotAttributeRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Image Request Marshaller
- */        
+ */
 public class CreateImageRequestMarshaller implements Marshaller<Request<CreateImageRequest>, CreateImageRequest> {
 
     public Request<CreateImageRequest> marshall(CreateImageRequest createImageRequest) {

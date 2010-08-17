@@ -16,21 +16,17 @@ package com.amazonaws.services.elasticloadbalancing;
 
 import org.w3c.dom.Node;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 import java.security.SignatureException;
 
-import javax.xml.stream.XMLEventReader;
-
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWS3Signer;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.DefaultResponseHandler;
 import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.HttpClient;
@@ -38,7 +34,6 @@ import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
-import com.amazonaws.transform.VoidUnmarshaller;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -65,15 +60,14 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
 
-    /**
-     * Low level client for sending requests to AWS services.
-     */
+    /** Low level client for sending requests to AWS services. */
     protected final HttpClient client;
 
-    /**
-     * Optional request handlers for additional request processing.
-     */
+    /** Optional request handlers for additional request processing. */
     private List<RequestHandler> requestHandlers = new ArrayList<RequestHandler>();
+    
+    /** AWS signer for authenticating requests. */
+    private QueryStringSigner signer;
 
 
     /**
@@ -123,6 +117,8 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("elasticloadbalancing.amazonaws.com");
+
+        signer = new QueryStringSigner(awsCredentials);
 
         requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
                 "/com/amazonaws/services/elasticloadbalancing/request.handlers");
@@ -489,6 +485,26 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
     }
     
 
+    /**
+     * Returns additional metadata for a previously executed successful, request, typically used for
+     * debugging issues where a service isn't acting as expected.  This data isn't considered part
+     * of the result data returned by an operation, so it's available through this separate,
+     * diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access
+     * this extra diagnostic information for an executed request, you should use this method
+     * to retrieve it as soon as possible after executing the request.
+     *
+     * @param request
+     *            The originally executed request
+     *
+     * @return The response metadata for the specified request, or null if none
+     *         is available.
+     */
+    public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
+        return client.getResponseMetadataForRequest(request);
+    }
+
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
@@ -502,21 +518,13 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
             }
         }
 
-        QueryStringSigner<Y> signer = new QueryStringSigner<Y>(awsCredentials);
         try {
             signer.sign(request);
         } catch (SignatureException e) {
             throw new AmazonServiceException("Unable to sign request", e);
         }
 
-        HttpRequest httpRequest = new HttpRequest(HttpMethodName.POST);
-        for (Entry<String, String> parameter : request.getParameters().entrySet()) {
-            httpRequest.addParameter(parameter.getKey(), parameter.getValue());
-        }
-        httpRequest.setServiceName(request.getServiceName());
-        httpRequest.setEndpoint(request.getEndpoint());
-        httpRequest.setResourcePath(request.getResourcePath());
-
+        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.POST);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);

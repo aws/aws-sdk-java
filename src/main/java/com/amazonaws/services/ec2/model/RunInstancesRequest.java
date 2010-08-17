@@ -180,6 +180,32 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     private String privateIpAddress;
 
     /**
+     * Default constructor for a new RunInstancesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RunInstancesRequest() {}
+    
+    /**
+     * Constructs a new RunInstancesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param imageId Unique ID of a machine image, returned by a call to
+     * DescribeImages.
+     * @param minCount Minimum number of instances to launch. If the value is
+     * more than Amazon EC2 can launch, no instances are launched at all.
+     * @param maxCount Maximum number of instances to launch. If the value is
+     * more than Amazon EC2 can launch, the largest possible number above
+     * minCount will be launched instead. <p> Between 1 and the maximum
+     * number allowed for your account (default: 20).
+     */
+    public RunInstancesRequest(String imageId, Integer minCount, Integer maxCount) {
+        this.imageId = imageId;
+        this.minCount = minCount;
+        this.maxCount = maxCount;
+    }
+    
+    /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
      *
      * @return Unique ID of a machine image, returned by a call to DescribeImages.

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Subnet Request Marshaller
- */        
+ */
 public class DeleteSubnetRequestMarshaller implements Marshaller<Request<DeleteSubnetRequest>, DeleteSubnetRequest> {
 
     public Request<DeleteSubnetRequest> marshall(DeleteSubnetRequest deleteSubnetRequest) {

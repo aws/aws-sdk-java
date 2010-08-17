@@ -43,6 +43,25 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
     private String vpcId;
 
     /**
+     * Default constructor for a new DetachVpnGatewayRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DetachVpnGatewayRequest() {}
+    
+    /**
+     * Constructs a new DetachVpnGatewayRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param vpnGatewayId The ID of the VPN gateway to detach from the VPC.
+     * @param vpcId The ID of the VPC to detach the VPN gateway from.
+     */
+    public DetachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
+        this.vpnGatewayId = vpnGatewayId;
+        this.vpcId = vpcId;
+    }
+    
+    /**
      * The ID of the VPN gateway to detach from the VPC.
      *
      * @return The ID of the VPN gateway to detach from the VPC.

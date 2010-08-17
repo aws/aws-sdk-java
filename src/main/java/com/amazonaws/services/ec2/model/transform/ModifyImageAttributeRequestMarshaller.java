@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Modify Image Attribute Request Marshaller
- */        
+ */
 public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request<ModifyImageAttributeRequest>, ModifyImageAttributeRequest> {
 
     public Request<ModifyImageAttributeRequest> marshall(ModifyImageAttributeRequest modifyImageAttributeRequest) {
@@ -51,7 +51,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         if (modifyImageAttributeRequest != null) {
             java.util.List<String> userIdsList = modifyImageAttributeRequest.getUserIds();
             int userIdsListIndex = 1;
-            for (String userIdsListValue : userIdsList) { 
+            for (String userIdsListValue : userIdsList) {
                 if (userIdsListValue != null) {
                     request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
                 }
@@ -61,7 +61,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         if (modifyImageAttributeRequest != null) {
             java.util.List<String> userGroupsList = modifyImageAttributeRequest.getUserGroups();
             int userGroupsListIndex = 1;
-            for (String userGroupsListValue : userGroupsList) { 
+            for (String userGroupsListValue : userGroupsList) {
                 if (userGroupsListValue != null) {
                     request.addParameter("UserGroup." + userGroupsListIndex, StringUtils.fromString(userGroupsListValue));
                 }
@@ -71,7 +71,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         if (modifyImageAttributeRequest != null) {
             java.util.List<String> productCodesList = modifyImageAttributeRequest.getProductCodes();
             int productCodesListIndex = 1;
-            for (String productCodesListValue : productCodesList) { 
+            for (String productCodesListValue : productCodesList) {
                 if (productCodesListValue != null) {
                     request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(productCodesListValue));
                 }

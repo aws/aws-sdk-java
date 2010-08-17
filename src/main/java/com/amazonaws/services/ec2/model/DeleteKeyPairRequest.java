@@ -31,6 +31,23 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest {
     private String keyName;
 
     /**
+     * Default constructor for a new DeleteKeyPairRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteKeyPairRequest() {}
+    
+    /**
+     * Constructs a new DeleteKeyPairRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param keyName The name of the Amazon EC2 key pair to delete.
+     */
+    public DeleteKeyPairRequest(String keyName) {
+        this.keyName = keyName;
+    }
+    
+    /**
      * The name of the Amazon EC2 key pair to delete.
      *
      * @return The name of the Amazon EC2 key pair to delete.

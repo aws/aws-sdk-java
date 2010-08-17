@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Create Spot Datafeed Subscription Request Marshaller
- */        
+ */
 public class CreateSpotDatafeedSubscriptionRequestMarshaller implements Marshaller<Request<CreateSpotDatafeedSubscriptionRequest>, CreateSpotDatafeedSubscriptionRequest> {
 
     public Request<CreateSpotDatafeedSubscriptionRequest> marshall(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Placement Group Request Marshaller
- */        
+ */
 public class DeletePlacementGroupRequestMarshaller implements Marshaller<Request<DeletePlacementGroupRequest>, DeletePlacementGroupRequest> {
 
     public Request<DeletePlacementGroupRequest> marshall(DeletePlacementGroupRequest deletePlacementGroupRequest) {

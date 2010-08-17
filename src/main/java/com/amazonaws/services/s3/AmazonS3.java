@@ -22,13 +22,15 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
-import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
@@ -37,7 +39,6 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
-import com.amazonaws.services.s3.model.BucketPolicy;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -2255,14 +2256,14 @@ public interface AmazonS3 {
      * <p>
      * By default, new buckets have no notification configuration.
      * <p>
-     * The notification configuration of a bucket provides near realtime notifications 
-     * of events the user is interested in, using SNS as the delivery service. 
-     * Notification is turned on by enabling configuration on a bucket, specifying 
-     * the events and the SNS topic. This configuration can only be turned 
+     * The notification configuration of a bucket provides near realtime notifications
+     * of events the user is interested in, using SNS as the delivery service.
+     * Notification is turned on by enabling configuration on a bucket, specifying
+     * the events and the SNS topic. This configuration can only be turned
      * on by the bucket owner. If a notification configuration already exists for the
-     * specified bucket, the new notification configuration will replace the existing 
-     * notification configuration.  To remove the notification configuration pass in 
-     * an empty request.  Currently, buckets may only have a single event and topic 
+     * specified bucket, the new notification configuration will replace the existing
+     * notification configuration.  To remove the notification configuration pass in
+     * an empty request.  Currently, buckets may only have a single event and topic
      * configuration.
      * <p>
      * S3 is eventually consistent. It may take time for the notification status
@@ -2288,14 +2289,14 @@ public interface AmazonS3 {
      * <p>
      * By default, new buckets have no notification configuration set.
      * <p>
-     * The notification configuration of a bucket provides near realtime notifications 
-     * of events the user is interested in, using SNS as the delivery service. 
-     * Notification is turned on by enabling configuration on a bucket, specifying 
-     * the events and the SNS topic. This configuration can only be turned 
+     * The notification configuration of a bucket provides near realtime notifications
+     * of events the user is interested in, using SNS as the delivery service.
+     * Notification is turned on by enabling configuration on a bucket, specifying
+     * the events and the SNS topic. This configuration can only be turned
      * on by the bucket owner. If a notification configuration already exists for the
-     * specified bucket, the new notification configuration will replace the existing 
-     * notification configuration.  To remove the notification configuration pass in 
-     * an empty request.  Currently, buckets may only have a single event and topic 
+     * specified bucket, the new notification configuration will replace the existing
+     * notification configuration.  To remove the notification configuration pass in
+     * an empty request.  Currently, buckets may only have a single event and topic
      * configuration.
      * <p>
      * S3 is eventually consistent. It may take time for the notification status
@@ -2500,5 +2501,23 @@ public interface AmazonS3 {
      */
     public URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
             throws AmazonClientException;
+
+    /**
+     * Returns additional metadata for a previously executed successful request, typically used for
+     * debugging issues where a service isn't acting as expected.  This data isn't considered part
+     * of the result data returned by an operation, so it's available through this separate,
+     * diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time, so if you need to access
+     * this extra diagnostic information for an executed request, you should use this method
+     * to retrieve it as soon as possible after executing a request.
+     *
+     * @param request
+     *            The originally executed request.
+     *
+     * @return The response metadata for the specified request, or null if none
+     *         is available.
+     */
+    public S3ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
 }

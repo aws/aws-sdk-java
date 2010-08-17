@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Delete Volume Request Marshaller
- */        
+ */
 public class DeleteVolumeRequestMarshaller implements Marshaller<Request<DeleteVolumeRequest>, DeleteVolumeRequest> {
 
     public Request<DeleteVolumeRequest> marshall(DeleteVolumeRequest deleteVolumeRequest) {

@@ -26,7 +26,7 @@ import com.amazonaws.util.StringUtils;
 
 /**
  * Describe Bundle Tasks Request Marshaller
- */        
+ */
 public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<DescribeBundleTasksRequest>, DescribeBundleTasksRequest> {
 
     public Request<DescribeBundleTasksRequest> marshall(DescribeBundleTasksRequest describeBundleTasksRequest) {
@@ -36,7 +36,7 @@ public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<
         if (describeBundleTasksRequest != null) {
             java.util.List<String> bundleIdsList = describeBundleTasksRequest.getBundleIds();
             int bundleIdsListIndex = 1;
-            for (String bundleIdsListValue : bundleIdsList) { 
+            for (String bundleIdsListValue : bundleIdsList) {
                 if (bundleIdsListValue != null) {
                     request.addParameter("BundleId." + bundleIdsListIndex, StringUtils.fromString(bundleIdsListValue));
                 }

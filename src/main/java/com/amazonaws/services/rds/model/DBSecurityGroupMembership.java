@@ -32,6 +32,12 @@ public class DBSecurityGroupMembership {
     private String status;
 
     /**
+     * Default constructor for a new DBSecurityGroupMembership object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DBSecurityGroupMembership() {}
+    
+    /**
      * The name of the DB Security Group.
      *
      * @return The name of the DB Security Group.
