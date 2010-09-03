@@ -26,7 +26,7 @@ public class Attribute {
     private String name;
 
     /**
-     * <p/>
+     * 
      */
     private String alternateNameEncoding;
 
@@ -36,7 +36,7 @@ public class Attribute {
     private String value;
 
     /**
-     * <p/>
+     * 
      */
     private String alternateValueEncoding;
 
@@ -94,29 +94,29 @@ public class Attribute {
     
     
     /**
-     * <p/>
+     * 
      *
-     * @return <p/>
+     * @return 
      */
     public String getAlternateNameEncoding() {
         return alternateNameEncoding;
     }
     
     /**
-     * <p/>
+     * 
      *
-     * @param alternateNameEncoding <p/>
+     * @param alternateNameEncoding 
      */
     public void setAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
     }
     
     /**
-     * <p/>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateNameEncoding <p/>
+     * @param alternateNameEncoding 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -162,29 +162,29 @@ public class Attribute {
     
     
     /**
-     * <p/>
+     * 
      *
-     * @return <p/>
+     * @return 
      */
     public String getAlternateValueEncoding() {
         return alternateValueEncoding;
     }
     
     /**
-     * <p/>
+     * 
      *
-     * @param alternateValueEncoding <p/>
+     * @param alternateValueEncoding 
      */
     public void setAlternateValueEncoding(String alternateValueEncoding) {
         this.alternateValueEncoding = alternateValueEncoding;
     }
     
     /**
-     * <p/>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateValueEncoding <p/>
+     * @param alternateValueEncoding 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

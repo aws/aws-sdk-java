@@ -19,8 +19,12 @@ import java.util.Date;
 import com.amazonaws.services.s3.internal.Constants;
 
 /**
- * Summary of a version stored in an Amazon S3 bucket. Doesn't contain the
- * version's full metadata or any of the contents.
+ * Contains the summary of a version stored in an Amazon S3 bucket. 
+ * This object doesn't contain the
+ * version's full metadata or any of its contents.
+ * 
+ * @see S3Object
+ * @see S3ObjectSummary
  */
 public class S3VersionSummary {
     
@@ -59,9 +63,11 @@ public class S3VersionSummary {
 
     
     /**
-     * Returns the name of the Amazon S3 bucket in which this version is stored.
+     * Gets the name of the Amazon S3 bucket in which this version is stored.
      * 
      * @return The name of the Amazon S3 bucket in which this version is stored.
+     * 
+     * @see S3VersionSummary#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -73,15 +79,19 @@ public class S3VersionSummary {
      * @param bucketName
      *            The name of the Amazon S3 bucket in which this version is
      *            stored.
+     *            
+     * @see S3VersionSummary#getBucketName()          
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
     
     /**
-     * Returns the key under which this version is stored in Amazon S3.
+     * Gets the key under which this version is stored in Amazon S3.
      * 
      * @return The key under which this version is stored in Amazon S3.
+     * 
+     * @see S3VersionSummary#setKey(String)
      */
     public String getKey() {
         return key;
@@ -92,13 +102,15 @@ public class S3VersionSummary {
      * 
      * @param key
      *            The key under which this version is stored in Amazon S3.
+     *            
+     * @see S3VersionSummary#getKey()
      */
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
-     * Returns the version ID which uniquely identifies this version of an
+     * Gets the version ID which uniquely identifies this version of an
      * object.
      * <p>
      * Objects created before versioning was enabled or when versioning is
@@ -106,9 +118,12 @@ public class S3VersionSummary {
      * {@link Constants#NULL_VERSION_ID}). Note that the
      * {@link Constants#NULL_VERSION_ID} is a valid version ID and is not the
      * same as not having a version ID.
+     * </p>
      * 
      * @return The version ID which uniquely identifies this version of an
      *         object.
+     *         
+     * @see S3VersionSummary#setVersionId(String)        
      */
     public String getVersionId() {
         return versionId;
@@ -120,23 +135,27 @@ public class S3VersionSummary {
      * @param id
      *            The version ID which uniquely identifies this version of an
      *            object.
+     *            
+     * @see S3VersionSummary#getVersionId()           
      */
     public void setVersionId(String id) {
         this.versionId = id;
     }
 
     /**
-     * Returns true if this version is the latest version for the associated
-     * object.
+     * Returns whether or not this version is the latest version
+     * for the associated object.
      * 
-     * @return True if this version is the latest version for the associated
-     *         object, otherwise false.
+     * @return The value <code>true</code> if this version is the 
+     * latest version for the associated object; returns the value
+     * <code>false</code> if otherwise.
      */
     public boolean isLatest() {
         return this.isLatest;
     }
 
     /**
+     * For internal use only.
      * Sets whether this version is the latest version for the associated
      * object. This method is intended to be used only by the client internals
      * and developers shouldn't need to use it.
@@ -150,140 +169,166 @@ public class S3VersionSummary {
     }
 
     /**
-     * Returns the date, according to Amazon S3, at which this version was last
+     * Gets the date according to Amazon S3 at which this version was last
      * modified.
      * 
-     * @return The date, according to Amazon S3, at which this version was last
+     * @return The date according to Amazon S3 at which this version was last
      *         modified.
+     *         
+     * @see S3VersionSummary#setLastModified(Date)      
      */
     public Date getLastModified() {
         return lastModified;
     }
 
     /**
-     * Sets the date, according to Amazon S3, at which this version was last
+     * Sets the date according to Amazon S3 at which this version was last
      * modified.
      * 
      * @param lastModified
-     *            The date, according to Amazon S3, at which this version was
+     *            The date according to Amazon S3 at which this version was
      *            last modified.
+     *            
+     * @see S3VersionSummary#getLastModified()                  
      */
     public void setLastModified(Date lastModified) {
         this.lastModified = lastModified;
     }
 
     /**
-     * Returns the owner of this version, or null if the requester doesn't have
-     * {@link Permission#ReadAcp} permission for this version (or own the bucket
-     * in which it resides) and therefore doesn't have permission to see object
-     * ownership.
+     * Gets the owner of this version. Returns <code>null</code> 
+     * if the requester doesn't have
+     * {@link Permission#ReadAcp} permission for this version or owns the bucket
+     * in which it resides.
      * 
-     * @return The owner of this version, or null if the requester doesn't have
+     * @return The owner of this version. Returns <code>null</code> 
+     *         if the requester doesn't have
      *         permission to see object ownership for this version.
+     *         
+     * @see S3VersionSummary#setOwner(Owner)        
      */
     public Owner getOwner() {
         return owner;
     }
 
     /**
+     * For internal use only.
      * Sets the owner of this version. This method is intended to be used only
      * by the client internals and developers shouldn't need to use it.
      * 
      * @param owner
-     *            The owner of this object.
+     *            The owner of this version.
+     *            
+     * @see S3VersionSummary#getOwner()         
      */
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
 
     /**
-     * Returns true if this version represents a delete marker.
+     * Returns whether or not this version represents a delete marker.
      * <p>
      * Delete markers are special types of versions that have no data associated
-     * with them. Deleting an versioned object in Amazon S3 without specifying
-     * an explicit version ID a new delete marker is created as the latest
-     * version of that object to mark that the object was deleted, even though
+     * with them. When deleting a versioned object in Amazon S3 without specifying
+     * an explicit version ID, a new delete marker is created as the latest
+     * version of that object to mark that the object was deleted.
+     * This occurs even though
      * the previous versions still exist in Amazon S3.
+     * </p>
      * <p>
      * Delete markers have no data associated with them and therefore have no
      * associated ACL, size or storage class. Only requesters with read access
      * to a bucket can learn of their existence by listing the versions in a
      * bucket.
+     * </p>
      * 
-     * @return True if this version represents a delete marker.
+     * @return The value <code>true</code> if this version represents a delete marker.
+     *         Returns the value <code>false</code> if otherwise.
      */
     public boolean isDeleteMarker() {
         return isDeleteMarker;
     }
 
     /**
-     * Intended for internal use only in the S3 client code. Sets the value of
-     * the isDeleteMarker property to record if this is a delete marker or not.
+     * Intended for internal use only in the Amazon S3 client code. Sets the value of
+     * the <code>isDeleteMarker</code> property to record if this is a delete marker or not.
      * 
      * @param isDeleteMarker
-     *            True if this version summary represents a delete marker,
-     *            otherwise false if it is a regular version summary.
+     *            Specify <code>true<code> if this version summary represents a delete marker,
+     *            otherwise <code>false<code> if it is a regular version summary.
      */
     public void setIsDeleteMarker(boolean isDeleteMarker) {
         this.isDeleteMarker = isDeleteMarker;
     }
 
     /**
-     * Returns the hex encoded 128 bit MD5 hash of this version's contents, as
+     * Gets the hex encoded 128-bit MD5 hash of this version's contents as
      * computed by Amazon S3.
      * 
-     * @return The hex encoded 128 bit MD5 hash of this version's contents, as
+     * @return The hex encoded 128-bit MD5 hash of this version's contents as
      *         computed by Amazon S3.
+     *         
+     * @see S3VersionSummary#setETag(String)       
      */
     public String getETag() {
         return eTag;
     }
 
     /**
-     * Sets the hex encoded 128 bit MD5 hash of this version's contents, as
+     * Sets the hex encoded 128-bit MD5 hash of this version's contents as
      * computed by Amazon S3.
      * 
      * @param eTag
-     *            The hex encoded 128 bit MD5 hash of this version's contents,
+     *            The hex encoded 128-bit MD5 hash of this version's contents
      *            as computed by Amazon S3.
+     *            
+     * @see S3VersionSummary#getETag()             
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
     }
 
     /**
-     * Returns the type of storage used by Amazon S3 for this version.
+     * Gets the storage class used by Amazon S3 for this version.
      * 
-     * @return The type of storage used by Amazon S3 for this version.
+     * @return The storage class used by Amazon S3 for this version.
+     * 
+     * @see S3VersionSummary#setStorageClass(String)
      */
     public String getStorageClass() {
         return storageClass;
     }
 
     /**
-     * Sets the type of storage used by Amazon S3 for this version.
+     * Sets the storage class used by Amazon S3 for this version.
      * 
      * @param storageClass
-     *            The type of storage used by Amazon S3 for this version.
+     *            The storage class used by Amazon S3 for this version.
+     *            
+     * @see S3VersionSummary#getStorageClass()         
      */
     public void setStorageClass(String storageClass) {
         this.storageClass = storageClass;
     }
 
     /**
-     * Returns the size of this version, in bytes.
+     * Gets the size of this version in bytes.
      * 
-     * @return The size of this version, in bytes.
+     * @return The size of this version in bytes.
+     * 
+     * @see S3VersionSummary#setSize(long)
      */
     public long getSize() {
         return size;
     }
 
     /**
-     * Sets the size of this version, in bytes.
+     * Sets the size of this version in bytes.
      * 
      * @param size
-     *            The size of this version, in bytes.
+     *            The size of this version in bytes.
+     *            
+     * @see S3VersionSummary#getSize()          
      */
     public void setSize(long size) {
         this.size = size;

@@ -17,10 +17,15 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Deletes the specified bucket. 
  * <p>
- * Note: If you delete an bucket that does not exist, Amazon S3 will return
- * a success (not an error message).
+ * Provides options for deleting a specified bucket. Amazon S3 buckets can only be deleted
+ * when empty.
+ * </p>
+ * <p>
+ * Note: When attempting to delete a bucket that does not exist, 
+ * Amazon S3 returns
+ * a success message, not an error message.
+ * </p>
  */
 public class DeleteBucketRequest extends AmazonWebServiceRequest {
 
@@ -30,7 +35,8 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest {
     private String bucketName;
 
     /**
-     * Constructs a new DeleteBucketRequest, ready to be executed and delete the
+     * Constructs a new {@link DeleteBucketRequest}, 
+     * ready to be executed to delete the
      * specified bucket.
      * 
      * @param bucketName
@@ -43,16 +49,21 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest {
     /**
      * Sets the name of the Amazon S3 bucket to delete.
      * 
-     * @param bucketName the name of the Amazon S3 bucket to delete.
+     * @param bucketName 
+     *            The name of the Amazon S3 bucket to delete.
+     *            
+     * @see DeleteBucketRequest#getBucketName()          
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Returns the name of the Amazon S3 bucket to delete.
+     * Gets the name of the Amazon S3 bucket to delete.
      * 
-     * @return the name of the Amazon S3 bucket to delete.
+     * @return The name of the Amazon S3 bucket to delete.
+     * 
+     * @see DeleteBucketRequest#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;

@@ -18,17 +18,22 @@
 package com.amazonaws.services.s3.model;
 
 /**
+ * <p>
+ * Represents a Amazon S3 bucket policy.
  * Bucket policies provide access control management at the bucket level for
  * both the bucket resource and contained object resources. Only one policy may
- * be specified per-bucket.
+ * be specified per bucket.
+ * </p>
  * <p>
- * Buckets have no policy text until one is explicitly specified. In other
- * words, requesting the bucket policy for a brand new bucket will return a
- * policy object with a null policy text.
+ * Buckets have no policy text until one is explicitly specified. 
+ * Requesting the bucket policy for a newly created bucket will return a
+ * policy object with <code>null</code> policy text.
+ * </p>
  * <p>
  * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
  * Amazon S3 developer guide</a> for more information on forming bucket
  * polices.
+ * </p>
  */
 public class BucketPolicy {
 
@@ -36,22 +41,29 @@ public class BucketPolicy {
     private String policyText;
 
     /**
-     * Returns the raw policy JSON text, as returned by Amazon S3. If no policy
-     * has ever been applied to the associated bucket, its policy text will be
+     * Gets the raw policy JSON text as returned by Amazon S3. If no policy
+     * has been applied to the specified bucket, the policy text will be
      * null.
      * 
-     * @return The raw policy JSON text, possibly null if no policy has been
-     *         specified for the associated bucket.
+     * @return The raw policy JSON text as returned by Amazon S3.
+     *         If no policy has been applied to the specified bucket, this method returns
+     *         null policy text.
+     *         
+     * @see BucketPolicy#setPolicyText()        
      */
     public String getPolicyText() {
         return policyText;
     }
 
     /**
-     * Sets the raw policy JSON text.
+     * Sets the raw policy JSON text. 
+     * A bucket will have no policy text unless the policy text is explicitly
+     * provided through this method.
      *
      * @param policyText
      *            The raw policy JSON text.
+     *            
+     * @see BucketPolicy#getPolicyText()           
      */
     public void setPolicyText(String policyText) {
         this.policyText = policyText;

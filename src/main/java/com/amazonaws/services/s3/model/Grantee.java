@@ -18,26 +18,30 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Represents a grantee (entity) who can be assigned access permissions in an
- * {@link AccessControlList}. All grantees have an ID of some kind (though the
- * format of the ID can differ depending on the kind of grantee).
+ * Represents a grantee (entity) that can be assigned access permissions in an
+ * {@link AccessControlList}. All grantees have an ID of some kind, though the
+ * format of the ID can differ depending on the kind of grantee.
  */
 public interface Grantee {
 
     /**
      * Sets the identifier for this grantee. The meaning of the identifier is
-     * specific to each implementation of the Grantee.
+     * specific to each implementation of the {@link Grantee}.
      *
      * @param id
      *            The identifier for this grantee.
+     *            
+     * @see Grantee#getIdentifier()        
      */
     public void setIdentifier(String id);
 
     /**
-     * Returns the identifier for this grantee. The meaning of the grantee
-     * identifier is specific to each implementation of the Grantee.
+     * Gets the identifier for this grantee. The meaning of the grantee
+     * identifier is specific to each implementation of the {@link Grantee}.
      *
      * @return The identifier for this grantee.
+     * 
+     * @see Grantee#setIdentifier() 
      */
     public String getIdentifier();
 

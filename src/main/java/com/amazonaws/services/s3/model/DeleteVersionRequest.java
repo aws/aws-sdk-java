@@ -18,22 +18,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
- * Options for deleting a specific version of an object in the specified bucket.
+ * <p>
+ * Provides options for deleting a specific version of an object in the specified bucket.
  * Once deleted, there is no method to restore or undelete an object version.
  * This is the only way to permanently delete object versions that are protected
  * by versioning.
+ * </p>
  * <p>
- * Since deleting an object version is permanent and irreversible, it is a
+ * Because deleting an object version is permanent and irreversible, it is a
  * privileged operation that only the owner of the bucket containing the version
  * may perform.
+ * </p>
  * <p>
- * You can only delete a version of an object if you've enabled versioning for
- * your bucket. See
- * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}
- * for more information about enabling versioning for a bucket.
+ * An owner can only delete a version of an object if the owner has enabled versioning for
+ * their bucket. 
+ * For more information about enabling versioning for a bucket, see 
+ * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
+ * </p>
  * <p>
- * Note: If you delete an object that does not exist, Amazon S3 will return a
- * success (not an error message).
+ * Note: When attempting to delete an object that does not exist, 
+ * Amazon S3 returns a
+ * success message, not an error message.
+ * </p>
  */
 public class DeleteVersionRequest extends AmazonWebServiceRequest {
 
@@ -65,7 +71,8 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
 
     
     /**
-     * Constructs a new DeleteVersionRequest object, ready to be executed to
+     * Constructs a new {@link DeleteVersionRequest} object, 
+     * ready to be executed to
      * delete the version identified by the specified version ID, in the
      * specified bucket and key.
      * 
@@ -74,7 +81,9 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
      * @param key
      *            The key of the object version to delete.
      * @param versionId
-     *            The version ID uniquely identifying the version to delete.
+     *            The version ID identifying the version to delete.
+     *            
+     * @see DeleteVersionRequest#DeleteVersionRequest(String, String, String, MultiFactorAuthentication)          
      */
     public DeleteVersionRequest(String bucketName, String key, String versionId) {
         this.bucketName = bucketName;
@@ -83,7 +92,8 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Constructs a new DeleteVersionRequest object, ready to be executed to
+     * Constructs a new {@link DeleteVersionRequest} object, 
+     * ready to be executed to
      * delete the version identified by the specified version ID, in the
      * specified bucket and key, with the specified Multi-Factor Authentication
      * (MFA) information. Multi-Factor Authentication is required when the MFA
@@ -100,6 +110,8 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
      * @param mfa
      *            The Multi-Factor Authentication information to include in this
      *            request.
+     *            
+     * @see DeleteVersionRequest#DeleteVersionRequest(String, String, String)           
      */
     public DeleteVersionRequest(String bucketName, String key, String versionId, MultiFactorAuthentication mfa) {
         this(bucketName, key, versionId);
@@ -107,11 +119,14 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the name of the Amazon S3 bucket containing the version to
+     * Gets the name of the Amazon S3 bucket containing the version to
      * delete.
      * 
-     * @return the name of the Amazon S3 bucket containing the version to
+     * @return The name of the Amazon S3 bucket containing the version to
      *         delete.
+     *         
+     * @see DeleteVersionRequest#setBucketName(String)
+     * @see DeleteVersionRequest#withBucketName(String)        
      */
     public String getBucketName() {
         return bucketName;
@@ -123,22 +138,29 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the version to
      *            delete.
+     *            
+     * @see DeleteVersionRequest#getBucketName()
+     * @see DeleteVersionRequest#withBucketName(String)           
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Sets the name of the Amazon S3 bucket containing the version to delete,
-     * and returns this object so that additional method calls may be chained
-     * together.
+     * Sets the name of the Amazon S3 bucket containing the version to delete.     
+     * Returns this {@link DeleteVersionRequest}, enabling additional method
+     * calls to be chained together.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the version to
      *            delete.
      * 
-     * @return The updated DeleteVersionRequest object so that additional method
-     *         calls may be chained together.
+     * @return The updated {@link DeleteVersionRequest} object,
+     *         enabling additional method
+     *         calls to be chained together.
+     *         
+     * @see DeleteVersionRequest#getBucketName()   
+     * @see DeleteVersionRequest#setBucketName(String)   
      */
     public DeleteVersionRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -146,9 +168,12 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the key of the version to delete.
+     * Gets the key of the version to delete.
      * 
      * @return The key of the version to delete.
+     * 
+     * @see DeleteVersionRequest#setKey(String)
+     * @see DeleteVersionRequest#withKey(String)
      */
     public String getKey() {
         return key;
@@ -159,20 +184,27 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
      * 
      * @param key
      *            The key of the version to delete.
+     *            
+     * @see DeleteVersionRequest#getKey()         
+     * @see DeleteVersionRequest#withKey(String)     
      */
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
-     * Sets the key of the version to delete, and returns this object so that
-     * additional method calls may be chained together.
+     * Sets the key of the version to delete     
+     * Returns this {@link DeleteVersionRequest}, enabling additional method
+     * calls to be chained together.
      * 
      * @param key
      *            The key of the version to delete.
      * 
-     * @return The updated DeleteVersionRequest object so that additional method
-     *         calls may be chained together.
+     * @return This {@link DeleteVersionRequest}, enabling additional method
+     *         calls to be chained together.
+     * 
+     * @see DeleteVersionRequest#getKey()        
+     * @see DeleteVersionRequest#setKey(String)      
      */
     public DeleteVersionRequest withKey(String key) {
         setKey(key);
@@ -180,23 +212,29 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the version ID uniquely identifying which version of the object
+     * Gets the version ID uniquely identifying which version of the object
      * to delete.
      * 
      * @return The version ID uniquely identifying which version of the object
      *         to delete.
+     *         
+     * @see DeleteVersionRequest#setVersionId(String)
+     * @see DeleteVersionRequest#withVersionId(String)    
      */
     public String getVersionId() {
         return versionId;
     }
 
     /**
-     * Sets the version version ID uniquely identifying which version of the
+     * Sets the version ID uniquely identifying which version of the
      * object to delete.
      * 
      * @param versionId
      *            The version ID uniquely identifying which version of
      *            the object to delete.
+     *            
+     * @see DeleteVersionRequest#getVersionId()           
+     * @see DeleteVersionRequest#withVersionId(String)                
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
@@ -204,15 +242,19 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the version ID uniquely identifying which version of the object to
-     * delete, and returns this object so that additional method calls may be
-     * chained together.
+     * delete
+     * Returns this {@link DeleteVersionRequest}, enabling additional method
+     * calls to be chained together.
      * 
      * @param versionId
      *            The version ID uniquely identifying which version of the
      *            object to delete.
      * 
-     * @return The updated DeleteVersionRequest object so that additional method
-     *         calls may be chained together.
+     * @return This {@link DeleteVersionRequest}, enabling additional method
+     *         calls to be chained together.
+     *         
+     * @see DeleteVersionRequest#getVersionId()
+     * @see DeleteVersionRequest#setVersionId(String)         
      */
     public DeleteVersionRequest withVersionId(String versionId) {
         setVersionId(versionId);
@@ -220,60 +262,82 @@ public class DeleteVersionRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the optional Multi-Factor Authentication information included
+     * <p>
+     * Gets the optional Multi-Factor Authentication information included
      * with this request.
+     * </p>
      * <p>
      * Multi-Factor Authentication is required when deleting an object version
      * from a bucket which has MFADelete enabled in its bucket versioning
      * configuration.
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @return The optional Multi-Factor Authentication information included
      *         with this request.
+     *         
+     * @see DeleteVersionRequest#setMfa(MultiFactorAuthentication)
+     * @see DeleteVersionRequest#withMfa(MultiFactorAuthentication)        
      */
     public MultiFactorAuthentication getMfa() {
         return mfa;
     }
 
     /**
+     * <p>
      * Sets the optional Multi-Factor Authentication information to include with
      * this request.
+     * </p>
      * <p>
      * Multi-Factor Authentication is required when deleting an object version
      * from a bucket which has MFADelete enabled in its bucket versioning
      * configuration.
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @param mfa
      *            The optional Multi-Factor Authentication information to
      *            include with this request.
+     *            
+     * @see DeleteVersionRequest#getMfa()
+     * @see DeleteVersionRequest#withMfa(MultiFactorAuthentication)   
      */
     public void setMfa(MultiFactorAuthentication mfa) {
         this.mfa = mfa;
     }
 
     /**
+     * <p>
      * Sets the optional Multi-Factor Authentication information to include with
-     * this request, and returns this object so that additional method calls may
-     * be chained together.
+     * this request
+     * Returns this {@link DeleteVersionRequest}, enabling additional method
+     * calls to be chained together.
+     * </p>
      * <p>
      * Multi-Factor Authentication is required when deleting an object version
      * from a bucket which has MFADelete enabled in its bucket versioning
      * configuration
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @param mfa
      *            The optional Multi-Factor Authentication information to
      *            include with this request.
      * 
-     * @return The updated DeleteVersionRequest object so that additional method
-     *         calls may be chained together.
+     * @return This {@link DeleteVersionRequest}, enabling additional method
+     *         calls to be chained together.
+     *         
+     * @see DeleteVersionRequest#getMfa()
+     * @see DeleteVersionRequest#withMfa(MultiFactorAuthentication)           
      */
     public DeleteVersionRequest withMfa(MultiFactorAuthentication mfa) {
         setMfa(mfa);

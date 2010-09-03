@@ -18,14 +18,16 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * A grant consists of one grantee and one permission.
+ * Specifies a grant, consisting of one grantee and one permission.
+ * 
+ * @see Grant#Grant(Grantee, Permission)
  */
 public class Grant {
     private Grantee grantee = null;
     private Permission permission = null;
 
     /**
-     * Constructs a new Grant object using the specified grantee and permission
+     * Constructs a new {@link Grant} object using the specified grantee and permission
      * objects.
      *
      * @param grantee
@@ -39,18 +41,22 @@ public class Grant {
     }
 
     /**
-     * Returns the grantee being granted a permission by this grant.
+     * Gets the grantee being granted a permission by this grant.
      *
      * @return The grantee being granted a permission by this grant.
+     * 
+     * @see Grant#getPermission()
      */
     public Grantee getGrantee() {
         return grantee;
     }
 
     /**
-     * Returns the permission being granted to the grantee by this grant.
+     * Gets the permission being granted to the grantee by this grant.
      *
      * @return The permission being granted to the grantee by this grant.
+     * 
+     * @see Grant#getGrantee()
      */
     public Permission getPermission() {
         return permission;

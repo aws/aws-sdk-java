@@ -320,47 +320,6 @@ public class XpathUtils {
     }
 
     /**
-     * Evaluates the specified XPath expression and returns the result as a
-     * Node.
-     *
-     * @param expression
-     *            The XPath expression to evaluate.
-     * @param source
-     *            The source document to run the expression on.
-     *
-     * @return The Node result.
-     *
-     * @throws XPathExpressionException
-     *             If there was a problem processing the specified XPath
-     *             expression.
-     */
-    public static Node asNode(String expression, InputSource source)
-            throws XPathExpressionException {
-        return (Node) xpath.evaluate(expression, source, XPathConstants.NODE);
-    }
-
-    /**
-     * Evaluates the specified XPath expression and returns the result as a
-     * NodeList.
-     *
-     * @param expression
-     *            The XPath expression to evaluate.
-     * @param node
-     *            The node to run the expression on.
-     *
-     * @return The NodeList result.
-     *
-     * @throws XPathExpressionException
-     *             If there was a problem processing the specified XPath
-     *             expression.
-     */
-    public static NodeList asNodeList(String expression, Node node)
-            throws XPathExpressionException {
-        if (node == null) return null;
-        return (NodeList) xpath.evaluate(expression, node, XPathConstants.NODESET);
-    }
-
-    /**
      * Returns the length of the specified node list.
      *
      * @param list

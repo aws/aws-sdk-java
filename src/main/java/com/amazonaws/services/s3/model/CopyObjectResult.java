@@ -19,10 +19,12 @@ import java.util.Date;
 import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
- * Contains the data returned by Amazon S3 from the copy object operation.
- * Callers can of course ignore this result if they don't need any of the data,
- * otherwise they can access information about the new object created from the
- * copy object operation, such as its ETag and last modification date.
+ * <p>
+ * Contains the data returned by Amazon S3 from the 
+ * {@link AmazonS3#copyObject(CopyObjectRequest copyObjectRequest)} call.
+ * This result may be ignored if not needed; otherwise, use this result
+ * to access information about the new object created from the copyObject call.
+ * </p>
  * 
  * @see AmazonS3Client#copyObject(String, String, String, String)
  * @see AmazonS3Client#copyObject(com.amazonaws.services.s3.model.CopyObjectRequest)
@@ -44,10 +46,12 @@ public class CopyObjectResult {
 
     
     /**
-     * Returns the ETag value for the new object that was created in the
-     * associated copy object request.
+     * Gets the ETag value for the new object that was created in the
+     * associated {@link CopyObjectRequest}.
      * 
      * @return The ETag value for the new object.
+     * 
+     * @see CopyObjectResult#setETag(String)
      */
     public String getETag() {
         return etag;
@@ -59,48 +63,56 @@ public class CopyObjectResult {
      * 
      * @param etag
      *            The ETag value for the new object.
+     *            
+     * @see CopyObjectResult#getETag()           
      */
     public void setETag(String etag) {
         this.etag = etag;
     }
 
     /**
-     * Returns the last modified date for the object that was created in the
-     * associated copy object request.
+     * Gets the date the newly copied object was last modified.
      * 
-     * @return The last modified date for the new object.
+     * @return The date the newly copied object was last modified.
+     * 
+     * @see CopyObjectResult#setLastModifiedDate(Date)
      */
     public Date getLastModifiedDate() {
         return lastModifiedDate;
     }
 
     /**
-     * Sets the last modified date for the object that was created in the
-     * associated copy object request.
+     * Sets the date the newly copied object was last modified.
      * 
      * @param lastModifiedDate
-     *            The last modified date for the new object.
+     *            The date the new, copied object was last modified.
+     *            
+     * @see CopyObjectResult#getLastModifiedDate()          
      */
     public void setLastModifiedDate(Date lastModifiedDate) {
         this.lastModifiedDate = lastModifiedDate;
     }
 
     /**
-     * Returns the version ID of the new, copied object. This field will only be
-     * present if object versioning has been enabled for the bucket to which the
-     * object was copied.
+     * Gets the version ID of the newly copied object. This field is only
+     * present if object versioning has been enabled for the bucket the
+     * object was copied to.
      * 
-     * @return The version ID of the new, copied object.
+     * @return The version ID of the newly copied object.
+     * 
+     * @see CopyObjectResult#setVersionId(String)
      */
     public String getVersionId() {
         return versionId;
     }
 
     /**
-     * Sets the version ID of the new, copied object.
+     * Sets the version ID of the newly copied object.
      * 
      * @param versionId
-     *            The version ID of the new, copied object.
+     *            The version ID of the newly copied object.
+     *            
+     * @see CopyObjectResult#getVersionId()
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;

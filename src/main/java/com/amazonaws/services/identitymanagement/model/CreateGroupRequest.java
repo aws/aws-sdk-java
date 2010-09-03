@@ -1,0 +1,191 @@
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.identitymanagement.model;
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest) CreateGroup operation}.
+ * <p>
+ * Creates a new group.
+ * </p>
+ * <p>
+ * For information about the number of groups you can create, see
+ * Limitations on AWS IAM Entities in the <a
+ * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
+ * Management User Guide </a> .
+ * </p>
+ *
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)
+ */
+public class CreateGroupRequest extends AmazonWebServiceRequest {
+
+    /**
+     * The path to the group. For more information about paths, see
+     * Identifiers for Users and Groups in the <a
+     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     * Identity and Access Management User Guide</a>. <p>This parameter is
+     * optional. If it is not included, it defaults to /.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     */
+    private String path;
+
+    /**
+     * Name of the group to create. Do not include the path in this value.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     */
+    private String groupName;
+
+    /**
+     * The path to the group. For more information about paths, see
+     * Identifiers for Users and Groups in the <a
+     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     * Identity and Access Management User Guide</a>. <p>This parameter is
+     * optional. If it is not included, it defaults to /.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     *
+     * @return The path to the group. For more information about paths, see
+     *         Identifiers for Users and Groups in the <a
+     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     *         Identity and Access Management User Guide</a>. <p>This parameter is
+     *         optional. If it is not included, it defaults to /.
+     */
+    public String getPath() {
+        return path;
+    }
+    
+    /**
+     * The path to the group. For more information about paths, see
+     * Identifiers for Users and Groups in the <a
+     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     * Identity and Access Management User Guide</a>. <p>This parameter is
+     * optional. If it is not included, it defaults to /.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     *
+     * @param path The path to the group. For more information about paths, see
+     *         Identifiers for Users and Groups in the <a
+     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     *         Identity and Access Management User Guide</a>. <p>This parameter is
+     *         optional. If it is not included, it defaults to /.
+     */
+    public void setPath(String path) {
+        this.path = path;
+    }
+    
+    /**
+     * The path to the group. For more information about paths, see
+     * Identifiers for Users and Groups in the <a
+     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     * Identity and Access Management User Guide</a>. <p>This parameter is
+     * optional. If it is not included, it defaults to /.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 512<br/>
+     * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
+     *
+     * @param path The path to the group. For more information about paths, see
+     *         Identifiers for Users and Groups in the <a
+     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
+     *         Identity and Access Management User Guide</a>. <p>This parameter is
+     *         optional. If it is not included, it defaults to /.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateGroupRequest withPath(String path) {
+        this.path = path;
+        return this;
+    }
+    
+    
+    /**
+     * Name of the group to create. Do not include the path in this value.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     *
+     * @return Name of the group to create. Do not include the path in this value.
+     */
+    public String getGroupName() {
+        return groupName;
+    }
+    
+    /**
+     * Name of the group to create. Do not include the path in this value.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     *
+     * @param groupName Name of the group to create. Do not include the path in this value.
+     */
+    public void setGroupName(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
+     * Name of the group to create. Do not include the path in this value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     * <b>Pattern: </b>[\w+=,.@-]*<br/>
+     *
+     * @param groupName Name of the group to create. Do not include the path in this value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateGroupRequest withGroupName(String groupName) {
+        this.groupName = groupName;
+        return this;
+    }
+    
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("Path: " + path + ", ");
+        sb.append("GroupName: " + groupName + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
+}
+    

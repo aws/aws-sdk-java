@@ -18,43 +18,60 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Represents an E-mail Grantee, that is a grantee identified by their e-mail
+ * Represents an e-mail grantee.  An e-mail grantee is a grantee 
+ * identified by their e-mail
  * address and authenticated by an Amazon system.
  * <p>
- * E-mail grants are internally converted to the CanonicalUser representation
- * when you create the ACL. If the grantee changes his or her e-mail address, it
- * will not affect the existing Amazon S3 permissions.
+ * E-mail grants are internally converted to the canonical user representation
+ * when creating the ACL. If the grantee changes their e-mail address, it
+ * will not affect existing Amazon S3 permissions.
+ * </p>
  * <p>
  * Adding a grantee by e-mail address only works if exactly one Amazon account
  * corresponds to the specified e-mail address. If multiple Amazon accounts are
- * associated with the e-mail address, an AmbiguousGrantByEmail error message is
- * returned. This is rare but usually occurs if a user created an Amazon account
- * in the past, forgot the password, and created another Amazon account using
- * the same e-mail address. If this occurs, the user should contact Amazon.com
- * customer service to have the accounts merged or you should grant user access
- * specifying the CanonicalUser representation.
+ * associated with the e-mail address, an <code>AmbiguousGrantByEmail</code> 
+ * error message is
+ * returned. This happens rarely, but usually occurs if a user created 
+ * an Amazon account
+ * in the past, forgotten the password, and created another Amazon account using
+ * the same e-mail address. If this occurs, the user should contact Amazon 
+ * customer service to have the accounts merged.
+ * Alernatively, grant user access
+ * specifying the canonical user representation.
+ * </p>
+ * 
+ * @see EmailAddressGrantee#EmailAddressGrantee(String)
  */
 public class EmailAddressGrantee implements Grantee {
     private String emailAddress = null;
 
     /**
-     * Constructs an email grantee with the given email address.
+     * Constructs a new {@link EmailAddressGrantee} object
+     * with the given email address.
      *
      * @param emailAddress
+     *        The e-mail address used to identify the e-mail grantee.
      */
     public EmailAddressGrantee(String emailAddress) {
         this.setIdentifier(emailAddress);
     }
 
     /**
-     * Set the email address as the grantee's ID.
+     * Set the e-mail address as the grantee's ID.
+     * 
+     * @param emailAddress
+     *        The e-mail address used to identify the e-mail grantee.
+     *        
+     * @see EmailAddressGrantee#getIdentifier()       
      */
     public void setIdentifier(String emailAddress) {
         this.emailAddress = emailAddress;
     }
 
     /**
-     * Returns the grantee's email address (ID).
+     * Gets the grantee's e-mail address.
+     * 
+     * @see EmailAddressGrantee#setIdentifier(string)     
      */
     public String getIdentifier() {
         return emailAddress;

@@ -25,7 +25,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * a list of {@link S3ObjectSummary} objects describing the objects stored in
  * the bucket, a list of common prefixes if a delimiter was specified in the
  * request, information describing if this is a complete or partial
- * listing, and the the original request parameters.
+ * listing, and the original request parameters.
  * 
  * @see AmazonS3#listObjects(String, String)
  * @see AmazonS3#listObjects(ListObjectsRequest)
@@ -91,7 +91,7 @@ public class ObjectListing {
      * S3 bucket. Listings for large buckets can be
      * truncated for performance reasons.  Always check the
      * {@link ObjectListing#isTruncated()} method to see if the returned
-     * listing is complete, or if additional calls are needed to get
+     * listing is complete or if additional calls are needed to get
      * more results. Callers might need to make
      * additional calls to
      * {@link AmazonS3#listNextBatchOfObjects(ObjectListing)} to get
@@ -139,7 +139,7 @@ public class ObjectListing {
     }
 
     /**
-     * Not intended for direct use by callers. Sets the common prefixes for this
+     * For internal use only. Sets the common prefixes for this
      * object listing, representing the key prefixes that were rolled up because
      * of the request's delimiter parameter.
      * 
@@ -161,16 +161,16 @@ public class ObjectListing {
      * in this listing.
      * 
      * @return The marker to use in the next <code>listObjects</code> request in order to see
-     *         the next page of results if this object listing is truncated,
-     *         otherwise null if this object listing isn't truncated.
+     *         the next page of results if this object listing is truncated.
+     *         Returns <code>null</code> if this object listing isn't truncated.
      */
     public String getNextMarker() {
         return nextMarker;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the marker to use in the
-     * next listObjects request in order to see the next page of results for a
+     * For internal use only. Sets the marker to use in the
+     * next list objects request in order to see the next page of results for a
      * truncated object listing.
      * 
      * @param nextMarker
@@ -183,17 +183,18 @@ public class ObjectListing {
 
     /**
      * Gets the name of the Amazon S3 bucket containing the objects listed in
-     * this <code>S3ObjectListing</code>.
+     * this {@link ObjectListing}.
      * 
      * @return The name of the Amazon S3 bucket containing the objects listed in
-     *         this <code>S3ObjectListing</code>.
+     *         this {@link ObjectListing}.
      */
     public String getBucketName() {
         return bucketName;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the name of the Amazon S3
+     * For internal use only.  
+     * Sets the name of the Amazon S3
      * bucket containing the objects listed in this S3ObjectListing.
      * 
      * @param bucketName
@@ -211,14 +212,15 @@ public class ObjectListing {
      * in this object listing start with the specified prefix.
      * 
      * @return The prefix parameter originally used to request this object
-     *         listing, or null if no prefix was specified.
+     *         listing. Returns <code>null</code> if no prefix was specified.
      */
     public String getPrefix() {
         return prefix;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the prefix parameter
+     * For internal use only. 
+     * Sets the prefix parameter
      * originally used to request this object listing.
      * 
      * @param prefix
@@ -237,14 +239,15 @@ public class ObjectListing {
      * alphabetically after the specified marker.
      * 
      * @return The marker parameter originally used to request this object
-     *         listing, or null if no marker was specified.
+     *         listing. Returns <code>null</code> if no marker was specified.
      */
     public String getMarker() {
         return marker;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the marker parameter
+     * For internal use only. 
+     * Sets the marker parameter
      * originally used to request this object listing.
      * 
      * @param marker
@@ -264,21 +267,22 @@ public class ObjectListing {
      * prefixes than indicated by the <code>maxKeys</code>, but can of course contain less.
      * 
      * @return The <code>maxKeys</code parameter originally used to request this object
-     *         listing, or the default <code>maxKeys</code value applied by Amazon S3 if
-     *         the requester didn't specify a value.
+     *         listing. Returns the default <code>maxKeys</code> value applied by Amazon S3 if
+     *         no value was specified.
      */
     public int getMaxKeys() {
         return maxKeys;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the maxKeys parameter
+     * For internal use only. 
+     * Sets the <code>maxKeys</code> parameter
      * originally used to request this object listing, or the default maxKeys
      * applied by Amazon S3 if the requester didn't specify a value.
      * 
      * @param maxKeys
-     *            The maxKeys parameter originally used to request this object
-     *            listing, or the default maxKeys value applied by Amazon S3 if
+     *            The <code>maxKeys</code> parameter originally used to request this object
+     *            listing, or the default <code>maxKeys</code> value applied by Amazon S3 if
      *            the requester didn't specify a value.
      */
     public void setMaxKeys(int maxKeys) {
@@ -287,23 +291,26 @@ public class ObjectListing {
 
     /**
      * Gets the delimiter parameter originally used to request this object
-     * listing, or <code>null</code> if none was specified. The delimiter value allows
+     * listing, or <code>null</code> if no delimiter specified. 
+     * <p>
+     * The delimiter value allows
      * callers to condense S3 keys into common prefix listings. For example, if
      * a caller specifies a delimiter of "/" (a common used value for
-     * delimiter), then any keys that contain a common prefix between the start
+     * delimiter), any keys that contain a common prefix between the start
      * of the key and the first occurrence of "/" will not be included in the
-     * list of object summaries. Instead the common prefixes list will have
+     * list of object summaries. Instead, the common prefixes list will have
      * one entry for the common prefix.
+     * </p>
      * 
      * @return The delimiter parameter originally used to request this object
-     *         listing, or <code>null</code> if none was specified.
+     *         listing. Returns <code>null</code> if no delimiter was specified.
      */
     public String getDelimiter() {
         return delimiter;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the delimiter parameter
+     * For internal use only. Sets the delimiter parameter
      * originally used to request this object listing.
      * 
      * @param delimiter
@@ -317,25 +324,25 @@ public class ObjectListing {
     /**
      * Gets whether or not this object listing is complete.
      * 
-     * @return Returns <code>true</code> if the object listing is <i>not complete</i>;
-     *         returns <code>false</code> if otherwise.  When returning <code>true</code>,
-     *         the caller may need to make additional calls to Amazon S3 in order to
-     *         get more results.
+     * @return The value <code>true</code> if the object listing is <b>not complete</b>.
+     *         Returns the value <code>false</code> if otherwise.  
+     *         When returning <code>true</code>,
+     *         additional calls to Amazon S3 may be needed in order to
+     *         obtain more results.
      */
     public boolean isTruncated() {
         return isTruncated;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the truncated property for
+     * For internal use only.  Sets the truncated property for
      * this object listing, indicating if this is a complete listing or not and
      * whether the caller needs to make additional calls to S3 to get more
      * object summaries.
      * 
      * @param isTruncated
-     *            True if this object listing is <b>not complete</b> and the
-     *            caller needs to make additional S3 calls to get additional
-     *            object summaries or common prefixes.
+     *            The value <code>true</code> if the object listing is <b>not complete</b>. 
+     *            The value <code>false</code> if otherwise.  
      */
     public void setTruncated(boolean isTruncated) {
         this.isTruncated = isTruncated;

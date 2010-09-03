@@ -17,10 +17,10 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
- * Contains the data returned by Amazon S3 from the put object operation.
- * Callers can ignore this result object if they don't need any of the data,
- * otherwise they can access information about the new object created from the
- * put object request, such as it's ETag and optional versionId.
+ * Contains the data returned by Amazon S3 from the <code>putObject</code>
+ * operation.
+ * Use this request to access information about the new object created from the
+ * <code>putObject</code> request, such as its ETag and optional version ID.
  * 
  * @see AmazonS3#putObject(String, String, java.io.File)
  * @see AmazonS3#putObject(String, String, java.io.InputStream, S3ObjectMetadata)
@@ -39,31 +39,36 @@ public class PutObjectResult {
     private String eTag;
 
     /**
-     * Returns the version ID of the new, uploaded object. This field will only
-     * be present if object versioning has been enabled for the bucket to which
-     * the object was uploaded.
+     * Gets the optional version ID of the newly uploaded object. This field will 
+     * be set only if object versioning is enabled for the bucket the
+     * object was uploaded to.
      * 
-     * @return The optional version ID of the new, uploaded object.
+     * @return The optional version ID of the newly uploaded object.
+     * 
+     * @see PutObjectResult#setVersionId(String)
      */
     public String getVersionId() {
         return versionId;
     }
 
     /**
-     * Sets the version ID of the new, uploaded object.
+     * Sets the optional version ID of the newly uploaded object.
      * 
      * @param versionId
-     *            The optional version ID of the new, uploaded object.
+     *            The optional version ID of the newly uploaded object.
+     *            
+     * @see PutObjectResult#getVersionId()        
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
 
     /**
-     * Returns the ETag value for the new object that was created in the
-     * associated put object request.
+     * Gets the ETag value for the newly created object.
      * 
      * @return The ETag value for the new object.
+     * 
+     * @see PutObjectResult#setETag(String)
      */
     public String getETag() {
         return eTag;
@@ -71,10 +76,12 @@ public class PutObjectResult {
 
     /**
      * Sets the ETag value for the new object that was created from the
-     * associated put object request.
+     * associated <code>putObject</code> request.
      * 
      * @param eTag
      *            The ETag value for the new object.
+     *            
+     * @see PutObjectResult#getETag()           
      */
     public void setETag(String eTag) {
         this.eTag = eTag;

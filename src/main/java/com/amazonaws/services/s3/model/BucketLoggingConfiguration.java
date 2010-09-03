@@ -21,16 +21,18 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
+ * <p>
  * Represents bucket logging configuration used to control bucket-based server
  * access logging in Amazon S3.
+ * </p>
  * <p>
- * For logging to be enabled for a bucket both the destinationBucketName and
- * logFilePrefix must be non-null, and the named bucket must exist. When both
- * variables are non-null, this object represents an <b>enabled</b> logging
+ * For logging to be enabled for a bucket both the <code>destinationBucketName</code> and
+ * <code>logfilePrefix</code> must not be <code>null</code>, and the named bucket must exist. When both
+ * variables are not <code>null</code>, this object represents an <b>enabled</b> logging
  * configuration (as indicated by {@link #isLoggingEnabled()}).
  * <p>
- * If either the targetBucketName or logfilePrefix are null, this object will
- * represent a <b>disabled</b> logging configuration (as indicated by
+ * If either the <code>targetBucketName</code> or <code>logfilePrefix</code> are <code>null</code>, 
+ * this object represents a <b>disabled</b> logging configuration (as indicated by
  * {@link #isLoggingEnabled()}).
  * <p>
  * Server access logging can be enabled or disabled with
@@ -52,6 +54,7 @@ public class BucketLoggingConfiguration {
      * Passing this new object directly to
      * {@link AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)}
      * will turn off bucket logging for the specified bucket.
+     * </p>
      */
     public BucketLoggingConfiguration() {}
 
@@ -73,15 +76,30 @@ public class BucketLoggingConfiguration {
         setDestinationBucketName(destinationBucketName);
     }
 
+    /**
+     * Returns true if logging is enabled.
+     * 
+     * @return True if logging is enabled.
+     */
     public boolean isLoggingEnabled() {
         return destinationBucketName != null
             && logFilePrefix != null;
     }
 
+    /**
+     * Returns the optional log file prefix.
+     * 
+     * @return The optional log file prefix.
+     */
     public String getLogFilePrefix() {
         return logFilePrefix;
     }
 
+    /**
+     * Sets the log file prefix for this bucket logging configuration.
+     *
+     * @param logFilePrefix The log file prefix for this logging configuration.
+     */
     public void setLogFilePrefix(String logFilePrefix) {
         // Default log file prefix to the empty string if none is specified
         if (logFilePrefix == null)
@@ -89,11 +107,21 @@ public class BucketLoggingConfiguration {
 
         this.logFilePrefix = logFilePrefix;
     }
-
+    
+    /**
+     * Returns the destination bucket name for this logging configuration.
+     * 
+     * @return The destination bucket name for this logging configuration.
+     */
     public String getDestinationBucketName() {
         return destinationBucketName;
     }
 
+    /**
+     * Sets the destination bucket name for this logging configuration.
+     * 
+     * @param destinationBucketName The destination bucket name for this logging configuration.
+     */
     public void setDestinationBucketName(String destinationBucketName) {
         this.destinationBucketName = destinationBucketName;
     }

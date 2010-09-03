@@ -113,6 +113,19 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjec
  * Provides the client for accessing the Amazon S3 web service.
  * </p>
  * <p>
+ * Amazon S3 provides storage for the Internet, 
+ * and is designed to make web-scale computing easier for developers.
+ * </p>
+ * <p>
+ * The Amazon S3 Java SDK provides a simple interface that can be 
+ * used to store and retrieve any amount of data, at any time, 
+ * from anywhere on the web. It gives any developer access to the same 
+ * highly scalable, reliable, secure, fast, inexpensive infrastructure 
+ * that Amazon uses to run its own global network of web sites. 
+ * The service aims to maximize benefits of scale and to pass those 
+ * benefits on to developers.
+ * </p>
+ * <p>
  * For more information about Amazon S3, please see
  * <a href="http://aws.amazon.com/s3">
  * http://aws.amazon.com/s3</a>
@@ -166,7 +179,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * </p>
      * <p>
      * Only a subset of the Amazon S3 API will work with anonymous
-     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations.
+     * (i.e. unsigned) requests, but this can prove useful in some situations.
      * For example:
      * <ul>
      * 	<li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
@@ -182,6 +195,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * 	to the bucket.</li>
      * </ul>
      * </p>
+     * 
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials)
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
      */
     public AmazonS3Client() {
         this(null);
@@ -196,6 +212,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param awsCredentials
      *            The AWS credentials to use when making requests to Amazon S3
      *            with this client.
+     *            
+     * @see AmazonS3Client#AmazonS3Client()
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)       
      */
     public AmazonS3Client(AWSCredentials awsCredentials) {
         this(awsCredentials, new ClientConfiguration());
@@ -212,7 +231,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            with this client.
      * @param clientConfiguration
      *            The client configuration options controlling how this client
-     *            connects to Amazon S3 (ex: proxy settings, retry counts, etc).
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     *            
+     * @see AmazonS3Client#AmazonS3Client()
+     * @see AmazonS3Client#AmazonS3Client(AWSCredentials)        
      */
     public AmazonS3Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
@@ -1417,14 +1439,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return (S3ResponseMetadata)client.getResponseMetadataForRequest(request);
     }
 
-
     /*
      * Private Interface
      */
 
     /**
-     * Asserts that the specified parameter value is not null and if it is,
-     * throws an IllegalArgumentException with the specified error message.
+     * <p>
+     * Asserts that the specified parameter value is not <code>null</code> and if it is,
+     * throws an <code>IllegalArgumentException</code> with the specified error message.
+     * </p>
      *
      * @param parameterValue
      *            The parameter value being checked.
@@ -1437,9 +1460,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * Returns the S3 ACL for the specified resource (bucket if only the
-     * bucketName parameter is specified, otherwise the object with the
+     * <p>
+     * Gets the Amazon S3 {@link AccessControlList} (ACL) for the specified resource. 
+     * (bucket if only the bucketName parameter is specified, otherwise the object with the
      * specified key in the bucket).
+     * </p>
      *
      * @param bucketName
      *            The name of the bucket whose ACL should be returned if the key
@@ -1447,7 +1472,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            the specified key.
      * @param key
      *            The object key whose ACL should be retrieve. If not specified,
-     *            the bucket's ACL will be returned.
+     *            the bucket's ACL is returned.
      * @param versionId
      *            The version ID of the object version whose ACL is being
      *            retrieved.
@@ -1639,7 +1664,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            will stop working.
      * @param subResource
      *            The optional sub-resource being requested as part of the
-     *            request (ex: "location", "acl", "logging", or "torrent".
+     *            request (e.g. "location", "acl", "logging", or "torrent").
      */
     private <T> void presignRequest(Request<T> request, HttpMethod methodName,
             String bucketName, String key, Date expiration, String subResource) {
@@ -1692,8 +1717,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
+     * <p>
      * Populates the specified request object with the appropriate headers from
-     * the S3ObjectMetadata object.
+     * the {@link ObjectMetadata} object.
+     * </p>
      *
      * @param request
      *            The request to populate with headers.
@@ -1718,11 +1745,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
+     * <p>
      * Populates the specified request with the specified Multi-Factor
-     * Authentication details, including the MFA header (with device serial
-     * number and generated token) as well as configuring the request object to
-     * use HTTPS instead of HTTP, since all requests which include the MFA
-     * header must be sent over HTTPS.
+     * Authentication (MFA) details. This includes the MFA header with device serial
+     * number and generated token. Since all requests which include the MFA
+     * header must be sent over HTTPS, this operation also configures the request object to
+     * use HTTPS instead of HTTP. 
+     * </p>
      *
      * @param request
      *            The request to populate.
@@ -1745,15 +1774,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
+     * <p>
      * Populates the specified request with the numerous options available in
-     * CopyObjectRequest.
+     * <code>CopyObjectRequest</code>.
+     * </p>
      *
      * @param request
      *            The request to populate with headers to represent all the
-     *            options expressed in the CopyObjectRequest object.
+     *            options expressed in the <code>CopyObjectRequest</code> object.
      * @param copyObjectRequest
      *            The object containing all the options for copying an object in
-     *            S3.
+     *            Amazon S3.
      */
     private static void populateRequestWithCopyObjectParameters(Request<Void> request, CopyObjectRequest copyObjectRequest) {
         String copySourceHeader =
@@ -1791,8 +1822,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * Adds the specified date header (in RFC 822 date format) to the specified
-     * request, if the specified value is not null.
+     * <p>
+     * Adds the specified date header in RFC 822 date format to the specified
+     * request.  
+     * This method will not add a date header if the specified date value is <code>null</code>.
+     * </p>
      *
      * @param request
      *            The request to add the header to.
@@ -1808,9 +1842,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * Adds the specified string list header (joined together separated with
-     * commas) to the specified request, if the specified value is not null or
-     * empty.
+     * <p>
+     * Adds the specified string list header, joined together separated with
+     * commas, to the specified request.
+     * This method will not add a string list header if the specified values
+     * are <code>null</code> or empty.
+     * </p>
      *
      * @param request
      *            The request to add the header to.

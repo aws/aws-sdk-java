@@ -32,8 +32,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest {
     /**
      * Sets the maximum number of jobs returned in the response. If there are
      * additional jobs that were not returned because MaxJobs was exceeded,
-     * the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     * the additional jobs, see Marker.
+     * the response contains <IsTruncated>true</IsTruncated>. To return the
+     * additional jobs, see Marker.
      */
     private Integer maxJobs;
 
@@ -47,13 +47,13 @@ public class ListJobsRequest extends AmazonWebServiceRequest {
     /**
      * Sets the maximum number of jobs returned in the response. If there are
      * additional jobs that were not returned because MaxJobs was exceeded,
-     * the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     * the additional jobs, see Marker.
+     * the response contains <IsTruncated>true</IsTruncated>. To return the
+     * additional jobs, see Marker.
      *
      * @return Sets the maximum number of jobs returned in the response. If there are
      *         additional jobs that were not returned because MaxJobs was exceeded,
-     *         the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     *         the additional jobs, see Marker.
+     *         the response contains <IsTruncated>true</IsTruncated>. To return the
+     *         additional jobs, see Marker.
      */
     public Integer getMaxJobs() {
         return maxJobs;
@@ -62,13 +62,13 @@ public class ListJobsRequest extends AmazonWebServiceRequest {
     /**
      * Sets the maximum number of jobs returned in the response. If there are
      * additional jobs that were not returned because MaxJobs was exceeded,
-     * the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     * the additional jobs, see Marker.
+     * the response contains <IsTruncated>true</IsTruncated>. To return the
+     * additional jobs, see Marker.
      *
      * @param maxJobs Sets the maximum number of jobs returned in the response. If there are
      *         additional jobs that were not returned because MaxJobs was exceeded,
-     *         the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     *         the additional jobs, see Marker.
+     *         the response contains <IsTruncated>true</IsTruncated>. To return the
+     *         additional jobs, see Marker.
      */
     public void setMaxJobs(Integer maxJobs) {
         this.maxJobs = maxJobs;
@@ -77,15 +77,15 @@ public class ListJobsRequest extends AmazonWebServiceRequest {
     /**
      * Sets the maximum number of jobs returned in the response. If there are
      * additional jobs that were not returned because MaxJobs was exceeded,
-     * the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     * the additional jobs, see Marker.
+     * the response contains <IsTruncated>true</IsTruncated>. To return the
+     * additional jobs, see Marker.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxJobs Sets the maximum number of jobs returned in the response. If there are
      *         additional jobs that were not returned because MaxJobs was exceeded,
-     *         the response contains &lt;IsTruncated>true&lt;/IsTruncated>. To return
-     *         the additional jobs, see Marker.
+     *         the response contains <IsTruncated>true</IsTruncated>. To return the
+     *         additional jobs, see Marker.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

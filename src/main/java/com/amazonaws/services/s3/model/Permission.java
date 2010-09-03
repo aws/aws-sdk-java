@@ -15,10 +15,11 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Represents an access permission, as granted to grantees in an
- * {@link AccessControlList}. Only a limited set of permission are available,
- * and each one is represented as a member of this enum.
- */
+ * Specifies constants defining an access permission,
+ * as granted to grantees in an
+ * {@link AccessControlList}. Only a limited set of permission are available;
+ * each one is represented as a value in this enumeration.
+*/
 public enum Permission {
 
     /**
@@ -26,29 +27,31 @@ public enum Permission {
      * <p>
      * It does not convey additional rights and is provided only for
      * convenience.
+     * </p>
      */
     FullControl("FULL_CONTROL"),
 
     /**
-     * When applied to a bucket, grants permission to list the bucket.
-     * <p>
-     * When applied to an object, grants permission to read the object data
-     * and/or metadata.
+     * Grants permission to list the bucket when applied to a bucket.
+     * Grants permission to read object data
+     * and/or metadata when applied to an object.
      */
     Read("READ"),
 
     /**
-     * When applied to a bucket, grants permission to create, overwrite, and
-     * delete any object in the bucket.
+     * Grants permission to create, overwrite, and
+     * delete any objects in the bucket.
      * <p>
      * This permission is not supported for objects.
+     * </p>
      */
     Write("WRITE"),
 
     /**
      * Grants permission to read the ACL for the applicable bucket or object.
      * <p>
-     * The owner of a bucket or object always has this permission implicitly.
+     * The owner of a bucket or object always implicitly has this permission.
+     * </p>
      */
     ReadAcp("READ_ACP"),
 
@@ -57,9 +60,11 @@ public enum Permission {
      * object.
      * <p>
      * The owner of a bucket or object always has this permission implicitly.
+     * </p>
      * <p>
-     * Granting this permission is equivalent to granting FULL_CONTROL because
+     * Granting this permission is equivalent to granting <code>FULL_CONTROL</code>because
      * the grant recipient can make any changes to the ACP.
+     * </p>
      */
     WriteAcp("WRITE_ACP");
     
@@ -70,23 +75,28 @@ public enum Permission {
     }
 
     /**
-     * Returns the string representation of this permission object as defined by
-     * Amazon S3, eg <tt>FULL_CONTROL</tt>
+     * Gets the string representation of this permission object as defined by
+     * Amazon S3, eg. <code>FULL_CONTROL</code>.
      * 
-     * @return the string representation of this permission object as defined by
-     *         Amazon S3, eg <tt>FULL_CONTROL</tt>
+     * @return The string representation of this permission object as defined by
+     *         Amazon S3, eg. <code>FULL_CONTROL</code>.
      */
     public String toString() {
         return permissionString;
     }
 
     /**
-     * @param str
-     *            a string representation of an S3 permission, eg
-     *            <tt>FULL_CONTROL</tt>
+     * Returns the {@link Permission} enumeration value representing the specified Amazon
+     * S3 Region ID string. If specified string doesn't map to a known Amazon S3
+     * Region, returns <code>null</code>.
      * 
-     * @return the Permission object represented by the given permission string,
-     *         or null if the string isn't a valid representation of an S3
+     * @param str
+     *            A string representation of an Amazon S3 permission, eg.
+     *            <code>FULL_CONTROL</code>
+     * 
+     * @return The {@link Permission} object represented by the given permission string,
+     *         Returns <code>null</code> if the string isn't a valid representation 
+     *         of an Amazon S3
      *         permission.
      */
     public static Permission parsePermission(String str) {

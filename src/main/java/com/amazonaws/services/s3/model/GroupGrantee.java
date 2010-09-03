@@ -15,8 +15,9 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Represents a group of Amazon S3 users who can be granted permissions to
- * Amazon S3 buckets and objects. This enum contains all the valid Amazon S3
+ * Specifies constants defining a group of Amazon S3 users 
+ * who can be granted permissions to
+ * Amazon S3 buckets and objects. This enumeration contains all the valid Amazon S3
  * group grantees.
  */
 public enum GroupGrantee implements Grantee {
@@ -26,17 +27,19 @@ public enum GroupGrantee implements Grantee {
      * be able to access the object by omitting the AWS Key ID and Signature
      * from a request.
      * <p>
-     * We highly recommend that you do not grant the AllUsers group write
-     * access to your buckets as you will have no control over the objects
+     * Amazon highly recommends that users do not grant the 
+     * <code>AllUsers</code> group write
+     * access to their buckets. If granted, users will have no control over the objects
      * others can store and their associated charges.
+     * </p>
      */
     AllUsers("http://acs.amazonaws.com/groups/global/AllUsers"),
 
     /**
      * Grants access to buckets or objects to anyone with an Amazon AWS account.
      * Although this is inherently insecure as any AWS user who is aware of the
-     * bucket or object will be able to access it, you might find this
-     * authentication method useful.
+     * bucket or object will be able to access it, users may find this authentication
+     * method useful.
      */
     AuthenticatedUsers("http://acs.amazonaws.com/groups/global/AuthenticatedUsers"),
 
@@ -56,14 +59,16 @@ public enum GroupGrantee implements Grantee {
     }
     
     /**
-     * Returns the group grantee's URI.
+     * Gets the group grantee's URI.
+     * 
+     * @return The group grantee's URI. 
      */
     public String getIdentifier() {
         return groupUri;
     }
 
     /**
-     * Unsupported operation. Group grantees have preset identifiers that cannot
+     * For internal use only. Group grantees have preset identifiers that cannot
      * be modified.
      */
     public void setIdentifier(String id) {
@@ -79,16 +84,19 @@ public enum GroupGrantee implements Grantee {
     }
 
     /**
-     * Returns the GroupGrantee with the specified Amazon S3 group URI (eg
-     * http://acs.amazonaws.com/groups/global/AllUsers) or null if an invalid
+     * Gets the {@link GroupGrantee} enumeration value
+     * with the specified Amazon S3 group URI (eg.
+     * http://acs.amazonaws.com/groups/global/AllUsers).
+     * Returns <code>null</code> if an invalid
      * Amazon S3 group URI is specified.
      * 
      * @param groupUri
-     *            a string representation of an Amazon S3 group URI, eg
-     *            <tt>http://acs.amazonaws.com/groups/global/AllUsers</tt>
+     *            A string representation of an Amazon S3 group URI (eg.
+     *            http://acs.amazonaws.com/groups/global/AllUsers)
      * 
-     * @return the GroupGrantee object represented by the given Amazon S3 group
-     *         URI string, or null if the string isn't a valid Amazon S3 group
+     * @return The {@link GroupGrantee} object represented by the given Amazon S3 group
+     *         URI string. Returns <code>null</code>
+     *         if the string isn't a valid Amazon S3 group
      *         URI.
      */
     public static GroupGrantee parseGroupGrantee(String groupUri) {

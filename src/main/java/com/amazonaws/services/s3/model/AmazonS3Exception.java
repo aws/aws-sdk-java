@@ -17,10 +17,11 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * Extension of AmazonServiceException for errors reported by Amazon S3 while
- * processing a request. In particular, this class provides access to S3's
- * extended request ID which is required debugging information in the odd case
- * that you need to contact Amazon about an issue where Amazon S3 is incorrectly
+ * Provides an extension of the AmazonServiceException 
+ * for errors reported by Amazon S3 while
+ * processing a request. In particular, this class provides access to Amazon S3's
+ * extended request ID.  This ID is required debugging information in the case
+ * the user needs to contact Amazon about an issue where Amazon S3 is incorrectly
  * handling a request.
  */
 public class AmazonS3Exception extends AmazonServiceException {
@@ -33,44 +34,52 @@ public class AmazonS3Exception extends AmazonServiceException {
 
 
     /**
-     * Constructs a new AmazonS3Exception with the specified message.
+     * Constructs a new {@link AmazonS3Exception} with the specified message.
      * 
      * @param message
      *            The error message describing why this exception was thrown.
+     *            
+     * @see AmazonS3Exception#AmazonS3Exception(String, Exception)           
      */
     public AmazonS3Exception(String message) {
         super(message);
     }
 
     /**
-     * Constructs a new AmazonS3Exception with the specified message and root
+     * Constructs a new {@link AmazonS3Exception} with the specified message and root
      * cause.
      * 
      * @param message
      *            The error message describing why this exception was thrown.
      * @param cause
      *            The root exception that caused this exception to be thrown.
+     *            
+     * @see AmazonS3Exception#AmazonS3Exception(String)             
      */
     public AmazonS3Exception(String message, Exception cause) {
         super(message, cause);
     }
 
     /**
-     * Returns S3's extended request ID that provides additional debugging
-     * information if you ever need to contact Amazon about S3 requests being
-     * incorrectly handled by the service.
+     * Gets Amazon S3's extended request ID. This ID is required debugging information in the case
+     * the user needs to contact Amazon about an issue where Amazon S3 is incorrectly
+     * handling a request.
      * 
-     * @return S3's extended request ID.
+     * @return Amazon S3's extended request ID.
+     * 
+     * @see AmazonS3Exception#setExtendedRequestId(String)
      */
     public String getExtendedRequestId() {
         return extendedRequestId;
     }
 
     /**
-     * Sets S3's extended request ID.
+     * Sets Amazon S3's extended request ID.
      * 
      * @param extendedRequestId
      *            S3's extended request ID.
+     *            
+     * @see AmazonS3Exception#getExtendedRequestId()           
      */
     public void setExtendedRequestId(String extendedRequestId) {
         this.extendedRequestId = extendedRequestId;

@@ -26,7 +26,7 @@ public class Item {
     private String name;
 
     /**
-     * <p/>
+     * 
      */
     private String alternateNameEncoding;
 
@@ -89,29 +89,29 @@ public class Item {
     
     
     /**
-     * <p/>
+     * 
      *
-     * @return <p/>
+     * @return 
      */
     public String getAlternateNameEncoding() {
         return alternateNameEncoding;
     }
     
     /**
-     * <p/>
+     * 
      *
-     * @param alternateNameEncoding <p/>
+     * @param alternateNameEncoding 
      */
     public void setAlternateNameEncoding(String alternateNameEncoding) {
         this.alternateNameEncoding = alternateNameEncoding;
     }
     
     /**
-     * <p/>
+     * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param alternateNameEncoding <p/>
+     * @param alternateNameEncoding 
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

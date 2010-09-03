@@ -17,27 +17,34 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Options for setting the logging configuration for a bucket. The bucket
- * logging configuration object controls whether server access logging is
- * enabled or not for the specified bucket, and if so the destination bucket
- * where server access logs are delivered (which may be the same bucket as the
- * source bucket), and the optional log file prefix.
+ * <p>
+ * Contains options for setting the logging configuration for a bucket. The bucket
+ * logging configuration object controls whether or not server access logging is
+ * enabled for the specified bucket.  If server access logging is enabled,
+ * this object provides options for specifying where the server
+ * access logs are delivered and the optional log file prefix.
+ * </p>
  * <p>
  * In order to deliver server access logs, the destination bucket must have log
- * delivery write permissions. You can use the
+ * delivery write permissions. Use the
  * {@link CannedAccessControlList#LogDeliveryWrite} ACL to quickly add the
- * correct permissions to your destination bucket, or you can modify the
+ * correct permissions to the destination bucket. Alternatively, modify the
  * bucket's existing ACL to grant the {@link GroupGrantee#LogDelivery} group
  * grantee the {@link Permission#Write} permission.
+ * </p>
  * <p>
  * Changes to the logging status for a bucket are visible in the configuration
- * API immediately, but they take time to actually affect the delivery of log
- * files. For example, if you enable logging for a bucket, some requests made in
- * the following hour might be logged, while others might not. Or, if you change
- * the target bucket for logging from bucket A to bucket B, some logs for the
- * next hour might continue to be delivered to bucket A, while others might be
- * delivered to the new target bucket B. In all cases, the new settings will
- * eventually take effect without any further action on your part.
+ * API immediately, but take time to actually affect the delivery of log
+ * files. For example, when enabling logging for a bucket, some requests made in
+ * the following hour might be logged while others might not. 
+ * For another example, when changing
+ * the target bucket for logging from bucket 'A' to bucket 'B', some logs for the
+ * next hour might continue to be delivered to bucket 'A.' Others might be
+ * delivered to the new target bucket 'B.' In all cases, the new settings will
+ * eventually take effect without any further action from the user.
+ * </p>
+ * 
+ * @see SetBucketLoggingConfigurationRequest#SetBucketLoggingConfigurationRequest(String, BucketLoggingConfiguration)
  */
 public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceRequest {
 
@@ -53,8 +60,15 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
 
     
     /**
+     * Constructs a new {@link SetBucketLoggingConfigurationRequest} 
+     * to set the bucket logging configuration of
+     * the specified bucket.
+     * 
      * @param bucketName
+     *            The name of the bucket whose logging configuration is being
+     *            set.
      * @param loggingConfiguration
+     *            The new logging configuration for the specified bucket.
      */
     public SetBucketLoggingConfigurationRequest(String bucketName, BucketLoggingConfiguration loggingConfiguration) {
         this.bucketName = bucketName;
@@ -62,9 +76,12 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
     }
 
     /**
-     * Returns the name of the bucket whose logging configuration is being set.
+     * Gets the name of the bucket whose logging configuration is being set.
      * 
      * @return The name of the bucket whose logging configuration is being set.
+     * 
+     * @see SetBucketLoggingConfigurationRequest#setBucketName(String)
+     * @see SetBucketLoggingConfigurationRequest#withLoggingConfiguration(BucketLoggingConfiguration)
      */
     public String getBucketName() {
         return bucketName;
@@ -76,22 +93,28 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
      * @param bucketName
      *            The name of the bucket whose logging configuration is being
      *            set.
+     *            
+     * @see SetBucketLoggingConfigurationRequest#getBucketName()
+     * @see SetBucketLoggingConfigurationRequest#withBucketName(String)            
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Sets the name of the bucket whose logging configuration is being set ,
-     * and returns the updated object so that additional method calls may be
+     * Sets the name of the bucket whose logging configuration is being set
+     * and returns this object, enabling additional method calls to be
      * chained together.
      * 
      * @param bucketName
      *            The name of the bucket whose logging configuration is being
      *            set.
      * 
-     * @return This SetBucketLoggingConfigurationRequest object so that
-     *         additional method calls may be chained together.
+     * @return This {@link SetBucketLoggingConfigurationRequest} object, enabling
+     *         additional method calls may to be chained together.
+     *         
+     * @see SetBucketLoggingConfigurationRequest#getBucketName()
+     * @see SetBucketLoggingConfigurationRequest#setBucketName(String)     
      */
     public SetBucketLoggingConfigurationRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -99,34 +122,43 @@ public class SetBucketLoggingConfigurationRequest extends AmazonWebServiceReques
     }
 
     /**
-     * Returns the new logging configuration for the specified bucket.
+     * Gets the logging configuration for the specified bucket.
      * 
-     * @return The new logging configuration for the specified bucket.
+     * @return The logging configuration for the specified bucket.
+     * 
+     * @see SetBucketLoggingConfigurationRequest#setLoggingConfiguration(BucketLoggingConfiguration)
+     * @see SetBucketLoggingConfigurationRequest#withLoggingConfiguration(BucketLoggingConfiguration)
      */
     public BucketLoggingConfiguration getLoggingConfiguration() {
         return loggingConfiguration;
     }
 
     /**
-     * Sets the new logging configuration for the specified bucket.
+     * Sets the logging configuration for the specified bucket.
      * 
      * @param loggingConfiguration
-     *            The new logging configuration for the specified bucket.
+     *            The logging configuration for the specified bucket.
+     *            
+     * @see SetBucketLoggingConfigurationRequest#getLoggingConfiguration()     
+     * @see SetBucketLoggingConfigurationRequest#withLoggingConfiguration(BucketLoggingConfiguration)
      */
     public void setLoggingConfiguration(BucketLoggingConfiguration loggingConfiguration) {
         this.loggingConfiguration = loggingConfiguration;
     }
 
     /**
-     * Sets the new logging configuration for the specified bucket, and returns
-     * the updated object so that additional method calls may be chained
+     * Sets the logging configuration for the specified bucket and returns
+     * the updated object, enabling additional method calls to be chained
      * together.
      * 
      * @param loggingConfiguration
-     *            The new logging configuration for the specified bucket.
+     *            The logging configuration for the specified bucket.
      * 
-     * @return This SetBucketLoggingConfigurationRequest object so that
-     *         additional method calls may be chained together.
+     * @return This {@link SetBucketLoggingConfigurationRequest} object, enabling
+     *         additional method calls to be chained together.
+     *         
+     * @see SetBucketLoggingConfigurationRequest#getLoggingConfiguration()
+     * @see SetBucketLoggingConfigurationRequest#setLoggingConfiguration(BucketLoggingConfiguration)
      */
     public SetBucketLoggingConfigurationRequest withLoggingConfiguration(BucketLoggingConfiguration loggingConfiguration) {
         setLoggingConfiguration(loggingConfiguration);

@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -18,48 +18,54 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
- * Returns a list of summary information about the objects in the specified
- * bucket, along with additional information depending on the request parameters
- * (such as common prefixes if a delimiter was specified). List results are
- * <b>always</b> returned in lexicographic (alphabetical) order.
  * <p>
- * Since buckets can contain a virtually unlimited number of keys, the complete
+ * Contains options to return a list of summary information about the objects in the specified
+ * bucket. Depending on the request parameters, additional information is returned,
+ * such as common prefixes if a delimiter was specified. List
+ * results are <i>always</i> returned in lexicographic (alphabetical) order.
+ * </p>
+ * <p>
+ * Buckets can contain a virtually unlimited number of keys, and the complete
  * results of a list query can be extremely large. To manage large result sets,
- * Amazon S3 uses pagination to split them into multiple responses. Callers
- * should always check the {@link ObjectListing#isTruncated()} method to see
+ * Amazon S3 uses pagination to split them into multiple responses.
+ * Always check the {@link ObjectListing#isTruncated()} method to see
  * if the returned listing is complete, or if callers need to make additional
- * calls to get more results. The marker parameter allows callers to specify
- * where to start the object listing. Alternatively, callers can use the
+ * calls to get more results. Alternatively, use the
  * {@link AmazonS3Client#listNextBatchOfObjects(ObjectListing)} method as an
  * easy way to get the next page of object listings.
+ * </p>
  * <p>
- * The delimiter parameter allows groups of keys that share a prefix terminated
- * by a special delimiter to be rolled-up by that common prefix in the returned
- * listing. This allows applications to organize and browse their keys
- * hierarchically, much like how you would organize your files into directories
- * in a file system. These common prefixes can be retrieved through the
- * {@link ObjectListing#getCommonPrefixes()} method.
+ * Calling {@link ListObjectsRequest#setDelimiter(String)}
+ * sets the delimiter, allowing groups of keys that share the
+ * delimiter-terminated prefix to be included
+ * in the returned listing. This allows applications to organize and browse
+ * their keys hierarchically, similar to how a file system organizes files
+ * into directories. These common prefixes can be retrieved
+ * through the {@link ObjectListing#getCommonPrefixes()} method.
+ * </p>
  * <p>
- * For example, consider a bucket that contains the keys:
+ * For example, consider a bucket that contains the following keys:
  * <ul>
- * <li>"foo/bar/baz"</li>
- * <li>"foo/bar/bash"</li>
- * <li>"foo/bar/bang"</li>
- * <li>"foo/boo"</li>
+ *  <li>"foo/bar/baz"</li>
+ *  <li>"foo/bar/bash"</li>
+ *  <li>"foo/bar/bang"</li>
+ *  <li>"foo/boo"</li>
  * </ul>
- * If you call listObjects with prefix="foo/" and delimiter="/" on this bucket,
- * you will get an S3ObjectListing back that contains one key ("foo/boo") and
- * one entry in the common prefixes list ("foo/bar/"). If you want to see deeper
- * into the virtual hierarchy, you can make another call to listObjects setting
- * the prefix parameter to any interesting common prefix to list the individual
- * keys under that prefix.
+ * If calling <code>listObjects</code> with
+ * a prefix value of "foo/" and a delimiter value of "/"
+ * on this bucket, an <code>ObjectListing</code> is returned that contains one key
+ * ("foo/boo") and one entry in the common prefixes list ("foo/bar/").
+ * To see deeper into the virtual hierarchy, make another
+ * call to <code>listObjects</code> setting the prefix parameter to any interesting
+ * common prefix to list the individual keys under that prefix.
+ * </p>
  * <p>
- * List performance is not substantially affected by the total number of keys in
- * your bucket, nor by the presence or absence of any additional query
- * parameters.
+ * The total number of keys in a bucket doesn't substantially affect list performance,
+ * nor does the presence or absence of additional request parameters.
+ * </p>
  */
 public class ListObjectsRequest extends AmazonWebServiceRequest {
-    
+
     /** The name of the Amazon S3 bucket to list. */
     private String bucketName;
 
@@ -74,7 +80,7 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     /**
      * Optional parameter indicating where in the bucket to begin listing. The
      * list will only include keys that occur lexicographically after the
-     * marker. This enables pagination: to get the next page of results use the
+     * marker. This enables pagination; to get the next page of results use the
      * current value from {@link ObjectListing#getNextMarker()} as the marker
      * for the next request to list objects.
      */
@@ -99,28 +105,33 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
      */
     private Integer maxKeys;
 
-    
+
     /**
-     * Constructs an empty ListObjectsRequest object. The caller must populate
-     * the fields before the request is ready to be executed.
+     * Constructs a new {@link ListObjectsRequest} object.
+     * The caller must populate
+     * the object fields before the request is ready to be executed.
+     *
+     * @see ListObjectsRequest#ListObjectsRequest(String, String, String, String, Integer)
      */
     public ListObjectsRequest() {}
 
     /**
-     * Constructs a new ListObjectsRequest object and initializes all required
-     * and optional fields.
-     * 
+     * Constructs a new {@link ListObjectsRequest} object and
+     * initializes all required and optional object fields.
+     *
      * @param bucketName
      *            The name of the bucket whose objects are to be listed.
      * @param prefix
      *            The prefix restricting what keys will be listed.
      * @param marker
-     *            The key marker indicating where results should begin.
+     *            The key marker indicating where listing results should begin.
      * @param delimiter
-     *            The delimiter for condensing common prefixes in returned
-     *            results.
+     *            The delimiter for condensing common prefixes in the returned
+     *            listing results.
      * @param maxKeys
      *            The maximum number of results to return.
+     *
+     * @see ListObjectsRequest#ListObjectsRequest()
      */
     public ListObjectsRequest(String bucketName, String prefix, String marker, String delimiter, Integer maxKeys) {
         setBucketName(bucketName);
@@ -130,11 +141,15 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
         setMaxKeys(maxKeys);
     }
 
-    
+
     /**
-     * Returns the name of the Amazon S3 bucket whose objects are to be listed.
-     * 
+     * Gets the name of the Amazon S3 bucket whose
+     * objects are to be listed.
+     *
      * @return The name of the Amazon S3 bucket whose objects are to be listed.
+     *
+     * @see ListObjectsRequest#setBucketName(String)
+     * @see ListObjectsRequest#withBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -142,26 +157,32 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the name of the Amazon S3 bucket whose objects are to be listed.
-     * 
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket whose objects are to be
      *            listed.
+     *
+     * @see ListObjectsRequest#getBucketName()
+     * @see ListObjectsRequest#withBucketName(String)
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Sets the name of the Amazon S3 bucket whose objects are to be listed, and
-     * returns this ListObjectsRequest object so that method calls can be
-     * chained together.
-     * 
+     * Sets the name of the Amazon S3 bucket whose objects are to be listed.
+     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * calls to be chained together.
+     *
      * @param bucketName
      *            The name of the Amazon S3 bucket whose objects are to be
      *            listed.
-     * 
-     * @return This ListObjectsRequest object so that method calls can be
-     *         chained together.
+     *
+     * @return This {@link ListObjectsRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see ListObjectsRequest#getBucketName()
+     * @see ListObjectsRequest#setBucketName(String)
      */
     public ListObjectsRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -169,41 +190,49 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the optional prefix parameter restricting the response to keys
-     * which begin with the specified prefix. You can use prefixes to separate a
-     * bucket into different sets of keys in a way similar to how a file system
-     * uses folders.
-     * 
+     * Gets the optional prefix parameter and restricts the response to keys
+     * that begin with the specified prefix. Use prefixes to separate a
+     * bucket into different sets of keys, similar to how a file system organizes files
+     * into directories.
+     *
      * @return The optional prefix parameter restricting the response to keys
-     *         which begin with the specified prefix.
+     *         that begin with the specified prefix.
+     *
+     * @see ListObjectsRequest#setPrefix(String)
      */
     public String getPrefix() {
         return prefix;
     }
 
     /**
-     * Sets the optional prefix parameter restricting the response to keys which
+     * Sets the optional prefix parameter, restricting the response to keys that
      * begin with the specified prefix.
-     * 
+     *
      * @param prefix
-     *            the optional prefix parameter restricting the response to keys
-     *            which begin with the specified prefix.
+     *            The optional prefix parameter, restricting the response to keys
+     *            that begin with the specified prefix.
+     *
+     * @see ListObjectsRequest#getPrefix()
      */
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
 
     /**
-     * Sets the optional prefix parameter restricting the response to keys which
-     * begin with the specified prefix, and returns this ListObjectsRequest
-     * object so that method calls may be chained together.
-     * 
+     * Sets the optional prefix parameter restricting the response to keys that
+     * begin with the specified prefix.
+     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * calls to be chained together.
+     *
      * @param prefix
-     *            the optional prefix parameter restricting the response to keys
-     *            which begin with the specified prefix.
-     * 
-     * @return This ListObjectsRequest object so that method calls may be
-     *         chained together.
+     *            The optional prefix parameter restricting the response to keys
+     *            that begin with the specified prefix.
+     *
+     * @return This {@link ListObjectsRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see ListObjectsRequest#getPrefix()
+     * @see ListObjectsRequest#setPrefix(String)
      */
     public ListObjectsRequest withPrefix(String prefix) {
         setPrefix(prefix);
@@ -211,45 +240,56 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the optional parameter indicating where in the bucket to begin
+     * Gets the optional marker parameter indicating where in the bucket to begin
      * listing. The list will only include keys that occur lexicographically
      * after the marker.
-     * 
-     * @return the optional parameter indicating where in the bucket to begin
+     *
+     * @return The optional marker parameter indicating where in the bucket to begin
      *         listing. The list will only include keys that occur
      *         lexicographically after the marker.
+     *
+     * @see ListObjectsRequest#setMarker(String)
+     * @see ListObjectsRequest#withMarker(String)
      */
     public String getMarker() {
         return marker;
     }
 
     /**
-     * Sets the optional parameter indicating where in the bucket to begin
+     * Sets the optional marker parameter indicating where in the bucket to begin
      * listing. The list will only include keys that occur lexicographically
      * after the marker.
-     * 
+     *
      * @param marker
-     *            the optional parameter indicating where in the bucket to begin
+     *            The optional marker parameter indicating where in the bucket to begin
      *            listing. The list will only include keys that occur
      *            lexicographically after the marker.
+     *
+     * @see ListObjectsRequest#getMarker()
+     * @see ListObjectsRequest#withMarker(String)
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
 
     /**
-     * Sets the optional parameter indicating where in the bucket to begin
-     * listing. The list will only include keys that occur lexicographically
-     * after the marker, and returns this ListObjectsRequest object so that
-     * method calls may be chained together.
-     * 
+     * Sets the optional marker parameter indicating where in the bucket to begin
+     * listing.
+     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * calls to be chained together.
+     * The list will only include keys that occur lexicographically
+     * after the marker.
+     *
      * @param marker
-     *            the optional parameter indicating where in the bucket to begin
+     *            The optional parameter indicating where in the bucket to begin
      *            listing. The list will only include keys that occur
      *            lexicographically after the marker.
-     * 
-     * @return This ListObjectsRequest object so that method calls may be
-     *         chained together.
+     *
+     * @return This {@link ListObjectsRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see ListObjectsRequest#getMarker()
+     * @see ListObjectsRequest#setMarker(String)
      */
     public ListObjectsRequest withMarker(String marker) {
         setMarker(marker);
@@ -257,18 +297,21 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the optional delimiter parameter that causes keys that contain
+     * Gets the optional delimiter parameter that causes keys that contain
      * the same string between the prefix and the first occurrence of the
-     * delimiter to be rolled up into a single result element in the
-     * {@link ObjectListing#getCommonPrefixes()} list. These rolled-up keys
+     * delimiter to be combined into a single result element in the
+     * {@link ObjectListing#getCommonPrefixes()} list. These combined keys
      * are not returned elsewhere in the response. The most commonly used
      * delimiter is "/", which simulates a hierarchical organization similar to
      * a file system directory structure.
-     * 
-     * @return the optional delimiter parameter that causes keys that contain
+     *
+     * @return The optional delimiter parameter that causes keys that contain
      *         the same string between the prefix and the first occurrence of
-     *         the delimiter to be rolled up into a single result element in the
+     *         the delimiter to be combined into a single result element in the
      *         {@link ObjectListing#getCommonPrefixes()} list.
+     *
+     * @see ListObjectsRequest#setDelimiter(String)
+     * @see ListObjectsRequest#withDelimiter(String)
      */
     public String getDelimiter() {
         return delimiter;
@@ -277,14 +320,17 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     /**
      * Sets the optional delimiter parameter that causes keys that contain the
      * same string between the prefix and the first occurrence of the delimiter
-     * to be rolled up into a single result element in the
+     * to be combined into a single result element in the
      * {@link ObjectListing#getCommonPrefixes()} list.
-     * 
+     *
      * @param delimiter
-     *            the optional delimiter parameter that causes keys that contain
+     *            The optional delimiter parameter that causes keys that contain
      *            the same string between the prefix and the first occurrence of
-     *            the delimiter to be rolled up into a single result element in
+     *            the delimiter to be combined into a single result element in
      *            the {@link ObjectListing#getCommonPrefixes()} list.
+     *
+     * @see ListObjectsRequest#getDelimiter()
+     * @see ListObjectsRequest#withDelimiter(String)
      */
     public void setDelimiter(String delimiter) {
         this.delimiter = delimiter;
@@ -294,17 +340,21 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
      * Sets the optional delimiter parameter that causes keys that contain the
      * same string between the prefix and the first occurrence of the delimiter
      * to be rolled up into a single result element in the
-     * {@link ObjectListing#getCommonPrefixes()} list, and returns this
-     * ListObjectsRequest object so that method calls may be chained together.
-     * 
+     * {@link ObjectListing#getCommonPrefixes()} list.
+     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * calls to be chained together.
+     *
      * @param delimiter
-     *            the optional delimiter parameter that causes keys that contain
+     *            The optional delimiter parameter that causes keys that contain
      *            the same string between the prefix and the first occurrence of
      *            the delimiter to be rolled up into a single result element in
      *            the {@link ObjectListing#getCommonPrefixes()} list.
-     * 
-     * @return This ListObjectsRequest object so that method calls may be
-     *         chained together.
+     *
+     * @return This {@link ListObjectsRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see ListObjectsRequest#getDelimiter()
+     * @see ListObjectsRequest#setDelimiter(String)
      */
     public ListObjectsRequest withDelimiter(String delimiter) {
         setDelimiter(delimiter);
@@ -312,41 +362,51 @@ public class ListObjectsRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the optional parameter indicating the maximum number of keys to
-     * include in the response. Amazon S3 might return fewer than this, but will
-     * not return more. Even if maxKeys is not specified, Amazon S3 will limit
-     * the number of results in the response.
-     * 
-     * @return the optional parameter indicating the maximum number of keys to
+     * Gets the optional <code>maxKeys</code> parameter indicating the maximum number of keys to
+     * include in the response. Amazon S3 might return fewer keys than specified, but will
+     * never return more. Even if the optional parameter is not specified,
+     * Amazon S3 will limit the number of results in the response.
+     *
+     * @return The optional parameter indicating the maximum number of keys to
      *         include in the response.
+     *
+     * @see ListObjectsRequest#setMaxKeys(Integer)
+     * @see ListObjectsRequest#withMaxKeys(Integer)
      */
     public Integer getMaxKeys() {
         return maxKeys;
     }
 
     /**
-     * Sets the optional parameter indicating the maximum number of keys to
+     * Sets the optional <code>maxKeys</code> parameter indicating the maximum number of keys to
      * include in the response.
-     * 
+     *
      * @param maxKeys
-     *            the optional parameter indicating the maximum number of keys
+     *            The optional parameter indicating the maximum number of keys
      *            to include in the response.
+     *
+     * @see ListObjectsRequest#getMaxKeys()
+     * @see ListObjectsRequest#withMaxKeys(Integer)
      */
     public void setMaxKeys(Integer maxKeys) {
         this.maxKeys = maxKeys;
     }
 
     /**
-     * Sets the optional parameter indicating the maximum number of keys to
-     * include in the response, and returns this ListObjectsRequest object so
-     * that method calls may be chained together.
-     * 
+     * Sets the optional <code>maxKeys</code> parameter indicating the maximum number of keys to
+     * include in the response.
+     * Returns this {@link ListObjectsRequest}, enabling additional method
+     * calls to be chained together.
+     *
      * @param maxKeys
-     *            the optional parameter indicating the maximum number of keys
+     *            The optional parameter indicating the maximum number of keys
      *            to include in the response.
-     * 
-     * @return This ListObjectsRequest object so that method calls may be
-     *         chained together.
+     *
+     * @return This {@link ListObjectsRequest}, enabling additional method
+     *         calls to be chained together.
+     *
+     * @see ListObjectsRequest#getMaxKeys()
+     * @see ListObjectsRequest#setMaxKeys(Integer)
      */
     public ListObjectsRequest withMaxKeys(Integer maxKeys) {
         setMaxKeys(maxKeys);

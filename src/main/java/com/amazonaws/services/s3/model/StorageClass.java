@@ -15,43 +15,50 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Amazon S3 offers multiple storage classes for customer's different needs. The
- * standard storage class is the default storage class, and means that several
- * redundant copies of your data will be stored in different locations.
  * <p>
- * The reduced redundancy storage class offers customers who are using Amazon S3
- * for storing non-critical, reproducible data a lower cost, highly available,
- * but less redundant storage option.
+ * Specifies constants that define Amazon S3 storage classes. The standard storage class
+ * is the default storage class.
+ * </p>
+ * <p>
+ * Amazon S3 offers multiple storage classes for different customers' needs. The
+ * <code>STANDARD</code> storage class is the default storage class, and means that
+ * redundant copies of data will be stored in different locations.
+ * </p>
+ * <p>
+ * The <code>REDUCED_REDUNDANCY</code> storage class offers customers who are using Amazon S3
+ * for storing non-critical, reproducible data a low-cost highly available,
+ * but less redundant, storage option.
+ * </p>
  */
 public enum StorageClass {
 
     /**
-     * Standard storage is the default Amazon S3 storage class, and is
-     * recommended for critical, non-reproducible data. The standard storage
-     * class offers a highly available and highly redundant storage option for
-     * an affordable price.
+     * The default Amazon S3 storage class. This storage class
+     * is recommended for critical, non-reproducible data.  The standard
+     * storage class is a highly available and highly redundant storage option
+     * provided for an affordable price.
      */
     Standard("STANDARD"),
 
     /**
-     * Reduced redundancy storage allows customers to reduce their storage costs
+     * The reduced redundancy storage class.
+     * This storage class allows customers to reduce their storage costs
      * in return for a reduced level of data redundancy. Customers who are using
-     * Amazon S3 for storing non-critical, reproducible data can now choose a
-     * lower cost, highly available, less redundant storage option.
+     * Amazon S3 for storing non-critical, reproducible data can choose this
+     * low cost and highly available, but less redundant, storage option.
      */
     ReducedRedundancy("REDUCED_REDUNDANCY");
 
-
     /**
-     * Returns the Amazon S3 storage class enum value representing the
-     * specified Amazon S3 storage class ID string. If specified string
-     * doesn't map to a known Amazon S3 storage class, then an
-     * IllegalArgumentException is thrown.
-     *
+     * Returns the Amazon S3 {@link StorageClass} enumeration value representing the
+     * specified Amazon S3 <code>StorageClass</code> ID string. 
+     * If the specified string doesn't map to a known Amazon S3 storage class, 
+     * an <code>IllegalArgumentException</code> is thrown.
+     * 
      * @param s3StorageClassString
      *            The Amazon S3 storage class ID string.
      *
-     * @return The Amazon S3 StorageClass enum value representing the
+     * @return The Amazon S3 <code>StorageClass</code> enumeration value representing the
      *         specified Amazon S3 storage class ID.
      *
      * @throws IllegalArgumentException
@@ -66,7 +73,6 @@ public enum StorageClass {
         throw new IllegalArgumentException(
                 "Cannot create enum from " + s3StorageClassString + " value!");
     }
-
 
     private final String storageClassId;
 

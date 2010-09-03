@@ -15,77 +15,85 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * CannedAccessControlLists are commonly used AccessControlLists that can be
- * used as a shortcut when applying an AccessControlList to Amazon S3 buckets
+ * Specifies constants defining a canned access control list.
+ * <p>
+ * Canned access control lists are commonly used access control lists (ACL) that can be
+ * used as a shortcut when applying an access control list to Amazon S3 buckets
  * and objects. Only a few commonly used configurations are available, but they
  * offer an alternative to manually creating a custom ACL. If more specific
- * access control is desired, you can create a custom {@link AccessControlList}.
+ * access control is desired, users can create a custom {@link AccessControlList}.
+ * </p>
  * 
  * @see AccessControlList
  */
 public enum CannedAccessControlList {
     /**
-     * Owner gets {@link Permission#FullControl}. No one else has access rights.
+     * Specifies the owner is granted {@link Permission#FullControl}. No one else has access rights.
      * <p>
      * This is the default access control policy for any new buckets or objects.
+     * </p>
      */
     Private("private"),
 
     /**
-     * Owner gets {@link Permission#FullControl} and the
+     * Specifies the owner is granted {@link Permission#FullControl} and the
      * {@link GroupGrantee#AllUsers} group grantee is granted
      * {@link Permission#Read} access.
      * <p>
-     * If this policy is used on an object, it can be read from a browser with
-     * no authentication.
+     * If this policy is used on an object, it can be read from a browser without
+     * authentication.
+     * </p>
      */
     PublicRead("public-read"),
 
     /**
-     * Owner gets {@link Permission#FullControl} and the
+     * Specifies the owner is granted {@link Permission#FullControl} and the
      * {@link GroupGrantee#AllUsers} group grantee is granted
      * {@link Permission#Read} and {@link Permission#Write} access.
      * <p>
-     * This can be a useful policy to apply to a bucket, but is generally not
-     * recommended.
+     * This access policy is not recommended for general use.
+     * </p>
      */
     PublicReadWrite("public-read-write"),
 
     /**
-     * Owner gets {@link Permission#FullControl} and the
+     * Specifies the owner is granted {@link Permission#FullControl} and the
      * {@link GroupGrantee#AuthenticatedUsers} group grantee is granted
      * {@link Permission#Read} access.
      */
     AuthenticatedRead("authenticated-read"),
 
     /**
-     * Owner gets {@link Permission#FullControl} and the
+     * Specifies the owner is granted {@link Permission#FullControl} and the
      * {@link GroupGrantee#LogDelivery} group grantee is granted
      * {@link Permission#Write} access so that access logs can be delivered.
      * <p>
-     * This is a useful access policy to use if you want to enable Amazon S3
-     * bucket logging for one of your buckets, since it requires a destination
-     * bucket with these permissions.
+     * Use this access policy to enable Amazon S3 bucket logging for a bucket.
+     * The destination bucket requires these permissions so that access logs can
+     * be delivered.
+     * </p>
      */
     LogDeliveryWrite("log-delivery-write"),
 
     /**
-     * The owner of the bucket (not necessarily the same as the owner of the
-     * object) gets {@link Permission#Read}.
+     * Specifies the owner of the bucket, but not necessarily the same as the owner of the
+     * object, is granted {@link Permission#Read}.
      * <p>
-     * This is a useful access policy if you need to upload objects to someone
-     * else's bucket and need to grant the bucket owner access to read the
-     * object, but don't want to give public read access for the object.
+     * Use this access policy when uploading objects to another owner's bucket.  
+     * This access policy grants the bucket owner read access to the object,
+     * but does not give read access for all users.
+     * </p>
      */
     BucketOwnerRead("bucket-owner-read"),
 
     /**
-     * The owner of the bucket (not necessarily the same as the owner of the
-     * object) gets {@link Permission#FullControl}.
+     * Specifies the owner of the bucket, but not necessarily the same as the owner of the
+     * object, is granted {@link Permission#FullControl}.
      * <p>
-     * This is a useful access policy if you need to upload objects to someone
-     * else's bucket and need to grant the bucket owner full access to the
-     * object, but don't want to give full access to all users.
+     * Use this access policy to upload objects to another owner's bucket.  This
+     * access policy grants the bucket owner full access to the object, but does
+     * not give full access to all users.
+     * </p>
      */
     BucketOwnerFullControl("bucket-owner-full-control");
     

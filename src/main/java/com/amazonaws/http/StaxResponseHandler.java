@@ -41,12 +41,6 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /** The StAX unmarshaller to use when handling the response */
     private Unmarshaller<T, StaxUnmarshallerContext> responseUnmarshaller;
 
-    /**
-     * The optional Xpath location of the AWS request ID field in a response. If
-     * not specified, the default request ID location will be used.
-     */
-    private String requestIdPath = null;
-
     /** Shared logger for profiling information */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
@@ -102,7 +96,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             unmarshallerContext.registerMetadataExpression("ResponseMetadata/RequestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             unmarshallerContext.registerMetadataExpression("requestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             registerAdditionalMetadataExpressions(unmarshallerContext);
-            
+
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
             awsResponse.setResult(result);
 
@@ -119,7 +113,7 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /**
      * Hook for subclasses to override in order to collect additional metadata
      * from service responses.
-     * 
+     *
      * @param unmarshallerContext
      *            The unmarshaller context used to process a service's response
      *            data.

@@ -22,7 +22,7 @@ import java.util.Map;
 import com.amazonaws.services.s3.Headers;
 
 /**
- * Represents the metadata that Amazon S3 stores for an object. This includes custom
+ * Represents the object metadata that is stored with Amazon S3. This includes custom
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
@@ -49,53 +49,66 @@ public class ObjectMetadata {
 
     /**
      * <p>
-     * Gets all the custom user metadata for the associated object.
+     * Gets the custom user-metadata for the associated object.
      * </p>
      * <p>
      * Amazon S3 can store additional metadata on objects by internally
-     * representing it as HTTP headers prefixed with "x-amz-meta-". Callers can
-     * use user metadata to store arbitrary metadata alongside their data in
-     * Amazon S3. When setting user metadata, callers <b>should not</b> include
-     * the internal "x-amz-meta-" prefix, as this library will handle that for
-     * them. Likewise, when callers retrieve custom user metadata, they will not
+     * representing it as HTTP headers prefixed with "x-amz-meta-". 
+     * Use user-metadata to store arbitrary metadata alongside their data in
+     * Amazon S3. When setting user metadata, callers <i>should not</i> include
+     * the internal "x-amz-meta-" prefix; this library will handle that for
+     * them. Likewise, when callers retrieve custom user-metadata, they will not
      * see the "x-amz-meta-" header prefix.
      * </p>
      * <p>
-     * Note that user metadata for an object is limited by the HTTP request
+     * Note that user-metadata for an object is limited by the HTTP request
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
      * </p>
      * 
-     * @return All the custom user metadata for the associated object.
+     * @return The custom user metadata for the associated object.
+     * 
+     * @see ObjectMetadata#setUserMetadata(Map)
+     * @see ObjectMetadata#addUserMetadata(String, String)   
      */
     public Map<String, String> getUserMetadata() {
         return userMetadata;
     }
 
     /**
-     * Sets the custom user metadata for the associated object.
+     * <p>
+     * Sets the custom user-metadata for the associated object.
+     * </p>
      * <p>
      * Amazon S3 can store additional metadata on objects by internally
-     * representing it as HTTP headers prefixed with "x-amz-meta-". Callers can
-     * use user metadata to store arbitrary metadata alongside their data in
-     * Amazon S3. When setting user metadata, callers <b>should not</b> include
-     * the internal "x-amz-meta-" prefix, as this library will handle that for
-     * them. Likewise, when callers retrieve custom user metadata, they will not
+     * representing it as HTTP headers prefixed with "x-amz-meta-". 
+     * Use user-metadata to store arbitrary metadata alongside their data in
+     * Amazon S3. When setting user metadata, callers <i>should not</i> include
+     * the internal "x-amz-meta-" prefix; this library will handle that for
+     * them. Likewise, when callers retrieve custom user-metadata, they will not
      * see the "x-amz-meta-" header prefix.
+     * </p>
      * <p>
-     * Note that user metadata for an object is limited by the HTTP request
+     * Note that user-metadata for an object is limited by the HTTP request
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
+     * </p>
      * 
      * @param userMetadata
-     *            The custom user metadata for the associated object.
+     *            The custom user-metadata for the associated object.
+     *            Note that the key
+     *            should not include
+     *            the internal S3 HTTP header prefix.
+     *            
+     * @see ObjectMetadata#getUserMetadata()
+     * @see ObjectMetadata#addUserMetadata(String, String)    
      */
     public void setUserMetadata(Map<String, String> userMetadata) {
         this.userMetadata = userMetadata;
     }
 
     /**
-     * <b>For internal use only</b>. Sets a specific metadata header value. Not
+     * For internal use only. Sets a specific metadata header value. Not
      * intended to be called by external code.
      * 
      * @param key
@@ -108,34 +121,42 @@ public class ObjectMetadata {
     }
 
     /**
-     * Adds the key value pair of custom user metadata for the associated
-     * object. If the entry in the custom user metadata map already contains the
+     * <p>
+     * Adds the key value pair of custom user-metadata for the associated
+     * object. If the entry in the custom user-metadata map already contains the
      * specified key, it will be replaced with these new contents.
+     * </p>
      * <p>
      * Amazon S3 can store additional metadata on objects by internally
-     * representing it as HTTP headers prefixed with "x-amz-meta-". Callers can
-     * use user metadata to store arbitrary metadata alongside their data in
-     * Amazon S3. When setting user metadata, callers <b>should not</b> include
-     * the internal "x-amz-meta-" prefix, as this library will handle that for
-     * them. Likewise, when callers retrieve custom user metadata, they will not
+     * representing it as HTTP headers prefixed with "x-amz-meta-". 
+     * Use user-metadata to store arbitrary metadata alongside their data in
+     * Amazon S3. When setting user metadata, callers <i>should not</i> include
+     * the internal "x-amz-meta-" prefix; this library will handle that for
+     * them. Likewise, when callers retrieve custom user-metadata, they will not
      * see the "x-amz-meta-" header prefix.
+     * </p>
      * <p>
-     * Note that user metadata for an object is limited by the HTTP request
+     * Note that user-metadata for an object is limited by the HTTP request
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
+     * </p>
      * 
      * @param key
-     *            The key for the custom user metadata entry (should not include
-     *            the internal S3 HTTP header prefix).
+     *            The key for the custom user metadata entry. Note that the key
+     *            should not include
+     *            the internal S3 HTTP header prefix.
      * @param value
-     *            The value for the custom user metadata entry.
+     *            The value for the custom user-metadata entry.
+     *            
+     * @see ObjectMetadata#setUserMetadata(Map)
+     * @see ObjectMetadata#getUserMetadata()
      */
     public void addUserMetadata(String key, String value) {
         this.userMetadata.put(key, value);
     }
 
     /**
-     * For <b>internal use only</b>. Returns a map of the raw metadata/headers
+     * For internal use only. Gets a map of the raw metadata/headers
      * for the associated object.
      * 
      * @return A map of the raw metadata/headers for the associated object.
@@ -145,19 +166,20 @@ public class ObjectMetadata {
     }
 
     /**
-     * Returns the value of the Last-Modified header, which indicates the date
+     * Gets the value of the Last-Modified header, indicating the date
      * and time at which Amazon S3 last recorded a modification to the
      * associated object.
      * 
      * @return The date and time at which Amazon S3 last recorded a modification
-     *         to the associated object, or null if it hasn't been set yet.
+     *         to the associated object. Returns <code>null</code> if 
+     *         the Last-Modified header hasn't been set.
      */
     public Date getLastModified() {
         return (Date)metadata.get(Headers.LAST_MODIFIED);
     }
 
     /**
-     * For <b>internal use only</b>. Sets the Last-Modified header value
+     * For internal use only. Sets the Last-Modified header value
      * indicating the date and time at which Amazon S3 last recorded a
      * modification to the associated object.
      * 
@@ -170,26 +192,29 @@ public class ObjectMetadata {
     }
 
     /**
-     * Returns the Content-Length HTTP header which indicates the size of the
+     * <p>
+     * Gets the Content-Length HTTP header indicating the size of the
      * associated object in bytes.
+     * </p>
      * <p>
      * This field is required when uploading objects to S3, but the AWS S3 Java
      * client will automatically set it when working directly with files. When
-     * uploading directly from a stream the caller should set this field if
-     * possible, otherwise the client will have to buffer the entire stream in
-     * order to calculate the content length before it can send the data to
+     * uploading directly from a stream, set this field if
+     * possible. Otherwise the client must buffer the entire stream in
+     * order to calculate the content length before sending the data to
      * Amazon S3.
+     * </p>
      * <p>
      * For more information on the Content-Length HTTP header, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     * </p>
      * 
-     * @return The Content-Length HTTP header, indicating the size of the
-     *         associated object in bytes, or null if it hasn't been set yet.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     * @return The Content-Length HTTP header indicating the size of the
+     *         associated object in bytes. Returns <code>null</code> 
+     *         if it hasn't been set yet.
+     *      
+     * @see ObjectMetadata#setContentLength(long)    
      */
     public long getContentLength() {
         Long contentLength = (Long)metadata.get(Headers.CONTENT_LENGTH);
@@ -199,119 +224,131 @@ public class ObjectMetadata {
     }
 
     /**
-     * Sets the Content-Length HTTP header which indicates the size of the
+     * <p>
+     * Sets the Content-Length HTTP header indicating the size of the
      * associated object in bytes.
+     * </p>
      * <p>
      * This field is required when uploading objects to S3, but the AWS S3 Java
      * client will automatically set it when working directly with files. When
-     * uploading directly from a stream the caller should set this field if
-     * possible, otherwise the client will have to buffer the entire stream in
-     * order to calculate the content length before it can send the data to
+     * uploading directly from a stream, set this field if
+     * possible. Otherwise the client must buffer the entire stream in
+     * order to calculate the content length before sending the data to
      * Amazon S3.
+     * </p>
      * <p>
      * For more information on the Content-Length HTTP header, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     * </p>
      * 
      * @param contentLength
-     *            The Content-Length HTTP header, indicating the size of the
+     *            The Content-Length HTTP header indicating the size of the
      *            associated object in bytes.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>
+     *      
+     * @see ObjectMetadata#getContentLength()         
      */
     public void setContentLength(long contentLength) {
         metadata.put(Headers.CONTENT_LENGTH, contentLength);
     }
 
     /**
-     * Returns the Content-Type HTTP header, which indicates the type of content
+     * <p>
+     * Gets the Content-Type HTTP header, which indicates the type of content
      * stored in the associated object. The value of this header is a standard
      * MIME type.
+     * </p>
      * <p>
      * When uploading files, the AWS S3 Java client will attempt to determine
      * the correct content type if one hasn't been set yet. Users are
      * responsible for ensuring a suitable content type is set when uploading
-     * streams. If no content type is provided, and cannot be determined by
-     * filename, then the default content type, "application/octet-stream", will
+     * streams. If no content type is provided and cannot be determined by
+     * the filename, the default content type, "application/octet-stream", will
      * be used.
+     * </p>
      * <p>
      * For more information on the Content-Type header, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
      * 
      * @return The HTTP Content-Type header, indicating the type of content
-     *         stored in the associated S3 object, or null if it hasn't been
+     *         stored in the associated S3 object. Returns <code>null</code> 
+     *         if it hasn't been
      *         set.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     *      
+     * @see ObjectMetadata#setContentType(String)     
      */
     public String getContentType() {
         return (String)metadata.get(Headers.CONTENT_TYPE);
     }
 
     /**
-     * Sets the Content-Type HTTP header, which indicates the type of content
+     * <p>
+     * Sets the Content-Type HTTP header indicating the type of content
      * stored in the associated object. The value of this header is a standard
      * MIME type.
+     * </p>
      * <p>
      * When uploading files, the AWS S3 Java client will attempt to determine
      * the correct content type if one hasn't been set yet. Users are
      * responsible for ensuring a suitable content type is set when uploading
-     * streams. If no content type is provided, and cannot be determined by
-     * filename, then the default content type, "application/octet-stream", will
+     * streams. If no content type is provided and cannot be determined by
+     * the filename, the default content type "application/octet-stream" will
      * be used.
+     * </p>
      * <p>
      * For more information on the Content-Type header, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     * </p>
      * 
      * @param contentType
-     *            The HTTP Content-Type header, indicating the type of content
+     *            The HTTP Content-Type header indicating the type of content
      *            stored in the associated S3 object.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.17</a>
+     *      
+     * @see ObjectMetadata#getContentType()        
      */
     public void setContentType(String contentType) {
         metadata.put(Headers.CONTENT_TYPE, contentType);
     }
 
     /**
-     * Returns the optional Content-Encoding HTTP header, which specifies what
-     * content encodings have been applied to the object, and thus what decoding
+     * <p>
+     * Gets the optional Content-Encoding HTTP header specifying what
+     * content encodings have been applied to the object and what decoding
      * mechanisms must be applied in order to obtain the media-type referenced
      * by the Content-Type field.
+     * </p>
      * <p>
      * For more information on how the Content-Encoding HTTP header works, see
      * <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     * </p>
      * 
-     * @return The HTTP Content-Encoding header, or null if it hasn't been set.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     * @return The HTTP Content-Encoding header. 
+     * Returns <code>null</code> if it hasn't been set.
+     *      
+     * @see ObjectMetadata#setContentType(String)
      */
     public String getContentEncoding() {
         return (String)metadata.get(Headers.CONTENT_ENCODING);
     }
 
     /**
-     * Sets the optional Content-Encoding HTTP header, which specifies what
-     * content encodings have been applied to the object, and thus what decoding
+     * <p>
+     * Sets the optional Content-Encoding HTTP header specifying what
+     * content encodings have been applied to the object and what decoding
      * mechanisms must be applied in order to obtain the media-type referenced
      * by the Content-Type field.
+     * </p>
      * <p>
      * For more information on how the Content-Encoding HTTP header works, see
      * <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     * </p>
      * 
      * @param encoding
      *            The HTTP Content-Encoding header, as defined in RFC 2616.
@@ -319,138 +356,163 @@ public class ObjectMetadata {
      * @see <a
      *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11"
      *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>
+     *      
+     * @see ObjectMetadata#getContentType()   
      */
     public void setContentEncoding(String encoding) {
         metadata.put(Headers.CONTENT_ENCODING, encoding);
     }
 
     /**
-     * Returns the optional Cache-Control HTTP header which allows the user to
+     * <p>
+     * Gets the optional Cache-Control HTTP header which allows the user to
      * specify caching behavior along the HTTP request/reply chain.
+     * </p>
      * <p>
      * For more information on how the Cache-Control HTTP header affects HTTP
-     * requests and responses see <a
+     * requests and responses, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     * </p>
      * 
-     * @return The HTTP Cache-Control header, as defined in RFC 2616, or null if
+     * @return The HTTP Cache-Control header as defined in RFC 2616. 
+     *         Returns <code>null</code>  if
      *         it hasn't been set.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     *  
+     * @see ObjectMetadata#setCacheControl(String)     
      */
     public String getCacheControl() {
         return (String)metadata.get(Headers.CACHE_CONTROL);
     }
 
     /**
+     * <p>
      * Sets the optional Cache-Control HTTP header which allows the user to
      * specify caching behavior along the HTTP request/reply chain.
+     * </p>
      * <p>
      * For more information on how the Cache-Control HTTP header affects HTTP
      * requests and responses see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     * </p>
      * 
      * @param cacheControl
-     *            The HTTP Cache-Control header, as defined in RFC 2616.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>
+     *            The HTTP Cache-Control header as defined in RFC 2616.
+     *      
+     * @see ObjectMetadata#getCacheControl()
      */
     public void setCacheControl(String cacheControl) {
         metadata.put(Headers.CACHE_CONTROL, cacheControl);
     }
 
     /**
+     * <p>
      * Sets the base64 encoded 128-bit MD5 digest of the associated object
      * (content - not including headers) according to RFC 1864. This data is
      * used as a message integrity check to verify that the data received by
      * Amazon S3 is the same data that the caller sent.
+     * </p>
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
      * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
      * S3.
+     * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
      * when uploading files to Amazon S3.
+     * </p>
      * 
      * @param md5Base64
      *            The base64 encoded MD5 hash of the content for the object
      *            associated with this metadata.
+     *            
+     * @see ObjectMetadata#getContentMD5()          
      */
     public void setContentMD5(String md5Base64) {
         metadata.put(Headers.CONTENT_MD5, md5Base64);
     }
 
     /**
-     * Returns the base64 encoded 128-bit MD5 digest of the associated object
+     * <p>
+     * Gets the base64 encoded 128-bit MD5 digest of the associated object
      * (content - not including headers) according to RFC 1864. This data is
      * used as a message integrity check to verify that the data received by
      * Amazon S3 is the same data that the caller sent.
+     * </p>
      * <p>
      * This field represents the base64 encoded 128-bit MD5 digest digest of an
      * object's content as calculated on the caller's side. The ETag metadata
      * field represents the hex encoded 128-bit MD5 digest as computed by Amazon
      * S3.
+     * </p>
      * <p>
      * The AWS S3 Java client will attempt to calculate this field automatically
      * when uploading files to Amazon S3.
+     * </p>
      * 
      * @return The base64 encoded MD5 hash of the content for the associated
-     *         object, or null if it hasn't been set.
+     *         object.  Returns <code>null</code> if the MD5 hash of the content
+     *         hasn't been set.
+     *         
+     * @see ObjectMetadata#setContentMD5(String)        
      */
     public String getContentMD5() {
         return (String)metadata.get(Headers.CONTENT_MD5);
     }
 
     /**
+     * <p>
      * Sets the optional Content-Disposition HTTP header, which specifies
      * presentational information such as the recommended filename for the
      * object to be saved as.
+     * </p>
      * <p>
      * For more information on how the Content-Disposition header affects HTTP
      * client behavior, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     * </p>
      * 
      * @param disposition
      *            The value for the Content-Disposition header.
-     * 
-     * @see <a
-     *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1"
-     *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     *      
+     * @see ObjectMetadata#getContentDisposition()    
      */
     public void setContentDisposition(String disposition) {
         metadata.put(Headers.CONTENT_DISPOSITION, disposition);
     }
 
     /**
-     * Returns the optional Content-Disposition HTTP header, which specifies
+     * <p>
+     * Gets the optional Content-Disposition HTTP header, which specifies
      * presentation information for the object such as the recommended filename
      * for the object to be saved as.
+     * </p>
      * <p>
      * For more information on how the Content-Disposition header affects HTTP
      * client behavior, see <a
      * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">
      * http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     * </p>
      * 
-     * @return The value of the Content-Disposition header, or null if it hasn't
-     *         been set.
+     * @return The value of the Content-Disposition header.
+     *         Returns <code>null</code> if the Content-Disposition header
+     *         hasn't been set.
      * 
      * @see <a
      *      href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1"
      *      >http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>
+     *      
+     * @see ObjectMetadata#setCacheControl(String)
      */
     public String getContentDisposition() {
         return (String)metadata.get(Headers.CONTENT_DISPOSITION);
     }
 
     /**
-     * Returns the hex encoded 128-bit MD5 digest of the associated object
+     * Gets the hex encoded 128-bit MD5 digest of the associated object
      * according to RFC 1864. This data is used as an integrity check to verify
      * that the data received by the caller is the same data that was sent by
      * Amazon S3.
@@ -458,20 +520,22 @@ public class ObjectMetadata {
      * This field represents the hex encoded 128-bit MD5 digest of an object's
      * content as calculated by Amazon S3. The ContentMD5 field represents the
      * base64 encoded 128-bit MD5 digest as calculated on the caller's side.
+     * </p>
      * 
      * @return The hex encoded MD5 hash of the content for the associated object
-     *         as calculated by Amazon S3, or null if it hasn't been set yet.
+     *         as calculated by Amazon S3.
+     *         Returns <code>null</code> if it hasn't been set yet.
      */
     public String getETag() {
         return (String)metadata.get(Headers.ETAG);
     }
 
     /**
-     * Returns the version ID of the associated Amazon S3 object, if available.
+     * Gets the version ID of the associated Amazon S3 object if available.
      * Version IDs are only assigned to objects when an object is uploaded to an
      * Amazon S3 bucket that has object versioning enabled.
      * 
-     * @return The version ID of the associated Amazon S3 object, if available.
+     * @return The version ID of the associated Amazon S3 object if available.
      */
     public String getVersionId() {
         return (String)metadata.get(Headers.S3_VERSION_ID);

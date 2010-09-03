@@ -17,11 +17,18 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Deletes the specified object in the specified bucket. Once deleted, the object
- * can only be restored if versioning was enabled when the object was deleted.
  * <p>
- * Note: If you delete an object that does not exist, Amazon S3 will return
- * a success (not an error message).
+ * Provides options for deleting a specified object in a specified bucket. 
+ * Once deleted, the object
+ * can only be restored if versioning was enabled when the object was deleted.
+ * </p>
+ * <p>
+ * Note: If deleting an object that does not exist, Amazon S3 returns
+ * a success message, not an error message.
+ * </p>
+ *
+ * @see deleteObject(String bucketName, String key)
+ * @see deleteObject(DeleteObjectRequest deleteObjectRequest)
  */
 public class DeleteObjectRequest extends AmazonWebServiceRequest {
 
@@ -37,8 +44,9 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest {
 
 
     /**
-     * Constructs a new DeleteObjectRequest, ready to be executed and delete the
-     * specified object.
+     * Constructs a new 
+     * {@link DeleteObjectRequest}, 
+     * specifying the object's bucket name and key.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
@@ -53,11 +61,13 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest {
 
 
     /**
-     * Returns the name of the Amazon S3 bucket containing the object to
+     * Gets the name of the Amazon S3 bucket containing the object to
      * delete.
      * 
-     * @return the name of the Amazon S3 bucket containing the object to
+     * @return The name of the Amazon S3 bucket containing the object to
      *         delete.
+     *         
+     * @see DeleteObjectRequest#setBucketName(String)       
      */
     public String getBucketName() {
         return bucketName;
@@ -69,22 +79,24 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest {
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
      *            delete.
+     * @see DeleteObjectRequest#getBucketName()               
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Sets the name of the Amazon S3 bucket containing the object to delete,
-     * and returns this object so that additional method calls may be chained
+     * Sets the name of the Amazon S3 bucket containing the object to delete
+     * and returns this object, enabling additional method calls to be chained
      * together.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket containing the object to
      *            delete.
      * 
-     * @return The updated DeleteObjectRequest object so that additional method
-     *         calls may be chained together.
+     * @return The updated {@link DeleteObjectRequest} 
+     *         object, enabling additional method
+     *         calls to be chained together.
      */
     public DeleteObjectRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -92,9 +104,11 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Returns the key of the object to delete.
+     * Gets the key of the object to delete.
      * 
      * @return The key of the object to delete.
+     * 
+     * @see DeleteObjectRequest#setKey(String)
      */
     public String getKey() {
         return key;
@@ -105,20 +119,22 @@ public class DeleteObjectRequest extends AmazonWebServiceRequest {
      * 
      * @param key
      *            The key of the object to delete.
+     *            
+     * @see DeleteObjectRequest#getKey()           
      */
     public void setKey(String key) {
         this.key = key;
     }
 
     /**
-     * Sets the key of the object to delete, and returns this object so that
-     * additional method calls may be chained together.
+     * Sets the key of the object to delete and returns this object, enabling
+     * additional method calls to be chained together.
      * 
      * @param key
      *            The key of the object to delete.
      * 
-     * @return The updated DeleteObjectRequest object so that additional method
-     *         calls may be chained together.
+     * @return The updated {@link DeleteObjectRequest} object, enabling additional method
+     *         calls to chained together.
      */
     public DeleteObjectRequest withKey(String key) {
         setKey(key);

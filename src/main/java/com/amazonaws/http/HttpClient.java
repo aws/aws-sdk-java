@@ -15,9 +15,8 @@
 package com.amazonaws.http;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
+import java.net.SocketException;
 import java.net.URI;
-import java.net.UnknownHostException;
 import java.util.Map.Entry;
 
 import org.apache.commons.httpclient.Header;
@@ -25,7 +24,6 @@ import org.apache.commons.httpclient.HostConfiguration;
 import org.apache.commons.httpclient.HttpConnectionManager;
 import org.apache.commons.httpclient.HttpMethod;
 import org.apache.commons.httpclient.HttpMethodBase;
-import org.apache.commons.httpclient.HttpMethodRetryHandler;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.MultiThreadedHttpConnectionManager;
 import org.apache.commons.httpclient.NameValuePair;
@@ -157,17 +155,19 @@ public class HttpClient {
         if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
             hostHeader += ":" + endpoint.getPort();
         }
-        method.addRequestHeader("Host", hostHeader);
+        method.addRequestHeader("Host", hostHeader);    
 
         // When we release connections, the connection manager leaves them
         // open so they can be reused.  We want to close out any idle
         // connections so that they don't sit around in CLOSE_WAIT.
         httpClient.getHttpConnectionManager().closeIdleConnections(1000 * 30);
 
+        requestLog.info("Sending Request: " + request.toString());
+        
         int retries = 0;
         while (true) {
             try {
-                requestLog.info("Sending Request: " + request.toString());
+                if (retries > 0) pauseExponentially(retries);
 
                 retries++;
                 int status = httpClient.executeMethod(method);
@@ -194,18 +194,16 @@ public class HttpClient {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
                     AmazonServiceException exception = handleErrorResponse(request, errorResponseHandler, method);
 
-                    if (shouldRetry(exception, retries)) {
-                        requestLog.info("Received retryable error response: " + status + ", retrying request...");
-                        pauseExponentially(retries);
-                    } else {
+                    if (!shouldRetry(method, exception, retries)) {
                         throw exception;
                     }
                 }
             } catch (IOException ioe) {
                 log.error("Unable to execute HTTP request: " + ioe.getMessage());
-
-                throw new AmazonClientException("Unable to execute HTTP request: "
-                        + ioe.getMessage(), ioe);
+                
+                if (!shouldRetry(method, ioe, retries)) {
+                    throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                }
             } finally {
                 /*
                  * Some response handlers need to manually manage the HTTP
@@ -237,17 +235,31 @@ public class HttpClient {
 
     /**
      * Returns true if a failed request should be retried.
-     *
+     * 
+     * @param method
+     *            The current HTTP method being executed.
      * @param exception
      *            The exception from the failed request.
      * @param retries
      *            The number of times the current request has been attempted.
-     *
+     * 
      * @return True if the failed request should be retried.
      */
-    private boolean shouldRetry(AmazonServiceException exception, int retries) {
+    private boolean shouldRetry(HttpMethod method, Exception exception, int retries) {
         if (retries > config.getMaxErrorRetry()) {
             return false;
+        }
+
+        if (!method.isRequestSent()) {
+            log.debug("Retrying on unsent request");
+            return true;
+        }
+        
+        if (exception instanceof NoHttpResponseException  
+            || exception instanceof SocketException) {
+            log.debug("Retrying on " + exception.getClass().getName() 
+                    + ": " + exception.getMessage());
+            return true;
         }
 
         /*
@@ -258,21 +270,24 @@ public class HttpClient {
          * retry limit we handle the error response as a non-retryable
          * error and go ahead and throw it back to the user as an exception.
          */
-        int statusCode = exception.getStatusCode();
-        if (statusCode == HttpStatus.SC_INTERNAL_SERVER_ERROR ||
-            statusCode == HttpStatus.SC_SERVICE_UNAVAILABLE) {
+        if (method.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
+            || method.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
             return true;
         }
+        
+        if (exception instanceof AmazonServiceException) {
+            AmazonServiceException ase = (AmazonServiceException)exception;
 
-        /*
-         * Throttling is reported as a 400 error from newer services. To try and
-         * smooth out an occasional throttling error, we'll pause and retry,
-         * hoping that the pause is long enough for the request to get through
-         * the next time.
-         */
-        if (statusCode == HttpStatus.SC_BAD_REQUEST &&
-            exception.getErrorCode().equals("Throttling")) {
-            return true;
+            /*
+             * Throttling is reported as a 400 error from newer services. To try
+             * and smooth out an occasional throttling error, we'll pause and
+             * retry, hoping that the pause is long enough for the request to
+             * get through the next time.
+             */
+            if (ase.getStatusCode() == HttpStatus.SC_BAD_REQUEST 
+                && ase.getErrorCode().equals("Throttling")) {
+                return true;
+            }
         }
 
         return false;
@@ -535,7 +550,6 @@ public class HttpClient {
         /* Set HTTP client parameters */
         HttpClientParams httpClientParams = new HttpClientParams();
         httpClientParams.setParameter(HttpMethodParams.USER_AGENT, userAgent);
-        httpClientParams.setParameter(HttpClientParams.RETRY_HANDLER, new RetryHandler());
 
         /* Set host configuration */
         HostConfiguration hostConfiguration = new HostConfiguration();
@@ -587,41 +601,10 @@ public class HttpClient {
         httpClient.setHostConfiguration(hostConfiguration);
     }
 
-    /**
-     * Implementation of HttpMethodRetryHandler that determines if a specific
-     * type of failure should be retried or not.
-     */
-    private final class RetryHandler implements HttpMethodRetryHandler {
-        public boolean retryMethod(HttpMethod method,
-                IOException exception, int executionCount) {
-            if (executionCount > 3) {
-                log.debug("Maximum Number of Retry attempts reached, will not retry");
-                return false;
-            }
-
-            log.debug("Retrying request. Attempt " + executionCount);
-            if (exception instanceof NoHttpResponseException) {
-                log.debug("Retrying on NoHttpResponseException");
-                return true;
-            }
-
-            if (exception instanceof InterruptedIOException) {
-                log.debug("Will not retry on InterruptedIOException", exception);
-                return false;
-            }
-
-            if (exception instanceof UnknownHostException) {
-                log.debug("Will not retry on UnknownHostException", exception);
-                return false;
-            }
-
-            if (!method.isRequestSent()) {
-                log.debug("Retrying on failed sent request");
-                return true;
-            }
-
-            return false;
-        }
+    @Override
+    protected void finalize() throws Throwable {
+        this.shutdown();
+        super.finalize();
     }
 
 }

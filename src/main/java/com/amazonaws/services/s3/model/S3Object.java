@@ -17,9 +17,12 @@ package com.amazonaws.services.s3.model;
 import java.io.InputStream;
 
 /**
- * Represents an object stored in Amazon S3, including the actual data content,
- * and the object metadata stored by Amazon S3 (such as Content-Type,
- * Content-Length, etc).
+ * Represents an object stored in Amazon S3. This object contains 
+ * the data content
+ * and the object metadata stored by Amazon S3, such as content type,
+ * content length, etc.
+ * 
+ * @see ObjectMetadata
  */
 public class S3Object {
     private static final long serialVersionUID = -2883501141593631181L;
@@ -39,11 +42,13 @@ public class S3Object {
 
     /**
      * Gets the metadata stored by Amazon S3 for this object. The
-     * S3ObjectMetadata object includes any custom user metadata supplied by the
+     * {@link ObjectMetadata} object includes any custom user metadata supplied by the
      * caller when the object was uploaded, as well as HTTP metadata such as
-     * Content-Length and Content-Type.
+     * content length and content type.
      * 
      * @return The metadata stored by Amazon S3 for this object.
+     * 
+     * @see S3Object#getObjectContent()
      */
     public ObjectMetadata getObjectMetadata() {
         return metadata;
@@ -51,11 +56,14 @@ public class S3Object {
 
     /**
      * Gets an input stream containing the contents of this object. Callers
-     * should be sure to close this input stream as soon as possible, since the
+     * should close this input stream as soon as possible, because the
      * object contents aren't buffered in memory and stream directly from Amazon
      * S3.
      * 
      * @return An input stream containing the contents of this object.
+     * 
+     * @see S3Object#getObjectMetadata()
+     * @see S3Object#setObjectContent(InputStream)
      */
     public InputStream getObjectContent() {
         return objectContent;
@@ -66,6 +74,8 @@ public class S3Object {
      * 
      * @param objectContent
      *            The input stream containing this object's contents.
+     *            
+     * @see S3Object#getObjectContent()        
      */
     public void setObjectContent(InputStream objectContent) {
         this.objectContent = objectContent;
@@ -75,6 +85,8 @@ public class S3Object {
      * Gets the name of the bucket in which this object is contained.
      * 
      * @return The name of the bucket in which this object is contained.
+     * 
+     * @see S3Object#setBucketName(String)     
      */
     public String getBucketName() {
         return bucketName;
@@ -85,6 +97,8 @@ public class S3Object {
      * 
      * @param bucketName
      *            The name of the bucket containing this object.
+     *            
+     * @see S3Object#getBucketName()      
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -94,6 +108,8 @@ public class S3Object {
      * Gets the key under which this object is stored.
      * 
      * @return The key under which this object is stored.
+     * 
+     * @see S3Object#setKey(String)
      */
     public String getKey() {
         return key;
@@ -104,6 +120,8 @@ public class S3Object {
      * 
      * @param key
      *            The key under which this object is stored.
+     *            
+     * @see S3Object#getKey()           
      */
     public void setKey(String key) {
         this.key = key;

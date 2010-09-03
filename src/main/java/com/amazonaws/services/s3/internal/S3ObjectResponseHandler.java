@@ -27,8 +27,7 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
     /**
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */
-    public AmazonWebServiceResponse<S3Object> handle(HttpResponse response)
-            throws Exception {
+    public AmazonWebServiceResponse<S3Object> handle(HttpResponse response) throws Exception {
         /*
          * TODO: It'd be nice to set the bucket name and key here, but the
          *       information isn't easy to pull out of the response/request

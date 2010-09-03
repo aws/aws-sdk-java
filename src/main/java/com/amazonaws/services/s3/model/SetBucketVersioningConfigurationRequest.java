@@ -18,40 +18,53 @@ import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.s3.internal.Constants;
 
 /**
- * Options for setting the versioning configuration for a bucket.
+ * <p>
+ * Contains options for setting the versioning configuration for a bucket.
+ * </p>
  * <p>
  * A bucket's versioning configuration can be in one of three possible states:
  * <ul>
- * <li>{@link BucketVersioningConfiguration#OFF}
- * <li>{@link BucketVersioningConfiguration#ENABLED}
- * <li>{@link BucketVersioningConfiguration#SUSPENDED}
+ *  <li>{@link BucketVersioningConfiguration#OFF}
+ *  <li>{@link BucketVersioningConfiguration#ENABLED}
+ *  <li>{@link BucketVersioningConfiguration#SUSPENDED}
  * </ul>
+ * </p>
  * <p>
- * By default, new buckets always start off in the
- * {@link BucketVersioningConfiguration#OFF off} state. Once versioning is
- * enabled for a bucket the status can never be reverted to
+ * By default, new buckets are created in the
+ * {@link BucketVersioningConfiguration#OFF} state. Once versioning is
+ * enabled for a bucket, its status can never be reverted to
  * {@link BucketVersioningConfiguration#OFF off}.
+ * </p>
  * <p>
- * Objects created before versioning was enabled or when versioning is suspended
- * will be given the default/null version ID (see
+ * Objects created before versioning is enabled or while versioning is suspended
+ * will be given the default <code>null</code> version ID (see
  * {@link Constants#NULL_VERSION_ID}). Note that the
- * {@link Constants#NULL_VERSION_ID} is a valid version ID and is not the same
- * as not having a version ID.
+ * <code>null</code> version ID is a valid version ID and is not the same
+ * as having no version ID.
+ * </p>
  * <p>
  * The versioning configuration of a bucket has different implications for each
- * operation performed on that bucket or for objects within that bucket. For
- * instance, when versioning is enabled, a PutObject operation creates a unique
- * object version-id for the object being uploaded. The PutObject API guarantees
- * that, if versioning is enabled for a bucket at the time of the request, the
- * new object can only be permanently deleted using the DeleteVersion operation.
- * It can never be overwritten. Additionally, PutObject guarantees that, if
- * versioning is enabled for a bucket the request, no other object will be
- * overwritten by that request. Refer to the documentation sections for each API
+ * operation performed on that bucket or for objects within that bucket. When 
+ * versioning is enabled, a <code>PutObject</code> operation creates a unique
+ * object version ID for the object being uploaded. The <code>PutObject</code> operation
+ * guarantees that if versioning is enabled for a bucket at the time of the request, the
+ * new object can only be permanently deleted by calling the <code>DeleteVersion</code> operation
+ * and can never be overwritten.
+ * </p>
+ * <p>
+ * Additionally, the <code>PutObject</code> operation guarantees that if
+ * versioning is enabled for a bucket at the time of the request, no other object will be
+ * overwritten by that request. Refer to the documentation sections for individual APIs
  * for information on how versioning status affects the semantics of that
  * particular API.
+ * </p>
  * <p>
- * S3 is eventually consistent. It may take time for the versioning status of a
+ * Amazon S3 is eventually consistent. It may take time for the versioning status of a
  * bucket to be propagated throughout the system.
+ * </p>
+ * 
+ * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)
+ * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)
  */
 public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceRequest {
     
@@ -74,7 +87,8 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     private MultiFactorAuthentication mfa;
     
     /**
-     * Constructs a new request to set the bucket versioning configuration of
+     * Constructs a new {@link SetBucketVersioningConfigurationRequest} 
+     * to set the bucket versioning configuration of
      * the specified bucket.
      * 
      * @param bucketName
@@ -82,6 +96,8 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      *            set.
      * @param configuration
      *            The new versioning configuration for the specified bucket.
+     *            
+     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration, MultiFactorAuthentication)          
      */
     public SetBucketVersioningConfigurationRequest(
             String bucketName, BucketVersioningConfiguration configuration) {
@@ -90,7 +106,8 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Constructs a new request to set the bucket versioning configuration of
+     * Constructs a new {@link SetBucketVersioningConfigurationRequest} 
+     * to set the bucket versioning configuration of
      * the specified bucket, including the specified Multi-Factor Authentication
      * (MFA) information, which is required when changing the state of the MFA
      * Delete option.
@@ -103,6 +120,8 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * @param mfa
      *            The Multi-Factor Authentication information to include in this
      *            request.
+     *            
+     * @see SetBucketVersioningConfigurationRequest#SetBucketVersioningConfigurationRequest(String, BucketVersioningConfiguration)           
      */
     public SetBucketVersioningConfigurationRequest(
             String bucketName, BucketVersioningConfiguration configuration, 
@@ -113,11 +132,13 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
 
     
     /**
-     * Returns the name of the bucket whose versioning configuration is being
+     * Gets the name of the bucket whose versioning configuration is being
      * set.
      * 
      * @return The name of the bucket whose versioning configuration is being
      *         set.
+     *         
+     * @see SetBucketVersioningConfigurationRequest#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -129,6 +150,8 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * @param bucketName
      *            The name of the bucket whose versioning configuration is being
      *            set.
+     *            
+     * @see SetBucketVersioningConfigurationRequest#getBucketName()           
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -143,8 +166,10 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      *            The name of the bucket whose versioning configuration is being
      *            set.
      * 
-     * @return This SetBucketVersioningConfigurationRequest object so that
+     * @return This {@link SetBucketVersioningConfigurationRequest} object so that
      *         additional method calls may be chained together.
+     *         
+     * @see SetBucketVersioningConfigurationRequest#setBucketName(String)       
      */
     public SetBucketVersioningConfigurationRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -152,9 +177,12 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Returns the new versioning configuration for the specified bucket.
+     * Gets the new versioning configuration for the specified bucket.
      * 
      * @return The new versioning configuration for the specified bucket.
+     * 
+     * @see SetBucketVersioningConfigurationRequest#setVersioningConfiguration(BucketVersioningConfiguration)
+     * @see SetBucketVersioningConfigurationRequest#withVersioningConfiguration(BucketVersioningConfiguration)
      */
     public BucketVersioningConfiguration getVersioningConfiguration() {
         return versioningConfiguration;
@@ -165,6 +193,9 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * 
      * @param versioningConfiguration
      *            The new versioning configuration for the specified bucket.
+     *            
+     * @see SetBucketVersioningConfigurationRequest#getVersioningConfiguration()           
+     * @see SetBucketVersioningConfigurationRequest#withVersioningConfiguration(BucketVersioningConfiguration)
      */
     public void setVersioningConfiguration(
             BucketVersioningConfiguration versioningConfiguration) {
@@ -172,15 +203,18 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Sets the new versioning configuration for the specified bucket, and
-     * returns this object so that additional method calls may be chained
+     * Sets the new versioning configuration for the specified bucket and
+     * returns this object, enabling additional method calls to be chained
      * together.
      * 
      * @param versioningConfiguration
      *            The new versioning configuration for the specified bucket.
      * 
-     * @return This SetBucketVersioningConfigurationRequest object so that
+     * @return This {@link SetBucketVersioningConfigurationRequest} object, enabling that
      *         additional method calls may be chained together.
+     *         
+     * @see SetBucketVersioningConfigurationRequest#getVersioningConfiguration()  
+     * @see SetBucketVersioningConfigurationRequest#getVersioningConfiguration()               
      */
     public SetBucketVersioningConfigurationRequest withVersioningConfiguration(
             BucketVersioningConfiguration versioningConfiguration) {
@@ -189,17 +223,24 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
     }
 
     /**
-     * Returns the optional Multi-Factor Authentication information included
+     * <p>
+     * Gets the optional Multi-Factor Authentication information included
      * with this request.
+     * </p>
      * <p>
      * Multi-Factor Authentication is required when enabling or disabling MFA
      * Delete functionality for a bucket.
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @return The optional Multi-Factor Authentication information included
      *         with this request.
+     *         
+     * @see SetBucketVersioningConfigurationRequest#setMfa(MultiFactorAuthentication)
+     * @see SetBucketVersioningConfigurationRequest#withMfa(MultiFactorAuthentication)
      */
     public MultiFactorAuthentication getMfa() {
         return mfa;
@@ -211,13 +252,18 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * <p>
      * Multi-Factor Authentication is required when enabling or disabling MFA
      * delete functionality for a bucket.
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @param mfa
      *            The optional Multi-Factor Authentication information to
      *            include with this request.
+     *            
+     * @see SetBucketVersioningConfigurationRequest#getMfa()
+     * @see SetBucketVersioningConfigurationRequest#withMfa(MultiFactorAuthentication)
      */
     public void setMfa(MultiFactorAuthentication mfa) {
         this.mfa = mfa;
@@ -230,9 +276,11 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * <p>
      * Multi-Factor Authentication is required when enabling or disabling MFA
      * delete functionality for a bucket.
+     * </p>
      * <p>
      * See {@link BucketVersioningConfiguration#setMfaDeleteEnabled(Boolean)}
      * for more information on MFADelete.
+     * </p>
      * 
      * @param mfa
      *            The optional Multi-Factor Authentication information to
@@ -240,6 +288,9 @@ public class SetBucketVersioningConfigurationRequest extends AmazonWebServiceReq
      * 
      * @return The updated SetBucketVersioningConfigurationRequest object so
      *         that additional method calls may be chained together.
+     *         
+     * @see SetBucketVersioningConfigurationRequest#getMfa()
+     * @see SetBucketVersioningConfigurationRequest#setMfa(MultiFactorAuthentication)       
      */
     public SetBucketVersioningConfigurationRequest withMfa(MultiFactorAuthentication mfa) {
         setMfa(mfa);

@@ -98,12 +98,12 @@ public class VersionListing {
     private String delimiter;
 
     /**
-     * Returns the list of version summaries describing the versions stored in
+     * Gets the list of version summaries describing the versions stored in
      * the associated S3 bucket. Callers should remember that listings for large
      * buckets can be truncated for performance reasons, so callers might need
      * to make additional calls to
      * {@link AmazonS3#listVersions(ListVersionsRequest)} to get additional
-     * results. Callers should always check the {@link #isTruncated()} method to
+     * results. Callers should always check {@link VersionListing#isTruncated()} to
      * determine if a listing is truncated or not.
      * 
      * @return A list of the version summaries describing the versions stored in
@@ -114,7 +114,7 @@ public class VersionListing {
     }
 
     /**
-     * Not intended for direct use by callers. Sets the list of version
+     * For internal use only. Sets the list of version
      * summaries describing the versions stored in the associated S3 bucket.
      * 
      * @param versionSummaries
@@ -126,36 +126,39 @@ public class VersionListing {
     }
 
     /**
-     * Returns the common prefixes included in this version listing. Common
+     * Gets the common prefixes included in this version listing. Common
      * prefixes are only present if a delimiter was specified in the original
      * request.
      * <p>
      * Each common prefix represents a set of keys in the S3 bucket that have
      * been condensed and omitted from the version summary results. This allows
-     * applications to organize and browse their keys hierarchically, much like
-     * how a file system organizes files into directories.
+     * applications to organize and browse their keys hierarchically, 
+     * similar to how a file system organizes files
+     * into directories.
      * <p>
      * For example, consider a bucket that contains the keys:
      * <ul>
-     * <li>"foo/bar/baz"</li>
-     * <li>"foo/bar/bash"</li>
-     * <li>"foo/bar/bang"</li>
-     * <li>"foo/boo"</li>
+     *  <li>"foo/bar/baz"</li>
+     *  <li>"foo/bar/bash"</li>
+     *  <li>"foo/bar/bang"</li>
+     *  <li>"foo/boo"</li>
      * </ul>
-     * If you call listVersions with prefix="foo/" and delimiter="/" on this
-     * bucket, the returned S3VersionListing will contain one entry in the
+     * If calling <code>listVersions</code> with a prefix value of "foo/" and a delimiter
+     * value of "/" on this
+     * bucket, the returned <code>VersionListing</code> will contain one entry in the
      * common prefixes list ("foo/bar/") and none of the keys beginning with
      * that common prefix will be included in the version summaries list.
+     * </p>
      * 
-     * @return The list of common prefixes included in this version listing,
-     *         which might be an empty list if no common prefixes were found.
+     * @return The list of common prefixes included in this version listing.
+     *         Returns an empty list if no common prefixes are found.
      */
     public List<String> getCommonPrefixes() {
         return commonPrefixes;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the common prefixes for this
+     * For internal use only. Sets the common prefixes for this
      * version listing, representing the key prefixes that were rolled up
      * because of the request's delimiter parameter.
      * 
@@ -167,8 +170,8 @@ public class VersionListing {
     }
 
     /**
-     * Returns the name of the Amazon S3 bucket containing the versions listed
-     * in this S3VersionListing.
+     * Gets the name of the Amazon S3 bucket containing the versions listed
+     * in this {@link VersionListing}.
      * 
      * @return The name of the Amazon S3 bucket containing the versions listed
      *         in this S3VersionListing.
@@ -178,7 +181,7 @@ public class VersionListing {
     }
 
     /**
-     * Not intended for direct use by callers. Sets the name of the Amazon S3
+     * For internal use only. Sets the name of the Amazon S3
      * bucket containing the versions listed in this S3VersionListing.
      * 
      * @param bucketName
@@ -191,18 +194,18 @@ public class VersionListing {
 
     /**
      * The prefix parameter originally used to request this version listing, or
-     * null if no prefix was specified. All object keys included in this version
+     * <code>null</code> if no prefix was specified. All object keys included in this version
      * listing start with the specified prefix.
      * 
      * @return The prefix parameter originally used to request this version
-     *         listing, or null if no prefix was specified.
+     *         listing, or <code>null</code> if no prefix was specified.
      */
     public String getPrefix() {
         return prefix;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the prefix parameter
+     * For internal use only. Sets the prefix parameter
      * originally used to request this version listing.
      * 
      * @param prefix
@@ -215,19 +218,19 @@ public class VersionListing {
 
     /**
      * The key marker parameter originally used to request this version listing,
-     * or null if no key marker was specified. If specified, all object keys
+     * or <code>null</code> if no key marker was specified. If specified, all object keys
      * included in this version listing will occur lexically (alphabetically)
      * after the specified key marker.
      * 
      * @return The key marker parameter originally used to request this version
-     *         listing, or null if no key marker was specified.
+     *         listing, or <code>null</code> if no key marker was specified.
      */
     public String getKeyMarker() { 
         return keyMarker; 
     }
 
     /**
-     * Not intended for direct use by callers. Sets the key marker parameter
+     * For internal use only. Sets the key marker parameter
      * originally used to request this version listing.
      * 
      * @param keyMarker
@@ -239,18 +242,18 @@ public class VersionListing {
     }
 
     /**
-     * The version ID marker parameter originally used to request this version
-     * listing, or null if no version ID marker was specified.
+     * Gets the value of the version ID marker parameter used to request this version
+     * listing. Returns <code>null</code> if no version ID marker was otherwise specified.
      * 
      * @return The version ID marker parameter originally used to request this
-     *         version listing, or null if no version ID marker was specified.
+     *         version listing. Returns <code>null</code> if no version ID marker otherwise was specified.
      */
     public String getVersionIdMarker() {
         return versionIdMarker; 
     }
 
     /**
-     * Not intended for direct use by callers. Sets the version ID marker
+     * For internal use only. Sets the version ID marker
      * parameter originally used to request this version listing.
      * 
      * @param versionIdMarker
@@ -262,23 +265,26 @@ public class VersionListing {
     }
 
     /**
-     * Returns the maxKeys parameter originally used to request this version
-     * listing, or the default maxKeys value provided by Amazon S3 if the
-     * requester didn't specify a value. The maxKeys parameter limits the number
+     * Gets the value of the <code>maxKeys</code> parameter used to request this version
+     * listing.  Returns the default <code>maxKeys</code> value provided by Amazon S3 if no
+     * parameter value was otherwise specified.
+     * <p>
+     * The <code>maxKeys</code> parameter limits the number
      * of versions included in this version listing. A version listing will
-     * never contain more versions than indicated by the maxKeys, but can of
-     * course contain less.
+     * never contain more versions than indicated by <code>maxKeys</code> , but can
+     * contain less.
+     * </p>
      * 
-     * @return The maxKeys parameter originally used to request this version
-     *         listing, or the default maxKeys value applied by Amazon S3 if the
-     *         requester didn't specify a value.
+     * @return The value of the <code>maxKeys</code> parameter used to request this version
+     *         listing.  Returns the default <code>maxKeys</code> value provided by Amazon S3 if no
+     *         parameter value was otherwise specified.
      */
     public int getMaxKeys() {
         return maxKeys;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the maxKeys parameter
+     * For internal use only. Sets the maxKeys parameter
      * originally used to request this object listing, or the default maxKeys
      * applied by Amazon S3 if the requester didn't specify a value.
      * 
@@ -292,24 +298,27 @@ public class VersionListing {
     }
 
     /**
-     * Returns the delimiter parameter originally used to request this version
-     * listing, or null if none was specified. The delimiter value allows
+     * Gets the value of the <code>delimiter</code> parameter used to request this version
+     * listing. Returns <code>null</code> if no parameter value was otherwise specified. 
+     * <p>
+     * The delimiter value allows
      * callers to condense S3 keys into common prefix listings. For example, if
      * a caller specifies a delimiter of "/" (a common used value for
      * delimiter), then any keys that contain a common prefix between the start
      * of the key and the first occurrence of "/" will not be included in the
-     * list of object summaries, but instead, the common prefixes list will have
+     * list of object summaries; instead, the common prefixes list will have
      * one entry for the common prefix.
+     * </p>
      * 
      * @return The delimiter parameter originally used to request this version
-     *         listing, or null if none was specified.
+     *         listing, or <code>null</code> if none was specified.
      */
     public String getDelimiter() {
         return delimiter;
     }
 
     /**
-     * Not intended for direct use by callers. Sets the delimiter parameter
+     * For internal use only. Sets the delimiter parameter
      * originally used to request this version listing.
      * 
      * @param delimiter
@@ -321,25 +330,25 @@ public class VersionListing {
     }
 
     /**
-     * For truncated version listings (see
-     * {@link VersionListing#isTruncated()}) returns the key marker to use in
-     * the next listVersions request in order to see the next page of results.
-     * If a version listing is not truncated, this method will return null
-     * since there is no need for a next key marker. For truncated requests,
+     * Gets the key marker to use in
+     * the next <code>listVersions</code> request in order to obtain the next page of results.
+     * Returns <code>null</code> if the version listing is not truncated.
+     * For truncated requests,
      * this value is equal to the greatest (lexicographically) value of the
      * object keys included in this listing.
      * 
-     * @return The key marker to use in the next listVersions request in order
-     *         to see the next page of results if this version listing is
-     *         truncated, otherwise null if this version listing isn't
-     *         truncated.
+     * @return The key marker to use in
+     *         the next <code>listVersions</code> request in order to obtain the next page of results.
+     *         Returns <code>null</code> if the version listing is not truncated.
+     *         
+     * @see VersionListing#isTruncated()
      */
     public String getNextKeyMarker() { 
         return nextKeyMarker; 
     }
 
     /**
-     * Not intended for direct use by callers. Sets the key marker to use in the
+     * For internal use only. Sets the key marker to use in the
      * next listVersions request in order to see the next page of results for a
      * truncated version listing.
      * 
@@ -353,29 +362,28 @@ public class VersionListing {
     }
 
     /**
-     * For truncated version listings (see
-     * {@link VersionListing#isTruncated()}) returns the version ID marker to
-     * use in the next listVersions request in order to see the next page of
-     * results. If a version listing is not truncated, this method will return
-     * null since there is no need for a next version ID marker.
+     * Gets the version ID marker to
+     * use in the next <code>listVersions</code> request in order to obtain the next page of
+     * results. Returns <code>null</code> if the version listing is not truncated.
      * 
-     * @return The version ID marker to use in the next listVersions request in
-     *         order to see the next page of results if this version listing is
-     *         truncated, otherwise null if this version listing isn't
-     *         truncated.
+     * @return The version ID marker to use in the next <code>listVersions</code> request in
+     *         order to see the next page of results.
+     *         Returns <code>null</code> if the version listing is not truncated.
+     *         
+     * @see VersionListing#isTruncated()
      */
     public String getNextVersionIdMarker() { 
         return nextVersionIdMarker; 
     }
 
     /**
-     * Not intended for direct use by callers. Sets the version ID marker to use
+     * For internal use only. Sets the version ID marker to use
      * in the next listVersions request in order to see the next page of results
      * for a truncated version listing.
      * 
      * @param marker
      *            The version ID marker to use in the next listVersions request
-     *            in order to see the next page of results for a truncated
+     *            in order to obtain the next page of results for a truncated
      *            version listing.
      */
     public void setNextVersionIdMarker(String marker) { 
@@ -383,20 +391,20 @@ public class VersionListing {
     }
 
     /**
-     * Returns true if this version listing is <b>not complete</b> and indicates
-     * that the caller needs to make additional calls to Amazon S3 to get more
-     * results.
+     * Gets whether or not the version listing
+     * is complete, indicating if additional calls to Amazon S3 are needed to obtain
+     * complete version listing results.
      * 
-     * @return True if this version listing is <b>not complete</b> and indicates
-     *         that the caller needs to make additional calls to Amazon S3 to
-     *         get additional version summaries.
+     * @return The value <code>true</code> if this version listing is complete, indicating
+     *         additional calls to Amazon S3 to Amazon S3 are needed to obtain
+     *         complete version listing results. Returns the value <code>false</code> if otherwise.
      */
     public boolean isTruncated() { 
         return isTruncated; 
     }
 
     /**
-     * Not intended for direct use by callers. Sets the truncated property for
+     * For internal use only. Sets the truncated property for
      * this version listing, indicating if this is a complete listing or not and
      * whether the caller needs to make additional calls to S3 to get more
      * version summaries.

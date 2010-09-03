@@ -9,5 +9,6 @@ THIRD PARTY COMPONENTS
 **********************
 This software includes third party software subject to the following copyrights:
 - XML parsing and utility functions from JetS3t - Copyright 2006-2009 James Murty.
+- JSON parsing and utility functions from JSON.org - Copyright 2002 JSON.org.
 
 The licenses for these third party components are included in LICENSE.txt

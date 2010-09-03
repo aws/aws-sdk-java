@@ -23,12 +23,16 @@ import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.AmazonS3;
 
 /**
- * A request to pre-sign a URL for an Amazon S3 resource.
  * <p>
- * Pre-signed URLs allow clients to form a URL for an Amazon S3 resource, and
- * sign it with the current AWS security credentials, then pass that pre-signed
- * URL around for other people to access the resource without providing them
+ * Contains options to genearate a pre-signed URL for an Amazon S3 resource.
+ * </p>
+ * <p>
+ * Pre-signed URLs allow clients to form a URL for an Amazon S3 resource and
+ * sign it with the current AWS security credentials. 
+ * A pre-signed URL may be passed around for other users to access
+ * the resource without providing them
  * access to an account's AWS security credentials.
+ * </p>
  *
  * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)
  */
@@ -74,12 +78,15 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     }
 
     /**
+     * <p>
      * Creates a new request for generating a pre-signed URL that can be used as
      * part of an HTTP request to access the specified Amazon S3 resource.
+     * </p>
      * <p>
      * When specifying an HTTP method, you <b>must</b> send the pre-signed URL
      * with the same HTTP method in order to successfully use the pre-signed
      * URL.
+     * </p>
      *
      * @param bucketName
      *            The name of the Amazon S3 bucket involved in the operation.
@@ -260,7 +267,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
      *
      * @param key
      *            The name of the request parameter, as it appears in the URL's
-     *            query string (ex: versionId).
+     *            query string (e.g. versionId).
      * @param value
      *            The (optional) value of the request parameter being added.
      */

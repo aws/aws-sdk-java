@@ -81,7 +81,15 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      */
     public void sign(Request<?> request, SignatureVersion version,
             SigningAlgorithm algorithm) throws SignatureException {
-        request.addParameter("AWSAccessKeyId", credentials.getAWSAccessKeyId());
+        String secretKey;
+        String accessKeyId;
+        synchronized (credentials) {
+            secretKey = credentials.getAWSSecretKey();
+            accessKeyId = credentials.getAWSAccessKeyId();
+        }
+
+        
+        request.addParameter("AWSAccessKeyId", accessKeyId);
         request.addParameter("SignatureVersion", version.toString());
         request.addParameter("Timestamp", getFormattedTimestamp());
 
@@ -98,8 +106,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             throw new SignatureException("Invalid Signature Version specified");
         }
 
-        String signatureValue = sign(stringToSign, credentials
-                .getAWSSecretKey(), algorithm);
+        String signatureValue = sign(stringToSign, secretKey, algorithm);
         request.addParameter("Signature", signatureValue);
     }
 

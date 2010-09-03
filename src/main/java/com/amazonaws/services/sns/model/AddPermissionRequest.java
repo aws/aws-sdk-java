@@ -40,7 +40,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
-     * need to be signed up for this service.
+     * need to be signed up for this service. <!--For information about
+     * locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      */
     private java.util.List<String> aWSAccountIds;
 
@@ -65,7 +68,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      * @param label A unique identifier for the new policy statement.
      * @param aWSAccountIds The AWS account IDs of the users (principals) who
      * will be given access to the specified actions. The users must have AWS
-     * accounts, but do not need to be signed up for this service.
+     * accounts, but do not need to be signed up for this service. <!--For
+     * information about locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      * @param actionNames The action you want to allow for the specified
      * principal(s).
      */
@@ -147,11 +153,17 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
-     * need to be signed up for this service.
+     * need to be signed up for this service. <!--For information about
+     * locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @return The AWS account IDs of the users (principals) who will be given access
      *         to the specified actions. The users must have AWS accounts, but do not
-     *         need to be signed up for this service.
+     *         need to be signed up for this service. <!--For information about
+     *         locating the AWS account identification, see <a
+     *         eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      */
     public java.util.List<String> getAWSAccountIds() {
         if (aWSAccountIds == null) {
@@ -163,11 +175,17 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
-     * need to be signed up for this service.
+     * need to be signed up for this service. <!--For information about
+     * locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @param aWSAccountIds The AWS account IDs of the users (principals) who will be given access
      *         to the specified actions. The users must have AWS accounts, but do not
-     *         need to be signed up for this service.
+     *         need to be signed up for this service. <!--For information about
+     *         locating the AWS account identification, see <a
+     *         eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      */
     public void setAWSAccountIds(java.util.Collection<String> aWSAccountIds) {
         java.util.List<String> aWSAccountIdsCopy = new java.util.ArrayList<String>();
@@ -180,13 +198,19 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
-     * need to be signed up for this service.
+     * need to be signed up for this service. <!--For information about
+     * locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account IDs of the users (principals) who will be given access
      *         to the specified actions. The users must have AWS accounts, but do not
-     *         need to be signed up for this service.
+     *         need to be signed up for this service. <!--For information about
+     *         locating the AWS account identification, see <a
+     *         eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -201,13 +225,19 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     /**
      * The AWS account IDs of the users (principals) who will be given access
      * to the specified actions. The users must have AWS accounts, but do not
-     * need to be signed up for this service.
+     * need to be signed up for this service. <!--For information about
+     * locating the AWS account identification, see <a
+     * eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     * AWS Identifiers</aulink> in the &service; Developer Guide.-->
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account IDs of the users (principals) who will be given access
      *         to the specified actions. The users must have AWS accounts, but do not
-     *         need to be signed up for this service.
+     *         need to be signed up for this service. <!--For information about
+     *         locating the AWS account identification, see <a
+     *         eService/latest/SQSDeveloperGuide/index.html?AWSCredentials.html">Your
+     *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -101,10 +101,15 @@ public class S3Signer extends AbstractAWSSigner implements Signer {
                 httpVerb, resourcePath, request, null);
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
-        String signature = super.sign(
-                canonicalString, credentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
-        request.addHeader("Authorization",
-                          "AWS " + credentials.getAWSAccessKeyId() + ":" + signature);
+        String secretKey;
+        String accessKeyId;
+        synchronized (credentials) {
+            secretKey = credentials.getAWSSecretKey();
+            accessKeyId = credentials.getAWSAccessKeyId();
+        }
+        
+        String signature = super.sign(canonicalString, secretKey, SigningAlgorithm.HmacSHA1);
+        request.addHeader("Authorization", "AWS " + accessKeyId + ":" + signature);
     }
 
 }

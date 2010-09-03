@@ -26,44 +26,66 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 
 /**
- * Represents bucket notification configuration used to control receiving 
- * notifications for specific events for Amazon S3 buckets.
  * <p>
- * The notification configuration of a bucket provides near realtime notifications 
- * of events the user is interested in, using SNS as the delivery service. 
+ * Represents a bucket's notification configuration. The notification configuration is
+ * used to control reception of notifications for specific events for Amazon S3 buckets.
+ * </p>
+ * <p>
+ * Using SNS as the delivery service, the notification configuration 
+ * of an Amazon S3 bucket provides near real-time notifications of events 
+ * the user is interested in. 
  * Notification is turned on by enabling configuration on a bucket, specifying 
  * the events and the SNS topic. This configuration can only be turned 
- * on by the bucket owner. If a notification configuration already exists for the
- * specified bucket, the new notification configuration will replace the existing 
- * notification configuration.  To remove the notification configuration pass in 
- * an empty request.  Currently, buckets may only have a single event and topic 
- * configuration.
+ * on by the bucket owner. 
+ * </p>
  * <p>
+ * If a notification configuration already exists for the
+ * specified bucket, the new notification configuration will replace the existing 
+ * notification configuration.  To remove a notification configuration, pass an 
+ * an empty configuration directly to 
+ * {@link AmazonS3#setBucketNotificationConfiguration(String,BucketNotificationConfiguration)}.  
+ * </p>
+ * <p>
+ * Note: Currently buckets may only have a single event and topic 
+ * configuration.
+ * </p>
  *
  * @see AmazonS3#getBucketNotificationConfiguration(String)
- * @see AmazonS3#setBucketNotificationConfiguration(String,BucketNotificationConfiguration)
+ * @see AmazonS3#setBucketNotificationConfiguration(String, BucketNotificationConfiguration)
  */
 public class BucketNotificationConfiguration {
 
     private List<TopicConfiguration> topicConfigurations = null;
 
     /**
-     * Creates a new bucket notification configuration, which by default is <b>empty</b>.
      * <p>
-     * Passing this new object directly to
+     * Creates a new bucket notification configuration.
+     * By default, the newly created configuration is empty.
+     * </p>
+     * <p>
+     * Passing the new configuration directly to
      * {@link AmazonS3#setBucketNotificationConfiguration(String,BucketNotificationConfiguration)}
-     * will do remove any existing bucket notification configuration.
+     * will remove any existing bucket notification configuration.
+     * </p>
+     * 
+     * @see BucketNotificationConfiguration#BucketNotificationConfiguration(Collection)
      */
     public BucketNotificationConfiguration() {
         this.topicConfigurations = new ArrayList<TopicConfiguration>( 1 );
     }
     
     /**
-     * Creates a new bucket notification configuration with the specified TopicConfigurations.
      * <p>
-     * Passing this new object directly to
+     * Creates a new bucket notification configuration containing the specified 
+     * <code>TopicConfigurations</code>.
+     * </p>
+     * <p>
+     * Passing the new configuration directly to
      * {@link AmazonS3#setBucketNotificationConfiguration(String,BucketNotificationConfiguration)}
-     * will set the bucket's notification configuration.
+     * will set the bucket's notification configuration and overwrite any existing configuration.
+     * </p>
+     * 
+     * @see BucketNotificationConfiguration#BucketNotificationConfiguration()
      */
     public BucketNotificationConfiguration( Collection<TopicConfiguration> topicConfigurations ) {
         this.topicConfigurations = new ArrayList<TopicConfiguration>( 1 );
@@ -71,16 +93,23 @@ public class BucketNotificationConfiguration {
     }
 
     /**
-     * Sets the TopicConfigurations for this object, and returns this object so that 
-     * additional method calls may be chained together.
      * <p>
-     * This method will clear out any previously set TopicConfigurations set for this object.
+     * Sets the {@link BucketNotificationConfiguration.TopicConfiguration}
+     * <code>TopicConfigurations</code> and returns this object,
+     * enabling additional method calls to be chained together.
+     * </p>
+     * <p>
+     * Calling this method will overwrite any 
+     * previously set <code>TopicConfigurations</code> for this object.
+     * </p>
      * 
      * @param topicConfigurations
      *            A set of topic configurations.
      * 
-     * @return The updated BucketNotificationConfiguration object so that
-     *         additional method calls may be chained together.
+     * @return The updated {@link BucketNotificationConfiguration} object,
+     * 		   enabling additional method calls to be chained together.
+     * 
+     * @see BucketNotificationConfiguration#setTopicConfigurations(Collection)
      */
     public BucketNotificationConfiguration withTopicConfigurations( TopicConfiguration... topicConfigurations ) {
         this.topicConfigurations.clear();
@@ -93,12 +122,18 @@ public class BucketNotificationConfiguration {
     }
 
     /**
-     * Sets the TopicConfigurations for this object.
      * <p>
-     * This method will clear out any previously set TopicConfigurations set for this object.
+     * Sets the {@link BucketNotificationConfiguration.TopicConfiguration}.
+     * </p>
+     * <p>
+     * Calling this method will overwrite any 
+     * previously set <code>TopicConfigurations</code> for this object.
+     * </p>
      * 
      * @param topicConfigurations
      *            A collection of topic configurations.
+     *            
+     * @see BucketNotificationConfiguration#withTopicConfigurations(TopicConfiguration)         
      */
     public void setTopicConfigurations( Collection<TopicConfiguration> topicConfigurations ) {
         this.topicConfigurations.clear();
@@ -106,7 +141,14 @@ public class BucketNotificationConfiguration {
     }
 
     /**
-     * @return Returns a List of TopicConfigurations present in this object.  May return an empty list.
+     * <p>
+     * Gets the list of {@link BucketNotificationConfiguration.TopicConfiguration} objects
+     * contained in this object. This method may return an empty list if no <code>TopicConfiguration</code>
+     * objects are present.
+     * </p>
+     * 
+     * @return The list of <code>TopicConfiguration</code> objects contained in this object.
+     *   May return an empty list.
      */
     public List<TopicConfiguration> getTopicConfigurations() {
         return this.topicConfigurations;
@@ -121,18 +163,25 @@ public class BucketNotificationConfiguration {
     }
     
     /**
-     * Represents the SNS Topic to publish event notification to.  Will publish notifications to the topic
+     * <p>
+     * Represents the SNS topic to publish event notification to.  
+     * Notifications are published to the topic
      * only if the specified event is triggered.
+     * </p>
      */
     public static class TopicConfiguration {
         private final String topic;
         private final String event;
         
         /**
+         * <p>
+         * Creates a new {@link BucketNotificationConfiguration.TopicConfiguration}.
+         * </p>
+         * 
          * @param topic
-         *          The SNS Topic ARN to publish notifications to.
+         *          The SNS Topic ARN (Amazon Resource Name) to publish notifications to.
          * @param event
-         *           The event that if it happens triggers the notification publication.
+         *           The event that must occur to trigger the notification publication.
          */
         public TopicConfiguration( final String topic, final String event ) {
             this.topic = topic;
@@ -140,6 +189,10 @@ public class BucketNotificationConfiguration {
         }
     
         /**
+         * <p>
+         * Gets the topic ARN (Amazon Resource Name) for the topic to publish events to.
+         * </p>
+         * 
          * @return The topic ARN for the topic to publish events to.
          */
         public String getTopic() {
@@ -147,7 +200,11 @@ public class BucketNotificationConfiguration {
         }
         
         /**
-         * @return The event that must occur for the notification top be published.
+         * <p>
+         * Gets the event that must occur for the notification to be published.
+         * </p>
+         * 
+         * @return The event that must occur for the notification to be published.
          */
         public String getEvent() {
             return this.event;

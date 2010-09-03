@@ -17,7 +17,7 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Lists buckets.
+ * Request object for listing all the Amazon S3 buckets owned by a user.
  */
 public class ListBucketsRequest extends AmazonWebServiceRequest {
 }

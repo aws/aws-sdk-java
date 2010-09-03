@@ -15,65 +15,74 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Amazon S3 Regions allow you to choose the geographical Region where Amazon S3
- * will store the buckets you create. You might choose a Region to optimize
- * latency, minimize costs, or address regulatory requirements. For example, if
- * you reside in Europe, you will probably find it advantageous to create
- * buckets in the EU (Ireland) Region.
+ * Specifies constants that define Amazon S3 Regions.
  * <p>
- * Objects stored in a Region never leave that Region unless you explicitly
- * transfer them to another Region. For example, objects stored in the EU
- * (Ireland) Region never leave it.
+ * Amazon S3 Regions allow the user to choose the geographical region where Amazon S3
+ * will store the buckets the user creates. Choose a Amazon S3 Region to optimize
+ * latency, minimize costs, or address regulatory requirements.
+ * </p>
+ * <p>
+ * Objects stored in a Amazon S3 Region never leave that region unless explicitly
+ * transfered to another region.
+ * </p>
  */
 public enum Region {
 
     /**
-     * The US Standard Amazon S3 region uses Amazon S3 servers in the United
+     * The US Standard Amazon S3 Region. This region
+     * uses Amazon S3 servers located in the United
      * States.
      * <p>
-     * This is the default Region. All requests sent to s3.amazonaws.com go
-     * to this Region unless you specify a location constraint on a bucket
-     * when you create it. The US Standard Region automatically places your
+     * This is the default Amazon S3 Region. All requests sent to
+     * <code>s3.amazonaws.com</code> go
+     * to this region unless a location constraint is specified when creating a bucket.
+     * The US Standard Region automatically places
      * data in either Amazon's east or west coast data centers depending on
-     * what will provide you with the lowest latency. The US Standard Region
+     * which one provides the lowest latency. The US Standard Region
      * provides eventual consistency for all requests.
+     * </p>
      */
     US_Standard(null),
 
     /**
-     * The US-West (Northern California) Amazon S3 region uses Amazon S3
-     * servers in Northern California.
+     * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
+     * servers located in Northern California.
      * <p>
-     * When using buckets in this region, you can optionally set the client
-     * endpoint to s3-us-west-1.amazonaws.com on all requests to these
-     * buckets to reduce the latency you might experience after the first
+     * When using buckets in this region, optionally set the client
+     * endpoint to <code>s3-us-west-1.amazonaws.com</code> on all requests to these
+     * buckets to reduce any latency experienced after the first
      * hour of creating a bucket in this region.
+     * </p>
      * <p>
      * In Amazon S3, the US-West (Northern California) Region provides
-     * read-after-write consistency for PUTS of new objects in your Amazon
-     * S3 bucket and eventual consistency for overwrite PUTS and DELETES.
+     * read-after-write consistency for PUTS of new objects in Amazon
+     * S3 buckets and eventual consistency for overwrite PUTS and DELETES.
+     * </p>
      */
     US_West("us-west-1"),
 
     /**
-     * The EU (Ireland) Amazon S3 region used Amazon S3 servers in Ireland.
+     * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
+     * in Ireland.
      * <p>
      * In Amazon S3, the EU (Ireland) Region provides read-after-write
-     * consistency for PUTS of new objects in your Amazon S3 bucket and eventual
+     * consistency for PUTS of new objects in Amazon S3 buckets and eventual
      * consistency for overwrite PUTS and DELETES.
+     * </p>
      */
     EU_Ireland("EU"),
 
     /**
-     * The Asia Pacific (Singapore) region uses Amazon S3 servers in Singapore.
+     * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
+     * in Singapore.
      * <p>
-     * When using buckets in this region, you can optionally set the client
-     * endpoint to s3-ap-southeast-1.amazonaws.com on all requests to these buckets
-     * to reduce the latency you might experience after the first hour of
+     * When using buckets in this region, optionally set the client
+     * endpoint to <code>s3-ap-southeast-1.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
      * creating a bucket in this region.
+     * </p>
      */
     AP_Singapore("ap-southeast-1");
-
 
     /** The unique ID representing each region. */
     private final String regionId;
@@ -97,15 +106,15 @@ public enum Region {
     }
 
     /**
-     * Returns the Amazon S3 Region enum value representing the specified Amazon
-     * S3 region ID string. If specified string doesn't map to a known Amazon S3
-     * region, then an IllegalArgumentException is thrown.
+     * Returns the Amazon S3 Region enumeration value representing the specified Amazon
+     * S3 Region ID string. If specified string doesn't map to a known Amazon S3
+     * Region, then an <code>IllegalArgumentException</code> is thrown.
      *
      * @param s3RegionString
      *            The Amazon S3 region ID string.
      *
-     * @return The Amazon S3 Region enum value representing the specified Amazon
-     *         S3 region ID.
+     * @return The Amazon S3 Region enumeration value representing the specified Amazon
+     *         S3 Region ID.
      *
      * @throws IllegalArgumentException
      *             If the specified value does not map to one of the known

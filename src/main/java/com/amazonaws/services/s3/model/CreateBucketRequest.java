@@ -17,7 +17,10 @@ package com.amazonaws.services.s3.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Creates the specified bucket. 
+ * Provides options for creating an Amazon S3 bucket.
+ * 
+ * @see DeleteBucketRequest
+ * @see CopyObjectRequest
  */
 public class CreateBucketRequest extends AmazonWebServiceRequest {
 
@@ -32,37 +35,49 @@ public class CreateBucketRequest extends AmazonWebServiceRequest {
     private String region;
     
     /**
-     * Constructs a new CreateBucketRequest, ready to be executed and create the
-     * specified bucket in the US_Standard region.
+     * Constructs a new {@link CreateBucketRequest}, 
+     * ready to be executed to create the
+     * specified bucket in the <code>US_Standard</code> region.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket to create.
+     *            
+     * @see CreateBucketRequest#CreateBucketRequest(String, Region)
+     * @see CreateBucketRequest#CreateBucketRequest(String, String)            
      */
     public CreateBucketRequest(String bucketName) {
         this(bucketName, Region.US_Standard);
     }
 
     /**
-     * Constructs a new CreateBucketRequest, ready to be executed and create the
+     * Constructs a new {@link CreateBucketRequest}, 
+     * ready to be executed to create the
      * specified bucket in the specified region.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket to create.
      * @param region
-     *            The region in which to create this bucket.           
+     *            The region in which to create this bucket.
+     *            
+     * @see CreateBucketRequest#CreateBucketRequest(String)                  
+     * @see CreateBucketRequest#CreateBucketRequest(String, String)                   
      */
     public CreateBucketRequest(String bucketName, Region region) {
         this(bucketName, region.toString());
     }
 
     /**
-     * Constructs a new CreateBucketRequest, ready to be executed and create the
+     * Constructs a new {@link CreateBucketRequest}, 
+     * ready to be executed and create the
      * specified bucket in the specified region.
      * 
      * @param bucketName
      *            The name of the Amazon S3 bucket to create.
      * @param region
      *            The region in which to create this bucket.           
+     *            
+     * @see CreateBucketRequest#CreateBucketRequest(String)                  
+     * @see CreateBucketRequest#CreateBucketRequest(String, Region)                   
      */
     public CreateBucketRequest(String bucketName, String region) {
         setBucketName(bucketName);
@@ -72,16 +87,21 @@ public class CreateBucketRequest extends AmazonWebServiceRequest {
     /**
      * Sets the name of the Amazon S3 bucket to create.
      * 
-     * @param bucketName the name of the Amazon S3 bucket to create.
+     * @param bucketName 
+     *              The name of the Amazon S3 bucket to create.
+     *              
+     * @see CreateBucketRequest#getBucketName()             
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
     }
 
     /**
-     * Returns the name of the Amazon S3 bucket to create.
+     * Gets the name of the Amazon S3 bucket to create.
      * 
-     * @return the name of the Amazon S3 bucket to create.
+     * @return The name of the Amazon S3 bucket to create.
+     * 
+     * @see CreateBucketRequest#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -90,16 +110,21 @@ public class CreateBucketRequest extends AmazonWebServiceRequest {
     /**
      * Sets the name of the Amazon S3 region in which this bucket will be created.
      * 
-     * @param region the name of the Amazon S3 region in which this bucket will be created.
+     * @param region 
+     *              The name of the Amazon S3 region in which this bucket will be created.
+     *              
+     * @see CreateBucketRequest#getRegion()
      */
     public void setRegion(String region) {
         this.region = region;
     }
 
     /**
-     * Returns the name of the Amazon S3 region in which this bucket will be created.
+     * Gets the name of the Amazon S3 region in which this bucket will be created.
      * 
-     * @return the name of the Amazon S3 region in which this bucket will be created.
+     * @return The name of the Amazon S3 region in which this bucket will be created.
+     * 
+     * @see CreateBucketRequest#setRegion(String)
      */
     public String getRegion() {
         return region;

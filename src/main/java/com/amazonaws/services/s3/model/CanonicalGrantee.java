@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+  * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -18,39 +18,78 @@
 package com.amazonaws.services.s3.model;
 
 /**
- * Represents a grantee identified by their canonical Amazon ID, which is
- * something along the lines of an Amazon-internal ID specific to a user. For
+ * Represents a grantee identified by their canonical Amazon ID.
+ * The canonical Amazon ID can be thought of as
+ * an Amazon-internal ID specific to a user. For
  * example, Amazon can map a grantee identified by an email address to a
  * canonical ID.
  * <p>
- * Canonical grantees may have an associated Display Name, which is a
- * human-friendly name that Amazon has linked to the canonical ID (eg the user's
+ * Canonical grantees may have an associated display name, which is a
+ * human-friendly name that Amazon has linked to the canonical ID (eg. the user's
  * login name).
+ * </p>
+ * 
+ * @see CanonicalGrantee#CanonicalGrantee(String)
  */
 public class CanonicalGrantee implements Grantee {
     private String id = null;
     private String displayName = null;
 
     /**
-     * Constructs a grantee with the given canonical ID.
+     * Constructs a new {@link CanonicalGrantee} object 
+     * with the given canonical ID.
+     * 
      * @param identifier
      */
     public CanonicalGrantee(String identifier) {
         this.setIdentifier(identifier);
     }
 
+    /**
+     * <p>
+     * Sets the unique identifier for this grantee.
+     * </p>
+     * 
+     * @see CanonicalGrantee#getIdentifier()
+     */
     public void setIdentifier(String id) {
         this.id = id;
     }
 
+    /**
+     * <p>
+     * Returns the unique identifier for this grantee.
+     * </p>
+     * 
+     * @see CanonicalGrantee#setIdentifier(String)
+     */
     public String getIdentifier() {
         return id;
     }
-
+    
+    
+    /**
+     * <p>
+     * Sets the display name for this grantee.
+     * </p>
+     * 
+     * @param displayName
+     * 
+     * @see CanonicalGrantee#getDisplayName()
+     */
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
     }
 
+    /**
+     * <p>
+     * Returns the display name for this grantee.
+     * </p>
+     * 
+     * @return The display name for this grantee.
+     * 
+     * @see CanonicalGrantee#setDisplayName(String)
+     */
     public String getDisplayName() {
         return this.displayName;
     }
