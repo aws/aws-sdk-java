@@ -63,7 +63,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
             int groupNamesListIndex = 1;
             for (String groupNamesListValue : groupNamesList) {
                 if (groupNamesListValue != null) {
-                    request.addParameter("Group." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
+                    request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }
                 groupNamesListIndex++;
             }

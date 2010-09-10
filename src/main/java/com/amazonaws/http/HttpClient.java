@@ -16,6 +16,7 @@ package com.amazonaws.http;
 
 import java.io.IOException;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.util.Map.Entry;
 
@@ -75,7 +76,7 @@ public class HttpClient {
     private static final String DEFAULT_ENCODING = "UTF-8";
 
     /** Maximum exponential back-off time before retrying a request */
-    private static final int MAX_BACKOFF_IN_MILLISECONDS = 30 * 1000;
+    private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
 
     /** Client configuration options, such as proxy settings, max retries, etc. */
     private final ClientConfiguration config;
@@ -155,7 +156,7 @@ public class HttpClient {
         if (HttpUtils.isUsingNonDefaultPort(endpoint)) {
             hostHeader += ":" + endpoint.getPort();
         }
-        method.addRequestHeader("Host", hostHeader);    
+        method.addRequestHeader("Host", hostHeader);
 
         // When we release connections, the connection manager leaves them
         // open so they can be reused.  We want to close out any idle
@@ -163,7 +164,7 @@ public class HttpClient {
         httpClient.getHttpConnectionManager().closeIdleConnections(1000 * 30);
 
         requestLog.info("Sending Request: " + request.toString());
-        
+
         int retries = 0;
         while (true) {
             try {
@@ -199,8 +200,8 @@ public class HttpClient {
                     }
                 }
             } catch (IOException ioe) {
-                log.error("Unable to execute HTTP request: " + ioe.getMessage());
-                
+                log.warn("Unable to execute HTTP request: " + ioe.getMessage());
+
                 if (!shouldRetry(method, ioe, retries)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 }
@@ -235,14 +236,14 @@ public class HttpClient {
 
     /**
      * Returns true if a failed request should be retried.
-     * 
+     *
      * @param method
      *            The current HTTP method being executed.
      * @param exception
      *            The exception from the failed request.
      * @param retries
      *            The number of times the current request has been attempted.
-     * 
+     *
      * @return True if the failed request should be retried.
      */
     private boolean shouldRetry(HttpMethod method, Exception exception, int retries) {
@@ -255,36 +256,38 @@ public class HttpClient {
             return true;
         }
         
-        if (exception instanceof NoHttpResponseException  
-            || exception instanceof SocketException) {
-            log.debug("Retrying on " + exception.getClass().getName() 
+        if (exception instanceof NoHttpResponseException
+            || exception instanceof SocketException
+            || exception instanceof SocketTimeoutException) {
+            log.debug("Retrying on " + exception.getClass().getName()
                     + ": " + exception.getMessage());
             return true;
         }
 
-        /*
-         * For 500 internal server errors and 503 service
-         * unavailable errors, we want to retry, but we need to use
-         * an exponential back-off strategy so that we don't overload
-         * a server with a flood of retries. If we've surpassed our
-         * retry limit we handle the error response as a non-retryable
-         * error and go ahead and throw it back to the user as an exception.
-         */
-        if (method.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
-            || method.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
-            return true;
-        }
-        
+
         if (exception instanceof AmazonServiceException) {
             AmazonServiceException ase = (AmazonServiceException)exception;
 
+            /*
+             * For 500 internal server errors and 503 service
+             * unavailable errors, we want to retry, but we need to use
+             * an exponential back-off strategy so that we don't overload
+             * a server with a flood of retries. If we've surpassed our
+             * retry limit we handle the error response as a non-retryable
+             * error and go ahead and throw it back to the user as an exception.
+             */
+            if (ase.getStatusCode() == HttpStatus.SC_INTERNAL_SERVER_ERROR
+                || ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
+                return true;
+            }
+            
             /*
              * Throttling is reported as a 400 error from newer services. To try
              * and smooth out an occasional throttling error, we'll pause and
              * retry, hoping that the pause is long enough for the request to
              * get through the next time.
              */
-            if (ase.getStatusCode() == HttpStatus.SC_BAD_REQUEST 
+            if (ase.getStatusCode() == HttpStatus.SC_BAD_REQUEST
                 && ase.getErrorCode().equals("Throttling")) {
                 return true;
             }
@@ -525,7 +528,7 @@ public class HttpClient {
      *            Current retry count.
      */
     private void pauseExponentially(int retries) {
-        long delay = (long) (Math.pow(4, retries) * 100L);
+        long delay = (long) (Math.pow(3, retries) * 100L);
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);
 

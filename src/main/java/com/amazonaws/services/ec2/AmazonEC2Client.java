@@ -2730,8 +2730,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the indicated snapshots, or in lieu of that, all snapshots
-     * owned by the caller.
+     * Returns information about the Amazon EBS snapshots available to you.
+     * Snapshots available to you include public snapshots available for any
+     * AWS account to launch, private snapshots you own, and private
+     * snapshots owned by another AWS account but for which you've been given
+     * explicit create volume permissions.
      * </p>
      *
      * @param describeSnapshotsRequest Container for the necessary parameters
@@ -3588,8 +3591,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Describes the indicated snapshots, or in lieu of that, all snapshots
-     * owned by the caller.
+     * Returns information about the Amazon EBS snapshots available to you.
+     * Snapshots available to you include public snapshots available for any
+     * AWS account to launch, private snapshots you own, and private
+     * snapshots owned by another AWS account but for which you've been given
+     * explicit create volume permissions.
      * </p>
      * 
      * @return The response from the DescribeSnapshots service method, as

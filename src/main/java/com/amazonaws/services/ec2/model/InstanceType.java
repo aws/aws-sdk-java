@@ -19,6 +19,7 @@ package com.amazonaws.services.ec2.model;
  */
 public enum InstanceType {
     
+    T1Micro("t1.micro"),
     M1Small("m1.small"),
     M1Large("m1.large"),
     M1Xlarge("m1.xlarge"),
@@ -51,6 +52,8 @@ public enum InstanceType {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
+        } else if ("t1.micro".equals(value)) {
+            return InstanceType.T1Micro;
         } else if ("m1.small".equals(value)) {
             return InstanceType.M1Small;
         } else if ("m1.large".equals(value)) {
