@@ -32,7 +32,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
     public Request<DescribeDhcpOptionsRequest> marshall(DescribeDhcpOptionsRequest describeDhcpOptionsRequest) {
         Request<DescribeDhcpOptionsRequest> request = new DefaultRequest<DescribeDhcpOptionsRequest>(describeDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeDhcpOptions");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (describeDhcpOptionsRequest != null) {
             java.util.List<String> dhcpOptionsIdsList = describeDhcpOptionsRequest.getDhcpOptionsIds();
             int dhcpOptionsIdsListIndex = 1;
@@ -41,6 +41,30 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
                     request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(dhcpOptionsIdsListValue));
                 }
                 dhcpOptionsIdsListIndex++;
+            }
+        }
+
+        if (describeDhcpOptionsRequest != null) {
+            java.util.List<Filter> filtersList = describeDhcpOptionsRequest.getFilters();
+            int filtersListIndex = 1;
+            for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+                }
+                if (filtersListValue != null) {
+                    java.util.List<String> valuesList = filtersListValue.getValues();
+                    int valuesListIndex = 1;
+                    for (String valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                filtersListIndex++;
             }
         }
 

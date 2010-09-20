@@ -76,6 +76,11 @@ public class ReservedInstances {
     private String state;
 
     /**
+     * A list of tags for the ReservedInstances.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * The unique ID of the Reserved Instances purchase.
      *
      * @return The unique ID of the Reserved Instances purchase.
@@ -437,6 +442,68 @@ public class ReservedInstances {
     
     
     /**
+     * A list of tags for the ReservedInstances.
+     *
+     * @return A list of tags for the ReservedInstances.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the ReservedInstances.
+     *
+     * @param tags A list of tags for the ReservedInstances.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the ReservedInstances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the ReservedInstances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstances withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the ReservedInstances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the ReservedInstances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstances withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -458,6 +525,7 @@ public class ReservedInstances {
         sb.append("InstanceCount: " + instanceCount + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("State: " + state + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

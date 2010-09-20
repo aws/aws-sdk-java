@@ -87,6 +87,10 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     reservedInstances.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    reservedInstances.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;

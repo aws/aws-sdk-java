@@ -45,6 +45,11 @@ public class License {
     private java.util.List<LicenseCapacity> capacities;
 
     /**
+     * A list of tags for the License.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * The unique ID identifying the license.
      *
      * @return The unique ID identifying the license.
@@ -225,6 +230,68 @@ public class License {
     }
     
     /**
+     * A list of tags for the License.
+     *
+     * @return A list of tags for the License.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the License.
+     *
+     * @param tags A list of tags for the License.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the License.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the License.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public License withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the License.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the License.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public License withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -240,6 +307,7 @@ public class License {
         sb.append("Type: " + type + ", ");
         sb.append("Pool: " + pool + ", ");
         sb.append("Capacities: " + capacities + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -32,7 +32,7 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
     public Request<ReleaseAddressRequest> marshall(ReleaseAddressRequest releaseAddressRequest) {
         Request<ReleaseAddressRequest> request = new DefaultRequest<ReleaseAddressRequest>(releaseAddressRequest, "AmazonEC2");
         request.addParameter("Action", "ReleaseAddress");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (releaseAddressRequest != null) {
             if (releaseAddressRequest.getPublicIp() != null) {
                 request.addParameter("PublicIp", StringUtils.fromString(releaseAddressRequest.getPublicIp()));

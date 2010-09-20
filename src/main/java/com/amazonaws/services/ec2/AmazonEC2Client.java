@@ -973,6 +973,52 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Imports the public key from an RSA key pair created with a
+     * third-party tool. This operation differs from CreateKeyPair as the
+     * private key is never transferred between the caller and AWS servers.
+     * </p>
+     * <p>
+     * RSA key pairs are easily created on Microsoft Windows and Linux OS
+     * systems using the <code>ssh-keygen</code> command line tool provided
+     * with the standard OpenSSH installation. Standard library support for
+     * RSA key pair creation is also available for Java, Ruby, Python, and
+     * many other programming languages.
+     * </p>
+     * <p>
+     * The following formats are supported:
+     * </p>
+     * 
+     * <ul>
+     * <li> OpenSSH public key format, </li>
+     * <li> Base64 encoded DER format. </li>
+     * <li> SSH public key file format as specified in <a
+     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a> . </li>
+     * 
+     * </ul>
+     *
+     * @param importKeyPairRequest Container for the necessary parameters to
+     *           execute the ImportKeyPair service method on AmazonEC2.
+     * 
+     * @return The response from the ImportKeyPair service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ImportKeyPairResult importKeyPair(ImportKeyPairRequest importKeyPairRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ImportKeyPairRequest> request = new ImportKeyPairRequestMarshaller().marshall(importKeyPairRequest);
+        return invoke(request, new ImportKeyPairResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Describes the Spot Price history.
      * </p>
      * <p>
@@ -1199,6 +1245,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Adds or overwrites tags for the specified resources. Each resource
+     * can have a maximum of 10 tags. Each tag consists of a key-value pair.
+     * Tag keys must be unique per resource.
+     * </p>
+     *
+     * @param createTagsRequest Container for the necessary parameters to
+     *           execute the CreateTags service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void createTags(CreateTagsRequest createTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateTagsRequest> request = new CreateTagsRequestMarshaller().marshall(createTagsRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Detaches a VPN gateway from a VPC. You do this if you're planning to
      * turn off the VPC and not use it anymore. You can confirm a VPN gateway
      * has been completely detached from a VPC by describing the VPN gateway
@@ -1282,6 +1353,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeSpotDatafeedSubscriptionRequest> request = new DescribeSpotDatafeedSubscriptionRequestMarshaller().marshall(describeSpotDatafeedSubscriptionRequest);
         return invoke(request, new DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Deletes tags from the specified Amazon EC2 resources.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteTags(DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteTagsRequest> request = new DeleteTagsRequestMarshaller().marshall(deleteTagsRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Describes the tags for the specified resources.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeTags service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTagsResult describeTags(DescribeTagsRequest describeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeTagsRequest> request = new DescribeTagsRequestMarshaller().marshall(describeTagsRequest);
+        return invoke(request, new DescribeTagsResultStaxUnmarshaller());
     }
     
     /**
@@ -3275,6 +3395,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscription() throws AmazonServiceException, AmazonClientException {
         return describeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
+    }
+    
+    /**
+     * <p>
+     * Describes the tags for the specified resources.
+     * </p>
+     * 
+     * @return The response from the DescribeTags service method, as returned
+     *         by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTagsResult describeTags() throws AmazonServiceException, AmazonClientException {
+        return describeTags(new DescribeTagsRequest());
     }
     
     /**

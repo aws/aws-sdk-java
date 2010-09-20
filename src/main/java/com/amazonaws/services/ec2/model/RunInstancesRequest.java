@@ -179,6 +179,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private String privateIpAddress;
 
+    private String clientToken;
+
     /**
      * Default constructor for a new RunInstancesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -981,6 +983,40 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the ClientToken property for this object.
+     *
+     * @return The value of the ClientToken property for this object.
+     */
+    public String getClientToken() {
+        return clientToken;
+    }
+    
+    /**
+     * Sets the value of the ClientToken property for this object.
+     *
+     * @param clientToken The new value for the ClientToken property for this object.
+     */
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+    
+    /**
+     * Sets the value of the ClientToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clientToken The new value for the ClientToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1009,6 +1045,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
         sb.append("License: " + license + ", ");
         sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
+        sb.append("ClientToken: " + clientToken + ", ");
         sb.append("}");
         return sb.toString();
     }

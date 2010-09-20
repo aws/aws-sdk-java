@@ -1515,7 +1515,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *         service name, ready for callers to populate any additional
      *         headers or parameters, and execute.
      */
-    private Request<Void> createRequest(String bucketName, String key, AmazonWebServiceRequest originalRequest) {
+    protected Request<Void> createRequest(String bucketName, String key, AmazonWebServiceRequest originalRequest) {
         Request<Void> request = new DefaultRequest<Void>(originalRequest, Constants.S3_SERVICE_NAME);
         if (bucketNameUtils.isValidV2BucketName(bucketName)) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
@@ -1728,7 +1728,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The metadata containing the header information to include in
      *            the request.
      */
-    private static void populateRequestMetadata(Request<Void> request, ObjectMetadata metadata) {
+    protected static void populateRequestMetadata(Request<Void> request, ObjectMetadata metadata) {
         Map<String, Object> rawMetadata = metadata.getRawMetadata();
         if (rawMetadata != null) {
             for (Entry<String, Object> entry : rawMetadata.entrySet()) {

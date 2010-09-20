@@ -32,7 +32,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
     public Request<DescribeReservedInstancesOfferingsRequest> marshall(DescribeReservedInstancesOfferingsRequest describeReservedInstancesOfferingsRequest) {
         Request<DescribeReservedInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedInstancesOfferingsRequest>(describeReservedInstancesOfferingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesOfferings");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (describeReservedInstancesOfferingsRequest != null) {
             java.util.List<String> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.getReservedInstancesOfferingIds();
             int reservedInstancesOfferingIdsListIndex = 1;
@@ -56,6 +56,30 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         if (describeReservedInstancesOfferingsRequest != null) {
             if (describeReservedInstancesOfferingsRequest.getProductDescription() != null) {
                 request.addParameter("ProductDescription", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getProductDescription()));
+            }
+        }
+
+        if (describeReservedInstancesOfferingsRequest != null) {
+            java.util.List<Filter> filtersList = describeReservedInstancesOfferingsRequest.getFilters();
+            int filtersListIndex = 1;
+            for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+                }
+                if (filtersListValue != null) {
+                    java.util.List<String> valuesList = filtersListValue.getValues();
+                    int valuesListIndex = 1;
+                    for (String valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                filtersListIndex++;
             }
         }
 

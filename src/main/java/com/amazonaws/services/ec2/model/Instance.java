@@ -179,6 +179,13 @@ public class Instance {
      */
     private InstanceLicense license;
 
+    private String clientToken;
+
+    /**
+     * A list of tags for the Instance.
+     */
+    private java.util.List<Tag> tags;
+
     /**
      * Unique ID of the instance launched.
      *
@@ -1330,6 +1337,102 @@ public class Instance {
     
     
     /**
+     * Returns the value of the ClientToken property for this object.
+     *
+     * @return The value of the ClientToken property for this object.
+     */
+    public String getClientToken() {
+        return clientToken;
+    }
+    
+    /**
+     * Sets the value of the ClientToken property for this object.
+     *
+     * @param clientToken The new value for the ClientToken property for this object.
+     */
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+    
+    /**
+     * Sets the value of the ClientToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clientToken The new value for the ClientToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withClientToken(String clientToken) {
+        this.clientToken = clientToken;
+        return this;
+    }
+    
+    
+    /**
+     * A list of tags for the Instance.
+     *
+     * @return A list of tags for the Instance.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the Instance.
+     *
+     * @param tags A list of tags for the Instance.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1370,6 +1473,8 @@ public class Instance {
         sb.append("InstanceLifecycle: " + instanceLifecycle + ", ");
         sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
         sb.append("License: " + license + ", ");
+        sb.append("ClientToken: " + clientToken + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

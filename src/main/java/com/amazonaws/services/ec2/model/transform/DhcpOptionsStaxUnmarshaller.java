@@ -55,6 +55,10 @@ public class DhcpOptionsStaxUnmarshaller implements Unmarshaller<DhcpOptions, St
                     dhcpOptions.getDhcpConfigurations().add(DhcpConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    dhcpOptions.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dhcpOptions;

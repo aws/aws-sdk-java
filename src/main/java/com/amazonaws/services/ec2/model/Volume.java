@@ -60,6 +60,11 @@ public class Volume {
     private java.util.List<VolumeAttachment> attachments;
 
     /**
+     * A list of tags for the Volume.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * The unique ID of this volume.
      *
      * @return The unique ID of this volume.
@@ -341,6 +346,68 @@ public class Volume {
     }
     
     /**
+     * A list of tags for the Volume.
+     *
+     * @return A list of tags for the Volume.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the Volume.
+     *
+     * @param tags A list of tags for the Volume.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the Volume.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Volume withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the Volume.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Volume.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Volume withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -359,6 +426,7 @@ public class Volume {
         sb.append("State: " + state + ", ");
         sb.append("CreateTime: " + createTime + ", ");
         sb.append("Attachments: " + attachments + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

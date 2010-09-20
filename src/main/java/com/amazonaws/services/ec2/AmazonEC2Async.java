@@ -805,6 +805,48 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Imports the public key from an RSA key pair created with a
+     * third-party tool. This operation differs from CreateKeyPair as the
+     * private key is never transferred between the caller and AWS servers.
+     * </p>
+     * <p>
+     * RSA key pairs are easily created on Microsoft Windows and Linux OS
+     * systems using the <code>ssh-keygen</code> command line tool provided
+     * with the standard OpenSSH installation. Standard library support for
+     * RSA key pair creation is also available for Java, Ruby, Python, and
+     * many other programming languages.
+     * </p>
+     * <p>
+     * The following formats are supported:
+     * </p>
+     * 
+     * <ul>
+     * <li> OpenSSH public key format, </li>
+     * <li> Base64 encoded DER format. </li>
+     * <li> SSH public key file format as specified in <a
+     * href="http://tools.ietf.org/html/rfc4716"> RFC4716 </a> . </li>
+     * 
+     * </ul>
+     *
+     * @param importKeyPairRequest Container for the necessary parameters to
+     *           execute the ImportKeyPair operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ImportKeyPair service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ImportKeyPairResult> importKeyPairAsync(ImportKeyPairRequest importKeyPairRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Describes the Spot Price history.
      * </p>
      * <p>
@@ -1007,6 +1049,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Adds or overwrites tags for the specified resources. Each resource
+     * can have a maximum of 10 tags. Each tag consists of a key-value pair.
+     * Tag keys must be unique per resource.
+     * </p>
+     *
+     * @param createTagsRequest Container for the necessary parameters to
+     *           execute the CreateTags operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateTags service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createTagsAsync(CreateTagsRequest createTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Detaches a VPN gateway from a VPC. You do this if you're planning to
      * turn off the VPC and not use it anymore. You can confirm a VPN gateway
      * has been completely detached from a VPC by describing the VPN gateway
@@ -1085,6 +1151,50 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<DescribeSpotDatafeedSubscriptionResult> describeSpotDatafeedSubscriptionAsync(DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes tags from the specified Amazon EC2 resources.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTags service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteTagsAsync(DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes the tags for the specified resources.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTags service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest describeTagsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

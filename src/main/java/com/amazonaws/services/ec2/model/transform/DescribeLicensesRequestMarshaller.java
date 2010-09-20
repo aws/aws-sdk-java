@@ -32,7 +32,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
     public Request<DescribeLicensesRequest> marshall(DescribeLicensesRequest describeLicensesRequest) {
         Request<DescribeLicensesRequest> request = new DefaultRequest<DescribeLicensesRequest>(describeLicensesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeLicenses");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (describeLicensesRequest != null) {
             java.util.List<String> licenseIdsList = describeLicensesRequest.getLicenseIds();
             int licenseIdsListIndex = 1;
@@ -41,6 +41,30 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
                     request.addParameter("LicenseId." + licenseIdsListIndex, StringUtils.fromString(licenseIdsListValue));
                 }
                 licenseIdsListIndex++;
+            }
+        }
+
+        if (describeLicensesRequest != null) {
+            java.util.List<Filter> filtersList = describeLicensesRequest.getFilters();
+            int filtersListIndex = 1;
+            for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+                }
+                if (filtersListValue != null) {
+                    java.util.List<String> valuesList = filtersListValue.getValues();
+                    int valuesListIndex = 1;
+                    for (String valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                filtersListIndex++;
             }
         }
 

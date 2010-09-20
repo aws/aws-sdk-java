@@ -99,6 +99,10 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                     spotInstanceRequest.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    spotInstanceRequest.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotInstanceRequest;

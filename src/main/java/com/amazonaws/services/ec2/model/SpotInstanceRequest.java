@@ -90,6 +90,11 @@ public class SpotInstanceRequest {
     private String productDescription;
 
     /**
+     * A list of tags for this spot instance request.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * 
      *
      * @return 
@@ -547,6 +552,68 @@ public class SpotInstanceRequest {
     
     
     /**
+     * A list of tags for this spot instance request.
+     *
+     * @return A list of tags for this spot instance request.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for this spot instance request.
+     *
+     * @param tags A list of tags for this spot instance request.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for this spot instance request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for this spot instance request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public SpotInstanceRequest withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for this spot instance request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for this spot instance request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -571,6 +638,7 @@ public class SpotInstanceRequest {
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("CreateTime: " + createTime + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

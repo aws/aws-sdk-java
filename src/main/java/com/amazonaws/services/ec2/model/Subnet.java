@@ -55,6 +55,11 @@ public class Subnet {
     private String availabilityZone;
 
     /**
+     * A list of tags for the Subnet.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * Specifies the ID of the subnet.
      *
      * @return Specifies the ID of the subnet.
@@ -277,6 +282,68 @@ public class Subnet {
     
     
     /**
+     * A list of tags for the Subnet.
+     *
+     * @return A list of tags for the Subnet.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the Subnet.
+     *
+     * @param tags A list of tags for the Subnet.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the Subnet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Subnet withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the Subnet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Subnet withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -294,6 +361,7 @@ public class Subnet {
         sb.append("CidrBlock: " + cidrBlock + ", ");
         sb.append("AvailableIpAddressCount: " + availableIpAddressCount + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

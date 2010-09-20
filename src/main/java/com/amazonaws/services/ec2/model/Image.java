@@ -126,6 +126,11 @@ public class Image {
     private String virtualizationType;
 
     /**
+     * A list of tags for the Image.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * The unique ID of the AMI.
      *
      * @return The unique ID of the AMI.
@@ -917,6 +922,68 @@ public class Image {
     
     
     /**
+     * A list of tags for the Image.
+     *
+     * @return A list of tags for the Image.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the Image.
+     *
+     * @param tags A list of tags for the Image.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the Image.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Image.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Image withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the Image.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Image.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Image withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -947,6 +1014,7 @@ public class Image {
         sb.append("RootDeviceName: " + rootDeviceName + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         sb.append("VirtualizationType: " + virtualizationType + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

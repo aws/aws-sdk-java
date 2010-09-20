@@ -32,7 +32,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -169,6 +169,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getPrivateIpAddress() != null) {
                 request.addParameter("PrivateIpAddress", StringUtils.fromString(runInstancesRequest.getPrivateIpAddress()));
+            }
+        }
+        if (runInstancesRequest != null) {
+            if (runInstancesRequest.getClientToken() != null) {
+                request.addParameter("ClientToken", StringUtils.fromString(runInstancesRequest.getClientToken()));
             }
         }
 

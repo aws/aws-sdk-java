@@ -63,6 +63,10 @@ public class LicenseStaxUnmarshaller implements Unmarshaller<License, StaxUnmars
                     license.getCapacities().add(LicenseCapacityStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    license.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return license;

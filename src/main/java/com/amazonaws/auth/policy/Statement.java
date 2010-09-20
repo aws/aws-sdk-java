@@ -90,7 +90,7 @@ public class Statement {
      */
     public Statement(Effect effect) {
         this.effect = effect;
-        this.id = UUID.randomUUID().toString();
+        this.id = null;
     }
 
     /**
@@ -98,10 +98,16 @@ public class Statement {
      * of multiple statements, and are often used to give the statement a
      * meaningful, human readable name.
      * <p>
+     * Statement IDs must be unique within a policy, but are not required to be
+     * globally unique.
+     * <p>
+     * If you do not explicitly assign an ID to a statement, a unique ID will be
+     * automatically assigned when the statement is added to a policy.
+     * <p>
      * Developers should be careful to not use the same statement ID for
      * multiple statements in the same policy. Reusing the same statement ID in
      * different policies is not a problem.
-     *
+     * 
      * @return The statement ID.
      */
     public String getId() {
@@ -112,6 +118,12 @@ public class Statement {
      * Sets the ID for this statement. Statement IDs serve to help keep track of
      * multiple statements, and are often used to give the statement a
      * meaningful, human readable name.
+     * <p>
+     * Statement IDs must be unique within a policy, but are not required to be
+     * globally unique.
+     * <p>
+     * If you do not explicitly assign an ID to a statement, a unique ID will be
+     * automatically assigned when the statement is added to a policy.
      * <p>
      * Developers should be careful to not use the same statement ID for
      * multiple statements in the same policy. Reusing the same statement ID in
@@ -130,6 +142,9 @@ public class Statement {
      * <p>
      * Statement IDs serve to help keep track of multiple statements, and are
      * often used to give the statement a meaningful, human readable name.
+     * <p>
+     * If you do not explicitly assign an ID to a statement, a unique ID will be
+     * automatically assigned when the statement is added to a policy.
      * <p>
      * Developers should be careful to not use the same statement ID for
      * multiple statements in the same policy. Reusing the same statement ID in

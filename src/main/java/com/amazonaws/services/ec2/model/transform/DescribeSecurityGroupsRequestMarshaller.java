@@ -32,7 +32,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
     public Request<DescribeSecurityGroupsRequest> marshall(DescribeSecurityGroupsRequest describeSecurityGroupsRequest) {
         Request<DescribeSecurityGroupsRequest> request = new DefaultRequest<DescribeSecurityGroupsRequest>(describeSecurityGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSecurityGroups");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (describeSecurityGroupsRequest != null) {
             java.util.List<String> groupNamesList = describeSecurityGroupsRequest.getGroupNames();
             int groupNamesListIndex = 1;
@@ -41,6 +41,30 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
                     request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }
                 groupNamesListIndex++;
+            }
+        }
+
+        if (describeSecurityGroupsRequest != null) {
+            java.util.List<Filter> filtersList = describeSecurityGroupsRequest.getFilters();
+            int filtersListIndex = 1;
+            for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+                }
+                if (filtersListValue != null) {
+                    java.util.List<String> valuesList = filtersListValue.getValues();
+                    int valuesListIndex = 1;
+                    for (String valuesListValue : valuesList) {
+                        if (valuesListValue != null) {
+                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        }
+                        valuesListIndex++;
+                    }
+                }
+
+                filtersListIndex++;
             }
         }
 

@@ -51,6 +51,11 @@ public class CustomerGateway {
     private String bgpAsn;
 
     /**
+     * A list of tags for the CustomerGateway.
+     */
+    private java.util.List<Tag> tags;
+
+    /**
      * Specifies the ID of the customer gateway.
      *
      * @return Specifies the ID of the customer gateway.
@@ -245,6 +250,68 @@ public class CustomerGateway {
     
     
     /**
+     * A list of tags for the CustomerGateway.
+     *
+     * @return A list of tags for the CustomerGateway.
+     */
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the CustomerGateway.
+     *
+     * @param tags A list of tags for the CustomerGateway.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the CustomerGateway.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the CustomerGateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CustomerGateway withTags(Tag... tags) {
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the CustomerGateway.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the CustomerGateway.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CustomerGateway withTags(java.util.Collection<Tag> tags) {
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
+        if (tags != null) {
+            tagsCopy.addAll(tags);
+        }
+        this.tags = tagsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -261,6 +328,7 @@ public class CustomerGateway {
         sb.append("Type: " + type + ", ");
         sb.append("IpAddress: " + ipAddress + ", ");
         sb.append("BgpAsn: " + bgpAsn + ", ");
+        sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }

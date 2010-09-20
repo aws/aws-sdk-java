@@ -17,7 +17,9 @@ package com.amazonaws.auth.policy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.amazonaws.auth.policy.internal.JsonPolicyWriter;
 
@@ -84,6 +86,9 @@ public class Policy {
      * and collection of statements. The policy ID is a user specified string
      * that serves to help developers keep track of multiple polices. Policy IDs
      * are often used as a human readable name for a policy.
+     * <p>
+     * Any statements that don't have a statement ID yet will automatically be
+     * assigned a unique ID within this policy.
      *
      * @param id
      *            The policy ID for the new policy object. Policy IDs serve to
@@ -93,9 +98,9 @@ public class Policy {
      *            The statements to include in the new policy.
      */
     public Policy(String id, Collection<Statement> statements) {
-        this.statements = new ArrayList<Statement>(statements);
+        this(id);
+        setStatements(statements);
     }
-
 
     /**
      * Returns the policy ID for this policy. Policy IDs serve to help
@@ -162,12 +167,16 @@ public class Policy {
      * Sets the collection of statements contained by this policy. Individual
      * statements in a policy are what specify the rules that enable or disable
      * access to your AWS resources.
+     * <p>
+     * Any statements that don't have a statement ID yet will automatically be
+     * assigned a unique ID within this policy.
      *
      * @param statements
      *            The collection of statements included in this policy.
      */
     public void setStatements(Collection<Statement> statements) {
         this.statements = new ArrayList<Statement>(statements);
+        assignUniqueStatementIds();
     }
 
     /**
@@ -177,10 +186,13 @@ public class Policy {
      * <p>
      * Individual statements in a policy are what specify the rules that enable
      * or disable access to your AWS resources.
-     *
+     * <p>
+     * Any statements that don't have a statement ID yet will automatically be
+     * assigned a unique ID within this policy.
+     * 
      * @param statements
      *            The collection of statements included in this policy.
-     *
+     * 
      * @return The updated policy object, so that additional method calls can be
      *         chained together.
      */
@@ -198,6 +210,21 @@ public class Policy {
      */
     public String toJson() {
         return new JsonPolicyWriter().writePolicyToString(this);
+    }
+
+    private void assignUniqueStatementIds() {
+        Set<String> usedStatementIds = new HashSet<String>();
+        for (Statement statement : statements) {
+            if (statement.getId() != null) usedStatementIds.add(statement.getId());
+        }
+        
+        int counter = 0;
+        for (Statement statement : statements) {
+            if (statement.getId() != null) continue;
+            
+            while (usedStatementIds.contains(Integer.toString(++counter)));
+            statement.setId(Integer.toString(counter));
+        }
     }
 
 }

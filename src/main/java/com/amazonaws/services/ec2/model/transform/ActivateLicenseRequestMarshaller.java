@@ -32,7 +32,7 @@ public class ActivateLicenseRequestMarshaller implements Marshaller<Request<Acti
     public Request<ActivateLicenseRequest> marshall(ActivateLicenseRequest activateLicenseRequest) {
         Request<ActivateLicenseRequest> request = new DefaultRequest<ActivateLicenseRequest>(activateLicenseRequest, "AmazonEC2");
         request.addParameter("Action", "ActivateLicense");
-        request.addParameter("Version", "2010-06-15");
+        request.addParameter("Version", "2010-08-31");
         if (activateLicenseRequest != null) {
             if (activateLicenseRequest.getLicenseId() != null) {
                 request.addParameter("LicenseId", StringUtils.fromString(activateLicenseRequest.getLicenseId()));

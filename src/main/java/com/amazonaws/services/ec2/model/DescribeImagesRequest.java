@@ -95,6 +95,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
     private java.util.List<String> executableUsers;
 
     /**
+     * A list of filters used to match tags associated with the specified
+     * Images. For a complete reference to the available filter keys for this
+     * operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     */
+    private java.util.List<Filter> filters;
+
+    /**
      * An optional list of the AMI IDs to describe. If not specified, all
      * AMIs will be described.
      *
@@ -337,6 +346,100 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * A list of filters used to match tags associated with the specified
+     * Images. For a complete reference to the available filter keys for this
+     * operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     *
+     * @return A list of filters used to match tags associated with the specified
+     *         Images. For a complete reference to the available filter keys for this
+     *         operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
+     */
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+            filters = new java.util.ArrayList<Filter>();
+        }
+        return filters;
+    }
+    
+    /**
+     * A list of filters used to match tags associated with the specified
+     * Images. For a complete reference to the available filter keys for this
+     * operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     *
+     * @param filters A list of filters used to match tags associated with the specified
+     *         Images. For a complete reference to the available filter keys for this
+     *         operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
+     */
+    public void setFilters(java.util.Collection<Filter> filters) {
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
+        if (filters != null) {
+            filtersCopy.addAll(filters);
+        }
+        this.filters = filtersCopy;
+    }
+    
+    /**
+     * A list of filters used to match tags associated with the specified
+     * Images. For a complete reference to the available filter keys for this
+     * operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters A list of filters used to match tags associated with the specified
+     *         Images. For a complete reference to the available filter keys for this
+     *         operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeImagesRequest withFilters(Filter... filters) {
+        for (Filter value : filters) {
+            getFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of filters used to match tags associated with the specified
+     * Images. For a complete reference to the available filter keys for this
+     * operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters A list of filters used to match tags associated with the specified
+     *         Images. For a complete reference to the available filter keys for this
+     *         operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeImagesRequest withFilters(java.util.Collection<Filter> filters) {
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
+        if (filters != null) {
+            filtersCopy.addAll(filters);
+        }
+        this.filters = filtersCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -351,6 +454,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
         sb.append("ImageIds: " + imageIds + ", ");
         sb.append("Owners: " + owners + ", ");
         sb.append("ExecutableUsers: " + executableUsers + ", ");
+        sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
     }

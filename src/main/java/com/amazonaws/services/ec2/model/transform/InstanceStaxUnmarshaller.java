@@ -163,6 +163,14 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.setLicense(InstanceLicenseStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("clientToken", targetDepth)) {
+                    instance.setClientToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    instance.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instance;

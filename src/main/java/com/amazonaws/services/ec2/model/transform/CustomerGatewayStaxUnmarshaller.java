@@ -67,6 +67,10 @@ public class CustomerGatewayStaxUnmarshaller implements Unmarshaller<CustomerGat
                     customerGateway.setBgpAsn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    customerGateway.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return customerGateway;
