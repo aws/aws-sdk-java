@@ -59,6 +59,10 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
                     listener.setInstancePort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SSLCertificateId", targetDepth)) {
+                    listener.setSSLCertificateId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listener;

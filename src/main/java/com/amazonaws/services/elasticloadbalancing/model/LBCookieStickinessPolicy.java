@@ -15,38 +15,78 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * L B Cookie Stickiness Policy
+ * <p>
+ * The LBCookieStickinessPolicy data type.
+ * </p>
  */
 public class LBCookieStickinessPolicy {
 
+    /**
+     * The name name for the policy being created. The name must be unique
+     * within the set of policies for this LoadBalancer.
+     */
     private String policyName;
 
+    /**
+     * The time period in seconds after which the cookie should be considered
+     * stale. Not specifying this parameter indicates that the sticky session
+     * will last for the duration of the browser session.
+     */
     private Long cookieExpirationPeriod;
 
     /**
-     * Returns the value of the PolicyName property for this object.
+     * Default constructor for a new LBCookieStickinessPolicy object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public LBCookieStickinessPolicy() {}
+    
+    /**
+     * Constructs a new LBCookieStickinessPolicy object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param policyName The name name for the policy being created. The name
+     * must be unique within the set of policies for this LoadBalancer.
+     * @param cookieExpirationPeriod The time period in seconds after which
+     * the cookie should be considered stale. Not specifying this parameter
+     * indicates that the sticky session will last for the duration of the
+     * browser session.
+     */
+    public LBCookieStickinessPolicy(String policyName, Long cookieExpirationPeriod) {
+        this.policyName = policyName;
+        this.cookieExpirationPeriod = cookieExpirationPeriod;
+    }
+    
+    /**
+     * The name name for the policy being created. The name must be unique
+     * within the set of policies for this LoadBalancer.
      *
-     * @return The value of the PolicyName property for this object.
+     * @return The name name for the policy being created. The name must be unique
+     *         within the set of policies for this LoadBalancer.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Sets the value of the PolicyName property for this object.
+     * The name name for the policy being created. The name must be unique
+     * within the set of policies for this LoadBalancer.
      *
-     * @param policyName The new value for the PolicyName property for this object.
+     * @param policyName The name name for the policy being created. The name must be unique
+     *         within the set of policies for this LoadBalancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Sets the value of the PolicyName property for this object.
+     * The name name for the policy being created. The name must be unique
+     * within the set of policies for this LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The new value for the PolicyName property for this object.
+     * @param policyName The name name for the policy being created. The name must be unique
+     *         within the set of policies for this LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,30 +98,41 @@ public class LBCookieStickinessPolicy {
     
     
     /**
-     * Returns the value of the CookieExpirationPeriod property for this
-     * object.
+     * The time period in seconds after which the cookie should be considered
+     * stale. Not specifying this parameter indicates that the sticky session
+     * will last for the duration of the browser session.
      *
-     * @return The value of the CookieExpirationPeriod property for this object.
+     * @return The time period in seconds after which the cookie should be considered
+     *         stale. Not specifying this parameter indicates that the sticky session
+     *         will last for the duration of the browser session.
      */
     public Long getCookieExpirationPeriod() {
         return cookieExpirationPeriod;
     }
     
     /**
-     * Sets the value of the CookieExpirationPeriod property for this object.
+     * The time period in seconds after which the cookie should be considered
+     * stale. Not specifying this parameter indicates that the sticky session
+     * will last for the duration of the browser session.
      *
-     * @param cookieExpirationPeriod The new value for the CookieExpirationPeriod property for this object.
+     * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
+     *         stale. Not specifying this parameter indicates that the sticky session
+     *         will last for the duration of the browser session.
      */
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
     }
     
     /**
-     * Sets the value of the CookieExpirationPeriod property for this object.
+     * The time period in seconds after which the cookie should be considered
+     * stale. Not specifying this parameter indicates that the sticky session
+     * will last for the duration of the browser session.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cookieExpirationPeriod The new value for the CookieExpirationPeriod property for this object.
+     * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
+     *         stale. Not specifying this parameter indicates that the sticky session
+     *         will last for the duration of the browser session.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticLoadBalancing exception
+ * <p>
+ * Requested configuration change is invalid.
+ * </p>
  */        
 public class InvalidConfigurationRequestException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

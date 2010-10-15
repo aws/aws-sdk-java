@@ -57,8 +57,15 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      */
     private String availabilityZone;
 
+    /**
+     * Specifies if the DB Instance is a Multi-AZ deployment.
+     */
     private Boolean multiAZ;
 
+    /**
+     * Indicates that minor version upgrades will be applied automatically to
+     * the DB Instance during the maintenance window.
+     */
     private Boolean autoMinorVersionUpgrade;
 
     /**
@@ -265,29 +272,29 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -299,43 +306,44 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version upgrades will be applied automatically to
+     * the DB Instance during the maintenance window.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return Indicates that minor version upgrades will be applied automatically to
+     *         the DB Instance during the maintenance window.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version upgrades will be applied automatically to
+     * the DB Instance during the maintenance window.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
+     *         the DB Instance during the maintenance window.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version upgrades will be applied automatically to
+     * the DB Instance during the maintenance window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade Indicates that minor version upgrades will be applied automatically to
+     *         the DB Instance during the maintenance window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -347,10 +355,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version upgrades will be applied automatically to
+     * the DB Instance during the maintenance window.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return Indicates that minor version upgrades will be applied automatically to
+     *         the DB Instance during the maintenance window.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

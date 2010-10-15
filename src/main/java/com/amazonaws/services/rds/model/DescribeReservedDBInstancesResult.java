@@ -19,34 +19,40 @@ package com.amazonaws.services.rds.model;
  */
 public class DescribeReservedDBInstancesResult {
 
+    /**
+     * The marker provided for paginated results.
+     */
     private String marker;
 
+    /**
+     * A list of of reserved DB Instances.
+     */
     private java.util.List<ReservedDBInstance> reservedDBInstances;
 
     /**
-     * Returns the value of the Marker property for this object.
+     * The marker provided for paginated results.
      *
-     * @return The value of the Marker property for this object.
+     * @return The marker provided for paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided for paginated results.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided for paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided for paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided for paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +64,9 @@ public class DescribeReservedDBInstancesResult {
     
     
     /**
-     * Returns the value of the ReservedDBInstances property for this object.
+     * A list of of reserved DB Instances.
      *
-     * @return The value of the ReservedDBInstances property for this object.
+     * @return A list of of reserved DB Instances.
      */
     public java.util.List<ReservedDBInstance> getReservedDBInstances() {
         if (reservedDBInstances == null) {
@@ -70,9 +76,9 @@ public class DescribeReservedDBInstancesResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstances property for this object.
+     * A list of of reserved DB Instances.
      *
-     * @param reservedDBInstances The new value for the ReservedDBInstances property for this object.
+     * @param reservedDBInstances A list of of reserved DB Instances.
      */
     public void setReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {
         java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>();
@@ -83,11 +89,11 @@ public class DescribeReservedDBInstancesResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstances property for this object.
+     * A list of of reserved DB Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstances The new value for the ReservedDBInstances property for this object.
+     * @param reservedDBInstances A list of of reserved DB Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +106,11 @@ public class DescribeReservedDBInstancesResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstances property for this object.
+     * A list of of reserved DB Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstances The new value for the ReservedDBInstances property for this object.
+     * @param reservedDBInstances A list of of reserved DB Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

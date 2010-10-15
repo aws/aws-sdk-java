@@ -15,36 +15,58 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Instance
+ * <p>
+ * The Instance data type.
+ * </p>
  */
 public class Instance {
 
+    /**
+     * Provides an EC2 instance ID.
+     */
     private String instanceId;
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * Default constructor for a new Instance object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Instance() {}
+    
+    /**
+     * Constructs a new Instance object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId Provides an EC2 instance ID.
+     */
+    public Instance(String instanceId) {
+        this.instanceId = instanceId;
+    }
+    
+    /**
+     * Provides an EC2 instance ID.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return Provides an EC2 instance ID.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * Provides an EC2 instance ID.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId Provides an EC2 instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * Provides an EC2 instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId Provides an EC2 instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

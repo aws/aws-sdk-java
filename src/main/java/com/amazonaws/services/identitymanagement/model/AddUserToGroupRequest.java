@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(AddUserToGroupRequest) AddUserToGroup operation}.
  * <p>
- * Adds the specified user to the specified group.
+ * Adds the specified User to the specified group.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addUserToGroup(AddUserToGroupRequest)
@@ -35,7 +35,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
-     * Name of the user to add.
+     * Name of the User to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -90,33 +90,33 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Name of the user to add.
+     * Name of the User to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to add.
+     * @return Name of the User to add.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to add.
+     * Name of the User to add.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to add.
+     * @param userName Name of the User to add.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to add.
+     * Name of the User to add.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -124,7 +124,7 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to add.
+     * @param userName Name of the User to add.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

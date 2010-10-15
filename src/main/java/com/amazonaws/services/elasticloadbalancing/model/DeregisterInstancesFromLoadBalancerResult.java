@@ -19,12 +19,18 @@ package com.amazonaws.services.elasticloadbalancing.model;
  */
 public class DeregisterInstancesFromLoadBalancerResult {
 
+    /**
+     * An updated list of remaining instances registered with the
+     * LoadBalancer.
+     */
     private java.util.List<Instance> instances;
 
     /**
-     * Returns the value of the Instances property for this object.
+     * An updated list of remaining instances registered with the
+     * LoadBalancer.
      *
-     * @return The value of the Instances property for this object.
+     * @return An updated list of remaining instances registered with the
+     *         LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -34,9 +40,11 @@ public class DeregisterInstancesFromLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of remaining instances registered with the
+     * LoadBalancer.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of remaining instances registered with the
+     *         LoadBalancer.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -47,11 +55,13 @@ public class DeregisterInstancesFromLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of remaining instances registered with the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of remaining instances registered with the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +74,13 @@ public class DeregisterInstancesFromLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of remaining instances registered with the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of remaining instances registered with the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

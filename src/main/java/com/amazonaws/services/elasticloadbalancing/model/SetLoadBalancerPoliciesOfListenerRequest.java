@@ -17,42 +17,90 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest) SetLoadBalancerPoliciesOfListener operation}.
- * 
+ * <p>
+ * Associates, updates, or disables a policy with a listener on the load
+ * balancer. Currently only zero (0) or one (1) policy can be associated
+ * with a listener.
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesOfListener(SetLoadBalancerPoliciesOfListenerRequest)
  */
 public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
+     */
     private String loadBalancerName;
 
+    /**
+     * The external port of the LoadBalancer with which this policy has to be
+     * associated.
+     */
     private Integer loadBalancerPort;
 
+    /**
+     * List of policies to be associated with the listener. Currently this
+     * list can have at most one policy. If the list is empty, the current
+     * policy is removed from the listener.
+     */
     private java.util.List<String> policyNames;
 
     /**
-     * Returns the value of the LoadBalancerName property for this object.
+     * Default constructor for a new SetLoadBalancerPoliciesOfListenerRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public SetLoadBalancerPoliciesOfListenerRequest() {}
+    
+    /**
+     * Constructs a new SetLoadBalancerPoliciesOfListenerRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The name associated with the LoadBalancer. The
+     * name must be unique within the client AWS account.
+     * @param loadBalancerPort The external port of the LoadBalancer with
+     * which this policy has to be associated.
+     * @param policyNames List of policies to be associated with the
+     * listener. Currently this list can have at most one policy. If the list
+     * is empty, the current policy is removed from the listener.
+     */
+    public SetLoadBalancerPoliciesOfListenerRequest(String loadBalancerName, Integer loadBalancerPort, java.util.List<String> policyNames) {
+        this.loadBalancerName = loadBalancerName;
+        this.loadBalancerPort = loadBalancerPort;
+        this.policyNames = policyNames;
+    }
+    
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      *
-     * @return The value of the LoadBalancerName property for this object.
+     * @return The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,29 +112,35 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     
     
     /**
-     * Returns the value of the LoadBalancerPort property for this object.
+     * The external port of the LoadBalancer with which this policy has to be
+     * associated.
      *
-     * @return The value of the LoadBalancerPort property for this object.
+     * @return The external port of the LoadBalancer with which this policy has to be
+     *         associated.
      */
     public Integer getLoadBalancerPort() {
         return loadBalancerPort;
     }
     
     /**
-     * Sets the value of the LoadBalancerPort property for this object.
+     * The external port of the LoadBalancer with which this policy has to be
+     * associated.
      *
-     * @param loadBalancerPort The new value for the LoadBalancerPort property for this object.
+     * @param loadBalancerPort The external port of the LoadBalancer with which this policy has to be
+     *         associated.
      */
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
     
     /**
-     * Sets the value of the LoadBalancerPort property for this object.
+     * The external port of the LoadBalancer with which this policy has to be
+     * associated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPort The new value for the LoadBalancerPort property for this object.
+     * @param loadBalancerPort The external port of the LoadBalancer with which this policy has to be
+     *         associated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,9 +152,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     
     
     /**
-     * Returns the value of the PolicyNames property for this object.
+     * List of policies to be associated with the listener. Currently this
+     * list can have at most one policy. If the list is empty, the current
+     * policy is removed from the listener.
      *
-     * @return The value of the PolicyNames property for this object.
+     * @return List of policies to be associated with the listener. Currently this
+     *         list can have at most one policy. If the list is empty, the current
+     *         policy is removed from the listener.
      */
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
@@ -110,9 +168,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * List of policies to be associated with the listener. Currently this
+     * list can have at most one policy. If the list is empty, the current
+     * policy is removed from the listener.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames List of policies to be associated with the listener. Currently this
+     *         list can have at most one policy. If the list is empty, the current
+     *         policy is removed from the listener.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
@@ -123,11 +185,15 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * List of policies to be associated with the listener. Currently this
+     * list can have at most one policy. If the list is empty, the current
+     * policy is removed from the listener.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames List of policies to be associated with the listener. Currently this
+     *         list can have at most one policy. If the list is empty, the current
+     *         policy is removed from the listener.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -140,11 +206,15 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * List of policies to be associated with the listener. Currently this
+     * list can have at most one policy. If the list is empty, the current
+     * policy is removed from the listener.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames List of policies to be associated with the listener. Currently this
+     *         list can have at most one policy. If the list is empty, the current
+     *         policy is removed from the listener.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

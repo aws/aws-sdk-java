@@ -40,10 +40,10 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -109,48 +109,48 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @return Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -158,10 +158,10 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

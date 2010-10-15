@@ -23,22 +23,22 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListUsersResult {
 
     /**
-     * A list of users.
+     * A list of User names.
      */
     private java.util.List<User> users;
 
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more Users in the list.
      */
     private Boolean isTruncated;
 
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -47,9 +47,9 @@ public class ListUsersResult {
     private String marker;
 
     /**
-     * A list of users.
+     * A list of User names.
      *
-     * @return A list of users.
+     * @return A list of User names.
      */
     public java.util.List<User> getUsers() {
         if (users == null) {
@@ -59,9 +59,9 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of users.
+     * A list of User names.
      *
-     * @param users A list of users.
+     * @param users A list of User names.
      */
     public void setUsers(java.util.Collection<User> users) {
         java.util.List<User> usersCopy = new java.util.ArrayList<User>();
@@ -72,11 +72,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of users.
+     * A list of User names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of users.
+     * @param users A list of User names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,11 +89,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of users.
+     * A list of User names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of users.
+     * @param users A list of User names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -109,47 +109,47 @@ public class ListUsersResult {
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more Users in the list.
      *
-     * @return A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @return A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more Users in the list.
      */
-    public Boolean isIsTruncated() {
+    public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more Users in the list.
      *
-     * @param isTruncated A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more Users in the list.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more Users in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isTruncated A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more Users in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -161,15 +161,15 @@ public class ListUsersResult {
     
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more Users in the list.
      *
-     * @return A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @return A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more Users in the list.
      */
     public Boolean getIsTruncated() {
         return isTruncated;
@@ -178,7 +178,7 @@ public class ListUsersResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -186,7 +186,7 @@ public class ListUsersResult {
      *
      * @return If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      */
     public String getMarker() {
         return marker;
@@ -195,7 +195,7 @@ public class ListUsersResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -203,7 +203,7 @@ public class ListUsersResult {
      *
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -212,7 +212,7 @@ public class ListUsersResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -222,7 +222,7 @@ public class ListUsersResult {
      *
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

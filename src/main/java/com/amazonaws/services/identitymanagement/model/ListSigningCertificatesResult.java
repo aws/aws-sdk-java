@@ -23,22 +23,22 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListSigningCertificatesResult {
 
     /**
-     * A list of the user's signing certificate information.
+     * A list of the User's signing certificate information.
      */
     private java.util.List<SigningCertificate> certificates;
 
     /**
      * A flag that indicates whether there are more certificate IDs to list.
-     * If your results were truncated, you can make a follow-up pagination
+     * If your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
      * more certificates in the list.
      */
     private Boolean isTruncated;
 
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -47,9 +47,9 @@ public class ListSigningCertificatesResult {
     private String marker;
 
     /**
-     * A list of the user's signing certificate information.
+     * A list of the User's signing certificate information.
      *
-     * @return A list of the user's signing certificate information.
+     * @return A list of the User's signing certificate information.
      */
     public java.util.List<SigningCertificate> getCertificates() {
         if (certificates == null) {
@@ -59,9 +59,9 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the user's signing certificate information.
+     * A list of the User's signing certificate information.
      *
-     * @param certificates A list of the user's signing certificate information.
+     * @param certificates A list of the User's signing certificate information.
      */
     public void setCertificates(java.util.Collection<SigningCertificate> certificates) {
         java.util.List<SigningCertificate> certificatesCopy = new java.util.ArrayList<SigningCertificate>();
@@ -72,11 +72,11 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the user's signing certificate information.
+     * A list of the User's signing certificate information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param certificates A list of the user's signing certificate information.
+     * @param certificates A list of the User's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,11 +89,11 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the user's signing certificate information.
+     * A list of the User's signing certificate information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param certificates A list of the user's signing certificate information.
+     * @param certificates A list of the User's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,27 +110,27 @@ public class ListSigningCertificatesResult {
     
     /**
      * A flag that indicates whether there are more certificate IDs to list.
-     * If your results were truncated, you can make a follow-up pagination
+     * If your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
      * more certificates in the list.
      *
      * @return A flag that indicates whether there are more certificate IDs to list.
-     *         If your results were truncated, you can make a follow-up pagination
+     *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
      */
-    public Boolean isIsTruncated() {
+    public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
      * A flag that indicates whether there are more certificate IDs to list.
-     * If your results were truncated, you can make a follow-up pagination
+     * If your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
      * more certificates in the list.
      *
      * @param isTruncated A flag that indicates whether there are more certificate IDs to list.
-     *         If your results were truncated, you can make a follow-up pagination
+     *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
      */
@@ -140,14 +140,14 @@ public class ListSigningCertificatesResult {
     
     /**
      * A flag that indicates whether there are more certificate IDs to list.
-     * If your results were truncated, you can make a follow-up pagination
+     * If your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
      * more certificates in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isTruncated A flag that indicates whether there are more certificate IDs to list.
-     *         If your results were truncated, you can make a follow-up pagination
+     *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
      *
@@ -162,12 +162,12 @@ public class ListSigningCertificatesResult {
     
     /**
      * A flag that indicates whether there are more certificate IDs to list.
-     * If your results were truncated, you can make a follow-up pagination
+     * If your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
      * more certificates in the list.
      *
      * @return A flag that indicates whether there are more certificate IDs to list.
-     *         If your results were truncated, you can make a follow-up pagination
+     *         If your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
      *         more certificates in the list.
      */
@@ -176,43 +176,43 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @return If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -220,9 +220,9 @@ public class ListSigningCertificatesResult {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

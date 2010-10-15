@@ -63,6 +63,9 @@ public class Parameter {
      */
     private Boolean isModifiable;
 
+    /**
+     * The earliest engine version to which the parameter can apply.
+     */
     private String minimumEngineVersion;
 
     /**
@@ -326,7 +329,7 @@ public class Parameter {
      *         can be modified. Some parameters have security or operational
      *         implications that prevent them from being changed.
      */
-    public Boolean isIsModifiable() {
+    public Boolean isModifiable() {
         return isModifiable;
     }
     
@@ -377,30 +380,29 @@ public class Parameter {
     }
     
     /**
-     * Returns the value of the MinimumEngineVersion property for this
-     * object.
+     * The earliest engine version to which the parameter can apply.
      *
-     * @return The value of the MinimumEngineVersion property for this object.
+     * @return The earliest engine version to which the parameter can apply.
      */
     public String getMinimumEngineVersion() {
         return minimumEngineVersion;
     }
     
     /**
-     * Sets the value of the MinimumEngineVersion property for this object.
+     * The earliest engine version to which the parameter can apply.
      *
-     * @param minimumEngineVersion The new value for the MinimumEngineVersion property for this object.
+     * @param minimumEngineVersion The earliest engine version to which the parameter can apply.
      */
     public void setMinimumEngineVersion(String minimumEngineVersion) {
         this.minimumEngineVersion = minimumEngineVersion;
     }
     
     /**
-     * Sets the value of the MinimumEngineVersion property for this object.
+     * The earliest engine version to which the parameter can apply.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param minimumEngineVersion The new value for the MinimumEngineVersion property for this object.
+     * @param minimumEngineVersion The earliest engine version to which the parameter can apply.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

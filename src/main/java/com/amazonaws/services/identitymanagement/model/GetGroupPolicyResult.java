@@ -44,6 +44,7 @@ public class GetGroupPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      */
     private String policyDocument;
@@ -144,6 +145,7 @@ public class GetGroupPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @return The policy document.
@@ -156,6 +158,7 @@ public class GetGroupPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
@@ -170,6 +173,7 @@ public class GetGroupPolicyResult {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.

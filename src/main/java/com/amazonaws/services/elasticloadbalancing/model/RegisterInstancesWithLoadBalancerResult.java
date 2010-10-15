@@ -19,12 +19,15 @@ package com.amazonaws.services.elasticloadbalancing.model;
  */
 public class RegisterInstancesWithLoadBalancerResult {
 
+    /**
+     * An updated list of instances for the LoadBalancer.
+     */
     private java.util.List<Instance> instances;
 
     /**
-     * Returns the value of the Instances property for this object.
+     * An updated list of instances for the LoadBalancer.
      *
-     * @return The value of the Instances property for this object.
+     * @return An updated list of instances for the LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -34,9 +37,9 @@ public class RegisterInstancesWithLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of instances for the LoadBalancer.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of instances for the LoadBalancer.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -47,11 +50,11 @@ public class RegisterInstancesWithLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of instances for the LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of instances for the LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +67,11 @@ public class RegisterInstancesWithLoadBalancerResult {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * An updated list of instances for the LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances An updated list of instances for the LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

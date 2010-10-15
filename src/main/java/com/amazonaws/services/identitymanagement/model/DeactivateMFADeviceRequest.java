@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest) DeactivateMFADevice operation}.
  * <p>
  * Deactivates the specified MFA device and removes it from association
- * with the user for which it was originally enabled.
+ * with the User name for which it was originally enabled.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest)
@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose MFA device you want to deactivate.
+     * Name of the User whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -45,33 +45,33 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
     private String serialNumber;
 
     /**
-     * Name of the user whose MFA device you want to deactivate.
+     * Name of the User whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose MFA device you want to deactivate.
+     * @return Name of the User whose MFA device you want to deactivate.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose MFA device you want to deactivate.
+     * Name of the User whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA device you want to deactivate.
+     * @param userName Name of the User whose MFA device you want to deactivate.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose MFA device you want to deactivate.
+     * Name of the User whose MFA device you want to deactivate.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -79,7 +79,7 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA device you want to deactivate.
+     * @param userName Name of the User whose MFA device you want to deactivate.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

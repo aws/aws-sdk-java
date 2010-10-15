@@ -121,11 +121,32 @@ public class DBInstance {
      */
     private java.util.Date latestRestorableTime;
 
+    /**
+     * Specifies if the DB Instance is a Multi-AZ deployment.
+     */
     private Boolean multiAZ;
 
+    /**
+     * Indicates the database engine version.
+     */
     private String engineVersion;
 
+    /**
+     * Indicates that minor version patches are applied automatically.
+     */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * Contains the identifier of the source DB Instance if this DB Instance
+     * is a Read Replica.
+     */
+    private String readReplicaSourceDBInstanceIdentifier;
+
+    /**
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB Instance.
+     */
+    private java.util.List<String> readReplicaDBInstanceIdentifiers;
 
     /**
      * Specifies a user-supplied database identifier. This is the unique key
@@ -856,29 +877,29 @@ public class DBInstance {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -890,38 +911,38 @@ public class DBInstance {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return Indicates the database engine version.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Indicates the database engine version.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Indicates the database engine version.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -933,34 +954,29 @@ public class DBInstance {
     
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version patches are applied automatically.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return Indicates that minor version patches are applied automatically.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version patches are applied automatically.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version patches are applied automatically.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade Indicates that minor version patches are applied automatically.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -972,13 +988,122 @@ public class DBInstance {
     
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * Indicates that minor version patches are applied automatically.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return Indicates that minor version patches are applied automatically.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
+    }
+    
+    /**
+     * Contains the identifier of the source DB Instance if this DB Instance
+     * is a Read Replica.
+     *
+     * @return Contains the identifier of the source DB Instance if this DB Instance
+     *         is a Read Replica.
+     */
+    public String getReadReplicaSourceDBInstanceIdentifier() {
+        return readReplicaSourceDBInstanceIdentifier;
+    }
+    
+    /**
+     * Contains the identifier of the source DB Instance if this DB Instance
+     * is a Read Replica.
+     *
+     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB Instance if this DB Instance
+     *         is a Read Replica.
+     */
+    public void setReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
+        this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
+    }
+    
+    /**
+     * Contains the identifier of the source DB Instance if this DB Instance
+     * is a Read Replica.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param readReplicaSourceDBInstanceIdentifier Contains the identifier of the source DB Instance if this DB Instance
+     *         is a Read Replica.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withReadReplicaSourceDBInstanceIdentifier(String readReplicaSourceDBInstanceIdentifier) {
+        this.readReplicaSourceDBInstanceIdentifier = readReplicaSourceDBInstanceIdentifier;
+        return this;
+    }
+    
+    
+    /**
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB Instance.
+     *
+     * @return Contains one or more identifiers of the Read Replicas associated with
+     *         this DB Instance.
+     */
+    public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
+        if (readReplicaDBInstanceIdentifiers == null) {
+            readReplicaDBInstanceIdentifiers = new java.util.ArrayList<String>();
+        }
+        return readReplicaDBInstanceIdentifiers;
+    }
+    
+    /**
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB Instance.
+     *
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
+     *         this DB Instance.
+     */
+    public void setReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
+        java.util.List<String> readReplicaDBInstanceIdentifiersCopy = new java.util.ArrayList<String>();
+        if (readReplicaDBInstanceIdentifiers != null) {
+            readReplicaDBInstanceIdentifiersCopy.addAll(readReplicaDBInstanceIdentifiers);
+        }
+        this.readReplicaDBInstanceIdentifiers = readReplicaDBInstanceIdentifiersCopy;
+    }
+    
+    /**
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
+     *         this DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withReadReplicaDBInstanceIdentifiers(String... readReplicaDBInstanceIdentifiers) {
+        for (String value : readReplicaDBInstanceIdentifiers) {
+            getReadReplicaDBInstanceIdentifiers().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Contains one or more identifiers of the Read Replicas associated with
+     * this DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param readReplicaDBInstanceIdentifiers Contains one or more identifiers of the Read Replicas associated with
+     *         this DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withReadReplicaDBInstanceIdentifiers(java.util.Collection<String> readReplicaDBInstanceIdentifiers) {
+        java.util.List<String> readReplicaDBInstanceIdentifiersCopy = new java.util.ArrayList<String>();
+        if (readReplicaDBInstanceIdentifiers != null) {
+            readReplicaDBInstanceIdentifiersCopy.addAll(readReplicaDBInstanceIdentifiers);
+        }
+        this.readReplicaDBInstanceIdentifiers = readReplicaDBInstanceIdentifiersCopy;
+
+        return this;
     }
     
     /**
@@ -1013,6 +1138,8 @@ public class DBInstance {
         sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("EngineVersion: " + engineVersion + ", ");
         sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        sb.append("ReadReplicaSourceDBInstanceIdentifier: " + readReplicaSourceDBInstanceIdentifier + ", ");
+        sb.append("ReadReplicaDBInstanceIdentifiers: " + readReplicaDBInstanceIdentifiers + ", ");
         sb.append("}");
         return sb.toString();
     }

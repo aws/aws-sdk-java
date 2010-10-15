@@ -26,8 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeTagsRequest extends AmazonWebServiceRequest {
 
     /**
-     * A list of filters used to match tags associated with the specified
-     * tags.
+     * A list of filters used to match properties for tags.
      */
     private java.util.List<Filter> filters;
 
@@ -42,19 +41,16 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param filters A list of filters used to match tags associated with
-     * the specified tags.
+     * @param filters A list of filters used to match properties for tags.
      */
     public DescribeTagsRequest(java.util.List<Filter> filters) {
         this.filters = filters;
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * tags.
+     * A list of filters used to match properties for tags.
      *
-     * @return A list of filters used to match tags associated with the specified
-     *         tags.
+     * @return A list of filters used to match properties for tags.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -64,11 +60,9 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * tags.
+     * A list of filters used to match properties for tags.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         tags.
+     * @param filters A list of filters used to match properties for tags.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -79,13 +73,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * tags.
+     * A list of filters used to match properties for tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         tags.
+     * @param filters A list of filters used to match properties for tags.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,13 +90,11 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * tags.
+     * A list of filters used to match properties for tags.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         tags.
+     * @param filters A list of filters used to match properties for tags.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

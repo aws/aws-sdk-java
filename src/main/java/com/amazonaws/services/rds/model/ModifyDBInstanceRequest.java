@@ -108,12 +108,29 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      */
     private String preferredMaintenanceWindow;
 
+    /**
+     * Specifies if the DB Instance is a Multi-AZ deployment.
+     */
     private Boolean multiAZ;
 
+    /**
+     * The version number of the database engine to upgrade to. <p> For major
+     * version upgrades, if a non-default DB Parameter Group is currently in
+     * use, a new DB Parameter Group in the DB Parameter Group Family for the
+     * new engine version must be specified. The new DB Parameter Group can
+     * be the default for that DB Parameter Group Family.
+     */
     private String engineVersion;
 
+    /**
+     * The indicates that major version upgrades are allowed.
+     */
     private Boolean allowMajorVersionUpgrade;
 
+    /**
+     * The indicates that minor version upgrades will be applied
+     * automatically to the DB Instance during the maintenance window.
+     */
     private Boolean autoMinorVersionUpgrade;
 
     /**
@@ -706,29 +723,29 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -740,38 +757,62 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Specifies if the DB Instance is a Multi-AZ deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * The version number of the database engine to upgrade to. <p> For major
+     * version upgrades, if a non-default DB Parameter Group is currently in
+     * use, a new DB Parameter Group in the DB Parameter Group Family for the
+     * new engine version must be specified. The new DB Parameter Group can
+     * be the default for that DB Parameter Group Family.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return The version number of the database engine to upgrade to. <p> For major
+     *         version upgrades, if a non-default DB Parameter Group is currently in
+     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
+     *         new engine version must be specified. The new DB Parameter Group can
+     *         be the default for that DB Parameter Group Family.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The version number of the database engine to upgrade to. <p> For major
+     * version upgrades, if a non-default DB Parameter Group is currently in
+     * use, a new DB Parameter Group in the DB Parameter Group Family for the
+     * new engine version must be specified. The new DB Parameter Group can
+     * be the default for that DB Parameter Group Family.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The version number of the database engine to upgrade to. <p> For major
+     *         version upgrades, if a non-default DB Parameter Group is currently in
+     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
+     *         new engine version must be specified. The new DB Parameter Group can
+     *         be the default for that DB Parameter Group Family.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The version number of the database engine to upgrade to. <p> For major
+     * version upgrades, if a non-default DB Parameter Group is currently in
+     * use, a new DB Parameter Group in the DB Parameter Group Family for the
+     * new engine version must be specified. The new DB Parameter Group can
+     * be the default for that DB Parameter Group Family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The version number of the database engine to upgrade to. <p> For major
+     *         version upgrades, if a non-default DB Parameter Group is currently in
+     *         use, a new DB Parameter Group in the DB Parameter Group Family for the
+     *         new engine version must be specified. The new DB Parameter Group can
+     *         be the default for that DB Parameter Group Family.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -783,34 +824,29 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AllowMajorVersionUpgrade property for this
-     * object.
+     * The indicates that major version upgrades are allowed.
      *
-     * @return The value of the AllowMajorVersionUpgrade property for this object.
+     * @return The indicates that major version upgrades are allowed.
      */
     public Boolean isAllowMajorVersionUpgrade() {
         return allowMajorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AllowMajorVersionUpgrade property for this
-     * object.
+     * The indicates that major version upgrades are allowed.
      *
-     * @param allowMajorVersionUpgrade The new value for the AllowMajorVersionUpgrade property for this
-     *         object.
+     * @param allowMajorVersionUpgrade The indicates that major version upgrades are allowed.
      */
     public void setAllowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
         this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AllowMajorVersionUpgrade property for this
-     * object.
+     * The indicates that major version upgrades are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowMajorVersionUpgrade The new value for the AllowMajorVersionUpgrade property for this
-     *         object.
+     * @param allowMajorVersionUpgrade The indicates that major version upgrades are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -822,44 +858,44 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AllowMajorVersionUpgrade property for this
-     * object.
+     * The indicates that major version upgrades are allowed.
      *
-     * @return The value of the AllowMajorVersionUpgrade property for this object.
+     * @return The indicates that major version upgrades are allowed.
      */
     public Boolean getAllowMajorVersionUpgrade() {
         return allowMajorVersionUpgrade;
     }
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * The indicates that minor version upgrades will be applied
+     * automatically to the DB Instance during the maintenance window.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return The indicates that minor version upgrades will be applied
+     *         automatically to the DB Instance during the maintenance window.
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * The indicates that minor version upgrades will be applied
+     * automatically to the DB Instance during the maintenance window.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade The indicates that minor version upgrades will be applied
+     *         automatically to the DB Instance during the maintenance window.
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
     }
     
     /**
-     * Sets the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * The indicates that minor version upgrades will be applied
+     * automatically to the DB Instance during the maintenance window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoMinorVersionUpgrade The new value for the AutoMinorVersionUpgrade property for this
-     *         object.
+     * @param autoMinorVersionUpgrade The indicates that minor version upgrades will be applied
+     *         automatically to the DB Instance during the maintenance window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -871,10 +907,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AutoMinorVersionUpgrade property for this
-     * object.
+     * The indicates that minor version upgrades will be applied
+     * automatically to the DB Instance during the maintenance window.
      *
-     * @return The value of the AutoMinorVersionUpgrade property for this object.
+     * @return The indicates that minor version upgrades will be applied
+     *         automatically to the DB Instance during the maintenance window.
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

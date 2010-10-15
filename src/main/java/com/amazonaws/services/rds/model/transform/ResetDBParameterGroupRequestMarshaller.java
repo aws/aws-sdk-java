@@ -32,7 +32,7 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
     public Request<ResetDBParameterGroupRequest> marshall(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
         Request<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ResetDBParameterGroup");
-        request.addParameter("Version", "2010-06-28");
+        request.addParameter("Version", "2010-07-28");
         if (resetDBParameterGroupRequest != null) {
             if (resetDBParameterGroupRequest.getDBParameterGroupName() != null) {
                 request.addParameter("DBParameterGroupName", StringUtils.fromString(resetDBParameterGroupRequest.getDBParameterGroupName()));
@@ -84,8 +84,8 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
                     }
                 }
                 if (parametersListValue != null) {
-                    if (parametersListValue.isIsModifiable() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parametersListValue.isIsModifiable()));
+                    if (parametersListValue.isModifiable() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parametersListValue.isModifiable()));
                     }
                 }
                 if (parametersListValue != null) {

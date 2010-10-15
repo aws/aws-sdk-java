@@ -25,8 +25,8 @@ import com.amazonaws.services.identitymanagement.model.*;
  * using Java Futures.
  * AWS Identity and Access Management <p>
  * AWS Identity and Access Management (IAM) is a web service that enables
- * Amazon Web Services (AWS) customers to manage users and user
- * permissions under their AWS account.
+ * Amazon Web Services (AWS) customers to manage Users and User
+ * permissions under their AWS Account.
  * </p>
  * <p>
  * This is the AWS Identity and Access Management API Reference. This
@@ -49,7 +49,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * http://json.org </a> )</li>
  * <li>The specific AWS products you are using or plan to use (e.g.,
  * Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage
- * Service (Amazon S3), etc.)</li>
+ * Service (Amazon S3), and so on.)</li>
  * 
  * </ul>
  * <p>
@@ -60,7 +60,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * </p>
  * <p>
  * We will refer to Amazon AWS Identity and Access Management using the
- * the abbreviated form IAM; all copyrights and legal protections still
+ * abbreviated form IAM. All copyrights and legal protections still
  * apply.
  * </p> 
  */       
@@ -93,14 +93,14 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Deletes the access key associated with the specified user.
+     * Deletes the access key associated with the specified User.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is
-     * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * If you do not specify a User name, IAM determines the User name
+     * implicitly based on the AWS Access Key ID signing the request. Because
+     * this action works for access keys under the AWS Account, you can use
+     * this API to manage root credentials even if the AWS Account has no
+     * associated Users.
      * </p>
      *
      * @param deleteAccessKeyRequest Container for the necessary parameters
@@ -124,19 +124,19 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Returns information about the signing certificates associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * specified User. If there are none, the action returns an empty list.
      * </p>
      * <p>
-     * Although each user is limited to a small number of signing
+     * Although each User is limited to a small number of signing
      * certificates, you can still paginate the results using the
      * <code>MaxItems</code> and <code>Marker</code> parameters.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * request. Because this action works for access keys under the AWS
+     * Account, this API can be used to manage root credentials even if the
+     * AWS Account has no associated Users.
      * </p>
      *
      * @param listSigningCertificatesRequest Container for the necessary
@@ -161,22 +161,23 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Uploads an X.509 signing certificate and associates it with the
-     * specified user. Some AWS services use X.509 signing certificates to
+     * specified User. Some AWS services use X.509 signing certificates to
      * validate requests that are signed with a corresponding private key.
-     * When you upload the certificate, its default status is Active.
+     * When you upload the certificate, its default status is
+     * <code>Active</code> .
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is
+     * If the <code>UserName</code> field is not specified, the User name is
      * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * request. Because this action works for access keys under the AWS
+     * Account, this API can be used to manage root credentials even if the
+     * AWS Account has no associated Users.
      * </p>
      * <p>
      * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
      * should use POST rather than GET when calling UploadSigningCertificate.
-     * For more information, see Using the Query API in the AWS Identity and
-     * Access Management User Guide.
+     * For more information, see Making Query Requests in Using AWS Identity
+     * and Access Management.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -200,7 +201,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Deletes the specified policy associated with the specified user.
+     * Deletes the specified policy associated with the specified User.
      * </p>
      *
      * @param deleteUserPolicyRequest Container for the necessary parameters
@@ -224,21 +225,22 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Adds (or updates) a policy document associated with the specified
-     * user. For information about how to write a policy, refer to the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * User. For information about policies, refer to <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
+     * Overview of Policies </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      * <p>
      * For information about limits on the number of policies you can
-     * associate with a user, see Limitations on AWS IAM Entities in the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * associate with a User, see <a
+     * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use POST
      * rather than GET when calling PutUserPolicy. For more information, see
-     * Using the Query API in the AWS Identity and Access Management User
-     * Guide.
+     * Making Query Requests in Using AWS Identity and Access Management.
      * </p>
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
@@ -260,10 +262,40 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves the specified policy document for the specified user. The
+     * Lists the server certificates that have the specified path prefix. If
+     * none exist, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listServerCertificatesRequest Container for the necessary
+     *           parameters to execute the ListServerCertificates operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListServerCertificates service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListServerCertificatesResult> listServerCertificatesAsync(ListServerCertificatesRequest listServerCertificatesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves the specified policy document for the specified User. The
      * returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * http://www.faqs.org/rfcs/rfc3986.html.
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
      * </p>
      *
      * @param getUserPolicyRequest Container for the necessary parameters to
@@ -285,8 +317,15 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Updates the login profile for the specified user. Use this API to
-     * change the user's password.
+     * Updates the login profile for the specified User. Use this API to
+     * change the User's password.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>In the full release you will be able to use IAM to access
+     * your services through the AWS Management Console. Although this
+     * feature is not currently available, you can create login profiles for
+     * your Users now. Then, when this feature is implemented, your Users can
+     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
@@ -310,12 +349,56 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Updates the name and/or the path of the specified user.
+     * Updates the name and/or the path of the specified server certificate.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing a
-     * user's path or name. For more information, see Renaming Users and
-     * Groups in the AWS Identity and Access Management User Guide.
+     * server certificate's path or name. For more information, see Managing
+     * Server Certificates in Using AWS Identity and Access Management.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>To change a server certificate name the requester must
+     * have appropriate permissions on both the source object and the target
+     * object. For example, to change the name from ProductionCert to
+     * ProdCert, the entity making the request must have permission on
+     * ProductionCert and ProdCert, or must have permission on all (*). For
+     * more information about permissions, see Permissions and Policies.
+     * </p>
+     *
+     * @param updateServerCertificateRequest Container for the necessary
+     *           parameters to execute the UpdateServerCertificate operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateServerCertificateAsync(UpdateServerCertificateRequest updateServerCertificateRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates the name and/or the path of the specified User.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> You should understand the implications of changing a
+     * User's path or name. For more information, see Renaming Users and
+     * Groups in Using AWS Identity and Access Management.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>To change a User name the requester must have appropriate
+     * permissions on both the source object and the target object. For
+     * example, to change Bob to Robert, the entity making the request must
+     * have permission on Bob and Robert, or must have permission on all (*).
+     * For more information about permissions, see Permissions and Policies.
      * </p>
      *
      * @param updateUserRequest Container for the necessary parameters to
@@ -337,16 +420,22 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Deletes the login profile for the specified user, which terminates the
-     * user's ability to access AWS services through the IAM login page.
+     * Deletes the login profile for the specified User, which terminates the
+     * User's ability to access AWS services through the IAM login page.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deleting a user's login profile does not prevent a
-     * user from accessing IAM through the command line interface or the API.
-     * To prevent a user from accessing IAM through the command line
-     * interface or the API you must either make the access key inactive or
-     * delete it. For more information about making keys inactive or
-     * deleting them, see UpdateAccessKey and DeleteAccessKey.
+     * <b>IMPORTANT:</b>Deleting a User's login profile does not prevent a
+     * User from accessing IAM through the command line interface or the API.
+     * To prevent all User access you must also either make the access key
+     * inactive or delete it. For more information about making keys
+     * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>In the full release you will be able to use IAM to access
+     * your services through the AWS Management Console. Although this
+     * feature is not currently available, you can create login profiles for
+     * your Users now. Then, when this feature is implemented, your Users can
+     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param deleteLoginProfileRequest Container for the necessary
@@ -371,20 +460,21 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Changes the status of the specified signing certificate from active to
-     * disabled, or vice versa. This action can be used to disable a user's
+     * disabled, or vice versa. This action can be used to disable a User's
      * signing certificate as part of a certificate rotation workflow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * request. Because this action works for access keys under the AWS
+     * Account, this API can be used to manage root credentials even if the
+     * AWS Account has no associated Users.
      * </p>
      * <p>
-     * For information about rotating certificates, see Managing Keys and
-     * Certificates in the <a href="http://aws.amazon.com/documentation/">
-     * AWS Identity and Access Management User Guide </a> .
+     * For information about rotating certificates, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in <i>Using AWS Identity and
+     * Access Management</i> .
      * </p>
      *
      * @param updateSigningCertificateRequest Container for the necessary
@@ -404,33 +494,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> updateSigningCertificateAsync(UpdateSigningCertificateRequest updateSigningCertificateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists the users that have the specified path prefix. If there are
-     * none, the action returns an empty list.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listUsersRequest Container for the necessary parameters to
-     *           execute the ListUsers operation on AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListUsers service method, as returned by AmazonIdentityManagement.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -460,12 +523,47 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Lists the Users that have the specified path prefix. If there are
+     * none, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listUsersRequest Container for the necessary parameters to
+     *           execute the ListUsers operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListUsers service method, as returned by AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListUsersResult> listUsersAsync(ListUsersRequest listUsersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Updates the name and/or the path of the specified group.
      * </p>
      * <p>
      * <b>IMPORTANT:</b> You should understand the implications of changing a
      * group's path or name. For more information, see Renaming Users and
-     * Groups in the AWS Identity and Access Management User Guide.
+     * Groups in Using AWS Identity and Access Management.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>To change a group name the requester must have appropriate
+     * permissions on both the source object and the target object. For
+     * example, to change Managers to MGRs, the entity making the request
+     * must have permission on Managers and MGRs, or must have permission on
+     * all (*). For more information about permissions, see Permissions and
+     * Policies.
      * </p>
      *
      * @param updateGroupRequest Container for the necessary parameters to
@@ -487,22 +585,47 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Retrieves information about the specified server certificate.
+     * </p>
+     *
+     * @param getServerCertificateRequest Container for the necessary
+     *           parameters to execute the GetServerCertificate operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetServerCertificateResult> getServerCertificateAsync(GetServerCertificateRequest getServerCertificateRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Adds (or updates) a policy document associated with the specified
-     * group. For information about how to write a policy, refer to the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * group. For information about policies, refer to <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
+     * Overview of Policies </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      * <p>
      * For information about limits on the number of policies you can
-     * associate with a group, see Limitations on AWS IAM Entities in the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * associate with a group, see <a
+     * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use POST
      * rather than GET when calling PutGroupPolicy. For more information, see
-     * Using the Query API in the AWS Identity and Access Management User
-     * Guide.
+     * Making Query Requests in Using AWS Identity and Access Management.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -525,13 +648,14 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Creates a new user for your account.
+     * Creates a new User for your AWS Account.
      * </p>
      * <p>
-     * For information about limitations on the number of users you can
-     * create, see Limitations on AWS IAM Entities in the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * For information about limitations on the number of Users you can
+     * create, see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      *
      * @param createUserRequest Container for the necessary parameters to
@@ -554,14 +678,14 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Deletes the specified signing certificate associated with the
-     * specified user.
+     * specified User.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is
-     * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * If you do not specify a User name, IAM determines the User name
+     * implicitly based on the AWS Access Key ID signing the request. Because
+     * this action works for access keys under the AWS Account, you can use
+     * this API to manage root credentials even if the AWS Account has no
+     * associated Users.
      * </p>
      *
      * @param deleteSigningCertificateRequest Container for the necessary
@@ -586,8 +710,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Enables the specified MFA device and associates it with the specified
-     * user. Once enabled, the MFA device is required for every subsequent
-     * login by the user associated with the device.
+     * User name. Once enabled, the MFA device is required for every
+     * subsequent login by the User name associated with the device.
      * </p>
      *
      * @param enableMFADeviceRequest Container for the necessary parameters
@@ -610,7 +734,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the names of the policies associated with the specified user. If
+     * Lists the names of the policies associated with the specified User. If
      * there are none, the action returns an empty list.
      * </p>
      * <p>
@@ -639,23 +763,23 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Returns information about the Access Key IDs associated with the
-     * specified user. If there are none, the action returns an empty list.
+     * specified User. If there are none, the action returns an empty list.
      * </p>
      * <p>
-     * Although each user is limited to a small number of keys, you can still
+     * Although each User is limited to a small number of keys, you can still
      * paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * request. Because this action works for access keys under the AWS
+     * Account, this API can be used to manage root credentials even if the
+     * AWS Account has no associated Users.
      * </p>
      * <p>
-     * <b>NOTE:</b>To ensure the security of your account, the secret access
-     * key is accesible only during key and user creation.
+     * <b>NOTE:</b>To ensure the security of your AWS Account, the secret
+     * access key is accessible only during key and User creation.
      * </p>
      *
      * @param listAccessKeysRequest Container for the necessary parameters to
@@ -678,7 +802,14 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves the login profile for the specified user.
+     * Retrieves the login profile for the specified User.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>In the full release you will be able to use IAM to access
+     * your services through the AWS Management Console. Although this
+     * feature is not currently available, you can create login profiles for
+     * your Users now. Then, when this feature is implemented, your Users can
+     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -701,7 +832,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the groups the specified user belongs to.
+     * Lists the groups the specified User belongs to.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -732,10 +863,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Creates a new group.
      * </p>
      * <p>
-     * For information about the number of groups you can create, see
-     * Limitations on AWS IAM Entities in the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * For information about the number of groups you can create, see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      *
      * @param createGroupRequest Container for the necessary parameters to
@@ -757,15 +888,32 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Deletes the specified user. The user must not belong to any groups,
-     * have any keys or signing certificates, or have any attached policies.
+     * Uploads a server certificate entity for the AWS Account. The server
+     * certificate entity includes a public key certificate, a private key,
+     * and an optional certificate chain, which should all be PEM-encoded.
+     * </p>
+     * <p>
+     * For information about the number of server certificates you can
+     * upload, see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because the body of the public key certificate, private
+     * key, and the certificate chain can be large, you should use POST
+     * rather than GET when calling UploadServerCertificate. For more
+     * information, see Making Query Requests in Using AWS Identity and
+     * Access Management.
      * </p>
      *
-     * @param deleteUserRequest Container for the necessary parameters to
-     *           execute the DeleteUser operation on AmazonIdentityManagement.
+     * @param uploadServerCertificateRequest Container for the necessary
+     *           parameters to execute the UploadServerCertificate operation on
+     *           AmazonIdentityManagement.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteUser service method, as returned by AmazonIdentityManagement.
+     *         UploadServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -775,15 +923,16 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             If an error response is returned by AmazonIdentityManagement indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteUserAsync(DeleteUserRequest deleteUserRequest) 
+    public Future<UploadServerCertificateResult> uploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
      * Retrieves the specified policy document for the specified group. The
      * returned policy is URL-encoded according to RFC 3986. For more
-     * information about RFC 3986, go to
-     * http://www.faqs.org/rfcs/rfc3986.html.
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
      * </p>
      *
      * @param getGroupPolicyRequest Container for the necessary parameters to
@@ -806,8 +955,31 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Deletes the specified User. The User must not belong to any groups,
+     * have any keys or signing certificates, or have any attached policies.
+     * </p>
+     *
+     * @param deleteUserRequest Container for the necessary parameters to
+     *           execute the DeleteUser operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteUser service method, as returned by AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteUserAsync(DeleteUserRequest deleteUserRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Deactivates the specified MFA device and removes it from association
-     * with the user for which it was originally enabled.
+     * with the User name for which it was originally enabled.
      * </p>
      *
      * @param deactivateMFADeviceRequest Container for the necessary
@@ -831,7 +1003,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Removes the specified user from the specified group.
+     * Removes the specified User from the specified group.
      * </p>
      *
      * @param removeUserFromGroupRequest Container for the necessary
@@ -851,6 +1023,40 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> removeUserFromGroupAsync(RemoveUserFromGroupRequest removeUserFromGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified server certificate.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>If your Elastic Load Balancing instances are using a
+     * server certificate, deleting the certificate could have implications
+     * for your application. If your Elastic Load Balancing instances do not
+     * detect the deletion of bound certificates, they may continue to use
+     * the certificates. This could cause them to stop accepting traffic.
+     * We recommend that you remove the reference to the certificate from
+     * your Elastic Load Balancing instances before using this command to
+     * delete the certificate.
+     * </p>
+     *
+     * @param deleteServerCertificateRequest Container for the necessary
+     *           parameters to execute the DeleteServerCertificate operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteServerCertificate service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteServerCertificateAsync(DeleteServerCertificateRequest deleteServerCertificateRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -884,11 +1090,19 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Creates a login profile for the specified user, giving the user the
+     * Creates a login profile for the specified User, giving the User the
      * ability to access AWS services such as the AWS Management Console.
-     * For more information about login profiles, see Managing Login Profiles
-     * and MFA Devices in the <a href="http://aws.amazon.com/documentation/">
-     * AWS Identity and Access Management User Guide </a> .
+     * For more information about login profiles, see <a
+     * .com/IAM/latest/UserGuide/index.html?Using_ManagingLoginsAndMFA.html">
+     * Managing Login Profiles and MFA Devices </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>In the full release you will be able to use IAM to access
+     * your services through the AWS Management Console. Although this
+     * feature is not currently available, you can create login profiles for
+     * your Users now. Then, when this feature is implemented, your Users can
+     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -913,27 +1127,29 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Creates a new AWS Secret Access Key and corresponding AWS Access Key
-     * ID for the specified user. The default status for new keys is Active.
+     * ID for the specified User. The default status for new keys is
+     * <code>Active</code> .
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, the UserName is
-     * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * If you do not specify a User name, IAM determines the User name
+     * implicitly based on the AWS Access Key ID signing the request. Because
+     * this action works for access keys under the AWS Account, you can use
+     * this API to manage root credentials even if the AWS Account has no
+     * associated Users.
      * </p>
      * <p>
      * For information about limits on the number of keys you can create, see
-     * Limitations on AWS IAM Entities in the <a
-     * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
-     * Management User Guide </a> .
+     * <a
+     * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>To ensure the security of your account, the secret
-     * access key is accesible only during key and user creation. You must
-     * save the key (for example, in a text file) if you want to be able to
-     * access it again. If a secret key is lost, you can delete the access
-     * keys for the associated user and then create new keys.
+     * <b>IMPORTANT:</b>To ensure the security of your AWS Account, the
+     * Secret Access Key is accessible only during key and User creation.
+     * You must save the key (for example, in a text file) if you want to be
+     * able to access it again. If a secret key is lost, you can delete the
+     * access keys for the associated User and then create new keys.
      * </p>
      *
      * @param createAccessKeyRequest Container for the necessary parameters
@@ -956,13 +1172,12 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves information about the specified user, including the user's
+     * Retrieves information about the specified User, including the User's
      * path, GUID, and ARN.
      * </p>
      * <p>
-     * If the <code>UserName</code> field is not specified, UserName is
-     * determined implicitly based on the AWS Access Key ID used to sign the
-     * request.
+     * If you do not specify a User name, IAM determines the User name
+     * implicitly based on the AWS Access Key ID signing the request.
      * </p>
      *
      * @param getUserRequest Container for the necessary parameters to
@@ -1007,7 +1222,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Lists the MFA devices associated with the specified user.
+     * Lists the MFA devices associated with the specified User name.
      * </p>
      * <p>
      * You can paginate the results using the <code>MaxItems</code> and
@@ -1035,20 +1250,21 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Changes the status of the specified access key from Active to
-     * Inactive, or vice versa. This action can be used to disable a user's
+     * Inactive, or vice versa. This action can be used to disable a User's
      * key as part of a key rotation workflow.
      * </p>
      * <p>
      * If the <code>UserName</code> field is not specified, the UserName is
      * determined implicitly based on the AWS Access Key ID used to sign the
-     * request. Because this action works for access keys under the account,
-     * this API can be used to manage root credentials even if the account
-     * has no associated users.
+     * request. Because this action works for access keys under the AWS
+     * Account, this API can be used to manage root credentials even if the
+     * AWS Account has no associated Users.
      * </p>
      * <p>
-     * For information about rotating keys, see Managing Keys and
-     * Certificates in the <a href="http://aws.amazon.com/documentation/">
-     * AWS Identity and Access Management User Guide </a> .
+     * For information about rotating keys, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in <i>Using AWS Identity and
+     * Access Management</i> .
      * </p>
      *
      * @param updateAccessKeyRequest Container for the necessary parameters
@@ -1071,7 +1287,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Adds the specified user to the specified group.
+     * Adds the specified User to the specified group.
      * </p>
      *
      * @param addUserToGroupRequest Container for the necessary parameters to
@@ -1094,7 +1310,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Returns a list of users that are in the specified group. You can
+     * Returns a list of Users that are in the specified group. You can
      * paginate the results using the <code>MaxItems</code> and
      * <code>Marker</code> parameters.
      * </p>
@@ -1118,7 +1334,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Deletes the specified group. The group must not contain any users or
+     * Deletes the specified group. The group must not contain any Users or
      * have any attached policies.
      * </p>
      *

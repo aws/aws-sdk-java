@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroup(DeleteGroupRequest) DeleteGroup operation}.
  * <p>
- * Deletes the specified group. The group must not contain any users or
+ * Deletes the specified group. The group must not contain any Users or
  * have any attached policies.
  * </p>
  *

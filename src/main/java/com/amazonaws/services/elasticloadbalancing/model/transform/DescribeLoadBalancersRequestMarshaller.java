@@ -32,7 +32,7 @@ public class DescribeLoadBalancersRequestMarshaller implements Marshaller<Reques
     public Request<DescribeLoadBalancersRequest> marshall(DescribeLoadBalancersRequest describeLoadBalancersRequest) {
         Request<DescribeLoadBalancersRequest> request = new DefaultRequest<DescribeLoadBalancersRequest>(describeLoadBalancersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeLoadBalancers");
-        request.addParameter("Version", "2009-11-25");
+        request.addParameter("Version", "2010-07-01");
         if (describeLoadBalancersRequest != null) {
             java.util.List<String> loadBalancerNamesList = describeLoadBalancersRequest.getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;

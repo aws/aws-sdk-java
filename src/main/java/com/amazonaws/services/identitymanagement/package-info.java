@@ -4,8 +4,8 @@
  *
  * AWS Identity and Access Management <p>
  * AWS Identity and Access Management (IAM) is a web service that enables
- * Amazon Web Services (AWS) customers to manage users and user
- * permissions under their AWS account.
+ * Amazon Web Services (AWS) customers to manage Users and User
+ * permissions under their AWS Account.
  * </p>
  * <p>
  * This is the AWS Identity and Access Management API Reference. This
@@ -28,7 +28,7 @@
  * http://json.org </a> )</li>
  * <li>The specific AWS products you are using or plan to use (e.g.,
  * Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage
- * Service (Amazon S3), etc.)</li>
+ * Service (Amazon S3), and so on.)</li>
  * 
  * </ul>
  * <p>
@@ -39,7 +39,7 @@
  * </p>
  * <p>
  * We will refer to Amazon AWS Identity and Access Management using the
- * the abbreviated form IAM; all copyrights and legal protections still
+ * abbreviated form IAM. All copyrights and legal protections still
  * apply.
  * </p>
  */

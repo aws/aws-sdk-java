@@ -19,21 +19,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest) PutGroupPolicy operation}.
  * <p>
  * Adds (or updates) a policy document associated with the specified
- * group. For information about how to write a policy, refer to the <a
- * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
- * Management User Guide </a> .
+ * group. For information about policies, refer to <a
+ * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
+ * Overview of Policies </a> in <i>Using AWS Identity and Access
+ * Management</i> .
  * </p>
  * <p>
  * For information about limits on the number of policies you can
- * associate with a group, see Limitations on AWS IAM Entities in the <a
- * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
- * Management User Guide </a> .
+ * associate with a group, see <a
+ * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+ * Management</i> .
  * </p>
  * <p>
  * <b>NOTE:</b>Because policy documents can be large, you should use POST
  * rather than GET when calling PutGroupPolicy. For more information, see
- * Using the Query API in the AWS Identity and Access Management User
- * Guide.
+ * Making Query Requests in Using AWS Identity and Access Management.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putGroupPolicy(PutGroupPolicyRequest)
@@ -62,6 +63,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      */
     private String policyDocument;
@@ -162,6 +164,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @return The policy document.
@@ -174,6 +177,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
@@ -188,6 +192,7 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.

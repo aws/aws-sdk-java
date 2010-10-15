@@ -99,4 +99,15 @@ public interface Headers {
     /** ETag non-matching constraint header for the get object request */
     public static final String GET_OBJECT_IF_NONE_MATCH = "If-None-Match";
 
+    /** Encrypted symmetric key header that is used in the envelope encryption mechanism */
+    public static final String CRYPTO_KEY = "x-amz-key";
+    
+    /** Initialization vector (IV) header that is used in the symmetric and envelope encryption mechanisms */
+    public static final String CRYPTO_IV = "x-amz-iv";
+
+    /** JSON-encoded description of encryption materials used during encryption */ 
+    public static final String MATERIALS_DESCRIPTION = "x-amz-matdesc";
+    
+    /** Instruction file header to be placed in the metadata of instruction files */
+    public static final String CRYPTO_INSTRUCTION_FILE = "x-amz-crypto-instr-file";
 }

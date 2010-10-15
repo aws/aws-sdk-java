@@ -17,40 +17,76 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest) DeleteLoadBalancerPolicy operation}.
- * 
+ * <p>
+ * Deletes a policy from the LoadBalancer. The specified policy must not
+ * be enabled for any listeners.
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerPolicy(DeleteLoadBalancerPolicyRequest)
  */
 public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The mnemonic name associated with the LoadBalancer. The name must be
+     * unique within your AWS account.
+     */
     private String loadBalancerName;
 
+    /**
+     * The mnemonic name for the policy being deleted.
+     */
     private String policyName;
 
     /**
-     * Returns the value of the LoadBalancerName property for this object.
+     * Default constructor for a new DeleteLoadBalancerPolicyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteLoadBalancerPolicyRequest() {}
+    
+    /**
+     * Constructs a new DeleteLoadBalancerPolicyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The mnemonic name associated with the
+     * LoadBalancer. The name must be unique within your AWS account.
+     * @param policyName The mnemonic name for the policy being deleted.
+     */
+    public DeleteLoadBalancerPolicyRequest(String loadBalancerName, String policyName) {
+        this.loadBalancerName = loadBalancerName;
+        this.policyName = policyName;
+    }
+    
+    /**
+     * The mnemonic name associated with the LoadBalancer. The name must be
+     * unique within your AWS account.
      *
-     * @return The value of the LoadBalancerName property for this object.
+     * @return The mnemonic name associated with the LoadBalancer. The name must be
+     *         unique within your AWS account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The mnemonic name associated with the LoadBalancer. The name must be
+     * unique within your AWS account.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. The name must be
+     *         unique within your AWS account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The mnemonic name associated with the LoadBalancer. The name must be
+     * unique within your AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. The name must be
+     *         unique within your AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,29 +98,29 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the PolicyName property for this object.
+     * The mnemonic name for the policy being deleted.
      *
-     * @return The value of the PolicyName property for this object.
+     * @return The mnemonic name for the policy being deleted.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * Sets the value of the PolicyName property for this object.
+     * The mnemonic name for the policy being deleted.
      *
-     * @param policyName The new value for the PolicyName property for this object.
+     * @param policyName The mnemonic name for the policy being deleted.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * Sets the value of the PolicyName property for this object.
+     * The mnemonic name for the policy being deleted.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The new value for the PolicyName property for this object.
+     * @param policyName The mnemonic name for the policy being deleted.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -548,7 +548,6 @@ public class HttpClient {
         if (!(userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT))) {
             userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
         }
-        userAgent += "-" + VersionInfoUtils.getVersion();
 
         /* Set HTTP client parameters */
         HttpClientParams httpClientParams = new HttpClientParams();

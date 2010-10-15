@@ -32,8 +32,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute being modified. <p> Available attribute
-     * names: kernel, ramdisk, userData, blockDeviceMapping,
-     * disableApiTermination, instanceInitiatedShutdownBehavior
+     * names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     * instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      */
     private String attribute;
 
@@ -66,9 +66,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * @param instanceId The ID of the instance whose attribute is being
      * modified.
      * @param attribute The name of the attribute being modified. <p>
-     * Available attribute names: kernel, ramdisk, userData,
-     * blockDeviceMapping, disableApiTermination,
-     * instanceInitiatedShutdownBehavior
+     * Available attribute names: instanceType, kernel, ramdisk, userData,
+     * disableApiTermination, instanceInitiatedShutdownBehavior, rootDevice,
+     * blockDeviceMapping
      */
     public ModifyInstanceAttributeRequest(String instanceId, String attribute) {
         this.instanceId = instanceId;
@@ -111,12 +111,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being modified. <p> Available attribute
-     * names: kernel, ramdisk, userData, blockDeviceMapping,
-     * disableApiTermination, instanceInitiatedShutdownBehavior
+     * names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     * instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      *
      * @return The name of the attribute being modified. <p> Available attribute
-     *         names: kernel, ramdisk, userData, blockDeviceMapping,
-     *         disableApiTermination, instanceInitiatedShutdownBehavior
+     *         names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     *         instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      */
     public String getAttribute() {
         return attribute;
@@ -124,12 +124,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being modified. <p> Available attribute
-     * names: kernel, ramdisk, userData, blockDeviceMapping,
-     * disableApiTermination, instanceInitiatedShutdownBehavior
+     * names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     * instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: kernel, ramdisk, userData, blockDeviceMapping,
-     *         disableApiTermination, instanceInitiatedShutdownBehavior
+     *         names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     *         instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -137,14 +137,14 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being modified. <p> Available attribute
-     * names: kernel, ramdisk, userData, blockDeviceMapping,
-     * disableApiTermination, instanceInitiatedShutdownBehavior
+     * names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     * instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
-     *         names: kernel, ramdisk, userData, blockDeviceMapping,
-     *         disableApiTermination, instanceInitiatedShutdownBehavior
+     *         names: instanceType, kernel, ramdisk, userData, disableApiTermination,
+     *         instanceInitiatedShutdownBehavior, rootDevice, blockDeviceMapping
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

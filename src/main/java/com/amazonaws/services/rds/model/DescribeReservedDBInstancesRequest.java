@@ -17,26 +17,65 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest) DescribeReservedDBInstances operation}.
- * 
+ * <p>
+ * Returns information about reserved DB Instances for this account, or
+ * about a specified reserved DB Instance.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest)
  */
 public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The reserved DB Instance identifier filter value. Specify this
+     * parameter to show only the reservation that matches the specified
+     * reservation ID.
+     */
     private String reservedDBInstanceId;
 
+    /**
+     * The offering identifier filter value. Specify this parameter to show
+     * only purchased reservations matching the specified offering
+     * identifier.
+     */
     private String reservedDBInstancesOfferingId;
 
+    /**
+     * The DB Instance class filter value. Specify this parameter to show
+     * only those reservations matching the specified DB Instances class.
+     */
     private String dBInstanceClass;
 
+    /**
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
+     */
     private String duration;
 
+    /**
+     * The product description filter value. Specify this parameter to show
+     * only those reservations matching the specified product description.
+     */
     private String productDescription;
 
+    /**
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
+     */
     private Boolean multiAZ;
 
+    /**
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
+     */
     private Integer maxRecords;
 
+    /**
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
+     */
     private String marker;
 
     /**
@@ -46,30 +85,41 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     public DescribeReservedDBInstancesRequest() {}
     
     /**
-     * Returns the value of the ReservedDBInstanceId property for this
-     * object.
+     * The reserved DB Instance identifier filter value. Specify this
+     * parameter to show only the reservation that matches the specified
+     * reservation ID.
      *
-     * @return The value of the ReservedDBInstanceId property for this object.
+     * @return The reserved DB Instance identifier filter value. Specify this
+     *         parameter to show only the reservation that matches the specified
+     *         reservation ID.
      */
     public String getReservedDBInstanceId() {
         return reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * The reserved DB Instance identifier filter value. Specify this
+     * parameter to show only the reservation that matches the specified
+     * reservation ID.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId The reserved DB Instance identifier filter value. Specify this
+     *         parameter to show only the reservation that matches the specified
+     *         reservation ID.
      */
     public void setReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * The reserved DB Instance identifier filter value. Specify this
+     * parameter to show only the reservation that matches the specified
+     * reservation ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId The reserved DB Instance identifier filter value. Specify this
+     *         parameter to show only the reservation that matches the specified
+     *         reservation ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,35 +131,41 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the ReservedDBInstancesOfferingId property for
-     * this object.
+     * The offering identifier filter value. Specify this parameter to show
+     * only purchased reservations matching the specified offering
+     * identifier.
      *
-     * @return The value of the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @return The offering identifier filter value. Specify this parameter to show
+     *         only purchased reservations matching the specified offering
+     *         identifier.
      */
     public String getReservedDBInstancesOfferingId() {
         return reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The offering identifier filter value. Specify this parameter to show
+     * only purchased reservations matching the specified offering
+     * identifier.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
+     *         only purchased reservations matching the specified offering
+     *         identifier.
      */
     public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The offering identifier filter value. Specify this parameter to show
+     * only purchased reservations matching the specified offering
+     * identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
+     *         only purchased reservations matching the specified offering
+     *         identifier.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -121,29 +177,35 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the DBInstanceClass property for this object.
+     * The DB Instance class filter value. Specify this parameter to show
+     * only those reservations matching the specified DB Instances class.
      *
-     * @return The value of the DBInstanceClass property for this object.
+     * @return The DB Instance class filter value. Specify this parameter to show
+     *         only those reservations matching the specified DB Instances class.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * Sets the value of the DBInstanceClass property for this object.
+     * The DB Instance class filter value. Specify this parameter to show
+     * only those reservations matching the specified DB Instances class.
      *
-     * @param dBInstanceClass The new value for the DBInstanceClass property for this object.
+     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
+     *         only those reservations matching the specified DB Instances class.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * Sets the value of the DBInstanceClass property for this object.
+     * The DB Instance class filter value. Specify this parameter to show
+     * only those reservations matching the specified DB Instances class.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The new value for the DBInstanceClass property for this object.
+     * @param dBInstanceClass The DB Instance class filter value. Specify this parameter to show
+     *         only those reservations matching the specified DB Instances class.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -155,29 +217,35 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the Duration property for this object.
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
      *
-     * @return The value of the Duration property for this object.
+     * @return The duration filter value, specified in years or seconds. Specify this
+     *         parameter to show only reservations for this duration.
      */
     public String getDuration() {
         return duration;
     }
     
     /**
-     * Sets the value of the Duration property for this object.
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
      *
-     * @param duration The new value for the Duration property for this object.
+     * @param duration The duration filter value, specified in years or seconds. Specify this
+     *         parameter to show only reservations for this duration.
      */
     public void setDuration(String duration) {
         this.duration = duration;
     }
     
     /**
-     * Sets the value of the Duration property for this object.
+     * The duration filter value, specified in years or seconds. Specify this
+     * parameter to show only reservations for this duration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration The new value for the Duration property for this object.
+     * @param duration The duration filter value, specified in years or seconds. Specify this
+     *         parameter to show only reservations for this duration.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -189,29 +257,35 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the ProductDescription property for this object.
+     * The product description filter value. Specify this parameter to show
+     * only those reservations matching the specified product description.
      *
-     * @return The value of the ProductDescription property for this object.
+     * @return The product description filter value. Specify this parameter to show
+     *         only those reservations matching the specified product description.
      */
     public String getProductDescription() {
         return productDescription;
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description filter value. Specify this parameter to show
+     * only those reservations matching the specified product description.
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description filter value. Specify this parameter to show
+     *         only those reservations matching the specified product description.
      */
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The product description filter value. Specify this parameter to show
+     * only those reservations matching the specified product description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The product description filter value. Specify this parameter to show
+     *         only those reservations matching the specified product description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -223,29 +297,35 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return The Multi-AZ filter value. Specify this parameter to show only those
+     *         reservations matching the specified Multi-AZ parameter.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only those
+     *         reservations matching the specified Multi-AZ parameter.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ The Multi-AZ filter value. Specify this parameter to show only those
+     *         reservations matching the specified Multi-AZ parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -257,38 +337,52 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * The Multi-AZ filter value. Specify this parameter to show only those
+     * reservations matching the specified Multi-AZ parameter.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return The Multi-AZ filter value. Specify this parameter to show only those
+     *         reservations matching the specified Multi-AZ parameter.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Returns the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      *
-     * @return The value of the MaxRecords property for this object.
+     * @return The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -300,29 +394,41 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      *
-     * @return The value of the Marker property for this object.
+     * @return The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

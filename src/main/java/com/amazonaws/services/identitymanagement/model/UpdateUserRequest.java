@@ -18,12 +18,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest) UpdateUser operation}.
  * <p>
- * Updates the name and/or the path of the specified user.
+ * Updates the name and/or the path of the specified User.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> You should understand the implications of changing a
- * user's path or name. For more information, see Renaming Users and
- * Groups in the AWS Identity and Access Management User Guide.
+ * User's path or name. For more information, see Renaming Users and
+ * Groups in Using AWS Identity and Access Management.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>To change a User name the requester must have appropriate
+ * permissions on both the source object and the target object. For
+ * example, to change Bob to Robert, the entity making the request must
+ * have permission on Bob and Robert, or must have permission on all (*).
+ * For more information about permissions, see Permissions and Policies.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest)
@@ -31,8 +38,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateUserRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user to update. If you're changing the name of the user,
-     * this is the original name.
+     * Name of the User to update. If you're changing the name of the User,
+     * this is the original User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -41,8 +48,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * New path for the user. Include this only if you're changing the user's
-     * path.
+     * New path for the User. Include this parameter only if you're changing
+     * the User's path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -51,8 +58,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     private String newPath;
 
     /**
-     * New name for the user. Include this only if you're changing the user's
-     * name.
+     * New name for the User. Include this parameter only if you're changing
+     * the User's name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -61,38 +68,38 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     private String newUserName;
 
     /**
-     * Name of the user to update. If you're changing the name of the user,
-     * this is the original name.
+     * Name of the User to update. If you're changing the name of the User,
+     * this is the original User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to update. If you're changing the name of the user,
-     *         this is the original name.
+     * @return Name of the User to update. If you're changing the name of the User,
+     *         this is the original User name.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to update. If you're changing the name of the user,
-     * this is the original name.
+     * Name of the User to update. If you're changing the name of the User,
+     * this is the original User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to update. If you're changing the name of the user,
-     *         this is the original name.
+     * @param userName Name of the User to update. If you're changing the name of the User,
+     *         this is the original User name.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to update. If you're changing the name of the user,
-     * this is the original name.
+     * Name of the User to update. If you're changing the name of the User,
+     * this is the original User name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -100,8 +107,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to update. If you're changing the name of the user,
-     *         this is the original name.
+     * @param userName Name of the User to update. If you're changing the name of the User,
+     *         this is the original User name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -113,38 +120,38 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * New path for the user. Include this only if you're changing the user's
-     * path.
+     * New path for the User. Include this parameter only if you're changing
+     * the User's path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return New path for the user. Include this only if you're changing the user's
-     *         path.
+     * @return New path for the User. Include this parameter only if you're changing
+     *         the User's path.
      */
     public String getNewPath() {
         return newPath;
     }
     
     /**
-     * New path for the user. Include this only if you're changing the user's
-     * path.
+     * New path for the User. Include this parameter only if you're changing
+     * the User's path.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param newPath New path for the user. Include this only if you're changing the user's
-     *         path.
+     * @param newPath New path for the User. Include this parameter only if you're changing
+     *         the User's path.
      */
     public void setNewPath(String newPath) {
         this.newPath = newPath;
     }
     
     /**
-     * New path for the user. Include this only if you're changing the user's
-     * path.
+     * New path for the User. Include this parameter only if you're changing
+     * the User's path.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -152,8 +159,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param newPath New path for the user. Include this only if you're changing the user's
-     *         path.
+     * @param newPath New path for the User. Include this parameter only if you're changing
+     *         the User's path.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -165,38 +172,38 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * New name for the user. Include this only if you're changing the user's
-     * name.
+     * New name for the User. Include this parameter only if you're changing
+     * the User's name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return New name for the user. Include this only if you're changing the user's
-     *         name.
+     * @return New name for the User. Include this parameter only if you're changing
+     *         the User's name.
      */
     public String getNewUserName() {
         return newUserName;
     }
     
     /**
-     * New name for the user. Include this only if you're changing the user's
-     * name.
+     * New name for the User. Include this parameter only if you're changing
+     * the User's name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param newUserName New name for the user. Include this only if you're changing the user's
-     *         name.
+     * @param newUserName New name for the User. Include this parameter only if you're changing
+     *         the User's name.
      */
     public void setNewUserName(String newUserName) {
         this.newUserName = newUserName;
     }
     
     /**
-     * New name for the user. Include this only if you're changing the user's
-     * name.
+     * New name for the User. Include this parameter only if you're changing
+     * the User's name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -204,8 +211,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param newUserName New name for the user. Include this only if you're changing the user's
-     *         name.
+     * @param newUserName New name for the User. Include this parameter only if you're changing
+     *         the User's name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

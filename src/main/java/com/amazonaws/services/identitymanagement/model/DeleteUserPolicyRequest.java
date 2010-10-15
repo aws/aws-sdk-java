@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest) DeleteUserPolicy operation}.
  * <p>
- * Deletes the specified policy associated with the specified user.
+ * Deletes the specified policy associated with the specified User.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUserPolicy(DeleteUserPolicyRequest)
@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteUserPolicyRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user the policy is associated with.
+     * Name of the User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -44,33 +44,33 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest {
     private String policyName;
 
     /**
-     * Name of the user the policy is associated with.
+     * Name of the User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user the policy is associated with.
+     * @return Name of the User the policy is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user the policy is associated with.
+     * Name of the User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the policy is associated with.
+     * @param userName Name of the User the policy is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user the policy is associated with.
+     * Name of the User the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -78,7 +78,7 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the policy is associated with.
+     * @param userName Name of the User the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

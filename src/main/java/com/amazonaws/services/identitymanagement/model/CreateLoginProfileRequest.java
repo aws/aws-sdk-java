@@ -18,11 +18,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createLoginProfile(CreateLoginProfileRequest) CreateLoginProfile operation}.
  * <p>
- * Creates a login profile for the specified user, giving the user the
+ * Creates a login profile for the specified User, giving the User the
  * ability to access AWS services such as the AWS Management Console.
- * For more information about login profiles, see Managing Login Profiles
- * and MFA Devices in the <a href="http://aws.amazon.com/documentation/">
- * AWS Identity and Access Management User Guide </a> .
+ * For more information about login profiles, see <a
+ * .com/IAM/latest/UserGuide/index.html?Using_ManagingLoginsAndMFA.html">
+ * Managing Login Profiles and MFA Devices </a> in <i>Using AWS Identity
+ * and Access Management</i> .
+ * </p>
+ * <p>
+ * <b>NOTE:</b>In the full release you will be able to use IAM to access
+ * your services through the AWS Management Console. Although this
+ * feature is not currently available, you can create login profiles for
+ * your Users now. Then, when this feature is implemented, your Users can
+ * use IAM to access your services through the AWS Management Console.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createLoginProfile(CreateLoginProfileRequest)
@@ -30,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user to create a login profile for.
+     * Name of the User to create a login profile for.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -39,7 +47,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * The new password for the user.
+     * The new password for the User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -48,33 +56,33 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
     private String password;
 
     /**
-     * Name of the user to create a login profile for.
+     * Name of the User to create a login profile for.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to create a login profile for.
+     * @return Name of the User to create a login profile for.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to create a login profile for.
+     * Name of the User to create a login profile for.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create a login profile for.
+     * @param userName Name of the User to create a login profile for.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to create a login profile for.
+     * Name of the User to create a login profile for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -82,7 +90,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create a login profile for.
+     * @param userName Name of the User to create a login profile for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -94,33 +102,33 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The new password for the user.
+     * The new password for the User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @return The new password for the user.
+     * @return The new password for the User name.
      */
     public String getPassword() {
         return password;
     }
     
     /**
-     * The new password for the user.
+     * The new password for the User name.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param password The new password for the user.
+     * @param password The new password for the User name.
      */
     public void setPassword(String password) {
         this.password = password;
     }
     
     /**
-     * The new password for the user.
+     * The new password for the User name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -128,7 +136,7 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
-     * @param password The new password for the user.
+     * @param password The new password for the User name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

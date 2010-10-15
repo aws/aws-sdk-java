@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest) RemoveUserFromGroup operation}.
  * <p>
- * Removes the specified user from the specified group.
+ * Removes the specified User from the specified group.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest)
@@ -35,7 +35,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
-     * Name of the user to remove.
+     * Name of the User to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -90,33 +90,33 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Name of the user to remove.
+     * Name of the User to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to remove.
+     * @return Name of the User to remove.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to remove.
+     * Name of the User to remove.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to remove.
+     * @param userName Name of the User to remove.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to remove.
+     * Name of the User to remove.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -124,7 +124,7 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to remove.
+     * @param userName Name of the User to remove.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * User already has a reservation with the given identifier.
+ * </p>
  */        
 public class ReservedDBInstanceAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

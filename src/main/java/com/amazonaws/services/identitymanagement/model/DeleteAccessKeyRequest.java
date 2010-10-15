@@ -18,14 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccessKey(DeleteAccessKeyRequest) DeleteAccessKey operation}.
  * <p>
- * Deletes the access key associated with the specified user.
+ * Deletes the access key associated with the specified User.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is
- * determined implicitly based on the AWS Access Key ID used to sign the
- * request. Because this action works for access keys under the account,
- * this API can be used to manage root credentials even if the account
- * has no associated users.
+ * If you do not specify a User name, IAM determines the User name
+ * implicitly based on the AWS Access Key ID signing the request. Because
+ * this action works for access keys under the AWS Account, you can use
+ * this API to manage root credentials even if the AWS Account has no
+ * associated Users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccessKey(DeleteAccessKeyRequest)
@@ -33,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteAccessKeyRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose key you want to delete.
+     * Name of the User whose key you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -52,33 +52,33 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest {
     private String accessKeyId;
 
     /**
-     * Name of the user whose key you want to delete.
+     * Name of the User whose key you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose key you want to delete.
+     * @return Name of the User whose key you want to delete.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose key you want to delete.
+     * Name of the User whose key you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose key you want to delete.
+     * @param userName Name of the User whose key you want to delete.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose key you want to delete.
+     * Name of the User whose key you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -86,7 +86,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose key you want to delete.
+     * @param userName Name of the User whose key you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

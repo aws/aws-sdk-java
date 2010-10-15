@@ -19,32 +19,35 @@ package com.amazonaws.services.elasticloadbalancing.model;
  */
 public class CreateLoadBalancerResult {
 
+    /**
+     * The DNS name for the LoadBalancer.
+     */
     private String dNSName;
 
     /**
-     * Returns the value of the DNSName property for this object.
+     * The DNS name for the LoadBalancer.
      *
-     * @return The value of the DNSName property for this object.
+     * @return The DNS name for the LoadBalancer.
      */
     public String getDNSName() {
         return dNSName;
     }
     
     /**
-     * Sets the value of the DNSName property for this object.
+     * The DNS name for the LoadBalancer.
      *
-     * @param dNSName The new value for the DNSName property for this object.
+     * @param dNSName The DNS name for the LoadBalancer.
      */
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
     }
     
     /**
-     * Sets the value of the DNSName property for this object.
+     * The DNS name for the LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dNSName The new value for the DNSName property for this object.
+     * @param dNSName The DNS name for the LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

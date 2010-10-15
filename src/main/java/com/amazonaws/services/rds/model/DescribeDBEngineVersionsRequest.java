@@ -17,22 +17,48 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBEngineVersions(DescribeDBEngineVersionsRequest) DescribeDBEngineVersions operation}.
- * 
+ * <p>
+ * Returns a list of the available DB engines.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBEngineVersions(DescribeDBEngineVersionsRequest)
  */
 public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The database engine to return.
+     */
     private String engine;
 
+    /**
+     * The database engine version to return.
+     */
     private String engineVersion;
 
+    /**
+     * The name of a specific database parameter group family to return
+     * details for.
+     */
     private String dBParameterGroupFamily;
 
+    /**
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
+     */
     private Integer maxRecords;
 
+    /**
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
+     */
     private String marker;
 
+    /**
+     * Indicates that only the default version of the specified engine or
+     * engine and major version combination is returned.
+     */
     private Boolean defaultOnly;
 
     /**
@@ -42,29 +68,29 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     public DescribeDBEngineVersionsRequest() {}
     
     /**
-     * Returns the value of the Engine property for this object.
+     * The database engine to return.
      *
-     * @return The value of the Engine property for this object.
+     * @return The database engine to return.
      */
     public String getEngine() {
         return engine;
     }
     
     /**
-     * Sets the value of the Engine property for this object.
+     * The database engine to return.
      *
-     * @param engine The new value for the Engine property for this object.
+     * @param engine The database engine to return.
      */
     public void setEngine(String engine) {
         this.engine = engine;
     }
     
     /**
-     * Sets the value of the Engine property for this object.
+     * The database engine to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The new value for the Engine property for this object.
+     * @param engine The database engine to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,29 +102,29 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * The database engine version to return.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return The database engine version to return.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The database engine version to return.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The database engine version to return.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The database engine version to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The database engine version to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,30 +136,35 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the DBParameterGroupFamily property for this
-     * object.
+     * The name of a specific database parameter group family to return
+     * details for.
      *
-     * @return The value of the DBParameterGroupFamily property for this object.
+     * @return The name of a specific database parameter group family to return
+     *         details for.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * Sets the value of the DBParameterGroupFamily property for this object.
+     * The name of a specific database parameter group family to return
+     * details for.
      *
-     * @param dBParameterGroupFamily The new value for the DBParameterGroupFamily property for this object.
+     * @param dBParameterGroupFamily The name of a specific database parameter group family to return
+     *         details for.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * Sets the value of the DBParameterGroupFamily property for this object.
+     * The name of a specific database parameter group family to return
+     * details for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The new value for the DBParameterGroupFamily property for this object.
+     * @param dBParameterGroupFamily The name of a specific database parameter group family to return
+     *         details for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -145,29 +176,41 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      *
-     * @return The value of the MaxRecords property for this object.
+     * @return The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more than
+     * the <code>MaxRecords</code> value is available, a marker is included
+     * in the response so that the following results can be retrieved.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more than
+     *         the <code>MaxRecords</code> value is available, a marker is included
+     *         in the response so that the following results can be retrieved.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -179,29 +222,41 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      *
-     * @return The value of the Marker property for this object.
+     * @return The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The marker provided in the previous request. If this parameter is
+     * specified, the response includes records beyond the marker only, up to
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The marker provided in the previous request. If this parameter is
+     *         specified, the response includes records beyond the marker only, up to
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -213,29 +268,35 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the DefaultOnly property for this object.
+     * Indicates that only the default version of the specified engine or
+     * engine and major version combination is returned.
      *
-     * @return The value of the DefaultOnly property for this object.
+     * @return Indicates that only the default version of the specified engine or
+     *         engine and major version combination is returned.
      */
     public Boolean isDefaultOnly() {
         return defaultOnly;
     }
     
     /**
-     * Sets the value of the DefaultOnly property for this object.
+     * Indicates that only the default version of the specified engine or
+     * engine and major version combination is returned.
      *
-     * @param defaultOnly The new value for the DefaultOnly property for this object.
+     * @param defaultOnly Indicates that only the default version of the specified engine or
+     *         engine and major version combination is returned.
      */
     public void setDefaultOnly(Boolean defaultOnly) {
         this.defaultOnly = defaultOnly;
     }
     
     /**
-     * Sets the value of the DefaultOnly property for this object.
+     * Indicates that only the default version of the specified engine or
+     * engine and major version combination is returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultOnly The new value for the DefaultOnly property for this object.
+     * @param defaultOnly Indicates that only the default version of the specified engine or
+     *         engine and major version combination is returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -247,9 +308,11 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the DefaultOnly property for this object.
+     * Indicates that only the default version of the specified engine or
+     * engine and major version combination is returned.
      *
-     * @return The value of the DefaultOnly property for this object.
+     * @return Indicates that only the default version of the specified engine or
+     *         engine and major version combination is returned.
      */
     public Boolean getDefaultOnly() {
         return defaultOnly;

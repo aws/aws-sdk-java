@@ -23,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class GetUserPolicyResult {
 
     /**
-     * The user the policy is associated with.
+     * The User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -44,38 +44,39 @@ public class GetUserPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      */
     private String policyDocument;
 
     /**
-     * The user the policy is associated with.
+     * The User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The user the policy is associated with.
+     * @return The User the policy is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The user the policy is associated with.
+     * The User the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user the policy is associated with.
+     * @param userName The User the policy is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The user the policy is associated with.
+     * The User the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -83,7 +84,7 @@ public class GetUserPolicyResult {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user the policy is associated with.
+     * @param userName The User the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -144,6 +145,7 @@ public class GetUserPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @return The policy document.
@@ -156,6 +158,7 @@ public class GetUserPolicyResult {
      * The policy document.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.
@@ -170,6 +173,7 @@ public class GetUserPolicyResult {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 131072<br/>
      * <b>Pattern: </b>[\u0009\u000A\u000D\u0020-\u00FF]+<br/>
      *
      * @param policyDocument The policy document.

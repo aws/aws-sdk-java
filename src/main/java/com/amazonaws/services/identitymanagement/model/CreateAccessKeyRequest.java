@@ -19,27 +19,29 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccessKey(CreateAccessKeyRequest) CreateAccessKey operation}.
  * <p>
  * Creates a new AWS Secret Access Key and corresponding AWS Access Key
- * ID for the specified user. The default status for new keys is Active.
+ * ID for the specified User. The default status for new keys is
+ * <code>Active</code> .
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is
- * determined implicitly based on the AWS Access Key ID used to sign the
- * request. Because this action works for access keys under the account,
- * this API can be used to manage root credentials even if the account
- * has no associated users.
+ * If you do not specify a User name, IAM determines the User name
+ * implicitly based on the AWS Access Key ID signing the request. Because
+ * this action works for access keys under the AWS Account, you can use
+ * this API to manage root credentials even if the AWS Account has no
+ * associated Users.
  * </p>
  * <p>
  * For information about limits on the number of keys you can create, see
- * Limitations on AWS IAM Entities in the <a
- * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
- * Management User Guide </a> .
+ * <a
+ * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+ * Management</i> .
  * </p>
  * <p>
- * <b>IMPORTANT:</b>To ensure the security of your account, the secret
- * access key is accesible only during key and user creation. You must
- * save the key (for example, in a text file) if you want to be able to
- * access it again. If a secret key is lost, you can delete the access
- * keys for the associated user and then create new keys.
+ * <b>IMPORTANT:</b>To ensure the security of your AWS Account, the
+ * Secret Access Key is accessible only during key and User creation.
+ * You must save the key (for example, in a text file) if you want to be
+ * able to access it again. If a secret key is lost, you can delete the
+ * access keys for the associated User and then create new keys.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccessKey(CreateAccessKeyRequest)
@@ -47,7 +49,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateAccessKeyRequest extends AmazonWebServiceRequest {
 
     /**
-     * The user that the new key will belong to.
+     * The User name that the new key will belong to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -56,33 +58,33 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * The user that the new key will belong to.
+     * The User name that the new key will belong to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The user that the new key will belong to.
+     * @return The User name that the new key will belong to.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The user that the new key will belong to.
+     * The User name that the new key will belong to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user that the new key will belong to.
+     * @param userName The User name that the new key will belong to.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The user that the new key will belong to.
+     * The User name that the new key will belong to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -90,7 +92,7 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user that the new key will belong to.
+     * @param userName The User name that the new key will belong to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

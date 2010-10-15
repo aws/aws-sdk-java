@@ -15,40 +15,107 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Listener
+ * <p>
+ * The Listener data type.
+ * </p>
  */
 public class Listener {
 
+    /**
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
+     */
     private String protocol;
 
+    /**
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
+     */
     private Integer loadBalancerPort;
 
+    /**
+     * Specifies the TCP port on which the instance server is listening. This
+     * property cannot be modified for the life of the LoadBalancer.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 65535<br/>
+     */
     private Integer instancePort;
 
     /**
-     * Returns the value of the Protocol property for this object.
+     * The ID of the SSL certificate chain to use. For more information on
+     * SSL certificates, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in the AWS Identity and Access
+     * Management documentation.
+     */
+    private String sSLCertificateId;
+
+    /**
+     * Default constructor for a new Listener object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public Listener() {}
+    
+    /**
+     * Constructs a new Listener object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param protocol Specifies the LoadBalancer transport protocol to use
+     * for routing - TCP or HTTP. This property cannot be modified for the
+     * life of the LoadBalancer.
+     * @param loadBalancerPort Specifies the LoadBalancer transport protocol
+     * to use for routing - TCP or HTTP. This property cannot be modified for
+     * the life of the LoadBalancer.
+     * @param instancePort Specifies the TCP port on which the instance
+     * server is listening. This property cannot be modified for the life of
+     * the LoadBalancer.
+     */
+    public Listener(String protocol, Integer loadBalancerPort, Integer instancePort) {
+        this.protocol = protocol;
+        this.loadBalancerPort = loadBalancerPort;
+        this.instancePort = instancePort;
+    }
+    
+    /**
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      *
-     * @return The value of the Protocol property for this object.
+     * @return Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      */
     public String getProtocol() {
         return protocol;
     }
     
     /**
-     * Sets the value of the Protocol property for this object.
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      *
-     * @param protocol The new value for the Protocol property for this object.
+     * @param protocol Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
     }
     
     /**
-     * Sets the value of the Protocol property for this object.
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param protocol The new value for the Protocol property for this object.
+     * @param protocol Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -60,29 +127,41 @@ public class Listener {
     
     
     /**
-     * Returns the value of the LoadBalancerPort property for this object.
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      *
-     * @return The value of the LoadBalancerPort property for this object.
+     * @return Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      */
     public Integer getLoadBalancerPort() {
         return loadBalancerPort;
     }
     
     /**
-     * Sets the value of the LoadBalancerPort property for this object.
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      *
-     * @param loadBalancerPort The new value for the LoadBalancerPort property for this object.
+     * @param loadBalancerPort Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      */
     public void setLoadBalancerPort(Integer loadBalancerPort) {
         this.loadBalancerPort = loadBalancerPort;
     }
     
     /**
-     * Sets the value of the LoadBalancerPort property for this object.
+     * Specifies the LoadBalancer transport protocol to use for routing - TCP
+     * or HTTP. This property cannot be modified for the life of the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerPort The new value for the LoadBalancerPort property for this object.
+     * @param loadBalancerPort Specifies the LoadBalancer transport protocol to use for routing - TCP
+     *         or HTTP. This property cannot be modified for the life of the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -94,44 +173,108 @@ public class Listener {
     
     
     /**
-     * Returns the value of the InstancePort property for this object.
+     * Specifies the TCP port on which the instance server is listening. This
+     * property cannot be modified for the life of the LoadBalancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @return The value of the InstancePort property for this object.
+     * @return Specifies the TCP port on which the instance server is listening. This
+     *         property cannot be modified for the life of the LoadBalancer.
      */
     public Integer getInstancePort() {
         return instancePort;
     }
     
     /**
-     * Sets the value of the InstancePort property for this object.
+     * Specifies the TCP port on which the instance server is listening. This
+     * property cannot be modified for the life of the LoadBalancer.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort The new value for the InstancePort property for this object.
+     * @param instancePort Specifies the TCP port on which the instance server is listening. This
+     *         property cannot be modified for the life of the LoadBalancer.
      */
     public void setInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
     }
     
     /**
-     * Sets the value of the InstancePort property for this object.
+     * Specifies the TCP port on which the instance server is listening. This
+     * property cannot be modified for the life of the LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 65535<br/>
      *
-     * @param instancePort The new value for the InstancePort property for this object.
+     * @param instancePort Specifies the TCP port on which the instance server is listening. This
+     *         property cannot be modified for the life of the LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public Listener withInstancePort(Integer instancePort) {
         this.instancePort = instancePort;
+        return this;
+    }
+    
+    
+    /**
+     * The ID of the SSL certificate chain to use. For more information on
+     * SSL certificates, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in the AWS Identity and Access
+     * Management documentation.
+     *
+     * @return The ID of the SSL certificate chain to use. For more information on
+     *         SSL certificates, see <a
+     *         ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     *         Managing Keys and Certificates </a> in the AWS Identity and Access
+     *         Management documentation.
+     */
+    public String getSSLCertificateId() {
+        return sSLCertificateId;
+    }
+    
+    /**
+     * The ID of the SSL certificate chain to use. For more information on
+     * SSL certificates, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in the AWS Identity and Access
+     * Management documentation.
+     *
+     * @param sSLCertificateId The ID of the SSL certificate chain to use. For more information on
+     *         SSL certificates, see <a
+     *         ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     *         Managing Keys and Certificates </a> in the AWS Identity and Access
+     *         Management documentation.
+     */
+    public void setSSLCertificateId(String sSLCertificateId) {
+        this.sSLCertificateId = sSLCertificateId;
+    }
+    
+    /**
+     * The ID of the SSL certificate chain to use. For more information on
+     * SSL certificates, see <a
+     * ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     * Managing Keys and Certificates </a> in the AWS Identity and Access
+     * Management documentation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sSLCertificateId The ID of the SSL certificate chain to use. For more information on
+     *         SSL certificates, see <a
+     *         ervices.com/IAM/latest/UserGuide/index.html?ManagingCredentials.html">
+     *         Managing Keys and Certificates </a> in the AWS Identity and Access
+     *         Management documentation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Listener withSSLCertificateId(String sSLCertificateId) {
+        this.sSLCertificateId = sSLCertificateId;
         return this;
     }
     
@@ -151,6 +294,7 @@ public class Listener {
         sb.append("Protocol: " + protocol + ", ");
         sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
         sb.append("InstancePort: " + instancePort + ", ");
+        sb.append("SSLCertificateId: " + sSLCertificateId + ", ");
         sb.append("}");
         return sb.toString();
     }

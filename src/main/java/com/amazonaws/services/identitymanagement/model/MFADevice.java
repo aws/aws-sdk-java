@@ -26,7 +26,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class MFADevice {
 
     /**
-     * The user with whom the MFA device is associated.
+     * The User with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -35,7 +35,7 @@ public class MFADevice {
     private String userName;
 
     /**
-     * Serial number which uniquely identifies the MFA device.
+     * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 48<br/>
@@ -44,33 +44,33 @@ public class MFADevice {
     private String serialNumber;
 
     /**
-     * The user with whom the MFA device is associated.
+     * The User with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The user with whom the MFA device is associated.
+     * @return The User with whom the MFA device is associated.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The user with whom the MFA device is associated.
+     * The User with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user with whom the MFA device is associated.
+     * @param userName The User with whom the MFA device is associated.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The user with whom the MFA device is associated.
+     * The User with whom the MFA device is associated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -78,7 +78,7 @@ public class MFADevice {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The user with whom the MFA device is associated.
+     * @param userName The User with whom the MFA device is associated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,33 +90,33 @@ public class MFADevice {
     
     
     /**
-     * Serial number which uniquely identifies the MFA device.
+     * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 48<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @return Serial number which uniquely identifies the MFA device.
+     * @return Serial number that uniquely identifies the MFA device.
      */
     public String getSerialNumber() {
         return serialNumber;
     }
     
     /**
-     * Serial number which uniquely identifies the MFA device.
+     * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>9 - 48<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param serialNumber Serial number which uniquely identifies the MFA device.
+     * @param serialNumber Serial number that uniquely identifies the MFA device.
      */
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
     
     /**
-     * Serial number which uniquely identifies the MFA device.
+     * Serial number that uniquely identifies the MFA device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -124,7 +124,7 @@ public class MFADevice {
      * <b>Length: </b>9 - 48<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param serialNumber Serial number which uniquely identifies the MFA device.
+     * @param serialNumber Serial number that uniquely identifies the MFA device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws;
 
+import com.amazonaws.util.VersionInfoUtils;
 /**
  * Client configuration options such as proxy settings, user agent string, max
  * retry attempts, etc.
@@ -23,7 +24,7 @@ public class ClientConfiguration {
     /**
      * The default HTTP user agent header for AWS Java SDK clients.
      */
-    public static final String DEFAULT_USER_AGENT = "AWS Java SDK";
+    public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent( "java" );
 
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;

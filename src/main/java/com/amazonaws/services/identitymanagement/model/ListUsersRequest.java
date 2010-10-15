@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest) ListUsers operation}.
  * <p>
- * Lists the users that have the specified path prefix. If there are
+ * Lists the Users that have the specified path prefix. If there are
  * none, the action returns an empty list.
  * </p>
  * <p>
@@ -32,10 +32,11 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
 
     /**
      * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     * whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to
-     * /, listing all users.
+     * <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     * names whose path starts with
+     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/), listing
+     * all User names.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -44,10 +45,10 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     private String pathPrefix;
 
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -56,10 +57,10 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of User names you want in the response. If there are
+     * additional User names beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -68,20 +69,22 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
 
     /**
      * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     * whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to
-     * /, listing all users.
+     * <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     * names whose path starts with
+     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/), listing
+     * all User names.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
      *
      * @return The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     *         whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to
-     *         /, listing all users.
+     *         <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     *         names whose path starts with
+     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/), listing
+     *         all User names.
      */
     public String getPathPrefix() {
         return pathPrefix;
@@ -89,20 +92,22 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     
     /**
      * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     * whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to
-     * /, listing all users.
+     * <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     * names whose path starts with
+     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/), listing
+     * all User names.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     *         whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to
-     *         /, listing all users.
+     *         <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     *         names whose path starts with
+     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/), listing
+     *         all User names.
      */
     public void setPathPrefix(String pathPrefix) {
         this.pathPrefix = pathPrefix;
@@ -110,10 +115,11 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     
     /**
      * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     * whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     * <p>This parameter is optional. If it is not included, it defaults to
-     * /, listing all users.
+     * <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     * names whose path starts with
+     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     * optional. If it is not included, it defaults to a slash (/), listing
+     * all User names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -122,10 +128,11 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
      *
      * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all users
-     *         whose path starts with <code>/division_abc/subdivision_xyz/</code>.
-     *         <p>This parameter is optional. If it is not included, it defaults to
-     *         /, listing all users.
+     *         <code>/division_abc/subdivision_xyz/</code>, which would get all User
+     *         names whose path starts with
+     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
+     *         optional. If it is not included, it defaults to a slash (/), listing
+     *         all User names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -137,48 +144,48 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @return Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -186,10 +193,10 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -201,56 +208,56 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of User names you want in the response. If there are
+     * additional User names beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @return Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     * @return Use this parameter only when paginating results to indicate the
+     *         maximum number of User names you want in the response. If there are
+     *         additional User names beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of User names you want in the response. If there are
+     * additional User names beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     * @param maxItems Use this parameter only when paginating results to indicate the
+     *         maximum number of User names you want in the response. If there are
+     *         additional User names beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of User names you want in the response. If there are
+     * additional User names beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     * @param maxItems Use this parameter only when paginating results to indicate the
+     *         maximum number of User names you want in the response. If there are
+     *         additional User names beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

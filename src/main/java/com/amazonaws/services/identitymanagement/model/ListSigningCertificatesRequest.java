@@ -19,19 +19,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest) ListSigningCertificates operation}.
  * <p>
  * Returns information about the signing certificates associated with the
- * specified user. If there are none, the action returns an empty list.
+ * specified User. If there are none, the action returns an empty list.
  * </p>
  * <p>
- * Although each user is limited to a small number of signing
+ * Although each User is limited to a small number of signing
  * certificates, you can still paginate the results using the
  * <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  * <p>
  * If the <code>UserName</code> field is not specified, the UserName is
  * determined implicitly based on the AWS Access Key ID used to sign the
- * request. Because this action works for access keys under the account,
- * this API can be used to manage root credentials even if the account
- * has no associated users.
+ * request. Because this action works for access keys under the AWS
+ * Account, this API can be used to manage root credentials even if the
+ * AWS Account has no associated Users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)
@@ -39,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the user.
+     * The name of the User.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -48,10 +48,10 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -71,33 +71,33 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
-     * The name of the user.
+     * The name of the User.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the user.
+     * @return The name of the User.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the user.
+     * The name of the User.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user.
+     * @param userName The name of the User.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the user.
+     * The name of the User.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -105,7 +105,7 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user.
+     * @param userName The name of the User.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,48 +117,48 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @return Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -166,10 +166,10 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

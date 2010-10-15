@@ -124,7 +124,7 @@ public class Job {
      *
      * @return Indicates whether the job was canceled.
      */
-    public Boolean isIsCanceled() {
+    public Boolean isCanceled() {
         return isCanceled;
     }
     

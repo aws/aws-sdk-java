@@ -32,7 +32,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller implements
     public Request<DisableAvailabilityZonesForLoadBalancerRequest> marshall(DisableAvailabilityZonesForLoadBalancerRequest disableAvailabilityZonesForLoadBalancerRequest) {
         Request<DisableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<DisableAvailabilityZonesForLoadBalancerRequest>(disableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DisableAvailabilityZonesForLoadBalancer");
-        request.addParameter("Version", "2009-11-25");
+        request.addParameter("Version", "2010-07-01");
         if (disableAvailabilityZonesForLoadBalancerRequest != null) {
             if (disableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(disableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName()));

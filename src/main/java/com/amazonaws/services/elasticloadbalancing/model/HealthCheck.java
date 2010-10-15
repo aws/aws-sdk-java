@@ -15,44 +15,206 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Health Check
+ * <p>
+ * The HealthCheck data type.
+ * </p>
  */
 public class HealthCheck {
 
+    /**
+     * Specifies the instance being checked. The protocol is either TCP or
+     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     * TCP is the default, specified as a TCP: port pair, for example
+     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     * connection to the instance on the specified port. Failure to connect
+     * within the configured timeout is considered unhealthy. <p> For HTTP,
+     * the situation is different. HTTP is specified as a
+     * HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     * issued to the instance on the given port and path. Any answer other
+     * than "200 OK" within the timeout period is considered unhealthy. <p>
+     * The total length of the HTTP ping target needs to be 1024 16-bit
+     * Unicode characters or less. </note>
+     */
     private String target;
 
+    /**
+     * Specifies the approximate interval, in seconds, between health checks
+     * of an individual instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 300<br/>
+     */
     private Integer interval;
 
+    /**
+     * Specifies the amount of time, in seconds, during which no response
+     * means a failed health probe. <note> This value must be less than the
+     * <i>Interval</i> value. </note>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 300<br/>
+     */
     private Integer timeout;
 
+    /**
+     * Specifies the number of consecutive health probe failures required
+     * before moving the instance to the <i>Unhealthy</i> state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>2 - 10<br/>
+     */
     private Integer unhealthyThreshold;
 
+    /**
+     * Specifies the number of consecutive health probe successes required
+     * before moving the instance to the <i>Healthy</i> state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>2 - 10<br/>
+     */
     private Integer healthyThreshold;
 
     /**
-     * Returns the value of the Target property for this object.
+     * Default constructor for a new HealthCheck object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public HealthCheck() {}
+    
+    /**
+     * Constructs a new HealthCheck object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param target Specifies the instance being checked. The protocol is
+     * either TCP or HTTP. The range of valid ports is one (1) through 65535.
+     * <note> <p> TCP is the default, specified as a TCP: port pair, for
+     * example "TCP:5000". In this case a healthcheck simply attempts to open
+     * a TCP connection to the instance on the specified port. Failure to
+     * connect within the configured timeout is considered unhealthy. <p> For
+     * HTTP, the situation is different. HTTP is specified as a
+     * HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     * issued to the instance on the given port and path. Any answer other
+     * than "200 OK" within the timeout period is considered unhealthy. <p>
+     * The total length of the HTTP ping target needs to be 1024 16-bit
+     * Unicode characters or less. </note>
+     * @param interval Specifies the approximate interval, in seconds,
+     * between health checks of an individual instance.
+     * @param timeout Specifies the amount of time, in seconds, during which
+     * no response means a failed health probe. <note> This value must be
+     * less than the <i>Interval</i> value. </note>
+     * @param unhealthyThreshold Specifies the number of consecutive health
+     * probe failures required before moving the instance to the
+     * <i>Unhealthy</i> state.
+     * @param healthyThreshold Specifies the number of consecutive health
+     * probe successes required before moving the instance to the
+     * <i>Healthy</i> state.
+     */
+    public HealthCheck(String target, Integer interval, Integer timeout, Integer unhealthyThreshold, Integer healthyThreshold) {
+        this.target = target;
+        this.interval = interval;
+        this.timeout = timeout;
+        this.unhealthyThreshold = unhealthyThreshold;
+        this.healthyThreshold = healthyThreshold;
+    }
+    
+    /**
+     * Specifies the instance being checked. The protocol is either TCP or
+     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     * TCP is the default, specified as a TCP: port pair, for example
+     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     * connection to the instance on the specified port. Failure to connect
+     * within the configured timeout is considered unhealthy. <p> For HTTP,
+     * the situation is different. HTTP is specified as a
+     * HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     * issued to the instance on the given port and path. Any answer other
+     * than "200 OK" within the timeout period is considered unhealthy. <p>
+     * The total length of the HTTP ping target needs to be 1024 16-bit
+     * Unicode characters or less. </note>
      *
-     * @return The value of the Target property for this object.
+     * @return Specifies the instance being checked. The protocol is either TCP or
+     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     *         TCP is the default, specified as a TCP: port pair, for example
+     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     *         connection to the instance on the specified port. Failure to connect
+     *         within the configured timeout is considered unhealthy. <p> For HTTP,
+     *         the situation is different. HTTP is specified as a
+     *         HTTP:port;/;PathToPing; grouping, for example
+     *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     *         issued to the instance on the given port and path. Any answer other
+     *         than "200 OK" within the timeout period is considered unhealthy. <p>
+     *         The total length of the HTTP ping target needs to be 1024 16-bit
+     *         Unicode characters or less. </note>
      */
     public String getTarget() {
         return target;
     }
     
     /**
-     * Sets the value of the Target property for this object.
+     * Specifies the instance being checked. The protocol is either TCP or
+     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     * TCP is the default, specified as a TCP: port pair, for example
+     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     * connection to the instance on the specified port. Failure to connect
+     * within the configured timeout is considered unhealthy. <p> For HTTP,
+     * the situation is different. HTTP is specified as a
+     * HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     * issued to the instance on the given port and path. Any answer other
+     * than "200 OK" within the timeout period is considered unhealthy. <p>
+     * The total length of the HTTP ping target needs to be 1024 16-bit
+     * Unicode characters or less. </note>
      *
-     * @param target The new value for the Target property for this object.
+     * @param target Specifies the instance being checked. The protocol is either TCP or
+     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     *         TCP is the default, specified as a TCP: port pair, for example
+     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     *         connection to the instance on the specified port. Failure to connect
+     *         within the configured timeout is considered unhealthy. <p> For HTTP,
+     *         the situation is different. HTTP is specified as a
+     *         HTTP:port;/;PathToPing; grouping, for example
+     *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     *         issued to the instance on the given port and path. Any answer other
+     *         than "200 OK" within the timeout period is considered unhealthy. <p>
+     *         The total length of the HTTP ping target needs to be 1024 16-bit
+     *         Unicode characters or less. </note>
      */
     public void setTarget(String target) {
         this.target = target;
     }
     
     /**
-     * Sets the value of the Target property for this object.
+     * Specifies the instance being checked. The protocol is either TCP or
+     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     * TCP is the default, specified as a TCP: port pair, for example
+     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     * connection to the instance on the specified port. Failure to connect
+     * within the configured timeout is considered unhealthy. <p> For HTTP,
+     * the situation is different. HTTP is specified as a
+     * HTTP:port;/;PathToPing; grouping, for example
+     * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     * issued to the instance on the given port and path. Any answer other
+     * than "200 OK" within the timeout period is considered unhealthy. <p>
+     * The total length of the HTTP ping target needs to be 1024 16-bit
+     * Unicode characters or less. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param target The new value for the Target property for this object.
+     * @param target Specifies the instance being checked. The protocol is either TCP or
+     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
+     *         TCP is the default, specified as a TCP: port pair, for example
+     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
+     *         connection to the instance on the specified port. Failure to connect
+     *         within the configured timeout is considered unhealthy. <p> For HTTP,
+     *         the situation is different. HTTP is specified as a
+     *         HTTP:port;/;PathToPing; grouping, for example
+     *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
+     *         issued to the instance on the given port and path. Any answer other
+     *         than "200 OK" within the timeout period is considered unhealthy. <p>
+     *         The total length of the HTTP ping target needs to be 1024 16-bit
+     *         Unicode characters or less. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,38 +226,44 @@ public class HealthCheck {
     
     
     /**
-     * Returns the value of the Interval property for this object.
+     * Specifies the approximate interval, in seconds, between health checks
+     * of an individual instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @return The value of the Interval property for this object.
+     * @return Specifies the approximate interval, in seconds, between health checks
+     *         of an individual instance.
      */
     public Integer getInterval() {
         return interval;
     }
     
     /**
-     * Sets the value of the Interval property for this object.
+     * Specifies the approximate interval, in seconds, between health checks
+     * of an individual instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param interval The new value for the Interval property for this object.
+     * @param interval Specifies the approximate interval, in seconds, between health checks
+     *         of an individual instance.
      */
     public void setInterval(Integer interval) {
         this.interval = interval;
     }
     
     /**
-     * Sets the value of the Interval property for this object.
+     * Specifies the approximate interval, in seconds, between health checks
+     * of an individual instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param interval The new value for the Interval property for this object.
+     * @param interval Specifies the approximate interval, in seconds, between health checks
+     *         of an individual instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,38 +275,50 @@ public class HealthCheck {
     
     
     /**
-     * Returns the value of the Timeout property for this object.
+     * Specifies the amount of time, in seconds, during which no response
+     * means a failed health probe. <note> This value must be less than the
+     * <i>Interval</i> value. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @return The value of the Timeout property for this object.
+     * @return Specifies the amount of time, in seconds, during which no response
+     *         means a failed health probe. <note> This value must be less than the
+     *         <i>Interval</i> value. </note>
      */
     public Integer getTimeout() {
         return timeout;
     }
     
     /**
-     * Sets the value of the Timeout property for this object.
+     * Specifies the amount of time, in seconds, during which no response
+     * means a failed health probe. <note> This value must be less than the
+     * <i>Interval</i> value. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param timeout The new value for the Timeout property for this object.
+     * @param timeout Specifies the amount of time, in seconds, during which no response
+     *         means a failed health probe. <note> This value must be less than the
+     *         <i>Interval</i> value. </note>
      */
     public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
     
     /**
-     * Sets the value of the Timeout property for this object.
+     * Specifies the amount of time, in seconds, during which no response
+     * means a failed health probe. <note> This value must be less than the
+     * <i>Interval</i> value. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 300<br/>
      *
-     * @param timeout The new value for the Timeout property for this object.
+     * @param timeout Specifies the amount of time, in seconds, during which no response
+     *         means a failed health probe. <note> This value must be less than the
+     *         <i>Interval</i> value. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -150,38 +330,44 @@ public class HealthCheck {
     
     
     /**
-     * Returns the value of the UnhealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe failures required
+     * before moving the instance to the <i>Unhealthy</i> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @return The value of the UnhealthyThreshold property for this object.
+     * @return Specifies the number of consecutive health probe failures required
+     *         before moving the instance to the <i>Unhealthy</i> state.
      */
     public Integer getUnhealthyThreshold() {
         return unhealthyThreshold;
     }
     
     /**
-     * Sets the value of the UnhealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe failures required
+     * before moving the instance to the <i>Unhealthy</i> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param unhealthyThreshold The new value for the UnhealthyThreshold property for this object.
+     * @param unhealthyThreshold Specifies the number of consecutive health probe failures required
+     *         before moving the instance to the <i>Unhealthy</i> state.
      */
     public void setUnhealthyThreshold(Integer unhealthyThreshold) {
         this.unhealthyThreshold = unhealthyThreshold;
     }
     
     /**
-     * Sets the value of the UnhealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe failures required
+     * before moving the instance to the <i>Unhealthy</i> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param unhealthyThreshold The new value for the UnhealthyThreshold property for this object.
+     * @param unhealthyThreshold Specifies the number of consecutive health probe failures required
+     *         before moving the instance to the <i>Unhealthy</i> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -193,38 +379,44 @@ public class HealthCheck {
     
     
     /**
-     * Returns the value of the HealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe successes required
+     * before moving the instance to the <i>Healthy</i> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @return The value of the HealthyThreshold property for this object.
+     * @return Specifies the number of consecutive health probe successes required
+     *         before moving the instance to the <i>Healthy</i> state.
      */
     public Integer getHealthyThreshold() {
         return healthyThreshold;
     }
     
     /**
-     * Sets the value of the HealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe successes required
+     * before moving the instance to the <i>Healthy</i> state.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param healthyThreshold The new value for the HealthyThreshold property for this object.
+     * @param healthyThreshold Specifies the number of consecutive health probe successes required
+     *         before moving the instance to the <i>Healthy</i> state.
      */
     public void setHealthyThreshold(Integer healthyThreshold) {
         this.healthyThreshold = healthyThreshold;
     }
     
     /**
-     * Sets the value of the HealthyThreshold property for this object.
+     * Specifies the number of consecutive health probe successes required
+     * before moving the instance to the <i>Healthy</i> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>2 - 10<br/>
      *
-     * @param healthyThreshold The new value for the HealthyThreshold property for this object.
+     * @param healthyThreshold Specifies the number of consecutive health probe successes required
+     *         before moving the instance to the <i>Healthy</i> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

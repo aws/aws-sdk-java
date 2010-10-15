@@ -29,16 +29,16 @@ public class ListAccessKeysResult {
 
     /**
      * A flag that indicates whether there are more keys to list. If your
-     * results were truncated, you can make a follow-up pagination request
+     * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more keys
      * in the list.
      */
     private Boolean isTruncated;
 
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -110,27 +110,27 @@ public class ListAccessKeysResult {
     
     /**
      * A flag that indicates whether there are more keys to list. If your
-     * results were truncated, you can make a follow-up pagination request
+     * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more keys
      * in the list.
      *
      * @return A flag that indicates whether there are more keys to list. If your
-     *         results were truncated, you can make a follow-up pagination request
+     *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
      */
-    public Boolean isIsTruncated() {
+    public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
      * A flag that indicates whether there are more keys to list. If your
-     * results were truncated, you can make a follow-up pagination request
+     * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more keys
      * in the list.
      *
      * @param isTruncated A flag that indicates whether there are more keys to list. If your
-     *         results were truncated, you can make a follow-up pagination request
+     *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
      */
@@ -140,14 +140,14 @@ public class ListAccessKeysResult {
     
     /**
      * A flag that indicates whether there are more keys to list. If your
-     * results were truncated, you can make a follow-up pagination request
+     * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more keys
      * in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param isTruncated A flag that indicates whether there are more keys to list. If your
-     *         results were truncated, you can make a follow-up pagination request
+     *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
      *
@@ -162,12 +162,12 @@ public class ListAccessKeysResult {
     
     /**
      * A flag that indicates whether there are more keys to list. If your
-     * results were truncated, you can make a follow-up pagination request
+     * results were truncated, you can make a subsequent pagination request
      * using the <code>Marker</code> request parameter to retrieve more keys
      * in the list.
      *
      * @return A flag that indicates whether there are more keys to list. If your
-     *         results were truncated, you can make a follow-up pagination request
+     *         results were truncated, you can make a subsequent pagination request
      *         using the <code>Marker</code> request parameter to retrieve more keys
      *         in the list.
      */
@@ -176,43 +176,43 @@ public class ListAccessKeysResult {
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @return If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * If <code>IsTruncated</code> is true, this element is present and
-     * contains the value to use for the <code>Marker</code> parameter in a
-     * follow-up pagination request.
+     * If <code>IsTruncated</code> is <code>true</code>, this element is
+     * present and contains the value to use for the <code>Marker</code>
+     * parameter in a subsequent pagination request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -220,9 +220,9 @@ public class ListAccessKeysResult {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker If <code>IsTruncated</code> is true, this element is present and
-     *         contains the value to use for the <code>Marker</code> parameter in a
-     *         follow-up pagination request.
+     * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
+     *         present and contains the value to use for the <code>Marker</code>
+     *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

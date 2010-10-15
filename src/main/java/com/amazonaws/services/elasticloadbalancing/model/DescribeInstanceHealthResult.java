@@ -19,12 +19,15 @@ package com.amazonaws.services.elasticloadbalancing.model;
  */
 public class DescribeInstanceHealthResult {
 
+    /**
+     * A list containing health information for the specified instances.
+     */
     private java.util.List<InstanceState> instanceStates;
 
     /**
-     * Returns the value of the InstanceStates property for this object.
+     * A list containing health information for the specified instances.
      *
-     * @return The value of the InstanceStates property for this object.
+     * @return A list containing health information for the specified instances.
      */
     public java.util.List<InstanceState> getInstanceStates() {
         if (instanceStates == null) {
@@ -34,9 +37,9 @@ public class DescribeInstanceHealthResult {
     }
     
     /**
-     * Sets the value of the InstanceStates property for this object.
+     * A list containing health information for the specified instances.
      *
-     * @param instanceStates The new value for the InstanceStates property for this object.
+     * @param instanceStates A list containing health information for the specified instances.
      */
     public void setInstanceStates(java.util.Collection<InstanceState> instanceStates) {
         java.util.List<InstanceState> instanceStatesCopy = new java.util.ArrayList<InstanceState>();
@@ -47,11 +50,11 @@ public class DescribeInstanceHealthResult {
     }
     
     /**
-     * Sets the value of the InstanceStates property for this object.
+     * A list containing health information for the specified instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceStates The new value for the InstanceStates property for this object.
+     * @param instanceStates A list containing health information for the specified instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,11 +67,11 @@ public class DescribeInstanceHealthResult {
     }
     
     /**
-     * Sets the value of the InstanceStates property for this object.
+     * A list containing health information for the specified instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceStates The new value for the InstanceStates property for this object.
+     * @param instanceStates A list containing health information for the specified instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -17,7 +17,10 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticLoadBalancing exception
+ * <p>
+ * Policy with the same name exists for this load balancer. Please
+ * choose another name.
+ * </p>
  */        
 public class DuplicatePolicyNameException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

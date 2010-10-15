@@ -23,7 +23,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>IMPORTANT:</b> You should understand the implications of changing a
  * group's path or name. For more information, see Renaming Users and
- * Groups in the AWS Identity and Access Management User Guide.
+ * Groups in Using AWS Identity and Access Management.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>To change a group name the requester must have appropriate
+ * permissions on both the source object and the target object. For
+ * example, to change Managers to MGRs, the entity making the request
+ * must have permission on Managers and MGRs, or must have permission on
+ * all (*). For more information about permissions, see Permissions and
+ * Policies.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateGroup(UpdateGroupRequest)

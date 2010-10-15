@@ -54,8 +54,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private String productDescription;
 
     /**
-     * A list of filters used to match tags associated with the specified
-     * ReservedInstanceesOfferings. For a complete reference to the available
+     * A list of filters used to match properties for
+     * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
      * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
@@ -250,14 +250,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * ReservedInstanceesOfferings. For a complete reference to the available
+     * A list of filters used to match properties for
+     * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
      * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
-     * @return A list of filters used to match tags associated with the specified
-     *         ReservedInstanceesOfferings. For a complete reference to the available
+     * @return A list of filters used to match properties for
+     *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
      *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
@@ -270,14 +270,14 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * ReservedInstanceesOfferings. For a complete reference to the available
+     * A list of filters used to match properties for
+     * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
      * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         ReservedInstanceesOfferings. For a complete reference to the available
+     * @param filters A list of filters used to match properties for
+     *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
      *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
@@ -291,16 +291,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * ReservedInstanceesOfferings. For a complete reference to the available
+     * A list of filters used to match properties for
+     * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
      * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         ReservedInstanceesOfferings. For a complete reference to the available
+     * @param filters A list of filters used to match properties for
+     *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
      *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
@@ -316,16 +316,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
-     * A list of filters used to match tags associated with the specified
-     * ReservedInstanceesOfferings. For a complete reference to the available
+     * A list of filters used to match properties for
+     * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
      * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters A list of filters used to match tags associated with the specified
-     *         ReservedInstanceesOfferings. For a complete reference to the available
+     * @param filters A list of filters used to match properties for
+     *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
      *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.

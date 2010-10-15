@@ -15,38 +15,53 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Listener Description
+ * <p>
+ * The ListenerDescription data type.
+ * </p>
  */
 public class ListenerDescription {
 
+    /**
+     * The Listener data type.
+     */
     private Listener listener;
 
+    /**
+     * A list of policies enabled for this listener. An empty list indicates
+     * that no policies are enabled.
+     */
     private java.util.List<String> policyNames;
 
     /**
-     * Returns the value of the Listener property for this object.
+     * Default constructor for a new ListenerDescription object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListenerDescription() {}
+    
+    /**
+     * The Listener data type.
      *
-     * @return The value of the Listener property for this object.
+     * @return The Listener data type.
      */
     public Listener getListener() {
         return listener;
     }
     
     /**
-     * Sets the value of the Listener property for this object.
+     * The Listener data type.
      *
-     * @param listener The new value for the Listener property for this object.
+     * @param listener The Listener data type.
      */
     public void setListener(Listener listener) {
         this.listener = listener;
     }
     
     /**
-     * Sets the value of the Listener property for this object.
+     * The Listener data type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listener The new value for the Listener property for this object.
+     * @param listener The Listener data type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +73,11 @@ public class ListenerDescription {
     
     
     /**
-     * Returns the value of the PolicyNames property for this object.
+     * A list of policies enabled for this listener. An empty list indicates
+     * that no policies are enabled.
      *
-     * @return The value of the PolicyNames property for this object.
+     * @return A list of policies enabled for this listener. An empty list indicates
+     *         that no policies are enabled.
      */
     public java.util.List<String> getPolicyNames() {
         if (policyNames == null) {
@@ -70,9 +87,11 @@ public class ListenerDescription {
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * A list of policies enabled for this listener. An empty list indicates
+     * that no policies are enabled.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames A list of policies enabled for this listener. An empty list indicates
+     *         that no policies are enabled.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
         java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
@@ -83,11 +102,13 @@ public class ListenerDescription {
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * A list of policies enabled for this listener. An empty list indicates
+     * that no policies are enabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames A list of policies enabled for this listener. An empty list indicates
+     *         that no policies are enabled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +121,13 @@ public class ListenerDescription {
     }
     
     /**
-     * Sets the value of the PolicyNames property for this object.
+     * A list of policies enabled for this listener. An empty list indicates
+     * that no policies are enabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyNames The new value for the PolicyNames property for this object.
+     * @param policyNames A list of policies enabled for this listener. An empty list indicates
+     *         that no policies are enabled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

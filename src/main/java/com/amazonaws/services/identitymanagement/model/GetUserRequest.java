@@ -18,13 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest) GetUser operation}.
  * <p>
- * Retrieves information about the specified user, including the user's
+ * Retrieves information about the specified User, including the User's
  * path, GUID, and ARN.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, UserName is
- * determined implicitly based on the AWS Access Key ID used to sign the
- * request.
+ * If you do not specify a User name, IAM determines the User name
+ * implicitly based on the AWS Access Key ID signing the request.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)
@@ -32,8 +31,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetUserRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
+     * Name of the User to get information about. <p>This parameter is
+     * optional. If it is not included, it defaults to the User making the
      * request.
      * <p>
      * <b>Constraints:</b><br/>
@@ -43,16 +42,16 @@ public class GetUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * Name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
+     * Name of the User to get information about. <p>This parameter is
+     * optional. If it is not included, it defaults to the User making the
      * request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
+     * @return Name of the User to get information about. <p>This parameter is
+     *         optional. If it is not included, it defaults to the User making the
      *         request.
      */
     public String getUserName() {
@@ -60,16 +59,16 @@ public class GetUserRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
+     * Name of the User to get information about. <p>This parameter is
+     * optional. If it is not included, it defaults to the User making the
      * request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
+     * @param userName Name of the User to get information about. <p>This parameter is
+     *         optional. If it is not included, it defaults to the User making the
      *         request.
      */
     public void setUserName(String userName) {
@@ -77,8 +76,8 @@ public class GetUserRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the user to get information about. <p>This parameter is
-     * optional. If it is not included, it defaults to the user making the
+     * Name of the User to get information about. <p>This parameter is
+     * optional. If it is not included, it defaults to the User making the
      * request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -87,8 +86,8 @@ public class GetUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to get information about. <p>This parameter is
-     *         optional. If it is not included, it defaults to the user making the
+     * @param userName Name of the User to get information about. <p>This parameter is
+     *         optional. If it is not included, it defaults to the User making the
      *         request.
      *
      * @return A reference to this updated object so that method calls can be chained 

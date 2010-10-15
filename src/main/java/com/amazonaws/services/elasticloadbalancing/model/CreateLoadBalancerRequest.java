@@ -17,42 +17,152 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest) CreateLoadBalancer operation}.
+ * <p>
+ * Creates a new LoadBalancer.
+ * </p>
+ * <p>
+ * Once the call has completed successfully, a new LoadBalancer is
+ * created; however, it will not be usable until at least one instance
+ * has been registered. When the LoadBalancer creation is completed, the
+ * client can check whether or not it is usable by using the
+ * DescribeInstanceHealth API. The LoadBalancer is usable as soon as any
+ * registered instance is <i>InService</i> .
  * 
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited
+ * to five per Region.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Load balancer DNS names vary depending on the Region
+ * they're created in. For load balancers created in the United States,
+ * the DNS name ends with: us-east-1.elb.amazonaws.com (for the US
+ * Standard Region) us-west-1.elb.amazonaws.com (for the Northern
+ * California Region) For load balancers created in the EU (Ireland)
+ * Region, the DNS name ends with: eu-west-1.elb.amazonaws.com
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest)
  */
 public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within your set of LoadBalancers requests on the specified protocol
+     * and received by Elastic Load Balancing on the LoadBalancerPort are
+     * load balanced across the registered instances and sent to port
+     * InstancePort.
+     */
     private String loadBalancerName;
 
+    /**
+     * A list of the following tuples: LoadBalancerPort, InstancePort, and
+     * Protocol.
+     */
     private java.util.List<Listener> listeners;
 
+    /**
+     * A list of Availability Zones. <p> At least one Availability Zone must
+     * be specified. Specified Availability Zones must be in the same EC2
+     * Region as the LoadBalancer. Traffic will be equally distributed across
+     * all zones. <p> This list can be modified after the creation of the
+     * LoadBalancer.
+     */
     private java.util.List<String> availabilityZones;
 
     /**
-     * Returns the value of the LoadBalancerName property for this object.
+     * Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateLoadBalancerRequest() {}
+    
+    /**
+     * Constructs a new CreateLoadBalancerRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The name associated with the LoadBalancer. The
+     * name must be unique within your set of LoadBalancers requests on the
+     * specified protocol and received by Elastic Load Balancing on the
+     * LoadBalancerPort are load balanced across the registered instances and
+     * sent to port InstancePort.
+     */
+    public CreateLoadBalancerRequest(String loadBalancerName) {
+        this.loadBalancerName = loadBalancerName;
+    }
+    
+    /**
+     * Constructs a new CreateLoadBalancerRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The name associated with the LoadBalancer. The
+     * name must be unique within your set of LoadBalancers requests on the
+     * specified protocol and received by Elastic Load Balancing on the
+     * LoadBalancerPort are load balanced across the registered instances and
+     * sent to port InstancePort.
+     * @param listeners A list of the following tuples: LoadBalancerPort,
+     * InstancePort, and Protocol.
+     * @param availabilityZones A list of Availability Zones. <p> At least
+     * one Availability Zone must be specified. Specified Availability Zones
+     * must be in the same EC2 Region as the LoadBalancer. Traffic will be
+     * equally distributed across all zones. <p> This list can be modified
+     * after the creation of the LoadBalancer.
+     */
+    public CreateLoadBalancerRequest(String loadBalancerName, java.util.List<Listener> listeners, java.util.List<String> availabilityZones) {
+        this.loadBalancerName = loadBalancerName;
+        this.listeners = listeners;
+        this.availabilityZones = availabilityZones;
+    }
+    
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within your set of LoadBalancers requests on the specified protocol
+     * and received by Elastic Load Balancing on the LoadBalancerPort are
+     * load balanced across the registered instances and sent to port
+     * InstancePort.
      *
-     * @return The value of the LoadBalancerName property for this object.
+     * @return The name associated with the LoadBalancer. The name must be unique
+     *         within your set of LoadBalancers requests on the specified protocol
+     *         and received by Elastic Load Balancing on the LoadBalancerPort are
+     *         load balanced across the registered instances and sent to port
+     *         InstancePort.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within your set of LoadBalancers requests on the specified protocol
+     * and received by Elastic Load Balancing on the LoadBalancerPort are
+     * load balanced across the registered instances and sent to port
+     * InstancePort.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within your set of LoadBalancers requests on the specified protocol
+     *         and received by Elastic Load Balancing on the LoadBalancerPort are
+     *         load balanced across the registered instances and sent to port
+     *         InstancePort.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within your set of LoadBalancers requests on the specified protocol
+     * and received by Elastic Load Balancing on the LoadBalancerPort are
+     * load balanced across the registered instances and sent to port
+     * InstancePort.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within your set of LoadBalancers requests on the specified protocol
+     *         and received by Elastic Load Balancing on the LoadBalancerPort are
+     *         load balanced across the registered instances and sent to port
+     *         InstancePort.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -64,9 +174,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Listeners property for this object.
+     * A list of the following tuples: LoadBalancerPort, InstancePort, and
+     * Protocol.
      *
-     * @return The value of the Listeners property for this object.
+     * @return A list of the following tuples: LoadBalancerPort, InstancePort, and
+     *         Protocol.
      */
     public java.util.List<Listener> getListeners() {
         if (listeners == null) {
@@ -76,9 +188,11 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Listeners property for this object.
+     * A list of the following tuples: LoadBalancerPort, InstancePort, and
+     * Protocol.
      *
-     * @param listeners The new value for the Listeners property for this object.
+     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
+     *         Protocol.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
         java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>();
@@ -89,11 +203,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Listeners property for this object.
+     * A list of the following tuples: LoadBalancerPort, InstancePort, and
+     * Protocol.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners The new value for the Listeners property for this object.
+     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
+     *         Protocol.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -106,11 +222,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Listeners property for this object.
+     * A list of the following tuples: LoadBalancerPort, InstancePort, and
+     * Protocol.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners The new value for the Listeners property for this object.
+     * @param listeners A list of the following tuples: LoadBalancerPort, InstancePort, and
+     *         Protocol.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -126,9 +244,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the value of the AvailabilityZones property for this object.
+     * A list of Availability Zones. <p> At least one Availability Zone must
+     * be specified. Specified Availability Zones must be in the same EC2
+     * Region as the LoadBalancer. Traffic will be equally distributed across
+     * all zones. <p> This list can be modified after the creation of the
+     * LoadBalancer.
      *
-     * @return The value of the AvailabilityZones property for this object.
+     * @return A list of Availability Zones. <p> At least one Availability Zone must
+     *         be specified. Specified Availability Zones must be in the same EC2
+     *         Region as the LoadBalancer. Traffic will be equally distributed across
+     *         all zones. <p> This list can be modified after the creation of the
+     *         LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
         if (availabilityZones == null) {
@@ -138,9 +264,17 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the AvailabilityZones property for this object.
+     * A list of Availability Zones. <p> At least one Availability Zone must
+     * be specified. Specified Availability Zones must be in the same EC2
+     * Region as the LoadBalancer. Traffic will be equally distributed across
+     * all zones. <p> This list can be modified after the creation of the
+     * LoadBalancer.
      *
-     * @param availabilityZones The new value for the AvailabilityZones property for this object.
+     * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
+     *         be specified. Specified Availability Zones must be in the same EC2
+     *         Region as the LoadBalancer. Traffic will be equally distributed across
+     *         all zones. <p> This list can be modified after the creation of the
+     *         LoadBalancer.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
@@ -151,11 +285,19 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the AvailabilityZones property for this object.
+     * A list of Availability Zones. <p> At least one Availability Zone must
+     * be specified. Specified Availability Zones must be in the same EC2
+     * Region as the LoadBalancer. Traffic will be equally distributed across
+     * all zones. <p> This list can be modified after the creation of the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones The new value for the AvailabilityZones property for this object.
+     * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
+     *         be specified. Specified Availability Zones must be in the same EC2
+     *         Region as the LoadBalancer. Traffic will be equally distributed across
+     *         all zones. <p> This list can be modified after the creation of the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -168,11 +310,19 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the AvailabilityZones property for this object.
+     * A list of Availability Zones. <p> At least one Availability Zone must
+     * be specified. Specified Availability Zones must be in the same EC2
+     * Region as the LoadBalancer. Traffic will be equally distributed across
+     * all zones. <p> This list can be modified after the creation of the
+     * LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZones The new value for the AvailabilityZones property for this object.
+     * @param availabilityZones A list of Availability Zones. <p> At least one Availability Zone must
+     *         be specified. Specified Availability Zones must be in the same EC2
+     *         Region as the LoadBalancer. Traffic will be equally distributed across
+     *         all zones. <p> This list can be modified after the creation of the
+     *         LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

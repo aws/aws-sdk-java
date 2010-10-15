@@ -33,9 +33,10 @@ package com.amazonaws.services.identitymanagement.model;
 public class Group {
 
     /**
-     * Path to the group. For more information about paths, see Identifiers
-     * for Users and Groups in the AWS Identity and Access Management User
-     * Guide.
+     * Path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -54,8 +55,10 @@ public class Group {
 
     /**
      * The stable and unique string identifying the group. For more
-     * information about IDs, see Identifiers for Users and Groups in the AWS
-     * Identity and Access Management User Guide.
+     * information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
@@ -65,10 +68,10 @@ public class Group {
 
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
-     * information about ARNs and how to use them in policies, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>.
+     * information about ARNs and how to use them in policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
@@ -76,43 +79,48 @@ public class Group {
     private String arn;
 
     /**
-     * Path to the group. For more information about paths, see Identifiers
-     * for Users and Groups in the AWS Identity and Access Management User
-     * Guide.
+     * Path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return Path to the group. For more information about paths, see Identifiers
-     *         for Users and Groups in the AWS Identity and Access Management User
-     *         Guide.
+     * @return Path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public String getPath() {
         return path;
     }
     
     /**
-     * Path to the group. For more information about paths, see Identifiers
-     * for Users and Groups in the AWS Identity and Access Management User
-     * Guide.
+     * Path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the group. For more information about paths, see Identifiers
-     *         for Users and Groups in the AWS Identity and Access Management User
-     *         Guide.
+     * @param path Path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public void setPath(String path) {
         this.path = path;
     }
     
     /**
-     * Path to the group. For more information about paths, see Identifiers
-     * for Users and Groups in the AWS Identity and Access Management User
-     * Guide.
+     * Path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -120,9 +128,10 @@ public class Group {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the group. For more information about paths, see Identifiers
-     *         for Users and Groups in the AWS Identity and Access Management User
-     *         Guide.
+     * @param path Path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -181,16 +190,20 @@ public class Group {
     
     /**
      * The stable and unique string identifying the group. For more
-     * information about IDs, see Identifiers for Users and Groups in the AWS
-     * Identity and Access Management User Guide.
+     * information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @return The stable and unique string identifying the group. For more
-     *         information about IDs, see Identifiers for Users and Groups in the AWS
-     *         Identity and Access Management User Guide.
+     *         information about IDs, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public String getGroupId() {
         return groupId;
@@ -198,16 +211,20 @@ public class Group {
     
     /**
      * The stable and unique string identifying the group. For more
-     * information about IDs, see Identifiers for Users and Groups in the AWS
-     * Identity and Access Management User Guide.
+     * information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param groupId The stable and unique string identifying the group. For more
-     *         information about IDs, see Identifiers for Users and Groups in the AWS
-     *         Identity and Access Management User Guide.
+     *         information about IDs, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public void setGroupId(String groupId) {
         this.groupId = groupId;
@@ -215,8 +232,10 @@ public class Group {
     
     /**
      * The stable and unique string identifying the group. For more
-     * information about IDs, see Identifiers for Users and Groups in the AWS
-     * Identity and Access Management User Guide.
+     * information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -225,8 +244,10 @@ public class Group {
      * <b>Pattern: </b>[\w]*<br/>
      *
      * @param groupId The stable and unique string identifying the group. For more
-     *         information about IDs, see Identifiers for Users and Groups in the AWS
-     *         Identity and Access Management User Guide.
+     *         information about IDs, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -239,19 +260,19 @@ public class Group {
     
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
-     * information about ARNs and how to use them in policies, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>.
+     * information about ARNs and how to use them in policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
      * @return The Amazon Resource Name (ARN) specifying the group. For more
-     *         information about ARNs and how to use them in policies, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>.
+     *         information about ARNs and how to use them in policies, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public String getArn() {
         return arn;
@@ -259,19 +280,19 @@ public class Group {
     
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
-     * information about ARNs and how to use them in policies, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>.
+     * information about ARNs and how to use them in policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
      * @param arn The Amazon Resource Name (ARN) specifying the group. For more
-     *         information about ARNs and how to use them in policies, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>.
+     *         information about ARNs and how to use them in policies, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      */
     public void setArn(String arn) {
         this.arn = arn;
@@ -279,10 +300,10 @@ public class Group {
     
     /**
      * The Amazon Resource Name (ARN) specifying the group. For more
-     * information about ARNs and how to use them in policies, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>.
+     * information about ARNs and how to use them in policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -290,10 +311,10 @@ public class Group {
      * <b>Length: </b>20 - 2048<br/>
      *
      * @param arn The Amazon Resource Name (ARN) specifying the group. For more
-     *         information about ARNs and how to use them in policies, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>.
+     *         information about ARNs and how to use them in policies, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

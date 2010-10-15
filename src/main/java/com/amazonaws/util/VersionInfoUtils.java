@@ -31,6 +31,9 @@ public class VersionInfoUtils {
     /** SDK version info */
     private static String version = null;
 
+    /** User Agent info */
+    private static String userAgent = null;
+
     /** Shared logger for any issues while loading version information */
     private static Log log = LogFactory.getLog(VersionInfoUtils.class);
 
@@ -52,7 +55,20 @@ public class VersionInfoUtils {
         return version;
     }
 
-    /**
+     /**
+     * @return Returns the User Agent string to be used when communicating with
+	 * the AWS services.  The User Agent encapsulates SDK, Java, OS and
+	 * region information.
+     */
+    public static String getUserAgent( String platform ) {
+        if (userAgent == null) {
+            initializeUserAgent( platform );
+        }
+        
+        return userAgent;
+    }
+
+   /**
      * Loads the versionInfo.properties file from the AWS Java SDK and
      * stores the information so that the file doesn't have to be read the
      * next time the data is needed.
@@ -67,8 +83,37 @@ public class VersionInfoUtils {
             versionInfoProperties.load(inputStream);
             version = versionInfoProperties.getProperty("version");
         } catch (Exception e) {
-            log.warn("Unable to load version information for the running SDK: " + e.getMessage());
+            log.info("Unable to load version information for the running SDK: " + e.getMessage());
             version = "unknown-version";
         }
     }
+			
+   /**
+     * Loads the versionInfo.properties file from the AWS Java SDK and
+     * stores the information so that the file doesn't have to be read the
+     * next time the data is needed.
+     */
+	private static void initializeUserAgent( String platform ) {
+		userAgent = "AWS Java SDK-" + VersionInfoUtils.getVersion();		
+	/*
+		StringBuffer buffer = new StringBuffer( 1024 );
+		buffer.append( "aws-sdk-" + platform.toLowerCase() + "/" );
+		buffer.append( VersionInfoUtils.getVersion() );
+		buffer.append( " " );
+		buffer.append( System.getProperty( "os.name" ).replace( ' ', '_' ) + "/" + System.getProperty( "os.version" ).replace( ' ', '_' ) );
+		buffer.append( " " );
+		buffer.append( System.getProperty( "java.vm.name" ).replace( ' ', '_' ) + "/" + System.getProperty( "java.vm.version" ).replace( ' ', '_' ) );
+		
+		String region = "";
+		try {
+			region = " " + System.getProperty( "user.language" ).replace( ' ', '_' ) + "_" + System.getProperty( "user.region" ).replace( ' ', '_' );
+		}
+		catch ( Exception exception ) {
+		}
+		
+		buffer.append( region );
+	
+		userAgent = buffer.toString();
+	*/		
+	}
 }

@@ -28,7 +28,7 @@ import com.amazonaws.ResponseMetadata;
  */
 public class ResponseMetadataCache {
     private final int maxEntries;
-    private Map<Object, ResponseMetadata> map;
+    private Map<Integer, ResponseMetadata> map;
     private List<Object> objectList;
 
     /**
@@ -42,7 +42,7 @@ public class ResponseMetadataCache {
         this.maxEntries = maxEntries;
 
         objectList = new ArrayList<Object>(maxEntries);
-        map = new HashMap<Object, ResponseMetadata>();
+        map = new HashMap<Integer, ResponseMetadata>();
     }
 
     /**
@@ -58,7 +58,7 @@ public class ResponseMetadataCache {
         if (obj == null) return;
 
         if (map.size() >= maxEntries) evictOldest();
-        store(obj, metadata);
+        store(System.identityHashCode(obj), metadata);
     }
 
     /**
@@ -72,15 +72,19 @@ public class ResponseMetadataCache {
      *         otherwise null if no metadata is associated with that object.
      */
     public ResponseMetadata get(Object obj) {
-        return map.get(obj);
+        // System.identityHashCode isn't guaranteed to be unique
+        // on all platforms, but should be reasonable enough to use
+        // for a few requests at a time.  We can always easily move
+        // to our own unique IDs if needed.
+        return map.get(System.identityHashCode(obj));
     }
 
     private void evictOldest() {
         map.remove(objectList.remove(0));
     }
 
-    private void store(Object obj, ResponseMetadata metadata) {
-        map.put(obj, metadata);
-        objectList.add(obj);
+    private void store(int id, ResponseMetadata metadata) {
+        map.put(id, metadata);
+        objectList.add(id);
     }
 }

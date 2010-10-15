@@ -125,8 +125,9 @@ public class StaxUnmarshallerContext {
             }
         }
 
+
         return (startingStackDepth == getCurrentDepth()
-                && stackString.endsWith(expression));
+                && stackString.endsWith("/" + expression));
     }
 
     /**

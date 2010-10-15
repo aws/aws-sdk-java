@@ -32,7 +32,7 @@ public class CreateLBCookieStickinessPolicyRequestMarshaller implements Marshall
     public Request<CreateLBCookieStickinessPolicyRequest> marshall(CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) {
         Request<CreateLBCookieStickinessPolicyRequest> request = new DefaultRequest<CreateLBCookieStickinessPolicyRequest>(createLBCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLBCookieStickinessPolicy");
-        request.addParameter("Version", "2009-11-25");
+        request.addParameter("Version", "2010-07-01");
         if (createLBCookieStickinessPolicyRequest != null) {
             if (createLBCookieStickinessPolicyRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(createLBCookieStickinessPolicyRequest.getLoadBalancerName()));

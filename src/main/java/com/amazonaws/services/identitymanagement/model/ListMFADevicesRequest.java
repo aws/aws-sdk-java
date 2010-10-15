@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest) ListMFADevices operation}.
  * <p>
- * Lists the MFA devices associated with the specified user.
+ * Lists the MFA devices associated with the specified User name.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListMFADevicesRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose MFA devices you want to list.
+     * Name of the User whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -39,10 +39,10 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -62,33 +62,33 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
-     * Name of the user whose MFA devices you want to list.
+     * Name of the User whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose MFA devices you want to list.
+     * @return Name of the User whose MFA devices you want to list.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose MFA devices you want to list.
+     * Name of the User whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA devices you want to list.
+     * @param userName Name of the User whose MFA devices you want to list.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose MFA devices you want to list.
+     * Name of the User whose MFA devices you want to list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -96,7 +96,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose MFA devices you want to list.
+     * @param userName Name of the User whose MFA devices you want to list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -108,48 +108,48 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @return Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -157,10 +157,10 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

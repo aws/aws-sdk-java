@@ -17,7 +17,10 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticLoadBalancing exception
+ * <p>
+ * Quota for number of policies for this load balancer has already been
+ * reached.
+ * </p>
  */        
 public class TooManyPoliciesException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

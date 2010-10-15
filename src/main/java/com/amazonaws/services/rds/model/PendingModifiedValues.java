@@ -50,6 +50,10 @@ public class PendingModifiedValues {
      */
     private Integer backupRetentionPeriod;
 
+    /**
+     * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     * deployment.
+     */
     private Boolean multiAZ;
 
     private String engineVersion;
@@ -255,29 +259,35 @@ public class PendingModifiedValues {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     * deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     *         deployment.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     * deployment.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     *         deployment.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     * deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     *         deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -289,9 +299,11 @@ public class PendingModifiedValues {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     * deployment.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Indicates that the Single-AZ DB Instance is to change to a Multi-AZ
+     *         deployment.
      */
     public Boolean getMultiAZ() {
         return multiAZ;

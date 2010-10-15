@@ -19,14 +19,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest) DeleteSigningCertificate operation}.
  * <p>
  * Deletes the specified signing certificate associated with the
- * specified user.
+ * specified User.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is
- * determined implicitly based on the AWS Access Key ID used to sign the
- * request. Because this action works for access keys under the account,
- * this API can be used to manage root credentials even if the account
- * has no associated users.
+ * If you do not specify a User name, IAM determines the User name
+ * implicitly based on the AWS Access Key ID signing the request. Because
+ * this action works for access keys under the AWS Account, you can use
+ * this API to manage root credentials even if the AWS Account has no
+ * associated Users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest)
@@ -34,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user the signing certificate belongs to.
+     * Name of the User the signing certificate belongs to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -52,33 +52,33 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest {
     private String certificateId;
 
     /**
-     * Name of the user the signing certificate belongs to.
+     * Name of the User the signing certificate belongs to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user the signing certificate belongs to.
+     * @return Name of the User the signing certificate belongs to.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user the signing certificate belongs to.
+     * Name of the User the signing certificate belongs to.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the signing certificate belongs to.
+     * @param userName Name of the User the signing certificate belongs to.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user the signing certificate belongs to.
+     * Name of the User the signing certificate belongs to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -86,7 +86,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user the signing certificate belongs to.
+     * @param userName Name of the User the signing certificate belongs to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

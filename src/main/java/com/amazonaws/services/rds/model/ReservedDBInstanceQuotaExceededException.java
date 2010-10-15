@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * Request would exceed the user's DB Instance quota.
+ * </p>
  */        
 public class ReservedDBInstanceQuotaExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

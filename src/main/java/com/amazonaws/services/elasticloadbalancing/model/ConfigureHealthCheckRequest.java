@@ -17,40 +17,78 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest) ConfigureHealthCheck operation}.
- * 
+ * <p>
+ * Enables the client to define an application healthcheck for the
+ * instances.
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#configureHealthCheck(ConfigureHealthCheckRequest)
  */
 public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The mnemonic name associated with the LoadBalancer. This name must be
+     * unique within the client AWS account.
+     */
     private String loadBalancerName;
 
+    /**
+     * A structure containing the configuration information for the new
+     * healthcheck.
+     */
     private HealthCheck healthCheck;
 
     /**
-     * Returns the value of the LoadBalancerName property for this object.
+     * Default constructor for a new ConfigureHealthCheckRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ConfigureHealthCheckRequest() {}
+    
+    /**
+     * Constructs a new ConfigureHealthCheckRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The mnemonic name associated with the
+     * LoadBalancer. This name must be unique within the client AWS account.
+     * @param healthCheck A structure containing the configuration
+     * information for the new healthcheck.
+     */
+    public ConfigureHealthCheckRequest(String loadBalancerName, HealthCheck healthCheck) {
+        this.loadBalancerName = loadBalancerName;
+        this.healthCheck = healthCheck;
+    }
+    
+    /**
+     * The mnemonic name associated with the LoadBalancer. This name must be
+     * unique within the client AWS account.
      *
-     * @return The value of the LoadBalancerName property for this object.
+     * @return The mnemonic name associated with the LoadBalancer. This name must be
+     *         unique within the client AWS account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The mnemonic name associated with the LoadBalancer. This name must be
+     * unique within the client AWS account.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
+     *         unique within the client AWS account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The mnemonic name associated with the LoadBalancer. This name must be
+     * unique within the client AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The mnemonic name associated with the LoadBalancer. This name must be
+     *         unique within the client AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,29 +100,35 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the HealthCheck property for this object.
+     * A structure containing the configuration information for the new
+     * healthcheck.
      *
-     * @return The value of the HealthCheck property for this object.
+     * @return A structure containing the configuration information for the new
+     *         healthcheck.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * Sets the value of the HealthCheck property for this object.
+     * A structure containing the configuration information for the new
+     * healthcheck.
      *
-     * @param healthCheck The new value for the HealthCheck property for this object.
+     * @param healthCheck A structure containing the configuration information for the new
+     *         healthcheck.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * Sets the value of the HealthCheck property for this object.
+     * A structure containing the configuration information for the new
+     * healthcheck.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck The new value for the HealthCheck property for this object.
+     * @param healthCheck A structure containing the configuration information for the new
+     *         healthcheck.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -17,16 +17,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest) PurchaseReservedDBInstancesOffering operation}.
- * 
+ * <p>
+ * Purchases a reserved DB Instance offering.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest)
  */
 public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The ID of the Reserved DB Instance offering to purchase.
+     */
     private String reservedDBInstancesOfferingId;
 
+    /**
+     * Customer-specified identifier to track this reservation.
+     */
     private String reservedDBInstanceId;
 
+    /**
+     * The number of instances to reserve.
+     */
     private Integer dBInstanceCount;
 
     /**
@@ -40,42 +51,37 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param reservedDBInstancesOfferingId
+     * @param reservedDBInstancesOfferingId The ID of the Reserved DB
+     * Instance offering to purchase.
      */
     public PurchaseReservedDBInstancesOfferingRequest(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
     
     /**
-     * Returns the value of the ReservedDBInstancesOfferingId property for
-     * this object.
+     * The ID of the Reserved DB Instance offering to purchase.
      *
-     * @return The value of the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @return The ID of the Reserved DB Instance offering to purchase.
      */
     public String getReservedDBInstancesOfferingId() {
         return reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The ID of the Reserved DB Instance offering to purchase.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The ID of the Reserved DB Instance offering to purchase.
      */
     public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The ID of the Reserved DB Instance offering to purchase.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The ID of the Reserved DB Instance offering to purchase.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,30 +93,29 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     
     
     /**
-     * Returns the value of the ReservedDBInstanceId property for this
-     * object.
+     * Customer-specified identifier to track this reservation.
      *
-     * @return The value of the ReservedDBInstanceId property for this object.
+     * @return Customer-specified identifier to track this reservation.
      */
     public String getReservedDBInstanceId() {
         return reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * Customer-specified identifier to track this reservation.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId Customer-specified identifier to track this reservation.
      */
     public void setReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * Customer-specified identifier to track this reservation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId Customer-specified identifier to track this reservation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,29 +127,29 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     
     
     /**
-     * Returns the value of the DBInstanceCount property for this object.
+     * The number of instances to reserve.
      *
-     * @return The value of the DBInstanceCount property for this object.
+     * @return The number of instances to reserve.
      */
     public Integer getDBInstanceCount() {
         return dBInstanceCount;
     }
     
     /**
-     * Sets the value of the DBInstanceCount property for this object.
+     * The number of instances to reserve.
      *
-     * @param dBInstanceCount The new value for the DBInstanceCount property for this object.
+     * @param dBInstanceCount The number of instances to reserve.
      */
     public void setDBInstanceCount(Integer dBInstanceCount) {
         this.dBInstanceCount = dBInstanceCount;
     }
     
     /**
-     * Sets the value of the DBInstanceCount property for this object.
+     * The number of instances to reserve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceCount The new value for the DBInstanceCount property for this object.
+     * @param dBInstanceCount The number of instances to reserve.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

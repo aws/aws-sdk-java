@@ -1,0 +1,74 @@
+/*
+ * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.elasticloadbalancing.model.transform;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.amazonaws.Request;
+import com.amazonaws.DefaultRequest;
+import com.amazonaws.services.elasticloadbalancing.model.*;
+import com.amazonaws.transform.Marshaller;
+import com.amazonaws.util.StringUtils;
+
+/**
+ * Create Load Balancer Listeners Request Marshaller
+ */
+public class CreateLoadBalancerListenersRequestMarshaller implements Marshaller<Request<CreateLoadBalancerListenersRequest>, CreateLoadBalancerListenersRequest> {
+
+    public Request<CreateLoadBalancerListenersRequest> marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) {
+        Request<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
+        request.addParameter("Action", "CreateLoadBalancerListeners");
+        request.addParameter("Version", "2010-07-01");
+        if (createLoadBalancerListenersRequest != null) {
+            if (createLoadBalancerListenersRequest.getLoadBalancerName() != null) {
+                request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerListenersRequest.getLoadBalancerName()));
+            }
+        }
+
+        if (createLoadBalancerListenersRequest != null) {
+            java.util.List<Listener> listenersList = createLoadBalancerListenersRequest.getListeners();
+            int listenersListIndex = 1;
+            for (Listener listenersListValue : listenersList) {
+                if (listenersListValue != null) {
+                    if (listenersListValue.getProtocol() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
+                    }
+                }
+                if (listenersListValue != null) {
+                    if (listenersListValue.getLoadBalancerPort() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.fromInteger(listenersListValue.getLoadBalancerPort()));
+                    }
+                }
+                if (listenersListValue != null) {
+                    if (listenersListValue.getInstancePort() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.fromInteger(listenersListValue.getInstancePort()));
+                    }
+                }
+                if (listenersListValue != null) {
+                    if (listenersListValue.getSSLCertificateId() != null) {
+                        request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.fromString(listenersListValue.getSSLCertificateId()));
+                    }
+                }
+
+                listenersListIndex++;
+            }
+        }
+
+
+        return request;
+    }
+}

@@ -19,10 +19,19 @@ package com.amazonaws.services.rds.model;
  */
 public class DBEngineVersion {
 
+    /**
+     * The name of the database engine.
+     */
     private String engine;
 
+    /**
+     * The version number of the database engine.
+     */
     private String engineVersion;
 
+    /**
+     * The name of the DBParameterGroupFamily for the database engine.
+     */
     private String dBParameterGroupFamily;
 
     /**
@@ -32,29 +41,29 @@ public class DBEngineVersion {
     public DBEngineVersion() {}
     
     /**
-     * Returns the value of the Engine property for this object.
+     * The name of the database engine.
      *
-     * @return The value of the Engine property for this object.
+     * @return The name of the database engine.
      */
     public String getEngine() {
         return engine;
     }
     
     /**
-     * Sets the value of the Engine property for this object.
+     * The name of the database engine.
      *
-     * @param engine The new value for the Engine property for this object.
+     * @param engine The name of the database engine.
      */
     public void setEngine(String engine) {
         this.engine = engine;
     }
     
     /**
-     * Sets the value of the Engine property for this object.
+     * The name of the database engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engine The new value for the Engine property for this object.
+     * @param engine The name of the database engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,29 +75,29 @@ public class DBEngineVersion {
     
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * The version number of the database engine.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return The version number of the database engine.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The version number of the database engine.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The version number of the database engine.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * The version number of the database engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion The version number of the database engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,30 +109,29 @@ public class DBEngineVersion {
     
     
     /**
-     * Returns the value of the DBParameterGroupFamily property for this
-     * object.
+     * The name of the DBParameterGroupFamily for the database engine.
      *
-     * @return The value of the DBParameterGroupFamily property for this object.
+     * @return The name of the DBParameterGroupFamily for the database engine.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * Sets the value of the DBParameterGroupFamily property for this object.
+     * The name of the DBParameterGroupFamily for the database engine.
      *
-     * @param dBParameterGroupFamily The new value for the DBParameterGroupFamily property for this object.
+     * @param dBParameterGroupFamily The name of the DBParameterGroupFamily for the database engine.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * Sets the value of the DBParameterGroupFamily property for this object.
+     * The name of the DBParameterGroupFamily for the database engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The new value for the DBParameterGroupFamily property for this object.
+     * @param dBParameterGroupFamily The name of the DBParameterGroupFamily for the database engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

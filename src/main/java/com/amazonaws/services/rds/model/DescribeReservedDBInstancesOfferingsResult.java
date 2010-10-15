@@ -19,34 +19,40 @@ package com.amazonaws.services.rds.model;
  */
 public class DescribeReservedDBInstancesOfferingsResult {
 
+    /**
+     * A marker provided for paginated results.
+     */
     private String marker;
 
+    /**
+     * A list of DB Instance offerings.
+     */
     private java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferings;
 
     /**
-     * Returns the value of the Marker property for this object.
+     * A marker provided for paginated results.
      *
-     * @return The value of the Marker property for this object.
+     * @return A marker provided for paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * A marker provided for paginated results.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker A marker provided for paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * A marker provided for paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker A marker provided for paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,11 +64,9 @@ public class DescribeReservedDBInstancesOfferingsResult {
     
     
     /**
-     * Returns the value of the ReservedDBInstancesOfferings property for
-     * this object.
+     * A list of DB Instance offerings.
      *
-     * @return The value of the ReservedDBInstancesOfferings property for this
-     *         object.
+     * @return A list of DB Instance offerings.
      */
     public java.util.List<ReservedDBInstancesOffering> getReservedDBInstancesOfferings() {
         if (reservedDBInstancesOfferings == null) {
@@ -72,11 +76,9 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferings property for this
-     * object.
+     * A list of DB Instance offerings.
      *
-     * @param reservedDBInstancesOfferings The new value for the ReservedDBInstancesOfferings property for this
-     *         object.
+     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
      */
     public void setReservedDBInstancesOfferings(java.util.Collection<ReservedDBInstancesOffering> reservedDBInstancesOfferings) {
         java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferingsCopy = new java.util.ArrayList<ReservedDBInstancesOffering>();
@@ -87,13 +89,11 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferings property for this
-     * object.
+     * A list of DB Instance offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferings The new value for the ReservedDBInstancesOfferings property for this
-     *         object.
+     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -106,13 +106,11 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferings property for this
-     * object.
+     * A list of DB Instance offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferings The new value for the ReservedDBInstancesOfferings property for this
-     *         object.
+     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

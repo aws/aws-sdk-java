@@ -21,10 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new group.
  * </p>
  * <p>
- * For information about the number of groups you can create, see
- * Limitations on AWS IAM Entities in the <a
- * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
- * Management User Guide </a> .
+ * For information about the number of groups you can create, see <a
+ * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+ * Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)
@@ -32,11 +32,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The path to the group. For more information about paths, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>. <p>This parameter is
-     * optional. If it is not included, it defaults to /.
+     * The path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -54,53 +54,53 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
-     * The path to the group. For more information about paths, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>. <p>This parameter is
-     * optional. If it is not included, it defaults to /.
+     * The path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return The path to the group. For more information about paths, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>. <p>This parameter is
-     *         optional. If it is not included, it defaults to /.
+     * @return The path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
     }
     
     /**
-     * The path to the group. For more information about paths, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>. <p>This parameter is
-     * optional. If it is not included, it defaults to /.
+     * The path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The path to the group. For more information about paths, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>. <p>This parameter is
-     *         optional. If it is not included, it defaults to /.
+     * @param path The path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
     }
     
     /**
-     * The path to the group. For more information about paths, see
-     * Identifiers for Users and Groups in the <a
-     * href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     * Identity and Access Management User Guide</a>. <p>This parameter is
-     * optional. If it is not included, it defaults to /.
+     * The path to the group. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -108,11 +108,11 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The path to the group. For more information about paths, see
-     *         Identifiers for Users and Groups in the <a
-     *         href="http://aws.amazon.com/documentation/" target="_blank">AWS
-     *         Identity and Access Management User Guide</a>. <p>This parameter is
-     *         optional. If it is not included, it defaults to /.
+     * @param path The path to the group. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

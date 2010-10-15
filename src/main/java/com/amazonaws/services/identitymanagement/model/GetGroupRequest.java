@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest) GetGroup operation}.
  * <p>
- * Returns a list of users that are in the specified group. You can
+ * Returns a list of Users that are in the specified group. You can
  * paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
@@ -37,10 +37,10 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -50,9 +50,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * of User names you want in the response. If there are additional User
+     * names beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -106,48 +106,48 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @return Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a follow-up request
-     * after you've received a response where the results are truncated. Set
-     * this to the value of the <code>Marker</code> element in the response
-     * you just received.
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -155,10 +155,10 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a follow-up request
-     *         after you've received a response where the results are truncated. Set
-     *         this to the value of the <code>Marker</code> element in the response
-     *         you just received.
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -171,17 +171,17 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * of User names you want in the response. If there are additional User
+     * names beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         of User names you want in the response. If there are additional User
+     *         names beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -189,17 +189,17 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * of User names you want in the response. If there are additional User
+     * names beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         of User names you want in the response. If there are additional User
+     *         names beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -207,9 +207,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of users you want in the response. If there are additional users
-     * beyond the maximum you specify, the <code>IsTruncated</code> response
-     * element is <code>true</code>.
+     * of User names you want in the response. If there are additional User
+     * names beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -217,9 +217,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of users you want in the response. If there are additional users
-     *         beyond the maximum you specify, the <code>IsTruncated</code> response
-     *         element is <code>true</code>.
+     *         of User names you want in the response. If there are additional User
+     *         names beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

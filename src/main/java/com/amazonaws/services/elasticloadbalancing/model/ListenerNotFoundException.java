@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticLoadBalancing exception
+ * <p>
+ * LoadBalancer does not have a listener configured at the given port.
+ * </p>
  */        
 public class ListenerNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

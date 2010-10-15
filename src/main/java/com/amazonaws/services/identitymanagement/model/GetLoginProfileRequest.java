@@ -18,7 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest) GetLoginProfile operation}.
  * <p>
- * Retrieves the login profile for the specified user.
+ * Retrieves the login profile for the specified User.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>In the full release you will be able to use IAM to access
+ * your services through the AWS Management Console. Although this
+ * feature is not currently available, you can create login profiles for
+ * your Users now. Then, when this feature is implemented, your Users can
+ * use IAM to access your services through the AWS Management Console.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest)
@@ -26,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetLoginProfileRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose login profile you want to retrieve.
+     * Name of the User whose login profile you want to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -35,33 +42,33 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * Name of the user whose login profile you want to retrieve.
+     * Name of the User whose login profile you want to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose login profile you want to retrieve.
+     * @return Name of the User whose login profile you want to retrieve.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose login profile you want to retrieve.
+     * Name of the User whose login profile you want to retrieve.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to retrieve.
+     * @param userName Name of the User whose login profile you want to retrieve.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose login profile you want to retrieve.
+     * Name of the User whose login profile you want to retrieve.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -69,7 +76,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to retrieve.
+     * @param userName Name of the User whose login profile you want to retrieve.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

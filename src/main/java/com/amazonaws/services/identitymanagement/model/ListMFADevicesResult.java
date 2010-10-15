@@ -28,17 +28,17 @@ public class ListMFADevicesResult {
     private java.util.List<MFADevice> mFADevices;
 
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more User names in the list.
      */
     private Boolean isTruncated;
 
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -109,47 +109,47 @@ public class ListMFADevicesResult {
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more User names in the list.
      *
-     * @return A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @return A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more User names in the list.
      */
-    public Boolean isIsTruncated() {
+    public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more User names in the list.
      *
-     * @param isTruncated A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more User names in the list.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more User names in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isTruncated A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more User names in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -161,15 +161,15 @@ public class ListMFADevicesResult {
     
     
     /**
-     * A flag that indicates whether there are more users to list. If your
-     * results were truncated, you can make a follow-up pagination request
-     * using the <code>Marker</code> request parameter to retrieve more users
-     * in the list.
+     * A flag that indicates whether there are more User names to list. If
+     * your results were truncated, you can make a subsequent pagination
+     * request using the <code>Marker</code> request parameter to retrieve
+     * more User names in the list.
      *
-     * @return A flag that indicates whether there are more users to list. If your
-     *         results were truncated, you can make a follow-up pagination request
-     *         using the <code>Marker</code> request parameter to retrieve more users
-     *         in the list.
+     * @return A flag that indicates whether there are more User names to list. If
+     *         your results were truncated, you can make a subsequent pagination
+     *         request using the <code>Marker</code> request parameter to retrieve
+     *         more User names in the list.
      */
     public Boolean getIsTruncated() {
         return isTruncated;
@@ -178,7 +178,7 @@ public class ListMFADevicesResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -186,7 +186,7 @@ public class ListMFADevicesResult {
      *
      * @return If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      */
     public String getMarker() {
         return marker;
@@ -195,7 +195,7 @@ public class ListMFADevicesResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -203,7 +203,7 @@ public class ListMFADevicesResult {
      *
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -212,7 +212,7 @@ public class ListMFADevicesResult {
     /**
      * If <code>IsTruncated</code> is <code>true</code>, this element is
      * present and contains the value to use for the <code>Marker</code>
-     * parameter in a follow-up pagination request.
+     * parameter in a subsequent pagination request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -222,7 +222,7 @@ public class ListMFADevicesResult {
      *
      * @param marker If <code>IsTruncated</code> is <code>true</code>, this element is
      *         present and contains the value to use for the <code>Marker</code>
-     *         parameter in a follow-up pagination request.
+     *         parameter in a subsequent pagination request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

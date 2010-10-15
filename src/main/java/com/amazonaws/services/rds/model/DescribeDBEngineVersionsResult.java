@@ -19,34 +19,40 @@ package com.amazonaws.services.rds.model;
  */
 public class DescribeDBEngineVersionsResult {
 
+    /**
+     * The identifier returned to allow retrieval of paginated results.
+     */
     private String marker;
 
+    /**
+     * A list of <code>DBEngineVersion</code> elements.
+     */
     private java.util.List<DBEngineVersion> dBEngineVersions;
 
     /**
-     * Returns the value of the Marker property for this object.
+     * The identifier returned to allow retrieval of paginated results.
      *
-     * @return The value of the Marker property for this object.
+     * @return The identifier returned to allow retrieval of paginated results.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The identifier returned to allow retrieval of paginated results.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The identifier returned to allow retrieval of paginated results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * The identifier returned to allow retrieval of paginated results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker The identifier returned to allow retrieval of paginated results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +64,9 @@ public class DescribeDBEngineVersionsResult {
     
     
     /**
-     * Returns the value of the DBEngineVersions property for this object.
+     * A list of <code>DBEngineVersion</code> elements.
      *
-     * @return The value of the DBEngineVersions property for this object.
+     * @return A list of <code>DBEngineVersion</code> elements.
      */
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
         if (dBEngineVersions == null) {
@@ -70,9 +76,9 @@ public class DescribeDBEngineVersionsResult {
     }
     
     /**
-     * Sets the value of the DBEngineVersions property for this object.
+     * A list of <code>DBEngineVersion</code> elements.
      *
-     * @param dBEngineVersions The new value for the DBEngineVersions property for this object.
+     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
      */
     public void setDBEngineVersions(java.util.Collection<DBEngineVersion> dBEngineVersions) {
         java.util.List<DBEngineVersion> dBEngineVersionsCopy = new java.util.ArrayList<DBEngineVersion>();
@@ -83,11 +89,11 @@ public class DescribeDBEngineVersionsResult {
     }
     
     /**
-     * Sets the value of the DBEngineVersions property for this object.
+     * A list of <code>DBEngineVersion</code> elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBEngineVersions The new value for the DBEngineVersions property for this object.
+     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +106,11 @@ public class DescribeDBEngineVersionsResult {
     }
     
     /**
-     * Sets the value of the DBEngineVersions property for this object.
+     * A list of <code>DBEngineVersion</code> elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBEngineVersions The new value for the DBEngineVersions property for this object.
+     * @param dBEngineVersions A list of <code>DBEngineVersion</code> elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

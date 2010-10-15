@@ -17,40 +17,81 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest) DescribeInstanceHealth operation}.
- * 
+ * <p>
+ * Returns the current state of the instances of the specified
+ * LoadBalancer. If no instances are specified, the state of all the
+ * instances for the LoadBalancer is returned.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> The client must have created the specified input
+ * LoadBalancer in order to retrieve this information; the client must
+ * provide the same account credentials as those that were used to create
+ * the LoadBalancer.
+ * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeInstanceHealth(DescribeInstanceHealthRequest)
  */
 public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
+     */
     private String loadBalancerName;
 
+    /**
+     * A list of instance IDs whose states are being queried.
+     */
     private java.util.List<Instance> instances;
 
     /**
-     * Returns the value of the LoadBalancerName property for this object.
+     * Default constructor for a new DescribeInstanceHealthRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeInstanceHealthRequest() {}
+    
+    /**
+     * Constructs a new DescribeInstanceHealthRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param loadBalancerName The name associated with the LoadBalancer. The
+     * name must be unique within the client AWS account.
+     */
+    public DescribeInstanceHealthRequest(String loadBalancerName) {
+        this.loadBalancerName = loadBalancerName;
+    }
+    
+    /**
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      *
-     * @return The value of the LoadBalancerName property for this object.
+     * @return The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
     
     /**
-     * Sets the value of the LoadBalancerName property for this object.
+     * The name associated with the LoadBalancer. The name must be unique
+     * within the client AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerName The new value for the LoadBalancerName property for this object.
+     * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
+     *         within the client AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,9 +103,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Instances property for this object.
+     * A list of instance IDs whose states are being queried.
      *
-     * @return The value of the Instances property for this object.
+     * @return A list of instance IDs whose states are being queried.
      */
     public java.util.List<Instance> getInstances() {
         if (instances == null) {
@@ -74,9 +115,9 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * A list of instance IDs whose states are being queried.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances A list of instance IDs whose states are being queried.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
@@ -87,11 +128,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * A list of instance IDs whose states are being queried.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances A list of instance IDs whose states are being queried.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -104,11 +145,11 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Instances property for this object.
+     * A list of instance IDs whose states are being queried.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances The new value for the Instances property for this object.
+     * @param instances A list of instance IDs whose states are being queried.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * The specified reserved DB Instance not found.
+ * </p>
  */        
 public class ReservedDBInstanceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

@@ -17,7 +17,7 @@ package com.amazonaws.services.identitymanagement.model;
 /**
  * <p>
  * The LoginProfile data type contains information about a login profile
- * for a user.
+ * for a User.
  * </p>
  * <p>
  * This data type is used as a response element in the actions
@@ -27,7 +27,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class LoginProfile {
 
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the User, which can be used for logins.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -36,33 +36,33 @@ public class LoginProfile {
     private String userName;
 
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the User, which can be used for logins.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the user, which can be used for logins.
+     * @return The name of the User, which can be used for logins.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the User, which can be used for logins.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for logins.
+     * @param userName The name of the User, which can be used for logins.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the User, which can be used for logins.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -70,7 +70,7 @@ public class LoginProfile {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for logins.
+     * @param userName The name of the User, which can be used for logins.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

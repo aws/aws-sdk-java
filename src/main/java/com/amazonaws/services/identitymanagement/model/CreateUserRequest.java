@@ -18,13 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createUser(CreateUserRequest) CreateUser operation}.
  * <p>
- * Creates a new user for your account.
+ * Creates a new User for your AWS Account.
  * </p>
  * <p>
- * For information about limitations on the number of users you can
- * create, see Limitations on AWS IAM Entities in the <a
- * href="http://aws.amazon.com/documentation/"> AWS Identity and Access
- * Management User Guide </a> .
+ * For information about limitations on the number of Users you can
+ * create, see <a
+ * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+ * Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createUser(CreateUserRequest)
@@ -32,10 +33,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateUserRequest extends AmazonWebServiceRequest {
 
     /**
-     * The user's path. For more information about paths, see Identifiers for
-     * Users and Groups in the AWS AWS Identity and Access Management User
-     * Guide. <p>This parameter is optional. If it is not included, it
-     * defaults to /.
+     * The path for the User name. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
@@ -44,7 +46,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     private String path;
 
     /**
-     * Name of the user to create.
+     * Name of the User to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -53,48 +55,53 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * The user's path. For more information about paths, see Identifiers for
-     * Users and Groups in the AWS AWS Identity and Access Management User
-     * Guide. <p>This parameter is optional. If it is not included, it
-     * defaults to /.
+     * The path for the User name. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return The user's path. For more information about paths, see Identifiers for
-     *         Users and Groups in the AWS AWS Identity and Access Management User
-     *         Guide. <p>This parameter is optional. If it is not included, it
-     *         defaults to /.
+     * @return The path for the User name. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      */
     public String getPath() {
         return path;
     }
     
     /**
-     * The user's path. For more information about paths, see Identifiers for
-     * Users and Groups in the AWS AWS Identity and Access Management User
-     * Guide. <p>This parameter is optional. If it is not included, it
-     * defaults to /.
+     * The path for the User name. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The user's path. For more information about paths, see Identifiers for
-     *         Users and Groups in the AWS AWS Identity and Access Management User
-     *         Guide. <p>This parameter is optional. If it is not included, it
-     *         defaults to /.
+     * @param path The path for the User name. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      */
     public void setPath(String path) {
         this.path = path;
     }
     
     /**
-     * The user's path. For more information about paths, see Identifiers for
-     * Users and Groups in the AWS AWS Identity and Access Management User
-     * Guide. <p>This parameter is optional. If it is not included, it
-     * defaults to /.
+     * The path for the User name. For more information about paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>. <p>This parameter is optional. If
+     * it is not included, it defaults to a slash (/).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -102,10 +109,11 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The user's path. For more information about paths, see Identifiers for
-     *         Users and Groups in the AWS AWS Identity and Access Management User
-     *         Guide. <p>This parameter is optional. If it is not included, it
-     *         defaults to /.
+     * @param path The path for the User name. For more information about paths, see <a
+     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     *         Identity and Access Management</i>. <p>This parameter is optional. If
+     *         it is not included, it defaults to a slash (/).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,33 +125,33 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Name of the user to create.
+     * Name of the User to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to create.
+     * @return Name of the User to create.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user to create.
+     * Name of the User to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param userName Name of the User to create.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user to create.
+     * Name of the User to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -151,7 +159,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param userName Name of the User to create.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

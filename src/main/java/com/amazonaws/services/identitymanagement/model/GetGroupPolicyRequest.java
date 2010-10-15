@@ -20,8 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Retrieves the specified policy document for the specified group. The
  * returned policy is URL-encoded according to RFC 3986. For more
- * information about RFC 3986, go to
- * http://www.faqs.org/rfcs/rfc3986.html.
+ * information about RFC 3986, go to <a
+ * href="http://www.faqs.org/rfcs/rfc3986.html">
+ * http://www.faqs.org/rfcs/rfc3986.html </a> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroupPolicy(GetGroupPolicyRequest)

@@ -15,42 +15,61 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Instance State
+ * <p>
+ * The InstanceState data type.
+ * </p>
  */
 public class InstanceState {
 
+    /**
+     * Provides an EC2 instance ID.
+     */
     private String instanceId;
 
+    /**
+     * Specifies the current status of the instance.
+     */
     private String state;
 
+    /**
+     * Provides information about the cause of <i>OutOfService</i> instances.
+     * Specifically, it indicates whether the cause is Elastic Load Balancing
+     * or the instance behind the Load Balancer.
+     */
     private String reasonCode;
 
     private String description;
 
     /**
-     * Returns the value of the InstanceId property for this object.
+     * Default constructor for a new InstanceState object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public InstanceState() {}
+    
+    /**
+     * Provides an EC2 instance ID.
      *
-     * @return The value of the InstanceId property for this object.
+     * @return Provides an EC2 instance ID.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * Provides an EC2 instance ID.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId Provides an EC2 instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Sets the value of the InstanceId property for this object.
+     * Provides an EC2 instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The new value for the InstanceId property for this object.
+     * @param instanceId Provides an EC2 instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -62,29 +81,29 @@ public class InstanceState {
     
     
     /**
-     * Returns the value of the State property for this object.
+     * Specifies the current status of the instance.
      *
-     * @return The value of the State property for this object.
+     * @return Specifies the current status of the instance.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Specifies the current status of the instance.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Specifies the current status of the instance.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * Specifies the current status of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state Specifies the current status of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -96,29 +115,41 @@ public class InstanceState {
     
     
     /**
-     * Returns the value of the ReasonCode property for this object.
+     * Provides information about the cause of <i>OutOfService</i> instances.
+     * Specifically, it indicates whether the cause is Elastic Load Balancing
+     * or the instance behind the Load Balancer.
      *
-     * @return The value of the ReasonCode property for this object.
+     * @return Provides information about the cause of <i>OutOfService</i> instances.
+     *         Specifically, it indicates whether the cause is Elastic Load Balancing
+     *         or the instance behind the Load Balancer.
      */
     public String getReasonCode() {
         return reasonCode;
     }
     
     /**
-     * Sets the value of the ReasonCode property for this object.
+     * Provides information about the cause of <i>OutOfService</i> instances.
+     * Specifically, it indicates whether the cause is Elastic Load Balancing
+     * or the instance behind the Load Balancer.
      *
-     * @param reasonCode The new value for the ReasonCode property for this object.
+     * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
+     *         Specifically, it indicates whether the cause is Elastic Load Balancing
+     *         or the instance behind the Load Balancer.
      */
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
     }
     
     /**
-     * Sets the value of the ReasonCode property for this object.
+     * Provides information about the cause of <i>OutOfService</i> instances.
+     * Specifically, it indicates whether the cause is Elastic Load Balancing
+     * or the instance behind the Load Balancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCode The new value for the ReasonCode property for this object.
+     * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
+     *         Specifically, it indicates whether the cause is Elastic Load Balancing
+     *         or the instance behind the Load Balancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -19,32 +19,35 @@ package com.amazonaws.services.elasticloadbalancing.model;
  */
 public class ConfigureHealthCheckResult {
 
+    /**
+     * The updated healthcheck for the instances.
+     */
     private HealthCheck healthCheck;
 
     /**
-     * Returns the value of the HealthCheck property for this object.
+     * The updated healthcheck for the instances.
      *
-     * @return The value of the HealthCheck property for this object.
+     * @return The updated healthcheck for the instances.
      */
     public HealthCheck getHealthCheck() {
         return healthCheck;
     }
     
     /**
-     * Sets the value of the HealthCheck property for this object.
+     * The updated healthcheck for the instances.
      *
-     * @param healthCheck The new value for the HealthCheck property for this object.
+     * @param healthCheck The updated healthcheck for the instances.
      */
     public void setHealthCheck(HealthCheck healthCheck) {
         this.healthCheck = healthCheck;
     }
     
     /**
-     * Sets the value of the HealthCheck property for this object.
+     * The updated healthcheck for the instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param healthCheck The new value for the HealthCheck property for this object.
+     * @param healthCheck The updated healthcheck for the instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

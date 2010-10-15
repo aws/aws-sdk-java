@@ -19,53 +19,85 @@ package com.amazonaws.services.rds.model;
  */
 public class ReservedDBInstance {
 
+    /**
+     * The unique identifier for the reservation.
+     */
     private String reservedDBInstanceId;
 
+    /**
+     * The offering identifier.
+     */
     private String reservedDBInstancesOfferingId;
 
+    /**
+     * The DB instance class for the reserved DB Instance.
+     */
     private String dBInstanceClass;
 
+    /**
+     * The time the reservation started.
+     */
     private java.util.Date startTime;
 
+    /**
+     * The duration of the reservation in seconds.
+     */
     private Integer duration;
 
+    /**
+     * The fixed price charged for this reserved DB Instance.
+     */
     private Double fixedPrice;
 
+    /**
+     * The hourly price charged for this reserved DB Instance.
+     */
     private Double usagePrice;
 
+    /**
+     * The number of reserved DB Instances.
+     */
     private Integer dBInstanceCount;
 
+    /**
+     * The description of the reserved DB Instance.
+     */
     private String productDescription;
 
+    /**
+     * Indicates if the reservation applies to Multi-AZ deployments.
+     */
     private Boolean multiAZ;
 
+    /**
+     * The state of the reserved DB Instance.
+     */
     private String state;
 
     /**
-     * Returns the value of the ReservedDBInstanceId property for this
-     * object.
+     * The unique identifier for the reservation.
      *
-     * @return The value of the ReservedDBInstanceId property for this object.
+     * @return The unique identifier for the reservation.
      */
     public String getReservedDBInstanceId() {
         return reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * The unique identifier for the reservation.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId The unique identifier for the reservation.
      */
     public void setReservedDBInstanceId(String reservedDBInstanceId) {
         this.reservedDBInstanceId = reservedDBInstanceId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstanceId property for this object.
+     * The unique identifier for the reservation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstanceId The new value for the ReservedDBInstanceId property for this object.
+     * @param reservedDBInstanceId The unique identifier for the reservation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -77,35 +109,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the ReservedDBInstancesOfferingId property for
-     * this object.
+     * The offering identifier.
      *
-     * @return The value of the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @return The offering identifier.
      */
     public String getReservedDBInstancesOfferingId() {
         return reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The offering identifier.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The offering identifier.
      */
     public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
     
     /**
-     * Sets the value of the ReservedDBInstancesOfferingId property for this
-     * object.
+     * The offering identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferingId The new value for the ReservedDBInstancesOfferingId property for this
-     *         object.
+     * @param reservedDBInstancesOfferingId The offering identifier.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -117,29 +143,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the DBInstanceClass property for this object.
+     * The DB instance class for the reserved DB Instance.
      *
-     * @return The value of the DBInstanceClass property for this object.
+     * @return The DB instance class for the reserved DB Instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * Sets the value of the DBInstanceClass property for this object.
+     * The DB instance class for the reserved DB Instance.
      *
-     * @param dBInstanceClass The new value for the DBInstanceClass property for this object.
+     * @param dBInstanceClass The DB instance class for the reserved DB Instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * Sets the value of the DBInstanceClass property for this object.
+     * The DB instance class for the reserved DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The new value for the DBInstanceClass property for this object.
+     * @param dBInstanceClass The DB instance class for the reserved DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -151,29 +177,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the StartTime property for this object.
+     * The time the reservation started.
      *
-     * @return The value of the StartTime property for this object.
+     * @return The time the reservation started.
      */
     public java.util.Date getStartTime() {
         return startTime;
     }
     
     /**
-     * Sets the value of the StartTime property for this object.
+     * The time the reservation started.
      *
-     * @param startTime The new value for the StartTime property for this object.
+     * @param startTime The time the reservation started.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
     }
     
     /**
-     * Sets the value of the StartTime property for this object.
+     * The time the reservation started.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param startTime The new value for the StartTime property for this object.
+     * @param startTime The time the reservation started.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -185,29 +211,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the Duration property for this object.
+     * The duration of the reservation in seconds.
      *
-     * @return The value of the Duration property for this object.
+     * @return The duration of the reservation in seconds.
      */
     public Integer getDuration() {
         return duration;
     }
     
     /**
-     * Sets the value of the Duration property for this object.
+     * The duration of the reservation in seconds.
      *
-     * @param duration The new value for the Duration property for this object.
+     * @param duration The duration of the reservation in seconds.
      */
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
     
     /**
-     * Sets the value of the Duration property for this object.
+     * The duration of the reservation in seconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration The new value for the Duration property for this object.
+     * @param duration The duration of the reservation in seconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -219,29 +245,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the FixedPrice property for this object.
+     * The fixed price charged for this reserved DB Instance.
      *
-     * @return The value of the FixedPrice property for this object.
+     * @return The fixed price charged for this reserved DB Instance.
      */
     public Double getFixedPrice() {
         return fixedPrice;
     }
     
     /**
-     * Sets the value of the FixedPrice property for this object.
+     * The fixed price charged for this reserved DB Instance.
      *
-     * @param fixedPrice The new value for the FixedPrice property for this object.
+     * @param fixedPrice The fixed price charged for this reserved DB Instance.
      */
     public void setFixedPrice(Double fixedPrice) {
         this.fixedPrice = fixedPrice;
     }
     
     /**
-     * Sets the value of the FixedPrice property for this object.
+     * The fixed price charged for this reserved DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fixedPrice The new value for the FixedPrice property for this object.
+     * @param fixedPrice The fixed price charged for this reserved DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -253,29 +279,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the UsagePrice property for this object.
+     * The hourly price charged for this reserved DB Instance.
      *
-     * @return The value of the UsagePrice property for this object.
+     * @return The hourly price charged for this reserved DB Instance.
      */
     public Double getUsagePrice() {
         return usagePrice;
     }
     
     /**
-     * Sets the value of the UsagePrice property for this object.
+     * The hourly price charged for this reserved DB Instance.
      *
-     * @param usagePrice The new value for the UsagePrice property for this object.
+     * @param usagePrice The hourly price charged for this reserved DB Instance.
      */
     public void setUsagePrice(Double usagePrice) {
         this.usagePrice = usagePrice;
     }
     
     /**
-     * Sets the value of the UsagePrice property for this object.
+     * The hourly price charged for this reserved DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param usagePrice The new value for the UsagePrice property for this object.
+     * @param usagePrice The hourly price charged for this reserved DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -287,29 +313,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the DBInstanceCount property for this object.
+     * The number of reserved DB Instances.
      *
-     * @return The value of the DBInstanceCount property for this object.
+     * @return The number of reserved DB Instances.
      */
     public Integer getDBInstanceCount() {
         return dBInstanceCount;
     }
     
     /**
-     * Sets the value of the DBInstanceCount property for this object.
+     * The number of reserved DB Instances.
      *
-     * @param dBInstanceCount The new value for the DBInstanceCount property for this object.
+     * @param dBInstanceCount The number of reserved DB Instances.
      */
     public void setDBInstanceCount(Integer dBInstanceCount) {
         this.dBInstanceCount = dBInstanceCount;
     }
     
     /**
-     * Sets the value of the DBInstanceCount property for this object.
+     * The number of reserved DB Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceCount The new value for the DBInstanceCount property for this object.
+     * @param dBInstanceCount The number of reserved DB Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -321,29 +347,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the ProductDescription property for this object.
+     * The description of the reserved DB Instance.
      *
-     * @return The value of the ProductDescription property for this object.
+     * @return The description of the reserved DB Instance.
      */
     public String getProductDescription() {
         return productDescription;
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The description of the reserved DB Instance.
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The description of the reserved DB Instance.
      */
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
     
     /**
-     * Sets the value of the ProductDescription property for this object.
+     * The description of the reserved DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productDescription The new value for the ProductDescription property for this object.
+     * @param productDescription The description of the reserved DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -355,29 +381,29 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Indicates if the reservation applies to Multi-AZ deployments.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Indicates if the reservation applies to Multi-AZ deployments.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Indicates if the reservation applies to Multi-AZ deployments.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Indicates if the reservation applies to Multi-AZ deployments.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Sets the value of the MultiAZ property for this object.
+     * Indicates if the reservation applies to Multi-AZ deployments.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ The new value for the MultiAZ property for this object.
+     * @param multiAZ Indicates if the reservation applies to Multi-AZ deployments.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -389,38 +415,38 @@ public class ReservedDBInstance {
     
     
     /**
-     * Returns the value of the MultiAZ property for this object.
+     * Indicates if the reservation applies to Multi-AZ deployments.
      *
-     * @return The value of the MultiAZ property for this object.
+     * @return Indicates if the reservation applies to Multi-AZ deployments.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Returns the value of the State property for this object.
+     * The state of the reserved DB Instance.
      *
-     * @return The value of the State property for this object.
+     * @return The state of the reserved DB Instance.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the reserved DB Instance.
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the reserved DB Instance.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * Sets the value of the State property for this object.
+     * The state of the reserved DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state The new value for the State property for this object.
+     * @param state The state of the reserved DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
