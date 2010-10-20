@@ -23,11 +23,19 @@ public class JobFlowInstancesConfig {
 
     /**
      * The EC2 instance type of the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String masterInstanceType;
 
     /**
      * The EC2 instance type of the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String slaveInstanceType;
 
@@ -37,11 +45,17 @@ public class JobFlowInstancesConfig {
     private Integer instanceCount;
 
     /**
+     * Configuration for the job flow's instance groups.
+     */
+    private java.util.List<InstanceGroupConfig> instanceGroups;
+
+    /**
      * Specifies the name of the Amazon EC2 key pair that can be used to ssh
      * to the master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String ec2KeyName;
 
@@ -57,12 +71,27 @@ public class JobFlowInstancesConfig {
     private Boolean keepJobFlowAliveWhenNoSteps;
 
     /**
-     * Specifies the Hadoop version for the job flow.
+     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     * or "0.20".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String hadoopVersion;
 
     /**
+     * Default constructor for a new JobFlowInstancesConfig object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public JobFlowInstancesConfig() {}
+    
+    /**
      * The EC2 instance type of the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The EC2 instance type of the master node.
      */
@@ -72,6 +101,10 @@ public class JobFlowInstancesConfig {
     
     /**
      * The EC2 instance type of the master node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceType The EC2 instance type of the master node.
      */
@@ -83,6 +116,10 @@ public class JobFlowInstancesConfig {
      * The EC2 instance type of the master node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param masterInstanceType The EC2 instance type of the master node.
      *
@@ -97,6 +134,10 @@ public class JobFlowInstancesConfig {
     
     /**
      * The EC2 instance type of the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The EC2 instance type of the slave nodes.
      */
@@ -106,6 +147,10 @@ public class JobFlowInstancesConfig {
     
     /**
      * The EC2 instance type of the slave nodes.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param slaveInstanceType The EC2 instance type of the slave nodes.
      */
@@ -117,6 +162,10 @@ public class JobFlowInstancesConfig {
      * The EC2 instance type of the slave nodes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param slaveInstanceType The EC2 instance type of the slave nodes.
      *
@@ -164,11 +213,74 @@ public class JobFlowInstancesConfig {
     
     
     /**
+     * Configuration for the job flow's instance groups.
+     *
+     * @return Configuration for the job flow's instance groups.
+     */
+    public java.util.List<InstanceGroupConfig> getInstanceGroups() {
+        if (instanceGroups == null) {
+            instanceGroups = new java.util.ArrayList<InstanceGroupConfig>();
+        }
+        return instanceGroups;
+    }
+    
+    /**
+     * Configuration for the job flow's instance groups.
+     *
+     * @param instanceGroups Configuration for the job flow's instance groups.
+     */
+    public void setInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
+        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
+        if (instanceGroups != null) {
+            instanceGroupsCopy.addAll(instanceGroups);
+        }
+        this.instanceGroups = instanceGroupsCopy;
+    }
+    
+    /**
+     * Configuration for the job flow's instance groups.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceGroups Configuration for the job flow's instance groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowInstancesConfig withInstanceGroups(InstanceGroupConfig... instanceGroups) {
+        for (InstanceGroupConfig value : instanceGroups) {
+            getInstanceGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Configuration for the job flow's instance groups.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceGroups Configuration for the job flow's instance groups.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowInstancesConfig withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
+        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
+        if (instanceGroups != null) {
+            instanceGroupsCopy.addAll(instanceGroups);
+        }
+        this.instanceGroups = instanceGroupsCopy;
+
+        return this;
+    }
+    
+    /**
      * Specifies the name of the Amazon EC2 key pair that can be used to ssh
      * to the master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Specifies the name of the Amazon EC2 key pair that can be used to ssh
      *         to the master node as the user called "hadoop."
@@ -182,7 +294,8 @@ public class JobFlowInstancesConfig {
      * to the master node as the user called "hadoop."
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param ec2KeyName Specifies the name of the Amazon EC2 key pair that can be used to ssh
      *         to the master node as the user called "hadoop."
@@ -198,7 +311,8 @@ public class JobFlowInstancesConfig {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param ec2KeyName Specifies the name of the Amazon EC2 key pair that can be used to ssh
      *         to the master node as the user called "hadoop."
@@ -298,29 +412,47 @@ public class JobFlowInstancesConfig {
     }
     
     /**
-     * Specifies the Hadoop version for the job flow.
+     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     * or "0.20".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the Hadoop version for the job flow.
+     * @return Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     *         or "0.20".
      */
     public String getHadoopVersion() {
         return hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow.
+     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     * or "0.20".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow.
+     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     *         or "0.20".
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow.
+     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     * or "0.20".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow.
+     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
+     *         or "0.20".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -346,6 +478,7 @@ public class JobFlowInstancesConfig {
         sb.append("MasterInstanceType: " + masterInstanceType + ", ");
         sb.append("SlaveInstanceType: " + slaveInstanceType + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");
+        sb.append("InstanceGroups: " + instanceGroups + ", ");
         sb.append("Ec2KeyName: " + ec2KeyName + ", ");
         sb.append("Placement: " + placement + ", ");
         sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");

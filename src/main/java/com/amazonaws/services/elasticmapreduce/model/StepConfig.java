@@ -25,7 +25,8 @@ public class StepConfig {
      * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String name;
 
@@ -33,7 +34,7 @@ public class StepConfig {
      * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
      */
     private String actionOnFailure;
 
@@ -43,10 +44,31 @@ public class StepConfig {
     private HadoopJarStepConfig hadoopJarStep;
 
     /**
+     * Default constructor for a new StepConfig object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public StepConfig() {}
+    
+    /**
+     * Constructs a new StepConfig object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the job flow step.
+     * @param hadoopJarStep Specifies the JAR file used for the job flow
+     * step.
+     */
+    public StepConfig(String name, HadoopJarStepConfig hadoopJarStep) {
+        this.name = name;
+        this.hadoopJarStep = hadoopJarStep;
+    }
+    
+    /**
      * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the job flow step.
      */
@@ -58,7 +80,8 @@ public class StepConfig {
      * The name of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow step.
      */
@@ -72,7 +95,8 @@ public class StepConfig {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow step.
      *
@@ -89,9 +113,11 @@ public class StepConfig {
      * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
      *
      * @return Specifies the action to take if the job flow step fails.
+     *
+     * @see ActionOnFailure
      */
     public String getActionOnFailure() {
         return actionOnFailure;
@@ -101,9 +127,11 @@ public class StepConfig {
      * Specifies the action to take if the job flow step fails.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure Specifies the action to take if the job flow step fails.
+     *
+     * @see ActionOnFailure
      */
     public void setActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;
@@ -115,12 +143,14 @@ public class StepConfig {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>TERMINATE_JOB_FLOW|CANCEL_AND_WAIT|CONTINUE<br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
      *
      * @param actionOnFailure Specifies the action to take if the job flow step fails.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see ActionOnFailure
      */
     public StepConfig withActionOnFailure(String actionOnFailure) {
         this.actionOnFailure = actionOnFailure;

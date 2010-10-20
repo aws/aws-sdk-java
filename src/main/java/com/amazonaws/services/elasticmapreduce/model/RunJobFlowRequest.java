@@ -19,12 +19,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#runJobFlow(RunJobFlowRequest) RunJobFlow operation}.
  * <p>
  * RunJobFlow creates and starts running a new job flow. The job flow
- * will run the steps specified. Once the job flow completes, the EC2
- * cluster is stopped and the HDFS partition is lost. To prevent loss of
- * data, configure the last step of the job flow to store results in
- * Amazon S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
- * parameter is set to TRUE, the job flow will transition to the WAITING
- * state rather than shutting down once the steps have completed.
+ * will run the steps specified. Once the job flow completes, the cluster
+ * is stopped and the HDFS partition is lost. To prevent loss of data,
+ * configure the last step of the job flow to store results in Amazon
+ * S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+ * parameter is set to <code>TRUE</code> , the job flow will transition
+ * to the WAITING state rather than shutting down once the steps have
+ * completed.
  * </p>
  * <p>
  * A maximum of 256 steps are allowed in each job flow.
@@ -42,13 +43,18 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * The name of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String name;
 
     /**
      * Specifies the location in Amazon S3 to write the log files of the job
      * flow. If a value is not provided, logs are not created.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String logUri;
 
@@ -56,7 +62,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * A JSON string for selecting additional features.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String additionalInfo;
 
@@ -73,15 +80,36 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
 
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
-     * on the job flow.
+     * on the cluster nodes.
      */
     private java.util.List<BootstrapActionConfig> bootstrapActions;
 
     /**
+     * Default constructor for a new RunJobFlowRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RunJobFlowRequest() {}
+    
+    /**
+     * Constructs a new RunJobFlowRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The name of the job flow.
+     * @param instances A specification of the number and type of Amazon EC2
+     * instances on which to run the job flow.
+     */
+    public RunJobFlowRequest(String name, JobFlowInstancesConfig instances) {
+        this.name = name;
+        this.instances = instances;
+    }
+    
+    /**
      * The name of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the job flow.
      */
@@ -93,7 +121,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * The name of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      */
@@ -107,7 +136,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      *
@@ -123,6 +153,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * Specifies the location in Amazon S3 to write the log files of the job
      * flow. If a value is not provided, logs are not created.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Specifies the location in Amazon S3 to write the log files of the job
      *         flow. If a value is not provided, logs are not created.
@@ -134,6 +168,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * Specifies the location in Amazon S3 to write the log files of the job
      * flow. If a value is not provided, logs are not created.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param logUri Specifies the location in Amazon S3 to write the log files of the job
      *         flow. If a value is not provided, logs are not created.
@@ -147,6 +185,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * flow. If a value is not provided, logs are not created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param logUri Specifies the location in Amazon S3 to write the log files of the job
      *         flow. If a value is not provided, logs are not created.
@@ -164,7 +206,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * A JSON string for selecting additional features.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return A JSON string for selecting additional features.
      */
@@ -176,7 +219,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * A JSON string for selecting additional features.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param additionalInfo A JSON string for selecting additional features.
      */
@@ -190,7 +234,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 256<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param additionalInfo A JSON string for selecting additional features.
      *
@@ -307,10 +352,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
-     * on the job flow.
+     * on the cluster nodes.
      *
      * @return A list of bootstrap actions that will be run before Hadoop is started
-     *         on the job flow.
+     *         on the cluster nodes.
      */
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
         if (bootstrapActions == null) {
@@ -321,10 +366,10 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
-     * on the job flow.
+     * on the cluster nodes.
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
-     *         on the job flow.
+     *         on the cluster nodes.
      */
     public void setBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
         java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>();
@@ -336,12 +381,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
-     * on the job flow.
+     * on the cluster nodes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
-     *         on the job flow.
+     *         on the cluster nodes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -355,12 +400,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of bootstrap actions that will be run before Hadoop is started
-     * on the job flow.
+     * on the cluster nodes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param bootstrapActions A list of bootstrap actions that will be run before Hadoop is started
-     *         on the job flow.
+     *         on the cluster nodes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -23,11 +23,37 @@ public class PlacementType {
 
     /**
      * The Amazon EC2 Availability Zone for the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String availabilityZone;
 
     /**
+     * Default constructor for a new PlacementType object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PlacementType() {}
+    
+    /**
+     * Constructs a new PlacementType object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param availabilityZone The Amazon EC2 Availability Zone for the job
+     * flow.
+     */
+    public PlacementType(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+    
+    /**
      * The Amazon EC2 Availability Zone for the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The Amazon EC2 Availability Zone for the job flow.
      */
@@ -37,6 +63,10 @@ public class PlacementType {
     
     /**
      * The Amazon EC2 Availability Zone for the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
      */
@@ -48,6 +78,10 @@ public class PlacementType {
      * The Amazon EC2 Availability Zone for the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param availabilityZone The Amazon EC2 Availability Zone for the job flow.
      *

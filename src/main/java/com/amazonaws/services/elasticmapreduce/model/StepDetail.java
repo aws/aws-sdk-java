@@ -32,6 +32,25 @@ public class StepDetail {
     private StepExecutionStatusDetail executionStatusDetail;
 
     /**
+     * Default constructor for a new StepDetail object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public StepDetail() {}
+    
+    /**
+     * Constructs a new StepDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param stepConfig The step configuration.
+     * @param executionStatusDetail The description of the step status.
+     */
+    public StepDetail(StepConfig stepConfig, StepExecutionStatusDetail executionStatusDetail) {
+        this.stepConfig = stepConfig;
+        this.executionStatusDetail = executionStatusDetail;
+    }
+    
+    /**
      * The step configuration.
      *
      * @return The step configuration.

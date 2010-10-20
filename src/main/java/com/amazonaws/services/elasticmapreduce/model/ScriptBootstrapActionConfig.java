@@ -24,6 +24,10 @@ public class ScriptBootstrapActionConfig {
     /**
      * Location of the script to run during a bootstrap action. Can be either
      * a location in Amazon S3 or on a local file system.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String path;
 
@@ -34,8 +38,33 @@ public class ScriptBootstrapActionConfig {
     private java.util.List<String> args;
 
     /**
+     * Default constructor for a new ScriptBootstrapActionConfig object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ScriptBootstrapActionConfig() {}
+    
+    /**
+     * Constructs a new ScriptBootstrapActionConfig object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param path Location of the script to run during a bootstrap action.
+     * Can be either a location in Amazon S3 or on a local file system.
+     * @param args A list of command line arguments to pass to the bootstrap
+     * action script.
+     */
+    public ScriptBootstrapActionConfig(String path, java.util.List<String> args) {
+        this.path = path;
+        this.args = args;
+    }
+    
+    /**
      * Location of the script to run during a bootstrap action. Can be either
      * a location in Amazon S3 or on a local file system.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Location of the script to run during a bootstrap action. Can be either
      *         a location in Amazon S3 or on a local file system.
@@ -47,6 +76,10 @@ public class ScriptBootstrapActionConfig {
     /**
      * Location of the script to run during a bootstrap action. Can be either
      * a location in Amazon S3 or on a local file system.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param path Location of the script to run during a bootstrap action. Can be either
      *         a location in Amazon S3 or on a local file system.
@@ -60,6 +93,10 @@ public class ScriptBootstrapActionConfig {
      * a location in Amazon S3 or on a local file system.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param path Location of the script to run during a bootstrap action. Can be either
      *         a location in Amazon S3 or on a local file system.

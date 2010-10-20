@@ -35,6 +35,23 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     private java.util.List<String> jobFlowIds;
 
     /**
+     * Default constructor for a new TerminateJobFlowsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public TerminateJobFlowsRequest() {}
+    
+    /**
+     * Constructs a new TerminateJobFlowsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jobFlowIds A list of job flows to be shutdown.
+     */
+    public TerminateJobFlowsRequest(java.util.List<String> jobFlowIds) {
+        this.jobFlowIds = jobFlowIds;
+    }
+    
+    /**
      * A list of job flows to be shutdown.
      *
      * @return A list of job flows to be shutdown.

@@ -67,6 +67,14 @@ public class JobFlowInstancesDetailStaxUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesDetail.setInstanceCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("InstanceGroups/member", targetDepth)) {
+                    jobFlowInstancesDetail.getInstanceGroups().add(InstanceGroupDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("NormalizedInstanceHours", targetDepth)) {
+                    jobFlowInstancesDetail.setNormalizedInstanceHours(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Ec2KeyName", targetDepth)) {
                     jobFlowInstancesDetail.setEc2KeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -25,7 +25,7 @@ public class JobFlowExecutionStatusDetail {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
      */
     private String state;
 
@@ -54,17 +54,39 @@ public class JobFlowExecutionStatusDetail {
      * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String lastStateChangeReason;
 
     /**
+     * Default constructor for a new JobFlowExecutionStatusDetail object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public JobFlowExecutionStatusDetail() {}
+    
+    /**
+     * Constructs a new JobFlowExecutionStatusDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param state The state of the job flow.
+     * @param creationDateTime The creation date and time of the job flow.
+     */
+    public JobFlowExecutionStatusDetail(String state, java.util.Date creationDateTime) {
+        this.state = state;
+        this.creationDateTime = creationDateTime;
+    }
+    
+    /**
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
      *
      * @return The state of the job flow.
+     *
+     * @see JobFlowExecutionState
      */
     public String getState() {
         return state;
@@ -74,9 +96,11 @@ public class JobFlowExecutionStatusDetail {
      * The state of the job flow.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
      *
      * @param state The state of the job flow.
+     *
+     * @see JobFlowExecutionState
      */
     public void setState(String state) {
         this.state = state;
@@ -88,12 +112,14 @@ public class JobFlowExecutionStatusDetail {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>COMPLETED|FAILED|TERMINATED|RUNNING|SHUTTING_DOWN|STARTING|WAITING|BOOTSTRAPPING<br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
      *
      * @param state The state of the job flow.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see JobFlowExecutionState
      */
     public JobFlowExecutionStatusDetail withState(String state) {
         this.state = state;
@@ -247,7 +273,8 @@ public class JobFlowExecutionStatusDetail {
      * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Description of the job flow last changed state.
      */
@@ -259,7 +286,8 @@ public class JobFlowExecutionStatusDetail {
      * Description of the job flow last changed state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason Description of the job flow last changed state.
      */
@@ -273,7 +301,8 @@ public class JobFlowExecutionStatusDetail {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>MASTER_TERMINATED|START_FAILED|STEP_FAILED<br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason Description of the job flow last changed state.
      *

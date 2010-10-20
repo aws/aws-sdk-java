@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest) AddJobFlowSteps operation}.
  * <p>
- * AddJobFlowSteps adds new steps to a running job flow. The maximum
- * number of steps in a job flow is 256.
+ * AddJobFlowSteps adds new steps to a running job flow. A maximum of
+ * 256 steps are allowed in each job flow.
  * </p>
  * <p>
  * A step specifies the location of a JAR file stored either on the
@@ -29,14 +29,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * MainFunction parameter of the step.
  * </p>
  * <p>
- * SElastic MapReduce executes each step in the order listed. For a step
+ * Elastic MapReduce executes each step in the order listed. For a step
  * to be considered complete, the main function must exit with a zero
  * exit code and all Hadoop jobs started while the step was running must
  * have completed and run successfully.
  * </p>
  * <p>
  * You can only add steps to a job flow that is in one of the following
- * states: STARTING, BOOTSTAPPING, RUNNING or WAITING.
+ * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)
@@ -47,6 +47,10 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> .
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String jobFlowId;
 
@@ -56,9 +60,48 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     private java.util.List<StepConfig> steps;
 
     /**
+     * Default constructor for a new AddJobFlowStepsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AddJobFlowStepsRequest() {}
+    
+    /**
+     * Constructs a new AddJobFlowStepsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jobFlowId A string that uniquely identifies the job flow. This
+     * identifier is returned by <a>RunJobFlow</a> and can also be obtained
+     * from <a>DescribeJobFlows</a> .
+     */
+    public AddJobFlowStepsRequest(String jobFlowId) {
+        this.jobFlowId = jobFlowId;
+    }
+    
+    /**
+     * Constructs a new AddJobFlowStepsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jobFlowId A string that uniquely identifies the job flow. This
+     * identifier is returned by <a>RunJobFlow</a> and can also be obtained
+     * from <a>DescribeJobFlows</a> .
+     * @param steps A list of <a>StepConfig</a> to be executed by the job
+     * flow.
+     */
+    public AddJobFlowStepsRequest(String jobFlowId, java.util.List<StepConfig> steps) {
+        this.jobFlowId = jobFlowId;
+        this.steps = steps;
+    }
+    
+    /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> .
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
@@ -72,6 +115,10 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
      * <a>DescribeJobFlows</a> .
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
@@ -87,6 +134,10 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * <a>DescribeJobFlows</a> .
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from

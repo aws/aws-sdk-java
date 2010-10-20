@@ -4,11 +4,8 @@
  *
  * <p>
  * This is the Amazon Elastic MapReduce API Reference Guide. This guide
- * is for programmers that need detailed information about the Amazon
- * Elastic MapReduce SOAP and Query APIs.
- * </p>
- * <p>
- * This document was last updated on May 5, 2010.
+ * is for programmers who need detailed information about the Amazon
+ * Elastic MapReduce APIs.
  * </p>
  */
  package com.amazonaws.services.elasticmapreduce;

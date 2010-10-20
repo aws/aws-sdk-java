@@ -16,45 +16,84 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
- * A key-value pair.
+ * A key value pair.
  * </p>
  */
 public class KeyValue {
 
     /**
-     * The unique identifier of a key-value pair.
+     * The unique identifier of a key value pair.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String key;
 
     /**
      * The value part of the identified key.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String value;
 
     /**
-     * The unique identifier of a key-value pair.
+     * Default constructor for a new KeyValue object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public KeyValue() {}
+    
+    /**
+     * Constructs a new KeyValue object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param key The unique identifier of a key value pair.
+     * @param value The value part of the identified key.
+     */
+    public KeyValue(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
+    
+    /**
+     * The unique identifier of a key value pair.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The unique identifier of a key-value pair.
+     * @return The unique identifier of a key value pair.
      */
     public String getKey() {
         return key;
     }
     
     /**
-     * The unique identifier of a key-value pair.
+     * The unique identifier of a key value pair.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param key The unique identifier of a key-value pair.
+     * @param key The unique identifier of a key value pair.
      */
     public void setKey(String key) {
         this.key = key;
     }
     
     /**
-     * The unique identifier of a key-value pair.
+     * The unique identifier of a key value pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param key The unique identifier of a key-value pair.
+     * @param key The unique identifier of a key value pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -67,6 +106,10 @@ public class KeyValue {
     
     /**
      * The value part of the identified key.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The value part of the identified key.
      */
@@ -76,6 +119,10 @@ public class KeyValue {
     
     /**
      * The value part of the identified key.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param value The value part of the identified key.
      */
@@ -87,6 +134,10 @@ public class KeyValue {
      * The value part of the identified key.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param value The value part of the identified key.
      *

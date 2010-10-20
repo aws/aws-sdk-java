@@ -22,11 +22,8 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Interface for accessing AmazonElasticMapReduce.
  * <p>
  * This is the Amazon Elastic MapReduce API Reference Guide. This guide
- * is for programmers that need detailed information about the Amazon
- * Elastic MapReduce SOAP and Query APIs.
- * </p>
- * <p>
- * This document was last updated on May 5, 2010.
+ * is for programmers who need detailed information about the Amazon
+ * Elastic MapReduce APIs.
  * </p>
  */
 public interface AmazonElasticMapReduce {
@@ -58,8 +55,33 @@ public interface AmazonElasticMapReduce {
     
     /**
      * <p>
-     * AddJobFlowSteps adds new steps to a running job flow. The maximum
-     * number of steps in a job flow is 256.
+     * AddInstanceGroups adds an instance group to a running cluster.
+     * </p>
+     *
+     * @param addInstanceGroupsRequest Container for the necessary parameters
+     *           to execute the AddInstanceGroups service method on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return The response from the AddInstanceGroups service method, as
+     *         returned by AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AddInstanceGroupsResult addInstanceGroups(AddInstanceGroupsRequest addInstanceGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * AddJobFlowSteps adds new steps to a running job flow. A maximum of
+     * 256 steps are allowed in each job flow.
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the
@@ -69,14 +91,14 @@ public interface AmazonElasticMapReduce {
      * MainFunction parameter of the step.
      * </p>
      * <p>
-     * SElastic MapReduce executes each step in the order listed. For a step
+     * Elastic MapReduce executes each step in the order listed. For a step
      * to be considered complete, the main function must exit with a zero
      * exit code and all Hadoop jobs started while the step was running must
      * have completed and run successfully.
      * </p>
      * <p>
      * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTAPPING, RUNNING or WAITING.
+     * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
      * </p>
      *
      * @param addJobFlowStepsRequest Container for the necessary parameters
@@ -134,12 +156,12 @@ public interface AmazonElasticMapReduce {
      * last two months are returned.
      * </p>
      * <p>
-     * If no parameters are supplied, then job flows matching either the
+     * If no parameters are supplied, then job flows matching either of the
      * following criteria are returned:
      * </p>
      * 
      * <ul>
-     * <li>Job flows created and completed in the last two weeks.</li>
+     * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
      * the following states: <code>RUNNING</code> ,
      * 
@@ -147,8 +169,7 @@ public interface AmazonElasticMapReduce {
      * 
      * <code>SHUTTING_DOWN</code> ,
      * 
-     * <code>STARTING</code> .
-     * </li>
+     * <code>STARTING</code> </li>
      * 
      * </ul>
      * <p>
@@ -179,12 +200,13 @@ public interface AmazonElasticMapReduce {
     /**
      * <p>
      * RunJobFlow creates and starts running a new job flow. The job flow
-     * will run the steps specified. Once the job flow completes, the EC2
-     * cluster is stopped and the HDFS partition is lost. To prevent loss of
-     * data, configure the last step of the job flow to store results in
-     * Amazon S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
-     * parameter is set to TRUE, the job flow will transition to the WAITING
-     * state rather than shutting down once the steps have completed.
+     * will run the steps specified. Once the job flow completes, the cluster
+     * is stopped and the HDFS partition is lost. To prevent loss of data,
+     * configure the last step of the job flow to store results in Amazon
+     * S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+     * parameter is set to <code>TRUE</code> , the job flow will transition
+     * to the WAITING state rather than shutting down once the steps have
+     * completed.
      * </p>
      * <p>
      * A maximum of 256 steps are allowed in each job flow.
@@ -215,6 +237,31 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * ModifyInstanceGroups modifies the number of nodes and configuration
+     * settings of an instance group. The input parameters include the new
+     * target instance count for the group and the instance group ID. The
+     * call will either succeed or fail atomically.
+     * </p>
+     *
+     * @param modifyInstanceGroupsRequest Container for the necessary
+     *           parameters to execute the ModifyInstanceGroups service method on
+     *           AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyInstanceGroups(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * DescribeJobFlows returns a list of job flows that match all of the
      * supplied parameters. The parameters can include a list of job flow
      * IDs, job flow states, and restrictions on job flow creation date and
@@ -225,12 +272,12 @@ public interface AmazonElasticMapReduce {
      * last two months are returned.
      * </p>
      * <p>
-     * If no parameters are supplied, then job flows matching either the
+     * If no parameters are supplied, then job flows matching either of the
      * following criteria are returned:
      * </p>
      * 
      * <ul>
-     * <li>Job flows created and completed in the last two weeks.</li>
+     * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
      * the following states: <code>RUNNING</code> ,
      * 
@@ -238,8 +285,7 @@ public interface AmazonElasticMapReduce {
      * 
      * <code>SHUTTING_DOWN</code> ,
      * 
-     * <code>STARTING</code> .
-     * </li>
+     * <code>STARTING</code> </li>
      * 
      * </ul>
      * <p>
@@ -261,6 +307,26 @@ public interface AmazonElasticMapReduce {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeJobFlowsResult describeJobFlows() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * ModifyInstanceGroups modifies the number of nodes and configuration
+     * settings of an instance group. The input parameters include the new
+     * target instance count for the group and the instance group ID. The
+     * call will either succeed or fail atomically.
+     * </p>
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyInstanceGroups() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

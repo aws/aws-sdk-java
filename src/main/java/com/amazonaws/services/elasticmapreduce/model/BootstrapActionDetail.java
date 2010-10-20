@@ -27,6 +27,23 @@ public class BootstrapActionDetail {
     private BootstrapActionConfig bootstrapActionConfig;
 
     /**
+     * Default constructor for a new BootstrapActionDetail object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public BootstrapActionDetail() {}
+    
+    /**
+     * Constructs a new BootstrapActionDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param bootstrapActionConfig A description of the bootstrap action.
+     */
+    public BootstrapActionDetail(BootstrapActionConfig bootstrapActionConfig) {
+        this.bootstrapActionConfig = bootstrapActionConfig;
+    }
+    
+    /**
      * A description of the bootstrap action.
      *
      * @return A description of the bootstrap action.

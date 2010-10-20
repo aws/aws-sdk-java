@@ -28,12 +28,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * last two months are returned.
  * </p>
  * <p>
- * If no parameters are supplied, then job flows matching either the
+ * If no parameters are supplied, then job flows matching either of the
  * following criteria are returned:
  * </p>
  * 
  * <ul>
- * <li>Job flows created and completed in the last two weeks.</li>
+ * <li>Job flows created and completed in the last two weeks</li>
  * <li> Job flows created within the last two months that are in one of
  * the following states: <code>RUNNING</code> ,
  * 
@@ -41,8 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * <code>SHUTTING_DOWN</code> ,
  * 
- * <code>STARTING</code> .
- * </li>
+ * <code>STARTING</code> </li>
  * 
  * </ul>
  * <p>
@@ -74,6 +73,24 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> jobFlowStates;
 
+    /**
+     * Default constructor for a new DescribeJobFlowsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DescribeJobFlowsRequest() {}
+    
+    /**
+     * Constructs a new DescribeJobFlowsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jobFlowIds Return only job flows whose job flow ID is contained
+     * in this list.
+     */
+    public DescribeJobFlowsRequest(java.util.List<String> jobFlowIds) {
+        this.jobFlowIds = jobFlowIds;
+    }
+    
     /**
      * Return only job flows created after this date and time.
      *

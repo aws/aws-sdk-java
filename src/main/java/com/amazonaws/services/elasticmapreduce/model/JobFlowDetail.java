@@ -23,16 +23,28 @@ public class JobFlowDetail {
 
     /**
      * The job flow identifier.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String jobFlowId;
 
     /**
      * The name of the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String name;
 
     /**
      * The location in Amazon S3 where log files for the job are stored.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String logUri;
 
@@ -57,7 +69,35 @@ public class JobFlowDetail {
     private java.util.List<BootstrapActionDetail> bootstrapActions;
 
     /**
+     * Default constructor for a new JobFlowDetail object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public JobFlowDetail() {}
+    
+    /**
+     * Constructs a new JobFlowDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jobFlowId The job flow identifier.
+     * @param name The name of the job flow.
+     * @param executionStatusDetail Describes the execution status of the job
+     * flow.
+     * @param instances Describes the Amazon EC2 instances of the job flow.
+     */
+    public JobFlowDetail(String jobFlowId, String name, JobFlowExecutionStatusDetail executionStatusDetail, JobFlowInstancesDetail instances) {
+        this.jobFlowId = jobFlowId;
+        this.name = name;
+        this.executionStatusDetail = executionStatusDetail;
+        this.instances = instances;
+    }
+    
+    /**
      * The job flow identifier.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The job flow identifier.
      */
@@ -67,6 +107,10 @@ public class JobFlowDetail {
     
     /**
      * The job flow identifier.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId The job flow identifier.
      */
@@ -78,6 +122,10 @@ public class JobFlowDetail {
      * The job flow identifier.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jobFlowId The job flow identifier.
      *
@@ -92,6 +140,10 @@ public class JobFlowDetail {
     
     /**
      * The name of the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the job flow.
      */
@@ -101,6 +153,10 @@ public class JobFlowDetail {
     
     /**
      * The name of the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      */
@@ -112,6 +168,10 @@ public class JobFlowDetail {
      * The name of the job flow.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the job flow.
      *
@@ -126,6 +186,10 @@ public class JobFlowDetail {
     
     /**
      * The location in Amazon S3 where log files for the job are stored.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The location in Amazon S3 where log files for the job are stored.
      */
@@ -135,6 +199,10 @@ public class JobFlowDetail {
     
     /**
      * The location in Amazon S3 where log files for the job are stored.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param logUri The location in Amazon S3 where log files for the job are stored.
      */
@@ -146,6 +214,10 @@ public class JobFlowDetail {
      * The location in Amazon S3 where log files for the job are stored.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param logUri The location in Amazon S3 where log files for the job are stored.
      *

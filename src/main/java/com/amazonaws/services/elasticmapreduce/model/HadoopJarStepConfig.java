@@ -25,12 +25,16 @@ public class HadoopJarStepConfig {
 
     /**
      * A list of Java properties that are set when the step runs. You can use
-     * these properties to pass key-value pairs to your main function.
+     * these properties to pass key value pairs to your main function.
      */
     private java.util.List<KeyValue> properties;
 
     /**
      * A path to a JAR file run during the step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String jar;
 
@@ -38,6 +42,10 @@ public class HadoopJarStepConfig {
      * The name of the main class in the specified Java file. If not
      * specified, the JAR file should specify a Main-Class in its manifest
      * file.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String mainClass;
 
@@ -48,11 +56,28 @@ public class HadoopJarStepConfig {
     private java.util.List<String> args;
 
     /**
+     * Default constructor for a new HadoopJarStepConfig object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public HadoopJarStepConfig() {}
+    
+    /**
+     * Constructs a new HadoopJarStepConfig object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param jar A path to a JAR file run during the step.
+     */
+    public HadoopJarStepConfig(String jar) {
+        this.jar = jar;
+    }
+    
+    /**
      * A list of Java properties that are set when the step runs. You can use
-     * these properties to pass key-value pairs to your main function.
+     * these properties to pass key value pairs to your main function.
      *
      * @return A list of Java properties that are set when the step runs. You can use
-     *         these properties to pass key-value pairs to your main function.
+     *         these properties to pass key value pairs to your main function.
      */
     public java.util.List<KeyValue> getProperties() {
         if (properties == null) {
@@ -63,10 +88,10 @@ public class HadoopJarStepConfig {
     
     /**
      * A list of Java properties that are set when the step runs. You can use
-     * these properties to pass key-value pairs to your main function.
+     * these properties to pass key value pairs to your main function.
      *
      * @param properties A list of Java properties that are set when the step runs. You can use
-     *         these properties to pass key-value pairs to your main function.
+     *         these properties to pass key value pairs to your main function.
      */
     public void setProperties(java.util.Collection<KeyValue> properties) {
         java.util.List<KeyValue> propertiesCopy = new java.util.ArrayList<KeyValue>();
@@ -78,12 +103,12 @@ public class HadoopJarStepConfig {
     
     /**
      * A list of Java properties that are set when the step runs. You can use
-     * these properties to pass key-value pairs to your main function.
+     * these properties to pass key value pairs to your main function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param properties A list of Java properties that are set when the step runs. You can use
-     *         these properties to pass key-value pairs to your main function.
+     *         these properties to pass key value pairs to your main function.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -97,12 +122,12 @@ public class HadoopJarStepConfig {
     
     /**
      * A list of Java properties that are set when the step runs. You can use
-     * these properties to pass key-value pairs to your main function.
+     * these properties to pass key value pairs to your main function.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param properties A list of Java properties that are set when the step runs. You can use
-     *         these properties to pass key-value pairs to your main function.
+     *         these properties to pass key value pairs to your main function.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -119,6 +144,10 @@ public class HadoopJarStepConfig {
     
     /**
      * A path to a JAR file run during the step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return A path to a JAR file run during the step.
      */
@@ -128,6 +157,10 @@ public class HadoopJarStepConfig {
     
     /**
      * A path to a JAR file run during the step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jar A path to a JAR file run during the step.
      */
@@ -139,6 +172,10 @@ public class HadoopJarStepConfig {
      * A path to a JAR file run during the step.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param jar A path to a JAR file run during the step.
      *
@@ -155,6 +192,10 @@ public class HadoopJarStepConfig {
      * The name of the main class in the specified Java file. If not
      * specified, the JAR file should specify a Main-Class in its manifest
      * file.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the main class in the specified Java file. If not
      *         specified, the JAR file should specify a Main-Class in its manifest
@@ -168,6 +209,10 @@ public class HadoopJarStepConfig {
      * The name of the main class in the specified Java file. If not
      * specified, the JAR file should specify a Main-Class in its manifest
      * file.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param mainClass The name of the main class in the specified Java file. If not
      *         specified, the JAR file should specify a Main-Class in its manifest
@@ -183,6 +228,10 @@ public class HadoopJarStepConfig {
      * file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param mainClass The name of the main class in the specified Java file. If not
      *         specified, the JAR file should specify a Main-Class in its manifest

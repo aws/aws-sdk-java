@@ -16,72 +16,73 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
- * Configuration of a bootstrap action.
+ * Modify an instance group size.
  * </p>
  */
-public class BootstrapActionConfig {
+public class InstanceGroupModifyConfig {
 
     /**
-     * The name of the bootstrap action.
+     * Unique ID of the instance group to expand or shrink.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
-    private String name;
+    private String instanceGroupId;
 
     /**
-     * The script run by the bootstrap action.
+     * Target size for the instance group.
      */
-    private ScriptBootstrapActionConfig scriptBootstrapAction;
+    private Integer instanceCount;
 
     /**
-     * Default constructor for a new BootstrapActionConfig object.  Callers should use the
+     * Default constructor for a new InstanceGroupModifyConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
-    public BootstrapActionConfig() {}
+    public InstanceGroupModifyConfig() {}
     
     /**
-     * Constructs a new BootstrapActionConfig object.
+     * Constructs a new InstanceGroupModifyConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param name The name of the bootstrap action.
-     * @param scriptBootstrapAction The script run by the bootstrap action.
+     * @param instanceGroupId Unique ID of the instance group to expand or
+     * shrink.
+     * @param instanceCount Target size for the instance group.
      */
-    public BootstrapActionConfig(String name, ScriptBootstrapActionConfig scriptBootstrapAction) {
-        this.name = name;
-        this.scriptBootstrapAction = scriptBootstrapAction;
+    public InstanceGroupModifyConfig(String instanceGroupId, Integer instanceCount) {
+        this.instanceGroupId = instanceGroupId;
+        this.instanceCount = instanceCount;
     }
     
     /**
-     * The name of the bootstrap action.
+     * Unique ID of the instance group to expand or shrink.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the bootstrap action.
+     * @return Unique ID of the instance group to expand or shrink.
      */
-    public String getName() {
-        return name;
+    public String getInstanceGroupId() {
+        return instanceGroupId;
     }
     
     /**
-     * The name of the bootstrap action.
+     * Unique ID of the instance group to expand or shrink.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the bootstrap action.
+     * @param instanceGroupId Unique ID of the instance group to expand or shrink.
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setInstanceGroupId(String instanceGroupId) {
+        this.instanceGroupId = instanceGroupId;
     }
     
     /**
-     * The name of the bootstrap action.
+     * Unique ID of the instance group to expand or shrink.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -89,47 +90,47 @@ public class BootstrapActionConfig {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param name The name of the bootstrap action.
+     * @param instanceGroupId Unique ID of the instance group to expand or shrink.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public BootstrapActionConfig withName(String name) {
-        this.name = name;
+    public InstanceGroupModifyConfig withInstanceGroupId(String instanceGroupId) {
+        this.instanceGroupId = instanceGroupId;
         return this;
     }
     
     
     /**
-     * The script run by the bootstrap action.
+     * Target size for the instance group.
      *
-     * @return The script run by the bootstrap action.
+     * @return Target size for the instance group.
      */
-    public ScriptBootstrapActionConfig getScriptBootstrapAction() {
-        return scriptBootstrapAction;
+    public Integer getInstanceCount() {
+        return instanceCount;
     }
     
     /**
-     * The script run by the bootstrap action.
+     * Target size for the instance group.
      *
-     * @param scriptBootstrapAction The script run by the bootstrap action.
+     * @param instanceCount Target size for the instance group.
      */
-    public void setScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction) {
-        this.scriptBootstrapAction = scriptBootstrapAction;
+    public void setInstanceCount(Integer instanceCount) {
+        this.instanceCount = instanceCount;
     }
     
     /**
-     * The script run by the bootstrap action.
+     * Target size for the instance group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scriptBootstrapAction The script run by the bootstrap action.
+     * @param instanceCount Target size for the instance group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public BootstrapActionConfig withScriptBootstrapAction(ScriptBootstrapActionConfig scriptBootstrapAction) {
-        this.scriptBootstrapAction = scriptBootstrapAction;
+    public InstanceGroupModifyConfig withInstanceCount(Integer instanceCount) {
+        this.instanceCount = instanceCount;
         return this;
     }
     
@@ -146,8 +147,8 @@ public class BootstrapActionConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("ScriptBootstrapAction: " + scriptBootstrapAction + ", ");
+        sb.append("InstanceGroupId: " + instanceGroupId + ", ");
+        sb.append("InstanceCount: " + instanceCount + ", ");
         sb.append("}");
         return sb.toString();
     }

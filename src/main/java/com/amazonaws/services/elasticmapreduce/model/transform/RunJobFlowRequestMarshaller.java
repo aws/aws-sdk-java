@@ -65,6 +65,40 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     request.addParameter("Instances.InstanceCount", StringUtils.fromInteger(instances.getInstanceCount()));
                 }
             }
+
+            if (instances != null) {
+                java.util.List<InstanceGroupConfig> instanceGroupsList = instances.getInstanceGroups();
+                int instanceGroupsListIndex = 1;
+                for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getName() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupsListValue.getName()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getMarket() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupsListValue.getMarket()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getInstanceRole() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupsListValue.getInstanceRole()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getInstanceType() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupsListValue.getInstanceType()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getInstanceCount() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupsListValue.getInstanceCount()));
+                        }
+                    }
+
+                    instanceGroupsListIndex++;
+                }
+            }
             if (instances != null) {
                 if (instances.getEc2KeyName() != null) {
                     request.addParameter("Instances.Ec2KeyName", StringUtils.fromString(instances.getEc2KeyName()));

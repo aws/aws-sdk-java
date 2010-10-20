@@ -25,7 +25,7 @@ public class StepExecutionStatusDetail {
      * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
      */
     private String state;
 
@@ -46,16 +46,41 @@ public class StepExecutionStatusDetail {
 
     /**
      * A description of the step's current state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String lastStateChangeReason;
 
     /**
+     * Default constructor for a new StepExecutionStatusDetail object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public StepExecutionStatusDetail() {}
+    
+    /**
+     * Constructs a new StepExecutionStatusDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param state The state of the job flow step.
+     * @param creationDateTime The creation date and time of the step.
+     */
+    public StepExecutionStatusDetail(String state, java.util.Date creationDateTime) {
+        this.state = state;
+        this.creationDateTime = creationDateTime;
+    }
+    
+    /**
      * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
      *
      * @return The state of the job flow step.
+     *
+     * @see StepExecutionState
      */
     public String getState() {
         return state;
@@ -65,9 +90,11 @@ public class StepExecutionStatusDetail {
      * The state of the job flow step.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
      *
      * @param state The state of the job flow step.
+     *
+     * @see StepExecutionState
      */
     public void setState(String state) {
         this.state = state;
@@ -79,12 +106,14 @@ public class StepExecutionStatusDetail {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>PENDING|RUNNING|COMPLETED|CANCELLED|FAILED|INTERRUPTED<br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
      *
      * @param state The state of the job flow step.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see StepExecutionState
      */
     public StepExecutionStatusDetail withState(String state) {
         this.state = state;
@@ -196,6 +225,10 @@ public class StepExecutionStatusDetail {
     
     /**
      * A description of the step's current state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return A description of the step's current state.
      */
@@ -205,6 +238,10 @@ public class StepExecutionStatusDetail {
     
     /**
      * A description of the step's current state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason A description of the step's current state.
      */
@@ -216,6 +253,10 @@ public class StepExecutionStatusDetail {
      * A description of the step's current state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param lastStateChangeReason A description of the step's current state.
      *
