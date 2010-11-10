@@ -41,22 +41,29 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
-import com.amazonaws.services.s3.model.CanonicalGrantee;
-import com.amazonaws.services.s3.model.EmailAddressGrantee;
-import com.amazonaws.services.s3.model.Grantee;
-import com.amazonaws.services.s3.model.GroupGrantee;
-import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.CanonicalGrantee;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.EmailAddressGrantee;
+import com.amazonaws.services.s3.model.Grantee;
+import com.amazonaws.services.s3.model.GroupGrantee;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.MultipartUpload;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
-import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.Owner;
-import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.PartListing;
+import com.amazonaws.services.s3.model.PartSummary;
+import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
+import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -355,6 +362,39 @@ public class XmlResponsesSaxParser {
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
+
+    public CompleteMultipartUploadHandler parseCompleteMultipartUploadResponse(InputStream inputStream)
+        throws AmazonClientException
+    {
+        CompleteMultipartUploadHandler handler = new CompleteMultipartUploadHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public InitiateMultipartUploadHandler parseInitiateMultipartUploadResponse(InputStream inputStream)
+        throws AmazonClientException
+    {
+        InitiateMultipartUploadHandler handler = new InitiateMultipartUploadHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListMultipartUploadsHandler parseListMultipartUploadsResponse(InputStream inputStream)
+        throws AmazonClientException
+    {
+        ListMultipartUploadsHandler handler = new ListMultipartUploadsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListPartsHandler parseListPartsResponse(InputStream inputStream)
+        throws AmazonClientException
+    {
+        ListPartsHandler handler = new ListPartsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
 
     /**
      * @param inputStream
@@ -1206,7 +1246,462 @@ public class XmlResponsesSaxParser {
             this.text.append(ch, start, length);
         }
     }
-    
+
+    /*
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <CompleteMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+     *     <Location>http://Example-Bucket.s3.amazonaws.com/Example-Object</Location>
+     *     <Bucket>Example-Bucket</Bucket>
+     *     <Key>Example-Object</Key>
+     *     <ETag>"3858f62230ac3c915f300c664312c11f-9"</ETag>
+     * </CompleteMultipartUploadResult>
+     *
+     * Or if an error occurred while completing:
+     *
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <Error>
+     *     <Code>InternalError</Code>
+     *     <Message>We encountered an internal error. Please try again.</Message>
+     *     <RequestId>656c76696e6727732072657175657374</RequestId>
+     *     <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>
+     * </Error>
+     */
+    public class CompleteMultipartUploadHandler extends DefaultHandler {
+        private StringBuilder text;
+
+        // Successful completion
+        private CompleteMultipartUploadResult result;
+
+        // Error during completion
+        private AmazonS3Exception ase;
+        private String hostId;
+        private String requestId;
+        private String errorCode;
+
+        public CompleteMultipartUploadResult getCompleteMultipartUploadResult() {
+            return result;
+        }
+
+        public AmazonS3Exception getAmazonS3Exception() {
+            return ase;
+        }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            // Success response XML elements
+            if (name.equals("CompleteMultipartUploadResult")) {
+                result = new CompleteMultipartUploadResult();
+            } else if (name.equals("Location")) {
+            } else if (name.equals("Bucket")) {
+            } else if (name.equals("Key")) {
+            } else if (name.equals("ETag")) {
+            }
+
+            // Error response XML elements
+            if (name.equals("Error")) {
+            } else if (name.equals("Code")) {
+            } else if (name.equals("Message")) {
+            } else if (name.equals("RequestId")) {
+            } else if (name.equals("HostId")) {
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (result != null) {
+                // Success response XML elements
+                if (name.equals("CompleteMultipartUploadResult")) {
+                } else if (name.equals("Location")) {
+                    result.setLocation(text.toString());
+                } else if (name.equals("Bucket")) {
+                    result.setBucketName(text.toString());
+                } else if (name.equals("Key")) {
+                    result.setKey(text.toString());
+                } else if (name.equals("ETag")) {
+                    result.setETag(ServiceUtils.removeQuotes(text.toString()));
+                }
+            } else {
+                // Error response XML elements
+                if (name.equals("Error")) {
+                    ase.setErrorCode(errorCode);
+                    ase.setRequestId(requestId);
+                    ase.setExtendedRequestId(hostId);
+                } else if (name.equals("Code")) {
+                    errorCode = text.toString();
+                } else if (name.equals("Message")) {
+                    ase = new AmazonS3Exception(text.toString());
+                } else if (name.equals("RequestId")) {
+                    requestId = text.toString();
+                } else if (name.equals("HostId")) {
+                    hostId = text.toString();
+                }
+            }
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
+    /*
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <InitiateMultipartUploadResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+     *     <Bucket>example-bucket</Bucket>
+     *     <Key>example-object</Key>
+     *     <UploadId>VXBsb2FkIElEIGZvciA2aWWpbmcncyBteS1tb3ZpZS5tMnRzIHVwbG9hZA</UploadId>
+     * </InitiateMultipartUploadResult>
+     */
+    public class InitiateMultipartUploadHandler extends DefaultHandler {
+        private StringBuilder text;
+
+        private InitiateMultipartUploadResult result;
+
+        public InitiateMultipartUploadResult getInitiateMultipartUploadResult() {
+            return result;
+        }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("InitiateMultipartUploadResult")) {
+                result = new InitiateMultipartUploadResult();
+            } else if (name.equals("Bucket")) {
+            } else if (name.equals("Key")) {
+            } else if (name.equals("UploadId")) {
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("InitiateMultipartUploadResult")) {
+            } else if (name.equals("Bucket")) {
+                result.setBucketName(text.toString());
+            } else if (name.equals("Key")) {
+                result.setKey(text.toString());
+            } else if (name.equals("UploadId")) {
+                result.setUploadId(text.toString());
+            }
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
+    /*
+     * HTTP/1.1 200 OK
+     * x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+     * x-amz-request-id: 656c76696e6727732072657175657374
+     * Date: Tue, 16 Feb 2010 20:34:56 GMT
+     * Content-Length: 1330
+     * Connection: keep-alive
+     * Server: AmazonS3
+     *
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <ListMultipartUploadsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+     *     <Bucket>bucket</Bucket>
+     *     <KeyMarker></KeyMarker>
+     *     <UploadIdMarker></UploadIdMarker>
+     *     <NextKeyMarker>my-movie.m2ts</NextKeyMarker>
+     *     <NextUploadIdMarker>YW55IGlkZWEgd2h5IGVsdmluZydzIHVwbG9hZCBmYWlsZWQ</NextUploadIdMarker>
+     *     <MaxUploads>3</MaxUploads>
+     *     <IsTruncated>true</IsTruncated>
+     *     <Upload>
+     *         <Key>my-divisor</Key>
+     *         <UploadId>XMgbGlrZSBlbHZpbmcncyBub3QgaGF2aW5nIG11Y2ggbHVjaw</UploadId>
+     *         <Owner>
+     *             <ID>b1d16700c70b0b05597d7acd6a3f92be</ID>
+     *             <DisplayName>delving</DisplayName>
+     *         </Owner>
+     *         <StorageClass>STANDARD</StorageClass>
+     *         <Initiated>Tue, 26 Jan 2010 19:42:19 GMT</Initiated>
+     *     </Upload>
+     *     <Upload>
+     *         <Key>my-movie.m2ts</Key>
+     *         <UploadId>VXBsb2FkIElEIGZvciBlbHZpbmcncyBteS1tb3ZpZS5tMnRzIHVwbG9hZA</UploadId>
+     *         <Owner>
+     *             <ID>b1d16700c70b0b05597d7acd6a3f92be</ID>
+     *             <DisplayName>delving</DisplayName>
+     *         </Owner>
+     *         <StorageClass>STANDARD</StorageClass>
+     *         <Initiated>Tue, 16 Feb 2010 20:34:56 GMT</Initiated>
+     *     </Upload>
+     *     <Upload>
+     *         <Key>my-movie.m2ts</Key>
+     *         <UploadId>YW55IGlkZWEgd2h5IGVsdmluZydzIHVwbG9hZCBmYWlsZWQ</UploadId>
+     *         <Owner>
+     *             <ID>b1d16700c70b0b05597d7acd6a3f92be</ID>
+     *             <DisplayName>delving</DisplayName>
+     *         </Owner>
+     *         <StorageClass>STANDARD</StorageClass>
+     *         <Initiated>Wed, 27 Jan 2010 03:02:01 GMT</Initiated>
+     *     </Upload>
+     * </ListMultipartUploadsResult>
+     */
+    public class ListMultipartUploadsHandler extends DefaultHandler {
+        private StringBuilder text;
+
+        private MultipartUploadListing result;
+
+        private MultipartUpload currentMultipartUpload;
+        private Owner currentOwner;
+        private Owner currentInitiator;
+
+        public MultipartUploadListing getListMultipartUploadsResult() {
+            return result;
+        }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("ListMultipartUploadsResult")) {
+                result = new MultipartUploadListing();
+            } else if (name.equals("Bucket")) {
+            } else if (name.equals("KeyMarker")) {
+            } else if (name.equals("UploadIdMarker")) {
+            } else if (name.equals("NextKeyMarker")) {
+            } else if (name.equals("NextUploadIdMarker")) {
+            } else if (name.equals("MaxUploads")) {
+            } else if (name.equals("IsTruncated")) {
+            } else if (name.equals("Upload")) {
+                currentMultipartUpload = new MultipartUpload();
+            } else if (name.equals("Key")) {
+            } else if (name.equals("UploadId")) {
+            } else if (name.equals("Owner")) {
+                currentOwner = new Owner();
+            } else if (name.equals("Initiator")) {
+                currentInitiator = new Owner();
+            } else if (name.equals("ID")) {
+            } else if (name.equals("DisplayName")) {
+            } else if (name.equals("StorageClass")) {
+            } else if (name.equals("Initiated")) {
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("ListMultipartUploadsResult")) {
+            } else if (name.equals("Bucket")) {
+                result.setBucketName(text.toString());
+            } else if (name.equals("KeyMarker")) {
+                result.setKeyMarker(checkForEmptyString(text.toString()));
+            } else if (name.equals("UploadIdMarker")) {
+                result.setUploadIdMarker(checkForEmptyString(text.toString()));
+            } else if (name.equals("NextKeyMarker")) {
+                result.setNextKeyMarker(checkForEmptyString(text.toString()));
+            } else if (name.equals("NextUploadIdMarker")) {
+                result.setNextUploadIdMarker(checkForEmptyString(text.toString()));
+            } else if (name.equals("MaxUploads")) {
+                result.setMaxUploads(Integer.parseInt(text.toString()));
+            } else if (name.equals("IsTruncated")) {
+                result.setTruncated(Boolean.parseBoolean(text.toString()));
+            } else if (name.equals("Upload")) {
+                result.getMultipartUploads().add(currentMultipartUpload);
+            } else if (name.equals("Key")) {
+                currentMultipartUpload.setKey(text.toString());
+            } else if (name.equals("UploadId")) {
+                currentMultipartUpload.setUploadId(text.toString());
+            } else if (name.equals("Owner")) {
+                currentMultipartUpload.setOwner(currentOwner);
+                currentOwner = null;
+            } else if (name.equals("Initiator")) {
+                currentMultipartUpload.setInitiator(currentInitiator);
+                currentInitiator = null;
+            } else if (name.equals("ID") && currentOwner != null) {
+                currentOwner.setId(checkForEmptyString(text.toString()));
+            } else if (name.equals("DisplayName") && currentOwner != null) {
+                currentOwner.setDisplayName(checkForEmptyString(text.toString()));
+            } else if (name.equals("ID") && currentInitiator != null) {
+                currentInitiator.setId(checkForEmptyString(text.toString()));
+            } else if (name.equals("DisplayName") && currentInitiator != null) {
+                currentInitiator.setDisplayName(checkForEmptyString(text.toString()));
+            } else if (name.equals("StorageClass")) {
+                currentMultipartUpload.setStorageClass(text.toString());
+            } else if (name.equals("Initiated")) {
+                try {
+                    currentMultipartUpload.setInitiated(ServiceUtils.parseIso8601Date(text.toString()));
+                } catch (ParseException e) {
+                    throw new SAXException(
+                            "Non-ISO8601 date for Initiated in initiate multipart upload result: "
+                            + text.toString(), e);
+                }
+            }
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
+    /*
+     * HTTP/1.1 200 OK
+     * x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+     * x-amz-request-id: 656c76696e6727732072657175657374
+     * Date: Tue, 16 Feb 2010 20:34:56 GMT
+     * Content-Length: 985
+     * Connection: keep-alive
+     * Server: AmazonS3
+     *
+     * <?xml version="1.0" encoding="UTF-8"?>
+     * <ListPartsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+     *     <Bucket>example-bucket</Bucket>
+     *     <Key>example-object</Key>
+     *     <UploadId>XXBsb2FkIElEIGZvciBlbHZpbmcncyVcdS1tb3ZpZS5tMnRzEEEwbG9hZA</UploadId>
+     *     <Owner>
+     *         <ID>x1x16700c70b0b05597d7ecd6a3f92be</ID>
+     *         <DisplayName>username</DisplayName>
+     *     </Owner>
+     *     <Initiator>
+     *         <ID>x1x16700c70b0b05597d7ecd6a3f92be</ID>
+     *         <DisplayName>username</DisplayName>
+     *     </Initiator>
+     *     <StorageClass>STANDARD</StorageClass>
+     *     <PartNumberMarker>1</PartNumberMarker>
+     *     <NextPartNumberMarker>3</NextPartNumberMarker>
+     *     <MaxParts>2</MaxParts>
+     *     <IsTruncated>true</IsTruncated>
+     *     <Part>
+     *         <PartNumber>2</PartNumber>
+     *         <LastModified>Wed, 27 Jan 2010 03:02:03 GMT</LastModified>
+     *         <ETag>"7778aef83f66abc1fa1e8477f296d394"</ETag>
+     *         <Size>10485760</Size>
+     *     </Part>
+     *     <Part>
+     *        <PartNumber>3</PartNumber>
+     *        <LastModified>Wed, 27 Jan 2010 03:02:02 GMT</LastModified>
+     *        <ETag>"aaaa18db4cc2f85cedef654fccc4a4x8"</ETag>
+     *        <Size>10485760</Size>
+     *     </Part>
+     * </ListPartsResult>
+     */
+    public class ListPartsHandler extends DefaultHandler {
+        private StringBuilder text;
+
+        private PartListing result;
+        private Owner currentOwner;
+        private Owner currentInitiator;
+        private PartSummary currentPart;
+
+        public PartListing getListPartsResult() {
+            return result;
+        }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("ListPartsResult")) {
+                result = new PartListing();
+            } else if (name.equals("Bucket")) {
+            } else if (name.equals("Key")) {
+            } else if (name.equals("UploadId")) {
+            } else if (name.equals("Owner")) {
+                currentOwner = new Owner();
+            } else if (name.equals("Initiator")) {
+                currentInitiator = new Owner();
+            } else if (name.equals("ID")) {
+            } else if (name.equals("DisplayName")) {
+            } else if (name.equals("StorageClass")) {
+            } else if (name.equals("PartNumberMarker")) {
+            } else if (name.equals("NextPartNumberMarker")) {
+            } else if (name.equals("MaxParts")) {
+            } else if (name.equals("IsTruncated")) {
+            } else if (name.equals("Part")) {
+                currentPart = new PartSummary();
+            } else if (name.equals("PartNumber")) {
+            } else if (name.equals("LastModified")) {
+            } else if (name.equals("ETag")) {
+            } else if (name.equals("Size")) {
+            }
+            text.setLength(0);
+        }
+
+        private Integer parseInteger(String text) {
+            text = checkForEmptyString(text.toString());
+            if (text == null) return null;
+            return Integer.parseInt(text);
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("ListPartsResult")) {
+            } else if (name.equals("Bucket")) {
+                result.setBucketName(text.toString());
+            } else if (name.equals("Key")) {
+                result.setKey(text.toString());
+            } else if (name.equals("UploadId")) {
+                result.setUploadId(text.toString());
+            } else if (name.equals("Owner")) {
+                result.setOwner(currentOwner);
+                currentOwner = null;
+            } else if (name.equals("Initiator")) {
+                result.setInitiator(currentInitiator);
+                currentInitiator = null;
+            } else if (name.equals("ID") && currentOwner != null) {
+                currentOwner.setId(checkForEmptyString(text.toString()));
+            } else if (name.equals("DisplayName") && currentOwner != null) {
+                currentOwner.setDisplayName(checkForEmptyString(text.toString()));
+            } else if (name.equals("ID") && currentInitiator != null) {
+                currentInitiator.setId(checkForEmptyString(text.toString()));
+            } else if (name.equals("DisplayName") && currentInitiator != null) {
+                currentInitiator.setDisplayName(checkForEmptyString(text.toString()));
+            } else if (name.equals("StorageClass")) {
+                result.setStorageClass(text.toString());
+            } else if (name.equals("PartNumberMarker")) {
+                result.setPartNumberMarker(parseInteger(text.toString()));
+            } else if (name.equals("NextPartNumberMarker")) {
+                result.setNextPartNumberMarker(parseInteger(text.toString()));
+            } else if (name.equals("MaxParts")) {
+                result.setMaxParts(parseInteger(text.toString()));
+            } else if (name.equals("IsTruncated")) {
+                result.setTruncated(Boolean.parseBoolean(text.toString()));
+            } else if (name.equals("Part")) {
+                result.getParts().add(currentPart);
+            } else if (name.equals("PartNumber")) {
+                currentPart.setPartNumber(Integer.parseInt(text.toString()));
+            } else if (name.equals("LastModified")) {
+                try {
+                    currentPart.setLastModified(ServiceUtils.parseIso8601Date(text.toString()));
+                } catch (ParseException e) {
+                    throw new SAXException(
+                            "Non-ISO8601 date for LastModified in list parts result: "
+                            + text.toString(), e);
+                }
+            } else if (name.equals("ETag")) {
+                currentPart.setETag(ServiceUtils.removeQuotes(text.toString()));
+            } else if (name.equals("Size")) {
+                currentPart.setSize(Long.parseLong(text.toString()));
+            }
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
     public class BucketNotificationConfigurationHandler extends DefaultHandler {
         private BucketNotificationConfiguration configuration = new BucketNotificationConfiguration();
         private StringBuilder text;
@@ -1242,12 +1737,12 @@ public class XmlResponsesSaxParser {
         public void endElement(String uri, String name, String qName) throws SAXException {
             if (name.equals("Topic")) {
                 topic = text.toString();
-            } 
+            }
             else if (name.equals("Event")) {
                 event = text.toString();
             }
             else if (name.equals("TopicConfiguration")) {
-                if ( topic != null && event != null ) {           
+                if ( topic != null && event != null ) {
                     topicConfigurations.add( new TopicConfiguration( topic, event ) );
                 }
             }

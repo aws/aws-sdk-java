@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -22,9 +22,13 @@ import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
 
@@ -43,7 +47,7 @@ public class Unmarshallers {
                     .parseListMyBucketsResponse(in).getBuckets();
         }
     }
-    
+
     /**
      * Unmarshaller for the ListBuckets XML response, parsing out the owner
      * even if the list is empty.
@@ -108,13 +112,13 @@ public class Unmarshallers {
         public String unmarshall(InputStream in) throws Exception {
             String location = new XmlResponsesSaxParser()
                     .parseBucketLocationResponse(in);
-    
+
             /*
              * S3 treats the US location differently, and assumes that if the
              * reported location is null, then it's a US bucket.
              */
             if (location == null) location = "US";
-            
+
             return location;
         }
     }
@@ -159,6 +163,37 @@ public class Unmarshallers {
         public CopyObjectResultHandler unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseCopyObjectResponse(in);
+        }
+    }
+
+    public static final class CompleteMultipartUploadResultUnmarshaller implements
+            Unmarshaller<CompleteMultipartUploadHandler, InputStream> {
+        public CompleteMultipartUploadHandler unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseCompleteMultipartUploadResponse(in);
+        }
+    }
+
+    public static final class InitiateMultipartUploadResultUnmarshaller implements
+            Unmarshaller<InitiateMultipartUploadResult, InputStream> {
+        public InitiateMultipartUploadResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseInitiateMultipartUploadResponse(in)
+                .getInitiateMultipartUploadResult();
+        }
+    }
+
+    public static final class ListMultipartUploadsResultUnmarshaller implements
+            Unmarshaller<MultipartUploadListing, InputStream> {
+        public MultipartUploadListing unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListMultipartUploadsResponse(in)
+                .getListMultipartUploadsResult();
+        }
+    }
+
+    public static final class ListPartsResultUnmarshaller implements
+        Unmarshaller<PartListing, InputStream> {
+        public PartListing unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListPartsResponse(in)
+                .getListPartsResult();
         }
     }
 

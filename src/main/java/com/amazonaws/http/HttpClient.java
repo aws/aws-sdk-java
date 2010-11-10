@@ -18,7 +18,10 @@ import java.io.IOException;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map.Entry;
+import java.util.Random;
 
 import org.apache.commons.httpclient.Header;
 import org.apache.commons.httpclient.HostConfiguration;
@@ -51,7 +54,6 @@ import com.amazonaws.ResponseMetadata;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.HttpUtils;
 import com.amazonaws.util.ResponseMetadataCache;
-import com.amazonaws.util.VersionInfoUtils;
 
 public class HttpClient {
 
@@ -84,6 +86,21 @@ public class HttpClient {
     /** Cache of metadata for recently executed requests for diagnostic purposes */
     private ResponseMetadataCache responseMetadataCache = new ResponseMetadataCache(50);
 
+    private Random random = new Random();
+
+    
+    static {
+        // Customers have reported XML parsing issues with the following 
+        // JVM versions, which don't occur with more recent versions, so
+        // if we detect any of these, give customers a heads up.
+        List<String> problematicJvmVersions = Arrays.asList(new String[] {
+                "1.6.0_06", "1.6.0_13", "1.6.0_17", });
+        String jvmVersion = System.getProperty("java.version");
+        if (problematicJvmVersions.contains(jvmVersion)) {
+            log.warn("Detected a possible problem with the current JVM version (" + jvmVersion + ").  " +
+                     "If you experience XML parsing problems using the SDK, try upgrading to a more recent JVM update.");
+        }
+    }
 
     /**
      * Constructs a new AWS client using the specified client configuration
@@ -166,11 +183,13 @@ public class HttpClient {
         requestLog.info("Sending Request: " + request.toString());
 
         int retries = 0;
+        AmazonServiceException exception = null;
         while (true) {
             try {
-                if (retries > 0) pauseExponentially(retries);
-
+                if (retries > 0) pauseExponentially(retries, exception);
+                exception = null;
                 retries++;
+                
                 int status = httpClient.executeMethod(method);
 
                 if (isRequestSuccessful(status)) {
@@ -193,7 +212,7 @@ public class HttpClient {
                     method.setURI(new org.apache.commons.httpclient.URI(redirectedLocation, false));
                 } else {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
-                    AmazonServiceException exception = handleErrorResponse(request, errorResponseHandler, method);
+                    exception = handleErrorResponse(request, errorResponseHandler, method);
 
                     if (!shouldRetry(method, exception, retries)) {
                         throw exception;
@@ -255,7 +274,7 @@ public class HttpClient {
             log.debug("Retrying on unsent request");
             return true;
         }
-        
+
         if (exception instanceof NoHttpResponseException
             || exception instanceof SocketException
             || exception instanceof SocketTimeoutException) {
@@ -280,17 +299,14 @@ public class HttpClient {
                 || ase.getStatusCode() == HttpStatus.SC_SERVICE_UNAVAILABLE) {
                 return true;
             }
-            
+
             /*
              * Throttling is reported as a 400 error from newer services. To try
              * and smooth out an occasional throttling error, we'll pause and
              * retry, hoping that the pause is long enough for the request to
              * get through the next time.
              */
-            if (ase.getStatusCode() == HttpStatus.SC_BAD_REQUEST
-                && ase.getErrorCode().equals("Throttling")) {
-                return true;
-            }
+            if (isThrottlingException(ase)) return true;
         }
 
         return false;
@@ -337,7 +353,20 @@ public class HttpClient {
         HttpMethodBase method;
         if (request.getMethodName() == HttpMethodName.POST) {
             PostMethod postMethod = new PostMethod(uri);
-            if (nameValuePairs != null) postMethod.addParameters(nameValuePairs);
+
+            /*
+             * If there isn't any payload content to include in this request,
+             * then try to include the POST parameters in the query body,
+             * otherwise, just use the query string. For all AWS Query services,
+             * the best behavior is putting the params in the request body for
+             * POST requests, but we can't do that for S3.
+             */
+            if (request.getContent() == null) {
+                if (nameValuePairs != null) postMethod.addParameters(nameValuePairs);
+            } else {
+                if (nameValuePairs != null) postMethod.setQueryString(nameValuePairs);
+                postMethod.setRequestEntity(new RepeatableInputStreamRequestEntity(request));
+            }
             method = postMethod;
         } else if (request.getMethodName() == HttpMethodName.GET) {
             GetMethod getMethod = new GetMethod(uri);
@@ -523,20 +552,41 @@ public class HttpClient {
     /**
      * Exponential sleep on failed request to avoid flooding a service with
      * retries.
-     *
+     * 
      * @param retries
      *            Current retry count.
+     * @param previousException
+     *            Exception information for the previous attempt, if any.
      */
-    private void pauseExponentially(int retries) {
-        long delay = (long) (Math.pow(3, retries) * 100L);
+    private void pauseExponentially(int retries, AmazonServiceException previousException) {
+        long scaleFactor = 300;
+        if ( isThrottlingException(previousException) ) {
+            scaleFactor = 500 + random.nextInt(100);
+        }
+        long delay = (long) (Math.pow(2, retries) * scaleFactor);
+
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);
-
+        
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
             // Nothing we need to do here
         }
+    }
+
+    /**
+     * Returns true if the specified exception is a throttling error.
+     * 
+     * @param ase
+     *            The exception to test.
+     * 
+     * @return True if the exception resulted from a throttling error message
+     *         from a service, otherwise false.
+     */
+    private boolean isThrottlingException(AmazonServiceException ase) {
+        if (ase == null) return false;
+        return ase.getErrorCode().equals("Throttling");
     }
 
     /**

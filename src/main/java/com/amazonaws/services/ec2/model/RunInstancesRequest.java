@@ -181,6 +181,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
 
     private String clientToken;
 
+    private String additionalInfo;
+
     /**
      * Default constructor for a new RunInstancesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -1017,6 +1019,40 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the AdditionalInfo property for this object.
+     *
+     * @return The value of the AdditionalInfo property for this object.
+     */
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+    
+    /**
+     * Sets the value of the AdditionalInfo property for this object.
+     *
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     */
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+    
+    /**
+     * Sets the value of the AdditionalInfo property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1046,6 +1082,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         sb.append("License: " + license + ", ");
         sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
         sb.append("ClientToken: " + clientToken + ", ");
+        sb.append("AdditionalInfo: " + additionalInfo + ", ");
         sb.append("}");
         return sb.toString();
     }

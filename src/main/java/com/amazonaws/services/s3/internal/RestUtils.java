@@ -38,7 +38,8 @@ public class RestUtils {
      */
     private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[]{
         "acl", "torrent", "logging", "location", "policy", "requestPayment",
-        "versioning", "versions", "versionId", "notification"
+        "versioning", "versions", "versionId", "notification",
+        "uploadId", "uploads", "partNumber"
     });
 
     /**

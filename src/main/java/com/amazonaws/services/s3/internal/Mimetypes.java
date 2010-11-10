@@ -69,12 +69,11 @@ public class Mimetypes {
     private Mimetypes() {}
 
     /**
-     * Loads mime type settings from the file 'mime.types' in the classpath, if it's available.
+     * Loads MIME type info from the file 'mime.types' in the classpath, if it's available.
      */
-    public static Mimetypes getInstance() {
-        if (mimetypes != null) {
-            return mimetypes;
-        }
+    public synchronized static Mimetypes getInstance() {
+        if (mimetypes != null) return mimetypes;
+        
         mimetypes = new Mimetypes();
         InputStream mimetypesFile = mimetypes.getClass().getResourceAsStream("/mime.types");
         if (mimetypesFile != null) {

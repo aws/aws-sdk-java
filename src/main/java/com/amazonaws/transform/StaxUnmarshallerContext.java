@@ -162,11 +162,13 @@ public class StaxUnmarshallerContext {
 
         updateContext(currentEvent);
 
-        XMLEvent nextEvent = eventReader.peek();
-        if (nextEvent != null && nextEvent.isCharacters()) {
-            for (MetadataExpression metadataExpression : metadataExpressions) {
-                if (testExpression(metadataExpression.expression, metadataExpression.targetDepth)) {
-                    metadata.put(metadataExpression.key, nextEvent.asCharacters().getData());
+        if (eventReader.hasNext()) {
+            XMLEvent nextEvent = eventReader.peek();
+            if (nextEvent != null && nextEvent.isCharacters()) {
+                for (MetadataExpression metadataExpression : metadataExpressions) {
+                    if (testExpression(metadataExpression.expression, metadataExpression.targetDepth)) {
+                        metadata.put(metadataExpression.key, nextEvent.asCharacters().getData());
+                    }
                 }
             }
         }

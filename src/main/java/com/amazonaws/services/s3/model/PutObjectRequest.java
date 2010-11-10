@@ -18,7 +18,6 @@ import java.io.File;
 import java.io.InputStream;
 
 import com.amazonaws.AmazonWebServiceRequest;
-import com.amazonaws.services.s3.AmazonS3;
 
 /**
  * <p>
@@ -133,7 +132,14 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      */
     private String storageClass;
 
+    /**
+     * The optional progress listener for receiving updates about object upload
+     * status.
+     */
+    private ProgressListener progressListener;
 
+    
+	
     /**
      * Constructs a new 
      * {@link PutObjectRequest} object to upload a file to the
@@ -155,6 +161,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         this.key = key;
         this.file = file;
     }
+	
 
     /**
      * Constructs a new 
@@ -411,6 +418,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+	
     /**
      * Gets the path and name of the file
      * containing the data to be uploaded to Amazon S3.
@@ -428,7 +436,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public File getFile() {
         return file;
     }
+	
 
+	
     /**
      * Sets the path and name of the file
      * containing the data to be uploaded to Amazon S3.
@@ -447,7 +457,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public void setFile(File file) {
         this.file = file;
     }
+	
 
+	
     /**
      * Sets the file containing the data to be uploaded to Amazon S3.
      * Returns this {@link PutObjectRequest}, enabling additional method
@@ -471,6 +483,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         setFile(file);
         return this;
     }
+	
 
     /**
      * Gets the optional metadata instructing Amazon S3 how to handle the
@@ -658,6 +671,43 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      */
     public PutObjectRequest withInputStream(InputStream inputStream) {
         setInputStream(inputStream);
+        return this;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * upload status.
+     * 
+     * @param progressListener
+     *            The new progress listener.
+     */
+    public void setProgressListener(ProgressListener progressListener) {
+        this.progressListener = progressListener;
+    }
+
+    /**
+     * Returns the optional progress listener for receiving updates about object
+     * upload status.
+     * 
+     * @return the optional progress listener for receiving updates about object
+     *         upload status.
+     */
+    public ProgressListener getProgressListener() {
+        return progressListener;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates about object
+     * upload status, and returns this updated object so that additional method
+     * calls can be chained together.
+     * 
+     * @param progressListener
+     *            The new progress listener.
+     * 
+     * @return This updated PutObjectRequest object.
+     */
+    public PutObjectRequest withProgressListener(ProgressListener progressListener) {
+        setProgressListener(progressListener);
         return this;
     }
 

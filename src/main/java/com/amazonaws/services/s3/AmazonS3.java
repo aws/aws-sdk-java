@@ -25,6 +25,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -32,6 +33,8 @@ import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketPolicy;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
+import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
@@ -42,8 +45,14 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
+import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
+import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
+import com.amazonaws.services.s3.model.ListPartsRequest;
+import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -56,6 +65,8 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
+import com.amazonaws.services.s3.model.UploadPartRequest;
+import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 
 /**
@@ -63,16 +74,16 @@ import com.amazonaws.services.s3.model.VersionListing;
  * Provides an interface for accessing the Amazon S3 web service.
  * </p>
  * <p>
- * Amazon S3 provides storage for the Internet, 
+ * Amazon S3 provides storage for the Internet,
  * and is designed to make web-scale computing easier for developers.
  * </p>
  * <p>
- * The Amazon S3 Java SDK provides a simple interface that can be 
- * used to store and retrieve any amount of data, at any time, 
- * from anywhere on the web. It gives any developer access to the same 
- * highly scalable, reliable, secure, fast, inexpensive infrastructure 
- * that Amazon uses to run its own global network of web sites. 
- * The service aims to maximize benefits of scale and to pass those 
+ * The Amazon S3 Java SDK provides a simple interface that can be
+ * used to store and retrieve any amount of data, at any time,
+ * from anywhere on the web. It gives any developer access to the same
+ * highly scalable, reliable, secure, fast, inexpensive infrastructure
+ * that Amazon uses to run its own global network of web sites.
+ * The service aims to maximize benefits of scale and to pass those
  * benefits on to developers.
  * </p>
  * <p>
@@ -111,9 +122,9 @@ public interface AmazonS3 {
      * offers multiple storage classes for developers' different needs.
      * </p>
      * <p>
-     * Note that changing the storage class of an object in a bucket 
-     * that has enabled versioning creates a new version of the object 
-     * with the new storage class. The existing version of the object persists 
+     * Note that changing the storage class of an object in a bucket
+     * that has enabled versioning creates a new version of the object
+     * with the new storage class. The existing version of the object persists
      * in the current storage class.
      * </p>
      *
@@ -152,7 +163,7 @@ public interface AmazonS3 {
      * an easy way to get the next page of object listings.
      * </p>
      * <p>
-     * The total number of keys in a bucket doesn't substantially 
+     * The total number of keys in a bucket doesn't substantially
      * affect list performance.
      * </p>
      *
@@ -211,7 +222,7 @@ public interface AmazonS3 {
      * common prefix to list the individual keys under that prefix.
      * </p>
      * <p>
-     * The total number of keys in a bucket doesn't substantially 
+     * The total number of keys in a bucket doesn't substantially
      * affect list performance.
      * </p>
      *
@@ -285,7 +296,7 @@ public interface AmazonS3 {
      * common prefix to list the individual keys under that prefix.
      * </p>
      * <p>
-     * The total number of keys in a bucket doesn't substantially 
+     * The total number of keys in a bucket doesn't substantially
      * affect list performance.
      * </p>
      *
@@ -375,7 +386,7 @@ public interface AmazonS3 {
      * to get the next page of results.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -398,8 +409,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3Client#listVersions(ListVersionsRequest)       
+     *
+     * @see AmazonS3Client#listVersions(ListVersionsRequest)
      * @see AmazonS3Client#listVersions(String, String, String, String, String, Integer)
      */
     public VersionListing listVersions(String bucketName, String prefix)
@@ -420,7 +431,7 @@ public interface AmazonS3 {
      * it is not truncated.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -508,7 +519,7 @@ public interface AmazonS3 {
      * prefix.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -581,10 +592,10 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3Client#listVersions(String, String)             
+     *
+     * @see AmazonS3Client#listVersions(String, String)
      * @see AmazonS3Client#listVersions(ListVersionsRequest)
-     * @see AmazonS3Client#listNextBatchOfVersions(VersionListing)          
+     * @see AmazonS3Client#listNextBatchOfVersions(VersionListing)
      */
     public VersionListing listVersions(String bucketName, String prefix,
             String keyMarker, String versionIdMarker, String delimiter, Integer maxResults)
@@ -650,7 +661,7 @@ public interface AmazonS3 {
      * prefix.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -668,17 +679,17 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3Client#listVersions(String, String)             
+     *
+     * @see AmazonS3Client#listVersions(String, String)
      * @see AmazonS3Client#listVersions(String, String, String, String, String, Integer)
-     * @see AmazonS3Client#listNextBatchOfVersions(VersionListing)               
+     * @see AmazonS3Client#listNextBatchOfVersions(VersionListing)
      */
     public VersionListing listVersions(ListVersionsRequest listVersionsRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
-     * Gets the current owner of the AWS account 
+     * Gets the current owner of the AWS account
      * that the authenticated sender of the request is using.
      * </p>
      * <p>
@@ -717,7 +728,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#createBucket(CreateBucketRequest)
      */
     public boolean doesBucketExist(String bucketName)
@@ -725,7 +736,7 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Returns a list of all Amazon S3 buckets that the 
+     * Returns a list of all Amazon S3 buckets that the
      * authenticated sender of the request owns.
      * </p>
      * <p>
@@ -743,7 +754,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#listBuckets(ListBucketsRequest)
      */
     public List<Bucket> listBuckets() throws AmazonClientException,
@@ -751,7 +762,7 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Returns a list of all Amazon S3 buckets that the 
+     * Returns a list of all Amazon S3 buckets that the
      * authenticated sender of the request owns.
      * </p>
      * <p>
@@ -773,7 +784,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#listBuckets()
      */
     public List<Bucket> listBuckets(ListBucketsRequest listBucketsRequest)
@@ -790,13 +801,13 @@ public interface AmazonS3 {
      * owner.
      * </p>
      * <p>
-     * Use {@link Region#fromValue(String)} to get the <code>Region</code> 
-     * enumeration value, but be prepared to 
+     * Use {@link Region#fromValue(String)} to get the <code>Region</code>
+     * enumeration value, but be prepared to
      * handle an <code>IllegalArgumentException</code>
      * if the value passed is not a known <code>Region</code> value.
      * </p>
      * <p>
-     * Note that <code>Region</code> enumeration values are not returned 
+     * Note that <code>Region</code> enumeration values are not returned
      * directly from this method.
      * </p>
      *
@@ -830,9 +841,9 @@ public interface AmazonS3 {
      * must be unique across all of Amazon S3.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names. 
-     * Within Amazon S3, only a single user owns each bucket. 
-     * Once a uniquely named bucket is created in Amazon S3, 
+     * Bucket ownership is similar to the ownership of Internet domain names.
+     * Within Amazon S3, only a single user owns each bucket.
+     * Once a uniquely named bucket is created in Amazon S3,
      * organize and name the objects within the bucket in any way.
      * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
      * </p>
@@ -897,9 +908,9 @@ public interface AmazonS3 {
      * must be unique across all of Amazon S3.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names. 
-     * Within Amazon S3, only a single user owns each bucket. 
-     * Once a uniquely named bucket is created in Amazon S3, 
+     * Bucket ownership is similar to the ownership of Internet domain names.
+     * Within Amazon S3, only a single user owns each bucket.
+     * Once a uniquely named bucket is created in Amazon S3,
      * organize and name the objects within the bucket in any way.
      * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
      * </p>
@@ -965,9 +976,9 @@ public interface AmazonS3 {
      * must be unique across all of Amazon S3.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names. 
-     * Within Amazon S3, only a single user owns each bucket. 
-     * Once a uniquely named bucket is created in Amazon S3, 
+     * Bucket ownership is similar to the ownership of Internet domain names.
+     * Within Amazon S3, only a single user owns each bucket.
+     * Once a uniquely named bucket is created in Amazon S3,
      * organize and name the objects within the bucket in any way.
      * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
      * </p>
@@ -1018,8 +1029,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see com.amazonaws.services.s3.model.Region            
+     *
+     * @see com.amazonaws.services.s3.model.Region
      */
     public Bucket createBucket(String bucketName, Region region)
             throws AmazonClientException, AmazonServiceException;
@@ -1038,9 +1049,9 @@ public interface AmazonS3 {
      * must be unique across all of Amazon S3.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names. 
-     * Within Amazon S3, only a single user owns each bucket. 
-     * Once a uniquely named bucket is created in Amazon S3, 
+     * Bucket ownership is similar to the ownership of Internet domain names.
+     * Within Amazon S3, only a single user owns each bucket.
+     * Once a uniquely named bucket is created in Amazon S3,
      * organize and name the objects within the bucket in any way.
      * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
      * </p>
@@ -1091,8 +1102,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see com.amazonaws.services.s3.model.Region            
+     *
+     * @see com.amazonaws.services.s3.model.Region
      */
     public Bucket createBucket(String bucketName, String region)
             throws AmazonClientException, AmazonServiceException;
@@ -1125,8 +1136,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#getObjectAcl(String, String, String)                
+     *
+     * @see AmazonS3#getObjectAcl(String, String, String)
      */
     public AccessControlList getObjectAcl(String bucketName, String key)
             throws AmazonClientException, AmazonServiceException;
@@ -1134,7 +1145,7 @@ public interface AmazonS3 {
     /**
      * <p>
      * Gets the {@link AccessControlList} (ACL) for the specified object
-     * with the specified version in Amazon S3. 
+     * with the specified version in Amazon S3.
      * Each version of an object has its own associated
      * ACL.
      * </p>
@@ -1147,7 +1158,7 @@ public interface AmazonS3 {
      * returns an error.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -1169,8 +1180,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#getObjectAcl(String, String)          
+     *
+     * @see AmazonS3#getObjectAcl(String, String)
      */
     public AccessControlList getObjectAcl(String bucketName, String key, String versionId)
         throws AmazonClientException, AmazonServiceException;
@@ -1188,7 +1199,7 @@ public interface AmazonS3 {
      * returns an error.
      * </p>
      * <p>
-     * When constructing a custom <code>AccessControlList</code>, 
+     * When constructing a custom <code>AccessControlList</code>,
      * callers typically retrieve
      * the existing <code>AccessControlList</code> for an object (
      * {@link AmazonS3Client#getObjectAcl(String, String)}), modify it as
@@ -1210,19 +1221,19 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#setObjectAcl(String, String, CannedAccessControlList)
      * @see AmazonS3#setObjectAcl(String, String, String, AccessControlList)
-     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)            
+     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)
      */
     public void setObjectAcl(String bucketName, String key, AccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
-     * Sets the {@link CannedAccessControlList} for the specified object in 
+     * Sets the {@link CannedAccessControlList} for the specified object in
      * Amazon S3 using one
-     * of the pre-configured <code>CannedAccessControlLists</code>. 
+     * of the pre-configured <code>CannedAccessControlLists</code>.
      * A <code>CannedAccessControlList</code>
      * provides a quick way to configure an object or bucket with commonly used
      * access control policies.
@@ -1252,10 +1263,10 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#setObjectAcl(String, String, AccessControlList)
      * @see AmazonS3#setObjectAcl(String, String, String, AccessControlList)
-     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)            
+     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)
      */
     public void setObjectAcl(String bucketName, String key, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
@@ -1263,7 +1274,7 @@ public interface AmazonS3 {
     /**
      * <p>
      * Sets the {@link CannedAccessControlList} for the specified object
-     * with the specified version in Amazon S3. 
+     * with the specified version in Amazon S3.
      * Each version of an object has its own associated
      * ACL.
      * </p>
@@ -1282,7 +1293,7 @@ public interface AmazonS3 {
      * necessary, and then use this method to upload the new ACL.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -1303,10 +1314,10 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#setObjectAcl(String, String, AccessControlList)
      * @see AmazonS3#setObjectAcl(String, String, CannedAccessControlList)
-     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)            
+     * @see AmazonS3#setObjectAcl(String, String, String, CannedAccessControlList)
      */
     public void setObjectAcl(String bucketName, String key, String versionId, AccessControlList acl)
         throws AmazonClientException, AmazonServiceException;
@@ -1315,7 +1326,7 @@ public interface AmazonS3 {
      * <p>
      * Sets the {@link CannedAccessControlList} for the specified object with the specified
      * version ID in Amazon S3 using one of the pre-configured
-     * <code>CannedAccessControlLists</code>. 
+     * <code>CannedAccessControlLists</code>.
      * A <code>CannedAccessControlList</code>
      * provides a quick way to configure an object or bucket with commonly used
      * access control policies.
@@ -1329,7 +1340,7 @@ public interface AmazonS3 {
      * approved, the request proceeds. Otherwise, Amazon S3 returns an error.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -1351,10 +1362,10 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#setObjectAcl(String, String, AccessControlList)
      * @see AmazonS3#setObjectAcl(String, String, CannedAccessControlList)
-     * @see AmazonS3#setObjectAcl(String, String, String, AccessControlList)         
+     * @see AmazonS3#setObjectAcl(String, String, String, AccessControlList)
      */
     public void setObjectAcl(String bucketName, String key, String versionId, CannedAccessControlList acl)
         throws AmazonClientException, AmazonServiceException;
@@ -1416,7 +1427,7 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#setBucketAcl(String, CannedAccessControlList)
      */
     public void setBucketAcl(String bucketName, AccessControlList acl)
@@ -1425,7 +1436,7 @@ public interface AmazonS3 {
     /**
      * <p>
      * Sets the {@link CannedAccessControlList} for the specified Amazon S3 bucket using one of
-     * the pre-configured <code>CannedAccessControlLists</code>. 
+     * the pre-configured <code>CannedAccessControlLists</code>.
      * A <code>CannedAccessControlList</code>
      * provides a quick way to configure an object or bucket with commonly used
      * access control policies.
@@ -1451,8 +1462,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#setBucketAcl(String, AccessControlList)            
+     *
+     * @see AmazonS3#setBucketAcl(String, AccessControlList)
      */
     public void setBucketAcl(String bucketName, CannedAccessControlList acl)
             throws AmazonClientException, AmazonServiceException;
@@ -1505,7 +1516,7 @@ public interface AmazonS3 {
      * with an object in Amazon S3.
      * </p>
      * <p>
-     * For more information about enabling versioning for a bucket, see 
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      *
@@ -1638,6 +1649,8 @@ public interface AmazonS3 {
     public S3Object getObject(GetObjectRequest getObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
+
+	
     /**
      * <p>
      * Gets the object metadata for the object stored
@@ -1648,7 +1661,7 @@ public interface AmazonS3 {
      * </p>
      * <p>
      * Instead of
-     * using {@link AmazonS3#getObject(GetObjectRequest)}, 
+     * using {@link AmazonS3#getObject(GetObjectRequest)},
      * use this method to ensure that the underlying
      * HTTP stream resources are automatically closed as soon as possible.
      * The Amazon S3 clients handles immediate storage of the object
@@ -1691,6 +1704,7 @@ public interface AmazonS3 {
      */
     public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
             throws AmazonClientException, AmazonServiceException;
+	
 
     /**
      * <p>
@@ -1712,8 +1726,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#deleteBucket(String)            
+     *
+     * @see AmazonS3#deleteBucket(String)
      */
     public void deleteBucket(DeleteBucketRequest deleteBucketRequest)
             throws AmazonClientException, AmazonServiceException;
@@ -1739,8 +1753,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#deleteBucket(String)            
+     *
+     * @see AmazonS3#deleteBucket(String)
      */
     public void deleteBucket(String bucketName)
             throws AmazonClientException, AmazonServiceException;
@@ -1767,12 +1781,12 @@ public interface AmazonS3 {
      * <ul>
      *  <li>
      *  The client automatically computes
-     *  a checksum of the file. 
-     *  Amazon S3 uses checksums to validate the data in each file.  
+     *  a checksum of the file.
+     *  Amazon S3 uses checksums to validate the data in each file.
      *  </li>
      *  <li>
-     *  Using the file extension, Amazon S3 attempts to determine 
-     *  the correct content type and content disposition to use 
+     *  Using the file extension, Amazon S3 attempts to determine
+     *  the correct content type and content disposition to use
      *  for the object.
      *  </li>
      * </ul>
@@ -1787,16 +1801,16 @@ public interface AmazonS3 {
      *  the content type, it will not be set in Amazon S3.
      *  </li>
      *  <li>Content length <b>must</b> be specified before data can be uploaded
-     *  to Amazon S3. Amazon S3 explicitly requires that the 
-     *  content length be sent in the request headers before it 
+     *  to Amazon S3. Amazon S3 explicitly requires that the
+     *  content length be sent in the request headers before it
      *  will accept any of the data. If the caller doesn't provide
-     *  the length, the library must buffer the contents of the 
+     *  the length, the library must buffer the contents of the
      *  input stream in order to calculate it.
      * </ul>
      * <p>
-     * If versioning is enabled for the specified bucket, 
-     * this operation will never overwrite an existing object 
-     * with the same key, but will keep the existing object as 
+     * If versioning is enabled for the specified bucket,
+     * this operation will never overwrite an existing object
+     * with the same key, but will keep the existing object as
      * an older version
      * until that version is
      * explicitly deleted (see
@@ -1806,9 +1820,9 @@ public interface AmazonS3 {
      * <p>
      * If versioning is not enabled, this operation will overwrite an existing object
      * with the same key; Amazon S3 will store the last write request.
-     * Amazon S3 does not provide object locking. 
+     * Amazon S3 does not provide object locking.
      * If Amazon S3 receives multiple write requests for the same object nearly
-     * simultaneously, all of the objects might be stored.  However, a single 
+     * simultaneously, all of the objects might be stored.  However, a single
      * object will be stored with the final write request.
      * </p>
 
@@ -1836,38 +1850,39 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#putObject(String, String, File)
      * @see AmazonS3#putObject(String, String, InputStream, ObjectMetadata)
      */
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
+	
     /**
      * <p>
      * Uploads the specified file to Amazon S3 under the specified bucket and
      * key name.
      * </p>
      * <p>
-     * Amazon S3 never stores partial objects; 
-     * if during this call an exception wasn't thrown, 
+     * Amazon S3 never stores partial objects;
+     * if during this call an exception wasn't thrown,
      * the entire object was stored.
      * </p>
      * <p>
      * The client automatically computes
-     * a checksum of the file. 
-     * Amazon S3 uses checksums to validate the data in each file.  
+     * a checksum of the file.
+     * Amazon S3 uses checksums to validate the data in each file.
      * </p>
      * <p>
-     *  Using the file extension, Amazon S3 attempts to determine 
-     *  the correct content type and content disposition to use 
+     *  Using the file extension, Amazon S3 attempts to determine
+     *  the correct content type and content disposition to use
      *  for the object.
      * </p>
      * <p>
-     * If versioning is enabled for the specified bucket, 
+     * If versioning is enabled for the specified bucket,
      * this operation will
-     * this operation will never overwrite an existing object 
-     * with the same key, but will keep the existing object as an 
+     * this operation will never overwrite an existing object
+     * with the same key, but will keep the existing object as an
      * older version
      * until that version is
      * explicitly deleted (see
@@ -1876,12 +1891,12 @@ public interface AmazonS3 {
      * <p>
      * If versioning is not enabled, this operation will overwrite an existing object
      * with the same key; Amazon S3 will store the last write request.
-     * Amazon S3 does not provide object locking. 
+     * Amazon S3 does not provide object locking.
      * If Amazon S3 receives multiple write requests for the same object nearly
-     * simultaneously, all of the objects might be stored.  However, a single 
+     * simultaneously, all of the objects might be stored.  However, a single
      * object will be stored with the final write request.
      * </p>
-     
+
      * <p>
      * When specifying a location constraint when creating a bucket, all objects
      * added to the bucket are stored in the bucket's region. For example, if
@@ -1916,6 +1931,7 @@ public interface AmazonS3 {
      */
     public PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException;
+	
 
     /**
      * <p>
@@ -1923,8 +1939,8 @@ public interface AmazonS3 {
      * the specified bucket and key name.
      * </p>
      * <p>
-     * Amazon S3 never stores partial objects; 
-     * if during this call an exception wasn't thrown, 
+     * Amazon S3 never stores partial objects;
+     * if during this call an exception wasn't thrown,
      * the entire object was stored.
      * </p>
      * <p>
@@ -1934,8 +1950,8 @@ public interface AmazonS3 {
      * has not corrupted in transit over the network.
      * </p>
      * <p>
-     * Using the file extension, Amazon S3 attempts to determine 
-     * the correct content type and content disposition to use 
+     * Using the file extension, Amazon S3 attempts to determine
+     * the correct content type and content disposition to use
      * for the object.
      * </p>
      * <p>
@@ -1952,17 +1968,17 @@ public interface AmazonS3 {
      * explicitly deleted (see
      * {@link AmazonS3#deleteVersion(String, String, String)}.
      * </p>
-     
+
      * <p>
-     * If versioning is not enabled, 
+     * If versioning is not enabled,
      * this operation will overwrite an existing object
      * with the same key; Amazon S3 will store the last write request.
-     * Amazon S3 does not provide object locking. 
+     * Amazon S3 does not provide object locking.
      * If Amazon S3 receives multiple write requests for the same object nearly
-     * simultaneously, all of the objects might be stored.  However, a single 
+     * simultaneously, all of the objects might be stored.  However, a single
      * object will be stored with the final write request.
      * </p>
-     
+
      * <p>
      * When specifying a location constraint when creating a bucket, all objects
      * added to the bucket are stored in the bucket's region. For example, if
@@ -1996,9 +2012,9 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
+     *
      * @see AmazonS3#putObject(String, String, File)
-     * @see AmazonS3#putObject(PutObjectRequest)          
+     * @see AmazonS3#putObject(PutObjectRequest)
      */
     public PutObjectResult putObject(
             String bucketName, String key, InputStream input, ObjectMetadata metadata)
@@ -2176,15 +2192,15 @@ public interface AmazonS3 {
      * are protected by versioning.
      * </p>
      * <p>
-     * Deleting an object version is permanent and irreversible. 
+     * Deleting an object version is permanent and irreversible.
      * It is a
      * privileged operation that only the owner of the bucket containing the
      * version can perform.
      * </p>
      * <p>
      * Users can only delete a version of an object if versioning is enabled
-     * for the bucket. 
-     * For more information about enabling versioning for a bucket, see 
+     * for the bucket.
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      * <p>
@@ -2219,15 +2235,15 @@ public interface AmazonS3 {
      * protected by versioning.
      * </p>
      * <p>
-     * Deleting an object version is permanent and irreversible. 
+     * Deleting an object version is permanent and irreversible.
      * It is a
      * privileged operation that only the owner of the bucket containing the
      * version can perform.
      * </p>
      * <p>
      * Users can only delete a version of an object if versioning is enabled
-     * for the bucket. 
-     * For more information about enabling versioning for a bucket, see 
+     * for the bucket.
+     * For more information about enabling versioning for a bucket, see
      * {@link #setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
      * </p>
      * <p>
@@ -2252,7 +2268,7 @@ public interface AmazonS3 {
 
     /**
      * <p>
-     * Gets the logging configuration for the specified bucket. 
+     * Gets the logging configuration for the specified bucket.
      * The bucket
      * logging configuration object indicates if server access logging is
      * enabled the specified bucket, the destination bucket
@@ -2271,15 +2287,15 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)            
+     *
+     * @see AmazonS3#setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest)
      */
     public BucketLoggingConfiguration getBucketLoggingConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
-     * Sets the logging configuration for the specified bucket. 
+     * Sets the logging configuration for the specified bucket.
      * The bucket
      * logging configuration object indicates whether server access logging is
      * enabled or not for the specified bucket, the destination bucket
@@ -2315,8 +2331,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#getBucketLoggingConfiguration(String)      
+     *
+     * @see AmazonS3#getBucketLoggingConfiguration(String)
      */
     public void setBucketLoggingConfiguration(SetBucketLoggingConfigurationRequest setBucketLoggingConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
@@ -2343,13 +2359,13 @@ public interface AmazonS3 {
      * <p>
      * The versioning configuration of a bucket has different implications for
      * each operation performed on that bucket or for objects within that
-     * bucket. For example, when versioning is enabled a <code>PutObject</code> 
+     * bucket. For example, when versioning is enabled a <code>PutObject</code>
      * operation creates a unique object version-id for the object being uploaded. The
      * The <code>PutObject</code> API guarantees that, if versioning is enabled for a bucket at
      * the time of the request, the new object can only be permanently deleted
      * using a <code>DeleteVersion</code> operation. It can never be overwritten.
      * Additionally, the <code>PutObject</code> API guarantees that,
-     * if versioning is enabled for a bucket the request, 
+     * if versioning is enabled for a bucket the request,
      * no other object will be overwritten by that request.
      * Refer to the documentation sections for each API for information on how
      * versioning status affects the semantics of that particular API.
@@ -2370,8 +2386,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest) 
+     *
+     * @see AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)
      */
     public BucketVersioningConfiguration getBucketVersioningConfiguration(String bucketName)
             throws AmazonClientException, AmazonServiceException;
@@ -2405,13 +2421,13 @@ public interface AmazonS3 {
      * <p>
      * The versioning configuration of a bucket has different implications for
      * each operation performed on that bucket or for objects within that
-     * bucket. For example, when versioning is enabled a <code>PutObject</code> 
+     * bucket. For example, when versioning is enabled a <code>PutObject</code>
      * operation creates a unique object version-id for the object being uploaded. The
      * The <code>PutObject</code> API guarantees that, if versioning is enabled for a bucket at
      * the time of the request, the new object can only be permanently deleted
      * using a <code>DeleteVersion</code> operation. It can never be overwritten.
      * Additionally, the <code>PutObject</code> API guarantees that,
-     * if versioning is enabled for a bucket the request, 
+     * if versioning is enabled for a bucket the request,
      * no other object will be overwritten by that request.
      * Refer to the documentation sections for each API for information on how
      * versioning status affects the semantics of that particular API.
@@ -2431,12 +2447,12 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#getBucketVersioningConfiguration(String)         
+     *
+     * @see AmazonS3#getBucketVersioningConfiguration(String)
      */
     public void setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest setBucketVersioningConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
-    
+
     /**
      * Gets the notification configuration for the specified bucket.
      * <p>
@@ -2504,7 +2520,7 @@ public interface AmazonS3 {
      */
     public void setBucketNotificationConfiguration(String bucketName, BucketNotificationConfiguration bucketNotificationConfiguration)
         throws AmazonClientException, AmazonServiceException;
-        
+
     /**
      * <p>
      * Gets the policy for the specified bucket. Only the owner of the
@@ -2535,8 +2551,8 @@ public interface AmazonS3 {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     *             
-     * @see AmazonS3#setBucketPolicy(String, String)            
+     *
+     * @see AmazonS3#setBucketPolicy(String, String)
      */
     public BucketPolicy getBucketPolicy(String bucketName)
         throws AmazonClientException, AmazonServiceException;
@@ -2643,9 +2659,9 @@ public interface AmazonS3 {
      * @throws AmazonClientException
      *             If there were any problems pre-signing the request for the
      *             specified S3 object.
-     *             
-     * @see AmazonS3#generatePresignedUrl(String, String, Date, HttpMethod)  
-     * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)          
+     *
+     * @see AmazonS3#generatePresignedUrl(String, String, Date, HttpMethod)
+     * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)
      */
     public URL generatePresignedUrl(String bucketName, String key, Date expiration)
             throws AmazonClientException;
@@ -2692,9 +2708,9 @@ public interface AmazonS3 {
      * @throws AmazonClientException
      *             If there were any problems pre-signing the request for the
      *             specified S3 object.
-     *             
-     * @see AmazonS3#generatePresignedUrl(String, String, Date) 
-     * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)                 
+     *
+     * @see AmazonS3#generatePresignedUrl(String, String, Date)
+     * @see AmazonS3#generatePresignedUrl(GeneratePresignedUrlRequest)
      */
     public URL generatePresignedUrl(String bucketName, String key, Date expiration, HttpMethod method)
             throws AmazonClientException;
@@ -2736,31 +2752,210 @@ public interface AmazonS3 {
      * @throws AmazonClientException
      *             If there were any problems pre-signing the request for the
      *             Amazon S3 resource.
-     *             
-     * @see AmazonS3#generatePresignedUrl(String, String, Date) 
-     * @see AmazonS3#generatePresignedUrl(String, String, Date, HttpMethod)                 
+     *
+     * @see AmazonS3#generatePresignedUrl(String, String, Date)
+     * @see AmazonS3#generatePresignedUrl(String, String, Date, HttpMethod)
      */
     public URL generatePresignedUrl(GeneratePresignedUrlRequest generatePresignedUrlRequest)
             throws AmazonClientException;
 
     /**
+     * Initiates a multipart upload and returns an InitiateMultipartUploadResult
+     * which contains an upload ID. This upload ID associates all the parts in
+     * the specific upload and is used in each of your subsequent
+     * {@link #uploadPart(UploadPartRequest)} requests. You also include this
+     * upload ID in the final request to either complete, or abort the multipart
+     * upload request.
+     * 
+     * @param request
+     *            The InitiateMultipartUploadRequest object that specifies all
+     *            the parameters of this operation.
+     * 
+     * @return An InitiateMultipartUploadResult from Amazon S3.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public InitiateMultipartUploadResult initiateMultipartUpload(InitiateMultipartUploadRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Uploads a part in a multipart upload. You must initiate a multipart
+     * upload before you can upload any part.
      * <p>
-     * Gets additional metadata for a previously executed successful request. The returned metadata
-     * is typically used for
-     * debugging issues when a service isn't acting as expected.  This data isn't considered part
-     * of the result data returned by an operation; as so, it's available through this separate
-     * diagnostic interface.
-     * </p>
+     * Your UploadPart request must include an upload ID and a part number. The
+     * upload ID is the ID returned by Amazon S3 in response to your Initiate
+     * Multipart Upload request. Part number can be any number between 1 and
+     * 10,000, inclusive. A part number uniquely identifies a part and also
+     * defines its position within the object being uploaded. If you upload a
+     * new part using the same part number that was specified in uploading a
+     * previous part, the previously uploaded part is overwritten.
      * <p>
-     * Response metadata is only cached for a limited period of time. Use this method
-     * to retrieve the response metadata as soon as possible after executing a request.
-     * </p>
+     * To ensure data is not corrupted traversing the network, specify the
+     * Content-MD5 header in the Upload Part request. Amazon S3 checks the part
+     * data against the provided MD5 value. If they do not match, Amazon S3
+     * returns an error.
+     * <p>
+     * When you upload a part, the returned UploadPartResult contains an ETag
+     * property. You should record this ETag property value and the part number.
+     * After uploading all parts, you must send a CompleteMultipartUpload
+     * request. At that time Amazon S3 constructs a complete object by
+     * concatenating all the parts you uploaded, in ascending order based on the
+     * part numbers. The CompleteMultipartUpload request requires you to send
+     * all the part numbers and the corresponding ETag values.
+     * 
+     * @param request
+     *            The UploadPartRequest object that specifies all the parameters
+     *            of this operation.
+     * 
+     * @return An UploadPartResult from Amazon S3 containing the part number and
+     *         ETag of the new part.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public UploadPartResult uploadPart(UploadPartRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Lists the parts that have been uploaded for a specific multipart upload.
+     * <p>
+     * This method must include the upload ID, returned by the
+     * {@link #initiateMultipartUpload(InitiateMultipartUploadRequest)}
+     * operation. This request returns a maximum of 1000 uploaded parts by
+     * default. You can restrict the number of parts returned by specifying the
+     * MaxParts property on the ListPartsRequest. If your multipart upload
+     * consists of more parts than allowed in the ListParts response, the
+     * response returns a IsTruncated field with value true, and a
+     * NextPartNumberMarker property. In subsequent ListParts request you can
+     * include the PartNumberMarker property and set its value to the
+     * NextPartNumberMarker property value from the previous response.
+     * 
+     * @param request
+     *            The ListPartsRequest object that specifies all the parameters
+     *            of this operation.
+     * 
+     * @return Returns a PartListing from Amazon S3.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public PartListing listParts(ListPartsRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Aborts a multipart upload. After a multipart upload is aborted, no
+     * additional parts can be uploaded using that upload ID. The storage
+     * consumed by any previously uploaded parts will be freed. However, if any
+     * part uploads are currently in progress, those part uploads may or may not
+     * succeed. As a result, it may be necessary to abort a given multipart
+     * upload multiple times in order to completely free all storage consumed by
+     * all parts.
+     * 
+     * @param request
+     *            The AbortMultipartUploadRequest object that specifies all the
+     *            parameters of this operation.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void abortMultipartUpload(AbortMultipartUploadRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Completes a multipart upload by assembling previously uploaded parts.
+     * <p>
+     * You first upload all parts using the
+     * {@link #uploadPart(UploadPartRequest)} method. After successfully
+     * uploading all individual parts of an upload, you call this operation to
+     * complete the upload. Upon receiving this request, Amazon S3 concatenates
+     * all the parts in ascending order by part number to create a new object.
+     * In the CompleteMultipartUpload request, you must provide the parts list.
+     * For each part in the list, you provide the part number and the ETag
+     * header value, returned after that part was uploaded.
+     * <p>
+     * Processing of a CompleteMultipartUpload request may take several minutes
+     * to complete.
+     * 
+     * @param request
+     *            The CompleteMultipartUploadRequest object that specifies all
+     *            the parameters of this operation.
+     * 
+     * @return A CompleteMultipartUploadResult from S3 containing the ETag for
+     *         the new object composed of the individual parts.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public CompleteMultipartUploadResult completeMultipartUpload(CompleteMultipartUploadRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Lists in-progress multipart uploads. An in-progress multipart upload is a
+     * multipart upload that has been initiated, using the
+     * InitiateMultipartUpload request, but has not yet been completed or
+     * aborted.
+     * <p>
+     * This operation returns at most 1,000 multipart uploads in the response by
+     * default. The number of multipart uploads can be further limited using the
+     * MaxUploads property on the request parameter. If there are additional
+     * multipart uploads that satisfy the list criteria, the response will
+     * contain an IsTruncated property with the value set to true. To list the
+     * additional multipart uploads use the KeyMarker and UploadIdMarker
+     * properties on the request parameters.
+     * 
+     * @param request
+     *            The ListMultipartUploadsRequest object that specifies all the
+     *            parameters of this operation.
+     * 
+     * @return A MultipartUploadListing from Amazon S3.
+     * 
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public MultipartUploadListing listMultipartUploads(ListMultipartUploadsRequest request)
+            throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Gets additional metadata for a previously executed successful request.
+     * The returned metadata is typically used for debugging issues when a
+     * service isn't acting as expected. This data isn't considered part of the
+     * result data returned by an operation; as so, it's available through this
+     * separate diagnostic interface.
+     * <p>
+     * Response metadata is only cached for a limited period of time. Use this
+     * method to retrieve the response metadata as soon as possible after
+     * executing a request.
      *
      * @param request
      *            The originally executed request.
      *
-     * @return The response metadata for the specified request, or <code>null</code> if none
-     *         is available.
+     * @return The response metadata for the specified request, or
+     *         <code>null</code> if none is available.
      */
     public S3ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 

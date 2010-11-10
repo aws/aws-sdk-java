@@ -45,6 +45,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> vpnConnectionIds;
 
+    private java.util.List<Filter> filters;
+
     /**
      * A VPN connection ID. More than one may be specified per request.
      *
@@ -108,6 +110,68 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the Filters property for this object.
+     *
+     * @return The value of the Filters property for this object.
+     */
+    public java.util.List<Filter> getFilters() {
+        if (filters == null) {
+            filters = new java.util.ArrayList<Filter>();
+        }
+        return filters;
+    }
+    
+    /**
+     * Sets the value of the Filters property for this object.
+     *
+     * @param filters The new value for the Filters property for this object.
+     */
+    public void setFilters(java.util.Collection<Filter> filters) {
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
+        if (filters != null) {
+            filtersCopy.addAll(filters);
+        }
+        this.filters = filtersCopy;
+    }
+    
+    /**
+     * Sets the value of the Filters property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters The new value for the Filters property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeVpnConnectionsRequest withFilters(Filter... filters) {
+        for (Filter value : filters) {
+            getFilters().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the Filters property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param filters The new value for the Filters property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeVpnConnectionsRequest withFilters(java.util.Collection<Filter> filters) {
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
+        if (filters != null) {
+            filtersCopy.addAll(filters);
+        }
+        this.filters = filtersCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -120,6 +184,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("VpnConnectionIds: " + vpnConnectionIds + ", ");
+        sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
     }

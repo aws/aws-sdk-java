@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.internal;
 
 import java.io.InputStream;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -35,6 +36,9 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
     /** Shared logger for profiling information */
     private static final Log log = LogFactory.getLog("com.amazonaws.request");
 
+    /** Response headers from the processed response */
+    private Map<String, String> responseHeaders;
+
     /**
      * Constructs a new S3 response handler that will use the specified SAX
      * unmarshaller to turn the response into an object.
@@ -51,6 +55,7 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
      */
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         AmazonWebServiceResponse<T> awsResponse = parseResponseMetadata(response);
+        responseHeaders = response.getHeaders();
 
         if (responseUnmarshaller != null) {
             log.trace("Beginning to parse service response XML");
@@ -60,6 +65,16 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
         }
 
         return awsResponse;
+    }
+
+    /**
+     * Returns the headers from the processed response. Will return null until a
+     * response has been handled.
+     *
+     * @return the headers from the processed response.
+     */
+    public Map<String, String> getResponseHeaders() {
+        return responseHeaders;
     }
 
 }

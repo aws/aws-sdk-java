@@ -176,6 +176,11 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                 request.addParameter("ClientToken", StringUtils.fromString(runInstancesRequest.getClientToken()));
             }
         }
+        if (runInstancesRequest != null) {
+            if (runInstancesRequest.getAdditionalInfo() != null) {
+                request.addParameter("AdditionalInfo", StringUtils.fromString(runInstancesRequest.getAdditionalInfo()));
+            }
+        }
 
 
         return request;
