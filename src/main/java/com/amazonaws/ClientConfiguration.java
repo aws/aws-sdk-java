@@ -24,7 +24,7 @@ public class ClientConfiguration {
     /**
      * The default HTTP user agent header for AWS Java SDK clients.
      */
-    public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent( "java" );
+    public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
 
     /** The HTTP user agent header passed with all HTTP requests. */
     private String userAgent = DEFAULT_USER_AGENT;

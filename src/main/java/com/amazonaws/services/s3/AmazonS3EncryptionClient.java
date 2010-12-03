@@ -293,6 +293,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         super.deleteObject(instructionDeleteRequest);
     }
 
+    /**
+     * Not implemented - AmazonS3EncryptionClient does not yet support
+     * encrypting multipart uploads.
+     */
     @Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
         throws AmazonClientException, AmazonServiceException {

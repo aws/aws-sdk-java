@@ -125,4 +125,21 @@ public class StringUtils {
         
         return buffer.toString();
     }
+
+    /**
+     * Joins the strings in parts with joiner between each string
+     * @param joiner the string to insert between the strings in parts
+     * @param parts the parts to join
+     * @return
+     */
+    public static String join(String joiner, String... parts) {
+      StringBuilder builder = new StringBuilder();
+      for (int i = 0; i < parts.length; i++) {
+    			builder.append(parts[i].toString());
+    			if (i < parts.length - 1) {
+    				builder.append(joiner);
+    			}
+    		}
+      return builder.toString();
+    }
 }

@@ -132,13 +132,13 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest {
      * updated ListMultipartUploadsRequest object so that additional method
      * calls can be chained together.
      *
-     * @param maxUploads
+     * @param maxUploadsInt
      *            The optional maximum number of uploads to return.
      *
      * @return This updated ListMultipartUploadsRequest object.
      */
-    public ListMultipartUploadsRequest withMaxUploads(int maxUploads) {
-        this.maxUploads = maxUploads;
+    public ListMultipartUploadsRequest withMaxUploads(int maxUploadsInt) {
+        this.maxUploads = maxUploadsInt;
         return this;
     }
 

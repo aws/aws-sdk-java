@@ -31,6 +31,9 @@ public class VersionInfoUtils {
     /** SDK version info */
     private static String version = null;
 
+    /** SDK platform info */
+    private static String platform = null;
+
     /** User Agent info */
     private static String userAgent = null;
 
@@ -55,14 +58,32 @@ public class VersionInfoUtils {
         return version;
     }
 
+    /**
+     * Returns the current platform for the AWS SDK in which this class is
+     * running. Version information is obtained from from the
+     * versionInfo.properties file which the AWS Java SDK build process
+     * generates.
+     *
+     * @return The current platform for the AWS SDK, if known, otherwise
+     *         returns a string indicating that the platform information is
+     *         not available.
+     */
+    public static String getPlatform() {
+        if (platform == null) {
+            initializeVersion();
+        }
+        
+        return platform;
+    }
+
      /**
      * @return Returns the User Agent string to be used when communicating with
 	 * the AWS services.  The User Agent encapsulates SDK, Java, OS and
 	 * region information.
      */
-    public static String getUserAgent( String platform ) {
+    public static String getUserAgent() {
         if (userAgent == null) {
-            initializeUserAgent( platform );
+            initializeUserAgent();
         }
         
         return userAgent;
@@ -82,9 +103,11 @@ public class VersionInfoUtils {
             
             versionInfoProperties.load(inputStream);
             version = versionInfoProperties.getProperty("version");
+            platform = versionInfoProperties.getProperty("platform");
         } catch (Exception e) {
             log.info("Unable to load version information for the running SDK: " + e.getMessage());
             version = "unknown-version";
+            platform = "java";
         }
     }
 			
@@ -93,11 +116,9 @@ public class VersionInfoUtils {
      * stores the information so that the file doesn't have to be read the
      * next time the data is needed.
      */
-	private static void initializeUserAgent( String platform ) {
-		userAgent = "AWS Java SDK-" + VersionInfoUtils.getVersion();		
-	/*
-		StringBuffer buffer = new StringBuffer( 1024 );
-		buffer.append( "aws-sdk-" + platform.toLowerCase() + "/" );
+	private static void initializeUserAgent() {
+		StringBuilder buffer = new StringBuilder( 1024 );
+		buffer.append( "aws-sdk-" + VersionInfoUtils.getPlatform().toLowerCase() + "/" );
 		buffer.append( VersionInfoUtils.getVersion() );
 		buffer.append( " " );
 		buffer.append( System.getProperty( "os.name" ).replace( ' ', '_' ) + "/" + System.getProperty( "os.version" ).replace( ' ', '_' ) );
@@ -114,6 +135,5 @@ public class VersionInfoUtils {
 		buffer.append( region );
 	
 		userAgent = buffer.toString();
-	*/		
 	}
 }

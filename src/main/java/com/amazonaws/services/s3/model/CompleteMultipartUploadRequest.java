@@ -235,14 +235,14 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest {
      * parts of the multipart upload to complete based on the specified results
      * from part uploads.
      *
-     * @param uploadPartResults
+     * @param uploadPartResultsCollection
      *            The list of results from the individual part uploads in the
      *            multipart upload to complete.
      *
      * @return This updated CompleteMultipartUploadRequest object.
      */
-    public CompleteMultipartUploadRequest withPartETags(Collection<UploadPartResult> uploadPartResults) {
-        for (UploadPartResult result : uploadPartResults) {
+    public CompleteMultipartUploadRequest withPartETags(Collection<UploadPartResult> uploadPartResultsCollection) {
+        for (UploadPartResult result : uploadPartResultsCollection) {
             this.partETags.add(new PartETag(result.getPartNumber(), result.getETag()));
         }
         return this;

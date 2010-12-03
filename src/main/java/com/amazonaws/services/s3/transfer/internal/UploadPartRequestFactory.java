@@ -30,15 +30,15 @@ import com.amazonaws.services.s3.model.UploadPartRequest;
  * while.
  */
 public class UploadPartRequestFactory {
-    private int partNumber = 1;
     private final String bucketName;
     private final String key;
     private final String uploadId;
     private final long optimalPartSize;
     private final File file;
-    private int offset = 0;
-    private long remainingBytes;
     private final PutObjectRequest putObjectRequest;
+    private int partNumber = 1;
+    private long offset = 0;
+    private long remainingBytes;
 
     public UploadPartRequestFactory(PutObjectRequest putObjectRequest, String uploadId, long optimalPartSize) {
         this.putObjectRequest = putObjectRequest;
@@ -46,14 +46,14 @@ public class UploadPartRequestFactory {
         this.optimalPartSize = optimalPartSize;
         this.bucketName = putObjectRequest.getBucketName();
         this.key = putObjectRequest.getKey();
-        this.file = TransferManagerUtils.getRequestFile(putObjectRequest); 
+        this.file = TransferManagerUtils.getRequestFile(putObjectRequest);
         this.remainingBytes = TransferManagerUtils.getContentLength(putObjectRequest);
     }
-    
+
     public synchronized boolean hasMoreRequests() {
         return (remainingBytes > 0);
     }
-    
+
     public synchronized UploadPartRequest getNextUploadPartRequest() {
         long partSize = Math.min(optimalPartSize, remainingBytes);
 
@@ -76,9 +76,9 @@ public class UploadPartRequestFactory {
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         }
-        
+
         request.setProgressListener(putObjectRequest.getProgressListener());
-        
+
         offset += partSize;
         remainingBytes -= partSize;
         return request;

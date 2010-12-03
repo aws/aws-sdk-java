@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amazonaws.services.elasticmapreduce.model.HadoopJarStepConfig;
+import com.amazonaws.util.StringUtils;
 
 /**
  * This class provides helper methods for creating common Elastic MapReduce step
@@ -60,6 +61,27 @@ import com.amazonaws.services.elasticmapreduce.model.HadoopJarStepConfig;
  */
 public class StepFactory {
     private final String bucket;
+    
+    /**
+     *  The available Hive versions.  These are only available on Hadoop 0.20
+     *  Hive_0_5 Hive 0.5
+     *  Hive_0_7 Hive 0.7
+     */
+    public static enum HiveVersion {
+    	Hive_0_5("0.5"),
+    	Hive_0_7("0.7");
+
+      private String stringVal;
+
+      HiveVersion(String str) {
+        stringVal = str;
+      }
+
+    	@Override
+    	public String toString() {
+    		return stringVal;
+    	}
+    }
 
     /**
      * Creates a new StepFactory using the default Elastic Map Reduce bucket
@@ -115,12 +137,31 @@ public class StepFactory {
     }
 
     /**
-     * Step that installs Hive on your job flow.
+     * Step that installs the specified versions of Hive on your job flow.
      *
+     * @param hiveVersions the versions of Hive to install
+     * @return HadoopJarStepConfig that can be passed to your job flow.
+     */
+    public HadoopJarStepConfig newInstallHiveStep(HiveVersion... hiveVersions) {
+    	if (hiveVersions.length > 0) {
+        String[] versionStrings = new String[hiveVersions.length];
+        for (int i = 0; i < hiveVersions.length; i++) {
+          versionStrings[i] = hiveVersions[i].toString();
+        }
+        return newHivePigStep("hive", "--install-hive", "--hive-versions",
+                StringUtils.join(",", versionStrings));
+    	}
+    	return newHivePigStep("hive", "--install-hive");
+    }
+
+    /**
+     * Step that installs the default version of Hive on your job flow.  This is
+     * 0.4 for Hadoop 0.18 and 0.5 for Hadoop 0.20.
+     * 
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
     public HadoopJarStepConfig newInstallHiveStep() {
-        return newHivePigStep("hive", "--install-hive");
+      return newInstallHiveStep(new HiveVersion[0]);
     }
 
     /**

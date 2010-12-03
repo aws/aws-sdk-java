@@ -265,6 +265,62 @@ public class AmazonSimpleDBAsyncClient extends AmazonSimpleDBClient
     
     /**
      * <p>
+     * Performs multiple DeleteAttributes operations in a single call, which
+     * reduces round trips and latencies. This enables Amazon SimpleDB to
+     * optimize requests, which generally yields better throughput.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you specify BatchDeleteAttributes without attributes
+     * or values, all the attributes for the item are deleted.
+     * BatchDeleteAttributes is an idempotent operation; running it multiple
+     * times on the same item or attribute doesn't result in an error. The
+     * BatchDeleteAttributes operation succeeds or fails in its entirety.
+     * There are no partial deletes. You can execute multiple
+     * BatchDeleteAttributes operations and other operations in parallel.
+     * However, large numbers of concurrent BatchDeleteAttributes calls can
+     * result in Service Unavailable (503) responses. This operation is
+     * vulnerable to exceeding the maximum URL size when making a REST
+     * request using the HTTP GET method. This operation does not support
+     * conditions using Expected.X.Name, Expected.X.Value, or
+     * Expected.X.Exists.
+     * </p>
+     * <p>
+     * The following limitations are enforced for this operation:
+     * <ul>
+     * <li>1 MB request size</li>
+     * <li>25 item limit per BatchDeleteAttributes operation</li>
+     * 
+     * </ul>
+     * 
+     * </p>
+     *
+     * @param batchDeleteAttributesRequest Container for the necessary
+     *           parameters to execute the BatchDeleteAttributes operation on
+     *           AmazonSimpleDB.
+     * 
+     * @return A Java Future object containing the response from the
+     *         BatchDeleteAttributes service method, as returned by AmazonSimpleDB.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> batchDeleteAttributesAsync(final BatchDeleteAttributesRequest batchDeleteAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                batchDeleteAttributes(batchDeleteAttributesRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The <code>DeleteDomain</code> operation deletes a domain. Any items
      * (and their attributes) in the domain are deleted as well. The
      * <code>DeleteDomain</code> operation might take 10 or more seconds to

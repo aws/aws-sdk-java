@@ -1584,7 +1584,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<InitiateMultipartUploadResult> responseHandler =
             new S3XmlResponseHandler<InitiateMultipartUploadResult>(new Unmarshallers.InitiateMultipartUploadResultUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (InitiateMultipartUploadResult)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -1616,7 +1616,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<MultipartUploadListing> responseHandler =
             new S3XmlResponseHandler<MultipartUploadListing>(new Unmarshallers.ListMultipartUploadsResultUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (MultipartUploadListing)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)
@@ -1652,7 +1652,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3XmlResponseHandler<PartListing> responseHandler =
             new S3XmlResponseHandler<PartListing>(new Unmarshallers.ListPartsResultUnmarshaller());
 
-        return client.execute(httpRequest, responseHandler, errorResponseHandler);
+        return (PartListing)client.execute(httpRequest, responseHandler, errorResponseHandler);
     }
 
     /* (non-Javadoc)

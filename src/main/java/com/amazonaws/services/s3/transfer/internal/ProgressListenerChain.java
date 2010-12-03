@@ -22,25 +22,27 @@ import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 
 public class ProgressListenerChain implements ProgressListener {
-    private List<ProgressListener> listeners = new ArrayList<ProgressListener>();
+    private final List<ProgressListener> listeners = new ArrayList<ProgressListener>();
     private final ExecutorService executor;
 
     public ProgressListenerChain(ExecutorService executor, ProgressListener... listeners) {
         this.executor = executor;
         for (ProgressListener listener : listeners) addProgressListener(listener);
     }
-    
-    public void addProgressListener(ProgressListener listener) {
+
+    public synchronized void addProgressListener(ProgressListener listener) {
         if (listener == null) return;
         this.listeners.add(listener);
     }
-    
-    public void removeProgressListener(ProgressListener listener) {
+
+    public synchronized void removeProgressListener(ProgressListener listener) {
         if (listener == null) return;
         this.listeners.remove(listener);
     }
 
     public void progressChanged(final ProgressEvent progressEvent) {
+        if (executor.isShutdown()) return;
+
         executor.submit(new Runnable() {
             public void run() {
                 for (ProgressListener listener : listeners) {

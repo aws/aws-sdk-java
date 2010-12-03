@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.transfer.internal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
@@ -42,7 +43,7 @@ public class MultipartUploadCallable implements Callable<UploadResult> {
     private final AmazonS3 s3;
     private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;
-    
+
     private static final Log log = LogFactory.getLog(MultipartUploadCallable.class);
     private final TransferManagerConfiguration configuration;
     private final ProgressListenerChain progressListenerChain;
@@ -50,44 +51,46 @@ public class MultipartUploadCallable implements Callable<UploadResult> {
     public MultipartUploadCallable(TransferManager transferManager, ExecutorService threadPool, PutObjectRequest putObjectRequest, ProgressListenerChain progressListenerChain) {
         this.s3 = transferManager.getAmazonS3Client();
         this.configuration = transferManager.getConfiguration();
-        
+
         this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
         this.progressListenerChain = progressListenerChain;
     }
-    
+
     public UploadResult call() throws Exception {
         final String bucketName = putObjectRequest.getBucketName();
         final String key        = putObjectRequest.getKey();
 
         fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
-        
-        String uploadId = initiateMultipartUpload(putObjectRequest); 
+
+        String uploadId = initiateMultipartUpload(putObjectRequest);
 
         long optimalPartSize = TransferManagerUtils.calculateOptimalPartSize(putObjectRequest, configuration);
         log.debug("Calculated optimal part size: " + optimalPartSize);
-        
+
         try {
             final List<PartETag> partETags = new ArrayList<PartETag>();
             UploadPartRequestFactory requestFactory = new UploadPartRequestFactory(putObjectRequest, uploadId, optimalPartSize);
-            
+
             if (TransferManagerUtils.isUploadParallelizable(putObjectRequest)) {
                 List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
                 while (requestFactory.hasMoreRequests()) {
+                    if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
                     UploadPartRequest request = requestFactory.getNextUploadPartRequest();
                     futures.add(threadPool.submit(new UploadPartCallable(s3, request)));
                 }
                 this.collectPartETags(futures, partETags);
             } else {
                 while (requestFactory.hasMoreRequests()) {
+                    if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
                     partETags.add(s3.uploadPart(requestFactory.getNextUploadPartRequest()).getPartETag());
                 }
             }
-            
+
             CompleteMultipartUploadResult completeMultipartUploadResult = s3.completeMultipartUpload(
                     new CompleteMultipartUploadRequest(bucketName, key, uploadId, partETags));
             fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
-            
+
             UploadResult uploadResult = new UploadResult();
             uploadResult.setBucketName(completeMultipartUploadResult.getBucketName());
             uploadResult.setKey(completeMultipartUploadResult.getKey());
@@ -96,7 +99,7 @@ public class MultipartUploadCallable implements Callable<UploadResult> {
             return uploadResult;
         } catch (Exception e) {
             fireProgressEvent(ProgressEvent.FAILED_EVENT_CODE);
-            
+
             try {
                 s3.abortMultipartUpload(new AbortMultipartUploadRequest(bucketName, key, uploadId));
             } catch (Exception e2) {
@@ -113,29 +116,29 @@ public class MultipartUploadCallable implements Callable<UploadResult> {
     }
 
     private String initiateMultipartUpload(PutObjectRequest putObjectRequest) {
-        InitiateMultipartUploadRequest initiateMultipartUploadRequest = 
+        InitiateMultipartUploadRequest initiateMultipartUploadRequest =
             new InitiateMultipartUploadRequest(putObjectRequest.getBucketName(), putObjectRequest.getKey())
                 .withCannedACL(putObjectRequest.getCannedAcl())
                 .withObjectMetadata(putObjectRequest.getMetadata());
-        
+
         if (putObjectRequest.getStorageClass() != null) {
             initiateMultipartUploadRequest.setStorageClass(
                     StorageClass.fromValue(putObjectRequest.getStorageClass()));
         }
-        
+
         String uploadId = s3.initiateMultipartUpload(initiateMultipartUploadRequest).getUploadId();
         log.debug("Initiated new multipart upload: " + uploadId);
-        
+
         return uploadId;
     }
-    
+
     private void fireProgressEvent(int eventType) {
         if (progressListenerChain == null) return;
         ProgressEvent event = new ProgressEvent(0);
         event.setEventCode(eventType);
         progressListenerChain.progressChanged(event);
     }
-    
+
    private void collectPartETags(final List<Future<PartETag>> futures, final List<PartETag> partETags) {
         for (Future<PartETag> future : futures) {
             try {

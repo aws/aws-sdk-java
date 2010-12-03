@@ -28,7 +28,7 @@ public class UploadImpl extends Upload {
      * Sets the state of this transfer - callers should <b>never</b> call this
      * method directly, it's only intended for the library to use when updating
      * a transfer's state.
-     * 
+     *
      * @param state
      *            The new state of this transfer.
      */
@@ -36,10 +36,10 @@ public class UploadImpl extends Upload {
         if (super.state == state) return;
         super.state = state;
     }
-    
+
     /**
      * Sets the future for the result of the asynchronous transfer.
-     * 
+     *
      * @param future
      */
     public void setFuture(Future<?> future) {

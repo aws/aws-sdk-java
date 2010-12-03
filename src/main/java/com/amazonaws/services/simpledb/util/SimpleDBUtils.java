@@ -341,7 +341,7 @@ public class SimpleDBUtils {
      *         in a SimpleDB select query.
      */
     public static String quoteValue(String value) {
-        return "'" + value.replace("'", "''") + "'";
+        return "'" + replaceChar( value, "'", "''" ) + "'";
     }
 
     /**
@@ -355,7 +355,25 @@ public class SimpleDBUtils {
      *         ready to be used in a SimpleDB select query.
      */
     public static String quoteName(String name) {
-        return "`" + name.replace("`", "``") + "`";
+        return "`" + replaceChar( name, "`", "``" ) + "`";
+    }
+    
+    protected static String replaceChar( String value, String termToFind, String replacementTerm ) {
+        StringBuilder buffer = new StringBuilder( value );
+        
+        int searchIndex = 0;
+        while ( searchIndex < buffer.length() ) {
+            searchIndex = buffer.indexOf( termToFind, searchIndex );
+            if ( searchIndex == -1 ) {
+                break;
+            }
+            else {            
+                buffer.replace( searchIndex, searchIndex + termToFind.length(), replacementTerm );
+                searchIndex += replacementTerm.length();
+            }                        
+        }
+        
+        return buffer.toString();
     }
 
 }

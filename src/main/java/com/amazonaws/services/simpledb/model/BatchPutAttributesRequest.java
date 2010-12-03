@@ -96,9 +96,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9,
-     * '_', '-', and '.'.
+     * The name of the domain in which the attributes are being stored.
      */
     private String domainName;
 
@@ -118,9 +116,8 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param domainName The name of the domain to create. The name can range
-     * between 3 and 255 characters and can contain the following characters:
-     * a-z, A-Z, 0-9, '_', '-', and '.'.
+     * @param domainName The name of the domain in which the attributes are
+     * being stored.
      * @param items A list of items on which to perform the operation.
      */
     public BatchPutAttributesRequest(String domainName, java.util.List<ReplaceableItem> items) {
@@ -129,41 +126,29 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9,
-     * '_', '-', and '.'.
+     * The name of the domain in which the attributes are being stored.
      *
-     * @return The name of the domain to create. The name can range between 3 and 255
-     *         characters and can contain the following characters: a-z, A-Z, 0-9,
-     *         '_', '-', and '.'.
+     * @return The name of the domain in which the attributes are being stored.
      */
     public String getDomainName() {
         return domainName;
     }
     
     /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9,
-     * '_', '-', and '.'.
+     * The name of the domain in which the attributes are being stored.
      *
-     * @param domainName The name of the domain to create. The name can range between 3 and 255
-     *         characters and can contain the following characters: a-z, A-Z, 0-9,
-     *         '_', '-', and '.'.
+     * @param domainName The name of the domain in which the attributes are being stored.
      */
     public void setDomainName(String domainName) {
         this.domainName = domainName;
     }
     
     /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9,
-     * '_', '-', and '.'.
+     * The name of the domain in which the attributes are being stored.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param domainName The name of the domain to create. The name can range between 3 and 255
-     *         characters and can contain the following characters: a-z, A-Z, 0-9,
-     *         '_', '-', and '.'.
+     * @param domainName The name of the domain in which the attributes are being stored.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

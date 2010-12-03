@@ -14,7 +14,7 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import static com.amazonaws.services.s3.internal.Constants.*;
+import com.amazonaws.services.s3.internal.Constants.*;
 
 import java.io.FilterInputStream;
 import java.io.IOException;
@@ -30,7 +30,7 @@ import com.amazonaws.services.s3.model.ProgressListener;
 public class ProgressReportingInputStream extends FilterInputStream {
 
     /** The threshold of bytes between notifications. */
-    private static final int NOTIFICATION_THRESHOLD = 8 * KB;
+    private static final int NOTIFICATION_THRESHOLD = 8 * Constants.KB;
 
     /** The listener to notify. */
     private final ProgressListener listener;

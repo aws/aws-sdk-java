@@ -45,16 +45,16 @@ public class Constants {
 
     /** Kilobytes */
     public static final int KB = 1024;
-    
+
     /** Megabytes */
     public static final int MB = 1024 * KB;
-    
+
     /** Gigabytes */
-    public static final int GB = 1024 * MB;
+    public static final long GB = 1024 * MB;
 
     /** The maximum allowed parts in a multipart upload. */
     public static final int MAXIMUM_UPLOAD_PARTS = 10000;
-    
+
     /**
      * The default size of the buffer when uploading data from a stream. A
      * buffer of this size will be created and filled with the first bytes from

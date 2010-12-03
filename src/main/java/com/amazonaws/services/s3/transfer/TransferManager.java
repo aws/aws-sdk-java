@@ -62,18 +62,18 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  * like all the client classes in the AWS SDK for Java, is thread safe.
  * <p>
  * Using <code>TransferManager</code> to upload data to Amazon S3 is easy:
- * 
+ *
  * <pre>
  * AWSCredentials myCredentials = new BasicAWSCredentials(...);
  * TransferManager tx = new TransferManager(myCredentials);
  * Upload myUpload = tx.upload(myBucket, myFile.getName(), myFile);
- * 
+ *
  * while (myUpload.isDone() == false) {
  *     System.out.println("Transfer: " + myUpload.getDescription());
- *     System.out.println("  - Status: " + myUpload.getStatus());
+ *     System.out.println("  - State: " + myUpload.getState());
  *     System.out.println("  - Progress: " + myUpload.getProgress().getBytesTransfered());
  *     // Do work while we wait for our upload to complete...
- *     Thread.sleep(500);     
+ *     Thread.sleep(500);
  * }
  * </pre>
  * <p>
@@ -82,31 +82,31 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  * that are incomplete.
  */
 public class TransferManager {
-    
+
     /** The low level client we use to make the actual calls to Amazon S3. */
     private AmazonS3 s3;
-    
+
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
-    
+
     /** The thread pool in which transfers are uploaded or downloaded. */
     private ThreadPoolExecutor threadPool;
 
     /** The thread pool in which progress listeners are notified of events. */
     private ExecutorService notificationThreadPool;
-    
+
 
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
      * the specified AWS security credentials.
      * <p>
-     * <code>TransferManager</code> and client objects 
+     * <code>TransferManager</code> and client objects
      * may pool connections and threads.
      * Reuse <code>TransferManager</code> and client objects
      * and share them throughout applications.
      * <p>
      * TransferManager and all AWS client objects are thread safe.
-     * 
+     *
      * @param credentials
      *            The AWS security credentials to use when making authenticated
      *            requests.
@@ -116,18 +116,18 @@ public class TransferManager {
     }
 
     /**
-     * Constructs a new <code>TransferManager</code>, 
+     * Constructs a new <code>TransferManager</code>,
      * specifying the client to use when making
      * requests to Amazon S3.
      * <p>
-     * <code>TransferManager</code> and client objects 
+     * <code>TransferManager</code> and client objects
      * may pool connections and threads.
      * Reuse <code>TransferManager</code> and client objects
      * and share them throughout applications.
      * <p>
      * TransferManager and all AWS client objects are thread safe.
      * </p>
-     * 
+     *
      * @param s3
      *            The client to use when making requests to Amazon S3.
      */
@@ -136,17 +136,17 @@ public class TransferManager {
     }
 
     /**
-     * Constructs a new <code>TransferManager</code> 
+     * Constructs a new <code>TransferManager</code>
      * specifying the client and thread pool to use when making
      * requests to Amazon S3.
      * <p>
-     * <code>TransferManager</code> and client objects 
+     * <code>TransferManager</code> and client objects
      * may pool connections and threads.
      * Reuse <code>TransferManager</code> and client objects
      * and share them throughout applications.
      * <p>
      * TransferManager and all AWS client objects are thread safe.
-     * 
+     *
      * @param s3
      *            The client to use when making requests to Amazon S3.
      * @param threadPool
@@ -159,13 +159,13 @@ public class TransferManager {
         this.notificationThreadPool = Executors.newFixedThreadPool(1);
     }
 
-    
+
     /**
      * Sets the configuration which specifies how
      * this <code>TransferManager</code> processes requests.
-     * 
+     *
      * @param configuration
-     *            The new configuration specifying how 
+     *            The new configuration specifying how
      *            this <code>TransferManager</code>
      *            processes requests.
      */
@@ -176,7 +176,7 @@ public class TransferManager {
     /**
      * Returns the configuration which specifies how
      * this <code>TransferManager</code> processes requests.
-     * 
+     *
      * @return The configuration settings for this <code>TransferManager</code>.
      */
     public TransferManagerConfiguration getConfiguration() {
@@ -186,7 +186,7 @@ public class TransferManager {
     /**
      * Returns the underlying Amazon S3 client used to make requests to
      * Amazon S3.
-     * 
+     *
      * @return The underlying Amazon S3 client used to make requests to
      *         Amazon S3.
      */
@@ -202,7 +202,7 @@ public class TransferManager {
      * </p>
      * <p>
      * When uploading data from a stream, callers <b>must</b> supply the size of
-     * data in the stream through the content length field in the 
+     * data in the stream through the content length field in the
      * <code>ObjectMetadata</code> parameter.
      * If no content length is specified for the input
      * stream, then TransferManager will attempt to buffer all the stream
@@ -216,11 +216,11 @@ public class TransferManager {
      * complete.
      * </p>
      * <p>
-     * If resources are available, the upload will begin immediately. 
-     * Otherwise, the upload is scheduled and started as soon as 
+     * If resources are available, the upload will begin immediately.
+     * Otherwise, the upload is scheduled and started as soon as
      * resources become available.
      * </p>
-     * 
+     *
      * @param bucketName
      *            The name of the bucket to upload the new object to.
      * @param key
@@ -232,11 +232,11 @@ public class TransferManager {
      *            Additional information about the object being uploaded,
      *            including the size of the data, content type, additional
      *            custom user metadata, etc.
-     * 
-     * @return A new <code>Upload<code> object to use to check 
-     * 		   the state of the upload, listen for progress notifications, 
+     *
+     * @return A new <code>Upload<code> object to use to check
+     * 		   the state of the upload, listen for progress notifications,
      * 		   and otherwise manage the upload.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -244,7 +244,7 @@ public class TransferManager {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public Upload upload(final String bucketName, final String key, final InputStream input, ObjectMetadata objectMetadata) 
+    public Upload upload(final String bucketName, final String key, final InputStream input, ObjectMetadata objectMetadata)
         throws AmazonServiceException, AmazonClientException {
         return upload(new PutObjectRequest(bucketName, key, input, objectMetadata));
     }
@@ -261,7 +261,7 @@ public class TransferManager {
      * <p>
      * If resources are available, the upload will begin immediately, otherwise
      * it will be scheduled and started as soon as resources become available.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket to upload the new object to.
      * @param key
@@ -269,11 +269,11 @@ public class TransferManager {
      *            object.
      * @param file
      *            The file to upload.
-     * 
+     *
      * @return A new Upload object which can be used to check state of the
      *         upload, listen for progress notifications, and otherwise manage
      *         the upload.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -281,7 +281,7 @@ public class TransferManager {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public Upload upload(final String bucketName, final String key, final File file) 
+    public Upload upload(final String bucketName, final String key, final File file)
         throws AmazonServiceException, AmazonClientException {
         return upload(new PutObjectRequest(bucketName, key, file));
     }
@@ -299,18 +299,18 @@ public class TransferManager {
      * complete.
      * </p>
      * <p>
-     * If resources are available, the upload will begin immediately. 
-     * Otherwise, the upload is scheduled and started as soon as 
+     * If resources are available, the upload will begin immediately.
+     * Otherwise, the upload is scheduled and started as soon as
      * resources become available.
      * </p>
-     * 
+     *
      * @param putObjectRequest
      *            The request containing all the parameters for the upload.
-     * 
-     * @return A new <code>Upload<code> object to use to check 
-     * 		   the state of the upload, listen for progress notifications, 
+     *
+     * @return A new <code>Upload<code> object to use to check
+     * 		   the state of the upload, listen for progress notifications,
      * 		   and otherwise manage the upload.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -318,13 +318,13 @@ public class TransferManager {
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      */
-    public Upload upload(final PutObjectRequest putObjectRequest) 
+    public Upload upload(final PutObjectRequest putObjectRequest)
         throws AmazonServiceException, AmazonClientException {
 
         if (putObjectRequest.getMetadata() == null)
             putObjectRequest.setMetadata(new ObjectMetadata());
         ObjectMetadata metadata = putObjectRequest.getMetadata();
-        
+
         if (TransferManagerUtils.getRequestFile(putObjectRequest) != null) {
             File file = TransferManagerUtils.getRequestFile(putObjectRequest);
 
@@ -336,7 +336,7 @@ public class TransferManager {
                 metadata.setContentType(Mimetypes.getInstance().getMimetype(file));
             }
         }
-        
+
         String description = "Uploading to " + putObjectRequest.getBucketName() + "/" + putObjectRequest.getKey();
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         transferProgress.setTotalBytesToTransfer(TransferManagerUtils.getContentLength(putObjectRequest));
@@ -346,19 +346,19 @@ public class TransferManager {
                 new TransferProgressUpdatingListener(transferProgress),
                 putObjectRequest.getProgressListener());
         putObjectRequest.setProgressListener(listenerChain);
-        
+
         UploadImpl upload = new UploadImpl(description, transferProgress, listenerChain);
-        
+
         Callable<UploadResult> callable = null;
         if (TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration)) {
             callable = new MultipartUploadCallable(this, threadPool, putObjectRequest, listenerChain);
         } else {
             callable = new PutObjectCallable(s3, putObjectRequest);
         }
-        
+
         callable = new TransferStateUpdatingCallable(callable, upload);
         upload.setFuture(threadPool.submit(callable));
-        
+
         return upload;
     }
 
@@ -368,11 +368,11 @@ public class TransferManager {
      * </p>
      * <p>
      * This method is useful for cleaning up any interrupted multipart uploads.
-     * <code>TransferManager</code> attempts to abort any failed uploads, 
+     * <code>TransferManager</code> attempts to abort any failed uploads,
      * but in some cases this may not be possible, such as if network connectivity
      * is completely lost.
      * </p>
-     * 
+     *
      * @param bucketName
      *            The name of the bucket containing the multipart uploads to
      *            abort.
@@ -389,7 +389,7 @@ public class TransferManager {
                             bucketName, upload.getKey(), upload.getUploadId()));
                 }
             }
-            
+
             ListMultipartUploadsRequest request = new ListMultipartUploadsRequest(bucketName)
                 .withUploadIdMarker(uploadListing.getNextUploadIdMarker())
                 .withKeyMarker(uploadListing.getNextKeyMarker());
@@ -397,4 +397,28 @@ public class TransferManager {
         } while (uploadListing.isTruncated());
     }
 
+    /**
+     * Forcefully shuts down this TransferManager instance - currently executing
+     * transfers will not be allowed to finish. Callers should use this method
+     * when they either:
+     * <ul>
+     * <li>have already verified that their transfers have completed by checking
+     * each transfer's state
+     * <li>need to exit quickly and don't mind stopping transfers before they
+     * complete.
+     * </ul>
+     * <p>
+     * Callers should also remember that uploaded parts from an interrupted
+     * upload may not always be automatically cleaned up, but callers can use
+     * {@link #abortMultipartUploads(String, Date)} to clean up any upload
+     * parts.
+     */
+    public void shutdownNow() {
+        threadPool.shutdownNow();
+        notificationThreadPool.shutdownNow();
+
+        if (s3 instanceof AmazonS3Client) {
+            ((AmazonS3Client)s3).shutdown();
+        }
+    }
 }
