@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,6 +28,25 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest {
 
     /** The name of the bucket containing the uploads to list. */
     private String bucketName;
+
+	/**
+	 * Optional parameter that causes multipart uploads for keys that contain
+	 * the same string between the prefix and the first occurrence of the
+	 * delimiter to be rolled up into a single result element in the
+	 * {@link MultipartUploadListing#getCommonPrefixes()} list. These rolled-up
+	 * keys are not returned elsewhere in the response. The most commonly used
+	 * delimiter is "/", which simulates a hierarchical organization similar to
+	 * a file system directory structure.
+	 */
+    private String delimiter;
+
+	/**
+	 * Optional parameter restricting the response to multipart uploads for keys
+	 * which begin with the specified prefix. You can use prefixes to separate a
+	 * bucket into different sets of keys in a way similar to how a file system
+	 * uses folders.
+	 */
+    private String prefix;
 
     /** The optional maximum number of uploads to return. */
     private Integer maxUploads;
@@ -256,4 +275,107 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+	/**
+	 * Returns the optional delimiter parameter that causes multipart uploads for
+	 * keys that contain the same string between the prefix and the first
+	 * occurrence of the delimiter to be combined into a single result element
+	 * in the {@link MultipartUploadListing#getCommonPrefixes()} list. These
+	 * combined keys are not returned elsewhere in the response. The most
+	 * commonly used delimiter is "/", which simulates a hierarchical
+	 * organization similar to a file system directory structure.
+	 *
+	 * @return The optional delimiter parameter that causes multipart uploads
+	 *         for keys that contain the same string between the prefix and the
+	 *         first occurrence of the delimiter to be combined into a single
+	 *         result element in the {@link MultipartUploadListing#getCommonPrefixes()}
+	 *         list.
+	 */
+    public String getDelimiter() {
+        return delimiter;
+    }
+
+	/**
+	 * Sets the optional delimiter parameter that causes multipart uploads for
+	 * keys that contain the same string between the prefix and the first
+	 * occurrence of the delimiter to be combined into a single result element
+	 * in the {@link MultipartUploadListing#getCommonPrefixes()} list.
+	 *
+	 * @param delimiter
+	 *            The optional delimiter parameter that causes multipart uploads
+	 *            for keys that contain the same string between the prefix and
+	 *            the first occurrence of the delimiter to be combined into a
+	 *            single result element in the
+	 *            {@link MultipartUploadListing#getCommonPrefixes()} list.
+	 */
+    public void setDelimiter(String delimiter) {
+        this.delimiter = delimiter;
+    }
+
+	/**
+	 * Sets the optional delimiter parameter that causes multipart uploads for
+	 * keys that contain the same string between the prefix and the first
+	 * occurrence of the delimiter to be rolled up into a single result element
+	 * in the {@link MultipartUploadListing#getCommonPrefixes()} list. Returns
+	 * this {@link ListMultipartUploadsRequest}, enabling additional method
+	 * calls to be chained together.
+	 *
+	 * @param delimiter
+	 *            The optional delimiter parameter that causes multipart uploads
+	 *            for keys that contain the same string between the prefix and
+	 *            the first occurrence of the delimiter to be rolled up into a
+	 *            single result element in the
+	 *            {@link MultipartUploadListing#getCommonPrefixes()} list.
+	 *
+	 * @return This {@link ListMultipartUploadsRequest}, enabling additional
+	 *         method calls to be chained together.
+	 */
+    public ListMultipartUploadsRequest withDelimiter(String delimiter) {
+        setDelimiter(delimiter);
+        return this;
+    }
+
+	/**
+	 * Returns the optional prefix parameter that restricts the response to
+	 * multipart uploads for keys that begin with the specified prefix. Use
+	 * prefixes to separate a bucket into different sets of keys, similar to how
+	 * a file system organizes files into directories.
+	 *
+	 * @return The optional prefix parameter restricting the response to
+	 *         multipart uploads for keys that begin with the specified prefix.
+	 */
+    public String getPrefix() {
+        return prefix;
+    }
+
+	/**
+	 * Sets the optional prefix parameter, restricting the response to multipart
+	 * uploads for keys that begin with the specified prefix.
+	 *
+	 * @param prefix
+	 *            The optional prefix parameter, restricting the response to
+	 *            multipart uploads for keys that begin with the specified
+	 *            prefix.
+	 */
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+	/**
+	 * Sets the optional prefix parameter restricting the response to multipart
+	 * uploads for keys that begin with the specified prefix. Returns this
+	 * {@link ListMultipartUploadsRequest}, enabling additional method calls to
+	 * be chained together.
+	 *
+	 * @param prefix
+	 *            The optional prefix parameter restricting the response to
+	 *            multipart uploads for keys that begin with the specified
+	 *            prefix.
+	 *
+	 * @return This {@link ListMultipartUploadsRequest}, enabling additional
+	 *         method calls to be chained together.
+	 */
+    public ListMultipartUploadsRequest withPrefix(String prefix) {
+        setPrefix(prefix);
+        return this;
+    }
 }

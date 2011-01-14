@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -357,22 +357,22 @@ public class SimpleDBUtils {
     public static String quoteName(String name) {
         return "`" + replaceChar( name, "`", "``" ) + "`";
     }
-    
+
     protected static String replaceChar( String value, String termToFind, String replacementTerm ) {
         StringBuilder buffer = new StringBuilder( value );
-        
+
         int searchIndex = 0;
         while ( searchIndex < buffer.length() ) {
             searchIndex = buffer.indexOf( termToFind, searchIndex );
             if ( searchIndex == -1 ) {
                 break;
             }
-            else {            
+            else {
                 buffer.replace( searchIndex, searchIndex + termToFind.length(), replacementTerm );
                 searchIndex += replacementTerm.length();
-            }                        
+            }
         }
-        
+
         return buffer.toString();
     }
 

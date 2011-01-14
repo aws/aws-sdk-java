@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,7 +84,11 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
      * object has been modified since the specified date.
      */
     private Date modifiedSinceConstraint;
-
+    
+    /**
+     * Optional field that overrides headers on the response.
+     */
+    private ResponseHeaderOverrides responseHeaders;
 
     /**
      * Constructs a new {@link GetObjectRequest} with all the required parameters.
@@ -632,4 +636,37 @@ public class GetObjectRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+    /**
+     * Returns the headers to be overridden in the service response.
+     * 
+     * @return the headers to be overridden in the service response.
+     */
+    public ResponseHeaderOverrides getResponseHeaders() {
+        return responseHeaders;
+    }
+
+    /**
+     * Sets the headers to be overridden in the service response.
+     * 
+     * @param responseHeaders
+     *            The headers to be overridden in the service response.
+     */
+    public void setResponseHeaders(ResponseHeaderOverrides responseHeaders) {
+        this.responseHeaders = responseHeaders;
+    }
+
+    /**
+     * Sets the headers to be overridden in the service response and returns
+     * this object, for method chaining.
+     * 
+     * @param responseHeaders
+     *            The headers to be overridden in the service response.
+     * 
+     *            
+     * @return This {@link GetObjectRequest} for method chaining.
+     */
+    public GetObjectRequest withResponseHeaders(ResponseHeaderOverrides responseHeaders) {
+        setResponseHeaders(responseHeaders);
+        return this;
+    }
 }

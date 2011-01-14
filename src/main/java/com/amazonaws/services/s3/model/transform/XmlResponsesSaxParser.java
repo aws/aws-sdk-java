@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -1414,6 +1414,8 @@ public class XmlResponsesSaxParser {
      * <ListMultipartUploadsResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
      *     <Bucket>bucket</Bucket>
      *     <KeyMarker></KeyMarker>
+     *     <Delimiter>/</Delimiter>
+     *     <Prefix/>
      *     <UploadIdMarker></UploadIdMarker>
      *     <NextKeyMarker>my-movie.m2ts</NextKeyMarker>
      *     <NextUploadIdMarker>YW55IGlkZWEgd2h5IGVsdmluZydzIHVwbG9hZCBmYWlsZWQ</NextUploadIdMarker>
@@ -1449,6 +1451,12 @@ public class XmlResponsesSaxParser {
      *         <StorageClass>STANDARD</StorageClass>
      *         <Initiated>Wed, 27 Jan 2010 03:02:01 GMT</Initiated>
      *     </Upload>
+     *    <CommonPrefixes>
+     *        <Prefix>photos/</Prefix>
+     *    </CommonPrefixes>
+     *    <CommonPrefixes>
+     *        <Prefix>videos/</Prefix>
+     *    </CommonPrefixes>
      * </ListMultipartUploadsResult>
      */
     public class ListMultipartUploadsHandler extends DefaultHandler {
@@ -1459,6 +1467,8 @@ public class XmlResponsesSaxParser {
         private MultipartUpload currentMultipartUpload;
         private Owner currentOwner;
         private Owner currentInitiator;
+
+        boolean inCommonPrefixes = false;
 
         public MultipartUploadListing getListMultipartUploadsResult() {
             return result;
@@ -1475,6 +1485,7 @@ public class XmlResponsesSaxParser {
                 result = new MultipartUploadListing();
             } else if (name.equals("Bucket")) {
             } else if (name.equals("KeyMarker")) {
+            } else if (name.equals("Delimiter")) {
             } else if (name.equals("UploadIdMarker")) {
             } else if (name.equals("NextKeyMarker")) {
             } else if (name.equals("NextUploadIdMarker")) {
@@ -1492,6 +1503,8 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("DisplayName")) {
             } else if (name.equals("StorageClass")) {
             } else if (name.equals("Initiated")) {
+            } else if (name.equals("CommonPrefixes")) {
+            	inCommonPrefixes = true;
             }
             text.setLength(0);
         }
@@ -1503,6 +1516,12 @@ public class XmlResponsesSaxParser {
                 result.setBucketName(text.toString());
             } else if (name.equals("KeyMarker")) {
                 result.setKeyMarker(checkForEmptyString(text.toString()));
+            } else if (name.equals("Delimiter")) {
+                result.setDelimiter(checkForEmptyString(text.toString()));
+            } else if (name.equals("Prefix") && inCommonPrefixes == false) {
+            	result.setPrefix(checkForEmptyString(text.toString()));
+            } else if (name.equals("Prefix") && inCommonPrefixes == true) {
+            	result.getCommonPrefixes().add(text.toString());
             } else if (name.equals("UploadIdMarker")) {
                 result.setUploadIdMarker(checkForEmptyString(text.toString()));
             } else if (name.equals("NextKeyMarker")) {
@@ -1543,6 +1562,8 @@ public class XmlResponsesSaxParser {
                             "Non-ISO8601 date for Initiated in initiate multipart upload result: "
                             + text.toString(), e);
                 }
+            } else if (name.equals("CommonPrefixes")) {
+            	inCommonPrefixes = false;
             }
         }
 

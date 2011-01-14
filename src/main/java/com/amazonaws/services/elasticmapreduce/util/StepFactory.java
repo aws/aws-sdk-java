@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,7 +61,7 @@ import com.amazonaws.util.StringUtils;
  */
 public class StepFactory {
     private final String bucket;
-    
+
     /**
      *  The available Hive versions.  These are only available on Hadoop 0.20
      *  Hive_0_5 Hive 0.5
@@ -157,7 +157,7 @@ public class StepFactory {
     /**
      * Step that installs the default version of Hive on your job flow.  This is
      * 0.4 for Hadoop 0.18 and 0.5 for Hadoop 0.20.
-     * 
+     *
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
     public HadoopJarStepConfig newInstallHiveStep() {

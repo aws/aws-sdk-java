@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,7 @@ import com.amazonaws.services.simpledb.model.transform.*;
  * using this client are blocking, and will not return until the service call
  * completes.
  * <p>
- * <p>
+ * Amazon SimpleDB <p>
  * Amazon SimpleDB is a web service providing the core database
  * functions of data indexing and querying in the cloud. By offloading
  * the time and effort associated with building and operating a web-scale
@@ -712,7 +712,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
      *         is available.
      */
     public SimpleDBResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request) {
-        return new SimpleDBResponseMetadata(client.getResponseMetadataForRequest(request));
+        ResponseMetadata metadata = client.getResponseMetadataForRequest(request);
+        if (metadata != null)
+          return new SimpleDBResponseMetadata(metadata);
+        else
+          return null;
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {

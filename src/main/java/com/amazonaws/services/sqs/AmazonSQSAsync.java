@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ import com.amazonaws.services.sqs.model.*;
 /**
  * Interface for accessing AmazonSQS asynchronously,
  * using Java Futures.
- * <p>
+ * Amazon Simple Queue Service <p>
  * Amazon Simple Queue Service (Amazon SQS) offers a reliable, highly
  * scalable, hosted queue for storing messages as they travel between
  * computers. By using Amazon SQS, developers can simply move data

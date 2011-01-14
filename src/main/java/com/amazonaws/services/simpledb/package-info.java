@@ -2,7 +2,7 @@
 /**
  * Synchronous and asynchronous client classes for accessing AmazonSimpleDB.
  *
- * <p>
+ * Amazon SimpleDB <p>
  * Amazon SimpleDB is a web service providing the core database
  * functions of data indexing and querying in the cloud. By offloading
  * the time and effort associated with building and operating a web-scale

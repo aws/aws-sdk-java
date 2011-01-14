@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -111,6 +112,7 @@ import com.amazonaws.services.s3.model.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
+import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
@@ -738,13 +740,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (getObjectRequest.getVersionId() != null) {
             request.addParameter("versionId", getObjectRequest.getVersionId());
-        }
+        }        
 
         // Range
         if (getObjectRequest.getRange() != null) {
             long[] range = getObjectRequest.getRange();
             request.addHeader(Headers.RANGE, "bytes=" + Long.toString(range[0]) + "-" + Long.toString(range[1]));
         }
+        
+        addResponseHeaderParameters(request, getObjectRequest.getResponseHeaders());
 
         addDateHeader(request, Headers.GET_OBJECT_IF_MODIFIED_SINCE,
                 getObjectRequest.getModifiedSinceConstraint());
@@ -1033,13 +1037,13 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         fireProgressEvent(progressListener, ProgressEvent.COMPLETED_EVENT_CODE);
-        
+
         PutObjectResult result = new PutObjectResult();
         result.setETag(returnedMetadata.getETag());
         result.setVersionId(returnedMetadata.getVersionId());
         return result;
     }
-    
+
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#copyObject(java.lang.String, java.lang.String, java.lang.String, java.lang.String)
      */
@@ -1465,6 +1469,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
+        
+        addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
         presignRequest(request, generatePresignedUrlRequest.getMethod(),
                 bucketName, key, generatePresignedUrlRequest.getExpiration(), null);
@@ -1599,6 +1605,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String keyMarker = listMultipartUploadsRequest.getKeyMarker();
         Integer maxUploads = listMultipartUploadsRequest.getMaxUploads();
         String uploadIdMarker = listMultipartUploadsRequest.getUploadIdMarker();
+        String delimiter = listMultipartUploadsRequest.getDelimiter();
+        String prefix = listMultipartUploadsRequest.getPrefix();
 
         assertParameterNotNull(bucketName,
             "The bucket name parameter must be specified when listing multipart uploads");
@@ -1609,6 +1617,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         if (keyMarker != null) request.addParameter("key-marker", keyMarker);
         if (maxUploads != null) request.addParameter("max-uploads", maxUploads.toString());
         if (uploadIdMarker != null) request.addParameter("upload-id-marker", uploadIdMarker);
+        if (delimiter != null) request.addParameter("delimiter", delimiter);
+        if (prefix != null) request.addParameter("prefix", prefix);
 
         signRequest(request, HttpMethodName.GET, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.GET);
@@ -1690,7 +1700,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         signRequest(request, HttpMethodName.PUT, bucketName, key);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.PUT);
         httpRequest.addHeader(Headers.CONTENT_LENGTH, Long.toString(partSize));
-        
+
         InputStream inputStream = null;
         if (uploadPartRequest.getInputStream() != null) {
             inputStream = uploadPartRequest.getInputStream();
@@ -1716,7 +1726,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             S3MetadataResponseHandler responseHandler = new S3MetadataResponseHandler();
             ObjectMetadata metadata = client.execute(httpRequest, responseHandler, errorResponseHandler);
             fireProgressEvent(progressListener, ProgressEvent.PART_COMPLETED_EVENT_CODE);
-            
+
             UploadPartResult result = new UploadPartResult();
             result.setETag(metadata.getETag());
             result.setPartNumber(partNumber);
@@ -1762,7 +1772,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /**
      * Fires a progress event with the specified event type to the specified
      * listener.
-     * 
+     *
      * @param listener
      *            The listener to receive the event.
      * @param eventType
@@ -2175,6 +2185,42 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     private static void addStringListHeader(Request<?> request, String header, List<String> values) {
         if (values != null && !values.isEmpty()) {
             request.addHeader(header, ServiceUtils.join(values));
+        }
+    }
+    
+    /**
+     * <p>
+     * Adds response headers parameters to the request given, if non-null.
+     * </p>
+     * 
+     * @param request
+     *            The request to add the response header parameters to.
+     * @param responseHeaders
+     *            The full set of response headers to add, or null for none.
+     */
+    private static void addResponseHeaderParameters(Request<?> request, ResponseHeaderOverrides responseHeaders) {
+        if ( responseHeaders != null ) {
+            if ( responseHeaders.getCacheControl() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL, responseHeaders.getCacheControl());
+            }
+            if ( responseHeaders.getContentDisposition() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
+                        responseHeaders.getContentDisposition());
+            }
+            if ( responseHeaders.getContentEncoding() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
+                        responseHeaders.getContentEncoding());
+            }
+            if ( responseHeaders.getContentLanguage() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_LANGUAGE,
+                        responseHeaders.getContentLanguage());
+            }
+            if ( responseHeaders.getContentType() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_TYPE, responseHeaders.getContentType());
+            }
+            if ( responseHeaders.getExpires() != null ) {
+                request.addParameter(ResponseHeaderOverrides.RESPONSE_HEADER_EXPIRES, responseHeaders.getExpires());
+            }
         }
     }
 

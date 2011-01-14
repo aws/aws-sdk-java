@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,9 +88,9 @@ public class HttpClient {
 
     private Random random = new Random();
 
-    
+
     static {
-        // Customers have reported XML parsing issues with the following 
+        // Customers have reported XML parsing issues with the following
         // JVM versions, which don't occur with more recent versions, so
         // if we detect any of these, give customers a heads up.
         List<String> problematicJvmVersions = Arrays.asList(new String[] {
@@ -189,7 +189,7 @@ public class HttpClient {
                 if (retries > 0) pauseExponentially(retries, exception);
                 exception = null;
                 retries++;
-                
+
                 int status = httpClient.executeMethod(method);
 
                 if (isRequestSuccessful(status)) {
@@ -552,7 +552,7 @@ public class HttpClient {
     /**
      * Exponential sleep on failed request to avoid flooding a service with
      * retries.
-     * 
+     *
      * @param retries
      *            Current retry count.
      * @param previousException
@@ -567,20 +567,20 @@ public class HttpClient {
 
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);
-        
+
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
-            // Nothing we need to do here
+        	throw new AmazonClientException(e.getMessage(), e);
         }
     }
 
     /**
      * Returns true if the specified exception is a throttling error.
-     * 
+     *
      * @param ase
      *            The exception to test.
-     * 
+     *
      * @return True if the exception resulted from a throttling error message
      *         from a service, otherwise false.
      */

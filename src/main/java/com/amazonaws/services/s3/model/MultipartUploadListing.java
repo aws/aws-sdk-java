@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,6 +36,18 @@ public class MultipartUploadListing {
     private String keyMarker;
 
     /**
+     * The optional delimiter specified in the original request to control how
+     * multipart uploads for keys with common prefixes are condensed.
+     */
+    private String delimiter;
+
+	/**
+	 * The optional prefix specified in the original request to limit the
+	 * returned multipart uploads to those for keys that match this prefix.
+	 */
+    private String prefix;
+
+    /**
      * The optional upload ID marker specified in the original request to
      * specify where in the results to begin listing multipart uploads.
      */
@@ -67,6 +79,14 @@ public class MultipartUploadListing {
 
     /** The list of multipart uploads. */
     private List<MultipartUpload> multipartUploads;
+
+    /**
+     * A list of the common prefixes included in this multipart upload listing - common
+     * prefixes will only be populated for requests that specified a delimiter, and indicate
+     * additional key prefixes that contain more multipart uploads that have not been included
+     * in this listing.
+     */
+    private List<String> commonPrefixes = new ArrayList<String>();
 
 
     /**
@@ -256,4 +276,107 @@ public class MultipartUploadListing {
         this.multipartUploads = multipartUploads;
     }
 
+    /**
+     * <p>
+     * Returns the common prefixes included in this multipart upload listing. Common
+     * prefixes are only present if a delimiter was specified in the original
+     * request.
+     * </p>
+     * <p>
+     * Each common prefix represents a set of keys in the S3 bucket that have
+     * been condensed and omitted from the multipart upload listing results. This allows
+     * applications to organize and browse their multipart uploads hierarchically,
+     * similar to how a file system organizes files into directories.
+     * </p>
+     * <p>
+     * For example, consider a bucket that contains the following keys currently
+     * involved in multipart uploads:
+     * <ul>
+     *  <li>"foo/bar/baz"</li>
+     *  <li>"foo/bar/bash"</li>
+     *  <li>"foo/bar/bang"</li>
+     *  <li>"foo/boo"</li>
+     * </ul>
+     * If calling <code>listMultipartUploads</code> with the prefix="foo/" and the delimiter="/" on
+     * this bucket, the returned <code>MultipartUploadListing</code>
+     * will contain one entry in the common
+     * prefixes list ("foo/bar/") and none of the uploads for the keys beginning with that
+     * common prefix will be included in the multipart upload list.
+     *
+     * @return The list of common prefixes included in this multipart object listing,
+     *         which might be an empty list if no common prefixes were found.
+     */
+    public List<String> getCommonPrefixes() {
+        return commonPrefixes;
+    }
+
+	/**
+	 * For internal use only. Sets the common prefixes for this multipart upload
+	 * listing, representing the uploads for key prefixes that were rolled up
+	 * because of the request's delimiter parameter.
+	 *
+	 * @param commonPrefixes
+	 *            The common prefixes for this multipart upload listing.
+	 */
+    public void setCommonPrefixes(List<String> commonPrefixes) {
+        this.commonPrefixes = commonPrefixes;
+    }
+
+	/**
+	 * Gets the delimiter parameter originally used to request this multipart
+	 * upload listing, or <code>null</code> if no delimiter specified.
+	 * <p>
+	 * The delimiter value allows callers to condense multipart uploads for keys
+	 * with common prefixes. For example, if a caller specifies a delimiter of
+	 * "/" (a commonly used value for delimiter), any multipart uploads for keys
+	 * that contain a common prefix between the start of the key and the first
+	 * occurrence of "/" will not be included in the list of multipart uploads.
+	 * Instead, the common prefixes list will have one entry for the common
+	 * prefix.
+	 * </p>
+	 *
+	 * @return The delimiter parameter originally used to request this multipart
+	 *         upload listing. Returns <code>null</code> if no delimiter was
+	 *         specified.
+	 */
+    public String getDelimiter() {
+        return delimiter;
+    }
+
+	/**
+	 * For internal use only. Sets the delimiter parameter originally used to
+	 * request this multipart upload listing.
+	 *
+	 * @param delimiter
+	 *            The delimiter parameter originally used to request this
+	 *            multipart upload listing.
+	 */
+    public void setDelimiter(String delimiter) {
+        this.delimiter = delimiter;
+    }
+
+	/**
+	 * Returns the prefix parameter originally used to request this multipart
+	 * upload listing, or <code>null</code> if no prefix was specified. All
+	 * objects and common prefixes included in this multipart upload listing
+	 * start with the specified prefix.
+	 *
+	 * @return The prefix parameter originally used to request this multipart upload
+	 *         listing. Returns <code>null</code> if no prefix was specified.
+	 */
+    public String getPrefix() {
+        return prefix;
+    }
+
+	/**
+	 * For internal use only. Sets the prefix parameter originally used to
+	 * request this multipart upload listing.
+	 *
+	 * @param prefix
+	 *            The prefix parameter originally used to request this multipart
+	 *            upload listing.
+	 */
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
 }

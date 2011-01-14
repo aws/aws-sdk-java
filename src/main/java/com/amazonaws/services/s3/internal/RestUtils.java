@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -27,6 +27,7 @@ import java.util.TreeMap;
 
 import com.amazonaws.Request;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 
 /**
  * Utilities useful for REST/HTTP S3Service implementations.
@@ -36,10 +37,12 @@ public class RestUtils {
      * The set of request parameters which must be included in the canonical
      * string to sign.
      */
-    private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[]{
-        "acl", "torrent", "logging", "location", "policy", "requestPayment",
-        "versioning", "versions", "versionId", "notification",
-        "uploadId", "uploads", "partNumber"
+    private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] { "acl", "torrent", "logging",
+            "location", "policy", "requestPayment", "versioning", "versions", "versionId", "notification", "uploadId",
+            "uploads", "partNumber", ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION, ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_LANGUAGE, ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_TYPE,
+            ResponseHeaderOverrides.RESPONSE_HEADER_EXPIRES, 
     });
 
     /**

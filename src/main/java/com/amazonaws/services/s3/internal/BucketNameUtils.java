@@ -1,5 +1,5 @@
 /*
- * Copyright 2010 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public class BucketNameUtils {
          * To conform with DNS requirements:
          *  - Bucket names should not contain underscores (_)
          *  - Bucket names should be between 3 and 63 characters long
-         *  - Bucket names should not end with a dash
+         *  - Bucket names should not end with a dash or a period
          *  - Bucket names cannot contain two, adjacent periods
          *  - Bucket names cannot contain dashes next to periods
          *     - (e.g., "my-.bucket.com" and "my.-bucket" are invalid)
@@ -58,16 +58,19 @@ public class BucketNameUtils {
         if (bucketName.contains("_"))
             throw new IllegalArgumentException("Bucket name should not contain '_'");
 
+        if (bucketName.contains("!") || bucketName.contains("@") || bucketName.contains("#"))
+        	throw new IllegalArgumentException("Bucket name contains illegal characters");
+
         if (bucketName.length() < 3 || bucketName.length() > 63)
             throw new IllegalArgumentException("Bucket name should be between 3 and 63 characters long");
 
-        if (bucketName.endsWith("-"))
-            throw new IllegalArgumentException("Bucket name should not end with '-'");
+        if (bucketName.endsWith("-") || bucketName.endsWith("."))
+            throw new IllegalArgumentException("Bucket name should not end with '-' or '.'");
 
         if (bucketName.contains(".."))
             throw new IllegalArgumentException("Bucket name should not contain two adjacent periods");
 
-        if ( bucketName.contains("-.") || 
+        if ( bucketName.contains("-.") ||
              bucketName.contains(".-") )
             throw new IllegalArgumentException("Bucket name should not contain dashes next to periods");
     }
