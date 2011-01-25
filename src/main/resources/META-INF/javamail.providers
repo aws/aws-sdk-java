@@ -1,0 +1,3 @@
+# AWS Mail Provider
+protocol=aws; type=transport; class=com.amazonaws.services.simpleemail.AWSJavaMailTransport; vendor=Amazon Web Services LLC;
+
