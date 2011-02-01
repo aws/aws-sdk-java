@@ -51,6 +51,10 @@ public class DescribeAutoScalingGroupsResultStaxUnmarshaller implements Unmarsha
                     describeAutoScalingGroupsResult.getAutoScalingGroups().add(AutoScalingGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    describeAutoScalingGroupsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeAutoScalingGroupsResult;

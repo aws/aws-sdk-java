@@ -113,7 +113,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -179,8 +179,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private String privateIpAddress;
 
+    /**
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, go to How to Ensure Idempotency in
+     * the Amazon Elastic Compute Cloud User Guide.
+     */
     private String clientToken;
 
+    /**
+     * For internal use only.
+     */
     private String additionalInfo;
 
     /**
@@ -477,7 +485,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
      *
      * @return Specifies the instance type for the launched instances.
      *
@@ -491,7 +499,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -507,7 +515,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -985,29 +993,41 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, go to How to Ensure Idempotency in
+     * the Amazon Elastic Compute Cloud User Guide.
      *
-     * @return The value of the ClientToken property for this object.
+     * @return Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         the request. For more information, go to How to Ensure Idempotency in
+     *         the Amazon Elastic Compute Cloud User Guide.
      */
     public String getClientToken() {
         return clientToken;
     }
     
     /**
-     * Sets the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, go to How to Ensure Idempotency in
+     * the Amazon Elastic Compute Cloud User Guide.
      *
-     * @param clientToken The new value for the ClientToken property for this object.
+     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         the request. For more information, go to How to Ensure Idempotency in
+     *         the Amazon Elastic Compute Cloud User Guide.
      */
     public void setClientToken(String clientToken) {
         this.clientToken = clientToken;
     }
     
     /**
-     * Sets the value of the ClientToken property for this object.
+     * Unique, case-sensitive identifier you provide to ensure idempotency of
+     * the request. For more information, go to How to Ensure Idempotency in
+     * the Amazon Elastic Compute Cloud User Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param clientToken The new value for the ClientToken property for this object.
+     * @param clientToken Unique, case-sensitive identifier you provide to ensure idempotency of
+     *         the request. For more information, go to How to Ensure Idempotency in
+     *         the Amazon Elastic Compute Cloud User Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1019,29 +1039,29 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AdditionalInfo property for this object.
+     * For internal use only.
      *
-     * @return The value of the AdditionalInfo property for this object.
+     * @return For internal use only.
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * For internal use only.
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo For internal use only.
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * For internal use only.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo For internal use only.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

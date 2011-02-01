@@ -32,20 +32,31 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
-     * parameter isn't case sensitive.
+     * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
 
     /**
-     * 
+     * Determines whether a final DB Snapshot is created before the DB
+     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If false is specified, a DB Snapshot is created before the
+     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     * <p>Default: <code>false</code>
      */
     private Boolean skipFinalSnapshot;
 
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     * <i>false</i>, a DB Snapshot is created before the DB Instance is
-     * deleted.
+     * The DBSnapshotIdentifier of the new DBSnapshot created when
+     * SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     * parameter and also setting the SkipFinalShapshot parameter to true
+     * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     private String finalDBSnapshotIdentifier;
 
@@ -62,6 +73,10 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
      * 
      * @param dBInstanceIdentifier The DB Instance identifier for the DB
      * Instance to be deleted. This parameter isn't case sensitive.
+     * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     public DeleteDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -69,10 +84,16 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
-     * parameter isn't case sensitive.
+     * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      *
      * @return The DB Instance identifier for the DB Instance to be deleted. This
-     *         parameter isn't case sensitive.
+     *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     *         character must be a letter</li> <li>Cannot end with a hyphen or
+     *         contain two consecutive hyphens</li> </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -80,10 +101,16 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
-     * parameter isn't case sensitive.
+     * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      *
      * @param dBInstanceIdentifier The DB Instance identifier for the DB Instance to be deleted. This
-     *         parameter isn't case sensitive.
+     *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     *         character must be a letter</li> <li>Cannot end with a hyphen or
+     *         contain two consecutive hyphens</li> </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -91,12 +118,18 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This
-     * parameter isn't case sensitive.
+     * parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB Instance identifier for the DB Instance to be deleted. This
-     *         parameter isn't case sensitive.
+     *         parameter isn't case sensitive. <p>Constraints: <ul> <li>Must contain
+     *         from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     *         character must be a letter</li> <li>Cannot end with a hyphen or
+     *         contain two consecutive hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -108,29 +141,59 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * 
+     * Determines whether a final DB Snapshot is created before the DB
+     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If false is specified, a DB Snapshot is created before the
+     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     * <p>Default: <code>false</code>
      *
-     * @return 
+     * @return Determines whether a final DB Snapshot is created before the DB
+     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If false is specified, a DB Snapshot is created before the
+     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     *         <p>Default: <code>false</code>
      */
     public Boolean isSkipFinalSnapshot() {
         return skipFinalSnapshot;
     }
     
     /**
-     * 
+     * Determines whether a final DB Snapshot is created before the DB
+     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If false is specified, a DB Snapshot is created before the
+     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     * <p>Default: <code>false</code>
      *
-     * @param skipFinalSnapshot 
+     * @param skipFinalSnapshot Determines whether a final DB Snapshot is created before the DB
+     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If false is specified, a DB Snapshot is created before the
+     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     *         <p>Default: <code>false</code>
      */
     public void setSkipFinalSnapshot(Boolean skipFinalSnapshot) {
         this.skipFinalSnapshot = skipFinalSnapshot;
     }
     
     /**
-     * 
+     * Determines whether a final DB Snapshot is created before the DB
+     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If false is specified, a DB Snapshot is created before the
+     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     * <p>Default: <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param skipFinalSnapshot 
+     * @param skipFinalSnapshot Determines whether a final DB Snapshot is created before the DB
+     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If false is specified, a DB Snapshot is created before the
+     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     *         <p>Default: <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -142,56 +205,84 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * 
+     * Determines whether a final DB Snapshot is created before the DB
+     * Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     * is created. If false is specified, a DB Snapshot is created before the
+     * DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     * must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     * <p>Default: <code>false</code>
      *
-     * @return 
+     * @return Determines whether a final DB Snapshot is created before the DB
+     *         Instance is deleted. If <code>true</code> is specified, no DBSnapshot
+     *         is created. If false is specified, a DB Snapshot is created before the
+     *         DB Instance is deleted. <note>The FinalDBSnapshotIdentifier parameter
+     *         must be specified if SkipFinalSnapshot is <code>false</code>.</note>
+     *         <p>Default: <code>false</code>
      */
     public Boolean getSkipFinalSnapshot() {
         return skipFinalSnapshot;
     }
     
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     * <i>false</i>, a DB Snapshot is created before the DB Instance is
-     * deleted.
+     * The DBSnapshotIdentifier of the new DBSnapshot created when
+     * SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     * parameter and also setting the SkipFinalShapshot parameter to true
+     * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      *
-     * @return Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     *         <i>false</i>, a DB Snapshot is created before the DB Instance is
-     *         deleted.
+     * @return The DBSnapshotIdentifier of the new DBSnapshot created when
+     *         SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     *         parameter and also setting the SkipFinalShapshot parameter to true
+     *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      */
     public String getFinalDBSnapshotIdentifier() {
         return finalDBSnapshotIdentifier;
     }
     
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     * <i>false</i>, a DB Snapshot is created before the DB Instance is
-     * deleted.
+     * The DBSnapshotIdentifier of the new DBSnapshot created when
+     * SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     * parameter and also setting the SkipFinalShapshot parameter to true
+     * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      *
-     * @param finalDBSnapshotIdentifier Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     *         <i>false</i>, a DB Snapshot is created before the DB Instance is
-     *         deleted.
+     * @param finalDBSnapshotIdentifier The DBSnapshotIdentifier of the new DBSnapshot created when
+     *         SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     *         parameter and also setting the SkipFinalShapshot parameter to true
+     *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      */
     public void setFinalDBSnapshotIdentifier(String finalDBSnapshotIdentifier) {
         this.finalDBSnapshotIdentifier = finalDBSnapshotIdentifier;
     }
     
     /**
-     * Determines whether a final DB Snapshot is created before the DB
-     * Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     * <i>false</i>, a DB Snapshot is created before the DB Instance is
-     * deleted.
+     * The DBSnapshotIdentifier of the new DBSnapshot created when
+     * SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     * parameter and also setting the SkipFinalShapshot parameter to true
+     * results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param finalDBSnapshotIdentifier Determines whether a final DB Snapshot is created before the DB
-     *         Instance is deleted. If <i>true</i>, no DBSnapshot is created. If
-     *         <i>false</i>, a DB Snapshot is created before the DB Instance is
-     *         deleted.
+     * @param finalDBSnapshotIdentifier The DBSnapshotIdentifier of the new DBSnapshot created when
+     *         SkipFinalSnapshot is set to <code>false</code>. <note> Specifying this
+     *         parameter and also setting the SkipFinalShapshot parameter to true
+     *         results in an error. </note> <p>Constraints: <ul> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

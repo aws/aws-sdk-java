@@ -28,7 +28,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     /**
      * The offering identifier filter value. Specify this parameter to show
      * only the available offering that matches the specified reservation
-     * identifier.
+     * identifier. <p>Example:
+     * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
     private String reservedDBInstancesOfferingId;
 
@@ -40,7 +41,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
 
     /**
      * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     private String duration;
 
@@ -60,6 +62,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     private Integer maxRecords;
 
@@ -79,11 +82,13 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     /**
      * The offering identifier filter value. Specify this parameter to show
      * only the available offering that matches the specified reservation
-     * identifier.
+     * identifier. <p>Example:
+     * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
      * @return The offering identifier filter value. Specify this parameter to show
      *         only the available offering that matches the specified reservation
-     *         identifier.
+     *         identifier. <p>Example:
+     *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
     public String getReservedDBInstancesOfferingId() {
         return reservedDBInstancesOfferingId;
@@ -92,11 +97,13 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     /**
      * The offering identifier filter value. Specify this parameter to show
      * only the available offering that matches the specified reservation
-     * identifier.
+     * identifier. <p>Example:
+     * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
      * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
      *         only the available offering that matches the specified reservation
-     *         identifier.
+     *         identifier. <p>Example:
+     *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      */
     public void setReservedDBInstancesOfferingId(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
@@ -105,13 +112,15 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     /**
      * The offering identifier filter value. Specify this parameter to show
      * only the available offering that matches the specified reservation
-     * identifier.
+     * identifier. <p>Example:
+     * <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reservedDBInstancesOfferingId The offering identifier filter value. Specify this parameter to show
      *         only the available offering that matches the specified reservation
-     *         identifier.
+     *         identifier. <p>Example:
+     *         <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -164,10 +173,12 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     
     /**
      * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @return Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public String getDuration() {
         return duration;
@@ -175,10 +186,12 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     
     /**
      * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @param duration Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public void setDuration(String duration) {
         this.duration = duration;
@@ -186,12 +199,14 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     
     /**
      * Duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration Duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -297,10 +312,12 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -310,10 +327,12 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -323,12 +342,14 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

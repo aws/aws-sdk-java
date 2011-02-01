@@ -33,7 +33,10 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
-     * string.
+     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
 
@@ -49,7 +52,10 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter
-     * is stored as a lowercase string.
+     * is stored as a lowercase string. <p>Constraints: <ul> <li>Must contain
+     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      */
     public RebootDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -57,10 +63,16 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
-     * string.
+     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @return The DB Instance identifier. This parameter is stored as a lowercase
-     *         string.
+     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -68,10 +80,16 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
-     * string.
+     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter is stored as a lowercase
-     *         string.
+     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -79,12 +97,18 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
-     * string.
+     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter is stored as a lowercase
-     *         string.
+     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     *         alphanumeric characters or hyphens</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

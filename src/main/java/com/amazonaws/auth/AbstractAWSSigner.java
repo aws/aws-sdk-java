@@ -103,4 +103,24 @@ public abstract class AbstractAWSSigner {
         return endpointForStringToSign;
     }
 
+    /**
+     * Loads the individual access key ID and secret key from the specified credentials, ensuring that
+     * access to the credentials is synchronized on the credentials object itself, and trimming any extra
+     * whitespace from the credentials.
+     * @param credentials
+     * @return A new credentials object with the sanitized credentials.
+     */
+    protected AWSCredentials sanitizeCredentials(AWSCredentials credentials) {
+        String accessKeyId = null;
+        String secretKey   = null;
+        synchronized (credentials) {
+            accessKeyId = credentials.getAWSAccessKeyId();
+            secretKey   = credentials.getAWSSecretKey();
+        }
+        if (secretKey != null) secretKey = secretKey.trim();
+        if (accessKeyId != null) accessKeyId = accessKeyId.trim();
+
+        return new BasicAWSCredentials(accessKeyId, secretKey);
+    }
+
 }

@@ -32,7 +32,7 @@ public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<S
     public Request<SetDesiredCapacityRequest> marshall(SetDesiredCapacityRequest setDesiredCapacityRequest) {
         Request<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetDesiredCapacity");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (setDesiredCapacityRequest != null) {
             if (setDesiredCapacityRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(setDesiredCapacityRequest.getAutoScalingGroupName()));
@@ -41,6 +41,11 @@ public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<S
         if (setDesiredCapacityRequest != null) {
             if (setDesiredCapacityRequest.getDesiredCapacity() != null) {
                 request.addParameter("DesiredCapacity", StringUtils.fromInteger(setDesiredCapacityRequest.getDesiredCapacity()));
+            }
+        }
+        if (setDesiredCapacityRequest != null) {
+            if (setDesiredCapacityRequest.isHonorCooldown() != null) {
+                request.addParameter("HonorCooldown", StringUtils.fromBoolean(setDesiredCapacityRequest.isHonorCooldown()));
             }
         }
 

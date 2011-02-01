@@ -22,9 +22,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * If the specified <i>ActivityIds</i> list is empty, all the activities
- * from the past six weeks are returned. Activities will be sorted by
- * completion time. Activities that have no completion time are
- * considered as using the most recent possible time.
+ * from the past six weeks are returned. Activities are sorted by
+ * completion time. Activities still in progress appear first on the
+ * list.
+ * </p>
+ * <p>
+ * This action supports pagination. If the response includes a token,
+ * there are more records available. To get the additional records,
+ * repeat the request with the response token as the NextToken parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest)
@@ -33,6 +38,11 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
 
     /**
      * A list containing the activity IDs of the desired scaling activities.
+     * If this list is omitted, all activities are described. If an
+     * AutoScalingGroupName is provided, the results are limited to that
+     * group. The list of requested activities cannot contain more than 50
+     * items. If unknown activities are requested, they are ignored with no
+     * error.
      */
     private java.util.List<String> activityIds;
 
@@ -40,7 +50,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The name of the <a>AutoScalingGroup</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String autoScalingGroupName;
@@ -49,12 +59,13 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The maximum number of scaling activities to return.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * A string that marks the start of the next batch of returned results
+     * for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
@@ -63,8 +74,18 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
 
     /**
      * A list containing the activity IDs of the desired scaling activities.
+     * If this list is omitted, all activities are described. If an
+     * AutoScalingGroupName is provided, the results are limited to that
+     * group. The list of requested activities cannot contain more than 50
+     * items. If unknown activities are requested, they are ignored with no
+     * error.
      *
      * @return A list containing the activity IDs of the desired scaling activities.
+     *         If this list is omitted, all activities are described. If an
+     *         AutoScalingGroupName is provided, the results are limited to that
+     *         group. The list of requested activities cannot contain more than 50
+     *         items. If unknown activities are requested, they are ignored with no
+     *         error.
      */
     public java.util.List<String> getActivityIds() {
         if (activityIds == null) {
@@ -75,8 +96,18 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     
     /**
      * A list containing the activity IDs of the desired scaling activities.
+     * If this list is omitted, all activities are described. If an
+     * AutoScalingGroupName is provided, the results are limited to that
+     * group. The list of requested activities cannot contain more than 50
+     * items. If unknown activities are requested, they are ignored with no
+     * error.
      *
      * @param activityIds A list containing the activity IDs of the desired scaling activities.
+     *         If this list is omitted, all activities are described. If an
+     *         AutoScalingGroupName is provided, the results are limited to that
+     *         group. The list of requested activities cannot contain more than 50
+     *         items. If unknown activities are requested, they are ignored with no
+     *         error.
      */
     public void setActivityIds(java.util.Collection<String> activityIds) {
         java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>();
@@ -88,10 +119,20 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     
     /**
      * A list containing the activity IDs of the desired scaling activities.
+     * If this list is omitted, all activities are described. If an
+     * AutoScalingGroupName is provided, the results are limited to that
+     * group. The list of requested activities cannot contain more than 50
+     * items. If unknown activities are requested, they are ignored with no
+     * error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityIds A list containing the activity IDs of the desired scaling activities.
+     *         If this list is omitted, all activities are described. If an
+     *         AutoScalingGroupName is provided, the results are limited to that
+     *         group. The list of requested activities cannot contain more than 50
+     *         items. If unknown activities are requested, they are ignored with no
+     *         error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -105,10 +146,20 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     
     /**
      * A list containing the activity IDs of the desired scaling activities.
+     * If this list is omitted, all activities are described. If an
+     * AutoScalingGroupName is provided, the results are limited to that
+     * group. The list of requested activities cannot contain more than 50
+     * items. If unknown activities are requested, they are ignored with no
+     * error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param activityIds A list containing the activity IDs of the desired scaling activities.
+     *         If this list is omitted, all activities are described. If an
+     *         AutoScalingGroupName is provided, the results are limited to that
+     *         group. The list of requested activities cannot contain more than 50
+     *         items. If unknown activities are requested, they are ignored with no
+     *         error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -127,7 +178,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The name of the <a>AutoScalingGroup</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the <a>AutoScalingGroup</a>.
@@ -140,7 +191,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The name of the <a>AutoScalingGroup</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the <a>AutoScalingGroup</a>.
@@ -155,7 +206,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the <a>AutoScalingGroup</a>.
@@ -173,7 +224,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The maximum number of scaling activities to return.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
      * @return The maximum number of scaling activities to return.
      */
@@ -185,7 +236,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * The maximum number of scaling activities to return.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of scaling activities to return.
      */
@@ -199,7 +250,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
      * @param maxRecords The maximum number of scaling activities to return.
      *
@@ -213,38 +264,44 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * A string that marks the start of the next batch of returned results
+     * for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return A string used to mark the start of the next batch of returned results.
+     * @return A string that marks the start of the next batch of returned results
+     *         for pagination.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * A string that marks the start of the next batch of returned results
+     * for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string used to mark the start of the next batch of returned results.
+     * @param nextToken A string that marks the start of the next batch of returned results
+     *         for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string used to mark the start of the next batch of returned results.
+     * A string that marks the start of the next batch of returned results
+     * for pagination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string used to mark the start of the next batch of returned results.
+     * @param nextToken A string that marks the start of the next batch of returned results
+     *         for pagination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

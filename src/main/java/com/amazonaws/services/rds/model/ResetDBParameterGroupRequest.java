@@ -33,13 +33,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      */
     private String dBParameterGroupName;
 
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     * parameters in the DB Parameter Group to default values.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     * reset all parameters in the DB Parameter Group to default values.
+     * <p>Default: <code>true</code>
      */
     private Boolean resetAllParameters;
 
@@ -47,7 +51,11 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * parameters may be modified in a single request. <p>Valid Values (for
+     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     * the immediate value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static
+     * parameters, and changes are applied when DB Instance reboots.
      */
     private java.util.List<Parameter> parameters;
 
@@ -63,35 +71,56 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBParameterGroupName The name of the DB Parameter Group.
+     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      */
     public ResetDBParameterGroupRequest(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
-     * @return The name of the DB Parameter Group.
+     * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     *         to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     *         to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     * to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1
+     *         to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -103,35 +132,41 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     * parameters in the DB Parameter Group to default values.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     * reset all parameters in the DB Parameter Group to default values.
+     * <p>Default: <code>true</code>
      *
-     * @return Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     *         parameters in the DB Parameter Group to default values.
+     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     *         reset all parameters in the DB Parameter Group to default values.
+     *         <p>Default: <code>true</code>
      */
     public Boolean isResetAllParameters() {
         return resetAllParameters;
     }
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     * parameters in the DB Parameter Group to default values.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     * reset all parameters in the DB Parameter Group to default values.
+     * <p>Default: <code>true</code>
      *
-     * @param resetAllParameters Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     *         parameters in the DB Parameter Group to default values.
+     * @param resetAllParameters Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     *         reset all parameters in the DB Parameter Group to default values.
+     *         <p>Default: <code>true</code>
      */
     public void setResetAllParameters(Boolean resetAllParameters) {
         this.resetAllParameters = resetAllParameters;
     }
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     * parameters in the DB Parameter Group to default values.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     * reset all parameters in the DB Parameter Group to default values.
+     * <p>Default: <code>true</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resetAllParameters Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     *         parameters in the DB Parameter Group to default values.
+     * @param resetAllParameters Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     *         reset all parameters in the DB Parameter Group to default values.
+     *         <p>Default: <code>true</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -143,11 +178,13 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     * parameters in the DB Parameter Group to default values.
+     * Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     * reset all parameters in the DB Parameter Group to default values.
+     * <p>Default: <code>true</code>
      *
-     * @return Specifies whether (<i>true</i>) or not (<i>false</i>) to reset all
-     *         parameters in the DB Parameter Group to default values.
+     * @return Specifies whether (<code>true</code>) or not (<code>false</code>) to
+     *         reset all parameters in the DB Parameter Group to default values.
+     *         <p>Default: <code>true</code>
      */
     public Boolean getResetAllParameters() {
         return resetAllParameters;
@@ -157,12 +194,20 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * parameters may be modified in a single request. <p>Valid Values (for
+     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     * the immediate value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static
+     * parameters, and changes are applied when DB Instance reboots.
      *
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request.
+     *         parameters may be modified in a single request. <p>Valid Values (for
+     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     *         the immediate value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static
+     *         parameters, and changes are applied when DB Instance reboots.
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -175,12 +220,20 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * parameters may be modified in a single request. <p>Valid Values (for
+     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     * the immediate value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static
+     * parameters, and changes are applied when DB Instance reboots.
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request.
+     *         parameters may be modified in a single request. <p>Valid Values (for
+     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     *         the immediate value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static
+     *         parameters, and changes are applied when DB Instance reboots.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
@@ -194,14 +247,22 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * parameters may be modified in a single request. <p>Valid Values (for
+     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     * the immediate value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static
+     * parameters, and changes are applied when DB Instance reboots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request.
+     *         parameters may be modified in a single request. <p>Valid Values (for
+     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     *         the immediate value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static
+     *         parameters, and changes are applied when DB Instance reboots.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -217,14 +278,22 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request.
+     * parameters may be modified in a single request. <p>Valid Values (for
+     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     * the immediate value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static
+     * parameters, and changes are applied when DB Instance reboots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request.
+     *         parameters may be modified in a single request. <p>Valid Values (for
+     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
+     *         the immediate value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static
+     *         parameters, and changes are applied when DB Instance reboots.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

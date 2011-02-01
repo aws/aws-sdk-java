@@ -89,18 +89,12 @@ public class AWS3Signer extends AbstractAWSSigner {
         }
         log.debug("Calculated StringToSign: " + stringToSign);
 
-        String accessKeyId = null;
-        String secretKey   = null;
-        synchronized (credentials) {
-            accessKeyId = credentials.getAWSAccessKeyId();
-            secretKey   = credentials.getAWSSecretKey();
-        }
-
-        String signature = sign(stringToSign, secretKey, algorithm);
+        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
+        String signature = sign(stringToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
 
         StringBuilder builder = new StringBuilder();
         builder.append(isHttps ? HTTPS_SCHEME : HTTP_SCHEME).append(" ");
-        builder.append("AWSAccessKeyId=" + accessKeyId + ",");
+        builder.append("AWSAccessKeyId=" + sanitizedCredentials.getAWSAccessKeyId() + ",");
         builder.append("Algorithm=" + algorithm.toString() + ",");
         builder.append("Signature=" + signature);
 

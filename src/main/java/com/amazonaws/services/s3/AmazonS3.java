@@ -42,6 +42,7 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -828,6 +829,44 @@ public interface AmazonS3 {
      */
     public String getBucketLocation(String bucketName) throws AmazonClientException,
             AmazonServiceException;
+
+    /**
+     * <p>
+     * Gets the geographical region where Amazon S3 stores the specified
+     * bucket.
+     * </p>
+     * <p>
+     * To view the location constraint of a bucket, the user must be the bucket
+     * owner.
+     * </p>
+     * <p>
+     * Use {@link Region#fromValue(String)} to get the <code>Region</code>
+     * enumeration value, but be prepared to
+     * handle an <code>IllegalArgumentException</code>
+     * if the value passed is not a known <code>Region</code> value.
+     * </p>
+     * <p>
+     * Note that <code>Region</code> enumeration values are not returned
+     * directly from this method.
+     * </p>
+     *
+     * @param getBucketLocationRequest
+     *            The request object containing the name of the Amazon S3
+     *            bucket to look up. This must be a bucket the user owns.
+     *
+     * @return The location of the specified Amazon S3 bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see Region
+     */
+    public String getBucketLocation(GetBucketLocationRequest getBucketLocationRequest)
+    	throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
@@ -2766,13 +2805,13 @@ public interface AmazonS3 {
      * {@link #uploadPart(UploadPartRequest)} requests. You also include this
      * upload ID in the final request to either complete, or abort the multipart
      * upload request.
-     * 
+     *
      * @param request
      *            The InitiateMultipartUploadRequest object that specifies all
      *            the parameters of this operation.
-     * 
+     *
      * @return An InitiateMultipartUploadResult from Amazon S3.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -2807,14 +2846,14 @@ public interface AmazonS3 {
      * concatenating all the parts you uploaded, in ascending order based on the
      * part numbers. The CompleteMultipartUpload request requires you to send
      * all the part numbers and the corresponding ETag values.
-     * 
+     *
      * @param request
      *            The UploadPartRequest object that specifies all the parameters
      *            of this operation.
-     * 
+     *
      * @return An UploadPartResult from Amazon S3 containing the part number and
      *         ETag of the new part.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -2838,13 +2877,13 @@ public interface AmazonS3 {
      * NextPartNumberMarker property. In subsequent ListParts request you can
      * include the PartNumberMarker property and set its value to the
      * NextPartNumberMarker property value from the previous response.
-     * 
+     *
      * @param request
      *            The ListPartsRequest object that specifies all the parameters
      *            of this operation.
-     * 
+     *
      * @return Returns a PartListing from Amazon S3.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -2863,11 +2902,11 @@ public interface AmazonS3 {
      * succeed. As a result, it may be necessary to abort a given multipart
      * upload multiple times in order to completely free all storage consumed by
      * all parts.
-     * 
+     *
      * @param request
      *            The AbortMultipartUploadRequest object that specifies all the
      *            parameters of this operation.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -2892,14 +2931,14 @@ public interface AmazonS3 {
      * <p>
      * Processing of a CompleteMultipartUpload request may take several minutes
      * to complete.
-     * 
+     *
      * @param request
      *            The CompleteMultipartUploadRequest object that specifies all
      *            the parameters of this operation.
-     * 
+     *
      * @return A CompleteMultipartUploadResult from S3 containing the ETag for
      *         the new object composed of the individual parts.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
@@ -2923,13 +2962,13 @@ public interface AmazonS3 {
      * contain an IsTruncated property with the value set to true. To list the
      * additional multipart uploads use the KeyMarker and UploadIdMarker
      * properties on the request parameters.
-     * 
+     *
      * @param request
      *            The ListMultipartUploadsRequest object that specifies all the
      *            parameters of this operation.
-     * 
+     *
      * @return A MultipartUploadListing from Amazon S3.
-     * 
+     *
      * @throws AmazonClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.

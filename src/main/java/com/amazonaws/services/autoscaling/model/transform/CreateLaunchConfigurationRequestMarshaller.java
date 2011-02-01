@@ -32,7 +32,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
     public Request<CreateLaunchConfigurationRequest> marshall(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
         Request<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateLaunchConfiguration");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (createLaunchConfigurationRequest != null) {
             if (createLaunchConfigurationRequest.getLaunchConfigurationName() != null) {
                 request.addParameter("LaunchConfigurationName", StringUtils.fromString(createLaunchConfigurationRequest.getLaunchConfigurationName()));
@@ -93,8 +93,29 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
                         request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
                     }
                 }
+                if (blockDeviceMappingsListValue != null) {
+                    Ebs ebs = blockDeviceMappingsListValue.getEbs();
+                    if (ebs != null) {
+                        if (ebs.getSnapshotId() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.fromString(ebs.getSnapshotId()));
+                        }
+                    }
+                    if (ebs != null) {
+                        if (ebs.getVolumeSize() != null) {
+                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebs.getVolumeSize()));
+                        }
+                    }
+                }
 
                 blockDeviceMappingsListIndex++;
+            }
+        }
+        if (createLaunchConfigurationRequest != null) {
+            InstanceMonitoring instanceMonitoring = createLaunchConfigurationRequest.getInstanceMonitoring();
+            if (instanceMonitoring != null) {
+                if (instanceMonitoring.isEnabled() != null) {
+                    request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoring.isEnabled()));
+                }
             }
         }
 

@@ -32,7 +32,7 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
     public Request<DescribeAutoScalingGroupsRequest> marshall(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
         Request<DescribeAutoScalingGroupsRequest> request = new DefaultRequest<DescribeAutoScalingGroupsRequest>(describeAutoScalingGroupsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingGroups");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (describeAutoScalingGroupsRequest != null) {
             java.util.List<String> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.getAutoScalingGroupNames();
             int autoScalingGroupNamesListIndex = 1;
@@ -41,6 +41,16 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
                     request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));
                 }
                 autoScalingGroupNamesListIndex++;
+            }
+        }
+        if (describeAutoScalingGroupsRequest != null) {
+            if (describeAutoScalingGroupsRequest.getNextToken() != null) {
+                request.addParameter("NextToken", StringUtils.fromString(describeAutoScalingGroupsRequest.getNextToken()));
+            }
+        }
+        if (describeAutoScalingGroupsRequest != null) {
+            if (describeAutoScalingGroupsRequest.getMaxRecords() != null) {
+                request.addParameter("MaxRecords", StringUtils.fromInteger(describeAutoScalingGroupsRequest.getMaxRecords()));
             }
         }
 

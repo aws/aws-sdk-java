@@ -15,38 +15,62 @@
 package com.amazonaws.services.cloudwatch.model;
 
 /**
- * Dimension
+ * <p>
+ * The <code>Dimension</code> data type further expands on the identity
+ * of a metric using a Name, Value pair.
+ * </p>
  */
 public class Dimension {
 
+    /**
+     * The name of the dimension.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
     private String name;
 
+    /**
+     * The value representing the dimension measurement
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
     private String value;
 
     /**
-     * Returns the value of the Name property for this object.
+     * The name of the dimension.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @return The value of the Name property for this object.
+     * @return The name of the dimension.
      */
     public String getName() {
         return name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the dimension.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the dimension.
      */
     public void setName(String name) {
         this.name = name;
     }
     
     /**
-     * Sets the value of the Name property for this object.
+     * The name of the dimension.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @param name The new value for the Name property for this object.
+     * @param name The name of the dimension.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,29 +82,38 @@ public class Dimension {
     
     
     /**
-     * Returns the value of the Value property for this object.
+     * The value representing the dimension measurement
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @return The value of the Value property for this object.
+     * @return The value representing the dimension measurement
      */
     public String getValue() {
         return value;
     }
     
     /**
-     * Sets the value of the Value property for this object.
+     * The value representing the dimension measurement
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @param value The new value for the Value property for this object.
+     * @param value The value representing the dimension measurement
      */
     public void setValue(String value) {
         this.value = value;
     }
     
     /**
-     * Sets the value of the Value property for this object.
+     * The value representing the dimension measurement
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @param value The new value for the Value property for this object.
+     * @param value The value representing the dimension measurement
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

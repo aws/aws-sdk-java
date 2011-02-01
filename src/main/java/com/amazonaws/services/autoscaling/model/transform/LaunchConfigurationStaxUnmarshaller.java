@@ -51,6 +51,10 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.setLaunchConfigurationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("LaunchConfigurationARN", targetDepth)) {
+                    launchConfiguration.setLaunchConfigurationARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ImageId", targetDepth)) {
                     launchConfiguration.setImageId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -81,6 +85,10 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                 }
                 if (context.testExpression("BlockDeviceMappings/member", targetDepth)) {
                     launchConfiguration.getBlockDeviceMappings().add(BlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("InstanceMonitoring", targetDepth)) {
+                    launchConfiguration.setInstanceMonitoring(InstanceMonitoringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {

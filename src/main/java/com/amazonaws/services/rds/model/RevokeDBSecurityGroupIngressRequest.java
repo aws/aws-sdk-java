@@ -34,19 +34,26 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     private String dBSecurityGroupName;
 
     /**
-     * The IP range to revoke access from.
+     * The IP range to revoke access from. Must be a valid CIDR range. If
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     private String cIDRIP;
 
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the EC2 Security Group to revoke access from. If
+     * <code>EC2SecurityGroupName</code> is specified,
+     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      */
     private String eC2SecurityGroupName;
 
     /**
      * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified <code>EC2SecurityGroupName</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -103,29 +110,41 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     
     /**
-     * The IP range to revoke access from.
+     * The IP range to revoke access from. Must be a valid CIDR range. If
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
-     * @return The IP range to revoke access from.
+     * @return The IP range to revoke access from. Must be a valid CIDR range. If
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     public String getCIDRIP() {
         return cIDRIP;
     }
     
     /**
-     * The IP range to revoke access from.
+     * The IP range to revoke access from. Must be a valid CIDR range. If
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
-     * @param cIDRIP The IP range to revoke access from.
+     * @param cIDRIP The IP range to revoke access from. Must be a valid CIDR range. If
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     public void setCIDRIP(String cIDRIP) {
         this.cIDRIP = cIDRIP;
     }
     
     /**
-     * The IP range to revoke access from.
+     * The IP range to revoke access from. Must be a valid CIDR range. If
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cIDRIP The IP range to revoke access from.
+     * @param cIDRIP The IP range to revoke access from. Must be a valid CIDR range. If
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
+     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -137,29 +156,47 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the EC2 Security Group to revoke access from. If
+     * <code>EC2SecurityGroupName</code> is specified,
+     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      *
-     * @return The name of the EC2 Security Group to revoke access from.
+     * @return The name of the EC2 Security Group to revoke access from. If
+     *         <code>EC2SecurityGroupName</code> is specified,
+     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the EC2 Security Group to revoke access from. If
+     * <code>EC2SecurityGroupName</code> is specified,
+     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from.
+     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. If
+     *         <code>EC2SecurityGroupName</code> is specified,
+     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from.
+     * The name of the EC2 Security Group to revoke access from. If
+     * <code>EC2SecurityGroupName</code> is specified,
+     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from.
+     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. If
+     *         <code>EC2SecurityGroupName</code> is specified,
+     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -172,12 +209,16 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified <code>EC2SecurityGroupName</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      *
      * @return The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     *         specified <code>EC2SecurityGroupName</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
@@ -185,12 +226,16 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified <code>EC2SecurityGroupName</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      *
      * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     *         specified <code>EC2SecurityGroupName</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
@@ -198,14 +243,18 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The AWS Account Number of the owner of the security group specified in
-     * the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     * not an acceptable value.
+     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     * specified <code>EC2SecurityGroupName</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is
-     *         not an acceptable value.
+     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
+     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
+     *         specified <code>EC2SecurityGroupName</code> must also be provided and
+     *         <code>CIDRIP</code> cannot be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

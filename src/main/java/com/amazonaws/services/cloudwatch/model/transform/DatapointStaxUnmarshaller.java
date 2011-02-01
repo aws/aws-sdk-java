@@ -51,16 +51,8 @@ public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUn
                     datapoint.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Unit", targetDepth)) {
-                    datapoint.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("CustomUnit", targetDepth)) {
-                    datapoint.setCustomUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Samples", targetDepth)) {
-                    datapoint.setSamples(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("SampleCount", targetDepth)) {
+                    datapoint.setSampleCount(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Average", targetDepth)) {
@@ -77,6 +69,10 @@ public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUn
                 }
                 if (context.testExpression("Maximum", targetDepth)) {
                     datapoint.setMaximum(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Unit", targetDepth)) {
+                    datapoint.setUnit(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -31,12 +31,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * A list of launch configuration names.
      */
     private java.util.List<String> launchConfigurationNames;
 
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
@@ -44,17 +44,17 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     private String nextToken;
 
     /**
-     * 
+     * The maximum number of launch configurations.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      */
     private Integer maxRecords;
 
     /**
-     * 
+     * A list of launch configuration names.
      *
-     * @return 
+     * @return A list of launch configuration names.
      */
     public java.util.List<String> getLaunchConfigurationNames() {
         if (launchConfigurationNames == null) {
@@ -64,9 +64,9 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * 
+     * A list of launch configuration names.
      *
-     * @param launchConfigurationNames 
+     * @param launchConfigurationNames A list of launch configuration names.
      */
     public void setLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
         java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>();
@@ -77,11 +77,11 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * 
+     * A list of launch configuration names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurationNames 
+     * @param launchConfigurationNames A list of launch configuration names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -94,11 +94,11 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * 
+     * A list of launch configuration names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurationNames 
+     * @param launchConfigurationNames A list of launch configuration names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -114,38 +114,38 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return 
+     * @return A string that marks the start of the next batch of returned results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken 
+     * @param nextToken A string that marks the start of the next batch of returned results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken 
+     * @param nextToken A string that marks the start of the next batch of returned results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -157,38 +157,38 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     
     
     /**
-     * 
+     * The maximum number of launch configurations.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
-     * @return 
+     * @return The maximum number of launch configurations.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * 
+     * The maximum number of launch configurations.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
-     * @param maxRecords 
+     * @param maxRecords The maximum number of launch configurations.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * 
+     * The maximum number of launch configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>20 - 100<br/>
+     * <b>Range: </b>1 - 50<br/>
      *
-     * @param maxRecords 
+     * @param maxRecords The maximum number of launch configurations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

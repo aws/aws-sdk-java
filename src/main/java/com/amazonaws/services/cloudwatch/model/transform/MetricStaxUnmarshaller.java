@@ -47,16 +47,16 @@ public class MetricStaxUnmarshaller implements Unmarshaller<Metric, StaxUnmarsha
             if (xmlEvent.isEndDocument()) return metric;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("MeasureName", targetDepth)) {
-                    metric.setMeasureName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Namespace", targetDepth)) {
+                    metric.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("MetricName", targetDepth)) {
+                    metric.setMetricName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Dimensions/member", targetDepth)) {
                     metric.getDimensions().add(DimensionStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Namespace", targetDepth)) {
-                    metric.setNamespace(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

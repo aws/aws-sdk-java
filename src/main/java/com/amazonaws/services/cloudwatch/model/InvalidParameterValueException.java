@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonCloudWatch exception
+ * <p>
+ * Bad or out-of-range value was supplied for the input parameter.
+ * </p>
  */        
 public class InvalidParameterValueException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

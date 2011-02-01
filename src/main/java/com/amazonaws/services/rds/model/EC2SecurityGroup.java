@@ -16,8 +16,16 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
+ * 
+ * <ul>
+ * <li> AuthorizeDBSecurityGroupIngress </li>
+ * <li> DescribeDBSecurityGroups </li>
+ * <li> RevokeDBSecurityGroupIngress </li>
+ * 
+ * </ul>
  */
 public class EC2SecurityGroup {
 
@@ -33,7 +41,7 @@ public class EC2SecurityGroup {
 
     /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * in the <code>EC2SecurityGroupName</code> field.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -113,10 +121,10 @@ public class EC2SecurityGroup {
     
     /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * in the <code>EC2SecurityGroupName</code> field.
      *
      * @return Specifies the AWS ID of the owner of the EC2 security group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     *         in the <code>EC2SecurityGroupName</code> field.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
@@ -124,10 +132,10 @@ public class EC2SecurityGroup {
     
     /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * in the <code>EC2SecurityGroupName</code> field.
      *
      * @param eC2SecurityGroupOwnerId Specifies the AWS ID of the owner of the EC2 security group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     *         in the <code>EC2SecurityGroupName</code> field.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
@@ -135,12 +143,12 @@ public class EC2SecurityGroup {
     
     /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
-     * in the <i>EC2SecurityGroupName</i> field.
+     * in the <code>EC2SecurityGroupName</code> field.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param eC2SecurityGroupOwnerId Specifies the AWS ID of the owner of the EC2 security group specified
-     *         in the <i>EC2SecurityGroupName</i> field.
+     *         in the <code>EC2SecurityGroupName</code> field.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteSubnetRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The ID of the subnet you want to delete.
      */
     private String subnetId;
 
@@ -43,36 +43,36 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param subnetId
+     * @param subnetId The ID of the subnet you want to delete.
      */
     public DeleteSubnetRequest(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * 
+     * The ID of the subnet you want to delete.
      *
-     * @return 
+     * @return The ID of the subnet you want to delete.
      */
     public String getSubnetId() {
         return subnetId;
     }
     
     /**
-     * 
+     * The ID of the subnet you want to delete.
      *
-     * @param subnetId 
+     * @param subnetId The ID of the subnet you want to delete.
      */
     public void setSubnetId(String subnetId) {
         this.subnetId = subnetId;
     }
     
     /**
-     * 
+     * The ID of the subnet you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnetId 
+     * @param subnetId The ID of the subnet you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -20,7 +20,7 @@ import com.amazonaws.services.rds.model.*;
 
 /**
  * Interface for accessing AmazonRDS.
- * <p>
+ * Amazon Relational Database Service <p>
  * Amazon Relational Database Service (Amazon RDS) is a web service that
  * makes it easier to set up, operate, and scale a relational database in
  * the cloud. It provides cost-efficient, resizable capacity for an
@@ -72,6 +72,10 @@ public interface AmazonRDS {
      * This API deletes a particular DBParameterGroup. The DBParameterGroup
      * cannot be associated with any RDS instances to be deleted.
      * </p>
+     * <p>
+     * <b>NOTE:</b> The specified database parameter group cannot be
+     * associated with any DB Instances.
+     * </p>
      *
      * @param deleteDBParameterGroupRequest Container for the necessary
      *           parameters to execute the DeleteDBParameterGroup service method on
@@ -93,8 +97,11 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * This API is used to delete a DBSnapshot. The DBSnapshot must be in
-     * the "available" state to be deleted.
+     * This API is used to delete a DBSnapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+     * deleted.
      * </p>
      *
      * @param deleteDBSnapshotRequest Container for the necessary parameters
@@ -403,6 +410,15 @@ public interface AmazonRDS {
      * parameters for this API are one of CIDR range or (EC2SecurityGroupName
      * AND EC2SecurityGroupOwnerId).
      * </p>
+     * <p>
+     * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
+     * in one Region to an Amazon RDS DB Instance in another.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
+     * </p>
      *
      * @param authorizeDBSecurityGroupIngressRequest Container for the
      *           necessary parameters to execute the AuthorizeDBSecurityGroupIngress
@@ -414,6 +430,7 @@ public interface AmazonRDS {
      * @throws DBSecurityGroupNotFoundException
      * @throws InvalidDBSecurityGroupStateException
      * @throws AuthorizationAlreadyExistsException
+     * @throws AuthorizationQuotaExceededException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -574,6 +591,11 @@ public interface AmazonRDS {
      * This API returns a list of DBSecurityGroup descriptions. If a
      * DBSecurityGroupName is specified, the list will contain only the
      * descriptions of the specified DBSecurityGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
      * </p>
      *
      * @param describeDBSecurityGroupsRequest Container for the necessary
@@ -779,8 +801,11 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * This API deletes a database security group. Database security group
-     * must not be associated with any RDS Instances.
+     * This API deletes a database security group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The specified database security group must not be
+     * associated with any DB instances.
      * </p>
      *
      * @param deleteDBSecurityGroupRequest Container for the necessary
@@ -1003,6 +1028,11 @@ public interface AmazonRDS {
      * This API returns a list of DBSecurityGroup descriptions. If a
      * DBSecurityGroupName is specified, the list will contain only the
      * descriptions of the specified DBSecurityGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
      * </p>
      * 
      * @return The response from the DescribeDBSecurityGroups service method,

@@ -16,18 +16,18 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * 
+ * The LaunchConfigurationsType data type.
  * </p>
  */
 public class DescribeLaunchConfigurationsResult {
 
     /**
-     * 
+     * A list of launch configurations.
      */
     private java.util.List<LaunchConfiguration> launchConfigurations;
 
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
@@ -35,9 +35,9 @@ public class DescribeLaunchConfigurationsResult {
     private String nextToken;
 
     /**
-     * 
+     * A list of launch configurations.
      *
-     * @return 
+     * @return A list of launch configurations.
      */
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
         if (launchConfigurations == null) {
@@ -47,9 +47,9 @@ public class DescribeLaunchConfigurationsResult {
     }
     
     /**
-     * 
+     * A list of launch configurations.
      *
-     * @param launchConfigurations 
+     * @param launchConfigurations A list of launch configurations.
      */
     public void setLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
         java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>();
@@ -60,11 +60,11 @@ public class DescribeLaunchConfigurationsResult {
     }
     
     /**
-     * 
+     * A list of launch configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurations 
+     * @param launchConfigurations A list of launch configurations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -77,11 +77,11 @@ public class DescribeLaunchConfigurationsResult {
     }
     
     /**
-     * 
+     * A list of launch configurations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurations 
+     * @param launchConfigurations A list of launch configurations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -97,38 +97,38 @@ public class DescribeLaunchConfigurationsResult {
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return 
+     * @return A string that marks the start of the next batch of returned results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken 
+     * @param nextToken A string that marks the start of the next batch of returned results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken 
+     * @param nextToken A string that marks the start of the next batch of returned results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

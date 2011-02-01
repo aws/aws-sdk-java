@@ -27,10 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * volume usage. You can restart your instance at any time.
  * </p>
  * <p>
- * <b>NOTE:</b> Before stopping an instance, make sure it is in a state
- * from which it can be restarted. Stopping an instance does not preserve
- * data stored in RAM. Performing this operation on an instance that uses
- * an instance store as its root device returns an error.
+ * <b>NOTE:</b> Performing this operation on an instance that uses an
+ * instance store as its root device returns an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest)

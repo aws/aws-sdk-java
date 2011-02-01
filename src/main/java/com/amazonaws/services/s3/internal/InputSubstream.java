@@ -20,17 +20,19 @@ import java.io.InputStream;
 
 /**
  * Filtered input stream implementation that exposes a range of an input stream
- * as a new input stream.   
+ * as a new input stream.
  */
 public final class InputSubstream extends FilterInputStream {
-    private long bytesRemaining;
-    private long offset;
+	private long currentPosition;
+	private final long requestedOffset;
+	private final long requestedLength;
+	private long markedPosition = 0;
 
     /**
      * Constructs a new InputSubstream so that when callers start reading from
      * this stream they'll start at the specified offset in the real stream and
      * after they've read the specified length, this stream will look empty.
-     * 
+     *
      * @param in
      *            The input stream to wrap.
      * @param offset
@@ -42,8 +44,10 @@ public final class InputSubstream extends FilterInputStream {
      */
     public InputSubstream(InputStream in, long offset, long length) {
         super(in);
-        this.bytesRemaining = length;
-        this.offset = offset;
+
+        this.currentPosition = 0;
+        this.requestedLength = length;
+        this.requestedOffset = offset;
     }
 
     @Override
@@ -57,23 +61,40 @@ public final class InputSubstream extends FilterInputStream {
 
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
-        if (offset > 0) {
-            super.skip(offset);
-            offset = 0;
+        while (currentPosition < requestedOffset) {
+            long skippedBytes = super.skip(requestedOffset - currentPosition);
+            currentPosition += skippedBytes;
         }
-            
-        if (bytesRemaining <= 0) return -1;
-        
+
+        long bytesRemaining = (requestedLength + requestedOffset) - currentPosition;
+		if (bytesRemaining <= 0) return -1;
+
         len = (int) Math.min(len, bytesRemaining);
         int bytesRead = super.read(b, off, len);
-        bytesRemaining -= bytesRead;
-        
+        currentPosition += bytesRead;
+
         return bytesRead;
     }
 
-    @Override
+	@Override
+	public synchronized void mark(int readlimit) {
+		markedPosition = currentPosition;
+		super.mark(readlimit);
+	}
+
+	@Override
+	public synchronized void reset() throws IOException {
+		currentPosition = markedPosition;
+		super.reset();
+	}
+
+	@Override
     public int available() throws IOException {
-        return (int)Math.min(bytesRemaining, super.available());
+		long bytesRemaining;
+		if (currentPosition < requestedOffset) bytesRemaining = requestedLength;
+		else bytesRemaining = (requestedLength + requestedOffset) - currentPosition;
+
+		return (int)Math.min(bytesRemaining, super.available());
     }
 
     @Override

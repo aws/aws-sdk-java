@@ -536,10 +536,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * volume usage. You can restart your instance at any time.
      * </p>
      * <p>
-     * <b>NOTE:</b> Before stopping an instance, make sure it is in a state
-     * from which it can be restarted. Stopping an instance does not preserve
-     * data stored in RAM. Performing this operation on an instance that uses
-     * an instance store as its root device returns an error.
+     * <b>NOTE:</b> Performing this operation on an instance that uses an
+     * instance store as its root device returns an error.
      * </p>
      *
      * @param startInstancesRequest Container for the necessary parameters to
@@ -703,11 +701,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Creates an AMI that uses an Amazon EBS root device from a "running"
-     * or "stopped" instance. AMIs that use an Amazon EBS root device boot
-     * faster than AMIs that use instance stores. They can be up to 1 TiB in
-     * size, use storage that persists on instance failure, and can be
-     * stopped and started.
+     * Creates an Amazon EBS-backed AMI from a "running" or "stopped"
+     * instance. AMIs that use an Amazon EBS root device boot faster than
+     * AMIs that use instance stores. They can be up to 1 TiB in size, use
+     * storage that persists on instance failure, and can be stopped and
+     * started.
      * </p>
      *
      * @param createImageRequest Container for the necessary parameters to
@@ -770,6 +768,40 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes Spot Instance requests. Spot Instances are instances that
+     * Amazon EC2 starts on your behalf when the maximum price that you
+     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
+     * the Spot Price based on available Spot Instance capacity and current
+     * spot instance requests. For conceptual information about Spot
+     * Instances, refer to the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide </a> or <a
+     * href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/">
+     * Amazon Elastic Compute Cloud User Guide </a> .
+     * </p>
+     * <p>
+     * You can filter the results to return information only about Spot
+     * Instance requests that match criteria you specify. For example, you
+     * could get information about requests where the Spot Price you
+     * specified is a certain value (you can't use greater than or less than
+     * comparison, but you can use <code>*</code> and <code>?</code>
+     * wildcards). You can specify multiple values for a filter. A Spot
+     * Instance request must match at least one of the specified values for
+     * it to be included in the results.
+     * </p>
+     * <p>
+     * You can specify multiple filters (e.g., the Spot Price is equal to a
+     * particular value, and the instance type is m1.small). The result
+     * includes information for a particular request only if it matches all
+     * your filters. If there's no match, no special message is returned; the
+     * response is simply empty.
+     * </p>
+     * <p>
+     * You can use wildcards with the filter values: <code>*</code> matches
+     * zero or more characters, and <code>?</code> matches exactly one
+     * character. You can escape special characters using a backslash before
+     * the character. For example, a value of <code>\*amazon\?\\</code>
+     * searches for the literal string <code>*amazon?\</code> .
      * 
      * </p>
      *
@@ -2736,7 +2768,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * to your network. If you don't have an ASN already, you can use a
      * private ASN (in the 64512 - 65534 range). For more information about
      * ASNs, go to <a
-     * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.">
+     * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29">
      * http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29 </a> .
      * </p>
      *
@@ -3236,6 +3268,40 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes Spot Instance requests. Spot Instances are instances that
+     * Amazon EC2 starts on your behalf when the maximum price that you
+     * specify exceeds the current Spot Price. Amazon EC2 periodically sets
+     * the Spot Price based on available Spot Instance capacity and current
+     * spot instance requests. For conceptual information about Spot
+     * Instances, refer to the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide </a> or <a
+     * href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/">
+     * Amazon Elastic Compute Cloud User Guide </a> .
+     * </p>
+     * <p>
+     * You can filter the results to return information only about Spot
+     * Instance requests that match criteria you specify. For example, you
+     * could get information about requests where the Spot Price you
+     * specified is a certain value (you can't use greater than or less than
+     * comparison, but you can use <code>*</code> and <code>?</code>
+     * wildcards). You can specify multiple values for a filter. A Spot
+     * Instance request must match at least one of the specified values for
+     * it to be included in the results.
+     * </p>
+     * <p>
+     * You can specify multiple filters (e.g., the Spot Price is equal to a
+     * particular value, and the instance type is m1.small). The result
+     * includes information for a particular request only if it matches all
+     * your filters. If there's no match, no special message is returned; the
+     * response is simply empty.
+     * </p>
+     * <p>
+     * You can use wildcards with the filter values: <code>*</code> matches
+     * zero or more characters, and <code>?</code> matches exactly one
+     * character. You can escape special characters using a backslash before
+     * the character. For example, a value of <code>\*amazon\?\\</code>
+     * searches for the literal string <code>*amazon?\</code> .
      * 
      * </p>
      * 

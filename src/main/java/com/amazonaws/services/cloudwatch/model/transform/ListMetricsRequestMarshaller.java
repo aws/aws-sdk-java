@@ -32,7 +32,36 @@ public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetr
     public Request<ListMetricsRequest> marshall(ListMetricsRequest listMetricsRequest) {
         Request<ListMetricsRequest> request = new DefaultRequest<ListMetricsRequest>(listMetricsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "ListMetrics");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
+        if (listMetricsRequest != null) {
+            if (listMetricsRequest.getNamespace() != null) {
+                request.addParameter("Namespace", StringUtils.fromString(listMetricsRequest.getNamespace()));
+            }
+        }
+        if (listMetricsRequest != null) {
+            if (listMetricsRequest.getMetricName() != null) {
+                request.addParameter("MetricName", StringUtils.fromString(listMetricsRequest.getMetricName()));
+            }
+        }
+
+        if (listMetricsRequest != null) {
+            java.util.List<DimensionFilter> dimensionsList = listMetricsRequest.getDimensions();
+            int dimensionsListIndex = 1;
+            for (DimensionFilter dimensionsListValue : dimensionsList) {
+                if (dimensionsListValue != null) {
+                    if (dimensionsListValue.getName() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
+                    }
+                }
+                if (dimensionsListValue != null) {
+                    if (dimensionsListValue.getValue() != null) {
+                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
+                    }
+                }
+
+                dimensionsListIndex++;
+            }
+        }
         if (listMetricsRequest != null) {
             if (listMetricsRequest.getNextToken() != null) {
                 request.addParameter("NextToken", StringUtils.fromString(listMetricsRequest.getNextToken()));

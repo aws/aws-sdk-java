@@ -26,6 +26,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * parameters for this API are one of CIDR range or (EC2SecurityGroupName
  * AND EC2SecurityGroupOwnerId).
  * </p>
+ * <p>
+ * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
+ * in one Region to an Amazon RDS DB Instance in another.
+ * </p>
+ * <p>
+ * For an overview of CIDR ranges, go to the <a
+ * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+ * Wikipedia Tutorial </a> .
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest)
  */

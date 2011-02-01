@@ -16,7 +16,18 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
+ * Contains the result of a successful invocation of the following
+ * actions:
+ * </p>
  * 
+ * <ul>
+ * <li> CreateDBSnapshot </li>
+ * <li> DeleteDBSnapshot </li>
+ * 
+ * </ul>
+ * <p>
+ * This data type is used as a response element in the
+ * DescribeDBSnapshots action.
  * </p>
  */
 public class DBSnapshot {
@@ -74,6 +85,9 @@ public class DBSnapshot {
      */
     private String masterUsername;
 
+    /**
+     * Specifies the version of the database engine.
+     */
     private String engineVersion;
 
     /**
@@ -435,29 +449,29 @@ public class DBSnapshot {
     
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * Specifies the version of the database engine.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return Specifies the version of the database engine.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Specifies the version of the database engine.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Specifies the version of the database engine.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Specifies the version of the database engine.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Specifies the version of the database engine.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -16,7 +16,19 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
+ * Contains the result of a successful invocation of the following
+ * actions:
+ * </p>
  * 
+ * <ul>
+ * <li> CreateDBInstance </li>
+ * <li> DeleteDBInstance </li>
+ * <li> ModifyDBInstance </li>
+ * 
+ * </ul>
+ * <p>
+ * This data type is used as a response element in the
+ * DescribeDBInstances action.
  * </p>
  */
 public class DBInstance {
@@ -74,7 +86,7 @@ public class DBInstance {
     /**
      * Specifies the daily time range during which automated backups are
      * created if automated backups are enabled, as determined by the
-     * <i>BackupRetentionPeriod</i>.
+     * <code>BackupRetentionPeriod</code>.
      */
     private String preferredBackupWindow;
 
@@ -86,8 +98,8 @@ public class DBInstance {
 
     /**
      * Provides List of DB Security Group elements containing only
-     * <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     * sub-elements.
+     * <code>DBSecurityGroup.Name</code> and
+     * <code>DBSecurityGroup.Status</code> subelements.
      */
     private java.util.List<DBSecurityGroupMembership> dBSecurityGroups;
 
@@ -111,7 +123,7 @@ public class DBInstance {
     /**
      * Specifies that changes to the DB Instance are pending. This element is
      * only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * identified by subelements.
      */
     private PendingModifiedValues pendingModifiedValues;
 
@@ -487,11 +499,11 @@ public class DBInstance {
     /**
      * Specifies the daily time range during which automated backups are
      * created if automated backups are enabled, as determined by the
-     * <i>BackupRetentionPeriod</i>.
+     * <code>BackupRetentionPeriod</code>.
      *
      * @return Specifies the daily time range during which automated backups are
      *         created if automated backups are enabled, as determined by the
-     *         <i>BackupRetentionPeriod</i>.
+     *         <code>BackupRetentionPeriod</code>.
      */
     public String getPreferredBackupWindow() {
         return preferredBackupWindow;
@@ -500,11 +512,11 @@ public class DBInstance {
     /**
      * Specifies the daily time range during which automated backups are
      * created if automated backups are enabled, as determined by the
-     * <i>BackupRetentionPeriod</i>.
+     * <code>BackupRetentionPeriod</code>.
      *
      * @param preferredBackupWindow Specifies the daily time range during which automated backups are
      *         created if automated backups are enabled, as determined by the
-     *         <i>BackupRetentionPeriod</i>.
+     *         <code>BackupRetentionPeriod</code>.
      */
     public void setPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -513,13 +525,13 @@ public class DBInstance {
     /**
      * Specifies the daily time range during which automated backups are
      * created if automated backups are enabled, as determined by the
-     * <i>BackupRetentionPeriod</i>.
+     * <code>BackupRetentionPeriod</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredBackupWindow Specifies the daily time range during which automated backups are
      *         created if automated backups are enabled, as determined by the
-     *         <i>BackupRetentionPeriod</i>.
+     *         <code>BackupRetentionPeriod</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -572,12 +584,12 @@ public class DBInstance {
     
     /**
      * Provides List of DB Security Group elements containing only
-     * <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     * sub-elements.
+     * <code>DBSecurityGroup.Name</code> and
+     * <code>DBSecurityGroup.Status</code> subelements.
      *
      * @return Provides List of DB Security Group elements containing only
-     *         <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     *         sub-elements.
+     *         <code>DBSecurityGroup.Name</code> and
+     *         <code>DBSecurityGroup.Status</code> subelements.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroups() {
         if (dBSecurityGroups == null) {
@@ -588,12 +600,12 @@ public class DBInstance {
     
     /**
      * Provides List of DB Security Group elements containing only
-     * <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     * sub-elements.
+     * <code>DBSecurityGroup.Name</code> and
+     * <code>DBSecurityGroup.Status</code> subelements.
      *
      * @param dBSecurityGroups Provides List of DB Security Group elements containing only
-     *         <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     *         sub-elements.
+     *         <code>DBSecurityGroup.Name</code> and
+     *         <code>DBSecurityGroup.Status</code> subelements.
      */
     public void setDBSecurityGroups(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroups) {
         java.util.List<DBSecurityGroupMembership> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroupMembership>();
@@ -605,14 +617,14 @@ public class DBInstance {
     
     /**
      * Provides List of DB Security Group elements containing only
-     * <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     * sub-elements.
+     * <code>DBSecurityGroup.Name</code> and
+     * <code>DBSecurityGroup.Status</code> subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups Provides List of DB Security Group elements containing only
-     *         <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     *         sub-elements.
+     *         <code>DBSecurityGroup.Name</code> and
+     *         <code>DBSecurityGroup.Status</code> subelements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -626,14 +638,14 @@ public class DBInstance {
     
     /**
      * Provides List of DB Security Group elements containing only
-     * <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     * sub-elements.
+     * <code>DBSecurityGroup.Name</code> and
+     * <code>DBSecurityGroup.Status</code> subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroups Provides List of DB Security Group elements containing only
-     *         <i>DBSecurityGroup.Name</i> and <i>DBSecurityGroup.Status</i>
-     *         sub-elements.
+     *         <code>DBSecurityGroup.Name</code> and
+     *         <code>DBSecurityGroup.Status</code> subelements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -793,11 +805,11 @@ public class DBInstance {
     /**
      * Specifies that changes to the DB Instance are pending. This element is
      * only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * identified by subelements.
      *
      * @return Specifies that changes to the DB Instance are pending. This element is
      *         only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     *         identified by subelements.
      */
     public PendingModifiedValues getPendingModifiedValues() {
         return pendingModifiedValues;
@@ -806,11 +818,11 @@ public class DBInstance {
     /**
      * Specifies that changes to the DB Instance are pending. This element is
      * only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * identified by subelements.
      *
      * @param pendingModifiedValues Specifies that changes to the DB Instance are pending. This element is
      *         only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     *         identified by subelements.
      */
     public void setPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
         this.pendingModifiedValues = pendingModifiedValues;
@@ -819,13 +831,13 @@ public class DBInstance {
     /**
      * Specifies that changes to the DB Instance are pending. This element is
      * only included when changes are pending. Specific changes are
-     * identified by sub-elements.
+     * identified by subelements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pendingModifiedValues Specifies that changes to the DB Instance are pending. This element is
      *         only included when changes are pending. Specific changes are
-     *         identified by sub-elements.
+     *         identified by subelements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

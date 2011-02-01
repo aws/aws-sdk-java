@@ -48,7 +48,8 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
 
     /**
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     private String duration;
 
@@ -68,6 +69,7 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     private Integer maxRecords;
 
@@ -218,10 +220,12 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     /**
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @return The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public String getDuration() {
         return duration;
@@ -229,10 +233,12 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     /**
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @param duration The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      */
     public void setDuration(String duration) {
         this.duration = duration;
@@ -240,12 +246,14 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
     
     /**
      * The duration filter value, specified in years or seconds. Specify this
-     * parameter to show only reservations for this duration.
+     * parameter to show only reservations for this duration. <p>Valid
+     * Values: <code>1 | 3 | 31536000 | 94608000</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param duration The duration filter value, specified in years or seconds. Specify this
-     *         parameter to show only reservations for this duration.
+     *         parameter to show only reservations for this duration. <p>Valid
+     *         Values: <code>1 | 3 | 31536000 | 94608000</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -351,10 +359,12 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -364,10 +374,12 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -377,12 +389,14 @@ public class DescribeReservedDBInstancesRequest extends AmazonWebServiceRequest 
      * The maximum number of records to include in the response. If more than
      * the <code>MaxRecords</code> value is available, a marker is included
      * in the response so that the following results can be retrieved.
+     * <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more than
      *         the <code>MaxRecords</code> value is available, a marker is included
      *         in the response so that the following results can be retrieved.
+     *         <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -46,28 +46,37 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB Instance that will act as the source for the
      * Read Replica. Each DB Instance can have up to five Read Replicas.
+     * <p>Constraints: Must be the identifier of an existing DB Instance that
+     * is not already a Read Replica DB Instance.
      */
     private String sourceDBInstanceIdentifier;
 
     /**
-     * The compute and memory capacity of the Read Replica.
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
+     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     * source DB Instance.
      */
     private String dBInstanceClass;
 
     /**
      * The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.
+     * in. <p> Default: A random, system-chosen Availability Zone in the
+     * endpoint's region. <p> Example: <code>us-east-1d</code>
      */
     private String availabilityZone;
 
     /**
-     * The port number that the DB Instance uses for connections.
+     * The port number that the DB Instance uses for connections. <p>Default:
+     * Inherits from the source DB Instance <p>Valid Values:
+     * <code>1150-65535</code>
      */
     private Integer port;
 
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the Read Replica during the maintenance window.
+     * the Read Replica during the maintenance window. <p>Default: Inherits
+     * from the source DB Instance
      */
     private Boolean autoMinorVersionUpgrade;
 
@@ -87,7 +96,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * parameter is stored as a lowercase string.
      * @param sourceDBInstanceIdentifier The identifier of the DB Instance
      * that will act as the source for the Read Replica. Each DB Instance can
-     * have up to five Read Replicas.
+     * have up to five Read Replicas. <p>Constraints: Must be the identifier
+     * of an existing DB Instance that is not already a Read Replica DB
+     * Instance.
      */
     public CreateDBInstanceReadReplicaRequest(String dBInstanceIdentifier, String sourceDBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -143,9 +154,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB Instance that will act as the source for the
      * Read Replica. Each DB Instance can have up to five Read Replicas.
+     * <p>Constraints: Must be the identifier of an existing DB Instance that
+     * is not already a Read Replica DB Instance.
      *
      * @return The identifier of the DB Instance that will act as the source for the
      *         Read Replica. Each DB Instance can have up to five Read Replicas.
+     *         <p>Constraints: Must be the identifier of an existing DB Instance that
+     *         is not already a Read Replica DB Instance.
      */
     public String getSourceDBInstanceIdentifier() {
         return sourceDBInstanceIdentifier;
@@ -154,9 +169,13 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB Instance that will act as the source for the
      * Read Replica. Each DB Instance can have up to five Read Replicas.
+     * <p>Constraints: Must be the identifier of an existing DB Instance that
+     * is not already a Read Replica DB Instance.
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB Instance that will act as the source for the
      *         Read Replica. Each DB Instance can have up to five Read Replicas.
+     *         <p>Constraints: Must be the identifier of an existing DB Instance that
+     *         is not already a Read Replica DB Instance.
      */
     public void setSourceDBInstanceIdentifier(String sourceDBInstanceIdentifier) {
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
@@ -165,11 +184,15 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     /**
      * The identifier of the DB Instance that will act as the source for the
      * Read Replica. Each DB Instance can have up to five Read Replicas.
+     * <p>Constraints: Must be the identifier of an existing DB Instance that
+     * is not already a Read Replica DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDBInstanceIdentifier The identifier of the DB Instance that will act as the source for the
      *         Read Replica. Each DB Instance can have up to five Read Replicas.
+     *         <p>Constraints: Must be the identifier of an existing DB Instance that
+     *         is not already a Read Replica DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -181,29 +204,47 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * The compute and memory capacity of the Read Replica.
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
+     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     * source DB Instance.
      *
-     * @return The compute and memory capacity of the Read Replica.
+     * @return The compute and memory capacity of the Read Replica. <p> Valid Values:
+     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     *         source DB Instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the Read Replica.
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
+     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     * source DB Instance.
      *
-     * @param dBInstanceClass The compute and memory capacity of the Read Replica.
+     * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
+     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     *         source DB Instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the Read Replica.
+     * The compute and memory capacity of the Read Replica. <p> Valid Values:
+     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     * source DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The compute and memory capacity of the Read Replica.
+     * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
+     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
+     *         source DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -216,10 +257,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.
+     * in. <p> Default: A random, system-chosen Availability Zone in the
+     * endpoint's region. <p> Example: <code>us-east-1d</code>
      *
      * @return The Amazon EC2 Availability Zone that the Read Replica will be created
-     *         in.
+     *         in. <p> Default: A random, system-chosen Availability Zone in the
+     *         endpoint's region. <p> Example: <code>us-east-1d</code>
      */
     public String getAvailabilityZone() {
         return availabilityZone;
@@ -227,10 +270,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.
+     * in. <p> Default: A random, system-chosen Availability Zone in the
+     * endpoint's region. <p> Example: <code>us-east-1d</code>
      *
      * @param availabilityZone The Amazon EC2 Availability Zone that the Read Replica will be created
-     *         in.
+     *         in. <p> Default: A random, system-chosen Availability Zone in the
+     *         endpoint's region. <p> Example: <code>us-east-1d</code>
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -238,12 +283,14 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The Amazon EC2 Availability Zone that the Read Replica will be created
-     * in.
+     * in. <p> Default: A random, system-chosen Availability Zone in the
+     * endpoint's region. <p> Example: <code>us-east-1d</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The Amazon EC2 Availability Zone that the Read Replica will be created
-     *         in.
+     *         in. <p> Default: A random, system-chosen Availability Zone in the
+     *         endpoint's region. <p> Example: <code>us-east-1d</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -255,29 +302,41 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * The port number that the DB Instance uses for connections.
+     * The port number that the DB Instance uses for connections. <p>Default:
+     * Inherits from the source DB Instance <p>Valid Values:
+     * <code>1150-65535</code>
      *
-     * @return The port number that the DB Instance uses for connections.
+     * @return The port number that the DB Instance uses for connections. <p>Default:
+     *         Inherits from the source DB Instance <p>Valid Values:
+     *         <code>1150-65535</code>
      */
     public Integer getPort() {
         return port;
     }
     
     /**
-     * The port number that the DB Instance uses for connections.
+     * The port number that the DB Instance uses for connections. <p>Default:
+     * Inherits from the source DB Instance <p>Valid Values:
+     * <code>1150-65535</code>
      *
-     * @param port The port number that the DB Instance uses for connections.
+     * @param port The port number that the DB Instance uses for connections. <p>Default:
+     *         Inherits from the source DB Instance <p>Valid Values:
+     *         <code>1150-65535</code>
      */
     public void setPort(Integer port) {
         this.port = port;
     }
     
     /**
-     * The port number that the DB Instance uses for connections.
+     * The port number that the DB Instance uses for connections. <p>Default:
+     * Inherits from the source DB Instance <p>Valid Values:
+     * <code>1150-65535</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param port The port number that the DB Instance uses for connections.
+     * @param port The port number that the DB Instance uses for connections. <p>Default:
+     *         Inherits from the source DB Instance <p>Valid Values:
+     *         <code>1150-65535</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -290,10 +349,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the Read Replica during the maintenance window.
+     * the Read Replica during the maintenance window. <p>Default: Inherits
+     * from the source DB Instance
      *
      * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the Read Replica during the maintenance window.
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
+     *         from the source DB Instance
      */
     public Boolean isAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;
@@ -301,10 +362,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the Read Replica during the maintenance window.
+     * the Read Replica during the maintenance window. <p>Default: Inherits
+     * from the source DB Instance
      *
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the Read Replica during the maintenance window.
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
+     *         from the source DB Instance
      */
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
         this.autoMinorVersionUpgrade = autoMinorVersionUpgrade;
@@ -312,12 +375,14 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the Read Replica during the maintenance window.
+     * the Read Replica during the maintenance window. <p>Default: Inherits
+     * from the source DB Instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoMinorVersionUpgrade Indicates that minor engine upgrades will be applied automatically to
-     *         the Read Replica during the maintenance window.
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
+     *         from the source DB Instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -330,10 +395,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * Indicates that minor engine upgrades will be applied automatically to
-     * the Read Replica during the maintenance window.
+     * the Read Replica during the maintenance window. <p>Default: Inherits
+     * from the source DB Instance
      *
      * @return Indicates that minor engine upgrades will be applied automatically to
-     *         the Read Replica during the maintenance window.
+     *         the Read Replica during the maintenance window. <p>Default: Inherits
+     *         from the source DB Instance
      */
     public Boolean getAutoMinorVersionUpgrade() {
         return autoMinorVersionUpgrade;

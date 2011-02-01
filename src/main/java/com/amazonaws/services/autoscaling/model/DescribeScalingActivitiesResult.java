@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * 
+ * The output for the DescribeScalingActivities action.
  * </p>
  */
 public class DescribeScalingActivitiesResult {

@@ -17,7 +17,10 @@ package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonCloudWatch exception
+ * <p>
+ * An input parameter that is mandatory for processing the request is
+ * not supplied.
+ * </p>
  */        
 public class MissingRequiredParameterException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

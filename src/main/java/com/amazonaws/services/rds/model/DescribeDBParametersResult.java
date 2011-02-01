@@ -16,7 +16,8 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * Contains the result of a successful invocation of the
+ * DescribeDBParameters action.
  * </p>
  */
 public class DescribeDBParametersResult {

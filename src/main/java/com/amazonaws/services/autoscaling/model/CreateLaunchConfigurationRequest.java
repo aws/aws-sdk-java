@@ -43,7 +43,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -62,18 +62,18 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String keyName;
 
     /**
-     * A list of names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * The names of the security groups with which to associate EC2
+     * instances. For more information about Amazon EC2 security groups, go
+     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation.</a>
      */
     private java.util.List<String> securityGroups;
 
     /**
      * The user data available to the launched EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -84,7 +84,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The instance type of the EC2 instance. For more information about
      * Amazon EC2 instance types, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -112,13 +112,20 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String ramdiskId;
 
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     * information about Amazon EC2 BlockDeviceMappings, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * A list of mappings that specify how block devices are exposed to the
+     * instance. Each mapping is made up of a <i>VirtualName</i>, a
+     * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     * information about the associated Elastic Block Storage volume. For
+     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+
+    /**
+     * Enables detailed monitoring.
+     */
+    private InstanceMonitoring instanceMonitoring;
 
     /**
      * The name of the launch configuration to create.
@@ -169,7 +176,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -178,7 +185,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @return Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
     public String getImageId() {
@@ -188,7 +195,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -197,7 +204,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
     public void setImageId(String imageId) {
@@ -207,7 +214,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -218,7 +225,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -277,15 +284,15 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * The names of the security groups with which to associate EC2
+     * instances. For more information about Amazon EC2 security groups, go
+     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation.</a>
      *
-     * @return A list of names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @return The names of the security groups with which to associate EC2
+     *         instances. For more information about Amazon EC2 security groups, go
+     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation.</a>
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -295,15 +302,15 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * The names of the security groups with which to associate EC2
+     * instances. For more information about Amazon EC2 security groups, go
+     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation.</a>
      *
-     * @param securityGroups A list of names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param securityGroups The names of the security groups with which to associate EC2
+     *         instances. For more information about Amazon EC2 security groups, go
+     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation.</a>
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
@@ -314,17 +321,17 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * The names of the security groups with which to associate EC2
+     * instances. For more information about Amazon EC2 security groups, go
+     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation.</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups A list of names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param securityGroups The names of the security groups with which to associate EC2
+     *         instances. For more information about Amazon EC2 security groups, go
+     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation.</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -337,17 +344,17 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups,
-     * please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * The names of the security groups with which to associate EC2
+     * instances. For more information about Amazon EC2 security groups, go
+     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation.</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups A list of names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups,
-     *         please see <a hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param securityGroups The names of the security groups with which to associate EC2
+     *         instances. For more information about Amazon EC2 security groups, go
+     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation.</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -365,8 +372,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The user data available to the launched EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -374,8 +381,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @return The user data available to the launched EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation</a>.
      */
     public String getUserData() {
         return userData;
@@ -384,8 +391,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The user data available to the launched EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -393,8 +400,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param userData The user data available to the launched EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation</a>.
      */
     public void setUserData(String userData) {
         this.userData = userData;
@@ -403,8 +410,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The user data available to the launched EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * documentation</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -414,8 +421,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param userData The user data available to the launched EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         documentation</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -429,7 +436,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The instance type of the EC2 instance. For more information about
      * Amazon EC2 instance types, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -438,7 +445,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @return The instance type of the EC2 instance. For more information about
      *         Amazon EC2 instance types, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
     public String getInstanceType() {
@@ -448,7 +455,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The instance type of the EC2 instance. For more information about
      * Amazon EC2 instance types, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * <b>Constraints:</b><br/>
@@ -457,7 +464,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param instanceType The instance type of the EC2 instance. For more information about
      *         Amazon EC2 instance types, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
     public void setInstanceType(String instanceType) {
@@ -467,7 +474,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     /**
      * The instance type of the EC2 instance. For more information about
      * Amazon EC2 instance types, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -478,7 +485,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *
      * @param instanceType The instance type of the EC2 instance. For more information about
      *         Amazon EC2 instance types, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
+     *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -583,17 +590,21 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     * information about Amazon EC2 BlockDeviceMappings, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * A list of mappings that specify how block devices are exposed to the
+     * instance. Each mapping is made up of a <i>VirtualName</i>, a
+     * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     * information about the associated Elastic Block Storage volume. For
+     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
-     * @return Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     *         information about Amazon EC2 BlockDeviceMappings, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @return A list of mappings that specify how block devices are exposed to the
+     *         instance. Each mapping is made up of a <i>VirtualName</i>, a
+     *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     *         information about the associated Elastic Block Storage volume. For
+     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -603,17 +614,21 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     * information about Amazon EC2 BlockDeviceMappings, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * A list of mappings that specify how block devices are exposed to the
+     * instance. Each mapping is made up of a <i>VirtualName</i>, a
+     * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     * information about the associated Elastic Block Storage volume. For
+     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     *         information about Amazon EC2 BlockDeviceMappings, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param blockDeviceMappings A list of mappings that specify how block devices are exposed to the
+     *         instance. Each mapping is made up of a <i>VirtualName</i>, a
+     *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     *         information about the associated Elastic Block Storage volume. For
+     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
@@ -624,19 +639,23 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     * information about Amazon EC2 BlockDeviceMappings, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * A list of mappings that specify how block devices are exposed to the
+     * instance. Each mapping is made up of a <i>VirtualName</i>, a
+     * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     * information about the associated Elastic Block Storage volume. For
+     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     *         information about Amazon EC2 BlockDeviceMappings, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param blockDeviceMappings A list of mappings that specify how block devices are exposed to the
+     *         instance. Each mapping is made up of a <i>VirtualName</i>, a
+     *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     *         information about the associated Elastic Block Storage volume. For
+     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -649,19 +668,23 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Specifies how block devices are exposed to the instance. Each mapping
-     * is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     * information about Amazon EC2 BlockDeviceMappings, please see <a
-     * hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * A list of mappings that specify how block devices are exposed to the
+     * instance. Each mapping is made up of a <i>VirtualName</i>, a
+     * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     * information about the associated Elastic Block Storage volume. For
+     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
-     *         is made up of a <i>VirtualName</i> and a <i>DeviceName</i>. For more
-     *         information about Amazon EC2 BlockDeviceMappings, please see <a
-     *         hlink="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     * @param blockDeviceMappings A list of mappings that specify how block devices are exposed to the
+     *         instance. Each mapping is made up of a <i>VirtualName</i>, a
+     *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
+     *         information about the associated Elastic Block Storage volume. For
+     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -675,6 +698,40 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
 
         return this;
     }
+    
+    /**
+     * Enables detailed monitoring.
+     *
+     * @return Enables detailed monitoring.
+     */
+    public InstanceMonitoring getInstanceMonitoring() {
+        return instanceMonitoring;
+    }
+    
+    /**
+     * Enables detailed monitoring.
+     *
+     * @param instanceMonitoring Enables detailed monitoring.
+     */
+    public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
+        this.instanceMonitoring = instanceMonitoring;
+    }
+    
+    /**
+     * Enables detailed monitoring.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceMonitoring Enables detailed monitoring.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLaunchConfigurationRequest withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
+        this.instanceMonitoring = instanceMonitoring;
+        return this;
+    }
+    
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -697,6 +754,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         sb.append("KernelId: " + kernelId + ", ");
         sb.append("RamdiskId: " + ramdiskId + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("InstanceMonitoring: " + instanceMonitoring + ", ");
         sb.append("}");
         return sb.toString();
     }

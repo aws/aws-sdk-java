@@ -16,8 +16,17 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
+ * 
+ * <ul>
+ * <li> ModifyDBInstance </li>
+ * <li> RebootDBInstance </li>
+ * <li> RestoreDBInstanceFromDBSnapshot </li>
+ * <li> RestoreDBInstanceToPointInTime </li>
+ * 
+ * </ul>
  */
 public class DBSecurityGroupMembership {
 
@@ -27,7 +36,7 @@ public class DBSecurityGroupMembership {
     private String dBSecurityGroupName;
 
     /**
-     * 
+     * The status of the DB Security Group.
      */
     private String status;
 
@@ -72,29 +81,29 @@ public class DBSecurityGroupMembership {
     
     
     /**
-     * 
+     * The status of the DB Security Group.
      *
-     * @return 
+     * @return The status of the DB Security Group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * 
+     * The status of the DB Security Group.
      *
-     * @param status 
+     * @param status The status of the DB Security Group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * 
+     * The status of the DB Security Group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status 
+     * @param status The status of the DB Security Group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

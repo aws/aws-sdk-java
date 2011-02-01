@@ -18,7 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * 
+ * Request would result in user exceeding the allowed number of DB
+ * Security Groups.
  * </p>
  */        
 public class DBSecurityGroupQuotaExceededException extends AmazonServiceException {

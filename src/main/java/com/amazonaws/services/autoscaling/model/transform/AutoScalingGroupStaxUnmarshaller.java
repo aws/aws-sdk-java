@@ -51,6 +51,10 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setAutoScalingGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AutoScalingGroupARN", targetDepth)) {
+                    autoScalingGroup.setAutoScalingGroupARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("LaunchConfigurationName", targetDepth)) {
                     autoScalingGroup.setLaunchConfigurationName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -67,8 +71,8 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setDesiredCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Cooldown", targetDepth)) {
-                    autoScalingGroup.setCooldown(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("DefaultCooldown", targetDepth)) {
+                    autoScalingGroup.setDefaultCooldown(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
@@ -79,12 +83,36 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.getLoadBalancerNames().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("HealthCheckType", targetDepth)) {
+                    autoScalingGroup.setHealthCheckType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("HealthCheckGracePeriod", targetDepth)) {
+                    autoScalingGroup.setHealthCheckGracePeriod(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Instances/member", targetDepth)) {
                     autoScalingGroup.getInstances().add(InstanceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     autoScalingGroup.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SuspendedProcesses/member", targetDepth)) {
+                    autoScalingGroup.getSuspendedProcesses().add(SuspendedProcessStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("PlacementGroup", targetDepth)) {
+                    autoScalingGroup.setPlacementGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("VPCZoneIdentifier", targetDepth)) {
+                    autoScalingGroup.setVPCZoneIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EnabledMetrics/member", targetDepth)) {
+                    autoScalingGroup.getEnabledMetrics().add(EnabledMetricStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

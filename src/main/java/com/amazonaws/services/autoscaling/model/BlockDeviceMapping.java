@@ -22,7 +22,7 @@ package com.amazonaws.services.autoscaling.model;
 public class BlockDeviceMapping {
 
     /**
-     * Specifies the virtual name associated with the device.
+     * The virtual name associated with the device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -31,7 +31,7 @@ public class BlockDeviceMapping {
     private String virtualName;
 
     /**
-     * Specifies the name of the device within Amazon EC2.
+     * The name of the device within Amazon EC2.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -40,33 +40,38 @@ public class BlockDeviceMapping {
     private String deviceName;
 
     /**
-     * Specifies the virtual name associated with the device.
+     * The Elastic Block Storage volume information.
+     */
+    private Ebs ebs;
+
+    /**
+     * The virtual name associated with the device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the virtual name associated with the device.
+     * @return The virtual name associated with the device.
      */
     public String getVirtualName() {
         return virtualName;
     }
     
     /**
-     * Specifies the virtual name associated with the device.
+     * The virtual name associated with the device.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param virtualName Specifies the virtual name associated with the device.
+     * @param virtualName The virtual name associated with the device.
      */
     public void setVirtualName(String virtualName) {
         this.virtualName = virtualName;
     }
     
     /**
-     * Specifies the virtual name associated with the device.
+     * The virtual name associated with the device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -74,7 +79,7 @@ public class BlockDeviceMapping {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param virtualName Specifies the virtual name associated with the device.
+     * @param virtualName The virtual name associated with the device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -86,33 +91,33 @@ public class BlockDeviceMapping {
     
     
     /**
-     * Specifies the name of the device within Amazon EC2.
+     * The name of the device within Amazon EC2.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the name of the device within Amazon EC2.
+     * @return The name of the device within Amazon EC2.
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * Specifies the name of the device within Amazon EC2.
+     * The name of the device within Amazon EC2.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param deviceName Specifies the name of the device within Amazon EC2.
+     * @param deviceName The name of the device within Amazon EC2.
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * Specifies the name of the device within Amazon EC2.
+     * The name of the device within Amazon EC2.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -120,13 +125,47 @@ public class BlockDeviceMapping {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param deviceName Specifies the name of the device within Amazon EC2.
+     * @param deviceName The name of the device within Amazon EC2.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public BlockDeviceMapping withDeviceName(String deviceName) {
         this.deviceName = deviceName;
+        return this;
+    }
+    
+    
+    /**
+     * The Elastic Block Storage volume information.
+     *
+     * @return The Elastic Block Storage volume information.
+     */
+    public Ebs getEbs() {
+        return ebs;
+    }
+    
+    /**
+     * The Elastic Block Storage volume information.
+     *
+     * @param ebs The Elastic Block Storage volume information.
+     */
+    public void setEbs(Ebs ebs) {
+        this.ebs = ebs;
+    }
+    
+    /**
+     * The Elastic Block Storage volume information.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebs The Elastic Block Storage volume information.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public BlockDeviceMapping withEbs(Ebs ebs) {
+        this.ebs = ebs;
         return this;
     }
     
@@ -145,6 +184,7 @@ public class BlockDeviceMapping {
         sb.append("{");
         sb.append("VirtualName: " + virtualName + ", ");
         sb.append("DeviceName: " + deviceName + ", ");
+        sb.append("Ebs: " + ebs + ", ");
         sb.append("}");
         return sb.toString();
     }

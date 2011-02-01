@@ -28,7 +28,9 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
 
     /**
      * The name for the DB Security Group. This value is stored as a
-     * lowercase string.
+     * lowercase string. <p>Constraints: Must contain no more than 255
+     * alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     * <code>mysecuritygroup</code>
      */
     private String dBSecurityGroupName;
 
@@ -49,7 +51,9 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBSecurityGroupName The name for the DB Security Group. This
-     * value is stored as a lowercase string.
+     * value is stored as a lowercase string. <p>Constraints: Must contain no
+     * more than 255 alphanumeric characters or hyphens. Must not be
+     * "Default". <p>Example: <code>mysecuritygroup</code>
      * @param dBSecurityGroupDescription The description for the DB Security
      * Group.
      */
@@ -60,10 +64,14 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name for the DB Security Group. This value is stored as a
-     * lowercase string.
+     * lowercase string. <p>Constraints: Must contain no more than 255
+     * alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     * <code>mysecuritygroup</code>
      *
      * @return The name for the DB Security Group. This value is stored as a
-     *         lowercase string.
+     *         lowercase string. <p>Constraints: Must contain no more than 255
+     *         alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     *         <code>mysecuritygroup</code>
      */
     public String getDBSecurityGroupName() {
         return dBSecurityGroupName;
@@ -71,10 +79,14 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name for the DB Security Group. This value is stored as a
-     * lowercase string.
+     * lowercase string. <p>Constraints: Must contain no more than 255
+     * alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     * <code>mysecuritygroup</code>
      *
      * @param dBSecurityGroupName The name for the DB Security Group. This value is stored as a
-     *         lowercase string.
+     *         lowercase string. <p>Constraints: Must contain no more than 255
+     *         alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     *         <code>mysecuritygroup</code>
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -82,12 +94,16 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name for the DB Security Group. This value is stored as a
-     * lowercase string.
+     * lowercase string. <p>Constraints: Must contain no more than 255
+     * alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     * <code>mysecuritygroup</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSecurityGroupName The name for the DB Security Group. This value is stored as a
-     *         lowercase string.
+     *         lowercase string. <p>Constraints: Must contain no more than 255
+     *         alphanumeric characters or hyphens. Must not be "Default". <p>Example:
+     *         <code>mysecuritygroup</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * 
+ * The LaunchConfiguration data type.
  * </p>
  */
 public class LaunchConfiguration {
@@ -29,6 +29,15 @@ public class LaunchConfiguration {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String launchConfigurationName;
+
+    /**
+     * The launch configuration's Amazon Resource Name (ARN).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String launchConfigurationARN;
 
     /**
      * Provides the unique ID of the <i>Amazon Machine Image</i> (AMI) that
@@ -50,13 +59,13 @@ public class LaunchConfiguration {
     private String keyName;
 
     /**
-     * Contains a description of the security groups to associate with the
-     * EC2 instances.
+     * A description of the security groups to associate with the EC2
+     * instances.
      */
     private java.util.List<String> securityGroups;
 
     /**
-     * Contains the user data available to the launched EC2 instances.
+     * The user data available to the launched EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -96,6 +105,12 @@ public class LaunchConfiguration {
      * is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+
+    /**
+     * Controls whether instances in this group are launched with detailed
+     * monitoring or not.
+     */
+    private InstanceMonitoring instanceMonitoring;
 
     /**
      * Provides the creation date and time for this launch configuration.
@@ -144,6 +159,52 @@ public class LaunchConfiguration {
      */
     public LaunchConfiguration withLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
+        return this;
+    }
+    
+    
+    /**
+     * The launch configuration's Amazon Resource Name (ARN).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The launch configuration's Amazon Resource Name (ARN).
+     */
+    public String getLaunchConfigurationARN() {
+        return launchConfigurationARN;
+    }
+    
+    /**
+     * The launch configuration's Amazon Resource Name (ARN).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param launchConfigurationARN The launch configuration's Amazon Resource Name (ARN).
+     */
+    public void setLaunchConfigurationARN(String launchConfigurationARN) {
+        this.launchConfigurationARN = launchConfigurationARN;
+    }
+    
+    /**
+     * The launch configuration's Amazon Resource Name (ARN).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param launchConfigurationARN The launch configuration's Amazon Resource Name (ARN).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchConfiguration withLaunchConfigurationARN(String launchConfigurationARN) {
+        this.launchConfigurationARN = launchConfigurationARN;
         return this;
     }
     
@@ -247,11 +308,11 @@ public class LaunchConfiguration {
     
     
     /**
-     * Contains a description of the security groups to associate with the
-     * EC2 instances.
+     * A description of the security groups to associate with the EC2
+     * instances.
      *
-     * @return Contains a description of the security groups to associate with the
-     *         EC2 instances.
+     * @return A description of the security groups to associate with the EC2
+     *         instances.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -261,11 +322,11 @@ public class LaunchConfiguration {
     }
     
     /**
-     * Contains a description of the security groups to associate with the
-     * EC2 instances.
+     * A description of the security groups to associate with the EC2
+     * instances.
      *
-     * @param securityGroups Contains a description of the security groups to associate with the
-     *         EC2 instances.
+     * @param securityGroups A description of the security groups to associate with the EC2
+     *         instances.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
@@ -276,13 +337,13 @@ public class LaunchConfiguration {
     }
     
     /**
-     * Contains a description of the security groups to associate with the
-     * EC2 instances.
+     * A description of the security groups to associate with the EC2
+     * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups Contains a description of the security groups to associate with the
-     *         EC2 instances.
+     * @param securityGroups A description of the security groups to associate with the EC2
+     *         instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -295,13 +356,13 @@ public class LaunchConfiguration {
     }
     
     /**
-     * Contains a description of the security groups to associate with the
-     * EC2 instances.
+     * A description of the security groups to associate with the EC2
+     * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups Contains a description of the security groups to associate with the
-     *         EC2 instances.
+     * @param securityGroups A description of the security groups to associate with the EC2
+     *         instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -317,33 +378,33 @@ public class LaunchConfiguration {
     }
     
     /**
-     * Contains the user data available to the launched EC2 instances.
+     * The user data available to the launched EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Contains the user data available to the launched EC2 instances.
+     * @return The user data available to the launched EC2 instances.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * Contains the user data available to the launched EC2 instances.
+     * The user data available to the launched EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData Contains the user data available to the launched EC2 instances.
+     * @param userData The user data available to the launched EC2 instances.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * Contains the user data available to the launched EC2 instances.
+     * The user data available to the launched EC2 instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -351,7 +412,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData Contains the user data available to the launched EC2 instances.
+     * @param userData The user data available to the launched EC2 instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -571,6 +632,46 @@ public class LaunchConfiguration {
     }
     
     /**
+     * Controls whether instances in this group are launched with detailed
+     * monitoring or not.
+     *
+     * @return Controls whether instances in this group are launched with detailed
+     *         monitoring or not.
+     */
+    public InstanceMonitoring getInstanceMonitoring() {
+        return instanceMonitoring;
+    }
+    
+    /**
+     * Controls whether instances in this group are launched with detailed
+     * monitoring or not.
+     *
+     * @param instanceMonitoring Controls whether instances in this group are launched with detailed
+     *         monitoring or not.
+     */
+    public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
+        this.instanceMonitoring = instanceMonitoring;
+    }
+    
+    /**
+     * Controls whether instances in this group are launched with detailed
+     * monitoring or not.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceMonitoring Controls whether instances in this group are launched with detailed
+     *         monitoring or not.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchConfiguration withInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
+        this.instanceMonitoring = instanceMonitoring;
+        return this;
+    }
+    
+    
+    /**
      * Provides the creation date and time for this launch configuration.
      *
      * @return Provides the creation date and time for this launch configuration.
@@ -617,6 +718,7 @@ public class LaunchConfiguration {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        sb.append("LaunchConfigurationARN: " + launchConfigurationARN + ", ");
         sb.append("ImageId: " + imageId + ", ");
         sb.append("KeyName: " + keyName + ", ");
         sb.append("SecurityGroups: " + securityGroups + ", ");
@@ -625,6 +727,7 @@ public class LaunchConfiguration {
         sb.append("KernelId: " + kernelId + ", ");
         sb.append("RamdiskId: " + ramdiskId + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        sb.append("InstanceMonitoring: " + instanceMonitoring + ", ");
         sb.append("CreatedTime: " + createdTime + ", ");
         sb.append("}");
         return sb.toString();

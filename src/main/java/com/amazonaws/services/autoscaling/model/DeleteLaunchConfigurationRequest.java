@@ -21,9 +21,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified LaunchConfiguration.
  * </p>
  * <p>
- * The specified LaunchConfiguration must not be currently attached to
- * any Auto Scaling group. Once this call completes, the launch
- * configuration is no longer available for use.
+ * The specified launch configuration must not be attached to an Auto
+ * Scaling group. Once this call completes, the launch configuration is
+ * no longer available for use.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)
@@ -31,50 +31,50 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The name of the launch configuration.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String launchConfigurationName;
 
     /**
-     * 
+     * The name of the launch configuration.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return 
+     * @return The name of the launch configuration.
      */
     public String getLaunchConfigurationName() {
         return launchConfigurationName;
     }
     
     /**
-     * 
+     * The name of the launch configuration.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param launchConfigurationName 
+     * @param launchConfigurationName The name of the launch configuration.
      */
     public void setLaunchConfigurationName(String launchConfigurationName) {
         this.launchConfigurationName = launchConfigurationName;
     }
     
     /**
-     * 
+     * The name of the launch configuration.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param launchConfigurationName 
+     * @param launchConfigurationName The name of the launch configuration.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

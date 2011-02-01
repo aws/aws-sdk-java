@@ -16,7 +16,20 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
+ * Contains the result of a successful invocation of the following
+ * actions:
+ * </p>
  * 
+ * <ul>
+ * <li> DescribeDBSecurityGroups </li>
+ * <li> AuthorizeDBSecurityGroupIngress </li>
+ * <li> CreateDBSecurityGroup </li>
+ * <li> RevokeDBSecurityGroupIngress </li>
+ * 
+ * </ul>
+ * <p>
+ * This data type is used as a response element in the
+ * DescribeDBSecurityGroups action.
  * </p>
  */
 public class DBSecurityGroup {

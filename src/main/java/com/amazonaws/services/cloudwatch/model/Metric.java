@@ -15,54 +15,135 @@
 package com.amazonaws.services.cloudwatch.model;
 
 /**
- * Metric
+ * <p>
+ * The <code>Metric</code> data type contains information about a
+ * specific metric. If you call ListMetrics, Amazon CloudWatch returns
+ * information contained by this data type.
+ * </p>
  */
 public class Metric {
 
-    private String measureName;
-
-    private java.util.List<Dimension> dimensions;
-
+    /**
+     * The namespace of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[^:].*<br/>
+     */
     private String namespace;
 
     /**
-     * Returns the value of the MeasureName property for this object.
-     *
-     * @return The value of the MeasureName property for this object.
+     * The name of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      */
-    public String getMeasureName() {
-        return measureName;
+    private String metricName;
+
+    /**
+     * A list of dimensions associated with the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     */
+    private java.util.List<Dimension> dimensions;
+
+    /**
+     * The namespace of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[^:].*<br/>
+     *
+     * @return The namespace of the metric.
+     */
+    public String getNamespace() {
+        return namespace;
     }
     
     /**
-     * Sets the value of the MeasureName property for this object.
+     * The namespace of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[^:].*<br/>
      *
-     * @param measureName The new value for the MeasureName property for this object.
+     * @param namespace The namespace of the metric.
      */
-    public void setMeasureName(String measureName) {
-        this.measureName = measureName;
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
     }
     
     /**
-     * Sets the value of the MeasureName property for this object.
+     * The namespace of the metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[^:].*<br/>
      *
-     * @param measureName The new value for the MeasureName property for this object.
+     * @param namespace The namespace of the metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public Metric withMeasureName(String measureName) {
-        this.measureName = measureName;
+    public Metric withNamespace(String namespace) {
+        this.namespace = namespace;
         return this;
     }
     
     
     /**
-     * Returns the value of the Dimensions property for this object.
+     * The name of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      *
-     * @return The value of the Dimensions property for this object.
+     * @return The name of the metric.
+     */
+    public String getMetricName() {
+        return metricName;
+    }
+    
+    /**
+     * The name of the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param metricName The name of the metric.
+     */
+    public void setMetricName(String metricName) {
+        this.metricName = metricName;
+    }
+    
+    /**
+     * The name of the metric.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param metricName The name of the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Metric withMetricName(String metricName) {
+        this.metricName = metricName;
+        return this;
+    }
+    
+    
+    /**
+     * A list of dimensions associated with the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
+     *
+     * @return A list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
         if (dimensions == null) {
@@ -72,9 +153,12 @@ public class Metric {
     }
     
     /**
-     * Sets the value of the Dimensions property for this object.
+     * A list of dimensions associated with the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param dimensions The new value for the Dimensions property for this object.
+     * @param dimensions A list of dimensions associated with the metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
         java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
@@ -85,11 +169,14 @@ public class Metric {
     }
     
     /**
-     * Sets the value of the Dimensions property for this object.
+     * A list of dimensions associated with the metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param dimensions The new value for the Dimensions property for this object.
+     * @param dimensions A list of dimensions associated with the metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -102,11 +189,14 @@ public class Metric {
     }
     
     /**
-     * Sets the value of the Dimensions property for this object.
+     * A list of dimensions associated with the metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10<br/>
      *
-     * @param dimensions The new value for the Dimensions property for this object.
+     * @param dimensions A list of dimensions associated with the metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,49 +212,6 @@ public class Metric {
     }
     
     /**
-     * Returns the value of the Namespace property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @return The value of the Namespace property for this object.
-     */
-    public String getNamespace() {
-        return namespace;
-    }
-    
-    /**
-     * Sets the value of the Namespace property for this object.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @param namespace The new value for the Namespace property for this object.
-     */
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-    
-    /**
-     * Sets the value of the Namespace property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[^:].*<br/>
-     *
-     * @param namespace The new value for the Namespace property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public Metric withNamespace(String namespace) {
-        this.namespace = namespace;
-        return this;
-    }
-    
-    
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -176,9 +223,9 @@ public class Metric {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MeasureName: " + measureName + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
         sb.append("Namespace: " + namespace + ", ");
+        sb.append("MetricName: " + metricName + ", ");
+        sb.append("Dimensions: " + dimensions + ", ");
         sb.append("}");
         return sb.toString();
     }

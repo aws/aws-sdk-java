@@ -29,14 +29,17 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of a specific database parameter group to return details for.
+     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      */
     private String dBParameterGroupName;
 
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     private Integer maxRecords;
 
@@ -44,7 +47,7 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -56,8 +59,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of a specific database parameter group to return details for.
+     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      *
      * @return The name of a specific database parameter group to return details for.
+     *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     *         or contain two consecutive hyphens</li> </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
@@ -65,8 +74,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of a specific database parameter group to return details for.
+     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      *
      * @param dBParameterGroupName The name of a specific database parameter group to return details for.
+     *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     *         or contain two consecutive hyphens</li> </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -74,10 +89,16 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of a specific database parameter group to return details for.
+     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName The name of a specific database parameter group to return details for.
+     *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     *         or contain two consecutive hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,14 +111,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -105,14 +126,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -120,16 +141,16 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -144,12 +165,12 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      *
      * @return An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
@@ -159,12 +180,12 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      *
      * @param marker An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -174,14 +195,14 @@ public class DescribeDBParameterGroupsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

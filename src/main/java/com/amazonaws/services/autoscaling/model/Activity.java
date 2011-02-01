@@ -16,7 +16,10 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The Activity data type.
+ * A Scaling Activity is a long-running process that represents a change
+ * to your AutoScalingGroup, such as changing the size of the group. It
+ * can also be a process to replace an instance, or a process to perform
+ * any other long-running operations supported by the API.
  * </p>
  */
 public class Activity {
@@ -30,6 +33,15 @@ public class Activity {
     private String activityId;
 
     /**
+     * The name of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String autoScalingGroupName;
+
+    /**
      * Contains a friendly, more verbose description of the scaling activity.
      * <p>
      * <b>Constraints:</b><br/>
@@ -41,7 +53,7 @@ public class Activity {
      * Contains the reason the activity was begun.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String cause;
@@ -68,6 +80,7 @@ public class Activity {
      * Contains a friendly, more verbose description of the activity status.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String statusMessage;
@@ -122,6 +135,52 @@ public class Activity {
     
     
     /**
+     * The name of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The name of the Auto Scaling group.
+     */
+    public String getAutoScalingGroupName() {
+        return autoScalingGroupName;
+    }
+    
+    /**
+     * The name of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param autoScalingGroupName The name of the Auto Scaling group.
+     */
+    public void setAutoScalingGroupName(String autoScalingGroupName) {
+        this.autoScalingGroupName = autoScalingGroupName;
+    }
+    
+    /**
+     * The name of the Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param autoScalingGroupName The name of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Activity withAutoScalingGroupName(String autoScalingGroupName) {
+        this.autoScalingGroupName = autoScalingGroupName;
+        return this;
+    }
+    
+    
+    /**
      * Contains a friendly, more verbose description of the scaling activity.
      * <p>
      * <b>Constraints:</b><br/>
@@ -168,7 +227,7 @@ public class Activity {
      * Contains the reason the activity was begun.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Contains the reason the activity was begun.
@@ -181,7 +240,7 @@ public class Activity {
      * Contains the reason the activity was begun.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param cause Contains the reason the activity was begun.
@@ -196,7 +255,7 @@ public class Activity {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1023<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param cause Contains the reason the activity was begun.
@@ -325,6 +384,7 @@ public class Activity {
      * Contains a friendly, more verbose description of the activity status.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Contains a friendly, more verbose description of the activity status.
@@ -337,6 +397,7 @@ public class Activity {
      * Contains a friendly, more verbose description of the activity status.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param statusMessage Contains a friendly, more verbose description of the activity status.
@@ -351,6 +412,7 @@ public class Activity {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param statusMessage Contains a friendly, more verbose description of the activity status.
@@ -417,6 +479,7 @@ public class Activity {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("ActivityId: " + activityId + ", ");
+        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
         sb.append("Description: " + description + ", ");
         sb.append("Cause: " + cause + ", ");
         sb.append("StartTime: " + startTime + ", ");

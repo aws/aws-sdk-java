@@ -16,40 +16,40 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * 
+ * The output for the TerminateInstanceInAutoScalingGroup action.
  * </p>
  */
 public class TerminateInstanceInAutoScalingGroupResult {
 
     /**
-     * 
+     * A Scaling Activity.
      */
     private Activity activity;
 
     /**
-     * 
+     * A Scaling Activity.
      *
-     * @return 
+     * @return A Scaling Activity.
      */
     public Activity getActivity() {
         return activity;
     }
     
     /**
-     * 
+     * A Scaling Activity.
      *
-     * @param activity 
+     * @param activity A Scaling Activity.
      */
     public void setActivity(Activity activity) {
         this.activity = activity;
     }
     
     /**
-     * 
+     * A Scaling Activity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param activity 
+     * @param activity A Scaling Activity.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

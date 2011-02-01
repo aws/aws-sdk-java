@@ -17,7 +17,9 @@ package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonCloudWatch exception
+ * <p>
+ * Parameters that must not be used together were used together.
+ * </p>
  */        
 public class InvalidParameterCombinationException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

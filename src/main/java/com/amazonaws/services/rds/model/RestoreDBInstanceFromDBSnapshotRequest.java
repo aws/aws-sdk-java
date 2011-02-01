@@ -31,34 +31,49 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest {
 
     /**
-     * The identifier for the DB Snapshot to restore from.
+     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
 
     /**
      * Name of the DB Instance to create from the DB Snapshot. This parameter
-     * isn't case sensitive.
+     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * 255 alphanumeric characters or hyphens</li> <li>First character must
+     * be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
     private String dBSnapshotIdentifier;
 
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
+     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.2xlarge | db.m2.4xlarge</code>
      */
     private String dBInstanceClass;
 
     /**
-     * The port number on which the database accepts connections.
+     * The port number on which the database accepts connections. <p>Default:
+     * The same port as the original DB Instance <p>Constraints: Value must
+     * be <code>1115-65535</code>
      */
     private Integer port;
 
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in.
+     * in. <p>Default: A random, system-chosen Availability Zone.
+     * <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     * the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     * <code>us-east-1a</code>
      */
     private String availabilityZone;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * You cannot specify the AvailabilityZone parameter if the MultiAZ
+     * parameter is set to <code>true</code>.
      */
     private Boolean multiAZ;
 
@@ -80,9 +95,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * initialize any additional object members.
      * 
      * @param dBInstanceIdentifier The identifier for the DB Snapshot to
-     * restore from.
+     * restore from. <p>Constraints: <ul> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul>
      * @param dBSnapshotIdentifier Name of the DB Instance to create from the
-     * DB Snapshot. This parameter isn't case sensitive.
+     * DB Snapshot. This parameter isn't case sensitive. <p>Constraints: <ul>
+     * <li>Must contain from 1 to 255 alphanumeric characters or hyphens</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul> <p>Example:
+     * <code>my-snapshot-id</code>
      */
     public RestoreDBInstanceFromDBSnapshotRequest(String dBInstanceIdentifier, String dBSnapshotIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -90,29 +112,47 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * The identifier for the DB Snapshot to restore from.
+     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return The identifier for the DB Snapshot to restore from.
+     * @return The identifier for the DB Snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
     }
     
     /**
-     * The identifier for the DB Snapshot to restore from.
+     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from.
+     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
     
     /**
-     * The identifier for the DB Snapshot to restore from.
+     * The identifier for the DB Snapshot to restore from. <p>Constraints:
+     * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from.
+     * @param dBInstanceIdentifier The identifier for the DB Snapshot to restore from. <p>Constraints:
+     *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -125,10 +165,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Name of the DB Instance to create from the DB Snapshot. This parameter
-     * isn't case sensitive.
+     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * 255 alphanumeric characters or hyphens</li> <li>First character must
+     * be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
      * @return Name of the DB Instance to create from the DB Snapshot. This parameter
-     *         isn't case sensitive.
+     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         255 alphanumeric characters or hyphens</li> <li>First character must
+     *         be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
     public String getDBSnapshotIdentifier() {
         return dBSnapshotIdentifier;
@@ -136,10 +182,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Name of the DB Instance to create from the DB Snapshot. This parameter
-     * isn't case sensitive.
+     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * 255 alphanumeric characters or hyphens</li> <li>First character must
+     * be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
      * @param dBSnapshotIdentifier Name of the DB Instance to create from the DB Snapshot. This parameter
-     *         isn't case sensitive.
+     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         255 alphanumeric characters or hyphens</li> <li>First character must
+     *         be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      */
     public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
@@ -147,12 +199,18 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * Name of the DB Instance to create from the DB Snapshot. This parameter
-     * isn't case sensitive.
+     * isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     * 255 alphanumeric characters or hyphens</li> <li>First character must
+     * be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBSnapshotIdentifier Name of the DB Instance to create from the DB Snapshot. This parameter
-     *         isn't case sensitive.
+     *         isn't case sensitive. <p>Constraints: <ul> <li>Must contain from 1 to
+     *         255 alphanumeric characters or hyphens</li> <li>First character must
+     *         be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul> <p>Example: <code>my-snapshot-id</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -165,8 +223,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
+     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return The compute and memory capacity of the Amazon RDS DB instance.
+     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -174,8 +236,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
+     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
+     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -183,10 +249,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
+     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.2xlarge | db.m2.4xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
+     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -198,29 +268,41 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The port number on which the database accepts connections.
+     * The port number on which the database accepts connections. <p>Default:
+     * The same port as the original DB Instance <p>Constraints: Value must
+     * be <code>1115-65535</code>
      *
-     * @return The port number on which the database accepts connections.
+     * @return The port number on which the database accepts connections. <p>Default:
+     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         be <code>1115-65535</code>
      */
     public Integer getPort() {
         return port;
     }
     
     /**
-     * The port number on which the database accepts connections.
+     * The port number on which the database accepts connections. <p>Default:
+     * The same port as the original DB Instance <p>Constraints: Value must
+     * be <code>1115-65535</code>
      *
-     * @param port The port number on which the database accepts connections.
+     * @param port The port number on which the database accepts connections. <p>Default:
+     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         be <code>1115-65535</code>
      */
     public void setPort(Integer port) {
         this.port = port;
     }
     
     /**
-     * The port number on which the database accepts connections.
+     * The port number on which the database accepts connections. <p>Default:
+     * The same port as the original DB Instance <p>Constraints: Value must
+     * be <code>1115-65535</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param port The port number on which the database accepts connections.
+     * @param port The port number on which the database accepts connections. <p>Default:
+     *         The same port as the original DB Instance <p>Constraints: Value must
+     *         be <code>1115-65535</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -233,10 +315,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in.
+     * in. <p>Default: A random, system-chosen Availability Zone.
+     * <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     * the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     * <code>us-east-1a</code>
      *
      * @return The EC2 Availability Zone that the database instance will be created
-     *         in.
+     *         in. <p>Default: A random, system-chosen Availability Zone.
+     *         <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     *         the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     *         <code>us-east-1a</code>
      */
     public String getAvailabilityZone() {
         return availabilityZone;
@@ -244,10 +332,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in.
+     * in. <p>Default: A random, system-chosen Availability Zone.
+     * <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     * the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     * <code>us-east-1a</code>
      *
      * @param availabilityZone The EC2 Availability Zone that the database instance will be created
-     *         in.
+     *         in. <p>Default: A random, system-chosen Availability Zone.
+     *         <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     *         the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     *         <code>us-east-1a</code>
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
@@ -255,12 +349,18 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The EC2 Availability Zone that the database instance will be created
-     * in.
+     * in. <p>Default: A random, system-chosen Availability Zone.
+     * <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     * the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     * <code>us-east-1a</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param availabilityZone The EC2 Availability Zone that the database instance will be created
-     *         in.
+     *         in. <p>Default: A random, system-chosen Availability Zone.
+     *         <p>Constraint: You cannot specify the AvailabilityZone parameter if
+     *         the MultiAZ parameter is set to <code>true</code>. <p>Example:
+     *         <code>us-east-1a</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -272,29 +372,41 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * You cannot specify the AvailabilityZone parameter if the MultiAZ
+     * parameter is set to <code>true</code>.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     *         You cannot specify the AvailabilityZone parameter if the MultiAZ
+     *         parameter is set to <code>true</code>.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * You cannot specify the AvailabilityZone parameter if the MultiAZ
+     * parameter is set to <code>true</code>.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     *         You cannot specify the AvailabilityZone parameter if the MultiAZ
+     *         parameter is set to <code>true</code>.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * You cannot specify the AvailabilityZone parameter if the MultiAZ
+     * parameter is set to <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     *         You cannot specify the AvailabilityZone parameter if the MultiAZ
+     *         parameter is set to <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -306,9 +418,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment.
+     * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     * You cannot specify the AvailabilityZone parameter if the MultiAZ
+     * parameter is set to <code>true</code>.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
+     *         You cannot specify the AvailabilityZone parameter if the MultiAZ
+     *         parameter is set to <code>true</code>.
      */
     public Boolean getMultiAZ() {
         return multiAZ;

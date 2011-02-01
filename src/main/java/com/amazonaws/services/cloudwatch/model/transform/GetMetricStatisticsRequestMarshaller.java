@@ -32,25 +32,15 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
     public Request<GetMetricStatisticsRequest> marshall(GetMetricStatisticsRequest getMetricStatisticsRequest) {
         Request<GetMetricStatisticsRequest> request = new DefaultRequest<GetMetricStatisticsRequest>(getMetricStatisticsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "GetMetricStatistics");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (getMetricStatisticsRequest != null) {
-            java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
-            int statisticsListIndex = 1;
-            for (String statisticsListValue : statisticsList) {
-                if (statisticsListValue != null) {
-                    request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
-                }
-                statisticsListIndex++;
+            if (getMetricStatisticsRequest.getNamespace() != null) {
+                request.addParameter("Namespace", StringUtils.fromString(getMetricStatisticsRequest.getNamespace()));
             }
         }
         if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getPeriod() != null) {
-                request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
-            }
-        }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getMeasureName() != null) {
-                request.addParameter("MeasureName", StringUtils.fromString(getMetricStatisticsRequest.getMeasureName()));
+            if (getMetricStatisticsRequest.getMetricName() != null) {
+                request.addParameter("MetricName", StringUtils.fromString(getMetricStatisticsRequest.getMetricName()));
             }
         }
 
@@ -83,18 +73,23 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
             }
         }
         if (getMetricStatisticsRequest != null) {
+            if (getMetricStatisticsRequest.getPeriod() != null) {
+                request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
+            }
+        }
+        if (getMetricStatisticsRequest != null) {
+            java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
+            int statisticsListIndex = 1;
+            for (String statisticsListValue : statisticsList) {
+                if (statisticsListValue != null) {
+                    request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
+                }
+                statisticsListIndex++;
+            }
+        }
+        if (getMetricStatisticsRequest != null) {
             if (getMetricStatisticsRequest.getUnit() != null) {
                 request.addParameter("Unit", StringUtils.fromString(getMetricStatisticsRequest.getUnit()));
-            }
-        }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getCustomUnit() != null) {
-                request.addParameter("CustomUnit", StringUtils.fromString(getMetricStatisticsRequest.getCustomUnit()));
-            }
-        }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(getMetricStatisticsRequest.getNamespace()));
             }
         }
 

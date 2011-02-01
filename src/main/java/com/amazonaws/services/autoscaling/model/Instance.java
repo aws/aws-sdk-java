@@ -22,7 +22,7 @@ package com.amazonaws.services.autoscaling.model;
 public class Instance {
 
     /**
-     * Specifies EC2 instance ID.
+     * Specifies the EC2 instance ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -31,7 +31,7 @@ public class Instance {
     private String instanceId;
 
     /**
-     * 
+     * Availability zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -49,33 +49,51 @@ public class Instance {
     private String lifecycleState;
 
     /**
-     * Specifies EC2 instance ID.
+     * The instance's health status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String healthStatus;
+
+    /**
+     * The launch configuration associated with this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String launchConfigurationName;
+
+    /**
+     * Specifies the EC2 instance ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies EC2 instance ID.
+     * @return Specifies the EC2 instance ID.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Specifies EC2 instance ID.
+     * Specifies the EC2 instance ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId Specifies EC2 instance ID.
+     * @param instanceId Specifies the EC2 instance ID.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Specifies EC2 instance ID.
+     * Specifies the EC2 instance ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -83,7 +101,7 @@ public class Instance {
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId Specifies EC2 instance ID.
+     * @param instanceId Specifies the EC2 instance ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,33 +113,33 @@ public class Instance {
     
     
     /**
-     * 
+     * Availability zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return 
+     * @return Availability zones associated with this instance.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * 
+     * Availability zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone 
+     * @param availabilityZone Availability zones associated with this instance.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * 
+     * Availability zones associated with this instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -129,7 +147,7 @@ public class Instance {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone 
+     * @param availabilityZone Availability zones associated with this instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -187,6 +205,98 @@ public class Instance {
     
     
     /**
+     * The instance's health status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The instance's health status.
+     */
+    public String getHealthStatus() {
+        return healthStatus;
+    }
+    
+    /**
+     * The instance's health status.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthStatus The instance's health status.
+     */
+    public void setHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+    }
+    
+    /**
+     * The instance's health status.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthStatus The instance's health status.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withHealthStatus(String healthStatus) {
+        this.healthStatus = healthStatus;
+        return this;
+    }
+    
+    
+    /**
+     * The launch configuration associated with this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The launch configuration associated with this instance.
+     */
+    public String getLaunchConfigurationName() {
+        return launchConfigurationName;
+    }
+    
+    /**
+     * The launch configuration associated with this instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param launchConfigurationName The launch configuration associated with this instance.
+     */
+    public void setLaunchConfigurationName(String launchConfigurationName) {
+        this.launchConfigurationName = launchConfigurationName;
+    }
+    
+    /**
+     * The launch configuration associated with this instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param launchConfigurationName The launch configuration associated with this instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withLaunchConfigurationName(String launchConfigurationName) {
+        this.launchConfigurationName = launchConfigurationName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -201,6 +311,8 @@ public class Instance {
         sb.append("InstanceId: " + instanceId + ", ");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("LifecycleState: " + lifecycleState + ", ");
+        sb.append("HealthStatus: " + healthStatus + ", ");
+        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
         sb.append("}");
         return sb.toString();
     }

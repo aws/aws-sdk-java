@@ -21,14 +21,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This API deletes a particular DBParameterGroup. The DBParameterGroup
  * cannot be associated with any RDS instances to be deleted.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The specified database parameter group cannot be
+ * associated with any DB Instances.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */
 public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the DB Parameter Group. <note> The specified database
-     * security group must not be associated with any DB instances. </note>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>You cannot delete
+     * a default DB Parameter Group</li> </ul>
      */
     private String dBParameterGroupName;
 
@@ -43,44 +48,51 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the DB Parameter Group. <note>
-     * The specified database security group must not be associated with any
-     * DB instances. </note>
+     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * <p>Constraints: <ul> <li>Must be the name of an existing DB Parameter
+     * Group</li> <li>You cannot delete a default DB Parameter Group</li>
+     * </ul>
      */
     public DeleteDBParameterGroupRequest(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group. <note> The specified database
-     * security group must not be associated with any DB instances. </note>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>You cannot delete
+     * a default DB Parameter Group</li> </ul>
      *
-     * @return The name of the DB Parameter Group. <note> The specified database
-     *         security group must not be associated with any DB instances. </note>
+     * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
+     *         a default DB Parameter Group</li> </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group. <note> The specified database
-     * security group must not be associated with any DB instances. </note>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>You cannot delete
+     * a default DB Parameter Group</li> </ul>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <note> The specified database
-     *         security group must not be associated with any DB instances. </note>
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
+     *         a default DB Parameter Group</li> </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group. <note> The specified database
-     * security group must not be associated with any DB instances. </note>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>You cannot delete
+     * a default DB Parameter Group</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group. <note> The specified database
-     *         security group must not be associated with any DB instances. </note>
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>You cannot delete
+     *         a default DB Parameter Group</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -15,18 +15,26 @@
 package com.amazonaws.services.cloudwatch.model;
 
 /**
- * List Metrics Result
+ * <p>
+ * The output for the ListMetrics action.
+ * </p>
  */
 public class ListMetricsResult {
 
+    /**
+     * A list of metrics used to generate statistics for an AWS account.
+     */
     private java.util.List<Metric> metrics;
 
+    /**
+     * A string that marks the start of the next batch of returned results.
+     */
     private String nextToken;
 
     /**
-     * Returns the value of the Metrics property for this object.
+     * A list of metrics used to generate statistics for an AWS account.
      *
-     * @return The value of the Metrics property for this object.
+     * @return A list of metrics used to generate statistics for an AWS account.
      */
     public java.util.List<Metric> getMetrics() {
         if (metrics == null) {
@@ -36,9 +44,9 @@ public class ListMetricsResult {
     }
     
     /**
-     * Sets the value of the Metrics property for this object.
+     * A list of metrics used to generate statistics for an AWS account.
      *
-     * @param metrics The new value for the Metrics property for this object.
+     * @param metrics A list of metrics used to generate statistics for an AWS account.
      */
     public void setMetrics(java.util.Collection<Metric> metrics) {
         java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>();
@@ -49,11 +57,11 @@ public class ListMetricsResult {
     }
     
     /**
-     * Sets the value of the Metrics property for this object.
+     * A list of metrics used to generate statistics for an AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics The new value for the Metrics property for this object.
+     * @param metrics A list of metrics used to generate statistics for an AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,11 +74,11 @@ public class ListMetricsResult {
     }
     
     /**
-     * Sets the value of the Metrics property for this object.
+     * A list of metrics used to generate statistics for an AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param metrics The new value for the Metrics property for this object.
+     * @param metrics A list of metrics used to generate statistics for an AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -86,29 +94,29 @@ public class ListMetricsResult {
     }
     
     /**
-     * Returns the value of the NextToken property for this object.
+     * A string that marks the start of the next batch of returned results.
      *
-     * @return The value of the NextToken property for this object.
+     * @return A string that marks the start of the next batch of returned results.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * A string that marks the start of the next batch of returned results.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken A string that marks the start of the next batch of returned results.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * A string that marks the start of the next batch of returned results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken A string that marks the start of the next batch of returned results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

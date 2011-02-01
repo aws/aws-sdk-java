@@ -16,20 +16,28 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * 
+ * The AutoScalingGroupsType data type.
  * </p>
  */
 public class DescribeAutoScalingGroupsResult {
 
     /**
-     * 
+     * A list of Auto Scaling groups.
      */
     private java.util.List<AutoScalingGroup> autoScalingGroups;
 
     /**
-     * 
+     * A string that marks the start of the next batch of returned results.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String nextToken;
+
+    /**
+     * A list of Auto Scaling groups.
      *
-     * @return 
+     * @return A list of Auto Scaling groups.
      */
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         if (autoScalingGroups == null) {
@@ -39,9 +47,9 @@ public class DescribeAutoScalingGroupsResult {
     }
     
     /**
-     * 
+     * A list of Auto Scaling groups.
      *
-     * @param autoScalingGroups 
+     * @param autoScalingGroups A list of Auto Scaling groups.
      */
     public void setAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
         java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>();
@@ -52,11 +60,11 @@ public class DescribeAutoScalingGroupsResult {
     }
     
     /**
-     * 
+     * A list of Auto Scaling groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroups 
+     * @param autoScalingGroups A list of Auto Scaling groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +77,11 @@ public class DescribeAutoScalingGroupsResult {
     }
     
     /**
-     * 
+     * A list of Auto Scaling groups.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param autoScalingGroups 
+     * @param autoScalingGroups A list of Auto Scaling groups.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,6 +97,49 @@ public class DescribeAutoScalingGroupsResult {
     }
     
     /**
+     * A string that marks the start of the next batch of returned results.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return A string that marks the start of the next batch of returned results.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * A string that marks the start of the next batch of returned results.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param nextToken A string that marks the start of the next batch of returned results.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * A string that marks the start of the next batch of returned results.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param nextToken A string that marks the start of the next batch of returned results.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeAutoScalingGroupsResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -101,6 +152,7 @@ public class DescribeAutoScalingGroupsResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("AutoScalingGroups: " + autoScalingGroups + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }

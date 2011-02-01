@@ -32,7 +32,7 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller
     public Request<DescribeLaunchConfigurationsRequest> marshall(DescribeLaunchConfigurationsRequest describeLaunchConfigurationsRequest) {
         Request<DescribeLaunchConfigurationsRequest> request = new DefaultRequest<DescribeLaunchConfigurationsRequest>(describeLaunchConfigurationsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeLaunchConfigurations");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (describeLaunchConfigurationsRequest != null) {
             java.util.List<String> launchConfigurationNamesList = describeLaunchConfigurationsRequest.getLaunchConfigurationNames();
             int launchConfigurationNamesListIndex = 1;

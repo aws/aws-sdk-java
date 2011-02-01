@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * to your network. If you don't have an ASN already, you can use a
  * private ASN (in the 64512 - 65534 range). For more information about
  * ASNs, go to <a
- * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29.">
+ * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29">
  * http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29 </a> .
  * </p>
  *
@@ -51,7 +51,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     private String type;
 
     /**
-     * 
+     * The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static
      */
     private String publicIp;
 
@@ -73,7 +74,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param type The type of VPN connection this customer gateway supports.
-     * @param publicIp
+     * @param publicIp The Internet-routable IP address for the customer
+     * gateway's outside interface. The address must be static
      * @param bgpAsn The customer gateway's Border Gateway Protocol (BGP)
      * Autonomous System Number (ASN).
      */
@@ -118,29 +120,35 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * 
+     * The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static
      *
-     * @return 
+     * @return The Internet-routable IP address for the customer gateway's outside
+     *         interface. The address must be static
      */
     public String getPublicIp() {
         return publicIp;
     }
     
     /**
-     * 
+     * The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static
      *
-     * @param publicIp 
+     * @param publicIp The Internet-routable IP address for the customer gateway's outside
+     *         interface. The address must be static
      */
     public void setPublicIp(String publicIp) {
         this.publicIp = publicIp;
     }
     
     /**
-     * 
+     * The Internet-routable IP address for the customer gateway's outside
+     * interface. The address must be static
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publicIp 
+     * @param publicIp The Internet-routable IP address for the customer gateway's outside
+     *         interface. The address must be static
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

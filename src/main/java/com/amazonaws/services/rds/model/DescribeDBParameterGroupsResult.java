@@ -16,7 +16,8 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * Contains the result of a successful invocation of the
+ * DescribeDBParameterGroups action.
  * </p>
  */
 public class DescribeDBParameterGroupsResult {
@@ -27,7 +28,7 @@ public class DescribeDBParameterGroupsResult {
     private String marker;
 
     /**
-     * A list of <a>DPParameterGroup</a> instances..
+     * A list of <a>DBParameterGroup</a> instances.
      */
     private java.util.List<DBParameterGroup> dBParameterGroups;
 
@@ -66,9 +67,9 @@ public class DescribeDBParameterGroupsResult {
     
     
     /**
-     * A list of <a>DPParameterGroup</a> instances..
+     * A list of <a>DBParameterGroup</a> instances.
      *
-     * @return A list of <a>DPParameterGroup</a> instances..
+     * @return A list of <a>DBParameterGroup</a> instances.
      */
     public java.util.List<DBParameterGroup> getDBParameterGroups() {
         if (dBParameterGroups == null) {
@@ -78,9 +79,9 @@ public class DescribeDBParameterGroupsResult {
     }
     
     /**
-     * A list of <a>DPParameterGroup</a> instances..
+     * A list of <a>DBParameterGroup</a> instances.
      *
-     * @param dBParameterGroups A list of <a>DPParameterGroup</a> instances..
+     * @param dBParameterGroups A list of <a>DBParameterGroup</a> instances.
      */
     public void setDBParameterGroups(java.util.Collection<DBParameterGroup> dBParameterGroups) {
         java.util.List<DBParameterGroup> dBParameterGroupsCopy = new java.util.ArrayList<DBParameterGroup>();
@@ -91,11 +92,11 @@ public class DescribeDBParameterGroupsResult {
     }
     
     /**
-     * A list of <a>DPParameterGroup</a> instances..
+     * A list of <a>DBParameterGroup</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroups A list of <a>DPParameterGroup</a> instances..
+     * @param dBParameterGroups A list of <a>DBParameterGroup</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -108,11 +109,11 @@ public class DescribeDBParameterGroupsResult {
     }
     
     /**
-     * A list of <a>DPParameterGroup</a> instances..
+     * A list of <a>DBParameterGroup</a> instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroups A list of <a>DPParameterGroup</a> instances..
+     * @param dBParameterGroups A list of <a>DBParameterGroup</a> instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

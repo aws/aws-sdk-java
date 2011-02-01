@@ -16,7 +16,8 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * Contains the result of a successful invocation of the
+ * DescribeDBSecurityGroups action.
  * </p>
  */
 public class DescribeDBSecurityGroupsResult {

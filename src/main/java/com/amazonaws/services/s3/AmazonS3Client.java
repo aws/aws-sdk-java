@@ -30,7 +30,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SignatureException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -90,6 +89,7 @@ import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
@@ -466,13 +466,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /* (non-Javadoc)
-     * @see com.amazonaws.services.s3.AmazonS3#getBucketLocation(java.lang.String)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketLocation(com.amazonaws.services.s3.AmazonS3Client.GetBucketLocationRequest)
      */
-    public String getBucketLocation(String bucketName)
-            throws AmazonClientException, AmazonServiceException {
+    public String getBucketLocation(GetBucketLocationRequest getBucketLocationRequest)
+    		throws AmazonClientException, AmazonServiceException {
+    	assertParameterNotNull(getBucketLocationRequest, "The request parameter must be specified when requesting a bucket's location");
+    	String bucketName = getBucketLocationRequest.getBucketName();
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting a bucket's location");
 
-        Request<Void> request = createRequest(bucketName, null, null);
+        Request<Void> request = createRequest(bucketName, null, getBucketLocationRequest);
         request.addParameter("location", null);
 
         signRequest(request, HttpMethodName.GET, bucketName, null);
@@ -482,6 +484,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             new S3XmlResponseHandler<String>(new Unmarshallers.BucketLocationUnmarshaller());
 
         return (String)client.execute(httpRequest, responseHandler, errorResponseHandler);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketLocation(java.lang.String)
+     */
+    public String getBucketLocation(String bucketName)
+            throws AmazonClientException, AmazonServiceException {
+    	return getBucketLocation(new GetBucketLocationRequest(bucketName));
     }
 
     /* (non-Javadoc)
@@ -518,6 +528,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         String bucketName = createBucketRequest.getBucketName();
         String region = createBucketRequest.getRegion();
+        CannedAccessControlList acl = createBucketRequest.getCannedAcl();
 
         assertParameterNotNull(bucketName,
                 "The bucket name parameter must be specified when creating a bucket");
@@ -526,6 +537,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         bucketNameUtils.validateBucketName(bucketName);
 
         Request<Void> request = createRequest(bucketName, null, createBucketRequest);
+        if (acl != null) request.addHeader(Headers.S3_CANNED_ACL, acl.toString());
         signRequest(request, HttpMethodName.PUT, bucketName, null);
         HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.PUT);
 
@@ -740,14 +752,14 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         if (getObjectRequest.getVersionId() != null) {
             request.addParameter("versionId", getObjectRequest.getVersionId());
-        }        
+        }
 
         // Range
         if (getObjectRequest.getRange() != null) {
             long[] range = getObjectRequest.getRange();
             request.addHeader(Headers.RANGE, "bytes=" + Long.toString(range[0]) + "-" + Long.toString(range[1]));
         }
-        
+
         addResponseHeaderParameters(request, getObjectRequest.getResponseHeaders());
 
         addDateHeader(request, Headers.GET_OBJECT_IF_MODIFIED_SINCE,
@@ -1469,7 +1481,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
-        
+
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
         presignRequest(request, generatePresignedUrlRequest.getMethod(),
@@ -1706,7 +1718,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             inputStream = uploadPartRequest.getInputStream();
         } else if (uploadPartRequest.getFile() != null) {
             try {
-                inputStream = new InputSubstream(new FileInputStream(uploadPartRequest.getFile()),
+                inputStream = new InputSubstream(new RepeatableFileInputStream(uploadPartRequest.getFile()),
                         uploadPartRequest.getFileOffset(), partSize);
             } catch (FileNotFoundException e) {
                 throw new IllegalArgumentException("The specified file doesn't exist", e);
@@ -2187,12 +2199,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(header, ServiceUtils.join(values));
         }
     }
-    
+
     /**
      * <p>
      * Adds response headers parameters to the request given, if non-null.
      * </p>
-     * 
+     *
      * @param request
      *            The request to add the response header parameters to.
      * @param responseHeaders

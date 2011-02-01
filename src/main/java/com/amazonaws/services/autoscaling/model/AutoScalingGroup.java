@@ -25,10 +25,19 @@ public class AutoScalingGroup {
      * Specifies the name of the group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String autoScalingGroupName;
+
+    /**
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String autoScalingGroupARN;
 
     /**
      * Specifies the name of the associated <a>LaunchConfiguration</a>.
@@ -58,7 +67,7 @@ public class AutoScalingGroup {
      * The number of seconds after a scaling activity completes before any
      * further scaling activities can start.
      */
-    private Integer cooldown;
+    private Integer defaultCooldown;
 
     /**
      * Contains a list of availability zones for the group.
@@ -69,9 +78,26 @@ public class AutoScalingGroup {
     private java.util.List<String> availabilityZones;
 
     /**
-     * 
+     * A list of load balancers associated with this Auto Scaling group.
      */
     private java.util.List<String> loadBalancerNames;
+
+    /**
+     * The service of interest for the health status check, either "EC2" for
+     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String healthCheckType;
+
+    /**
+     * The length of time that Auto Scaling waits before checking an
+     * instance's health status. The grace period begins when an instance
+     * comes into service.
+     */
+    private Integer healthCheckGracePeriod;
 
     /**
      * Provides a summary list of EC2 instances.
@@ -84,10 +110,41 @@ public class AutoScalingGroup {
     private java.util.Date createdTime;
 
     /**
+     * Suspended processes associated with this Auto Scaling group.
+     */
+    private java.util.List<SuspendedProcess> suspendedProcesses;
+
+    /**
+     * The name of the cluster placement group, if applicable. For more
+     * information, go to <a
+     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String placementGroup;
+
+    /**
+     * The identifier for the VPC connection, if applicable.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String vPCZoneIdentifier;
+
+    /**
+     * A list of metrics enabled for this Auto Scaling group.
+     */
+    private java.util.List<EnabledMetric> enabledMetrics;
+
+    /**
      * Specifies the name of the group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Specifies the name of the group.
@@ -100,7 +157,7 @@ public class AutoScalingGroup {
      * Specifies the name of the group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName Specifies the name of the group.
@@ -115,7 +172,7 @@ public class AutoScalingGroup {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName Specifies the name of the group.
@@ -125,6 +182,52 @@ public class AutoScalingGroup {
      */
     public AutoScalingGroup withAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
+        return this;
+    }
+    
+    
+    /**
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The Amazon Resource Name (ARN) of the Auto Scaling group.
+     */
+    public String getAutoScalingGroupARN() {
+        return autoScalingGroupARN;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param autoScalingGroupARN The Amazon Resource Name (ARN) of the Auto Scaling group.
+     */
+    public void setAutoScalingGroupARN(String autoScalingGroupARN) {
+        this.autoScalingGroupARN = autoScalingGroupARN;
+    }
+    
+    /**
+     * The Amazon Resource Name (ARN) of the Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param autoScalingGroupARN The Amazon Resource Name (ARN) of the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withAutoScalingGroupARN(String autoScalingGroupARN) {
+        this.autoScalingGroupARN = autoScalingGroupARN;
         return this;
     }
     
@@ -284,19 +387,19 @@ public class AutoScalingGroup {
      * @return The number of seconds after a scaling activity completes before any
      *         further scaling activities can start.
      */
-    public Integer getCooldown() {
-        return cooldown;
+    public Integer getDefaultCooldown() {
+        return defaultCooldown;
     }
     
     /**
      * The number of seconds after a scaling activity completes before any
      * further scaling activities can start.
      *
-     * @param cooldown The number of seconds after a scaling activity completes before any
+     * @param defaultCooldown The number of seconds after a scaling activity completes before any
      *         further scaling activities can start.
      */
-    public void setCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
+    public void setDefaultCooldown(Integer defaultCooldown) {
+        this.defaultCooldown = defaultCooldown;
     }
     
     /**
@@ -305,14 +408,14 @@ public class AutoScalingGroup {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cooldown The number of seconds after a scaling activity completes before any
+     * @param defaultCooldown The number of seconds after a scaling activity completes before any
      *         further scaling activities can start.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public AutoScalingGroup withCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
+    public AutoScalingGroup withDefaultCooldown(Integer defaultCooldown) {
+        this.defaultCooldown = defaultCooldown;
         return this;
     }
     
@@ -392,9 +495,9 @@ public class AutoScalingGroup {
     }
     
     /**
-     * 
+     * A list of load balancers associated with this Auto Scaling group.
      *
-     * @return 
+     * @return A list of load balancers associated with this Auto Scaling group.
      */
     public java.util.List<String> getLoadBalancerNames() {
         if (loadBalancerNames == null) {
@@ -404,9 +507,9 @@ public class AutoScalingGroup {
     }
     
     /**
-     * 
+     * A list of load balancers associated with this Auto Scaling group.
      *
-     * @param loadBalancerNames 
+     * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
      */
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
         java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>();
@@ -417,11 +520,11 @@ public class AutoScalingGroup {
     }
     
     /**
-     * 
+     * A list of load balancers associated with this Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames 
+     * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -434,11 +537,11 @@ public class AutoScalingGroup {
     }
     
     /**
-     * 
+     * A list of load balancers associated with this Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loadBalancerNames 
+     * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -452,6 +555,104 @@ public class AutoScalingGroup {
 
         return this;
     }
+    
+    /**
+     * The service of interest for the health status check, either "EC2" for
+     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The service of interest for the health status check, either "EC2" for
+     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     */
+    public String getHealthCheckType() {
+        return healthCheckType;
+    }
+    
+    /**
+     * The service of interest for the health status check, either "EC2" for
+     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthCheckType The service of interest for the health status check, either "EC2" for
+     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     */
+    public void setHealthCheckType(String healthCheckType) {
+        this.healthCheckType = healthCheckType;
+    }
+    
+    /**
+     * The service of interest for the health status check, either "EC2" for
+     * Amazon EC2 or "ELB" for Elastic Load Balancing.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthCheckType The service of interest for the health status check, either "EC2" for
+     *         Amazon EC2 or "ELB" for Elastic Load Balancing.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withHealthCheckType(String healthCheckType) {
+        this.healthCheckType = healthCheckType;
+        return this;
+    }
+    
+    
+    /**
+     * The length of time that Auto Scaling waits before checking an
+     * instance's health status. The grace period begins when an instance
+     * comes into service.
+     *
+     * @return The length of time that Auto Scaling waits before checking an
+     *         instance's health status. The grace period begins when an instance
+     *         comes into service.
+     */
+    public Integer getHealthCheckGracePeriod() {
+        return healthCheckGracePeriod;
+    }
+    
+    /**
+     * The length of time that Auto Scaling waits before checking an
+     * instance's health status. The grace period begins when an instance
+     * comes into service.
+     *
+     * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
+     *         instance's health status. The grace period begins when an instance
+     *         comes into service.
+     */
+    public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
+        this.healthCheckGracePeriod = healthCheckGracePeriod;
+    }
+    
+    /**
+     * The length of time that Auto Scaling waits before checking an
+     * instance's health status. The grace period begins when an instance
+     * comes into service.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param healthCheckGracePeriod The length of time that Auto Scaling waits before checking an
+     *         instance's health status. The grace period begins when an instance
+     *         comes into service.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
+        this.healthCheckGracePeriod = healthCheckGracePeriod;
+        return this;
+    }
+    
     
     /**
      * Provides a summary list of EC2 instances.
@@ -550,6 +751,240 @@ public class AutoScalingGroup {
     
     
     /**
+     * Suspended processes associated with this Auto Scaling group.
+     *
+     * @return Suspended processes associated with this Auto Scaling group.
+     */
+    public java.util.List<SuspendedProcess> getSuspendedProcesses() {
+        if (suspendedProcesses == null) {
+            suspendedProcesses = new java.util.ArrayList<SuspendedProcess>();
+        }
+        return suspendedProcesses;
+    }
+    
+    /**
+     * Suspended processes associated with this Auto Scaling group.
+     *
+     * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
+     */
+    public void setSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
+        java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>();
+        if (suspendedProcesses != null) {
+            suspendedProcessesCopy.addAll(suspendedProcesses);
+        }
+        this.suspendedProcesses = suspendedProcessesCopy;
+    }
+    
+    /**
+     * Suspended processes associated with this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withSuspendedProcesses(SuspendedProcess... suspendedProcesses) {
+        for (SuspendedProcess value : suspendedProcesses) {
+            getSuspendedProcesses().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Suspended processes associated with this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
+        java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>();
+        if (suspendedProcesses != null) {
+            suspendedProcessesCopy.addAll(suspendedProcesses);
+        }
+        this.suspendedProcesses = suspendedProcessesCopy;
+
+        return this;
+    }
+    
+    /**
+     * The name of the cluster placement group, if applicable. For more
+     * information, go to <a
+     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The name of the cluster placement group, if applicable. For more
+     *         information, go to <a
+     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     */
+    public String getPlacementGroup() {
+        return placementGroup;
+    }
+    
+    /**
+     * The name of the cluster placement group, if applicable. For more
+     * information, go to <a
+     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param placementGroup The name of the cluster placement group, if applicable. For more
+     *         information, go to <a
+     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     */
+    public void setPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+    
+    /**
+     * The name of the cluster placement group, if applicable. For more
+     * information, go to <a
+     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param placementGroup The name of the cluster placement group, if applicable. For more
+     *         information, go to <a
+     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+        return this;
+    }
+    
+    
+    /**
+     * The identifier for the VPC connection, if applicable.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The identifier for the VPC connection, if applicable.
+     */
+    public String getVPCZoneIdentifier() {
+        return vPCZoneIdentifier;
+    }
+    
+    /**
+     * The identifier for the VPC connection, if applicable.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     */
+    public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
+        this.vPCZoneIdentifier = vPCZoneIdentifier;
+    }
+    
+    /**
+     * The identifier for the VPC connection, if applicable.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withVPCZoneIdentifier(String vPCZoneIdentifier) {
+        this.vPCZoneIdentifier = vPCZoneIdentifier;
+        return this;
+    }
+    
+    
+    /**
+     * A list of metrics enabled for this Auto Scaling group.
+     *
+     * @return A list of metrics enabled for this Auto Scaling group.
+     */
+    public java.util.List<EnabledMetric> getEnabledMetrics() {
+        if (enabledMetrics == null) {
+            enabledMetrics = new java.util.ArrayList<EnabledMetric>();
+        }
+        return enabledMetrics;
+    }
+    
+    /**
+     * A list of metrics enabled for this Auto Scaling group.
+     *
+     * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
+     */
+    public void setEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
+        java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>();
+        if (enabledMetrics != null) {
+            enabledMetricsCopy.addAll(enabledMetrics);
+        }
+        this.enabledMetrics = enabledMetricsCopy;
+    }
+    
+    /**
+     * A list of metrics enabled for this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withEnabledMetrics(EnabledMetric... enabledMetrics) {
+        for (EnabledMetric value : enabledMetrics) {
+            getEnabledMetrics().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of metrics enabled for this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
+        java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>();
+        if (enabledMetrics != null) {
+            enabledMetricsCopy.addAll(enabledMetrics);
+        }
+        this.enabledMetrics = enabledMetricsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -562,15 +997,22 @@ public class AutoScalingGroup {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        sb.append("AutoScalingGroupARN: " + autoScalingGroupARN + ", ");
         sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
         sb.append("MinSize: " + minSize + ", ");
         sb.append("MaxSize: " + maxSize + ", ");
         sb.append("DesiredCapacity: " + desiredCapacity + ", ");
-        sb.append("Cooldown: " + cooldown + ", ");
+        sb.append("DefaultCooldown: " + defaultCooldown + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
         sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        sb.append("HealthCheckType: " + healthCheckType + ", ");
+        sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("CreatedTime: " + createdTime + ", ");
+        sb.append("SuspendedProcesses: " + suspendedProcesses + ", ");
+        sb.append("PlacementGroup: " + placementGroup + ", ");
+        sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
+        sb.append("EnabledMetrics: " + enabledMetrics + ", ");
         sb.append("}");
         return sb.toString();
     }

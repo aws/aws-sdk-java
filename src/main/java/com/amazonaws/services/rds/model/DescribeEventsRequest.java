@@ -33,12 +33,21 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
+     * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</li> <li>If the source type is DBInstance, then
+     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     * must be supplied.</li> <li>If the source type is DBSnapshot, a
+     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
      */
     private String sourceIdentifier;
 
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid Values: <code>db-instance |
+     * db-security-group | db-parameter-group | db-snapshot</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
@@ -47,26 +56,30 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
 
     /**
      * The beginning of the time interval to retrieve events for, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      */
     private java.util.Date startTime;
 
     /**
      * The end of the time interval for which to retrieve events, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      */
     private java.util.Date endTime;
 
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes to retrieve events for. <p>Default: 60
      */
     private Integer duration;
 
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     private Integer maxRecords;
 
@@ -74,7 +87,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -87,9 +100,25 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
+     * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</li> <li>If the source type is DBInstance, then
+     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     * must be supplied.</li> <li>If the source type is DBSnapshot, a
+     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
      *
      * @return The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
+     *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     *         must also be provided.</li> <li>If the source type is DBInstance, then
+     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
+     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
      */
     public String getSourceIdentifier() {
         return sourceIdentifier;
@@ -98,9 +127,25 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
+     * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</li> <li>If the source type is DBInstance, then
+     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     * must be supplied.</li> <li>If the source type is DBSnapshot, a
+     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
      *
      * @param sourceIdentifier The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
+     *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     *         must also be provided.</li> <li>If the source type is DBInstance, then
+     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
+     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
      */
     public void setSourceIdentifier(String sourceIdentifier) {
         this.sourceIdentifier = sourceIdentifier;
@@ -109,11 +154,27 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The identifier of the event source for which events will be returned.
      * If not specified, then all sources are included in the response.
+     * <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     * must also be provided.</li> <li>If the source type is DBInstance, then
+     * a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     * is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     * <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     * must be supplied.</li> <li>If the source type is DBSnapshot, a
+     * DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceIdentifier The identifier of the event source for which events will be returned.
      *         If not specified, then all sources are included in the response.
+     *         <p>Constraints: <ul> <li>If SourceIdentifier is supplied, SourceType
+     *         must also be provided.</li> <li>If the source type is DBInstance, then
+     *         a DBInstanceIdentifier must be supplied.</li> <li>If the source type
+     *         is DBSecurityGroup, a DBSecurityGroupName must be supplied.</li>
+     *         <li>If the source type is DBParameterGroup, a DBParameterGroupName
+     *         must be supplied.</li> <li>If the source type is DBSnapshot, a
+     *         DBSnapshotIdentifier must be supplied.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -126,13 +187,15 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid Values: <code>db-instance |
+     * db-security-group | db-parameter-group | db-snapshot</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @return The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid Values: <code>db-instance |
+     *         db-security-group | db-parameter-group | db-snapshot</code>
      *
      * @see SourceType
      */
@@ -142,13 +205,15 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid Values: <code>db-instance |
+     * db-security-group | db-parameter-group | db-snapshot</code>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid Values: <code>db-instance |
+     *         db-security-group | db-parameter-group | db-snapshot</code>
      *
      * @see SourceType
      */
@@ -158,7 +223,8 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned.
+     * events are returned. <p>Valid Values: <code>db-instance |
+     * db-security-group | db-parameter-group | db-snapshot</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -166,7 +232,8 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned.
+     *         events are returned. <p>Valid Values: <code>db-instance |
+     *         db-security-group | db-parameter-group | db-snapshot</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -181,10 +248,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The beginning of the time interval to retrieve events for, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @return The beginning of the time interval to retrieve events for, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      */
     public java.util.Date getStartTime() {
         return startTime;
@@ -192,10 +263,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The beginning of the time interval to retrieve events for, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @param startTime The beginning of the time interval to retrieve events for, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -203,12 +278,16 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The beginning of the time interval to retrieve events for, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The beginning of the time interval to retrieve events for, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -221,10 +300,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The end of the time interval for which to retrieve events, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @return The end of the time interval for which to retrieve events, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      */
     public java.util.Date getEndTime() {
         return endTime;
@@ -232,10 +315,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The end of the time interval for which to retrieve events, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @param endTime The end of the time interval for which to retrieve events, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -243,12 +330,16 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The end of the time interval for which to retrieve events, specified
-     * in ISO 8601 format.
+     * in ISO 8601 format. For more information about ISO 8601, go to the <a
+     * href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     * page.</a> <p>Example: 2009-07-08T18:00Z
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endTime The end of the time interval for which to retrieve events, specified
-     *         in ISO 8601 format.
+     *         in ISO 8601 format. For more information about ISO 8601, go to the <a
+     *         href="http://en.wikipedia.org/wiki/ISO_8601">ISO8601 Wikipedia
+     *         page.</a> <p>Example: 2009-07-08T18:00Z
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -260,29 +351,29 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes to retrieve events for. <p>Default: 60
      *
-     * @return The number of minutes to retrieve events for.
+     * @return The number of minutes to retrieve events for. <p>Default: 60
      */
     public Integer getDuration() {
         return duration;
     }
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes to retrieve events for. <p>Default: 60
      *
-     * @param duration The number of minutes to retrieve events for.
+     * @param duration The number of minutes to retrieve events for. <p>Default: 60
      */
     public void setDuration(Integer duration) {
         this.duration = duration;
     }
     
     /**
-     * The number of minutes to retrieve events for.
+     * The number of minutes to retrieve events for. <p>Default: 60
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param duration The number of minutes to retrieve events for.
+     * @param duration The number of minutes to retrieve events for. <p>Default: 60
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -295,14 +386,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -310,14 +401,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -325,16 +416,16 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The maximum number of records to include in the response. If more
-     * records exist than the specified <i>MaxRecords</i> value, a marker is
-     * included in the response so that the remaining results may be
-     * retrieved.
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * marker is included in the response so that the remaining results may
+     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
-     *         records exist than the specified <i>MaxRecords</i> value, a marker is
-     *         included in the response so that the remaining results may be
-     *         retrieved.
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         marker is included in the response so that the remaining results may
+     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -349,12 +440,12 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      *
      * @return An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
@@ -364,12 +455,12 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      *
      * @param marker An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -379,14 +470,14 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * An optional marker provided in the previous DescribeDBInstances
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
-     * <i>MaxRecords</i>.
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param marker An optional marker provided in the previous DescribeDBInstances
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
-     *         <i>MaxRecords</i>.
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

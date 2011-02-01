@@ -26,13 +26,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * string.</note>
      */
     private String dBParameterGroupName;
 
     /**
-     * The name of the DB Parameter Group Family the DB Parameter Group can
-     * be used with.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine compatible
+     * with that DB parameter group family and version. <p> Valid Values:
+     * <code>MySQL5.1</code>
      */
     private String dBParameterGroupFamily;
 
@@ -52,9 +59,16 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the DB Parameter Group.
-     * @param dBParameterGroupFamily The name of the DB Parameter Group
-     * Family the DB Parameter Group can be used with.
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>
+     * Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul> <note>This value is
+     * stored as a lower-case string.</note>
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB
+     * parameter group can be associated with one and only one DB parameter
+     * group family, and can be applied only to a DB instance running a
+     * database engine compatible with that DB parameter group family and
+     * version. <p> Valid Values: <code>MySQL5.1</code>
      * @param description The description for the DB Parameter Group.
      */
     public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
@@ -64,29 +78,53 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * string.</note>
      *
-     * @return The name of the DB Parameter Group.
+     * @return The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     *         1 to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         string.</note>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * string.</note>
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     *         1 to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         string.</note>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DB Parameter Group.
+     * The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     * 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul> <note>This value is stored as a lower-case
+     * string.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p> Constraints: <ul> <li>Must be
+     *         1 to 255 alphanumeric characters</li> <li>First character must be a
+     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     *         hyphens</li> </ul> <note>This value is stored as a lower-case
+     *         string.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,35 +136,53 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of the DB Parameter Group Family the DB Parameter Group can
-     * be used with.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine compatible
+     * with that DB parameter group family and version. <p> Valid Values:
+     * <code>MySQL5.1</code>
      *
-     * @return The name of the DB Parameter Group Family the DB Parameter Group can
-     *         be used with.
+     * @return The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine compatible
+     *         with that DB parameter group family and version. <p> Valid Values:
+     *         <code>MySQL5.1</code>
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DB Parameter Group Family the DB Parameter Group can
-     * be used with.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine compatible
+     * with that DB parameter group family and version. <p> Valid Values:
+     * <code>MySQL5.1</code>
      *
-     * @param dBParameterGroupFamily The name of the DB Parameter Group Family the DB Parameter Group can
-     *         be used with.
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine compatible
+     *         with that DB parameter group family and version. <p> Valid Values:
+     *         <code>MySQL5.1</code>
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DB Parameter Group Family the DB Parameter Group can
-     * be used with.
+     * The DB parameter group family name. A DB parameter group can be
+     * associated with one and only one DB parameter group family, and can be
+     * applied only to a DB instance running a database engine compatible
+     * with that DB parameter group family and version. <p> Valid Values:
+     * <code>MySQL5.1</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The name of the DB Parameter Group Family the DB Parameter Group can
-     *         be used with.
+     * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
+     *         associated with one and only one DB parameter group family, and can be
+     *         applied only to a DB instance running a database engine compatible
+     *         with that DB parameter group family and version. <p> Valid Values:
+     *         <code>MySQL5.1</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

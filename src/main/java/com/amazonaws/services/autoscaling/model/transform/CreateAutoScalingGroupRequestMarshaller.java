@@ -32,7 +32,7 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
     public Request<CreateAutoScalingGroupRequest> marshall(CreateAutoScalingGroupRequest createAutoScalingGroupRequest) {
         Request<CreateAutoScalingGroupRequest> request = new DefaultRequest<CreateAutoScalingGroupRequest>(createAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateAutoScalingGroup");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (createAutoScalingGroupRequest != null) {
             if (createAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(createAutoScalingGroupRequest.getAutoScalingGroupName()));
@@ -54,8 +54,13 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
         if (createAutoScalingGroupRequest != null) {
-            if (createAutoScalingGroupRequest.getCooldown() != null) {
-                request.addParameter("Cooldown", StringUtils.fromInteger(createAutoScalingGroupRequest.getCooldown()));
+            if (createAutoScalingGroupRequest.getDesiredCapacity() != null) {
+                request.addParameter("DesiredCapacity", StringUtils.fromInteger(createAutoScalingGroupRequest.getDesiredCapacity()));
+            }
+        }
+        if (createAutoScalingGroupRequest != null) {
+            if (createAutoScalingGroupRequest.getDefaultCooldown() != null) {
+                request.addParameter("DefaultCooldown", StringUtils.fromInteger(createAutoScalingGroupRequest.getDefaultCooldown()));
             }
         }
         if (createAutoScalingGroupRequest != null) {
@@ -76,6 +81,26 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     request.addParameter("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.fromString(loadBalancerNamesListValue));
                 }
                 loadBalancerNamesListIndex++;
+            }
+        }
+        if (createAutoScalingGroupRequest != null) {
+            if (createAutoScalingGroupRequest.getHealthCheckType() != null) {
+                request.addParameter("HealthCheckType", StringUtils.fromString(createAutoScalingGroupRequest.getHealthCheckType()));
+            }
+        }
+        if (createAutoScalingGroupRequest != null) {
+            if (createAutoScalingGroupRequest.getHealthCheckGracePeriod() != null) {
+                request.addParameter("HealthCheckGracePeriod", StringUtils.fromInteger(createAutoScalingGroupRequest.getHealthCheckGracePeriod()));
+            }
+        }
+        if (createAutoScalingGroupRequest != null) {
+            if (createAutoScalingGroupRequest.getPlacementGroup() != null) {
+                request.addParameter("PlacementGroup", StringUtils.fromString(createAutoScalingGroupRequest.getPlacementGroup()));
+            }
+        }
+        if (createAutoScalingGroupRequest != null) {
+            if (createAutoScalingGroupRequest.getVPCZoneIdentifier() != null) {
+                request.addParameter("VPCZoneIdentifier", StringUtils.fromString(createAutoScalingGroupRequest.getVPCZoneIdentifier()));
             }
         }
 

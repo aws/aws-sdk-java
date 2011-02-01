@@ -18,8 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest) DeleteDBSecurityGroup operation}.
  * <p>
- * This API deletes a database security group. Database security group
- * must not be associated with any RDS Instances.
+ * This API deletes a database security group.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>The specified database security group must not be
+ * associated with any DB instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest)
@@ -27,7 +30,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the database security group to delete.
+     * The name of the database security group to delete. <note>You cannot
+     * delete the default security group.</note> <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     * must be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul>
      */
     private String dBSecurityGroupName;
 
@@ -43,36 +50,63 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBSecurityGroupName The name of the database security group to
-     * delete.
+     * delete. <note>You cannot delete the default security group.</note> <p>
+     * Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
+     * or contain two consecutive hyphens</li> </ul>
      */
     public DeleteDBSecurityGroupRequest(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
     
     /**
-     * The name of the database security group to delete.
+     * The name of the database security group to delete. <note>You cannot
+     * delete the default security group.</note> <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     * must be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul>
      *
-     * @return The name of the database security group to delete.
+     * @return The name of the database security group to delete. <note>You cannot
+     *         delete the default security group.</note> <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul>
      */
     public String getDBSecurityGroupName() {
         return dBSecurityGroupName;
     }
     
     /**
-     * The name of the database security group to delete.
+     * The name of the database security group to delete. <note>You cannot
+     * delete the default security group.</note> <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     * must be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul>
      *
-     * @param dBSecurityGroupName The name of the database security group to delete.
+     * @param dBSecurityGroupName The name of the database security group to delete. <note>You cannot
+     *         delete the default security group.</note> <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul>
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
     
     /**
-     * The name of the database security group to delete.
+     * The name of the database security group to delete. <note>You cannot
+     * delete the default security group.</note> <p> Constraints: <ul>
+     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     * must be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupName The name of the database security group to delete.
+     * @param dBSecurityGroupName The name of the database security group to delete. <note>You cannot
+     *         delete the default security group.</note> <p> Constraints: <ul>
+     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
+     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
+     *         consecutive hyphens</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

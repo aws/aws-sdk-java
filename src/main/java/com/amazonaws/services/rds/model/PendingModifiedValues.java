@@ -16,20 +16,21 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * This data type is used as a response element in the ModifyDBInstance
+ * action.
  * </p>
  */
 public class PendingModifiedValues {
 
     /**
-     * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     * be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     * will be applied or is in progress.
      */
     private String dBInstanceClass;
 
     /**
-     * Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     * will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB
+     * Instance that will be applied or is in progress.
      */
     private Integer allocatedStorage;
 
@@ -56,6 +57,9 @@ public class PendingModifiedValues {
      */
     private Boolean multiAZ;
 
+    /**
+     * Indicates the database engine version.
+     */
     private String engineVersion;
 
     /**
@@ -65,35 +69,35 @@ public class PendingModifiedValues {
     public PendingModifiedValues() {}
     
     /**
-     * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     * be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     * will be applied or is in progress.
      *
-     * @return Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     *         be applied or is in progress.
+     * @return Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     *         will be applied or is in progress.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     * be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     * will be applied or is in progress.
      *
-     * @param dBInstanceClass Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     *         be applied or is in progress.
+     * @param dBInstanceClass Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     *         will be applied or is in progress.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     * be applied or is in progress.
+     * Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     * will be applied or is in progress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass Contains the new <i>DBInstanceClass</i> for the DB Instance that will
-     *         be applied or is in progress.
+     * @param dBInstanceClass Contains the new <code>DBInstanceClass</code> for the DB Instance that
+     *         will be applied or is in progress.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -105,35 +109,35 @@ public class PendingModifiedValues {
     
     
     /**
-     * Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     * will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB
+     * Instance that will be applied or is in progress.
      *
-     * @return Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     *         will be applied or is in progress.
+     * @return Contains the new <code>AllocatedStorage</code> size for the DB
+     *         Instance that will be applied or is in progress.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
     }
     
     /**
-     * Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     * will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB
+     * Instance that will be applied or is in progress.
      *
-     * @param allocatedStorage Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     *         will be applied or is in progress.
+     * @param allocatedStorage Contains the new <code>AllocatedStorage</code> size for the DB
+     *         Instance that will be applied or is in progress.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
     }
     
     /**
-     * Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     * will be applied or is in progress.
+     * Contains the new <code>AllocatedStorage</code> size for the DB
+     * Instance that will be applied or is in progress.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allocatedStorage Contains the new <i>AllocatedStorage</i> size for the DB Instance that
-     *         will be applied or is in progress.
+     * @param allocatedStorage Contains the new <code>AllocatedStorage</code> size for the DB
+     *         Instance that will be applied or is in progress.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -310,29 +314,29 @@ public class PendingModifiedValues {
     }
     
     /**
-     * Returns the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      *
-     * @return The value of the EngineVersion property for this object.
+     * @return Indicates the database engine version.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Indicates the database engine version.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * Sets the value of the EngineVersion property for this object.
+     * Indicates the database engine version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The new value for the EngineVersion property for this object.
+     * @param engineVersion Indicates the database engine version.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

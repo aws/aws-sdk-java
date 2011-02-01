@@ -15,7 +15,10 @@
 package com.amazonaws.services.rds.model;
 
 /**
- * Describe Reserved D B Instances Result
+ * <p>
+ * Contains the result of a successful invocation of the
+ * DescribeReservedDBInstances action.
+ * </p>
  */
 public class DescribeReservedDBInstancesResult {
 

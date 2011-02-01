@@ -32,7 +32,7 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
     public Request<UpdateAutoScalingGroupRequest> marshall(UpdateAutoScalingGroupRequest updateAutoScalingGroupRequest) {
         Request<UpdateAutoScalingGroupRequest> request = new DefaultRequest<UpdateAutoScalingGroupRequest>(updateAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "UpdateAutoScalingGroup");
-        request.addParameter("Version", "2009-05-15");
+        request.addParameter("Version", "2010-08-01");
         if (updateAutoScalingGroupRequest != null) {
             if (updateAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(updateAutoScalingGroupRequest.getAutoScalingGroupName()));
@@ -54,8 +54,13 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             }
         }
         if (updateAutoScalingGroupRequest != null) {
-            if (updateAutoScalingGroupRequest.getCooldown() != null) {
-                request.addParameter("Cooldown", StringUtils.fromInteger(updateAutoScalingGroupRequest.getCooldown()));
+            if (updateAutoScalingGroupRequest.getDesiredCapacity() != null) {
+                request.addParameter("DesiredCapacity", StringUtils.fromInteger(updateAutoScalingGroupRequest.getDesiredCapacity()));
+            }
+        }
+        if (updateAutoScalingGroupRequest != null) {
+            if (updateAutoScalingGroupRequest.getDefaultCooldown() != null) {
+                request.addParameter("DefaultCooldown", StringUtils.fromInteger(updateAutoScalingGroupRequest.getDefaultCooldown()));
             }
         }
         if (updateAutoScalingGroupRequest != null) {
@@ -66,6 +71,26 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
                 }
                 availabilityZonesListIndex++;
+            }
+        }
+        if (updateAutoScalingGroupRequest != null) {
+            if (updateAutoScalingGroupRequest.getHealthCheckType() != null) {
+                request.addParameter("HealthCheckType", StringUtils.fromString(updateAutoScalingGroupRequest.getHealthCheckType()));
+            }
+        }
+        if (updateAutoScalingGroupRequest != null) {
+            if (updateAutoScalingGroupRequest.getHealthCheckGracePeriod() != null) {
+                request.addParameter("HealthCheckGracePeriod", StringUtils.fromInteger(updateAutoScalingGroupRequest.getHealthCheckGracePeriod()));
+            }
+        }
+        if (updateAutoScalingGroupRequest != null) {
+            if (updateAutoScalingGroupRequest.getPlacementGroup() != null) {
+                request.addParameter("PlacementGroup", StringUtils.fromString(updateAutoScalingGroupRequest.getPlacementGroup()));
+            }
+        }
+        if (updateAutoScalingGroupRequest != null) {
+            if (updateAutoScalingGroupRequest.getVPCZoneIdentifier() != null) {
+                request.addParameter("VPCZoneIdentifier", StringUtils.fromString(updateAutoScalingGroupRequest.getVPCZoneIdentifier()));
             }
         }
 

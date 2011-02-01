@@ -16,8 +16,16 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * This data type is used as a response element in the following
+ * actions:
  * </p>
+ * 
+ * <ul>
+ * <li> CreateDBInstance </li>
+ * <li> DescribeDBInstances </li>
+ * <li> DeleteDBInstance </li>
+ * 
+ * </ul>
  */
 public class Endpoint {
 

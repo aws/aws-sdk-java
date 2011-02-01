@@ -16,8 +16,21 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * The status of the DP Parameter Group.
+ * The status of the DB Parameter Group.
  * </p>
+ * <p>
+ * This data type is used as a response element in the following actions:
+ * </p>
+ * 
+ * <ul>
+ * <li> CreateDBInstance </li>
+ * <li> CreateDBInstanceReadReplica </li>
+ * <li> DeleteDBInstance </li>
+ * <li> ModifyDBInstance </li>
+ * <li> RebootDBInstance </li>
+ * <li> RestoreDBInstanceFromDBSnapshot </li>
+ * 
+ * </ul>
  */
 public class DBParameterGroupStatus {
 

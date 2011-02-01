@@ -15,38 +15,46 @@
 package com.amazonaws.services.cloudwatch.model;
 
 /**
- * Get Metric Statistics Result
+ * <p>
+ * The output for the GetMetricStatistics action.
+ * </p>
  */
 public class GetMetricStatisticsResult {
 
+    /**
+     * A label describing the specified metric.
+     */
     private String label;
 
+    /**
+     * The datapoints for the specified metric.
+     */
     private java.util.List<Datapoint> datapoints;
 
     /**
-     * Returns the value of the Label property for this object.
+     * A label describing the specified metric.
      *
-     * @return The value of the Label property for this object.
+     * @return A label describing the specified metric.
      */
     public String getLabel() {
         return label;
     }
     
     /**
-     * Sets the value of the Label property for this object.
+     * A label describing the specified metric.
      *
-     * @param label The new value for the Label property for this object.
+     * @param label A label describing the specified metric.
      */
     public void setLabel(String label) {
         this.label = label;
     }
     
     /**
-     * Sets the value of the Label property for this object.
+     * A label describing the specified metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param label The new value for the Label property for this object.
+     * @param label A label describing the specified metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,9 +66,9 @@ public class GetMetricStatisticsResult {
     
     
     /**
-     * Returns the value of the Datapoints property for this object.
+     * The datapoints for the specified metric.
      *
-     * @return The value of the Datapoints property for this object.
+     * @return The datapoints for the specified metric.
      */
     public java.util.List<Datapoint> getDatapoints() {
         if (datapoints == null) {
@@ -70,9 +78,9 @@ public class GetMetricStatisticsResult {
     }
     
     /**
-     * Sets the value of the Datapoints property for this object.
+     * The datapoints for the specified metric.
      *
-     * @param datapoints The new value for the Datapoints property for this object.
+     * @param datapoints The datapoints for the specified metric.
      */
     public void setDatapoints(java.util.Collection<Datapoint> datapoints) {
         java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>();
@@ -83,11 +91,11 @@ public class GetMetricStatisticsResult {
     }
     
     /**
-     * Sets the value of the Datapoints property for this object.
+     * The datapoints for the specified metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param datapoints The new value for the Datapoints property for this object.
+     * @param datapoints The datapoints for the specified metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -100,11 +108,11 @@ public class GetMetricStatisticsResult {
     }
     
     /**
-     * Sets the value of the Datapoints property for this object.
+     * The datapoints for the specified metric.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param datapoints The new value for the Datapoints property for this object.
+     * @param datapoints The datapoints for the specified metric.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

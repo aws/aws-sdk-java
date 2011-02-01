@@ -126,7 +126,14 @@ public class RepeatableFileInputStream extends InputStream {
         }
     }
 
-    /**
+    @Override
+	public long skip(long n) throws IOException {
+		long skipped = super.skip(n);
+		bytesReadPastMarkPoint += skipped;
+		return skipped;
+	}
+
+	/**
      * @see java.io.InputStream#read(byte[], int, int)
      */
     public int read(byte[] arg0, int arg1, int arg2) throws IOException {

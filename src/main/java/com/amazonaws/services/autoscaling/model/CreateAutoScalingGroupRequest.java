@@ -23,8 +23,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * used in other calls.
  * </p>
  * <p>
- * <b>NOTE:</b> The client must not have already used up their entire
- * quota of AutoScaling groups in order for this call to be successful.
+ * <b>NOTE:</b> The Auto Scaling group name must be unique within the
+ * scope of your AWS account, and under the quota of Auto Scaling groups
+ * allowed for your account.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)
@@ -35,7 +36,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String autoScalingGroupName;
@@ -45,7 +46,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String launchConfigurationName;
@@ -61,10 +62,15 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private Integer maxSize;
 
     /**
+     * The number of EC2 instances that should be running in the group.
+     */
+    private Integer desiredCapacity;
+
+    /**
      * The amount of time, in seconds, after a scaling activity completes
      * before any further trigger-related scaling activities can start.
      */
-    private Integer cooldown;
+    private Integer defaultCooldown;
 
     /**
      * A list of availability zones for the Auto Scaling group.
@@ -80,10 +86,45 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private java.util.List<String> loadBalancerNames;
 
     /**
+     * The service you want the health status from, Amazon EC2 or Elastic
+     * Load Balancer.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String healthCheckType;
+
+    /**
+     * Length of time in seconds after a new EC2 instance comes into service
+     * that Auto Scaling starts checking its health.
+     */
+    private Integer healthCheckGracePeriod;
+
+    /**
+     * Physical location of your cluster placement group created in Amazon
+     * EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String placementGroup;
+
+    /**
+     * The subnet identifier of the Virtual Private Cloud.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String vPCZoneIdentifier;
+
+    /**
      * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the Auto Scaling group.
@@ -96,7 +137,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
@@ -111,7 +152,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
+     * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param autoScalingGroupName The name of the Auto Scaling group.
@@ -130,7 +171,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the launch configuration to use with the Auto Scaling
@@ -145,7 +186,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of the launch configuration to use with the Auto Scaling
@@ -162,7 +203,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param launchConfigurationName The name of the launch configuration to use with the Auto Scaling
@@ -246,25 +287,59 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The number of EC2 instances that should be running in the group.
+     *
+     * @return The number of EC2 instances that should be running in the group.
+     */
+    public Integer getDesiredCapacity() {
+        return desiredCapacity;
+    }
+    
+    /**
+     * The number of EC2 instances that should be running in the group.
+     *
+     * @param desiredCapacity The number of EC2 instances that should be running in the group.
+     */
+    public void setDesiredCapacity(Integer desiredCapacity) {
+        this.desiredCapacity = desiredCapacity;
+    }
+    
+    /**
+     * The number of EC2 instances that should be running in the group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param desiredCapacity The number of EC2 instances that should be running in the group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withDesiredCapacity(Integer desiredCapacity) {
+        this.desiredCapacity = desiredCapacity;
+        return this;
+    }
+    
+    
+    /**
      * The amount of time, in seconds, after a scaling activity completes
      * before any further trigger-related scaling activities can start.
      *
      * @return The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
      */
-    public Integer getCooldown() {
-        return cooldown;
+    public Integer getDefaultCooldown() {
+        return defaultCooldown;
     }
     
     /**
      * The amount of time, in seconds, after a scaling activity completes
      * before any further trigger-related scaling activities can start.
      *
-     * @param cooldown The amount of time, in seconds, after a scaling activity completes
+     * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
      */
-    public void setCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
+    public void setDefaultCooldown(Integer defaultCooldown) {
+        this.defaultCooldown = defaultCooldown;
     }
     
     /**
@@ -273,14 +348,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cooldown The amount of time, in seconds, after a scaling activity completes
+     * @param defaultCooldown The amount of time, in seconds, after a scaling activity completes
      *         before any further trigger-related scaling activities can start.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateAutoScalingGroupRequest withCooldown(Integer cooldown) {
-        this.cooldown = cooldown;
+    public CreateAutoScalingGroupRequest withDefaultCooldown(Integer defaultCooldown) {
+        this.defaultCooldown = defaultCooldown;
         return this;
     }
     
@@ -422,6 +497,196 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * The service you want the health status from, Amazon EC2 or Elastic
+     * Load Balancer.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The service you want the health status from, Amazon EC2 or Elastic
+     *         Load Balancer.
+     */
+    public String getHealthCheckType() {
+        return healthCheckType;
+    }
+    
+    /**
+     * The service you want the health status from, Amazon EC2 or Elastic
+     * Load Balancer.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthCheckType The service you want the health status from, Amazon EC2 or Elastic
+     *         Load Balancer.
+     */
+    public void setHealthCheckType(String healthCheckType) {
+        this.healthCheckType = healthCheckType;
+    }
+    
+    /**
+     * The service you want the health status from, Amazon EC2 or Elastic
+     * Load Balancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 32<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param healthCheckType The service you want the health status from, Amazon EC2 or Elastic
+     *         Load Balancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withHealthCheckType(String healthCheckType) {
+        this.healthCheckType = healthCheckType;
+        return this;
+    }
+    
+    
+    /**
+     * Length of time in seconds after a new EC2 instance comes into service
+     * that Auto Scaling starts checking its health.
+     *
+     * @return Length of time in seconds after a new EC2 instance comes into service
+     *         that Auto Scaling starts checking its health.
+     */
+    public Integer getHealthCheckGracePeriod() {
+        return healthCheckGracePeriod;
+    }
+    
+    /**
+     * Length of time in seconds after a new EC2 instance comes into service
+     * that Auto Scaling starts checking its health.
+     *
+     * @param healthCheckGracePeriod Length of time in seconds after a new EC2 instance comes into service
+     *         that Auto Scaling starts checking its health.
+     */
+    public void setHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
+        this.healthCheckGracePeriod = healthCheckGracePeriod;
+    }
+    
+    /**
+     * Length of time in seconds after a new EC2 instance comes into service
+     * that Auto Scaling starts checking its health.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param healthCheckGracePeriod Length of time in seconds after a new EC2 instance comes into service
+     *         that Auto Scaling starts checking its health.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withHealthCheckGracePeriod(Integer healthCheckGracePeriod) {
+        this.healthCheckGracePeriod = healthCheckGracePeriod;
+        return this;
+    }
+    
+    
+    /**
+     * Physical location of your cluster placement group created in Amazon
+     * EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return Physical location of your cluster placement group created in Amazon
+     *         EC2.
+     */
+    public String getPlacementGroup() {
+        return placementGroup;
+    }
+    
+    /**
+     * Physical location of your cluster placement group created in Amazon
+     * EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param placementGroup Physical location of your cluster placement group created in Amazon
+     *         EC2.
+     */
+    public void setPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+    }
+    
+    /**
+     * Physical location of your cluster placement group created in Amazon
+     * EC2.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param placementGroup Physical location of your cluster placement group created in Amazon
+     *         EC2.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withPlacementGroup(String placementGroup) {
+        this.placementGroup = placementGroup;
+        return this;
+    }
+    
+    
+    /**
+     * The subnet identifier of the Virtual Private Cloud.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The subnet identifier of the Virtual Private Cloud.
+     */
+    public String getVPCZoneIdentifier() {
+        return vPCZoneIdentifier;
+    }
+    
+    /**
+     * The subnet identifier of the Virtual Private Cloud.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param vPCZoneIdentifier The subnet identifier of the Virtual Private Cloud.
+     */
+    public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
+        this.vPCZoneIdentifier = vPCZoneIdentifier;
+    }
+    
+    /**
+     * The subnet identifier of the Virtual Private Cloud.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param vPCZoneIdentifier The subnet identifier of the Virtual Private Cloud.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withVPCZoneIdentifier(String vPCZoneIdentifier) {
+        this.vPCZoneIdentifier = vPCZoneIdentifier;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -437,9 +702,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
         sb.append("MinSize: " + minSize + ", ");
         sb.append("MaxSize: " + maxSize + ", ");
-        sb.append("Cooldown: " + cooldown + ", ");
+        sb.append("DesiredCapacity: " + desiredCapacity + ", ");
+        sb.append("DefaultCooldown: " + defaultCooldown + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
         sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        sb.append("HealthCheckType: " + healthCheckType + ", ");
+        sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
+        sb.append("PlacementGroup: " + placementGroup + ", ");
+        sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
         sb.append("}");
         return sb.toString();
     }

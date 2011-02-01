@@ -18,8 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest) DeleteDBSnapshot operation}.
  * <p>
- * This API is used to delete a DBSnapshot. The DBSnapshot must be in
- * the "available" state to be deleted.
+ * This API is used to delete a DBSnapshot.
+ * </p>
+ * <p>
+ * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+ * deleted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)
@@ -27,7 +30,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
 
     /**
-     * The DBSnapshot identifier.
+     * The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.
      */
     private String dBSnapshotIdentifier;
 
@@ -42,36 +46,44 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBSnapshotIdentifier The DBSnapshot identifier.
+     * @param dBSnapshotIdentifier The DBSnapshot identifier. <p>Constraints:
+     * Must be the name of an existing DB Snapshot in the
+     * <code>available</code> state.
      */
     public DeleteDBSnapshotRequest(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
     }
     
     /**
-     * The DBSnapshot identifier.
+     * The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.
      *
-     * @return The DBSnapshot identifier.
+     * @return The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     *         existing DB Snapshot in the <code>available</code> state.
      */
     public String getDBSnapshotIdentifier() {
         return dBSnapshotIdentifier;
     }
     
     /**
-     * The DBSnapshot identifier.
+     * The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.
      *
-     * @param dBSnapshotIdentifier The DBSnapshot identifier.
+     * @param dBSnapshotIdentifier The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     *         existing DB Snapshot in the <code>available</code> state.
      */
     public void setDBSnapshotIdentifier(String dBSnapshotIdentifier) {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
     }
     
     /**
-     * The DBSnapshot identifier.
+     * The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     * existing DB Snapshot in the <code>available</code> state.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSnapshotIdentifier The DBSnapshot identifier.
+     * @param dBSnapshotIdentifier The DBSnapshot identifier. <p>Constraints: Must be the name of an
+     *         existing DB Snapshot in the <code>available</code> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

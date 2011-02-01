@@ -16,40 +16,41 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * Contains the result of a successful invocation of the
+ * ModifyDBParameterGroup or ResetDBParameterGroup action.
  * </p>
  */
 public class ResetDBParameterGroupResult {
 
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DB Parameter Group.
      */
     private String dBParameterGroupName;
 
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DB Parameter Group.
      *
-     * @return The name of the DP Parameter Group.
+     * @return The name of the DB Parameter Group.
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DB Parameter Group.
      *
-     * @param dBParameterGroupName The name of the DP Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group.
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the DP Parameter Group.
+     * The name of the DB Parameter Group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the DP Parameter Group.
+     * @param dBParameterGroupName The name of the DB Parameter Group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -16,7 +16,12 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * 
+ * This data type is used as a request parameter in the
+ * ModifyDBParameterGroup and ResetDBParameterGroup actions.
+ * </p>
+ * <p>
+ * This data type is used as a response element in the
+ * DescribeEngineDefaultParameters and DescribeDBParameters actions.
  * </p>
  */
 public class Parameter {
@@ -57,9 +62,9 @@ public class Parameter {
     private String allowedValues;
 
     /**
-     * Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     * can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or
+     * operational implications that prevent them from being changed.
      */
     private Boolean isModifiable;
 
@@ -321,41 +326,41 @@ public class Parameter {
     
     
     /**
-     * Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     * can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or
+     * operational implications that prevent them from being changed.
      *
-     * @return Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     *         can be modified. Some parameters have security or operational
-     *         implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     *         parameter can be modified. Some parameters have security or
+     *         operational implications that prevent them from being changed.
      */
     public Boolean isModifiable() {
         return isModifiable;
     }
     
     /**
-     * Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     * can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or
+     * operational implications that prevent them from being changed.
      *
-     * @param isModifiable Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     *         can be modified. Some parameters have security or operational
-     *         implications that prevent them from being changed.
+     * @param isModifiable Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     *         parameter can be modified. Some parameters have security or
+     *         operational implications that prevent them from being changed.
      */
     public void setIsModifiable(Boolean isModifiable) {
         this.isModifiable = isModifiable;
     }
     
     /**
-     * Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     * can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or
+     * operational implications that prevent them from being changed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isModifiable Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     *         can be modified. Some parameters have security or operational
-     *         implications that prevent them from being changed.
+     * @param isModifiable Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     *         parameter can be modified. Some parameters have security or
+     *         operational implications that prevent them from being changed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -367,13 +372,13 @@ public class Parameter {
     
     
     /**
-     * Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     * can be modified. Some parameters have security or operational
-     * implications that prevent them from being changed.
+     * Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or
+     * operational implications that prevent them from being changed.
      *
-     * @return Indicates whether (<i>true</i>) or not (<i>false</i>) the parameter
-     *         can be modified. Some parameters have security or operational
-     *         implications that prevent them from being changed.
+     * @return Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     *         parameter can be modified. Some parameters have security or
+     *         operational implications that prevent them from being changed.
      */
     public Boolean getIsModifiable() {
         return isModifiable;
