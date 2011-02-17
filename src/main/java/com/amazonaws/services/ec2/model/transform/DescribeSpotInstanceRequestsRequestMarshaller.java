@@ -36,6 +36,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
         if (describeSpotInstanceRequestsRequest != null) {
             java.util.List<String> spotInstanceRequestIdsList = describeSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
             int spotInstanceRequestIdsListIndex = 1;
+
             for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
                 if (spotInstanceRequestIdsListValue != null) {
                     request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

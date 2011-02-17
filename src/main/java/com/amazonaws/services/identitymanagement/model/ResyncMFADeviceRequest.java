@@ -62,6 +62,33 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
     private String authenticationCode2;
 
     /**
+     * Default constructor for a new ResyncMFADeviceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResyncMFADeviceRequest() {}
+    
+    /**
+     * Constructs a new ResyncMFADeviceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose MFA device you want to
+     * resynchronize.
+     * @param serialNumber Serial number that uniquely identifies the MFA
+     * device.
+     * @param authenticationCode1 An authentication code emitted by the
+     * device.
+     * @param authenticationCode2 A subsequent authentication code emitted by
+     * the device.
+     */
+    public ResyncMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
+        this.userName = userName;
+        this.serialNumber = serialNumber;
+        this.authenticationCode1 = authenticationCode1;
+        this.authenticationCode2 = authenticationCode2;
+    }
+    
+    /**
      * Name of the User whose MFA device you want to resynchronize.
      * <p>
      * <b>Constraints:</b><br/>

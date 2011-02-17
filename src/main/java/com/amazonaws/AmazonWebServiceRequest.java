@@ -17,10 +17,43 @@ package com.amazonaws;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.amazonaws.auth.AWSCredentials;
+
 /**
  * Base class for all user facing web service request objects.
  */
 public abstract class AmazonWebServiceRequest {
+
+    /**
+     * The optional credentials to use for this request - overrides the
+     * default credentials set at the client level.
+     */
+	private AWSCredentials credentials;
+
+
+	/**
+	 * Sets the optional credentials to use for this request, overriding the
+	 * default credentials set at the client level.
+	 *
+	 * @param credentials
+	 *            The optional AWS security credentials to use for this request,
+	 *            overriding the default credentials set at the client level.
+	 */
+    public void setRequestCredentials(AWSCredentials credentials) {
+		this.credentials = credentials;
+    }
+
+	/**
+	 * Returns the optional credentials to use to sign this request, overriding
+	 * the default credentials set at the client level.
+	 *
+	 * @return The optional credentials to use to sign this request, overriding
+	 *         the default credentials set at the client level.
+	 */
+    public AWSCredentials getRequestCredentials() {
+    	return credentials;
+    }
+
 
     /**
      * Internal only method for accessing private, internal request parameters.

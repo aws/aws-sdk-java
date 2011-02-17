@@ -36,6 +36,7 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
         if (startInstancesRequest != null) {
             java.util.List<String> instanceIdsList = startInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
+
             for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

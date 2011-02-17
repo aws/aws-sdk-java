@@ -41,6 +41,7 @@ public class DeleteLoadBalancerListenersRequestMarshaller implements Marshaller<
         if (deleteLoadBalancerListenersRequest != null) {
             java.util.List<Integer> loadBalancerPortsList = deleteLoadBalancerListenersRequest.getLoadBalancerPorts();
             int loadBalancerPortsListIndex = 1;
+
             for (Integer loadBalancerPortsListValue : loadBalancerPortsList) {
                 if (loadBalancerPortsListValue != null) {
                     request.addParameter("LoadBalancerPorts.member." + loadBalancerPortsListIndex, StringUtils.fromInteger(loadBalancerPortsListValue));

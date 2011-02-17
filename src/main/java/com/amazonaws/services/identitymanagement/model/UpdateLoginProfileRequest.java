@@ -21,13 +21,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the login profile for the specified User. Use this API to
  * change the User's password.
  * </p>
- * <p>
- * <b>NOTE:</b>In the full release you will be able to use IAM to access
- * your services through the AWS Management Console. Although this
- * feature is not currently available, you can create login profiles for
- * your Users now. Then, when this feature is implemented, your Users can
- * use IAM to access your services through the AWS Management Console.
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest)
  */
@@ -51,6 +44,24 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
      */
     private String password;
 
+    /**
+     * Default constructor for a new UpdateLoginProfileRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateLoginProfileRequest() {}
+    
+    /**
+     * Constructs a new UpdateLoginProfileRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose login profile you want to
+     * update.
+     */
+    public UpdateLoginProfileRequest(String userName) {
+        this.userName = userName;
+    }
+    
     /**
      * Name of the User whose login profile you want to update.
      * <p>

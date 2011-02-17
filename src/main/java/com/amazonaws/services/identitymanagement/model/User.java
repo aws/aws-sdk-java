@@ -88,6 +88,48 @@ public class User {
     private String arn;
 
     /**
+     * The date when the User was created.
+     */
+    private java.util.Date createDate;
+
+    /**
+     * Default constructor for a new User object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public User() {}
+    
+    /**
+     * Constructs a new User object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param path Path to the User name. For more information about paths,
+     * see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     * @param userName The name identifying the User.
+     * @param userId The stable and unique string identifying the User. For
+     * more information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     * @param arn The Amazon Resource Name (ARN) specifying the User. For
+     * more information about ARNs and how to use them in policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     * @param createDate The date when the User was created.
+     */
+    public User(String path, String userName, String userId, String arn, java.util.Date createDate) {
+        this.path = path;
+        this.userName = userName;
+        this.userId = userId;
+        this.arn = arn;
+        this.createDate = createDate;
+    }
+    
+    /**
      * Path to the User name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -335,6 +377,40 @@ public class User {
     
     
     /**
+     * The date when the User was created.
+     *
+     * @return The date when the User was created.
+     */
+    public java.util.Date getCreateDate() {
+        return createDate;
+    }
+    
+    /**
+     * The date when the User was created.
+     *
+     * @param createDate The date when the User was created.
+     */
+    public void setCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+    }
+    
+    /**
+     * The date when the User was created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param createDate The date when the User was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public User withCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -350,6 +426,7 @@ public class User {
         sb.append("UserName: " + userName + ", ");
         sb.append("UserId: " + userId + ", ");
         sb.append("Arn: " + arn + ", ");
+        sb.append("CreateDate: " + createDate + ", ");
         sb.append("}");
         return sb.toString();
     }

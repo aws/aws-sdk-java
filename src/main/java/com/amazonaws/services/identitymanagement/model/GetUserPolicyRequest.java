@@ -48,6 +48,25 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest {
     private String policyName;
 
     /**
+     * Default constructor for a new GetUserPolicyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetUserPolicyRequest() {}
+    
+    /**
+     * Constructs a new GetUserPolicyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User who the policy is associated with.
+     * @param policyName Name of the policy document to get.
+     */
+    public GetUserPolicyRequest(String userName, String policyName) {
+        this.userName = userName;
+        this.policyName = policyName;
+    }
+    
+    /**
      * Name of the User who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>

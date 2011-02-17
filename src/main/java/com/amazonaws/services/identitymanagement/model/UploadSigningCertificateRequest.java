@@ -61,6 +61,23 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest {
     private String certificateBody;
 
     /**
+     * Default constructor for a new UploadSigningCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UploadSigningCertificateRequest() {}
+    
+    /**
+     * Constructs a new UploadSigningCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param certificateBody The contents of the signing certificate.
+     */
+    public UploadSigningCertificateRequest(String certificateBody) {
+        this.certificateBody = certificateBody;
+    }
+    
+    /**
      * Name of the User the signing certificate is for.
      * <p>
      * <b>Constraints:</b><br/>

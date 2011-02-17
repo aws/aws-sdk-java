@@ -36,6 +36,7 @@ public class DescribeApplicationsRequestMarshaller implements Marshaller<Request
         if (describeApplicationsRequest != null) {
             java.util.List<String> applicationNamesList = describeApplicationsRequest.getApplicationNames();
             int applicationNamesListIndex = 1;
+
             for (String applicationNamesListValue : applicationNamesList) {
                 if (applicationNamesListValue != null) {
                     request.addParameter("ApplicationNames.member." + applicationNamesListIndex, StringUtils.fromString(applicationNamesListValue));

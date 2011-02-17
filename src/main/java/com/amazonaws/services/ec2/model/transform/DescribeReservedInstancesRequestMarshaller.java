@@ -36,6 +36,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
         if (describeReservedInstancesRequest != null) {
             java.util.List<String> reservedInstancesIdsList = describeReservedInstancesRequest.getReservedInstancesIds();
             int reservedInstancesIdsListIndex = 1;
+
             for (String reservedInstancesIdsListValue : reservedInstancesIdsList) {
                 if (reservedInstancesIdsListValue != null) {
                     request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex, StringUtils.fromString(reservedInstancesIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

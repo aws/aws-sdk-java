@@ -46,6 +46,7 @@ import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CanonicalGrantee;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.EmailAddressGrantee;
@@ -345,6 +346,14 @@ public class XmlResponsesSaxParser {
         BucketVersioningConfigurationHandler handler = new BucketVersioningConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
+    }
+
+    public BucketWebsiteConfigurationHandler parseWebsiteConfigurationResponse(InputStream inputStream)
+    	throws AmazonClientException
+    {
+    	BucketWebsiteConfigurationHandler handler = new BucketWebsiteConfigurationHandler();
+    	parseXmlInputStream(handler, inputStream);
+    	return handler;
     }
 
     public BucketNotificationConfigurationHandler parseNotificationConfigurationResponse(InputStream inputStream)
@@ -1191,6 +1200,55 @@ public class XmlResponsesSaxParser {
                 owner.setDisplayName(text.toString());
             } else {
                 log.error("Ignoring unexpected tag <"+name+">");
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
+    public class BucketWebsiteConfigurationHandler extends DefaultHandler {
+    	private BucketWebsiteConfiguration configuration = new BucketWebsiteConfiguration(null);
+    	private StringBuilder text;
+
+    	boolean inIndexDocumentElement = false;
+    	boolean inErrorDocumentElement = false;
+
+    	public BucketWebsiteConfiguration getConfiguration() { return configuration; }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("WebsiteConfiguration")) {
+            } else if (name.equals("IndexDocument")) {
+            	inIndexDocumentElement = true;
+            } else if (name.equals("Suffix") && inIndexDocumentElement) {
+            } else if (name.equals("ErrorDocument")) {
+            	inErrorDocumentElement = true;
+            } else if (name.equals("Key") && inErrorDocumentElement) {
+            } else {
+                log.error("Ignoring unexpected tag <"+name+">");
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("WebsiteConfiguration")) {
+            } else if (name.equals("IndexDocument")) {
+            	inIndexDocumentElement = false;
+            } else if (name.equals("Suffix") && inIndexDocumentElement) {
+            	configuration.setIndexDocumentSuffix(text.toString());
+            } else if (name.equals("ErrorDocument")) {
+            	inErrorDocumentElement = false;
+            } else if (name.equals("Key") && inErrorDocumentElement) {
+            	configuration.setErrorDocument(text.toString());
             }
             text.setLength(0);
         }

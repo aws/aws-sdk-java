@@ -45,6 +45,27 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
     private String serialNumber;
 
     /**
+     * Default constructor for a new DeactivateMFADeviceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeactivateMFADeviceRequest() {}
+    
+    /**
+     * Constructs a new DeactivateMFADeviceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose MFA device you want to
+     * deactivate.
+     * @param serialNumber The serial number that uniquely identifies the MFA
+     * device.
+     */
+    public DeactivateMFADeviceRequest(String userName, String serialNumber) {
+        this.userName = userName;
+        this.serialNumber = serialNumber;
+    }
+    
+    /**
      * Name of the User whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>

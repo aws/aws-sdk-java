@@ -36,6 +36,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         if (describeReservedInstancesOfferingsRequest != null) {
             java.util.List<String> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.getReservedInstancesOfferingIds();
             int reservedInstancesOfferingIdsListIndex = 1;
+
             for (String reservedInstancesOfferingIdsListValue : reservedInstancesOfferingIdsList) {
                 if (reservedInstancesOfferingIdsListValue != null) {
                     request.addParameter("ReservedInstancesOfferingId." + reservedInstancesOfferingIdsListIndex, StringUtils.fromString(reservedInstancesOfferingIdsListValue));
@@ -71,6 +72,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

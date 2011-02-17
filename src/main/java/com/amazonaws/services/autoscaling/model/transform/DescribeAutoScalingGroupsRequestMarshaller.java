@@ -36,6 +36,7 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
         if (describeAutoScalingGroupsRequest != null) {
             java.util.List<String> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.getAutoScalingGroupNames();
             int autoScalingGroupNamesListIndex = 1;
+
             for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
                 if (autoScalingGroupNamesListValue != null) {
                     request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));

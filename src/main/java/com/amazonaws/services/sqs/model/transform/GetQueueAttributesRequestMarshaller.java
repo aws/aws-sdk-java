@@ -41,6 +41,7 @@ public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<G
         if (getQueueAttributesRequest != null) {
             java.util.List<String> attributeNamesList = getQueueAttributesRequest.getAttributeNames();
             int attributeNamesListIndex = 1;
+
             for (String attributeNamesListValue : attributeNamesList) {
                 if (attributeNamesListValue != null) {
                     request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));

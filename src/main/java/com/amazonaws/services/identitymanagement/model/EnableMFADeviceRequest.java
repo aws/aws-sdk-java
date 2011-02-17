@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest) EnableMFADevice operation}.
  * <p>
  * Enables the specified MFA device and associates it with the specified
- * User name. Once enabled, the MFA device is required for every
+ * User name. When enabled, the MFA device is required for every
  * subsequent login by the User name associated with the device.
  * </p>
  *
@@ -63,6 +63,33 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest {
      */
     private String authenticationCode2;
 
+    /**
+     * Default constructor for a new EnableMFADeviceRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public EnableMFADeviceRequest() {}
+    
+    /**
+     * Constructs a new EnableMFADeviceRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User for whom you want to enable the MFA
+     * device.
+     * @param serialNumber The serial number that uniquely identifies the MFA
+     * device.
+     * @param authenticationCode1 An authentication code emitted by the
+     * device.
+     * @param authenticationCode2 A subsequent authentication code emitted by
+     * the device.
+     */
+    public EnableMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
+        this.userName = userName;
+        this.serialNumber = serialNumber;
+        this.authenticationCode1 = authenticationCode1;
+        this.authenticationCode2 = authenticationCode2;
+    }
+    
     /**
      * Name of the User for whom you want to enable the MFA device.
      * <p>

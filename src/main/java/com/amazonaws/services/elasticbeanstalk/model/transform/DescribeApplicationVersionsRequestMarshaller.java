@@ -41,6 +41,7 @@ public class DescribeApplicationVersionsRequestMarshaller implements Marshaller<
         if (describeApplicationVersionsRequest != null) {
             java.util.List<String> versionLabelsList = describeApplicationVersionsRequest.getVersionLabels();
             int versionLabelsListIndex = 1;
+
             for (String versionLabelsListValue : versionLabelsList) {
                 if (versionLabelsListValue != null) {
                     request.addParameter("VersionLabels.member." + versionLabelsListIndex, StringUtils.fromString(versionLabelsListValue));

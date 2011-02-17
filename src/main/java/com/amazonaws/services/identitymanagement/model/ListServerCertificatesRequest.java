@@ -68,6 +68,12 @@ public class ListServerCertificatesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListServerCertificatesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListServerCertificatesRequest() {}
+    
+    /**
      * The path prefix for filtering the results. For example:
      * <code>/company/servercerts</code> would get all server certificates
      * for which the path starts with <code>/company/servercerts</code>.

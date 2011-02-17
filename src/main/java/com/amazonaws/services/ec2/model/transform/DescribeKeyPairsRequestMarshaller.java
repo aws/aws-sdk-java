@@ -36,6 +36,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
         if (describeKeyPairsRequest != null) {
             java.util.List<String> keyNamesList = describeKeyPairsRequest.getKeyNames();
             int keyNamesListIndex = 1;
+
             for (String keyNamesListValue : keyNamesList) {
                 if (keyNamesListValue != null) {
                     request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(keyNamesListValue));
@@ -56,6 +57,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

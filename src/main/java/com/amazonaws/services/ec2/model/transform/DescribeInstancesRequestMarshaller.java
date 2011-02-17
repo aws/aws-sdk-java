@@ -36,6 +36,7 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
         if (describeInstancesRequest != null) {
             java.util.List<String> instanceIdsList = describeInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
+
             for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

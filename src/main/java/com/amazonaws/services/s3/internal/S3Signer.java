@@ -14,16 +14,15 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.security.SignatureException;
 import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
-import com.amazonaws.auth.SignatureVersion;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SigningAlgorithm;
 import com.amazonaws.services.s3.Headers;
@@ -32,10 +31,7 @@ import com.amazonaws.services.s3.Headers;
  * Implementation of the {@linkplain Signer} interface specific to S3's signing
  * algorithm.
  */
-public class S3Signer extends AbstractAWSSigner implements Signer {
-
-    /** AWS Credentials */
-    private final AWSCredentials credentials;
+public class S3Signer extends AbstractAWSSigner {
 
     /** Shared log for signing debug output */
     private static final Log log = LogFactory.getLog(S3Signer.class);
@@ -77,8 +73,7 @@ public class S3Signer extends AbstractAWSSigner implements Signer {
      *            The canonical S3 resource path (ex: "/", "/<bucket name>/", or
      *            "/<bucket name>/<key>".
      */
-    public S3Signer(AWSCredentials credentials, String httpVerb, String resourcePath) {
-        this.credentials = credentials;
+    public S3Signer(String httpVerb, String resourcePath) {
         this.httpVerb = httpVerb;
         this.resourcePath = resourcePath;
 
@@ -86,11 +81,7 @@ public class S3Signer extends AbstractAWSSigner implements Signer {
             throw new IllegalArgumentException("Parameter resourcePath is empty");
     }
 
-    /* (non-Javadoc)
-     * @see com.amazonaws.auth.Signer#sign(com.amazonaws.Request, com.amazonaws.auth.SignatureVersion, com.amazonaws.auth.SigningAlgorithm)
-     */
-    public void sign(Request<?> request, SignatureVersion version,
-            SigningAlgorithm algorithm) throws SignatureException {
+    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
         if (credentials == null) {
             log.debug("Canonical string will not be signed, as no AWS Secret Key was provided");
             return;
@@ -106,5 +97,4 @@ public class S3Signer extends AbstractAWSSigner implements Signer {
         String signature = super.sign(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
         request.addHeader("Authorization", "AWS " + sanitizedCredentials.getAWSAccessKeyId() + ":" + signature);
     }
-
 }

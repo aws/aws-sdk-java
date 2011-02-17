@@ -36,6 +36,7 @@ public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<
         if (describeBundleTasksRequest != null) {
             java.util.List<String> bundleIdsList = describeBundleTasksRequest.getBundleIds();
             int bundleIdsListIndex = 1;
+
             for (String bundleIdsListValue : bundleIdsList) {
                 if (bundleIdsListValue != null) {
                     request.addParameter("BundleId." + bundleIdsListIndex, StringUtils.fromString(bundleIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeBundleTasksRequestMarshaller implements Marshaller<Request<
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

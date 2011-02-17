@@ -36,6 +36,7 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
         if (describeAvailabilityZonesRequest != null) {
             java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
             int zoneNamesListIndex = 1;
+
             for (String zoneNamesListValue : zoneNamesList) {
                 if (zoneNamesListValue != null) {
                     request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(zoneNamesListValue));
@@ -56,6 +57,7 @@ public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Re
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

@@ -46,6 +46,8 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
         if (setLoadBalancerPoliciesOfListenerRequest != null) {
             java.util.List<String> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.getPolicyNames();
             int policyNamesListIndex = 1;
+
+            if (policyNamesList.isEmpty()) request.addParameter("PolicyNames", "");
             for (String policyNamesListValue : policyNamesList) {
                 if (policyNamesListValue != null) {
                     request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

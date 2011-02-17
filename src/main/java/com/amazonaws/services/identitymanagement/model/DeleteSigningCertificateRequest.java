@@ -52,6 +52,23 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest {
     private String certificateId;
 
     /**
+     * Default constructor for a new DeleteSigningCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteSigningCertificateRequest() {}
+    
+    /**
+     * Constructs a new DeleteSigningCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param certificateId ID of the signing certificate to delete.
+     */
+    public DeleteSigningCertificateRequest(String certificateId) {
+        this.certificateId = certificateId;
+    }
+    
+    /**
      * Name of the User the signing certificate belongs to.
      * <p>
      * <b>Constraints:</b><br/>

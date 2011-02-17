@@ -14,17 +14,15 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.security.SignatureException;
 import java.util.Date;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.SigningAlgorithm;
 
 public class S3QueryStringSigner<T> extends AbstractAWSSigner {
-    /** AWS Credentials */
-    private final AWSCredentials credentials;
 
     /**
      * The HTTP verb (GET, PUT, HEAD, DELETE) the request to sign
@@ -53,8 +51,7 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
     private final Date expiration;
 
 
-    public S3QueryStringSigner(AWSCredentials credentials, String httpVerb, String resourcePath, Date expiration) {
-        this.credentials = credentials;
+    public S3QueryStringSigner(String httpVerb, String resourcePath, Date expiration) {
         this.httpVerb = httpVerb;
         this.resourcePath = resourcePath;
         this.expiration = expiration;
@@ -63,7 +60,7 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
             throw new IllegalArgumentException("Parameter resourcePath is empty");
     }
 
-    public void sign(Request<T> request) throws SignatureException {
+    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
         String expirationInSeconds = Long.toString(expiration.getTime() / 1000L);
 
         String canonicalString = RestUtils.makeS3CanonicalString(
@@ -77,4 +74,5 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
         request.addParameter("Expires", expirationInSeconds);
         request.addParameter("Signature", signature);
     }
+
 }

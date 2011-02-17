@@ -71,6 +71,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest != null) {
             java.util.List<String> dBSecurityGroupsList = createDBInstanceRequest.getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
+
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
                 if (dBSecurityGroupsListValue != null) {
                     request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));

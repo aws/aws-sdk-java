@@ -70,6 +70,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
         if (createLoadBalancerRequest != null) {
             java.util.List<String> availabilityZonesList = createLoadBalancerRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
+
             for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));

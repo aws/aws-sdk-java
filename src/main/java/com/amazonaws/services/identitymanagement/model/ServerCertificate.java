@@ -51,6 +51,26 @@ public class ServerCertificate {
     private String certificateChain;
 
     /**
+     * Default constructor for a new ServerCertificate object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ServerCertificate() {}
+    
+    /**
+     * Constructs a new ServerCertificate object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param serverCertificateMetadata The meta information of the server
+     * certificate, such as its name, path, ID, and ARN.
+     * @param certificateBody The contents of the public key certificate.
+     */
+    public ServerCertificate(ServerCertificateMetadata serverCertificateMetadata, String certificateBody) {
+        this.serverCertificateMetadata = serverCertificateMetadata;
+        this.certificateBody = certificateBody;
+    }
+    
+    /**
      * The meta information of the server certificate, such as its name,
      * path, ID, and ARN.
      *

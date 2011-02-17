@@ -69,6 +69,28 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
     private String status;
 
     /**
+     * Default constructor for a new UpdateSigningCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateSigningCertificateRequest() {}
+    
+    /**
+     * Constructs a new UpdateSigningCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param certificateId The ID of the signing certificate you want to
+     * update.
+     * @param status The status you want to assign to the certificate.
+     * <code>Active</code> means the certificate can be used for API calls to
+     * AWS, while <code>Inactive</code> means the certificate cannot be used.
+     */
+    public UpdateSigningCertificateRequest(String certificateId, String status) {
+        this.certificateId = certificateId;
+        this.status = status;
+    }
+    
+    /**
      * Name of the User the signing certificate belongs to.
      * <p>
      * <b>Constraints:</b><br/>

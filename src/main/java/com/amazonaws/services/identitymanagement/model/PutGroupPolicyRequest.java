@@ -69,6 +69,27 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
     private String policyDocument;
 
     /**
+     * Default constructor for a new PutGroupPolicyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PutGroupPolicyRequest() {}
+    
+    /**
+     * Constructs a new PutGroupPolicyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to associate the policy with.
+     * @param policyName Name of the policy document.
+     * @param policyDocument The policy document.
+     */
+    public PutGroupPolicyRequest(String groupName, String policyName, String policyDocument) {
+        this.groupName = groupName;
+        this.policyName = policyName;
+        this.policyDocument = policyDocument;
+    }
+    
+    /**
      * Name of the group to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>

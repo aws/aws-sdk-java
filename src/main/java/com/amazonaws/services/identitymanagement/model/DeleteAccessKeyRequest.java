@@ -52,6 +52,24 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest {
     private String accessKeyId;
 
     /**
+     * Default constructor for a new DeleteAccessKeyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteAccessKeyRequest() {}
+    
+    /**
+     * Constructs a new DeleteAccessKeyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param accessKeyId The Access Key ID for the Access Key ID and Secret
+     * Access Key you want to delete.
+     */
+    public DeleteAccessKeyRequest(String accessKeyId) {
+        this.accessKeyId = accessKeyId;
+    }
+    
+    /**
      * Name of the User whose key you want to delete.
      * <p>
      * <b>Constraints:</b><br/>

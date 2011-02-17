@@ -36,6 +36,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
         if (describeSubnetsRequest != null) {
             java.util.List<String> subnetIdsList = describeSubnetsRequest.getSubnetIds();
             int subnetIdsListIndex = 1;
+
             for (String subnetIdsListValue : subnetIdsList) {
                 if (subnetIdsListValue != null) {
                     request.addParameter("SubnetId." + subnetIdsListIndex, StringUtils.fromString(subnetIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

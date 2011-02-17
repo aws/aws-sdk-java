@@ -55,6 +55,10 @@ public class MFADeviceStaxUnmarshaller implements Unmarshaller<MFADevice, StaxUn
                     mFADevice.setSerialNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EnableDate", targetDepth)) {
+                    mFADevice.setEnableDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return mFADevice;

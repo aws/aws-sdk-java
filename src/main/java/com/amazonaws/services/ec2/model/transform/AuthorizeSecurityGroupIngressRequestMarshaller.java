@@ -110,6 +110,7 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
                 if (ipPermissionsListValue != null) {
                     java.util.List<String> ipRangesList = ipPermissionsListValue.getIpRanges();
                     int ipRangesListIndex = 1;
+
                     for (String ipRangesListValue : ipRangesList) {
                         if (ipRangesListValue != null) {
                             request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp", StringUtils.fromString(ipRangesListValue));

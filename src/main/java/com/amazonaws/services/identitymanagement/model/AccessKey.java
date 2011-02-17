@@ -63,6 +63,31 @@ public class AccessKey {
     private java.util.Date createDate;
 
     /**
+     * Default constructor for a new AccessKey object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AccessKey() {}
+    
+    /**
+     * Constructs a new AccessKey object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User the key is associated with.
+     * @param accessKeyId The ID for this access key.
+     * @param status The status of the access key. <code>Active</code> means
+     * the key is valid for API calls, while <code>Inactive</code> means it
+     * is not.
+     * @param secretAccessKey The secret key used to sign requests.
+     */
+    public AccessKey(String userName, String accessKeyId, String status, String secretAccessKey) {
+        this.userName = userName;
+        this.accessKeyId = accessKeyId;
+        this.status = status;
+        this.secretAccessKey = secretAccessKey;
+    }
+    
+    /**
      * Name of the User the key is associated with.
      * <p>
      * <b>Constraints:</b><br/>

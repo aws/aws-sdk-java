@@ -36,6 +36,7 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
         if (describeVolumesRequest != null) {
             java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
             int volumeIdsListIndex = 1;
+
             for (String volumeIdsListValue : volumeIdsList) {
                 if (volumeIdsListValue != null) {
                     request.addParameter("VolumeId." + volumeIdsListIndex, StringUtils.fromString(volumeIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

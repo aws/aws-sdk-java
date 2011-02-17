@@ -71,6 +71,12 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListSigningCertificatesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListSigningCertificatesRequest() {}
+    
+    /**
      * The name of the User.
      * <p>
      * <b>Constraints:</b><br/>

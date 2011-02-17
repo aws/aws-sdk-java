@@ -22,6 +22,7 @@ import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
+import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -93,17 +94,55 @@ public class BucketConfigurationXmlFactory {
     public byte[] convertToXmlByteArray(BucketNotificationConfiguration notificationConfiguration) {
         XmlWriter xml = new XmlWriter();
         xml.start("NotificationConfiguration", "xmlns", Constants.XML_NAMESPACE);
-        
+
         List<TopicConfiguration> topicConfigurations = notificationConfiguration.getTopicConfigurations();
         for ( TopicConfiguration topicConfiguration : topicConfigurations ) {
             xml.start( "TopicConfiguration" );
             xml.start( "Topic" ).value( topicConfiguration.getTopic() ).end();
             xml.start( "Event" ).value( topicConfiguration.getEvent() ).end();
             xml.end();
-        }    
-        
+        }
+
         xml.end();
 
+        return xml.getBytes();
+    }
+
+    /**
+     * Converts the specified website configuration into an XML byte array to
+     * send to S3.
+     *
+     * Sample XML:
+     * <WebsiteConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+     *	  <IndexDocument>
+     *	    <Suffix>index.html</Suffix>
+     *	  </IndexDocument>
+     *	  <ErrorDocument>
+     *	    <Key>404.html</Key>
+     *	  </ErrorDocument>
+     *	</WebsiteConfiguration>
+     *
+     * @param websiteConfiguration
+     *            The configuration to convert.
+     * @return The XML byte array representation.
+     */
+    public byte[] convertToXmlByteArray(BucketWebsiteConfiguration websiteConfiguration) {
+        XmlWriter xml = new XmlWriter();
+        xml.start("WebsiteConfiguration", "xmlns", Constants.XML_NAMESPACE);
+
+        if (websiteConfiguration.getIndexDocumentSuffix() != null) {
+            XmlWriter indexDocumentElement = xml.start("IndexDocument");
+            indexDocumentElement.start("Suffix").value(websiteConfiguration.getIndexDocumentSuffix()).end();
+            indexDocumentElement.end();
+        }
+
+        if (websiteConfiguration.getErrorDocument() != null) {
+            XmlWriter errorDocumentElement = xml.start("ErrorDocument");
+            errorDocumentElement.start("Key").value(websiteConfiguration.getErrorDocument()).end();
+            errorDocumentElement.end();
+        }
+
+        xml.end();
         return xml.getBytes();
     }
 }

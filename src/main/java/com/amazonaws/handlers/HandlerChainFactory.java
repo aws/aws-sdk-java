@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -30,11 +30,11 @@ public class HandlerChainFactory {
     /**
      * Constructs a new request handler chain by analyzing the specified
      * classpath resource.
-     * 
+     *
      * @param resource
      *            The resource to load from the classpath containing the list of
      *            request handlers to instantiate.
-     * 
+     *
      * @return A list of request handlers based on the handlers referenced in
      *         the specified resource.
      */
@@ -44,14 +44,14 @@ public class HandlerChainFactory {
         try {
             InputStream input = getClass().getResourceAsStream(resource);
             if (input == null) return handlers;
-            
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             while (true) {
                 String requestHandlerClassName = reader.readLine();
                 if (requestHandlerClassName == null) break;
                 requestHandlerClassName = requestHandlerClassName.trim();
                 if (requestHandlerClassName.equals("")) continue;
-                
+
                 Class<?> requestHandlerClass = getClass().getClassLoader().loadClass(requestHandlerClassName);
                 Object requestHandlerObject = requestHandlerClass.newInstance();
                 if (requestHandlerObject instanceof RequestHandler) {
@@ -63,10 +63,10 @@ public class HandlerChainFactory {
                 }
             }
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to instantiate request handler chain for client: " 
+            throw new AmazonClientException("Unable to instantiate request handler chain for client: "
                     + e.getMessage(), e);
         }
-        
+
         return handlers;
     }
 }

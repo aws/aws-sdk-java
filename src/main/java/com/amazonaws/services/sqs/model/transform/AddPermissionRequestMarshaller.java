@@ -46,6 +46,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
         if (addPermissionRequest != null) {
             java.util.List<String> aWSAccountIdsList = addPermissionRequest.getAWSAccountIds();
             int aWSAccountIdsListIndex = 1;
+
             for (String aWSAccountIdsListValue : aWSAccountIdsList) {
                 if (aWSAccountIdsListValue != null) {
                     request.addParameter("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.fromString(aWSAccountIdsListValue));
@@ -56,6 +57,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
         if (addPermissionRequest != null) {
             java.util.List<String> actionsList = addPermissionRequest.getActions();
             int actionsListIndex = 1;
+
             for (String actionsListValue : actionsList) {
                 if (actionsListValue != null) {
                     request.addParameter("ActionName." + actionsListIndex, StringUtils.fromString(actionsListValue));

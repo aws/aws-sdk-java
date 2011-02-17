@@ -24,34 +24,25 @@ import com.amazonaws.services.identitymanagement.model.*;
  * Interface for accessing AmazonIdentityManagement asynchronously,
  * using Java Futures.
  * AWS Identity and Access Management <p>
+ * This is the AWS Identity and Access Management (IAM) API Reference.
+ * This guide provides descriptions of the IAM API as well as links to
+ * related content in the guide, <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/"> Using
+ * IAM </a> .
+ * </p>
+ * <p>
  * AWS Identity and Access Management (IAM) is a web service that enables
  * Amazon Web Services (AWS) customers to manage Users and User
  * permissions under their AWS Account.
  * </p>
  * <p>
- * This is the AWS Identity and Access Management API Reference. This
- * guide describes who should read this guide and other resources related
- * to IAM.
+ * For more information about this product go to <a
+ * href="http://aws.amazon.com/iam/"> AWS Identity and Access Management
+ * (IAM) </a> . For specific information about setting up signatures and
+ * authorization through the API, go to <a
+ * cs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">
+ * Making Query Requests </a> in the Using IAM guide.
  * </p>
- * <p>
- * Use of this guide assumes you are familiar with the following:
- * </p>
- * 
- * <ul>
- * <li>Basic understanding of web services (for information, go to W3
- * Schools Web Services Tutorial at <a
- * href="http://www.w3schools.com/webservices/default.asp">
- * http://www.w3schools.com/webservices/default.asp </a> ).</li>
- * <li>XML (for information, go to W3 Schools XML Tutorial at <a
- * href="http://www.w3schools.com/xml/default.asp">
- * http://www.w3schools.com/xml/default.asp </a> ).</li>
- * <li>JSON (for information, go to <a href="http://json.org">
- * http://json.org </a> )</li>
- * <li>The specific AWS products you are using or plan to use (e.g.,
- * Amazon Elastic Compute Cloud (Amazon EC2), Amazon Simple Storage
- * Service (Amazon S3), and so on.)</li>
- * 
- * </ul>
  * <p>
  * If you're new to AWS and need additional technical information about a
  * specific AWS product, you can find the product's technical
@@ -119,6 +110,34 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> deleteAccessKeyAsync(DeleteAccessKeyRequest deleteAccessKeyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes the specified AWS Account alias. For information about using
+     * an AWS Account alias, see <a
+     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     *
+     * @param deleteAccountAliasRequest Container for the necessary
+     *           parameters to execute the DeleteAccountAlias operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteAccountAlias service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteAccountAliasAsync(DeleteAccountAliasRequest deleteAccountAliasRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -320,13 +339,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * Updates the login profile for the specified User. Use this API to
      * change the User's password.
      * </p>
-     * <p>
-     * <b>NOTE:</b>In the full release you will be able to use IAM to access
-     * your services through the AWS Management Console. Although this
-     * feature is not currently available, you can create login profiles for
-     * your Users now. Then, when this feature is implemented, your Users can
-     * use IAM to access your services through the AWS Management Console.
-     * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
      *           parameters to execute the UpdateLoginProfile operation on
@@ -429,13 +441,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * To prevent all User access you must also either make the access key
      * inactive or delete it. For more information about making keys
      * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>In the full release you will be able to use IAM to access
-     * your services through the AWS Management Console. Although this
-     * feature is not currently available, you can create login profiles for
-     * your Users now. Then, when this feature is implemented, your Users can
-     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param deleteLoginProfileRequest Container for the necessary
@@ -710,7 +715,7 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Enables the specified MFA device and associates it with the specified
-     * User name. Once enabled, the MFA device is required for every
+     * User name. When enabled, the MFA device is required for every
      * subsequent login by the User name associated with the device.
      * </p>
      *
@@ -803,13 +808,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
     /**
      * <p>
      * Retrieves the login profile for the specified User.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>In the full release you will be able to use IAM to access
-     * your services through the AWS Management Console. Although this
-     * feature is not currently available, you can create login profiles for
-     * your Users now. Then, when this feature is implemented, your Users can
-     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -924,6 +922,34 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<UploadServerCertificateResult> uploadServerCertificateAsync(UploadServerCertificateRequest uploadServerCertificateRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This action creates an alias for your AWS Account. For information
+     * about using an AWS Account alias, see <a
+     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     *
+     * @param createAccountAliasRequest Container for the necessary
+     *           parameters to execute the CreateAccountAlias operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateAccountAlias service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createAccountAliasAsync(CreateAccountAliasRequest createAccountAliasRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1096,13 +1122,6 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      * .com/IAM/latest/UserGuide/index.html?Using_ManagingLoginsAndMFA.html">
      * Managing Login Profiles and MFA Devices </a> in <i>Using AWS Identity
      * and Access Management</i> .
-     * </p>
-     * <p>
-     * <b>NOTE:</b>In the full release you will be able to use IAM to access
-     * your services through the AWS Management Console. Although this
-     * feature is not currently available, you can create login profiles for
-     * your Users now. Then, when this feature is implemented, your Users can
-     * use IAM to access your services through the AWS Management Console.
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -1287,6 +1306,37 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
+     * Retrieves account level information about account entity usage and IAM
+     * quotas.
+     * </p>
+     * <p>
+     * For information about limitations on IAM entities, see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     *
+     * @param getAccountSummaryRequest Container for the necessary parameters
+     *           to execute the GetAccountSummary operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccountSummary service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccountSummaryResult> getAccountSummaryAsync(GetAccountSummaryRequest getAccountSummaryRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Adds the specified User to the specified group.
      * </p>
      *
@@ -1330,6 +1380,38 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<GetGroupResult> getGroupAsync(GetGroupRequest getGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists the account aliases associated with the account. For information
+     * about using an AWS Account alias, see <a
+     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listAccountAliasesRequest Container for the necessary
+     *           parameters to execute the ListAccountAliases operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListAccountAliases service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListAccountAliasesResult> listAccountAliasesAsync(ListAccountAliasesRequest listAccountAliasesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

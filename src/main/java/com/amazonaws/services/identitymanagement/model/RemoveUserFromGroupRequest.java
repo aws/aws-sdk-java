@@ -44,6 +44,25 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new RemoveUserFromGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public RemoveUserFromGroupRequest() {}
+    
+    /**
+     * Constructs a new RemoveUserFromGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to update.
+     * @param userName Name of the User to remove.
+     */
+    public RemoveUserFromGroupRequest(String groupName, String userName) {
+        this.groupName = groupName;
+        this.userName = userName;
+    }
+    
+    /**
      * Name of the group to update.
      * <p>
      * <b>Constraints:</b><br/>

@@ -16,17 +16,19 @@ package com.amazonaws.services.ec2.model.transform;
 
 import org.apache.commons.codec.binary.Base64;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
-import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.handlers.AbstractRequestHandler;
 import com.amazonaws.services.ec2.model.ImportKeyPairRequest;
 
-public class EC2RequestHandler implements RequestHandler {
-    public <T> Request<T> handleRequest(Request<T> request) {
-        if (request.getOriginalRequest() instanceof ImportKeyPairRequest) {
-            String publicKeyMaterial = request.getParameters().get("PublicKeyMaterial");
+public class EC2RequestHandler extends AbstractRequestHandler {
+    public void beforeRequest(Request<?> request) {
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        if (originalRequest instanceof ImportKeyPairRequest) {
+            ImportKeyPairRequest importKeyPairRequest = (ImportKeyPairRequest)originalRequest;
+            String publicKeyMaterial = importKeyPairRequest.getPublicKeyMaterial();
             String encodedKeyMaterial = new String(Base64.encodeBase64(publicKeyMaterial.getBytes()));
-            request.getParameters().put("PublicKeyMaterial", encodedKeyMaterial);
+            importKeyPairRequest.setPublicKeyMaterial(encodedKeyMaterial);
         }
-        return request;
     }
 }

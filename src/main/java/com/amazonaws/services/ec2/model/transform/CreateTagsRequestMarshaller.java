@@ -36,6 +36,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
         if (createTagsRequest != null) {
             java.util.List<String> resourcesList = createTagsRequest.getResources();
             int resourcesListIndex = 1;
+
             for (String resourcesListValue : resourcesList) {
                 if (resourcesListValue != null) {
                     request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));

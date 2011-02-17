@@ -32,7 +32,7 @@ import com.amazonaws.services.cloudwatch.model.*;
  * using this client are non-blocking and will immediately return a Java Future.
  * Callers must use the Future object to determine when the service call has actually
  * completed.
- * <p>
+ * Amazon CloudWatch <p>
  * Amazon CloudWatch is a web service that enables you to monitor and
  * manage various metrics, as well as configure alarm actions based on
  * data from metrics.

@@ -20,13 +20,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Retrieves the login profile for the specified User.
  * </p>
- * <p>
- * <b>NOTE:</b>In the full release you will be able to use IAM to access
- * your services through the AWS Management Console. Although this
- * feature is not currently available, you can create login profiles for
- * your Users now. Then, when this feature is implemented, your Users can
- * use IAM to access your services through the AWS Management Console.
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getLoginProfile(GetLoginProfileRequest)
  */
@@ -41,6 +34,24 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest {
      */
     private String userName;
 
+    /**
+     * Default constructor for a new GetLoginProfileRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetLoginProfileRequest() {}
+    
+    /**
+     * Constructs a new GetLoginProfileRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose login profile you want to
+     * retrieve.
+     */
+    public GetLoginProfileRequest(String userName) {
+        this.userName = userName;
+    }
+    
     /**
      * Name of the User whose login profile you want to retrieve.
      * <p>

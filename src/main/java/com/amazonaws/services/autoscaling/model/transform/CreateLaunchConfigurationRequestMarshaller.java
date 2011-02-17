@@ -51,6 +51,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest != null) {
             java.util.List<String> securityGroupsList = createLaunchConfigurationRequest.getSecurityGroups();
             int securityGroupsListIndex = 1;
+
             for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
                     request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));

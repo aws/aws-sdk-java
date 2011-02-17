@@ -36,6 +36,7 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
         if (describeVpnConnectionsRequest != null) {
             java.util.List<String> vpnConnectionIdsList = describeVpnConnectionsRequest.getVpnConnectionIds();
             int vpnConnectionIdsListIndex = 1;
+
             for (String vpnConnectionIdsListValue : vpnConnectionIdsList) {
                 if (vpnConnectionIdsListValue != null) {
                     request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.fromString(vpnConnectionIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

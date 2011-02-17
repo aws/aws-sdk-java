@@ -46,6 +46,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
         if (describeSpotPriceHistoryRequest != null) {
             java.util.List<String> instanceTypesList = describeSpotPriceHistoryRequest.getInstanceTypes();
             int instanceTypesListIndex = 1;
+
             for (String instanceTypesListValue : instanceTypesList) {
                 if (instanceTypesListValue != null) {
                     request.addParameter("InstanceType." + instanceTypesListIndex, StringUtils.fromString(instanceTypesListValue));
@@ -56,6 +57,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
         if (describeSpotPriceHistoryRequest != null) {
             java.util.List<String> productDescriptionsList = describeSpotPriceHistoryRequest.getProductDescriptions();
             int productDescriptionsListIndex = 1;
+
             for (String productDescriptionsListValue : productDescriptionsList) {
                 if (productDescriptionsListValue != null) {
                     request.addParameter("ProductDescription." + productDescriptionsListIndex, StringUtils.fromString(productDescriptionsListValue));
@@ -76,6 +78,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

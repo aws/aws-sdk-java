@@ -58,6 +58,12 @@ public class CreateAccessKeyRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new CreateAccessKeyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateAccessKeyRequest() {}
+    
+    /**
      * The User name that the new key will belong to.
      * <p>
      * <b>Constraints:</b><br/>

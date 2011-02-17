@@ -41,6 +41,7 @@ public class DescribeScheduledActionsRequestMarshaller implements Marshaller<Req
         if (describeScheduledActionsRequest != null) {
             java.util.List<String> scheduledActionNamesList = describeScheduledActionsRequest.getScheduledActionNames();
             int scheduledActionNamesListIndex = 1;
+
             for (String scheduledActionNamesListValue : scheduledActionNamesList) {
                 if (scheduledActionNamesListValue != null) {
                     request.addParameter("ScheduledActionNames.member." + scheduledActionNamesListIndex, StringUtils.fromString(scheduledActionNamesListValue));

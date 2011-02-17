@@ -45,6 +45,24 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest {
     private String serverCertificateName;
 
     /**
+     * Default constructor for a new DeleteServerCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteServerCertificateRequest() {}
+    
+    /**
+     * Constructs a new DeleteServerCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param serverCertificateName The name of the server certificate you
+     * want to delete.
+     */
+    public DeleteServerCertificateRequest(String serverCertificateName) {
+        this.serverCertificateName = serverCertificateName;
+    }
+    
+    /**
      * The name of the server certificate you want to delete.
      * <p>
      * <b>Constraints:</b><br/>

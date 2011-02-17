@@ -36,6 +36,23 @@ public class DeleteUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new DeleteUserRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteUserRequest() {}
+    
+    /**
+     * Constructs a new DeleteUserRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User to delete.
+     */
+    public DeleteUserRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * Name of the User to delete.
      * <p>
      * <b>Constraints:</b><br/>

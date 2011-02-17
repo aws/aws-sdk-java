@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -35,7 +35,7 @@ import com.amazonaws.util.XpathUtils;
  * body (ex: error type/fault information) so it has to be inferred from other
  * parts of the error response.
  */
-public class S3ErrorResponseHandler 
+public class S3ErrorResponseHandler
         implements HttpResponseHandler<AmazonServiceException> {
 
     /**
@@ -48,8 +48,8 @@ public class S3ErrorResponseHandler
          * a HEAD request, we don't receive a body, so we'll have to just return
          * what we can.
          */
-        if (errorResponse.getContent() == null 
-                || errorResponse.getRequest().getMethodName() == HttpMethodName.HEAD) {
+        if (errorResponse.getContent() == null
+                || errorResponse.getRequest().getHttpMethod() == HttpMethodName.HEAD) {
             String requestId = errorResponse.getHeaders().get(Headers.REQUEST_ID);
             String extendedRequestId = errorResponse.getHeaders().get(Headers.EXTENDED_REQUEST_ID);
             AmazonS3Exception ase = new AmazonS3Exception(errorResponse.getStatusText());
@@ -82,7 +82,7 @@ public class S3ErrorResponseHandler
      * response. S3 error responses don't explicitly declare a sender or client
      * fault like other AWS services, so we have to use the HTTP status code to
      * infer this information.
-     * 
+     *
      * @param ase
      *            The AmazonServiceException to populate with error type
      *            information.

@@ -62,6 +62,23 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListMFADevicesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListMFADevicesRequest() {}
+    
+    /**
+     * Constructs a new ListMFADevicesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose MFA devices you want to list.
+     */
+    public ListMFADevicesRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * Name of the User whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>

@@ -25,13 +25,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Managing Login Profiles and MFA Devices </a> in <i>Using AWS Identity
  * and Access Management</i> .
  * </p>
- * <p>
- * <b>NOTE:</b>In the full release you will be able to use IAM to access
- * your services through the AWS Management Console. Although this
- * feature is not currently available, you can create login profiles for
- * your Users now. Then, when this feature is implemented, your Users can
- * use IAM to access your services through the AWS Management Console.
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createLoginProfile(CreateLoginProfileRequest)
  */
@@ -55,6 +48,25 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
      */
     private String password;
 
+    /**
+     * Default constructor for a new CreateLoginProfileRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateLoginProfileRequest() {}
+    
+    /**
+     * Constructs a new CreateLoginProfileRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User to create a login profile for.
+     * @param password The new password for the User name.
+     */
+    public CreateLoginProfileRequest(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+    
     /**
      * Name of the User to create a login profile for.
      * <p>

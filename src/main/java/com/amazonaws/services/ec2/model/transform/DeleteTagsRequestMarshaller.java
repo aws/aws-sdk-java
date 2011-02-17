@@ -36,6 +36,7 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
         if (deleteTagsRequest != null) {
             java.util.List<String> resourcesList = deleteTagsRequest.getResources();
             int resourcesListIndex = 1;
+
             for (String resourcesListValue : resourcesList) {
                 if (resourcesListValue != null) {
                     request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));

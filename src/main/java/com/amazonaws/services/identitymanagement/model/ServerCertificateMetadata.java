@@ -80,6 +80,43 @@ public class ServerCertificateMetadata {
     private java.util.Date uploadDate;
 
     /**
+     * Default constructor for a new ServerCertificateMetadata object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ServerCertificateMetadata() {}
+    
+    /**
+     * Constructs a new ServerCertificateMetadata object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param path Path to the server certificate. For more information about
+     * paths, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     * @param serverCertificateName The name that identifies the server
+     * certificate.
+     * @param serverCertificateId The stable and unique string identifying
+     * the server certificate. For more information about IDs, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     * @param arn The Amazon Resource Name (ARN) specifying the server
+     * certificate. For more information about ARNs and how to use them in
+     * policies, see <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
+     * Identity and Access Management</i>.
+     */
+    public ServerCertificateMetadata(String path, String serverCertificateName, String serverCertificateId, String arn) {
+        this.path = path;
+        this.serverCertificateName = serverCertificateName;
+        this.serverCertificateId = serverCertificateId;
+        this.arn = arn;
+    }
+    
+    /**
      * Path to the server certificate. For more information about paths, see
      * <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"

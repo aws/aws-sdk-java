@@ -2,7 +2,7 @@
 /**
  * Synchronous and asynchronous client classes for accessing AmazonCloudWatch.
  *
- * <p>
+ * Amazon CloudWatch <p>
  * Amazon CloudWatch is a web service that enables you to monitor and
  * manage various metrics, as well as configure alarm actions based on
  * data from metrics.

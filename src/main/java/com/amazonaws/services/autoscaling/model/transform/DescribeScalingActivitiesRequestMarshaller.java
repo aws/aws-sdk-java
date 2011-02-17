@@ -36,6 +36,7 @@ public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Re
         if (describeScalingActivitiesRequest != null) {
             java.util.List<String> activityIdsList = describeScalingActivitiesRequest.getActivityIds();
             int activityIdsListIndex = 1;
+
             for (String activityIdsListValue : activityIdsList) {
                 if (activityIdsListValue != null) {
                     request.addParameter("ActivityIds.member." + activityIdsListIndex, StringUtils.fromString(activityIdsListValue));

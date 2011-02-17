@@ -14,12 +14,9 @@
  */
 package com.amazonaws.auth;
 
-import java.security.SignatureException;
-
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 
 public interface Signer {
-
-    public void sign(Request<?> request, SignatureVersion version, SigningAlgorithm algorithm) throws SignatureException;
-
+    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException;
 }

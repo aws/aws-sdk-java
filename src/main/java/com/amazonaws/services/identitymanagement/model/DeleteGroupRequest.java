@@ -36,6 +36,23 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
+     * Default constructor for a new DeleteGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteGroupRequest() {}
+    
+    /**
+     * Constructs a new DeleteGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to delete.
+     */
+    public DeleteGroupRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * Name of the group to delete.
      * <p>
      * <b>Constraints:</b><br/>

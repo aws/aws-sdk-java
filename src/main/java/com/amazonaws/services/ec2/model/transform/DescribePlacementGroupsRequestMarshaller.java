@@ -36,6 +36,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
         if (describePlacementGroupsRequest != null) {
             java.util.List<String> groupNamesList = describePlacementGroupsRequest.getGroupNames();
             int groupNamesListIndex = 1;
+
             for (String groupNamesListValue : groupNamesList) {
                 if (groupNamesListValue != null) {
                     request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
@@ -56,6 +57,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

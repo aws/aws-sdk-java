@@ -51,6 +51,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest != null) {
             java.util.List<String> dBSecurityGroupsList = modifyDBInstanceRequest.getDBSecurityGroups();
             int dBSecurityGroupsListIndex = 1;
+
             for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
                 if (dBSecurityGroupsListValue != null) {
                     request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));

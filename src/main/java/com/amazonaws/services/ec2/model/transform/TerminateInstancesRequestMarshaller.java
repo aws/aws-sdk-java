@@ -36,6 +36,7 @@ public class TerminateInstancesRequestMarshaller implements Marshaller<Request<T
         if (terminateInstancesRequest != null) {
             java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
+
             for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

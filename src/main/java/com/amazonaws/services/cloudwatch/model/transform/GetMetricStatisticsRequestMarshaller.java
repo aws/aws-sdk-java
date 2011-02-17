@@ -80,6 +80,7 @@ public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<
         if (getMetricStatisticsRequest != null) {
             java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
             int statisticsListIndex = 1;
+
             for (String statisticsListValue : statisticsList) {
                 if (statisticsListValue != null) {
                     request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));

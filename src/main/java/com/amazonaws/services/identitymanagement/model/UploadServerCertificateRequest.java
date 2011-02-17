@@ -94,6 +94,30 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
     private String certificateChain;
 
     /**
+     * Default constructor for a new UploadServerCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UploadServerCertificateRequest() {}
+    
+    /**
+     * Constructs a new UploadServerCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param serverCertificateName The name for the server certificate. Do
+     * not include the path in this value.
+     * @param certificateBody The contents of the public key certificate in
+     * PEM-encoded format.
+     * @param privateKey The contents of the private key in PEM-encoded
+     * format.
+     */
+    public UploadServerCertificateRequest(String serverCertificateName, String certificateBody, String privateKey) {
+        this.serverCertificateName = serverCertificateName;
+        this.certificateBody = certificateBody;
+        this.privateKey = privateKey;
+    }
+    
+    /**
      * The path for the server certificate. For more information about paths,
      * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"

@@ -36,6 +36,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
         if (describeAddressesRequest != null) {
             java.util.List<String> publicIpsList = describeAddressesRequest.getPublicIps();
             int publicIpsListIndex = 1;
+
             for (String publicIpsListValue : publicIpsList) {
                 if (publicIpsListValue != null) {
                     request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(publicIpsListValue));
@@ -56,6 +57,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

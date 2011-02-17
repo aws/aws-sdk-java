@@ -36,6 +36,7 @@ public class DescribeAutoScalingInstancesRequestMarshaller implements Marshaller
         if (describeAutoScalingInstancesRequest != null) {
             java.util.List<String> instanceIdsList = describeAutoScalingInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
+
             for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceIds.member." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

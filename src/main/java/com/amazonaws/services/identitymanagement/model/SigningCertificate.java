@@ -69,6 +69,32 @@ public class SigningCertificate {
     private java.util.Date uploadDate;
 
     /**
+     * Default constructor for a new SigningCertificate object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public SigningCertificate() {}
+    
+    /**
+     * Constructs a new SigningCertificate object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User the signing certificate is associated
+     * with.
+     * @param certificateId The ID for the signing certificate.
+     * @param certificateBody The contents of the signing certificate.
+     * @param status The status of the signing certificate.
+     * <code>Active</code> means the key is valid for API calls, while
+     * <code>Inactive</code> means it is not.
+     */
+    public SigningCertificate(String userName, String certificateId, String certificateBody, String status) {
+        this.userName = userName;
+        this.certificateId = certificateId;
+        this.certificateBody = certificateBody;
+        this.status = status;
+    }
+    
+    /**
      * Name of the User the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>

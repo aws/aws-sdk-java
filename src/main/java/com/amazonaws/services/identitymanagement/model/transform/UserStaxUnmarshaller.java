@@ -63,6 +63,10 @@ public class UserStaxUnmarshaller implements Unmarshaller<User, StaxUnmarshaller
                     user.setArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    user.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return user;

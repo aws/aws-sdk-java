@@ -43,6 +43,7 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             if (destination != null) {
                 java.util.List<String> toAddressesList = destination.getToAddresses();
                 int toAddressesListIndex = 1;
+
                 for (String toAddressesListValue : toAddressesList) {
                     if (toAddressesListValue != null) {
                         request.addParameter("Destination.ToAddresses.member." + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
@@ -53,6 +54,7 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             if (destination != null) {
                 java.util.List<String> ccAddressesList = destination.getCcAddresses();
                 int ccAddressesListIndex = 1;
+
                 for (String ccAddressesListValue : ccAddressesList) {
                     if (ccAddressesListValue != null) {
                         request.addParameter("Destination.CcAddresses.member." + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
@@ -63,6 +65,7 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
             if (destination != null) {
                 java.util.List<String> bccAddressesList = destination.getBccAddresses();
                 int bccAddressesListIndex = 1;
+
                 for (String bccAddressesListValue : bccAddressesList) {
                     if (bccAddressesListValue != null) {
                         request.addParameter("Destination.BccAddresses.member." + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
@@ -119,6 +122,7 @@ public class SendEmailRequestMarshaller implements Marshaller<Request<SendEmailR
         if (sendEmailRequest != null) {
             java.util.List<String> replyToAddressesList = sendEmailRequest.getReplyToAddresses();
             int replyToAddressesListIndex = 1;
+
             for (String replyToAddressesListValue : replyToAddressesList) {
                 if (replyToAddressesListValue != null) {
                     request.addParameter("ReplyToAddresses.member." + replyToAddressesListIndex, StringUtils.fromString(replyToAddressesListValue));

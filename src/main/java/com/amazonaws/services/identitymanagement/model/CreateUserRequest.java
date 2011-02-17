@@ -55,6 +55,23 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new CreateUserRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateUserRequest() {}
+    
+    /**
+     * Constructs a new CreateUserRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User to create.
+     */
+    public CreateUserRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * The path for the User name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS

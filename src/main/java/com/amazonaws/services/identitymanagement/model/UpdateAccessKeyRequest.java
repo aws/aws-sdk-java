@@ -69,6 +69,28 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest {
     private String status;
 
     /**
+     * Default constructor for a new UpdateAccessKeyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateAccessKeyRequest() {}
+    
+    /**
+     * Constructs a new UpdateAccessKeyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param accessKeyId The Access Key ID of the Secret Access Key you want
+     * to update.
+     * @param status The status you want to assign to the Secret Access Key.
+     * <code>Active</code> means the key can be used for API calls to AWS,
+     * while <code>Inactive</code> means the key cannot be used.
+     */
+    public UpdateAccessKeyRequest(String accessKeyId, String status) {
+        this.accessKeyId = accessKeyId;
+        this.status = status;
+    }
+    
+    /**
      * Name of the User whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>

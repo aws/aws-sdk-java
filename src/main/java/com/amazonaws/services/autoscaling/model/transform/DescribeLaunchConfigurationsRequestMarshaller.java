@@ -36,6 +36,7 @@ public class DescribeLaunchConfigurationsRequestMarshaller implements Marshaller
         if (describeLaunchConfigurationsRequest != null) {
             java.util.List<String> launchConfigurationNamesList = describeLaunchConfigurationsRequest.getLaunchConfigurationNames();
             int launchConfigurationNamesListIndex = 1;
+
             for (String launchConfigurationNamesListValue : launchConfigurationNamesList) {
                 if (launchConfigurationNamesListValue != null) {
                     request.addParameter("LaunchConfigurationNames.member." + launchConfigurationNamesListIndex, StringUtils.fromString(launchConfigurationNamesListValue));

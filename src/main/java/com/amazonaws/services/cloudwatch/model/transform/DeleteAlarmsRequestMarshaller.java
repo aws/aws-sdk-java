@@ -36,6 +36,7 @@ public class DeleteAlarmsRequestMarshaller implements Marshaller<Request<DeleteA
         if (deleteAlarmsRequest != null) {
             java.util.List<String> alarmNamesList = deleteAlarmsRequest.getAlarmNames();
             int alarmNamesListIndex = 1;
+
             for (String alarmNamesListValue : alarmNamesList) {
                 if (alarmNamesListValue != null) {
                     request.addParameter("AlarmNames.member." + alarmNamesListIndex, StringUtils.fromString(alarmNamesListValue));

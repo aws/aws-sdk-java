@@ -36,6 +36,7 @@ public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<Te
         if (terminateJobFlowsRequest != null) {
             java.util.List<String> jobFlowIdsList = terminateJobFlowsRequest.getJobFlowIds();
             int jobFlowIdsListIndex = 1;
+
             for (String jobFlowIdsListValue : jobFlowIdsList) {
                 if (jobFlowIdsListValue != null) {
                     request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));

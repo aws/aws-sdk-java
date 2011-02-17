@@ -68,6 +68,24 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest {
     private String newServerCertificateName;
 
     /**
+     * Default constructor for a new UpdateServerCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateServerCertificateRequest() {}
+    
+    /**
+     * Constructs a new UpdateServerCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param serverCertificateName The name of the server certificate that
+     * you want to update.
+     */
+    public UpdateServerCertificateRequest(String serverCertificateName) {
+        this.serverCertificateName = serverCertificateName;
+    }
+    
+    /**
      * The name of the server certificate that you want to update.
      * <p>
      * <b>Constraints:</b><br/>

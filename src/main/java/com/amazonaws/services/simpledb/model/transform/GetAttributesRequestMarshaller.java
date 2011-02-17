@@ -46,6 +46,7 @@ public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAtt
         if (getAttributesRequest != null) {
             java.util.List<String> attributeNamesList = getAttributesRequest.getAttributeNames();
             int attributeNamesListIndex = 1;
+
             for (String attributeNamesListValue : attributeNamesList) {
                 if (attributeNamesListValue != null) {
                     request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));

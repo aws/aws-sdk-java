@@ -41,6 +41,7 @@ public class DisableMetricsCollectionRequestMarshaller implements Marshaller<Req
         if (disableMetricsCollectionRequest != null) {
             java.util.List<String> metricsList = disableMetricsCollectionRequest.getMetrics();
             int metricsListIndex = 1;
+
             for (String metricsListValue : metricsList) {
                 if (metricsListValue != null) {
                     request.addParameter("Metrics.member." + metricsListIndex, StringUtils.fromString(metricsListValue));

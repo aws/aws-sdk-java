@@ -172,6 +172,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     if (hadoopJarStep != null) {
                         java.util.List<String> argsList = hadoopJarStep.getArgs();
                         int argsListIndex = 1;
+
                         for (String argsListValue : argsList) {
                             if (argsListValue != null) {
                                 request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
@@ -204,6 +205,7 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                     if (scriptBootstrapAction != null) {
                         java.util.List<String> argsList = scriptBootstrapAction.getArgs();
                         int argsListIndex = 1;
+
                         for (String argsListValue : argsList) {
                             if (argsListValue != null) {
                                 request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));

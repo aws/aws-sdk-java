@@ -41,6 +41,7 @@ public class SendRawEmailRequestMarshaller implements Marshaller<Request<SendRaw
         if (sendRawEmailRequest != null) {
             java.util.List<String> destinationsList = sendRawEmailRequest.getDestinations();
             int destinationsListIndex = 1;
+
             for (String destinationsListValue : destinationsList) {
                 if (destinationsListValue != null) {
                     request.addParameter("Destinations.member." + destinationsListIndex, StringUtils.fromString(destinationsListValue));

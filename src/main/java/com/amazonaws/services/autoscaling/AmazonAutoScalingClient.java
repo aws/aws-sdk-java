@@ -17,9 +17,9 @@ package com.amazonaws.services.autoscaling;
 import org.w3c.dom.Node;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
-import java.security.SignatureException;
 
 import com.amazonaws.*;
 import com.amazonaws.auth.AWSCredentials;
@@ -30,8 +30,7 @@ import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.HttpClient;
-import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.http.HttpRequest;
+import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
@@ -105,7 +104,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
     protected final HttpClient client;
 
     /** Optional request handlers for additional request processing. */
-    private List<RequestHandler> requestHandlers = new ArrayList<RequestHandler>();
+    private final List<RequestHandler> requestHandlers;
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
@@ -155,11 +154,24 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("autoscaling.amazonaws.com");
 
-        signer = new QueryStringSigner(awsCredentials);
+        signer = new QueryStringSigner();
 
-        requestHandlers = new HandlerChainFactory().newRequestHandlerChain(
-                "/com/amazonaws/services/autoscaling/request.handlers");
+        HandlerChainFactory chainFactory = new HandlerChainFactory();
+		requestHandlers = Collections.synchronizedList(chainFactory.newRequestHandlerChain(
+                "/com/amazonaws/services/autoscaling/request.handlers"));
         client = new HttpClient(clientConfiguration);
+    }
+
+	/**
+	 * Appends a request handler to the list of registered handlers that are run
+	 * as part of a request's lifecycle.
+	 *
+	 * @param requestHandler
+	 *            The new handler to add to the current list of request
+	 *            handlers.
+	 */
+    public void addRequestHandler(RequestHandler requestHandler) {
+    	requestHandlers.add(requestHandler);
     }
 
     
@@ -1247,22 +1259,22 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         // Apply any additional service specific request handlers that need to be run
         if (requestHandlers != null) {
             for (RequestHandler requestHandler : requestHandlers) {
-                request = requestHandler.handleRequest(request);
+                requestHandler.beforeRequest(request);
             }
         }
 
-        try {
-            signer.sign(request);
-        } catch (SignatureException e) {
-            throw new AmazonServiceException("Unable to sign request", e);
+        if (request.getOriginalRequest().getRequestCredentials() != null) {
+	        signer.sign(request, request.getOriginalRequest().getRequestCredentials());
+        } else {
+    	    signer.sign(request, awsCredentials);
         }
 
-        HttpRequest httpRequest = convertToHttpRequest(request, HttpMethodName.POST);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
-        return (X)client.execute(httpRequest, responseHandler, errorResponseHandler);
+        ExecutionContext executionContext = new ExecutionContext(requestHandlers);
+        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
         

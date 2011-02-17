@@ -63,6 +63,23 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListGroupPoliciesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListGroupPoliciesRequest() {}
+    
+    /**
+     * Constructs a new ListGroupPoliciesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName The name of the group to list policies for.
+     */
+    public ListGroupPoliciesRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * The name of the group to list policies for.
      * <p>
      * <b>Constraints:</b><br/>

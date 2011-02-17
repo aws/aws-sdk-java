@@ -36,6 +36,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
         if (describeDhcpOptionsRequest != null) {
             java.util.List<String> dhcpOptionsIdsList = describeDhcpOptionsRequest.getDhcpOptionsIds();
             int dhcpOptionsIdsListIndex = 1;
+
             for (String dhcpOptionsIdsListValue : dhcpOptionsIdsList) {
                 if (dhcpOptionsIdsListValue != null) {
                     request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(dhcpOptionsIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

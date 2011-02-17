@@ -63,6 +63,23 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListUserPoliciesRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListUserPoliciesRequest() {}
+    
+    /**
+     * Constructs a new ListUserPoliciesRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName The name of the User to list policies for.
+     */
+    public ListUserPoliciesRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * The name of the User to list policies for.
      * <p>
      * <b>Constraints:</b><br/>

@@ -36,6 +36,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
         if (describeLicensesRequest != null) {
             java.util.List<String> licenseIdsList = describeLicensesRequest.getLicenseIds();
             int licenseIdsListIndex = 1;
+
             for (String licenseIdsListValue : licenseIdsList) {
                 if (licenseIdsListValue != null) {
                     request.addParameter("LicenseId." + licenseIdsListIndex, StringUtils.fromString(licenseIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

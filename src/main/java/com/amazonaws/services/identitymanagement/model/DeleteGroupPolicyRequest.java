@@ -45,6 +45,25 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest {
     private String policyName;
 
     /**
+     * Default constructor for a new DeleteGroupPolicyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteGroupPolicyRequest() {}
+    
+    /**
+     * Constructs a new DeleteGroupPolicyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group the policy is associated with.
+     * @param policyName Name of the policy document to delete.
+     */
+    public DeleteGroupPolicyRequest(String groupName, String policyName) {
+        this.groupName = groupName;
+        this.policyName = policyName;
+    }
+    
+    /**
      * Name of the group the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>

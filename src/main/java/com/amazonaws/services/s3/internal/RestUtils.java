@@ -37,12 +37,15 @@ public class RestUtils {
      * The set of request parameters which must be included in the canonical
      * string to sign.
      */
-    private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] { "acl", "torrent", "logging",
-            "location", "policy", "requestPayment", "versioning", "versions", "versionId", "notification", "uploadId",
-            "uploads", "partNumber", ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
-            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION, ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
-            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_LANGUAGE, ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_TYPE,
-            ResponseHeaderOverrides.RESPONSE_HEADER_EXPIRES, 
+    private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] {
+    		"acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
+    		"versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website",
+            ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_LANGUAGE,
+            ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_TYPE,
+            ResponseHeaderOverrides.RESPONSE_HEADER_EXPIRES,
     });
 
     /**

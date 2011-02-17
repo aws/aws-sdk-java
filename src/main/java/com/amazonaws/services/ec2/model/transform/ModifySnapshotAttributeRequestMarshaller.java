@@ -51,6 +51,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
         if (modifySnapshotAttributeRequest != null) {
             java.util.List<String> userIdsList = modifySnapshotAttributeRequest.getUserIds();
             int userIdsListIndex = 1;
+
             for (String userIdsListValue : userIdsList) {
                 if (userIdsListValue != null) {
                     request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
@@ -61,6 +62,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
         if (modifySnapshotAttributeRequest != null) {
             java.util.List<String> groupNamesList = modifySnapshotAttributeRequest.getGroupNames();
             int groupNamesListIndex = 1;
+
             for (String groupNamesListValue : groupNamesList) {
                 if (groupNamesListValue != null) {
                     request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));

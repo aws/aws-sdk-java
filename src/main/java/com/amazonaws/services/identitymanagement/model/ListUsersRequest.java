@@ -68,6 +68,12 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListUsersRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListUsersRequest() {}
+    
+    /**
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all User
      * names whose path starts with

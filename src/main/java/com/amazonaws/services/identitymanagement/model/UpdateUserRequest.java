@@ -68,6 +68,24 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     private String newUserName;
 
     /**
+     * Default constructor for a new UpdateUserRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateUserRequest() {}
+    
+    /**
+     * Constructs a new UpdateUserRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User to update. If you're changing the
+     * name of the User, this is the original User name.
+     */
+    public UpdateUserRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * Name of the User to update. If you're changing the name of the User,
      * this is the original User name.
      * <p>

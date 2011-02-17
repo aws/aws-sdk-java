@@ -36,6 +36,7 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
         if (describeCustomerGatewaysRequest != null) {
             java.util.List<String> customerGatewayIdsList = describeCustomerGatewaysRequest.getCustomerGatewayIds();
             int customerGatewayIdsListIndex = 1;
+
             for (String customerGatewayIdsListValue : customerGatewayIdsList) {
                 if (customerGatewayIdsListValue != null) {
                     request.addParameter("CustomerGatewayId." + customerGatewayIdsListIndex, StringUtils.fromString(customerGatewayIdsListValue));
@@ -56,6 +57,7 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

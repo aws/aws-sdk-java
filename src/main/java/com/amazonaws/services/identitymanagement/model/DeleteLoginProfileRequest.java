@@ -28,13 +28,6 @@ import com.amazonaws.AmazonWebServiceRequest;
  * inactive or delete it. For more information about making keys
  * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
  * </p>
- * <p>
- * <b>NOTE:</b>In the full release you will be able to use IAM to access
- * your services through the AWS Management Console. Although this
- * feature is not currently available, you can create login profiles for
- * your Users now. Then, when this feature is implemented, your Users can
- * use IAM to access your services through the AWS Management Console.
- * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)
  */
@@ -49,6 +42,24 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
      */
     private String userName;
 
+    /**
+     * Default constructor for a new DeleteLoginProfileRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public DeleteLoginProfileRequest() {}
+    
+    /**
+     * Constructs a new DeleteLoginProfileRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User whose login profile you want to
+     * delete.
+     */
+    public DeleteLoginProfileRequest(String userName) {
+        this.userName = userName;
+    }
+    
     /**
      * Name of the User whose login profile you want to delete.
      * <p>

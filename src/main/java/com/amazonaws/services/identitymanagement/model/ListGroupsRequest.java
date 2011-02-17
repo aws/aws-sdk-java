@@ -67,6 +67,12 @@ public class ListGroupsRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListGroupsRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListGroupsRequest() {}
+    
+    /**
      * The path prefix for filtering the results. For example:
      * <code>/division_abc/subdivision_xyz/</code>, which would get all
      * groups whose path starts with

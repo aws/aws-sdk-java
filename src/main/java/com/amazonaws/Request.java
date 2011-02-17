@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,8 +14,11 @@
  */
 package com.amazonaws;
 
+import java.io.InputStream;
 import java.net.URI;
 import java.util.Map;
+
+import com.amazonaws.http.HttpMethodName;
 
 /**
  * Represents a request being sent to an Amazon Web Service, including the
@@ -24,7 +27,7 @@ import java.util.Map;
  * <p>
  * This class is only intended for internal use inside the AWS client libraries.
  * Callers shouldn't ever interact directly with objects of this class.
- * 
+ *
  * @param <T>
  *            The type of original, user facing request represented by this
  *            request.
@@ -33,7 +36,7 @@ public interface Request<T> {
 
     /**
      * Adds the specified header to this request.
-     * 
+     *
      * @param name
      *            The name of the header to add.
      * @param value
@@ -43,14 +46,14 @@ public interface Request<T> {
 
     /**
      * Returns a map of all the headers included in this request.
-     * 
+     *
      * @return A map of all the headers included in this request.
      */
     public Map<String, String> getHeaders();
 
     /**
      * Sets the path to the resource being requested.
-     * 
+     *
      * @param path
      *            The path to the resource being requested.
      */
@@ -58,14 +61,14 @@ public interface Request<T> {
 
     /**
      * Returns the path to the resource being requested.
-     * 
+     *
      * @return The path to the resource being requested.
      */
     public String getResourcePath();
-    
+
     /**
      * Adds the specified request parameter to this request.
-     * 
+     *
      * @param name
      *            The name of the request parameter.
      * @param value
@@ -76,19 +79,19 @@ public interface Request<T> {
     /**
      * Adds the specified request parameter to this request, and returns the
      * updated request object.
-     * 
+     *
      * @param name
      *            The name of the request parameter.
      * @param value
      *            The value of the request parameter.
-     *         
+     *
      * @return The updated request object.
      */
     public Request<T> withParameter(String name, String value);
 
     /**
      * Returns a map of all parameters in this request.
-     * 
+     *
      * @return A map of all parameters in this request.
      */
     public Map<String, String> getParameters();
@@ -96,7 +99,7 @@ public interface Request<T> {
     /**
      * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which
      * this request should be sent.
-     * 
+     *
      * @return The service endpoint to which this request should be sent.
      */
     public URI getEndpoint();
@@ -104,15 +107,50 @@ public interface Request<T> {
     /**
      * Sets the service endpoint (ex: "https://ec2.amazonaws.com") to which this
      * request should be sent.
-     * 
+     *
      * @param endpoint
      *            The service endpoint to which this request should be sent.
      */
     public void setEndpoint(URI endpoint);
 
+	/**
+	 * Returns the HTTP method (GET, POST, etc) to use when sending this
+	 * request.
+	 * 
+	 * @return The HTTP method to use when sending this request.
+	 */
+    public HttpMethodName getHttpMethod();
+
+	/**
+	 * Sets the HTTP method (GET, POST, etc) to use when sending this request.
+	 * 
+	 * @param httpMethod
+	 *            The HTTP method to use when sending this request.
+	 */
+    public void setHttpMethod(HttpMethodName httpMethod);
+
+	/**
+	 * Returns the optional stream containing the payload data to include for
+	 * this request.  Not all requests will contain payload data.
+	 * 
+	 * @return The optional stream containing the payload data to include for
+	 *         this request.
+	 */
+    public InputStream getContent();
+
+	/**
+	 * Sets the optional stream containing the payload data to include for this
+	 * request. Not all requests will contain payload data.
+	 * 
+	 * @param content
+	 *            The optional stream containing the payload data to include for
+	 *            this request.
+	 */
+    public void setContent(InputStream content);
+
     /**
      * Returns the name of the Amazon service this request is for.
-     * 
+     *
      * @return The name of the Amazon service this request is for.
      */
     public String getServiceName();
@@ -120,10 +158,10 @@ public interface Request<T> {
     /**
      * Returns the original, user facing request object which this internal
      * request object is representing.
-     * 
+     *
      * @return The original, user facing request object which this request
      *         object is representing.
      */
     public AmazonWebServiceRequest getOriginalRequest();
-    
+
 }

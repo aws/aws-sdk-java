@@ -69,6 +69,27 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest {
     private String policyDocument;
 
     /**
+     * Default constructor for a new PutUserPolicyRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PutUserPolicyRequest() {}
+    
+    /**
+     * Constructs a new PutUserPolicyRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the User to associate the policy with.
+     * @param policyName Name of the policy document.
+     * @param policyDocument The policy document.
+     */
+    public PutUserPolicyRequest(String userName, String policyName, String policyDocument) {
+        this.userName = userName;
+        this.policyName = policyName;
+        this.policyDocument = policyDocument;
+    }
+    
+    /**
      * Name of the User to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>

@@ -83,6 +83,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             if (launchSpecification != null) {
                 java.util.List<String> securityGroupsList = launchSpecification.getSecurityGroups();
                 int securityGroupsListIndex = 1;
+
                 for (String securityGroupsListValue : securityGroupsList) {
                     if (securityGroupsListValue != null) {
                         request.addParameter("LaunchSpecification.SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));

@@ -66,6 +66,7 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
         if (createAutoScalingGroupRequest != null) {
             java.util.List<String> availabilityZonesList = createAutoScalingGroupRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
+
             for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
@@ -76,6 +77,7 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
         if (createAutoScalingGroupRequest != null) {
             java.util.List<String> loadBalancerNamesList = createAutoScalingGroupRequest.getLoadBalancerNames();
             int loadBalancerNamesListIndex = 1;
+
             for (String loadBalancerNamesListValue : loadBalancerNamesList) {
                 if (loadBalancerNamesListValue != null) {
                     request.addParameter("LoadBalancerNames.member." + loadBalancerNamesListIndex, StringUtils.fromString(loadBalancerNamesListValue));

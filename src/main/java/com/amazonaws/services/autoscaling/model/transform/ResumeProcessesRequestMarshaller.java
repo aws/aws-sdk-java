@@ -41,6 +41,7 @@ public class ResumeProcessesRequestMarshaller implements Marshaller<Request<Resu
         if (resumeProcessesRequest != null) {
             java.util.List<String> scalingProcessesList = resumeProcessesRequest.getScalingProcesses();
             int scalingProcessesListIndex = 1;
+
             for (String scalingProcessesListValue : scalingProcessesList) {
                 if (scalingProcessesListValue != null) {
                     request.addParameter("ScalingProcesses.member." + scalingProcessesListIndex, StringUtils.fromString(scalingProcessesListValue));

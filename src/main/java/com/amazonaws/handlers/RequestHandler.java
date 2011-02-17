@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -15,6 +15,7 @@
 package com.amazonaws.handlers;
 
 import com.amazonaws.Request;
+import com.amazonaws.util.TimingInfo;
 
 /**
  * Interface for addition request handling in clients. A request handler is
@@ -25,18 +26,34 @@ public interface RequestHandler {
 
     /**
      * Runs any additional processing logic on the specified request (before it
-     * is executed by the client runtime), then hands back the updated request
-     * object.
-     * 
-     * @param <T>
-     *            Indicates the parameterized type of the request being
-     *            processed by this handler.
-     * 
+     * is executed by the client runtime).
+     *
      * @param request
-     *            The request being processed by this handler.
-     * 
-     * @return The updated request object.
+     *            The low level request being processed.
      */
-    public <T> Request<T> handleRequest(Request<T> request);
+    public void beforeRequest(Request<?> request);
+
+	/**
+	 * Runs any additional processing logic on the specified request (after is
+	 * has been executed by the client runtime).
+	 *
+	 * @param request
+	 *            The low level request being processed.
+	 * @param response
+	 *            The response generated from the specified request.
+	 * @param timingInfo
+	 *            Timing information on the request's processing.
+	 */
+    public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo);
+
+	/**
+	 * Runs any additional processing logic on a request after it has failed.
+	 *
+	 * @param request
+	 *            The request that generated an error.
+	 * @param e
+	 *            The error that resulted from executing the request.
+	 */
+    public void afterError(Request<?> request, Exception e);
 
 }

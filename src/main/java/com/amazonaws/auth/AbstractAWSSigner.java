@@ -15,7 +15,6 @@
 package com.amazonaws.auth;
 
 import java.net.URI;
-import java.security.SignatureException;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.SortedMap;
@@ -26,6 +25,7 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.HttpUtils;
 
 /**
@@ -35,7 +35,7 @@ import com.amazonaws.util.HttpUtils;
  * <p>
  * Not intended to be sub-classed by developers.
  */
-public abstract class AbstractAWSSigner {
+public abstract class AbstractAWSSigner implements Signer {
 
     /** The default encoding to use when URL encoding */
     private static final String DEFAULT_ENCODING = "UTF-8";
@@ -45,7 +45,7 @@ public abstract class AbstractAWSSigner {
      * Computes RFC 2104-compliant HMAC signature.
      */
     protected String sign(String data, String key, SigningAlgorithm algorithm)
-            throws SignatureException {
+            throws AmazonClientException {
         try {
             Mac mac = Mac.getInstance(algorithm.toString());
             mac.init(new SecretKeySpec(key.getBytes(), algorithm.toString()));
@@ -53,7 +53,7 @@ public abstract class AbstractAWSSigner {
                     .getBytes(DEFAULT_ENCODING)));
             return new String(signature);
         } catch (Exception e) {
-            throw new SignatureException("Failed to generate signature: " + e.getMessage(), e);
+            throw new AmazonClientException("Failed to generate signature: " + e.getMessage(), e);
         }
     }
 

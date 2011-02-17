@@ -60,6 +60,23 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new GetGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetGroupRequest() {}
+    
+    /**
+     * Constructs a new GetGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group.
+     */
+    public GetGroupRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * Name of the group.
      * <p>
      * <b>Constraints:</b><br/>

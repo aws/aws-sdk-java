@@ -69,6 +69,24 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest {
     private String newGroupName;
 
     /**
+     * Default constructor for a new UpdateGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public UpdateGroupRequest() {}
+    
+    /**
+     * Constructs a new UpdateGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to update. If you're changing the
+     * name of the group, this is the original name.
+     */
+    public UpdateGroupRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * Name of the group to update. If you're changing the name of the group,
      * this is the original name.
      * <p>

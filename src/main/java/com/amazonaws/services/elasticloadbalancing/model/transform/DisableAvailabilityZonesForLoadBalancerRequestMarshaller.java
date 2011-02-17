@@ -41,6 +41,7 @@ public class DisableAvailabilityZonesForLoadBalancerRequestMarshaller implements
         if (disableAvailabilityZonesForLoadBalancerRequest != null) {
             java.util.List<String> availabilityZonesList = disableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones();
             int availabilityZonesListIndex = 1;
+
             for (String availabilityZonesListValue : availabilityZonesList) {
                 if (availabilityZonesListValue != null) {
                     request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));

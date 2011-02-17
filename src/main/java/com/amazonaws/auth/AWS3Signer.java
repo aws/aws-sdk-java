@@ -16,7 +16,6 @@ package com.amazonaws.auth;
 
 import java.net.MalformedURLException;
 import java.security.MessageDigest;
-import java.security.SignatureException;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Map;
@@ -27,6 +26,7 @@ import java.util.UUID;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
 
@@ -40,23 +40,10 @@ public class AWS3Signer extends AbstractAWSSigner {
     private static final String HTTP_SCHEME = "AWS3";
     private static final String HTTPS_SCHEME = "AWS3-HTTPS";
 
-    private final AWSCredentials credentials;
-
     protected static final DateUtils dateUtils = new DateUtils();
 
     private static final Log log = LogFactory.getLog(AWS3Signer.class);
 
-
-    /**
-     * Constructs a new AWS3Signer using the specified AWS account credentials
-     * to sign requests using the AWS3 signing protocol.
-     *
-     * @param credentials
-     *            The AWS account credentials to use when signing requests.
-     */
-    public AWS3Signer(AWSCredentials credentials) {
-        this.credentials = credentials;
-    }
 
     /**
      * Signs the specified request with the AWS3 signing protocol by using the
@@ -65,11 +52,8 @@ public class AWS3Signer extends AbstractAWSSigner {
      *
      * @param request
      *            The request to sign.
-     *
-     * @throws SignatureException
-     *             If any problems are encountered while signing the request.
      */
-    public void sign(Request<?> request) throws SignatureException {
+    public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
         SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
         String nonce = UUID.randomUUID().toString();
         String date = dateUtils.formatRfc822Date(new Date());
@@ -103,13 +87,13 @@ public class AWS3Signer extends AbstractAWSSigner {
         request.addHeader("Date", date);
     }
 
-    private String hash(String text) throws SignatureException {
+    private String hash(String text) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(text.getBytes());
             return toHex(md.digest());
         } catch (Exception e) {
-            throw new SignatureException("Unable to compute hash while signing request: " + e.getMessage(), e);
+            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
         }
     }
 
@@ -147,7 +131,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         return builder.toString();
     }
 
-    private boolean isHttpsRequest(Request<?> request) throws SignatureException {
+    private boolean isHttpsRequest(Request<?> request) throws AmazonClientException {
         try {
             String protocol = request.getEndpoint().toURL().getProtocol().toLowerCase();
             if (protocol.equals("http")) {
@@ -155,12 +139,11 @@ public class AWS3Signer extends AbstractAWSSigner {
             } else if (protocol.equals("https")) {
                 return true;
             } else {
-                throw new SignatureException("Unknown request endpoint protocol " +
+                throw new AmazonClientException("Unknown request endpoint protocol " +
                 		"encountered while signing request: " + protocol);
             }
         } catch (MalformedURLException e) {
-            throw new SignatureException("Unable to parse request endpoint during signing", e);
+            throw new AmazonClientException("Unable to parse request endpoint during signing", e);
         }
     }
-
 }

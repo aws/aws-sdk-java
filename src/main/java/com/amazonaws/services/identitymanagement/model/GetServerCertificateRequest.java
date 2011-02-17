@@ -36,6 +36,24 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest {
     private String serverCertificateName;
 
     /**
+     * Default constructor for a new GetServerCertificateRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetServerCertificateRequest() {}
+    
+    /**
+     * Constructs a new GetServerCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param serverCertificateName The name of the server certificate you
+     * want to retrieve information about.
+     */
+    public GetServerCertificateRequest(String serverCertificateName) {
+        this.serverCertificateName = serverCertificateName;
+    }
+    
+    /**
      * The name of the server certificate you want to retrieve information
      * about.
      * <p>

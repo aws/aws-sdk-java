@@ -36,6 +36,31 @@ public class LoginProfile {
     private String userName;
 
     /**
+     * The date when the login profile for the User was created.
+     */
+    private java.util.Date createDate;
+
+    /**
+     * Default constructor for a new LoginProfile object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public LoginProfile() {}
+    
+    /**
+     * Constructs a new LoginProfile object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName The name of the User, which can be used for logins.
+     * @param createDate The date when the login profile for the User was
+     * created.
+     */
+    public LoginProfile(String userName, java.util.Date createDate) {
+        this.userName = userName;
+        this.createDate = createDate;
+    }
+    
+    /**
      * The name of the User, which can be used for logins.
      * <p>
      * <b>Constraints:</b><br/>
@@ -82,6 +107,40 @@ public class LoginProfile {
     
     
     /**
+     * The date when the login profile for the User was created.
+     *
+     * @return The date when the login profile for the User was created.
+     */
+    public java.util.Date getCreateDate() {
+        return createDate;
+    }
+    
+    /**
+     * The date when the login profile for the User was created.
+     *
+     * @param createDate The date when the login profile for the User was created.
+     */
+    public void setCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+    }
+    
+    /**
+     * The date when the login profile for the User was created.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param createDate The date when the login profile for the User was created.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoginProfile withCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -94,6 +153,7 @@ public class LoginProfile {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("UserName: " + userName + ", ");
+        sb.append("CreateDate: " + createDate + ", ");
         sb.append("}");
         return sb.toString();
     }

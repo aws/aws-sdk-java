@@ -54,6 +54,24 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
+     * Default constructor for a new CreateGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public CreateGroupRequest() {}
+    
+    /**
+     * Constructs a new CreateGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to create. Do not include the path
+     * in this value.
+     */
+    public CreateGroupRequest(String groupName) {
+        this.groupName = groupName;
+    }
+    
+    /**
      * The path to the group. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS

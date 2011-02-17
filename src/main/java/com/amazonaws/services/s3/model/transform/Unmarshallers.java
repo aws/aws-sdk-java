@@ -22,6 +22,7 @@ import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
+import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -131,6 +132,17 @@ public class Unmarshallers {
         public BucketVersioningConfiguration unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser()
                     .parseVersioningConfigurationResponse(in).getConfiguration();
+        }
+    }
+
+    /**
+     * Unmarshaller for the BucketWebsiteConfiguration XML response.
+     */
+    public static final class BucketWebsiteConfigurationUnmarshaller implements
+            Unmarshaller<BucketWebsiteConfiguration, InputStream> {
+        public BucketWebsiteConfiguration unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser()
+                    .parseWebsiteConfigurationResponse(in).getConfiguration();
         }
     }
 

@@ -36,6 +36,7 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
         if (describeAlarmsRequest != null) {
             java.util.List<String> alarmNamesList = describeAlarmsRequest.getAlarmNames();
             int alarmNamesListIndex = 1;
+
             for (String alarmNamesListValue : alarmNamesList) {
                 if (alarmNamesListValue != null) {
                     request.addParameter("AlarmNames.member." + alarmNamesListIndex, StringUtils.fromString(alarmNamesListValue));

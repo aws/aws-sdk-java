@@ -44,6 +44,34 @@ public class MFADevice {
     private String serialNumber;
 
     /**
+     * The date when the MFA device was enabled for the User.
+     */
+    private java.util.Date enableDate;
+
+    /**
+     * Default constructor for a new MFADevice object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public MFADevice() {}
+    
+    /**
+     * Constructs a new MFADevice object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName The User with whom the MFA device is associated.
+     * @param serialNumber Serial number that uniquely identifies the MFA
+     * device.
+     * @param enableDate The date when the MFA device was enabled for the
+     * User.
+     */
+    public MFADevice(String userName, String serialNumber, java.util.Date enableDate) {
+        this.userName = userName;
+        this.serialNumber = serialNumber;
+        this.enableDate = enableDate;
+    }
+    
+    /**
      * The User with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
@@ -136,6 +164,40 @@ public class MFADevice {
     
     
     /**
+     * The date when the MFA device was enabled for the User.
+     *
+     * @return The date when the MFA device was enabled for the User.
+     */
+    public java.util.Date getEnableDate() {
+        return enableDate;
+    }
+    
+    /**
+     * The date when the MFA device was enabled for the User.
+     *
+     * @param enableDate The date when the MFA device was enabled for the User.
+     */
+    public void setEnableDate(java.util.Date enableDate) {
+        this.enableDate = enableDate;
+    }
+    
+    /**
+     * The date when the MFA device was enabled for the User.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param enableDate The date when the MFA device was enabled for the User.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public MFADevice withEnableDate(java.util.Date enableDate) {
+        this.enableDate = enableDate;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -149,6 +211,7 @@ public class MFADevice {
         sb.append("{");
         sb.append("UserName: " + userName + ", ");
         sb.append("SerialNumber: " + serialNumber + ", ");
+        sb.append("EnableDate: " + enableDate + ", ");
         sb.append("}");
         return sb.toString();
     }

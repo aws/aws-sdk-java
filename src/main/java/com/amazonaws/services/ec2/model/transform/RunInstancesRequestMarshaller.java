@@ -56,6 +56,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest != null) {
             java.util.List<String> securityGroupsList = runInstancesRequest.getSecurityGroups();
             int securityGroupsListIndex = 1;
+
             for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
                     request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));

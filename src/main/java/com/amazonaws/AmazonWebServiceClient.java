@@ -119,6 +119,7 @@ public abstract class AmazonWebServiceClient {
      * @return A new HttpRequest object created from the details of the
      *         specified Request<T> object.
      */
+    @Deprecated
     protected <T> HttpRequest convertToHttpRequest(Request<T> request, HttpMethodName methodName) {
         HttpRequest httpRequest = new HttpRequest(methodName);
         for (Entry<String, String> parameter : request.getParameters().entrySet()) {

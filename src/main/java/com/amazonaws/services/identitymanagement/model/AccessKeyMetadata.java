@@ -59,6 +59,12 @@ public class AccessKeyMetadata {
     private java.util.Date createDate;
 
     /**
+     * Default constructor for a new AccessKeyMetadata object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AccessKeyMetadata() {}
+    
+    /**
      * Name of the User the key is associated with.
      * <p>
      * <b>Constraints:</b><br/>

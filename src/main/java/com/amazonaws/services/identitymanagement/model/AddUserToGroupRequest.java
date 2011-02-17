@@ -44,6 +44,25 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new AddUserToGroupRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public AddUserToGroupRequest() {}
+    
+    /**
+     * Constructs a new AddUserToGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName Name of the group to update.
+     * @param userName Name of the User to add.
+     */
+    public AddUserToGroupRequest(String groupName, String userName) {
+        this.groupName = groupName;
+        this.userName = userName;
+    }
+    
+    /**
      * Name of the group to update.
      * <p>
      * <b>Constraints:</b><br/>

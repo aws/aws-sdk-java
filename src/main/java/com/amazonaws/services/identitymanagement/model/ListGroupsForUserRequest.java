@@ -62,6 +62,23 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
+     * Default constructor for a new ListGroupsForUserRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListGroupsForUserRequest() {}
+    
+    /**
+     * Constructs a new ListGroupsForUserRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName The name of the User to list groups for.
+     */
+    public ListGroupsForUserRequest(String userName) {
+        this.userName = userName;
+    }
+    
+    /**
      * The name of the User to list groups for.
      * <p>
      * <b>Constraints:</b><br/>

@@ -36,6 +36,7 @@ public class RebootInstancesRequestMarshaller implements Marshaller<Request<Rebo
         if (rebootInstancesRequest != null) {
             java.util.List<String> instanceIdsList = rebootInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;
+
             for (String instanceIdsListValue : instanceIdsList) {
                 if (instanceIdsListValue != null) {
                     request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

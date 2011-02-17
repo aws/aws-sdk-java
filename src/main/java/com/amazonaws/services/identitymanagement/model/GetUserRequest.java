@@ -42,6 +42,12 @@ public class GetUserRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
+     * Default constructor for a new GetUserRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public GetUserRequest() {}
+    
+    /**
      * Name of the User to get information about. <p>This parameter is
      * optional. If it is not included, it defaults to the User making the
      * request.

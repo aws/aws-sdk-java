@@ -36,6 +36,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         if (describeRegionsRequest != null) {
             java.util.List<String> regionNamesList = describeRegionsRequest.getRegionNames();
             int regionNamesListIndex = 1;
+
             for (String regionNamesListValue : regionNamesList) {
                 if (regionNamesListValue != null) {
                     request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(regionNamesListValue));
@@ -56,6 +57,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
                 if (filtersListValue != null) {
                     java.util.List<String> valuesList = filtersListValue.getValues();
                     int valuesListIndex = 1;
+
                     for (String valuesListValue : valuesList) {
                         if (valuesListValue != null) {
                             request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

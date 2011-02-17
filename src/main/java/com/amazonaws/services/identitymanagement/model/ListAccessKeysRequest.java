@@ -52,10 +52,10 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
     private String userName;
 
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -64,16 +64,22 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
     private String marker;
 
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of keys you want in the response. If there are
+     * additional keys beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      */
     private Integer maxItems;
 
+    /**
+     * Default constructor for a new ListAccessKeysRequest object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ListAccessKeysRequest() {}
+    
     /**
      * Name of the User.
      * <p>
@@ -121,48 +127,48 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @return Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @param marker Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Use this only when paginating results, and only in a subsequent
-     * request after you've received a response where the results are
-     * truncated. Set it to the value of the <code>Marker</code> element in
-     * the response you just received.
+     * Use this parameter only when paginating results, and only in a
+     * subsequent request after you've received a response where the results
+     * are truncated. Set it to the value of the <code>Marker</code> element
+     * in the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -170,10 +176,10 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker Use this only when paginating results, and only in a subsequent
-     *         request after you've received a response where the results are
-     *         truncated. Set it to the value of the <code>Marker</code> element in
-     *         the response you just received.
+     * @param marker Use this parameter only when paginating results, and only in a
+     *         subsequent request after you've received a response where the results
+     *         are truncated. Set it to the value of the <code>Marker</code> element
+     *         in the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -185,56 +191,56 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of keys you want in the response. If there are
+     * additional keys beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @return Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     * @return Use this parameter only when paginating results to indicate the
+     *         maximum number of keys you want in the response. If there are
+     *         additional keys beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      */
     public Integer getMaxItems() {
         return maxItems;
     }
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of keys you want in the response. If there are
+     * additional keys beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     * @param maxItems Use this parameter only when paginating results to indicate the
+     *         maximum number of keys you want in the response. If there are
+     *         additional keys beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
     }
     
     /**
-     * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * Use this parameter only when paginating results to indicate the
+     * maximum number of keys you want in the response. If there are
+     * additional keys beyond the maximum you specify, the
+     * <code>IsTruncated</code> response element is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
-     * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     * @param maxItems Use this parameter only when paginating results to indicate the
+     *         maximum number of keys you want in the response. If there are
+     *         additional keys beyond the maximum you specify, the
+     *         <code>IsTruncated</code> response element is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -63,6 +63,10 @@ public class GroupStaxUnmarshaller implements Unmarshaller<Group, StaxUnmarshall
                     group.setArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CreateDate", targetDepth)) {
+                    group.setCreateDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return group;
