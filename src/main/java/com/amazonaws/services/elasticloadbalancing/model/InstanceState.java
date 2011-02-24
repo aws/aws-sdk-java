@@ -38,6 +38,9 @@ public class InstanceState {
      */
     private String reasonCode;
 
+    /**
+     * Provides a description of the instance.
+     */
     private String description;
 
     /**
@@ -161,29 +164,29 @@ public class InstanceState {
     
     
     /**
-     * Returns the value of the Description property for this object.
+     * Provides a description of the instance.
      *
-     * @return The value of the Description property for this object.
+     * @return Provides a description of the instance.
      */
     public String getDescription() {
         return description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * Provides a description of the instance.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description Provides a description of the instance.
      */
     public void setDescription(String description) {
         this.description = description;
     }
     
     /**
-     * Sets the value of the Description property for this object.
+     * Provides a description of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param description The new value for the Description property for this object.
+     * @param description Provides a description of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Create App Cookie Stickiness Policy Result
+ * <p>
+ * The output for the CreateAppCookieStickinessPolicy action.
+ * </p>
  */
 public class CreateAppCookieStickinessPolicyResult {
 

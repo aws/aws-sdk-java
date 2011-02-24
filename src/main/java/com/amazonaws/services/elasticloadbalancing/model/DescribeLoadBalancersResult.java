@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Describe Load Balancers Result
+ * <p>
+ * The output for the DescribeLoadBalancers action.
+ * </p>
  */
 public class DescribeLoadBalancersResult {
 

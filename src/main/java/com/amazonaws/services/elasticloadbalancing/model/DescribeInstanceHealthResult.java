@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Describe Instance Health Result
+ * <p>
+ * The output for the DescribeInstanceHealth action.
+ * </p>
  */
 public class DescribeInstanceHealthResult {
 

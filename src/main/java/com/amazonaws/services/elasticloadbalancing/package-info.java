@@ -2,7 +2,7 @@
 /**
  * Synchronous and asynchronous client classes for accessing AmazonElasticLoadBalancing.
  *
- * <p>
+ * Elastic Load Balancing <p>
  * Elastic Load Balancing is a cost-effective and easy to use web
  * service to help you improve availability and scalability of your
  * application. It makes it easy for you to distribute application loads

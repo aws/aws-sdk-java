@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Delete Load Balancer Policy Result
+ * <p>
+ * The output for the DeleteLoadBalancerPolicy action.
+ * </p>
  */
 public class DeleteLoadBalancerPolicyResult {
 

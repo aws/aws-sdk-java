@@ -22,8 +22,8 @@ package com.amazonaws.services.elasticloadbalancing.model;
 public class LBCookieStickinessPolicy {
 
     /**
-     * The name name for the policy being created. The name must be unique
-     * within the set of policies for this LoadBalancer.
+     * The name for the policy being created. The name must be unique within
+     * the set of policies for this LoadBalancer.
      */
     private String policyName;
 
@@ -45,8 +45,8 @@ public class LBCookieStickinessPolicy {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param policyName The name name for the policy being created. The name
-     * must be unique within the set of policies for this LoadBalancer.
+     * @param policyName The name for the policy being created. The name must
+     * be unique within the set of policies for this LoadBalancer.
      * @param cookieExpirationPeriod The time period in seconds after which
      * the cookie should be considered stale. Not specifying this parameter
      * indicates that the sticky session will last for the duration of the
@@ -58,35 +58,35 @@ public class LBCookieStickinessPolicy {
     }
     
     /**
-     * The name name for the policy being created. The name must be unique
-     * within the set of policies for this LoadBalancer.
+     * The name for the policy being created. The name must be unique within
+     * the set of policies for this LoadBalancer.
      *
-     * @return The name name for the policy being created. The name must be unique
-     *         within the set of policies for this LoadBalancer.
+     * @return The name for the policy being created. The name must be unique within
+     *         the set of policies for this LoadBalancer.
      */
     public String getPolicyName() {
         return policyName;
     }
     
     /**
-     * The name name for the policy being created. The name must be unique
-     * within the set of policies for this LoadBalancer.
+     * The name for the policy being created. The name must be unique within
+     * the set of policies for this LoadBalancer.
      *
-     * @param policyName The name name for the policy being created. The name must be unique
-     *         within the set of policies for this LoadBalancer.
+     * @param policyName The name for the policy being created. The name must be unique within
+     *         the set of policies for this LoadBalancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
     }
     
     /**
-     * The name name for the policy being created. The name must be unique
-     * within the set of policies for this LoadBalancer.
+     * The name for the policy being created. The name must be unique within
+     * the set of policies for this LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param policyName The name name for the policy being created. The name must be unique
-     *         within the set of policies for this LoadBalancer.
+     * @param policyName The name for the policy being created. The name must be unique within
+     *         the set of policies for this LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

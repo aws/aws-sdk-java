@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Configure Health Check Result
+ * <p>
+ * The output for the ConfigureHealthCheck action.
+ * </p>
  */
 public class ConfigureHealthCheckResult {
 

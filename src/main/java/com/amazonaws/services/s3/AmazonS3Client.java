@@ -2084,12 +2084,19 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 requestHandler.beforeRequest(request);
             }
         }
-    	
+
         String resourcePath = "/" +
             ((bucketName != null) ? bucketName + "/" : "") +
             ((key != null) ? ServiceUtils.urlEncode(key) : "") +
             ((subResource != null) ? "?" + subResource : "");
-        new S3QueryStringSigner<T>(methodName.toString(), resourcePath, expiration).sign(request, awsCredentials);
+
+        AWSCredentials credentials = awsCredentials;
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
+        	credentials = originalRequest.getRequestCredentials();
+        }
+
+        new S3QueryStringSigner<T>(methodName.toString(), resourcePath, expiration).sign(request, credentials);
 
         // The Amazon S3 DevPay token header is a special exception and can be safely moved
         // from the request's headers into the query string to ensure that it travels along

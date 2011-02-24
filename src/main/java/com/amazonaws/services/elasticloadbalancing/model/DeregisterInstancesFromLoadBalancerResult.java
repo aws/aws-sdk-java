@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Deregister Instances From Load Balancer Result
+ * <p>
+ * The output for the DeregisterInstancesFromLoadBalancer action.
+ * </p>
  */
 public class DeregisterInstancesFromLoadBalancerResult {
 

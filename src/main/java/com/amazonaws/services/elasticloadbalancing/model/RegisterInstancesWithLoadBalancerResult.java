@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Register Instances With Load Balancer Result
+ * <p>
+ * The output for the RegisterInstancesWithLoadBalancer action.
+ * </p>
  */
 public class RegisterInstancesWithLoadBalancerResult {
 

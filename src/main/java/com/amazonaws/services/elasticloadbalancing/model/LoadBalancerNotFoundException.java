@@ -17,7 +17,9 @@ package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonElasticLoadBalancing exception
+ * <p>
+ * The specified LoadBalancer could not be found.
+ * </p>
  */        
 public class LoadBalancerNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

@@ -22,13 +22,13 @@ package com.amazonaws.services.elasticloadbalancing.model;
 public class Policies {
 
     /**
-     * A list of the <a>AppCookieStickinessPolicies</a> created with
+     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      */
     private java.util.List<AppCookieStickinessPolicy> appCookieStickinessPolicies;
 
     /**
-     * A list of the <a>LBCookieStickinessPolicies</a> created with
+     * A list of the <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      */
     private java.util.List<LBCookieStickinessPolicy> lBCookieStickinessPolicies;
@@ -40,10 +40,10 @@ public class Policies {
     public Policies() {}
     
     /**
-     * A list of the <a>AppCookieStickinessPolicies</a> created with
+     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A list of the <a>AppCookieStickinessPolicies</a> created with
+     * @return A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public java.util.List<AppCookieStickinessPolicy> getAppCookieStickinessPolicies() {
@@ -54,10 +54,10 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicies</a> created with
+     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicies</a> created with
+     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public void setAppCookieStickinessPolicies(java.util.Collection<AppCookieStickinessPolicy> appCookieStickinessPolicies) {
@@ -69,12 +69,12 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicies</a> created with
+     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicies</a> created with
+     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -88,12 +88,12 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>AppCookieStickinessPolicies</a> created with
+     * A list of the <a>AppCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicies</a> created with
+     * @param appCookieStickinessPolicies A list of the <a>AppCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -110,10 +110,10 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>LBCookieStickinessPolicies</a> created with
+     * A list of the <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @return A list of the <a>LBCookieStickinessPolicies</a> created with
+     * @return A list of the <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public java.util.List<LBCookieStickinessPolicy> getLBCookieStickinessPolicies() {
@@ -124,10 +124,10 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>LBCookieStickinessPolicies</a> created with
+     * A list of the <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      *
-     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicies</a> created with
+     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      */
     public void setLBCookieStickinessPolicies(java.util.Collection<LBCookieStickinessPolicy> lBCookieStickinessPolicies) {
@@ -139,12 +139,12 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>LBCookieStickinessPolicies</a> created with
+     * A list of the <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicies</a> created with
+     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -158,12 +158,12 @@ public class Policies {
     }
     
     /**
-     * A list of the <a>LBCookieStickinessPolicies</a> created with
+     * A list of the <a>LBCookieStickinessPolicy</a> objects created with
      * <a>CreateAppCookieStickinessPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicies</a> created with
+     * @param lBCookieStickinessPolicies A list of the <a>LBCookieStickinessPolicy</a> objects created with
      *         <a>CreateAppCookieStickinessPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 

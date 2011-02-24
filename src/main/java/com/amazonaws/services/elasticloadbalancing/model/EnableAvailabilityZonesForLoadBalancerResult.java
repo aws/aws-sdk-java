@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Enable Availability Zones For Load Balancer Result
+ * <p>
+ * The output for the EnableAvailabilityZonesForLoadBalancer action.
+ * </p>
  */
 public class EnableAvailabilityZonesForLoadBalancerResult {
 

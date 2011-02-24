@@ -15,7 +15,9 @@
 package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
- * Set Load Balancer Policies Of Listener Result
+ * <p>
+ * The output for the SetLoadBalancerPoliciesOfListener action.
+ * </p>
  */
 public class SetLoadBalancerPoliciesOfListenerResult {
 
