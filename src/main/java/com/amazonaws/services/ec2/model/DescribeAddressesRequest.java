@@ -40,6 +40,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<Filter> filters;
 
+    private java.util.List<String> allocationIds;
+
     /**
      * The optional list of Elastic IP addresses to describe.
      *
@@ -197,6 +199,68 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the AllocationIds property for this object.
+     *
+     * @return The value of the AllocationIds property for this object.
+     */
+    public java.util.List<String> getAllocationIds() {
+        if (allocationIds == null) {
+            allocationIds = new java.util.ArrayList<String>();
+        }
+        return allocationIds;
+    }
+    
+    /**
+     * Sets the value of the AllocationIds property for this object.
+     *
+     * @param allocationIds The new value for the AllocationIds property for this object.
+     */
+    public void setAllocationIds(java.util.Collection<String> allocationIds) {
+        java.util.List<String> allocationIdsCopy = new java.util.ArrayList<String>();
+        if (allocationIds != null) {
+            allocationIdsCopy.addAll(allocationIds);
+        }
+        this.allocationIds = allocationIdsCopy;
+    }
+    
+    /**
+     * Sets the value of the AllocationIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allocationIds The new value for the AllocationIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeAddressesRequest withAllocationIds(String... allocationIds) {
+        for (String value : allocationIds) {
+            getAllocationIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the AllocationIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allocationIds The new value for the AllocationIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeAddressesRequest withAllocationIds(java.util.Collection<String> allocationIds) {
+        java.util.List<String> allocationIdsCopy = new java.util.ArrayList<String>();
+        if (allocationIds != null) {
+            allocationIdsCopy.addAll(allocationIds);
+        }
+        this.allocationIds = allocationIdsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -210,6 +274,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
         sb.append("{");
         sb.append("PublicIps: " + publicIps + ", ");
         sb.append("Filters: " + filters + ", ");
+        sb.append("AllocationIds: " + allocationIds + ", ");
         sb.append("}");
         return sb.toString();
     }

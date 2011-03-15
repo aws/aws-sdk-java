@@ -114,7 +114,7 @@ public class Image {
     private String rootDeviceType;
 
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      */
     private String rootDeviceName;
 
@@ -777,29 +777,29 @@ public class Image {
     
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @return The root device name (e.g., /dev/sda1).
+     * @return The root device name (e.g., <code>/dev/sda1</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

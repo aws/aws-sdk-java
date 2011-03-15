@@ -32,10 +32,15 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
     public Request<AuthorizeSecurityGroupIngressRequest> marshall(AuthorizeSecurityGroupIngressRequest authorizeSecurityGroupIngressRequest) {
         Request<AuthorizeSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeSecurityGroupIngressRequest>(authorizeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupIngress");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (authorizeSecurityGroupIngressRequest != null) {
             if (authorizeSecurityGroupIngressRequest.getGroupName() != null) {
                 request.addParameter("GroupName", StringUtils.fromString(authorizeSecurityGroupIngressRequest.getGroupName()));
+            }
+        }
+        if (authorizeSecurityGroupIngressRequest != null) {
+            if (authorizeSecurityGroupIngressRequest.getGroupId() != null) {
+                request.addParameter("GroupId", StringUtils.fromString(authorizeSecurityGroupIngressRequest.getGroupId()));
             }
         }
         if (authorizeSecurityGroupIngressRequest != null) {
@@ -101,6 +106,11 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
                         if (userIdGroupPairsListValue != null) {
                             if (userIdGroupPairsListValue.getGroupName() != null) {
                                 request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName", StringUtils.fromString(userIdGroupPairsListValue.getGroupName()));
+                            }
+                        }
+                        if (userIdGroupPairsListValue != null) {
+                            if (userIdGroupPairsListValue.getGroupId() != null) {
+                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId", StringUtils.fromString(userIdGroupPairsListValue.getGroupId()));
                             }
                         }
 

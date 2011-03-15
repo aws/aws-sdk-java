@@ -39,7 +39,8 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
     private String instanceId;
 
     /**
-     * Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * Specifies how the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      */
     private String device;
 
@@ -61,7 +62,7 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
      * The volume and instance must be within the same Availability Zone and
      * the instance must be running.
      * @param device Specifies how the device is exposed to the instance
-     * (e.g., /dev/sdh).
+     * (e.g., <code>/dev/sdh</code>).
      */
     public AttachVolumeRequest(String volumeId, String instanceId, String device) {
         this.volumeId = volumeId;
@@ -156,29 +157,35 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * Specifies how the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      *
-     * @return Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * @return Specifies how the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      */
     public String getDevice() {
         return device;
     }
     
     /**
-     * Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * Specifies how the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      *
-     * @param device Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * @param device Specifies how the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      */
     public void setDevice(String device) {
         this.device = device;
     }
     
     /**
-     * Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * Specifies how the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param device Specifies how the device is exposed to the instance (e.g., /dev/sdh).
+     * @param device Specifies how the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

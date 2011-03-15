@@ -55,7 +55,11 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     launchSpecification.setKeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("groupSet/item/groupId", targetDepth)) {
+                if (context.testExpression("groupSet/item", targetDepth)) {
+                    launchSpecification.getAllSecurityGroups().add(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("groupSet/item/groupName", targetDepth)) {
                     launchSpecification.getSecurityGroups().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

@@ -32,7 +32,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (modifyInstanceAttributeRequest != null) {
             if (modifyInstanceAttributeRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));
@@ -83,6 +83,22 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
                 }
 
                 blockDeviceMappingsListIndex++;
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.isSourceDestCheck() != null) {
+                request.addParameter("SourceDestCheck", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isSourceDestCheck()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            java.util.List<String> groupsList = modifyInstanceAttributeRequest.getGroups();
+            int groupsListIndex = 1;
+
+            for (String groupsListValue : groupsList) {
+                if (groupsListValue != null) {
+                    request.addParameter("GroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+                }
+                groupsListIndex++;
             }
         }
 

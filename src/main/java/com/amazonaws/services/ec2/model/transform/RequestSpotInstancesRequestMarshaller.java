@@ -32,7 +32,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
     public Request<RequestSpotInstancesRequest> marshall(RequestSpotInstancesRequest requestSpotInstancesRequest) {
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (requestSpotInstancesRequest != null) {
             if (requestSpotInstancesRequest.getSpotPrice() != null) {
                 request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
@@ -78,6 +78,25 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             if (launchSpecification != null) {
                 if (launchSpecification.getKeyName() != null) {
                     request.addParameter("LaunchSpecification.KeyName", StringUtils.fromString(launchSpecification.getKeyName()));
+                }
+            }
+
+            if (launchSpecification != null) {
+                java.util.List<GroupIdentifier> allSecurityGroupsList = launchSpecification.getAllSecurityGroups();
+                int allSecurityGroupsListIndex = 1;
+                for (GroupIdentifier allSecurityGroupsListValue : allSecurityGroupsList) {
+                    if (allSecurityGroupsListValue != null) {
+                        if (allSecurityGroupsListValue.getGroupName() != null) {
+                            request.addParameter("LaunchSpecification.GroupSet." + allSecurityGroupsListIndex + ".GroupName", StringUtils.fromString(allSecurityGroupsListValue.getGroupName()));
+                        }
+                    }
+                    if (allSecurityGroupsListValue != null) {
+                        if (allSecurityGroupsListValue.getGroupId() != null) {
+                            request.addParameter("LaunchSpecification.GroupSet." + allSecurityGroupsListIndex + ".GroupId", StringUtils.fromString(allSecurityGroupsListValue.getGroupId()));
+                        }
+                    }
+
+                    allSecurityGroupsListIndex++;
                 }
             }
             if (launchSpecification != null) {

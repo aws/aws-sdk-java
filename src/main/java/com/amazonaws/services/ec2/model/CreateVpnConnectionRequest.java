@@ -24,12 +24,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The response includes information that you need to configure your
  * customer gateway, in XML format. We recommend you use the command line
- * version of this operation (ec2-create-vpn-connection), which takes an
- * -f option (for format) and returns configuration information formatted
- * as expected by the vendor you specified, or in a generic, human
- * readable format. For information about the command, go to
- * ec2-create-vpn-connection in the Amazon Virtual Private Cloud Command
- * Line Reference.
+ * version of this operation ( <code>ec2-create-vpn-connection</code> ),
+ * which takes an <code>-f</code> option (for format) and returns
+ * configuration information formatted as expected by the vendor you
+ * specified, or in a generic, human readable format. For information
+ * about the command, go to <code>ec2-create-vpn-connection</code> in the
+ * Amazon Virtual Private Cloud Command Line Reference.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling

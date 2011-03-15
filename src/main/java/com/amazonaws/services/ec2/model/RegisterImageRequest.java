@@ -48,8 +48,9 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
 
     /**
      * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * alphanumeric characters, parenthesis (<code>()</code>), commas
+     * (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     * or underscores(<code>_</code>)
      */
     private String name;
 
@@ -59,7 +60,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
      */
     private String architecture;
 
@@ -77,7 +79,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     private String ramdiskId;
 
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      */
     private String rootDeviceName;
 
@@ -142,12 +144,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     /**
      * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * alphanumeric characters, parenthesis (<code>()</code>), commas
+     * (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     * or underscores(<code>_</code>)
      *
      * @return The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     *         alphanumeric characters, parenthesis (<code>()</code>), commas
+     *         (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     *         or underscores(<code>_</code>)
      */
     public String getName() {
         return name;
@@ -155,12 +159,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     /**
      * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * alphanumeric characters, parenthesis (<code>()</code>), commas
+     * (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     * or underscores(<code>_</code>)
      *
      * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     *         alphanumeric characters, parenthesis (<code>()</code>), commas
+     *         (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     *         or underscores(<code>_</code>)
      */
     public void setName(String name) {
         this.name = name;
@@ -168,14 +174,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     /**
      * The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     * alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     * dashes (-), or underscores(_)
+     * alphanumeric characters, parenthesis (<code>()</code>), commas
+     * (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     * or underscores(<code>_</code>)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name to give the new Amazon Machine Image. <p> Constraints: 3-128
-     *         alphanumeric characters, parenthesis (()), commas (,), slashes (/),
-     *         dashes (-), or underscores(_)
+     *         alphanumeric characters, parenthesis (<code>()</code>), commas
+     *         (<code>,</code>), slashes (<code>/</code>), dashes (<code>-</code>),
+     *         or underscores(<code>_</code>)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -221,29 +229,35 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
      *
-     * @return The architecture of the image. <p> Valid Values: i386, x86_64
+     * @return The architecture of the image. <p> Valid Values: <code>i386</code>,
+     *         <code>x86_64</code>
      */
     public String getArchitecture() {
         return architecture;
     }
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
      *
-     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
+     *         <code>x86_64</code>
      */
     public void setArchitecture(String architecture) {
         this.architecture = architecture;
     }
     
     /**
-     * The architecture of the image. <p> Valid Values: i386, x86_64
+     * The architecture of the image. <p> Valid Values: <code>i386</code>,
+     * <code>x86_64</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param architecture The architecture of the image. <p> Valid Values: i386, x86_64
+     * @param architecture The architecture of the image. <p> Valid Values: <code>i386</code>,
+     *         <code>x86_64</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -341,29 +355,29 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @return The root device name (e.g., /dev/sda1).
+     * @return The root device name (e.g., <code>/dev/sda1</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

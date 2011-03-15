@@ -32,7 +32,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
     public Request<DescribeAddressesRequest> marshall(DescribeAddressesRequest describeAddressesRequest) {
         Request<DescribeAddressesRequest> request = new DefaultRequest<DescribeAddressesRequest>(describeAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAddresses");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (describeAddressesRequest != null) {
             java.util.List<String> publicIpsList = describeAddressesRequest.getPublicIps();
             int publicIpsListIndex = 1;
@@ -67,6 +67,17 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
                 }
 
                 filtersListIndex++;
+            }
+        }
+        if (describeAddressesRequest != null) {
+            java.util.List<String> allocationIdsList = describeAddressesRequest.getAllocationIds();
+            int allocationIdsListIndex = 1;
+
+            for (String allocationIdsListValue : allocationIdsList) {
+                if (allocationIdsListValue != null) {
+                    request.addParameter("AllocationId." + allocationIdsListIndex, StringUtils.fromString(allocationIdsListValue));
+                }
+                allocationIdsListIndex++;
             }
         }
 

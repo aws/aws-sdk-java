@@ -22,7 +22,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * more VPCs, causing all existing and new instances that you launch in
  * those VPCs to use the set of DHCP options. The following table lists
  * the individual DHCP options you can specify. For more information
- * about the options, go to http://www.ietf.org/rfc/rfc2132.txt
+ * about the options, go to <a
+ * href="http://www.ietf.org/rfc/rfc2132.txt">
+ * http://www.ietf.org/rfc/rfc2132.txt </a>
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)

@@ -28,9 +28,16 @@ public class UserIdGroupPair {
     private String userId;
 
     /**
-     * The name of the security group in the specified user's account.
+     * Name of the security group in the specified AWS account. Cannot be
+     * used when specifying a CIDR IP address range.
      */
     private String groupName;
+
+    /**
+     * ID of the security group in the specified AWS account. Cannot be used
+     * when specifying a CIDR IP address range.
+     */
+    private String groupId;
 
     /**
      * The AWS user ID of an account.
@@ -67,35 +74,81 @@ public class UserIdGroupPair {
     
     
     /**
-     * The name of the security group in the specified user's account.
+     * Name of the security group in the specified AWS account. Cannot be
+     * used when specifying a CIDR IP address range.
      *
-     * @return The name of the security group in the specified user's account.
+     * @return Name of the security group in the specified AWS account. Cannot be
+     *         used when specifying a CIDR IP address range.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the security group in the specified user's account.
+     * Name of the security group in the specified AWS account. Cannot be
+     * used when specifying a CIDR IP address range.
      *
-     * @param groupName The name of the security group in the specified user's account.
+     * @param groupName Name of the security group in the specified AWS account. Cannot be
+     *         used when specifying a CIDR IP address range.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the security group in the specified user's account.
+     * Name of the security group in the specified AWS account. Cannot be
+     * used when specifying a CIDR IP address range.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the security group in the specified user's account.
+     * @param groupName Name of the security group in the specified AWS account. Cannot be
+     *         used when specifying a CIDR IP address range.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public UserIdGroupPair withGroupName(String groupName) {
         this.groupName = groupName;
+        return this;
+    }
+    
+    
+    /**
+     * ID of the security group in the specified AWS account. Cannot be used
+     * when specifying a CIDR IP address range.
+     *
+     * @return ID of the security group in the specified AWS account. Cannot be used
+     *         when specifying a CIDR IP address range.
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+    
+    /**
+     * ID of the security group in the specified AWS account. Cannot be used
+     * when specifying a CIDR IP address range.
+     *
+     * @param groupId ID of the security group in the specified AWS account. Cannot be used
+     *         when specifying a CIDR IP address range.
+     */
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+    
+    /**
+     * ID of the security group in the specified AWS account. Cannot be used
+     * when specifying a CIDR IP address range.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupId ID of the security group in the specified AWS account. Cannot be used
+     *         when specifying a CIDR IP address range.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public UserIdGroupPair withGroupId(String groupId) {
+        this.groupId = groupId;
         return this;
     }
     
@@ -114,6 +167,7 @@ public class UserIdGroupPair {
         sb.append("{");
         sb.append("UserId: " + userId + ", ");
         sb.append("GroupName: " + groupName + ", ");
+        sb.append("GroupId: " + groupId + ", ");
         sb.append("}");
         return sb.toString();
     }

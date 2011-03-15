@@ -22,8 +22,8 @@ package com.amazonaws.services.ec2.model;
 public class InstanceBlockDeviceMapping {
 
     /**
-     * The device name (e.g., /dev/sdh) at which the block device is exposed
-     * on the instance.
+     * The device name (e.g., <code>/dev/sdh</code>) at which the block
+     * device is exposed on the instance.
      */
     private String deviceName;
 
@@ -33,35 +33,35 @@ public class InstanceBlockDeviceMapping {
     private EbsInstanceBlockDevice ebs;
 
     /**
-     * The device name (e.g., /dev/sdh) at which the block device is exposed
-     * on the instance.
+     * The device name (e.g., <code>/dev/sdh</code>) at which the block
+     * device is exposed on the instance.
      *
-     * @return The device name (e.g., /dev/sdh) at which the block device is exposed
-     *         on the instance.
+     * @return The device name (e.g., <code>/dev/sdh</code>) at which the block
+     *         device is exposed on the instance.
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * The device name (e.g., /dev/sdh) at which the block device is exposed
-     * on the instance.
+     * The device name (e.g., <code>/dev/sdh</code>) at which the block
+     * device is exposed on the instance.
      *
-     * @param deviceName The device name (e.g., /dev/sdh) at which the block device is exposed
-     *         on the instance.
+     * @param deviceName The device name (e.g., <code>/dev/sdh</code>) at which the block
+     *         device is exposed on the instance.
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * The device name (e.g., /dev/sdh) at which the block device is exposed
-     * on the instance.
+     * The device name (e.g., <code>/dev/sdh</code>) at which the block
+     * device is exposed on the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName The device name (e.g., /dev/sdh) at which the block device is exposed
-     *         on the instance.
+     * @param deviceName The device name (e.g., <code>/dev/sdh</code>) at which the block
+     *         device is exposed on the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

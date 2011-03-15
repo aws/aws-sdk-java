@@ -32,7 +32,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * kernel, ramdisk
+     * <code>kernel</code>, <code>ramdisk</code>
      */
     private String attribute;
 
@@ -50,7 +50,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * @param instanceId The ID of the Amazon EC2 instance whose attribute is
      * being reset.
      * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: kernel, ramdisk
+     * attribute names: <code>kernel</code>, <code>ramdisk</code>
      */
     public ResetInstanceAttributeRequest(String instanceId, String attribute) {
         this.instanceId = instanceId;
@@ -93,10 +93,10 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * kernel, ramdisk
+     * <code>kernel</code>, <code>ramdisk</code>
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
-     *         kernel, ramdisk
+     *         <code>kernel</code>, <code>ramdisk</code>
      */
     public String getAttribute() {
         return attribute;
@@ -104,10 +104,10 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * kernel, ramdisk
+     * <code>kernel</code>, <code>ramdisk</code>
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         kernel, ramdisk
+     *         <code>kernel</code>, <code>ramdisk</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -115,12 +115,12 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * kernel, ramdisk
+     * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         kernel, ramdisk
+     *         <code>kernel</code>, <code>ramdisk</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,7 +32,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
     public Request<CreateTagsRequest> marshall(CreateTagsRequest createTagsRequest) {
         Request<CreateTagsRequest> request = new DefaultRequest<CreateTagsRequest>(createTagsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateTags");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (createTagsRequest != null) {
             java.util.List<String> resourcesList = createTagsRequest.getResources();
             int resourcesListIndex = 1;

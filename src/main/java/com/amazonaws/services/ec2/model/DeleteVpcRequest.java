@@ -18,9 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest) DeleteVpc operation}.
  * <p>
- * Deletes a VPC. You must terminate all running instances and delete
- * all subnets before deleting the VPC, otherwise Amazon VPC returns an
- * error.
+ * Deletes a VPC. You must detach or delete all gateways or other
+ * objects that are dependent on the VPC first. For example, you must
+ * terminate all running instances, delete all VPC security groups
+ * (except the default), delete all the route tables (except the
+ * default), etc.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)
@@ -28,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteVpcRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The ID of the VPC you want to delete.
      */
     private String vpcId;
 
@@ -43,36 +45,36 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param vpcId
+     * @param vpcId The ID of the VPC you want to delete.
      */
     public DeleteVpcRequest(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * 
+     * The ID of the VPC you want to delete.
      *
-     * @return 
+     * @return The ID of the VPC you want to delete.
      */
     public String getVpcId() {
         return vpcId;
     }
     
     /**
-     * 
+     * The ID of the VPC you want to delete.
      *
-     * @param vpcId 
+     * @param vpcId The ID of the VPC you want to delete.
      */
     public void setVpcId(String vpcId) {
         this.vpcId = vpcId;
     }
     
     /**
-     * 
+     * The ID of the VPC you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcId 
+     * @param vpcId The ID of the VPC you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

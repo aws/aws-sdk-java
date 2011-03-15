@@ -33,8 +33,10 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * instanceType, kernel, ramdisk, userData, disableApiTermination,
-     * instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     * <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>userData</code>, <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      */
     private String attribute;
 
@@ -52,9 +54,11 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
      * @param instanceId The ID of the instance whose instance attribute is
      * being described.
      * @param attribute The name of the attribute to describe. <p> Available
-     * attribute names: instanceType, kernel, ramdisk, userData,
-     * disableApiTermination, instanceInitiatedShutdownBehavior,
-     * rootDeviceName, blockDeviceMapping
+     * attribute names: <code>instanceType</code>, <code>kernel</code>,
+     * <code>ramdisk</code>, <code>userData</code>,
+     * <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      */
     public DescribeInstanceAttributeRequest(String instanceId, String attribute) {
         this.instanceId = instanceId;
@@ -97,12 +101,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * instanceType, kernel, ramdisk, userData, disableApiTermination,
-     * instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     * <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>userData</code>, <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      *
      * @return The name of the attribute to describe. <p> Available attribute names:
-     *         instanceType, kernel, ramdisk, userData, disableApiTermination,
-     *         instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     *         <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>userData</code>, <code>disableApiTermination</code>,
+     *         <code>instanceInitiatedShutdownBehavior</code>,
+     *         <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      */
     public String getAttribute() {
         return attribute;
@@ -110,12 +118,16 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * instanceType, kernel, ramdisk, userData, disableApiTermination,
-     * instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     * <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>userData</code>, <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
-     *         instanceType, kernel, ramdisk, userData, disableApiTermination,
-     *         instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     *         <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>userData</code>, <code>disableApiTermination</code>,
+     *         <code>instanceInitiatedShutdownBehavior</code>,
+     *         <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -123,14 +135,18 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * instanceType, kernel, ramdisk, userData, disableApiTermination,
-     * instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     * <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>userData</code>, <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
-     *         instanceType, kernel, ramdisk, userData, disableApiTermination,
-     *         instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping
+     *         <code>instanceType</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>userData</code>, <code>disableApiTermination</code>,
+     *         <code>instanceInitiatedShutdownBehavior</code>,
+     *         <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

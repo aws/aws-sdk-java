@@ -18,7 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSnapshot(DeleteSnapshotRequest) DeleteSnapshot operation}.
  * <p>
- * Deletes the snapshot identified by snapshotId.
+ * Deletes the snapshot identified by <code>snapshotId</code> .
+ * 
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSnapshot(DeleteSnapshotRequest)

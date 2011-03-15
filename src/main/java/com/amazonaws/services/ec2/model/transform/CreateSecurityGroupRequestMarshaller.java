@@ -32,7 +32,7 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
     public Request<CreateSecurityGroupRequest> marshall(CreateSecurityGroupRequest createSecurityGroupRequest) {
         Request<CreateSecurityGroupRequest> request = new DefaultRequest<CreateSecurityGroupRequest>(createSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSecurityGroup");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (createSecurityGroupRequest != null) {
             if (createSecurityGroupRequest.getGroupName() != null) {
                 request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
@@ -41,6 +41,11 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
         if (createSecurityGroupRequest != null) {
             if (createSecurityGroupRequest.getDescription() != null) {
                 request.addParameter("GroupDescription", StringUtils.fromString(createSecurityGroupRequest.getDescription()));
+            }
+        }
+        if (createSecurityGroupRequest != null) {
+            if (createSecurityGroupRequest.getVpcId() != null) {
+                request.addParameter("VpcId", StringUtils.fromString(createSecurityGroupRequest.getVpcId()));
             }
         }
 

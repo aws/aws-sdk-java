@@ -31,13 +31,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * 
  * <ul>
- * <li> Public: The owner of the AMI granted launch permissions for the
- * AMI to the all group. All users have launch permissions for these
- * AMIs. </li>
- * <li> Explicit: The owner of the AMI granted launch permissions to a
- * specific user. </li>
- * <li> Implicit: A user has implicit launch permissions for all AMIs he
- * or she owns. </li>
+ * <li> <b>Public:</b> The owner of the AMI granted launch permissions
+ * for the AMI to the all group. All users have launch permissions for
+ * these AMIs. </li>
+ * <li> <b>Explicit:</b> The owner of the AMI granted launch permissions
+ * to a specific user. </li>
+ * <li> <b>Implicit:</b> A user has implicit launch permissions for all
+ * AMIs he or she owns. </li>
  * 
  * </ul>
  * <p>

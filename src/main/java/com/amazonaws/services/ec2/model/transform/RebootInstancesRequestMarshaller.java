@@ -32,7 +32,7 @@ public class RebootInstancesRequestMarshaller implements Marshaller<Request<Rebo
     public Request<RebootInstancesRequest> marshall(RebootInstancesRequest rebootInstancesRequest) {
         Request<RebootInstancesRequest> request = new DefaultRequest<RebootInstancesRequest>(rebootInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RebootInstances");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (rebootInstancesRequest != null) {
             java.util.List<String> instanceIdsList = rebootInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;

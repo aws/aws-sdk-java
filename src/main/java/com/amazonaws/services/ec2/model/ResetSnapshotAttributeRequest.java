@@ -32,7 +32,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * createVolumePermission
+     * <code>createVolumePermission</code>
      */
     private String attribute;
 
@@ -50,7 +50,7 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
      * @param snapshotId The ID of the snapshot whose attribute is being
      * reset.
      * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: createVolumePermission
+     * attribute names: <code>createVolumePermission</code>
      */
     public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
         this.snapshotId = snapshotId;
@@ -93,10 +93,10 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * createVolumePermission
+     * <code>createVolumePermission</code>
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
-     *         createVolumePermission
+     *         <code>createVolumePermission</code>
      */
     public String getAttribute() {
         return attribute;
@@ -104,10 +104,10 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * createVolumePermission
+     * <code>createVolumePermission</code>
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         createVolumePermission
+     *         <code>createVolumePermission</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -115,12 +115,12 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * createVolumePermission
+     * <code>createVolumePermission</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         createVolumePermission
+     *         <code>createVolumePermission</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -171,6 +171,14 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("groupSet/item", targetDepth)) {
+                    instance.getSecurityGroups().add(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("sourceDestCheck", targetDepth)) {
+                    instance.setSourceDestCheck(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instance;

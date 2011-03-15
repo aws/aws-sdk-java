@@ -27,7 +27,7 @@ public class BlockDeviceMapping {
     private String virtualName;
 
     /**
-     * Specifies the device name (e.g., /dev/sdh).
+     * Specifies the device name (e.g., <code>/dev/sdh</code>).
      */
     private String deviceName;
 
@@ -77,29 +77,29 @@ public class BlockDeviceMapping {
     
     
     /**
-     * Specifies the device name (e.g., /dev/sdh).
+     * Specifies the device name (e.g., <code>/dev/sdh</code>).
      *
-     * @return Specifies the device name (e.g., /dev/sdh).
+     * @return Specifies the device name (e.g., <code>/dev/sdh</code>).
      */
     public String getDeviceName() {
         return deviceName;
     }
     
     /**
-     * Specifies the device name (e.g., /dev/sdh).
+     * Specifies the device name (e.g., <code>/dev/sdh</code>).
      *
-     * @param deviceName Specifies the device name (e.g., /dev/sdh).
+     * @param deviceName Specifies the device name (e.g., <code>/dev/sdh</code>).
      */
     public void setDeviceName(String deviceName) {
         this.deviceName = deviceName;
     }
     
     /**
-     * Specifies the device name (e.g., /dev/sdh).
+     * Specifies the device name (e.g., <code>/dev/sdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deviceName Specifies the device name (e.g., /dev/sdh).
+     * @param deviceName Specifies the device name (e.g., <code>/dev/sdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -55,6 +55,10 @@ public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroup
                     userIdGroupPair.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("groupId", targetDepth)) {
+                    userIdGroupPair.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return userIdGroupPair;

@@ -36,7 +36,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * launchPermission
+     * <code>launchPermission</code>
      */
     private String attribute;
 
@@ -53,7 +53,7 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
      * 
      * @param imageId The ID of the AMI whose attribute is being reset.
      * @param attribute The name of the attribute being reset. <p> Available
-     * attribute names: launchPermission
+     * attribute names: <code>launchPermission</code>
      */
     public ResetImageAttributeRequest(String imageId, String attribute) {
         this.imageId = imageId;
@@ -96,10 +96,10 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * launchPermission
+     * <code>launchPermission</code>
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
-     *         launchPermission
+     *         <code>launchPermission</code>
      */
     public String getAttribute() {
         return attribute;
@@ -107,10 +107,10 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * launchPermission
+     * <code>launchPermission</code>
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         launchPermission
+     *         <code>launchPermission</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -118,12 +118,12 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute being reset. <p> Available attribute names:
-     * launchPermission
+     * <code>launchPermission</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
-     *         launchPermission
+     *         <code>launchPermission</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

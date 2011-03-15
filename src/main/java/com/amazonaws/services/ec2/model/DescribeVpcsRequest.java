@@ -20,14 +20,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Gives you information about your VPCs. You can filter the results to
  * return information only about VPCs that match criteria you specify.
+ * </p>
+ * <p>
  * For example, you could ask to get information about a particular VPC
  * or VPCs (or all your VPCs) only if the VPC's state is available. You
  * can specify multiple filters (e.g., the VPC uses one of several sets
  * of DHCP options, and the VPC's state is available). The result
  * includes information for a particular VPC only if the VPC matches all
- * your filters. If there's no match, no special message is returned; the
- * response is simply empty. The following table shows the available
- * filters.
+ * your filters.
+ * </p>
+ * <p>
+ * If there's no match, no special message is returned; the response is
+ * simply empty. The following table shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
@@ -35,19 +39,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeVpcsRequest extends AmazonWebServiceRequest {
 
     /**
-     * A set of one or more IDs of VPCs to describe.
+     * The ID of a VPC you want information about.
      */
     private java.util.List<String> vpcIds;
 
     /**
-     * 
+     * A list of filters used to match properties for VPCs. For a complete
+     * reference to the available filter keys for this operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
 
     /**
-     * A set of one or more IDs of VPCs to describe.
+     * The ID of a VPC you want information about.
      *
-     * @return A set of one or more IDs of VPCs to describe.
+     * @return The ID of a VPC you want information about.
      */
     public java.util.List<String> getVpcIds() {
         if (vpcIds == null) {
@@ -57,9 +64,9 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more IDs of VPCs to describe.
+     * The ID of a VPC you want information about.
      *
-     * @param vpcIds A set of one or more IDs of VPCs to describe.
+     * @param vpcIds The ID of a VPC you want information about.
      */
     public void setVpcIds(java.util.Collection<String> vpcIds) {
         java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>();
@@ -70,11 +77,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more IDs of VPCs to describe.
+     * The ID of a VPC you want information about.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds A set of one or more IDs of VPCs to describe.
+     * @param vpcIds The ID of a VPC you want information about.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,11 +94,11 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more IDs of VPCs to describe.
+     * The ID of a VPC you want information about.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcIds A set of one or more IDs of VPCs to describe.
+     * @param vpcIds The ID of a VPC you want information about.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,9 +114,15 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPCs. For a complete
+     * reference to the available filter keys for this operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @return 
+     * @return A list of filters used to match properties for VPCs. For a complete
+     *         reference to the available filter keys for this operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -119,9 +132,15 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPCs. For a complete
+     * reference to the available filter keys for this operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPCs. For a complete
+     *         reference to the available filter keys for this operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -132,11 +151,17 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPCs. For a complete
+     * reference to the available filter keys for this operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPCs. For a complete
+     *         reference to the available filter keys for this operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -149,11 +174,17 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPCs. For a complete
+     * reference to the available filter keys for this operation, see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPCs. For a complete
+     *         reference to the available filter keys for this operation, see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

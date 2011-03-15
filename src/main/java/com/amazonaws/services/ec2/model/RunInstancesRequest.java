@@ -104,6 +104,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> securityGroups;
 
+    private java.util.List<String> securityGroupIds;
+
     /**
      * Specifies additional information to make available to the instance(s).
      */
@@ -138,7 +140,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     private String ramdiskId;
 
     /**
-     * 
+     * Specifies how block devices are exposed to the instance. Each mapping
+     * is made up of a virtualName and a deviceName.
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
 
@@ -186,9 +189,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private String clientToken;
 
-    /**
-     * For internal use only.
-     */
     private String additionalInfo;
 
     /**
@@ -448,6 +448,68 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the SecurityGroupIds property for this object.
+     *
+     * @return The value of the SecurityGroupIds property for this object.
+     */
+    public java.util.List<String> getSecurityGroupIds() {
+        if (securityGroupIds == null) {
+            securityGroupIds = new java.util.ArrayList<String>();
+        }
+        return securityGroupIds;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroupIds property for this object.
+     *
+     * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
+     */
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>();
+        if (securityGroupIds != null) {
+            securityGroupIdsCopy.addAll(securityGroupIds);
+        }
+        this.securityGroupIds = securityGroupIdsCopy;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
+        for (String value : securityGroupIds) {
+            getSecurityGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>();
+        if (securityGroupIds != null) {
+            securityGroupIdsCopy.addAll(securityGroupIds);
+        }
+        this.securityGroupIds = securityGroupIdsCopy;
+
+        return this;
+    }
+    
+    /**
      * Specifies additional information to make available to the instance(s).
      *
      * @return Specifies additional information to make available to the instance(s).
@@ -663,9 +725,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * 
+     * Specifies how block devices are exposed to the instance. Each mapping
+     * is made up of a virtualName and a deviceName.
      *
-     * @return 
+     * @return Specifies how block devices are exposed to the instance. Each mapping
+     *         is made up of a virtualName and a deviceName.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         if (blockDeviceMappings == null) {
@@ -675,9 +739,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * Specifies how block devices are exposed to the instance. Each mapping
+     * is made up of a virtualName and a deviceName.
      *
-     * @param blockDeviceMappings 
+     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
+     *         is made up of a virtualName and a deviceName.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
         java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
@@ -688,11 +754,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * Specifies how block devices are exposed to the instance. Each mapping
+     * is made up of a virtualName and a deviceName.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings 
+     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
+     *         is made up of a virtualName and a deviceName.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -705,11 +773,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * Specifies how block devices are exposed to the instance. Each mapping
+     * is made up of a virtualName and a deviceName.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param blockDeviceMappings 
+     * @param blockDeviceMappings Specifies how block devices are exposed to the instance. Each mapping
+     *         is made up of a virtualName and a deviceName.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1039,29 +1109,29 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * For internal use only.
+     * Returns the value of the AdditionalInfo property for this object.
      *
-     * @return For internal use only.
+     * @return The value of the AdditionalInfo property for this object.
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * For internal use only.
+     * Sets the value of the AdditionalInfo property for this object.
      *
-     * @param additionalInfo For internal use only.
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * For internal use only.
+     * Sets the value of the AdditionalInfo property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param additionalInfo For internal use only.
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1089,6 +1159,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         sb.append("MaxCount: " + maxCount + ", ");
         sb.append("KeyName: " + keyName + ", ");
         sb.append("SecurityGroups: " + securityGroups + ", ");
+        sb.append("SecurityGroupIds: " + securityGroupIds + ", ");
         sb.append("UserData: " + userData + ", ");
         sb.append("InstanceType: " + instanceType + ", ");
         sb.append("Placement: " + placement + ", ");

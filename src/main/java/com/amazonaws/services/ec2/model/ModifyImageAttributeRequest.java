@@ -32,13 +32,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the AMI attribute you want to modify. <p> Available
-     * attributes: launchPermission, productCodes
+     * attributes: <code>launchPermission</code>, <code>productCodes</code>
      */
     private String attribute;
 
     /**
      * The type of operation being requested. <p> Available operation types:
-     * add, remove
+     * <code>add</code>, <code>remove</code>
      */
     private String operationType;
 
@@ -53,7 +53,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
      * launchPermission attribute is being modified. <p> Available user
-     * groups: all
+     * groups: <code>all</code>
      */
     private java.util.List<String> userGroups;
 
@@ -82,7 +82,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * 
      * @param imageId The ID of the AMI whose attribute you want to modify.
      * @param attribute The name of the AMI attribute you want to modify. <p>
-     * Available attributes: launchPermission, productCodes
+     * Available attributes: <code>launchPermission</code>,
+     * <code>productCodes</code>
      */
     public ModifyImageAttributeRequest(String imageId, String attribute) {
         this.imageId = imageId;
@@ -125,10 +126,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the AMI attribute you want to modify. <p> Available
-     * attributes: launchPermission, productCodes
+     * attributes: <code>launchPermission</code>, <code>productCodes</code>
      *
      * @return The name of the AMI attribute you want to modify. <p> Available
-     *         attributes: launchPermission, productCodes
+     *         attributes: <code>launchPermission</code>, <code>productCodes</code>
      */
     public String getAttribute() {
         return attribute;
@@ -136,10 +137,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the AMI attribute you want to modify. <p> Available
-     * attributes: launchPermission, productCodes
+     * attributes: <code>launchPermission</code>, <code>productCodes</code>
      *
      * @param attribute The name of the AMI attribute you want to modify. <p> Available
-     *         attributes: launchPermission, productCodes
+     *         attributes: <code>launchPermission</code>, <code>productCodes</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -147,12 +148,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the AMI attribute you want to modify. <p> Available
-     * attributes: launchPermission, productCodes
+     * attributes: <code>launchPermission</code>, <code>productCodes</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the AMI attribute you want to modify. <p> Available
-     *         attributes: launchPermission, productCodes
+     *         attributes: <code>launchPermission</code>, <code>productCodes</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -165,10 +166,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The type of operation being requested. <p> Available operation types:
-     * add, remove
+     * <code>add</code>, <code>remove</code>
      *
      * @return The type of operation being requested. <p> Available operation types:
-     *         add, remove
+     *         <code>add</code>, <code>remove</code>
      */
     public String getOperationType() {
         return operationType;
@@ -176,10 +177,10 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The type of operation being requested. <p> Available operation types:
-     * add, remove
+     * <code>add</code>, <code>remove</code>
      *
      * @param operationType The type of operation being requested. <p> Available operation types:
-     *         add, remove
+     *         <code>add</code>, <code>remove</code>
      */
     public void setOperationType(String operationType) {
         this.operationType = operationType;
@@ -187,12 +188,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The type of operation being requested. <p> Available operation types:
-     * add, remove
+     * <code>add</code>, <code>remove</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param operationType The type of operation being requested. <p> Available operation types:
-     *         add, remove
+     *         <code>add</code>, <code>remove</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -285,12 +286,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
      * launchPermission attribute is being modified. <p> Available user
-     * groups: all
+     * groups: <code>all</code>
      *
      * @return The user group being added to or removed from the list of user groups
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
-     *         groups: all
+     *         groups: <code>all</code>
      */
     public java.util.List<String> getUserGroups() {
         if (userGroups == null) {
@@ -303,12 +304,12 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
      * launchPermission attribute is being modified. <p> Available user
-     * groups: all
+     * groups: <code>all</code>
      *
      * @param userGroups The user group being added to or removed from the list of user groups
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
-     *         groups: all
+     *         groups: <code>all</code>
      */
     public void setUserGroups(java.util.Collection<String> userGroups) {
         java.util.List<String> userGroupsCopy = new java.util.ArrayList<String>();
@@ -322,14 +323,14 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
      * launchPermission attribute is being modified. <p> Available user
-     * groups: all
+     * groups: <code>all</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userGroups The user group being added to or removed from the list of user groups
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
-     *         groups: all
+     *         groups: <code>all</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -345,14 +346,14 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      * The user group being added to or removed from the list of user groups
      * with launch permissions for this AMI. Only valid when the
      * launchPermission attribute is being modified. <p> Available user
-     * groups: all
+     * groups: <code>all</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param userGroups The user group being added to or removed from the list of user groups
      *         with launch permissions for this AMI. Only valid when the
      *         launchPermission attribute is being modified. <p> Available user
-     *         groups: all
+     *         groups: <code>all</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

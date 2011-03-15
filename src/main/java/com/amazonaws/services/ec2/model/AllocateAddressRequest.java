@@ -27,6 +27,70 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AllocateAddressRequest extends AmazonWebServiceRequest {
 
     /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     */
+    private String domain;
+
+    /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @return Set to <code>vpc</code> to allocate the address to your VPC. By
+     *         default, will allocate to EC2.
+     *
+     * @see DomainType
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
+     *         default, will allocate to EC2.
+     *
+     * @see DomainType
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
+     *         default, will allocate to EC2.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see DomainType
+     */
+    public AllocateAddressRequest withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -38,6 +102,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        sb.append("Domain: " + domain + ", ");
         sb.append("}");
         return sb.toString();
     }

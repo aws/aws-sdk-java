@@ -31,6 +31,13 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> groupNames;
 
+    /**
+     * A list of filters used to match properties for Placement Groups. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
+     */
     private java.util.List<Filter> filters;
 
     /**
@@ -96,9 +103,17 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Returns the value of the Filters property for this object.
+     * A list of filters used to match properties for Placement Groups. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @return The value of the Filters property for this object.
+     * @return A list of filters used to match properties for Placement Groups. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -108,9 +123,17 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * A list of filters used to match properties for Placement Groups. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters A list of filters used to match properties for Placement Groups. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -121,11 +144,19 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * A list of filters used to match properties for Placement Groups. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters A list of filters used to match properties for Placement Groups. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -138,11 +169,19 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the Filters property for this object.
+     * A list of filters used to match properties for Placement Groups. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters The new value for the Filters property for this object.
+     * @param filters A list of filters used to match properties for Placement Groups. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

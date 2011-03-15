@@ -33,7 +33,8 @@ public class VolumeAttachment {
     private String instanceId;
 
     /**
-     * How the device is exposed to the instance (e.g., /dev/sdh).
+     * How the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      */
     private String device;
 
@@ -125,29 +126,35 @@ public class VolumeAttachment {
     
     
     /**
-     * How the device is exposed to the instance (e.g., /dev/sdh).
+     * How the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      *
-     * @return How the device is exposed to the instance (e.g., /dev/sdh).
+     * @return How the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      */
     public String getDevice() {
         return device;
     }
     
     /**
-     * How the device is exposed to the instance (e.g., /dev/sdh).
+     * How the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      *
-     * @param device How the device is exposed to the instance (e.g., /dev/sdh).
+     * @param device How the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      */
     public void setDevice(String device) {
         this.device = device;
     }
     
     /**
-     * How the device is exposed to the instance (e.g., /dev/sdh).
+     * How the device is exposed to the instance (e.g.,
+     * <code>/dev/sdh</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param device How the device is exposed to the instance (e.g., /dev/sdh).
+     * @param device How the device is exposed to the instance (e.g.,
+     *         <code>/dev/sdh</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

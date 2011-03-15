@@ -32,7 +32,7 @@ public class DescribeCustomerGatewaysRequestMarshaller implements Marshaller<Req
     public Request<DescribeCustomerGatewaysRequest> marshall(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest) {
         Request<DescribeCustomerGatewaysRequest> request = new DefaultRequest<DescribeCustomerGatewaysRequest>(describeCustomerGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeCustomerGateways");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (describeCustomerGatewaysRequest != null) {
             java.util.List<String> customerGatewayIdsList = describeCustomerGatewaysRequest.getCustomerGatewayIds();
             int customerGatewayIdsListIndex = 1;

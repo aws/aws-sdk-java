@@ -34,6 +34,11 @@ public class LaunchSpecification {
     /**
      * 
      */
+    private java.util.List<GroupIdentifier> allSecurityGroups;
+
+    /**
+     * 
+     */
     private java.util.List<String> securityGroups;
 
     /**
@@ -82,7 +87,7 @@ public class LaunchSpecification {
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
 
     /**
-     * 
+     * Enables monitoring for the instance.
      */
     private Boolean monitoringEnabled;
 
@@ -159,6 +164,68 @@ public class LaunchSpecification {
         return this;
     }
     
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public java.util.List<GroupIdentifier> getAllSecurityGroups() {
+        if (allSecurityGroups == null) {
+            allSecurityGroups = new java.util.ArrayList<GroupIdentifier>();
+        }
+        return allSecurityGroups;
+    }
+    
+    /**
+     * 
+     *
+     * @param allSecurityGroups 
+     */
+    public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
+        java.util.List<GroupIdentifier> allSecurityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (allSecurityGroups != null) {
+            allSecurityGroupsCopy.addAll(allSecurityGroups);
+        }
+        this.allSecurityGroups = allSecurityGroupsCopy;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allSecurityGroups 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchSpecification withAllSecurityGroups(GroupIdentifier... allSecurityGroups) {
+        for (GroupIdentifier value : allSecurityGroups) {
+            getAllSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allSecurityGroups 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchSpecification withAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
+        java.util.List<GroupIdentifier> allSecurityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (allSecurityGroups != null) {
+            allSecurityGroupsCopy.addAll(allSecurityGroups);
+        }
+        this.allSecurityGroups = allSecurityGroupsCopy;
+
+        return this;
+    }
     
     /**
      * 
@@ -548,29 +615,29 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Enables monitoring for the instance.
      *
-     * @return 
+     * @return Enables monitoring for the instance.
      */
     public Boolean isMonitoringEnabled() {
         return monitoringEnabled;
     }
     
     /**
-     * 
+     * Enables monitoring for the instance.
      *
-     * @param monitoringEnabled 
+     * @param monitoringEnabled Enables monitoring for the instance.
      */
     public void setMonitoringEnabled(Boolean monitoringEnabled) {
         this.monitoringEnabled = monitoringEnabled;
     }
     
     /**
-     * 
+     * Enables monitoring for the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param monitoringEnabled 
+     * @param monitoringEnabled Enables monitoring for the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -582,9 +649,9 @@ public class LaunchSpecification {
     
     
     /**
-     * 
+     * Enables monitoring for the instance.
      *
-     * @return 
+     * @return Enables monitoring for the instance.
      */
     public Boolean getMonitoringEnabled() {
         return monitoringEnabled;
@@ -644,6 +711,7 @@ public class LaunchSpecification {
         sb.append("{");
         sb.append("ImageId: " + imageId + ", ");
         sb.append("KeyName: " + keyName + ", ");
+        sb.append("AllSecurityGroups: " + allSecurityGroups + ", ");
         sb.append("SecurityGroups: " + securityGroups + ", ");
         sb.append("UserData: " + userData + ", ");
         sb.append("AddressingType: " + addressingType + ", ");

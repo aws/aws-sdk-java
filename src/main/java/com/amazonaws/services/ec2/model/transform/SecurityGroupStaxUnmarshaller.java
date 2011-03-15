@@ -55,12 +55,28 @@ public class SecurityGroupStaxUnmarshaller implements Unmarshaller<SecurityGroup
                     securityGroup.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("groupId", targetDepth)) {
+                    securityGroup.setGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("groupDescription", targetDepth)) {
                     securityGroup.setDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("ipPermissions/item", targetDepth)) {
                     securityGroup.getIpPermissions().add(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ipPermissionsEgress/item", targetDepth)) {
+                    securityGroup.getIpPermissionsEgress().add(IpPermissionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("vpcId", targetDepth)) {
+                    securityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    securityGroup.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

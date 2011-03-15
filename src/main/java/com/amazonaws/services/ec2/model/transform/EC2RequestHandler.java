@@ -14,21 +14,80 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.commons.codec.binary.Base64;
 
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.Request;
 import com.amazonaws.handlers.AbstractRequestHandler;
+import com.amazonaws.services.ec2.model.DescribeInstancesResult;
+import com.amazonaws.services.ec2.model.DescribeSpotInstanceRequestsResult;
+import com.amazonaws.services.ec2.model.GroupIdentifier;
 import com.amazonaws.services.ec2.model.ImportKeyPairRequest;
+import com.amazonaws.services.ec2.model.LaunchSpecification;
+import com.amazonaws.services.ec2.model.RequestSpotInstancesResult;
+import com.amazonaws.services.ec2.model.Reservation;
+import com.amazonaws.services.ec2.model.RunInstancesResult;
+import com.amazonaws.services.ec2.model.SpotInstanceRequest;
+import com.amazonaws.util.TimingInfo;
 
 public class EC2RequestHandler extends AbstractRequestHandler {
-    public void beforeRequest(Request<?> request) {
-        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
-        if (originalRequest instanceof ImportKeyPairRequest) {
-            ImportKeyPairRequest importKeyPairRequest = (ImportKeyPairRequest)originalRequest;
-            String publicKeyMaterial = importKeyPairRequest.getPublicKeyMaterial();
-            String encodedKeyMaterial = new String(Base64.encodeBase64(publicKeyMaterial.getBytes()));
-            importKeyPairRequest.setPublicKeyMaterial(encodedKeyMaterial);
-        }
+    @Override
+	public void beforeRequest(Request<?> request) {
+    	AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+    	if (originalRequest instanceof ImportKeyPairRequest) {
+    		ImportKeyPairRequest importKeyPairRequest = (ImportKeyPairRequest)originalRequest;
+    		String publicKeyMaterial = importKeyPairRequest.getPublicKeyMaterial();
+    		String encodedKeyMaterial = new String(Base64.encodeBase64(publicKeyMaterial.getBytes()));
+    		request.addParameter("PublicKeyMaterial", encodedKeyMaterial);
+    	}
+    }
+
+    @Override
+    public void afterResponse(Request<?> request, Object response, TimingInfo timingInfo) {
+		/*
+		 * For backwards compatibility, we preserve the existing List<String> of
+		 * security group names by explicitly populating it from the full list
+		 * of security group info.
+		 */
+    	if (response instanceof DescribeSpotInstanceRequestsResult) {
+    		DescribeSpotInstanceRequestsResult result = (DescribeSpotInstanceRequestsResult)response;
+    		for (SpotInstanceRequest spotInstanceRequest : result.getSpotInstanceRequests()) {
+    			LaunchSpecification launchSpecification = spotInstanceRequest.getLaunchSpecification();
+    			populateLaunchSpecificationSecurityGroupNames(launchSpecification);
+    		}
+    	} else if (response instanceof RequestSpotInstancesResult) {
+    		RequestSpotInstancesResult result = (RequestSpotInstancesResult)response;
+    		for (SpotInstanceRequest spotInstanceRequest : result.getSpotInstanceRequests()) {
+    			LaunchSpecification launchSpecification = spotInstanceRequest.getLaunchSpecification();
+    			populateLaunchSpecificationSecurityGroupNames(launchSpecification);
+    		}
+    	} else if (response instanceof DescribeInstancesResult) {
+    		DescribeInstancesResult result = (DescribeInstancesResult)response;
+    		for (Reservation reservation : result.getReservations()) {
+    			populateReservationSecurityGroupNames(reservation);
+    		}
+    	} else if (response instanceof RunInstancesResult) {
+    		RunInstancesResult result = (RunInstancesResult)response;
+    		populateReservationSecurityGroupNames(result.getReservation());
+    	}
+	}
+
+    private void populateReservationSecurityGroupNames(Reservation reservation) {
+    	List<String> groupNames = new ArrayList<String>();
+    	for (GroupIdentifier group : reservation.getGroups()) {
+    		groupNames.add(group.getGroupName());
+    	}
+    	reservation.setGroupNames(groupNames);
+    }
+
+    private void populateLaunchSpecificationSecurityGroupNames(LaunchSpecification launchSpecification) {
+    	List<String> groupNames = new ArrayList<String>();
+    	for (GroupIdentifier group : launchSpecification.getAllSecurityGroups()) {
+    		groupNames.add(group.getGroupName());
+    	}
+    	launchSpecification.setSecurityGroups(groupNames);
     }
 }

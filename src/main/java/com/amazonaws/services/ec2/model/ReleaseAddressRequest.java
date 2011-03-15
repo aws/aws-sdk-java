@@ -46,6 +46,12 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     private String publicIp;
 
     /**
+     * The allocation ID that AWS provided when you allocated the address for
+     * use with Amazon VPC.
+     */
+    private String allocationId;
+
+    /**
      * Default constructor for a new ReleaseAddressRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -98,6 +104,46 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The allocation ID that AWS provided when you allocated the address for
+     * use with Amazon VPC.
+     *
+     * @return The allocation ID that AWS provided when you allocated the address for
+     *         use with Amazon VPC.
+     */
+    public String getAllocationId() {
+        return allocationId;
+    }
+    
+    /**
+     * The allocation ID that AWS provided when you allocated the address for
+     * use with Amazon VPC.
+     *
+     * @param allocationId The allocation ID that AWS provided when you allocated the address for
+     *         use with Amazon VPC.
+     */
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+    
+    /**
+     * The allocation ID that AWS provided when you allocated the address for
+     * use with Amazon VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allocationId The allocation ID that AWS provided when you allocated the address for
+     *         use with Amazon VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReleaseAddressRequest withAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -110,6 +156,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("PublicIp: " + publicIp + ", ");
+        sb.append("AllocationId: " + allocationId + ", ");
         sb.append("}");
         return sb.toString();
     }

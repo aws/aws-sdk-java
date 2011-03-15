@@ -249,7 +249,7 @@ public class TransferManager {
         return upload(new PutObjectRequest(bucketName, key, input, objectMetadata));
     }
 
-    
+    // ANDROID_START
     /**
      * Schedules a new transfer to upload data to Amazon S3. This method is
      * non-blocking and returns immediately (i.e. before the upload has
@@ -285,7 +285,7 @@ public class TransferManager {
         throws AmazonServiceException, AmazonClientException {
         return upload(new PutObjectRequest(bucketName, key, file));
     }
-    
+    // ANDROID_END
 
     /**
      * <p>

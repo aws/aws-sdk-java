@@ -32,7 +32,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
     public Request<RunInstancesRequest> marshall(RunInstancesRequest runInstancesRequest) {
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (runInstancesRequest != null) {
             if (runInstancesRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -62,6 +62,17 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                 }
                 securityGroupsListIndex++;
+            }
+        }
+        if (runInstancesRequest != null) {
+            java.util.List<String> securityGroupIdsList = runInstancesRequest.getSecurityGroupIds();
+            int securityGroupIdsListIndex = 1;
+
+            for (String securityGroupIdsListValue : securityGroupIdsList) {
+                if (securityGroupIdsListValue != null) {
+                    request.addParameter("SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
+                }
+                securityGroupIdsListIndex++;
             }
         }
         if (runInstancesRequest != null) {

@@ -37,6 +37,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> groupNames;
 
+    private java.util.List<String> groupIds;
+
     /**
      * A list of filters used to match properties for SecurityGroups. For a
      * complete reference to the available filter keys for this operation,
@@ -104,6 +106,68 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
             groupNamesCopy.addAll(groupNames);
         }
         this.groupNames = groupNamesCopy;
+
+        return this;
+    }
+    
+    /**
+     * Returns the value of the GroupIds property for this object.
+     *
+     * @return The value of the GroupIds property for this object.
+     */
+    public java.util.List<String> getGroupIds() {
+        if (groupIds == null) {
+            groupIds = new java.util.ArrayList<String>();
+        }
+        return groupIds;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     */
+    public void setGroupIds(java.util.Collection<String> groupIds) {
+        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>();
+        if (groupIds != null) {
+            groupIdsCopy.addAll(groupIds);
+        }
+        this.groupIds = groupIdsCopy;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
+        for (String value : groupIds) {
+            getGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the GroupIds property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupIds The new value for the GroupIds property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
+        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>();
+        if (groupIds != null) {
+            groupIdsCopy.addAll(groupIds);
+        }
+        this.groupIds = groupIdsCopy;
 
         return this;
     }
@@ -215,6 +279,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("GroupNames: " + groupNames + ", ");
+        sb.append("GroupIds: " + groupIds + ", ");
         sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();

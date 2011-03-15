@@ -1,0 +1,142 @@
+/*
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.ec2.model;
+import com.amazonaws.AmazonWebServiceRequest;
+
+/**
+ * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest) ReplaceRouteTableAssociation operation}.
+ * <p>
+ * Changes the route table associated with a given subnet in a VPC.
+ * After you execute this action, the subnet uses the routes in the new
+ * route table it's associated with. For more information about route
+ * tables, go to <a
+ * azonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
+ * Route Tables </a> in the Amazon Virtual Private Cloud User Guide.
+ * </p>
+ * <p>
+ * You can also use this to change which table is the main route table
+ * in the VPC. You just specify the main route table's association ID and
+ * the route table that you want to be the new main route table.
+ * </p>
+ *
+ * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)
+ */
+public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest {
+
+    /**
+     * The ID representing the current association between the original route
+     * table and the subnet.
+     */
+    private String associationId;
+
+    /**
+     * The ID of the new route table to associate with the subnet.
+     */
+    private String routeTableId;
+
+    /**
+     * The ID representing the current association between the original route
+     * table and the subnet.
+     *
+     * @return The ID representing the current association between the original route
+     *         table and the subnet.
+     */
+    public String getAssociationId() {
+        return associationId;
+    }
+    
+    /**
+     * The ID representing the current association between the original route
+     * table and the subnet.
+     *
+     * @param associationId The ID representing the current association between the original route
+     *         table and the subnet.
+     */
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+    
+    /**
+     * The ID representing the current association between the original route
+     * table and the subnet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param associationId The ID representing the current association between the original route
+     *         table and the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReplaceRouteTableAssociationRequest withAssociationId(String associationId) {
+        this.associationId = associationId;
+        return this;
+    }
+    
+    
+    /**
+     * The ID of the new route table to associate with the subnet.
+     *
+     * @return The ID of the new route table to associate with the subnet.
+     */
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+    
+    /**
+     * The ID of the new route table to associate with the subnet.
+     *
+     * @param routeTableId The ID of the new route table to associate with the subnet.
+     */
+    public void setRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+    }
+    
+    /**
+     * The ID of the new route table to associate with the subnet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param routeTableId The ID of the new route table to associate with the subnet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReplaceRouteTableAssociationRequest withRouteTableId(String routeTableId) {
+        this.routeTableId = routeTableId;
+        return this;
+    }
+    
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("AssociationId: " + associationId + ", ");
+        sb.append("RouteTableId: " + routeTableId + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
+}
+    

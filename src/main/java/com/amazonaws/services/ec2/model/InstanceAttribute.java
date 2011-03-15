@@ -27,7 +27,8 @@ public class InstanceAttribute {
     private String instanceId;
 
     /**
-     * The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * The instance type (e.g., <code>m1.small</code>,
+     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      */
     private String instanceType;
 
@@ -59,7 +60,7 @@ public class InstanceAttribute {
     private String instanceInitiatedShutdownBehavior;
 
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      */
     private String rootDeviceName;
 
@@ -104,29 +105,35 @@ public class InstanceAttribute {
     
     
     /**
-     * The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * The instance type (e.g., <code>m1.small</code>,
+     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      *
-     * @return The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * @return The instance type (e.g., <code>m1.small</code>,
+     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * The instance type (e.g., <code>m1.small</code>,
+     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      *
-     * @param instanceType The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * @param instanceType The instance type (e.g., <code>m1.small</code>,
+     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * The instance type (e.g., <code>m1.small</code>,
+     * <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type (e.g., m1.small, c1.medium, m2.2xlarge, and so on).
+     * @param instanceType The instance type (e.g., <code>m1.small</code>,
+     *         <code>c1.medium</code>, <code>m2.2xlarge</code>, and so on).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -331,29 +338,29 @@ public class InstanceAttribute {
     
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @return The root device name (e.g., /dev/sda1).
+     * @return The root device name (e.g., <code>/dev/sda1</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

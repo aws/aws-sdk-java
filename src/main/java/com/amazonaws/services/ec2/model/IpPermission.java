@@ -23,21 +23,22 @@ package com.amazonaws.services.ec2.model;
 public class IpPermission {
 
     /**
-     * The IP protocol of this permission. <p> Valid protocol values: tpc,
-     * upd, icmp
+     * The IP protocol of this permission. <p> Valid protocol values:
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      */
     private String ipProtocol;
 
     /**
      * Start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     * type number).
+     * number. An ICMP type number of <code>-1</code> indicates a wildcard
+     * (i.e., any ICMP type number).
      */
     private Integer fromPort;
 
     /**
      * End of port range for the TCP and UDP protocols, or an ICMP code. An
-     * ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     * code).
      */
     private Integer toPort;
 
@@ -52,35 +53,35 @@ public class IpPermission {
     private java.util.List<String> ipRanges;
 
     /**
-     * The IP protocol of this permission. <p> Valid protocol values: tpc,
-     * upd, icmp
+     * The IP protocol of this permission. <p> Valid protocol values:
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      *
-     * @return The IP protocol of this permission. <p> Valid protocol values: tpc,
-     *         upd, icmp
+     * @return The IP protocol of this permission. <p> Valid protocol values:
+     *         <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      */
     public String getIpProtocol() {
         return ipProtocol;
     }
     
     /**
-     * The IP protocol of this permission. <p> Valid protocol values: tpc,
-     * upd, icmp
+     * The IP protocol of this permission. <p> Valid protocol values:
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      *
-     * @param ipProtocol The IP protocol of this permission. <p> Valid protocol values: tpc,
-     *         upd, icmp
+     * @param ipProtocol The IP protocol of this permission. <p> Valid protocol values:
+     *         <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      */
     public void setIpProtocol(String ipProtocol) {
         this.ipProtocol = ipProtocol;
     }
     
     /**
-     * The IP protocol of this permission. <p> Valid protocol values: tpc,
-     * upd, icmp
+     * The IP protocol of this permission. <p> Valid protocol values:
+     * <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ipProtocol The IP protocol of this permission. <p> Valid protocol values: tpc,
-     *         upd, icmp
+     * @param ipProtocol The IP protocol of this permission. <p> Valid protocol values:
+     *         <code>tcp</code>, <code>udp</code>, <code>icmp</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,12 +94,12 @@ public class IpPermission {
     
     /**
      * Start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     * type number).
+     * number. An ICMP type number of <code>-1</code> indicates a wildcard
+     * (i.e., any ICMP type number).
      *
      * @return Start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     *         type number).
+     *         number. An ICMP type number of <code>-1</code> indicates a wildcard
+     *         (i.e., any ICMP type number).
      */
     public Integer getFromPort() {
         return fromPort;
@@ -106,12 +107,12 @@ public class IpPermission {
     
     /**
      * Start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     * type number).
+     * number. An ICMP type number of <code>-1</code> indicates a wildcard
+     * (i.e., any ICMP type number).
      *
      * @param fromPort Start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     *         type number).
+     *         number. An ICMP type number of <code>-1</code> indicates a wildcard
+     *         (i.e., any ICMP type number).
      */
     public void setFromPort(Integer fromPort) {
         this.fromPort = fromPort;
@@ -119,14 +120,14 @@ public class IpPermission {
     
     /**
      * Start of port range for the TCP and UDP protocols, or an ICMP type
-     * number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     * type number).
+     * number. An ICMP type number of <code>-1</code> indicates a wildcard
+     * (i.e., any ICMP type number).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fromPort Start of port range for the TCP and UDP protocols, or an ICMP type
-     *         number. An ICMP type number of -1 indicates a wildcard (i.e., any ICMP
-     *         type number).
+     *         number. An ICMP type number of <code>-1</code> indicates a wildcard
+     *         (i.e., any ICMP type number).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -139,10 +140,12 @@ public class IpPermission {
     
     /**
      * End of port range for the TCP and UDP protocols, or an ICMP code. An
-     * ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     * code).
      *
      * @return End of port range for the TCP and UDP protocols, or an ICMP code. An
-     *         ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     *         ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     *         code).
      */
     public Integer getToPort() {
         return toPort;
@@ -150,10 +153,12 @@ public class IpPermission {
     
     /**
      * End of port range for the TCP and UDP protocols, or an ICMP code. An
-     * ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     * code).
      *
      * @param toPort End of port range for the TCP and UDP protocols, or an ICMP code. An
-     *         ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     *         ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     *         code).
      */
     public void setToPort(Integer toPort) {
         this.toPort = toPort;
@@ -161,12 +166,14 @@ public class IpPermission {
     
     /**
      * End of port range for the TCP and UDP protocols, or an ICMP code. An
-     * ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     * ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     * code).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param toPort End of port range for the TCP and UDP protocols, or an ICMP code. An
-     *         ICMP code of -1 indicates a wildcard (i.e., any ICMP code).
+     *         ICMP code of <code>-1</code> indicates a wildcard (i.e., any ICMP
+     *         code).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

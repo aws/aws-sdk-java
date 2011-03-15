@@ -815,7 +815,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
-	
+	// ANDROID_START
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#getObject(com.amazonaws.services.s3.model.GetObjectRequest, java.io.File)
      */
@@ -859,7 +859,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return s3Object.getObjectMetadata();
     }
-	
+	// ANDROID_END
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#deleteBucket(java.lang.String)
@@ -887,7 +887,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         client.execute(request, voidResponseHandler, errorResponseHandler, executionContext);
     }
 
-	
+	// ANDROID_START
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(java.lang.String, java.lang.String, java.io.File)
      */
@@ -896,7 +896,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return putObject(new PutObjectRequest(bucketName, key, file)
             .withMetadata(new ObjectMetadata()));
     }
-	
+	// ANDROID_END
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(java.lang.String, java.lang.String, java.io.InputStream, com.amazonaws.services.s3.model.S3ObjectMetadata)
@@ -924,7 +924,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when uploading an object");
         assertParameterNotNull(key, "The key parameter must be specified when uploading an object");
 
-		
+		// ANDROID_START
         // If a file is specified for upload, we need to pull some additional
         // information from it to auto-configure a few options
         if (putObjectRequest.getFile() != null) {
@@ -956,7 +956,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 throw new AmazonClientException("Unable to find file to upload", fnfe);
             }
         }
-		
+		// ANDROID_END
 
         Request<Void> request = createRequest(bucketName, key, putObjectRequest, HttpMethodName.PUT);
 

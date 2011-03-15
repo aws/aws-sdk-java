@@ -32,7 +32,7 @@ public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request
     public Request<CreatePlacementGroupRequest> marshall(CreatePlacementGroupRequest createPlacementGroupRequest) {
         Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(createPlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreatePlacementGroup");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (createPlacementGroupRequest != null) {
             if (createPlacementGroupRequest.getGroupName() != null) {
                 request.addParameter("GroupName", StringUtils.fromString(createPlacementGroupRequest.getGroupName()));

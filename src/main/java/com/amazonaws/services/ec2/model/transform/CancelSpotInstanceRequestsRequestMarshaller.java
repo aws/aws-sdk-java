@@ -32,7 +32,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<R
     public Request<CancelSpotInstanceRequestsRequest> marshall(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) {
         Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(cancelSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (cancelSpotInstanceRequestsRequest != null) {
             java.util.List<String> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
             int spotInstanceRequestIdsListIndex = 1;

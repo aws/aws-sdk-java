@@ -46,6 +46,11 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
     private String description;
 
     /**
+     * ID of the VPC.
+     */
+    private String vpcId;
+
+    /**
      * Default constructor for a new CreateSecurityGroupRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -134,6 +139,40 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * ID of the VPC.
+     *
+     * @return ID of the VPC.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * ID of the VPC.
+     *
+     * @param vpcId ID of the VPC.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * ID of the VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId ID of the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateSecurityGroupRequest withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -147,6 +186,7 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
         sb.append("{");
         sb.append("GroupName: " + groupName + ", ");
         sb.append("Description: " + description + ", ");
+        sb.append("VpcId: " + vpcId + ", ");
         sb.append("}");
         return sb.toString();
     }

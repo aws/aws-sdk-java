@@ -32,7 +32,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
     public Request<DescribeSecurityGroupsRequest> marshall(DescribeSecurityGroupsRequest describeSecurityGroupsRequest) {
         Request<DescribeSecurityGroupsRequest> request = new DefaultRequest<DescribeSecurityGroupsRequest>(describeSecurityGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSecurityGroups");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (describeSecurityGroupsRequest != null) {
             java.util.List<String> groupNamesList = describeSecurityGroupsRequest.getGroupNames();
             int groupNamesListIndex = 1;
@@ -42,6 +42,17 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
                     request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }
                 groupNamesListIndex++;
+            }
+        }
+        if (describeSecurityGroupsRequest != null) {
+            java.util.List<String> groupIdsList = describeSecurityGroupsRequest.getGroupIds();
+            int groupIdsListIndex = 1;
+
+            for (String groupIdsListValue : groupIdsList) {
+                if (groupIdsListValue != null) {
+                    request.addParameter("GroupId." + groupIdsListIndex, StringUtils.fromString(groupIdsListValue));
+                }
+                groupIdsListIndex++;
             }
         }
 

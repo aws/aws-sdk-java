@@ -33,7 +33,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      */
     private String attribute;
 
@@ -50,8 +51,9 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
      * 
      * @param imageId The ID of the AMI whose attribute is to be described.
      * @param attribute The name of the attribute to describe. <p> Available
-     * attribute names: productCodes, kernel, ramdisk, launchPermisson,
-     * blockDeviceMapping
+     * attribute names: <code>productCodes</code>, <code>kernel</code>,
+     * <code>ramdisk</code>, <code>launchPermisson</code>,
+     * <code>blockDeviceMapping</code>
      */
     public DescribeImageAttributeRequest(String imageId, String attribute) {
         this.imageId = imageId;
@@ -94,10 +96,12 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      *
      * @return The name of the attribute to describe. <p> Available attribute names:
-     *         productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      */
     public String getAttribute() {
         return attribute;
@@ -105,10 +109,12 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
-     *         productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -116,12 +122,14 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute to describe. <p> Available attribute names:
-     * productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     * <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     * <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attribute The name of the attribute to describe. <p> Available attribute names:
-     *         productCodes, kernel, ramdisk, launchPermisson, blockDeviceMapping
+     *         <code>productCodes</code>, <code>kernel</code>, <code>ramdisk</code>,
+     *         <code>launchPermisson</code>, <code>blockDeviceMapping</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

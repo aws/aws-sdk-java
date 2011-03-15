@@ -28,7 +28,7 @@ public class LaunchPermission {
 
     /**
      * The AWS group of the user involved in this launch permission. <p>
-     * Available groups: all
+     * Available groups: <code>all</code>
      */
     private String group;
 
@@ -68,10 +68,10 @@ public class LaunchPermission {
     
     /**
      * The AWS group of the user involved in this launch permission. <p>
-     * Available groups: all
+     * Available groups: <code>all</code>
      *
      * @return The AWS group of the user involved in this launch permission. <p>
-     *         Available groups: all
+     *         Available groups: <code>all</code>
      */
     public String getGroup() {
         return group;
@@ -79,10 +79,10 @@ public class LaunchPermission {
     
     /**
      * The AWS group of the user involved in this launch permission. <p>
-     * Available groups: all
+     * Available groups: <code>all</code>
      *
      * @param group The AWS group of the user involved in this launch permission. <p>
-     *         Available groups: all
+     *         Available groups: <code>all</code>
      */
     public void setGroup(String group) {
         this.group = group;
@@ -90,12 +90,12 @@ public class LaunchPermission {
     
     /**
      * The AWS group of the user involved in this launch permission. <p>
-     * Available groups: all
+     * Available groups: <code>all</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param group The AWS group of the user involved in this launch permission. <p>
-     *         Available groups: all
+     *         Available groups: <code>all</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

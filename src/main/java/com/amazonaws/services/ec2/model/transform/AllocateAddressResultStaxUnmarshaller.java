@@ -51,6 +51,14 @@ public class AllocateAddressResultStaxUnmarshaller implements Unmarshaller<Alloc
                     allocateAddressResult.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("domain", targetDepth)) {
+                    allocateAddressResult.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("allocationId", targetDepth)) {
+                    allocateAddressResult.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return allocateAddressResult;

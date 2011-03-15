@@ -59,7 +59,11 @@ public class ReservationStaxUnmarshaller implements Unmarshaller<Reservation, St
                     reservation.setRequesterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("groupSet/item/groupId", targetDepth)) {
+                if (context.testExpression("groupSet/item", targetDepth)) {
+                    reservation.getGroups().add(GroupIdentifierStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("groupSet/item/groupName", targetDepth)) {
                     reservation.getGroupNames().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

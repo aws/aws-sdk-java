@@ -152,7 +152,7 @@ public class Instance {
     private String rootDeviceType;
 
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      */
     private String rootDeviceName;
 
@@ -185,6 +185,10 @@ public class Instance {
      * A list of tags for the Instance.
      */
     private java.util.List<Tag> tags;
+
+    private java.util.List<GroupIdentifier> securityGroups;
+
+    private Boolean sourceDestCheck;
 
     /**
      * Unique ID of the instance launched.
@@ -1084,29 +1088,29 @@ public class Instance {
     
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @return The root device name (e.g., /dev/sda1).
+     * @return The root device name (e.g., <code>/dev/sda1</code>).
      */
     public String getRootDeviceName() {
         return rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      */
     public void setRootDeviceName(String rootDeviceName) {
         this.rootDeviceName = rootDeviceName;
     }
     
     /**
-     * The root device name (e.g., /dev/sda1).
+     * The root device name (e.g., <code>/dev/sda1</code>).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param rootDeviceName The root device name (e.g., /dev/sda1).
+     * @param rootDeviceName The root device name (e.g., <code>/dev/sda1</code>).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1433,6 +1437,111 @@ public class Instance {
     }
     
     /**
+     * Returns the value of the SecurityGroups property for this object.
+     *
+     * @return The value of the SecurityGroups property for this object.
+     */
+    public java.util.List<GroupIdentifier> getSecurityGroups() {
+        if (securityGroups == null) {
+            securityGroups = new java.util.ArrayList<GroupIdentifier>();
+        }
+        return securityGroups;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     */
+    public void setSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
+        java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withSecurityGroups(GroupIdentifier... securityGroups) {
+        for (GroupIdentifier value : securityGroups) {
+            getSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the SecurityGroups property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The new value for the SecurityGroups property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
+        java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+
+        return this;
+    }
+    
+    /**
+     * Returns the value of the SourceDestCheck property for this object.
+     *
+     * @return The value of the SourceDestCheck property for this object.
+     */
+    public Boolean isSourceDestCheck() {
+        return sourceDestCheck;
+    }
+    
+    /**
+     * Sets the value of the SourceDestCheck property for this object.
+     *
+     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     */
+    public void setSourceDestCheck(Boolean sourceDestCheck) {
+        this.sourceDestCheck = sourceDestCheck;
+    }
+    
+    /**
+     * Sets the value of the SourceDestCheck property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceDestCheck The new value for the SourceDestCheck property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withSourceDestCheck(Boolean sourceDestCheck) {
+        this.sourceDestCheck = sourceDestCheck;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the SourceDestCheck property for this object.
+     *
+     * @return The value of the SourceDestCheck property for this object.
+     */
+    public Boolean getSourceDestCheck() {
+        return sourceDestCheck;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1475,6 +1584,8 @@ public class Instance {
         sb.append("License: " + license + ", ");
         sb.append("ClientToken: " + clientToken + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("SecurityGroups: " + securityGroups + ", ");
+        sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
         sb.append("}");
         return sb.toString();
     }

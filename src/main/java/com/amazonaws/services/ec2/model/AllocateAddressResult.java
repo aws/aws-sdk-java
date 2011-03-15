@@ -26,6 +26,10 @@ public class AllocateAddressResult {
      */
     private String publicIp;
 
+    private String domain;
+
+    private String allocationId;
+
     /**
      * IP address for use with your account.
      *
@@ -61,6 +65,89 @@ public class AllocateAddressResult {
     
     
     /**
+     * Returns the value of the Domain property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @return The value of the Domain property for this object.
+     *
+     * @see DomainType
+     */
+    public String getDomain() {
+        return domain;
+    }
+    
+    /**
+     * Sets the value of the Domain property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain The new value for the Domain property for this object.
+     *
+     * @see DomainType
+     */
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+    
+    /**
+     * Sets the value of the Domain property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain The new value for the Domain property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see DomainType
+     */
+    public AllocateAddressResult withDomain(String domain) {
+        this.domain = domain;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AllocationId property for this object.
+     *
+     * @return The value of the AllocationId property for this object.
+     */
+    public String getAllocationId() {
+        return allocationId;
+    }
+    
+    /**
+     * Sets the value of the AllocationId property for this object.
+     *
+     * @param allocationId The new value for the AllocationId property for this object.
+     */
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+    
+    /**
+     * Sets the value of the AllocationId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allocationId The new value for the AllocationId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AllocateAddressResult withAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -73,6 +160,8 @@ public class AllocateAddressResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("PublicIp: " + publicIp + ", ");
+        sb.append("Domain: " + domain + ", ");
+        sb.append("AllocationId: " + allocationId + ", ");
         sb.append("}");
         return sb.toString();
     }

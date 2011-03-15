@@ -42,7 +42,11 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     private java.util.List<String> customerGatewayIds;
 
     /**
-     * 
+     * A list of filters used to match properties for Customer Gateways. For
+     * a complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
 
@@ -109,9 +113,17 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for Customer Gateways. For
+     * a complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @return 
+     * @return A list of filters used to match properties for Customer Gateways. For
+     *         a complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -121,9 +133,17 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for Customer Gateways. For
+     * a complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for Customer Gateways. For
+     *         a complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -134,11 +154,19 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for Customer Gateways. For
+     * a complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for Customer Gateways. For
+     *         a complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -151,11 +179,19 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for Customer Gateways. For
+     * a complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for Customer Gateways. For
+     *         a complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

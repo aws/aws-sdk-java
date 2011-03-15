@@ -41,6 +41,12 @@ public class Reservation {
      * The list of security groups requested for the instances in this
      * reservation.
      */
+    private java.util.List<GroupIdentifier> groups;
+
+    /**
+     * The list of security groups requested for the instances in this
+     * reservation.
+     */
     private java.util.List<String> groupNames;
 
     /**
@@ -155,6 +161,76 @@ public class Reservation {
         return this;
     }
     
+    
+    /**
+     * The list of security groups requested for the instances in this
+     * reservation.
+     *
+     * @return The list of security groups requested for the instances in this
+     *         reservation.
+     */
+    public java.util.List<GroupIdentifier> getGroups() {
+        if (groups == null) {
+            groups = new java.util.ArrayList<GroupIdentifier>();
+        }
+        return groups;
+    }
+    
+    /**
+     * The list of security groups requested for the instances in this
+     * reservation.
+     *
+     * @param groups The list of security groups requested for the instances in this
+     *         reservation.
+     */
+    public void setGroups(java.util.Collection<GroupIdentifier> groups) {
+        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (groups != null) {
+            groupsCopy.addAll(groups);
+        }
+        this.groups = groupsCopy;
+    }
+    
+    /**
+     * The list of security groups requested for the instances in this
+     * reservation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groups The list of security groups requested for the instances in this
+     *         reservation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Reservation withGroups(GroupIdentifier... groups) {
+        for (GroupIdentifier value : groups) {
+            getGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of security groups requested for the instances in this
+     * reservation.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groups The list of security groups requested for the instances in this
+     *         reservation.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
+        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>();
+        if (groups != null) {
+            groupsCopy.addAll(groups);
+        }
+        this.groups = groupsCopy;
+
+        return this;
+    }
     
     /**
      * The list of security groups requested for the instances in this
@@ -303,6 +379,7 @@ public class Reservation {
         sb.append("ReservationId: " + reservationId + ", ");
         sb.append("OwnerId: " + ownerId + ", ");
         sb.append("RequesterId: " + requesterId + ", ");
+        sb.append("Groups: " + groups + ", ");
         sb.append("GroupNames: " + groupNames + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("}");

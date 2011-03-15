@@ -41,13 +41,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You can specify multiple filters (e.g., the Spot Price is equal to a
- * particular value, and the instance type is m1.small). The result
- * includes information for a particular request only if it matches all
- * your filters. If there's no match, no special message is returned; the
- * response is simply empty.
+ * particular value, and the instance type is <code>m1.small</code> ).
+ * The result includes information for a particular request only if it
+ * matches all your filters. If there's no match, no special message is
+ * returned; the response is simply empty.
  * </p>
  * <p>
- * You can use wildcards with the filter values: <code>*</code> matches
+ * You can use wildcards with the filter values: an asterisk matches
  * zero or more characters, and <code>?</code> matches exactly one
  * character. You can escape special characters using a backslash before
  * the character. For example, a value of <code>\*amazon\?\\</code>

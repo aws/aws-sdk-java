@@ -32,10 +32,15 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
     public Request<RevokeSecurityGroupIngressRequest> marshall(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest) {
         Request<RevokeSecurityGroupIngressRequest> request = new DefaultRequest<RevokeSecurityGroupIngressRequest>(revokeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupIngress");
-        request.addParameter("Version", "2010-08-31");
+        request.addParameter("Version", "2011-01-01");
         if (revokeSecurityGroupIngressRequest != null) {
             if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
                 request.addParameter("GroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupName()));
+            }
+        }
+        if (revokeSecurityGroupIngressRequest != null) {
+            if (revokeSecurityGroupIngressRequest.getGroupId() != null) {
+                request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupId()));
             }
         }
         if (revokeSecurityGroupIngressRequest != null) {
@@ -101,6 +106,11 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
                         if (userIdGroupPairsListValue != null) {
                             if (userIdGroupPairsListValue.getGroupName() != null) {
                                 request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName", StringUtils.fromString(userIdGroupPairsListValue.getGroupName()));
+                            }
+                        }
+                        if (userIdGroupPairsListValue != null) {
+                            if (userIdGroupPairsListValue.getGroupId() != null) {
+                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId", StringUtils.fromString(userIdGroupPairsListValue.getGroupId()));
                             }
                         }
 

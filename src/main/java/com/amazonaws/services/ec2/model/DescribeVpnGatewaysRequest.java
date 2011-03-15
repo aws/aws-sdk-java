@@ -20,14 +20,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Gives you information about your VPN gateways. You can filter the
  * results to return information only about VPN gateways that match
- * criteria you specify. For example, you could ask to get information
- * about a particular VPN gateway (or all) only if the gateway's state is
- * pending or available. You can specify multiple filters (e.g., the VPN
- * gateway is in a particular Availability Zone and the gateway's state
- * is pending or available). The result includes information for a
- * particular VPN gateway only if the gateway matches all your filters.
- * If there's no match, no special message is returned; the response is
- * simply empty. The following table shows the available filters.
+ * criteria you specify.
+ * </p>
+ * <p>
+ * For example, you could ask to get information about a particular VPN
+ * gateway (or all) only if the gateway's state is pending or available.
+ * You can specify multiple filters (e.g., the VPN gateway is in a
+ * particular Availability Zone and the gateway's state is pending or
+ * available).
+ * </p>
+ * <p>
+ * The result includes information for a particular VPN gateway only if
+ * the gateway matches all your filters. If there's no match, no special
+ * message is returned; the response is simply empty. The following table
+ * shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)
@@ -35,19 +41,35 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
 
     /**
-     * A set of one or more VPN Gateway IDs.
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      */
     private java.util.List<String> vpnGatewayIds;
 
     /**
-     * 
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
 
     /**
-     * A set of one or more VPN Gateway IDs.
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @return A set of one or more VPN Gateway IDs.
+     * @return A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public java.util.List<String> getVpnGatewayIds() {
         if (vpnGatewayIds == null) {
@@ -57,9 +79,17 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more VPN Gateway IDs.
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @param vpnGatewayIds A set of one or more VPN Gateway IDs.
+     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
         java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>();
@@ -70,11 +100,19 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more VPN Gateway IDs.
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayIds A set of one or more VPN Gateway IDs.
+     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,11 +125,19 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A set of one or more VPN Gateway IDs.
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpnGatewayIds A set of one or more VPN Gateway IDs.
+     * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,9 +153,17 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @return 
+     * @return A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
         if (filters == null) {
@@ -119,9 +173,17 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
         java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
@@ -132,11 +194,19 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -149,11 +219,19 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * A list of filters used to match properties for VPN Gateways. For a
+     * complete reference to the available filter keys for this operation,
+     * see the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param filters 
+     * @param filters A list of filters used to match properties for VPN Gateways. For a
+     *         complete reference to the available filter keys for this operation,
+     *         see the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

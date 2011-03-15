@@ -27,8 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * (assuming you want only a single subnet in the VPC), or a subset of
  * the VPC's CIDR block. If you create more than one subnet in a VPC, the
  * subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
- * you can create uses a /28 netmask (16 IP addresses), and the largest
- * uses a /18 netmask (16,384 IP addresses).
+ * you can create uses a <code>/28</code> netmask (16 IP addresses), and
+ * the largest uses a <code>/18</code> netmask (16,384 IP addresses).
  * </p>
  * <p>
  * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP

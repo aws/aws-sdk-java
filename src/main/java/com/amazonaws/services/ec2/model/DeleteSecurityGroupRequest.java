@@ -39,6 +39,11 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     private String groupName;
 
     /**
+     * The ID of the Amazon EC2 security group to delete.
+     */
+    private String groupId;
+
+    /**
      * Default constructor for a new DeleteSecurityGroupRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -90,6 +95,40 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The ID of the Amazon EC2 security group to delete.
+     *
+     * @return The ID of the Amazon EC2 security group to delete.
+     */
+    public String getGroupId() {
+        return groupId;
+    }
+    
+    /**
+     * The ID of the Amazon EC2 security group to delete.
+     *
+     * @param groupId The ID of the Amazon EC2 security group to delete.
+     */
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+    
+    /**
+     * The ID of the Amazon EC2 security group to delete.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param groupId The ID of the Amazon EC2 security group to delete.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DeleteSecurityGroupRequest withGroupId(String groupId) {
+        this.groupId = groupId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -102,6 +141,7 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("GroupName: " + groupName + ", ");
+        sb.append("GroupId: " + groupId + ", ");
         sb.append("}");
         return sb.toString();
     }
