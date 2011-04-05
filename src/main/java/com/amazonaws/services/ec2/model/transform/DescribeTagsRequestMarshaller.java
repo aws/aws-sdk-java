@@ -32,7 +32,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
     public Request<DescribeTagsRequest> marshall(DescribeTagsRequest describeTagsRequest) {
         Request<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeTags");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
 
         if (describeTagsRequest != null) {
             java.util.List<Filter> filtersList = describeTagsRequest.getFilters();

@@ -32,7 +32,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (modifyInstanceAttributeRequest != null) {
             if (modifyInstanceAttributeRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));

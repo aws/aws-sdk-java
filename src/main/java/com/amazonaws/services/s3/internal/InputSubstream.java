@@ -96,7 +96,4 @@ public final class InputSubstream extends FilterInputStream {
 
 		return (int)Math.min(bytesRemaining, super.available());
     }
-
-    @Override
-    public void close() throws IOException {}
 }

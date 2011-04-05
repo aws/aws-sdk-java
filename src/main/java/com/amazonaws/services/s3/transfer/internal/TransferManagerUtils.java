@@ -127,9 +127,7 @@ public class TransferManagerUtils {
      * Convenience method for getting the file specified in a request.
      */
     public static File getRequestFile(final PutObjectRequest putObjectRequest) {
-        // ANDROID_START
         if (putObjectRequest.getFile() != null) return putObjectRequest.getFile();
-        // ANDROID_END
         return null;
     }
 

@@ -32,7 +32,7 @@ public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<
     public Request<ResetImageAttributeRequest> marshall(ResetImageAttributeRequest resetImageAttributeRequest) {
         Request<ResetImageAttributeRequest> request = new DefaultRequest<ResetImageAttributeRequest>(resetImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetImageAttribute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (resetImageAttributeRequest != null) {
             if (resetImageAttributeRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(resetImageAttributeRequest.getImageId()));

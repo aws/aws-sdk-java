@@ -32,7 +32,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
     public Request<DescribeNetworkAclsRequest> marshall(DescribeNetworkAclsRequest describeNetworkAclsRequest) {
         Request<DescribeNetworkAclsRequest> request = new DefaultRequest<DescribeNetworkAclsRequest>(describeNetworkAclsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkAcls");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (describeNetworkAclsRequest != null) {
             java.util.List<String> networkAclIdsList = describeNetworkAclsRequest.getNetworkAclIds();
             int networkAclIdsListIndex = 1;

@@ -139,7 +139,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     private ProgressListener progressListener;
 
     
-	// ANDROID_START
     /**
      * Constructs a new 
      * {@link PutObjectRequest} object to upload a file to the
@@ -161,7 +160,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         this.key = key;
         this.file = file;
     }
-	// ANDROID_END
 
     /**
      * Constructs a new 
@@ -418,7 +416,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         return this;
     }
 
-	// ANDROID_START
     /**
      * Gets the path and name of the file
      * containing the data to be uploaded to Amazon S3.
@@ -436,9 +433,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public File getFile() {
         return file;
     }
-	// ANDROID_END
 
-	// ANDROID_START
     /**
      * Sets the path and name of the file
      * containing the data to be uploaded to Amazon S3.
@@ -457,9 +452,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public void setFile(File file) {
         this.file = file;
     }
-	// ANDROID_END
 
-	// ANDROID_START
     /**
      * Sets the file containing the data to be uploaded to Amazon S3.
      * Returns this {@link PutObjectRequest}, enabling additional method
@@ -483,7 +476,6 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
         setFile(file);
         return this;
     }
-	// ANDROID_END
 
     /**
      * Gets the optional metadata instructing Amazon S3 how to handle the

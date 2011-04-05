@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.util.Iterator;
 import java.util.Map;
@@ -42,19 +43,30 @@ public abstract class AbstractAWSSigner implements Signer {
 
 
     /**
-     * Computes RFC 2104-compliant HMAC signature.
+     * Computes an RFC 2104-compliant HMAC signature.
      */
     protected String sign(String data, String key, SigningAlgorithm algorithm)
             throws AmazonClientException {
-        try {
-            Mac mac = Mac.getInstance(algorithm.toString());
-            mac.init(new SecretKeySpec(key.getBytes(), algorithm.toString()));
-            byte[] signature = Base64.encodeBase64(mac.doFinal(data
-                    .getBytes(DEFAULT_ENCODING)));
-            return new String(signature);
-        } catch (Exception e) {
-            throw new AmazonClientException("Failed to generate signature: " + e.getMessage(), e);
-        }
+    	try {
+			return sign(data.getBytes(DEFAULT_ENCODING), key, algorithm);
+		} catch (UnsupportedEncodingException e) {
+    		throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
+		}
+    }
+
+    /**
+     * Computes an RFC 2104-compliant HMAC signature for an array of bytes.
+     */
+    protected String sign(byte[] data, String key, SigningAlgorithm algorithm)
+    		throws AmazonClientException {
+    	try {
+    		Mac mac = Mac.getInstance(algorithm.toString());
+    		mac.init(new SecretKeySpec(key.getBytes(), algorithm.toString()));
+    		byte[] signature = Base64.encodeBase64(mac.doFinal(data));
+    		return new String(signature);
+    	} catch (Exception e) {
+    		throw new AmazonClientException("Unable to calculate a request signature: " + e.getMessage(), e);
+    	}
     }
 
     protected String getCanonicalizedQueryString(Map<String, String> parameters) {

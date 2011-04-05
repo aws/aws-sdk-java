@@ -193,4 +193,36 @@ public class DefaultRequest<T> implements Request<T> {
 		this.content = content;
 	}
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        builder.append(getHttpMethod().toString() + " ");
+        builder.append(getEndpoint().toString() + " ");
+
+        builder.append("/"
+                + (getResourcePath() != null ? getResourcePath() : "")
+                + " ");
+
+        if (!getParameters().isEmpty()) {
+            builder.append("Parameters: (");
+            for (String key : getParameters().keySet()) {
+                String value = getParameters().get(key);
+                builder.append(key + ": " + value + ", ");
+            }
+            builder.append(") ");
+        }
+
+        if (!getHeaders().isEmpty()) {
+            builder.append("Headers: (");
+            for (String key : getHeaders().keySet()) {
+                String value = getHeaders().get(key);
+                builder.append(key + ": " + value + ", ");
+            }
+            builder.append(") ");
+        }
+
+        return builder.toString();
+    }
+    
 }

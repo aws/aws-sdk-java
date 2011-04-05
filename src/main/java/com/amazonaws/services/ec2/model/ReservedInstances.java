@@ -81,6 +81,17 @@ public class ReservedInstances {
     private java.util.List<Tag> tags;
 
     /**
+     * The tenancy of the reserved instance (ex: default or dedicated).
+     */
+    private String instanceTenancy;
+
+    /**
+     * The currency of the reserved instance. Specified using ISO 4217
+     * standard (e.g., USD, JPY).
+     */
+    private String currencyCode;
+
+    /**
      * The unique ID of the Reserved Instances purchase.
      *
      * @return The unique ID of the Reserved Instances purchase.
@@ -504,6 +515,80 @@ public class ReservedInstances {
     }
     
     /**
+     * The tenancy of the reserved instance (ex: default or dedicated).
+     *
+     * @return The tenancy of the reserved instance (ex: default or dedicated).
+     */
+    public String getInstanceTenancy() {
+        return instanceTenancy;
+    }
+    
+    /**
+     * The tenancy of the reserved instance (ex: default or dedicated).
+     *
+     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     */
+    public void setInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+    }
+    
+    /**
+     * The tenancy of the reserved instance (ex: default or dedicated).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceTenancy The tenancy of the reserved instance (ex: default or dedicated).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstances withInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+        return this;
+    }
+    
+    
+    /**
+     * The currency of the reserved instance. Specified using ISO 4217
+     * standard (e.g., USD, JPY).
+     *
+     * @return The currency of the reserved instance. Specified using ISO 4217
+     *         standard (e.g., USD, JPY).
+     */
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+    
+    /**
+     * The currency of the reserved instance. Specified using ISO 4217
+     * standard (e.g., USD, JPY).
+     *
+     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
+     *         standard (e.g., USD, JPY).
+     */
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+    
+    /**
+     * The currency of the reserved instance. Specified using ISO 4217
+     * standard (e.g., USD, JPY).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param currencyCode The currency of the reserved instance. Specified using ISO 4217
+     *         standard (e.g., USD, JPY).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstances withCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -526,6 +611,8 @@ public class ReservedInstances {
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("State: " + state + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        sb.append("CurrencyCode: " + currencyCode + ", ");
         sb.append("}");
         return sb.toString();
     }

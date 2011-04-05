@@ -32,7 +32,7 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
     public Request<DescribeInternetGatewaysRequest> marshall(DescribeInternetGatewaysRequest describeInternetGatewaysRequest) {
         Request<DescribeInternetGatewaysRequest> request = new DefaultRequest<DescribeInternetGatewaysRequest>(describeInternetGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInternetGateways");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (describeInternetGatewaysRequest != null) {
             java.util.List<String> internetGatewayIdsList = describeInternetGatewaysRequest.getInternetGatewayIds();
             int internetGatewayIdsListIndex = 1;

@@ -32,7 +32,7 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
     public Request<DeleteRouteRequest> marshall(DeleteRouteRequest deleteRouteRequest) {
         Request<DeleteRouteRequest> request = new DefaultRequest<DeleteRouteRequest>(deleteRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRoute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (deleteRouteRequest != null) {
             if (deleteRouteRequest.getRouteTableId() != null) {
                 request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));

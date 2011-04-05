@@ -75,6 +75,14 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     reservedInstancesOffering.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("instanceTenancy", targetDepth)) {
+                    reservedInstancesOffering.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    reservedInstancesOffering.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstancesOffering;

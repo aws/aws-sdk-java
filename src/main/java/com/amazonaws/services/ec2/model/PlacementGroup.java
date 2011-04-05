@@ -25,7 +25,7 @@ package com.amazonaws.services.ec2.model;
 public class PlacementGroup {
 
     /**
-     * The name of the <code>PlacementGroup</code>.
+     * The name of this <code>PlacementGroup</code>.
      */
     private String groupName;
 
@@ -57,36 +57,36 @@ public class PlacementGroup {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param groupName The name of the <code>PlacementGroup</code>.
+     * @param groupName The name of this <code>PlacementGroup</code>.
      */
     public PlacementGroup(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the <code>PlacementGroup</code>.
+     * The name of this <code>PlacementGroup</code>.
      *
-     * @return The name of the <code>PlacementGroup</code>.
+     * @return The name of this <code>PlacementGroup</code>.
      */
     public String getGroupName() {
         return groupName;
     }
     
     /**
-     * The name of the <code>PlacementGroup</code>.
+     * The name of this <code>PlacementGroup</code>.
      *
-     * @param groupName The name of the <code>PlacementGroup</code>.
+     * @param groupName The name of this <code>PlacementGroup</code>.
      */
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
     
     /**
-     * The name of the <code>PlacementGroup</code>.
+     * The name of this <code>PlacementGroup</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param groupName The name of the <code>PlacementGroup</code>.
+     * @param groupName The name of this <code>PlacementGroup</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

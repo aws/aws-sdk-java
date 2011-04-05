@@ -116,6 +116,7 @@ public class XmlResponsesSaxParser {
             if (log.isDebugEnabled()) {
                 log.debug("Parsing XML response document with handler: " + handler.getClass());
             }
+            
             BufferedReader breader = new BufferedReader(new InputStreamReader(inputStream,
                 Constants.DEFAULT_ENCODING));
             xr.setContentHandler(handler);
@@ -750,7 +751,7 @@ public class XmlResponsesSaxParser {
         public void endDocument() {
         }
 
-        public void startElement(String uri, String name, String qName, Attributes attrs) {
+        public void startElement(String uri, String name, String qName, Attributes attrs) {            
             if (name.equals("Owner")) {
                 owner = new Owner();
             } else if (name.equals("AccessControlList")) {
@@ -758,11 +759,12 @@ public class XmlResponsesSaxParser {
                 accessControlList.setOwner(owner);
                 insideACL = true;
             } else if (name.equals("Grantee")) {
-                if ("AmazonCustomerByEmail".equals(attrs.getValue("xsi:type"))) {
+                String type = XmlResponsesSaxParser.findAttributeValue( "xsi:type", attrs );            
+                if ("AmazonCustomerByEmail".equals(type)) {
                     currentGrantee = new EmailAddressGrantee(null);
-                } else if ("CanonicalUser".equals(attrs.getValue("xsi:type"))) {
+                } else if ("CanonicalUser".equals(type)) {
                     currentGrantee = new CanonicalGrantee(null);
-                } else if ("Group".equals(attrs.getValue("xsi:type"))) {
+                } else if ("Group".equals(type)) {
                     /*
                      * Nothing to do for GroupGrantees here since we
                      * can't construct an empty enum value early.
@@ -773,6 +775,7 @@ public class XmlResponsesSaxParser {
 
         public void endElement(String uri, String name, String qName) {
             String elementText = this.currText.toString();
+            
             // Owner details.
             if (name.equals("ID") && !insideACL) {
                 owner.setId(elementText);
@@ -1836,4 +1839,16 @@ public class XmlResponsesSaxParser {
             this.text.append(ch, start, length);
         }
     }
+    
+    
+    private static String findAttributeValue( String qnameToFind, Attributes attrs ) {
+        for ( int i = 0; i < attrs.getLength(); i++ ) {
+            String qname = attrs.getQName( i );
+            if ( qname.trim().equalsIgnoreCase( qnameToFind.trim() ) ) {
+                return attrs.getValue( i );
+            }
+        }
+
+        return null;        
+    } 
 }

@@ -32,7 +32,7 @@ public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRo
     public Request<CreateRouteRequest> marshall(CreateRouteRequest createRouteRequest) {
         Request<CreateRouteRequest> request = new DefaultRequest<CreateRouteRequest>(createRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRoute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (createRouteRequest != null) {
             if (createRouteRequest.getRouteTableId() != null) {
                 request.addParameter("RouteTableId", StringUtils.fromString(createRouteRequest.getRouteTableId()));

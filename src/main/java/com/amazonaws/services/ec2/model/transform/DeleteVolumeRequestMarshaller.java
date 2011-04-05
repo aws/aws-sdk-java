@@ -32,7 +32,7 @@ public class DeleteVolumeRequestMarshaller implements Marshaller<Request<DeleteV
     public Request<DeleteVolumeRequest> marshall(DeleteVolumeRequest deleteVolumeRequest) {
         Request<DeleteVolumeRequest> request = new DefaultRequest<DeleteVolumeRequest>(deleteVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVolume");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (deleteVolumeRequest != null) {
             if (deleteVolumeRequest.getVolumeId() != null) {
                 request.addParameter("VolumeId", StringUtils.fromString(deleteVolumeRequest.getVolumeId()));

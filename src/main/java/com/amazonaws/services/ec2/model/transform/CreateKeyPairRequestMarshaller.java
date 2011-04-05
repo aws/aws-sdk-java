@@ -32,7 +32,7 @@ public class CreateKeyPairRequestMarshaller implements Marshaller<Request<Create
     public Request<CreateKeyPairRequest> marshall(CreateKeyPairRequest createKeyPairRequest) {
         Request<CreateKeyPairRequest> request = new DefaultRequest<CreateKeyPairRequest>(createKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "CreateKeyPair");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (createKeyPairRequest != null) {
             if (createKeyPairRequest.getKeyName() != null) {
                 request.addParameter("KeyName", StringUtils.fromString(createKeyPairRequest.getKeyName()));

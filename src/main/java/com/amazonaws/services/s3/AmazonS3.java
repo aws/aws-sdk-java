@@ -1690,7 +1690,6 @@ public interface AmazonS3 {
             throws AmazonClientException, AmazonServiceException;
 
 
-	// ANDROID_START
     /**
      * <p>
      * Gets the object metadata for the object stored
@@ -1744,7 +1743,6 @@ public interface AmazonS3 {
      */
     public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
             throws AmazonClientException, AmazonServiceException;
-	// ANDROID_END
 
     /**
      * <p>
@@ -1897,7 +1895,6 @@ public interface AmazonS3 {
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
-	// ANDROID_START
     /**
      * <p>
      * Uploads the specified file to Amazon S3 under the specified bucket and
@@ -1971,7 +1968,6 @@ public interface AmazonS3 {
      */
     public PutObjectResult putObject(String bucketName, String key, File file)
             throws AmazonClientException, AmazonServiceException;
-	// ANDROID_END
 
     /**
      * <p>

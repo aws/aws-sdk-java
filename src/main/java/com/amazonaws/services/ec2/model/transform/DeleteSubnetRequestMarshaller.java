@@ -32,7 +32,7 @@ public class DeleteSubnetRequestMarshaller implements Marshaller<Request<DeleteS
     public Request<DeleteSubnetRequest> marshall(DeleteSubnetRequest deleteSubnetRequest) {
         Request<DeleteSubnetRequest> request = new DefaultRequest<DeleteSubnetRequest>(deleteSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSubnet");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (deleteSubnetRequest != null) {
             if (deleteSubnetRequest.getSubnetId() != null) {
                 request.addParameter("SubnetId", StringUtils.fromString(deleteSubnetRequest.getSubnetId()));

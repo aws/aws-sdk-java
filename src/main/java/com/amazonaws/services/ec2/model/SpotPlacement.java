@@ -20,7 +20,7 @@ package com.amazonaws.services.ec2.model;
  * EC2 region.
  * </p>
  */
-public class Placement {
+public class SpotPlacement {
 
     /**
      * The availability zone in which an Amazon EC2 instance runs.
@@ -36,27 +36,20 @@ public class Placement {
     private String groupName;
 
     /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
-     */
-    private String tenancy;
-
-    /**
-     * Default constructor for a new Placement object.  Callers should use the
+     * Default constructor for a new SpotPlacement object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
-    public Placement() {}
+    public SpotPlacement() {}
     
     /**
-     * Constructs a new Placement object.
+     * Constructs a new SpotPlacement object.
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
      * @param availabilityZone The availability zone in which an Amazon EC2
      * instance runs.
      */
-    public Placement(String availabilityZone) {
+    public SpotPlacement(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
@@ -88,7 +81,7 @@ public class Placement {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public Placement withAvailabilityZone(String availabilityZone) {
+    public SpotPlacement withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
         return this;
     }
@@ -140,54 +133,8 @@ public class Placement {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public Placement withGroupName(String groupName) {
+    public SpotPlacement withGroupName(String groupName) {
         this.groupName = groupName;
-        return this;
-    }
-    
-    
-    /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
-     *
-     * @return The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
-     */
-    public String getTenancy() {
-        return tenancy;
-    }
-    
-    /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
-     *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
-     */
-    public void setTenancy(String tenancy) {
-        this.tenancy = tenancy;
-    }
-    
-    /**
-     * The allowed tenancy of instances launched into the VPC. A value of
-     * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
-     *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public Placement withTenancy(String tenancy) {
-        this.tenancy = tenancy;
         return this;
     }
     
@@ -206,7 +153,6 @@ public class Placement {
         sb.append("{");
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("GroupName: " + groupName + ", ");
-        sb.append("Tenancy: " + tenancy + ", ");
         sb.append("}");
         return sb.toString();
     }

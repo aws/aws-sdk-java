@@ -32,7 +32,7 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
     public Request<ReplaceRouteRequest> marshall(ReplaceRouteRequest replaceRouteRequest) {
         Request<ReplaceRouteRequest> request = new DefaultRequest<ReplaceRouteRequest>(replaceRouteRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceRoute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (replaceRouteRequest != null) {
             if (replaceRouteRequest.getRouteTableId() != null) {
                 request.addParameter("RouteTableId", StringUtils.fromString(replaceRouteRequest.getRouteTableId()));

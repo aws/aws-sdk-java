@@ -91,6 +91,14 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     reservedInstances.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("instanceTenancy", targetDepth)) {
+                    reservedInstances.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("currencyCode", targetDepth)) {
+                    reservedInstances.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;

@@ -76,7 +76,7 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     continue;
                 }
                 if (context.testExpression("placement", targetDepth)) {
-                    launchSpecification.setPlacement(PlacementStaxUnmarshaller.getInstance().unmarshall(context));
+                    launchSpecification.setPlacement(SpotPlacementStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("kernelId", targetDepth)) {

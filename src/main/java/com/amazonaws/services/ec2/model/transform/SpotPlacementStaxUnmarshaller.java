@@ -28,14 +28,14 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Placement StAX Unmarshaller
+ * Spot Placement StAX Unmarshaller
  */
-public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUnmarshallerContext> {
+public class SpotPlacementStaxUnmarshaller implements Unmarshaller<SpotPlacement, StaxUnmarshallerContext> {
 
     
 
-    public Placement unmarshall(StaxUnmarshallerContext context) throws Exception {
-        Placement placement = new Placement();
+    public SpotPlacement unmarshall(StaxUnmarshallerContext context) throws Exception {
+        SpotPlacement spotPlacement = new SpotPlacement();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
@@ -44,32 +44,28 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return placement;
+            if (xmlEvent.isEndDocument()) return spotPlacement;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
                 if (context.testExpression("availabilityZone", targetDepth)) {
-                    placement.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotPlacement.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("groupName", targetDepth)) {
-                    placement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("tenancy", targetDepth)) {
-                    placement.setTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    spotPlacement.setGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return placement;
+                    return spotPlacement;
                 }
             }
         }
     }
 
-    private static PlacementStaxUnmarshaller instance;
-    public static PlacementStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new PlacementStaxUnmarshaller();
+    private static SpotPlacementStaxUnmarshaller instance;
+    public static SpotPlacementStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new SpotPlacementStaxUnmarshaller();
         return instance;
     }
 }

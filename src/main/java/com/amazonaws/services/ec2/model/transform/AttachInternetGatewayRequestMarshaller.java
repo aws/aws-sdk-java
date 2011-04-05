@@ -32,7 +32,7 @@ public class AttachInternetGatewayRequestMarshaller implements Marshaller<Reques
     public Request<AttachInternetGatewayRequest> marshall(AttachInternetGatewayRequest attachInternetGatewayRequest) {
         Request<AttachInternetGatewayRequest> request = new DefaultRequest<AttachInternetGatewayRequest>(attachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachInternetGateway");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (attachInternetGatewayRequest != null) {
             if (attachInternetGatewayRequest.getInternetGatewayId() != null) {
                 request.addParameter("InternetGatewayId", StringUtils.fromString(attachInternetGatewayRequest.getInternetGatewayId()));

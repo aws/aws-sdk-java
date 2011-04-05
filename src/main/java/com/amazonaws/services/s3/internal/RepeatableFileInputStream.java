@@ -128,7 +128,7 @@ public class RepeatableFileInputStream extends InputStream {
 
     @Override
 	public long skip(long n) throws IOException {
-		long skipped = super.skip(n);
+		long skipped = fis.skip(n);
 		bytesReadPastMarkPoint += skipped;
 		return skipped;
 	}

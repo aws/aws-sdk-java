@@ -63,6 +63,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     private java.util.List<Filter> filters;
 
     /**
+     * The tenancy of the Reserved Instance offering. A Reserved Instance
+     * with tenancy of dedicated will run on single-tenant hardware and can
+     * only be launched within a VPC.
+     */
+    private String instanceTenancy;
+
+    /**
      * An optional list of the unique IDs of the Reserved Instance offerings
      * to describe.
      *
@@ -344,6 +351,52 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     }
     
     /**
+     * The tenancy of the Reserved Instance offering. A Reserved Instance
+     * with tenancy of dedicated will run on single-tenant hardware and can
+     * only be launched within a VPC.
+     *
+     * @return The tenancy of the Reserved Instance offering. A Reserved Instance
+     *         with tenancy of dedicated will run on single-tenant hardware and can
+     *         only be launched within a VPC.
+     */
+    public String getInstanceTenancy() {
+        return instanceTenancy;
+    }
+    
+    /**
+     * The tenancy of the Reserved Instance offering. A Reserved Instance
+     * with tenancy of dedicated will run on single-tenant hardware and can
+     * only be launched within a VPC.
+     *
+     * @param instanceTenancy The tenancy of the Reserved Instance offering. A Reserved Instance
+     *         with tenancy of dedicated will run on single-tenant hardware and can
+     *         only be launched within a VPC.
+     */
+    public void setInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+    }
+    
+    /**
+     * The tenancy of the Reserved Instance offering. A Reserved Instance
+     * with tenancy of dedicated will run on single-tenant hardware and can
+     * only be launched within a VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceTenancy The tenancy of the Reserved Instance offering. A Reserved Instance
+     *         with tenancy of dedicated will run on single-tenant hardware and can
+     *         only be launched within a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesOfferingsRequest withInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -360,6 +413,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("Filters: " + filters + ", ");
+        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
         sb.append("}");
         return sb.toString();
     }

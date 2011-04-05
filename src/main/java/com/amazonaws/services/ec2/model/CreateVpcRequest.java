@@ -40,6 +40,13 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     private String cidrBlock;
 
     /**
+     * The allowed tenancy of instances launched into the VPC. A value of
+     * default means instances can be launched with any tenancy; a value of
+     * dedicated means instances must be launched with tenancy as dedicated.
+     */
+    private String instanceTenancy;
+
+    /**
      * Default constructor for a new CreateVpcRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -91,6 +98,52 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The allowed tenancy of instances launched into the VPC. A value of
+     * default means instances can be launched with any tenancy; a value of
+     * dedicated means instances must be launched with tenancy as dedicated.
+     *
+     * @return The allowed tenancy of instances launched into the VPC. A value of
+     *         default means instances can be launched with any tenancy; a value of
+     *         dedicated means instances must be launched with tenancy as dedicated.
+     */
+    public String getInstanceTenancy() {
+        return instanceTenancy;
+    }
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC. A value of
+     * default means instances can be launched with any tenancy; a value of
+     * dedicated means instances must be launched with tenancy as dedicated.
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC. A value of
+     *         default means instances can be launched with any tenancy; a value of
+     *         dedicated means instances must be launched with tenancy as dedicated.
+     */
+    public void setInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+    }
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC. A value of
+     * default means instances can be launched with any tenancy; a value of
+     * dedicated means instances must be launched with tenancy as dedicated.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC. A value of
+     *         default means instances can be launched with any tenancy; a value of
+     *         dedicated means instances must be launched with tenancy as dedicated.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateVpcRequest withInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -103,6 +156,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("CidrBlock: " + cidrBlock + ", ");
+        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
         sb.append("}");
         return sb.toString();
     }

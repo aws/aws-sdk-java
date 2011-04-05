@@ -32,7 +32,7 @@ public class DescribeImageAttributeRequestMarshaller implements Marshaller<Reque
     public Request<DescribeImageAttributeRequest> marshall(DescribeImageAttributeRequest describeImageAttributeRequest) {
         Request<DescribeImageAttributeRequest> request = new DefaultRequest<DescribeImageAttributeRequest>(describeImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImageAttribute");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (describeImageAttributeRequest != null) {
             if (describeImageAttributeRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(describeImageAttributeRequest.getImageId()));

@@ -32,7 +32,7 @@ public class MonitorInstancesRequestMarshaller implements Marshaller<Request<Mon
     public Request<MonitorInstancesRequest> marshall(MonitorInstancesRequest monitorInstancesRequest) {
         Request<MonitorInstancesRequest> request = new DefaultRequest<MonitorInstancesRequest>(monitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "MonitorInstances");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
         if (monitorInstancesRequest != null) {
             java.util.List<String> instanceIdsList = monitorInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;

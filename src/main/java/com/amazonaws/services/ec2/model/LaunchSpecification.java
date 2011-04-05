@@ -65,7 +65,7 @@ public class LaunchSpecification {
     /**
      * Defines a placement item.
      */
-    private Placement placement;
+    private SpotPlacement placement;
 
     /**
      * Specifies the ID of the kernel to select.
@@ -429,7 +429,7 @@ public class LaunchSpecification {
      *
      * @return Defines a placement item.
      */
-    public Placement getPlacement() {
+    public SpotPlacement getPlacement() {
         return placement;
     }
     
@@ -438,7 +438,7 @@ public class LaunchSpecification {
      *
      * @param placement Defines a placement item.
      */
-    public void setPlacement(Placement placement) {
+    public void setPlacement(SpotPlacement placement) {
         this.placement = placement;
     }
     
@@ -452,7 +452,7 @@ public class LaunchSpecification {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public LaunchSpecification withPlacement(Placement placement) {
+    public LaunchSpecification withPlacement(SpotPlacement placement) {
         this.placement = placement;
         return this;
     }

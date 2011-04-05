@@ -14,10 +14,13 @@
  */
 package com.amazonaws.auth;
 
+import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
-import java.util.Locale;
+import java.util.List;
 import java.util.Map;
 import java.util.SortedMap;
 import java.util.TreeMap;
@@ -29,6 +32,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.HttpUtils;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -40,8 +44,10 @@ public class AWS3Signer extends AbstractAWSSigner {
     private static final String HTTP_SCHEME = "AWS3";
     private static final String HTTPS_SCHEME = "AWS3-HTTPS";
 
-    protected static final DateUtils dateUtils = new DateUtils();
+    /** For internal testing only - allows the request's date to be overridden for testing. */
+    private String overriddenDate;
 
+    protected static final DateUtils dateUtils = new DateUtils();
     private static final Log log = LogFactory.getLog(AWS3Signer.class);
 
 
@@ -59,72 +65,137 @@ public class AWS3Signer extends AbstractAWSSigner {
         String date = dateUtils.formatRfc822Date(new Date());
         boolean isHttps = isHttpsRequest(request);
 
+        if (overriddenDate != null) date = overriddenDate;
+        request.addHeader("Date", date);
+        request.addHeader("X-Amz-Date", date);
+
+        // AWS3 HTTP requires that we sign the Host header
+        // so we have to have it in the request by the time we sign.
+        String hostHeader = request.getEndpoint().getHost();
+        if (HttpUtils.isUsingNonDefaultPort(request.getEndpoint())) {
+            hostHeader += ":" + request.getEndpoint().getPort();
+        }
+        request.addHeader("Host", hostHeader);
+
+
+        byte[] bytesToSign;
         String stringToSign;
         if (isHttps) {
+        	request.addHeader(NONCE_HEADER, nonce);
             stringToSign = date + nonce;
+            bytesToSign = stringToSign.getBytes();
         } else {
             stringToSign = "POST\n"
-                + getCanonicalizedEndpoint(request.getEndpoint()) + "\n"
                 + getCanonicalizedResourcePath(request.getEndpoint()) + "\n"
                 + getCanonicalizedQueryString(request.getParameters()) + "\n"
                 + getCanonicalizedHeadersForStringToSign(request) + "\n"
-                + ""; // we shouldn't ever have a payload in a request yet
-            stringToSign = hash(stringToSign);
+                + getRequestPayload(request);
+            bytesToSign = hash(stringToSign);
         }
         log.debug("Calculated StringToSign: " + stringToSign);
 
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
-        String signature = sign(stringToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
+        String signature = sign(bytesToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
 
         StringBuilder builder = new StringBuilder();
         builder.append(isHttps ? HTTPS_SCHEME : HTTP_SCHEME).append(" ");
         builder.append("AWSAccessKeyId=" + sanitizedCredentials.getAWSAccessKeyId() + ",");
         builder.append("Algorithm=" + algorithm.toString() + ",");
-        builder.append("Signature=" + signature);
 
+        if (!isHttps) {
+        	builder.append(getSignedHeadersComponent(request) + ",");
+        }
+
+        builder.append("Signature=" + signature);
         request.addHeader(AUTHORIZATION_HEADER, builder.toString());
-        request.addHeader(NONCE_HEADER, nonce);
-        request.addHeader("Date", date);
     }
 
-    private String hash(String text) throws AmazonClientException {
+    private String getRequestPayload(Request<?> request) {
+        try {
+        	InputStream content = request.getContent();
+        	if (!content.markSupported()) {
+        		throw new AmazonClientException("Unable to read request payload to sign request.");
+        	}
+
+        	StringBuilder sb = new StringBuilder();
+        	content.mark(-1);
+        	int b;
+        	while ((b = content.read()) > -1) {
+        		sb.append((char)b);
+        	}
+        	content.reset();
+            return sb.toString();
+        } catch (Exception e) {
+        	throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+        }
+    }
+
+    private String getSignedHeadersComponent(Request<?> request) {
+    	StringBuilder builder = new StringBuilder();
+    	builder.append("SignedHeaders=");
+    	boolean first = true;
+    	for (String header : getHeadersForStringToSign(request)) {
+    		if (!first) builder.append(";");
+    		builder.append(header);
+    		first = false;
+    	}
+    	return builder.toString();
+    }
+
+    private byte[] hash(String text) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(text.getBytes());
-            return toHex(md.digest());
+            return md.digest();
         } catch (Exception e) {
             throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
         }
     }
 
-    private String toHex(byte[] data) {
-        StringBuilder sb = new StringBuilder(data.length * 2);
-        for (int i = 0; i < data.length; i++) {
-            String hex = Integer.toHexString(data[i]);
-            if (hex.length() == 1) {
-                // Append leading zero.
-                sb.append("0");
-            } else if (hex.length() == 8) {
-                // Remove ff prefix from negative numbers.
-                hex = hex.substring(6);
+    protected List<String> getHeadersForStringToSign(Request<?> request) {
+        List<String> headersToSign = new ArrayList<String>();
+        for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
+            String key = entry.getKey();
+            String lowerCaseKey = key.toLowerCase();
+            if (lowerCaseKey.startsWith("x-amz")
+            		|| lowerCaseKey.equals("content-encoding")
+            		|| lowerCaseKey.equals("host")) {
+            	headersToSign.add(key);
             }
-            sb.append(hex);
         }
-        return sb.toString().toLowerCase(Locale.getDefault());
+
+        Collections.sort(headersToSign);
+        return headersToSign;
+    }
+
+	/**
+	 * For internal testing only - allows the date to be overridden for internal
+	 * tests.
+	 *
+	 * @param date
+	 *            The RFC822 date string to use when signing requests.
+	 */
+    void overrideDate(String date) {
+		this.overriddenDate = date;
     }
 
     protected String getCanonicalizedHeadersForStringToSign(Request<?> request) {
+    	List<String> headersToSign = getHeadersForStringToSign(request);
+
+    	for (int i = 0; i < headersToSign.size(); i++) {
+    		headersToSign.set(i, headersToSign.get(i).toLowerCase());
+    	}
+
         SortedMap<String, String> sortedHeaderMap = new TreeMap<String, String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
-            String key = entry.getKey().toLowerCase();
-            if (key.startsWith("x-amz") || key.equals("date") || key.equals("content-length")) {
-                sortedHeaderMap.put(key, entry.getValue());
-            }
+        	if (headersToSign.contains(entry.getKey().toLowerCase())) {
+        		sortedHeaderMap.put(entry.getKey(), entry.getValue());
+        	}
         }
 
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, String> entry : sortedHeaderMap.entrySet()) {
-            builder.append(entry.getKey()).append(":")
+            builder.append(entry.getKey().toLowerCase()).append(":")
                    .append(entry.getValue()).append("\n");
         }
 

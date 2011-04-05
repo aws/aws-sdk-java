@@ -50,6 +50,11 @@ public class Vpc {
     private java.util.List<Tag> tags;
 
     /**
+     * The allowed tenancy of instances launched into the VPC.
+     */
+    private String instanceTenancy;
+
+    /**
      * Specifies the ID of the VPC.
      *
      * @return Specifies the ID of the VPC.
@@ -266,6 +271,40 @@ public class Vpc {
     }
     
     /**
+     * The allowed tenancy of instances launched into the VPC.
+     *
+     * @return The allowed tenancy of instances launched into the VPC.
+     */
+    public String getInstanceTenancy() {
+        return instanceTenancy;
+    }
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC.
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     */
+    public void setInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+    }
+    
+    /**
+     * The allowed tenancy of instances launched into the VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceTenancy The allowed tenancy of instances launched into the VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Vpc withInstanceTenancy(String instanceTenancy) {
+        this.instanceTenancy = instanceTenancy;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -282,6 +321,7 @@ public class Vpc {
         sb.append("CidrBlock: " + cidrBlock + ", ");
         sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
         sb.append("}");
         return sb.toString();
     }

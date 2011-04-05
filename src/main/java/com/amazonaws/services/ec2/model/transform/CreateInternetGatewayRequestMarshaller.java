@@ -32,7 +32,7 @@ public class CreateInternetGatewayRequestMarshaller implements Marshaller<Reques
     public Request<CreateInternetGatewayRequest> marshall(CreateInternetGatewayRequest createInternetGatewayRequest) {
         Request<CreateInternetGatewayRequest> request = new DefaultRequest<CreateInternetGatewayRequest>(createInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateInternetGateway");
-        request.addParameter("Version", "2011-01-01");
+        request.addParameter("Version", "2011-02-28");
 
 
         return request;

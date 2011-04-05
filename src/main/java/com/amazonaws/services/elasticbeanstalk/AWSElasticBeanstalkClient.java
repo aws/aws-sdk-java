@@ -130,7 +130,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         exceptionUnmarshallers.add(new InvalidParameterCombinationExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("clearbox.us-east-1.amazonaws.com");
+        setEndpoint("elasticbeanstalk.us-east-1.amazonaws.com");
 
         signer = new QueryStringSigner();
 

@@ -55,6 +55,10 @@ public class StringUtils {
         return Boolean.toString(value);
     }
 
+    public static String fromFloat(Float value) {
+        return Float.toString(value);
+    }
+
     /**
      * Converts the specified date to an ISO 8601 timestamp string and returns
      * it.
