@@ -59,7 +59,7 @@ import com.amazonaws.services.cloudformation.model.*;
 public interface AmazonCloudFormation {
 
     /**
-     * Overrides the default endpoint for this client ("https://stackbuilder.amazonaws.com").
+     * Overrides the default endpoint for this client ("https://cloudformation.us-east-1.amazonaws.com").
      * Callers can use this method to control which AWS region they want to work with.
      * <p>
      * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full

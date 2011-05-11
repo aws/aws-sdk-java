@@ -78,7 +78,7 @@ public class InstanceGroupDetail {
      * State of instance group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, RUNNING, SHUTTING_DOWN, TERMINATED, FAILED
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      */
     private String state;
 
@@ -450,7 +450,7 @@ public class InstanceGroupDetail {
      * State of instance group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, RUNNING, SHUTTING_DOWN, TERMINATED, FAILED
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
      * @return State of instance group.
      *
@@ -464,7 +464,7 @@ public class InstanceGroupDetail {
      * State of instance group.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, RUNNING, SHUTTING_DOWN, TERMINATED, FAILED
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
      * @param state State of instance group.
      *
@@ -480,7 +480,7 @@ public class InstanceGroupDetail {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>PROVISIONING, STARTING, RUNNING, SHUTTING_DOWN, TERMINATED, FAILED
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
      * @param state State of instance group.
      *

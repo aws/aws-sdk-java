@@ -118,6 +118,11 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                 }
             }
             if (instances != null) {
+                if (instances.isTerminationProtected() != null) {
+                    request.addParameter("Instances.TerminationProtected", StringUtils.fromBoolean(instances.isTerminationProtected()));
+                }
+            }
+            if (instances != null) {
                 if (instances.getHadoopVersion() != null) {
                     request.addParameter("Instances.HadoopVersion", StringUtils.fromString(instances.getHadoopVersion()));
                 }

@@ -101,6 +101,14 @@ public class RestUtils {
             interestingHeaders.put("content-md5", "");
         }
 
+        // Any parameters that are prefixed with "x-amz-" need to be included
+        // in the headers section of the canonical string to sign
+        for (Map.Entry<String, String> parameter: request.getParameters().entrySet()) {
+            if (parameter.getKey().startsWith("x-amz-")) {
+                interestingHeaders.put(parameter.getKey(), parameter.getValue());
+            }
+        }
+
         // Add all the interesting headers (i.e.: all that startwith x-amz- ;-))
         for (Iterator<Map.Entry<String, String>> i = interestingHeaders.entrySet().iterator(); i.hasNext(); ) {
             Map.Entry<String, String> entry = (Map.Entry<String, String>) i.next();
@@ -123,7 +131,7 @@ public class RestUtils {
         char separator = '?';
         for (String parameterName : parameterNames) {
             // Skip any parameters that aren't part of the canonical signed string
-            if (SIGNED_PARAMETERS.contains(parameterName) == false) continue;
+        	if (SIGNED_PARAMETERS.contains(parameterName) == false) continue;
 
             buf.append(separator);
             buf.append(parameterName);

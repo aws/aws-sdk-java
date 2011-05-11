@@ -40,27 +40,13 @@ public class CountingInputStream extends FilterInputStream {
     @Override
     public int read() throws IOException {
         int tmp = super.read();
-        byteCount += tmp >= 0 ? tmp : 0;
+        byteCount += tmp >= 0 ? 1 : 0;
         return tmp;
     }
 
     @Override
     public int read(byte[] b, int off, int len) throws IOException {
         int tmp = super.read(b, off, len);
-        byteCount += tmp >= 0 ? tmp : 0;
-        return tmp;
-    }
-
-    @Override
-    public int read(byte[] b) throws IOException {
-        int tmp = super.read(b);
-        byteCount += tmp >= 0 ? tmp : 0;
-        return tmp;
-    }
-
-    @Override
-    public long skip(long n) throws IOException {
-        long tmp = super.skip(n);
         byteCount += tmp >= 0 ? tmp : 0;
         return tmp;
     }

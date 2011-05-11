@@ -77,10 +77,13 @@ public class UploadPartRequestFactory {
                 .withPartSize(partSize);
         }
 
-        request.setProgressListener(putObjectRequest.getProgressListener());
-
         offset += partSize;
         remainingBytes -= partSize;
+
+        boolean isLastPart = (remainingBytes <= 0);
+        request.setLastPart(isLastPart);
+        request.setProgressListener(putObjectRequest.getProgressListener());
+
         return request;
     }
 }

@@ -16,12 +16,32 @@ package com.amazonaws.http;
 
 import java.util.List;
 
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.util.TimingInfo;
 
 public class ExecutionContext {
-	public List<RequestHandler> requestHandlers;
+	private List<RequestHandler> requestHandlers;
+	private String contextUserAgent;
+	private TimingInfo timingInfo;
 
-	public ExecutionContext() {}
+	/** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
+	private Signer signer;
+
+	/** Optional credentials to enable the runtime layer to handle signing requests (and resigning on retries). */
+	private AWSCredentials credentials;
+
+
+    public String getContextUserAgent() {
+        return contextUserAgent;
+    }
+
+    public void setContextUserAgent(String contextUserAgent) {
+        this.contextUserAgent = contextUserAgent;
+    }
+
+    public ExecutionContext() {}
 
 	public ExecutionContext(List<RequestHandler> requestHandlers) {
 		this.requestHandlers = requestHandlers;
@@ -36,4 +56,56 @@ public class ExecutionContext {
 	public List<RequestHandler> getRequestHandlers() {
 		return requestHandlers;
 	}
+
+	public TimingInfo getTimingInfo() {
+		return timingInfo;
+	}
+
+	public void setTimingInfo(TimingInfo timingInfo) {
+		this.timingInfo = timingInfo;
+	}
+
+	/**
+	 * Returns the optional signer used to sign the associated request.
+	 *
+	 * @return The optional signer used to sign the associated request.
+	 */
+	public Signer getSigner() {
+		return signer;
+	}
+
+	/**
+	 * Sets the optional signer used to sign the associated request. If no
+	 * signer is specified as part of a request's ExecutionContext, then the
+	 * runtime layer will not attempt to sign (or resign on retries) requests.
+	 *
+	 * @param signer
+	 *            The optional signer used to sign the associated request.
+	 */
+	public void setSigner(Signer signer) {
+		this.signer = signer;
+	}
+
+	/**
+	 * Returns the optional credentials used to sign the associated request.
+	 *
+	 * @return The optional credentials used to sign the associated request.
+	 */
+	public AWSCredentials getCredentials() {
+		return credentials;
+	}
+
+	/**
+	 * Sets the optional credentials used to sign the associated request. If no
+	 * credentials are specified as part of a request's ExecutionContext, then
+	 * the runtime layer will not attempt to sign (or resign on retries)
+	 * requests.
+	 *
+	 * @param credentials
+	 *            The optional credentials used to sign the associated request.
+	 */
+	public void setCredentials(AWSCredentials credentials) {
+		this.credentials = credentials;
+	}
+
 }

@@ -31,7 +31,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
 
     /**
      * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
+     * the user's AWS account. The maximum length is 255 characters.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -66,13 +66,13 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
 
     /**
      * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
+     * the user's AWS account. The maximum length is 255 characters.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @return The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
+     *         the user's AWS account. The maximum length is 255 characters.
      */
     public String getAlarmName() {
         return alarmName;
@@ -80,13 +80,13 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     
     /**
      * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
+     * the user's AWS account. The maximum length is 255 characters.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @param alarmName The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
+     *         the user's AWS account. The maximum length is 255 characters.
      */
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
@@ -94,7 +94,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     
     /**
      * The descriptive name for the alarm. This name must be unique within
-     * the user's AWS account
+     * the user's AWS account. The maximum length is 255 characters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -102,7 +102,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param alarmName The descriptive name for the alarm. This name must be unique within
-     *         the user's AWS account
+     *         the user's AWS account. The maximum length is 255 characters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

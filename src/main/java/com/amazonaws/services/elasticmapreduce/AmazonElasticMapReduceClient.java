@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWS3Signer;
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -44,9 +44,16 @@ import com.amazonaws.services.elasticmapreduce.model.transform.*;
  * completes.
  * <p>
  * <p>
- * This is the Amazon Elastic MapReduce API Reference Guide. This guide
- * is for programmers who need detailed information about the Amazon
- * Elastic MapReduce APIs.
+ * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
+ * guide provides descriptions and samples of the Amazon Elastic
+ * MapReduce APIs.
+ * </p>
+ * <p>
+ * Amazon Elastic MapReduce is a web service that makes it easy to
+ * process large amounts of data efficiently. Elastic MapReduce uses
+ * Hadoop processing combined with several AWS products to do tasks such
+ * as web indexing, data mining, log file analysis, machine learning,
+ * scientific simulation, and data warehousing.
  * </p>
  */
 public class AmazonElasticMapReduceClient extends AmazonWebServiceClient implements AmazonElasticMapReduce {
@@ -62,8 +69,6 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
 
-    /** Optional request handlers for additional request processing. */
-    private final List<RequestHandler> requestHandlers;
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
@@ -112,20 +117,8 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         signer = new QueryStringSigner();
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers = Collections.synchronizedList(chainFactory.newRequestHandlerChain(
+		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/elasticmapreduce/request.handlers"));
-    }
-
-	/**
-	 * Appends a request handler to the list of registered handlers that are run
-	 * as part of a request's lifecycle.
-	 *
-	 * @param requestHandler
-	 *            The new handler to add to the current list of request
-	 *            handlers.
-	 */
-    public void addRequestHandler(RequestHandler requestHandler) {
-    	requestHandlers.add(requestHandler);
     }
 
     
@@ -177,7 +170,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * </p>
      * <p>
      * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
+     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
      * </p>
      *
      * @param addJobFlowStepsRequest Container for the necessary parameters
@@ -249,9 +242,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
      * the following states: <code>RUNNING</code> ,
-     * 
      * <code>WAITING</code> ,
-     * 
      * <code>SHUTTING_DOWN</code> ,
      * 
      * <code>STARTING</code> </li>
@@ -287,14 +278,70 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
     
     /**
      * <p>
+     * SetTerminationProtection locks a job flow so the Amazon EC2 instances
+     * in the cluster cannot be terminated by user intervention, an API call,
+     * or in the event of a job-flow error. The cluster still terminates upon
+     * successful completion of the job flow. Calling
+     * SetTerminationProtection on a job flow is analogous to calling the
+     * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
+     * cluster.
+     * </p>
+     * <p>
+     * SetTerminationProtection is used to prevent accidental termination of
+     * a job flow and to ensure that in the event of an error, the instances
+     * will persist so you can recover any data stored in their ephemeral
+     * instance storage.
+     * </p>
+     * <p>
+     * To terminate a job flow that has been locked by setting
+     * SetTerminationProtection to <code>true</code> ,
+     * you must first unlock the job flow by a subsequent call to
+     * SetTerminationProtection in which you set the value to
+     * <code>false</code> .
+     * </p>
+     * <p>
+     * For more information, go to <a
+     * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+     * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * </p>
+     *
+     * @param setTerminationProtectionRequest Container for the necessary
+     *           parameters to execute the SetTerminationProtection service method on
+     *           AmazonElasticMapReduce.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void setTerminationProtection(SetTerminationProtectionRequest setTerminationProtectionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<SetTerminationProtectionRequest> request = new SetTerminationProtectionRequestMarshaller().marshall(setTerminationProtectionRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * RunJobFlow creates and starts running a new job flow. The job flow
      * will run the steps specified. Once the job flow completes, the cluster
      * is stopped and the HDFS partition is lost. To prevent loss of data,
-     * configure the last step of the job flow to store results in Amazon
-     * S3. If the JobFlowInstancesDetail : KeepJobFlowAliveWhenNoSteps
+     * configure the last step of the job flow to store results in Amazon S3.
+     * If the JobFlowInstancesDetail <code>KeepJobFlowAliveWhenNoSteps</code>
      * parameter is set to <code>TRUE</code> , the job flow will transition
      * to the WAITING state rather than shutting down once the steps have
      * completed.
+     * </p>
+     * <p>
+     * For additional protection, you can set the JobFlowInstancesDetail
+     * <code>TerminationProtected</code> parameter to <code>TRUE</code> to
+     * lock the job flow and prevent it from being terminated by API call,
+     * user intervention, or in the event of a job flow error.
      * </p>
      * <p>
      * A maximum of 256 steps are allowed in each job flow.
@@ -374,9 +421,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <li>Job flows created and completed in the last two weeks</li>
      * <li> Job flows created within the last two months that are in one of
      * the following states: <code>RUNNING</code> ,
-     * 
      * <code>WAITING</code> ,
-     * 
      * <code>SHUTTING_DOWN</code> ,
      * 
      * <code>STARTING</code> </li>
@@ -471,7 +516,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
-        ExecutionContext executionContext = new ExecutionContext(requestHandlers);
+        ExecutionContext executionContext = createExecutionContext();
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

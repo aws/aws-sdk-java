@@ -82,7 +82,20 @@ public enum Region {
      * creating a bucket in this region.
      * </p>
      */
-    AP_Singapore("ap-southeast-1");
+    AP_Singapore("ap-southeast-1"),
+
+	/**
+	 * The Asia Pacific (Tokyo) Region. This region uses Amazon S3 servers
+	 * located in Tokyo.
+	 * <p>
+	 * When using buckets in this region, optionally set the client endpoint to
+	 * <code>s3-ap-northeast-1.amazonaws.com</code> on all requests to these
+	 * buckets to reduce any latency experienced after the first hour of
+	 * creating a bucket in this region.
+	 * </p>
+	 */
+    AP_Tokyo("ap-northeast-1");
+    
 
     /** The unique ID representing each region. */
     private final String regionId;

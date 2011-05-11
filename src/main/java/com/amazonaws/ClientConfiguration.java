@@ -21,9 +21,7 @@ import com.amazonaws.util.VersionInfoUtils;
  */
 public class ClientConfiguration {
 
-    /**
-     * The default HTTP user agent header for AWS Java SDK clients.
-     */
+    /** The default HTTP user agent header for AWS Java SDK clients. */
     public static final String DEFAULT_USER_AGENT = VersionInfoUtils.getUserAgent();
 
     /** The HTTP user agent header passed with all HTTP requests. */
@@ -55,7 +53,13 @@ public class ClientConfiguration {
     /** Optionally specifies the password to use when connecting through a proxy. */
     private String proxyPassword = null;
 
-    /** The maximum number of open HTTP connections. */
+    /** Optional Windows domain name for configuring NTLM proxy support. */
+    private String proxyDomain = null;
+
+    /** Optional Windows workstation name for configuring NTLM proxy support. */
+    private String proxyWorkstation = null;
+
+	/** The maximum number of open HTTP connections. */
     private int maxConnections = 50;
 
     /**
@@ -344,6 +348,89 @@ public class ClientConfiguration {
         setProxyPassword(proxyPassword);
         return this;
     }
+
+	/**
+	 * Returns the optional Windows domain name for configuring an NTLM proxy.
+	 * If you aren't using a Windows NTLM proxy, you do not need to set this
+	 * field.
+	 *
+	 * @return The optional Windows domain name for configuring an NTLM proxy.
+	 */
+    public String getProxyDomain() {
+		return proxyDomain;
+	}
+
+	/**
+	 * Sets the optional Windows domain name for configuration an NTML proxy.
+	 * If you aren't using a Windows NTLM proxy, you do not need to set this
+	 * field.
+	 *
+	 * @param proxyDomain
+	 *            The optional Windows domain name for configuring an NTLM
+	 *            proxy.
+	 */
+	public void setProxyDomain(String proxyDomain) {
+		this.proxyDomain = proxyDomain;
+	}
+
+	/**
+	 * Sets the optional Windows domain name for configuration an NTML proxy and
+	 * returns a reference to this updated ClientConfiguration object so that
+	 * additional method calls can be chained together. If you aren't using a
+	 * Windows NTLM proxy, you do not need to set this field.
+	 *
+	 * @param proxyDomain
+	 *            The optional Windows domain name for configuring an NTLM
+	 *            proxy.
+	 *
+     * @return The updated ClientConfiguration object.
+	 */
+	public ClientConfiguration withProxyDomain(String proxyDomain) {
+		setProxyDomain(proxyDomain);
+		return this;
+	}
+
+	/**
+	 * Returns the optional Windows workstation name for configuring NTLM proxy
+	 * support. If you aren't using a Windows NTLM proxy, you do not need to set
+	 * this field.
+	 *
+	 * @return The optional Windows workstation name for configuring NTLM proxy
+	 *         support.
+	 */
+	public String getProxyWorkstation() {
+		return proxyWorkstation;
+	}
+
+	/**
+	 * Sets the optional Windows workstation name for configuring NTLM proxy
+	 * support. If you aren't using a Windows NTLM proxy, you do not need to set
+	 * this field.
+	 *
+	 * @param proxyWorkstation
+	 *            The optional Windows workstation name for configuring NTLM
+	 *            proxy support.
+	 */
+	public void setProxyWorkstation(String proxyWorkstation) {
+		this.proxyWorkstation = proxyWorkstation;
+	}
+
+	/**
+	 * Sets the optional Windows workstation name for configuring NTLM proxy
+	 * support, and returns the updated ClientConfiguration object so that
+	 * additional method calls can be chained together. If you aren't using a
+	 * Windows NTLM proxy, you do not need to set this field.
+	 *
+	 * @param proxyWorkstation
+	 *            The optional Windows workstation name for configuring NTLM
+	 *            proxy support.
+	 *
+	 * @return The updated ClientConfiguration object.
+	 */
+	public ClientConfiguration withProxyWorkstation(String proxyWorkstation) {
+		setProxyWorkstation(proxyWorkstation);
+		return this;
+	}
 
     /**
      * Returns the maximum number of retry attempts for failed retryable

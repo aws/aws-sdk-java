@@ -3,30 +3,52 @@
  * Synchronous and asynchronous client classes for accessing AmazonCloudWatch.
  *
  * Amazon CloudWatch <p>
- * Amazon CloudWatch is a web service that enables you to monitor and
- * manage various metrics, as well as configure alarm actions based on
- * data from metrics.
+ * This is the <i>Amazon CloudWatch API Reference</i> . This guide
+ * provides detailed information about Amazon CloudWatch actions, data
+ * types, parameters, and errors. For detailed information about Amazon
+ * CloudWatch features and their associated API calls, go to the <a
+ * ://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide">
+ * Amazon CloudWatch Developer Guide </a> .
  * </p>
  * <p>
- * Amazon CloudWatch monitoring enables you to collect, analyze, and view
- * system and application metrics so that you can make operational and
- * business decisions more quickly and with greater confidence. You can
- * use Amazon CloudWatch to collect metrics about your AWS resources,
- * such as the performance of your Amazon EC2 instances.
+ * Amazon CloudWatch is a web service that enables you to publish,
+ * monitor, and manage various metrics, as well as configure alarm
+ * actions based on data from metrics. For more information about this
+ * product go to <a href="http://aws.amazon.com/cloudwatch">
+ * http://aws.amazon.com/cloudwatch </a> .
  * </p>
  * <p>
- * If you are registered for an AWS product that supports Amazon
- * CloudWatch, the service automatically pushes basic metrics to
- * CloudWatch for you. Once Amazon CloudWatch contains metrics, you can
- * calculate statistics based on that data.
+ * Use the following links to get started using the <i>Amazon CloudWatch
+ * API Reference</i> :
  * </p>
- * <p>
- * Amazon CloudWatch alarms help you implement decisions more easily by
- * enabling you do things like send notifications or automatically make
- * changes to the resources you are monitoring, based on rules that you
- * define. For example, you can create alarms that initiate Auto Scaling
- * and Simple Notification Service actions on your behalf.
- * </p>
+ * 
+ * <ul>
+ * <li> <a
+ * ervices.com/AmazonCloudWatch/latest/APIReference/API_Operations.html">
+ * Actions </a> : An alphabetical list of all Amazon CloudWatch
+ * actions.</li>
+ * <li> <a
+ * nwebservices.com/AmazonCloudWatch/latest/APIReference/API_Types.html">
+ * Data Types </a> : An alphabetical list of all Amazon CloudWatch data
+ * types.</li>
+ * <li> <a
+ * vices.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use.</li>
+ * <li> <a
+ * bservices.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return.</li>
+ * <li> <a
+ * //docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
+ * Regions and Endpoints </a> : Itemized regions and endpoints for all
+ * AWS products.</li>
+ * <li> <a
+ * href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl">
+ * WSDL Location </a> :
+ * http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
+ * 
+ * </ul>
  */
  package com.amazonaws.services.cloudwatch;
         

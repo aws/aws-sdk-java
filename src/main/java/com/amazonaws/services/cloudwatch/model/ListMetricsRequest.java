@@ -27,6 +27,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * retrieve further results, use returned NextToken values with
  * subsequent ListMetrics operations.
  * </p>
+ * <p>
+ * <b>NOTE:</b> If you create a metric with the PutMetricData action,
+ * allow up to fifteen minutes for the metric to appear in calls to the
+ * ListMetrics action.
+ * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest)
  */

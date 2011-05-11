@@ -14,13 +14,12 @@
  */
 package com.amazonaws.services.s3.model;
 
-import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * The CompleteMultipartUploadResult contains all the information about the
  * CompleteMultipartUpload method.
  */
-public class CompleteMultipartUploadResult extends AmazonWebServiceRequest {
+public class CompleteMultipartUploadResult {
 
     /** The name of the bucket containing the completed multipart upload. */
     private String bucketName;

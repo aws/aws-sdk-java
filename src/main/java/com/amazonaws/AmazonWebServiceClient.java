@@ -16,9 +16,14 @@ package com.amazonaws;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map.Entry;
 
-import com.amazonaws.http.HttpClient;
+import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 
@@ -30,18 +35,17 @@ import com.amazonaws.http.HttpRequest;
  */
 public abstract class AmazonWebServiceClient {
 
-    /**
-     * The service endpoint to which this client will send requests.
-     */
+    /** The service endpoint to which this client will send requests. */
     protected URI endpoint;
 
     /** The client configuration */
     protected final ClientConfiguration clientConfiguration;
 
-    /**
-     * Low level client for sending requests to AWS services.
-     */
-    protected final HttpClient client;
+    /** Low level client for sending requests to AWS services. */
+    protected final AmazonHttpClient client;
+
+    /** Optional request handlers for additional request processing. */
+    protected final List<RequestHandler> requestHandlers;
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -52,7 +56,8 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;
-        client = new HttpClient(clientConfiguration);
+        client = new AmazonHttpClient(clientConfiguration);
+        requestHandlers = Collections.synchronizedList(new LinkedList<RequestHandler>());
     }
 
     /**
@@ -136,6 +141,35 @@ public abstract class AmazonWebServiceClient {
         httpRequest.setOriginalRequest(request.getOriginalRequest());
 
         return httpRequest;
+    }
+
+    /**
+     * Appends a request handler to the list of registered handlers that are run
+     * as part of a request's lifecycle.
+     *
+     * @param requestHandler
+     *            The new handler to add to the current list of request
+     *            handlers.
+     */
+    public void addRequestHandler(RequestHandler requestHandler) {
+    	requestHandlers.add(requestHandler);
+    }
+    
+    /**
+     * Removes a request handler from the list of registered handlers that are run
+     * as part of a request's lifecycle.
+     *
+     * @param requestHandler
+     *            The handler to remove from the current list of request
+     *            handlers.
+     */
+    public void removeRequestHandler(RequestHandler requestHandler) {
+        requestHandlers.remove(requestHandler);
+    }
+
+    protected ExecutionContext createExecutionContext() {
+        ExecutionContext executionContext = new ExecutionContext(requestHandlers);
+        return executionContext;
     }
 
 }

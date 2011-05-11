@@ -39,7 +39,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
      * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     private String dBParameterGroupFamily;
 
@@ -68,7 +68,8 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * parameter group can be associated with one and only one DB parameter
      * group family, and can be applied only to a DB instance running a
      * database engine compatible with that DB parameter group family and
-     * version. <p> Valid Values: <code>MySQL5.1</code>
+     * version. <p> Valid Values: <code>MySQL5.1</code> |
+     * <code>MySQL5.5</code>
      * @param description The description for the DB Parameter Group.
      */
     public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
@@ -140,13 +141,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
      * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @return The DB parameter group family name. A DB parameter group can be
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
      *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
@@ -157,13 +158,13 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
      * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
      *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -174,7 +175,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
      * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -182,7 +183,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
      *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

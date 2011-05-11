@@ -18,10 +18,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.apache.commons.httpclient.methods.InputStreamRequestEntity;
-import org.apache.commons.httpclient.methods.RequestEntity;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.http.entity.BasicHttpEntity;
+import org.apache.http.entity.InputStreamEntity;
 
 import com.amazonaws.Request;
 
@@ -32,19 +32,19 @@ import com.amazonaws.Request;
  * report that it is repeatable and will reset the stream on all subsequent
  * attempts to write out the request.
  */
-class RepeatableInputStreamRequestEntity implements RequestEntity {
+class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
 
     /** True if the request entity hasn't been written out yet */
     private boolean firstAttempt = true;
 
     /** The underlying InputStreamRequestEntity being delegated to */
-    private InputStreamRequestEntity inputStreamRequestEntity;
+    private InputStreamEntity inputStreamRequestEntity;
 
     /** The InputStream containing the content to write out */
     private InputStream content;
 
     /** Shared logger for more debugging information */
-    private static final Log log = LogFactory.getLog(HttpClient.class);
+    private static final Log log = LogFactory.getLog(AmazonHttpClient.class);
 
 
     /**
@@ -58,6 +58,8 @@ class RepeatableInputStreamRequestEntity implements RequestEntity {
      *            content length, and content).
      */
     RepeatableInputStreamRequestEntity(Request<?> request) {
+    	setChunked(false);
+
         /*
          * If we don't specify a content length when we instantiate our
          * InputStreamRequestEntity, then HttpClient will attempt to
@@ -68,7 +70,7 @@ class RepeatableInputStreamRequestEntity implements RequestEntity {
          *       content type from the request, instead of having to look
          *       directly into the headers.
          */
-        long contentLength = InputStreamRequestEntity.CONTENT_LENGTH_AUTO;
+        long contentLength = -1;
         try {
             String contentLengthString = request.getHeaders().get("Content-Length");
             if (contentLengthString != null) {
@@ -81,19 +83,29 @@ class RepeatableInputStreamRequestEntity implements RequestEntity {
 
         String contentType = request.getHeaders().get("Content-Type");
 
-        inputStreamRequestEntity = new InputStreamRequestEntity(
-                request.getContent(), contentLength, contentType);
+        inputStreamRequestEntity = new InputStreamEntity(request.getContent(), contentLength);
+        inputStreamRequestEntity.setContentType(contentType);
         content = request.getContent();
+
+        setContent(content);
+        setContentType(contentType);
+        setContentLength(contentLength);
     }
 
-    /**
-     * Delegates to the underlying InputStreamRequestEntity.
-     *
-     * @see org.apache.commons.httpclient.methods.RequestEntity#getContentType()
-     */
-    public String getContentType() {
-        return inputStreamRequestEntity.getContentType();
-    }
+    @Override
+	public boolean isChunked() {
+    	return false;
+	}
+
+//	/**
+//     * Delegates to the underlying InputStreamRequestEntity.
+//     *
+//     * @see org.apache.commons.httpclient.methods.RequestEntity#getContentType()
+//     */
+//    @Override
+//    public Header getContentType() {
+//        return inputStreamRequestEntity.getContentType();
+//    }
 
     /**
      * Returns true if the underlying InputStream supports marking/reseting or
@@ -104,6 +116,7 @@ class RepeatableInputStreamRequestEntity implements RequestEntity {
      *
      * @see org.apache.commons.httpclient.methods.RequestEntity#isRepeatable()
      */
+    @Override
     public boolean isRepeatable() {
         return content.markSupported() || inputStreamRequestEntity.isRepeatable();
     }
@@ -115,22 +128,12 @@ class RepeatableInputStreamRequestEntity implements RequestEntity {
      *
      * @see org.apache.commons.httpclient.methods.RequestEntity#writeRequest(java.io.OutputStream)
      */
-    public void writeRequest(OutputStream output) throws IOException {
-        if (!firstAttempt && isRepeatable()) {
-            content.reset();
-        }
+    @Override
+    public void writeTo(OutputStream output) throws IOException {
+        if (!firstAttempt && isRepeatable()) content.reset();
 
         firstAttempt = false;
-        inputStreamRequestEntity.writeRequest(output);
-    }
-
-    /**
-     * Delegates to the underlying InputStreamRequestEntity.
-     *
-     * @see org.apache.commons.httpclient.methods.RequestEntity#getContentLength()
-     */
-    public long getContentLength() {
-        return inputStreamRequestEntity.getContentLength();
+        inputStreamRequestEntity.writeTo(output);
     }
 
 }

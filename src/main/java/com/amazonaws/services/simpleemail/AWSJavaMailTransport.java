@@ -33,9 +33,11 @@ import javax.mail.event.TransportEvent;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.simpleemail.model.RawMessage;
 import com.amazonaws.services.simpleemail.model.SendRawEmailRequest;
+import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * A transport implementation using Amazon Web Service's E-mail Service. For
@@ -260,6 +262,7 @@ public class AWSJavaMailTransport extends Transport {
 		Address[] invalid = null;
 
 		try {
+		    appendUserAgent(req, USER_AGENT);
 			this.emailService.sendRawEmail(req);
 			sent = m.getAllRecipients();
 			unsent = new Address[0];
@@ -313,8 +316,7 @@ public class AWSJavaMailTransport extends Transport {
 			awsSecretKey = this.secretKey;
 		}
 
-		this.emailService = new AmazonSimpleEmailServiceClient(
-				new BasicAWSCredentials(awsAccessKey, awsSecretKey));
+        this.emailService = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials(awsAccessKey, awsSecretKey));
 		if (!isNullOrEmpty(host)) {
 			this.emailService.setEndpoint(host);
 		} else if (this.httpsEndpoint != null) {
@@ -337,5 +339,12 @@ public class AWSJavaMailTransport extends Transport {
 	private static boolean isNullOrEmpty(Object[] o) {
 		return (o == null || o.length == 0);
 	}
+	
+    public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
+        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        return request;
+    }
+	
+    private static final String USER_AGENT = AWSJavaMailTransport.class.getName() + "/" + VersionInfoUtils.getVersion();	
 
 }

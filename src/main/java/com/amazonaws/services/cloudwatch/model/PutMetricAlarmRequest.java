@@ -63,9 +63,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Name (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto
+     * Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
@@ -75,9 +75,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic and triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
@@ -87,9 +87,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN). Currently the only
-     * actions supported are publishing to an Amazon SNS topic and triggering
-     * an Auto Scaling policy.
+     * is specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
@@ -315,18 +315,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Name (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto
+     * Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @return The list of actions to execute when this alarm transitions into an
      *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Name (ARN). Currently the only actions supported
-     *         are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     *         policy.
+     *         as an Amazon Resource Number (ARN). Currently the only action
+     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
+     *         Scaling policy.
      */
     public java.util.List<String> getOKActions() {
         if (oKActions == null) {
@@ -338,18 +338,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Name (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto
+     * Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @param oKActions The list of actions to execute when this alarm transitions into an
      *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Name (ARN). Currently the only actions supported
-     *         are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     *         policy.
+     *         as an Amazon Resource Number (ARN). Currently the only action
+     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
+     *         Scaling policy.
      */
     public void setOKActions(java.util.Collection<String> oKActions) {
         java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>();
@@ -362,9 +362,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Name (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto
+     * Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -373,9 +373,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param oKActions The list of actions to execute when this alarm transitions into an
      *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Name (ARN). Currently the only actions supported
-     *         are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     *         policy.
+     *         as an Amazon Resource Number (ARN). Currently the only action
+     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
+     *         Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -390,9 +390,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>OK</code> state from any other state. Each action is specified
-     * as an Amazon Resource Name (ARN). Currently the only actions supported
-     * are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     * policy.
+     * as an Amazon Resource Number (ARN). Currently the only action
+     * supported is publishing to an Amazon SNS topic or an Amazon Auto
+     * Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -401,9 +401,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param oKActions The list of actions to execute when this alarm transitions into an
      *         <code>OK</code> state from any other state. Each action is specified
-     *         as an Amazon Resource Name (ARN). Currently the only actions supported
-     *         are publishing to an Amazon SNS topic and triggering an Auto Scaling
-     *         policy.
+     *         as an Amazon Resource Number (ARN). Currently the only action
+     *         supported is publishing to an Amazon SNS topic or an Amazon Auto
+     *         Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -421,18 +421,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic and triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @return The list of actions to execute when this alarm transitions into an
      *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Name (ARN). Currently the only actions
-     *         supported are publishing to an Amazon SNS topic and triggering an Auto
-     *         Scaling policy.
+     *         specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
         if (alarmActions == null) {
@@ -444,18 +444,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic and triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @param alarmActions The list of actions to execute when this alarm transitions into an
      *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Name (ARN). Currently the only actions
-     *         supported are publishing to an Amazon SNS topic and triggering an Auto
-     *         Scaling policy.
+     *         specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      */
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
         java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>();
@@ -468,9 +468,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic and triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -479,9 +479,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param alarmActions The list of actions to execute when this alarm transitions into an
      *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Name (ARN). Currently the only actions
-     *         supported are publishing to an Amazon SNS topic and triggering an Auto
-     *         Scaling policy.
+     *         specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -496,9 +496,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>ALARM</code> state from any other state. Each action is
-     * specified as an Amazon Resource Name (ARN). Currently the only actions
-     * supported are publishing to an Amazon SNS topic and triggering an Auto
-     * Scaling policy.
+     * specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -507,9 +507,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param alarmActions The list of actions to execute when this alarm transitions into an
      *         <code>ALARM</code> state from any other state. Each action is
-     *         specified as an Amazon Resource Name (ARN). Currently the only actions
-     *         supported are publishing to an Amazon SNS topic and triggering an Auto
-     *         Scaling policy.
+     *         specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -527,18 +527,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN). Currently the only
-     * actions supported are publishing to an Amazon SNS topic and triggering
-     * an Auto Scaling policy.
+     * is specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @return The list of actions to execute when this alarm transitions into an
      *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Name (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and triggering
-     *         an Auto Scaling policy.
+     *         is specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
         if (insufficientDataActions == null) {
@@ -550,18 +550,18 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN). Currently the only
-     * actions supported are publishing to an Amazon SNS topic and triggering
-     * an Auto Scaling policy.
+     * is specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      *
      * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
      *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Name (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and triggering
-     *         an Auto Scaling policy.
+     *         is specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      */
     public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
         java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>();
@@ -574,9 +574,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN). Currently the only
-     * actions supported are publishing to an Amazon SNS topic and triggering
-     * an Auto Scaling policy.
+     * is specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -585,9 +585,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
      *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Name (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and triggering
-     *         an Auto Scaling policy.
+     *         is specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -602,9 +602,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     /**
      * The list of actions to execute when this alarm transitions into an
      * <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     * is specified as an Amazon Resource Name (ARN). Currently the only
-     * actions supported are publishing to an Amazon SNS topic and triggering
-     * an Auto Scaling policy.
+     * is specified as an Amazon Resource Number (ARN). Currently the only
+     * action supported is publishing to an Amazon SNS topic or an Amazon
+     * Auto Scaling policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -613,9 +613,9 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *
      * @param insufficientDataActions The list of actions to execute when this alarm transitions into an
      *         <code>INSUFFICIENT_DATA</code> state from any other state. Each action
-     *         is specified as an Amazon Resource Name (ARN). Currently the only
-     *         actions supported are publishing to an Amazon SNS topic and triggering
-     *         an Auto Scaling policy.
+     *         is specified as an Amazon Resource Number (ARN). Currently the only
+     *         action supported is publishing to an Amazon SNS topic or an Amazon
+     *         Auto Scaling policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

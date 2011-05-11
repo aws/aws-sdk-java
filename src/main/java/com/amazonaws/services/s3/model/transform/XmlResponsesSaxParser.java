@@ -116,7 +116,7 @@ public class XmlResponsesSaxParser {
             if (log.isDebugEnabled()) {
                 log.debug("Parsing XML response document with handler: " + handler.getClass());
             }
-            
+
             BufferedReader breader = new BufferedReader(new InputStreamReader(inputStream,
                 Constants.DEFAULT_ENCODING));
             xr.setContentHandler(handler);
@@ -472,7 +472,15 @@ public class XmlResponsesSaxParser {
             if (nextMarker != null) {
                 objectListing.setNextMarker(nextMarker);
             } else if (listingTruncated) {
-                String nextMarker = objectListing.getObjectSummaries().get(objectListing.getObjectSummaries().size() - 1).getKey();
+            	String nextMarker = null;
+            	if (objectListing.getObjectSummaries().isEmpty() == false) {
+					nextMarker = objectListing.getObjectSummaries().get(objectListing.getObjectSummaries().size() - 1).getKey();
+            	} else if (objectListing.getCommonPrefixes().isEmpty() == false) {
+					nextMarker = objectListing.getCommonPrefixes().get(objectListing.getCommonPrefixes().size() - 1);
+            	} else {
+            		log.error("S3 response indicates truncated results, but contains no object summaries or common prefixes.");
+            	}
+
                 objectListing.setNextMarker(nextMarker);
             }
 
@@ -590,9 +598,6 @@ public class XmlResponsesSaxParser {
             // Object details.
             else if (name.equals("Contents")) {
                 objectListing.getObjectSummaries().add(currentObject);
-                if (log.isDebugEnabled()) {
-                    log.debug("Created new S3Object from listing: " + currentObject);
-                }
             } else if (name.equals("Key")) {
                 currentObject.setKey(elementText);
                 lastKey = elementText;
@@ -693,9 +698,6 @@ public class XmlResponsesSaxParser {
             }
             // Bucket item details.
             else if (name.equals("Bucket")) {
-                if (log.isDebugEnabled()) {
-                    log.debug("Created new bucket from listing: " + currentBucket);
-                }
                 currentBucket.setOwner(bucketsOwner);
                 buckets.add(currentBucket);
             } else if (name.equals("Name")) {
@@ -751,7 +753,7 @@ public class XmlResponsesSaxParser {
         public void endDocument() {
         }
 
-        public void startElement(String uri, String name, String qName, Attributes attrs) {            
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
             if (name.equals("Owner")) {
                 owner = new Owner();
             } else if (name.equals("AccessControlList")) {
@@ -759,7 +761,7 @@ public class XmlResponsesSaxParser {
                 accessControlList.setOwner(owner);
                 insideACL = true;
             } else if (name.equals("Grantee")) {
-                String type = XmlResponsesSaxParser.findAttributeValue( "xsi:type", attrs );            
+                String type = XmlResponsesSaxParser.findAttributeValue( "xsi:type", attrs );
                 if ("AmazonCustomerByEmail".equals(type)) {
                     currentGrantee = new EmailAddressGrantee(null);
                 } else if ("CanonicalUser".equals(type)) {
@@ -775,7 +777,7 @@ public class XmlResponsesSaxParser {
 
         public void endElement(String uri, String name, String qName) {
             String elementText = this.currText.toString();
-            
+
             // Owner details.
             if (name.equals("ID") && !insideACL) {
                 owner.setId(elementText);
@@ -1098,6 +1100,7 @@ public class XmlResponsesSaxParser {
                 insideCommonPrefixes = true;
             } else if (name.equals("Name")) {
             } else if (name.equals("Prefix")) {
+            } else if (name.equals("Delimiter")) {
             } else if (name.equals("KeyMarker")) {
             } else if (name.equals("VersionIdMarker")) {
             } else if (name.equals("MaxKeys")) {
@@ -1123,7 +1126,7 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("ID")) {
             } else if (name.equals("DisplayName")) {
             } else {
-                log.error("Ignoring unexpected tag <"+name+">");
+                log.warn("Ignoring unexpected tag <"+name+">");
             }
             text.setLength(0);
         }
@@ -1202,7 +1205,7 @@ public class XmlResponsesSaxParser {
                 assert(owner != null);
                 owner.setDisplayName(text.toString());
             } else {
-                log.error("Ignoring unexpected tag <"+name+">");
+                log.warn("Ignoring unexpected tag <"+name+">");
             }
             text.setLength(0);
         }
@@ -1237,7 +1240,7 @@ public class XmlResponsesSaxParser {
             	inErrorDocumentElement = true;
             } else if (name.equals("Key") && inErrorDocumentElement) {
             } else {
-                log.error("Ignoring unexpected tag <"+name+">");
+                log.warn("Ignoring unexpected tag <"+name+">");
             }
         }
 
@@ -1281,7 +1284,7 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("MfaDelete")) {
                 text.setLength(0);
             } else {
-                log.error("Ignoring unexpected tag <"+name+">");
+                log.warn("Ignoring unexpected tag <"+name+">");
             }
         }
 
@@ -1811,7 +1814,7 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("Event")) {
                 text.setLength(0);
             } else {
-                log.error("Ignoring unexpected tag <"+name+">");
+                log.warn("Ignoring unexpected tag <"+name+">");
             }
         }
 
@@ -1839,8 +1842,8 @@ public class XmlResponsesSaxParser {
             this.text.append(ch, start, length);
         }
     }
-    
-    
+
+
     private static String findAttributeValue( String qnameToFind, Attributes attrs ) {
         for ( int i = 0; i < attrs.getLength(); i++ ) {
             String qname = attrs.getQName( i );
@@ -1849,6 +1852,6 @@ public class XmlResponsesSaxParser {
             }
         }
 
-        return null;        
-    } 
+        return null;
+    }
 }

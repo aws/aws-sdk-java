@@ -257,7 +257,7 @@ public class ServiceUtils {
      * @throws AmazonClientException
      *             If the request cannot be converted to a well formed URL.
      */
-    public static URL convertRequestToUrl(Request<Void> request) {
+    public static URL convertRequestToUrl(Request<?> request) {
         String urlString =  request.getEndpoint()
             + "/" + request.getResourcePath();
 

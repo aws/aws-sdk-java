@@ -25,6 +25,12 @@ import com.amazonaws.auth.AWSCredentials;
 public abstract class AmazonWebServiceRequest {
 
     /**
+     * Arbitrary options storage for individual {@link AmazonWebServiceRequest}s. This
+     * field is not intended to be used by clients.
+     */
+    private final RequestClientOptions requestClientOptions = new RequestClientOptions();
+    
+    /**
      * The optional credentials to use for this request - overrides the
      * default credentials set at the client level.
      */
@@ -64,5 +70,13 @@ public abstract class AmazonWebServiceRequest {
     public Map<String, String> copyPrivateRequestParameters() {
         return new HashMap<String, String>();
     }
-
+    
+    /**
+     * Gets the options stored with this request object. Intended for internal
+     * use only.
+     */
+    public RequestClientOptions getRequestClientOptions() {
+        return requestClientOptions;
+    }
 }
+

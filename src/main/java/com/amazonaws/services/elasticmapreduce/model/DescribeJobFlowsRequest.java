@@ -36,9 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li>Job flows created and completed in the last two weeks</li>
  * <li> Job flows created within the last two months that are in one of
  * the following states: <code>RUNNING</code> ,
- * 
  * <code>WAITING</code> ,
- * 
  * <code>SHUTTING_DOWN</code> ,
  * 
  * <code>STARTING</code> </li>

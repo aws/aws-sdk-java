@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class UploadPartRequest extends AmazonWebServiceRequest {
 
-    /**
+	/**
      * The name of the bucket containing the initiated multipart upload with
      * which this new part will be associated.
      */
@@ -63,7 +63,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * File or InputStream must be specified as the input to this operation.
      */
     private InputStream inputStream;
-    
+
     /**
      * The file containing the data to upload. Exactly one File or InputStream
      * must be specified as the input to this operation.
@@ -83,8 +83,13 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      */
     private ProgressListener progressListener;
 
-    
-    
+	/**
+	 * Allows the caller to indicate if this is the last part being uploaded in
+	 * a multipart upload.
+	 */
+	private boolean isLastPart;
+
+
     /**
      * Sets the stream containing the data to upload for the new part.
      *
@@ -361,7 +366,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     /**
      * Returns the file containing the data to upload. Exactly one File or
      * InputStream must be specified as the input to this operation.
-     * 
+     *
      * @return The file containing the data to upload. Exactly one File or
      *         InputStream must be specified as the input to this operation.
      */
@@ -372,7 +377,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the file containing the data to upload. Exactly one File or
      * InputStream must be specified as the input to this operation.
-     * 
+     *
      * @param file
      *            The file containing the data to upload. Exactly one File or
      *            InputStream must be specified as the input to this operation.
@@ -388,11 +393,11 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * <p>
      * Exactly one File or InputStream must be specified as the input to this
      * operation.
-     * 
+     *
      * @param file
      *            The file containing the data to upload. Exactly one File or
      *            InputStream must be specified as the input to this operation.
-     * 
+     *
      * @return This updated UploadPartRequest object.
      */
     public UploadPartRequest withFile(File file) {
@@ -404,7 +409,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * Returns the optional offset in the specified file, at which to begin
      * uploading data for this part. If not specified, data will be read from
      * the beginning of the file.
-     * 
+     *
      * @return The optional offset in the specified file, at which to begin
      *         uploading data for this part. If not specified, data will be read
      *         from the beginning of the file.
@@ -417,7 +422,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * Sets the optional offset in the specified file, at which to begin
      * uploading data for this part. If not specified, data will be read from
      * the beginning of the file.
-     * 
+     *
      * @param fileOffset
      *            The optional offset in the specified file, at which to begin
      *            uploading data for this part. If not specified, data will be
@@ -433,12 +438,12 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * object so that additional method calls can be chained together.
      * <p>
      * If not specified, data will be read from the beginning of the file.
-     * 
+     *
      * @param fileOffset
      *            The optional offset in the specified file, at which to begin
      *            uploading data for this part. If not specified, data will be
      *            read from the beginning of the file.
-     * 
+     *
      * @return This updated UploadPartRequest object.
      */
     public UploadPartRequest withFileOffset(long fileOffset) {
@@ -449,7 +454,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     /**
      * Sets the optional progress listener for receiving updates about object
      * upload status.
-     * 
+     *
      * @param progressListener
      *            The new progress listener.
      */
@@ -460,7 +465,7 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
     /**
      * Returns the optional progress listener for receiving updates about object
      * upload status.
-     * 
+     *
      * @return the optional progress listener for receiving updates about object
      *         upload status.
      */
@@ -472,10 +477,10 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
      * Sets the optional progress listener for receiving updates about object
      * upload status, and returns this updated object so that additional method
      * calls can be chained together.
-     * 
+     *
      * @param progressListener
      *            The new progress listener.
-     * 
+     *
      * @return This updated UploadPartRequest object.
      */
     public UploadPartRequest withProgressListener(ProgressListener progressListener) {
@@ -483,4 +488,42 @@ public class UploadPartRequest extends AmazonWebServiceRequest {
         return this;
     }
 
+	/**
+	 * Returns true if the creator of this request has indicated this part is
+	 * the last part being uploaded in a multipart upload.
+	 *
+	 * @return True if the creator of this request has indicated this part is
+	 *         the last part being uploaded in a multipart upload.
+	 */
+    public boolean isLastPart() {
+		return isLastPart;
+	}
+
+	/**
+	 * Marks this part as the last part being uploaded in a multipart upload.
+	 *
+	 * @param isLastPart
+	 *            Whether or not this is the last part being uploaded in a
+	 *            multipart upload.
+	 */
+	public void setLastPart(boolean isLastPart) {
+		this.isLastPart = isLastPart;
+	}
+
+	/**
+	 * Marks this part as the last part being uploaded in a multipart upload,
+	 * and returns this updated request object so that additional method calls
+	 * can be chained together.
+	 *
+	 * @param isLastPart
+	 *            Whether or not this is the last part being uploaded in a
+	 *            multipart upload.
+	 *
+	 * @return This updated request object so that additional method calls can
+	 *         be chained together.
+	 */
+	public UploadPartRequest withLastPart(boolean isLastPart) {
+		setLastPart(isLastPart);
+		return this;
+	}
 }

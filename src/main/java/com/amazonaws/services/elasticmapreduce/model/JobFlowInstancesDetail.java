@@ -102,6 +102,13 @@ public class JobFlowInstancesDetail {
     private Boolean keepJobFlowAliveWhenNoSteps;
 
     /**
+     * Specifies whether the Amazon EC2 instances in the cluster are
+     * protected from termination by API calls, user intervention, or in the
+     * event of a job flow error.
+     */
+    private Boolean terminationProtected;
+
+    /**
      * Specifies the Hadoop version for the job flow.
      * <p>
      * <b>Constraints:</b><br/>
@@ -634,6 +641,65 @@ public class JobFlowInstancesDetail {
     }
     
     /**
+     * Specifies whether the Amazon EC2 instances in the cluster are
+     * protected from termination by API calls, user intervention, or in the
+     * event of a job flow error.
+     *
+     * @return Specifies whether the Amazon EC2 instances in the cluster are
+     *         protected from termination by API calls, user intervention, or in the
+     *         event of a job flow error.
+     */
+    public Boolean isTerminationProtected() {
+        return terminationProtected;
+    }
+    
+    /**
+     * Specifies whether the Amazon EC2 instances in the cluster are
+     * protected from termination by API calls, user intervention, or in the
+     * event of a job flow error.
+     *
+     * @param terminationProtected Specifies whether the Amazon EC2 instances in the cluster are
+     *         protected from termination by API calls, user intervention, or in the
+     *         event of a job flow error.
+     */
+    public void setTerminationProtected(Boolean terminationProtected) {
+        this.terminationProtected = terminationProtected;
+    }
+    
+    /**
+     * Specifies whether the Amazon EC2 instances in the cluster are
+     * protected from termination by API calls, user intervention, or in the
+     * event of a job flow error.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationProtected Specifies whether the Amazon EC2 instances in the cluster are
+     *         protected from termination by API calls, user intervention, or in the
+     *         event of a job flow error.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowInstancesDetail withTerminationProtected(Boolean terminationProtected) {
+        this.terminationProtected = terminationProtected;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies whether the Amazon EC2 instances in the cluster are
+     * protected from termination by API calls, user intervention, or in the
+     * event of a job flow error.
+     *
+     * @return Specifies whether the Amazon EC2 instances in the cluster are
+     *         protected from termination by API calls, user intervention, or in the
+     *         event of a job flow error.
+     */
+    public Boolean getTerminationProtected() {
+        return terminationProtected;
+    }
+    
+    /**
      * Specifies the Hadoop version for the job flow.
      * <p>
      * <b>Constraints:</b><br/>
@@ -701,6 +767,7 @@ public class JobFlowInstancesDetail {
         sb.append("Ec2KeyName: " + ec2KeyName + ", ");
         sb.append("Placement: " + placement + ", ");
         sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
+        sb.append("TerminationProtected: " + terminationProtected + ", ");
         sb.append("HadoopVersion: " + hadoopVersion + ", ");
         sb.append("}");
         return sb.toString();

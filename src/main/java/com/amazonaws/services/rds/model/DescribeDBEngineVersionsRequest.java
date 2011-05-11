@@ -31,8 +31,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     private String engine;
 
     /**
-     * The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     * 5.1.49</code>
+     * The database engine version to return.
      */
     private String engineVersion;
 
@@ -106,35 +105,29 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     * 5.1.49</code>
+     * The database engine version to return.
      *
-     * @return The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     *         5.1.49</code>
+     * @return The database engine version to return.
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     * 5.1.49</code>
+     * The database engine version to return.
      *
-     * @param engineVersion The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     *         5.1.49</code>
+     * @param engineVersion The database engine version to return.
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     * 5.1.49</code>
+     * The database engine version to return.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The database engine version to return. <p>Valid Values: <code>5.1.45 |
-     *         5.1.49</code>
+     * @param engineVersion The database engine version to return.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

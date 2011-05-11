@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
-import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWS3Signer;
+import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.QueryStringSigner;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -99,8 +99,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
 
-    /** Optional request handlers for additional request processing. */
-    private final List<RequestHandler> requestHandlers;
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
@@ -153,20 +151,8 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         signer = new QueryStringSigner();
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers = Collections.synchronizedList(chainFactory.newRequestHandlerChain(
+		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/autoscaling/request.handlers"));
-    }
-
-	/**
-	 * Appends a request handler to the list of registered handlers that are run
-	 * as part of a request's lifecycle.
-	 *
-	 * @param requestHandler
-	 *            The new handler to add to the current list of request
-	 *            handlers.
-	 */
-    public void addRequestHandler(RequestHandler requestHandler) {
-    	requestHandlers.add(requestHandler);
     }
 
     
@@ -1268,7 +1254,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
-        ExecutionContext executionContext = new ExecutionContext(requestHandlers);
+        ExecutionContext executionContext = createExecutionContext();
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

@@ -47,18 +47,24 @@ public class TransferManagerUtils {
         return (ThreadPoolExecutor)Executors.newFixedThreadPool(10, threadFactory);
     }
 
-    /**
-     * Returns true if the specified upload request can use parallel part
-     * uploads for increased performance.
-     *
-     * @param putObjectRequest
-     *            The request to check.
-     *
-     * @return True if this request can use parallel part uploads for fasters
-     *         uploads.
-     */
-    public static boolean isUploadParallelizable(final PutObjectRequest putObjectRequest) {
-        // Currently we only use parallel part uploads for files
+	/**
+	 * Returns true if the specified upload request can use parallel part
+	 * uploads for increased performance.
+	 * 
+	 * @param putObjectRequest
+	 *            The request to check.
+	 * @param isUsingEncryption
+	 *            True if the upload is an encrypted upload, otherwise false.
+	 * 
+	 * @return True if this request can use parallel part uploads for faster
+	 *         uploads.
+	 */
+    public static boolean isUploadParallelizable(final PutObjectRequest putObjectRequest, final boolean isUsingEncryption) {
+    	// Each uploaded part in an encrypted upload depends on the encryption context
+    	// from the previous upload, so we cannot parallelize encrypted upload parts.
+    	if (isUsingEncryption) return false;
+
+    	// Otherwise, if there's a file, we can process the uploads concurrently.
         return (getRequestFile(putObjectRequest) != null);
     }
 

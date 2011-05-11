@@ -120,18 +120,18 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      * in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      * Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     * maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     * maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      */
     private String preferredBackupWindow;
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
+     * If moving this window to the current time, there must be at least 30
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      */
     private String preferredMaintenanceWindow;
 
@@ -800,14 +800,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      * in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      * Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     * maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     * maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      *
      * @return The daily time range during which automated backups are created if
      *         automated backups are enabled, as determined by the
      *         <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      *         in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      *         Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     *         maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     *         maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      */
     public String getPreferredBackupWindow() {
         return preferredBackupWindow;
@@ -819,14 +819,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      * in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      * Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     * maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     * maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
      *         automated backups are enabled, as determined by the
      *         <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      *         in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      *         Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     *         maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     *         maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      */
     public void setPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -838,7 +838,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      * in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      * Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     * maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     * maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -847,7 +847,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         <code>BackupRetentionPeriod</code>. <p>Constraints: <ul> <li>Must be
      *         in the format hh24:mi-hh24:mi</li> <li>Times should be Universal Time
      *         Coordinated (UTC)</li> <li>Must not conflict with the preferred
-     *         maintenance window</li> <li>Must be at least 2 hours</li> </ul>
+     *         maintenance window</li> <li>Must be at least 30 minutes</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -861,19 +861,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
+     * If moving this window to the current time, there must be at least 30
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      *
      * @return The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
+     *         If moving this window to the current time, there must be at least 30
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -882,19 +882,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
+     * If moving this window to the current time, there must be at least 30
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
+     *         If moving this window to the current time, there must be at least 30
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -903,21 +903,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 120
+     * If moving this window to the current time, there must be at least 30
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 120
+     *         If moving this window to the current time, there must be at least 30
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum four-hour period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

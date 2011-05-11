@@ -32,8 +32,8 @@ public class DimensionFilter {
 
     /**
      * The value of the dimension to be matched. <note> Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> is returns
-     * all values associated with that <code>Name</code>. </note>
+     * <code>Name</code> without specifying a <code>Value</code> returns all
+     * values associated with that <code>Name</code>. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -85,15 +85,15 @@ public class DimensionFilter {
     
     /**
      * The value of the dimension to be matched. <note> Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> is returns
-     * all values associated with that <code>Name</code>. </note>
+     * <code>Name</code> without specifying a <code>Value</code> returns all
+     * values associated with that <code>Name</code>. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @return The value of the dimension to be matched. <note> Specifying a
-     *         <code>Name</code> without specifying a <code>Value</code> is returns
-     *         all values associated with that <code>Name</code>. </note>
+     *         <code>Name</code> without specifying a <code>Value</code> returns all
+     *         values associated with that <code>Name</code>. </note>
      */
     public String getValue() {
         return value;
@@ -101,15 +101,15 @@ public class DimensionFilter {
     
     /**
      * The value of the dimension to be matched. <note> Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> is returns
-     * all values associated with that <code>Name</code>. </note>
+     * <code>Name</code> without specifying a <code>Value</code> returns all
+     * values associated with that <code>Name</code>. </note>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @param value The value of the dimension to be matched. <note> Specifying a
-     *         <code>Name</code> without specifying a <code>Value</code> is returns
-     *         all values associated with that <code>Name</code>. </note>
+     *         <code>Name</code> without specifying a <code>Value</code> returns all
+     *         values associated with that <code>Name</code>. </note>
      */
     public void setValue(String value) {
         this.value = value;
@@ -117,8 +117,8 @@ public class DimensionFilter {
     
     /**
      * The value of the dimension to be matched. <note> Specifying a
-     * <code>Name</code> without specifying a <code>Value</code> is returns
-     * all values associated with that <code>Name</code>. </note>
+     * <code>Name</code> without specifying a <code>Value</code> returns all
+     * values associated with that <code>Name</code>. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -126,8 +126,8 @@ public class DimensionFilter {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param value The value of the dimension to be matched. <note> Specifying a
-     *         <code>Name</code> without specifying a <code>Value</code> is returns
-     *         all values associated with that <code>Name</code>. </note>
+     *         <code>Name</code> without specifying a <code>Value</code> returns all
+     *         values associated with that <code>Name</code>. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -25,7 +25,7 @@ import com.amazonaws.Request;
  * service request.
  */
 public class HttpResponse {
-    private Request request;
+    private Request<?> request;
     private String statusText;
     private int statusCode;
     private InputStream content;
@@ -37,7 +37,7 @@ public class HttpResponse {
      * @param request
      *            The associated request that generated this response.
      */
-    public HttpResponse(Request request) {
+    public HttpResponse(Request<?> request) {
         this.request = request;
     }
 
@@ -46,7 +46,7 @@ public class HttpResponse {
      *
      * @return The HttpRequest associated with this response.
      */
-    public Request getRequest() {
+    public Request<?> getRequest() {
         return request;
     }
 

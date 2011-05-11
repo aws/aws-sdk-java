@@ -33,30 +33,52 @@ import com.amazonaws.services.cloudwatch.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * Amazon CloudWatch <p>
- * Amazon CloudWatch is a web service that enables you to monitor and
- * manage various metrics, as well as configure alarm actions based on
- * data from metrics.
+ * This is the <i>Amazon CloudWatch API Reference</i> . This guide
+ * provides detailed information about Amazon CloudWatch actions, data
+ * types, parameters, and errors. For detailed information about Amazon
+ * CloudWatch features and their associated API calls, go to the <a
+ * ://docs.amazonwebservices.com/AmazonCloudWatch/latest/DeveloperGuide">
+ * Amazon CloudWatch Developer Guide </a> .
  * </p>
  * <p>
- * Amazon CloudWatch monitoring enables you to collect, analyze, and view
- * system and application metrics so that you can make operational and
- * business decisions more quickly and with greater confidence. You can
- * use Amazon CloudWatch to collect metrics about your AWS resources,
- * such as the performance of your Amazon EC2 instances.
+ * Amazon CloudWatch is a web service that enables you to publish,
+ * monitor, and manage various metrics, as well as configure alarm
+ * actions based on data from metrics. For more information about this
+ * product go to <a href="http://aws.amazon.com/cloudwatch">
+ * http://aws.amazon.com/cloudwatch </a> .
  * </p>
  * <p>
- * If you are registered for an AWS product that supports Amazon
- * CloudWatch, the service automatically pushes basic metrics to
- * CloudWatch for you. Once Amazon CloudWatch contains metrics, you can
- * calculate statistics based on that data.
+ * Use the following links to get started using the <i>Amazon CloudWatch
+ * API Reference</i> :
  * </p>
- * <p>
- * Amazon CloudWatch alarms help you implement decisions more easily by
- * enabling you do things like send notifications or automatically make
- * changes to the resources you are monitoring, based on rules that you
- * define. For example, you can create alarms that initiate Auto Scaling
- * and Simple Notification Service actions on your behalf.
- * </p> 
+ * 
+ * <ul>
+ * <li> <a
+ * ervices.com/AmazonCloudWatch/latest/APIReference/API_Operations.html">
+ * Actions </a> : An alphabetical list of all Amazon CloudWatch
+ * actions.</li>
+ * <li> <a
+ * nwebservices.com/AmazonCloudWatch/latest/APIReference/API_Types.html">
+ * Data Types </a> : An alphabetical list of all Amazon CloudWatch data
+ * types.</li>
+ * <li> <a
+ * vices.com/AmazonCloudWatch/latest/APIReference/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use.</li>
+ * <li> <a
+ * bservices.com/AmazonCloudWatch/latest/APIReference/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return.</li>
+ * <li> <a
+ * //docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
+ * Regions and Endpoints </a> : Itemized regions and endpoints for all
+ * AWS products.</li>
+ * <li> <a
+ * href="http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl">
+ * WSDL Location </a> :
+ * http://monitoring.amazonaws.com/doc/2010-08-01/CloudWatch.wsdl</li>
+ * 
+ * </ul> 
  */       
 public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         implements AmazonCloudWatchAsync { 
@@ -187,6 +209,53 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     
     /**
      * <p>
+     * Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch
+     * associates the data points with the specified metric. If the specified
+     * metric does not exist, Amazon CloudWatch creates the metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you create a metric with the PutMetricData action,
+     * allow up to fifteen minutes for the metric to appear in calls to the
+     * ListMetrics action.
+     * </p>
+     * <p>
+     * The size of a PutMetricData request is limited to 8 KB for HTTP GET
+     * requests and 40 KB for HTTP POST requests.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Although the Value parameter accepts numbers of type
+     * Double, Amazon CloudWatch truncates values with very large exponents.
+     * Values with base-10 exponents greater than 126 (1 x 10^126) are
+     * truncated. Likewise, values with base-10 exponents less than -130 (1 x
+     * 10^-130) are also truncated.
+     * </p>
+     *
+     * @param putMetricDataRequest Container for the necessary parameters to
+     *           execute the PutMetricData operation on AmazonCloudWatch.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutMetricData service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putMetricDataAsync(final PutMetricDataRequest putMetricDataRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                putMetricData(putMetricDataRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Returns a list of valid metrics stored for the AWS account owner.
      * Returned metrics can be used with <code>GetMetricStatistics</code> to
      * obtain statistical data for a given metric.
@@ -195,6 +264,11 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
      * <b>NOTE:</b> Up to 500 results are returned for any one call. To
      * retrieve further results, use returned NextToken values with
      * subsequent ListMetrics operations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you create a metric with the PutMetricData action,
+     * allow up to fifteen minutes for the metric to appear in calls to the
+     * ListMetrics action.
      * </p>
      *
      * @param listMetricsRequest Container for the necessary parameters to
@@ -225,13 +299,38 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
      * Gets statistics for the specified metric.
      * </p>
      * <p>
-     * <b>NOTE:</b> The maximum number of datapoints returned from a single
+     * <b>NOTE:</b> The maximum number of data points returned from a single
      * GetMetricStatistics request is 1,440. If a request is made that
-     * generates more than 1,440 datapoints, Amazon CloudWatch returns an
+     * generates more than 1,440 data points, Amazon CloudWatch returns an
      * error. In such a case, alter the request by narrowing the specified
      * time range or increasing the specified period. Alternatively, make
      * multiple requests across adjacent time ranges.
      * </p>
+     * <p>
+     * Amazon CloudWatch aggregates data points based on the length of the
+     * <code>period</code> that you specify. For example, if you request
+     * statistics with a one-minute granularity, Amazon CloudWatch aggregates
+     * data points with time stamps that fall within the same one-minute
+     * period. In such a case, the data points queried can greatly outnumber
+     * the data points returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The maximum number of data points that can be queried is
+     * 50,850; whereas the maximum number of data points returned is 1,440.
+     * </p>
+     * <p>
+     * The following examples show various statistics allowed by the data
+     * point query maximum of 50,850 when you call
+     * <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed
+     * (one-minute) monitoring enabled:
+     * </p>
+     * 
+     * <ul>
+     * <li>Statistics for up to 400 instances for a span of one hour</li>
+     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
+     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+     * 
+     * </ul>
      *
      * @param getMetricStatisticsRequest Container for the necessary
      *           parameters to execute the GetMetricStatistics operation on
@@ -358,9 +457,8 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
      * CloudWatch returns histories for all of the owner's alarms.
      * </p>
      * <p>
-     * <b>NOTE:</b> Amazon CloudWatch retains the history of deleted alarms
-     * for a period of six weeks. If an alarm has been deleted, its history
-     * can still be queried.
+     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
+     * weeks, whether or not you delete the alarm.
      * </p>
      *
      * @param describeAlarmHistoryRequest Container for the necessary

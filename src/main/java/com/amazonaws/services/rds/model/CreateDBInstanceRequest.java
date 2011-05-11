@@ -94,15 +94,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     * Region the database was created in. These are the default maintenance
-     * windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     * Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     * (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     * (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     * four-hour period.
+     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     * 30-minute window selected at random from an 8-hour block of time per
+     * region, occurring on a random day of the week. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -128,16 +129,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The daily time range during which automated backups are created if
-     * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     * the database was created in. These are the default backup windows for
-     * each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     * UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     * Times should be Universal Time Coordinated (UTC). Must not conflict
-     * with the preferred maintenance window. Must be at least two hours.
+     * automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     * window selected at random from an 8-hour block of time per region. The
+     * following list shows the time blocks for each region from which the
+     * default backup windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      */
     private String preferredBackupWindow;
 
@@ -678,26 +681,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     * Region the database was created in. These are the default maintenance
-     * windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     * Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     * (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     * (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     * four-hour period.
+     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     * 30-minute window selected at random from an 8-hour block of time per
+     * region, occurring on a random day of the week. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     *         Region the database was created in. These are the default maintenance
-     *         windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     *         Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     *         (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     *         (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     *         Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     *         four-hour period.
+     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     *         30-minute window selected at random from an 8-hour block of time per
+     *         region, occurring on a random day of the week. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -705,26 +710,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     * Region the database was created in. These are the default maintenance
-     * windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     * Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     * (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     * (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     * four-hour period.
+     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     * 30-minute window selected at random from an 8-hour block of time per
+     * region, occurring on a random day of the week. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     *         Region the database was created in. These are the default maintenance
-     *         windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     *         Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     *         (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     *         (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     *         Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     *         four-hour period.
+     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     *         30-minute window selected at random from an 8-hour block of time per
+     *         region, occurring on a random day of the week. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -732,28 +739,30 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The weekly time range (in UTC) during which system maintenance can
-     * occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     * Region the database was created in. These are the default maintenance
-     * windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     * Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     * (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     * (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     * Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     * four-hour period.
+     * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     * 30-minute window selected at random from an 8-hour block of time per
+     * region, occurring on a random day of the week. The following list
+     * shows the time blocks for each region from which the default
+     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
-     *         occur. <p> Format: ddd:hh24:mi-ddd:hh24:mi <p> Default: Depends on the
-     *         Region the database was created in. These are the default maintenance
-     *         windows for each Region: <ul> <li><b>US-East (Northern Virginia)
-     *         Region:</b> Sun:05:00-Sun:09:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> Sun:08:00-Sun:12:00 UTC</li> <li><b>EU
-     *         (Ireland) Region:</b> Sun:00:00-Sun:04:00 UTC</li> <li><b>Asia Pacific
-     *         (Singapore) Region:</b> Sat:16:00-Sat:20:00 UTC</li> </ul> <p>Valid
-     *         Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun <p>Constraints: Minimum
-     *         four-hour period.
+     *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
+     *         30-minute window selected at random from an 8-hour block of time per
+     *         region, occurring on a random day of the week. The following list
+     *         shows the time blocks for each region from which the default
+     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
+     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -894,28 +903,32 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The daily time range during which automated backups are created if
-     * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     * the database was created in. These are the default backup windows for
-     * each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     * UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     * Times should be Universal Time Coordinated (UTC). Must not conflict
-     * with the preferred maintenance window. Must be at least two hours.
+     * automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     * window selected at random from an 8-hour block of time per region. The
+     * following list shows the time blocks for each region from which the
+     * default backup windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      *
      * @return The daily time range during which automated backups are created if
-     *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     *         the database was created in. These are the default backup windows for
-     *         each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     *         UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     *         Times should be Universal Time Coordinated (UTC). Must not conflict
-     *         with the preferred maintenance window. Must be at least two hours.
+     *         automated backups are enabled, using the
+     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     *         window selected at random from an 8-hour block of time per region. The
+     *         following list shows the time blocks for each region from which the
+     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      */
     public String getPreferredBackupWindow() {
         return preferredBackupWindow;
@@ -923,28 +936,32 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The daily time range during which automated backups are created if
-     * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     * the database was created in. These are the default backup windows for
-     * each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     * UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     * Times should be Universal Time Coordinated (UTC). Must not conflict
-     * with the preferred maintenance window. Must be at least two hours.
+     * automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     * window selected at random from an 8-hour block of time per region. The
+     * following list shows the time blocks for each region from which the
+     * default backup windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
-     *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     *         the database was created in. These are the default backup windows for
-     *         each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     *         UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     *         Times should be Universal Time Coordinated (UTC). Must not conflict
-     *         with the preferred maintenance window. Must be at least two hours.
+     *         automated backups are enabled, using the
+     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     *         window selected at random from an 8-hour block of time per region. The
+     *         following list shows the time blocks for each region from which the
+     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      */
     public void setPreferredBackupWindow(String preferredBackupWindow) {
         this.preferredBackupWindow = preferredBackupWindow;
@@ -952,30 +969,34 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The daily time range during which automated backups are created if
-     * automated backups are enabled, as determined by the
-     * <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     * the database was created in. These are the default backup windows for
-     * each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     * 03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     * 06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     * UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     * UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     * Times should be Universal Time Coordinated (UTC). Must not conflict
-     * with the preferred maintenance window. Must be at least two hours.
+     * automated backups are enabled, using the
+     * <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     * window selected at random from an 8-hour block of time per region. The
+     * following list shows the time blocks for each region from which the
+     * default backup windows are assigned. <ul> <li><b>US-East (Northern
+     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Coordinated (UTC). Must not conflict with the preferred maintenance
+     * window. Must be at least 30 minutes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredBackupWindow The daily time range during which automated backups are created if
-     *         automated backups are enabled, as determined by the
-     *         <code>BackupRetentionPeriod</code>. <p> Default: Depends on the Region
-     *         the database was created in. These are the default backup windows for
-     *         each Region: <ul> <li><b>US-East (Northern Virginia) Region:</b>
-     *         03:00-05:00 UTC</li> <li><b>US-West (Northern California) Region:</b>
-     *         06:00-08:00 UTC</li> <li><b>EU (Ireland) Region:</b> 22:00-00:00
-     *         UTC</li> <li><b>Asia Pacific (Singapore) Region:</b> 14:00-16:00
-     *         UTC</li> </ul> <p> Constraints: Must be in the format hh24:mi-hh24:mi.
-     *         Times should be Universal Time Coordinated (UTC). Must not conflict
-     *         with the preferred maintenance window. Must be at least two hours.
+     *         automated backups are enabled, using the
+     *         <code>BackupRetentionPeriod</code> parameter. <p> Default: A 30-minute
+     *         window selected at random from an 8-hour block of time per region. The
+     *         following list shows the time blocks for each region from which the
+     *         default backup windows are assigned. <ul> <li><b>US-East (Northern
+     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
+     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
+     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
+     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Coordinated (UTC). Must not conflict with the preferred maintenance
+     *         window. Must be at least 30 minutes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

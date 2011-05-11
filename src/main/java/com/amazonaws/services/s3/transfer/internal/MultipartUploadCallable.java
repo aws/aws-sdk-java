@@ -26,6 +26,7 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.AmazonS3EncryptionClient;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
@@ -64,15 +65,20 @@ public class MultipartUploadCallable implements Callable<UploadResult> {
         fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
 
         String uploadId = initiateMultipartUpload(putObjectRequest);
+        boolean isUsingEncryption = s3 instanceof AmazonS3EncryptionClient;
 
         long optimalPartSize = TransferManagerUtils.calculateOptimalPartSize(putObjectRequest, configuration);
+        if (isUsingEncryption) {
+        	// When using encryption, we want to make sure our parts line up correctly along cipher block boundaries 
+        	optimalPartSize += optimalPartSize % 32;
+        }
         log.debug("Calculated optimal part size: " + optimalPartSize);
 
         try {
             final List<PartETag> partETags = new ArrayList<PartETag>();
             UploadPartRequestFactory requestFactory = new UploadPartRequestFactory(putObjectRequest, uploadId, optimalPartSize);
 
-            if (TransferManagerUtils.isUploadParallelizable(putObjectRequest)) {
+            if (TransferManagerUtils.isUploadParallelizable(putObjectRequest, isUsingEncryption)) {
                 List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
                 while (requestFactory.hasMoreRequests()) {
                     if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");

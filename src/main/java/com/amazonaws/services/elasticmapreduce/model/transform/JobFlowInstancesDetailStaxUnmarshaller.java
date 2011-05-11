@@ -87,6 +87,10 @@ public class JobFlowInstancesDetailStaxUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesDetail.setKeepJobFlowAliveWhenNoSteps(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("TerminationProtected", targetDepth)) {
+                    jobFlowInstancesDetail.setTerminationProtected(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("HadoopVersion", targetDepth)) {
                     jobFlowInstancesDetail.setHadoopVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -28,7 +28,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     private String dBParameterGroupFamily;
 
@@ -60,7 +60,7 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * initialize any additional object members.
      * 
      * @param dBParameterGroupFamily The name of the DB Parameter Group
-     * Family. <p>Valid Values: <code>MySQL5.1</code>
+     * Family. <p>Valid Values: <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     public DescribeEngineDefaultParametersRequest(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -68,10 +68,10 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @return The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
@@ -79,10 +79,10 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @param dBParameterGroupFamily The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -90,12 +90,12 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code>
+     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupFamily The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code>
+     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

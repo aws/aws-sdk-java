@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You can only add steps to a job flow that is in one of the following
- * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
+ * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)
@@ -46,7 +46,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> .
+     * <a>DescribeJobFlows</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -72,7 +72,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * 
      * @param jobFlowId A string that uniquely identifies the job flow. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained
-     * from <a>DescribeJobFlows</a> .
+     * from <a>DescribeJobFlows</a>.
      */
     public AddJobFlowStepsRequest(String jobFlowId) {
         this.jobFlowId = jobFlowId;
@@ -85,7 +85,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * 
      * @param jobFlowId A string that uniquely identifies the job flow. This
      * identifier is returned by <a>RunJobFlow</a> and can also be obtained
-     * from <a>DescribeJobFlows</a> .
+     * from <a>DescribeJobFlows</a>.
      * @param steps A list of <a>StepConfig</a> to be executed by the job
      * flow.
      */
@@ -97,7 +97,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> .
+     * <a>DescribeJobFlows</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -105,7 +105,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *
      * @return A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a> .
+     *         <a>DescribeJobFlows</a>.
      */
     public String getJobFlowId() {
         return jobFlowId;
@@ -114,7 +114,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> .
+     * <a>DescribeJobFlows</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
@@ -122,7 +122,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a> .
+     *         <a>DescribeJobFlows</a>.
      */
     public void setJobFlowId(String jobFlowId) {
         this.jobFlowId = jobFlowId;
@@ -131,7 +131,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     /**
      * A string that uniquely identifies the job flow. This identifier is
      * returned by <a>RunJobFlow</a> and can also be obtained from
-     * <a>DescribeJobFlows</a> .
+     * <a>DescribeJobFlows</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -141,7 +141,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *
      * @param jobFlowId A string that uniquely identifies the job flow. This identifier is
      *         returned by <a>RunJobFlow</a> and can also be obtained from
-     *         <a>DescribeJobFlows</a> .
+     *         <a>DescribeJobFlows</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

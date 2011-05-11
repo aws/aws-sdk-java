@@ -23,9 +23,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * CloudWatch returns histories for all of the owner's alarms.
  * </p>
  * <p>
- * <b>NOTE:</b> Amazon CloudWatch retains the history of deleted alarms
- * for a period of six weeks. If an alarm has been deleted, its history
- * can still be queried.
+ * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
+ * weeks, whether or not you delete the alarm.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmHistory(DescribeAlarmHistoryRequest)
