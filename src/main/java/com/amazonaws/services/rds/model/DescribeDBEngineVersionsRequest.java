@@ -31,7 +31,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     private String engine;
 
     /**
-     * The database engine version to return.
+     * The database engine version to return. <p>Example: <code>5.1.49</code>
      */
     private String engineVersion;
 
@@ -105,29 +105,29 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The database engine version to return.
+     * The database engine version to return. <p>Example: <code>5.1.49</code>
      *
-     * @return The database engine version to return.
+     * @return The database engine version to return. <p>Example: <code>5.1.49</code>
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The database engine version to return.
+     * The database engine version to return. <p>Example: <code>5.1.49</code>
      *
-     * @param engineVersion The database engine version to return.
+     * @param engineVersion The database engine version to return. <p>Example: <code>5.1.49</code>
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The database engine version to return.
+     * The database engine version to return. <p>Example: <code>5.1.49</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The database engine version to return.
+     * @param engineVersion The database engine version to return. <p>Example: <code>5.1.49</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

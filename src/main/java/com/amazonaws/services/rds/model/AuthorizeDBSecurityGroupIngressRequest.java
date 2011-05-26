@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest) AuthorizeDBSecurityGroupIngress operation}.
  * <p>
- * This API allows for ingress to a DBSecurityGroup using one of two
- * forms of authorization. First, EC2 Security Groups can be added to the
+ * Enables ingress to a DBSecurityGroup using one of two forms of
+ * authorization. First, EC2 Security Groups can be added to the
  * DBSecurityGroup if the application using the database is running on
  * EC2 instances. Second, IP ranges are available if the application
  * accessing your database is running on the Internet. Required

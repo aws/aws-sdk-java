@@ -42,14 +42,15 @@ import com.amazonaws.services.rds.model.*;
  * </p>
  * <p>
  * Amazon RDS gives you access to the capabilities of a familiar MySQL
- * database server. This means the code, applications, and tools you
- * already use today with your existing MySQL databases work with Amazon
- * RDS without modification. Amazon RDS automatically backs up your
- * database and maintains the database software that powers your DB
- * Instance. Amazon RDS is flexible: you can scale your database
- * instance's compute resources and storage capacity to meet your
- * application's demand. As with all Amazon Web Services, there are no
- * up-front investments, and you pay only for the resources you use.
+ * or Oracle database server. This means the code, applications, and
+ * tools you already use today with your existing MySQL or Oracle
+ * databases work with Amazon RDS without modification. Amazon RDS
+ * automatically backs up your database and maintains the database
+ * software that powers your DB Instance. Amazon RDS is flexible: you can
+ * scale your database instance's compute resources and storage capacity
+ * to meet your application's demand. As with all Amazon Web Services,
+ * there are no up-front investments, and you pay only for the resources
+ * you use.
  * </p> 
  */       
 public class AmazonRDSAsyncClient extends AmazonRDSClient
@@ -140,20 +141,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             
     /**
      * <p>
-     * This API deletes a particular DBParameterGroup. The DBParameterGroup
-     * cannot be associated with any RDS instances to be deleted.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The specified database parameter group cannot be
-     * associated with any DB Instances.
+     * Returns information about provisioned RDS instances. This API
+     * supports pagination.
      * </p>
      *
-     * @param deleteDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBParameterGroup operation on
-     *           AmazonRDS.
+     * @param describeDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDBParameterGroup service method, as returned by AmazonRDS.
+     *         DescribeDBInstances service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -163,145 +159,19 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteDBParameterGroupAsync(final DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
+    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(final DescribeDBInstancesRequest describeDBInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteDBParameterGroup(deleteDBParameterGroupRequest);
-                return null;
+        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
+            public DescribeDBInstancesResult call() throws Exception {
+                return describeDBInstances(describeDBInstancesRequest);
 		    }
 		});
     }
     
     /**
      * <p>
-     * This API is used to delete a DBSnapshot.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
-     * deleted.
-     * </p>
-     *
-     * @param deleteDBSnapshotRequest Container for the necessary parameters
-     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> deleteDBSnapshotAsync(final DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return deleteDBSnapshot(deleteDBSnapshotRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API modifies the parameters of a DBParameterGroup. To modify
-     * more than one parameter submit a list of the following: ParameterName,
-     * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
-     * modified in a single request.
-     * </p>
-     *
-     * @param modifyDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ModifyDBParameterGroup operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ModifyDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ModifyDBParameterGroupResult> modifyDBParameterGroupAsync(final ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ModifyDBParameterGroupResult>() {
-            public ModifyDBParameterGroupResult call() throws Exception {
-                return modifyDBParameterGroup(modifyDBParameterGroupRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API revokes ingress from a DBSecurityGroup for previously
-     * authorized IP ranges or EC2 Security Groups. Required parameters for
-     * this API are one of CIDRIP or (EC2SecurityGroupName AND
-     * EC2SecurityGroupOwnerId).
-     * </p>
-     *
-     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
-     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-                return revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API returns the detailed parameter list for a particular
-     * DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParametersRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameters service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParametersResult> describeDBParametersAsync(final DescribeDBParametersRequest describeDBParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParametersResult>() {
-            public DescribeDBParametersResult call() throws Exception {
-                return describeDBParameters(describeDBParametersRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API returns events related to DB Instances, DB Security Groups,
-     * DB Snapshots and DB Parameter Groups for the past 14 das. Events
+     * Returns events related to DB Instances, DB Security Groups, DB
+     * Snapshots and DB Parameter Groups for the past 14 days. Events
      * specific to a particular DB Instance, database security group,
      * database snapshot or database parameter group can be obtained by
      * providing the name as a parameter. By default, the past hour of events
@@ -333,16 +203,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * This API creates a new database security group. Database Security
-     * groups control access to a database instance.
+     * Returns the detailed parameter list for a particular
+     * DBParameterGroup.
      * </p>
      *
-     * @param createDBSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSecurityGroup operation on
-     *           AmazonRDS.
+     * @param describeDBParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
+     *         DescribeDBParameters service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -352,171 +221,19 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBSecurityGroup> createDBSecurityGroupAsync(final CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
+    public Future<DescribeDBParametersResult> describeDBParametersAsync(final DescribeDBParametersRequest describeDBParametersRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-                return createDBSecurityGroup(createDBSecurityGroupRequest);
+        return executorService.submit(new Callable<DescribeDBParametersResult>() {
+            public DescribeDBParametersResult call() throws Exception {
+                return describeDBParameters(describeDBParametersRequest);
 		    }
 		});
     }
     
     /**
      * <p>
-     * This API is used to retrieve information about provisioned RDS
-     * instances. DescribeDBInstances supports pagination.
-     * </p>
-     *
-     * @param describeDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBInstances service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(final DescribeDBInstancesRequest describeDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
-            public DescribeDBInstancesResult call() throws Exception {
-                return describeDBInstances(describeDBInstancesRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API returns a list of DBParameterGroup descriptions. If a
-     * DBParameterGroupName is specified, the list will contain only the
-     * descriptions of the specified DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameterGroups operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
-            public DescribeDBParameterGroupsResult call() throws Exception {
-                return describeDBParameterGroups(describeDBParameterGroupsRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API is used to create a DBSnapshot. The source DBInstance must
-     * be in "available" state.
-     * </p>
-     *
-     * @param createDBSnapshotRequest Container for the necessary parameters
-     *           to execute the CreateDBSnapshot operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> createDBSnapshotAsync(final CreateDBSnapshotRequest createDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return createDBSnapshot(createDBSnapshotRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns a list of the available DB engines.
-     * </p>
-     *
-     * @param describeDBEngineVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeDBEngineVersions operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBEngineVersions service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBEngineVersionsResult> describeDBEngineVersionsAsync(final DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBEngineVersionsResult>() {
-            public DescribeDBEngineVersionsResult call() throws Exception {
-                return describeDBEngineVersions(describeDBEngineVersionsRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * The RebootDBInstance API reboots a previously provisioned RDS
-     * instance. This API results in the application of modified
-     * DBParameterGroup parameters with ApplyStatus of pending-reboot to the
-     * RDS instance. This action is taken as soon as possible, and results in
-     * a momentary outage to the RDS instance during which the RDS instance
-     * status is set to rebooting. A DBInstance event is created when the
-     * reboot is completed.
-     * </p>
-     *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RebootDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return rebootDBInstance(rebootDBInstanceRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API allows for ingress to a DBSecurityGroup using one of two
-     * forms of authorization. First, EC2 Security Groups can be added to the
+     * Enables ingress to a DBSecurityGroup using one of two forms of
+     * authorization. First, EC2 Security Groups can be added to the
      * DBSecurityGroup if the application using the database is running on
      * EC2 instances. Second, IP ranges are available if the application
      * accessing your database is running on the Internet. Required
@@ -560,164 +277,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * This API creates a new RDS instance from a point-in-time system
-     * snapshot. The target database is created from the source database
-     * restore point with the same configuration as the original source
-     * database, except that the new RDS instance is created with the default
-     * security group.
-     * </p>
-     *
-     * @param restoreDBInstanceToPointInTimeRequest Container for the
-     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
-     *           operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RestoreDBInstanceToPointInTime service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API is used to retrieve information about DBSnapshots. This API
-     * supports pagination.
-     * </p>
-     *
-     * @param describeDBSnapshotsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(final DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
-            public DescribeDBSnapshotsResult call() throws Exception {
-                return describeDBSnapshots(describeDBSnapshotsRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Lists available reserved DB Instance offerings.
-     * </p>
-     *
-     * @param describeReservedDBInstancesOfferingsRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeReservedDBInstancesOfferings operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeReservedDBInstancesOfferings service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeReservedDBInstancesOfferingsResult> describeReservedDBInstancesOfferingsAsync(final DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeReservedDBInstancesOfferingsResult>() {
-            public DescribeReservedDBInstancesOfferingsResult call() throws Exception {
-                return describeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API returns the default engine and system parameter information
-     * for the specified database engine.
-     * </p>
-     *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEngineDefaultParameters service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EngineDefaults> describeEngineDefaultParametersAsync(final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EngineDefaults>() {
-            public EngineDefaults call() throws Exception {
-                return describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * The DeleteDBInstance API deletes a previously provisioned RDS
-     * instance. A successful response from the web service indicates the
-     * request was received correctly. If a final DBSnapshot is requested the
-     * status of the RDS instance will be "deleting" until the DBSnapshot is
-     * created. DescribeDBInstance is used to monitor the status of this
-     * operation. This cannot be canceled or reverted once submitted.
-     * </p>
-     *
-     * @param deleteDBInstanceRequest Container for the necessary parameters
-     *           to execute the DeleteDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> deleteDBInstanceAsync(final DeleteDBInstanceRequest deleteDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return deleteDBInstance(deleteDBInstanceRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API returns a list of DBSecurityGroup descriptions. If a
+     * Returns a list of DBSecurityGroup descriptions. If a
      * DBSecurityGroupName is specified, the list will contain only the
      * descriptions of the specified DBSecurityGroup.
      * </p>
@@ -753,42 +313,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * This API creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return createDBInstance(createDBInstanceRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API modifies the parameters of a DBParameterGroup to the
-     * engine/system default value. To reset specific parameters submit a
-     * list of the following: ParameterName and ApplyMethod. To reset the
-     * entire DBParameterGroup specify the DBParameterGroup name and
+     * Modifies the parameters of a DBParameterGroup to the engine/system
+     * default value. To reset specific parameters submit a list of the
+     * following: ParameterName and ApplyMethod. To reset the entire
+     * DBParameterGroup specify the DBParameterGroup name and
      * ResetAllParameters parameters. When resetting the entire group,
      * dynamic parameters are updated immediately and static parameters are
-     * set to pending-reboot to take effect on the next MySQL reboot or
-     * RebootDBInstance request.
+     * set to pending-reboot to take effect on the next DB instance restart
+     * or RebootDBInstance request.
      * </p>
      *
      * @param resetDBParameterGroupRequest Container for the necessary
@@ -817,10 +349,100 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * This API is used to change RDS Instance settings. Users call the
-     * ModifyDBInstance API to change one or more database configuration
-     * parameters by specifying these parameters and the new values in the
-     * request.
+     * Creates a new DB Instance from a point-in-time system snapshot. The
+     * target database is created from the source database restore point with
+     * the same configuration as the original source database, except that
+     * the new RDS instance is created with the default security group.
+     * </p>
+     *
+     * @param restoreDBInstanceToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBInstanceToPointInTime service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of the available DB engines.
+     * </p>
+     *
+     * @param describeDBEngineVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeDBEngineVersions operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBEngineVersions service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBEngineVersionsResult> describeDBEngineVersionsAsync(final DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBEngineVersionsResult>() {
+            public DescribeDBEngineVersionsResult call() throws Exception {
+                return describeDBEngineVersions(describeDBEngineVersionsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new database parameter group.
+     * </p>
+     *
+     * @param createDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBParameterGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBParameterGroup> createDBParameterGroupAsync(final CreateDBParameterGroupRequest createDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBParameterGroup>() {
+            public DBParameterGroup call() throws Exception {
+                return createDBParameterGroup(createDBParameterGroupRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modify settings for a DB Instance. You can change one or more
+     * database configuration parameters by specifying these parameters and
+     * the new values in the request.
      * </p>
      *
      * @param modifyDBInstanceRequest Container for the necessary parameters
@@ -848,12 +470,12 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * This API creates a new DB Instance to an arbitrary point-in-time.
-     * Users can restore to any point in time before the latestRestorableTime
-     * for up to backupRetentionPeriod days. The target database is created
-     * from the source database with the same configuration as the original
-     * database except that the DB instance is created with the default DB
-     * security group.
+     * Restores a DB Instance to an arbitrary point-in-time. Users can
+     * restore to any point in time before the latestRestorableTime for up to
+     * backupRetentionPeriod days. The target database is created from the
+     * source database with the same configuration as the original database
+     * except that the DB instance is created with the default DB security
+     * group.
      * </p>
      *
      * @param restoreDBInstanceFromDBSnapshotRequest Container for the
@@ -883,16 +505,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns information about reserved DB Instances for this account, or
-     * about a specified reserved DB Instance.
+     * Creates a new database security group. Database Security groups
+     * control access to a database instance.
      * </p>
      *
-     * @param describeReservedDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeReservedDBInstances operation on
+     * @param createDBSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSecurityGroup operation on
      *           AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
+     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -902,47 +524,18 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
+    public Future<DBSecurityGroup> createDBSecurityGroupAsync(final CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
-            public DescribeReservedDBInstancesResult call() throws Exception {
-                return describeReservedDBInstances(describeReservedDBInstancesRequest);
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+                return createDBSecurityGroup(createDBSecurityGroupRequest);
 		    }
 		});
     }
     
     /**
      * <p>
-     * This API creates a new database parameter group.
-     * </p>
-     *
-     * @param createDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBParameterGroup operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBParameterGroup> createDBParameterGroupAsync(final CreateDBParameterGroupRequest createDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBParameterGroup>() {
-            public DBParameterGroup call() throws Exception {
-                return createDBParameterGroup(createDBParameterGroupRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * This API deletes a database security group.
+     * Deletes a database security group.
      * </p>
      * <p>
      * <b>NOTE:</b>The specified database security group must not be
@@ -970,6 +563,67 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             public Void call() throws Exception {
                 deleteDBSecurityGroup(deleteDBSecurityGroupRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of orderable DB Instance options for the specified
+     * engine.
+     * </p>
+     *
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOrderableDBInstanceOptions service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
+            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
+                return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Lists available reserved DB Instance offerings.
+     * </p>
+     *
+     * @param describeReservedDBInstancesOfferingsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedDBInstancesOfferings operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedDBInstancesOfferings service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedDBInstancesOfferingsResult> describeReservedDBInstancesOfferingsAsync(final DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeReservedDBInstancesOfferingsResult>() {
+            public DescribeReservedDBInstancesOfferingsResult call() throws Exception {
+                return describeReservedDBInstancesOfferings(describeReservedDBInstancesOfferingsRequest);
 		    }
 		});
     }
@@ -1016,6 +670,286 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP
+     * ranges or EC2 Security Groups. Required parameters for this API are
+     * one of CIDRIP or (EC2SecurityGroupName AND EC2SecurityGroupOwnerId).
+     * </p>
+     *
+     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
+     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+                return revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a DBSnapshot. The source DBInstance must be in "available"
+     * state.
+     * </p>
+     *
+     * @param createDBSnapshotRequest Container for the necessary parameters
+     *           to execute the CreateDBSnapshot operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> createDBSnapshotAsync(final CreateDBSnapshotRequest createDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return createDBSnapshot(createDBSnapshotRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Reboots a previously provisioned RDS instance. This API results in
+     * the application of modified DBParameterGroup parameters with
+     * ApplyStatus of pending-reboot to the RDS instance. This action is
+     * taken as soon as possible, and results in a momentary outage to the
+     * RDS instance during which the RDS instance status is set to rebooting.
+     * A DBInstance event is created when the reboot is completed.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RebootDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return rebootDBInstance(rebootDBInstanceRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of DBParameterGroup descriptions. If a
+     * DBParameterGroupName is specified, the list will contain only the
+     * descriptions of the specified DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameterGroups operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
+            public DescribeDBParameterGroupsResult call() throws Exception {
+                return describeDBParameterGroups(describeDBParameterGroupsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new DB instance.
+     * </p>
+     *
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return createDBInstance(createDBInstanceRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The DeleteDBInstance API deletes a previously provisioned RDS
+     * instance. A successful response from the web service indicates the
+     * request was received correctly. If a final DBSnapshot is requested the
+     * status of the RDS instance will be "deleting" until the DBSnapshot is
+     * created. DescribeDBInstance is used to monitor the status of this
+     * operation. This cannot be canceled or reverted once submitted.
+     * </p>
+     *
+     * @param deleteDBInstanceRequest Container for the necessary parameters
+     *           to execute the DeleteDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> deleteDBInstanceAsync(final DeleteDBInstanceRequest deleteDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return deleteDBInstance(deleteDBInstanceRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes a specified DBParameterGroup. The DBParameterGroup cannot be
+     * associated with any RDS instances to be deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The specified database parameter group cannot be
+     * associated with any DB Instances.
+     * </p>
+     *
+     * @param deleteDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBParameterGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBParameterGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDBParameterGroupAsync(final DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteDBParameterGroup(deleteDBParameterGroupRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modifies the parameters of a DBParameterGroup. To modify more than
+     * one parameter submit a list of the following: ParameterName,
+     * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
+     * modified in a single request.
+     * </p>
+     *
+     * @param modifyDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ModifyDBParameterGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBParameterGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ModifyDBParameterGroupResult> modifyDBParameterGroupAsync(final ModifyDBParameterGroupRequest modifyDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ModifyDBParameterGroupResult>() {
+            public ModifyDBParameterGroupResult call() throws Exception {
+                return modifyDBParameterGroup(modifyDBParameterGroupRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns information about DBSnapshots. This API supports pagination.
+     * </p>
+     *
+     * @param describeDBSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(final DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
+            public DescribeDBSnapshotsResult call() throws Exception {
+                return describeDBSnapshots(describeDBSnapshotsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Purchases a reserved DB Instance offering.
      * </p>
      *
@@ -1040,6 +974,99 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
         return executorService.submit(new Callable<ReservedDBInstance>() {
             public ReservedDBInstance call() throws Exception {
                 return purchaseReservedDBInstancesOffering(purchaseReservedDBInstancesOfferingRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * specified database engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultParameters service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultParametersAsync(final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+                return describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns information about reserved DB Instances for this account, or
+     * about a specified reserved DB Instance.
+     * </p>
+     *
+     * @param describeReservedDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeReservedDBInstances operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
+            public DescribeReservedDBInstancesResult call() throws Exception {
+                return describeReservedDBInstances(describeReservedDBInstancesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes a DBSnapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+     * deleted.
+     * </p>
+     *
+     * @param deleteDBSnapshotRequest Container for the necessary parameters
+     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> deleteDBSnapshotAsync(final DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return deleteDBSnapshot(deleteDBSnapshotRequest);
 		    }
 		});
     }

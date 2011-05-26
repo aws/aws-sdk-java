@@ -44,11 +44,6 @@ public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<Ad
                     }
                 }
                 if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getMarket() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupsListValue.getMarket()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
                     if (instanceGroupsListValue.getInstanceRole() != null) {
                         request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupsListValue.getInstanceRole()));
                     }

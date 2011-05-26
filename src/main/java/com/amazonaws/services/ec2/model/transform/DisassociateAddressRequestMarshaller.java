@@ -39,8 +39,8 @@ public class DisassociateAddressRequestMarshaller implements Marshaller<Request<
             }
         }
         if (disassociateAddressRequest != null) {
-            if (disassociateAddressRequest.getAssocationId() != null) {
-                request.addParameter("AssocationId", StringUtils.fromString(disassociateAddressRequest.getAssocationId()));
+            if (disassociateAddressRequest.getAssociationId() != null) {
+                request.addParameter("AssociationId", StringUtils.fromString(disassociateAddressRequest.getAssociationId()));
             }
         }
 

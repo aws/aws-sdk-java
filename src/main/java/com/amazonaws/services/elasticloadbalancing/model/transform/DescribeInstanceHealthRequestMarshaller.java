@@ -32,7 +32,7 @@ public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Reque
     public Request<DescribeInstanceHealthRequest> marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest) {
         Request<DescribeInstanceHealthRequest> request = new DefaultRequest<DescribeInstanceHealthRequest>(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeInstanceHealth");
-        request.addParameter("Version", "2010-07-01");
+        request.addParameter("Version", "2011-04-05");
         if (describeInstanceHealthRequest != null) {
             if (describeInstanceHealthRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(describeInstanceHealthRequest.getLoadBalancerName()));

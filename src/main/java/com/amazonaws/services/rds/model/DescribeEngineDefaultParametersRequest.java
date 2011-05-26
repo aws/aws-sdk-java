@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest) DescribeEngineDefaultParameters operation}.
  * <p>
- * This API returns the default engine and system parameter information
- * for the specified database engine.
+ * Returns the default engine and system parameter information for the
+ * specified database engine.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest)
@@ -27,8 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * The name of the DB Parameter Group Family.
      */
     private String dBParameterGroupFamily;
 
@@ -60,42 +59,36 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
      * initialize any additional object members.
      * 
      * @param dBParameterGroupFamily The name of the DB Parameter Group
-     * Family. <p>Valid Values: <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * Family.
      */
     public DescribeEngineDefaultParametersRequest(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * The name of the DB Parameter Group Family.
      *
-     * @return The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * @return The name of the DB Parameter Group Family.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * The name of the DB Parameter Group Family.
      *
-     * @param dBParameterGroupFamily The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
     }
     
     /**
-     * The name of the DB Parameter Group Family. <p>Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * The name of the DB Parameter Group Family.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The name of the DB Parameter Group Family. <p>Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * @param dBParameterGroupFamily The name of the DB Parameter Group Family.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

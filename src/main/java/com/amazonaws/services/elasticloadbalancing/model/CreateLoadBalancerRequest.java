@@ -48,10 +48,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers requests on the specified protocol
-     * and received by Elastic Load Balancing on the LoadBalancerPort are
-     * load balanced across the registered instances and sent to port
-     * InstancePort.
+     * within your set of LoadBalancers.
      */
     private String loadBalancerName;
 
@@ -82,10 +79,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within your set of LoadBalancers requests on the
-     * specified protocol and received by Elastic Load Balancing on the
-     * LoadBalancerPort are load balanced across the registered instances and
-     * sent to port InstancePort.
+     * name must be unique within your set of LoadBalancers.
      */
     public CreateLoadBalancerRequest(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -97,10 +91,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param loadBalancerName The name associated with the LoadBalancer. The
-     * name must be unique within your set of LoadBalancers requests on the
-     * specified protocol and received by Elastic Load Balancing on the
-     * LoadBalancerPort are load balanced across the registered instances and
-     * sent to port InstancePort.
+     * name must be unique within your set of LoadBalancers.
      * @param listeners A list of the following tuples: LoadBalancerPort,
      * InstancePort, and Protocol.
      * @param availabilityZones A list of Availability Zones. <p> At least
@@ -117,16 +108,10 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     
     /**
      * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers requests on the specified protocol
-     * and received by Elastic Load Balancing on the LoadBalancerPort are
-     * load balanced across the registered instances and sent to port
-     * InstancePort.
+     * within your set of LoadBalancers.
      *
      * @return The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers requests on the specified protocol
-     *         and received by Elastic Load Balancing on the LoadBalancerPort are
-     *         load balanced across the registered instances and sent to port
-     *         InstancePort.
+     *         within your set of LoadBalancers.
      */
     public String getLoadBalancerName() {
         return loadBalancerName;
@@ -134,16 +119,10 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     
     /**
      * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers requests on the specified protocol
-     * and received by Elastic Load Balancing on the LoadBalancerPort are
-     * load balanced across the registered instances and sent to port
-     * InstancePort.
+     * within your set of LoadBalancers.
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers requests on the specified protocol
-     *         and received by Elastic Load Balancing on the LoadBalancerPort are
-     *         load balanced across the registered instances and sent to port
-     *         InstancePort.
+     *         within your set of LoadBalancers.
      */
     public void setLoadBalancerName(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
@@ -151,18 +130,12 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     
     /**
      * The name associated with the LoadBalancer. The name must be unique
-     * within your set of LoadBalancers requests on the specified protocol
-     * and received by Elastic Load Balancing on the LoadBalancerPort are
-     * load balanced across the registered instances and sent to port
-     * InstancePort.
+     * within your set of LoadBalancers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param loadBalancerName The name associated with the LoadBalancer. The name must be unique
-     *         within your set of LoadBalancers requests on the specified protocol
-     *         and received by Elastic Load Balancing on the LoadBalancerPort are
-     *         load balanced across the registered instances and sent to port
-     *         InstancePort.
+     *         within your set of LoadBalancers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

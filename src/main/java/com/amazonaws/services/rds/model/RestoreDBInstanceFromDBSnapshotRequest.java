@@ -18,12 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest) RestoreDBInstanceFromDBSnapshot operation}.
  * <p>
- * This API creates a new DB Instance to an arbitrary point-in-time.
- * Users can restore to any point in time before the latestRestorableTime
- * for up to backupRetentionPeriod days. The target database is created
- * from the source database with the same configuration as the original
- * database except that the DB instance is created with the default DB
- * security group.
+ * Restores a DB Instance to an arbitrary point-in-time. Users can
+ * restore to any point in time before the latestRestorableTime for up to
+ * backupRetentionPeriod days. The target database is created from the
+ * source database with the same configuration as the original database
+ * except that the DB instance is created with the default DB security
+ * group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)
@@ -82,6 +82,27 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * the DB Instance during the maintenance window.
      */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     */
+    private String licenseModel;
+
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter doesn't apply to the MySQL engine. </note>
+     */
+    private String dBName;
+
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     */
+    private String engine;
 
     /**
      * Default constructor for a new RestoreDBInstanceFromDBSnapshotRequest object.  Callers should use the
@@ -482,6 +503,144 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @return License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public String getLicenseModel() {
+        return licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+        return this;
+    }
+    
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter doesn't apply to the MySQL engine. </note>
+     *
+     * @return The database name for the restored DB Instance. <note> <p>This
+     *         parameter doesn't apply to the MySQL engine. </note>
+     */
+    public String getDBName() {
+        return dBName;
+    }
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter doesn't apply to the MySQL engine. </note>
+     *
+     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     *         parameter doesn't apply to the MySQL engine. </note>
+     */
+    public void setDBName(String dBName) {
+        this.dBName = dBName;
+    }
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter doesn't apply to the MySQL engine. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     *         parameter doesn't apply to the MySQL engine. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withDBName(String dBName) {
+        this.dBName = dBName;
+        return this;
+    }
+    
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     *
+     * @return The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     */
+    public String getEngine() {
+        return engine;
+    }
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     *
+     * @param engine The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     */
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engine The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -500,6 +659,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        sb.append("LicenseModel: " + licenseModel + ", ");
+        sb.append("DBName: " + dBName + ", ");
+        sb.append("Engine: " + engine + ", ");
         sb.append("}");
         return sb.toString();
     }

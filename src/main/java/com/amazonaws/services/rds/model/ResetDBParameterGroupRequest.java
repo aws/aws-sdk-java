@@ -18,14 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest) ResetDBParameterGroup operation}.
  * <p>
- * This API modifies the parameters of a DBParameterGroup to the
- * engine/system default value. To reset specific parameters submit a
- * list of the following: ParameterName and ApplyMethod. To reset the
- * entire DBParameterGroup specify the DBParameterGroup name and
+ * Modifies the parameters of a DBParameterGroup to the engine/system
+ * default value. To reset specific parameters submit a list of the
+ * following: ParameterName and ApplyMethod. To reset the entire
+ * DBParameterGroup specify the DBParameterGroup name and
  * ResetAllParameters parameters. When resetting the entire group,
  * dynamic parameters are updated immediately and static parameters are
- * set to pending-reboot to take effect on the next MySQL reboot or
- * RebootDBInstance request.
+ * set to pending-reboot to take effect on the next DB instance restart
+ * or RebootDBInstance request.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#resetDBParameterGroup(ResetDBParameterGroupRequest)
@@ -51,11 +51,13 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p>Valid Values (for
-     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     * the immediate value with dynamic parameters only. You can use the
-     * <code>pending-reboot</code> value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots.
+     * parameters may be modified in a single request. <p><b>MySQL</b>
+     * <p>Valid Values (for Apply method): <code>immediate</code> |
+     * <code>pending-reboot</code> <p>You can use the immediate value with
+     * dynamic parameters only. You can use the <code>pending-reboot</code>
+     * value for both dynamic and static parameters, and changes are applied
+     * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     * method): <code>pending-reboot</code>
      */
     private java.util.List<Parameter> parameters;
 
@@ -194,20 +196,24 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p>Valid Values (for
-     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     * the immediate value with dynamic parameters only. You can use the
-     * <code>pending-reboot</code> value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots.
+     * parameters may be modified in a single request. <p><b>MySQL</b>
+     * <p>Valid Values (for Apply method): <code>immediate</code> |
+     * <code>pending-reboot</code> <p>You can use the immediate value with
+     * dynamic parameters only. You can use the <code>pending-reboot</code>
+     * value for both dynamic and static parameters, and changes are applied
+     * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     * method): <code>pending-reboot</code>
      *
      * @return An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p>Valid Values (for
-     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     *         the immediate value with dynamic parameters only. You can use the
-     *         <code>pending-reboot</code> value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots.
+     *         parameters may be modified in a single request. <p><b>MySQL</b>
+     *         <p>Valid Values (for Apply method): <code>immediate</code> |
+     *         <code>pending-reboot</code> <p>You can use the immediate value with
+     *         dynamic parameters only. You can use the <code>pending-reboot</code>
+     *         value for both dynamic and static parameters, and changes are applied
+     *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     *         method): <code>pending-reboot</code>
      */
     public java.util.List<Parameter> getParameters() {
         if (parameters == null) {
@@ -220,20 +226,24 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p>Valid Values (for
-     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     * the immediate value with dynamic parameters only. You can use the
-     * <code>pending-reboot</code> value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots.
+     * parameters may be modified in a single request. <p><b>MySQL</b>
+     * <p>Valid Values (for Apply method): <code>immediate</code> |
+     * <code>pending-reboot</code> <p>You can use the immediate value with
+     * dynamic parameters only. You can use the <code>pending-reboot</code>
+     * value for both dynamic and static parameters, and changes are applied
+     * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     * method): <code>pending-reboot</code>
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p>Valid Values (for
-     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     *         the immediate value with dynamic parameters only. You can use the
-     *         <code>pending-reboot</code> value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots.
+     *         parameters may be modified in a single request. <p><b>MySQL</b>
+     *         <p>Valid Values (for Apply method): <code>immediate</code> |
+     *         <code>pending-reboot</code> <p>You can use the immediate value with
+     *         dynamic parameters only. You can use the <code>pending-reboot</code>
+     *         value for both dynamic and static parameters, and changes are applied
+     *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     *         method): <code>pending-reboot</code>
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
@@ -247,22 +257,26 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p>Valid Values (for
-     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     * the immediate value with dynamic parameters only. You can use the
-     * <code>pending-reboot</code> value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots.
+     * parameters may be modified in a single request. <p><b>MySQL</b>
+     * <p>Valid Values (for Apply method): <code>immediate</code> |
+     * <code>pending-reboot</code> <p>You can use the immediate value with
+     * dynamic parameters only. You can use the <code>pending-reboot</code>
+     * value for both dynamic and static parameters, and changes are applied
+     * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     * method): <code>pending-reboot</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p>Valid Values (for
-     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     *         the immediate value with dynamic parameters only. You can use the
-     *         <code>pending-reboot</code> value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots.
+     *         parameters may be modified in a single request. <p><b>MySQL</b>
+     *         <p>Valid Values (for Apply method): <code>immediate</code> |
+     *         <code>pending-reboot</code> <p>You can use the immediate value with
+     *         dynamic parameters only. You can use the <code>pending-reboot</code>
+     *         value for both dynamic and static parameters, and changes are applied
+     *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     *         method): <code>pending-reboot</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -278,22 +292,26 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      * An array of parameter names, values, and the apply method for the
      * parameter update. At least one parameter name, value, and apply method
      * must be supplied; subsequent arguments are optional. A maximum of 20
-     * parameters may be modified in a single request. <p>Valid Values (for
-     * Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     * the immediate value with dynamic parameters only. You can use the
-     * <code>pending-reboot</code> value for both dynamic and static
-     * parameters, and changes are applied when DB Instance reboots.
+     * parameters may be modified in a single request. <p><b>MySQL</b>
+     * <p>Valid Values (for Apply method): <code>immediate</code> |
+     * <code>pending-reboot</code> <p>You can use the immediate value with
+     * dynamic parameters only. You can use the <code>pending-reboot</code>
+     * value for both dynamic and static parameters, and changes are applied
+     * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     * method): <code>pending-reboot</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param parameters An array of parameter names, values, and the apply method for the
      *         parameter update. At least one parameter name, value, and apply method
      *         must be supplied; subsequent arguments are optional. A maximum of 20
-     *         parameters may be modified in a single request. <p>Valid Values (for
-     *         Apply method): <code>immediate | pending-reboot</code> <p>You can use
-     *         the immediate value with dynamic parameters only. You can use the
-     *         <code>pending-reboot</code> value for both dynamic and static
-     *         parameters, and changes are applied when DB Instance reboots.
+     *         parameters may be modified in a single request. <p><b>MySQL</b>
+     *         <p>Valid Values (for Apply method): <code>immediate</code> |
+     *         <code>pending-reboot</code> <p>You can use the immediate value with
+     *         dynamic parameters only. You can use the <code>pending-reboot</code>
+     *         value for both dynamic and static parameters, and changes are applied
+     *         when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
+     *         method): <code>pending-reboot</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

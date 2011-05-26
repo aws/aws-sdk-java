@@ -32,7 +32,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
     public Request<RestoreDBInstanceFromDBSnapshotRequest> marshall(RestoreDBInstanceFromDBSnapshotRequest restoreDBInstanceFromDBSnapshotRequest) {
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2010-07-28");
+        request.addParameter("Version", "2011-04-01");
         if (restoreDBInstanceFromDBSnapshotRequest != null) {
             if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
                 request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));
@@ -66,6 +66,21 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         if (restoreDBInstanceFromDBSnapshotRequest != null) {
             if (restoreDBInstanceFromDBSnapshotRequest.isAutoMinorVersionUpgrade() != null) {
                 request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.isAutoMinorVersionUpgrade()));
+            }
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest != null) {
+            if (restoreDBInstanceFromDBSnapshotRequest.getLicenseModel() != null) {
+                request.addParameter("LicenseModel", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getLicenseModel()));
+            }
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest != null) {
+            if (restoreDBInstanceFromDBSnapshotRequest.getDBName() != null) {
+                request.addParameter("DBName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBName()));
+            }
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest != null) {
+            if (restoreDBInstanceFromDBSnapshotRequest.getEngine() != null) {
+                request.addParameter("Engine", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getEngine()));
             }
         }
 

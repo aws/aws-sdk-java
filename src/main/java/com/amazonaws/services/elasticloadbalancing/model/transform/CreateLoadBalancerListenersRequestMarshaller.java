@@ -32,7 +32,7 @@ public class CreateLoadBalancerListenersRequestMarshaller implements Marshaller<
     public Request<CreateLoadBalancerListenersRequest> marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) {
         Request<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancerListeners");
-        request.addParameter("Version", "2010-07-01");
+        request.addParameter("Version", "2011-04-05");
         if (createLoadBalancerListenersRequest != null) {
             if (createLoadBalancerListenersRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerListenersRequest.getLoadBalancerName()));

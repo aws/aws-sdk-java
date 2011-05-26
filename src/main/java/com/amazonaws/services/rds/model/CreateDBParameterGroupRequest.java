@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest) CreateDBParameterGroup operation}.
  * <p>
- * This API creates a new database parameter group.
+ * Creates a new database parameter group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest)
@@ -38,8 +38,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * The DB parameter group family name. A DB parameter group can be
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
-     * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * with that DB parameter group family and version.
      */
     private String dBParameterGroupFamily;
 
@@ -68,8 +67,7 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * parameter group can be associated with one and only one DB parameter
      * group family, and can be applied only to a DB instance running a
      * database engine compatible with that DB parameter group family and
-     * version. <p> Valid Values: <code>MySQL5.1</code> |
-     * <code>MySQL5.5</code>
+     * version.
      * @param description The description for the DB Parameter Group.
      */
     public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
@@ -140,14 +138,12 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * The DB parameter group family name. A DB parameter group can be
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
-     * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * with that DB parameter group family and version.
      *
      * @return The DB parameter group family name. A DB parameter group can be
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
-     *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     *         with that DB parameter group family and version.
      */
     public String getDBParameterGroupFamily() {
         return dBParameterGroupFamily;
@@ -157,14 +153,12 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * The DB parameter group family name. A DB parameter group can be
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
-     * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * with that DB parameter group family and version.
      *
      * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
-     *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     *         with that DB parameter group family and version.
      */
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
         this.dBParameterGroupFamily = dBParameterGroupFamily;
@@ -174,16 +168,14 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest {
      * The DB parameter group family name. A DB parameter group can be
      * associated with one and only one DB parameter group family, and can be
      * applied only to a DB instance running a database engine compatible
-     * with that DB parameter group family and version. <p> Valid Values:
-     * <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     * with that DB parameter group family and version.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupFamily The DB parameter group family name. A DB parameter group can be
      *         associated with one and only one DB parameter group family, and can be
      *         applied only to a DB instance running a database engine compatible
-     *         with that DB parameter group family and version. <p> Valid Values:
-     *         <code>MySQL5.1</code> | <code>MySQL5.5</code>
+     *         with that DB parameter group family and version.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

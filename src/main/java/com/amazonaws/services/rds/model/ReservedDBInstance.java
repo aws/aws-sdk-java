@@ -59,6 +59,11 @@ public class ReservedDBInstance {
     private Double usagePrice;
 
     /**
+     * The currency code for the reserved DB Instance.
+     */
+    private String currencyCode;
+
+    /**
      * The number of reserved DB Instances.
      */
     private Integer dBInstanceCount;
@@ -317,6 +322,40 @@ public class ReservedDBInstance {
     
     
     /**
+     * The currency code for the reserved DB Instance.
+     *
+     * @return The currency code for the reserved DB Instance.
+     */
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+    
+    /**
+     * The currency code for the reserved DB Instance.
+     *
+     * @param currencyCode The currency code for the reserved DB Instance.
+     */
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+    
+    /**
+     * The currency code for the reserved DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param currencyCode The currency code for the reserved DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedDBInstance withCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+        return this;
+    }
+    
+    
+    /**
      * The number of reserved DB Instances.
      *
      * @return The number of reserved DB Instances.
@@ -480,6 +519,7 @@ public class ReservedDBInstance {
         sb.append("Duration: " + duration + ", ");
         sb.append("FixedPrice: " + fixedPrice + ", ");
         sb.append("UsagePrice: " + usagePrice + ", ");
+        sb.append("CurrencyCode: " + currencyCode + ", ");
         sb.append("DBInstanceCount: " + dBInstanceCount + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");

@@ -18,10 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest) ModifyDBInstance operation}.
  * <p>
- * This API is used to change RDS Instance settings. Users call the
- * ModifyDBInstance API to change one or more database configuration
- * parameters by specifying these parameters and the new values in the
- * request.
+ * Modify settings for a DB Instance. You can change one or more
+ * database configuration parameters by specifying these parameters and
+ * the new values in the request.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBInstance(ModifyDBInstanceRequest)
@@ -30,10 +29,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. <p>Constraints: <ul> <li>Must be the identifier for an
+     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul> <p>Example: <copy>mydbinstance</copy>
      */
     private String dBInstanceIdentifier;
 
@@ -41,11 +41,16 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * The new storage capacity of the RDS instance. <p> This change does not
      * result in an outage and is applied during the next maintenance window
      * unless the <code>ApplyImmediately</code> parameter is specified as
-     * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.
+     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p>Type:
+     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.
      */
     private Integer allocatedStorage;
 
@@ -127,11 +132,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 30
+     * If moving this window to the current time, there must be at least 120
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     * Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      */
     private String preferredMaintenanceWindow;
 
@@ -177,11 +182,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBInstanceIdentifier The DB Instance identifier. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must contain
-     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul> <p>Example:
-     * <copy>mydbinstance</copy>
+     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be the
+     * identifier for an existing DB Instance</li> <li>Must contain from 1 to
+     * 63 alphanumeric characters or hyphens</li> <li>First character must be
+     * a letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      */
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -189,16 +194,18 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. <p>Constraints: <ul> <li>Must be the identifier for an
+     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul> <p>Example: <copy>mydbinstance</copy>
      *
      * @return The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
+     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         characters or hyphens</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul> <p>Example: <copy>mydbinstance</copy>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -206,16 +213,18 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. <p>Constraints: <ul> <li>Must be the identifier for an
+     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul> <p>Example: <copy>mydbinstance</copy>
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
+     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         characters or hyphens</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul> <p>Example: <copy>mydbinstance</copy>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -223,18 +232,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens</li> <li>First character must be a
-     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. <p>Constraints: <ul> <li>Must be the identifier for an
+     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     * characters or hyphens</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul> <p>Example: <copy>mydbinstance</copy>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens</li> <li>First character must be a
-     *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
+     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
+     *         characters or hyphens</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul> <p>Example: <copy>mydbinstance</copy>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -249,20 +260,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * The new storage capacity of the RDS instance. <p> This change does not
      * result in an outage and is applied during the next maintenance window
      * unless the <code>ApplyImmediately</code> parameter is specified as
-     * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.
+     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p>Type:
+     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.
      *
      * @return The new storage capacity of the RDS instance. <p> This change does not
      *         result in an outage and is applied during the next maintenance window
      *         unless the <code>ApplyImmediately</code> parameter is specified as
-     *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value.
+     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p>Type:
+     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -272,20 +293,30 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * The new storage capacity of the RDS instance. <p> This change does not
      * result in an outage and is applied during the next maintenance window
      * unless the <code>ApplyImmediately</code> parameter is specified as
-     * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.
+     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p>Type:
+     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. <p> This change does not
      *         result in an outage and is applied during the next maintenance window
      *         unless the <code>ApplyImmediately</code> parameter is specified as
-     *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value.
+     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p>Type:
+     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -295,22 +326,32 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * The new storage capacity of the RDS instance. <p> This change does not
      * result in an outage and is applied during the next maintenance window
      * unless the <code>ApplyImmediately</code> parameter is specified as
-     * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     * least 10% greater than the current value. Values that are not at least
-     * 10% greater than the existing value are rounded up so that they are
-     * 10% greater than the current value.
+     * <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     * existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     * supplied must be at least 10% greater than the current value. Values
+     * that are not at least 10% greater than the existing value are rounded
+     * up so that they are 10% greater than the current value. <p>Type:
+     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     * greater than the current value. Values that are not at least 10%
+     * greater than the existing value are rounded up so that they are 10%
+     * greater than the current value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. <p> This change does not
      *         result in an outage and is applied during the next maintenance window
      *         unless the <code>ApplyImmediately</code> parameter is specified as
-     *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: 5-1024 <p>Constraints: Value supplied must be at
-     *         least 10% greater than the current value. Values that are not at least
-     *         10% greater than the existing value are rounded up so that they are
-     *         10% greater than the current value.
+     *         <code>true</code> for this request. <p><b>MySQL</b> <p>Default: Uses
+     *         existing setting <p>Valid Values: 5-1024 <p>Constraints: Value
+     *         supplied must be at least 10% greater than the current value. Values
+     *         that are not at least 10% greater than the existing value are rounded
+     *         up so that they are 10% greater than the current value. <p>Type:
+     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
+     *         greater than the current value. Values that are not at least 10%
+     *         greater than the existing value are rounded up so that they are 10%
+     *         greater than the current value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -861,19 +902,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 30
+     * If moving this window to the current time, there must be at least 120
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     * Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      *
      * @return The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 30
+     *         If moving this window to the current time, there must be at least 120
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -882,19 +923,19 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 30
+     * If moving this window to the current time, there must be at least 120
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     * Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 30
+     *         If moving this window to the current time, there must be at least 120
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -903,21 +944,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur, which may result in an outage. This change is made immediately.
-     * If moving this window to the current time, there must be at least 30
+     * If moving this window to the current time, there must be at least 120
      * minutes between the current time and end of the window to ensure
      * pending changes are applied. <p>Default: Uses existing setting
      * <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     * Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     * Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur, which may result in an outage. This change is made immediately.
-     *         If moving this window to the current time, there must be at least 30
+     *         If moving this window to the current time, there must be at least 120
      *         minutes between the current time and end of the window to ensure
      *         pending changes are applied. <p>Default: Uses existing setting
      *         <p>Format: ddd:hh24:mi-ddd:hh24:mi <p>Valid Days: Mon | Tue | Wed |
-     *         Thu | Fri | Sat | Sun <p>Constraints: Minimum 30 minute period
+     *         Thu | Fri | Sat | Sun <p>Constraints: Must be at least 30 minutes
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

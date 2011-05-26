@@ -16,7 +16,8 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * The LoadBalancerDescription data type.
+ * Contains the result of a successful invocation of
+ * DescribeLoadBalancers.
  * </p>
  */
 public class LoadBalancerDescription {
@@ -30,6 +31,26 @@ public class LoadBalancerDescription {
      * Specifies the external DNS name associated with the LoadBalancer.
      */
     private String dNSName;
+
+    /**
+     * Provides the name of the Amazon Route 53 hosted zone that is
+     * associated with the load balancer. For information on how to associate
+     * your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     */
+    private String canonicalHostedZoneName;
+
+    /**
+     * Provides the ID of the Amazon Route 53 hosted zone name that is
+     * associated with the load balancer. For information on how to associate
+     * or disassociate your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     */
+    private String canonicalHostedZoneNameID;
 
     /**
      * LoadBalancerPort, InstancePort, Protocol, and PolicyNames are returned
@@ -57,6 +78,15 @@ public class LoadBalancerDescription {
      * the LoadBalancer.
      */
     private HealthCheck healthCheck;
+
+    /**
+     * The security group that you can use as part of your inbound rules for
+     * your load balancer's back-end Amazon EC2 application instances. To
+     * disallow traffic from sources other than your load balancer, add a
+     * security group rule to your back end instance that specifies this
+     * source security group as the inbound source.
+     */
+    private SourceSecurityGroup sourceSecurityGroup;
 
     /**
      * Provides the date and time the LoadBalancer was created.
@@ -133,6 +163,134 @@ public class LoadBalancerDescription {
      */
     public LoadBalancerDescription withDNSName(String dNSName) {
         this.dNSName = dNSName;
+        return this;
+    }
+    
+    
+    /**
+     * Provides the name of the Amazon Route 53 hosted zone that is
+     * associated with the load balancer. For information on how to associate
+     * your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     *
+     * @return Provides the name of the Amazon Route 53 hosted zone that is
+     *         associated with the load balancer. For information on how to associate
+     *         your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     */
+    public String getCanonicalHostedZoneName() {
+        return canonicalHostedZoneName;
+    }
+    
+    /**
+     * Provides the name of the Amazon Route 53 hosted zone that is
+     * associated with the load balancer. For information on how to associate
+     * your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     *
+     * @param canonicalHostedZoneName Provides the name of the Amazon Route 53 hosted zone that is
+     *         associated with the load balancer. For information on how to associate
+     *         your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     */
+    public void setCanonicalHostedZoneName(String canonicalHostedZoneName) {
+        this.canonicalHostedZoneName = canonicalHostedZoneName;
+    }
+    
+    /**
+     * Provides the name of the Amazon Route 53 hosted zone that is
+     * associated with the load balancer. For information on how to associate
+     * your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param canonicalHostedZoneName Provides the name of the Amazon Route 53 hosted zone that is
+     *         associated with the load balancer. For information on how to associate
+     *         your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withCanonicalHostedZoneName(String canonicalHostedZoneName) {
+        this.canonicalHostedZoneName = canonicalHostedZoneName;
+        return this;
+    }
+    
+    
+    /**
+     * Provides the ID of the Amazon Route 53 hosted zone name that is
+     * associated with the load balancer. For information on how to associate
+     * or disassociate your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     *
+     * @return Provides the ID of the Amazon Route 53 hosted zone name that is
+     *         associated with the load balancer. For information on how to associate
+     *         or disassociate your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     */
+    public String getCanonicalHostedZoneNameID() {
+        return canonicalHostedZoneNameID;
+    }
+    
+    /**
+     * Provides the ID of the Amazon Route 53 hosted zone name that is
+     * associated with the load balancer. For information on how to associate
+     * or disassociate your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     *
+     * @param canonicalHostedZoneNameID Provides the ID of the Amazon Route 53 hosted zone name that is
+     *         associated with the load balancer. For information on how to associate
+     *         or disassociate your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     */
+    public void setCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
+        this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
+    }
+    
+    /**
+     * Provides the ID of the Amazon Route 53 hosted zone name that is
+     * associated with the load balancer. For information on how to associate
+     * or disassociate your load balancer with a hosted zone, go to <a
+     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     * Balancing Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param canonicalHostedZoneNameID Provides the ID of the Amazon Route 53 hosted zone name that is
+     *         associated with the load balancer. For information on how to associate
+     *         or disassociate your load balancer with a hosted zone, go to <a
+     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
+     *         Balancing Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withCanonicalHostedZoneNameID(String canonicalHostedZoneNameID) {
+        this.canonicalHostedZoneNameID = canonicalHostedZoneNameID;
         return this;
     }
     
@@ -406,6 +564,64 @@ public class LoadBalancerDescription {
     
     
     /**
+     * The security group that you can use as part of your inbound rules for
+     * your load balancer's back-end Amazon EC2 application instances. To
+     * disallow traffic from sources other than your load balancer, add a
+     * security group rule to your back end instance that specifies this
+     * source security group as the inbound source.
+     *
+     * @return The security group that you can use as part of your inbound rules for
+     *         your load balancer's back-end Amazon EC2 application instances. To
+     *         disallow traffic from sources other than your load balancer, add a
+     *         security group rule to your back end instance that specifies this
+     *         source security group as the inbound source.
+     */
+    public SourceSecurityGroup getSourceSecurityGroup() {
+        return sourceSecurityGroup;
+    }
+    
+    /**
+     * The security group that you can use as part of your inbound rules for
+     * your load balancer's back-end Amazon EC2 application instances. To
+     * disallow traffic from sources other than your load balancer, add a
+     * security group rule to your back end instance that specifies this
+     * source security group as the inbound source.
+     *
+     * @param sourceSecurityGroup The security group that you can use as part of your inbound rules for
+     *         your load balancer's back-end Amazon EC2 application instances. To
+     *         disallow traffic from sources other than your load balancer, add a
+     *         security group rule to your back end instance that specifies this
+     *         source security group as the inbound source.
+     */
+    public void setSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
+        this.sourceSecurityGroup = sourceSecurityGroup;
+    }
+    
+    /**
+     * The security group that you can use as part of your inbound rules for
+     * your load balancer's back-end Amazon EC2 application instances. To
+     * disallow traffic from sources other than your load balancer, add a
+     * security group rule to your back end instance that specifies this
+     * source security group as the inbound source.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param sourceSecurityGroup The security group that you can use as part of your inbound rules for
+     *         your load balancer's back-end Amazon EC2 application instances. To
+     *         disallow traffic from sources other than your load balancer, add a
+     *         security group rule to your back end instance that specifies this
+     *         source security group as the inbound source.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withSourceSecurityGroup(SourceSecurityGroup sourceSecurityGroup) {
+        this.sourceSecurityGroup = sourceSecurityGroup;
+        return this;
+    }
+    
+    
+    /**
      * Provides the date and time the LoadBalancer was created.
      *
      * @return Provides the date and time the LoadBalancer was created.
@@ -453,11 +669,14 @@ public class LoadBalancerDescription {
         sb.append("{");
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("DNSName: " + dNSName + ", ");
+        sb.append("CanonicalHostedZoneName: " + canonicalHostedZoneName + ", ");
+        sb.append("CanonicalHostedZoneNameID: " + canonicalHostedZoneNameID + ", ");
         sb.append("ListenerDescriptions: " + listenerDescriptions + ", ");
         sb.append("Policies: " + policies + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("HealthCheck: " + healthCheck + ", ");
+        sb.append("SourceSecurityGroup: " + sourceSecurityGroup + ", ");
         sb.append("CreatedTime: " + createdTime + ", ");
         sb.append("}");
         return sb.toString();

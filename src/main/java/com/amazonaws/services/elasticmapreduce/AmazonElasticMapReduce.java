@@ -21,9 +21,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
 /**
  * Interface for accessing AmazonElasticMapReduce.
  * <p>
- * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
- * guide provides descriptions and samples of the Amazon Elastic
- * MapReduce APIs.
+ * This is the Amazon Elastic MapReduce API Reference. This guide
+ * provides descriptions and samples of the Amazon Elastic MapReduce
+ * APIs.
  * </p>
  * <p>
  * Amazon Elastic MapReduce is a web service that makes it easy to
@@ -31,6 +31,14 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Hadoop processing combined with several AWS products to do tasks such
  * as web indexing, data mining, log file analysis, machine learning,
  * scientific simulation, and data warehousing.
+ * </p>
+ * <p>
+ * For more information about this product go to the <a
+ * href="http://aws.amazon.com/elasticmapreduce/"> Amazon Elastic
+ * MapReduce </a> detail page. For specific information about setting up
+ * signatures and authorization through the API, go to <a
+ * .com/ElasticMapReduce/latest/DeveloperGuide/making_api_requests.html">
+ * Amazon Elastic MapReduce Developer Guide </a> .
  * </p>
  */
 public interface AmazonElasticMapReduce {
@@ -105,7 +113,7 @@ public interface AmazonElasticMapReduce {
      * </p>
      * <p>
      * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
+     * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
      * </p>
      *
      * @param addJobFlowStepsRequest Container for the necessary parameters

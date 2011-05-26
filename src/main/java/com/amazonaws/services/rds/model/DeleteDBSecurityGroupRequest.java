@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest) DeleteDBSecurityGroup operation}.
  * <p>
- * This API deletes a database security group.
+ * Deletes a database security group.
  * </p>
  * <p>
  * <b>NOTE:</b>The specified database security group must not be

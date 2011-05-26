@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest) ModifyDBParameterGroup operation}.
  * <p>
- * This API modifies the parameters of a DBParameterGroup. To modify
- * more than one parameter submit a list of the following: ParameterName,
+ * Modifies the parameters of a DBParameterGroup. To modify more than
+ * one parameter submit a list of the following: ParameterName,
  * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
  * modified in a single request.
  * </p>
@@ -30,6 +30,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the database parameter group. <p>Constraints: <ul>
+     * <li>Must be the name of an existing database parameter group</li>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
@@ -60,7 +61,8 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBParameterGroupName The name of the database parameter group.
-     * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
+     * <p>Constraints: <ul> <li>Must be the name of an existing database
+     * parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      * @param parameters An array of parameter names, values, and the apply
@@ -80,11 +82,13 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database parameter group. <p>Constraints: <ul>
+     * <li>Must be the name of an existing database parameter group</li>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
      * @return The name of the database parameter group. <p>Constraints: <ul>
+     *         <li>Must be the name of an existing database parameter group</li>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      *         must be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
@@ -95,11 +99,13 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database parameter group. <p>Constraints: <ul>
+     * <li>Must be the name of an existing database parameter group</li>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      *
      * @param dBParameterGroupName The name of the database parameter group. <p>Constraints: <ul>
+     *         <li>Must be the name of an existing database parameter group</li>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      *         must be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>
@@ -110,6 +116,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database parameter group. <p>Constraints: <ul>
+     * <li>Must be the name of an existing database parameter group</li>
      * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
@@ -117,6 +124,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName The name of the database parameter group. <p>Constraints: <ul>
+     *         <li>Must be the name of an existing database parameter group</li>
      *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
      *         must be a letter</li> <li>Cannot end with a hyphen or contain two
      *         consecutive hyphens</li> </ul>

@@ -59,6 +59,14 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     dBEngineVersion.setDBParameterGroupFamily(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DBEngineDescription", targetDepth)) {
+                    dBEngineVersion.setDBEngineDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("DBEngineVersionDescription", targetDepth)) {
+                    dBEngineVersion.setDBEngineVersionDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

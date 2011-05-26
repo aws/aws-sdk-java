@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * This API returns events related to DB Instances, DB Security Groups,
- * DB Snapshots and DB Parameter Groups for the past 14 das. Events
+ * Returns events related to DB Instances, DB Security Groups, DB
+ * Snapshots and DB Parameter Groups for the past 14 days. Events
  * specific to a particular DB Instance, database security group,
  * database snapshot or database parameter group can be obtained by
  * providing the name as a parameter. By default, the past hour of events
@@ -46,8 +46,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
 
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned. <p>Valid Values: <code>db-instance |
-     * db-security-group | db-parameter-group | db-snapshot</code>
+     * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
@@ -187,15 +186,13 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned. <p>Valid Values: <code>db-instance |
-     * db-security-group | db-parameter-group | db-snapshot</code>
+     * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @return The event source to retrieve events for. If no value is specified, all
-     *         events are returned. <p>Valid Values: <code>db-instance |
-     *         db-security-group | db-parameter-group | db-snapshot</code>
+     *         events are returned.
      *
      * @see SourceType
      */
@@ -205,15 +202,13 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned. <p>Valid Values: <code>db-instance |
-     * db-security-group | db-parameter-group | db-snapshot</code>
+     * events are returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned. <p>Valid Values: <code>db-instance |
-     *         db-security-group | db-parameter-group | db-snapshot</code>
+     *         events are returned.
      *
      * @see SourceType
      */
@@ -223,8 +218,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     /**
      * The event source to retrieve events for. If no value is specified, all
-     * events are returned. <p>Valid Values: <code>db-instance |
-     * db-security-group | db-parameter-group | db-snapshot</code>
+     * events are returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -232,8 +226,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
      *
      * @param sourceType The event source to retrieve events for. If no value is specified, all
-     *         events are returned. <p>Valid Values: <code>db-instance |
-     *         db-security-group | db-parameter-group | db-snapshot</code>
+     *         events are returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

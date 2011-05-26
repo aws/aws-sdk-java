@@ -32,7 +32,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
     public Request<CreateDBInstanceRequest> marshall(CreateDBInstanceRequest createDBInstanceRequest) {
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
-        request.addParameter("Version", "2010-07-28");
+        request.addParameter("Version", "2011-04-01");
         if (createDBInstanceRequest != null) {
             if (createDBInstanceRequest.getDBName() != null) {
                 request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
@@ -122,6 +122,11 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest != null) {
             if (createDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
                 request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceRequest.isAutoMinorVersionUpgrade()));
+            }
+        }
+        if (createDBInstanceRequest != null) {
+            if (createDBInstanceRequest.getLicenseModel() != null) {
+                request.addParameter("LicenseModel", StringUtils.fromString(createDBInstanceRequest.getLicenseModel()));
             }
         }
 

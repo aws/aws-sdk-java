@@ -32,7 +32,7 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
     public Request<RestoreDBInstanceToPointInTimeRequest> marshall(RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) {
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
-        request.addParameter("Version", "2010-07-28");
+        request.addParameter("Version", "2011-04-01");
         if (restoreDBInstanceToPointInTimeRequest != null) {
             if (restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier() != null) {
                 request.addParameter("SourceDBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier()));
@@ -76,6 +76,21 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest != null) {
             if (restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade() != null) {
                 request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade()));
+            }
+        }
+        if (restoreDBInstanceToPointInTimeRequest != null) {
+            if (restoreDBInstanceToPointInTimeRequest.getLicenseModel() != null) {
+                request.addParameter("LicenseModel", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getLicenseModel()));
+            }
+        }
+        if (restoreDBInstanceToPointInTimeRequest != null) {
+            if (restoreDBInstanceToPointInTimeRequest.getDBName() != null) {
+                request.addParameter("DBName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDBName()));
+            }
+        }
+        if (restoreDBInstanceToPointInTimeRequest != null) {
+            if (restoreDBInstanceToPointInTimeRequest.getEngine() != null) {
+                request.addParameter("Engine", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getEngine()));
             }
         }
 

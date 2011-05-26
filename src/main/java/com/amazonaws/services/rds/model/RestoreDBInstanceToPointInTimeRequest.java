@@ -18,11 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest) RestoreDBInstanceToPointInTime operation}.
  * <p>
- * This API creates a new RDS instance from a point-in-time system
- * snapshot. The target database is created from the source database
- * restore point with the same configuration as the original source
- * database, except that the new RDS instance is created with the default
- * security group.
+ * Creates a new DB Instance from a point-in-time system snapshot. The
+ * target database is created from the source database restore point with
+ * the same configuration as the original source database, except that
+ * the new RDS instance is created with the default security group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)
@@ -31,7 +30,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The identifier of the source DB Instance from which to restore.
-     * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing
+     * database instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
@@ -101,6 +101,27 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     private Boolean autoMinorVersionUpgrade;
 
     /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     */
+    private String licenseModel;
+
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter is not used for the MySQL engine. </note>
+     */
+    private String dBName;
+
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     */
+    private String engine;
+
+    /**
      * Default constructor for a new RestoreDBInstanceToPointInTimeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -112,10 +133,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * initialize any additional object members.
      * 
      * @param sourceDBInstanceIdentifier The identifier of the source DB
-     * Instance from which to restore. <p>Constraints: <ul> <li>Must contain
-     * from 1 to 63 alphanumeric characters or hyphens</li> <li>First
-     * character must be a letter</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens</li> </ul>
+     * Instance from which to restore. <p>Constraints: <ul> <li>Must be the
+     * identifier of an existing database instance</li> <li>Must contain from
+     * 1 to 63 alphanumeric characters or hyphens</li> <li>First character
+     * must be a letter</li> <li>Cannot end with a hyphen or contain two
+     * consecutive hyphens</li> </ul>
      * @param targetDBInstanceIdentifier The name of the new database
      * instance to be created. <p>Constraints: <ul> <li>Must contain from 1
      * to 63 alphanumeric characters or hyphens</li> <li>First character must
@@ -129,13 +151,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The identifier of the source DB Instance from which to restore.
-     * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing
+     * database instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
      * @return The identifier of the source DB Instance from which to restore.
-     *         <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing
+     *         database instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -146,13 +170,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The identifier of the source DB Instance from which to restore.
-     * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing
+     * database instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
      *
      * @param sourceDBInstanceIdentifier The identifier of the source DB Instance from which to restore.
-     *         <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing
+     *         database instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -163,7 +189,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The identifier of the source DB Instance from which to restore.
-     * <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     * <p>Constraints: <ul> <li>Must be the identifier of an existing
+     * database instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      * </ul>
@@ -171,7 +198,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sourceDBInstanceIdentifier The identifier of the source DB Instance from which to restore.
-     *         <p>Constraints: <ul> <li>Must contain from 1 to 63 alphanumeric
+     *         <p>Constraints: <ul> <li>Must be the identifier of an existing
+     *         database instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
      *         </ul>
@@ -629,6 +657,144 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
     
     /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @return License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public String getLicenseModel() {
+        return licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance. <p> Default:
+     * Same as source. <p> Valid values: <code>license-included</code> |
+     * <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param licenseModel License model information for the restored DB Instance. <p> Default:
+     *         Same as source. <p> Valid values: <code>license-included</code> |
+     *         <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+        return this;
+    }
+    
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter is not used for the MySQL engine. </note>
+     *
+     * @return The database name for the restored DB Instance. <note> <p>This
+     *         parameter is not used for the MySQL engine. </note>
+     */
+    public String getDBName() {
+        return dBName;
+    }
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter is not used for the MySQL engine. </note>
+     *
+     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     *         parameter is not used for the MySQL engine. </note>
+     */
+    public void setDBName(String dBName) {
+        this.dBName = dBName;
+    }
+    
+    /**
+     * The database name for the restored DB Instance. <note> <p>This
+     * parameter is not used for the MySQL engine. </note>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBName The database name for the restored DB Instance. <note> <p>This
+     *         parameter is not used for the MySQL engine. </note>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withDBName(String dBName) {
+        this.dBName = dBName;
+        return this;
+    }
+    
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     *
+     * @return The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     */
+    public String getEngine() {
+        return engine;
+    }
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     *
+     * @param engine The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     */
+    public void setEngine(String engine) {
+        this.engine = engine;
+    }
+    
+    /**
+     * The database engine to use for the new instance. <p>Default: The same
+     * as source <p>Constraint: Must be compatible with the engine of the
+     * source <p>Example: <code>oracle-ee</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param engine The database engine to use for the new instance. <p>Default: The same
+     *         as source <p>Constraint: Must be compatible with the engine of the
+     *         source <p>Example: <code>oracle-ee</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withEngine(String engine) {
+        this.engine = engine;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -649,6 +815,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         sb.append("AvailabilityZone: " + availabilityZone + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        sb.append("LicenseModel: " + licenseModel + ", ");
+        sb.append("DBName: " + dBName + ", ");
+        sb.append("Engine: " + engine + ", ");
         sb.append("}");
         return sb.toString();
     }

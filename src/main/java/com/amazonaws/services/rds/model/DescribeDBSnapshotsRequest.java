@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSnapshots(DescribeDBSnapshotsRequest) DescribeDBSnapshots operation}.
  * <p>
- * This API is used to retrieve information about DBSnapshots. This API
- * supports pagination.
+ * Returns information about DBSnapshots. This API supports pagination.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSnapshots(DescribeDBSnapshotsRequest)

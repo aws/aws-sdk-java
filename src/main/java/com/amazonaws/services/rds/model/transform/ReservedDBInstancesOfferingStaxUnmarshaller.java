@@ -69,6 +69,10 @@ public class ReservedDBInstancesOfferingStaxUnmarshaller implements Unmarshaller
                     reservedDBInstancesOffering.setUsagePrice(DoubleStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CurrencyCode", targetDepth)) {
+                    reservedDBInstancesOffering.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ProductDescription", targetDepth)) {
                     reservedDBInstancesOffering.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

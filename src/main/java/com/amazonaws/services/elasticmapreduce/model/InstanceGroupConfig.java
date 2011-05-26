@@ -31,14 +31,6 @@ public class InstanceGroupConfig {
     private String name;
 
     /**
-     * Market type of the Amazon EC2 instances used to create a cluster node.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND
-     */
-    private String market;
-
-    /**
      * The role of the instance group in the cluster.
      * <p>
      * <b>Constraints:</b><br/>
@@ -71,16 +63,13 @@ public class InstanceGroupConfig {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param market Market type of the Amazon EC2 instances used to create a
-     * cluster node.
      * @param instanceRole The role of the instance group in the cluster.
      * @param instanceType The Amazon EC2 instance type for all instances in
      * the instance group.
      * @param instanceCount Target number of instances for the instance
      * group.
      */
-    public InstanceGroupConfig(String market, String instanceRole, String instanceType, Integer instanceCount) {
-        this.market = market;
+    public InstanceGroupConfig(String instanceRole, String instanceType, Integer instanceCount) {
         this.instanceRole = instanceRole;
         this.instanceType = instanceType;
         this.instanceCount = instanceCount;
@@ -128,55 +117,6 @@ public class InstanceGroupConfig {
      */
     public InstanceGroupConfig withName(String name) {
         this.name = name;
-        return this;
-    }
-    
-    
-    /**
-     * Market type of the Amazon EC2 instances used to create a cluster node.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND
-     *
-     * @return Market type of the Amazon EC2 instances used to create a cluster node.
-     *
-     * @see MarketType
-     */
-    public String getMarket() {
-        return market;
-    }
-    
-    /**
-     * Market type of the Amazon EC2 instances used to create a cluster node.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND
-     *
-     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
-     *
-     * @see MarketType
-     */
-    public void setMarket(String market) {
-        this.market = market;
-    }
-    
-    /**
-     * Market type of the Amazon EC2 instances used to create a cluster node.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ON_DEMAND
-     *
-     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     *
-     * @see MarketType
-     */
-    public InstanceGroupConfig withMarket(String market) {
-        this.market = market;
         return this;
     }
     
@@ -323,7 +263,6 @@ public class InstanceGroupConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("Name: " + name + ", ");
-        sb.append("Market: " + market + ", ");
         sb.append("InstanceRole: " + instanceRole + ", ");
         sb.append("InstanceType: " + instanceType + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");

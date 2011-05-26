@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest) CreateAppCookieStickinessPolicy operation}.
  * <p>
  * Generates a stickiness policy with sticky session lifetimes that
- * follow that of an application-generated cookie. This policy can only
- * be associated with HTTP listeners.
+ * follow that of an application-generated cookie. This policy can be
+ * associated only with HTTP/HTTPS listeners.
  * </p>
  * <p>
  * This policy is similar to the policy created by
@@ -33,6 +33,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * If the application cookie is explicitly removed or expires, the
  * session stops being sticky until a new application cookie is issued.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> An application client must receive and send two cookies:
+ * the application-generated cookie and the special Elastic Load
+ * Balancing cookie named AWSELB. This is the default behavior for many
+ * common web browsers.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createAppCookieStickinessPolicy(CreateAppCookieStickinessPolicyRequest)

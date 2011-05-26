@@ -32,7 +32,7 @@ public class SetLoadBalancerListenerSSLCertificateRequestMarshaller implements M
     public Request<SetLoadBalancerListenerSSLCertificateRequest> marshall(SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) {
         Request<SetLoadBalancerListenerSSLCertificateRequest> request = new DefaultRequest<SetLoadBalancerListenerSSLCertificateRequest>(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerListenerSSLCertificate");
-        request.addParameter("Version", "2010-07-01");
+        request.addParameter("Version", "2011-04-05");
         if (setLoadBalancerListenerSSLCertificateRequest != null) {
             if (setLoadBalancerListenerSSLCertificateRequest.getLoadBalancerName() != null) {
                 request.addParameter("LoadBalancerName", StringUtils.fromString(setLoadBalancerListenerSSLCertificateRequest.getLoadBalancerName()));

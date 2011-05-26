@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstance(CreateDBInstanceRequest) CreateDBInstance operation}.
  * <p>
- * This API creates a new DB instance.
+ * Creates a new DB instance.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBInstance(CreateDBInstanceRequest)
@@ -26,11 +26,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the database to create when the DB Instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     * characters</li> <li>Cannot be a word reserved by the specified
-     * database engine</li> </ul>
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p>The name of the database to create when
+     * the DB Instance is created. If this parameter is not specified, no
+     * database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     * reserved by the specified database engine</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul>
      */
     private String dBName;
 
@@ -45,7 +49,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. Must be an integer from 5 to 1024.
+     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     * Must be an integer from 10 to 1024.
      */
     private Integer allocatedStorage;
 
@@ -58,21 +64,27 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the database engine to be used for this instance. <p>
-     * Valid Values: <code>MySQL</code>
+     * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code>
      */
     private String engine;
 
     /**
-     * The name of master user for the client DB Instance. <p>Constraints:
-     * <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     * character must be a letter.</li> <li>Cannot be a reserved word for the
-     * chosen database engine.</li> </ul>
+     * The name of master user for the client DB Instance. <p><b>MySQL</b>
+     * <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     * <li>First character must be a letter.</li> <li>Cannot be a reserved
+     * word for the chosen database engine.</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     * be a reserved word for the chosen database engine.</li> </ul>
      */
     private String masterUsername;
 
     /**
-     * The password for the master DB Instance user. <p> Constraints: Must
-     * contain 4 to 41 alphanumeric characters.
+     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     * Constraints: Cannot contain more than 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     * than 30 alphanumeric characters.
      */
     private String masterUserPassword;
 
@@ -99,11 +111,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * region, occurring on a random day of the week. The following list
      * shows the time blocks for each region from which the default
      * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -134,19 +147,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * window selected at random from an 8-hour block of time per region. The
      * following list shows the time blocks for each region from which the
      * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      * Coordinated (UTC). Must not conflict with the preferred maintenance
      * window. Must be at least 30 minutes.
      */
     private String preferredBackupWindow;
 
     /**
-     * The port number on which the database accepts connections. <p>
-     * Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * The port number on which the database accepts connections.
+     * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      */
     private Integer port;
 
@@ -158,8 +174,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private Boolean multiAZ;
 
     /**
-     * The version number of the database engine to use. <p>Example:
-     * <code>5.1.42</code>
+     * The version number of the database engine to use. <p><b>MySQL</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>11.2.0.2.v2</code>
      */
     private String engineVersion;
 
@@ -169,6 +186,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>true</code>
      */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * License model information for this DB Instance. <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     */
+    private String licenseModel;
 
     /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
@@ -188,19 +212,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * contain two consecutive hyphens.</li> </ul> <p>Example:
      * <code>mydbinstance</code>
      * @param allocatedStorage The amount of storage (in gigabytes) to be
-     * initially allocated for the database instance. Must be an integer from
-     * 5 to 1024.
+     * initially allocated for the database instance. <p><b>MySQL</b> <p>
+     * Constraints: Must be an integer from 5 to 1024. <p> Type: Integer
+     * <p><b>Oracle</b> <p> Constraints: Must be an integer from 10 to 1024.
      * @param dBInstanceClass The compute and memory capacity of the DB
      * Instance. <p> Valid Values: <code>db.m1.small | db.m1.large |
      * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      * @param engine The name of the database engine to be used for this
-     * instance. <p> Valid Values: <code>MySQL</code>
+     * instance. <p> Valid Values: <code>MySQL</code> |
+     * <code>oracle-se1</code> | <code>oracle-se</code> |
+     * <code>oracle-ee</code>
      * @param masterUsername The name of master user for the client DB
-     * Instance. <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric
-     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
-     * be a reserved word for the chosen database engine.</li> </ul>
+     * Instance. <p><b>MySQL</b> <p>Constraints: <ul> <li>Must be 1 to 16
+     * alphanumeric characters.</li> <li>First character must be a
+     * letter.</li> <li>Cannot be a reserved word for the chosen database
+     * engine.</li> </ul> <p>Type: String <p><b>Oracle</b> <p>Constraints:
+     * <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First
+     * character must be a letter.</li> <li>Cannot be a reserved word for the
+     * chosen database engine.</li> </ul>
      * @param masterUserPassword The password for the master DB Instance
-     * user. <p> Constraints: Must contain 4 to 41 alphanumeric characters.
+     * user. <p><b>MySQL</b> <p> Constraints: Cannot contain more than 41
+     * alphanumeric characters. <p>Type: String <p><b>Oracle</b> <p>
+     * Constraints: Cannot contain more than 30 alphanumeric characters.
      */
     public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername, String masterUserPassword) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -212,53 +245,77 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of the database to create when the DB Instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     * characters</li> <li>Cannot be a word reserved by the specified
-     * database engine</li> </ul>
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p>The name of the database to create when
+     * the DB Instance is created. If this parameter is not specified, no
+     * database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     * reserved by the specified database engine</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul>
      *
-     * @return The name of the database to create when the DB Instance is created. If
-     *         this parameter is not specified, no database is created in the DB
-     *         Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     *         characters</li> <li>Cannot be a word reserved by the specified
-     *         database engine</li> </ul>
+     * @return The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
+     *         the DB Instance is created. If this parameter is not specified, no
+     *         database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     *         reserved by the specified database engine</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul>
      */
     public String getDBName() {
         return dBName;
     }
     
     /**
-     * The name of the database to create when the DB Instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     * characters</li> <li>Cannot be a word reserved by the specified
-     * database engine</li> </ul>
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p>The name of the database to create when
+     * the DB Instance is created. If this parameter is not specified, no
+     * database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     * reserved by the specified database engine</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul>
      *
-     * @param dBName The name of the database to create when the DB Instance is created. If
-     *         this parameter is not specified, no database is created in the DB
-     *         Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     *         characters</li> <li>Cannot be a word reserved by the specified
-     *         database engine</li> </ul>
+     * @param dBName The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
+     *         the DB Instance is created. If this parameter is not specified, no
+     *         database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     *         reserved by the specified database engine</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul>
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
     }
     
     /**
-     * The name of the database to create when the DB Instance is created. If
-     * this parameter is not specified, no database is created in the DB
-     * Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     * characters</li> <li>Cannot be a word reserved by the specified
-     * database engine</li> </ul>
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p>The name of the database to create when
+     * the DB Instance is created. If this parameter is not specified, no
+     * database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     * reserved by the specified database engine</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBName The name of the database to create when the DB Instance is created. If
-     *         this parameter is not specified, no database is created in the DB
-     *         Instance. <p>Constraints: <ul> <li>Must contain 1 to 64 alphanumeric
-     *         characters</li> <li>Cannot be a word reserved by the specified
-     *         database engine</li> </ul>
+     * @param dBName The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p>The name of the database to create when
+     *         the DB Instance is created. If this parameter is not specified, no
+     *         database is created in the DB Instance. <p>Constraints: <ul> <li>Must
+     *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
+     *         reserved by the specified database engine</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
+     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -329,10 +386,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. Must be an integer from 5 to 1024.
+     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     * Must be an integer from 10 to 1024.
      *
      * @return The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. Must be an integer from 5 to 1024.
+     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     *         Must be an integer from 10 to 1024.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -340,10 +401,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. Must be an integer from 5 to 1024.
+     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     * Must be an integer from 10 to 1024.
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. Must be an integer from 5 to 1024.
+     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     *         Must be an integer from 10 to 1024.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -351,12 +416,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The amount of storage (in gigabytes) to be initially allocated for the
-     * database instance. Must be an integer from 5 to 1024.
+     * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     * Must be an integer from 10 to 1024.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
-     *         database instance. Must be an integer from 5 to 1024.
+     *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
+     *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
+     *         Must be an integer from 10 to 1024.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -415,10 +484,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database engine to be used for this instance. <p>
-     * Valid Values: <code>MySQL</code>
+     * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code>
      *
      * @return The name of the database engine to be used for this instance. <p>
-     *         Valid Values: <code>MySQL</code>
+     *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     *         <code>oracle-se</code> | <code>oracle-ee</code>
      */
     public String getEngine() {
         return engine;
@@ -426,10 +497,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database engine to be used for this instance. <p>
-     * Valid Values: <code>MySQL</code>
+     * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code>
      *
      * @param engine The name of the database engine to be used for this instance. <p>
-     *         Valid Values: <code>MySQL</code>
+     *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     *         <code>oracle-se</code> | <code>oracle-ee</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -437,12 +510,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the database engine to be used for this instance. <p>
-     * Valid Values: <code>MySQL</code>
+     * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     * <code>oracle-se</code> | <code>oracle-ee</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the database engine to be used for this instance. <p>
-     *         Valid Values: <code>MySQL</code>
+     *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
+     *         <code>oracle-se</code> | <code>oracle-ee</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -454,47 +529,65 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of master user for the client DB Instance. <p>Constraints:
-     * <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     * character must be a letter.</li> <li>Cannot be a reserved word for the
-     * chosen database engine.</li> </ul>
+     * The name of master user for the client DB Instance. <p><b>MySQL</b>
+     * <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     * <li>First character must be a letter.</li> <li>Cannot be a reserved
+     * word for the chosen database engine.</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     * be a reserved word for the chosen database engine.</li> </ul>
      *
-     * @return The name of master user for the client DB Instance. <p>Constraints:
-     *         <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     *         character must be a letter.</li> <li>Cannot be a reserved word for the
-     *         chosen database engine.</li> </ul>
+     * @return The name of master user for the client DB Instance. <p><b>MySQL</b>
+     *         <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot be a reserved
+     *         word for the chosen database engine.</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     *         be a reserved word for the chosen database engine.</li> </ul>
      */
     public String getMasterUsername() {
         return masterUsername;
     }
     
     /**
-     * The name of master user for the client DB Instance. <p>Constraints:
-     * <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     * character must be a letter.</li> <li>Cannot be a reserved word for the
-     * chosen database engine.</li> </ul>
+     * The name of master user for the client DB Instance. <p><b>MySQL</b>
+     * <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     * <li>First character must be a letter.</li> <li>Cannot be a reserved
+     * word for the chosen database engine.</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     * be a reserved word for the chosen database engine.</li> </ul>
      *
-     * @param masterUsername The name of master user for the client DB Instance. <p>Constraints:
-     *         <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     *         character must be a letter.</li> <li>Cannot be a reserved word for the
-     *         chosen database engine.</li> </ul>
+     * @param masterUsername The name of master user for the client DB Instance. <p><b>MySQL</b>
+     *         <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot be a reserved
+     *         word for the chosen database engine.</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     *         be a reserved word for the chosen database engine.</li> </ul>
      */
     public void setMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
     }
     
     /**
-     * The name of master user for the client DB Instance. <p>Constraints:
-     * <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     * character must be a letter.</li> <li>Cannot be a reserved word for the
-     * chosen database engine.</li> </ul>
+     * The name of master user for the client DB Instance. <p><b>MySQL</b>
+     * <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     * <li>First character must be a letter.</li> <li>Cannot be a reserved
+     * word for the chosen database engine.</li> </ul> <p>Type: String
+     * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     * be a reserved word for the chosen database engine.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUsername The name of master user for the client DB Instance. <p>Constraints:
-     *         <ul> <li>Must be 1 to 16 alphanumeric characters.</li> <li>First
-     *         character must be a letter.</li> <li>Cannot be a reserved word for the
-     *         chosen database engine.</li> </ul>
+     * @param masterUsername The name of master user for the client DB Instance. <p><b>MySQL</b>
+     *         <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
+     *         <li>First character must be a letter.</li> <li>Cannot be a reserved
+     *         word for the chosen database engine.</li> </ul> <p>Type: String
+     *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
+     *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     *         be a reserved word for the chosen database engine.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -506,35 +599,47 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The password for the master DB Instance user. <p> Constraints: Must
-     * contain 4 to 41 alphanumeric characters.
+     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     * Constraints: Cannot contain more than 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     * than 30 alphanumeric characters.
      *
-     * @return The password for the master DB Instance user. <p> Constraints: Must
-     *         contain 4 to 41 alphanumeric characters.
+     * @return The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     *         Constraints: Cannot contain more than 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     *         than 30 alphanumeric characters.
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
     }
     
     /**
-     * The password for the master DB Instance user. <p> Constraints: Must
-     * contain 4 to 41 alphanumeric characters.
+     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     * Constraints: Cannot contain more than 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     * than 30 alphanumeric characters.
      *
-     * @param masterUserPassword The password for the master DB Instance user. <p> Constraints: Must
-     *         contain 4 to 41 alphanumeric characters.
+     * @param masterUserPassword The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     *         Constraints: Cannot contain more than 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     *         than 30 alphanumeric characters.
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
     }
     
     /**
-     * The password for the master DB Instance user. <p> Constraints: Must
-     * contain 4 to 41 alphanumeric characters.
+     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     * Constraints: Cannot contain more than 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     * than 30 alphanumeric characters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUserPassword The password for the master DB Instance user. <p> Constraints: Must
-     *         contain 4 to 41 alphanumeric characters.
+     * @param masterUserPassword The password for the master DB Instance user. <p><b>MySQL</b> <p>
+     *         Constraints: Cannot contain more than 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
+     *         than 30 alphanumeric characters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -686,11 +791,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * region, occurring on a random day of the week. The following list
      * shows the time blocks for each region from which the default
      * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
@@ -698,11 +804,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         region, occurring on a random day of the week. The following list
      *         shows the time blocks for each region from which the default
      *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -715,11 +822,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * region, occurring on a random day of the week. The following list
      * shows the time blocks for each region from which the default
      * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
@@ -727,11 +835,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         region, occurring on a random day of the week. The following list
      *         shows the time blocks for each region from which the default
      *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -744,11 +853,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * region, occurring on a random day of the week. The following list
      * shows the time blocks for each region from which the default
      * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     * Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -758,11 +868,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         region, occurring on a random day of the week. The following list
      *         shows the time blocks for each region from which the default
      *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed,
-     *         Thu, Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
+     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -908,11 +1019,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * window selected at random from an 8-hour block of time per region. The
      * following list shows the time blocks for each region from which the
      * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      * Coordinated (UTC). Must not conflict with the preferred maintenance
      * window. Must be at least 30 minutes.
      *
@@ -922,11 +1034,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         window selected at random from an 8-hour block of time per region. The
      *         following list shows the time blocks for each region from which the
      *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      *         Coordinated (UTC). Must not conflict with the preferred maintenance
      *         window. Must be at least 30 minutes.
      */
@@ -941,11 +1054,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * window selected at random from an 8-hour block of time per region. The
      * following list shows the time blocks for each region from which the
      * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      * Coordinated (UTC). Must not conflict with the preferred maintenance
      * window. Must be at least 30 minutes.
      *
@@ -955,11 +1069,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         window selected at random from an 8-hour block of time per region. The
      *         following list shows the time blocks for each region from which the
      *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      *         Coordinated (UTC). Must not conflict with the preferred maintenance
      *         window. Must be at least 30 minutes.
      */
@@ -974,11 +1089,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * window selected at random from an 8-hour block of time per region. The
      * following list shows the time blocks for each region from which the
      * default backup windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     * format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     * </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     * <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      * Coordinated (UTC). Must not conflict with the preferred maintenance
      * window. Must be at least 30 minutes.
      * <p>
@@ -990,11 +1106,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         window selected at random from an 8-hour block of time per region. The
      *         following list shows the time blocks for each region from which the
      *         default backup windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-011:00 UTC</li> <li><b>US-West (Northern
+     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
      *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
      *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> </ul> <p> Constraints: Must be in the
-     *         format <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
+     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
+     *         </b> 17:00-03:00 UTC</li> </ul> <p> Constraints: Must be in the format
+     *         <code>hh24:mi-hh24:mi</code>. Times should be Universal Time
      *         Coordinated (UTC). Must not conflict with the preferred maintenance
      *         window. Must be at least 30 minutes.
      *
@@ -1008,35 +1125,47 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The port number on which the database accepts connections. <p>
-     * Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * The port number on which the database accepts connections.
+     * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      *
-     * @return The port number on which the database accepts connections. <p>
-     *         Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * @return The port number on which the database accepts connections.
+     *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      */
     public Integer getPort() {
         return port;
     }
     
     /**
-     * The port number on which the database accepts connections. <p>
-     * Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * The port number on which the database accepts connections.
+     * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      *
-     * @param port The port number on which the database accepts connections. <p>
-     *         Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * @param port The port number on which the database accepts connections.
+     *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      */
     public void setPort(Integer port) {
         this.port = port;
     }
     
     /**
-     * The port number on which the database accepts connections. <p>
-     * Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * The port number on which the database accepts connections.
+     * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param port The port number on which the database accepts connections. <p>
-     *         Default: <code>3306</code> <p> Valid Values: <code>1150-65535</code>
+     * @param port The port number on which the database accepts connections.
+     *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
+     *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1107,35 +1236,41 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The version number of the database engine to use. <p>Example:
-     * <code>5.1.42</code>
+     * The version number of the database engine to use. <p><b>MySQL</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>11.2.0.2.v2</code>
      *
-     * @return The version number of the database engine to use. <p>Example:
-     *         <code>5.1.42</code>
+     * @return The version number of the database engine to use. <p><b>MySQL</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>11.2.0.2.v2</code>
      */
     public String getEngineVersion() {
         return engineVersion;
     }
     
     /**
-     * The version number of the database engine to use. <p>Example:
-     * <code>5.1.42</code>
+     * The version number of the database engine to use. <p><b>MySQL</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>11.2.0.2.v2</code>
      *
-     * @param engineVersion The version number of the database engine to use. <p>Example:
-     *         <code>5.1.42</code>
+     * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>11.2.0.2.v2</code>
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
     }
     
     /**
-     * The version number of the database engine to use. <p>Example:
-     * <code>5.1.42</code>
+     * The version number of the database engine to use. <p><b>MySQL</b>
+     * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     * <p>Example: <code>11.2.0.2.v2</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineVersion The version number of the database engine to use. <p>Example:
-     *         <code>5.1.42</code>
+     * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
+     *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
+     *         <p>Example: <code>11.2.0.2.v2</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1206,6 +1341,52 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * License model information for this DB Instance. <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @return License model information for this DB Instance. <p> Valid values:
+     *         <code>license-included</code> | <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public String getLicenseModel() {
+        return licenseModel;
+    }
+    
+    /**
+     * License model information for this DB Instance. <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     *
+     * @param licenseModel License model information for this DB Instance. <p> Valid values:
+     *         <code>license-included</code> | <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     */
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+    
+    /**
+     * License model information for this DB Instance. <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param licenseModel License model information for this DB Instance. <p> Valid values:
+     *         <code>license-included</code> | <code>bring-your-own-license</code> |
+     *         <code>general-public-license</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1234,6 +1415,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("EngineVersion: " + engineVersion + ", ");
         sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        sb.append("LicenseModel: " + licenseModel + ", ");
         sb.append("}");
         return sb.toString();
     }

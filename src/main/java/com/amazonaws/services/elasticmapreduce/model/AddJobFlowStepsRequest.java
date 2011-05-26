@@ -36,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * You can only add steps to a job flow that is in one of the following
- * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
+ * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)

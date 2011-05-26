@@ -129,335 +129,6 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             
     /**
      * <p>
-     * Creates one or more listeners on a LoadBalancer for the specified
-     * port. If a listener with the given port does not already exist, it
-     * will be created; otherwise, the properties of the new listener must
-     * match the properties of the existing listener.
-     * </p>
-     *
-     * @param createLoadBalancerListenersRequest Container for the necessary
-     *           parameters to execute the CreateLoadBalancerListeners operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLoadBalancerListeners service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> createLoadBalancerListenersAsync(final CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                createLoadBalancerListeners(createLoadBalancerListenersRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes listeners from the LoadBalancer for the specified port.
-     * </p>
-     *
-     * @param deleteLoadBalancerListenersRequest Container for the necessary
-     *           parameters to execute the DeleteLoadBalancerListeners operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteLoadBalancerListeners service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteLoadBalancerListenersAsync(final DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Enables the client to define an application healthcheck for the
-     * instances.
-     * </p>
-     *
-     * @param configureHealthCheckRequest Container for the necessary
-     *           parameters to execute the ConfigureHealthCheck operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ConfigureHealthCheck service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ConfigureHealthCheckResult> configureHealthCheckAsync(final ConfigureHealthCheckRequest configureHealthCheckRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
-            public ConfigureHealthCheckResult call() throws Exception {
-                return configureHealthCheck(configureHealthCheckRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns detailed configuration information for the specified
-     * LoadBalancers. If no LoadBalancers are specified, the operation
-     * returns configuration information for all LoadBalancers created by the
-     * caller.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The client must have created the specified input
-     * LoadBalancers in order to retrieve this information; the client must
-     * provide the same account credentials as those that were used to create
-     * the LoadBalancer.
-     * </p>
-     *
-     * @param describeLoadBalancersRequest Container for the necessary
-     *           parameters to execute the DescribeLoadBalancers operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeLoadBalancers service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(final DescribeLoadBalancersRequest describeLoadBalancersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
-            public DescribeLoadBalancersResult call() throws Exception {
-                return describeLoadBalancers(describeLoadBalancersRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Generates a stickiness policy with sticky session lifetimes
-     * controlled by the lifetime of the browser (user-agent) or a specified
-     * expiration period. This policy can only be associated only with HTTP
-     * listeners.
-     * </p>
-     * <p>
-     * When a load balancer implements this policy, the load balancer uses a
-     * special cookie to track the backend server instance for each request.
-     * When the load balancer receives a request, it first checks to see if
-     * this cookie is present in the request. If so, the load balancer sends
-     * the request to the application server specified in the cookie. If not,
-     * the load balancer sends the request to a server that is chosen based
-     * on the existing load balancing algorithm.
-     * </p>
-     * <p>
-     * A cookie is inserted into the response for binding subsequent
-     * requests from the same user to that server. The validity of the cookie
-     * is based on the cookie expiration time, which is specified in the
-     * policy configuration.
-     * </p>
-     *
-     * @param createLBCookieStickinessPolicyRequest Container for the
-     *           necessary parameters to execute the CreateLBCookieStickinessPolicy
-     *           operation on AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateLBCookieStickinessPolicy service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateLBCookieStickinessPolicyResult> createLBCookieStickinessPolicyAsync(final CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
-            public CreateLBCookieStickinessPolicyResult call() throws Exception {
-                return createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Adds one or more EC2 Availability Zones to the LoadBalancer.
-     * </p>
-     * <p>
-     * The LoadBalancer evenly distributes requests across all its
-     * registered Availability Zones that contain instances. As a result, the
-     * client must ensure that its LoadBalancer is appropriately scaled for
-     * each registered Availability Zone.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the
-     * same EC2 Region as the Availability Zones for which the LoadBalancer
-     * was created.
-     * </p>
-     *
-     * @param enableAvailabilityZonesForLoadBalancerRequest Container for the
-     *           necessary parameters to execute the
-     *           EnableAvailabilityZonesForLoadBalancer operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         EnableAvailabilityZonesForLoadBalancer service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EnableAvailabilityZonesForLoadBalancerResult> enableAvailabilityZonesForLoadBalancerAsync(final EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
-            public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
-                return enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns the current state of the instances of the specified
-     * LoadBalancer. If no instances are specified, the state of all the
-     * instances for the LoadBalancer is returned.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> The client must have created the specified input
-     * LoadBalancer in order to retrieve this information; the client must
-     * provide the same account credentials as those that were used to create
-     * the LoadBalancer.
-     * </p>
-     *
-     * @param describeInstanceHealthRequest Container for the necessary
-     *           parameters to execute the DescribeInstanceHealth operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeInstanceHealth service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeInstanceHealthResult> describeInstanceHealthAsync(final DescribeInstanceHealthRequest describeInstanceHealthRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
-            public DescribeInstanceHealthResult call() throws Exception {
-                return describeInstanceHealth(describeInstanceHealthRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Sets the certificate that terminates the specified listener's SSL
-     * connections. The specified certificate replaces any prior certificate
-     * that was used on the same LoadBalancer and port.
-     * </p>
-     *
-     * @param setLoadBalancerListenerSSLCertificateRequest Container for the
-     *           necessary parameters to execute the
-     *           SetLoadBalancerListenerSSLCertificate operation on
-     *           AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetLoadBalancerListenerSSLCertificate service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setLoadBalancerListenerSSLCertificateAsync(final SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Associates, updates, or disables a policy with a listener on the load
-     * balancer. Currently only zero (0) or one (1) policy can be associated
-     * with a listener.
-     * </p>
-     *
-     * @param setLoadBalancerPoliciesOfListenerRequest Container for the
-     *           necessary parameters to execute the SetLoadBalancerPoliciesOfListener
-     *           operation on AmazonElasticLoadBalancing.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetLoadBalancerPoliciesOfListener service method, as returned by
-     *         AmazonElasticLoadBalancing.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticLoadBalancing indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SetLoadBalancerPoliciesOfListenerResult> setLoadBalancerPoliciesOfListenerAsync(final SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
-            public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
-                return setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * Creates a new LoadBalancer.
      * </p>
      * <p>
@@ -509,33 +180,15 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Adds new instances to the LoadBalancer.
-     * </p>
-     * <p>
-     * Once the instance is registered, it starts receiving traffic and
-     * requests from the LoadBalancer. Any instance that is not in any of the
-     * Availability Zones registered for the LoadBalancer will be moved to
-     * the <i>OutOfService</i> state. It will move to the <i>InService</i>
-     * state when the Availability Zone is added to the LoadBalancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> In order for this call to be successful, the client must
-     * have created the LoadBalancer. The client must provide the same
-     * account credentials as those that were used to create the
-     * LoadBalancer.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> Completion of this API does not guarantee that operation
-     * has completed. Rather, it means that the request has been registered
-     * and the changes will happen shortly.
+     * Deletes listeners from the LoadBalancer for the specified port.
      * </p>
      *
-     * @param registerInstancesWithLoadBalancerRequest Container for the
-     *           necessary parameters to execute the RegisterInstancesWithLoadBalancer
-     *           operation on AmazonElasticLoadBalancing.
+     * @param deleteLoadBalancerListenersRequest Container for the necessary
+     *           parameters to execute the DeleteLoadBalancerListeners operation on
+     *           AmazonElasticLoadBalancing.
      * 
      * @return A Java Future object containing the response from the
-     *         RegisterInstancesWithLoadBalancer service method, as returned by
+     *         DeleteLoadBalancerListeners service method, as returned by
      *         AmazonElasticLoadBalancing.
      *
      * @throws AmazonClientException
@@ -546,40 +199,35 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<RegisterInstancesWithLoadBalancerResult> registerInstancesWithLoadBalancerAsync(final RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
+    public Future<Void> deleteLoadBalancerListenersAsync(final DeleteLoadBalancerListenersRequest deleteLoadBalancerListenersRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
-            public RegisterInstancesWithLoadBalancerResult call() throws Exception {
-                return registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteLoadBalancerListeners(deleteLoadBalancerListenersRequest);
+                return null;
 		    }
 		});
     }
     
     /**
      * <p>
-     * Generates a stickiness policy with sticky session lifetimes that
-     * follow that of an application-generated cookie. This policy can only
-     * be associated with HTTP listeners.
+     * Returns the current state of the instances of the specified
+     * LoadBalancer. If no instances are specified, the state of all the
+     * instances for the LoadBalancer is returned.
      * </p>
      * <p>
-     * This policy is similar to the policy created by
-     * CreateLBCookieStickinessPolicy, except that the lifetime of the
-     * special Elastic Load Balancing cookie follows the lifetime of the
-     * application-generated cookie specified in the policy configuration.
-     * The load balancer only inserts a new stickiness cookie when the
-     * application response includes a new application cookie.
-     * </p>
-     * <p>
-     * If the application cookie is explicitly removed or expires, the
-     * session stops being sticky until a new application cookie is issued.
+     * <b>NOTE:</b> The client must have created the specified input
+     * LoadBalancer in order to retrieve this information; the client must
+     * provide the same account credentials as those that were used to create
+     * the LoadBalancer.
      * </p>
      *
-     * @param createAppCookieStickinessPolicyRequest Container for the
-     *           necessary parameters to execute the CreateAppCookieStickinessPolicy
-     *           operation on AmazonElasticLoadBalancing.
+     * @param describeInstanceHealthRequest Container for the necessary
+     *           parameters to execute the DescribeInstanceHealth operation on
+     *           AmazonElasticLoadBalancing.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateAppCookieStickinessPolicy service method, as returned by
+     *         DescribeInstanceHealth service method, as returned by
      *         AmazonElasticLoadBalancing.
      *
      * @throws AmazonClientException
@@ -590,11 +238,11 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<CreateAppCookieStickinessPolicyResult> createAppCookieStickinessPolicyAsync(final CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) 
+    public Future<DescribeInstanceHealthResult> describeInstanceHealthAsync(final DescribeInstanceHealthRequest describeInstanceHealthRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
-            public CreateAppCookieStickinessPolicyResult call() throws Exception {
-                return createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
+        return executorService.submit(new Callable<DescribeInstanceHealthResult>() {
+            public DescribeInstanceHealthResult call() throws Exception {
+                return describeInstanceHealth(describeInstanceHealthRequest);
 		    }
 		});
     }
@@ -643,6 +291,127 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
             public Void call() throws Exception {
                 deleteLoadBalancer(deleteLoadBalancerRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Generates a stickiness policy with sticky session lifetimes
+     * controlled by the lifetime of the browser (user-agent) or a specified
+     * expiration period. This policy can be associated only with HTTP/HTTPS
+     * listeners.
+     * </p>
+     * <p>
+     * When a load balancer implements this policy, the load balancer uses a
+     * special cookie to track the backend server instance for each request.
+     * When the load balancer receives a request, it first checks to see if
+     * this cookie is present in the request. If so, the load balancer sends
+     * the request to the application server specified in the cookie. If not,
+     * the load balancer sends the request to a server that is chosen based
+     * on the existing load balancing algorithm.
+     * </p>
+     * <p>
+     * A cookie is inserted into the response for binding subsequent
+     * requests from the same user to that server. The validity of the cookie
+     * is based on the cookie expiration time, which is specified in the
+     * policy configuration.
+     * </p>
+     *
+     * @param createLBCookieStickinessPolicyRequest Container for the
+     *           necessary parameters to execute the CreateLBCookieStickinessPolicy
+     *           operation on AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateLBCookieStickinessPolicy service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateLBCookieStickinessPolicyResult> createLBCookieStickinessPolicyAsync(final CreateLBCookieStickinessPolicyRequest createLBCookieStickinessPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateLBCookieStickinessPolicyResult>() {
+            public CreateLBCookieStickinessPolicyResult call() throws Exception {
+                return createLBCookieStickinessPolicy(createLBCookieStickinessPolicyRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates one or more listeners on a LoadBalancer for the specified
+     * port. If a listener with the given port does not already exist, it
+     * will be created; otherwise, the properties of the new listener must
+     * match the properties of the existing listener.
+     * </p>
+     *
+     * @param createLoadBalancerListenersRequest Container for the necessary
+     *           parameters to execute the CreateLoadBalancerListeners operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateLoadBalancerListeners service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createLoadBalancerListenersAsync(final CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                createLoadBalancerListeners(createLoadBalancerListenersRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns detailed configuration information for the specified
+     * LoadBalancers. If no LoadBalancers are specified, the operation
+     * returns configuration information for all LoadBalancers created by the
+     * caller.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The client must have created the specified input
+     * LoadBalancers in order to retrieve this information; the client must
+     * provide the same account credentials as those that were used to create
+     * the LoadBalancer.
+     * </p>
+     *
+     * @param describeLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DescribeLoadBalancers operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeLoadBalancers service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeLoadBalancersResult> describeLoadBalancersAsync(final DescribeLoadBalancersRequest describeLoadBalancersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeLoadBalancersResult>() {
+            public DescribeLoadBalancersResult call() throws Exception {
+                return describeLoadBalancers(describeLoadBalancersRequest);
 		    }
 		});
     }
@@ -698,6 +467,174 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
+     * Deregisters instances from the LoadBalancer. Once the instance is
+     * deregistered, it will stop receiving traffic from the LoadBalancer.
+     * </p>
+     * <p>
+     * In order to successfully call this API, the same account credentials
+     * as those used to create the LoadBalancer must be provided.
+     * </p>
+     *
+     * @param deregisterInstancesFromLoadBalancerRequest Container for the
+     *           necessary parameters to execute the
+     *           DeregisterInstancesFromLoadBalancer operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeregisterInstancesFromLoadBalancer service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeregisterInstancesFromLoadBalancerResult> deregisterInstancesFromLoadBalancerAsync(final DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
+            public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
+                return deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Generates a stickiness policy with sticky session lifetimes that
+     * follow that of an application-generated cookie. This policy can be
+     * associated only with HTTP/HTTPS listeners.
+     * </p>
+     * <p>
+     * This policy is similar to the policy created by
+     * CreateLBCookieStickinessPolicy, except that the lifetime of the
+     * special Elastic Load Balancing cookie follows the lifetime of the
+     * application-generated cookie specified in the policy configuration.
+     * The load balancer only inserts a new stickiness cookie when the
+     * application response includes a new application cookie.
+     * </p>
+     * <p>
+     * If the application cookie is explicitly removed or expires, the
+     * session stops being sticky until a new application cookie is issued.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> An application client must receive and send two cookies:
+     * the application-generated cookie and the special Elastic Load
+     * Balancing cookie named AWSELB. This is the default behavior for many
+     * common web browsers.
+     * </p>
+     *
+     * @param createAppCookieStickinessPolicyRequest Container for the
+     *           necessary parameters to execute the CreateAppCookieStickinessPolicy
+     *           operation on AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateAppCookieStickinessPolicy service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateAppCookieStickinessPolicyResult> createAppCookieStickinessPolicyAsync(final CreateAppCookieStickinessPolicyRequest createAppCookieStickinessPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateAppCookieStickinessPolicyResult>() {
+            public CreateAppCookieStickinessPolicyResult call() throws Exception {
+                return createAppCookieStickinessPolicy(createAppCookieStickinessPolicyRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Adds new instances to the LoadBalancer.
+     * </p>
+     * <p>
+     * Once the instance is registered, it starts receiving traffic and
+     * requests from the LoadBalancer. Any instance that is not in any of the
+     * Availability Zones registered for the LoadBalancer will be moved to
+     * the <i>OutOfService</i> state. It will move to the <i>InService</i>
+     * state when the Availability Zone is added to the LoadBalancer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> In order for this call to be successful, the client must
+     * have created the LoadBalancer. The client must provide the same
+     * account credentials as those that were used to create the
+     * LoadBalancer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Completion of this API does not guarantee that operation
+     * has completed. Rather, it means that the request has been registered
+     * and the changes will happen shortly.
+     * </p>
+     *
+     * @param registerInstancesWithLoadBalancerRequest Container for the
+     *           necessary parameters to execute the RegisterInstancesWithLoadBalancer
+     *           operation on AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RegisterInstancesWithLoadBalancer service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<RegisterInstancesWithLoadBalancerResult> registerInstancesWithLoadBalancerAsync(final RegisterInstancesWithLoadBalancerRequest registerInstancesWithLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<RegisterInstancesWithLoadBalancerResult>() {
+            public RegisterInstancesWithLoadBalancerResult call() throws Exception {
+                return registerInstancesWithLoadBalancer(registerInstancesWithLoadBalancerRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Sets the certificate that terminates the specified listener's SSL
+     * connections. The specified certificate replaces any prior certificate
+     * that was used on the same LoadBalancer and port.
+     * </p>
+     *
+     * @param setLoadBalancerListenerSSLCertificateRequest Container for the
+     *           necessary parameters to execute the
+     *           SetLoadBalancerListenerSSLCertificate operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetLoadBalancerListenerSSLCertificate service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setLoadBalancerListenerSSLCertificateAsync(final SetLoadBalancerListenerSSLCertificateRequest setLoadBalancerListenerSSLCertificateRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setLoadBalancerListenerSSLCertificate(setLoadBalancerListenerSSLCertificateRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Deletes a policy from the LoadBalancer. The specified policy must not
      * be enabled for any listeners.
      * </p>
@@ -729,21 +666,17 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
     
     /**
      * <p>
-     * Deregisters instances from the LoadBalancer. Once the instance is
-     * deregistered, it will stop receiving traffic from the LoadBalancer.
-     * </p>
-     * <p>
-     * In order to successfully call this API, the same account credentials
-     * as those used to create the LoadBalancer must be provided.
+     * Associates, updates, or disables a policy with a listener on the load
+     * balancer. Currently only zero (0) or one (1) policy can be associated
+     * with a listener.
      * </p>
      *
-     * @param deregisterInstancesFromLoadBalancerRequest Container for the
-     *           necessary parameters to execute the
-     *           DeregisterInstancesFromLoadBalancer operation on
-     *           AmazonElasticLoadBalancing.
+     * @param setLoadBalancerPoliciesOfListenerRequest Container for the
+     *           necessary parameters to execute the SetLoadBalancerPoliciesOfListener
+     *           operation on AmazonElasticLoadBalancing.
      * 
      * @return A Java Future object containing the response from the
-     *         DeregisterInstancesFromLoadBalancer service method, as returned by
+     *         SetLoadBalancerPoliciesOfListener service method, as returned by
      *         AmazonElasticLoadBalancing.
      *
      * @throws AmazonClientException
@@ -754,11 +687,84 @@ public class AmazonElasticLoadBalancingAsyncClient extends AmazonElasticLoadBala
      *             If an error response is returned by AmazonElasticLoadBalancing indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DeregisterInstancesFromLoadBalancerResult> deregisterInstancesFromLoadBalancerAsync(final DeregisterInstancesFromLoadBalancerRequest deregisterInstancesFromLoadBalancerRequest) 
+    public Future<SetLoadBalancerPoliciesOfListenerResult> setLoadBalancerPoliciesOfListenerAsync(final SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DeregisterInstancesFromLoadBalancerResult>() {
-            public DeregisterInstancesFromLoadBalancerResult call() throws Exception {
-                return deregisterInstancesFromLoadBalancer(deregisterInstancesFromLoadBalancerRequest);
+        return executorService.submit(new Callable<SetLoadBalancerPoliciesOfListenerResult>() {
+            public SetLoadBalancerPoliciesOfListenerResult call() throws Exception {
+                return setLoadBalancerPoliciesOfListener(setLoadBalancerPoliciesOfListenerRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Adds one or more EC2 Availability Zones to the LoadBalancer.
+     * </p>
+     * <p>
+     * The LoadBalancer evenly distributes requests across all its
+     * registered Availability Zones that contain instances. As a result, the
+     * client must ensure that its LoadBalancer is appropriately scaled for
+     * each registered Availability Zone.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The new EC2 Availability Zones to be added must be in the
+     * same EC2 Region as the Availability Zones for which the LoadBalancer
+     * was created.
+     * </p>
+     *
+     * @param enableAvailabilityZonesForLoadBalancerRequest Container for the
+     *           necessary parameters to execute the
+     *           EnableAvailabilityZonesForLoadBalancer operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableAvailabilityZonesForLoadBalancer service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EnableAvailabilityZonesForLoadBalancerResult> enableAvailabilityZonesForLoadBalancerAsync(final EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EnableAvailabilityZonesForLoadBalancerResult>() {
+            public EnableAvailabilityZonesForLoadBalancerResult call() throws Exception {
+                return enableAvailabilityZonesForLoadBalancer(enableAvailabilityZonesForLoadBalancerRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Enables the client to define an application healthcheck for the
+     * instances.
+     * </p>
+     *
+     * @param configureHealthCheckRequest Container for the necessary
+     *           parameters to execute the ConfigureHealthCheck operation on
+     *           AmazonElasticLoadBalancing.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ConfigureHealthCheck service method, as returned by
+     *         AmazonElasticLoadBalancing.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticLoadBalancing indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ConfigureHealthCheckResult> configureHealthCheckAsync(final ConfigureHealthCheckRequest configureHealthCheckRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ConfigureHealthCheckResult>() {
+            public ConfigureHealthCheckResult call() throws Exception {
+                return configureHealthCheck(configureHealthCheckRequest);
 		    }
 		});
     }

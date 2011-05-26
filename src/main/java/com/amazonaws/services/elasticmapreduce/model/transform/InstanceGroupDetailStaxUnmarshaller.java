@@ -55,10 +55,6 @@ public class InstanceGroupDetailStaxUnmarshaller implements Unmarshaller<Instanc
                     instanceGroupDetail.setName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Market", targetDepth)) {
-                    instanceGroupDetail.setMarket(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("InstanceRole", targetDepth)) {
                     instanceGroupDetail.setInstanceRole(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest) DeleteDBSnapshot operation}.
  * <p>
- * This API is used to delete a DBSnapshot.
+ * Deletes a DBSnapshot.
  * </p>
  * <p>
  * <b>NOTE:</b>The DBSnapshot must be in the available state to be

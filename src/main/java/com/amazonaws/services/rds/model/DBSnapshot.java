@@ -91,6 +91,11 @@ public class DBSnapshot {
     private String engineVersion;
 
     /**
+     * License model information for the restored DB Instance.
+     */
+    private String licenseModel;
+
+    /**
      * Specifies the identifier for the DB Snapshot.
      *
      * @return Specifies the identifier for the DB Snapshot.
@@ -483,6 +488,40 @@ public class DBSnapshot {
     
     
     /**
+     * License model information for the restored DB Instance.
+     *
+     * @return License model information for the restored DB Instance.
+     */
+    public String getLicenseModel() {
+        return licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance.
+     *
+     * @param licenseModel License model information for the restored DB Instance.
+     */
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+    
+    /**
+     * License model information for the restored DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param licenseModel License model information for the restored DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSnapshot withLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -505,6 +544,7 @@ public class DBSnapshot {
         sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
         sb.append("MasterUsername: " + masterUsername + ", ");
         sb.append("EngineVersion: " + engineVersion + ", ");
+        sb.append("LicenseModel: " + licenseModel + ", ");
         sb.append("}");
         return sb.toString();
     }

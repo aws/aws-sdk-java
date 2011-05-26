@@ -37,7 +37,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
      * Association ID corresponding to the VPC elastic IP address you want to
      * disassociate.
      */
-    private String assocationId;
+    private String associationId;
 
     /**
      * Default constructor for a new DisassociateAddressRequest object.  Callers should use the
@@ -98,19 +98,19 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
      * @return Association ID corresponding to the VPC elastic IP address you want to
      *         disassociate.
      */
-    public String getAssocationId() {
-        return assocationId;
+    public String getAssociationId() {
+        return associationId;
     }
     
     /**
      * Association ID corresponding to the VPC elastic IP address you want to
      * disassociate.
      *
-     * @param assocationId Association ID corresponding to the VPC elastic IP address you want to
+     * @param associationId Association ID corresponding to the VPC elastic IP address you want to
      *         disassociate.
      */
-    public void setAssocationId(String assocationId) {
-        this.assocationId = assocationId;
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
     }
     
     /**
@@ -119,14 +119,14 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param assocationId Association ID corresponding to the VPC elastic IP address you want to
+     * @param associationId Association ID corresponding to the VPC elastic IP address you want to
      *         disassociate.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DisassociateAddressRequest withAssocationId(String assocationId) {
-        this.assocationId = assocationId;
+    public DisassociateAddressRequest withAssociationId(String associationId) {
+        this.associationId = associationId;
         return this;
     }
     
@@ -144,7 +144,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("PublicIp: " + publicIp + ", ");
-        sb.append("AssocationId: " + assocationId + ", ");
+        sb.append("AssociationId: " + associationId + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -32,7 +32,7 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
     public Request<DescribeEventsRequest> marshall(DescribeEventsRequest describeEventsRequest) {
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEvents");
-        request.addParameter("Version", "2010-07-28");
+        request.addParameter("Version", "2011-04-01");
         if (describeEventsRequest != null) {
             if (describeEventsRequest.getSourceIdentifier() != null) {
                 request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));

@@ -34,13 +34,13 @@ package com.amazonaws.services.rds.model;
 public class DBInstance {
 
     /**
-     * Specifies a user-supplied database identifier. This is the unique key
+     * Contains a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
      */
     private String dBInstanceIdentifier;
 
     /**
-     * Specifies the name of the compute and memory capacity class of the DB
+     * Contains the name of the compute and memory capacity class of the DB
      * Instance.
      */
     private String dBInstanceClass;
@@ -62,14 +62,17 @@ public class DBInstance {
     private String masterUsername;
 
     /**
-     * Specifies the name of the initial database of this instance that was
-     * provided at create time, if one was specified when the DB Instance was
-     * created. This same name is returned for the life of the DB Instance.
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     * of this instance that was provided at create time, if one was
+     * specified when the DB Instance was created. This same name is returned
+     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     * Contains the Oracle System ID (SID) of the created DB Instance.
      */
     private String dBName;
 
     /**
-     * Specifies the endpoint type.
+     * Specifies the connection endpoint.
      */
     private Endpoint endpoint;
 
@@ -161,10 +164,15 @@ public class DBInstance {
     private java.util.List<String> readReplicaDBInstanceIdentifiers;
 
     /**
-     * Specifies a user-supplied database identifier. This is the unique key
+     * License model information for this DB Instance.
+     */
+    private String licenseModel;
+
+    /**
+     * Contains a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
      *
-     * @return Specifies a user-supplied database identifier. This is the unique key
+     * @return Contains a user-supplied database identifier. This is the unique key
      *         that identifies a DB Instance.
      */
     public String getDBInstanceIdentifier() {
@@ -172,10 +180,10 @@ public class DBInstance {
     }
     
     /**
-     * Specifies a user-supplied database identifier. This is the unique key
+     * Contains a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
      *
-     * @param dBInstanceIdentifier Specifies a user-supplied database identifier. This is the unique key
+     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
      *         that identifies a DB Instance.
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
@@ -183,12 +191,12 @@ public class DBInstance {
     }
     
     /**
-     * Specifies a user-supplied database identifier. This is the unique key
+     * Contains a user-supplied database identifier. This is the unique key
      * that identifies a DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceIdentifier Specifies a user-supplied database identifier. This is the unique key
+     * @param dBInstanceIdentifier Contains a user-supplied database identifier. This is the unique key
      *         that identifies a DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -201,10 +209,10 @@ public class DBInstance {
     
     
     /**
-     * Specifies the name of the compute and memory capacity class of the DB
+     * Contains the name of the compute and memory capacity class of the DB
      * Instance.
      *
-     * @return Specifies the name of the compute and memory capacity class of the DB
+     * @return Contains the name of the compute and memory capacity class of the DB
      *         Instance.
      */
     public String getDBInstanceClass() {
@@ -212,10 +220,10 @@ public class DBInstance {
     }
     
     /**
-     * Specifies the name of the compute and memory capacity class of the DB
+     * Contains the name of the compute and memory capacity class of the DB
      * Instance.
      *
-     * @param dBInstanceClass Specifies the name of the compute and memory capacity class of the DB
+     * @param dBInstanceClass Contains the name of the compute and memory capacity class of the DB
      *         Instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
@@ -223,12 +231,12 @@ public class DBInstance {
     }
     
     /**
-     * Specifies the name of the compute and memory capacity class of the DB
+     * Contains the name of the compute and memory capacity class of the DB
      * Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass Specifies the name of the compute and memory capacity class of the DB
+     * @param dBInstanceClass Contains the name of the compute and memory capacity class of the DB
      *         Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -349,41 +357,59 @@ public class DBInstance {
     
     
     /**
-     * Specifies the name of the initial database of this instance that was
-     * provided at create time, if one was specified when the DB Instance was
-     * created. This same name is returned for the life of the DB Instance.
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     * of this instance that was provided at create time, if one was
+     * specified when the DB Instance was created. This same name is returned
+     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     * Contains the Oracle System ID (SID) of the created DB Instance.
      *
-     * @return Specifies the name of the initial database of this instance that was
-     *         provided at create time, if one was specified when the DB Instance was
-     *         created. This same name is returned for the life of the DB Instance.
+     * @return The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     *         of this instance that was provided at create time, if one was
+     *         specified when the DB Instance was created. This same name is returned
+     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     *         Contains the Oracle System ID (SID) of the created DB Instance.
      */
     public String getDBName() {
         return dBName;
     }
     
     /**
-     * Specifies the name of the initial database of this instance that was
-     * provided at create time, if one was specified when the DB Instance was
-     * created. This same name is returned for the life of the DB Instance.
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     * of this instance that was provided at create time, if one was
+     * specified when the DB Instance was created. This same name is returned
+     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     * Contains the Oracle System ID (SID) of the created DB Instance.
      *
-     * @param dBName Specifies the name of the initial database of this instance that was
-     *         provided at create time, if one was specified when the DB Instance was
-     *         created. This same name is returned for the life of the DB Instance.
+     * @param dBName The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     *         of this instance that was provided at create time, if one was
+     *         specified when the DB Instance was created. This same name is returned
+     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     *         Contains the Oracle System ID (SID) of the created DB Instance.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
     }
     
     /**
-     * Specifies the name of the initial database of this instance that was
-     * provided at create time, if one was specified when the DB Instance was
-     * created. This same name is returned for the life of the DB Instance.
+     * The meaning of this parameter differs according to the database engine
+     * you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     * of this instance that was provided at create time, if one was
+     * specified when the DB Instance was created. This same name is returned
+     * for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     * Contains the Oracle System ID (SID) of the created DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBName Specifies the name of the initial database of this instance that was
-     *         provided at create time, if one was specified when the DB Instance was
-     *         created. This same name is returned for the life of the DB Instance.
+     * @param dBName The meaning of this parameter differs according to the database engine
+     *         you use. <p><b>MySQL</b> <p> Contains the name of the initial database
+     *         of this instance that was provided at create time, if one was
+     *         specified when the DB Instance was created. This same name is returned
+     *         for the life of the DB Instance. <p>Type: String <p><b>Oracle</b> <p>
+     *         Contains the Oracle System ID (SID) of the created DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -395,29 +421,29 @@ public class DBInstance {
     
     
     /**
-     * Specifies the endpoint type.
+     * Specifies the connection endpoint.
      *
-     * @return Specifies the endpoint type.
+     * @return Specifies the connection endpoint.
      */
     public Endpoint getEndpoint() {
         return endpoint;
     }
     
     /**
-     * Specifies the endpoint type.
+     * Specifies the connection endpoint.
      *
-     * @param endpoint Specifies the endpoint type.
+     * @param endpoint Specifies the connection endpoint.
      */
     public void setEndpoint(Endpoint endpoint) {
         this.endpoint = endpoint;
     }
     
     /**
-     * Specifies the endpoint type.
+     * Specifies the connection endpoint.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param endpoint Specifies the endpoint type.
+     * @param endpoint Specifies the connection endpoint.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1119,6 +1145,40 @@ public class DBInstance {
     }
     
     /**
+     * License model information for this DB Instance.
+     *
+     * @return License model information for this DB Instance.
+     */
+    public String getLicenseModel() {
+        return licenseModel;
+    }
+    
+    /**
+     * License model information for this DB Instance.
+     *
+     * @param licenseModel License model information for this DB Instance.
+     */
+    public void setLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+    }
+    
+    /**
+     * License model information for this DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param licenseModel License model information for this DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withLicenseModel(String licenseModel) {
+        this.licenseModel = licenseModel;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1152,6 +1212,7 @@ public class DBInstance {
         sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("ReadReplicaSourceDBInstanceIdentifier: " + readReplicaSourceDBInstanceIdentifier + ", ");
         sb.append("ReadReplicaDBInstanceIdentifiers: " + readReplicaDBInstanceIdentifiers + ", ");
+        sb.append("LicenseModel: " + licenseModel + ", ");
         sb.append("}");
         return sb.toString();
     }

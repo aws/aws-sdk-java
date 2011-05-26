@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBParameterGroups(DescribeDBParameterGroupsRequest) DescribeDBParameterGroups operation}.
  * <p>
- * This API returns a list of DBParameterGroup descriptions. If a
+ * Returns a list of DBParameterGroup descriptions. If a
  * DBParameterGroupName is specified, the list will contain only the
  * descriptions of the specified DBParameterGroup.
  * </p>

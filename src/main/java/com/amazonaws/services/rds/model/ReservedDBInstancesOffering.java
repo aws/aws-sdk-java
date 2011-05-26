@@ -48,6 +48,11 @@ public class ReservedDBInstancesOffering {
     private Double usagePrice;
 
     /**
+     * The currency code for the reserved DB Instance offering.
+     */
+    private String currencyCode;
+
+    /**
      * The database engine used by the offering.
      */
     private String productDescription;
@@ -234,6 +239,40 @@ public class ReservedDBInstancesOffering {
     
     
     /**
+     * The currency code for the reserved DB Instance offering.
+     *
+     * @return The currency code for the reserved DB Instance offering.
+     */
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+    
+    /**
+     * The currency code for the reserved DB Instance offering.
+     *
+     * @param currencyCode The currency code for the reserved DB Instance offering.
+     */
+    public void setCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+    }
+    
+    /**
+     * The currency code for the reserved DB Instance offering.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param currencyCode The currency code for the reserved DB Instance offering.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedDBInstancesOffering withCurrencyCode(String currencyCode) {
+        this.currencyCode = currencyCode;
+        return this;
+    }
+    
+    
+    /**
      * The database engine used by the offering.
      *
      * @return The database engine used by the offering.
@@ -327,6 +366,7 @@ public class ReservedDBInstancesOffering {
         sb.append("Duration: " + duration + ", ");
         sb.append("FixedPrice: " + fixedPrice + ", ");
         sb.append("UsagePrice: " + usagePrice + ", ");
+        sb.append("CurrencyCode: " + currencyCode + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("}");

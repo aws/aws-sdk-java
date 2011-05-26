@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Generates a stickiness policy with sticky session lifetimes
  * controlled by the lifetime of the browser (user-agent) or a specified
- * expiration period. This policy can only be associated only with HTTP
+ * expiration period. This policy can be associated only with HTTP/HTTPS
  * listeners.
  * </p>
  * <p>
