@@ -15,9 +15,7 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Describe Spot Datafeed Subscription Result
  */
 public class DescribeSpotDatafeedSubscriptionResult {
 

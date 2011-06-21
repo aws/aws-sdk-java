@@ -89,6 +89,14 @@ public final class InputSubstream extends FilterInputStream {
 	}
 
 	@Override
+	public void close() throws IOException {
+		// Only close the wrapped input stream if we're at the end of
+		// the wrapped stream.  We don't want to close the wrapped input
+		// stream just because we've reached the end of one subsection.
+		if (in.available() <= 0) super.close();
+	}
+
+	@Override
     public int available() throws IOException {
 		long bytesRemaining;
 		if (currentPosition < requestedOffset) bytesRemaining = requestedLength;

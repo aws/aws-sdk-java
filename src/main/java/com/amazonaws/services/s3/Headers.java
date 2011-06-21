@@ -86,7 +86,10 @@ public interface Headers {
 
     /** Range header for the get object request */
     public static final String RANGE = "Range";
-
+    
+    /**Range header for the copy part request */
+    public static final String COPY_PART_RANGE = "x-amz-copy-source-range";
+    
     /** Modified since constraint header for the get object request */
     public static final String GET_OBJECT_IF_MODIFIED_SINCE = "If-Modified-Since";
 

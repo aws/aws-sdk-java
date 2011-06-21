@@ -32,7 +32,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifyInstanceAttributeRequest> marshall(ModifyInstanceAttributeRequest modifyInstanceAttributeRequest) {
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (modifyInstanceAttributeRequest != null) {
             if (modifyInstanceAttributeRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));
@@ -88,6 +88,36 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
         if (modifyInstanceAttributeRequest != null) {
             if (modifyInstanceAttributeRequest.isSourceDestCheck() != null) {
                 request.addParameter("SourceDestCheck", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isSourceDestCheck()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.isDisableApiTermination() != null) {
+                request.addParameter("DisableApiTermination", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isDisableApiTermination()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.getInstanceType() != null) {
+                request.addParameter("InstanceType", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceType()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.getKernel() != null) {
+                request.addParameter("Kernel", StringUtils.fromString(modifyInstanceAttributeRequest.getKernel()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.getRamdisk() != null) {
+                request.addParameter("Ramdisk", StringUtils.fromString(modifyInstanceAttributeRequest.getRamdisk()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.getUserData() != null) {
+                request.addParameter("UserData", StringUtils.fromString(modifyInstanceAttributeRequest.getUserData()));
+            }
+        }
+        if (modifyInstanceAttributeRequest != null) {
+            if (modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior() != null) {
+                request.addParameter("InstanceInitiatedShutdownBehavior", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior()));
             }
         }
         if (modifyInstanceAttributeRequest != null) {

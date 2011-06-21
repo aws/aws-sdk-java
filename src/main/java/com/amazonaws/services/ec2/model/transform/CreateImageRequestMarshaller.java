@@ -32,7 +32,7 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
     public Request<CreateImageRequest> marshall(CreateImageRequest createImageRequest) {
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (createImageRequest != null) {
             if (createImageRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));

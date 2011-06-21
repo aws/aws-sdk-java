@@ -15,46 +15,39 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Cancelled Spot Instance Request
  */
 public class CancelledSpotInstanceRequest {
 
-    /**
-     * 
-     */
     private String spotInstanceRequestId;
 
-    /**
-     * 
-     */
     private String state;
 
     /**
-     * 
+     * Returns the value of the SpotInstanceRequestId property for this
+     * object.
      *
-     * @return 
+     * @return The value of the SpotInstanceRequestId property for this object.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequestId property for this object.
      *
-     * @param spotInstanceRequestId 
+     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequestId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId 
+     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,29 +59,29 @@ public class CancelledSpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the State property for this object.
      *
-     * @return 
+     * @return The value of the State property for this object.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * 
+     * Sets the value of the State property for this object.
      *
-     * @param state 
+     * @param state The new value for the State property for this object.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * 
+     * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state 
+     * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

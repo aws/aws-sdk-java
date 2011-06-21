@@ -15,78 +15,37 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Spot Instance Request
  */
 public class SpotInstanceRequest {
 
-    /**
-     * 
-     */
     private String spotInstanceRequestId;
 
-    /**
-     * 
-     */
     private String spotPrice;
 
-    /**
-     * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>one-time, persistent
-     */
     private String type;
 
-    /**
-     * 
-     */
     private String state;
 
-    /**
-     * 
-     */
     private SpotInstanceStateFault fault;
 
-    /**
-     * 
-     */
     private java.util.Date validFrom;
 
-    /**
-     * 
-     */
     private java.util.Date validUntil;
 
-    /**
-     * 
-     */
     private String launchGroup;
 
-    /**
-     * 
-     */
     private String availabilityZoneGroup;
 
     /**
-     * 
+     * The LaunchSpecificationType data type.
      */
     private LaunchSpecification launchSpecification;
 
-    /**
-     * 
-     */
     private String instanceId;
 
-    /**
-     * 
-     */
     private java.util.Date createTime;
 
-    /**
-     * 
-     */
     private String productDescription;
 
     /**
@@ -95,29 +54,35 @@ public class SpotInstanceRequest {
     private java.util.List<Tag> tags;
 
     /**
-     * 
+     * The Availability Zone in which the bid is launched.
+     */
+    private String launchedAvailabilityZone;
+
+    /**
+     * Returns the value of the SpotInstanceRequestId property for this
+     * object.
      *
-     * @return 
+     * @return The value of the SpotInstanceRequestId property for this object.
      */
     public String getSpotInstanceRequestId() {
         return spotInstanceRequestId;
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequestId property for this object.
      *
-     * @param spotInstanceRequestId 
+     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
      */
     public void setSpotInstanceRequestId(String spotInstanceRequestId) {
         this.spotInstanceRequestId = spotInstanceRequestId;
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequestId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequestId 
+     * @param spotInstanceRequestId The new value for the SpotInstanceRequestId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -129,29 +94,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the SpotPrice property for this object.
      *
-     * @return 
+     * @return The value of the SpotPrice property for this object.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * 
+     * Sets the value of the SpotPrice property for this object.
      *
-     * @param spotPrice 
+     * @param spotPrice The new value for the SpotPrice property for this object.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * 
+     * Sets the value of the SpotPrice property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPrice 
+     * @param spotPrice The new value for the SpotPrice property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -163,12 +128,12 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the Type property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @return 
+     * @return The value of the Type property for this object.
      *
      * @see SpotInstanceType
      */
@@ -177,12 +142,12 @@ public class SpotInstanceRequest {
     }
     
     /**
-     * 
+     * Sets the value of the Type property for this object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type 
+     * @param type The new value for the Type property for this object.
      *
      * @see SpotInstanceType
      */
@@ -191,14 +156,14 @@ public class SpotInstanceRequest {
     }
     
     /**
-     * 
+     * Sets the value of the Type property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>one-time, persistent
      *
-     * @param type 
+     * @param type The new value for the Type property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -212,29 +177,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the State property for this object.
      *
-     * @return 
+     * @return The value of the State property for this object.
      */
     public String getState() {
         return state;
     }
     
     /**
-     * 
+     * Sets the value of the State property for this object.
      *
-     * @param state 
+     * @param state The new value for the State property for this object.
      */
     public void setState(String state) {
         this.state = state;
     }
     
     /**
-     * 
+     * Sets the value of the State property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param state 
+     * @param state The new value for the State property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -246,29 +211,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the Fault property for this object.
      *
-     * @return 
+     * @return The value of the Fault property for this object.
      */
     public SpotInstanceStateFault getFault() {
         return fault;
     }
     
     /**
-     * 
+     * Sets the value of the Fault property for this object.
      *
-     * @param fault 
+     * @param fault The new value for the Fault property for this object.
      */
     public void setFault(SpotInstanceStateFault fault) {
         this.fault = fault;
     }
     
     /**
-     * 
+     * Sets the value of the Fault property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param fault 
+     * @param fault The new value for the Fault property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -280,29 +245,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the ValidFrom property for this object.
      *
-     * @return 
+     * @return The value of the ValidFrom property for this object.
      */
     public java.util.Date getValidFrom() {
         return validFrom;
     }
     
     /**
-     * 
+     * Sets the value of the ValidFrom property for this object.
      *
-     * @param validFrom 
+     * @param validFrom The new value for the ValidFrom property for this object.
      */
     public void setValidFrom(java.util.Date validFrom) {
         this.validFrom = validFrom;
     }
     
     /**
-     * 
+     * Sets the value of the ValidFrom property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validFrom 
+     * @param validFrom The new value for the ValidFrom property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -314,29 +279,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the ValidUntil property for this object.
      *
-     * @return 
+     * @return The value of the ValidUntil property for this object.
      */
     public java.util.Date getValidUntil() {
         return validUntil;
     }
     
     /**
-     * 
+     * Sets the value of the ValidUntil property for this object.
      *
-     * @param validUntil 
+     * @param validUntil The new value for the ValidUntil property for this object.
      */
     public void setValidUntil(java.util.Date validUntil) {
         this.validUntil = validUntil;
     }
     
     /**
-     * 
+     * Sets the value of the ValidUntil property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param validUntil 
+     * @param validUntil The new value for the ValidUntil property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -348,29 +313,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the LaunchGroup property for this object.
      *
-     * @return 
+     * @return The value of the LaunchGroup property for this object.
      */
     public String getLaunchGroup() {
         return launchGroup;
     }
     
     /**
-     * 
+     * Sets the value of the LaunchGroup property for this object.
      *
-     * @param launchGroup 
+     * @param launchGroup The new value for the LaunchGroup property for this object.
      */
     public void setLaunchGroup(String launchGroup) {
         this.launchGroup = launchGroup;
     }
     
     /**
-     * 
+     * Sets the value of the LaunchGroup property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchGroup 
+     * @param launchGroup The new value for the LaunchGroup property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -382,29 +347,30 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the AvailabilityZoneGroup property for this
+     * object.
      *
-     * @return 
+     * @return The value of the AvailabilityZoneGroup property for this object.
      */
     public String getAvailabilityZoneGroup() {
         return availabilityZoneGroup;
     }
     
     /**
-     * 
+     * Sets the value of the AvailabilityZoneGroup property for this object.
      *
-     * @param availabilityZoneGroup 
+     * @param availabilityZoneGroup The new value for the AvailabilityZoneGroup property for this object.
      */
     public void setAvailabilityZoneGroup(String availabilityZoneGroup) {
         this.availabilityZoneGroup = availabilityZoneGroup;
     }
     
     /**
-     * 
+     * Sets the value of the AvailabilityZoneGroup property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZoneGroup 
+     * @param availabilityZoneGroup The new value for the AvailabilityZoneGroup property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -416,29 +382,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * The LaunchSpecificationType data type.
      *
-     * @return 
+     * @return The LaunchSpecificationType data type.
      */
     public LaunchSpecification getLaunchSpecification() {
         return launchSpecification;
     }
     
     /**
-     * 
+     * The LaunchSpecificationType data type.
      *
-     * @param launchSpecification 
+     * @param launchSpecification The LaunchSpecificationType data type.
      */
     public void setLaunchSpecification(LaunchSpecification launchSpecification) {
         this.launchSpecification = launchSpecification;
     }
     
     /**
-     * 
+     * The LaunchSpecificationType data type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchSpecification 
+     * @param launchSpecification The LaunchSpecificationType data type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -450,29 +416,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the InstanceId property for this object.
      *
-     * @return 
+     * @return The value of the InstanceId property for this object.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * 
+     * Sets the value of the InstanceId property for this object.
      *
-     * @param instanceId 
+     * @param instanceId The new value for the InstanceId property for this object.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * 
+     * Sets the value of the InstanceId property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId 
+     * @param instanceId The new value for the InstanceId property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -484,29 +450,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the CreateTime property for this object.
      *
-     * @return 
+     * @return The value of the CreateTime property for this object.
      */
     public java.util.Date getCreateTime() {
         return createTime;
     }
     
     /**
-     * 
+     * Sets the value of the CreateTime property for this object.
      *
-     * @param createTime 
+     * @param createTime The new value for the CreateTime property for this object.
      */
     public void setCreateTime(java.util.Date createTime) {
         this.createTime = createTime;
     }
     
     /**
-     * 
+     * Sets the value of the CreateTime property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createTime 
+     * @param createTime The new value for the CreateTime property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -518,29 +484,29 @@ public class SpotInstanceRequest {
     
     
     /**
-     * 
+     * Returns the value of the ProductDescription property for this object.
      *
-     * @return 
+     * @return The value of the ProductDescription property for this object.
      */
     public String getProductDescription() {
         return productDescription;
     }
     
     /**
-     * 
+     * Sets the value of the ProductDescription property for this object.
      *
-     * @param productDescription 
+     * @param productDescription The new value for the ProductDescription property for this object.
      */
     public void setProductDescription(String productDescription) {
         this.productDescription = productDescription;
     }
     
     /**
-     * 
+     * Sets the value of the ProductDescription property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param productDescription 
+     * @param productDescription The new value for the ProductDescription property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -614,6 +580,40 @@ public class SpotInstanceRequest {
     }
     
     /**
+     * The Availability Zone in which the bid is launched.
+     *
+     * @return The Availability Zone in which the bid is launched.
+     */
+    public String getLaunchedAvailabilityZone() {
+        return launchedAvailabilityZone;
+    }
+    
+    /**
+     * The Availability Zone in which the bid is launched.
+     *
+     * @param launchedAvailabilityZone The Availability Zone in which the bid is launched.
+     */
+    public void setLaunchedAvailabilityZone(String launchedAvailabilityZone) {
+        this.launchedAvailabilityZone = launchedAvailabilityZone;
+    }
+    
+    /**
+     * The Availability Zone in which the bid is launched.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param launchedAvailabilityZone The Availability Zone in which the bid is launched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public SpotInstanceRequest withLaunchedAvailabilityZone(String launchedAvailabilityZone) {
+        this.launchedAvailabilityZone = launchedAvailabilityZone;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -639,6 +639,7 @@ public class SpotInstanceRequest {
         sb.append("CreateTime: " + createTime + ", ");
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("LaunchedAvailabilityZone: " + launchedAvailabilityZone + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -32,7 +32,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
     public Request<DescribeReservedInstancesRequest> marshall(DescribeReservedInstancesRequest describeReservedInstancesRequest) {
         Request<DescribeReservedInstancesRequest> request = new DefaultRequest<DescribeReservedInstancesRequest>(describeReservedInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstances");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (describeReservedInstancesRequest != null) {
             java.util.List<String> reservedInstancesIdsList = describeReservedInstancesRequest.getReservedInstancesIds();
             int reservedInstancesIdsListIndex = 1;

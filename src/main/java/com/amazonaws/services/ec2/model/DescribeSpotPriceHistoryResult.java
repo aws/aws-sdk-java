@@ -15,21 +15,22 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Describe Spot Price History Result
  */
 public class DescribeSpotPriceHistoryResult {
 
-    /**
-     * 
-     */
     private java.util.List<SpotPrice> spotPriceHistory;
 
     /**
-     * 
+     * The string marking the next set of results returned. Displays empty if
+     * there are no more results to be returned.
+     */
+    private String nextToken;
+
+    /**
+     * Returns the value of the SpotPriceHistory property for this object.
      *
-     * @return 
+     * @return The value of the SpotPriceHistory property for this object.
      */
     public java.util.List<SpotPrice> getSpotPriceHistory() {
         if (spotPriceHistory == null) {
@@ -39,9 +40,9 @@ public class DescribeSpotPriceHistoryResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotPriceHistory property for this object.
      *
-     * @param spotPriceHistory 
+     * @param spotPriceHistory The new value for the SpotPriceHistory property for this object.
      */
     public void setSpotPriceHistory(java.util.Collection<SpotPrice> spotPriceHistory) {
         java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>();
@@ -52,11 +53,11 @@ public class DescribeSpotPriceHistoryResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotPriceHistory property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPriceHistory 
+     * @param spotPriceHistory The new value for the SpotPriceHistory property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +70,11 @@ public class DescribeSpotPriceHistoryResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotPriceHistory property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotPriceHistory 
+     * @param spotPriceHistory The new value for the SpotPriceHistory property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,6 +90,46 @@ public class DescribeSpotPriceHistoryResult {
     }
     
     /**
+     * The string marking the next set of results returned. Displays empty if
+     * there are no more results to be returned.
+     *
+     * @return The string marking the next set of results returned. Displays empty if
+     *         there are no more results to be returned.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * The string marking the next set of results returned. Displays empty if
+     * there are no more results to be returned.
+     *
+     * @param nextToken The string marking the next set of results returned. Displays empty if
+     *         there are no more results to be returned.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * The string marking the next set of results returned. Displays empty if
+     * there are no more results to be returned.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The string marking the next set of results returned. Displays empty if
+     *         there are no more results to be returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSpotPriceHistoryResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -101,6 +142,7 @@ public class DescribeSpotPriceHistoryResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("SpotPriceHistory: " + spotPriceHistory + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }

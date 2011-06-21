@@ -67,6 +67,21 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     private java.util.List<Filter> filters;
 
     /**
+     * Filters the results by availability zone (ex: 'us-east-1a').
+     */
+    private String availabilityZone;
+
+    /**
+     * Specifies the number of rows to return.
+     */
+    private Integer maxResults;
+
+    /**
+     * Specifies the next set of rows to return.
+     */
+    private String nextToken;
+
+    /**
      * The start date and time of the Spot Instance price history data.
      *
      * @return The start date and time of the Spot Instance price history data.
@@ -353,6 +368,108 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Filters the results by availability zone (ex: 'us-east-1a').
+     *
+     * @return Filters the results by availability zone (ex: 'us-east-1a').
+     */
+    public String getAvailabilityZone() {
+        return availabilityZone;
+    }
+    
+    /**
+     * Filters the results by availability zone (ex: 'us-east-1a').
+     *
+     * @param availabilityZone Filters the results by availability zone (ex: 'us-east-1a').
+     */
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+    
+    /**
+     * Filters the results by availability zone (ex: 'us-east-1a').
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param availabilityZone Filters the results by availability zone (ex: 'us-east-1a').
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSpotPriceHistoryRequest withAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies the number of rows to return.
+     *
+     * @return Specifies the number of rows to return.
+     */
+    public Integer getMaxResults() {
+        return maxResults;
+    }
+    
+    /**
+     * Specifies the number of rows to return.
+     *
+     * @param maxResults Specifies the number of rows to return.
+     */
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+    
+    /**
+     * Specifies the number of rows to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param maxResults Specifies the number of rows to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSpotPriceHistoryRequest withMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies the next set of rows to return.
+     *
+     * @return Specifies the next set of rows to return.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Specifies the next set of rows to return.
+     *
+     * @param nextToken Specifies the next set of rows to return.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Specifies the next set of rows to return.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken Specifies the next set of rows to return.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSpotPriceHistoryRequest withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -369,6 +486,9 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
         sb.append("InstanceTypes: " + instanceTypes + ", ");
         sb.append("ProductDescriptions: " + productDescriptions + ", ");
         sb.append("Filters: " + filters + ", ");
+        sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        sb.append("MaxResults: " + maxResults + ", ");
+        sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -15,41 +15,39 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Create Spot Datafeed Subscription Result
  */
 public class CreateSpotDatafeedSubscriptionResult {
 
     /**
-     * 
+     * The SpotDatafeedSubscriptionType data type.
      */
     private SpotDatafeedSubscription spotDatafeedSubscription;
 
     /**
-     * 
+     * The SpotDatafeedSubscriptionType data type.
      *
-     * @return 
+     * @return The SpotDatafeedSubscriptionType data type.
      */
     public SpotDatafeedSubscription getSpotDatafeedSubscription() {
         return spotDatafeedSubscription;
     }
     
     /**
-     * 
+     * The SpotDatafeedSubscriptionType data type.
      *
-     * @param spotDatafeedSubscription 
+     * @param spotDatafeedSubscription The SpotDatafeedSubscriptionType data type.
      */
     public void setSpotDatafeedSubscription(SpotDatafeedSubscription spotDatafeedSubscription) {
         this.spotDatafeedSubscription = spotDatafeedSubscription;
     }
     
     /**
-     * 
+     * The SpotDatafeedSubscriptionType data type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotDatafeedSubscription 
+     * @param spotDatafeedSubscription The SpotDatafeedSubscriptionType data type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

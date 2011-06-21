@@ -17,9 +17,6 @@ package com.amazonaws.services.s3.transfer;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import com.amazonaws.AmazonClientException;
@@ -35,15 +32,13 @@ import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.transfer.internal.MultipartUploadCallable;
 import com.amazonaws.services.s3.transfer.internal.ProgressListenerChain;
-import com.amazonaws.services.s3.transfer.internal.PutObjectCallable;
 import com.amazonaws.services.s3.transfer.internal.TransferManagerUtils;
 import com.amazonaws.services.s3.transfer.internal.TransferProgressImpl;
 import com.amazonaws.services.s3.transfer.internal.TransferProgressUpdatingListener;
-import com.amazonaws.services.s3.transfer.internal.TransferStateUpdatingCallable;
+import com.amazonaws.services.s3.transfer.internal.UploadCallable;
 import com.amazonaws.services.s3.transfer.internal.UploadImpl;
-import com.amazonaws.services.s3.transfer.model.UploadResult;
+import com.amazonaws.services.s3.transfer.internal.UploadMonitor;
 import com.amazonaws.util.VersionInfoUtils;
 
 /**
@@ -93,10 +88,6 @@ public class TransferManager {
 
     /** The thread pool in which transfers are uploaded or downloaded. */
     private ThreadPoolExecutor threadPool;
-
-    /** The thread pool in which progress listeners are notified of events. */
-    private ExecutorService notificationThreadPool;
-
 
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
@@ -158,7 +149,6 @@ public class TransferManager {
         this.s3 = s3;
         this.threadPool = threadPool;
         this.configuration = new TransferManagerConfiguration();
-        this.notificationThreadPool = Executors.newFixedThreadPool(1);
     }
 
 
@@ -343,23 +333,17 @@ public class TransferManager {
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         transferProgress.setTotalBytesToTransfer(TransferManagerUtils.getContentLength(putObjectRequest));
 
-        ProgressListenerChain listenerChain = new ProgressListenerChain(
-                notificationThreadPool,
-                new TransferProgressUpdatingListener(transferProgress),
-                putObjectRequest.getProgressListener());
+        ProgressListenerChain listenerChain = new ProgressListenerChain(new TransferProgressUpdatingListener(
+                transferProgress), putObjectRequest.getProgressListener());
         putObjectRequest.setProgressListener(listenerChain);
 
         UploadImpl upload = new UploadImpl(description, transferProgress, listenerChain);
 
-        Callable<UploadResult> callable = null;
-        if (TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration)) {
-            callable = new MultipartUploadCallable(this, threadPool, putObjectRequest, listenerChain);
-        } else {
-            callable = new PutObjectCallable(s3, putObjectRequest);
-        }
-
-        callable = new TransferStateUpdatingCallable(callable, upload);
-        upload.setFuture(threadPool.submit(callable));
+        UploadCallable uploadCallable = new UploadCallable(this, threadPool, putObjectRequest,
+                listenerChain);
+        UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest,
+                listenerChain);
+        upload.setMonitor(watcher);
 
         return upload;
     }
@@ -418,7 +402,6 @@ public class TransferManager {
      */
     public void shutdownNow() {
         threadPool.shutdownNow();
-        notificationThreadPool.shutdownNow();
 
         if (s3 instanceof AmazonS3Client) {
             ((AmazonS3Client)s3).shutdown();

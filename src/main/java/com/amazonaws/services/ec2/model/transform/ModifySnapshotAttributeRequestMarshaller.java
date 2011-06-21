@@ -32,7 +32,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
     public Request<ModifySnapshotAttributeRequest> marshall(ModifySnapshotAttributeRequest modifySnapshotAttributeRequest) {
         Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(modifySnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySnapshotAttribute");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (modifySnapshotAttributeRequest != null) {
             if (modifySnapshotAttributeRequest.getSnapshotId() != null) {
                 request.addParameter("SnapshotId", StringUtils.fromString(modifySnapshotAttributeRequest.getSnapshotId()));
@@ -68,6 +68,47 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
                     request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
                 }
                 groupNamesListIndex++;
+            }
+        }
+        if (modifySnapshotAttributeRequest != null) {
+            CreateVolumePermissionModifications createVolumePermission = modifySnapshotAttributeRequest.getCreateVolumePermission();
+
+            if (createVolumePermission != null) {
+                java.util.List<CreateVolumePermission> addList = createVolumePermission.getAdd();
+                int addListIndex = 1;
+                for (CreateVolumePermission addListValue : addList) {
+                    if (addListValue != null) {
+                        if (addListValue.getUserId() != null) {
+                            request.addParameter("CreateVolumePermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
+                        }
+                    }
+                    if (addListValue != null) {
+                        if (addListValue.getGroup() != null) {
+                            request.addParameter("CreateVolumePermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
+                        }
+                    }
+
+                    addListIndex++;
+                }
+            }
+
+            if (createVolumePermission != null) {
+                java.util.List<CreateVolumePermission> removeList = createVolumePermission.getRemove();
+                int removeListIndex = 1;
+                for (CreateVolumePermission removeListValue : removeList) {
+                    if (removeListValue != null) {
+                        if (removeListValue.getUserId() != null) {
+                            request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".UserId", StringUtils.fromString(removeListValue.getUserId()));
+                        }
+                    }
+                    if (removeListValue != null) {
+                        if (removeListValue.getGroup() != null) {
+                            request.addParameter("CreateVolumePermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
+                        }
+                    }
+
+                    removeListIndex++;
+                }
             }
         }
 

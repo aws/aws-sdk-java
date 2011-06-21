@@ -32,7 +32,7 @@ public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<De
     public Request<DeactivateLicenseRequest> marshall(DeactivateLicenseRequest deactivateLicenseRequest) {
         Request<DeactivateLicenseRequest> request = new DefaultRequest<DeactivateLicenseRequest>(deactivateLicenseRequest, "AmazonEC2");
         request.addParameter("Action", "DeactivateLicense");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (deactivateLicenseRequest != null) {
             if (deactivateLicenseRequest.getLicenseId() != null) {
                 request.addParameter("LicenseId", StringUtils.fromString(deactivateLicenseRequest.getLicenseId()));

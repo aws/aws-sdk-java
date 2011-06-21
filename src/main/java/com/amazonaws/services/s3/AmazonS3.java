@@ -38,12 +38,15 @@ import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
+import com.amazonaws.services.s3.model.CopyPartRequest;
+import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
+import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -66,6 +69,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
@@ -1441,6 +1445,62 @@ public interface AmazonS3 {
     public AccessControlList getBucketAcl(String bucketName) throws AmazonClientException,
             AmazonServiceException;
 
+	/**
+	 * Sets the {@link AccessControlList} for the specified Amazon S3 bucket.
+	 * <p>
+	 * Each bucket and object in Amazon S3 has an ACL that defines its access
+	 * control policy. When a request is made, Amazon S3 authenticates the
+	 * request using its standard authentication procedure and then checks the
+	 * ACL to verify the sender was granted access to the bucket or object. If
+	 * the sender is approved, the request proceeds. Otherwise, Amazon S3
+	 * returns an error.
+	 * <p>
+	 * When constructing a custom <code>AccessControlList</code>, callers
+	 * typically retrieve the existing <code>AccessControlList</code> for a
+	 * bucket ( {@link AmazonS3Client#getBucketAcl(String)}), modify it as
+	 * necessary, and then use this method to upload the new ACL.
+	 * 
+	 * @param setBucketAclRequest
+	 *            The request object containing the bucket to modify and the ACL
+	 *            to set.
+	 * 
+	 * @throws AmazonClientException
+	 *             If any errors are encountered in the client while making the
+	 *             request or handling the response.
+	 * @throws AmazonServiceException
+	 *             If any errors occurred in Amazon S3 while processing the
+	 *             request.
+	 */
+    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
+    		throws AmazonClientException, AmazonServiceException;
+
+	/**
+	 * Gets the {@link AccessControlList} (ACL) for the specified Amazon S3
+	 * bucket.
+	 * <p>
+	 * Each bucket and object in Amazon S3 has an ACL that defines its access
+	 * control policy. When a request is made, Amazon S3 authenticates the
+	 * request using its standard authentication procedure and then checks the
+	 * ACL to verify the sender was granted access to the bucket or object. If
+	 * the sender is approved, the request proceeds. Otherwise, Amazon S3
+	 * returns an error.
+	 * 
+	 * @param getBucketAclRequest
+	 *            The request containing the name of the bucket whose ACL is
+	 *            being retrieved.
+	 * 
+	 * @return The <code>AccessControlList</code> for the specified S3 bucket.
+	 * 
+	 * @throws AmazonClientException
+	 *             If any errors are encountered in the client while making the
+	 *             request or handling the response.
+	 * @throws AmazonServiceException
+	 *             If any errors occurred in Amazon S3 while processing the
+	 *             request.
+	 */
+    public AccessControlList getBucketAcl(GetBucketAclRequest getBucketAclRequest)
+    		throws AmazonClientException, AmazonServiceException;
+   
     /**
      * <p>
      * Sets the {@link AccessControlList} for the specified Amazon S3 bucket.
@@ -2166,6 +2226,44 @@ public interface AmazonS3 {
     public CopyObjectResult copyObject(CopyObjectRequest copyObjectRequest)
             throws AmazonClientException, AmazonServiceException;
 
+    /**
+     * Copies a source object to a part of a multipart upload.
+     * 
+     * To copy an object, the caller's account must have read access to the source object and
+     * write access to the destination bucket.
+     * </p>
+     * <p>
+     * If constraints are specified in the <code>CopyPartRequest</code>
+     * (e.g.
+     * {@link CopyPartRequest#setMatchingETagConstraints(List)})
+     * and are not satisfied when Amazon S3 receives the
+     * request, this method returns <code>null</code>.
+     * This method returns a non-null result under all other
+     * circumstances.
+     * </p>
+     *
+     * @param copyPartRequest
+     *            The request object containing all the options for copying an
+     *            Amazon S3 object.
+     *
+     * @return A {@link CopyPartResult} object containing the information
+     *         returned by Amazon S3 about the newly created object, or <code>null</code> if
+     *         constraints were specified that weren't met when Amazon S3 attempted
+     *         to copy the object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#copyObject(CopyObjectRequest)
+     * @see AmazonS3Client#initiateMultipartUpload(InitiateMultipartUploadRequest)
+     */
+    public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws AmazonClientException,
+            AmazonServiceException;
+    
     /**
      * <p>
      * Deletes the specified object in the specified bucket. Once deleted, the object

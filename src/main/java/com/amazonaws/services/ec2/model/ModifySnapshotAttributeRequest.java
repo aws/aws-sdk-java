@@ -60,6 +60,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> groupNames;
 
+    private CreateVolumePermissionModifications createVolumePermission;
+
     /**
      * Default constructor for a new ModifySnapshotAttributeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -387,6 +389,41 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the CreateVolumePermission property for this
+     * object.
+     *
+     * @return The value of the CreateVolumePermission property for this object.
+     */
+    public CreateVolumePermissionModifications getCreateVolumePermission() {
+        return createVolumePermission;
+    }
+    
+    /**
+     * Sets the value of the CreateVolumePermission property for this object.
+     *
+     * @param createVolumePermission The new value for the CreateVolumePermission property for this object.
+     */
+    public void setCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
+        this.createVolumePermission = createVolumePermission;
+    }
+    
+    /**
+     * Sets the value of the CreateVolumePermission property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param createVolumePermission The new value for the CreateVolumePermission property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifySnapshotAttributeRequest withCreateVolumePermission(CreateVolumePermissionModifications createVolumePermission) {
+        this.createVolumePermission = createVolumePermission;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -403,6 +440,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
         sb.append("OperationType: " + operationType + ", ");
         sb.append("UserIds: " + userIds + ", ");
         sb.append("GroupNames: " + groupNames + ", ");
+        sb.append("CreateVolumePermission: " + createVolumePermission + ", ");
         sb.append("}");
         return sb.toString();
     }

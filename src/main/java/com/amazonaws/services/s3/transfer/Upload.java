@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.transfer;
 
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -60,10 +61,15 @@ public class Upload extends Transfer {
     public UploadResult waitForUploadResult() 
             throws AmazonClientException, AmazonServiceException, InterruptedException {
         try {
-            return (UploadResult)future.get();
+            UploadResult result = null;
+            while (!monitor.isDone() || result == null) {
+                Future<?> f = monitor.getFuture();
+                result = (UploadResult)f.get();
+            }
+            return result;
         } catch (ExecutionException e) {
             rethrowExecutionException(e);
+            return null;
         }
-        return null;
     }
 }

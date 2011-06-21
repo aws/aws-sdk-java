@@ -32,7 +32,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
     public Request<DescribeSpotPriceHistoryRequest> marshall(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest) {
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (describeSpotPriceHistoryRequest != null) {
             if (describeSpotPriceHistoryRequest.getStartTime() != null) {
                 request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));
@@ -88,6 +88,21 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
                 }
 
                 filtersListIndex++;
+            }
+        }
+        if (describeSpotPriceHistoryRequest != null) {
+            if (describeSpotPriceHistoryRequest.getAvailabilityZone() != null) {
+                request.addParameter("AvailabilityZone", StringUtils.fromString(describeSpotPriceHistoryRequest.getAvailabilityZone()));
+            }
+        }
+        if (describeSpotPriceHistoryRequest != null) {
+            if (describeSpotPriceHistoryRequest.getMaxResults() != null) {
+                request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotPriceHistoryRequest.getMaxResults()));
+            }
+        }
+        if (describeSpotPriceHistoryRequest != null) {
+            if (describeSpotPriceHistoryRequest.getNextToken() != null) {
+                request.addParameter("NextToken", StringUtils.fromString(describeSpotPriceHistoryRequest.getNextToken()));
             }
         }
 

@@ -69,6 +69,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      */
     private String value;
 
+    private LaunchPermissionModifications launchPermission;
+
+    /**
+     * String value
+     */
+    private String description;
+
     /**
      * Default constructor for a new ModifyImageAttributeRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -479,6 +486,74 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the LaunchPermission property for this object.
+     *
+     * @return The value of the LaunchPermission property for this object.
+     */
+    public LaunchPermissionModifications getLaunchPermission() {
+        return launchPermission;
+    }
+    
+    /**
+     * Sets the value of the LaunchPermission property for this object.
+     *
+     * @param launchPermission The new value for the LaunchPermission property for this object.
+     */
+    public void setLaunchPermission(LaunchPermissionModifications launchPermission) {
+        this.launchPermission = launchPermission;
+    }
+    
+    /**
+     * Sets the value of the LaunchPermission property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param launchPermission The new value for the LaunchPermission property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyImageAttributeRequest withLaunchPermission(LaunchPermissionModifications launchPermission) {
+        this.launchPermission = launchPermission;
+        return this;
+    }
+    
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getDescription() {
+        return description;
+    }
+    
+    /**
+     * String value
+     *
+     * @param description String value
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param description String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyImageAttributeRequest withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -497,6 +572,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
         sb.append("UserGroups: " + userGroups + ", ");
         sb.append("ProductCodes: " + productCodes + ", ");
         sb.append("Value: " + value + ", ");
+        sb.append("LaunchPermission: " + launchPermission + ", ");
+        sb.append("Description: " + description + ", ");
         sb.append("}");
         return sb.toString();
     }

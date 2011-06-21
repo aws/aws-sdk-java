@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
-import java.util.concurrent.Future;
-
 import com.amazonaws.services.s3.transfer.Upload;
 
 public class UploadImpl extends Upload {
@@ -36,13 +34,11 @@ public class UploadImpl extends Upload {
         if (super.state == state) return;
         super.state = state;
     }
-
+    
     /**
-     * Sets the future for the result of the asynchronous transfer.
-     *
-     * @param future
+     * Sets the monitor used to poll for upload completion.
      */
-    public void setFuture(Future<?> future) {
-        super.future = future;
+    public void setMonitor(TransferMonitor monitor) {
+        super.monitor = monitor;
     }
 }

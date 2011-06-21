@@ -31,14 +31,8 @@ public class LaunchSpecification {
      */
     private String keyName;
 
-    /**
-     * 
-     */
     private java.util.List<GroupIdentifier> allSecurityGroups;
 
-    /**
-     * 
-     */
     private java.util.List<String> securityGroups;
 
     /**
@@ -166,9 +160,9 @@ public class LaunchSpecification {
     
     
     /**
-     * 
+     * Returns the value of the AllSecurityGroups property for this object.
      *
-     * @return 
+     * @return The value of the AllSecurityGroups property for this object.
      */
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
         if (allSecurityGroups == null) {
@@ -178,9 +172,9 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the AllSecurityGroups property for this object.
      *
-     * @param allSecurityGroups 
+     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
      */
     public void setAllSecurityGroups(java.util.Collection<GroupIdentifier> allSecurityGroups) {
         java.util.List<GroupIdentifier> allSecurityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
@@ -191,11 +185,11 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the AllSecurityGroups property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups 
+     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -208,11 +202,11 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the AllSecurityGroups property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allSecurityGroups 
+     * @param allSecurityGroups The new value for the AllSecurityGroups property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -228,9 +222,9 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Returns the value of the SecurityGroups property for this object.
      *
-     * @return 
+     * @return The value of the SecurityGroups property for this object.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -240,9 +234,9 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the SecurityGroups property for this object.
      *
-     * @param securityGroups 
+     * @param securityGroups The new value for the SecurityGroups property for this object.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
@@ -253,11 +247,11 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the SecurityGroups property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups 
+     * @param securityGroups The new value for the SecurityGroups property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -270,11 +264,11 @@ public class LaunchSpecification {
     }
     
     /**
-     * 
+     * Sets the value of the SecurityGroups property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups 
+     * @param securityGroups The new value for the SecurityGroups property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

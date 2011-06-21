@@ -63,6 +63,10 @@ public class SpotPriceStaxUnmarshaller implements Unmarshaller<SpotPrice, StaxUn
                     spotPrice.setTimestamp(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("availabilityZone", targetDepth)) {
+                    spotPrice.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return spotPrice;

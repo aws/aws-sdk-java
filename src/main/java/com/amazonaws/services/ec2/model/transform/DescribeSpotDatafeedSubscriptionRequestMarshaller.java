@@ -32,7 +32,7 @@ public class DescribeSpotDatafeedSubscriptionRequestMarshaller implements Marsha
     public Request<DescribeSpotDatafeedSubscriptionRequest> marshall(DescribeSpotDatafeedSubscriptionRequest describeSpotDatafeedSubscriptionRequest) {
         Request<DescribeSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DescribeSpotDatafeedSubscriptionRequest>(describeSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotDatafeedSubscription");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
 
 
         return request;

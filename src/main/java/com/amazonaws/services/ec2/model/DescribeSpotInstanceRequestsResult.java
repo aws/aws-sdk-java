@@ -15,21 +15,17 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Describe Spot Instance Requests Result
  */
 public class DescribeSpotInstanceRequestsResult {
 
-    /**
-     * 
-     */
     private java.util.List<SpotInstanceRequest> spotInstanceRequests;
 
     /**
-     * 
+     * Returns the value of the SpotInstanceRequests property for this
+     * object.
      *
-     * @return 
+     * @return The value of the SpotInstanceRequests property for this object.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         if (spotInstanceRequests == null) {
@@ -39,9 +35,9 @@ public class DescribeSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequests property for this object.
      *
-     * @param spotInstanceRequests 
+     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
      */
     public void setSpotInstanceRequests(java.util.Collection<SpotInstanceRequest> spotInstanceRequests) {
         java.util.List<SpotInstanceRequest> spotInstanceRequestsCopy = new java.util.ArrayList<SpotInstanceRequest>();
@@ -52,11 +48,11 @@ public class DescribeSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequests property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests 
+     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +65,11 @@ public class DescribeSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the SpotInstanceRequests property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param spotInstanceRequests 
+     * @param spotInstanceRequests The new value for the SpotInstanceRequests property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

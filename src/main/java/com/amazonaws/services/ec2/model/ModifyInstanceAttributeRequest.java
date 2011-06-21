@@ -61,6 +61,36 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      */
     private Boolean sourceDestCheck;
 
+    /**
+     * Boolean value
+     */
+    private Boolean disableApiTermination;
+
+    /**
+     * String value
+     */
+    private String instanceType;
+
+    /**
+     * String value
+     */
+    private String kernel;
+
+    /**
+     * String value
+     */
+    private String ramdisk;
+
+    /**
+     * String value
+     */
+    private String userData;
+
+    /**
+     * String value
+     */
+    private String instanceInitiatedShutdownBehavior;
+
     private java.util.List<String> groups;
 
     /**
@@ -366,6 +396,219 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean isDisableApiTermination() {
+        return disableApiTermination;
+    }
+    
+    /**
+     * Boolean value
+     *
+     * @param disableApiTermination Boolean value
+     */
+    public void setDisableApiTermination(Boolean disableApiTermination) {
+        this.disableApiTermination = disableApiTermination;
+    }
+    
+    /**
+     * Boolean value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param disableApiTermination Boolean value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withDisableApiTermination(Boolean disableApiTermination) {
+        this.disableApiTermination = disableApiTermination;
+        return this;
+    }
+    
+    
+    /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean getDisableApiTermination() {
+        return disableApiTermination;
+    }
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getInstanceType() {
+        return instanceType;
+    }
+    
+    /**
+     * String value
+     *
+     * @param instanceType String value
+     */
+    public void setInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceType String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withInstanceType(String instanceType) {
+        this.instanceType = instanceType;
+        return this;
+    }
+    
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getKernel() {
+        return kernel;
+    }
+    
+    /**
+     * String value
+     *
+     * @param kernel String value
+     */
+    public void setKernel(String kernel) {
+        this.kernel = kernel;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param kernel String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withKernel(String kernel) {
+        this.kernel = kernel;
+        return this;
+    }
+    
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getRamdisk() {
+        return ramdisk;
+    }
+    
+    /**
+     * String value
+     *
+     * @param ramdisk String value
+     */
+    public void setRamdisk(String ramdisk) {
+        this.ramdisk = ramdisk;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ramdisk String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withRamdisk(String ramdisk) {
+        this.ramdisk = ramdisk;
+        return this;
+    }
+    
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getUserData() {
+        return userData;
+    }
+    
+    /**
+     * String value
+     *
+     * @param userData String value
+     */
+    public void setUserData(String userData) {
+        this.userData = userData;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param userData String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withUserData(String userData) {
+        this.userData = userData;
+        return this;
+    }
+    
+    
+    /**
+     * String value
+     *
+     * @return String value
+     */
+    public String getInstanceInitiatedShutdownBehavior() {
+        return instanceInitiatedShutdownBehavior;
+    }
+    
+    /**
+     * String value
+     *
+     * @param instanceInitiatedShutdownBehavior String value
+     */
+    public void setInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
+    }
+    
+    /**
+     * String value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceInitiatedShutdownBehavior String value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withInstanceInitiatedShutdownBehavior(String instanceInitiatedShutdownBehavior) {
+        this.instanceInitiatedShutdownBehavior = instanceInitiatedShutdownBehavior;
+        return this;
+    }
+    
+    
+    /**
      * Returns the value of the Groups property for this object.
      *
      * @return The value of the Groups property for this object.
@@ -444,6 +687,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
         sb.append("Value: " + value + ", ");
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
+        sb.append("DisableApiTermination: " + disableApiTermination + ", ");
+        sb.append("InstanceType: " + instanceType + ", ");
+        sb.append("Kernel: " + kernel + ", ");
+        sb.append("Ramdisk: " + ramdisk + ", ");
+        sb.append("UserData: " + userData + ", ");
+        sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
         sb.append("Groups: " + groups + ", ");
         sb.append("}");
         return sb.toString();

@@ -15,21 +15,18 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Cancel Spot Instance Requests Result
  */
 public class CancelSpotInstanceRequestsResult {
 
-    /**
-     * 
-     */
     private java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
 
     /**
-     * 
+     * Returns the value of the CancelledSpotInstanceRequests property for
+     * this object.
      *
-     * @return 
+     * @return The value of the CancelledSpotInstanceRequests property for this
+     *         object.
      */
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
         if (cancelledSpotInstanceRequests == null) {
@@ -39,9 +36,11 @@ public class CancelSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the CancelledSpotInstanceRequests property for this
+     * object.
      *
-     * @param cancelledSpotInstanceRequests 
+     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
+     *         object.
      */
     public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
         java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>();
@@ -52,11 +51,13 @@ public class CancelSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the CancelledSpotInstanceRequests property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests 
+     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -69,11 +70,13 @@ public class CancelSpotInstanceRequestsResult {
     }
     
     /**
-     * 
+     * Sets the value of the CancelledSpotInstanceRequests property for this
+     * object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cancelledSpotInstanceRequests 
+     * @param cancelledSpotInstanceRequests The new value for the CancelledSpotInstanceRequests property for this
+     *         object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

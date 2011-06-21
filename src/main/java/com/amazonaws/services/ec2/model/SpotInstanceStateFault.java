@@ -15,46 +15,38 @@
 package com.amazonaws.services.ec2.model;
 
 /**
- * <p>
- * 
- * </p>
+ * Spot Instance State Fault
  */
 public class SpotInstanceStateFault {
 
-    /**
-     * 
-     */
     private String code;
 
-    /**
-     * 
-     */
     private String message;
 
     /**
-     * 
+     * Returns the value of the Code property for this object.
      *
-     * @return 
+     * @return The value of the Code property for this object.
      */
     public String getCode() {
         return code;
     }
     
     /**
-     * 
+     * Sets the value of the Code property for this object.
      *
-     * @param code 
+     * @param code The new value for the Code property for this object.
      */
     public void setCode(String code) {
         this.code = code;
     }
     
     /**
-     * 
+     * Sets the value of the Code property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param code 
+     * @param code The new value for the Code property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,29 +58,29 @@ public class SpotInstanceStateFault {
     
     
     /**
-     * 
+     * Returns the value of the Message property for this object.
      *
-     * @return 
+     * @return The value of the Message property for this object.
      */
     public String getMessage() {
         return message;
     }
     
     /**
-     * 
+     * Sets the value of the Message property for this object.
      *
-     * @param message 
+     * @param message The new value for the Message property for this object.
      */
     public void setMessage(String message) {
         this.message = message;
     }
     
     /**
-     * 
+     * Sets the value of the Message property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param message 
+     * @param message The new value for the Message property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

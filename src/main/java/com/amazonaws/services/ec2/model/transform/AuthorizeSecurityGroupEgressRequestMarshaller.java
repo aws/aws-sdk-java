@@ -32,7 +32,7 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements Marshaller
     public Request<AuthorizeSecurityGroupEgressRequest> marshall(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) {
         Request<AuthorizeSecurityGroupEgressRequest> request = new DefaultRequest<AuthorizeSecurityGroupEgressRequest>(authorizeSecurityGroupEgressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupEgress");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (authorizeSecurityGroupEgressRequest != null) {
             if (authorizeSecurityGroupEgressRequest.getGroupId() != null) {
                 request.addParameter("GroupId", StringUtils.fromString(authorizeSecurityGroupEgressRequest.getGroupId()));

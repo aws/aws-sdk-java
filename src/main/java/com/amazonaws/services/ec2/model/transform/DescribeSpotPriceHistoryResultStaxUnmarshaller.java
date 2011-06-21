@@ -51,6 +51,10 @@ public class DescribeSpotPriceHistoryResultStaxUnmarshaller implements Unmarshal
                     describeSpotPriceHistoryResult.getSpotPriceHistory().add(SpotPriceStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeSpotPriceHistoryResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSpotPriceHistoryResult;

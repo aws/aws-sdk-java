@@ -32,7 +32,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
     public Request<ModifyImageAttributeRequest> marshall(ModifyImageAttributeRequest modifyImageAttributeRequest) {
         Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
-        request.addParameter("Version", "2011-02-28");
+        request.addParameter("Version", "2011-05-15");
         if (modifyImageAttributeRequest != null) {
             if (modifyImageAttributeRequest.getImageId() != null) {
                 request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));
@@ -84,6 +84,52 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         if (modifyImageAttributeRequest != null) {
             if (modifyImageAttributeRequest.getValue() != null) {
                 request.addParameter("Value", StringUtils.fromString(modifyImageAttributeRequest.getValue()));
+            }
+        }
+        if (modifyImageAttributeRequest != null) {
+            LaunchPermissionModifications launchPermission = modifyImageAttributeRequest.getLaunchPermission();
+
+            if (launchPermission != null) {
+                java.util.List<LaunchPermission> addList = launchPermission.getAdd();
+                int addListIndex = 1;
+                for (LaunchPermission addListValue : addList) {
+                    if (addListValue != null) {
+                        if (addListValue.getUserId() != null) {
+                            request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
+                        }
+                    }
+                    if (addListValue != null) {
+                        if (addListValue.getGroup() != null) {
+                            request.addParameter("LaunchPermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
+                        }
+                    }
+
+                    addListIndex++;
+                }
+            }
+
+            if (launchPermission != null) {
+                java.util.List<LaunchPermission> removeList = launchPermission.getRemove();
+                int removeListIndex = 1;
+                for (LaunchPermission removeListValue : removeList) {
+                    if (removeListValue != null) {
+                        if (removeListValue.getUserId() != null) {
+                            request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId", StringUtils.fromString(removeListValue.getUserId()));
+                        }
+                    }
+                    if (removeListValue != null) {
+                        if (removeListValue.getGroup() != null) {
+                            request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
+                        }
+                    }
+
+                    removeListIndex++;
+                }
+            }
+        }
+        if (modifyImageAttributeRequest != null) {
+            if (modifyImageAttributeRequest.getDescription() != null) {
+                request.addParameter("Description", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
             }
         }
 

@@ -85,6 +85,8 @@ import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
+import com.amazonaws.services.s3.model.CopyPartRequest;
+import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
@@ -92,6 +94,7 @@ import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
+import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
@@ -118,6 +121,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
@@ -531,7 +535,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting an object's ACL");
         assertParameterNotNull(key, "The key parameter must be specified when requesting an object's ACL");
 
-        return getAcl(bucketName, key, versionId);
+        return getAcl(bucketName, key, versionId, null);
     }
 
     /* (non-Javadoc)
@@ -559,7 +563,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
 
-        setAcl(bucketName, key, versionId, acl);
+        setAcl(bucketName, key, versionId, acl, null);
     }
 
     /* (non-Javadoc)
@@ -571,7 +575,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(key, "The key parameter must be specified when setting an object's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting an object's ACL");
 
-        setAcl(bucketName, key, versionId, acl);
+        setAcl(bucketName, key, versionId, acl, null);
     }
 
     /* (non-Javadoc)
@@ -581,7 +585,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             throws AmazonClientException, AmazonServiceException {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting a bucket's ACL");
 
-        return getAcl(bucketName, null, null);
+        return getAcl(bucketName, null, null, null);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketAcl(com.amazonaws.services.s3.GetBucketAclRequest)
+     */
+    public AccessControlList getBucketAcl(GetBucketAclRequest getBucketAclRequest)
+		throws AmazonClientException, AmazonServiceException {
+    	String bucketName = getBucketAclRequest.getBucketName();
+        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when requesting a bucket's ACL");
+
+        return getAcl(bucketName, null, null, getBucketAclRequest);
     }
 
     /* (non-Javadoc)
@@ -592,7 +607,26 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
 
-        setAcl(bucketName, null, null, acl);
+        setAcl(bucketName, null, null, acl, null);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#setBucketAcl(com.amazonaws.services.s3.SetBucketAclRequest)
+     */
+    public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
+    		throws AmazonClientException, AmazonServiceException {
+    	String bucketName = setBucketAclRequest.getBucketName();
+    	AccessControlList acl = setBucketAclRequest.getAcl();
+    	CannedAccessControlList cannedAcl = setBucketAclRequest.getCannedAcl();
+        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
+
+        if (acl != null) {
+        	setAcl(bucketName, null, null, acl, setBucketAclRequest);
+        } else if (cannedAcl != null) {
+        	setAcl(bucketName, null, null, cannedAcl, setBucketAclRequest);
+        } else {
+        	assertParameterNotNull(null, "The ACL parameter must be specified when setting a bucket's ACL");
+        }
     }
 
     /* (non-Javadoc)
@@ -603,7 +637,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(bucketName, "The bucket name parameter must be specified when setting a bucket's ACL");
         assertParameterNotNull(acl, "The ACL parameter must be specified when setting a bucket's ACL");
 
-        setAcl(bucketName, null, null, acl);
+        setAcl(bucketName, null, null, acl, null);
     }
 
     /* (non-Javadoc)
@@ -1083,6 +1117,130 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         copyObjectResult.setVersionId(copyObjectResultHandler.getVersionId());
 
         return copyObjectResult;
+    }
+    
+    /**
+     * Copies a source object to a part of a multipart upload.
+     * 
+     * To copy an object, the caller's account must have read access to the source object and
+     * write access to the destination bucket.
+     * </p>
+     * <p>
+     * If constraints are specified in the <code>CopyPartRequest</code>
+     * (e.g.
+     * {@link CopyPartRequest#setMatchingETagConstraints(List)})
+     * and are not satisfied when Amazon S3 receives the
+     * request, this method returns <code>null</code>.
+     * This method returns a non-null result under all other
+     * circumstances.
+     * </p>
+     *
+     * @param copyPartRequest
+     *            The request object containing all the options for copying an
+     *            Amazon S3 object.
+     *
+     * @return A {@link CopyPartResult} object containing the information
+     *         returned by Amazon S3 about the newly created object, or <code>null</code> if
+     *         constraints were specified that weren't met when Amazon S3 attempted
+     *         to copy the object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#copyObject(CopyObjectRequest)
+     * @see AmazonS3#initiateMultipartUpload(InitiateMultipartUploadRequest)
+     */
+    public CopyPartResult copyPart(CopyPartRequest copyPartRequest) {
+        assertParameterNotNull(copyPartRequest.getSourceBucketName(),
+                "The source bucket name must be specified when copying a part");
+        assertParameterNotNull(copyPartRequest.getSourceKey(),
+                "The source object key must be specified when copying a part");
+        assertParameterNotNull(copyPartRequest.getDestinationBucketName(),
+                "The destination bucket name must be specified when copying a part");
+        assertParameterNotNull(copyPartRequest.getUploadId(),
+                "The upload id must be specified when copying a part");
+        assertParameterNotNull(copyPartRequest.getDestinationKey(),
+                "The destination object key must be specified when copying a part");        
+        assertParameterNotNull(copyPartRequest.getPartNumber(),
+                "The part number must be specified when copying a part");
+
+        String destinationKey = copyPartRequest.getDestinationKey();
+        String destinationBucketName = copyPartRequest.getDestinationBucketName();
+
+        Request<CopyPartRequest> request = createRequest(destinationBucketName, destinationKey, copyPartRequest,
+                HttpMethodName.PUT);
+
+        populateRequestWithCopyPartParameters(request, copyPartRequest);
+        
+        request.addParameter("uploadId", copyPartRequest.getUploadId());
+        request.addParameter("partNumber", Integer.toString(copyPartRequest.getPartNumber()));
+        
+        /*
+         * We can't send the Content-Length header if the user specified it,
+         * otherwise it messes up the HTTP connection when the remote server
+         * thinks there's more data to pull.
+         */
+        request.getHeaders().remove(Headers.CONTENT_LENGTH);
+
+        CopyObjectResultHandler copyObjectResultHandler = null;
+        try {
+            copyObjectResultHandler = invoke(request, new CopyObjectResponseHandler(), destinationBucketName,
+                    destinationKey);
+        } catch ( AmazonS3Exception ase ) {
+            /*
+             * If the request failed because one of the specified constraints
+             * was not met (ex: matching ETag, modified since date, etc.), then
+             * return null, so that users don't have to wrap their code in
+             * try/catch blocks and check for this status code if they want to
+             * use constraints.
+             */
+            if ( ase.getStatusCode() == Constants.FAILED_PRECONDITION_STATUS_CODE ) {
+                return null;
+            }
+
+            throw ase;
+        }
+
+        /*
+         * CopyPart has two failure modes: 1 - An HTTP error code is returned
+         * and the error is processed like any other error response. 2 - An HTTP
+         * 200 OK code is returned, but the response content contains an XML
+         * error response.
+         * 
+         * This makes it very difficult for the client runtime to cleanly detect
+         * this case and handle it like any other error response. We could
+         * extend the runtime to have a more flexible/customizable definition of
+         * success/error (per request), but it's probably overkill for this one
+         * special case.
+         */
+        if ( copyObjectResultHandler.getErrorCode() != null ) {
+            String errorCode = copyObjectResultHandler.getErrorCode();
+            String errorMessage = copyObjectResultHandler.getErrorMessage();
+            String requestId = copyObjectResultHandler.getErrorRequestId();
+            String hostId = copyObjectResultHandler.getErrorHostId();
+
+            AmazonS3Exception ase = new AmazonS3Exception(errorMessage);
+            ase.setErrorCode(errorCode);
+            ase.setErrorType(ErrorType.Service);
+            ase.setRequestId(requestId);
+            ase.setExtendedRequestId(hostId);
+            ase.setServiceName(request.getServiceName());
+            ase.setStatusCode(200);
+
+            throw ase;
+        }
+
+        CopyPartResult copyPartResult = new CopyPartResult();
+        copyPartResult.setETag(copyObjectResultHandler.getETag());
+        copyPartResult.setPartNumber(copyPartRequest.getPartNumber());
+        copyPartResult.setLastModifiedDate(copyObjectResultHandler.getLastModified());
+        copyPartResult.setVersionId(copyObjectResultHandler.getVersionId());
+
+        return copyPartResult;
     }
 
     /* (non-Javadoc)
@@ -1778,11 +1936,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param versionId
      *            The version ID of the object version whose ACL is being
      *            retrieved.
-     *
+	 * @param originalRequest
+	 *            The original, user facing request object.
+	 *
      * @return The S3 ACL for the specified resource.
      */
-    private AccessControlList getAcl(String bucketName, String key, String versionId) {
-        Request<GenericBucketRequest> request = createRequest(bucketName, key, new GenericBucketRequest(bucketName), HttpMethodName.GET);
+    private AccessControlList getAcl(String bucketName, String key, String versionId, AmazonWebServiceRequest originalRequest) {
+    	if (originalRequest == null) originalRequest = new GenericBucketRequest(bucketName);
+
+        Request<AmazonWebServiceRequest> request = createRequest(bucketName, key, originalRequest, HttpMethodName.GET);
         request.addParameter("acl", null);
         if (versionId != null) request.addParameter("versionId", versionId);
 
@@ -1798,16 +1960,20 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @param bucketName
      *            The name of the bucket containing the specified key, or if no
      *            key is listed, the bucket whose ACL will be set.
-     * @param key
+	 * @param key
      *            The optional object key within the specified bucket whose ACL
      *            will be set. If not specified, the bucket ACL will be set.
-     * @param versionId
+	 * @param versionId
      *            The version ID of the object version whose ACL is being set.
-     * @param cannedAcl
+	 * @param cannedAcl
      *            The canned ACL to apply to the resource.
+	 * @param originalRequest
+	 *            The original, user facing request object.
      */
-    private void setAcl(String bucketName, String key, String versionId, CannedAccessControlList cannedAcl) {
-        Request<GenericBucketRequest> request = createRequest(bucketName, key, new GenericBucketRequest(bucketName), HttpMethodName.PUT);
+    private void setAcl(String bucketName, String key, String versionId, CannedAccessControlList cannedAcl, AmazonWebServiceRequest originalRequest) {
+    	if (originalRequest == null) originalRequest = new GenericBucketRequest(bucketName);
+
+        Request<AmazonWebServiceRequest> request = createRequest(bucketName, key, originalRequest, HttpMethodName.PUT);
         request.addParameter("acl", null);
         request.addHeader(Headers.S3_CANNED_ACL, cannedAcl.toString());
         if (versionId != null) request.addParameter("versionId", versionId);
@@ -1815,24 +1981,28 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, key);
     }
 
-    /**
-     * Sets the ACL for the specified resource in S3. If only bucketName is
-     * specified, the ACL will be applied to the bucket, otherwise if bucketName
-     * and key are specified, the ACL will be applied to the object.
-     *
-     * @param bucketName
-     *            The name of the bucket containing the specified key, or if no
-     *            key is listed, the bucket whose ACL will be set.
-     * @param key
-     *            The optional object key within the specified bucket whose ACL
-     *            will be set. If not specified, the bucket ACL will be set.
-     * @param versionId
-     *            The version ID of the object version whose ACL is being set.
-     * @param acl
-     *            The ACL to apply to the resource.
-     */
-    private void setAcl(String bucketName, String key, String versionId, AccessControlList acl) {
-        Request<GenericBucketRequest> request = createRequest(bucketName, key, new GenericBucketRequest(bucketName), HttpMethodName.PUT);
+	/**
+	 * Sets the ACL for the specified resource in S3. If only bucketName is
+	 * specified, the ACL will be applied to the bucket, otherwise if bucketName
+	 * and key are specified, the ACL will be applied to the object.
+	 *
+	 * @param bucketName
+	 *            The name of the bucket containing the specified key, or if no
+	 *            key is listed, the bucket whose ACL will be set.
+	 * @param key
+	 *            The optional object key within the specified bucket whose ACL
+	 *            will be set. If not specified, the bucket ACL will be set.
+	 * @param versionId
+	 *            The version ID of the object version whose ACL is being set.
+	 * @param acl
+	 *            The ACL to apply to the resource.
+	 * @param originalRequest
+	 *            The original, user facing request object.
+	 */
+    private void setAcl(String bucketName, String key, String versionId, AccessControlList acl, AmazonWebServiceRequest originalRequest) {
+    	if (originalRequest == null) originalRequest = new GenericBucketRequest(bucketName);
+
+        Request<AmazonWebServiceRequest> request = createRequest(bucketName, key, originalRequest, HttpMethodName.PUT);
         request.addParameter("acl", null);
         if (versionId != null) request.addParameter("versionId", versionId);
 
@@ -2031,6 +2201,44 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             populateRequestMetadata(request, newObjectMetadata);
         }
     }
+    
+    /**
+     * <p>
+     * Populates the specified request with the numerous options available in
+     * <code>CopyObjectRequest</code>.
+     * </p>
+     *
+     * @param request
+     *            The request to populate with headers to represent all the
+     *            options expressed in the <code>CopyPartRequest</code> object.
+     * @param copyPartRequest
+     *            The object containing all the options for copying an object in
+     *            Amazon S3.
+     */
+    private static void populateRequestWithCopyPartParameters(Request<?> request, CopyPartRequest copyPartRequest) {
+        String copySourceHeader =
+             "/" + ServiceUtils.urlEncode(copyPartRequest.getSourceBucketName())
+           + "/" + ServiceUtils.urlEncode(copyPartRequest.getSourceKey());
+        if (copyPartRequest.getSourceVersionId() != null) {
+            copySourceHeader += "?versionId=" + copyPartRequest.getSourceVersionId();
+        }
+        request.addHeader("x-amz-copy-source", copySourceHeader);
+
+        addDateHeader(request, Headers.COPY_SOURCE_IF_MODIFIED_SINCE,
+                copyPartRequest.getModifiedSinceConstraint());
+        addDateHeader(request, Headers.COPY_SOURCE_IF_UNMODIFIED_SINCE,
+                copyPartRequest.getUnmodifiedSinceConstraint());
+
+        addStringListHeader(request, Headers.COPY_SOURCE_IF_MATCH,
+                copyPartRequest.getMatchingETagConstraints());
+        addStringListHeader(request, Headers.COPY_SOURCE_IF_NO_MATCH,
+                copyPartRequest.getNonmatchingETagConstraints());
+        
+        if ( copyPartRequest.getFirstByte() != null && copyPartRequest.getLastByte() != null ) {
+            String range = "bytes=" + copyPartRequest.getFirstByte() + "-" + copyPartRequest.getLastByte();
+            request.addHeader(Headers.COPY_PART_RANGE, range);
+        }
+    }
 
     /**
      * <p>
@@ -2155,7 +2363,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return request;
     }
-
+    
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
                                   Unmarshaller<X, InputStream> unmarshaller,
                                   String bucketName,
