@@ -28,14 +28,14 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * List Available Solution Stacks Result StAX Unmarshaller
+ * Environment Resources Description StAX Unmarshaller
  */
-public class ListAvailableSolutionStacksResultStaxUnmarshaller implements Unmarshaller<ListAvailableSolutionStacksResult, StaxUnmarshallerContext> {
+public class EnvironmentResourcesDescriptionStaxUnmarshaller implements Unmarshaller<EnvironmentResourcesDescription, StaxUnmarshallerContext> {
 
     
 
-    public ListAvailableSolutionStacksResult unmarshall(StaxUnmarshallerContext context) throws Exception {
-        ListAvailableSolutionStacksResult listAvailableSolutionStacksResult = new ListAvailableSolutionStacksResult();
+    public EnvironmentResourcesDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
+        EnvironmentResourcesDescription environmentResourcesDescription = new EnvironmentResourcesDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
@@ -44,28 +44,24 @@ public class ListAvailableSolutionStacksResultStaxUnmarshaller implements Unmars
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return listAvailableSolutionStacksResult;
+            if (xmlEvent.isEndDocument()) return environmentResourcesDescription;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("SolutionStacks/member", targetDepth)) {
-                    listAvailableSolutionStacksResult.getSolutionStacks().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("SolutionStackDetails/member", targetDepth)) {
-                    listAvailableSolutionStacksResult.getSolutionStackDetails().add(SolutionStackDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("LoadBalancer", targetDepth)) {
+                    environmentResourcesDescription.setLoadBalancer(LoadBalancerDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return listAvailableSolutionStacksResult;
+                    return environmentResourcesDescription;
                 }
             }
         }
     }
 
-    private static ListAvailableSolutionStacksResultStaxUnmarshaller instance;
-    public static ListAvailableSolutionStacksResultStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new ListAvailableSolutionStacksResultStaxUnmarshaller();
+    private static EnvironmentResourcesDescriptionStaxUnmarshaller instance;
+    public static EnvironmentResourcesDescriptionStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new EnvironmentResourcesDescriptionStaxUnmarshaller();
         return instance;
     }
 }

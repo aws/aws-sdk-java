@@ -42,7 +42,7 @@ public class ConfigurationOptionSetting {
      * The current value for the configuration option.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * <b>Length: </b>0 - 200<br/>
      */
     private String value;
 
@@ -158,7 +158,7 @@ public class ConfigurationOptionSetting {
      * The current value for the configuration option.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * <b>Length: </b>0 - 200<br/>
      *
      * @return The current value for the configuration option.
      */
@@ -170,7 +170,7 @@ public class ConfigurationOptionSetting {
      * The current value for the configuration option.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * <b>Length: </b>0 - 200<br/>
      *
      * @param value The current value for the configuration option.
      */
@@ -184,7 +184,7 @@ public class ConfigurationOptionSetting {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 100<br/>
+     * <b>Length: </b>0 - 200<br/>
      *
      * @param value The current value for the configuration option.
      *

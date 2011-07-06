@@ -99,6 +99,10 @@ public class CreateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Cre
                     createEnvironmentResult.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Resources", targetDepth)) {
+                    createEnvironmentResult.setResources(EnvironmentResourcesDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createEnvironmentResult;

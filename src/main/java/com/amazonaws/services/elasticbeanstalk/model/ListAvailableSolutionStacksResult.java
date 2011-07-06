@@ -27,6 +27,12 @@ public class ListAvailableSolutionStacksResult {
     private java.util.List<String> solutionStacks;
 
     /**
+     * A list of available solution stacks and their
+     * <a>SolutionStackDescription</a>.
+     */
+    private java.util.List<SolutionStackDescription> solutionStackDetails;
+
+    /**
      * A list of available solution stacks.
      *
      * @return A list of available solution stacks.
@@ -89,6 +95,76 @@ public class ListAvailableSolutionStacksResult {
     }
     
     /**
+     * A list of available solution stacks and their
+     * <a>SolutionStackDescription</a>.
+     *
+     * @return A list of available solution stacks and their
+     *         <a>SolutionStackDescription</a>.
+     */
+    public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
+        if (solutionStackDetails == null) {
+            solutionStackDetails = new java.util.ArrayList<SolutionStackDescription>();
+        }
+        return solutionStackDetails;
+    }
+    
+    /**
+     * A list of available solution stacks and their
+     * <a>SolutionStackDescription</a>.
+     *
+     * @param solutionStackDetails A list of available solution stacks and their
+     *         <a>SolutionStackDescription</a>.
+     */
+    public void setSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
+        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>();
+        if (solutionStackDetails != null) {
+            solutionStackDetailsCopy.addAll(solutionStackDetails);
+        }
+        this.solutionStackDetails = solutionStackDetailsCopy;
+    }
+    
+    /**
+     * A list of available solution stacks and their
+     * <a>SolutionStackDescription</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param solutionStackDetails A list of available solution stacks and their
+     *         <a>SolutionStackDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
+        for (SolutionStackDescription value : solutionStackDetails) {
+            getSolutionStackDetails().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of available solution stacks and their
+     * <a>SolutionStackDescription</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param solutionStackDetails A list of available solution stacks and their
+     *         <a>SolutionStackDescription</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ListAvailableSolutionStacksResult withSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
+        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>();
+        if (solutionStackDetails != null) {
+            solutionStackDetailsCopy.addAll(solutionStackDetails);
+        }
+        this.solutionStackDetails = solutionStackDetailsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -101,6 +177,7 @@ public class ListAvailableSolutionStacksResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("SolutionStacks: " + solutionStacks + ", ");
+        sb.append("SolutionStackDetails: " + solutionStackDetails + ", ");
         sb.append("}");
         return sb.toString();
     }

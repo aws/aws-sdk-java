@@ -92,6 +92,11 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     private SourceConfiguration sourceConfiguration;
 
     /**
+     * The ID of the environment used with this configuration template.
+     */
+    private String environmentId;
+
+    /**
      * Describes this configuration.
      * <p>
      * <b>Constraints:</b><br/>
@@ -445,6 +450,40 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     
     
     /**
+     * The ID of the environment used with this configuration template.
+     *
+     * @return The ID of the environment used with this configuration template.
+     */
+    public String getEnvironmentId() {
+        return environmentId;
+    }
+    
+    /**
+     * The ID of the environment used with this configuration template.
+     *
+     * @param environmentId The ID of the environment used with this configuration template.
+     */
+    public void setEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+    }
+    
+    /**
+     * The ID of the environment used with this configuration template.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param environmentId The ID of the environment used with this configuration template.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateConfigurationTemplateRequest withEnvironmentId(String environmentId) {
+        this.environmentId = environmentId;
+        return this;
+    }
+    
+    
+    /**
      * Describes this configuration.
      * <p>
      * <b>Constraints:</b><br/>
@@ -581,6 +620,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         sb.append("TemplateName: " + templateName + ", ");
         sb.append("SolutionStackName: " + solutionStackName + ", ");
         sb.append("SourceConfiguration: " + sourceConfiguration + ", ");
+        sb.append("EnvironmentId: " + environmentId + ", ");
         sb.append("Description: " + description + ", ");
         sb.append("OptionSettings: " + optionSettings + ", ");
         sb.append("}");

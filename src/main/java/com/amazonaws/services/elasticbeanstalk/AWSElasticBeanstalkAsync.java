@@ -36,11 +36,23 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * For more information about this product, go to the <a
  * href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk
- * </a> details page. For specific information about setting up
- * signatures and authorization through the API, go to the <a
- * href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/">
- * AWS Elastic Beanstalk User Guide </a> .
- * </p> 
+ * </a> details page. The location of the lastest AWS Elastic Beanstalk
+ * WSDL is <a
+ * icbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * sticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl
+ * </a> .
+ * </p>
+ * <p>
+ * <b>Endpoints</b>
+ * </p>
+ * <p>
+ * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * </p>
+ * 
+ * <ul>
+ * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
+ * 
+ * </ul> 
  */       
 public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
     /**
@@ -380,6 +392,30 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     *
+     * @param swapEnvironmentCNAMEsRequest Container for the necessary
+     *           parameters to execute the SwapEnvironmentCNAMEs operation on
+     *           AWSElasticBeanstalk.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SwapEnvironmentCNAMEs service method, as returned by
+     *         AWSElasticBeanstalk.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> swapEnvironmentCNAMEsAsync(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -827,7 +863,8 @@ public interface AWSElasticBeanstalkAsync extends AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns list of event descriptions matching criteria.
+     * Returns list of event descriptions matching criteria up to the last 6
+     * weeks.
      * </p>
      * <p>
      * <b>NOTE:</b> This action returns the most recent 1,000 events from the

@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,52 +28,44 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Address StAX Unmarshaller
+ * Listener StAX Unmarshaller
  */
-public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmarshallerContext> {
+public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnmarshallerContext> {
 
     
 
-    public Address unmarshall(StaxUnmarshallerContext context) throws Exception {
-        Address address = new Address();
+    public Listener unmarshall(StaxUnmarshallerContext context) throws Exception {
+        Listener listener = new Listener();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument()) targetDepth += 2;
         
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return address;
+            if (xmlEvent.isEndDocument()) return listener;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("instanceId", targetDepth)) {
-                    address.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Protocol", targetDepth)) {
+                    listener.setProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("publicIp", targetDepth)) {
-                    address.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("allocationId", targetDepth)) {
-                    address.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("domain", targetDepth)) {
-                    address.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Port", targetDepth)) {
+                    listener.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return address;
+                    return listener;
                 }
             }
         }
     }
 
-    private static AddressStaxUnmarshaller instance;
-    public static AddressStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AddressStaxUnmarshaller();
+    private static ListenerStaxUnmarshaller instance;
+    public static ListenerStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new ListenerStaxUnmarshaller();
         return instance;
     }
 }

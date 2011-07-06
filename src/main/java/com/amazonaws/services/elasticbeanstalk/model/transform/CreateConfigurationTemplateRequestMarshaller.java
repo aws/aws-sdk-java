@@ -62,6 +62,11 @@ public class CreateConfigurationTemplateRequestMarshaller implements Marshaller<
             }
         }
         if (createConfigurationTemplateRequest != null) {
+            if (createConfigurationTemplateRequest.getEnvironmentId() != null) {
+                request.addParameter("EnvironmentId", StringUtils.fromString(createConfigurationTemplateRequest.getEnvironmentId()));
+            }
+        }
+        if (createConfigurationTemplateRequest != null) {
             if (createConfigurationTemplateRequest.getDescription() != null) {
                 request.addParameter("Description", StringUtils.fromString(createConfigurationTemplateRequest.getDescription()));
             }

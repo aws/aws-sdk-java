@@ -141,6 +141,11 @@ public class CreateEnvironmentResult {
     private String health;
 
     /**
+     * The description of the AWS resources used by this environment.
+     */
+    private EnvironmentResourcesDescription resources;
+
+    /**
      * The name of this environment.
      * <p>
      * <b>Constraints:</b><br/>
@@ -838,6 +843,40 @@ public class CreateEnvironmentResult {
     
     
     /**
+     * The description of the AWS resources used by this environment.
+     *
+     * @return The description of the AWS resources used by this environment.
+     */
+    public EnvironmentResourcesDescription getResources() {
+        return resources;
+    }
+    
+    /**
+     * The description of the AWS resources used by this environment.
+     *
+     * @param resources The description of the AWS resources used by this environment.
+     */
+    public void setResources(EnvironmentResourcesDescription resources) {
+        this.resources = resources;
+    }
+    
+    /**
+     * The description of the AWS resources used by this environment.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resources The description of the AWS resources used by this environment.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateEnvironmentResult withResources(EnvironmentResourcesDescription resources) {
+        this.resources = resources;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -862,6 +901,7 @@ public class CreateEnvironmentResult {
         sb.append("DateUpdated: " + dateUpdated + ", ");
         sb.append("Status: " + status + ", ");
         sb.append("Health: " + health + ", ");
+        sb.append("Resources: " + resources + ", ");
         sb.append("}");
         return sb.toString();
     }

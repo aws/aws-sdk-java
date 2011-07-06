@@ -15,11 +15,23 @@
  * <p>
  * For more information about this product, go to the <a
  * href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk
- * </a> details page. For specific information about setting up
- * signatures and authorization through the API, go to the <a
- * href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/">
- * AWS Elastic Beanstalk User Guide </a> .
+ * </a> details page. The location of the lastest AWS Elastic Beanstalk
+ * WSDL is <a
+ * icbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * sticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl
+ * </a> .
  * </p>
+ * <p>
+ * <b>Endpoints</b>
+ * </p>
+ * <p>
+ * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * </p>
+ * 
+ * <ul>
+ * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
+ * 
+ * </ul>
  */
  package com.amazonaws.services.elasticbeanstalk;
         

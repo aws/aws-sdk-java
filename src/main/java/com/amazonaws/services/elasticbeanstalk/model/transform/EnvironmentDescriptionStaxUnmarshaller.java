@@ -99,6 +99,10 @@ public class EnvironmentDescriptionStaxUnmarshaller implements Unmarshaller<Envi
                     environmentDescription.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Resources", targetDepth)) {
+                    environmentDescription.setResources(EnvironmentResourcesDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return environmentDescription;

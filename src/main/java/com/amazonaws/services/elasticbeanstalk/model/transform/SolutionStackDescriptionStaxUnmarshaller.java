@@ -13,14 +13,14 @@
  * permissions and limitations under the License.
  */
 
-package com.amazonaws.services.ec2.model.transform;
+package com.amazonaws.services.elasticbeanstalk.model.transform;
 
 import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.xml.stream.events.XMLEvent;
 
-import com.amazonaws.services.ec2.model.*;
+import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.MapEntry;
 import com.amazonaws.transform.StaxUnmarshallerContext;
@@ -28,52 +28,44 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Address StAX Unmarshaller
+ * Solution Stack Description StAX Unmarshaller
  */
-public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmarshallerContext> {
+public class SolutionStackDescriptionStaxUnmarshaller implements Unmarshaller<SolutionStackDescription, StaxUnmarshallerContext> {
 
     
 
-    public Address unmarshall(StaxUnmarshallerContext context) throws Exception {
-        Address address = new Address();
+    public SolutionStackDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
+        SolutionStackDescription solutionStackDescription = new SolutionStackDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
         
-        if (context.isStartOfDocument()) targetDepth += 1;
+        if (context.isStartOfDocument()) targetDepth += 2;
         
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return address;
+            if (xmlEvent.isEndDocument()) return solutionStackDescription;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("instanceId", targetDepth)) {
-                    address.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("SolutionStackName", targetDepth)) {
+                    solutionStackDescription.setSolutionStackName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("publicIp", targetDepth)) {
-                    address.setPublicIp(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("allocationId", targetDepth)) {
-                    address.setAllocationId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("domain", targetDepth)) {
-                    address.setDomain(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("PermittedFileTypes/member", targetDepth)) {
+                    solutionStackDescription.getPermittedFileTypes().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return address;
+                    return solutionStackDescription;
                 }
             }
         }
     }
 
-    private static AddressStaxUnmarshaller instance;
-    public static AddressStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new AddressStaxUnmarshaller();
+    private static SolutionStackDescriptionStaxUnmarshaller instance;
+    public static SolutionStackDescriptionStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new SolutionStackDescriptionStaxUnmarshaller();
         return instance;
     }
 }

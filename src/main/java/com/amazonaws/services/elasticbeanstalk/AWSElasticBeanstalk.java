@@ -33,11 +33,23 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * <p>
  * For more information about this product, go to the <a
  * href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk
- * </a> details page. For specific information about setting up
- * signatures and authorization through the API, go to the <a
- * href="http://docs.amazonwebservices.com/elasticbeanstalk/latest/ug/">
- * AWS Elastic Beanstalk User Guide </a> .
+ * </a> details page. The location of the lastest AWS Elastic Beanstalk
+ * WSDL is <a
+ * icbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * sticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl
+ * </a> .
  * </p>
+ * <p>
+ * <b>Endpoints</b>
+ * </p>
+ * <p>
+ * AWS Elastic Beanstalk supports the following region-specific endpoint:
+ * </p>
+ * 
+ * <ul>
+ * <li> https://elasticbeanstalk.us-east-1.amazonaws.com </li>
+ * 
+ * </ul>
  */
 public interface AWSElasticBeanstalk {
 
@@ -106,9 +118,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the DescribeConfigurationOptions service
      *         method, as returned by AWSElasticBeanstalk.
      * 
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -136,10 +145,6 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the DeleteConfigurationTemplate service method
      *           on AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -165,10 +170,7 @@ public interface AWSElasticBeanstalk {
      * @return The response from the CreateEnvironment service method, as
      *         returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
      * @throws TooManyEnvironmentsException
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -234,8 +236,6 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the RequestEnvironmentInfo service method on
      *           AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -267,10 +267,8 @@ public interface AWSElasticBeanstalk {
      * @return The response from the CreateApplicationVersion service method,
      *         as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
+     * @throws TooManyApplicationsException
      * @throws TooManyApplicationVersionsException
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -296,8 +294,6 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the DeleteApplicationVersion service method on
      *           AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      * @throws SourceBundleDeletionException
      *
      * @throws AmazonClientException
@@ -349,8 +345,6 @@ public interface AWSElasticBeanstalk {
      *           to execute the DeleteApplication service method on
      *           AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -381,8 +375,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the UpdateApplicationVersion service method,
      *         as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -413,9 +405,7 @@ public interface AWSElasticBeanstalk {
      * @return The response from the CreateApplication service method, as
      *         returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
      * @throws TooManyApplicationsException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -426,6 +416,27 @@ public interface AWSElasticBeanstalk {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateApplicationResult createApplication(CreateApplicationRequest createApplicationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     *
+     * @param swapEnvironmentCNAMEsRequest Container for the necessary
+     *           parameters to execute the SwapEnvironmentCNAMEs service method on
+     *           AWSElasticBeanstalk.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void swapEnvironmentCNAMEs(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -454,10 +465,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the UpdateConfigurationTemplate service
      *         method, as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -491,8 +498,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the RetrieveEnvironmentInfo service method,
      *         as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -546,8 +551,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the UpdateApplication service method, as
      *         returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -596,8 +599,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the DescribeEnvironmentResources service
      *         method, as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -622,8 +623,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the TerminateEnvironment service method, as
      *         returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -675,8 +674,6 @@ public interface AWSElasticBeanstalk {
      * @param restartAppServerRequest Container for the necessary parameters
      *           to execute the RestartAppServer service method on AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -708,10 +705,6 @@ public interface AWSElasticBeanstalk {
      *           necessary parameters to execute the DeleteEnvironmentConfiguration
      *           service method on AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -750,9 +743,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the UpdateEnvironment service method, as
      *         returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -789,10 +779,7 @@ public interface AWSElasticBeanstalk {
      * @return The response from the CreateConfigurationTemplate service
      *         method, as returned by AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      * @throws TooManyConfigurationTemplatesException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -834,9 +821,6 @@ public interface AWSElasticBeanstalk {
      * @return The response from the DescribeConfigurationSettings service
      *         method, as returned by AWSElasticBeanstalk.
      * 
-     * @throws InvalidParameterValueException
-     * @throws MissingRequiredParameterException
-     * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -884,8 +868,6 @@ public interface AWSElasticBeanstalk {
      *           parameters to execute the RebuildEnvironment service method on
      *           AWSElasticBeanstalk.
      * 
-     * @throws ValidationErrorException
-     * @throws InvalidParameterValueException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -900,7 +882,8 @@ public interface AWSElasticBeanstalk {
 
     /**
      * <p>
-     * Returns list of event descriptions matching criteria.
+     * Returns list of event descriptions matching criteria up to the last 6
+     * weeks.
      * </p>
      * <p>
      * <b>NOTE:</b> This action returns the most recent 1,000 events from the
@@ -970,6 +953,22 @@ public interface AWSElasticBeanstalk {
     
     /**
      * <p>
+     * Swaps the CNAMEs of two environments.
+     * </p>
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSElasticBeanstalk indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void swapEnvironmentCNAMEs() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
      * Returns a list of the available solution stack names.
      * </p>
      * 
@@ -1027,7 +1026,8 @@ public interface AWSElasticBeanstalk {
     
     /**
      * <p>
-     * Returns list of event descriptions matching criteria.
+     * Returns list of event descriptions matching criteria up to the last 6
+     * weeks.
      * </p>
      * <p>
      * <b>NOTE:</b> This action returns the most recent 1,000 events from the

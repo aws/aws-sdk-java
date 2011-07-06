@@ -99,6 +99,10 @@ public class UpdateEnvironmentResultStaxUnmarshaller implements Unmarshaller<Upd
                     updateEnvironmentResult.setHealth(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Resources", targetDepth)) {
+                    updateEnvironmentResult.setResources(EnvironmentResourcesDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return updateEnvironmentResult;

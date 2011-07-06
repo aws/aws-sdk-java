@@ -130,6 +130,8 @@ public class Image {
      */
     private java.util.List<Tag> tags;
 
+    private String hypervisor;
+
     /**
      * The unique ID of the AMI.
      *
@@ -984,6 +986,55 @@ public class Image {
     }
     
     /**
+     * Returns the value of the Hypervisor property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @return The value of the Hypervisor property for this object.
+     *
+     * @see HypervisorType
+     */
+    public String getHypervisor() {
+        return hypervisor;
+    }
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @see HypervisorType
+     */
+    public void setHypervisor(String hypervisor) {
+        this.hypervisor = hypervisor;
+    }
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see HypervisorType
+     */
+    public Image withHypervisor(String hypervisor) {
+        this.hypervisor = hypervisor;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1015,6 +1066,7 @@ public class Image {
         sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         sb.append("VirtualizationType: " + virtualizationType + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("Hypervisor: " + hypervisor + ", ");
         sb.append("}");
         return sb.toString();
     }
