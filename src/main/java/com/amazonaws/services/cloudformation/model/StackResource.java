@@ -44,7 +44,7 @@ public class StackResource {
 
     /**
      * Type of the resource. (For more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      */
     private String resourceType;
@@ -216,11 +216,11 @@ public class StackResource {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      *
      * @return Type of the resource. (For more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      */
     public String getResourceType() {
@@ -229,11 +229,11 @@ public class StackResource {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      *
      * @param resourceType Type of the resource. (For more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      */
     public void setResourceType(String resourceType) {
@@ -242,13 +242,13 @@ public class StackResource {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceType Type of the resource. (For more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      *
      * @return A reference to this updated object so that method calls can be chained 

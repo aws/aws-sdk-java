@@ -18,9 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest) CreateStack operation}.
  * <p>
- * Creates a stack as specified in the template. Once the call completes
- * successfully, the stack creation starts. You can check the status of
- * the stack via the DescribeStacks API.
+ * Creates a stack as specified in the template. After the call
+ * completes successfully, the stack creation starts. You can check the
+ * status of the stack via the DescribeStacks API.
  * </p>
  * <p>
  * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
@@ -42,7 +42,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Condition: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -56,7 +56,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -153,7 +153,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Condition: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -163,7 +163,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Condition: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -175,7 +175,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Condition: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -185,7 +185,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Condition: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -197,7 +197,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Condition: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -209,7 +209,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Condition: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -227,7 +227,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -238,7 +238,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @return Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -251,7 +251,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -262,7 +262,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -275,7 +275,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Location of file containing the template body. The URL must point to a
      * template located in an S3 bucket in the same region as the stack. For
      * more information, go to the <a
-     * tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -288,7 +288,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template located in an S3 bucket in the same region as the stack. For
      *         more information, go to the <a
-     *         tp://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">AWS
+     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.

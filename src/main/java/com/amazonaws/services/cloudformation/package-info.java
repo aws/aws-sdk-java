@@ -6,10 +6,25 @@
  * This is the AWS CloudFormation API Reference. The major sections of
  * this guide are described in the following table.
  * </p>
- * Actions Alphabetical list of CloudFormation actions Data Types
- * Alphabetical list of CloudFormation data types Common Parameters
- * Parameters that all Query actions can use Common Errors Client and
- * server errors that all actions can return <p>
+ * 
+ * <ul>
+ * <li> <a
+ * rvices.com/AWSCloudFormation/latest/APIReference/API_Operations.html">
+ * Actions </a> : Alphabetical list of CloudFormation actions</li>
+ * <li> <a
+ * webservices.com/AWSCloudFormation/latest/APIReference/API_Types.html">
+ * Data Types </a> : Alphabetical list of CloudFormation data types</li>
+ * <li> <a
+ * ices.com/AWSCloudFormation/latest/APIReference/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use</li>
+ * <li> <a
+ * services.com/AWSCloudFormation/latest/APIReference/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return</li>
+ * 
+ * </ul>
+ * <p>
  * This guide is for programmers who need detailed information about the
  * CloudFormation APIs. You use AWS CloudFormation to create and manage
  * AWS infrastructure deployments predictably and repeatedly.
@@ -34,8 +49,9 @@
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need
  * additional technical information about a specific AWS product, you can
- * find the product's technical documentation at
- * http://aws.amazon.com/documentation/.
+ * find the product's technical documentation at <a
+ * href="http://aws.amazon.com/documentation/">
+ * http://aws.amazon.com/documentation/ </a> .
  * </p>
  */
  package com.amazonaws.services.cloudformation;

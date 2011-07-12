@@ -60,6 +60,10 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         return timedThreadPoool;
     }
     
+    public static synchronized void shutdownNow() {
+    	if (timedThreadPoool != null) timedThreadPoool.shutdownNow();
+    }
+    
     private final AmazonS3 s3;
     private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;

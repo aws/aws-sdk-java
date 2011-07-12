@@ -821,19 +821,26 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         try {
-            byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
-            byte[] serverSideHash = ServiceUtils.fromHex(s3Object.getObjectMetadata().getETag());
-
-            if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                throw new AmazonClientException("Unable to verify integrity of data download.  " +
-                        "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                        "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
-            }
+        	// Multipart Uploads don't have an MD5 calculated on the service side 
+        	if (isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
+	            byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
+	            byte[] serverSideHash = ServiceUtils.fromHex(s3Object.getObjectMetadata().getETag());
+	
+	            if (!Arrays.equals(clientSideHash, serverSideHash)) {
+	                throw new AmazonClientException("Unable to verify integrity of data download.  " +
+	                        "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
+	                        "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
+	            }
+        	}
         } catch (Exception e) {
             log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
         }
 
         return s3Object.getObjectMetadata();
+    }
+    
+    private boolean isMultipartUploadETag(String eTag) {
+    	return eTag.contains("-");
     }
 
     /* (non-Javadoc)

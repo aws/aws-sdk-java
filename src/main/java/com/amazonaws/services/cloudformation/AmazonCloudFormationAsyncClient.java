@@ -36,10 +36,25 @@ import com.amazonaws.services.cloudformation.model.*;
  * This is the AWS CloudFormation API Reference. The major sections of
  * this guide are described in the following table.
  * </p>
- * Actions Alphabetical list of CloudFormation actions Data Types
- * Alphabetical list of CloudFormation data types Common Parameters
- * Parameters that all Query actions can use Common Errors Client and
- * server errors that all actions can return <p>
+ * 
+ * <ul>
+ * <li> <a
+ * rvices.com/AWSCloudFormation/latest/APIReference/API_Operations.html">
+ * Actions </a> : Alphabetical list of CloudFormation actions</li>
+ * <li> <a
+ * webservices.com/AWSCloudFormation/latest/APIReference/API_Types.html">
+ * Data Types </a> : Alphabetical list of CloudFormation data types</li>
+ * <li> <a
+ * ices.com/AWSCloudFormation/latest/APIReference/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use</li>
+ * <li> <a
+ * services.com/AWSCloudFormation/latest/APIReference/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return</li>
+ * 
+ * </ul>
+ * <p>
  * This guide is for programmers who need detailed information about the
  * CloudFormation APIs. You use AWS CloudFormation to create and manage
  * AWS infrastructure deployments predictably and repeatedly.
@@ -64,8 +79,9 @@ import com.amazonaws.services.cloudformation.model.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need
  * additional technical information about a specific AWS product, you can
- * find the product's technical documentation at
- * http://aws.amazon.com/documentation/.
+ * find the product's technical documentation at <a
+ * href="http://aws.amazon.com/documentation/">
+ * http://aws.amazon.com/documentation/ </a> .
  * </p> 
  */       
 public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
@@ -156,9 +172,42 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
             
     /**
      * <p>
-     * Creates a stack as specified in the template. Once the call completes
-     * successfully, the stack creation starts. You can check the status of
-     * the stack via the DescribeStacks API.
+     * Returns the summary information for stacks whose status matches the
+     * specified StackStatusFilter. Summary information for stacks that have
+     * been deleted is kept for 90 days after the stack is deleted. If no
+     * StackStatusFilter is specified, summary information for all stacks is
+     * returned (including existing stacks and stacks that have been
+     * deleted).
+     * </p>
+     *
+     * @param listStacksRequest Container for the necessary parameters to
+     *           execute the ListStacks operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListStacks service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListStacksResult> listStacksAsync(final ListStacksRequest listStacksRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListStacksResult>() {
+            public ListStacksResult call() throws Exception {
+                return listStacks(listStacksRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a stack as specified in the template. After the call
+     * completes successfully, the stack creation starts. You can check the
+     * status of the stack via the DescribeStacks API.
      * </p>
      * <p>
      * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
@@ -252,7 +301,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * stacks with the given name. If <code>StackName</code> is not
      * specified, returns all the events for the account. For more
      * information about a stack's event history, go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -287,7 +336,12 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Returns the template body for a specified stack name.
+     * Returns the template body for a specified stack name. You can get the
+     * template for running or deleted stacks.
+     * </p>
+     * <p>
+     * For deleted stacks, GetTemplate returns the template for up to 90 days
+     * after the stack has been deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> If the template does not exist, a ValidationError is
@@ -313,6 +367,46 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<GetTemplateResult>() {
             public GetTemplateResult call() throws Exception {
                 return getTemplate(getTemplateRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the description for the specified resource in the specified
+     * stack.
+     * </p>
+     * <p>
+     * For deleted stacks, DescribeStackResource returns resource information
+     * for up to 90 days after the stack has been deleted.
+     * </p>
+     * <p>
+     * You must specify <code>StackName</code> and
+     * <code>LogicalResourceId</code> .
+     * 
+     * </p>
+     *
+     * @param describeStackResourceRequest Container for the necessary
+     *           parameters to execute the DescribeStackResource operation on
+     *           AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStackResource service method, as returned by
+     *         AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStackResourceResult> describeStackResourceAsync(final DescribeStackResourceRequest describeStackResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeStackResourceResult>() {
+            public DescribeStackResourceResult call() throws Exception {
+                return describeStackResource(describeStackResourceRequest);
 		    }
 		});
     }
@@ -350,11 +444,49 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Returns AWS resource descriptions. If <code>StackName</code> is
-     * specified, all the associated resources that are part of the stack are
-     * returned. If <code>PhysicalResourceId</code> is specified, all the
-     * associated resources of the stack the resource belongs to are
-     * returned.
+     * Returns descriptions for all resources of the specified stack.
+     * </p>
+     * <p>
+     * For deleted stacks, ListStackResources returns resource information
+     * for up to 90 days after the stack has been deleted.
+     * </p>
+     *
+     * @param listStackResourcesRequest Container for the necessary
+     *           parameters to execute the ListStackResources operation on
+     *           AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListStackResources service method, as returned by
+     *         AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListStackResourcesResult> listStackResourcesAsync(final ListStackResourcesRequest listStackResourcesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListStackResourcesResult>() {
+            public ListStackResourcesResult call() throws Exception {
+                return listStackResources(listStackResourcesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns AWS resource descriptions for running and deleted stacks. If
+     * <code>StackName</code> is specified, all the associated resources that
+     * are part of the stack are returned. If <code>PhysicalResourceId</code>
+     * is specified, all the associated resources of the stack the resource
+     * belongs to are returned.
+     * </p>
+     * <p>
+     * For deleted stacks, DescribeStackResources returns resource
+     * information for up to 90 days after the stack has been deleted.
      * </p>
      * <p>
      * You must specify <code>StackName</code> or
@@ -362,7 +494,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * <code>LogicalResourceId</code> to filter the returned result. For more
      * information about resources, the <code>LogicalResourceId</code> and
      * <code>PhysicalResourceId</code> , go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>

@@ -16,27 +16,21 @@ package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackEvents(DescribeStackEventsRequest) DescribeStackEvents operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest) ListStackResources operation}.
  * <p>
- * Returns all the stack related events for the AWS account. If
- * <code>StackName</code> is specified, returns events related to all the
- * stacks with the given name. If <code>StackName</code> is not
- * specified, returns all the events for the account. For more
- * information about a stack's event history, go to the <a
- * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
- * AWS CloudFormation User Guide </a> .
+ * Returns descriptions for all resources of the specified stack.
  * </p>
  * <p>
- * <b>NOTE:</b>Events are returned, even if the stack never existed or
- * has been successfully deleted.
+ * For deleted stacks, ListStackResources returns resource information
+ * for up to 90 days after the stack has been deleted.
  * </p>
  *
- * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackEvents(DescribeStackEventsRequest)
+ * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest)
  */
-public class DescribeStackEventsRequest extends AmazonWebServiceRequest {
+public class ListStackResourcesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name or the unique identifier associated with the stack.<br></br>
+     * The name or the unique identifier associated with the stack. <p>
      * Default: There is no default value.
      */
     private String stackName;
@@ -51,10 +45,10 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest {
     private String nextToken;
 
     /**
-     * The name or the unique identifier associated with the stack.<br></br>
+     * The name or the unique identifier associated with the stack. <p>
      * Default: There is no default value.
      *
-     * @return The name or the unique identifier associated with the stack.<br></br>
+     * @return The name or the unique identifier associated with the stack. <p>
      *         Default: There is no default value.
      */
     public String getStackName() {
@@ -62,10 +56,10 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name or the unique identifier associated with the stack.<br></br>
+     * The name or the unique identifier associated with the stack. <p>
      * Default: There is no default value.
      *
-     * @param stackName The name or the unique identifier associated with the stack.<br></br>
+     * @param stackName The name or the unique identifier associated with the stack. <p>
      *         Default: There is no default value.
      */
     public void setStackName(String stackName) {
@@ -73,18 +67,18 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name or the unique identifier associated with the stack.<br></br>
+     * The name or the unique identifier associated with the stack. <p>
      * Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or the unique identifier associated with the stack.<br></br>
+     * @param stackName The name or the unique identifier associated with the stack. <p>
      *         Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStackEventsRequest withStackName(String stackName) {
+    public ListStackResourcesRequest withStackName(String stackName) {
         this.stackName = stackName;
         return this;
     }
@@ -133,7 +127,7 @@ public class DescribeStackEventsRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStackEventsRequest withNextToken(String nextToken) {
+    public ListStackResourcesRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }

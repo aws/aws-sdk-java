@@ -26,7 +26,8 @@ public enum StackStatus {
     ROLLBACK_FAILED("ROLLBACK_FAILED"),
     ROLLBACK_COMPLETE("ROLLBACK_COMPLETE"),
     DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
-    DELETE_FAILED("DELETE_FAILED");
+    DELETE_FAILED("DELETE_FAILED"),
+    DELETE_COMPLETE("DELETE_COMPLETE");
 
     private String value;
 
@@ -66,6 +67,8 @@ public enum StackStatus {
             return StackStatus.DELETE_IN_PROGRESS;
         } else if ("DELETE_FAILED".equals(value)) {
             return StackStatus.DELETE_FAILED;
+        } else if ("DELETE_COMPLETE".equals(value)) {
+            return StackStatus.DELETE_COMPLETE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

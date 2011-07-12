@@ -402,6 +402,7 @@ public class TransferManager {
      */
     public void shutdownNow() {
         threadPool.shutdownNow();
+        UploadMonitor.shutdownNow();
 
         if (s3 instanceof AmazonS3Client) {
             ((AmazonS3Client)s3).shutdown();

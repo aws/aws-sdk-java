@@ -16,25 +16,10 @@ package com.amazonaws.services.cloudformation.model;
 
 /**
  * <p>
- * The StackEvent data type.
+ * The StackResourceSummary data type.
  * </p>
  */
-public class StackEvent {
-
-    /**
-     * The unique ID name of the instance of the stack.
-     */
-    private String stackId;
-
-    /**
-     * The unique ID of this event.
-     */
-    private String eventId;
-
-    /**
-     * The name associated with a stack.
-     */
-    private String stackName;
+public class StackResourceSummary {
 
     /**
      * The logical name of the resource specified in the template.
@@ -42,8 +27,8 @@ public class StackEvent {
     private String logicalResourceId;
 
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of the resource.
      */
     private String physicalResourceId;
 
@@ -57,7 +42,7 @@ public class StackEvent {
     /**
      * Time the status was updated.
      */
-    private java.util.Date timestamp;
+    private java.util.Date lastUpdatedTimestamp;
 
     /**
      * Current status of the resource.
@@ -72,113 +57,6 @@ public class StackEvent {
      */
     private String resourceStatusReason;
 
-    /**
-     * BLOB of the properties used to create the resource.
-     */
-    private String resourceProperties;
-
-    /**
-     * The unique ID name of the instance of the stack.
-     *
-     * @return The unique ID name of the instance of the stack.
-     */
-    public String getStackId() {
-        return stackId;
-    }
-    
-    /**
-     * The unique ID name of the instance of the stack.
-     *
-     * @param stackId The unique ID name of the instance of the stack.
-     */
-    public void setStackId(String stackId) {
-        this.stackId = stackId;
-    }
-    
-    /**
-     * The unique ID name of the instance of the stack.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId The unique ID name of the instance of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withStackId(String stackId) {
-        this.stackId = stackId;
-        return this;
-    }
-    
-    
-    /**
-     * The unique ID of this event.
-     *
-     * @return The unique ID of this event.
-     */
-    public String getEventId() {
-        return eventId;
-    }
-    
-    /**
-     * The unique ID of this event.
-     *
-     * @param eventId The unique ID of this event.
-     */
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
-    }
-    
-    /**
-     * The unique ID of this event.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventId The unique ID of this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withEventId(String eventId) {
-        this.eventId = eventId;
-        return this;
-    }
-    
-    
-    /**
-     * The name associated with a stack.
-     *
-     * @return The name associated with a stack.
-     */
-    public String getStackName() {
-        return stackName;
-    }
-    
-    /**
-     * The name associated with a stack.
-     *
-     * @param stackName The name associated with a stack.
-     */
-    public void setStackName(String stackName) {
-        this.stackName = stackName;
-    }
-    
-    /**
-     * The name associated with a stack.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackName The name associated with a stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withStackName(String stackName) {
-        this.stackName = stackName;
-        return this;
-    }
-    
-    
     /**
      * The logical name of the resource specified in the template.
      *
@@ -207,47 +85,47 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withLogicalResourceId(String logicalResourceId) {
+    public StackResourceSummary withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
         return this;
     }
     
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of the resource.
      *
-     * @return The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @return The name or unique identifier that corresponds to a physical instance
+     *         ID of the resource.
      */
     public String getPhysicalResourceId() {
         return physicalResourceId;
     }
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of the resource.
      *
-     * @param physicalResourceId The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
+     *         ID of the resource.
      */
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param physicalResourceId The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
+     *         ID of the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withPhysicalResourceId(String physicalResourceId) {
+    public StackResourceSummary withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
         return this;
     }
@@ -293,7 +171,7 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withResourceType(String resourceType) {
+    public StackResourceSummary withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
@@ -304,17 +182,17 @@ public class StackEvent {
      *
      * @return Time the status was updated.
      */
-    public java.util.Date getTimestamp() {
-        return timestamp;
+    public java.util.Date getLastUpdatedTimestamp() {
+        return lastUpdatedTimestamp;
     }
     
     /**
      * Time the status was updated.
      *
-     * @param timestamp Time the status was updated.
+     * @param lastUpdatedTimestamp Time the status was updated.
      */
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
+    public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
+        this.lastUpdatedTimestamp = lastUpdatedTimestamp;
     }
     
     /**
@@ -322,13 +200,13 @@ public class StackEvent {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp Time the status was updated.
+     * @param lastUpdatedTimestamp Time the status was updated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
+    public StackResourceSummary withLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
+        this.lastUpdatedTimestamp = lastUpdatedTimestamp;
         return this;
     }
     
@@ -376,7 +254,7 @@ public class StackEvent {
      *
      * @see ResourceStatus
      */
-    public StackEvent withResourceStatus(String resourceStatus) {
+    public StackResourceSummary withResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
         return this;
     }
@@ -410,42 +288,8 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withResourceStatusReason(String resourceStatusReason) {
+    public StackResourceSummary withResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
-        return this;
-    }
-    
-    
-    /**
-     * BLOB of the properties used to create the resource.
-     *
-     * @return BLOB of the properties used to create the resource.
-     */
-    public String getResourceProperties() {
-        return resourceProperties;
-    }
-    
-    /**
-     * BLOB of the properties used to create the resource.
-     *
-     * @param resourceProperties BLOB of the properties used to create the resource.
-     */
-    public void setResourceProperties(String resourceProperties) {
-        this.resourceProperties = resourceProperties;
-    }
-    
-    /**
-     * BLOB of the properties used to create the resource.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param resourceProperties BLOB of the properties used to create the resource.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withResourceProperties(String resourceProperties) {
-        this.resourceProperties = resourceProperties;
         return this;
     }
     
@@ -462,16 +306,12 @@ public class StackEvent {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackId: " + stackId + ", ");
-        sb.append("EventId: " + eventId + ", ");
-        sb.append("StackName: " + stackName + ", ");
         sb.append("LogicalResourceId: " + logicalResourceId + ", ");
         sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
         sb.append("ResourceType: " + resourceType + ", ");
-        sb.append("Timestamp: " + timestamp + ", ");
+        sb.append("LastUpdatedTimestamp: " + lastUpdatedTimestamp + ", ");
         sb.append("ResourceStatus: " + resourceStatus + ", ");
         sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
-        sb.append("ResourceProperties: " + resourceProperties + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -47,10 +47,25 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * This is the AWS CloudFormation API Reference. The major sections of
  * this guide are described in the following table.
  * </p>
- * Actions Alphabetical list of CloudFormation actions Data Types
- * Alphabetical list of CloudFormation data types Common Parameters
- * Parameters that all Query actions can use Common Errors Client and
- * server errors that all actions can return <p>
+ * 
+ * <ul>
+ * <li> <a
+ * rvices.com/AWSCloudFormation/latest/APIReference/API_Operations.html">
+ * Actions </a> : Alphabetical list of CloudFormation actions</li>
+ * <li> <a
+ * webservices.com/AWSCloudFormation/latest/APIReference/API_Types.html">
+ * Data Types </a> : Alphabetical list of CloudFormation data types</li>
+ * <li> <a
+ * ices.com/AWSCloudFormation/latest/APIReference/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use</li>
+ * <li> <a
+ * services.com/AWSCloudFormation/latest/APIReference/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return</li>
+ * 
+ * </ul>
+ * <p>
  * This guide is for programmers who need detailed information about the
  * CloudFormation APIs. You use AWS CloudFormation to create and manage
  * AWS infrastructure deployments predictably and repeatedly.
@@ -75,8 +90,9 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need
  * additional technical information about a specific AWS product, you can
- * find the product's technical documentation at
- * http://aws.amazon.com/documentation/.
+ * find the product's technical documentation at <a
+ * href="http://aws.amazon.com/documentation/">
+ * http://aws.amazon.com/documentation/ </a> .
  * </p>
  */
 public class AmazonCloudFormationClient extends AmazonWebServiceClient implements AmazonCloudFormation {
@@ -133,7 +149,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
         exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
         exceptionUnmarshallers.add(new AlreadyExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ValidationErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new LimitExceededExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
@@ -149,9 +164,40 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Creates a stack as specified in the template. Once the call completes
-     * successfully, the stack creation starts. You can check the status of
-     * the stack via the DescribeStacks API.
+     * Returns the summary information for stacks whose status matches the
+     * specified StackStatusFilter. Summary information for stacks that have
+     * been deleted is kept for 90 days after the stack is deleted. If no
+     * StackStatusFilter is specified, summary information for all stacks is
+     * returned (including existing stacks and stacks that have been
+     * deleted).
+     * </p>
+     *
+     * @param listStacksRequest Container for the necessary parameters to
+     *           execute the ListStacks service method on AmazonCloudFormation.
+     * 
+     * @return The response from the ListStacks service method, as returned
+     *         by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListStacksResult listStacks(ListStacksRequest listStacksRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListStacksRequest> request = new ListStacksRequestMarshaller().marshall(listStacksRequest);
+        return invoke(request, new ListStacksResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Creates a stack as specified in the template. After the call
+     * completes successfully, the stack creation starts. You can check the
+     * status of the stack via the DescribeStacks API.
      * </p>
      * <p>
      * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
@@ -193,7 +239,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @return The response from the ValidateTemplate service method, as
      *         returned by AmazonCloudFormation.
      * 
-     * @throws ValidationErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -243,7 +288,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * stacks with the given name. If <code>StackName</code> is not
      * specified, returns all the events for the account. For more
      * information about a stack's event history, go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -275,7 +320,12 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns the template body for a specified stack name.
+     * Returns the template body for a specified stack name. You can get the
+     * template for running or deleted stacks.
+     * </p>
+     * <p>
+     * For deleted stacks, GetTemplate returns the template for up to 90 days
+     * after the stack has been deleted.
      * </p>
      * <p>
      * <b>NOTE:</b> If the template does not exist, a ValidationError is
@@ -288,7 +338,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @return The response from the GetTemplate service method, as returned
      *         by AmazonCloudFormation.
      * 
-     * @throws ValidationErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -302,6 +351,43 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             throws AmazonServiceException, AmazonClientException {
         Request<GetTemplateRequest> request = new GetTemplateRequestMarshaller().marshall(getTemplateRequest);
         return invoke(request, new GetTemplateResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Returns the description for the specified resource in the specified
+     * stack.
+     * </p>
+     * <p>
+     * For deleted stacks, DescribeStackResource returns resource information
+     * for up to 90 days after the stack has been deleted.
+     * </p>
+     * <p>
+     * You must specify <code>StackName</code> and
+     * <code>LogicalResourceId</code> .
+     * 
+     * </p>
+     *
+     * @param describeStackResourceRequest Container for the necessary
+     *           parameters to execute the DescribeStackResource service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the DescribeStackResource service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeStackResourceResult describeStackResource(DescribeStackResourceRequest describeStackResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeStackResourceRequest> request = new DescribeStackResourceRequestMarshaller().marshall(describeStackResourceRequest);
+        return invoke(request, new DescribeStackResourceResultStaxUnmarshaller());
     }
     
     /**
@@ -331,11 +417,46 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns AWS resource descriptions. If <code>StackName</code> is
-     * specified, all the associated resources that are part of the stack are
-     * returned. If <code>PhysicalResourceId</code> is specified, all the
-     * associated resources of the stack the resource belongs to are
-     * returned.
+     * Returns descriptions for all resources of the specified stack.
+     * </p>
+     * <p>
+     * For deleted stacks, ListStackResources returns resource information
+     * for up to 90 days after the stack has been deleted.
+     * </p>
+     *
+     * @param listStackResourcesRequest Container for the necessary
+     *           parameters to execute the ListStackResources service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the ListStackResources service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListStackResourcesResult listStackResources(ListStackResourcesRequest listStackResourcesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListStackResourcesRequest> request = new ListStackResourcesRequestMarshaller().marshall(listStackResourcesRequest);
+        return invoke(request, new ListStackResourcesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Returns AWS resource descriptions for running and deleted stacks. If
+     * <code>StackName</code> is specified, all the associated resources that
+     * are part of the stack are returned. If <code>PhysicalResourceId</code>
+     * is specified, all the associated resources of the stack the resource
+     * belongs to are returned.
+     * </p>
+     * <p>
+     * For deleted stacks, DescribeStackResources returns resource
+     * information for up to 90 days after the stack has been deleted.
      * </p>
      * <p>
      * You must specify <code>StackName</code> or
@@ -343,7 +464,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <code>LogicalResourceId</code> to filter the returned result. For more
      * information about resources, the <code>LogicalResourceId</code> and
      * <code>PhysicalResourceId</code> , go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -358,7 +479,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @return The response from the DescribeStackResources service method,
      *         as returned by AmazonCloudFormation.
      * 
-     * @throws ValidationErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -376,13 +496,17 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Validates a specified template.
+     * Returns the summary information for stacks whose status matches the
+     * specified StackStatusFilter. Summary information for stacks that have
+     * been deleted is kept for 90 days after the stack is deleted. If no
+     * StackStatusFilter is specified, summary information for all stacks is
+     * returned (including existing stacks and stacks that have been
+     * deleted).
      * </p>
      * 
-     * @return The response from the ValidateTemplate service method, as
-     *         returned by AmazonCloudFormation.
+     * @return The response from the ListStacks service method, as returned
+     *         by AmazonCloudFormation.
      * 
-     * @throws ValidationErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -392,8 +516,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      *             If an error response is returned by AmazonCloudFormation indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ValidateTemplateResult validateTemplate() throws AmazonServiceException, AmazonClientException {
-        return validateTemplate(new ValidateTemplateRequest());
+    public ListStacksResult listStacks() throws AmazonServiceException, AmazonClientException {
+        return listStacks(new ListStacksRequest());
     }
     
     /**
@@ -425,7 +549,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * stacks with the given name. If <code>StackName</code> is not
      * specified, returns all the events for the account. For more
      * information about a stack's event history, go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -451,11 +575,15 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     
     /**
      * <p>
-     * Returns AWS resource descriptions. If <code>StackName</code> is
-     * specified, all the associated resources that are part of the stack are
-     * returned. If <code>PhysicalResourceId</code> is specified, all the
-     * associated resources of the stack the resource belongs to are
-     * returned.
+     * Returns AWS resource descriptions for running and deleted stacks. If
+     * <code>StackName</code> is specified, all the associated resources that
+     * are part of the stack are returned. If <code>PhysicalResourceId</code>
+     * is specified, all the associated resources of the stack the resource
+     * belongs to are returned.
+     * </p>
+     * <p>
+     * For deleted stacks, DescribeStackResources returns resource
+     * information for up to 90 days after the stack has been deleted.
      * </p>
      * <p>
      * You must specify <code>StackName</code> or
@@ -463,7 +591,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <code>LogicalResourceId</code> to filter the returned result. For more
      * information about resources, the <code>LogicalResourceId</code> and
      * <code>PhysicalResourceId</code> , go to the <a
-     * "http://docs.amazonwebservices.com/AWSCloudFormation/latest/CFNGuide">
+     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
@@ -474,7 +602,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * @return The response from the DescribeStackResources service method,
      *         as returned by AmazonCloudFormation.
      * 
-     * @throws ValidationErrorException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

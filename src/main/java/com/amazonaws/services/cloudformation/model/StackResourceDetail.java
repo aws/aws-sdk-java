@@ -16,25 +16,20 @@ package com.amazonaws.services.cloudformation.model;
 
 /**
  * <p>
- * The StackEvent data type.
+ * The StackResourceDetail data type.
  * </p>
  */
-public class StackEvent {
+public class StackResourceDetail {
 
     /**
-     * The unique ID name of the instance of the stack.
-     */
-    private String stackId;
-
-    /**
-     * The unique ID of this event.
-     */
-    private String eventId;
-
-    /**
-     * The name associated with a stack.
+     * The name associated with the stack.
      */
     private String stackName;
+
+    /**
+     * Unique identifier of the stack.
+     */
+    private String stackId;
 
     /**
      * The logical name of the resource specified in the template.
@@ -42,8 +37,8 @@ public class StackEvent {
     private String logicalResourceId;
 
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of a resource supported by AWS CloudFormation.
      */
     private String physicalResourceId;
 
@@ -57,7 +52,7 @@ public class StackEvent {
     /**
      * Time the status was updated.
      */
-    private java.util.Date timestamp;
+    private java.util.Date lastUpdatedTimestamp;
 
     /**
      * Current status of the resource.
@@ -73,108 +68,82 @@ public class StackEvent {
     private String resourceStatusReason;
 
     /**
-     * BLOB of the properties used to create the resource.
+     * User defined description associated with the resource.
      */
-    private String resourceProperties;
+    private String description;
 
     /**
-     * The unique ID name of the instance of the stack.
-     *
-     * @return The unique ID name of the instance of the stack.
+     * The JSON format content of the <code>Metadata</code> attribute
+     * declared for the resource. For more information, see <a
+     * SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * Attribute</a> in the AWS CloudFormation User Guide.
      */
-    public String getStackId() {
-        return stackId;
-    }
-    
+    private String metadata;
+
     /**
-     * The unique ID name of the instance of the stack.
+     * The name associated with the stack.
      *
-     * @param stackId The unique ID name of the instance of the stack.
-     */
-    public void setStackId(String stackId) {
-        this.stackId = stackId;
-    }
-    
-    /**
-     * The unique ID name of the instance of the stack.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param stackId The unique ID name of the instance of the stack.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withStackId(String stackId) {
-        this.stackId = stackId;
-        return this;
-    }
-    
-    
-    /**
-     * The unique ID of this event.
-     *
-     * @return The unique ID of this event.
-     */
-    public String getEventId() {
-        return eventId;
-    }
-    
-    /**
-     * The unique ID of this event.
-     *
-     * @param eventId The unique ID of this event.
-     */
-    public void setEventId(String eventId) {
-        this.eventId = eventId;
-    }
-    
-    /**
-     * The unique ID of this event.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eventId The unique ID of this event.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StackEvent withEventId(String eventId) {
-        this.eventId = eventId;
-        return this;
-    }
-    
-    
-    /**
-     * The name associated with a stack.
-     *
-     * @return The name associated with a stack.
+     * @return The name associated with the stack.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name associated with a stack.
+     * The name associated with the stack.
      *
-     * @param stackName The name associated with a stack.
+     * @param stackName The name associated with the stack.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name associated with a stack.
+     * The name associated with the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name associated with a stack.
+     * @param stackName The name associated with the stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withStackName(String stackName) {
+    public StackResourceDetail withStackName(String stackName) {
         this.stackName = stackName;
+        return this;
+    }
+    
+    
+    /**
+     * Unique identifier of the stack.
+     *
+     * @return Unique identifier of the stack.
+     */
+    public String getStackId() {
+        return stackId;
+    }
+    
+    /**
+     * Unique identifier of the stack.
+     *
+     * @param stackId Unique identifier of the stack.
+     */
+    public void setStackId(String stackId) {
+        this.stackId = stackId;
+    }
+    
+    /**
+     * Unique identifier of the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param stackId Unique identifier of the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public StackResourceDetail withStackId(String stackId) {
+        this.stackId = stackId;
         return this;
     }
     
@@ -207,47 +176,47 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withLogicalResourceId(String logicalResourceId) {
+    public StackResourceDetail withLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
         return this;
     }
     
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of a resource supported by AWS CloudFormation.
      *
-     * @return The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @return The name or unique identifier that corresponds to a physical instance
+     *         ID of a resource supported by AWS CloudFormation.
      */
     public String getPhysicalResourceId() {
         return physicalResourceId;
     }
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of a resource supported by AWS CloudFormation.
      *
-     * @param physicalResourceId The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
+     *         ID of a resource supported by AWS CloudFormation.
      */
     public void setPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
     }
     
     /**
-     * The name or unique identifier associated with the physical instance of
-     * the resource.
+     * The name or unique identifier that corresponds to a physical instance
+     * ID of a resource supported by AWS CloudFormation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param physicalResourceId The name or unique identifier associated with the physical instance of
-     *         the resource.
+     * @param physicalResourceId The name or unique identifier that corresponds to a physical instance
+     *         ID of a resource supported by AWS CloudFormation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withPhysicalResourceId(String physicalResourceId) {
+    public StackResourceDetail withPhysicalResourceId(String physicalResourceId) {
         this.physicalResourceId = physicalResourceId;
         return this;
     }
@@ -293,7 +262,7 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withResourceType(String resourceType) {
+    public StackResourceDetail withResourceType(String resourceType) {
         this.resourceType = resourceType;
         return this;
     }
@@ -304,17 +273,17 @@ public class StackEvent {
      *
      * @return Time the status was updated.
      */
-    public java.util.Date getTimestamp() {
-        return timestamp;
+    public java.util.Date getLastUpdatedTimestamp() {
+        return lastUpdatedTimestamp;
     }
     
     /**
      * Time the status was updated.
      *
-     * @param timestamp Time the status was updated.
+     * @param lastUpdatedTimestamp Time the status was updated.
      */
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
+    public void setLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
+        this.lastUpdatedTimestamp = lastUpdatedTimestamp;
     }
     
     /**
@@ -322,13 +291,13 @@ public class StackEvent {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp Time the status was updated.
+     * @param lastUpdatedTimestamp Time the status was updated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
+    public StackResourceDetail withLastUpdatedTimestamp(java.util.Date lastUpdatedTimestamp) {
+        this.lastUpdatedTimestamp = lastUpdatedTimestamp;
         return this;
     }
     
@@ -376,7 +345,7 @@ public class StackEvent {
      *
      * @see ResourceStatus
      */
-    public StackEvent withResourceStatus(String resourceStatus) {
+    public StackResourceDetail withResourceStatus(String resourceStatus) {
         this.resourceStatus = resourceStatus;
         return this;
     }
@@ -410,42 +379,94 @@ public class StackEvent {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withResourceStatusReason(String resourceStatusReason) {
+    public StackResourceDetail withResourceStatusReason(String resourceStatusReason) {
         this.resourceStatusReason = resourceStatusReason;
         return this;
     }
     
     
     /**
-     * BLOB of the properties used to create the resource.
+     * User defined description associated with the resource.
      *
-     * @return BLOB of the properties used to create the resource.
+     * @return User defined description associated with the resource.
      */
-    public String getResourceProperties() {
-        return resourceProperties;
+    public String getDescription() {
+        return description;
     }
     
     /**
-     * BLOB of the properties used to create the resource.
+     * User defined description associated with the resource.
      *
-     * @param resourceProperties BLOB of the properties used to create the resource.
+     * @param description User defined description associated with the resource.
      */
-    public void setResourceProperties(String resourceProperties) {
-        this.resourceProperties = resourceProperties;
+    public void setDescription(String description) {
+        this.description = description;
     }
     
     /**
-     * BLOB of the properties used to create the resource.
+     * User defined description associated with the resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceProperties BLOB of the properties used to create the resource.
+     * @param description User defined description associated with the resource.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StackEvent withResourceProperties(String resourceProperties) {
-        this.resourceProperties = resourceProperties;
+    public StackResourceDetail withDescription(String description) {
+        this.description = description;
+        return this;
+    }
+    
+    
+    /**
+     * The JSON format content of the <code>Metadata</code> attribute
+     * declared for the resource. For more information, see <a
+     * SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * Attribute</a> in the AWS CloudFormation User Guide.
+     *
+     * @return The JSON format content of the <code>Metadata</code> attribute
+     *         declared for the resource. For more information, see <a
+     *         SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     *         Attribute</a> in the AWS CloudFormation User Guide.
+     */
+    public String getMetadata() {
+        return metadata;
+    }
+    
+    /**
+     * The JSON format content of the <code>Metadata</code> attribute
+     * declared for the resource. For more information, see <a
+     * SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * Attribute</a> in the AWS CloudFormation User Guide.
+     *
+     * @param metadata The JSON format content of the <code>Metadata</code> attribute
+     *         declared for the resource. For more information, see <a
+     *         SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     *         Attribute</a> in the AWS CloudFormation User Guide.
+     */
+    public void setMetadata(String metadata) {
+        this.metadata = metadata;
+    }
+    
+    /**
+     * The JSON format content of the <code>Metadata</code> attribute
+     * declared for the resource. For more information, see <a
+     * SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     * Attribute</a> in the AWS CloudFormation User Guide.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param metadata The JSON format content of the <code>Metadata</code> attribute
+     *         declared for the resource. For more information, see <a
+     *         SCloudFormation/latest/UserGuide/aws-attribute-metadata.html">Metadata
+     *         Attribute</a> in the AWS CloudFormation User Guide.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public StackResourceDetail withMetadata(String metadata) {
+        this.metadata = metadata;
         return this;
     }
     
@@ -462,16 +483,16 @@ public class StackEvent {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackId: " + stackId + ", ");
-        sb.append("EventId: " + eventId + ", ");
         sb.append("StackName: " + stackName + ", ");
+        sb.append("StackId: " + stackId + ", ");
         sb.append("LogicalResourceId: " + logicalResourceId + ", ");
         sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
         sb.append("ResourceType: " + resourceType + ", ");
-        sb.append("Timestamp: " + timestamp + ", ");
+        sb.append("LastUpdatedTimestamp: " + lastUpdatedTimestamp + ", ");
         sb.append("ResourceStatus: " + resourceStatus + ", ");
         sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
-        sb.append("ResourceProperties: " + resourceProperties + ", ");
+        sb.append("Description: " + description + ", ");
+        sb.append("Metadata: " + metadata + ", ");
         sb.append("}");
         return sb.toString();
     }
