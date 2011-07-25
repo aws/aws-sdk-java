@@ -32,7 +32,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
     public Request<CreateLaunchConfigurationRequest> marshall(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
         Request<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateLaunchConfiguration");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (createLaunchConfigurationRequest != null) {
             if (createLaunchConfigurationRequest.getLaunchConfigurationName() != null) {
                 request.addParameter("LaunchConfigurationName", StringUtils.fromString(createLaunchConfigurationRequest.getLaunchConfigurationName()));

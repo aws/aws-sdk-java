@@ -141,6 +141,15 @@ public class AutoScalingGroup {
     private java.util.List<EnabledMetric> enabledMetrics;
 
     /**
+     * A list of status conditions for the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String status;
+
+    /**
      * Specifies the name of the group.
      * <p>
      * <b>Constraints:</b><br/>
@@ -985,6 +994,52 @@ public class AutoScalingGroup {
     }
     
     /**
+     * A list of status conditions for the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return A list of status conditions for the Auto Scaling group.
+     */
+    public String getStatus() {
+        return status;
+    }
+    
+    /**
+     * A list of status conditions for the Auto Scaling group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param status A list of status conditions for the Auto Scaling group.
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    /**
+     * A list of status conditions for the Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param status A list of status conditions for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withStatus(String status) {
+        this.status = status;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1013,6 +1068,7 @@ public class AutoScalingGroup {
         sb.append("PlacementGroup: " + placementGroup + ", ");
         sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
         sb.append("EnabledMetrics: " + enabledMetrics + ", ");
+        sb.append("Status: " + status + ", ");
         sb.append("}");
         return sb.toString();
     }

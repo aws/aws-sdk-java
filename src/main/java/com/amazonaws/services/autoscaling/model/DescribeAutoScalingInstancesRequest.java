@@ -20,7 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns a description of each Auto Scaling instance in the
  * InstanceIds list. If a list is not provided, the service returns the
- * full details of all instances up to a maximum of fifty.
+ * full details of all instances up to a maximum of fifty. By default,
+ * the service returns a list of 20 items.
  * </p>
  * <p>
  * This action supports pagination by returning a token if there are

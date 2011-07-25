@@ -32,7 +32,7 @@ public class EnableMetricsCollectionRequestMarshaller implements Marshaller<Requ
     public Request<EnableMetricsCollectionRequest> marshall(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
         Request<EnableMetricsCollectionRequest> request = new DefaultRequest<EnableMetricsCollectionRequest>(enableMetricsCollectionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "EnableMetricsCollection");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (enableMetricsCollectionRequest != null) {
             if (enableMetricsCollectionRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(enableMetricsCollectionRequest.getAutoScalingGroupName()));

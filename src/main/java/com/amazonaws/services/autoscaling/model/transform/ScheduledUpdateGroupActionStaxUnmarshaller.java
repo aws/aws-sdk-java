@@ -63,6 +63,18 @@ public class ScheduledUpdateGroupActionStaxUnmarshaller implements Unmarshaller<
                     scheduledUpdateGroupAction.setTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    scheduledUpdateGroupAction.setStartTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("EndTime", targetDepth)) {
+                    scheduledUpdateGroupAction.setEndTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Recurrence", targetDepth)) {
+                    scheduledUpdateGroupAction.setRecurrence(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("MinSize", targetDepth)) {
                     scheduledUpdateGroupAction.setMinSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

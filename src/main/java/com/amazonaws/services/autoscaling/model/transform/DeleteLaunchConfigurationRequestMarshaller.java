@@ -32,7 +32,7 @@ public class DeleteLaunchConfigurationRequestMarshaller implements Marshaller<Re
     public Request<DeleteLaunchConfigurationRequest> marshall(DeleteLaunchConfigurationRequest deleteLaunchConfigurationRequest) {
         Request<DeleteLaunchConfigurationRequest> request = new DefaultRequest<DeleteLaunchConfigurationRequest>(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteLaunchConfiguration");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (deleteLaunchConfigurationRequest != null) {
             if (deleteLaunchConfigurationRequest.getLaunchConfigurationName() != null) {
                 request.addParameter("LaunchConfigurationName", StringUtils.fromString(deleteLaunchConfigurationRequest.getLaunchConfigurationName()));

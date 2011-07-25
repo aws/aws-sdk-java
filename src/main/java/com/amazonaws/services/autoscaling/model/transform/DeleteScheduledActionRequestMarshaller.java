@@ -32,7 +32,7 @@ public class DeleteScheduledActionRequestMarshaller implements Marshaller<Reques
     public Request<DeleteScheduledActionRequest> marshall(DeleteScheduledActionRequest deleteScheduledActionRequest) {
         Request<DeleteScheduledActionRequest> request = new DefaultRequest<DeleteScheduledActionRequest>(deleteScheduledActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteScheduledAction");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (deleteScheduledActionRequest != null) {
             if (deleteScheduledActionRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteScheduledActionRequest.getAutoScalingGroupName()));

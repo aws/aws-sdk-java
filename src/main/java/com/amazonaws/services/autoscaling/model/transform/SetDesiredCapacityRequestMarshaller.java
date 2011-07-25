@@ -32,7 +32,7 @@ public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<S
     public Request<SetDesiredCapacityRequest> marshall(SetDesiredCapacityRequest setDesiredCapacityRequest) {
         Request<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetDesiredCapacity");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (setDesiredCapacityRequest != null) {
             if (setDesiredCapacityRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(setDesiredCapacityRequest.getAutoScalingGroupName()));

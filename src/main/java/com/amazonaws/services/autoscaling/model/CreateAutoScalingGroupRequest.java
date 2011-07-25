@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest) CreateAutoScalingGroup operation}.
  * <p>
- * Creates a new Auto Scaling group with the specified name. Once the
- * creation request is completed, the AutoScalingGroup is ready to be
+ * Creates a new Auto Scaling group with the specified name. When the
+ * creation request is completed, the Auto Scaling group is ready to be
  * used in other calls.
  * </p>
  * <p>
@@ -87,7 +87,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
     /**
      * The service you want the health status from, Amazon EC2 or Elastic
-     * Load Balancer.
+     * Load Balancer. Valid values are "EC2" or "ELB."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
@@ -498,14 +498,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The service you want the health status from, Amazon EC2 or Elastic
-     * Load Balancer.
+     * Load Balancer. Valid values are "EC2" or "ELB."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The service you want the health status from, Amazon EC2 or Elastic
-     *         Load Balancer.
+     *         Load Balancer. Valid values are "EC2" or "ELB."
      */
     public String getHealthCheckType() {
         return healthCheckType;
@@ -513,14 +513,14 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The service you want the health status from, Amazon EC2 or Elastic
-     * Load Balancer.
+     * Load Balancer. Valid values are "EC2" or "ELB."
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 32<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param healthCheckType The service you want the health status from, Amazon EC2 or Elastic
-     *         Load Balancer.
+     *         Load Balancer. Valid values are "EC2" or "ELB."
      */
     public void setHealthCheckType(String healthCheckType) {
         this.healthCheckType = healthCheckType;
@@ -528,7 +528,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * The service you want the health status from, Amazon EC2 or Elastic
-     * Load Balancer.
+     * Load Balancer. Valid values are "EC2" or "ELB."
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -537,7 +537,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param healthCheckType The service you want the health status from, Amazon EC2 or Elastic
-     *         Load Balancer.
+     *         Load Balancer. Valid values are "EC2" or "ELB."
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

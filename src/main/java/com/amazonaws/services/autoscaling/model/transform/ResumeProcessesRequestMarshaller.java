@@ -32,7 +32,7 @@ public class ResumeProcessesRequestMarshaller implements Marshaller<Request<Resu
     public Request<ResumeProcessesRequest> marshall(ResumeProcessesRequest resumeProcessesRequest) {
         Request<ResumeProcessesRequest> request = new DefaultRequest<ResumeProcessesRequest>(resumeProcessesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ResumeProcesses");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (resumeProcessesRequest != null) {
             if (resumeProcessesRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(resumeProcessesRequest.getAutoScalingGroupName()));

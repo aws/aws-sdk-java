@@ -32,7 +32,7 @@ public class DescribeMetricCollectionTypesRequestMarshaller implements Marshalle
     public Request<DescribeMetricCollectionTypesRequest> marshall(DescribeMetricCollectionTypesRequest describeMetricCollectionTypesRequest) {
         Request<DescribeMetricCollectionTypesRequest> request = new DefaultRequest<DescribeMetricCollectionTypesRequest>(describeMetricCollectionTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeMetricCollectionTypes");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
 
 
         return request;

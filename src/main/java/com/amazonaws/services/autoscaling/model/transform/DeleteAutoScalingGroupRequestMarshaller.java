@@ -32,10 +32,15 @@ public class DeleteAutoScalingGroupRequestMarshaller implements Marshaller<Reque
     public Request<DeleteAutoScalingGroupRequest> marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
         Request<DeleteAutoScalingGroupRequest> request = new DefaultRequest<DeleteAutoScalingGroupRequest>(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteAutoScalingGroup");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (deleteAutoScalingGroupRequest != null) {
             if (deleteAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteAutoScalingGroupRequest.getAutoScalingGroupName()));
+            }
+        }
+        if (deleteAutoScalingGroupRequest != null) {
+            if (deleteAutoScalingGroupRequest.isForceDelete() != null) {
+                request.addParameter("ForceDelete", StringUtils.fromBoolean(deleteAutoScalingGroupRequest.isForceDelete()));
             }
         }
 

@@ -32,7 +32,7 @@ public class PutScheduledUpdateGroupActionRequestMarshaller implements Marshalle
     public Request<PutScheduledUpdateGroupActionRequest> marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
         Request<PutScheduledUpdateGroupActionRequest> request = new DefaultRequest<PutScheduledUpdateGroupActionRequest>(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutScheduledUpdateGroupAction");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (putScheduledUpdateGroupActionRequest != null) {
             if (putScheduledUpdateGroupActionRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getAutoScalingGroupName()));
@@ -46,6 +46,21 @@ public class PutScheduledUpdateGroupActionRequestMarshaller implements Marshalle
         if (putScheduledUpdateGroupActionRequest != null) {
             if (putScheduledUpdateGroupActionRequest.getTime() != null) {
                 request.addParameter("Time", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getTime()));
+            }
+        }
+        if (putScheduledUpdateGroupActionRequest != null) {
+            if (putScheduledUpdateGroupActionRequest.getStartTime() != null) {
+                request.addParameter("StartTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getStartTime()));
+            }
+        }
+        if (putScheduledUpdateGroupActionRequest != null) {
+            if (putScheduledUpdateGroupActionRequest.getEndTime() != null) {
+                request.addParameter("EndTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getEndTime()));
+            }
+        }
+        if (putScheduledUpdateGroupActionRequest != null) {
+            if (putScheduledUpdateGroupActionRequest.getRecurrence() != null) {
+                request.addParameter("Recurrence", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getRecurrence()));
             }
         }
         if (putScheduledUpdateGroupActionRequest != null) {

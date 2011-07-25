@@ -18,13 +18,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest) CreateLaunchConfiguration operation}.
  * <p>
- * Creates a new launch configuration. Once created, the new launch
- * configuration is available for immediate use.
+ * Creates a new launch configuration. The launch configuration name
+ * must be unique within the scope of the client's AWS account. The
+ * maximum limit of launch configurations, which by default is 100, must
+ * not yet have been met; otherwise, the call will fail. When created,
+ * the new launch configuration is available for immediate use.
  * </p>
  * <p>
- * <b>NOTE:</b> The launch configuration name used must be unique, within
- * the scope of the client's AWS account, and the maximum limit of launch
- * configurations must not yet have been met, or else the call will fail.
+ * You can create a launch configuration with Amazon EC2 security groups
+ * or with Amazon VPC security groups. However, you can't use Amazon EC2
+ * security groups together with Amazon VPC security groups, or vice
+ * versa. In addition, you can only create Auto Scaling launch
+ * configurations with Amazon VPC security groups in the Regions where
+ * Amazon VPC is supported. Amazon VPC is currently available only in the
+ * Amazon EC2 US-East (Northern Virginia) Region, and in the Amazon EC2
+ * EU-West (Ireland) Region.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't
+ * support compressed (e.g. gzipped) user data files.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)
@@ -62,15 +74,22 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String keyName;
 
     /**
-     * The names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups, go
-     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation.</a>
+     * The names of the security groups with which to associate Amazon EC2 or
+     * Amazon VPC instances. Specify Amazon EC2 security groups using
+     * security group names, such as <code>websrv</code>. Specify Amazon VPC
+     * security groups using security group IDs, such as
+     * <code>sg-12345678</code>. For more information about Amazon EC2
+     * security groups, go to <a
+     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * Using Security Groups</a> in the Amazon EC2 product documentation. For
+     * more information about Amazon VPC security groups, go to <a
+     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * Security Groups</a> in the Amazon VPC product documentation.
      */
     private java.util.List<String> securityGroups;
 
     /**
-     * The user data available to the launched EC2 instances. For more
+     * The user data available to the launched Amazon EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>.
@@ -284,15 +303,29 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups, go
-     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation.</a>
+     * The names of the security groups with which to associate Amazon EC2 or
+     * Amazon VPC instances. Specify Amazon EC2 security groups using
+     * security group names, such as <code>websrv</code>. Specify Amazon VPC
+     * security groups using security group IDs, such as
+     * <code>sg-12345678</code>. For more information about Amazon EC2
+     * security groups, go to <a
+     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * Using Security Groups</a> in the Amazon EC2 product documentation. For
+     * more information about Amazon VPC security groups, go to <a
+     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * Security Groups</a> in the Amazon VPC product documentation.
      *
-     * @return The names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups, go
-     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation.</a>
+     * @return The names of the security groups with which to associate Amazon EC2 or
+     *         Amazon VPC instances. Specify Amazon EC2 security groups using
+     *         security group names, such as <code>websrv</code>. Specify Amazon VPC
+     *         security groups using security group IDs, such as
+     *         <code>sg-12345678</code>. For more information about Amazon EC2
+     *         security groups, go to <a
+     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         Using Security Groups</a> in the Amazon EC2 product documentation. For
+     *         more information about Amazon VPC security groups, go to <a
+     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         Security Groups</a> in the Amazon VPC product documentation.
      */
     public java.util.List<String> getSecurityGroups() {
         if (securityGroups == null) {
@@ -302,15 +335,29 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups, go
-     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation.</a>
+     * The names of the security groups with which to associate Amazon EC2 or
+     * Amazon VPC instances. Specify Amazon EC2 security groups using
+     * security group names, such as <code>websrv</code>. Specify Amazon VPC
+     * security groups using security group IDs, such as
+     * <code>sg-12345678</code>. For more information about Amazon EC2
+     * security groups, go to <a
+     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * Using Security Groups</a> in the Amazon EC2 product documentation. For
+     * more information about Amazon VPC security groups, go to <a
+     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * Security Groups</a> in the Amazon VPC product documentation.
      *
-     * @param securityGroups The names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups, go
-     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation.</a>
+     * @param securityGroups The names of the security groups with which to associate Amazon EC2 or
+     *         Amazon VPC instances. Specify Amazon EC2 security groups using
+     *         security group names, such as <code>websrv</code>. Specify Amazon VPC
+     *         security groups using security group IDs, such as
+     *         <code>sg-12345678</code>. For more information about Amazon EC2
+     *         security groups, go to <a
+     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         Using Security Groups</a> in the Amazon EC2 product documentation. For
+     *         more information about Amazon VPC security groups, go to <a
+     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         Security Groups</a> in the Amazon VPC product documentation.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
         java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
@@ -321,17 +368,31 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups, go
-     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation.</a>
+     * The names of the security groups with which to associate Amazon EC2 or
+     * Amazon VPC instances. Specify Amazon EC2 security groups using
+     * security group names, such as <code>websrv</code>. Specify Amazon VPC
+     * security groups using security group IDs, such as
+     * <code>sg-12345678</code>. For more information about Amazon EC2
+     * security groups, go to <a
+     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * Using Security Groups</a> in the Amazon EC2 product documentation. For
+     * more information about Amazon VPC security groups, go to <a
+     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * Security Groups</a> in the Amazon VPC product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups, go
-     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation.</a>
+     * @param securityGroups The names of the security groups with which to associate Amazon EC2 or
+     *         Amazon VPC instances. Specify Amazon EC2 security groups using
+     *         security group names, such as <code>websrv</code>. Specify Amazon VPC
+     *         security groups using security group IDs, such as
+     *         <code>sg-12345678</code>. For more information about Amazon EC2
+     *         security groups, go to <a
+     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         Using Security Groups</a> in the Amazon EC2 product documentation. For
+     *         more information about Amazon VPC security groups, go to <a
+     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         Security Groups</a> in the Amazon VPC product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -344,17 +405,31 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The names of the security groups with which to associate EC2
-     * instances. For more information about Amazon EC2 security groups, go
-     * to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation.</a>
+     * The names of the security groups with which to associate Amazon EC2 or
+     * Amazon VPC instances. Specify Amazon EC2 security groups using
+     * security group names, such as <code>websrv</code>. Specify Amazon VPC
+     * security groups using security group IDs, such as
+     * <code>sg-12345678</code>. For more information about Amazon EC2
+     * security groups, go to <a
+     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * Using Security Groups</a> in the Amazon EC2 product documentation. For
+     * more information about Amazon VPC security groups, go to <a
+     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * Security Groups</a> in the Amazon VPC product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The names of the security groups with which to associate EC2
-     *         instances. For more information about Amazon EC2 security groups, go
-     *         to the <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation.</a>
+     * @param securityGroups The names of the security groups with which to associate Amazon EC2 or
+     *         Amazon VPC instances. Specify Amazon EC2 security groups using
+     *         security group names, such as <code>websrv</code>. Specify Amazon VPC
+     *         security groups using security group IDs, such as
+     *         <code>sg-12345678</code>. For more information about Amazon EC2
+     *         security groups, go to <a
+     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         Using Security Groups</a> in the Amazon EC2 product documentation. For
+     *         more information about Amazon VPC security groups, go to <a
+     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         Security Groups</a> in the Amazon VPC product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -370,7 +445,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The user data available to the launched EC2 instances. For more
+     * The user data available to the launched Amazon EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>.
@@ -379,7 +454,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The user data available to the launched EC2 instances. For more
+     * @return The user data available to the launched Amazon EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>.
@@ -389,7 +464,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The user data available to the launched EC2 instances. For more
+     * The user data available to the launched Amazon EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>.
@@ -398,7 +473,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the launched EC2 instances. For more
+     * @param userData The user data available to the launched Amazon EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>.
@@ -408,7 +483,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The user data available to the launched EC2 instances. For more
+     * The user data available to the launched Amazon EC2 instances. For more
      * information about Amazon EC2 user data, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>.
@@ -419,7 +494,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the launched EC2 instances. For more
+     * @param userData The user data available to the launched Amazon EC2 instances. For more
      *         information about Amazon EC2 user data, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>.

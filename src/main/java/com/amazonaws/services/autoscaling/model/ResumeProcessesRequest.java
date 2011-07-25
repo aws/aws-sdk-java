@@ -39,8 +39,9 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     * suspend all process types, omit this parameter.
+     * <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     * omit this parameter.
      */
     private java.util.List<String> scalingProcesses;
 
@@ -94,14 +95,16 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     * suspend all process types, omit this parameter.
+     * <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     * omit this parameter.
      *
      * @return The processes that you want to suspend or resume, which can include
      *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     *         suspend all process types, omit this parameter.
+     *         <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     *         omit this parameter.
      */
     public java.util.List<String> getScalingProcesses() {
         if (scalingProcesses == null) {
@@ -114,14 +117,16 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     * suspend all process types, omit this parameter.
+     * <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     * omit this parameter.
      *
      * @param scalingProcesses The processes that you want to suspend or resume, which can include
      *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     *         suspend all process types, omit this parameter.
+     *         <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     *         omit this parameter.
      */
     public void setScalingProcesses(java.util.Collection<String> scalingProcesses) {
         java.util.List<String> scalingProcessesCopy = new java.util.ArrayList<String>();
@@ -135,16 +140,18 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     * suspend all process types, omit this parameter.
+     * <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     * omit this parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingProcesses The processes that you want to suspend or resume, which can include
      *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     *         suspend all process types, omit this parameter.
+     *         <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     *         omit this parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -160,16 +167,18 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      * The processes that you want to suspend or resume, which can include
      * one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      * <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     * <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     * suspend all process types, omit this parameter.
+     * <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     * <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     * omit this parameter.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scalingProcesses The processes that you want to suspend or resume, which can include
      *         one or more of the following: <ul> <li>Launch</li> <li>Terminate</li>
      *         <li>HealthCheck</li> <li>ReplaceUnhealthy</li> <li>AZRebalance</li>
-     *         <li>AlarmNotifications</li> <li>ScheduledActions</li> </ul> <p> To
-     *         suspend all process types, omit this parameter.
+     *         <li>AlarmNotifications</li> <li>ScheduledActions</li>
+     *         <li>AddToLoadBalancer</li> </ul> <p> To suspend all process types,
+     *         omit this parameter.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

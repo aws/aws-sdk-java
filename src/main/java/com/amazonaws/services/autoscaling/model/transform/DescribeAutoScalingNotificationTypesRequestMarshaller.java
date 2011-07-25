@@ -25,13 +25,13 @@ import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Describe Scaling Process Types Request Marshaller
+ * Describe Auto Scaling Notification Types Request Marshaller
  */
-public class DescribeScalingProcessTypesRequestMarshaller implements Marshaller<Request<DescribeScalingProcessTypesRequest>, DescribeScalingProcessTypesRequest> {
+public class DescribeAutoScalingNotificationTypesRequestMarshaller implements Marshaller<Request<DescribeAutoScalingNotificationTypesRequest>, DescribeAutoScalingNotificationTypesRequest> {
 
-    public Request<DescribeScalingProcessTypesRequest> marshall(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
-        Request<DescribeScalingProcessTypesRequest> request = new DefaultRequest<DescribeScalingProcessTypesRequest>(describeScalingProcessTypesRequest, "AmazonAutoScaling");
-        request.addParameter("Action", "DescribeScalingProcessTypes");
+    public Request<DescribeAutoScalingNotificationTypesRequest> marshall(DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest) {
+        Request<DescribeAutoScalingNotificationTypesRequest> request = new DefaultRequest<DescribeAutoScalingNotificationTypesRequest>(describeAutoScalingNotificationTypesRequest, "AmazonAutoScaling");
+        request.addParameter("Action", "DescribeAutoScalingNotificationTypes");
         request.addParameter("Version", "2011-01-01");
 
 

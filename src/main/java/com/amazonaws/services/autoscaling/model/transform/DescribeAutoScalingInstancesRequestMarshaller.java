@@ -32,7 +32,7 @@ public class DescribeAutoScalingInstancesRequestMarshaller implements Marshaller
     public Request<DescribeAutoScalingInstancesRequest> marshall(DescribeAutoScalingInstancesRequest describeAutoScalingInstancesRequest) {
         Request<DescribeAutoScalingInstancesRequest> request = new DefaultRequest<DescribeAutoScalingInstancesRequest>(describeAutoScalingInstancesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingInstances");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (describeAutoScalingInstancesRequest != null) {
             java.util.List<String> instanceIdsList = describeAutoScalingInstancesRequest.getInstanceIds();
             int instanceIdsListIndex = 1;

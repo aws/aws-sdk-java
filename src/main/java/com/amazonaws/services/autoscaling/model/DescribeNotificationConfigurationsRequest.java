@@ -16,27 +16,24 @@ package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest) DescribeLaunchConfigurations operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest) DescribeNotificationConfigurations operation}.
  * <p>
- * Returns a full description of the launch configurations given the
- * specified names.
- * </p>
- * <p>
- * If no names are specified, then the full details of all launch
- * configurations are returned.
+ * Returns a list of notification actions associated with Auto Scaling
+ * groups for specified events.
  * </p>
  *
- * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest)
+ * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeNotificationConfigurations(DescribeNotificationConfigurationsRequest)
  */
-public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest {
+public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceRequest {
 
     /**
-     * A list of launch configuration names.
+     * The name of the Auto Scaling group.
      */
-    private java.util.List<String> launchConfigurationNames;
+    private java.util.List<String> autoScalingGroupNames;
 
     /**
-     * A string that marks the start of the next batch of returned results.
+     * A string that is used to mark the start of the next batch of returned
+     * results for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
@@ -44,7 +41,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     private String nextToken;
 
     /**
-     * The maximum number of launch configurations. The default is 100.
+     * Maximum number of records to be returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
@@ -52,148 +49,154 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     private Integer maxRecords;
 
     /**
-     * A list of launch configuration names.
+     * The name of the Auto Scaling group.
      *
-     * @return A list of launch configuration names.
+     * @return The name of the Auto Scaling group.
      */
-    public java.util.List<String> getLaunchConfigurationNames() {
-        if (launchConfigurationNames == null) {
-            launchConfigurationNames = new java.util.ArrayList<String>();
+    public java.util.List<String> getAutoScalingGroupNames() {
+        if (autoScalingGroupNames == null) {
+            autoScalingGroupNames = new java.util.ArrayList<String>();
         }
-        return launchConfigurationNames;
+        return autoScalingGroupNames;
     }
     
     /**
-     * A list of launch configuration names.
+     * The name of the Auto Scaling group.
      *
-     * @param launchConfigurationNames A list of launch configuration names.
+     * @param autoScalingGroupNames The name of the Auto Scaling group.
      */
-    public void setLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
-        java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>();
-        if (launchConfigurationNames != null) {
-            launchConfigurationNamesCopy.addAll(launchConfigurationNames);
+    public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
+        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>();
+        if (autoScalingGroupNames != null) {
+            autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
         }
-        this.launchConfigurationNames = launchConfigurationNamesCopy;
+        this.autoScalingGroupNames = autoScalingGroupNamesCopy;
     }
     
     /**
-     * A list of launch configuration names.
+     * The name of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurationNames A list of launch configuration names.
+     * @param autoScalingGroupNames The name of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(String... launchConfigurationNames) {
-        for (String value : launchConfigurationNames) {
-            getLaunchConfigurationNames().add(value);
+    public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
+        for (String value : autoScalingGroupNames) {
+            getAutoScalingGroupNames().add(value);
         }
         return this;
     }
     
     /**
-     * A list of launch configuration names.
+     * The name of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param launchConfigurationNames A list of launch configuration names.
+     * @param autoScalingGroupNames The name of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
-        java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>();
-        if (launchConfigurationNames != null) {
-            launchConfigurationNamesCopy.addAll(launchConfigurationNames);
+    public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
+        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>();
+        if (autoScalingGroupNames != null) {
+            autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
         }
-        this.launchConfigurationNames = launchConfigurationNamesCopy;
+        this.autoScalingGroupNames = autoScalingGroupNamesCopy;
 
         return this;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * A string that is used to mark the start of the next batch of returned
+     * results for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return A string that marks the start of the next batch of returned results.
+     * @return A string that is used to mark the start of the next batch of returned
+     *         results for pagination.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * A string that is used to mark the start of the next batch of returned
+     * results for pagination.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken A string that is used to mark the start of the next batch of returned
+     *         results for pagination.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * A string that marks the start of the next batch of returned results.
+     * A string that is used to mark the start of the next batch of returned
+     * results for pagination.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param nextToken A string that marks the start of the next batch of returned results.
+     * @param nextToken A string that is used to mark the start of the next batch of returned
+     *         results for pagination.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeLaunchConfigurationsRequest withNextToken(String nextToken) {
+    public DescribeNotificationConfigurationsRequest withNextToken(String nextToken) {
         this.nextToken = nextToken;
         return this;
     }
     
     
     /**
-     * The maximum number of launch configurations. The default is 100.
+     * Maximum number of records to be returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
      *
-     * @return The maximum number of launch configurations. The default is 100.
+     * @return Maximum number of records to be returned.
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * The maximum number of launch configurations. The default is 100.
+     * Maximum number of records to be returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
      *
-     * @param maxRecords The maximum number of launch configurations. The default is 100.
+     * @param maxRecords Maximum number of records to be returned.
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * The maximum number of launch configurations. The default is 100.
+     * Maximum number of records to be returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 50<br/>
      *
-     * @param maxRecords The maximum number of launch configurations. The default is 100.
+     * @param maxRecords Maximum number of records to be returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeLaunchConfigurationsRequest withMaxRecords(Integer maxRecords) {
+    public DescribeNotificationConfigurationsRequest withMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
         return this;
     }
@@ -211,7 +214,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LaunchConfigurationNames: " + launchConfigurationNames + ", ");
+        sb.append("AutoScalingGroupNames: " + autoScalingGroupNames + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("}");

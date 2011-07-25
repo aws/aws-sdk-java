@@ -26,6 +26,7 @@ package com.amazonaws.services.autoscaling.model;
  * The remaining Auto Scaling process types relate to specific Auto
  * Scaling features:
  * <ul>
+ * <li>AddToLoadBalancer</li>
  * <li>AlarmNotifications</li>
  * <li>AZRebalance</li>
  * <li>HealthCheck</li>
@@ -40,6 +41,16 @@ package com.amazonaws.services.autoscaling.model;
  * process types are affected to varying degrees. The following
  * descriptions discuss how each process type is affected by a suspension
  * of Launch or Terminate.
+ * </p>
+ * <p>
+ * The <code>AddToLoadBalancer</code> process type adds instances to the
+ * the load balancer when the instances are launched. If you suspend this
+ * process, Auto Scaling will launch the instances but will not add them
+ * to the load balancer. If you resume the <code>AddToLoadBalancer</code>
+ * process, Auto Scaling will also resume adding new instances to the
+ * load balancer when they are launched. However, Auto Scaling will not
+ * add running instances that were launched when the process was
+ * suspended.
  * </p>
  * <p>
  * The <code>AlarmNotifications</code> process type accepts

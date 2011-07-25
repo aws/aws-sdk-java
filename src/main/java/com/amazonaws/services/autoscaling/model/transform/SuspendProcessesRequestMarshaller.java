@@ -32,7 +32,7 @@ public class SuspendProcessesRequestMarshaller implements Marshaller<Request<Sus
     public Request<SuspendProcessesRequest> marshall(SuspendProcessesRequest suspendProcessesRequest) {
         Request<SuspendProcessesRequest> request = new DefaultRequest<SuspendProcessesRequest>(suspendProcessesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SuspendProcesses");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (suspendProcessesRequest != null) {
             if (suspendProcessesRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(suspendProcessesRequest.getAutoScalingGroupName()));

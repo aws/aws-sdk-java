@@ -32,7 +32,7 @@ public class DeletePolicyRequestMarshaller implements Marshaller<Request<DeleteP
     public Request<DeletePolicyRequest> marshall(DeletePolicyRequest deletePolicyRequest) {
         Request<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeletePolicy");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (deletePolicyRequest != null) {
             if (deletePolicyRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(deletePolicyRequest.getAutoScalingGroupName()));

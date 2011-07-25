@@ -32,7 +32,7 @@ public class DescribeAdjustmentTypesRequestMarshaller implements Marshaller<Requ
     public Request<DescribeAdjustmentTypesRequest> marshall(DescribeAdjustmentTypesRequest describeAdjustmentTypesRequest) {
         Request<DescribeAdjustmentTypesRequest> request = new DefaultRequest<DescribeAdjustmentTypesRequest>(describeAdjustmentTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAdjustmentTypes");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
 
 
         return request;

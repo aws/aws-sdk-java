@@ -25,16 +25,16 @@ import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 
 /**
- * Describe Auto Scaling Groups Request Marshaller
+ * Describe Notification Configurations Request Marshaller
  */
-public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Request<DescribeAutoScalingGroupsRequest>, DescribeAutoScalingGroupsRequest> {
+public class DescribeNotificationConfigurationsRequestMarshaller implements Marshaller<Request<DescribeNotificationConfigurationsRequest>, DescribeNotificationConfigurationsRequest> {
 
-    public Request<DescribeAutoScalingGroupsRequest> marshall(DescribeAutoScalingGroupsRequest describeAutoScalingGroupsRequest) {
-        Request<DescribeAutoScalingGroupsRequest> request = new DefaultRequest<DescribeAutoScalingGroupsRequest>(describeAutoScalingGroupsRequest, "AmazonAutoScaling");
-        request.addParameter("Action", "DescribeAutoScalingGroups");
+    public Request<DescribeNotificationConfigurationsRequest> marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) {
+        Request<DescribeNotificationConfigurationsRequest> request = new DefaultRequest<DescribeNotificationConfigurationsRequest>(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
+        request.addParameter("Action", "DescribeNotificationConfigurations");
         request.addParameter("Version", "2011-01-01");
-        if (describeAutoScalingGroupsRequest != null) {
-            java.util.List<String> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.getAutoScalingGroupNames();
+        if (describeNotificationConfigurationsRequest != null) {
+            java.util.List<String> autoScalingGroupNamesList = describeNotificationConfigurationsRequest.getAutoScalingGroupNames();
             int autoScalingGroupNamesListIndex = 1;
 
             for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
@@ -44,14 +44,14 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
                 autoScalingGroupNamesListIndex++;
             }
         }
-        if (describeAutoScalingGroupsRequest != null) {
-            if (describeAutoScalingGroupsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeAutoScalingGroupsRequest.getNextToken()));
+        if (describeNotificationConfigurationsRequest != null) {
+            if (describeNotificationConfigurationsRequest.getNextToken() != null) {
+                request.addParameter("NextToken", StringUtils.fromString(describeNotificationConfigurationsRequest.getNextToken()));
             }
         }
-        if (describeAutoScalingGroupsRequest != null) {
-            if (describeAutoScalingGroupsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeAutoScalingGroupsRequest.getMaxRecords()));
+        if (describeNotificationConfigurationsRequest != null) {
+            if (describeNotificationConfigurationsRequest.getMaxRecords() != null) {
+                request.addParameter("MaxRecords", StringUtils.fromInteger(describeNotificationConfigurationsRequest.getMaxRecords()));
             }
         }
 

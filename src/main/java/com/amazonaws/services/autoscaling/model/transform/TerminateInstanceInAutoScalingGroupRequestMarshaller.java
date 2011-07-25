@@ -32,7 +32,7 @@ public class TerminateInstanceInAutoScalingGroupRequestMarshaller implements Mar
     public Request<TerminateInstanceInAutoScalingGroupRequest> marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) {
         Request<TerminateInstanceInAutoScalingGroupRequest> request = new DefaultRequest<TerminateInstanceInAutoScalingGroupRequest>(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "TerminateInstanceInAutoScalingGroup");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (terminateInstanceInAutoScalingGroupRequest != null) {
             if (terminateInstanceInAutoScalingGroupRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(terminateInstanceInAutoScalingGroupRequest.getInstanceId()));

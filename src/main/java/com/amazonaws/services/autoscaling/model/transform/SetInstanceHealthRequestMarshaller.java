@@ -32,7 +32,7 @@ public class SetInstanceHealthRequestMarshaller implements Marshaller<Request<Se
     public Request<SetInstanceHealthRequest> marshall(SetInstanceHealthRequest setInstanceHealthRequest) {
         Request<SetInstanceHealthRequest> request = new DefaultRequest<SetInstanceHealthRequest>(setInstanceHealthRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetInstanceHealth");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (setInstanceHealthRequest != null) {
             if (setInstanceHealthRequest.getInstanceId() != null) {
                 request.addParameter("InstanceId", StringUtils.fromString(setInstanceHealthRequest.getInstanceId()));

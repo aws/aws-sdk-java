@@ -32,7 +32,7 @@ public class ExecutePolicyRequestMarshaller implements Marshaller<Request<Execut
     public Request<ExecutePolicyRequest> marshall(ExecutePolicyRequest executePolicyRequest) {
         Request<ExecutePolicyRequest> request = new DefaultRequest<ExecutePolicyRequest>(executePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ExecutePolicy");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (executePolicyRequest != null) {
             if (executePolicyRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(executePolicyRequest.getAutoScalingGroupName()));

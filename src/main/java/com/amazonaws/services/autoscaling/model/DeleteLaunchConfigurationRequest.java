@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * The specified launch configuration must not be attached to an Auto
- * Scaling group. Once this call completes, the launch configuration is
+ * Scaling group. When this call completes, the launch configuration is
  * no longer available for use.
  * </p>
  *

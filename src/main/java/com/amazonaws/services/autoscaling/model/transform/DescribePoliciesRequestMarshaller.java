@@ -32,7 +32,7 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
     public Request<DescribePoliciesRequest> marshall(DescribePoliciesRequest describePoliciesRequest) {
         Request<DescribePoliciesRequest> request = new DefaultRequest<DescribePoliciesRequest>(describePoliciesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribePolicies");
-        request.addParameter("Version", "2010-08-01");
+        request.addParameter("Version", "2011-01-01");
         if (describePoliciesRequest != null) {
             if (describePoliciesRequest.getAutoScalingGroupName() != null) {
                 request.addParameter("AutoScalingGroupName", StringUtils.fromString(describePoliciesRequest.getAutoScalingGroupName()));
