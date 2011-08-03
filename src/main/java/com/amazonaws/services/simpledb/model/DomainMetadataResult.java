@@ -50,7 +50,8 @@ public class DomainMetadataResult {
     private Long attributeValuesSizeBytes;
 
     /**
-     * The data and time when metadata was calculated in Epoch (UNIX) time.
+     * The data and time when metadata was calculated, in Epoch (UNIX)
+     * seconds.
      */
     private Integer timestamp;
 
@@ -259,29 +260,35 @@ public class DomainMetadataResult {
     
     
     /**
-     * The data and time when metadata was calculated in Epoch (UNIX) time.
+     * The data and time when metadata was calculated, in Epoch (UNIX)
+     * seconds.
      *
-     * @return The data and time when metadata was calculated in Epoch (UNIX) time.
+     * @return The data and time when metadata was calculated, in Epoch (UNIX)
+     *         seconds.
      */
     public Integer getTimestamp() {
         return timestamp;
     }
     
     /**
-     * The data and time when metadata was calculated in Epoch (UNIX) time.
+     * The data and time when metadata was calculated, in Epoch (UNIX)
+     * seconds.
      *
-     * @param timestamp The data and time when metadata was calculated in Epoch (UNIX) time.
+     * @param timestamp The data and time when metadata was calculated, in Epoch (UNIX)
+     *         seconds.
      */
     public void setTimestamp(Integer timestamp) {
         this.timestamp = timestamp;
     }
     
     /**
-     * The data and time when metadata was calculated in Epoch (UNIX) time.
+     * The data and time when metadata was calculated, in Epoch (UNIX)
+     * seconds.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param timestamp The data and time when metadata was calculated in Epoch (UNIX) time.
+     * @param timestamp The data and time when metadata was calculated, in Epoch (UNIX)
+     *         seconds.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

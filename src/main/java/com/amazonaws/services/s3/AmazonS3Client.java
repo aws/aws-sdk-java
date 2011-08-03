@@ -2370,7 +2370,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return request;
     }
-    
+
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
                                   Unmarshaller<X, InputStream> unmarshaller,
                                   String bucketName,

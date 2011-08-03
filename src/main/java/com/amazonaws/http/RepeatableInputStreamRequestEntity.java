@@ -97,16 +97,6 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     	return false;
 	}
 
-//	/**
-//     * Delegates to the underlying InputStreamRequestEntity.
-//     *
-//     * @see org.apache.commons.httpclient.methods.RequestEntity#getContentType()
-//     */
-//    @Override
-//    public Header getContentType() {
-//        return inputStreamRequestEntity.getContentType();
-//    }
-
     /**
      * Returns true if the underlying InputStream supports marking/reseting or
      * if the underlying InputStreamRequestEntity is repeatable (i.e. its

@@ -60,6 +60,9 @@ public class AWS3Signer extends AbstractAWSSigner {
      *            The request to sign.
      */
     public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+
+        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
+
         SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
         String nonce = UUID.randomUUID().toString();
         String date = dateUtils.formatRfc822Date(new Date());
@@ -77,6 +80,9 @@ public class AWS3Signer extends AbstractAWSSigner {
         }
         request.addHeader("Host", hostHeader);
 
+        if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
+            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+        }
 
         byte[] bytesToSign;
         String stringToSign;
@@ -94,7 +100,6 @@ public class AWS3Signer extends AbstractAWSSigner {
         }
         log.debug("Calculated StringToSign: " + stringToSign);
 
-        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         String signature = sign(bytesToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
 
         StringBuilder builder = new StringBuilder();
@@ -217,4 +222,10 @@ public class AWS3Signer extends AbstractAWSSigner {
             throw new AmazonClientException("Unable to parse request endpoint during signing", e);
         }
     }
+
+    @Override
+    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+        request.addHeader("x-amz-security-token", credentials.getSessionToken());
+    }
+    
 }

@@ -27,6 +27,7 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Base64;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.Request;
 import com.amazonaws.util.HttpUtils;
 
 /**
@@ -40,7 +41,6 @@ public abstract class AbstractAWSSigner implements Signer {
 
     /** The default encoding to use when URL encoding */
     private static final String DEFAULT_ENCODING = "UTF-8";
-
 
     /**
      * Computes an RFC 2104-compliant HMAC signature.
@@ -116,23 +116,47 @@ public abstract class AbstractAWSSigner implements Signer {
     }
 
     /**
-     * Loads the individual access key ID and secret key from the specified credentials, ensuring that
-     * access to the credentials is synchronized on the credentials object itself, and trimming any extra
-     * whitespace from the credentials.
+     * Loads the individual access key ID and secret key from the specified
+     * credentials, ensuring that access to the credentials is synchronized on
+     * the credentials object itself, and trimming any extra whitespace from the
+     * credentials.
+     * <p>
+     * Returns either a {@link BasicSessionCredentials} or a
+     * {@link BasicAWSCredentials} object, depending on the input type.
+     * 
      * @param credentials
      * @return A new credentials object with the sanitized credentials.
      */
-    protected AWSCredentials sanitizeCredentials(AWSCredentials credentials) {
+    protected AWSCredentials sanitizeCredentials(AWSCredentials credentials) {        
         String accessKeyId = null;
         String secretKey   = null;
+        String token = null;
         synchronized (credentials) {
             accessKeyId = credentials.getAWSAccessKeyId();
             secretKey   = credentials.getAWSSecretKey();
+            if ( credentials instanceof AWSSessionCredentials ) {
+                token = ((AWSSessionCredentials) credentials).getSessionToken();
+            }
         }
         if (secretKey != null) secretKey = secretKey.trim();
         if (accessKeyId != null) accessKeyId = accessKeyId.trim();
+        if (token != null) token = token.trim();
 
+        if (credentials instanceof AWSSessionCredentials) {
+            return new BasicSessionCredentials(accessKeyId, secretKey, token);
+        }
+        
         return new BasicAWSCredentials(accessKeyId, secretKey);
     }
-
+    
+    /**
+     * Adds session credentials to the request given.
+     * 
+     * @param request
+     *            The request to add session credentials information to
+     * @param credentials
+     *            The session credentials to add to the request
+     */
+    protected abstract void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials);
+    
 }

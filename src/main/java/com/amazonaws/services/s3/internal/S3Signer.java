@@ -22,6 +22,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SigningAlgorithm;
@@ -87,14 +88,22 @@ public class S3Signer extends AbstractAWSSigner {
             return;
         }
 
+        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
+        if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
+        	addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+        }
+        
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(new Date()));
         String canonicalString = RestUtils.makeS3CanonicalString(
                 httpVerb, resourcePath, request, null);
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
-        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
-
         String signature = super.sign(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
         request.addHeader("Authorization", "AWS " + sanitizedCredentials.getAWSAccessKeyId() + ":" + signature);
+    }
+
+    @Override
+    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+        request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
 }

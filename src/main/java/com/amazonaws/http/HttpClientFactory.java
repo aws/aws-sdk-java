@@ -14,11 +14,27 @@
  */
 package com.amazonaws.http;
 
+import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSocket;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
+
 import org.apache.http.HttpHost;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.HttpClient;
+import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
+import org.apache.http.conn.scheme.LayeredSchemeSocketFactory;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
@@ -64,11 +80,18 @@ class HttpClientFactory {
         }
 
         /* Set connection manager */
-        ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
-        connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
-        connectionManager.setMaxTotal(config.getMaxConnections());
-
+        ThreadSafeClientConnManager connectionManager = ConnectionManagerFactory.createThreadSafeClientConnManager( config, httpClientParams );
         DefaultHttpClient httpClient = new DefaultHttpClient(connectionManager, httpClientParams);
+
+		/*
+		 * If SSL cert checking for endpoints has been explicitly disabled,
+		 * register a new scheme for HTTPS that won't cause self-signed certs to
+		 * error out.
+		 */
+        if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
+        	Scheme sch = new Scheme("https", 443, new TrustingSocketFactory());
+        	httpClient.getConnectionManager().getSchemeRegistry().register(sch);
+        }
 
         /* Set proxy if configured */
         String proxyHost = config.getProxyHost();
@@ -92,4 +115,80 @@ class HttpClientFactory {
 
         return httpClient;
 	}
+
+	/**
+	 * Simple implementation of SchemeSocketFactory (and
+	 * LayeredSchemeSocketFactory) that bypasses SSL certificate checks. This
+	 * class is only intended to be used for testing purposes.
+	 */
+	private static class TrustingSocketFactory implements SchemeSocketFactory, LayeredSchemeSocketFactory {
+
+		private SSLContext sslcontext = null;
+
+		private static SSLContext createSSLContext() throws IOException {
+			try {
+				SSLContext context = SSLContext.getInstance("TLS");
+				context.init(null, new TrustManager[] { new TrustingX509TrustManager() }, null);
+				return context;
+			} catch (Exception e) {
+				throw new IOException(e.getMessage());
+			}
+		}
+
+		private SSLContext getSSLContext() throws IOException {
+			if (this.sslcontext == null) this.sslcontext = createSSLContext();
+			return this.sslcontext;
+		}
+
+		public Socket createSocket(HttpParams params) throws IOException {
+			return getSSLContext().getSocketFactory().createSocket();
+		}
+
+		public Socket connectSocket(Socket sock,
+				InetSocketAddress remoteAddress,
+				InetSocketAddress localAddress, HttpParams params)
+				throws IOException, UnknownHostException,
+				ConnectTimeoutException {
+			int connTimeout = HttpConnectionParams.getConnectionTimeout(params);
+			int soTimeout = HttpConnectionParams.getSoTimeout(params);
+
+			SSLSocket sslsock = (SSLSocket) ((sock != null) ? sock : createSocket(params));
+			if (localAddress != null) sslsock.bind(localAddress);
+
+			sslsock.connect(remoteAddress, connTimeout);
+			sslsock.setSoTimeout(soTimeout);
+			return sslsock;
+		}
+
+		public boolean isSecure(Socket sock) throws IllegalArgumentException {
+			return true;
+		}
+
+		public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3) 
+				throws IOException, UnknownHostException {
+			return getSSLContext().getSocketFactory().createSocket();
+		}
+	}
+
+	/**
+	 * Simple implementation of X509TrustManager that trusts all certificates.
+	 * This class is only intended to be used for testing purposes.
+	 */
+	private static class TrustingX509TrustManager implements X509TrustManager {
+    	private static final X509Certificate[] X509_CERTIFICATES = new X509Certificate[0];
+
+		public X509Certificate[] getAcceptedIssuers() {
+			return X509_CERTIFICATES;
+		}
+
+		public void checkServerTrusted(X509Certificate[] chain, String authType)
+				throws CertificateException {
+			// No-op, to trust all certs
+		}
+
+		public void checkClientTrusted(X509Certificate[] chain, String authType)
+				throws CertificateException {
+			// No-op, to trust all certs
+		}
+	};
 }

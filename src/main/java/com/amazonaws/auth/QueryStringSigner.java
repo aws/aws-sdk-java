@@ -65,6 +65,10 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
         request.addParameter("SignatureVersion", version.toString());
         request.addParameter("Timestamp", getFormattedTimestamp());
+        
+        if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
+            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+        }
 
         String stringToSign = null;
         if ( version.equals( SignatureVersion.V1 ) ) {
@@ -136,4 +140,8 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         return df.format(new Date());
     }
 
+    @Override
+    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+        request.addParameter("SecurityToken", credentials.getSessionToken());
+    }
 }

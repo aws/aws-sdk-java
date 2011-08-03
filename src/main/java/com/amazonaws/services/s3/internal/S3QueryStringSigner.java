@@ -19,6 +19,7 @@ import java.util.Date;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSSessionCredentials;
 import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.SigningAlgorithm;
 
@@ -50,7 +51,6 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
 
     private final Date expiration;
 
-
     public S3QueryStringSigner(String httpVerb, String resourcePath, Date expiration) {
         this.httpVerb = httpVerb;
         this.resourcePath = resourcePath;
@@ -75,4 +75,11 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
         request.addParameter("Signature", signature);
     }
 
+    /**
+     * Session credentials for pre-signed URLs are not supported.
+     */
+    @Override
+    protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
+        throw new RuntimeException("Session credentials are not supported for pre-signed URLs");
+    }
 }

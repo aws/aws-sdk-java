@@ -72,7 +72,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     /** Map of data about in progress encrypted multipart uploads. */
     private Map<String, EncryptedUploadContext> currentMultipartUploadSecretKeys = new HashMap<String, EncryptedUploadContext>();
 
-    
+
     /**
      * <p>
      * Constructs a new Amazon S3 Encryption client that will make <b>anonymous</b>
@@ -238,6 +238,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         // Get the object from S3
         S3Object retrievedObject = super.getObject(getObjectRequest);
 
+        // If the caller has specified constraints, it's possible that super.getObject(...)
+        // would return null, so we simply return null as well.
+        if (retrievedObject == null) return null;
+
         S3Object objectToBeReturned;
         // Check if encryption info is in object metadata
         if (EncryptionUtils.isEncryptionInfoInMetadata(retrievedObject)) {
@@ -317,10 +321,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	public CompleteMultipartUploadResult completeMultipartUpload(
 			CompleteMultipartUploadRequest completeMultipartUploadRequest)
 			throws AmazonClientException, AmazonServiceException {
-    	
+
     	String uploadId = completeMultipartUploadRequest.getUploadId();
     	EncryptedUploadContext encryptedUploadContext = currentMultipartUploadSecretKeys.get(uploadId);
-    	
+
     	if (encryptedUploadContext.hasFinalPartBeenSeen() == false) {
     		throw new AmazonClientException("Unable to complete an encrypted multipart upload without being told which part was the last.  " +
     				"Without knowing which part was the last, the encrypted data in Amazon S3 is incomplete and corrupt.");
@@ -328,13 +332,13 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 
 		CompleteMultipartUploadResult result = super.completeMultipartUpload(completeMultipartUploadRequest);
 
-		// In InstructionFile mode, we want to write the instruction file only after the whole upload has completed correctly. 
+		// In InstructionFile mode, we want to write the instruction file only after the whole upload has completed correctly.
 		if (cryptoConfig.getStorageMode() == CryptoStorageMode.InstructionFile) {
 	        Cipher symmetricCipher = EncryptionUtils.createSymmetricCipher(
-	        		encryptedUploadContext.getEnvelopeEncryptionKey(), 
-	        		Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(), 
+	        		encryptedUploadContext.getEnvelopeEncryptionKey(),
+	        		Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(),
 	        		encryptedUploadContext.getFirstInitializationVector());
-	        
+
 	        // Encrypt the envelope symmetric key
 	        byte[] encryptedEnvelopeSymmetricKey = EncryptionUtils.getEncryptedSymmetricKey(encryptedUploadContext.getEnvelopeEncryptionKey(), encryptionMaterials, cryptoConfig.getCryptoProvider());
 			EncryptionInstruction instruction = new EncryptionInstruction(encryptionMaterials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey, encryptedUploadContext.getEnvelopeEncryptionKey(), symmetricCipher);
@@ -342,7 +346,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	        // Put the instruction file into S3
 	        super.putObject(EncryptionUtils.createInstructionPutRequest(encryptedUploadContext.getBucketName(), encryptedUploadContext.getKey(), instruction));
 		}
-		
+
 		currentMultipartUploadSecretKeys.remove(uploadId);
 		return result;
 	}
@@ -362,7 +366,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 		if (cryptoConfig.getStorageMode() == CryptoStorageMode.ObjectMetadata) {
 			// Encrypt the envelope symmetric key
 			byte[] encryptedEnvelopeSymmetricKey = EncryptionUtils.getEncryptedSymmetricKey(envelopeSymmetricKey, encryptionMaterials, cryptoConfig.getCryptoProvider());
-			
+
 	        // Store encryption info in metadata
 	        ObjectMetadata metadata = EncryptionUtils.updateMetadataWithEncryptionInfo(initiateMultipartUploadRequest, encryptedEnvelopeSymmetricKey, symmetricCipher, encryptionMaterials.getMaterialsDescription());
 
@@ -388,18 +392,18 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 
 		boolean isLastPart = uploadPartRequest.isLastPart();
 		String uploadId = uploadPartRequest.getUploadId();
-		
+
 		boolean partSizeMultipleOfCipherBlockSize = uploadPartRequest.getPartSize() % JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE == 0;
 		if (!isLastPart && !partSizeMultipleOfCipherBlockSize) {
 			throw new AmazonClientException("Invalid part size: part sizes for encrypted multipart uploads must be multiples " +
 					"of the cipher block size (" + JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE + ") with the exception of the last part.  " +
 				    "Otherwise encryption adds extra padding that will corrupt the final object.");
 		}
-	
+
         // Generate the envelope symmetric key and initialize a cipher to encrypt the object's data
 		EncryptedUploadContext encryptedUploadContext = currentMultipartUploadSecretKeys.get(uploadId);
     	if (encryptedUploadContext == null) throw new AmazonClientException("No client-side information available on upload ID " + uploadId);
-    	
+
         SecretKey envelopeSymmetricKey = encryptedUploadContext.getEnvelopeEncryptionKey();
         byte[] iv = encryptedUploadContext.getNextInitializationVector();
         Cipher symmetricCipher = EncryptionUtils.createSymmetricCipher(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(), iv);
@@ -409,7 +413,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         uploadPartRequest.setInputStream(encryptedInputStream);
 
         // The last part of the multipart upload will contain extra padding from the encryption process, which
-        // changes the  
+        // changes the
 		if (uploadPartRequest.isLastPart()) {
 			// We only change the size of the last part
 			long cryptoContentLength = EncryptionUtils.calculateCryptoContentLength(symmetricCipher, uploadPartRequest);
@@ -419,7 +423,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 				throw new AmazonClientException("This part was specified as the last part in a multipart upload, but a previous part was already marked as the last part.  " +
 						"Only the last part of the upload should be marked as the last part, otherwise it will cause the encrypted data to be corrupted.");
 			}
-			
+
 			encryptedUploadContext.setHasFinalPartBeenSeen(true);
 		}
 
@@ -462,8 +466,17 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     private PutObjectResult putObjectUsingMetadata(PutObjectRequest putObjectRequest)
     throws AmazonClientException, AmazonServiceException {
-        putObjectRequest = EncryptionUtils.encryptRequestUsingMetadata(putObjectRequest, this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
-        return super.putObject(putObjectRequest);
+        // Create instruction
+        EncryptionInstruction instruction = EncryptionUtils.generateInstruction(this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
+
+        // Encrypt the object data with the instruction
+        PutObjectRequest encryptedObjectRequest = EncryptionUtils.encryptRequestUsingInstruction(putObjectRequest, instruction);
+        
+        // Update the metadata
+        EncryptionUtils.updateMetadataWithEncryptionInstruction( putObjectRequest, instruction );
+        
+        // Put the encrypted object into S3
+        return super.putObject(encryptedObjectRequest);
     }
 
     /**
@@ -510,7 +523,11 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      *      An S3Object with decrypted object contents.  If decryption is not possible, returns null.
      */
     private S3Object decryptObjectUsingMetadata(S3Object object) {
-        return EncryptionUtils.decryptObjectUsingMetadata(object, this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
+        // Create an instruction object from the object headers
+        EncryptionInstruction instruction = EncryptionUtils.buildInstructionFromObjectMetadata( object, this.encryptionMaterials, this.cryptoConfig.getCryptoProvider() );
+        
+        // Decrypt the object file with the instruction
+        return EncryptionUtils.decryptObjectUsingInstruction(object, instruction);
     }
 
     /**

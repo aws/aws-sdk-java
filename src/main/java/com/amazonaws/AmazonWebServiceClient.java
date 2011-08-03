@@ -22,8 +22,8 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.handlers.RequestHandler;
-import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.AmazonHttpClient;
+import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
 
@@ -171,5 +171,5 @@ public abstract class AmazonWebServiceClient {
         ExecutionContext executionContext = new ExecutionContext(requestHandlers);
         return executionContext;
     }
-
+    
 }
