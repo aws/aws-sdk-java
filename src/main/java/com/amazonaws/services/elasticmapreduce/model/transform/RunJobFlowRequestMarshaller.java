@@ -76,8 +76,18 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
                         }
                     }
                     if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getMarket() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupsListValue.getMarket()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
                         if (instanceGroupsListValue.getInstanceRole() != null) {
                             request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupsListValue.getInstanceRole()));
+                        }
+                    }
+                    if (instanceGroupsListValue != null) {
+                        if (instanceGroupsListValue.getBidPrice() != null) {
+                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupsListValue.getBidPrice()));
                         }
                     }
                     if (instanceGroupsListValue != null) {

@@ -31,12 +31,30 @@ public class InstanceGroupConfig {
     private String name;
 
     /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     */
+    private String market;
+
+    /**
      * The role of the instance group in the cluster.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>MASTER, CORE, TASK
      */
     private String instanceRole;
+
+    /**
+     * Bid price for each Amazon EC2 instance in the instance group when
+     * launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String bidPrice;
 
     /**
      * The Amazon EC2 instance type for all instances in the instance group.
@@ -122,6 +140,55 @@ public class InstanceGroupConfig {
     
     
     /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @return Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @see MarketType
+     */
+    public String getMarket() {
+        return market;
+    }
+    
+    /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @see MarketType
+     */
+    public void setMarket(String market) {
+        this.market = market;
+    }
+    
+    /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see MarketType
+     */
+    public InstanceGroupConfig withMarket(String market) {
+        this.market = market;
+        return this;
+    }
+    
+    
+    /**
      * The role of the instance group in the cluster.
      * <p>
      * <b>Constraints:</b><br/>
@@ -166,6 +233,58 @@ public class InstanceGroupConfig {
      */
     public InstanceGroupConfig withInstanceRole(String instanceRole) {
         this.instanceRole = instanceRole;
+        return this;
+    }
+    
+    
+    /**
+     * Bid price for each Amazon EC2 instance in the instance group when
+     * launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return Bid price for each Amazon EC2 instance in the instance group when
+     *         launching nodes as Spot Instances, expressed in USD.
+     */
+    public String getBidPrice() {
+        return bidPrice;
+    }
+    
+    /**
+     * Bid price for each Amazon EC2 instance in the instance group when
+     * launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param bidPrice Bid price for each Amazon EC2 instance in the instance group when
+     *         launching nodes as Spot Instances, expressed in USD.
+     */
+    public void setBidPrice(String bidPrice) {
+        this.bidPrice = bidPrice;
+    }
+    
+    /**
+     * Bid price for each Amazon EC2 instance in the instance group when
+     * launching nodes as Spot Instances, expressed in USD.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param bidPrice Bid price for each Amazon EC2 instance in the instance group when
+     *         launching nodes as Spot Instances, expressed in USD.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceGroupConfig withBidPrice(String bidPrice) {
+        this.bidPrice = bidPrice;
         return this;
     }
     
@@ -263,7 +382,9 @@ public class InstanceGroupConfig {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("Name: " + name + ", ");
+        sb.append("Market: " + market + ", ");
         sb.append("InstanceRole: " + instanceRole + ", ");
+        sb.append("BidPrice: " + bidPrice + ", ");
         sb.append("InstanceType: " + instanceType + ", ");
         sb.append("InstanceCount: " + instanceCount + ", ");
         sb.append("}");

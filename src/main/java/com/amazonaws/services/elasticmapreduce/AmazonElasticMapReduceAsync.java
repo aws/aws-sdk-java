@@ -24,9 +24,9 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Interface for accessing AmazonElasticMapReduce asynchronously,
  * using Java Futures.
  * <p>
- * This is the Amazon Elastic MapReduce API Reference. This guide
- * provides descriptions and samples of the Amazon Elastic MapReduce
- * APIs.
+ * This is the <i>Amazon Elastic MapReduce API Reference</i> . This
+ * guide provides descriptions and samples of the Amazon Elastic
+ * MapReduce APIs.
  * </p>
  * <p>
  * Amazon Elastic MapReduce is a web service that makes it easy to
@@ -34,14 +34,6 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * Hadoop processing combined with several AWS products to do tasks such
  * as web indexing, data mining, log file analysis, machine learning,
  * scientific simulation, and data warehousing.
- * </p>
- * <p>
- * For more information about this product go to the <a
- * href="http://aws.amazon.com/elasticmapreduce/"> Amazon Elastic
- * MapReduce </a> detail page. For specific information about setting up
- * signatures and authorization through the API, go to <a
- * .com/ElasticMapReduce/latest/DeveloperGuide/making_api_requests.html">
- * Amazon Elastic MapReduce Developer Guide </a> .
  * </p> 
  */       
 public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
@@ -74,6 +66,17 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * 256 steps are allowed in each job flow.
      * </p>
      * <p>
+     * If your job flow is long-running (such as a Hive data warehouse) or
+     * complex, you may require more than 256 steps to process your data. You
+     * can bypass the 256-step limitation in various ways, including using
+     * the SSH shell to connect to the master node and submitting queries
+     * directly to the software running on the master node, such as Hive and
+     * Hadoop. For more information on how to do this, go to <a
+     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
+     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide</i> .
+     * </p>
+     * <p>
      * A step specifies the location of a JAR file stored either on the
      * master node of the job flow or in Amazon S3. Each step is performed by
      * the main function of the main class of the JAR file. The main class
@@ -88,7 +91,7 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * </p>
      * <p>
      * You can only add steps to a job flow that is in one of the following
-     * states: STARTING, BOOTSTAPPING, RUNNING, or WAITING.
+     * states: STARTING, BOOTSTRAPPING, RUNNING, or WAITING.
      * </p>
      *
      * @param addJobFlowStepsRequest Container for the necessary parameters
@@ -254,7 +257,18 @@ public interface AmazonElasticMapReduceAsync extends AmazonElasticMapReduce {
      * A maximum of 256 steps are allowed in each job flow.
      * </p>
      * <p>
-     * For long running job flows, we recommended that you periodically store
+     * If your job flow is long-running (such as a Hive data warehouse) or
+     * complex, you may require more than 256 steps to process your data. You
+     * can bypass the 256-step limitation in various ways, including using
+     * the SSH shell to connect to the master node and submitting queries
+     * directly to the software running on the master node, such as Hive and
+     * Hadoop. For more information on how to do this, go to <a
+     * .com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html">
+     * Add More than 256 Steps to a Job Flow </a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide</i> .
+     * </p>
+     * <p>
+     * For long running job flows, we recommend that you periodically store
      * your results.
      * </p>
      *

@@ -59,6 +59,10 @@ public class JobFlowDetailStaxUnmarshaller implements Unmarshaller<JobFlowDetail
                     jobFlowDetail.setLogUri(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AmiVersion", targetDepth)) {
+                    jobFlowDetail.setAmiVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("ExecutionStatusDetail", targetDepth)) {
                     jobFlowDetail.setExecutionStatusDetail(JobFlowExecutionStatusDetailStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

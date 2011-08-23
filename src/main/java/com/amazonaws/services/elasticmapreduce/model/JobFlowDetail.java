@@ -48,6 +48,8 @@ public class JobFlowDetail {
      */
     private String logUri;
 
+    private String amiVersion;
+
     /**
      * Describes the execution status of the job flow.
      */
@@ -226,6 +228,52 @@ public class JobFlowDetail {
      */
     public JobFlowDetail withLogUri(String logUri) {
         this.logUri = logUri;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AmiVersion property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The value of the AmiVersion property for this object.
+     */
+    public String getAmiVersion() {
+        return amiVersion;
+    }
+    
+    /**
+     * Sets the value of the AmiVersion property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param amiVersion The new value for the AmiVersion property for this object.
+     */
+    public void setAmiVersion(String amiVersion) {
+        this.amiVersion = amiVersion;
+    }
+    
+    /**
+     * Sets the value of the AmiVersion property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param amiVersion The new value for the AmiVersion property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowDetail withAmiVersion(String amiVersion) {
+        this.amiVersion = amiVersion;
         return this;
     }
     
@@ -437,6 +485,7 @@ public class JobFlowDetail {
         sb.append("JobFlowId: " + jobFlowId + ", ");
         sb.append("Name: " + name + ", ");
         sb.append("LogUri: " + logUri + ", ");
+        sb.append("AmiVersion: " + amiVersion + ", ");
         sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("Steps: " + steps + ", ");
