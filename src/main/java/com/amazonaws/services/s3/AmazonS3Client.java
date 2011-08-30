@@ -944,7 +944,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             request.addHeader(Headers.STORAGE_CLASS, putObjectRequest.getStorageClass());
         }
 
-        if (metadata.getContentLength() <= 0) {
+        // Use internal interface to differentiate 0 from unset.
+        if (metadata.getRawMetadata().get(Headers.CONTENT_LENGTH) == null) {
             /*
              * There's nothing we can do except for let the HTTP client buffer
              * the input stream contents if the caller doesn't tell us how much
