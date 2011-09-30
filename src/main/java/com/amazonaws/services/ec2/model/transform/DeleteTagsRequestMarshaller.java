@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,38 +31,40 @@ import com.amazonaws.util.StringUtils;
 public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTagsRequest>, DeleteTagsRequest> {
 
     public Request<DeleteTagsRequest> marshall(DeleteTagsRequest deleteTagsRequest) {
+
+        if (deleteTagsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteTagsRequest> request = new DefaultRequest<DeleteTagsRequest>(deleteTagsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteTags");
         request.addParameter("Version", "2011-05-15");
-        if (deleteTagsRequest != null) {
-            java.util.List<String> resourcesList = deleteTagsRequest.getResources();
-            int resourcesListIndex = 1;
 
-            for (String resourcesListValue : resourcesList) {
-                if (resourcesListValue != null) {
-                    request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));
-                }
-                resourcesListIndex++;
+
+        java.util.List<String> resourcesList = deleteTagsRequest.getResources();
+        int resourcesListIndex = 1;
+        for (String resourcesListValue : resourcesList) {
+            if (resourcesListValue != null) {
+                request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));
             }
+
+            resourcesListIndex++;
         }
 
-        if (deleteTagsRequest != null) {
-            java.util.List<Tag> tagsList = deleteTagsRequest.getTags();
-            int tagsListIndex = 1;
-            for (Tag tagsListValue : tagsList) {
-                if (tagsListValue != null) {
-                    if (tagsListValue.getKey() != null) {
-                        request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                    }
+        java.util.List<Tag> tagsList = deleteTagsRequest.getTags();
+        int tagsListIndex = 1;
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
                 }
-                if (tagsListValue != null) {
-                    if (tagsListValue.getValue() != null) {
-                        request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
-                    }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
                 }
-
-                tagsListIndex++;
             }
+
+            tagsListIndex++;
         }
 
 

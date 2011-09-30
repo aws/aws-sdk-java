@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteVpnConnectionRequestMarshaller implements Marshaller<Request<DeleteVpnConnectionRequest>, DeleteVpnConnectionRequest> {
 
     public Request<DeleteVpnConnectionRequest> marshall(DeleteVpnConnectionRequest deleteVpnConnectionRequest) {
+
+        if (deleteVpnConnectionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteVpnConnectionRequest> request = new DefaultRequest<DeleteVpnConnectionRequest>(deleteVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnConnection");
         request.addParameter("Version", "2011-05-15");
-        if (deleteVpnConnectionRequest != null) {
-            if (deleteVpnConnectionRequest.getVpnConnectionId() != null) {
-                request.addParameter("VpnConnectionId", StringUtils.fromString(deleteVpnConnectionRequest.getVpnConnectionId()));
-            }
+
+        if (deleteVpnConnectionRequest.getVpnConnectionId() != null) {
+            request.addParameter("VpnConnectionId", StringUtils.fromString(deleteVpnConnectionRequest.getVpnConnectionId()));
         }
 
 

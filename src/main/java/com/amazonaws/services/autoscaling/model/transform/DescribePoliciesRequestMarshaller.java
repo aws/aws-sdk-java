@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,34 +31,33 @@ import com.amazonaws.util.StringUtils;
 public class DescribePoliciesRequestMarshaller implements Marshaller<Request<DescribePoliciesRequest>, DescribePoliciesRequest> {
 
     public Request<DescribePoliciesRequest> marshall(DescribePoliciesRequest describePoliciesRequest) {
+
+        if (describePoliciesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribePoliciesRequest> request = new DefaultRequest<DescribePoliciesRequest>(describePoliciesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribePolicies");
         request.addParameter("Version", "2011-01-01");
-        if (describePoliciesRequest != null) {
-            if (describePoliciesRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(describePoliciesRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (describePoliciesRequest != null) {
-            java.util.List<String> policyNamesList = describePoliciesRequest.getPolicyNames();
-            int policyNamesListIndex = 1;
 
-            for (String policyNamesListValue : policyNamesList) {
-                if (policyNamesListValue != null) {
-                    request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));
-                }
-                policyNamesListIndex++;
-            }
+        if (describePoliciesRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(describePoliciesRequest.getAutoScalingGroupName()));
         }
-        if (describePoliciesRequest != null) {
-            if (describePoliciesRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describePoliciesRequest.getNextToken()));
+
+        java.util.List<String> policyNamesList = describePoliciesRequest.getPolicyNames();
+        int policyNamesListIndex = 1;
+        for (String policyNamesListValue : policyNamesList) {
+            if (policyNamesListValue != null) {
+                request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));
             }
+
+            policyNamesListIndex++;
         }
-        if (describePoliciesRequest != null) {
-            if (describePoliciesRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describePoliciesRequest.getMaxRecords()));
-            }
+        if (describePoliciesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describePoliciesRequest.getNextToken()));
+        }
+        if (describePoliciesRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describePoliciesRequest.getMaxRecords()));
         }
 
 

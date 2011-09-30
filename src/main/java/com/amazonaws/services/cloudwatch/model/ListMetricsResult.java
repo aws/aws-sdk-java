@@ -37,6 +37,7 @@ public class ListMetricsResult {
      * @return A list of metrics used to generate statistics for an AWS account.
      */
     public java.util.List<Metric> getMetrics() {
+        
         if (metrics == null) {
             metrics = new java.util.ArrayList<Metric>();
         }
@@ -67,6 +68,7 @@ public class ListMetricsResult {
      *         together. 
      */
     public ListMetricsResult withMetrics(Metric... metrics) {
+        if (getMetrics() == null) setMetrics(new java.util.ArrayList<Metric>());
         for (Metric value : metrics) {
             getMetrics().add(value);
         }

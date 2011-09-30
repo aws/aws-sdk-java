@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class UnsubscribeRequestMarshaller implements Marshaller<Request<UnsubscribeRequest>, UnsubscribeRequest> {
 
     public Request<UnsubscribeRequest> marshall(UnsubscribeRequest unsubscribeRequest) {
+
+        if (unsubscribeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<UnsubscribeRequest> request = new DefaultRequest<UnsubscribeRequest>(unsubscribeRequest, "AmazonSNS");
         request.addParameter("Action", "Unsubscribe");
         request.addParameter("Version", "2010-03-31");
-        if (unsubscribeRequest != null) {
-            if (unsubscribeRequest.getSubscriptionArn() != null) {
-                request.addParameter("SubscriptionArn", StringUtils.fromString(unsubscribeRequest.getSubscriptionArn()));
-            }
+
+        if (unsubscribeRequest.getSubscriptionArn() != null) {
+            request.addParameter("SubscriptionArn", StringUtils.fromString(unsubscribeRequest.getSubscriptionArn()));
         }
 
 

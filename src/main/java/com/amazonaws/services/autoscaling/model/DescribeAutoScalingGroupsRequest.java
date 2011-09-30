@@ -60,6 +60,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest {
      * @return A list of Auto Scaling group names.
      */
     public java.util.List<String> getAutoScalingGroupNames() {
+        
         if (autoScalingGroupNames == null) {
             autoScalingGroupNames = new java.util.ArrayList<String>();
         }
@@ -90,6 +91,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAutoScalingGroupsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
+        if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>());
         for (String value : autoScalingGroupNames) {
             getAutoScalingGroupNames().add(value);
         }

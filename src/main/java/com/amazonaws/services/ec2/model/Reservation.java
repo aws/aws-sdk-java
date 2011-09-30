@@ -170,6 +170,7 @@ public class Reservation {
      *         reservation.
      */
     public java.util.List<GroupIdentifier> getGroups() {
+        
         if (groups == null) {
             groups = new java.util.ArrayList<GroupIdentifier>();
         }
@@ -204,6 +205,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroups(GroupIdentifier... groups) {
+        if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>());
         for (GroupIdentifier value : groups) {
             getGroups().add(value);
         }
@@ -240,6 +242,7 @@ public class Reservation {
      *         reservation.
      */
     public java.util.List<String> getGroupNames() {
+        
         if (groupNames == null) {
             groupNames = new java.util.ArrayList<String>();
         }
@@ -274,6 +277,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroupNames(String... groupNames) {
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
         for (String value : groupNames) {
             getGroupNames().add(value);
         }
@@ -308,6 +312,7 @@ public class Reservation {
      * @return The list of Amazon EC2 instances included in this reservation.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -338,6 +343,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }

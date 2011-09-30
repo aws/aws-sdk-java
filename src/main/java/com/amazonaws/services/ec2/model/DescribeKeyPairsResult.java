@@ -32,6 +32,7 @@ public class DescribeKeyPairsResult {
      * @return The list of described key pairs.
      */
     public java.util.List<KeyPairInfo> getKeyPairs() {
+        
         if (keyPairs == null) {
             keyPairs = new java.util.ArrayList<KeyPairInfo>();
         }
@@ -62,6 +63,7 @@ public class DescribeKeyPairsResult {
      *         together. 
      */
     public DescribeKeyPairsResult withKeyPairs(KeyPairInfo... keyPairs) {
+        if (getKeyPairs() == null) setKeyPairs(new java.util.ArrayList<KeyPairInfo>());
         for (KeyPairInfo value : keyPairs) {
             getKeyPairs().add(value);
         }

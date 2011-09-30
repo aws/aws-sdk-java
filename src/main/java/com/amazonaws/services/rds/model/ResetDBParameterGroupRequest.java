@@ -216,6 +216,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      *         method): <code>pending-reboot</code>
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -282,6 +283,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ResetDBParameterGroupRequest withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }

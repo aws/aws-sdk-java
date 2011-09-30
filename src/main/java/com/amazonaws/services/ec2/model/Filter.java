@@ -112,6 +112,7 @@ public class Filter {
      * @return Contains one or more values for the filter.
      */
     public java.util.List<String> getValues() {
+        
         if (values == null) {
             values = new java.util.ArrayList<String>();
         }
@@ -142,6 +143,7 @@ public class Filter {
      *         together. 
      */
     public Filter withValues(String... values) {
+        if (getValues() == null) setValues(new java.util.ArrayList<String>());
         for (String value : values) {
             getValues().add(value);
         }

@@ -446,6 +446,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         contain two consecutive hyphens</li> </ul>
      */
     public java.util.List<String> getDBSecurityGroups() {
+        
         if (dBSecurityGroups == null) {
             dBSecurityGroups = new java.util.ArrayList<String>();
         }
@@ -492,6 +493,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<String>());
         for (String value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }

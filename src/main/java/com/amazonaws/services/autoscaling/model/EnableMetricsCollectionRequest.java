@@ -127,6 +127,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
      *         </ul>
      */
     public java.util.List<String> getMetrics() {
+        
         if (metrics == null) {
             metrics = new java.util.ArrayList<String>();
         }
@@ -181,6 +182,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public EnableMetricsCollectionRequest withMetrics(String... metrics) {
+        if (getMetrics() == null) setMetrics(new java.util.ArrayList<String>());
         for (String value : metrics) {
             getMetrics().add(value);
         }

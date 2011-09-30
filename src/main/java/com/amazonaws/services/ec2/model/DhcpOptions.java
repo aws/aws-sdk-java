@@ -76,6 +76,7 @@ public class DhcpOptions {
      * @return Contains information about the set of DHCP options.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
+        
         if (dhcpConfigurations == null) {
             dhcpConfigurations = new java.util.ArrayList<DhcpConfiguration>();
         }
@@ -106,6 +107,7 @@ public class DhcpOptions {
      *         together. 
      */
     public DhcpOptions withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
+        if (getDhcpConfigurations() == null) setDhcpConfigurations(new java.util.ArrayList<DhcpConfiguration>());
         for (DhcpConfiguration value : dhcpConfigurations) {
             getDhcpConfigurations().add(value);
         }
@@ -138,6 +140,7 @@ public class DhcpOptions {
      * @return A list of tags for the DhcpOptions.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -168,6 +171,7 @@ public class DhcpOptions {
      *         together. 
      */
     public DhcpOptions withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

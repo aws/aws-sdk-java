@@ -50,7 +50,7 @@ public class Stack {
      * Current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE
      */
     private String stackStatus;
 
@@ -81,6 +81,11 @@ public class Stack {
      * <b>Range: </b>1 - <br/>
      */
     private Integer timeoutInMinutes;
+
+    /**
+     * The capabilities allowed in the stack.
+     */
+    private java.util.List<String> capabilities;
 
     /**
      * A list of output structures.
@@ -195,6 +200,7 @@ public class Stack {
      * @return A list of <code>Parameter</code> structures.
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -225,6 +231,7 @@ public class Stack {
      *         together. 
      */
     public Stack withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }
@@ -289,7 +296,7 @@ public class Stack {
      * Current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE
      *
      * @return Current status of the stack.
      *
@@ -303,7 +310,7 @@ public class Stack {
      * Current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE
      *
      * @param stackStatus Current status of the stack.
      *
@@ -319,7 +326,7 @@ public class Stack {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE
      *
      * @param stackStatus Current status of the stack.
      *
@@ -436,6 +443,7 @@ public class Stack {
      * @return SNS topic ARNs to which stack related events are published.
      */
     public java.util.List<String> getNotificationARNs() {
+        
         if (notificationARNs == null) {
             notificationARNs = new java.util.ArrayList<String>();
         }
@@ -472,6 +480,7 @@ public class Stack {
      *         together. 
      */
     public Stack withNotificationARNs(String... notificationARNs) {
+        if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>());
         for (String value : notificationARNs) {
             getNotificationARNs().add(value);
         }
@@ -545,11 +554,76 @@ public class Stack {
     
     
     /**
+     * The capabilities allowed in the stack.
+     *
+     * @return The capabilities allowed in the stack.
+     */
+    public java.util.List<String> getCapabilities() {
+        
+        if (capabilities == null) {
+            capabilities = new java.util.ArrayList<String>();
+        }
+        return capabilities;
+    }
+    
+    /**
+     * The capabilities allowed in the stack.
+     *
+     * @param capabilities The capabilities allowed in the stack.
+     */
+    public void setCapabilities(java.util.Collection<String> capabilities) {
+        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
+        if (capabilities != null) {
+            capabilitiesCopy.addAll(capabilities);
+        }
+        this.capabilities = capabilitiesCopy;
+    }
+    
+    /**
+     * The capabilities allowed in the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The capabilities allowed in the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Stack withCapabilities(String... capabilities) {
+        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>());
+        for (String value : capabilities) {
+            getCapabilities().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The capabilities allowed in the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The capabilities allowed in the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Stack withCapabilities(java.util.Collection<String> capabilities) {
+        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
+        if (capabilities != null) {
+            capabilitiesCopy.addAll(capabilities);
+        }
+        this.capabilities = capabilitiesCopy;
+
+        return this;
+    }
+    
+    /**
      * A list of output structures.
      *
      * @return A list of output structures.
      */
     public java.util.List<Output> getOutputs() {
+        
         if (outputs == null) {
             outputs = new java.util.ArrayList<Output>();
         }
@@ -580,6 +654,7 @@ public class Stack {
      *         together. 
      */
     public Stack withOutputs(Output... outputs) {
+        if (getOutputs() == null) setOutputs(new java.util.ArrayList<Output>());
         for (Output value : outputs) {
             getOutputs().add(value);
         }
@@ -628,6 +703,7 @@ public class Stack {
         sb.append("DisableRollback: " + disableRollback + ", ");
         sb.append("NotificationARNs: " + notificationARNs + ", ");
         sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
+        sb.append("Capabilities: " + capabilities + ", ");
         sb.append("Outputs: " + outputs + ", ");
         sb.append("}");
         return sb.toString();

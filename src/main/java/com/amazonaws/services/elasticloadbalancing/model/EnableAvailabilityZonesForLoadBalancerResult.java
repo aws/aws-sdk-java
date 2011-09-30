@@ -32,6 +32,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult {
      * @return An updated list of Availability Zones for the LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -62,6 +63,7 @@ public class EnableAvailabilityZonesForLoadBalancerResult {
      *         together. 
      */
     public EnableAvailabilityZonesForLoadBalancerResult withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

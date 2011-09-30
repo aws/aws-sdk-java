@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<CreateVpnConnectionRequest>, CreateVpnConnectionRequest> {
 
     public Request<CreateVpnConnectionRequest> marshall(CreateVpnConnectionRequest createVpnConnectionRequest) {
+
+        if (createVpnConnectionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateVpnConnectionRequest> request = new DefaultRequest<CreateVpnConnectionRequest>(createVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnConnection");
         request.addParameter("Version", "2011-05-15");
-        if (createVpnConnectionRequest != null) {
-            if (createVpnConnectionRequest.getType() != null) {
-                request.addParameter("Type", StringUtils.fromString(createVpnConnectionRequest.getType()));
-            }
+
+        if (createVpnConnectionRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createVpnConnectionRequest.getType()));
         }
-        if (createVpnConnectionRequest != null) {
-            if (createVpnConnectionRequest.getCustomerGatewayId() != null) {
-                request.addParameter("CustomerGatewayId", StringUtils.fromString(createVpnConnectionRequest.getCustomerGatewayId()));
-            }
+        if (createVpnConnectionRequest.getCustomerGatewayId() != null) {
+            request.addParameter("CustomerGatewayId", StringUtils.fromString(createVpnConnectionRequest.getCustomerGatewayId()));
         }
-        if (createVpnConnectionRequest != null) {
-            if (createVpnConnectionRequest.getVpnGatewayId() != null) {
-                request.addParameter("VpnGatewayId", StringUtils.fromString(createVpnConnectionRequest.getVpnGatewayId()));
-            }
+        if (createVpnConnectionRequest.getVpnGatewayId() != null) {
+            request.addParameter("VpnGatewayId", StringUtils.fromString(createVpnConnectionRequest.getVpnGatewayId()));
         }
 
 

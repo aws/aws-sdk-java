@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class SwapEnvironmentCNAMEsRequestMarshaller implements Marshaller<Request<SwapEnvironmentCNAMEsRequest>, SwapEnvironmentCNAMEsRequest> {
 
     public Request<SwapEnvironmentCNAMEsRequest> marshall(SwapEnvironmentCNAMEsRequest swapEnvironmentCNAMEsRequest) {
+
+        if (swapEnvironmentCNAMEsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SwapEnvironmentCNAMEsRequest> request = new DefaultRequest<SwapEnvironmentCNAMEsRequest>(swapEnvironmentCNAMEsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "SwapEnvironmentCNAMEs");
         request.addParameter("Version", "2010-12-01");
-        if (swapEnvironmentCNAMEsRequest != null) {
-            if (swapEnvironmentCNAMEsRequest.getSourceEnvironmentId() != null) {
-                request.addParameter("SourceEnvironmentId", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getSourceEnvironmentId()));
-            }
+
+        if (swapEnvironmentCNAMEsRequest.getSourceEnvironmentId() != null) {
+            request.addParameter("SourceEnvironmentId", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getSourceEnvironmentId()));
         }
-        if (swapEnvironmentCNAMEsRequest != null) {
-            if (swapEnvironmentCNAMEsRequest.getSourceEnvironmentName() != null) {
-                request.addParameter("SourceEnvironmentName", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getSourceEnvironmentName()));
-            }
+        if (swapEnvironmentCNAMEsRequest.getSourceEnvironmentName() != null) {
+            request.addParameter("SourceEnvironmentName", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getSourceEnvironmentName()));
         }
-        if (swapEnvironmentCNAMEsRequest != null) {
-            if (swapEnvironmentCNAMEsRequest.getDestinationEnvironmentId() != null) {
-                request.addParameter("DestinationEnvironmentId", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getDestinationEnvironmentId()));
-            }
+        if (swapEnvironmentCNAMEsRequest.getDestinationEnvironmentId() != null) {
+            request.addParameter("DestinationEnvironmentId", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getDestinationEnvironmentId()));
         }
-        if (swapEnvironmentCNAMEsRequest != null) {
-            if (swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName() != null) {
-                request.addParameter("DestinationEnvironmentName", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName()));
-            }
+        if (swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName() != null) {
+            request.addParameter("DestinationEnvironmentName", StringUtils.fromString(swapEnvironmentCNAMEsRequest.getDestinationEnvironmentName()));
         }
 
 

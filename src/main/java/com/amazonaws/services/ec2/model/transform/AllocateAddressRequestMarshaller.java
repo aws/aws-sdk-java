@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class AllocateAddressRequestMarshaller implements Marshaller<Request<AllocateAddressRequest>, AllocateAddressRequest> {
 
     public Request<AllocateAddressRequest> marshall(AllocateAddressRequest allocateAddressRequest) {
+
+        if (allocateAddressRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AllocateAddressRequest> request = new DefaultRequest<AllocateAddressRequest>(allocateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AllocateAddress");
         request.addParameter("Version", "2011-05-15");
-        if (allocateAddressRequest != null) {
-            if (allocateAddressRequest.getDomain() != null) {
-                request.addParameter("Domain", StringUtils.fromString(allocateAddressRequest.getDomain()));
-            }
+
+        if (allocateAddressRequest.getDomain() != null) {
+            request.addParameter("Domain", StringUtils.fromString(allocateAddressRequest.getDomain()));
         }
 
 

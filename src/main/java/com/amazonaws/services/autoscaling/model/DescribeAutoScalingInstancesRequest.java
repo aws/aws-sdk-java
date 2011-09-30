@@ -71,6 +71,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         instances are requested, they are ignored with no error.
      */
     public java.util.List<String> getInstanceIds() {
+        
         if (instanceIds == null) {
             instanceIds = new java.util.ArrayList<String>();
         }
@@ -113,6 +114,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeAutoScalingInstancesRequest withInstanceIds(String... instanceIds) {
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }

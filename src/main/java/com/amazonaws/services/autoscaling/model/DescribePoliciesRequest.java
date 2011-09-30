@@ -123,6 +123,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest {
      *         policy names are requested, they are ignored with no error.
      */
     public java.util.List<String> getPolicyNames() {
+        
         if (policyNames == null) {
             policyNames = new java.util.ArrayList<String>();
         }
@@ -169,6 +170,7 @@ public class DescribePoliciesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribePoliciesRequest withPolicyNames(String... policyNames) {
+        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>());
         for (String value : policyNames) {
             getPolicyNames().add(value);
         }

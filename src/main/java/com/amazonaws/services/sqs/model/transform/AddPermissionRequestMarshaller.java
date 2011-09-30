@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,40 +31,40 @@ import com.amazonaws.util.StringUtils;
 public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPermissionRequest>, AddPermissionRequest> {
 
     public Request<AddPermissionRequest> marshall(AddPermissionRequest addPermissionRequest) {
+
+        if (addPermissionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AmazonSQS");
         request.addParameter("Action", "AddPermission");
         request.addParameter("Version", "2009-02-01");
-        if (addPermissionRequest != null) {
-            if (addPermissionRequest.getQueueUrl() != null) {
-                request.addParameter("QueueUrl", StringUtils.fromString(addPermissionRequest.getQueueUrl()));
-            }
-        }
-        if (addPermissionRequest != null) {
-            if (addPermissionRequest.getLabel() != null) {
-                request.addParameter("Label", StringUtils.fromString(addPermissionRequest.getLabel()));
-            }
-        }
-        if (addPermissionRequest != null) {
-            java.util.List<String> aWSAccountIdsList = addPermissionRequest.getAWSAccountIds();
-            int aWSAccountIdsListIndex = 1;
 
-            for (String aWSAccountIdsListValue : aWSAccountIdsList) {
-                if (aWSAccountIdsListValue != null) {
-                    request.addParameter("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.fromString(aWSAccountIdsListValue));
-                }
-                aWSAccountIdsListIndex++;
-            }
+        if (addPermissionRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(addPermissionRequest.getQueueUrl()));
         }
-        if (addPermissionRequest != null) {
-            java.util.List<String> actionsList = addPermissionRequest.getActions();
-            int actionsListIndex = 1;
+        if (addPermissionRequest.getLabel() != null) {
+            request.addParameter("Label", StringUtils.fromString(addPermissionRequest.getLabel()));
+        }
 
-            for (String actionsListValue : actionsList) {
-                if (actionsListValue != null) {
-                    request.addParameter("ActionName." + actionsListIndex, StringUtils.fromString(actionsListValue));
-                }
-                actionsListIndex++;
+        java.util.List<String> aWSAccountIdsList = addPermissionRequest.getAWSAccountIds();
+        int aWSAccountIdsListIndex = 1;
+        for (String aWSAccountIdsListValue : aWSAccountIdsList) {
+            if (aWSAccountIdsListValue != null) {
+                request.addParameter("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.fromString(aWSAccountIdsListValue));
             }
+
+            aWSAccountIdsListIndex++;
+        }
+
+        java.util.List<String> actionsList = addPermissionRequest.getActions();
+        int actionsListIndex = 1;
+        for (String actionsListValue : actionsList) {
+            if (actionsListValue != null) {
+                request.addParameter("ActionName." + actionsListIndex, StringUtils.fromString(actionsListValue));
+            }
+
+            actionsListIndex++;
         }
 
 

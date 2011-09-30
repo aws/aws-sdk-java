@@ -40,6 +40,7 @@ public class DescribeAutoScalingInstancesResult {
      * @return A list of Auto Scaling instances.
      */
     public java.util.List<AutoScalingInstanceDetails> getAutoScalingInstances() {
+        
         if (autoScalingInstances == null) {
             autoScalingInstances = new java.util.ArrayList<AutoScalingInstanceDetails>();
         }
@@ -70,6 +71,7 @@ public class DescribeAutoScalingInstancesResult {
      *         together. 
      */
     public DescribeAutoScalingInstancesResult withAutoScalingInstances(AutoScalingInstanceDetails... autoScalingInstances) {
+        if (getAutoScalingInstances() == null) setAutoScalingInstances(new java.util.ArrayList<AutoScalingInstanceDetails>());
         for (AutoScalingInstanceDetails value : autoScalingInstances) {
             getAutoScalingInstances().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<DeactivateLicenseRequest>, DeactivateLicenseRequest> {
 
     public Request<DeactivateLicenseRequest> marshall(DeactivateLicenseRequest deactivateLicenseRequest) {
+
+        if (deactivateLicenseRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeactivateLicenseRequest> request = new DefaultRequest<DeactivateLicenseRequest>(deactivateLicenseRequest, "AmazonEC2");
         request.addParameter("Action", "DeactivateLicense");
         request.addParameter("Version", "2011-05-15");
-        if (deactivateLicenseRequest != null) {
-            if (deactivateLicenseRequest.getLicenseId() != null) {
-                request.addParameter("LicenseId", StringUtils.fromString(deactivateLicenseRequest.getLicenseId()));
-            }
+
+        if (deactivateLicenseRequest.getLicenseId() != null) {
+            request.addParameter("LicenseId", StringUtils.fromString(deactivateLicenseRequest.getLicenseId()));
         }
-        if (deactivateLicenseRequest != null) {
-            if (deactivateLicenseRequest.getCapacity() != null) {
-                request.addParameter("Capacity", StringUtils.fromInteger(deactivateLicenseRequest.getCapacity()));
-            }
+        if (deactivateLicenseRequest.getCapacity() != null) {
+            request.addParameter("Capacity", StringUtils.fromInteger(deactivateLicenseRequest.getCapacity()));
         }
 
 

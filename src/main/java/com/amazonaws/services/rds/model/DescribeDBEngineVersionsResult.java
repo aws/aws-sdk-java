@@ -72,6 +72,7 @@ public class DescribeDBEngineVersionsResult {
      * @return A list of <code>DBEngineVersion</code> elements.
      */
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
+        
         if (dBEngineVersions == null) {
             dBEngineVersions = new java.util.ArrayList<DBEngineVersion>();
         }
@@ -102,6 +103,7 @@ public class DescribeDBEngineVersionsResult {
      *         together. 
      */
     public DescribeDBEngineVersionsResult withDBEngineVersions(DBEngineVersion... dBEngineVersions) {
+        if (getDBEngineVersions() == null) setDBEngineVersions(new java.util.ArrayList<DBEngineVersion>());
         for (DBEngineVersion value : dBEngineVersions) {
             getDBEngineVersions().add(value);
         }

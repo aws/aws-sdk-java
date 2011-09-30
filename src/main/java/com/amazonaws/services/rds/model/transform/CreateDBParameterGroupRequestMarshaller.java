@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateDBParameterGroupRequestMarshaller implements Marshaller<Request<CreateDBParameterGroupRequest>, CreateDBParameterGroupRequest> {
 
     public Request<CreateDBParameterGroupRequest> marshall(CreateDBParameterGroupRequest createDBParameterGroupRequest) {
+
+        if (createDBParameterGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateDBParameterGroupRequest> request = new DefaultRequest<CreateDBParameterGroupRequest>(createDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBParameterGroup");
         request.addParameter("Version", "2011-04-01");
-        if (createDBParameterGroupRequest != null) {
-            if (createDBParameterGroupRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupName()));
-            }
+
+        if (createDBParameterGroupRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupName()));
         }
-        if (createDBParameterGroupRequest != null) {
-            if (createDBParameterGroupRequest.getDBParameterGroupFamily() != null) {
-                request.addParameter("DBParameterGroupFamily", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupFamily()));
-            }
+        if (createDBParameterGroupRequest.getDBParameterGroupFamily() != null) {
+            request.addParameter("DBParameterGroupFamily", StringUtils.fromString(createDBParameterGroupRequest.getDBParameterGroupFamily()));
         }
-        if (createDBParameterGroupRequest != null) {
-            if (createDBParameterGroupRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(createDBParameterGroupRequest.getDescription()));
-            }
+        if (createDBParameterGroupRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createDBParameterGroupRequest.getDescription()));
         }
 
 

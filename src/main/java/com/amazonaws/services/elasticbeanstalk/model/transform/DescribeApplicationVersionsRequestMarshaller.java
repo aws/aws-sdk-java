@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class DescribeApplicationVersionsRequestMarshaller implements Marshaller<Request<DescribeApplicationVersionsRequest>, DescribeApplicationVersionsRequest> {
 
     public Request<DescribeApplicationVersionsRequest> marshall(DescribeApplicationVersionsRequest describeApplicationVersionsRequest) {
+
+        if (describeApplicationVersionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeApplicationVersionsRequest> request = new DefaultRequest<DescribeApplicationVersionsRequest>(describeApplicationVersionsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeApplicationVersions");
         request.addParameter("Version", "2010-12-01");
-        if (describeApplicationVersionsRequest != null) {
-            if (describeApplicationVersionsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(describeApplicationVersionsRequest.getApplicationName()));
-            }
-        }
-        if (describeApplicationVersionsRequest != null) {
-            java.util.List<String> versionLabelsList = describeApplicationVersionsRequest.getVersionLabels();
-            int versionLabelsListIndex = 1;
 
-            for (String versionLabelsListValue : versionLabelsList) {
-                if (versionLabelsListValue != null) {
-                    request.addParameter("VersionLabels.member." + versionLabelsListIndex, StringUtils.fromString(versionLabelsListValue));
-                }
-                versionLabelsListIndex++;
+        if (describeApplicationVersionsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(describeApplicationVersionsRequest.getApplicationName()));
+        }
+
+        java.util.List<String> versionLabelsList = describeApplicationVersionsRequest.getVersionLabels();
+        int versionLabelsListIndex = 1;
+        for (String versionLabelsListValue : versionLabelsList) {
+            if (versionLabelsListValue != null) {
+                request.addParameter("VersionLabels.member." + versionLabelsListIndex, StringUtils.fromString(versionLabelsListValue));
             }
+
+            versionLabelsListIndex++;
         }
 
 

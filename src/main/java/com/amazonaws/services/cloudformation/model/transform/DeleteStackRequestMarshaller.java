@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteStackRequest>, DeleteStackRequest> {
 
     public Request<DeleteStackRequest> marshall(DeleteStackRequest deleteStackRequest) {
+
+        if (deleteStackRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteStackRequest> request = new DefaultRequest<DeleteStackRequest>(deleteStackRequest, "AmazonCloudFormation");
         request.addParameter("Action", "DeleteStack");
         request.addParameter("Version", "2010-05-15");
-        if (deleteStackRequest != null) {
-            if (deleteStackRequest.getStackName() != null) {
-                request.addParameter("StackName", StringUtils.fromString(deleteStackRequest.getStackName()));
-            }
+
+        if (deleteStackRequest.getStackName() != null) {
+            request.addParameter("StackName", StringUtils.fromString(deleteStackRequest.getStackName()));
         }
 
 

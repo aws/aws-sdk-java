@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,77 +31,60 @@ import com.amazonaws.util.StringUtils;
 public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Request<ResetDBParameterGroupRequest>, ResetDBParameterGroupRequest> {
 
     public Request<ResetDBParameterGroupRequest> marshall(ResetDBParameterGroupRequest resetDBParameterGroupRequest) {
+
+        if (resetDBParameterGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ResetDBParameterGroup");
         request.addParameter("Version", "2011-04-01");
-        if (resetDBParameterGroupRequest != null) {
-            if (resetDBParameterGroupRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(resetDBParameterGroupRequest.getDBParameterGroupName()));
-            }
+
+        if (resetDBParameterGroupRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(resetDBParameterGroupRequest.getDBParameterGroupName()));
         }
-        if (resetDBParameterGroupRequest != null) {
-            if (resetDBParameterGroupRequest.isResetAllParameters() != null) {
-                request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetDBParameterGroupRequest.isResetAllParameters()));
-            }
+        if (resetDBParameterGroupRequest.isResetAllParameters() != null) {
+            request.addParameter("ResetAllParameters", StringUtils.fromBoolean(resetDBParameterGroupRequest.isResetAllParameters()));
         }
 
-        if (resetDBParameterGroupRequest != null) {
-            java.util.List<Parameter> parametersList = resetDBParameterGroupRequest.getParameters();
-            int parametersListIndex = 1;
-            for (Parameter parametersListValue : parametersList) {
-                if (parametersListValue != null) {
-                    if (parametersListValue.getParameterName() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterName", StringUtils.fromString(parametersListValue.getParameterName()));
-                    }
+        java.util.List<Parameter> parametersList = resetDBParameterGroupRequest.getParameters();
+        int parametersListIndex = 1;
+        for (Parameter parametersListValue : parametersList) {
+            Parameter parameterMember = parametersListValue;
+            if (parameterMember != null) {
+                if (parameterMember.getParameterName() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterName", StringUtils.fromString(parameterMember.getParameterName()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getParameterValue() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue", StringUtils.fromString(parametersListValue.getParameterValue()));
-                    }
+                if (parameterMember.getParameterValue() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ParameterValue", StringUtils.fromString(parameterMember.getParameterValue()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getDescription() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".Description", StringUtils.fromString(parametersListValue.getDescription()));
-                    }
+                if (parameterMember.getDescription() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Description", StringUtils.fromString(parameterMember.getDescription()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getSource() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".Source", StringUtils.fromString(parametersListValue.getSource()));
-                    }
+                if (parameterMember.getSource() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".Source", StringUtils.fromString(parameterMember.getSource()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getApplyType() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".ApplyType", StringUtils.fromString(parametersListValue.getApplyType()));
-                    }
+                if (parameterMember.getApplyType() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyType", StringUtils.fromString(parameterMember.getApplyType()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getDataType() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".DataType", StringUtils.fromString(parametersListValue.getDataType()));
-                    }
+                if (parameterMember.getDataType() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".DataType", StringUtils.fromString(parameterMember.getDataType()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getAllowedValues() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".AllowedValues", StringUtils.fromString(parametersListValue.getAllowedValues()));
-                    }
+                if (parameterMember.getAllowedValues() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".AllowedValues", StringUtils.fromString(parameterMember.getAllowedValues()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.isModifiable() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parametersListValue.isModifiable()));
-                    }
+                if (parameterMember.isModifiable() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".IsModifiable", StringUtils.fromBoolean(parameterMember.isModifiable()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getMinimumEngineVersion() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".MinimumEngineVersion", StringUtils.fromString(parametersListValue.getMinimumEngineVersion()));
-                    }
+                if (parameterMember.getMinimumEngineVersion() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".MinimumEngineVersion", StringUtils.fromString(parameterMember.getMinimumEngineVersion()));
                 }
-                if (parametersListValue != null) {
-                    if (parametersListValue.getApplyMethod() != null) {
-                        request.addParameter("Parameters.member." + parametersListIndex + ".ApplyMethod", StringUtils.fromString(parametersListValue.getApplyMethod()));
-                    }
+                if (parameterMember.getApplyMethod() != null) {
+                    request.addParameter("Parameters.Parameter." + parametersListIndex + ".ApplyMethod", StringUtils.fromString(parameterMember.getApplyMethod()));
                 }
-
-                parametersListIndex++;
             }
+
+            parametersListIndex++;
         }
 
 

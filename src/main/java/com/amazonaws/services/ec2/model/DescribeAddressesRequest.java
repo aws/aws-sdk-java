@@ -48,6 +48,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      * @return The optional list of Elastic IP addresses to describe.
      */
     public java.util.List<String> getPublicIps() {
+        
         if (publicIps == null) {
             publicIps = new java.util.ArrayList<String>();
         }
@@ -78,6 +79,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAddressesRequest withPublicIps(String... publicIps) {
+        if (getPublicIps() == null) setPublicIps(new java.util.ArrayList<String>());
         for (String value : publicIps) {
             getPublicIps().add(value);
         }
@@ -118,6 +120,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -164,6 +167,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAddressesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -204,6 +208,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      * @return The value of the AllocationIds property for this object.
      */
     public java.util.List<String> getAllocationIds() {
+        
         if (allocationIds == null) {
             allocationIds = new java.util.ArrayList<String>();
         }
@@ -234,6 +239,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAddressesRequest withAllocationIds(String... allocationIds) {
+        if (getAllocationIds() == null) setAllocationIds(new java.util.ArrayList<String>());
         for (String value : allocationIds) {
             getAllocationIds().add(value);
         }

@@ -57,6 +57,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
      * @return The list of instances to terminate.
      */
     public java.util.List<String> getInstanceIds() {
+        
         if (instanceIds == null) {
             instanceIds = new java.util.ArrayList<String>();
         }
@@ -87,6 +88,7 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RebootInstancesRequest withInstanceIds(String... instanceIds) {
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }

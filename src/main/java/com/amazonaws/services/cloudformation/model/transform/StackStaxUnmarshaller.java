@@ -87,6 +87,10 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     stack.setTimeoutInMinutes(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Capabilities/member", targetDepth)) {
+                    stack.getCapabilities().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Outputs/member", targetDepth)) {
                     stack.getOutputs().add(OutputStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

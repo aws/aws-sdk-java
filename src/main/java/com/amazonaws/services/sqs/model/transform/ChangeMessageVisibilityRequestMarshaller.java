@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ChangeMessageVisibilityRequestMarshaller implements Marshaller<Request<ChangeMessageVisibilityRequest>, ChangeMessageVisibilityRequest> {
 
     public Request<ChangeMessageVisibilityRequest> marshall(ChangeMessageVisibilityRequest changeMessageVisibilityRequest) {
+
+        if (changeMessageVisibilityRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ChangeMessageVisibilityRequest> request = new DefaultRequest<ChangeMessageVisibilityRequest>(changeMessageVisibilityRequest, "AmazonSQS");
         request.addParameter("Action", "ChangeMessageVisibility");
         request.addParameter("Version", "2009-02-01");
-        if (changeMessageVisibilityRequest != null) {
-            if (changeMessageVisibilityRequest.getQueueUrl() != null) {
-                request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityRequest.getQueueUrl()));
-            }
+
+        if (changeMessageVisibilityRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityRequest.getQueueUrl()));
         }
-        if (changeMessageVisibilityRequest != null) {
-            if (changeMessageVisibilityRequest.getReceiptHandle() != null) {
-                request.addParameter("ReceiptHandle", StringUtils.fromString(changeMessageVisibilityRequest.getReceiptHandle()));
-            }
+        if (changeMessageVisibilityRequest.getReceiptHandle() != null) {
+            request.addParameter("ReceiptHandle", StringUtils.fromString(changeMessageVisibilityRequest.getReceiptHandle()));
         }
-        if (changeMessageVisibilityRequest != null) {
-            if (changeMessageVisibilityRequest.getVisibilityTimeout() != null) {
-                request.addParameter("VisibilityTimeout", StringUtils.fromInteger(changeMessageVisibilityRequest.getVisibilityTimeout()));
-            }
+        if (changeMessageVisibilityRequest.getVisibilityTimeout() != null) {
+            request.addParameter("VisibilityTimeout", StringUtils.fromInteger(changeMessageVisibilityRequest.getVisibilityTimeout()));
         }
 
 

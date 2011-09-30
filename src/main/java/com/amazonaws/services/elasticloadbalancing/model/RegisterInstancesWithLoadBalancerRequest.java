@@ -124,6 +124,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *         LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -158,6 +159,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      *         together. 
      */
     public RegisterInstancesWithLoadBalancerRequest withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }

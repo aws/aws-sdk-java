@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.importexport.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobRequest>, CancelJobRequest> {
 
     public Request<CancelJobRequest> marshall(CancelJobRequest cancelJobRequest) {
+
+        if (cancelJobRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CancelJobRequest> request = new DefaultRequest<CancelJobRequest>(cancelJobRequest, "AmazonImportExport");
         request.addParameter("Action", "CancelJob");
         request.addParameter("Version", "2010-06-01");
-        if (cancelJobRequest != null) {
-            if (cancelJobRequest.getJobId() != null) {
-                request.addParameter("JobId", StringUtils.fromString(cancelJobRequest.getJobId()));
-            }
+
+        if (cancelJobRequest.getJobId() != null) {
+            request.addParameter("JobId", StringUtils.fromString(cancelJobRequest.getJobId()));
         }
 
 

@@ -19,8 +19,8 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * Queue already exists. SQS returns this error only if the request
- * includes a DefaultVisibilityTimeout value that differs from the value
- * for the existing queue.
+ * includes a <code>DefaultVisibilityTimeout</code> value that differs
+ * from the value for the existing queue.
  * </p>
  */        
 public class QueueNameExistsException extends AmazonServiceException {

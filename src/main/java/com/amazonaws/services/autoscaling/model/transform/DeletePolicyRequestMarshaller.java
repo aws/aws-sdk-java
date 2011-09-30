@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeletePolicyRequestMarshaller implements Marshaller<Request<DeletePolicyRequest>, DeletePolicyRequest> {
 
     public Request<DeletePolicyRequest> marshall(DeletePolicyRequest deletePolicyRequest) {
+
+        if (deletePolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeletePolicy");
         request.addParameter("Version", "2011-01-01");
-        if (deletePolicyRequest != null) {
-            if (deletePolicyRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(deletePolicyRequest.getAutoScalingGroupName()));
-            }
+
+        if (deletePolicyRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(deletePolicyRequest.getAutoScalingGroupName()));
         }
-        if (deletePolicyRequest != null) {
-            if (deletePolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(deletePolicyRequest.getPolicyName()));
-            }
+        if (deletePolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(deletePolicyRequest.getPolicyName()));
         }
 
 

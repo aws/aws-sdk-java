@@ -158,6 +158,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
      *         parameters, and changes are applied when DB Instance reboots. </note>
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -216,6 +217,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyDBParameterGroupRequest withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }

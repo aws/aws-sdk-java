@@ -32,6 +32,7 @@ public class DescribeCustomerGatewaysResult {
      * @return 
      */
     public java.util.List<CustomerGateway> getCustomerGateways() {
+        
         if (customerGateways == null) {
             customerGateways = new java.util.ArrayList<CustomerGateway>();
         }
@@ -62,6 +63,7 @@ public class DescribeCustomerGatewaysResult {
      *         together. 
      */
     public DescribeCustomerGatewaysResult withCustomerGateways(CustomerGateway... customerGateways) {
+        if (getCustomerGateways() == null) setCustomerGateways(new java.util.ArrayList<CustomerGateway>());
         for (CustomerGateway value : customerGateways) {
             getCustomerGateways().add(value);
         }

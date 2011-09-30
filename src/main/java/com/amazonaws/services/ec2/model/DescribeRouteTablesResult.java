@@ -27,6 +27,7 @@ public class DescribeRouteTablesResult {
      * @return The value of the RouteTables property for this object.
      */
     public java.util.List<RouteTable> getRouteTables() {
+        
         if (routeTables == null) {
             routeTables = new java.util.ArrayList<RouteTable>();
         }
@@ -57,6 +58,7 @@ public class DescribeRouteTablesResult {
      *         together. 
      */
     public DescribeRouteTablesResult withRouteTables(RouteTable... routeTables) {
+        if (getRouteTables() == null) setRouteTables(new java.util.ArrayList<RouteTable>());
         for (RouteTable value : routeTables) {
             getRouteTables().add(value);
         }

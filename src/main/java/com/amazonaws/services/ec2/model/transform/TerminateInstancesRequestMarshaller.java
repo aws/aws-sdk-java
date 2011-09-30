@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,19 +31,24 @@ import com.amazonaws.util.StringUtils;
 public class TerminateInstancesRequestMarshaller implements Marshaller<Request<TerminateInstancesRequest>, TerminateInstancesRequest> {
 
     public Request<TerminateInstancesRequest> marshall(TerminateInstancesRequest terminateInstancesRequest) {
+
+        if (terminateInstancesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<TerminateInstancesRequest> request = new DefaultRequest<TerminateInstancesRequest>(terminateInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "TerminateInstances");
         request.addParameter("Version", "2011-05-15");
-        if (terminateInstancesRequest != null) {
-            java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();
-            int instanceIdsListIndex = 1;
 
-            for (String instanceIdsListValue : instanceIdsList) {
-                if (instanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
-                }
-                instanceIdsListIndex++;
+
+        java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();
+        int instanceIdsListIndex = 1;
+        for (String instanceIdsListValue : instanceIdsList) {
+            if (instanceIdsListValue != null) {
+                request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
             }
+
+            instanceIdsListIndex++;
         }
 
 

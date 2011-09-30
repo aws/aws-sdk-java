@@ -32,6 +32,7 @@ public class DescribeVpnConnectionsResult {
      * @return 
      */
     public java.util.List<VpnConnection> getVpnConnections() {
+        
         if (vpnConnections == null) {
             vpnConnections = new java.util.ArrayList<VpnConnection>();
         }
@@ -62,6 +63,7 @@ public class DescribeVpnConnectionsResult {
      *         together. 
      */
     public DescribeVpnConnectionsResult withVpnConnections(VpnConnection... vpnConnections) {
+        if (getVpnConnections() == null) setVpnConnections(new java.util.ArrayList<VpnConnection>());
         for (VpnConnection value : vpnConnections) {
             getVpnConnections().add(value);
         }

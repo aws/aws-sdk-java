@@ -36,6 +36,7 @@ public class TerminateInstancesResult {
      *         has changed.
      */
     public java.util.List<InstanceStateChange> getTerminatingInstances() {
+        
         if (terminatingInstances == null) {
             terminatingInstances = new java.util.ArrayList<InstanceStateChange>();
         }
@@ -70,6 +71,7 @@ public class TerminateInstancesResult {
      *         together. 
      */
     public TerminateInstancesResult withTerminatingInstances(InstanceStateChange... terminatingInstances) {
+        if (getTerminatingInstances() == null) setTerminatingInstances(new java.util.ArrayList<InstanceStateChange>());
         for (InstanceStateChange value : terminatingInstances) {
             getTerminatingInstances().add(value);
         }

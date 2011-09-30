@@ -50,6 +50,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest {
      *         returned.
      */
     public java.util.List<String> getLicenseIds() {
+        
         if (licenseIds == null) {
             licenseIds = new java.util.ArrayList<String>();
         }
@@ -84,6 +85,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeLicensesRequest withLicenseIds(String... licenseIds) {
+        if (getLicenseIds() == null) setLicenseIds(new java.util.ArrayList<String>());
         for (String value : licenseIds) {
             getLicenseIds().add(value);
         }
@@ -126,6 +128,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -172,6 +175,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeLicensesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

@@ -373,17 +373,12 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Returns the description for the specified resource in the specified
+     * Returns a description of the specified resource in the specified
      * stack.
      * </p>
      * <p>
      * For deleted stacks, DescribeStackResource returns resource information
      * for up to 90 days after the stack has been deleted.
-     * </p>
-     * <p>
-     * You must specify <code>StackName</code> and
-     * <code>LogicalResourceId</code> .
-     * 
      * </p>
      *
      * @param describeStackResourceRequest Container for the necessary
@@ -444,7 +439,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     
     /**
      * <p>
-     * Returns descriptions for all resources of the specified stack.
+     * Returns descriptions of all resources of the specified stack.
      * </p>
      * <p>
      * For deleted stacks, ListStackResources returns resource information
@@ -523,6 +518,46 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<DescribeStackResourcesResult>() {
             public DescribeStackResourcesResult call() throws Exception {
                 return describeStackResources(describeStackResourcesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Updates a stack as specified in the template. After the call
+     * completes successfully, the stack update starts. You can check the
+     * status of the stack via the DescribeStacks action.
+     * </p>
+     * <p>
+     * To get a copy of the template for an existing stack, you can use the
+     * GetTemplate action.
+     * </p>
+     * <p>
+     * For more information about creating an update template, updating a
+     * stack, and monitoring the progress of the update, see <a
+     * om/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html">
+     * Updating a Stack </a> .
+     * </p>
+     *
+     * @param updateStackRequest Container for the necessary parameters to
+     *           execute the UpdateStack operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateStack service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdateStackResult> updateStackAsync(final UpdateStackRequest updateStackRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<UpdateStackResult>() {
+            public UpdateStackResult call() throws Exception {
+                return updateStack(updateStackRequest);
 		    }
 		});
     }

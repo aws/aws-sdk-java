@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class ListStacksRequestMarshaller implements Marshaller<Request<ListStacksRequest>, ListStacksRequest> {
 
     public Request<ListStacksRequest> marshall(ListStacksRequest listStacksRequest) {
+
+        if (listStacksRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListStacksRequest> request = new DefaultRequest<ListStacksRequest>(listStacksRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ListStacks");
         request.addParameter("Version", "2010-05-15");
-        if (listStacksRequest != null) {
-            if (listStacksRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listStacksRequest.getNextToken()));
-            }
-        }
-        if (listStacksRequest != null) {
-            java.util.List<String> stackStatusFiltersList = listStacksRequest.getStackStatusFilters();
-            int stackStatusFiltersListIndex = 1;
 
-            for (String stackStatusFiltersListValue : stackStatusFiltersList) {
-                if (stackStatusFiltersListValue != null) {
-                    request.addParameter("StackStatusFilter.member." + stackStatusFiltersListIndex, StringUtils.fromString(stackStatusFiltersListValue));
-                }
-                stackStatusFiltersListIndex++;
+        if (listStacksRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listStacksRequest.getNextToken()));
+        }
+
+        java.util.List<String> stackStatusFiltersList = listStacksRequest.getStackStatusFilters();
+        int stackStatusFiltersListIndex = 1;
+        for (String stackStatusFiltersListValue : stackStatusFiltersList) {
+            if (stackStatusFiltersListValue != null) {
+                request.addParameter("StackStatusFilter.member." + stackStatusFiltersListIndex, StringUtils.fromString(stackStatusFiltersListValue));
             }
+
+            stackStatusFiltersListIndex++;
         }
 
 

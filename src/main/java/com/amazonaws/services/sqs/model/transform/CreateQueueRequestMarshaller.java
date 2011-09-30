@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQueueRequest>, CreateQueueRequest> {
 
     public Request<CreateQueueRequest> marshall(CreateQueueRequest createQueueRequest) {
+
+        if (createQueueRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateQueueRequest> request = new DefaultRequest<CreateQueueRequest>(createQueueRequest, "AmazonSQS");
         request.addParameter("Action", "CreateQueue");
         request.addParameter("Version", "2009-02-01");
-        if (createQueueRequest != null) {
-            if (createQueueRequest.getQueueName() != null) {
-                request.addParameter("QueueName", StringUtils.fromString(createQueueRequest.getQueueName()));
-            }
+
+        if (createQueueRequest.getQueueName() != null) {
+            request.addParameter("QueueName", StringUtils.fromString(createQueueRequest.getQueueName()));
         }
-        if (createQueueRequest != null) {
-            if (createQueueRequest.getDefaultVisibilityTimeout() != null) {
-                request.addParameter("DefaultVisibilityTimeout", StringUtils.fromInteger(createQueueRequest.getDefaultVisibilityTimeout()));
-            }
+        if (createQueueRequest.getDefaultVisibilityTimeout() != null) {
+            request.addParameter("DefaultVisibilityTimeout", StringUtils.fromInteger(createQueueRequest.getDefaultVisibilityTimeout()));
         }
 
 

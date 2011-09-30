@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements Marshaller<Request<EnableAvailabilityZonesForLoadBalancerRequest>, EnableAvailabilityZonesForLoadBalancerRequest> {
 
     public Request<EnableAvailabilityZonesForLoadBalancerRequest> marshall(EnableAvailabilityZonesForLoadBalancerRequest enableAvailabilityZonesForLoadBalancerRequest) {
+
+        if (enableAvailabilityZonesForLoadBalancerRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<EnableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<EnableAvailabilityZonesForLoadBalancerRequest>(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "EnableAvailabilityZonesForLoadBalancer");
-        request.addParameter("Version", "2011-04-05");
-        if (enableAvailabilityZonesForLoadBalancerRequest != null) {
-            if (enableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(enableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName()));
-            }
-        }
-        if (enableAvailabilityZonesForLoadBalancerRequest != null) {
-            java.util.List<String> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones();
-            int availabilityZonesListIndex = 1;
+        request.addParameter("Version", "2011-08-15");
 
-            for (String availabilityZonesListValue : availabilityZonesList) {
-                if (availabilityZonesListValue != null) {
-                    request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
-                }
-                availabilityZonesListIndex++;
+        if (enableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(enableAvailabilityZonesForLoadBalancerRequest.getLoadBalancerName()));
+        }
+
+        java.util.List<String> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones();
+        int availabilityZonesListIndex = 1;
+        for (String availabilityZonesListValue : availabilityZonesList) {
+            if (availabilityZonesListValue != null) {
+                request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
             }
+
+            availabilityZonesListIndex++;
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,34 +31,33 @@ import com.amazonaws.util.StringUtils;
 public class DescribeScalingActivitiesRequestMarshaller implements Marshaller<Request<DescribeScalingActivitiesRequest>, DescribeScalingActivitiesRequest> {
 
     public Request<DescribeScalingActivitiesRequest> marshall(DescribeScalingActivitiesRequest describeScalingActivitiesRequest) {
+
+        if (describeScalingActivitiesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeScalingActivitiesRequest> request = new DefaultRequest<DescribeScalingActivitiesRequest>(describeScalingActivitiesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScalingActivities");
         request.addParameter("Version", "2011-01-01");
-        if (describeScalingActivitiesRequest != null) {
-            java.util.List<String> activityIdsList = describeScalingActivitiesRequest.getActivityIds();
-            int activityIdsListIndex = 1;
 
-            for (String activityIdsListValue : activityIdsList) {
-                if (activityIdsListValue != null) {
-                    request.addParameter("ActivityIds.member." + activityIdsListIndex, StringUtils.fromString(activityIdsListValue));
-                }
-                activityIdsListIndex++;
+
+        java.util.List<String> activityIdsList = describeScalingActivitiesRequest.getActivityIds();
+        int activityIdsListIndex = 1;
+        for (String activityIdsListValue : activityIdsList) {
+            if (activityIdsListValue != null) {
+                request.addParameter("ActivityIds.member." + activityIdsListIndex, StringUtils.fromString(activityIdsListValue));
             }
+
+            activityIdsListIndex++;
         }
-        if (describeScalingActivitiesRequest != null) {
-            if (describeScalingActivitiesRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScalingActivitiesRequest.getAutoScalingGroupName()));
-            }
+        if (describeScalingActivitiesRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScalingActivitiesRequest.getAutoScalingGroupName()));
         }
-        if (describeScalingActivitiesRequest != null) {
-            if (describeScalingActivitiesRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeScalingActivitiesRequest.getMaxRecords()));
-            }
+        if (describeScalingActivitiesRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeScalingActivitiesRequest.getMaxRecords()));
         }
-        if (describeScalingActivitiesRequest != null) {
-            if (describeScalingActivitiesRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeScalingActivitiesRequest.getNextToken()));
-            }
+        if (describeScalingActivitiesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeScalingActivitiesRequest.getNextToken()));
         }
 
 

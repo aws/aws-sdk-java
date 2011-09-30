@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteCustomerGatewayRequestMarshaller implements Marshaller<Request<DeleteCustomerGatewayRequest>, DeleteCustomerGatewayRequest> {
 
     public Request<DeleteCustomerGatewayRequest> marshall(DeleteCustomerGatewayRequest deleteCustomerGatewayRequest) {
+
+        if (deleteCustomerGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteCustomerGatewayRequest> request = new DefaultRequest<DeleteCustomerGatewayRequest>(deleteCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteCustomerGateway");
         request.addParameter("Version", "2011-05-15");
-        if (deleteCustomerGatewayRequest != null) {
-            if (deleteCustomerGatewayRequest.getCustomerGatewayId() != null) {
-                request.addParameter("CustomerGatewayId", StringUtils.fromString(deleteCustomerGatewayRequest.getCustomerGatewayId()));
-            }
+
+        if (deleteCustomerGatewayRequest.getCustomerGatewayId() != null) {
+            request.addParameter("CustomerGatewayId", StringUtils.fromString(deleteCustomerGatewayRequest.getCustomerGatewayId()));
         }
 
 

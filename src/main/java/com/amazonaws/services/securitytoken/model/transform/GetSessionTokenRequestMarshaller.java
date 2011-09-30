@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.securitytoken.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class GetSessionTokenRequestMarshaller implements Marshaller<Request<GetSessionTokenRequest>, GetSessionTokenRequest> {
 
     public Request<GetSessionTokenRequest> marshall(GetSessionTokenRequest getSessionTokenRequest) {
+
+        if (getSessionTokenRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetSessionTokenRequest> request = new DefaultRequest<GetSessionTokenRequest>(getSessionTokenRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "GetSessionToken");
         request.addParameter("Version", "2011-06-15");
-        if (getSessionTokenRequest != null) {
-            if (getSessionTokenRequest.getDurationSeconds() != null) {
-                request.addParameter("DurationSeconds", StringUtils.fromInteger(getSessionTokenRequest.getDurationSeconds()));
-            }
+
+        if (getSessionTokenRequest.getDurationSeconds() != null) {
+            request.addParameter("DurationSeconds", StringUtils.fromInteger(getSessionTokenRequest.getDurationSeconds()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,44 +31,47 @@ import com.amazonaws.util.StringUtils;
 public class DescribeAvailabilityZonesRequestMarshaller implements Marshaller<Request<DescribeAvailabilityZonesRequest>, DescribeAvailabilityZonesRequest> {
 
     public Request<DescribeAvailabilityZonesRequest> marshall(DescribeAvailabilityZonesRequest describeAvailabilityZonesRequest) {
+
+        if (describeAvailabilityZonesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeAvailabilityZonesRequest> request = new DefaultRequest<DescribeAvailabilityZonesRequest>(describeAvailabilityZonesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAvailabilityZones");
         request.addParameter("Version", "2011-05-15");
-        if (describeAvailabilityZonesRequest != null) {
-            java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
-            int zoneNamesListIndex = 1;
 
-            for (String zoneNamesListValue : zoneNamesList) {
-                if (zoneNamesListValue != null) {
-                    request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(zoneNamesListValue));
-                }
-                zoneNamesListIndex++;
+
+        java.util.List<String> zoneNamesList = describeAvailabilityZonesRequest.getZoneNames();
+        int zoneNamesListIndex = 1;
+        for (String zoneNamesListValue : zoneNamesList) {
+            if (zoneNamesListValue != null) {
+                request.addParameter("ZoneName." + zoneNamesListIndex, StringUtils.fromString(zoneNamesListValue));
             }
+
+            zoneNamesListIndex++;
         }
 
-        if (describeAvailabilityZonesRequest != null) {
-            java.util.List<Filter> filtersList = describeAvailabilityZonesRequest.getFilters();
-            int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) {
-                if (filtersListValue != null) {
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                    }
-                }
-                if (filtersListValue != null) {
-                    java.util.List<String> valuesList = filtersListValue.getValues();
-                    int valuesListIndex = 1;
-
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+        java.util.List<Filter> filtersList = describeAvailabilityZonesRequest.getFilters();
+        int filtersListIndex = 1;
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
 
-                filtersListIndex++;
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
             }
+
+            filtersListIndex++;
         }
 
 

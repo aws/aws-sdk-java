@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ListStackResourcesRequestMarshaller implements Marshaller<Request<ListStackResourcesRequest>, ListStackResourcesRequest> {
 
     public Request<ListStackResourcesRequest> marshall(ListStackResourcesRequest listStackResourcesRequest) {
+
+        if (listStackResourcesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListStackResourcesRequest> request = new DefaultRequest<ListStackResourcesRequest>(listStackResourcesRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ListStackResources");
         request.addParameter("Version", "2010-05-15");
-        if (listStackResourcesRequest != null) {
-            if (listStackResourcesRequest.getStackName() != null) {
-                request.addParameter("StackName", StringUtils.fromString(listStackResourcesRequest.getStackName()));
-            }
+
+        if (listStackResourcesRequest.getStackName() != null) {
+            request.addParameter("StackName", StringUtils.fromString(listStackResourcesRequest.getStackName()));
         }
-        if (listStackResourcesRequest != null) {
-            if (listStackResourcesRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listStackResourcesRequest.getNextToken()));
-            }
+        if (listStackResourcesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listStackResourcesRequest.getNextToken()));
         }
 
 

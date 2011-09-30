@@ -328,6 +328,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         Security Groups</a> in the Amazon VPC product documentation.
      */
     public java.util.List<String> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<String>();
         }
@@ -398,6 +399,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLaunchConfigurationRequest withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -682,6 +684,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -736,6 +739,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLaunchConfigurationRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

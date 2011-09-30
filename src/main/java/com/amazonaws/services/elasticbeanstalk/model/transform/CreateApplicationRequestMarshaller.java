@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateApplicationRequestMarshaller implements Marshaller<Request<CreateApplicationRequest>, CreateApplicationRequest> {
 
     public Request<CreateApplicationRequest> marshall(CreateApplicationRequest createApplicationRequest) {
+
+        if (createApplicationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateApplicationRequest> request = new DefaultRequest<CreateApplicationRequest>(createApplicationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateApplication");
         request.addParameter("Version", "2010-12-01");
-        if (createApplicationRequest != null) {
-            if (createApplicationRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(createApplicationRequest.getApplicationName()));
-            }
+
+        if (createApplicationRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(createApplicationRequest.getApplicationName()));
         }
-        if (createApplicationRequest != null) {
-            if (createApplicationRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(createApplicationRequest.getDescription()));
-            }
+        if (createApplicationRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createApplicationRequest.getDescription()));
         }
 
 

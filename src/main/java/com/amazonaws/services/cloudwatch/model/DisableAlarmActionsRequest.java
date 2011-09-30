@@ -44,6 +44,7 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest {
      * @return The names of the alarms to disable actions for.
      */
     public java.util.List<String> getAlarmNames() {
+        
         if (alarmNames == null) {
             alarmNames = new java.util.ArrayList<String>();
         }
@@ -80,6 +81,7 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DisableAlarmActionsRequest withAlarmNames(String... alarmNames) {
+        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>());
         for (String value : alarmNames) {
             getAlarmNames().add(value);
         }

@@ -52,6 +52,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
      * @return A list of the availability zone names to describe.
      */
     public java.util.List<String> getZoneNames() {
+        
         if (zoneNames == null) {
             zoneNames = new java.util.ArrayList<String>();
         }
@@ -82,6 +83,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAvailabilityZonesRequest withZoneNames(String... zoneNames) {
+        if (getZoneNames() == null) setZoneNames(new java.util.ArrayList<String>());
         for (String value : zoneNames) {
             getZoneNames().add(value);
         }
@@ -122,6 +124,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -168,6 +171,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAvailabilityZonesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

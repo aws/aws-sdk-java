@@ -161,6 +161,7 @@ public class License {
      *         instances can be supported, etc.
      */
     public java.util.List<LicenseCapacity> getCapacities() {
+        
         if (capacities == null) {
             capacities = new java.util.ArrayList<LicenseCapacity>();
         }
@@ -199,6 +200,7 @@ public class License {
      *         together. 
      */
     public License withCapacities(LicenseCapacity... capacities) {
+        if (getCapacities() == null) setCapacities(new java.util.ArrayList<LicenseCapacity>());
         for (LicenseCapacity value : capacities) {
             getCapacities().add(value);
         }
@@ -235,6 +237,7 @@ public class License {
      * @return A list of tags for the License.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -265,6 +268,7 @@ public class License {
      *         together. 
      */
     public License withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

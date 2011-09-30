@@ -16,7 +16,7 @@ package com.amazonaws.services.cloudformation.model;
 
 /**
  * <p>
- * The StackResourceDetail data type.
+ * Contains detailed information about the specified stack resource.
  * </p>
  */
 public class StackResourceDetail {

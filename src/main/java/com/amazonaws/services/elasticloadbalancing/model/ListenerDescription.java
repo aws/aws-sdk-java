@@ -80,6 +80,7 @@ public class ListenerDescription {
      *         that no policies are enabled.
      */
     public java.util.List<String> getPolicyNames() {
+        
         if (policyNames == null) {
             policyNames = new java.util.ArrayList<String>();
         }
@@ -114,6 +115,7 @@ public class ListenerDescription {
      *         together. 
      */
     public ListenerDescription withPolicyNames(String... policyNames) {
+        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>());
         for (String value : policyNames) {
             getPolicyNames().add(value);
         }

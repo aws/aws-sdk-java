@@ -54,6 +54,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      * @return The optional list of Amazon EC2 security groups to describe.
      */
     public java.util.List<String> getGroupNames() {
+        
         if (groupNames == null) {
             groupNames = new java.util.ArrayList<String>();
         }
@@ -84,6 +85,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
         for (String value : groupNames) {
             getGroupNames().add(value);
         }
@@ -116,6 +118,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      * @return The value of the GroupIds property for this object.
      */
     public java.util.List<String> getGroupIds() {
+        
         if (groupIds == null) {
             groupIds = new java.util.ArrayList<String>();
         }
@@ -146,6 +149,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
+        if (getGroupIds() == null) setGroupIds(new java.util.ArrayList<String>());
         for (String value : groupIds) {
             getGroupIds().add(value);
         }
@@ -186,6 +190,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -232,6 +237,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

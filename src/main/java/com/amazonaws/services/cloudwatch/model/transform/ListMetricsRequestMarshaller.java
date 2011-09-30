@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,42 +31,39 @@ import com.amazonaws.util.StringUtils;
 public class ListMetricsRequestMarshaller implements Marshaller<Request<ListMetricsRequest>, ListMetricsRequest> {
 
     public Request<ListMetricsRequest> marshall(ListMetricsRequest listMetricsRequest) {
+
+        if (listMetricsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListMetricsRequest> request = new DefaultRequest<ListMetricsRequest>(listMetricsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "ListMetrics");
         request.addParameter("Version", "2010-08-01");
-        if (listMetricsRequest != null) {
-            if (listMetricsRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(listMetricsRequest.getNamespace()));
-            }
+
+        if (listMetricsRequest.getNamespace() != null) {
+            request.addParameter("Namespace", StringUtils.fromString(listMetricsRequest.getNamespace()));
         }
-        if (listMetricsRequest != null) {
-            if (listMetricsRequest.getMetricName() != null) {
-                request.addParameter("MetricName", StringUtils.fromString(listMetricsRequest.getMetricName()));
-            }
+        if (listMetricsRequest.getMetricName() != null) {
+            request.addParameter("MetricName", StringUtils.fromString(listMetricsRequest.getMetricName()));
         }
 
-        if (listMetricsRequest != null) {
-            java.util.List<DimensionFilter> dimensionsList = listMetricsRequest.getDimensions();
-            int dimensionsListIndex = 1;
-            for (DimensionFilter dimensionsListValue : dimensionsList) {
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getName() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                    }
+        java.util.List<DimensionFilter> dimensionsList = listMetricsRequest.getDimensions();
+        int dimensionsListIndex = 1;
+        for (DimensionFilter dimensionsListValue : dimensionsList) {
+            DimensionFilter dimensionFilterMember = dimensionsListValue;
+            if (dimensionFilterMember != null) {
+                if (dimensionFilterMember.getName() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionFilterMember.getName()));
                 }
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getValue() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
-                    }
+                if (dimensionFilterMember.getValue() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionFilterMember.getValue()));
                 }
+            }
 
-                dimensionsListIndex++;
-            }
+            dimensionsListIndex++;
         }
-        if (listMetricsRequest != null) {
-            if (listMetricsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listMetricsRequest.getNextToken()));
-            }
+        if (listMetricsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listMetricsRequest.getNextToken()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<DeleteDBInstanceRequest>, DeleteDBInstanceRequest> {
 
     public Request<DeleteDBInstanceRequest> marshall(DeleteDBInstanceRequest deleteDBInstanceRequest) {
+
+        if (deleteDBInstanceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteDBInstanceRequest> request = new DefaultRequest<DeleteDBInstanceRequest>(deleteDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBInstance");
         request.addParameter("Version", "2011-04-01");
-        if (deleteDBInstanceRequest != null) {
-            if (deleteDBInstanceRequest.getDBInstanceIdentifier() != null) {
-                request.addParameter("DBInstanceIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getDBInstanceIdentifier()));
-            }
+
+        if (deleteDBInstanceRequest.getDBInstanceIdentifier() != null) {
+            request.addParameter("DBInstanceIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getDBInstanceIdentifier()));
         }
-        if (deleteDBInstanceRequest != null) {
-            if (deleteDBInstanceRequest.isSkipFinalSnapshot() != null) {
-                request.addParameter("SkipFinalSnapshot", StringUtils.fromBoolean(deleteDBInstanceRequest.isSkipFinalSnapshot()));
-            }
+        if (deleteDBInstanceRequest.isSkipFinalSnapshot() != null) {
+            request.addParameter("SkipFinalSnapshot", StringUtils.fromBoolean(deleteDBInstanceRequest.isSkipFinalSnapshot()));
         }
-        if (deleteDBInstanceRequest != null) {
-            if (deleteDBInstanceRequest.getFinalDBSnapshotIdentifier() != null) {
-                request.addParameter("FinalDBSnapshotIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getFinalDBSnapshotIdentifier()));
-            }
+        if (deleteDBInstanceRequest.getFinalDBSnapshotIdentifier() != null) {
+            request.addParameter("FinalDBSnapshotIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getFinalDBSnapshotIdentifier()));
         }
 
 

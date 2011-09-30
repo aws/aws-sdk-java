@@ -32,6 +32,7 @@ public class DescribeInstancesResult {
      * @return The list of reservations containing the describes instances.
      */
     public java.util.List<Reservation> getReservations() {
+        
         if (reservations == null) {
             reservations = new java.util.ArrayList<Reservation>();
         }
@@ -62,6 +63,7 @@ public class DescribeInstancesResult {
      *         together. 
      */
     public DescribeInstancesResult withReservations(Reservation... reservations) {
+        if (getReservations() == null) setReservations(new java.util.ArrayList<Reservation>());
         for (Reservation value : reservations) {
             getReservations().add(value);
         }

@@ -77,6 +77,7 @@ public class DescribeSnapshotAttributeResult {
      *         createVolumePermission attribute is requested.
      */
     public java.util.List<CreateVolumePermission> getCreateVolumePermissions() {
+        
         if (createVolumePermissions == null) {
             createVolumePermissions = new java.util.ArrayList<CreateVolumePermission>();
         }
@@ -115,6 +116,7 @@ public class DescribeSnapshotAttributeResult {
      *         together. 
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(CreateVolumePermission... createVolumePermissions) {
+        if (getCreateVolumePermissions() == null) setCreateVolumePermissions(new java.util.ArrayList<CreateVolumePermission>());
         for (CreateVolumePermission value : createVolumePermissions) {
             getCreateVolumePermissions().add(value);
         }

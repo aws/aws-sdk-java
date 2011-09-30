@@ -72,6 +72,7 @@ public class DescribeEventsResult {
      * @return A list of <a>Event</a> instances.
      */
     public java.util.List<Event> getEvents() {
+        
         if (events == null) {
             events = new java.util.ArrayList<Event>();
         }
@@ -102,6 +103,7 @@ public class DescribeEventsResult {
      *         together. 
      */
     public DescribeEventsResult withEvents(Event... events) {
+        if (getEvents() == null) setEvents(new java.util.ArrayList<Event>());
         for (Event value : events) {
             getEvents().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class AttachVolumeRequestMarshaller implements Marshaller<Request<AttachVolumeRequest>, AttachVolumeRequest> {
 
     public Request<AttachVolumeRequest> marshall(AttachVolumeRequest attachVolumeRequest) {
+
+        if (attachVolumeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AttachVolumeRequest> request = new DefaultRequest<AttachVolumeRequest>(attachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVolume");
         request.addParameter("Version", "2011-05-15");
-        if (attachVolumeRequest != null) {
-            if (attachVolumeRequest.getVolumeId() != null) {
-                request.addParameter("VolumeId", StringUtils.fromString(attachVolumeRequest.getVolumeId()));
-            }
+
+        if (attachVolumeRequest.getVolumeId() != null) {
+            request.addParameter("VolumeId", StringUtils.fromString(attachVolumeRequest.getVolumeId()));
         }
-        if (attachVolumeRequest != null) {
-            if (attachVolumeRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(attachVolumeRequest.getInstanceId()));
-            }
+        if (attachVolumeRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(attachVolumeRequest.getInstanceId()));
         }
-        if (attachVolumeRequest != null) {
-            if (attachVolumeRequest.getDevice() != null) {
-                request.addParameter("Device", StringUtils.fromString(attachVolumeRequest.getDevice()));
-            }
+        if (attachVolumeRequest.getDevice() != null) {
+            request.addParameter("Device", StringUtils.fromString(attachVolumeRequest.getDevice()));
         }
 
 

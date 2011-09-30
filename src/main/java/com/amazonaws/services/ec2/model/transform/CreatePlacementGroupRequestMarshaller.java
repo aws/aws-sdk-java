@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request<CreatePlacementGroupRequest>, CreatePlacementGroupRequest> {
 
     public Request<CreatePlacementGroupRequest> marshall(CreatePlacementGroupRequest createPlacementGroupRequest) {
+
+        if (createPlacementGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(createPlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreatePlacementGroup");
         request.addParameter("Version", "2011-05-15");
-        if (createPlacementGroupRequest != null) {
-            if (createPlacementGroupRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(createPlacementGroupRequest.getGroupName()));
-            }
+
+        if (createPlacementGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(createPlacementGroupRequest.getGroupName()));
         }
-        if (createPlacementGroupRequest != null) {
-            if (createPlacementGroupRequest.getStrategy() != null) {
-                request.addParameter("Strategy", StringUtils.fromString(createPlacementGroupRequest.getStrategy()));
-            }
+        if (createPlacementGroupRequest.getStrategy() != null) {
+            request.addParameter("Strategy", StringUtils.fromString(createPlacementGroupRequest.getStrategy()));
         }
 
 

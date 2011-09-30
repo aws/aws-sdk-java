@@ -18,10 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest) DeleteMessage operation}.
  * <p>
- * The DeleteMessage action unconditionally removes the specified
- * message from the specified queue. Even if the message is locked by
- * another reader due to the visibility timeout setting, it is still
- * deleted from the queue.
+ * The <code>DeleteMessage</code> action unconditionally removes the
+ * specified message from the specified queue. Even if the message is
+ * locked by another reader due to the visibility timeout setting, it is
+ * still deleted from the queue.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest)
@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteMessageRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      */
     private String queueUrl;
 
@@ -49,7 +49,7 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
+     * @param queueUrl The URL of the SQS queue to take action on.
      * @param receiptHandle The receipt handle associated with the message to
      * delete.
      */
@@ -59,29 +59,29 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @return 
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,52 +31,45 @@ import com.amazonaws.util.StringUtils;
 public class DescribeAlarmsForMetricRequestMarshaller implements Marshaller<Request<DescribeAlarmsForMetricRequest>, DescribeAlarmsForMetricRequest> {
 
     public Request<DescribeAlarmsForMetricRequest> marshall(DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest) {
+
+        if (describeAlarmsForMetricRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeAlarmsForMetricRequest> request = new DefaultRequest<DescribeAlarmsForMetricRequest>(describeAlarmsForMetricRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DescribeAlarmsForMetric");
         request.addParameter("Version", "2010-08-01");
-        if (describeAlarmsForMetricRequest != null) {
-            if (describeAlarmsForMetricRequest.getMetricName() != null) {
-                request.addParameter("MetricName", StringUtils.fromString(describeAlarmsForMetricRequest.getMetricName()));
-            }
+
+        if (describeAlarmsForMetricRequest.getMetricName() != null) {
+            request.addParameter("MetricName", StringUtils.fromString(describeAlarmsForMetricRequest.getMetricName()));
         }
-        if (describeAlarmsForMetricRequest != null) {
-            if (describeAlarmsForMetricRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(describeAlarmsForMetricRequest.getNamespace()));
-            }
+        if (describeAlarmsForMetricRequest.getNamespace() != null) {
+            request.addParameter("Namespace", StringUtils.fromString(describeAlarmsForMetricRequest.getNamespace()));
         }
-        if (describeAlarmsForMetricRequest != null) {
-            if (describeAlarmsForMetricRequest.getStatistic() != null) {
-                request.addParameter("Statistic", StringUtils.fromString(describeAlarmsForMetricRequest.getStatistic()));
-            }
+        if (describeAlarmsForMetricRequest.getStatistic() != null) {
+            request.addParameter("Statistic", StringUtils.fromString(describeAlarmsForMetricRequest.getStatistic()));
         }
 
-        if (describeAlarmsForMetricRequest != null) {
-            java.util.List<Dimension> dimensionsList = describeAlarmsForMetricRequest.getDimensions();
-            int dimensionsListIndex = 1;
-            for (Dimension dimensionsListValue : dimensionsList) {
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getName() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                    }
+        java.util.List<Dimension> dimensionsList = describeAlarmsForMetricRequest.getDimensions();
+        int dimensionsListIndex = 1;
+        for (Dimension dimensionsListValue : dimensionsList) {
+            Dimension dimensionMember = dimensionsListValue;
+            if (dimensionMember != null) {
+                if (dimensionMember.getName() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionMember.getName()));
                 }
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getValue() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
-                    }
+                if (dimensionMember.getValue() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionMember.getValue()));
                 }
+            }
 
-                dimensionsListIndex++;
-            }
+            dimensionsListIndex++;
         }
-        if (describeAlarmsForMetricRequest != null) {
-            if (describeAlarmsForMetricRequest.getPeriod() != null) {
-                request.addParameter("Period", StringUtils.fromInteger(describeAlarmsForMetricRequest.getPeriod()));
-            }
+        if (describeAlarmsForMetricRequest.getPeriod() != null) {
+            request.addParameter("Period", StringUtils.fromInteger(describeAlarmsForMetricRequest.getPeriod()));
         }
-        if (describeAlarmsForMetricRequest != null) {
-            if (describeAlarmsForMetricRequest.getUnit() != null) {
-                request.addParameter("Unit", StringUtils.fromString(describeAlarmsForMetricRequest.getUnit()));
-            }
+        if (describeAlarmsForMetricRequest.getUnit() != null) {
+            request.addParameter("Unit", StringUtils.fromString(describeAlarmsForMetricRequest.getUnit()));
         }
 
 

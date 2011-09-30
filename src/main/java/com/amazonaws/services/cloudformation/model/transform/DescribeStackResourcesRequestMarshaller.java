@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeStackResourcesRequestMarshaller implements Marshaller<Request<DescribeStackResourcesRequest>, DescribeStackResourcesRequest> {
 
     public Request<DescribeStackResourcesRequest> marshall(DescribeStackResourcesRequest describeStackResourcesRequest) {
+
+        if (describeStackResourcesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeStackResourcesRequest> request = new DefaultRequest<DescribeStackResourcesRequest>(describeStackResourcesRequest, "AmazonCloudFormation");
         request.addParameter("Action", "DescribeStackResources");
         request.addParameter("Version", "2010-05-15");
-        if (describeStackResourcesRequest != null) {
-            if (describeStackResourcesRequest.getStackName() != null) {
-                request.addParameter("StackName", StringUtils.fromString(describeStackResourcesRequest.getStackName()));
-            }
+
+        if (describeStackResourcesRequest.getStackName() != null) {
+            request.addParameter("StackName", StringUtils.fromString(describeStackResourcesRequest.getStackName()));
         }
-        if (describeStackResourcesRequest != null) {
-            if (describeStackResourcesRequest.getLogicalResourceId() != null) {
-                request.addParameter("LogicalResourceId", StringUtils.fromString(describeStackResourcesRequest.getLogicalResourceId()));
-            }
+        if (describeStackResourcesRequest.getLogicalResourceId() != null) {
+            request.addParameter("LogicalResourceId", StringUtils.fromString(describeStackResourcesRequest.getLogicalResourceId()));
         }
-        if (describeStackResourcesRequest != null) {
-            if (describeStackResourcesRequest.getPhysicalResourceId() != null) {
-                request.addParameter("PhysicalResourceId", StringUtils.fromString(describeStackResourcesRequest.getPhysicalResourceId()));
-            }
+        if (describeStackResourcesRequest.getPhysicalResourceId() != null) {
+            request.addParameter("PhysicalResourceId", StringUtils.fromString(describeStackResourcesRequest.getPhysicalResourceId()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class SetTopicAttributesRequestMarshaller implements Marshaller<Request<SetTopicAttributesRequest>, SetTopicAttributesRequest> {
 
     public Request<SetTopicAttributesRequest> marshall(SetTopicAttributesRequest setTopicAttributesRequest) {
+
+        if (setTopicAttributesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetTopicAttributesRequest> request = new DefaultRequest<SetTopicAttributesRequest>(setTopicAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "SetTopicAttributes");
         request.addParameter("Version", "2010-03-31");
-        if (setTopicAttributesRequest != null) {
-            if (setTopicAttributesRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(setTopicAttributesRequest.getTopicArn()));
-            }
+
+        if (setTopicAttributesRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(setTopicAttributesRequest.getTopicArn()));
         }
-        if (setTopicAttributesRequest != null) {
-            if (setTopicAttributesRequest.getAttributeName() != null) {
-                request.addParameter("AttributeName", StringUtils.fromString(setTopicAttributesRequest.getAttributeName()));
-            }
+        if (setTopicAttributesRequest.getAttributeName() != null) {
+            request.addParameter("AttributeName", StringUtils.fromString(setTopicAttributesRequest.getAttributeName()));
         }
-        if (setTopicAttributesRequest != null) {
-            if (setTopicAttributesRequest.getAttributeValue() != null) {
-                request.addParameter("AttributeValue", StringUtils.fromString(setTopicAttributesRequest.getAttributeValue()));
-            }
+        if (setTopicAttributesRequest.getAttributeValue() != null) {
+            request.addParameter("AttributeValue", StringUtils.fromString(setTopicAttributesRequest.getAttributeValue()));
         }
 
 

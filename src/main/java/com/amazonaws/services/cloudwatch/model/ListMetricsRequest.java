@@ -166,6 +166,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
      * @return A list of dimensions to filter against.
      */
     public java.util.List<DimensionFilter> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<DimensionFilter>();
         }
@@ -202,6 +203,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<DimensionFilter>());
         for (DimensionFilter value : dimensions) {
             getDimensions().add(value);
         }

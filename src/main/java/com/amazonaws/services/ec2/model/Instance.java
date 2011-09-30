@@ -512,6 +512,7 @@ public class Instance {
      * @return Product codes attached to this instance.
      */
     public java.util.List<ProductCode> getProductCodes() {
+        
         if (productCodes == null) {
             productCodes = new java.util.ArrayList<ProductCode>();
         }
@@ -542,6 +543,7 @@ public class Instance {
      *         together. 
      */
     public Instance withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -1129,6 +1131,7 @@ public class Instance {
      * @return Block device mapping set.
      */
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<InstanceBlockDeviceMapping>();
         }
@@ -1159,6 +1162,7 @@ public class Instance {
      *         together. 
      */
     public Instance withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMapping>());
         for (InstanceBlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -1382,6 +1386,7 @@ public class Instance {
      * @return A list of tags for the Instance.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -1412,6 +1417,7 @@ public class Instance {
      *         together. 
      */
     public Instance withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -1444,6 +1450,7 @@ public class Instance {
      * @return The value of the SecurityGroups property for this object.
      */
     public java.util.List<GroupIdentifier> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<GroupIdentifier>();
         }
@@ -1474,6 +1481,7 @@ public class Instance {
      *         together. 
      */
     public Instance withSecurityGroups(GroupIdentifier... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<GroupIdentifier>());
         for (GroupIdentifier value : securityGroups) {
             getSecurityGroups().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeDBSecurityGroupsRequestMarshaller implements Marshaller<Request<DescribeDBSecurityGroupsRequest>, DescribeDBSecurityGroupsRequest> {
 
     public Request<DescribeDBSecurityGroupsRequest> marshall(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) {
+
+        if (describeDBSecurityGroupsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeDBSecurityGroupsRequest> request = new DefaultRequest<DescribeDBSecurityGroupsRequest>(describeDBSecurityGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSecurityGroups");
         request.addParameter("Version", "2011-04-01");
-        if (describeDBSecurityGroupsRequest != null) {
-            if (describeDBSecurityGroupsRequest.getDBSecurityGroupName() != null) {
-                request.addParameter("DBSecurityGroupName", StringUtils.fromString(describeDBSecurityGroupsRequest.getDBSecurityGroupName()));
-            }
+
+        if (describeDBSecurityGroupsRequest.getDBSecurityGroupName() != null) {
+            request.addParameter("DBSecurityGroupName", StringUtils.fromString(describeDBSecurityGroupsRequest.getDBSecurityGroupName()));
         }
-        if (describeDBSecurityGroupsRequest != null) {
-            if (describeDBSecurityGroupsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBSecurityGroupsRequest.getMaxRecords()));
-            }
+        if (describeDBSecurityGroupsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBSecurityGroupsRequest.getMaxRecords()));
         }
-        if (describeDBSecurityGroupsRequest != null) {
-            if (describeDBSecurityGroupsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeDBSecurityGroupsRequest.getMarker()));
-            }
+        if (describeDBSecurityGroupsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeDBSecurityGroupsRequest.getMarker()));
         }
 
 

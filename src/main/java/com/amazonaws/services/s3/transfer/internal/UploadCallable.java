@@ -63,15 +63,22 @@ public class UploadCallable implements Callable<UploadResult> {
     List<Future<PartETag>> getFutures() {
         return futures;
     }
-    
+
     String getMultipartUploadId() {
         return multipartUploadId;
     }
 
+    /**
+     * Returns true if this UploadCallable is processing a multipart upload.
+     * @return True if this UploadCallable is processing a multipart upload.
+     */
+    public boolean isMultipartUpload() {
+    	return TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration);
+    }
+    
     public UploadResult call() throws Exception {
-        fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
-
-        if (TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration)) {
+        if (isMultipartUpload()) {
+        	fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
             return uploadInParts();
         } else {
             return uploadInOneChunk();
@@ -89,15 +96,15 @@ public class UploadCallable implements Callable<UploadResult> {
         uploadResult.setKey(putObjectRequest.getKey());
         uploadResult.setETag(putObjectResult.getETag());
         uploadResult.setVersionId(putObjectResult.getVersionId());
-        return uploadResult;    
+        return uploadResult;
     }
-    
+
     /**
      * Uploads the request in multiple chunks, submitting each upload chunk task
      * to the thread pool and recording its corresponding Future object, as well
      * as the multipart upload id.
      */
-    private UploadResult uploadInParts() throws Exception {        
+    private UploadResult uploadInParts() throws Exception {
         final String bucketName = putObjectRequest.getBucketName();
         final String key        = putObjectRequest.getKey();
 
@@ -105,7 +112,7 @@ public class UploadCallable implements Callable<UploadResult> {
         long optimalPartSize = getOptimalPartSize(isUsingEncryption);
 
         multipartUploadId = initiateMultipartUpload(putObjectRequest);
-        
+
         try {
             UploadPartRequestFactory requestFactory = new UploadPartRequestFactory(putObjectRequest, multipartUploadId, optimalPartSize);
 
@@ -139,7 +146,7 @@ public class UploadCallable implements Callable<UploadResult> {
     private long getOptimalPartSize(boolean isUsingEncryption) {
         long optimalPartSize = TransferManagerUtils.calculateOptimalPartSize(putObjectRequest, configuration);
         if (isUsingEncryption) {
-        	// When using encryption, we want to make sure our parts line up correctly along cipher block boundaries 
+        	// When using encryption, we want to make sure our parts line up correctly along cipher block boundaries
         	optimalPartSize += optimalPartSize % 32;
         }
         log.debug("Calculated optimal part size: " + optimalPartSize);
@@ -151,20 +158,20 @@ public class UploadCallable implements Callable<UploadResult> {
      * the upload and returns the result.
      */
     private UploadResult uploadPartsInSeries(UploadPartRequestFactory requestFactory) {
-        
+
         final List<PartETag> partETags = new ArrayList<PartETag>();
 
         while (requestFactory.hasMoreRequests()) {
             if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
             partETags.add(s3.uploadPart(requestFactory.getNextUploadPartRequest()).getPartETag());
         }
-        
+
         CompleteMultipartUploadResult completeMultipartUploadResult = s3
                 .completeMultipartUpload(new CompleteMultipartUploadRequest(putObjectRequest.getBucketName(),
                         putObjectRequest.getKey(), multipartUploadId, partETags));
-      
+
         fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
-      
+
         UploadResult uploadResult = new UploadResult();
         uploadResult.setBucketName(completeMultipartUploadResult.getBucketName());
         uploadResult.setKey(completeMultipartUploadResult.getKey());
@@ -185,10 +192,10 @@ public class UploadCallable implements Callable<UploadResult> {
     }
 
     /**
-     * Initiates a multipart upload and returns the upload id 
+     * Initiates a multipart upload and returns the upload id
      */
     private String initiateMultipartUpload(PutObjectRequest putObjectRequest) {
-        
+
         InitiateMultipartUploadRequest initiateMultipartUploadRequest =
             new InitiateMultipartUploadRequest(putObjectRequest.getBucketName(), putObjectRequest.getKey())
                 .withCannedACL(putObjectRequest.getCannedAcl())

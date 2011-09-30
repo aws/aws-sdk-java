@@ -32,6 +32,7 @@ public class DescribeScalingProcessTypesResult {
      * @return A list of <a>ProcessType</a> names.
      */
     public java.util.List<ProcessType> getProcesses() {
+        
         if (processes == null) {
             processes = new java.util.ArrayList<ProcessType>();
         }
@@ -62,6 +63,7 @@ public class DescribeScalingProcessTypesResult {
      *         together. 
      */
     public DescribeScalingProcessTypesResult withProcesses(ProcessType... processes) {
+        if (getProcesses() == null) setProcesses(new java.util.ArrayList<ProcessType>());
         for (ProcessType value : processes) {
             getProcesses().add(value);
         }

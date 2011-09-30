@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DescribeStackResourceRequestMarshaller implements Marshaller<Request<DescribeStackResourceRequest>, DescribeStackResourceRequest> {
 
     public Request<DescribeStackResourceRequest> marshall(DescribeStackResourceRequest describeStackResourceRequest) {
+
+        if (describeStackResourceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeStackResourceRequest> request = new DefaultRequest<DescribeStackResourceRequest>(describeStackResourceRequest, "AmazonCloudFormation");
         request.addParameter("Action", "DescribeStackResource");
         request.addParameter("Version", "2010-05-15");
-        if (describeStackResourceRequest != null) {
-            if (describeStackResourceRequest.getStackName() != null) {
-                request.addParameter("StackName", StringUtils.fromString(describeStackResourceRequest.getStackName()));
-            }
+
+        if (describeStackResourceRequest.getStackName() != null) {
+            request.addParameter("StackName", StringUtils.fromString(describeStackResourceRequest.getStackName()));
         }
-        if (describeStackResourceRequest != null) {
-            if (describeStackResourceRequest.getLogicalResourceId() != null) {
-                request.addParameter("LogicalResourceId", StringUtils.fromString(describeStackResourceRequest.getLogicalResourceId()));
-            }
+        if (describeStackResourceRequest.getLogicalResourceId() != null) {
+            request.addParameter("LogicalResourceId", StringUtils.fromString(describeStackResourceRequest.getLogicalResourceId()));
         }
 
 

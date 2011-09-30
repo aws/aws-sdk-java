@@ -71,6 +71,7 @@ public class GetMetricStatisticsResult {
      * @return The datapoints for the specified metric.
      */
     public java.util.List<Datapoint> getDatapoints() {
+        
         if (datapoints == null) {
             datapoints = new java.util.ArrayList<Datapoint>();
         }
@@ -101,6 +102,7 @@ public class GetMetricStatisticsResult {
      *         together. 
      */
     public GetMetricStatisticsResult withDatapoints(Datapoint... datapoints) {
+        if (getDatapoints() == null) setDatapoints(new java.util.ArrayList<Datapoint>());
         for (Datapoint value : datapoints) {
             getDatapoints().add(value);
         }

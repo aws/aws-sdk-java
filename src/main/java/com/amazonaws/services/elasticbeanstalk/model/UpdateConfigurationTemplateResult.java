@@ -565,6 +565,7 @@ public class UpdateConfigurationTemplateResult {
      *         configuration set.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
+        
         if (optionSettings == null) {
             optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
         }
@@ -599,6 +600,7 @@ public class UpdateConfigurationTemplateResult {
      *         together. 
      */
     public UpdateConfigurationTemplateResult withOptionSettings(ConfigurationOptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }

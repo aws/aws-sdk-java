@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteVpcRequestMarshaller implements Marshaller<Request<DeleteVpcRequest>, DeleteVpcRequest> {
 
     public Request<DeleteVpcRequest> marshall(DeleteVpcRequest deleteVpcRequest) {
+
+        if (deleteVpcRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteVpcRequest> request = new DefaultRequest<DeleteVpcRequest>(deleteVpcRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpc");
         request.addParameter("Version", "2011-05-15");
-        if (deleteVpcRequest != null) {
-            if (deleteVpcRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(deleteVpcRequest.getVpcId()));
-            }
+
+        if (deleteVpcRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(deleteVpcRequest.getVpcId()));
         }
 
 

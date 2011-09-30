@@ -29,8 +29,8 @@ public class LBCookieStickinessPolicy {
 
     /**
      * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * stale. Not specifying this parameter indicates that the stickiness
+     * session will last for the duration of the browser session.
      */
     private Long cookieExpirationPeriod;
 
@@ -49,8 +49,8 @@ public class LBCookieStickinessPolicy {
      * be unique within the set of policies for this LoadBalancer.
      * @param cookieExpirationPeriod The time period in seconds after which
      * the cookie should be considered stale. Not specifying this parameter
-     * indicates that the sticky session will last for the duration of the
-     * browser session.
+     * indicates that the stickiness session will last for the duration of
+     * the browser session.
      */
     public LBCookieStickinessPolicy(String policyName, Long cookieExpirationPeriod) {
         this.policyName = policyName;
@@ -99,12 +99,12 @@ public class LBCookieStickinessPolicy {
     
     /**
      * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * stale. Not specifying this parameter indicates that the stickiness
+     * session will last for the duration of the browser session.
      *
      * @return The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     *         stale. Not specifying this parameter indicates that the stickiness
+     *         session will last for the duration of the browser session.
      */
     public Long getCookieExpirationPeriod() {
         return cookieExpirationPeriod;
@@ -112,12 +112,12 @@ public class LBCookieStickinessPolicy {
     
     /**
      * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * stale. Not specifying this parameter indicates that the stickiness
+     * session will last for the duration of the browser session.
      *
      * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     *         stale. Not specifying this parameter indicates that the stickiness
+     *         session will last for the duration of the browser session.
      */
     public void setCookieExpirationPeriod(Long cookieExpirationPeriod) {
         this.cookieExpirationPeriod = cookieExpirationPeriod;
@@ -125,14 +125,14 @@ public class LBCookieStickinessPolicy {
     
     /**
      * The time period in seconds after which the cookie should be considered
-     * stale. Not specifying this parameter indicates that the sticky session
-     * will last for the duration of the browser session.
+     * stale. Not specifying this parameter indicates that the stickiness
+     * session will last for the duration of the browser session.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cookieExpirationPeriod The time period in seconds after which the cookie should be considered
-     *         stale. Not specifying this parameter indicates that the sticky session
-     *         will last for the duration of the browser session.
+     *         stale. Not specifying this parameter indicates that the stickiness
+     *         session will last for the duration of the browser session.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

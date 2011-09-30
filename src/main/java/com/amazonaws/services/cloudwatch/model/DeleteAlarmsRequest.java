@@ -43,6 +43,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest {
      * @return A list of alarms to be deleted.
      */
     public java.util.List<String> getAlarmNames() {
+        
         if (alarmNames == null) {
             alarmNames = new java.util.ArrayList<String>();
         }
@@ -79,6 +80,7 @@ public class DeleteAlarmsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DeleteAlarmsRequest withAlarmNames(String... alarmNames) {
+        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>());
         for (String value : alarmNames) {
             getAlarmNames().add(value);
         }

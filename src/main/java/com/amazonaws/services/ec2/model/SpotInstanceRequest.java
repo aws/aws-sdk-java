@@ -523,6 +523,7 @@ public class SpotInstanceRequest {
      * @return A list of tags for this spot instance request.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -553,6 +554,7 @@ public class SpotInstanceRequest {
      *         together. 
      */
     public SpotInstanceRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

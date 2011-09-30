@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,28 +31,28 @@ import com.amazonaws.util.StringUtils;
 public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<SetQueueAttributesRequest>, SetQueueAttributesRequest> {
 
     public Request<SetQueueAttributesRequest> marshall(SetQueueAttributesRequest setQueueAttributesRequest) {
+
+        if (setQueueAttributesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetQueueAttributesRequest> request = new DefaultRequest<SetQueueAttributesRequest>(setQueueAttributesRequest, "AmazonSQS");
         request.addParameter("Action", "SetQueueAttributes");
         request.addParameter("Version", "2009-02-01");
-        if (setQueueAttributesRequest != null) {
-            if (setQueueAttributesRequest.getQueueUrl() != null) {
-                request.addParameter("QueueUrl", StringUtils.fromString(setQueueAttributesRequest.getQueueUrl()));
-            }
+
+        if (setQueueAttributesRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(setQueueAttributesRequest.getQueueUrl()));
         }
         if (setQueueAttributesRequest != null) {
             if (setQueueAttributesRequest.getAttributes() != null) {
                 int attributesListIndex = 1;
                 for (Map.Entry<String, String> attributesListValue : setQueueAttributesRequest.getAttributes().entrySet()) {
 
-                    if (attributesListValue != null) {
-                        if (attributesListValue.getKey() != null) {
-                            request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getKey()));
-                        }
+                    if (attributesListValue.getKey() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getKey()));
                     }
-                    if (attributesListValue != null) {
-                        if (attributesListValue.getValue() != null) {
-                            request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                        }
+                    if (attributesListValue.getValue() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
                     }
                     ++attributesListIndex;
                 }

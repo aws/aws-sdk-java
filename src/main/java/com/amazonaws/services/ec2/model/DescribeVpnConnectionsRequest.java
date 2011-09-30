@@ -60,6 +60,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
      * @return A VPN connection ID. More than one may be specified per request.
      */
     public java.util.List<String> getVpnConnectionIds() {
+        
         if (vpnConnectionIds == null) {
             vpnConnectionIds = new java.util.ArrayList<String>();
         }
@@ -90,6 +91,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnConnectionsRequest withVpnConnectionIds(String... vpnConnectionIds) {
+        if (getVpnConnectionIds() == null) setVpnConnectionIds(new java.util.ArrayList<String>());
         for (String value : vpnConnectionIds) {
             getVpnConnectionIds().add(value);
         }
@@ -130,6 +132,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -176,6 +179,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnConnectionsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

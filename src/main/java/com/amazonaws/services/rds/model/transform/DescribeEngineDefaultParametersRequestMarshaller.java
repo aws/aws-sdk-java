@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeEngineDefaultParametersRequestMarshaller implements Marshaller<Request<DescribeEngineDefaultParametersRequest>, DescribeEngineDefaultParametersRequest> {
 
     public Request<DescribeEngineDefaultParametersRequest> marshall(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) {
+
+        if (describeEngineDefaultParametersRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
         request.addParameter("Version", "2011-04-01");
-        if (describeEngineDefaultParametersRequest != null) {
-            if (describeEngineDefaultParametersRequest.getDBParameterGroupFamily() != null) {
-                request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getDBParameterGroupFamily()));
-            }
+
+        if (describeEngineDefaultParametersRequest.getDBParameterGroupFamily() != null) {
+            request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getDBParameterGroupFamily()));
         }
-        if (describeEngineDefaultParametersRequest != null) {
-            if (describeEngineDefaultParametersRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeEngineDefaultParametersRequest.getMaxRecords()));
-            }
+        if (describeEngineDefaultParametersRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeEngineDefaultParametersRequest.getMaxRecords()));
         }
-        if (describeEngineDefaultParametersRequest != null) {
-            if (describeEngineDefaultParametersRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeEngineDefaultParametersRequest.getMarker()));
-            }
+        if (describeEngineDefaultParametersRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeEngineDefaultParametersRequest.getMarker()));
         }
 
 

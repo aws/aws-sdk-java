@@ -45,6 +45,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
      * @return The optional list of regions to describe.
      */
     public java.util.List<String> getRegionNames() {
+        
         if (regionNames == null) {
             regionNames = new java.util.ArrayList<String>();
         }
@@ -75,6 +76,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeRegionsRequest withRegionNames(String... regionNames) {
+        if (getRegionNames() == null) setRegionNames(new java.util.ArrayList<String>());
         for (String value : regionNames) {
             getRegionNames().add(value);
         }
@@ -113,6 +115,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -155,6 +158,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeRegionsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

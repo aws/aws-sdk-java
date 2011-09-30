@@ -33,6 +33,7 @@ public class DescribeReservedInstancesResult {
      * @return The list of described Reserved Instances.
      */
     public java.util.List<ReservedInstances> getReservedInstances() {
+        
         if (reservedInstances == null) {
             reservedInstances = new java.util.ArrayList<ReservedInstances>();
         }
@@ -63,6 +64,7 @@ public class DescribeReservedInstancesResult {
      *         together. 
      */
     public DescribeReservedInstancesResult withReservedInstances(ReservedInstances... reservedInstances) {
+        if (getReservedInstances() == null) setReservedInstances(new java.util.ArrayList<ReservedInstances>());
         for (ReservedInstances value : reservedInstances) {
             getReservedInstances().add(value);
         }

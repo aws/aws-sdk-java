@@ -32,6 +32,7 @@ public class DescribeStackResourcesResult {
      * @return A list of <code>StackResource</code> structures.
      */
     public java.util.List<StackResource> getStackResources() {
+        
         if (stackResources == null) {
             stackResources = new java.util.ArrayList<StackResource>();
         }
@@ -62,6 +63,7 @@ public class DescribeStackResourcesResult {
      *         together. 
      */
     public DescribeStackResourcesResult withStackResources(StackResource... stackResources) {
+        if (getStackResources() == null) setStackResources(new java.util.ArrayList<StackResource>());
         for (StackResource value : stackResources) {
             getStackResources().add(value);
         }

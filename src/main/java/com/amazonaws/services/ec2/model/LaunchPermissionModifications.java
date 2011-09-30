@@ -29,6 +29,7 @@ public class LaunchPermissionModifications {
      * @return The value of the Add property for this object.
      */
     public java.util.List<LaunchPermission> getAdd() {
+        
         if (add == null) {
             add = new java.util.ArrayList<LaunchPermission>();
         }
@@ -59,6 +60,7 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
+        if (getAdd() == null) setAdd(new java.util.ArrayList<LaunchPermission>());
         for (LaunchPermission value : add) {
             getAdd().add(value);
         }
@@ -91,6 +93,7 @@ public class LaunchPermissionModifications {
      * @return The value of the Remove property for this object.
      */
     public java.util.List<LaunchPermission> getRemove() {
+        
         if (remove == null) {
             remove = new java.util.ArrayList<LaunchPermission>();
         }
@@ -121,6 +124,7 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
+        if (getRemove() == null) setRemove(new java.util.ArrayList<LaunchPermission>());
         for (LaunchPermission value : remove) {
             getRemove().add(value);
         }

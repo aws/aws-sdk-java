@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,80 +31,72 @@ import com.amazonaws.util.StringUtils;
 public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Request<DescribeSpotPriceHistoryRequest>, DescribeSpotPriceHistoryRequest> {
 
     public Request<DescribeSpotPriceHistoryRequest> marshall(DescribeSpotPriceHistoryRequest describeSpotPriceHistoryRequest) {
+
+        if (describeSpotPriceHistoryRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
         request.addParameter("Version", "2011-05-15");
-        if (describeSpotPriceHistoryRequest != null) {
-            if (describeSpotPriceHistoryRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));
-            }
-        }
-        if (describeSpotPriceHistoryRequest != null) {
-            if (describeSpotPriceHistoryRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getEndTime()));
-            }
-        }
-        if (describeSpotPriceHistoryRequest != null) {
-            java.util.List<String> instanceTypesList = describeSpotPriceHistoryRequest.getInstanceTypes();
-            int instanceTypesListIndex = 1;
 
-            for (String instanceTypesListValue : instanceTypesList) {
-                if (instanceTypesListValue != null) {
-                    request.addParameter("InstanceType." + instanceTypesListIndex, StringUtils.fromString(instanceTypesListValue));
+        if (describeSpotPriceHistoryRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getStartTime()));
+        }
+        if (describeSpotPriceHistoryRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(describeSpotPriceHistoryRequest.getEndTime()));
+        }
+
+        java.util.List<String> instanceTypesList = describeSpotPriceHistoryRequest.getInstanceTypes();
+        int instanceTypesListIndex = 1;
+        for (String instanceTypesListValue : instanceTypesList) {
+            if (instanceTypesListValue != null) {
+                request.addParameter("InstanceType." + instanceTypesListIndex, StringUtils.fromString(instanceTypesListValue));
+            }
+
+            instanceTypesListIndex++;
+        }
+
+        java.util.List<String> productDescriptionsList = describeSpotPriceHistoryRequest.getProductDescriptions();
+        int productDescriptionsListIndex = 1;
+        for (String productDescriptionsListValue : productDescriptionsList) {
+            if (productDescriptionsListValue != null) {
+                request.addParameter("ProductDescription." + productDescriptionsListIndex, StringUtils.fromString(productDescriptionsListValue));
+            }
+
+            productDescriptionsListIndex++;
+        }
+
+        java.util.List<Filter> filtersList = describeSpotPriceHistoryRequest.getFilters();
+        int filtersListIndex = 1;
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
-                instanceTypesListIndex++;
-            }
-        }
-        if (describeSpotPriceHistoryRequest != null) {
-            java.util.List<String> productDescriptionsList = describeSpotPriceHistoryRequest.getProductDescriptions();
-            int productDescriptionsListIndex = 1;
 
-            for (String productDescriptionsListValue : productDescriptionsList) {
-                if (productDescriptionsListValue != null) {
-                    request.addParameter("ProductDescription." + productDescriptionsListIndex, StringUtils.fromString(productDescriptionsListValue));
-                }
-                productDescriptionsListIndex++;
-            }
-        }
-
-        if (describeSpotPriceHistoryRequest != null) {
-            java.util.List<Filter> filtersList = describeSpotPriceHistoryRequest.getFilters();
-            int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) {
-                if (filtersListValue != null) {
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
-                }
-                if (filtersListValue != null) {
-                    java.util.List<String> valuesList = filtersListValue.getValues();
-                    int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+                    valuesListIndex++;
                 }
+            }
 
-                filtersListIndex++;
-            }
+            filtersListIndex++;
         }
-        if (describeSpotPriceHistoryRequest != null) {
-            if (describeSpotPriceHistoryRequest.getAvailabilityZone() != null) {
-                request.addParameter("AvailabilityZone", StringUtils.fromString(describeSpotPriceHistoryRequest.getAvailabilityZone()));
-            }
+        if (describeSpotPriceHistoryRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(describeSpotPriceHistoryRequest.getAvailabilityZone()));
         }
-        if (describeSpotPriceHistoryRequest != null) {
-            if (describeSpotPriceHistoryRequest.getMaxResults() != null) {
-                request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotPriceHistoryRequest.getMaxResults()));
-            }
+        if (describeSpotPriceHistoryRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotPriceHistoryRequest.getMaxResults()));
         }
-        if (describeSpotPriceHistoryRequest != null) {
-            if (describeSpotPriceHistoryRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeSpotPriceHistoryRequest.getNextToken()));
-            }
+        if (describeSpotPriceHistoryRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotPriceHistoryRequest.getNextToken()));
         }
 
 

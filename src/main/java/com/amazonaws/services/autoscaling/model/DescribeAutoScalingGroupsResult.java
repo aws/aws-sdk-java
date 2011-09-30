@@ -40,6 +40,7 @@ public class DescribeAutoScalingGroupsResult {
      * @return A list of Auto Scaling groups.
      */
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
+        
         if (autoScalingGroups == null) {
             autoScalingGroups = new java.util.ArrayList<AutoScalingGroup>();
         }
@@ -70,6 +71,7 @@ public class DescribeAutoScalingGroupsResult {
      *         together. 
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
+        if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>());
         for (AutoScalingGroup value : autoScalingGroups) {
             getAutoScalingGroups().add(value);
         }

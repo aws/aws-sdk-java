@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,44 +31,39 @@ import com.amazonaws.util.StringUtils;
 public class DescribeScheduledActionsRequestMarshaller implements Marshaller<Request<DescribeScheduledActionsRequest>, DescribeScheduledActionsRequest> {
 
     public Request<DescribeScheduledActionsRequest> marshall(DescribeScheduledActionsRequest describeScheduledActionsRequest) {
+
+        if (describeScheduledActionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeScheduledActionsRequest> request = new DefaultRequest<DescribeScheduledActionsRequest>(describeScheduledActionsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScheduledActions");
         request.addParameter("Version", "2011-01-01");
-        if (describeScheduledActionsRequest != null) {
-            if (describeScheduledActionsRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScheduledActionsRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (describeScheduledActionsRequest != null) {
-            java.util.List<String> scheduledActionNamesList = describeScheduledActionsRequest.getScheduledActionNames();
-            int scheduledActionNamesListIndex = 1;
 
-            for (String scheduledActionNamesListValue : scheduledActionNamesList) {
-                if (scheduledActionNamesListValue != null) {
-                    request.addParameter("ScheduledActionNames.member." + scheduledActionNamesListIndex, StringUtils.fromString(scheduledActionNamesListValue));
-                }
-                scheduledActionNamesListIndex++;
-            }
+        if (describeScheduledActionsRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(describeScheduledActionsRequest.getAutoScalingGroupName()));
         }
-        if (describeScheduledActionsRequest != null) {
-            if (describeScheduledActionsRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(describeScheduledActionsRequest.getStartTime()));
+
+        java.util.List<String> scheduledActionNamesList = describeScheduledActionsRequest.getScheduledActionNames();
+        int scheduledActionNamesListIndex = 1;
+        for (String scheduledActionNamesListValue : scheduledActionNamesList) {
+            if (scheduledActionNamesListValue != null) {
+                request.addParameter("ScheduledActionNames.member." + scheduledActionNamesListIndex, StringUtils.fromString(scheduledActionNamesListValue));
             }
+
+            scheduledActionNamesListIndex++;
         }
-        if (describeScheduledActionsRequest != null) {
-            if (describeScheduledActionsRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(describeScheduledActionsRequest.getEndTime()));
-            }
+        if (describeScheduledActionsRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeScheduledActionsRequest.getStartTime()));
         }
-        if (describeScheduledActionsRequest != null) {
-            if (describeScheduledActionsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeScheduledActionsRequest.getNextToken()));
-            }
+        if (describeScheduledActionsRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(describeScheduledActionsRequest.getEndTime()));
         }
-        if (describeScheduledActionsRequest != null) {
-            if (describeScheduledActionsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeScheduledActionsRequest.getMaxRecords()));
-            }
+        if (describeScheduledActionsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeScheduledActionsRequest.getNextToken()));
+        }
+        if (describeScheduledActionsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeScheduledActionsRequest.getMaxRecords()));
         }
 
 

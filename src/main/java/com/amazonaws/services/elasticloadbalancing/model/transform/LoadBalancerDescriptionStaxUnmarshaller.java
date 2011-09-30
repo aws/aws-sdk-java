@@ -71,6 +71,10 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                     loadBalancerDescription.setPolicies(PoliciesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("BackendServerDescriptions/member", targetDepth)) {
+                    loadBalancerDescription.getBackendServerDescriptions().add(BackendServerDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("AvailabilityZones/member", targetDepth)) {
                     loadBalancerDescription.getAvailabilityZones().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

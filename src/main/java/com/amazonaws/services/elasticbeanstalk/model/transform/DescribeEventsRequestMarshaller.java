@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,58 +31,44 @@ import com.amazonaws.util.StringUtils;
 public class DescribeEventsRequestMarshaller implements Marshaller<Request<DescribeEventsRequest>, DescribeEventsRequest> {
 
     public Request<DescribeEventsRequest> marshall(DescribeEventsRequest describeEventsRequest) {
+
+        if (describeEventsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEvents");
         request.addParameter("Version", "2010-12-01");
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(describeEventsRequest.getApplicationName()));
-            }
+
+        if (describeEventsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(describeEventsRequest.getApplicationName()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(describeEventsRequest.getVersionLabel()));
-            }
+        if (describeEventsRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(describeEventsRequest.getVersionLabel()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(describeEventsRequest.getTemplateName()));
-            }
+        if (describeEventsRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(describeEventsRequest.getTemplateName()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(describeEventsRequest.getEnvironmentId()));
-            }
+        if (describeEventsRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(describeEventsRequest.getEnvironmentId()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(describeEventsRequest.getEnvironmentName()));
-            }
+        if (describeEventsRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(describeEventsRequest.getEnvironmentName()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getRequestId() != null) {
-                request.addParameter("RequestId", StringUtils.fromString(describeEventsRequest.getRequestId()));
-            }
+        if (describeEventsRequest.getRequestId() != null) {
+            request.addParameter("RequestId", StringUtils.fromString(describeEventsRequest.getRequestId()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getSeverity() != null) {
-                request.addParameter("Severity", StringUtils.fromString(describeEventsRequest.getSeverity()));
-            }
+        if (describeEventsRequest.getSeverity() != null) {
+            request.addParameter("Severity", StringUtils.fromString(describeEventsRequest.getSeverity()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(describeEventsRequest.getStartTime()));
-            }
+        if (describeEventsRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeEventsRequest.getStartTime()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(describeEventsRequest.getEndTime()));
-            }
+        if (describeEventsRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(describeEventsRequest.getEndTime()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeEventsRequest.getNextToken()));
-            }
+        if (describeEventsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeEventsRequest.getNextToken()));
         }
 
 

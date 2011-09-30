@@ -26,28 +26,33 @@ public final class InputSubstream extends FilterInputStream {
 	private long currentPosition;
 	private final long requestedOffset;
 	private final long requestedLength;
+	private final boolean closeSourceStream;
 	private long markedPosition = 0;
 
-    /**
-     * Constructs a new InputSubstream so that when callers start reading from
-     * this stream they'll start at the specified offset in the real stream and
-     * after they've read the specified length, this stream will look empty.
-     *
-     * @param in
-     *            The input stream to wrap.
-     * @param offset
-     *            The offset, in bytes, into the specified input stream at which
-     *            to start reading data.
-     * @param length
-     *            The length, in bytes, of the specified input stream to return
-     *            through this stream.
-     */
-    public InputSubstream(InputStream in, long offset, long length) {
-        super(in);
-
-        this.currentPosition = 0;
-        this.requestedLength = length;
-        this.requestedOffset = offset;
+	/**
+	 * Constructs a new InputSubstream so that when callers start reading from
+	 * this stream they'll start at the specified offset in the real stream and
+	 * after they've read the specified length, this stream will look empty.
+	 * 
+	 * @param in
+	 *            The input stream to wrap.
+	 * @param offset
+	 *            The offset, in bytes, into the specified input stream at which
+	 *            to start reading data.
+	 * @param length
+	 *            The length, in bytes, of the specified input stream to return
+	 *            through this stream.
+	 * @param closeSourceStream
+	 *            True if the wrapped InputStream should be closed when this
+	 *            InputSubstream is closed.
+	 */
+    public InputSubstream(InputStream in, long offset, long length, boolean closeSourceStream) {
+    	super(in);
+    	
+    	this.currentPosition = 0;
+    	this.requestedLength = length;
+    	this.requestedOffset = offset;
+    	this.closeSourceStream = closeSourceStream;
     }
 
     @Override
@@ -93,7 +98,7 @@ public final class InputSubstream extends FilterInputStream {
 		// Only close the wrapped input stream if we're at the end of
 		// the wrapped stream.  We don't want to close the wrapped input
 		// stream just because we've reached the end of one subsection.
-		if (in.available() <= 0) super.close();
+		if (closeSourceStream) super.close();
 	}
 
 	@Override

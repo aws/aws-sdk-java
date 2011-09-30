@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class ListTopicsRequestMarshaller implements Marshaller<Request<ListTopicsRequest>, ListTopicsRequest> {
 
     public Request<ListTopicsRequest> marshall(ListTopicsRequest listTopicsRequest) {
+
+        if (listTopicsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListTopicsRequest> request = new DefaultRequest<ListTopicsRequest>(listTopicsRequest, "AmazonSNS");
         request.addParameter("Action", "ListTopics");
         request.addParameter("Version", "2010-03-31");
-        if (listTopicsRequest != null) {
-            if (listTopicsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listTopicsRequest.getNextToken()));
-            }
+
+        if (listTopicsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listTopicsRequest.getNextToken()));
         }
 
 

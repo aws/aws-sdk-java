@@ -458,6 +458,7 @@ public class ReservedInstances {
      * @return A list of tags for the ReservedInstances.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -488,6 +489,7 @@ public class ReservedInstances {
      *         together. 
      */
     public ReservedInstances withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

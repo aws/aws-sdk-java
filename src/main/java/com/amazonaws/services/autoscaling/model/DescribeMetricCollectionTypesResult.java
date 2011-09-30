@@ -37,6 +37,7 @@ public class DescribeMetricCollectionTypesResult {
      * @return The list of Metrics collected.
      */
     public java.util.List<MetricCollectionType> getMetrics() {
+        
         if (metrics == null) {
             metrics = new java.util.ArrayList<MetricCollectionType>();
         }
@@ -67,6 +68,7 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withMetrics(MetricCollectionType... metrics) {
+        if (getMetrics() == null) setMetrics(new java.util.ArrayList<MetricCollectionType>());
         for (MetricCollectionType value : metrics) {
             getMetrics().add(value);
         }
@@ -99,6 +101,7 @@ public class DescribeMetricCollectionTypesResult {
      * @return A list of Granularities for the listed Metrics.
      */
     public java.util.List<MetricGranularityType> getGranularities() {
+        
         if (granularities == null) {
             granularities = new java.util.ArrayList<MetricGranularityType>();
         }
@@ -129,6 +132,7 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withGranularities(MetricGranularityType... granularities) {
+        if (getGranularities() == null) setGranularities(new java.util.ArrayList<MetricGranularityType>());
         for (MetricGranularityType value : granularities) {
             getGranularities().add(value);
         }

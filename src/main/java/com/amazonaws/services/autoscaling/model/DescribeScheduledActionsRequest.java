@@ -133,6 +133,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
      *         scheduled actions are requested, they are ignored with no error.
      */
     public java.util.List<String> getScheduledActionNames() {
+        
         if (scheduledActionNames == null) {
             scheduledActionNames = new java.util.ArrayList<String>();
         }
@@ -179,6 +180,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(String... scheduledActionNames) {
+        if (getScheduledActionNames() == null) setScheduledActionNames(new java.util.ArrayList<String>());
         for (String value : scheduledActionNames) {
             getScheduledActionNames().add(value);
         }

@@ -41,6 +41,7 @@ public class ListStackResourcesResult {
      * @return A list of <code>StackResourceSummary</code> structures.
      */
     public java.util.List<StackResourceSummary> getStackResourceSummaries() {
+        
         if (stackResourceSummaries == null) {
             stackResourceSummaries = new java.util.ArrayList<StackResourceSummary>();
         }
@@ -71,6 +72,7 @@ public class ListStackResourcesResult {
      *         together. 
      */
     public ListStackResourcesResult withStackResourceSummaries(StackResourceSummary... stackResourceSummaries) {
+        if (getStackResourceSummaries() == null) setStackResourceSummaries(new java.util.ArrayList<StackResourceSummary>());
         for (StackResourceSummary value : stackResourceSummaries) {
             getStackResourceSummaries().add(value);
         }

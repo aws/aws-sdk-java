@@ -221,6 +221,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         attribute is being modified.
      */
     public java.util.List<String> getUserIds() {
+        
         if (userIds == null) {
             userIds = new java.util.ArrayList<String>();
         }
@@ -259,6 +260,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserIds(String... userIds) {
+        if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>());
         for (String value : userIds) {
             getUserIds().add(value);
         }
@@ -301,6 +303,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         groups: <code>all</code>
      */
     public java.util.List<String> getUserGroups() {
+        
         if (userGroups == null) {
             userGroups = new java.util.ArrayList<String>();
         }
@@ -343,6 +346,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserGroups(String... userGroups) {
+        if (getUserGroups() == null) setUserGroups(new java.util.ArrayList<String>());
         for (String value : userGroups) {
             getUserGroups().add(value);
         }
@@ -383,6 +387,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         AMI. Only valid when the productCodes attribute is being modified.
      */
     public java.util.List<String> getProductCodes() {
+        
         if (productCodes == null) {
             productCodes = new java.util.ArrayList<String>();
         }
@@ -417,6 +422,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withProductCodes(String... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<String>());
         for (String value : productCodes) {
             getProductCodes().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteScheduledActionRequestMarshaller implements Marshaller<Request<DeleteScheduledActionRequest>, DeleteScheduledActionRequest> {
 
     public Request<DeleteScheduledActionRequest> marshall(DeleteScheduledActionRequest deleteScheduledActionRequest) {
+
+        if (deleteScheduledActionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteScheduledActionRequest> request = new DefaultRequest<DeleteScheduledActionRequest>(deleteScheduledActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteScheduledAction");
         request.addParameter("Version", "2011-01-01");
-        if (deleteScheduledActionRequest != null) {
-            if (deleteScheduledActionRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteScheduledActionRequest.getAutoScalingGroupName()));
-            }
+
+        if (deleteScheduledActionRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteScheduledActionRequest.getAutoScalingGroupName()));
         }
-        if (deleteScheduledActionRequest != null) {
-            if (deleteScheduledActionRequest.getScheduledActionName() != null) {
-                request.addParameter("ScheduledActionName", StringUtils.fromString(deleteScheduledActionRequest.getScheduledActionName()));
-            }
+        if (deleteScheduledActionRequest.getScheduledActionName() != null) {
+            request.addParameter("ScheduledActionName", StringUtils.fromString(deleteScheduledActionRequest.getScheduledActionName()));
         }
 
 

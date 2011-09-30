@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class RemovePermissionRequestMarshaller implements Marshaller<Request<RemovePermissionRequest>, RemovePermissionRequest> {
 
     public Request<RemovePermissionRequest> marshall(RemovePermissionRequest removePermissionRequest) {
+
+        if (removePermissionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(removePermissionRequest, "AmazonSNS");
         request.addParameter("Action", "RemovePermission");
         request.addParameter("Version", "2010-03-31");
-        if (removePermissionRequest != null) {
-            if (removePermissionRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(removePermissionRequest.getTopicArn()));
-            }
+
+        if (removePermissionRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(removePermissionRequest.getTopicArn()));
         }
-        if (removePermissionRequest != null) {
-            if (removePermissionRequest.getLabel() != null) {
-                request.addParameter("Label", StringUtils.fromString(removePermissionRequest.getLabel()));
-            }
+        if (removePermissionRequest.getLabel() != null) {
+            request.addParameter("Label", StringUtils.fromString(removePermissionRequest.getLabel()));
         }
 
 

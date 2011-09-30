@@ -33,6 +33,7 @@ public class DescribeSecurityGroupsResult {
      * @return The list of described Amazon EC2 security groups.
      */
     public java.util.List<SecurityGroup> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<SecurityGroup>();
         }
@@ -63,6 +64,7 @@ public class DescribeSecurityGroupsResult {
      *         together. 
      */
     public DescribeSecurityGroupsResult withSecurityGroups(SecurityGroup... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroup>());
         for (SecurityGroup value : securityGroups) {
             getSecurityGroups().add(value);
         }

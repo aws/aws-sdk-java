@@ -27,6 +27,7 @@ public class DescribeInternetGatewaysResult {
      * @return The value of the InternetGateways property for this object.
      */
     public java.util.List<InternetGateway> getInternetGateways() {
+        
         if (internetGateways == null) {
             internetGateways = new java.util.ArrayList<InternetGateway>();
         }
@@ -57,6 +58,7 @@ public class DescribeInternetGatewaysResult {
      *         together. 
      */
     public DescribeInternetGatewaysResult withInternetGateways(InternetGateway... internetGateways) {
+        if (getInternetGateways() == null) setInternetGateways(new java.util.ArrayList<InternetGateway>());
         for (InternetGateway value : internetGateways) {
             getInternetGateways().add(value);
         }

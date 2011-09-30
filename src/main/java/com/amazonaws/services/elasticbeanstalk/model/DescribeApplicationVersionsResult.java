@@ -32,6 +32,7 @@ public class DescribeApplicationVersionsResult {
      * @return A list of <a>ApplicationVersionDescription</a> .
      */
     public java.util.List<ApplicationVersionDescription> getApplicationVersions() {
+        
         if (applicationVersions == null) {
             applicationVersions = new java.util.ArrayList<ApplicationVersionDescription>();
         }
@@ -62,6 +63,7 @@ public class DescribeApplicationVersionsResult {
      *         together. 
      */
     public DescribeApplicationVersionsResult withApplicationVersions(ApplicationVersionDescription... applicationVersions) {
+        if (getApplicationVersions() == null) setApplicationVersions(new java.util.ArrayList<ApplicationVersionDescription>());
         for (ApplicationVersionDescription value : applicationVersions) {
             getApplicationVersions().add(value);
         }

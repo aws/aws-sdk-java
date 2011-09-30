@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteDBSnapshotRequestMarshaller implements Marshaller<Request<DeleteDBSnapshotRequest>, DeleteDBSnapshotRequest> {
 
     public Request<DeleteDBSnapshotRequest> marshall(DeleteDBSnapshotRequest deleteDBSnapshotRequest) {
+
+        if (deleteDBSnapshotRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteDBSnapshotRequest> request = new DefaultRequest<DeleteDBSnapshotRequest>(deleteDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSnapshot");
         request.addParameter("Version", "2011-04-01");
-        if (deleteDBSnapshotRequest != null) {
-            if (deleteDBSnapshotRequest.getDBSnapshotIdentifier() != null) {
-                request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(deleteDBSnapshotRequest.getDBSnapshotIdentifier()));
-            }
+
+        if (deleteDBSnapshotRequest.getDBSnapshotIdentifier() != null) {
+            request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(deleteDBSnapshotRequest.getDBSnapshotIdentifier()));
         }
 
 

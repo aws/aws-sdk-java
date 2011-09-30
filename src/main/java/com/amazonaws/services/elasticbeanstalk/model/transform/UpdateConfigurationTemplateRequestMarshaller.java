@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,66 +31,58 @@ import com.amazonaws.util.StringUtils;
 public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<Request<UpdateConfigurationTemplateRequest>, UpdateConfigurationTemplateRequest> {
 
     public Request<UpdateConfigurationTemplateRequest> marshall(UpdateConfigurationTemplateRequest updateConfigurationTemplateRequest) {
+
+        if (updateConfigurationTemplateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<UpdateConfigurationTemplateRequest> request = new DefaultRequest<UpdateConfigurationTemplateRequest>(updateConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateConfigurationTemplate");
         request.addParameter("Version", "2010-12-01");
-        if (updateConfigurationTemplateRequest != null) {
-            if (updateConfigurationTemplateRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(updateConfigurationTemplateRequest.getApplicationName()));
-            }
+
+        if (updateConfigurationTemplateRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(updateConfigurationTemplateRequest.getApplicationName()));
         }
-        if (updateConfigurationTemplateRequest != null) {
-            if (updateConfigurationTemplateRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(updateConfigurationTemplateRequest.getTemplateName()));
-            }
+        if (updateConfigurationTemplateRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(updateConfigurationTemplateRequest.getTemplateName()));
         }
-        if (updateConfigurationTemplateRequest != null) {
-            if (updateConfigurationTemplateRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(updateConfigurationTemplateRequest.getDescription()));
-            }
+        if (updateConfigurationTemplateRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(updateConfigurationTemplateRequest.getDescription()));
         }
 
-        if (updateConfigurationTemplateRequest != null) {
-            java.util.List<ConfigurationOptionSetting> optionSettingsList = updateConfigurationTemplateRequest.getOptionSettings();
-            int optionSettingsListIndex = 1;
-            for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getNamespace() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                    }
+        java.util.List<ConfigurationOptionSetting> optionSettingsList = updateConfigurationTemplateRequest.getOptionSettings();
+        int optionSettingsListIndex = 1;
+        for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+            ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
+            if (configurationOptionSettingMember != null) {
+                if (configurationOptionSettingMember.getNamespace() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(configurationOptionSettingMember.getNamespace()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getOptionName() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                    }
+                if (configurationOptionSettingMember.getOptionName() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(configurationOptionSettingMember.getOptionName()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getValue() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
-                    }
+                if (configurationOptionSettingMember.getValue() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(configurationOptionSettingMember.getValue()));
                 }
-
-                optionSettingsListIndex++;
             }
+
+            optionSettingsListIndex++;
         }
 
-        if (updateConfigurationTemplateRequest != null) {
-            java.util.List<OptionSpecification> optionsToRemoveList = updateConfigurationTemplateRequest.getOptionsToRemove();
-            int optionsToRemoveListIndex = 1;
-            for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
-                if (optionsToRemoveListValue != null) {
-                    if (optionsToRemoveListValue.getNamespace() != null) {
-                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
-                    }
+        java.util.List<OptionSpecification> optionsToRemoveList = updateConfigurationTemplateRequest.getOptionsToRemove();
+        int optionsToRemoveListIndex = 1;
+        for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
+            OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
+            if (optionSpecificationMember != null) {
+                if (optionSpecificationMember.getNamespace() != null) {
+                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.fromString(optionSpecificationMember.getNamespace()));
                 }
-                if (optionsToRemoveListValue != null) {
-                    if (optionsToRemoveListValue.getOptionName() != null) {
-                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
-                    }
+                if (optionSpecificationMember.getOptionName() != null) {
+                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.fromString(optionSpecificationMember.getOptionName()));
                 }
-
-                optionsToRemoveListIndex++;
             }
+
+            optionsToRemoveListIndex++;
         }
 
 

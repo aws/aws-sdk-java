@@ -190,6 +190,7 @@ public class IpPermission {
      * @return The list of AWS user IDs and groups included in this permission.
      */
     public java.util.List<UserIdGroupPair> getUserIdGroupPairs() {
+        
         if (userIdGroupPairs == null) {
             userIdGroupPairs = new java.util.ArrayList<UserIdGroupPair>();
         }
@@ -220,6 +221,7 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
+        if (getUserIdGroupPairs() == null) setUserIdGroupPairs(new java.util.ArrayList<UserIdGroupPair>());
         for (UserIdGroupPair value : userIdGroupPairs) {
             getUserIdGroupPairs().add(value);
         }
@@ -252,6 +254,7 @@ public class IpPermission {
      * @return The list of CIDR IP ranges included in this permission.
      */
     public java.util.List<String> getIpRanges() {
+        
         if (ipRanges == null) {
             ipRanges = new java.util.ArrayList<String>();
         }
@@ -282,6 +285,7 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withIpRanges(String... ipRanges) {
+        if (getIpRanges() == null) setIpRanges(new java.util.ArrayList<String>());
         for (String value : ipRanges) {
             getIpRanges().add(value);
         }

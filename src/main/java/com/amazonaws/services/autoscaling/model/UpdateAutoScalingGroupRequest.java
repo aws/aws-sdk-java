@@ -372,6 +372,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * @return Availability zones for the group.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -408,6 +409,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

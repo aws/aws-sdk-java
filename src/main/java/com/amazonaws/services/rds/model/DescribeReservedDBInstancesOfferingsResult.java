@@ -72,6 +72,7 @@ public class DescribeReservedDBInstancesOfferingsResult {
      * @return A list of DB Instance offerings.
      */
     public java.util.List<ReservedDBInstancesOffering> getReservedDBInstancesOfferings() {
+        
         if (reservedDBInstancesOfferings == null) {
             reservedDBInstancesOfferings = new java.util.ArrayList<ReservedDBInstancesOffering>();
         }
@@ -102,6 +103,7 @@ public class DescribeReservedDBInstancesOfferingsResult {
      *         together. 
      */
     public DescribeReservedDBInstancesOfferingsResult withReservedDBInstancesOfferings(ReservedDBInstancesOffering... reservedDBInstancesOfferings) {
+        if (getReservedDBInstancesOfferings() == null) setReservedDBInstancesOfferings(new java.util.ArrayList<ReservedDBInstancesOffering>());
         for (ReservedDBInstancesOffering value : reservedDBInstancesOfferings) {
             getReservedDBInstancesOfferings().add(value);
         }

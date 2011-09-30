@@ -214,6 +214,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      *         </note>
      */
     public java.util.List<String> getUserIds() {
+        
         if (userIds == null) {
             userIds = new java.util.ArrayList<String>();
         }
@@ -260,6 +261,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifySnapshotAttributeRequest withUserIds(String... userIds) {
+        if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>());
         for (String value : userIds) {
             getUserIds().add(value);
         }
@@ -308,6 +310,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      *         </note>
      */
     public java.util.List<String> getGroupNames() {
+        
         if (groupNames == null) {
             groupNames = new java.util.ArrayList<String>();
         }
@@ -354,6 +357,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifySnapshotAttributeRequest withGroupNames(String... groupNames) {
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
         for (String value : groupNames) {
             getGroupNames().add(value);
         }

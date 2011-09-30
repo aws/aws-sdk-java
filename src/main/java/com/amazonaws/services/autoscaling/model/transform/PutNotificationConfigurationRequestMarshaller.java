@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,29 +31,30 @@ import com.amazonaws.util.StringUtils;
 public class PutNotificationConfigurationRequestMarshaller implements Marshaller<Request<PutNotificationConfigurationRequest>, PutNotificationConfigurationRequest> {
 
     public Request<PutNotificationConfigurationRequest> marshall(PutNotificationConfigurationRequest putNotificationConfigurationRequest) {
+
+        if (putNotificationConfigurationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PutNotificationConfigurationRequest> request = new DefaultRequest<PutNotificationConfigurationRequest>(putNotificationConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutNotificationConfiguration");
         request.addParameter("Version", "2011-01-01");
-        if (putNotificationConfigurationRequest != null) {
-            if (putNotificationConfigurationRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(putNotificationConfigurationRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (putNotificationConfigurationRequest != null) {
-            if (putNotificationConfigurationRequest.getTopicARN() != null) {
-                request.addParameter("TopicARN", StringUtils.fromString(putNotificationConfigurationRequest.getTopicARN()));
-            }
-        }
-        if (putNotificationConfigurationRequest != null) {
-            java.util.List<String> notificationTypesList = putNotificationConfigurationRequest.getNotificationTypes();
-            int notificationTypesListIndex = 1;
 
-            for (String notificationTypesListValue : notificationTypesList) {
-                if (notificationTypesListValue != null) {
-                    request.addParameter("NotificationTypes.member." + notificationTypesListIndex, StringUtils.fromString(notificationTypesListValue));
-                }
-                notificationTypesListIndex++;
+        if (putNotificationConfigurationRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(putNotificationConfigurationRequest.getAutoScalingGroupName()));
+        }
+        if (putNotificationConfigurationRequest.getTopicARN() != null) {
+            request.addParameter("TopicARN", StringUtils.fromString(putNotificationConfigurationRequest.getTopicARN()));
+        }
+
+        java.util.List<String> notificationTypesList = putNotificationConfigurationRequest.getNotificationTypes();
+        int notificationTypesListIndex = 1;
+        for (String notificationTypesListValue : notificationTypesList) {
+            if (notificationTypesListValue != null) {
+                request.addParameter("NotificationTypes.member." + notificationTypesListIndex, StringUtils.fromString(notificationTypesListValue));
             }
+
+            notificationTypesListIndex++;
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class SetAlarmStateRequestMarshaller implements Marshaller<Request<SetAlarmStateRequest>, SetAlarmStateRequest> {
 
     public Request<SetAlarmStateRequest> marshall(SetAlarmStateRequest setAlarmStateRequest) {
+
+        if (setAlarmStateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetAlarmStateRequest> request = new DefaultRequest<SetAlarmStateRequest>(setAlarmStateRequest, "AmazonCloudWatch");
         request.addParameter("Action", "SetAlarmState");
         request.addParameter("Version", "2010-08-01");
-        if (setAlarmStateRequest != null) {
-            if (setAlarmStateRequest.getAlarmName() != null) {
-                request.addParameter("AlarmName", StringUtils.fromString(setAlarmStateRequest.getAlarmName()));
-            }
+
+        if (setAlarmStateRequest.getAlarmName() != null) {
+            request.addParameter("AlarmName", StringUtils.fromString(setAlarmStateRequest.getAlarmName()));
         }
-        if (setAlarmStateRequest != null) {
-            if (setAlarmStateRequest.getStateValue() != null) {
-                request.addParameter("StateValue", StringUtils.fromString(setAlarmStateRequest.getStateValue()));
-            }
+        if (setAlarmStateRequest.getStateValue() != null) {
+            request.addParameter("StateValue", StringUtils.fromString(setAlarmStateRequest.getStateValue()));
         }
-        if (setAlarmStateRequest != null) {
-            if (setAlarmStateRequest.getStateReason() != null) {
-                request.addParameter("StateReason", StringUtils.fromString(setAlarmStateRequest.getStateReason()));
-            }
+        if (setAlarmStateRequest.getStateReason() != null) {
+            request.addParameter("StateReason", StringUtils.fromString(setAlarmStateRequest.getStateReason()));
         }
-        if (setAlarmStateRequest != null) {
-            if (setAlarmStateRequest.getStateReasonData() != null) {
-                request.addParameter("StateReasonData", StringUtils.fromString(setAlarmStateRequest.getStateReasonData()));
-            }
+        if (setAlarmStateRequest.getStateReasonData() != null) {
+            request.addParameter("StateReasonData", StringUtils.fromString(setAlarmStateRequest.getStateReasonData()));
         }
 
 

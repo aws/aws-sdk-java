@@ -60,6 +60,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      * @return The optional list of EBS snapshot IDs to describe.
      */
     public java.util.List<String> getSnapshotIds() {
+        
         if (snapshotIds == null) {
             snapshotIds = new java.util.ArrayList<String>();
         }
@@ -90,6 +91,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSnapshotsRequest withSnapshotIds(String... snapshotIds) {
+        if (getSnapshotIds() == null) setSnapshotIds(new java.util.ArrayList<String>());
         for (String value : snapshotIds) {
             getSnapshotIds().add(value);
         }
@@ -122,6 +124,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      * @return The optional list of EBS snapshot owners.
      */
     public java.util.List<String> getOwnerIds() {
+        
         if (ownerIds == null) {
             ownerIds = new java.util.ArrayList<String>();
         }
@@ -152,6 +155,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSnapshotsRequest withOwnerIds(String... ownerIds) {
+        if (getOwnerIds() == null) setOwnerIds(new java.util.ArrayList<String>());
         for (String value : ownerIds) {
             getOwnerIds().add(value);
         }
@@ -186,6 +190,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         the described EBS snapshots.
      */
     public java.util.List<String> getRestorableByUserIds() {
+        
         if (restorableByUserIds == null) {
             restorableByUserIds = new java.util.ArrayList<String>();
         }
@@ -220,6 +225,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSnapshotsRequest withRestorableByUserIds(String... restorableByUserIds) {
+        if (getRestorableByUserIds() == null) setRestorableByUserIds(new java.util.ArrayList<String>());
         for (String value : restorableByUserIds) {
             getRestorableByUserIds().add(value);
         }
@@ -262,6 +268,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -308,6 +315,7 @@ public class DescribeSnapshotsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSnapshotsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

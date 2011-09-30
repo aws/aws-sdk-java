@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class SetInstanceHealthRequestMarshaller implements Marshaller<Request<SetInstanceHealthRequest>, SetInstanceHealthRequest> {
 
     public Request<SetInstanceHealthRequest> marshall(SetInstanceHealthRequest setInstanceHealthRequest) {
+
+        if (setInstanceHealthRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetInstanceHealthRequest> request = new DefaultRequest<SetInstanceHealthRequest>(setInstanceHealthRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetInstanceHealth");
         request.addParameter("Version", "2011-01-01");
-        if (setInstanceHealthRequest != null) {
-            if (setInstanceHealthRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(setInstanceHealthRequest.getInstanceId()));
-            }
+
+        if (setInstanceHealthRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(setInstanceHealthRequest.getInstanceId()));
         }
-        if (setInstanceHealthRequest != null) {
-            if (setInstanceHealthRequest.getHealthStatus() != null) {
-                request.addParameter("HealthStatus", StringUtils.fromString(setInstanceHealthRequest.getHealthStatus()));
-            }
+        if (setInstanceHealthRequest.getHealthStatus() != null) {
+            request.addParameter("HealthStatus", StringUtils.fromString(setInstanceHealthRequest.getHealthStatus()));
         }
-        if (setInstanceHealthRequest != null) {
-            if (setInstanceHealthRequest.isShouldRespectGracePeriod() != null) {
-                request.addParameter("ShouldRespectGracePeriod", StringUtils.fromBoolean(setInstanceHealthRequest.isShouldRespectGracePeriod()));
-            }
+        if (setInstanceHealthRequest.isShouldRespectGracePeriod() != null) {
+            request.addParameter("ShouldRespectGracePeriod", StringUtils.fromBoolean(setInstanceHealthRequest.isShouldRespectGracePeriod()));
         }
 
 

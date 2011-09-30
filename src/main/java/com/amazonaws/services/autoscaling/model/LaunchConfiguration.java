@@ -315,6 +315,7 @@ public class LaunchConfiguration {
      *         instances.
      */
     public java.util.List<String> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<String>();
         }
@@ -349,6 +350,7 @@ public class LaunchConfiguration {
      *         together. 
      */
     public LaunchConfiguration withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -569,6 +571,7 @@ public class LaunchConfiguration {
      *         is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -603,6 +606,7 @@ public class LaunchConfiguration {
      *         together. 
      */
     public LaunchConfiguration withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

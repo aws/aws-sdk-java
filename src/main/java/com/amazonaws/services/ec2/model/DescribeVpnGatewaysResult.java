@@ -32,6 +32,7 @@ public class DescribeVpnGatewaysResult {
      * @return 
      */
     public java.util.List<VpnGateway> getVpnGateways() {
+        
         if (vpnGateways == null) {
             vpnGateways = new java.util.ArrayList<VpnGateway>();
         }
@@ -62,6 +63,7 @@ public class DescribeVpnGatewaysResult {
      *         together. 
      */
     public DescribeVpnGatewaysResult withVpnGateways(VpnGateway... vpnGateways) {
+        if (getVpnGateways() == null) setVpnGateways(new java.util.ArrayList<VpnGateway>());
         for (VpnGateway value : vpnGateways) {
             getVpnGateways().add(value);
         }

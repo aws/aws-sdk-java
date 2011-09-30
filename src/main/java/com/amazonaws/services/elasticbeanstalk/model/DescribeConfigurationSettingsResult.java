@@ -33,6 +33,7 @@ public class DescribeConfigurationSettingsResult {
      * @return A list of <a>ConfigurationSettingsDescription</a>.
      */
     public java.util.List<ConfigurationSettingsDescription> getConfigurationSettings() {
+        
         if (configurationSettings == null) {
             configurationSettings = new java.util.ArrayList<ConfigurationSettingsDescription>();
         }
@@ -63,6 +64,7 @@ public class DescribeConfigurationSettingsResult {
      *         together. 
      */
     public DescribeConfigurationSettingsResult withConfigurationSettings(ConfigurationSettingsDescription... configurationSettings) {
+        if (getConfigurationSettings() == null) setConfigurationSettings(new java.util.ArrayList<ConfigurationSettingsDescription>());
         for (ConfigurationSettingsDescription value : configurationSettings) {
             getConfigurationSettings().add(value);
         }

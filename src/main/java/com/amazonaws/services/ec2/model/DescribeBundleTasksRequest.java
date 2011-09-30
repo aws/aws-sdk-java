@@ -48,6 +48,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      * @return The list of bundle task IDs to describe.
      */
     public java.util.List<String> getBundleIds() {
+        
         if (bundleIds == null) {
             bundleIds = new java.util.ArrayList<String>();
         }
@@ -78,6 +79,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withBundleIds(String... bundleIds) {
+        if (getBundleIds() == null) setBundleIds(new java.util.ArrayList<String>());
         for (String value : bundleIds) {
             getBundleIds().add(value);
         }
@@ -118,6 +120,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -164,6 +167,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

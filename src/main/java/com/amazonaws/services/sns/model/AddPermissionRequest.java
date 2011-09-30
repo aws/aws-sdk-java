@@ -166,6 +166,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      *         AWS Identifiers</aulink> in the &service; Developer Guide.-->
      */
     public java.util.List<String> getAWSAccountIds() {
+        
         if (aWSAccountIds == null) {
             aWSAccountIds = new java.util.ArrayList<String>();
         }
@@ -216,6 +217,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddPermissionRequest withAWSAccountIds(String... aWSAccountIds) {
+        if (getAWSAccountIds() == null) setAWSAccountIds(new java.util.ArrayList<String>());
         for (String value : aWSAccountIds) {
             getAWSAccountIds().add(value);
         }
@@ -258,6 +260,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      * @return The action you want to allow for the specified principal(s).
      */
     public java.util.List<String> getActionNames() {
+        
         if (actionNames == null) {
             actionNames = new java.util.ArrayList<String>();
         }
@@ -288,6 +291,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddPermissionRequest withActionNames(String... actionNames) {
+        if (getActionNames() == null) setActionNames(new java.util.ArrayList<String>());
         for (String value : actionNames) {
             getActionNames().add(value);
         }

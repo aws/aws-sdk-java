@@ -385,6 +385,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         launched.
      */
     public java.util.List<String> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<String>();
         }
@@ -419,6 +420,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -453,6 +455,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * @return The value of the SecurityGroupIds property for this object.
      */
     public java.util.List<String> getSecurityGroupIds() {
+        
         if (securityGroupIds == null) {
             securityGroupIds = new java.util.ArrayList<String>();
         }
@@ -483,6 +486,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
+        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>());
         for (String value : securityGroupIds) {
             getSecurityGroupIds().add(value);
         }
@@ -732,6 +736,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         is made up of a virtualName and a deviceName.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -766,6 +771,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

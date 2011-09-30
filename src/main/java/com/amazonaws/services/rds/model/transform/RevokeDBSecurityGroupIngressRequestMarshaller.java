@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller<Request<RevokeDBSecurityGroupIngressRequest>, RevokeDBSecurityGroupIngressRequest> {
 
     public Request<RevokeDBSecurityGroupIngressRequest> marshall(RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) {
+
+        if (revokeDBSecurityGroupIngressRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "RevokeDBSecurityGroupIngress");
         request.addParameter("Version", "2011-04-01");
-        if (revokeDBSecurityGroupIngressRequest != null) {
-            if (revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
-                request.addParameter("DBSecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));
-            }
+
+        if (revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
+            request.addParameter("DBSecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));
         }
-        if (revokeDBSecurityGroupIngressRequest != null) {
-            if (revokeDBSecurityGroupIngressRequest.getCIDRIP() != null) {
-                request.addParameter("CIDRIP", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getCIDRIP()));
-            }
+        if (revokeDBSecurityGroupIngressRequest.getCIDRIP() != null) {
+            request.addParameter("CIDRIP", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getCIDRIP()));
         }
-        if (revokeDBSecurityGroupIngressRequest != null) {
-            if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName() != null) {
-                request.addParameter("EC2SecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName()));
-            }
+        if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName() != null) {
+            request.addParameter("EC2SecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName()));
         }
-        if (revokeDBSecurityGroupIngressRequest != null) {
-            if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
-                request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));
-            }
+        if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
+            request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));
         }
 
 

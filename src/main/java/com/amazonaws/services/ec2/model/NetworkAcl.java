@@ -148,6 +148,7 @@ public class NetworkAcl {
      * @return The value of the Entries property for this object.
      */
     public java.util.List<NetworkAclEntry> getEntries() {
+        
         if (entries == null) {
             entries = new java.util.ArrayList<NetworkAclEntry>();
         }
@@ -178,6 +179,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
+        if (getEntries() == null) setEntries(new java.util.ArrayList<NetworkAclEntry>());
         for (NetworkAclEntry value : entries) {
             getEntries().add(value);
         }
@@ -210,6 +212,7 @@ public class NetworkAcl {
      * @return The value of the Associations property for this object.
      */
     public java.util.List<NetworkAclAssociation> getAssociations() {
+        
         if (associations == null) {
             associations = new java.util.ArrayList<NetworkAclAssociation>();
         }
@@ -240,6 +243,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
+        if (getAssociations() == null) setAssociations(new java.util.ArrayList<NetworkAclAssociation>());
         for (NetworkAclAssociation value : associations) {
             getAssociations().add(value);
         }
@@ -272,6 +276,7 @@ public class NetworkAcl {
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -302,6 +307,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

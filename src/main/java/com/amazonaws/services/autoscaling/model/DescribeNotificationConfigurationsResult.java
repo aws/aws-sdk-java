@@ -41,6 +41,7 @@ public class DescribeNotificationConfigurationsResult {
      * @return The list of notification configurations.
      */
     public java.util.List<NotificationConfiguration> getNotificationConfigurations() {
+        
         if (notificationConfigurations == null) {
             notificationConfigurations = new java.util.ArrayList<NotificationConfiguration>();
         }
@@ -71,6 +72,7 @@ public class DescribeNotificationConfigurationsResult {
      *         together. 
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(NotificationConfiguration... notificationConfigurations) {
+        if (getNotificationConfigurations() == null) setNotificationConfigurations(new java.util.ArrayList<NotificationConfiguration>());
         for (NotificationConfiguration value : notificationConfigurations) {
             getNotificationConfigurations().add(value);
         }

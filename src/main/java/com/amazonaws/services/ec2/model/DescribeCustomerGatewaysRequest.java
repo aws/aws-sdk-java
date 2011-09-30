@@ -56,6 +56,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      * @return A set of one or more customer gateway IDs.
      */
     public java.util.List<String> getCustomerGatewayIds() {
+        
         if (customerGatewayIds == null) {
             customerGatewayIds = new java.util.ArrayList<String>();
         }
@@ -86,6 +87,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(String... customerGatewayIds) {
+        if (getCustomerGatewayIds() == null) setCustomerGatewayIds(new java.util.ArrayList<String>());
         for (String value : customerGatewayIds) {
             getCustomerGatewayIds().add(value);
         }
@@ -126,6 +128,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -172,6 +175,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CreateKeyPairRequestMarshaller implements Marshaller<Request<CreateKeyPairRequest>, CreateKeyPairRequest> {
 
     public Request<CreateKeyPairRequest> marshall(CreateKeyPairRequest createKeyPairRequest) {
+
+        if (createKeyPairRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateKeyPairRequest> request = new DefaultRequest<CreateKeyPairRequest>(createKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "CreateKeyPair");
         request.addParameter("Version", "2011-05-15");
-        if (createKeyPairRequest != null) {
-            if (createKeyPairRequest.getKeyName() != null) {
-                request.addParameter("KeyName", StringUtils.fromString(createKeyPairRequest.getKeyName()));
-            }
+
+        if (createKeyPairRequest.getKeyName() != null) {
+            request.addParameter("KeyName", StringUtils.fromString(createKeyPairRequest.getKeyName()));
         }
 
 

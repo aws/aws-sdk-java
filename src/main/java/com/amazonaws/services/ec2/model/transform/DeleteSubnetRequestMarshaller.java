@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteSubnetRequestMarshaller implements Marshaller<Request<DeleteSubnetRequest>, DeleteSubnetRequest> {
 
     public Request<DeleteSubnetRequest> marshall(DeleteSubnetRequest deleteSubnetRequest) {
+
+        if (deleteSubnetRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteSubnetRequest> request = new DefaultRequest<DeleteSubnetRequest>(deleteSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSubnet");
         request.addParameter("Version", "2011-05-15");
-        if (deleteSubnetRequest != null) {
-            if (deleteSubnetRequest.getSubnetId() != null) {
-                request.addParameter("SubnetId", StringUtils.fromString(deleteSubnetRequest.getSubnetId()));
-            }
+
+        if (deleteSubnetRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(deleteSubnetRequest.getSubnetId()));
         }
 
 

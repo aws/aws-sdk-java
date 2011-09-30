@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<DeleteKeyPairRequest>, DeleteKeyPairRequest> {
 
     public Request<DeleteKeyPairRequest> marshall(DeleteKeyPairRequest deleteKeyPairRequest) {
+
+        if (deleteKeyPairRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteKeyPairRequest> request = new DefaultRequest<DeleteKeyPairRequest>(deleteKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteKeyPair");
         request.addParameter("Version", "2011-05-15");
-        if (deleteKeyPairRequest != null) {
-            if (deleteKeyPairRequest.getKeyName() != null) {
-                request.addParameter("KeyName", StringUtils.fromString(deleteKeyPairRequest.getKeyName()));
-            }
+
+        if (deleteKeyPairRequest.getKeyName() != null) {
+            request.addParameter("KeyName", StringUtils.fromString(deleteKeyPairRequest.getKeyName()));
         }
 
 

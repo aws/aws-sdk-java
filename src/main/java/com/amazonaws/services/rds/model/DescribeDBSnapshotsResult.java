@@ -72,6 +72,7 @@ public class DescribeDBSnapshotsResult {
      * @return A list of <a>DBSnapshot</a> instances.
      */
     public java.util.List<DBSnapshot> getDBSnapshots() {
+        
         if (dBSnapshots == null) {
             dBSnapshots = new java.util.ArrayList<DBSnapshot>();
         }
@@ -102,6 +103,7 @@ public class DescribeDBSnapshotsResult {
      *         together. 
      */
     public DescribeDBSnapshotsResult withDBSnapshots(DBSnapshot... dBSnapshots) {
+        if (getDBSnapshots() == null) setDBSnapshots(new java.util.ArrayList<DBSnapshot>());
         for (DBSnapshot value : dBSnapshots) {
             getDBSnapshots().add(value);
         }

@@ -20,6 +20,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,7 +71,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     private static Log log = LogFactory.getLog(AmazonS3EncryptionClient.class);
 
     /** Map of data about in progress encrypted multipart uploads. */
-    private Map<String, EncryptedUploadContext> currentMultipartUploadSecretKeys = new HashMap<String, EncryptedUploadContext>();
+    private Map<String, EncryptedUploadContext> currentMultipartUploadSecretKeys =
+    	Collections.synchronizedMap(new HashMap<String, EncryptedUploadContext>());
 
 
     /**
@@ -383,8 +385,15 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see com.amazonaws.services.s3.AmazonS3Client#uploadPart(com.amazonaws.services.s3.model.UploadPartRequest)
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * <p>
+	 * <b>NOTE:</b> Because the encryption process requires context from block
+	 * N-1 in order to encrypt block N, parts uploaded with the
+	 * AmazonS3EncryptionClient (as opposed to the normal AmazonS3Client) must
+	 * be uploaded serially, and in order. Otherwise, the previous encryption
+	 * context isn't available to use when encrypting the current part.
 	 */
 	@Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class UpdateApplicationVersionRequestMarshaller implements Marshaller<Request<UpdateApplicationVersionRequest>, UpdateApplicationVersionRequest> {
 
     public Request<UpdateApplicationVersionRequest> marshall(UpdateApplicationVersionRequest updateApplicationVersionRequest) {
+
+        if (updateApplicationVersionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<UpdateApplicationVersionRequest> request = new DefaultRequest<UpdateApplicationVersionRequest>(updateApplicationVersionRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateApplicationVersion");
         request.addParameter("Version", "2010-12-01");
-        if (updateApplicationVersionRequest != null) {
-            if (updateApplicationVersionRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(updateApplicationVersionRequest.getApplicationName()));
-            }
+
+        if (updateApplicationVersionRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(updateApplicationVersionRequest.getApplicationName()));
         }
-        if (updateApplicationVersionRequest != null) {
-            if (updateApplicationVersionRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(updateApplicationVersionRequest.getVersionLabel()));
-            }
+        if (updateApplicationVersionRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(updateApplicationVersionRequest.getVersionLabel()));
         }
-        if (updateApplicationVersionRequest != null) {
-            if (updateApplicationVersionRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(updateApplicationVersionRequest.getDescription()));
-            }
+        if (updateApplicationVersionRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(updateApplicationVersionRequest.getDescription()));
         }
 
 

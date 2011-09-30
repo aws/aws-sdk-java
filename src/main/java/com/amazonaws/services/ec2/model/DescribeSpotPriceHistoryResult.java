@@ -33,6 +33,7 @@ public class DescribeSpotPriceHistoryResult {
      * @return The value of the SpotPriceHistory property for this object.
      */
     public java.util.List<SpotPrice> getSpotPriceHistory() {
+        
         if (spotPriceHistory == null) {
             spotPriceHistory = new java.util.ArrayList<SpotPrice>();
         }
@@ -63,6 +64,7 @@ public class DescribeSpotPriceHistoryResult {
      *         together. 
      */
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(SpotPrice... spotPriceHistory) {
+        if (getSpotPriceHistory() == null) setSpotPriceHistory(new java.util.ArrayList<SpotPrice>());
         for (SpotPrice value : spotPriceHistory) {
             getSpotPriceHistory().add(value);
         }

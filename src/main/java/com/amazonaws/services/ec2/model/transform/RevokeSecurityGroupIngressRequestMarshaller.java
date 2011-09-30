@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,107 +31,86 @@ import com.amazonaws.util.StringUtils;
 public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<Request<RevokeSecurityGroupIngressRequest>, RevokeSecurityGroupIngressRequest> {
 
     public Request<RevokeSecurityGroupIngressRequest> marshall(RevokeSecurityGroupIngressRequest revokeSecurityGroupIngressRequest) {
+
+        if (revokeSecurityGroupIngressRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RevokeSecurityGroupIngressRequest> request = new DefaultRequest<RevokeSecurityGroupIngressRequest>(revokeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "RevokeSecurityGroupIngress");
         request.addParameter("Version", "2011-05-15");
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupName()));
-            }
+
+        if (revokeSecurityGroupIngressRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupName()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getGroupId() != null) {
-                request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupId()));
-            }
+        if (revokeSecurityGroupIngressRequest.getGroupId() != null) {
+            request.addParameter("GroupId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getGroupId()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupName() != null) {
-                request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupName()));
-            }
+        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupName() != null) {
+            request.addParameter("SourceSecurityGroupName", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupName()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId() != null) {
-                request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId()));
-            }
+        if (revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId() != null) {
+            request.addParameter("SourceSecurityGroupOwnerId", StringUtils.fromString(revokeSecurityGroupIngressRequest.getSourceSecurityGroupOwnerId()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getIpProtocol() != null) {
-                request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupIngressRequest.getIpProtocol()));
-            }
+        if (revokeSecurityGroupIngressRequest.getIpProtocol() != null) {
+            request.addParameter("IpProtocol", StringUtils.fromString(revokeSecurityGroupIngressRequest.getIpProtocol()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getFromPort() != null) {
-                request.addParameter("FromPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getFromPort()));
-            }
+        if (revokeSecurityGroupIngressRequest.getFromPort() != null) {
+            request.addParameter("FromPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getFromPort()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getToPort() != null) {
-                request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getToPort()));
-            }
+        if (revokeSecurityGroupIngressRequest.getToPort() != null) {
+            request.addParameter("ToPort", StringUtils.fromInteger(revokeSecurityGroupIngressRequest.getToPort()));
         }
-        if (revokeSecurityGroupIngressRequest != null) {
-            if (revokeSecurityGroupIngressRequest.getCidrIp() != null) {
-                request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupIngressRequest.getCidrIp()));
-            }
+        if (revokeSecurityGroupIngressRequest.getCidrIp() != null) {
+            request.addParameter("CidrIp", StringUtils.fromString(revokeSecurityGroupIngressRequest.getCidrIp()));
         }
 
-        if (revokeSecurityGroupIngressRequest != null) {
-            java.util.List<IpPermission> ipPermissionsList = revokeSecurityGroupIngressRequest.getIpPermissions();
-            int ipPermissionsListIndex = 1;
-            for (IpPermission ipPermissionsListValue : ipPermissionsList) {
-                if (ipPermissionsListValue != null) {
-                    if (ipPermissionsListValue.getIpProtocol() != null) {
-                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol", StringUtils.fromString(ipPermissionsListValue.getIpProtocol()));
-                    }
+        java.util.List<IpPermission> ipPermissionsList = revokeSecurityGroupIngressRequest.getIpPermissions();
+        int ipPermissionsListIndex = 1;
+        for (IpPermission ipPermissionsListValue : ipPermissionsList) {
+            IpPermission ipPermissionMember = ipPermissionsListValue;
+            if (ipPermissionMember != null) {
+                if (ipPermissionMember.getIpProtocol() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpProtocol", StringUtils.fromString(ipPermissionMember.getIpProtocol()));
                 }
-                if (ipPermissionsListValue != null) {
-                    if (ipPermissionsListValue.getFromPort() != null) {
-                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort", StringUtils.fromInteger(ipPermissionsListValue.getFromPort()));
-                    }
+                if (ipPermissionMember.getFromPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".FromPort", StringUtils.fromInteger(ipPermissionMember.getFromPort()));
                 }
-                if (ipPermissionsListValue != null) {
-                    if (ipPermissionsListValue.getToPort() != null) {
-                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort", StringUtils.fromInteger(ipPermissionsListValue.getToPort()));
-                    }
+                if (ipPermissionMember.getToPort() != null) {
+                    request.addParameter("IpPermissions." + ipPermissionsListIndex + ".ToPort", StringUtils.fromInteger(ipPermissionMember.getToPort()));
                 }
 
-                if (ipPermissionsListValue != null) {
-                    java.util.List<UserIdGroupPair> userIdGroupPairsList = ipPermissionsListValue.getUserIdGroupPairs();
-                    int userIdGroupPairsListIndex = 1;
-                    for (UserIdGroupPair userIdGroupPairsListValue : userIdGroupPairsList) {
-                        if (userIdGroupPairsListValue != null) {
-                            if (userIdGroupPairsListValue.getUserId() != null) {
-                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId", StringUtils.fromString(userIdGroupPairsListValue.getUserId()));
-                            }
+                java.util.List<UserIdGroupPair> userIdGroupPairsList = ipPermissionMember.getUserIdGroupPairs();
+                int userIdGroupPairsListIndex = 1;
+                for (UserIdGroupPair userIdGroupPairsListValue : userIdGroupPairsList) {
+                    UserIdGroupPair userIdGroupPairMember = userIdGroupPairsListValue;
+                    if (userIdGroupPairMember != null) {
+                        if (userIdGroupPairMember.getUserId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".UserId", StringUtils.fromString(userIdGroupPairMember.getUserId()));
                         }
-                        if (userIdGroupPairsListValue != null) {
-                            if (userIdGroupPairsListValue.getGroupName() != null) {
-                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName", StringUtils.fromString(userIdGroupPairsListValue.getGroupName()));
-                            }
+                        if (userIdGroupPairMember.getGroupName() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupName", StringUtils.fromString(userIdGroupPairMember.getGroupName()));
                         }
-                        if (userIdGroupPairsListValue != null) {
-                            if (userIdGroupPairsListValue.getGroupId() != null) {
-                                request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId", StringUtils.fromString(userIdGroupPairsListValue.getGroupId()));
-                            }
+                        if (userIdGroupPairMember.getGroupId() != null) {
+                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".Groups." + userIdGroupPairsListIndex + ".GroupId", StringUtils.fromString(userIdGroupPairMember.getGroupId()));
                         }
-
-                        userIdGroupPairsListIndex++;
                     }
-                }
-                if (ipPermissionsListValue != null) {
-                    java.util.List<String> ipRangesList = ipPermissionsListValue.getIpRanges();
-                    int ipRangesListIndex = 1;
 
-                    for (String ipRangesListValue : ipRangesList) {
-                        if (ipRangesListValue != null) {
-                            request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp", StringUtils.fromString(ipRangesListValue));
-                        }
-                        ipRangesListIndex++;
-                    }
+                    userIdGroupPairsListIndex++;
                 }
 
-                ipPermissionsListIndex++;
+                java.util.List<String> ipRangesList = ipPermissionMember.getIpRanges();
+                int ipRangesListIndex = 1;
+                for (String ipRangesListValue : ipRangesList) {
+                    if (ipRangesListValue != null) {
+                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex, StringUtils.fromString(ipRangesListValue));
+                    }
+
+                    ipRangesListIndex++;
+                }
             }
+
+            ipPermissionsListIndex++;
         }
 
 

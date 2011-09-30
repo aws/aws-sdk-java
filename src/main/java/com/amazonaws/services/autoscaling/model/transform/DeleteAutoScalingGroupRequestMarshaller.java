@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteAutoScalingGroupRequestMarshaller implements Marshaller<Request<DeleteAutoScalingGroupRequest>, DeleteAutoScalingGroupRequest> {
 
     public Request<DeleteAutoScalingGroupRequest> marshall(DeleteAutoScalingGroupRequest deleteAutoScalingGroupRequest) {
+
+        if (deleteAutoScalingGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteAutoScalingGroupRequest> request = new DefaultRequest<DeleteAutoScalingGroupRequest>(deleteAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteAutoScalingGroup");
         request.addParameter("Version", "2011-01-01");
-        if (deleteAutoScalingGroupRequest != null) {
-            if (deleteAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteAutoScalingGroupRequest.getAutoScalingGroupName()));
-            }
+
+        if (deleteAutoScalingGroupRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(deleteAutoScalingGroupRequest.getAutoScalingGroupName()));
         }
-        if (deleteAutoScalingGroupRequest != null) {
-            if (deleteAutoScalingGroupRequest.isForceDelete() != null) {
-                request.addParameter("ForceDelete", StringUtils.fromBoolean(deleteAutoScalingGroupRequest.isForceDelete()));
-            }
+        if (deleteAutoScalingGroupRequest.isForceDelete() != null) {
+            request.addParameter("ForceDelete", StringUtils.fromBoolean(deleteAutoScalingGroupRequest.isForceDelete()));
         }
 
 

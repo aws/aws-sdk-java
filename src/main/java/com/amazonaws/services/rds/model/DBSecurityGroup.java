@@ -167,6 +167,7 @@ public class DBSecurityGroup {
      * @return Contains a list of <a>EC2SecurityGroup</a> elements.
      */
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
+        
         if (eC2SecurityGroups == null) {
             eC2SecurityGroups = new java.util.ArrayList<EC2SecurityGroup>();
         }
@@ -197,6 +198,7 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
+        if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>());
         for (EC2SecurityGroup value : eC2SecurityGroups) {
             getEC2SecurityGroups().add(value);
         }
@@ -229,6 +231,7 @@ public class DBSecurityGroup {
      * @return Contains a list of <a>IPRange</a> elements.
      */
     public java.util.List<IPRange> getIPRanges() {
+        
         if (iPRanges == null) {
             iPRanges = new java.util.ArrayList<IPRange>();
         }
@@ -259,6 +262,7 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withIPRanges(IPRange... iPRanges) {
+        if (getIPRanges() == null) setIPRanges(new java.util.ArrayList<IPRange>());
         for (IPRange value : iPRanges) {
             getIPRanges().add(value);
         }

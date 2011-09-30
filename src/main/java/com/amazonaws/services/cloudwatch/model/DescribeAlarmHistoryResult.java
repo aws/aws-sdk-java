@@ -37,6 +37,7 @@ public class DescribeAlarmHistoryResult {
      * @return A list of alarm histories in JSON format.
      */
     public java.util.List<AlarmHistoryItem> getAlarmHistoryItems() {
+        
         if (alarmHistoryItems == null) {
             alarmHistoryItems = new java.util.ArrayList<AlarmHistoryItem>();
         }
@@ -67,6 +68,7 @@ public class DescribeAlarmHistoryResult {
      *         together. 
      */
     public DescribeAlarmHistoryResult withAlarmHistoryItems(AlarmHistoryItem... alarmHistoryItems) {
+        if (getAlarmHistoryItems() == null) setAlarmHistoryItems(new java.util.ArrayList<AlarmHistoryItem>());
         for (AlarmHistoryItem value : alarmHistoryItems) {
             getAlarmHistoryItems().add(value);
         }

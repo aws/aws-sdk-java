@@ -438,6 +438,7 @@ public class AutoScalingGroup {
      * @return Contains a list of availability zones for the group.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -474,6 +475,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -509,6 +511,7 @@ public class AutoScalingGroup {
      * @return A list of load balancers associated with this Auto Scaling group.
      */
     public java.util.List<String> getLoadBalancerNames() {
+        
         if (loadBalancerNames == null) {
             loadBalancerNames = new java.util.ArrayList<String>();
         }
@@ -539,6 +542,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withLoadBalancerNames(String... loadBalancerNames) {
+        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>());
         for (String value : loadBalancerNames) {
             getLoadBalancerNames().add(value);
         }
@@ -669,6 +673,7 @@ public class AutoScalingGroup {
      * @return Provides a summary list of EC2 instances.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -699,6 +704,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }
@@ -765,6 +771,7 @@ public class AutoScalingGroup {
      * @return Suspended processes associated with this Auto Scaling group.
      */
     public java.util.List<SuspendedProcess> getSuspendedProcesses() {
+        
         if (suspendedProcesses == null) {
             suspendedProcesses = new java.util.ArrayList<SuspendedProcess>();
         }
@@ -795,6 +802,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withSuspendedProcesses(SuspendedProcess... suspendedProcesses) {
+        if (getSuspendedProcesses() == null) setSuspendedProcesses(new java.util.ArrayList<SuspendedProcess>());
         for (SuspendedProcess value : suspendedProcesses) {
             getSuspendedProcesses().add(value);
         }
@@ -937,6 +945,7 @@ public class AutoScalingGroup {
      * @return A list of metrics enabled for this Auto Scaling group.
      */
     public java.util.List<EnabledMetric> getEnabledMetrics() {
+        
         if (enabledMetrics == null) {
             enabledMetrics = new java.util.ArrayList<EnabledMetric>();
         }
@@ -967,6 +976,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withEnabledMetrics(EnabledMetric... enabledMetrics) {
+        if (getEnabledMetrics() == null) setEnabledMetrics(new java.util.ArrayList<EnabledMetric>());
         for (EnabledMetric value : enabledMetrics) {
             getEnabledMetrics().add(value);
         }

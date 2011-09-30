@@ -32,6 +32,7 @@ public class DescribeAdjustmentTypesResult {
      * @return A list of specific policy adjustment types.
      */
     public java.util.List<AdjustmentType> getAdjustmentTypes() {
+        
         if (adjustmentTypes == null) {
             adjustmentTypes = new java.util.ArrayList<AdjustmentType>();
         }
@@ -62,6 +63,7 @@ public class DescribeAdjustmentTypesResult {
      *         together. 
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(AdjustmentType... adjustmentTypes) {
+        if (getAdjustmentTypes() == null) setAdjustmentTypes(new java.util.ArrayList<AdjustmentType>());
         for (AdjustmentType value : adjustmentTypes) {
             getAdjustmentTypes().add(value);
         }

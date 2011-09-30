@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.importexport.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class UpdateJobRequestMarshaller implements Marshaller<Request<UpdateJobRequest>, UpdateJobRequest> {
 
     public Request<UpdateJobRequest> marshall(UpdateJobRequest updateJobRequest) {
+
+        if (updateJobRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<UpdateJobRequest> request = new DefaultRequest<UpdateJobRequest>(updateJobRequest, "AmazonImportExport");
         request.addParameter("Action", "UpdateJob");
         request.addParameter("Version", "2010-06-01");
-        if (updateJobRequest != null) {
-            if (updateJobRequest.getJobId() != null) {
-                request.addParameter("JobId", StringUtils.fromString(updateJobRequest.getJobId()));
-            }
+
+        if (updateJobRequest.getJobId() != null) {
+            request.addParameter("JobId", StringUtils.fromString(updateJobRequest.getJobId()));
         }
-        if (updateJobRequest != null) {
-            if (updateJobRequest.getManifest() != null) {
-                request.addParameter("Manifest", StringUtils.fromString(updateJobRequest.getManifest()));
-            }
+        if (updateJobRequest.getManifest() != null) {
+            request.addParameter("Manifest", StringUtils.fromString(updateJobRequest.getManifest()));
         }
-        if (updateJobRequest != null) {
-            if (updateJobRequest.getJobType() != null) {
-                request.addParameter("JobType", StringUtils.fromString(updateJobRequest.getJobType()));
-            }
+        if (updateJobRequest.getJobType() != null) {
+            request.addParameter("JobType", StringUtils.fromString(updateJobRequest.getJobType()));
         }
-        if (updateJobRequest != null) {
-            if (updateJobRequest.isValidateOnly() != null) {
-                request.addParameter("ValidateOnly", StringUtils.fromBoolean(updateJobRequest.isValidateOnly()));
-            }
+        if (updateJobRequest.isValidateOnly() != null) {
+            request.addParameter("ValidateOnly", StringUtils.fromBoolean(updateJobRequest.isValidateOnly()));
         }
 
 

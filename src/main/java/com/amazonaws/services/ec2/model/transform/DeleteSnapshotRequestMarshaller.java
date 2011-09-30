@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteSnapshotRequestMarshaller implements Marshaller<Request<DeleteSnapshotRequest>, DeleteSnapshotRequest> {
 
     public Request<DeleteSnapshotRequest> marshall(DeleteSnapshotRequest deleteSnapshotRequest) {
+
+        if (deleteSnapshotRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteSnapshotRequest> request = new DefaultRequest<DeleteSnapshotRequest>(deleteSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSnapshot");
         request.addParameter("Version", "2011-05-15");
-        if (deleteSnapshotRequest != null) {
-            if (deleteSnapshotRequest.getSnapshotId() != null) {
-                request.addParameter("SnapshotId", StringUtils.fromString(deleteSnapshotRequest.getSnapshotId()));
-            }
+
+        if (deleteSnapshotRequest.getSnapshotId() != null) {
+            request.addParameter("SnapshotId", StringUtils.fromString(deleteSnapshotRequest.getSnapshotId()));
         }
 
 

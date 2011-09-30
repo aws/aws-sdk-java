@@ -84,6 +84,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
      * @return A list of alarm names to retrieve information for.
      */
     public java.util.List<String> getAlarmNames() {
+        
         if (alarmNames == null) {
             alarmNames = new java.util.ArrayList<String>();
         }
@@ -120,6 +121,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
+        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>());
         for (String value : alarmNames) {
             getAlarmNames().add(value);
         }

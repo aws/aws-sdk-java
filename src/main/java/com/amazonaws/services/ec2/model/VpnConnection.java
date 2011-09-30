@@ -322,6 +322,7 @@ public class VpnConnection {
      * @return A list of tags for the VpnConnection.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -352,6 +353,7 @@ public class VpnConnection {
      *         together. 
      */
     public VpnConnection withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

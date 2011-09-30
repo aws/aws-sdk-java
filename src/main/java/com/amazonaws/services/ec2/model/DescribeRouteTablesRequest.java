@@ -65,6 +65,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest {
      * @return One or more route table IDs.
      */
     public java.util.List<String> getRouteTableIds() {
+        
         if (routeTableIds == null) {
             routeTableIds = new java.util.ArrayList<String>();
         }
@@ -95,6 +96,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeRouteTablesRequest withRouteTableIds(String... routeTableIds) {
+        if (getRouteTableIds() == null) setRouteTableIds(new java.util.ArrayList<String>());
         for (String value : routeTableIds) {
             getRouteTableIds().add(value);
         }
@@ -135,6 +137,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -181,6 +184,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeRouteTablesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

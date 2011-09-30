@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DisassociateAddressRequestMarshaller implements Marshaller<Request<DisassociateAddressRequest>, DisassociateAddressRequest> {
 
     public Request<DisassociateAddressRequest> marshall(DisassociateAddressRequest disassociateAddressRequest) {
+
+        if (disassociateAddressRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DisassociateAddressRequest> request = new DefaultRequest<DisassociateAddressRequest>(disassociateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "DisassociateAddress");
         request.addParameter("Version", "2011-05-15");
-        if (disassociateAddressRequest != null) {
-            if (disassociateAddressRequest.getPublicIp() != null) {
-                request.addParameter("PublicIp", StringUtils.fromString(disassociateAddressRequest.getPublicIp()));
-            }
+
+        if (disassociateAddressRequest.getPublicIp() != null) {
+            request.addParameter("PublicIp", StringUtils.fromString(disassociateAddressRequest.getPublicIp()));
         }
-        if (disassociateAddressRequest != null) {
-            if (disassociateAddressRequest.getAssociationId() != null) {
-                request.addParameter("AssociationId", StringUtils.fromString(disassociateAddressRequest.getAssociationId()));
-            }
+        if (disassociateAddressRequest.getAssociationId() != null) {
+            request.addParameter("AssociationId", StringUtils.fromString(disassociateAddressRequest.getAssociationId()));
         }
 
 

@@ -214,6 +214,7 @@ public class Vpc {
      * @return A list of tags for the VPC.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -244,6 +245,7 @@ public class Vpc {
      *         together. 
      */
     public Vpc withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

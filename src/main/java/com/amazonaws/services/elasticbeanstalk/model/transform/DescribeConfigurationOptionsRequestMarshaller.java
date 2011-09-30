@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,47 +31,42 @@ import com.amazonaws.util.StringUtils;
 public class DescribeConfigurationOptionsRequestMarshaller implements Marshaller<Request<DescribeConfigurationOptionsRequest>, DescribeConfigurationOptionsRequest> {
 
     public Request<DescribeConfigurationOptionsRequest> marshall(DescribeConfigurationOptionsRequest describeConfigurationOptionsRequest) {
+
+        if (describeConfigurationOptionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeConfigurationOptionsRequest> request = new DefaultRequest<DescribeConfigurationOptionsRequest>(describeConfigurationOptionsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeConfigurationOptions");
         request.addParameter("Version", "2010-12-01");
-        if (describeConfigurationOptionsRequest != null) {
-            if (describeConfigurationOptionsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(describeConfigurationOptionsRequest.getApplicationName()));
-            }
+
+        if (describeConfigurationOptionsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(describeConfigurationOptionsRequest.getApplicationName()));
         }
-        if (describeConfigurationOptionsRequest != null) {
-            if (describeConfigurationOptionsRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(describeConfigurationOptionsRequest.getTemplateName()));
-            }
+        if (describeConfigurationOptionsRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(describeConfigurationOptionsRequest.getTemplateName()));
         }
-        if (describeConfigurationOptionsRequest != null) {
-            if (describeConfigurationOptionsRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(describeConfigurationOptionsRequest.getEnvironmentName()));
-            }
+        if (describeConfigurationOptionsRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(describeConfigurationOptionsRequest.getEnvironmentName()));
         }
-        if (describeConfigurationOptionsRequest != null) {
-            if (describeConfigurationOptionsRequest.getSolutionStackName() != null) {
-                request.addParameter("SolutionStackName", StringUtils.fromString(describeConfigurationOptionsRequest.getSolutionStackName()));
-            }
+        if (describeConfigurationOptionsRequest.getSolutionStackName() != null) {
+            request.addParameter("SolutionStackName", StringUtils.fromString(describeConfigurationOptionsRequest.getSolutionStackName()));
         }
 
-        if (describeConfigurationOptionsRequest != null) {
-            java.util.List<OptionSpecification> optionsList = describeConfigurationOptionsRequest.getOptions();
-            int optionsListIndex = 1;
-            for (OptionSpecification optionsListValue : optionsList) {
-                if (optionsListValue != null) {
-                    if (optionsListValue.getNamespace() != null) {
-                        request.addParameter("Options.member." + optionsListIndex + ".Namespace", StringUtils.fromString(optionsListValue.getNamespace()));
-                    }
+        java.util.List<OptionSpecification> optionsList = describeConfigurationOptionsRequest.getOptions();
+        int optionsListIndex = 1;
+        for (OptionSpecification optionsListValue : optionsList) {
+            OptionSpecification optionSpecificationMember = optionsListValue;
+            if (optionSpecificationMember != null) {
+                if (optionSpecificationMember.getNamespace() != null) {
+                    request.addParameter("Options.member." + optionsListIndex + ".Namespace", StringUtils.fromString(optionSpecificationMember.getNamespace()));
                 }
-                if (optionsListValue != null) {
-                    if (optionsListValue.getOptionName() != null) {
-                        request.addParameter("Options.member." + optionsListIndex + ".OptionName", StringUtils.fromString(optionsListValue.getOptionName()));
-                    }
+                if (optionSpecificationMember.getOptionName() != null) {
+                    request.addParameter("Options.member." + optionsListIndex + ".OptionName", StringUtils.fromString(optionSpecificationMember.getOptionName()));
                 }
-
-                optionsListIndex++;
             }
+
+            optionsListIndex++;
         }
 
 

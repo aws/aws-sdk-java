@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateSpotDatafeedSubscriptionRequestMarshaller implements Marshaller<Request<CreateSpotDatafeedSubscriptionRequest>, CreateSpotDatafeedSubscriptionRequest> {
 
     public Request<CreateSpotDatafeedSubscriptionRequest> marshall(CreateSpotDatafeedSubscriptionRequest createSpotDatafeedSubscriptionRequest) {
+
+        if (createSpotDatafeedSubscriptionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateSpotDatafeedSubscriptionRequest> request = new DefaultRequest<CreateSpotDatafeedSubscriptionRequest>(createSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSpotDatafeedSubscription");
         request.addParameter("Version", "2011-05-15");
-        if (createSpotDatafeedSubscriptionRequest != null) {
-            if (createSpotDatafeedSubscriptionRequest.getBucket() != null) {
-                request.addParameter("Bucket", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getBucket()));
-            }
+
+        if (createSpotDatafeedSubscriptionRequest.getBucket() != null) {
+            request.addParameter("Bucket", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getBucket()));
         }
-        if (createSpotDatafeedSubscriptionRequest != null) {
-            if (createSpotDatafeedSubscriptionRequest.getPrefix() != null) {
-                request.addParameter("Prefix", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getPrefix()));
-            }
+        if (createSpotDatafeedSubscriptionRequest.getPrefix() != null) {
+            request.addParameter("Prefix", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getPrefix()));
         }
 
 

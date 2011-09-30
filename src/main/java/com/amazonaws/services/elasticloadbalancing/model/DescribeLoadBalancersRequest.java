@@ -63,6 +63,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
      * @return A list of names associated with the LoadBalancers at creation time.
      */
     public java.util.List<String> getLoadBalancerNames() {
+        
         if (loadBalancerNames == null) {
             loadBalancerNames = new java.util.ArrayList<String>();
         }
@@ -93,6 +94,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeLoadBalancersRequest withLoadBalancerNames(String... loadBalancerNames) {
+        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>());
         for (String value : loadBalancerNames) {
             getLoadBalancerNames().add(value);
         }

@@ -57,6 +57,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      * @return The ID of a VPC you want information about.
      */
     public java.util.List<String> getVpcIds() {
+        
         if (vpcIds == null) {
             vpcIds = new java.util.ArrayList<String>();
         }
@@ -87,6 +88,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withVpcIds(String... vpcIds) {
+        if (getVpcIds() == null) setVpcIds(new java.util.ArrayList<String>());
         for (String value : vpcIds) {
             getVpcIds().add(value);
         }
@@ -125,6 +127,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -167,6 +170,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

@@ -54,6 +54,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * @return The name of the Auto Scaling group.
      */
     public java.util.List<String> getAutoScalingGroupNames() {
+        
         if (autoScalingGroupNames == null) {
             autoScalingGroupNames = new java.util.ArrayList<String>();
         }
@@ -84,6 +85,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
+        if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>());
         for (String value : autoScalingGroupNames) {
             getAutoScalingGroupNames().add(value);
         }

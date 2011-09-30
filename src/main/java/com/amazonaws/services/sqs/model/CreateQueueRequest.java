@@ -18,16 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest) CreateQueue operation}.
  * <p>
- * The CreateQueue action creates a new queue, or returns the URL of an
- * existing one. When you request CreateQueue, you provide a name for the
- * queue. To successfully create a new queue, you must provide a name
- * that is unique within the scope of your own queues. If you provide the
- * name of an existing queue, a new queue isn't created and an error
- * isn't returned. Instead, the request succeeds and the queue URL for
- * the existing queue is returned.
+ * The <code>CreateQueue</code> action creates a new queue, or returns
+ * the URL of an existing one. When you request <code>CreateQueue</code>
+ * , you provide a name for the queue. To successfully create a new
+ * queue, you must provide a name that is unique within the scope of your
+ * own queues. If you provide the name of an existing queue, a new queue
+ * isn't created and an error isn't returned. Instead, the request
+ * succeeds and the queue URL for the existing queue is returned.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If you provide a value for DefaultVisibilityTimeout
+ * <b>IMPORTANT:</b>If you provide a value for DefaultVisibilityTimeout
  * that is different from the value for the existing queue, you receive
  * an error.
  * </p>
@@ -37,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateQueueRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name to use for the created queue.
+     * The name for the queue to be created.
      */
     private String queueName;
 
@@ -57,50 +57,36 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueName The name to use for the created queue.
+     * @param queueName The name for the queue to be created.
      */
     public CreateQueueRequest(String queueName) {
         this.queueName = queueName;
     }
     
     /**
-     * Constructs a new CreateQueueRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
-     * 
-     * @param queueName The name to use for the created queue.
-     * @param defaultVisibilityTimeout The visibility timeout (in seconds) to
-     * use for the created queue.
-     */
-    public CreateQueueRequest(String queueName, Integer defaultVisibilityTimeout) {
-        this.queueName = queueName;
-        this.defaultVisibilityTimeout = defaultVisibilityTimeout;
-    }
-    
-    /**
-     * The name to use for the created queue.
+     * The name for the queue to be created.
      *
-     * @return The name to use for the created queue.
+     * @return The name for the queue to be created.
      */
     public String getQueueName() {
         return queueName;
     }
     
     /**
-     * The name to use for the created queue.
+     * The name for the queue to be created.
      *
-     * @param queueName The name to use for the created queue.
+     * @param queueName The name for the queue to be created.
      */
     public void setQueueName(String queueName) {
         this.queueName = queueName;
     }
     
     /**
-     * The name to use for the created queue.
+     * The name for the queue to be created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueName The name to use for the created queue.
+     * @param queueName The name for the queue to be created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteQueueRequestMarshaller implements Marshaller<Request<DeleteQueueRequest>, DeleteQueueRequest> {
 
     public Request<DeleteQueueRequest> marshall(DeleteQueueRequest deleteQueueRequest) {
+
+        if (deleteQueueRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteQueueRequest> request = new DefaultRequest<DeleteQueueRequest>(deleteQueueRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteQueue");
         request.addParameter("Version", "2009-02-01");
-        if (deleteQueueRequest != null) {
-            if (deleteQueueRequest.getQueueUrl() != null) {
-                request.addParameter("QueueUrl", StringUtils.fromString(deleteQueueRequest.getQueueUrl()));
-            }
+
+        if (deleteQueueRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(deleteQueueRequest.getQueueUrl()));
         }
 
 

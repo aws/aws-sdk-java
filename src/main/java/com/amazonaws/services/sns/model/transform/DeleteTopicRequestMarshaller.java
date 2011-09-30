@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteTopicRequestMarshaller implements Marshaller<Request<DeleteTopicRequest>, DeleteTopicRequest> {
 
     public Request<DeleteTopicRequest> marshall(DeleteTopicRequest deleteTopicRequest) {
+
+        if (deleteTopicRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteTopicRequest> request = new DefaultRequest<DeleteTopicRequest>(deleteTopicRequest, "AmazonSNS");
         request.addParameter("Action", "DeleteTopic");
         request.addParameter("Version", "2010-03-31");
-        if (deleteTopicRequest != null) {
-            if (deleteTopicRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(deleteTopicRequest.getTopicArn()));
-            }
+
+        if (deleteTopicRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(deleteTopicRequest.getTopicArn()));
         }
 
 

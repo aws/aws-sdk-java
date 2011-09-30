@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<DetachVpnGatewayRequest>, DetachVpnGatewayRequest> {
 
     public Request<DetachVpnGatewayRequest> marshall(DetachVpnGatewayRequest detachVpnGatewayRequest) {
+
+        if (detachVpnGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DetachVpnGatewayRequest> request = new DefaultRequest<DetachVpnGatewayRequest>(detachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVpnGateway");
         request.addParameter("Version", "2011-05-15");
-        if (detachVpnGatewayRequest != null) {
-            if (detachVpnGatewayRequest.getVpnGatewayId() != null) {
-                request.addParameter("VpnGatewayId", StringUtils.fromString(detachVpnGatewayRequest.getVpnGatewayId()));
-            }
+
+        if (detachVpnGatewayRequest.getVpnGatewayId() != null) {
+            request.addParameter("VpnGatewayId", StringUtils.fromString(detachVpnGatewayRequest.getVpnGatewayId()));
         }
-        if (detachVpnGatewayRequest != null) {
-            if (detachVpnGatewayRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(detachVpnGatewayRequest.getVpcId()));
-            }
+        if (detachVpnGatewayRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(detachVpnGatewayRequest.getVpcId()));
         }
 
 

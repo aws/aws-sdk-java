@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateVolumeRequest>, CreateVolumeRequest> {
 
     public Request<CreateVolumeRequest> marshall(CreateVolumeRequest createVolumeRequest) {
+
+        if (createVolumeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(createVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVolume");
         request.addParameter("Version", "2011-05-15");
-        if (createVolumeRequest != null) {
-            if (createVolumeRequest.getSize() != null) {
-                request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
-            }
+
+        if (createVolumeRequest.getSize() != null) {
+            request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));
         }
-        if (createVolumeRequest != null) {
-            if (createVolumeRequest.getSnapshotId() != null) {
-                request.addParameter("SnapshotId", StringUtils.fromString(createVolumeRequest.getSnapshotId()));
-            }
+        if (createVolumeRequest.getSnapshotId() != null) {
+            request.addParameter("SnapshotId", StringUtils.fromString(createVolumeRequest.getSnapshotId()));
         }
-        if (createVolumeRequest != null) {
-            if (createVolumeRequest.getAvailabilityZone() != null) {
-                request.addParameter("AvailabilityZone", StringUtils.fromString(createVolumeRequest.getAvailabilityZone()));
-            }
+        if (createVolumeRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createVolumeRequest.getAvailabilityZone()));
         }
 
 

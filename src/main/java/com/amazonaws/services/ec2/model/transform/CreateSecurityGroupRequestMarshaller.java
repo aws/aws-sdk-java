@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<CreateSecurityGroupRequest>, CreateSecurityGroupRequest> {
 
     public Request<CreateSecurityGroupRequest> marshall(CreateSecurityGroupRequest createSecurityGroupRequest) {
+
+        if (createSecurityGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateSecurityGroupRequest> request = new DefaultRequest<CreateSecurityGroupRequest>(createSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSecurityGroup");
         request.addParameter("Version", "2011-05-15");
-        if (createSecurityGroupRequest != null) {
-            if (createSecurityGroupRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
-            }
+
+        if (createSecurityGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(createSecurityGroupRequest.getGroupName()));
         }
-        if (createSecurityGroupRequest != null) {
-            if (createSecurityGroupRequest.getDescription() != null) {
-                request.addParameter("GroupDescription", StringUtils.fromString(createSecurityGroupRequest.getDescription()));
-            }
+        if (createSecurityGroupRequest.getDescription() != null) {
+            request.addParameter("GroupDescription", StringUtils.fromString(createSecurityGroupRequest.getDescription()));
         }
-        if (createSecurityGroupRequest != null) {
-            if (createSecurityGroupRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(createSecurityGroupRequest.getVpcId()));
-            }
+        if (createSecurityGroupRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createSecurityGroupRequest.getVpcId()));
         }
 
 

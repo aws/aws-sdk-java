@@ -99,6 +99,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         removed.
      */
     public java.util.List<Integer> getLoadBalancerPorts() {
+        
         if (loadBalancerPorts == null) {
             loadBalancerPorts = new java.util.ArrayList<Integer>();
         }
@@ -133,6 +134,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(Integer... loadBalancerPorts) {
+        if (getLoadBalancerPorts() == null) setLoadBalancerPorts(new java.util.ArrayList<Integer>());
         for (Integer value : loadBalancerPorts) {
             getLoadBalancerPorts().add(value);
         }

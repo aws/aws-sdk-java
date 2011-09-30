@@ -696,6 +696,7 @@ public class ConfigurationOptionDescription {
      *         this list.
      */
     public java.util.List<String> getValueOptions() {
+        
         if (valueOptions == null) {
             valueOptions = new java.util.ArrayList<String>();
         }
@@ -730,6 +731,7 @@ public class ConfigurationOptionDescription {
      *         together. 
      */
     public ConfigurationOptionDescription withValueOptions(String... valueOptions) {
+        if (getValueOptions() == null) setValueOptions(new java.util.ArrayList<String>());
         for (String value : valueOptions) {
             getValueOptions().add(value);
         }

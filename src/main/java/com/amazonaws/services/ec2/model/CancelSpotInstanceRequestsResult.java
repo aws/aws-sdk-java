@@ -29,6 +29,7 @@ public class CancelSpotInstanceRequestsResult {
      *         object.
      */
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
+        
         if (cancelledSpotInstanceRequests == null) {
             cancelledSpotInstanceRequests = new java.util.ArrayList<CancelledSpotInstanceRequest>();
         }
@@ -63,6 +64,7 @@ public class CancelSpotInstanceRequestsResult {
      *         together. 
      */
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
+        if (getCancelledSpotInstanceRequests() == null) setCancelledSpotInstanceRequests(new java.util.ArrayList<CancelledSpotInstanceRequest>());
         for (CancelledSpotInstanceRequest value : cancelledSpotInstanceRequests) {
             getCancelledSpotInstanceRequests().add(value);
         }

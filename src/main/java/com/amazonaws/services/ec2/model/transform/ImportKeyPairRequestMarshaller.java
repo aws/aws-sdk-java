@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ImportKeyPairRequestMarshaller implements Marshaller<Request<ImportKeyPairRequest>, ImportKeyPairRequest> {
 
     public Request<ImportKeyPairRequest> marshall(ImportKeyPairRequest importKeyPairRequest) {
+
+        if (importKeyPairRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ImportKeyPairRequest> request = new DefaultRequest<ImportKeyPairRequest>(importKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "ImportKeyPair");
         request.addParameter("Version", "2011-05-15");
-        if (importKeyPairRequest != null) {
-            if (importKeyPairRequest.getKeyName() != null) {
-                request.addParameter("KeyName", StringUtils.fromString(importKeyPairRequest.getKeyName()));
-            }
+
+        if (importKeyPairRequest.getKeyName() != null) {
+            request.addParameter("KeyName", StringUtils.fromString(importKeyPairRequest.getKeyName()));
         }
-        if (importKeyPairRequest != null) {
-            if (importKeyPairRequest.getPublicKeyMaterial() != null) {
-                request.addParameter("PublicKeyMaterial", StringUtils.fromString(importKeyPairRequest.getPublicKeyMaterial()));
-            }
+        if (importKeyPairRequest.getPublicKeyMaterial() != null) {
+            request.addParameter("PublicKeyMaterial", StringUtils.fromString(importKeyPairRequest.getPublicKeyMaterial()));
         }
 
 

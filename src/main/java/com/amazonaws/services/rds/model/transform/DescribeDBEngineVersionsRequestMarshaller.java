@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,38 +31,32 @@ import com.amazonaws.util.StringUtils;
 public class DescribeDBEngineVersionsRequestMarshaller implements Marshaller<Request<DescribeDBEngineVersionsRequest>, DescribeDBEngineVersionsRequest> {
 
     public Request<DescribeDBEngineVersionsRequest> marshall(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) {
+
+        if (describeDBEngineVersionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeDBEngineVersionsRequest> request = new DefaultRequest<DescribeDBEngineVersionsRequest>(describeDBEngineVersionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBEngineVersions");
         request.addParameter("Version", "2011-04-01");
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.getEngine() != null) {
-                request.addParameter("Engine", StringUtils.fromString(describeDBEngineVersionsRequest.getEngine()));
-            }
+
+        if (describeDBEngineVersionsRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(describeDBEngineVersionsRequest.getEngine()));
         }
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.getEngineVersion() != null) {
-                request.addParameter("EngineVersion", StringUtils.fromString(describeDBEngineVersionsRequest.getEngineVersion()));
-            }
+        if (describeDBEngineVersionsRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(describeDBEngineVersionsRequest.getEngineVersion()));
         }
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.getDBParameterGroupFamily() != null) {
-                request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeDBEngineVersionsRequest.getDBParameterGroupFamily()));
-            }
+        if (describeDBEngineVersionsRequest.getDBParameterGroupFamily() != null) {
+            request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeDBEngineVersionsRequest.getDBParameterGroupFamily()));
         }
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBEngineVersionsRequest.getMaxRecords()));
-            }
+        if (describeDBEngineVersionsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBEngineVersionsRequest.getMaxRecords()));
         }
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeDBEngineVersionsRequest.getMarker()));
-            }
+        if (describeDBEngineVersionsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeDBEngineVersionsRequest.getMarker()));
         }
-        if (describeDBEngineVersionsRequest != null) {
-            if (describeDBEngineVersionsRequest.isDefaultOnly() != null) {
-                request.addParameter("DefaultOnly", StringUtils.fromBoolean(describeDBEngineVersionsRequest.isDefaultOnly()));
-            }
+        if (describeDBEngineVersionsRequest.isDefaultOnly() != null) {
+            request.addParameter("DefaultOnly", StringUtils.fromBoolean(describeDBEngineVersionsRequest.isDefaultOnly()));
         }
 
 

@@ -15,9 +15,7 @@
 package com.amazonaws.services.sqs.model;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class Message {
 
@@ -194,6 +192,7 @@ public class Message {
      * @return 
      */
     public java.util.Map<String,String> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.HashMap<String,String>();
         }

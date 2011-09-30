@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,53 +31,52 @@ import com.amazonaws.util.StringUtils;
 public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<CreateLoadBalancerRequest>, CreateLoadBalancerRequest> {
 
     public Request<CreateLoadBalancerRequest> marshall(CreateLoadBalancerRequest createLoadBalancerRequest) {
+
+        if (createLoadBalancerRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateLoadBalancerRequest> request = new DefaultRequest<CreateLoadBalancerRequest>(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancer");
-        request.addParameter("Version", "2011-04-05");
-        if (createLoadBalancerRequest != null) {
-            if (createLoadBalancerRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerRequest.getLoadBalancerName()));
-            }
+        request.addParameter("Version", "2011-08-15");
+
+        if (createLoadBalancerRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerRequest.getLoadBalancerName()));
         }
 
-        if (createLoadBalancerRequest != null) {
-            java.util.List<Listener> listenersList = createLoadBalancerRequest.getListeners();
-            int listenersListIndex = 1;
-            for (Listener listenersListValue : listenersList) {
-                if (listenersListValue != null) {
-                    if (listenersListValue.getProtocol() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
-                    }
+        java.util.List<Listener> listenersList = createLoadBalancerRequest.getListeners();
+        int listenersListIndex = 1;
+        for (Listener listenersListValue : listenersList) {
+            Listener listenerMember = listenersListValue;
+            if (listenerMember != null) {
+                if (listenerMember.getProtocol() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenerMember.getProtocol()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getLoadBalancerPort() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.fromInteger(listenersListValue.getLoadBalancerPort()));
-                    }
+                if (listenerMember.getLoadBalancerPort() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.fromInteger(listenerMember.getLoadBalancerPort()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getInstancePort() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.fromInteger(listenersListValue.getInstancePort()));
-                    }
+                if (listenerMember.getInstanceProtocol() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".InstanceProtocol", StringUtils.fromString(listenerMember.getInstanceProtocol()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getSSLCertificateId() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.fromString(listenersListValue.getSSLCertificateId()));
-                    }
+                if (listenerMember.getInstancePort() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.fromInteger(listenerMember.getInstancePort()));
                 }
-
-                listenersListIndex++;
+                if (listenerMember.getSSLCertificateId() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.fromString(listenerMember.getSSLCertificateId()));
+                }
             }
+
+            listenersListIndex++;
         }
-        if (createLoadBalancerRequest != null) {
-            java.util.List<String> availabilityZonesList = createLoadBalancerRequest.getAvailabilityZones();
-            int availabilityZonesListIndex = 1;
 
-            for (String availabilityZonesListValue : availabilityZonesList) {
-                if (availabilityZonesListValue != null) {
-                    request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
-                }
-                availabilityZonesListIndex++;
+        java.util.List<String> availabilityZonesList = createLoadBalancerRequest.getAvailabilityZones();
+        int availabilityZonesListIndex = 1;
+        for (String availabilityZonesListValue : availabilityZonesList) {
+            if (availabilityZonesListValue != null) {
+                request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));
             }
+
+            availabilityZonesListIndex++;
         }
 
 

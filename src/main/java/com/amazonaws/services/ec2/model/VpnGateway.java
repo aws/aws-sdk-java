@@ -207,6 +207,7 @@ public class VpnGateway {
      * @return Contains information about the VPCs attached to the VPN gateway.
      */
     public java.util.List<VpcAttachment> getVpcAttachments() {
+        
         if (vpcAttachments == null) {
             vpcAttachments = new java.util.ArrayList<VpcAttachment>();
         }
@@ -237,6 +238,7 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withVpcAttachments(VpcAttachment... vpcAttachments) {
+        if (getVpcAttachments() == null) setVpcAttachments(new java.util.ArrayList<VpcAttachment>());
         for (VpcAttachment value : vpcAttachments) {
             getVpcAttachments().add(value);
         }
@@ -269,6 +271,7 @@ public class VpnGateway {
      * @return A list of tags for the VpnGateway.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -299,6 +302,7 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

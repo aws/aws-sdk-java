@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Request<CreateCustomerGatewayRequest>, CreateCustomerGatewayRequest> {
 
     public Request<CreateCustomerGatewayRequest> marshall(CreateCustomerGatewayRequest createCustomerGatewayRequest) {
+
+        if (createCustomerGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateCustomerGatewayRequest> request = new DefaultRequest<CreateCustomerGatewayRequest>(createCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateCustomerGateway");
         request.addParameter("Version", "2011-05-15");
-        if (createCustomerGatewayRequest != null) {
-            if (createCustomerGatewayRequest.getType() != null) {
-                request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
-            }
+
+        if (createCustomerGatewayRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }
-        if (createCustomerGatewayRequest != null) {
-            if (createCustomerGatewayRequest.getPublicIp() != null) {
-                request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
-            }
+        if (createCustomerGatewayRequest.getPublicIp() != null) {
+            request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
         }
-        if (createCustomerGatewayRequest != null) {
-            if (createCustomerGatewayRequest.getBgpAsn() != null) {
-                request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
-            }
+        if (createCustomerGatewayRequest.getBgpAsn() != null) {
+            request.addParameter("BgpAsn", StringUtils.fromInteger(createCustomerGatewayRequest.getBgpAsn()));
         }
 
 

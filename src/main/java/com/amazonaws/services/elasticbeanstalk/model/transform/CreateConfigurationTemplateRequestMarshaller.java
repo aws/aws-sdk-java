@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,70 +31,57 @@ import com.amazonaws.util.StringUtils;
 public class CreateConfigurationTemplateRequestMarshaller implements Marshaller<Request<CreateConfigurationTemplateRequest>, CreateConfigurationTemplateRequest> {
 
     public Request<CreateConfigurationTemplateRequest> marshall(CreateConfigurationTemplateRequest createConfigurationTemplateRequest) {
+
+        if (createConfigurationTemplateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateConfigurationTemplateRequest> request = new DefaultRequest<CreateConfigurationTemplateRequest>(createConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateConfigurationTemplate");
         request.addParameter("Version", "2010-12-01");
-        if (createConfigurationTemplateRequest != null) {
-            if (createConfigurationTemplateRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(createConfigurationTemplateRequest.getApplicationName()));
+
+        if (createConfigurationTemplateRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(createConfigurationTemplateRequest.getApplicationName()));
+        }
+        if (createConfigurationTemplateRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(createConfigurationTemplateRequest.getTemplateName()));
+        }
+        if (createConfigurationTemplateRequest.getSolutionStackName() != null) {
+            request.addParameter("SolutionStackName", StringUtils.fromString(createConfigurationTemplateRequest.getSolutionStackName()));
+        }
+        SourceConfiguration sourceConfigurationSourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
+        if (sourceConfigurationSourceConfiguration != null) {
+            if (sourceConfigurationSourceConfiguration.getApplicationName() != null) {
+                request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfigurationSourceConfiguration.getApplicationName()));
+            }
+            if (sourceConfigurationSourceConfiguration.getTemplateName() != null) {
+                request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfigurationSourceConfiguration.getTemplateName()));
             }
         }
-        if (createConfigurationTemplateRequest != null) {
-            if (createConfigurationTemplateRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(createConfigurationTemplateRequest.getTemplateName()));
-            }
+        if (createConfigurationTemplateRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(createConfigurationTemplateRequest.getEnvironmentId()));
         }
-        if (createConfigurationTemplateRequest != null) {
-            if (createConfigurationTemplateRequest.getSolutionStackName() != null) {
-                request.addParameter("SolutionStackName", StringUtils.fromString(createConfigurationTemplateRequest.getSolutionStackName()));
-            }
-        }
-        if (createConfigurationTemplateRequest != null) {
-            SourceConfiguration sourceConfiguration = createConfigurationTemplateRequest.getSourceConfiguration();
-            if (sourceConfiguration != null) {
-                if (sourceConfiguration.getApplicationName() != null) {
-                    request.addParameter("SourceConfiguration.ApplicationName", StringUtils.fromString(sourceConfiguration.getApplicationName()));
-                }
-            }
-            if (sourceConfiguration != null) {
-                if (sourceConfiguration.getTemplateName() != null) {
-                    request.addParameter("SourceConfiguration.TemplateName", StringUtils.fromString(sourceConfiguration.getTemplateName()));
-                }
-            }
-        }
-        if (createConfigurationTemplateRequest != null) {
-            if (createConfigurationTemplateRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(createConfigurationTemplateRequest.getEnvironmentId()));
-            }
-        }
-        if (createConfigurationTemplateRequest != null) {
-            if (createConfigurationTemplateRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(createConfigurationTemplateRequest.getDescription()));
-            }
+        if (createConfigurationTemplateRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createConfigurationTemplateRequest.getDescription()));
         }
 
-        if (createConfigurationTemplateRequest != null) {
-            java.util.List<ConfigurationOptionSetting> optionSettingsList = createConfigurationTemplateRequest.getOptionSettings();
-            int optionSettingsListIndex = 1;
-            for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getNamespace() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                    }
+        java.util.List<ConfigurationOptionSetting> optionSettingsList = createConfigurationTemplateRequest.getOptionSettings();
+        int optionSettingsListIndex = 1;
+        for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+            ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
+            if (configurationOptionSettingMember != null) {
+                if (configurationOptionSettingMember.getNamespace() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(configurationOptionSettingMember.getNamespace()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getOptionName() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                    }
+                if (configurationOptionSettingMember.getOptionName() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(configurationOptionSettingMember.getOptionName()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getValue() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
-                    }
+                if (configurationOptionSettingMember.getValue() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(configurationOptionSettingMember.getValue()));
                 }
-
-                optionSettingsListIndex++;
             }
+
+            optionSettingsListIndex++;
         }
 
 

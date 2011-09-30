@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateSubnetRequest>, CreateSubnetRequest> {
 
     public Request<CreateSubnetRequest> marshall(CreateSubnetRequest createSubnetRequest) {
+
+        if (createSubnetRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateSubnetRequest> request = new DefaultRequest<CreateSubnetRequest>(createSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSubnet");
         request.addParameter("Version", "2011-05-15");
-        if (createSubnetRequest != null) {
-            if (createSubnetRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
-            }
+
+        if (createSubnetRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createSubnetRequest.getVpcId()));
         }
-        if (createSubnetRequest != null) {
-            if (createSubnetRequest.getCidrBlock() != null) {
-                request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
-            }
+        if (createSubnetRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(createSubnetRequest.getCidrBlock()));
         }
-        if (createSubnetRequest != null) {
-            if (createSubnetRequest.getAvailabilityZone() != null) {
-                request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
-            }
+        if (createSubnetRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createSubnetRequest.getAvailabilityZone()));
         }
 
 

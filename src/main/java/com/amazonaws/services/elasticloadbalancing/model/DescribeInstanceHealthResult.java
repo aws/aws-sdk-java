@@ -32,6 +32,7 @@ public class DescribeInstanceHealthResult {
      * @return A list containing health information for the specified instances.
      */
     public java.util.List<InstanceState> getInstanceStates() {
+        
         if (instanceStates == null) {
             instanceStates = new java.util.ArrayList<InstanceState>();
         }
@@ -62,6 +63,7 @@ public class DescribeInstanceHealthResult {
      *         together. 
      */
     public DescribeInstanceHealthResult withInstanceStates(InstanceState... instanceStates) {
+        if (getInstanceStates() == null) setInstanceStates(new java.util.ArrayList<InstanceState>());
         for (InstanceState value : instanceStates) {
             getInstanceStates().add(value);
         }

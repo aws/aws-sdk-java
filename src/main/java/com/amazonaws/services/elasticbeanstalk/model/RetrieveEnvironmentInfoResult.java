@@ -33,6 +33,7 @@ public class RetrieveEnvironmentInfoResult {
      * @return The <a>EnvironmentInfoDescription</a> of the environment.
      */
     public java.util.List<EnvironmentInfoDescription> getEnvironmentInfo() {
+        
         if (environmentInfo == null) {
             environmentInfo = new java.util.ArrayList<EnvironmentInfoDescription>();
         }
@@ -63,6 +64,7 @@ public class RetrieveEnvironmentInfoResult {
      *         together. 
      */
     public RetrieveEnvironmentInfoResult withEnvironmentInfo(EnvironmentInfoDescription... environmentInfo) {
+        if (getEnvironmentInfo() == null) setEnvironmentInfo(new java.util.ArrayList<EnvironmentInfoDescription>());
         for (EnvironmentInfoDescription value : environmentInfo) {
             getEnvironmentInfo().add(value);
         }

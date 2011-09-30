@@ -34,7 +34,7 @@ public class InstanceState {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the Load Balancer.
+     * or the instance behind the LoadBalancer.
      */
     private String reasonCode;
 
@@ -120,11 +120,11 @@ public class InstanceState {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the Load Balancer.
+     * or the instance behind the LoadBalancer.
      *
      * @return Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the Load Balancer.
+     *         or the instance behind the LoadBalancer.
      */
     public String getReasonCode() {
         return reasonCode;
@@ -133,11 +133,11 @@ public class InstanceState {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the Load Balancer.
+     * or the instance behind the LoadBalancer.
      *
      * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the Load Balancer.
+     *         or the instance behind the LoadBalancer.
      */
     public void setReasonCode(String reasonCode) {
         this.reasonCode = reasonCode;
@@ -146,13 +146,13 @@ public class InstanceState {
     /**
      * Provides information about the cause of <i>OutOfService</i> instances.
      * Specifically, it indicates whether the cause is Elastic Load Balancing
-     * or the instance behind the Load Balancer.
+     * or the instance behind the LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param reasonCode Provides information about the cause of <i>OutOfService</i> instances.
      *         Specifically, it indicates whether the cause is Elastic Load Balancing
-     *         or the instance behind the Load Balancer.
+     *         or the instance behind the LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

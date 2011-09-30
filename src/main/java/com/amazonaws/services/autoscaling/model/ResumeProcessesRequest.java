@@ -107,6 +107,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      *         omit this parameter.
      */
     public java.util.List<String> getScalingProcesses() {
+        
         if (scalingProcesses == null) {
             scalingProcesses = new java.util.ArrayList<String>();
         }
@@ -157,6 +158,7 @@ public class ResumeProcessesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ResumeProcessesRequest withScalingProcesses(String... scalingProcesses) {
+        if (getScalingProcesses() == null) setScalingProcesses(new java.util.ArrayList<String>());
         for (String value : scalingProcesses) {
             getScalingProcesses().add(value);
         }

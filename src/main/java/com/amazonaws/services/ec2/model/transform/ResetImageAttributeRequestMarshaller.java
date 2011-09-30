@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<ResetImageAttributeRequest>, ResetImageAttributeRequest> {
 
     public Request<ResetImageAttributeRequest> marshall(ResetImageAttributeRequest resetImageAttributeRequest) {
+
+        if (resetImageAttributeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ResetImageAttributeRequest> request = new DefaultRequest<ResetImageAttributeRequest>(resetImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetImageAttribute");
         request.addParameter("Version", "2011-05-15");
-        if (resetImageAttributeRequest != null) {
-            if (resetImageAttributeRequest.getImageId() != null) {
-                request.addParameter("ImageId", StringUtils.fromString(resetImageAttributeRequest.getImageId()));
-            }
+
+        if (resetImageAttributeRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(resetImageAttributeRequest.getImageId()));
         }
-        if (resetImageAttributeRequest != null) {
-            if (resetImageAttributeRequest.getAttribute() != null) {
-                request.addParameter("Attribute", StringUtils.fromString(resetImageAttributeRequest.getAttribute()));
-            }
+        if (resetImageAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(resetImageAttributeRequest.getAttribute()));
         }
 
 

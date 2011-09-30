@@ -68,6 +68,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         an instance, an EBS volume, or snapshot, etc.
      */
     public java.util.List<String> getResources() {
+        
         if (resources == null) {
             resources = new java.util.ArrayList<String>();
         }
@@ -102,6 +103,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withResources(String... resources) {
+        if (getResources() == null) setResources(new java.util.ArrayList<String>());
         for (String value : resources) {
             getResources().add(value);
         }
@@ -138,6 +140,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         item consists of a key-value pair.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -172,6 +175,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

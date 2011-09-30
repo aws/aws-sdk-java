@@ -120,6 +120,7 @@ public class MetricDatum {
      * @return A list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -156,6 +157,7 @@ public class MetricDatum {
      *         together. 
      */
     public MetricDatum withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }

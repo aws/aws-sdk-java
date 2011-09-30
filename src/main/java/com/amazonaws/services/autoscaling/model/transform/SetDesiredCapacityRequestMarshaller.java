@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<SetDesiredCapacityRequest>, SetDesiredCapacityRequest> {
 
     public Request<SetDesiredCapacityRequest> marshall(SetDesiredCapacityRequest setDesiredCapacityRequest) {
+
+        if (setDesiredCapacityRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetDesiredCapacity");
         request.addParameter("Version", "2011-01-01");
-        if (setDesiredCapacityRequest != null) {
-            if (setDesiredCapacityRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(setDesiredCapacityRequest.getAutoScalingGroupName()));
-            }
+
+        if (setDesiredCapacityRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(setDesiredCapacityRequest.getAutoScalingGroupName()));
         }
-        if (setDesiredCapacityRequest != null) {
-            if (setDesiredCapacityRequest.getDesiredCapacity() != null) {
-                request.addParameter("DesiredCapacity", StringUtils.fromInteger(setDesiredCapacityRequest.getDesiredCapacity()));
-            }
+        if (setDesiredCapacityRequest.getDesiredCapacity() != null) {
+            request.addParameter("DesiredCapacity", StringUtils.fromInteger(setDesiredCapacityRequest.getDesiredCapacity()));
         }
-        if (setDesiredCapacityRequest != null) {
-            if (setDesiredCapacityRequest.isHonorCooldown() != null) {
-                request.addParameter("HonorCooldown", StringUtils.fromBoolean(setDesiredCapacityRequest.isHonorCooldown()));
-            }
+        if (setDesiredCapacityRequest.isHonorCooldown() != null) {
+            request.addParameter("HonorCooldown", StringUtils.fromBoolean(setDesiredCapacityRequest.isHonorCooldown()));
         }
 
 

@@ -34,6 +34,7 @@ public class DescribeLicensesResult {
      *         instance.
      */
     public java.util.List<License> getLicenses() {
+        
         if (licenses == null) {
             licenses = new java.util.ArrayList<License>();
         }
@@ -68,6 +69,7 @@ public class DescribeLicensesResult {
      *         together. 
      */
     public DescribeLicensesResult withLicenses(License... licenses) {
+        if (getLicenses() == null) setLicenses(new java.util.ArrayList<License>());
         for (License value : licenses) {
             getLicenses().add(value);
         }

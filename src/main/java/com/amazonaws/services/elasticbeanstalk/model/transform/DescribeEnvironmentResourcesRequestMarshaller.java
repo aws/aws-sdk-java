@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DescribeEnvironmentResourcesRequestMarshaller implements Marshaller<Request<DescribeEnvironmentResourcesRequest>, DescribeEnvironmentResourcesRequest> {
 
     public Request<DescribeEnvironmentResourcesRequest> marshall(DescribeEnvironmentResourcesRequest describeEnvironmentResourcesRequest) {
+
+        if (describeEnvironmentResourcesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeEnvironmentResourcesRequest> request = new DefaultRequest<DescribeEnvironmentResourcesRequest>(describeEnvironmentResourcesRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEnvironmentResources");
         request.addParameter("Version", "2010-12-01");
-        if (describeEnvironmentResourcesRequest != null) {
-            if (describeEnvironmentResourcesRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(describeEnvironmentResourcesRequest.getEnvironmentId()));
-            }
+
+        if (describeEnvironmentResourcesRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(describeEnvironmentResourcesRequest.getEnvironmentId()));
         }
-        if (describeEnvironmentResourcesRequest != null) {
-            if (describeEnvironmentResourcesRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(describeEnvironmentResourcesRequest.getEnvironmentName()));
-            }
+        if (describeEnvironmentResourcesRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(describeEnvironmentResourcesRequest.getEnvironmentName()));
         }
 
 

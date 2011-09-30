@@ -426,6 +426,7 @@ public class MetricAlarm {
      *         Scaling policy.
      */
     public java.util.List<String> getOKActions() {
+        
         if (oKActions == null) {
             oKActions = new java.util.ArrayList<String>();
         }
@@ -478,6 +479,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withOKActions(String... oKActions) {
+        if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>());
         for (String value : oKActions) {
             getOKActions().add(value);
         }
@@ -532,6 +534,7 @@ public class MetricAlarm {
      *         an Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
+        
         if (alarmActions == null) {
             alarmActions = new java.util.ArrayList<String>();
         }
@@ -584,6 +587,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withAlarmActions(String... alarmActions) {
+        if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>());
         for (String value : alarmActions) {
             getAlarmActions().add(value);
         }
@@ -638,6 +642,7 @@ public class MetricAlarm {
      *         an Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
+        
         if (insufficientDataActions == null) {
             insufficientDataActions = new java.util.ArrayList<String>();
         }
@@ -690,6 +695,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withInsufficientDataActions(String... insufficientDataActions) {
+        if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>());
         for (String value : insufficientDataActions) {
             getInsufficientDataActions().add(value);
         }
@@ -1043,6 +1049,7 @@ public class MetricAlarm {
      * @return The list of dimensions associated with the alarm's associated metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -1079,6 +1086,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }

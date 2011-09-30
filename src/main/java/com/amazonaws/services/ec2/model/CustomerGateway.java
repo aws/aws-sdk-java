@@ -255,6 +255,7 @@ public class CustomerGateway {
      * @return A list of tags for the CustomerGateway.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -285,6 +286,7 @@ public class CustomerGateway {
      *         together. 
      */
     public CustomerGateway withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

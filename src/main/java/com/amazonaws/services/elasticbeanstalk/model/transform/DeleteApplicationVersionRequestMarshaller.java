@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DeleteApplicationVersionRequestMarshaller implements Marshaller<Request<DeleteApplicationVersionRequest>, DeleteApplicationVersionRequest> {
 
     public Request<DeleteApplicationVersionRequest> marshall(DeleteApplicationVersionRequest deleteApplicationVersionRequest) {
+
+        if (deleteApplicationVersionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteApplicationVersionRequest> request = new DefaultRequest<DeleteApplicationVersionRequest>(deleteApplicationVersionRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteApplicationVersion");
         request.addParameter("Version", "2010-12-01");
-        if (deleteApplicationVersionRequest != null) {
-            if (deleteApplicationVersionRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(deleteApplicationVersionRequest.getApplicationName()));
-            }
+
+        if (deleteApplicationVersionRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(deleteApplicationVersionRequest.getApplicationName()));
         }
-        if (deleteApplicationVersionRequest != null) {
-            if (deleteApplicationVersionRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(deleteApplicationVersionRequest.getVersionLabel()));
-            }
+        if (deleteApplicationVersionRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(deleteApplicationVersionRequest.getVersionLabel()));
         }
-        if (deleteApplicationVersionRequest != null) {
-            if (deleteApplicationVersionRequest.isDeleteSourceBundle() != null) {
-                request.addParameter("DeleteSourceBundle", StringUtils.fromBoolean(deleteApplicationVersionRequest.isDeleteSourceBundle()));
-            }
+        if (deleteApplicationVersionRequest.isDeleteSourceBundle() != null) {
+            request.addParameter("DeleteSourceBundle", StringUtils.fromBoolean(deleteApplicationVersionRequest.isDeleteSourceBundle()));
         }
 
 

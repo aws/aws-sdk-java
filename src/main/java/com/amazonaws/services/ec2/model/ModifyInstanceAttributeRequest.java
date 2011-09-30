@@ -284,6 +284,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *         the attribute being modified.
      */
     public java.util.List<InstanceBlockDeviceMappingSpecification> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>();
         }
@@ -322,6 +323,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyInstanceAttributeRequest withBlockDeviceMappings(InstanceBlockDeviceMappingSpecification... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>());
         for (InstanceBlockDeviceMappingSpecification value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -614,6 +616,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * @return The value of the Groups property for this object.
      */
     public java.util.List<String> getGroups() {
+        
         if (groups == null) {
             groups = new java.util.ArrayList<String>();
         }
@@ -644,6 +647,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyInstanceAttributeRequest withGroups(String... groups) {
+        if (getGroups() == null) setGroups(new java.util.ArrayList<String>());
         for (String value : groups) {
             getGroups().add(value);
         }

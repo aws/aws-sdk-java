@@ -88,6 +88,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      *         error.
      */
     public java.util.List<String> getActivityIds() {
+        
         if (activityIds == null) {
             activityIds = new java.util.ArrayList<String>();
         }
@@ -138,6 +139,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScalingActivitiesRequest withActivityIds(String... activityIds) {
+        if (getActivityIds() == null) setActivityIds(new java.util.ArrayList<String>());
         for (String value : activityIds) {
             getActivityIds().add(value);
         }

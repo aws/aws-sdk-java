@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements Marshaller<Request<PurchaseReservedDBInstancesOfferingRequest>, PurchaseReservedDBInstancesOfferingRequest> {
 
     public Request<PurchaseReservedDBInstancesOfferingRequest> marshall(PurchaseReservedDBInstancesOfferingRequest purchaseReservedDBInstancesOfferingRequest) {
+
+        if (purchaseReservedDBInstancesOfferingRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PurchaseReservedDBInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedDBInstancesOfferingRequest>(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
         request.addParameter("Action", "PurchaseReservedDBInstancesOffering");
         request.addParameter("Version", "2011-04-01");
-        if (purchaseReservedDBInstancesOfferingRequest != null) {
-            if (purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId() != null) {
-                request.addParameter("ReservedDBInstancesOfferingId", StringUtils.fromString(purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId()));
-            }
+
+        if (purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId() != null) {
+            request.addParameter("ReservedDBInstancesOfferingId", StringUtils.fromString(purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId()));
         }
-        if (purchaseReservedDBInstancesOfferingRequest != null) {
-            if (purchaseReservedDBInstancesOfferingRequest.getReservedDBInstanceId() != null) {
-                request.addParameter("ReservedDBInstanceId", StringUtils.fromString(purchaseReservedDBInstancesOfferingRequest.getReservedDBInstanceId()));
-            }
+        if (purchaseReservedDBInstancesOfferingRequest.getReservedDBInstanceId() != null) {
+            request.addParameter("ReservedDBInstanceId", StringUtils.fromString(purchaseReservedDBInstancesOfferingRequest.getReservedDBInstanceId()));
         }
-        if (purchaseReservedDBInstancesOfferingRequest != null) {
-            if (purchaseReservedDBInstancesOfferingRequest.getDBInstanceCount() != null) {
-                request.addParameter("DBInstanceCount", StringUtils.fromInteger(purchaseReservedDBInstancesOfferingRequest.getDBInstanceCount()));
-            }
+        if (purchaseReservedDBInstancesOfferingRequest.getDBInstanceCount() != null) {
+            request.addParameter("DBInstanceCount", StringUtils.fromInteger(purchaseReservedDBInstancesOfferingRequest.getDBInstanceCount()));
         }
 
 

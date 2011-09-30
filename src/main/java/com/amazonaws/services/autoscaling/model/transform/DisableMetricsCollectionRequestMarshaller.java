@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class DisableMetricsCollectionRequestMarshaller implements Marshaller<Request<DisableMetricsCollectionRequest>, DisableMetricsCollectionRequest> {
 
     public Request<DisableMetricsCollectionRequest> marshall(DisableMetricsCollectionRequest disableMetricsCollectionRequest) {
+
+        if (disableMetricsCollectionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DisableMetricsCollectionRequest> request = new DefaultRequest<DisableMetricsCollectionRequest>(disableMetricsCollectionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DisableMetricsCollection");
         request.addParameter("Version", "2011-01-01");
-        if (disableMetricsCollectionRequest != null) {
-            if (disableMetricsCollectionRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(disableMetricsCollectionRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (disableMetricsCollectionRequest != null) {
-            java.util.List<String> metricsList = disableMetricsCollectionRequest.getMetrics();
-            int metricsListIndex = 1;
 
-            for (String metricsListValue : metricsList) {
-                if (metricsListValue != null) {
-                    request.addParameter("Metrics.member." + metricsListIndex, StringUtils.fromString(metricsListValue));
-                }
-                metricsListIndex++;
+        if (disableMetricsCollectionRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(disableMetricsCollectionRequest.getAutoScalingGroupName()));
+        }
+
+        java.util.List<String> metricsList = disableMetricsCollectionRequest.getMetrics();
+        int metricsListIndex = 1;
+        for (String metricsListValue : metricsList) {
+            if (metricsListValue != null) {
+                request.addParameter("Metrics.member." + metricsListIndex, StringUtils.fromString(metricsListValue));
             }
+
+            metricsListIndex++;
         }
 
 

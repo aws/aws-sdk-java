@@ -72,6 +72,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<String> getVpnGatewayIds() {
+        
         if (vpnGatewayIds == null) {
             vpnGatewayIds = new java.util.ArrayList<String>();
         }
@@ -118,6 +119,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
+        if (getVpnGatewayIds() == null) setVpnGatewayIds(new java.util.ArrayList<String>());
         for (String value : vpnGatewayIds) {
             getVpnGatewayIds().add(value);
         }
@@ -166,6 +168,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -212,6 +215,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

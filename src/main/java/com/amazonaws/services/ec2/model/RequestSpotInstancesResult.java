@@ -32,6 +32,7 @@ public class RequestSpotInstancesResult {
      * @return Contains a list of Spot Instance requests.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
+        
         if (spotInstanceRequests == null) {
             spotInstanceRequests = new java.util.ArrayList<SpotInstanceRequest>();
         }
@@ -62,6 +63,7 @@ public class RequestSpotInstancesResult {
      *         together. 
      */
     public RequestSpotInstancesResult withSpotInstanceRequests(SpotInstanceRequest... spotInstanceRequests) {
+        if (getSpotInstanceRequests() == null) setSpotInstanceRequests(new java.util.ArrayList<SpotInstanceRequest>());
         for (SpotInstanceRequest value : spotInstanceRequests) {
             getSpotInstanceRequests().add(value);
         }

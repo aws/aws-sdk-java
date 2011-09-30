@@ -53,6 +53,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
      * @return A list of filters used to match properties for tags.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -83,6 +84,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeTagsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

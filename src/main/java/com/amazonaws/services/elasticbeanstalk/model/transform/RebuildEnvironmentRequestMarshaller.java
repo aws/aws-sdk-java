@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class RebuildEnvironmentRequestMarshaller implements Marshaller<Request<RebuildEnvironmentRequest>, RebuildEnvironmentRequest> {
 
     public Request<RebuildEnvironmentRequest> marshall(RebuildEnvironmentRequest rebuildEnvironmentRequest) {
+
+        if (rebuildEnvironmentRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RebuildEnvironmentRequest> request = new DefaultRequest<RebuildEnvironmentRequest>(rebuildEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RebuildEnvironment");
         request.addParameter("Version", "2010-12-01");
-        if (rebuildEnvironmentRequest != null) {
-            if (rebuildEnvironmentRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(rebuildEnvironmentRequest.getEnvironmentId()));
-            }
+
+        if (rebuildEnvironmentRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(rebuildEnvironmentRequest.getEnvironmentId()));
         }
-        if (rebuildEnvironmentRequest != null) {
-            if (rebuildEnvironmentRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(rebuildEnvironmentRequest.getEnvironmentName()));
-            }
+        if (rebuildEnvironmentRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(rebuildEnvironmentRequest.getEnvironmentName()));
         }
 
 

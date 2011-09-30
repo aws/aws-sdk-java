@@ -56,6 +56,7 @@ public class UploadPartRequestFactory {
 
     public synchronized UploadPartRequest getNextUploadPartRequest() {
         long partSize = Math.min(optimalPartSize, remainingBytes);
+        boolean isLastPart = (remainingBytes - partSize <= 0);
 
         UploadPartRequest request = null;
         if (putObjectRequest.getInputStream() != null) {
@@ -63,7 +64,7 @@ public class UploadPartRequestFactory {
                 .withBucketName(bucketName)
                 .withKey(key)
                 .withUploadId(uploadId)
-                .withInputStream(new InputSubstream(putObjectRequest.getInputStream(), 0, partSize))
+                .withInputStream(new InputSubstream(putObjectRequest.getInputStream(), 0, partSize, isLastPart))
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         } else {
@@ -79,8 +80,7 @@ public class UploadPartRequestFactory {
 
         offset += partSize;
         remainingBytes -= partSize;
-
-        boolean isLastPart = (remainingBytes <= 0);
+        
         request.setLastPart(isLastPart);
         request.setProgressListener(putObjectRequest.getProgressListener());
 

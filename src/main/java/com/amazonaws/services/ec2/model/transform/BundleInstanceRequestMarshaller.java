@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,42 +31,36 @@ import com.amazonaws.util.StringUtils;
 public class BundleInstanceRequestMarshaller implements Marshaller<Request<BundleInstanceRequest>, BundleInstanceRequest> {
 
     public Request<BundleInstanceRequest> marshall(BundleInstanceRequest bundleInstanceRequest) {
+
+        if (bundleInstanceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<BundleInstanceRequest> request = new DefaultRequest<BundleInstanceRequest>(bundleInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "BundleInstance");
         request.addParameter("Version", "2011-05-15");
-        if (bundleInstanceRequest != null) {
-            if (bundleInstanceRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(bundleInstanceRequest.getInstanceId()));
-            }
+
+        if (bundleInstanceRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(bundleInstanceRequest.getInstanceId()));
         }
-        if (bundleInstanceRequest != null) {
-            Storage storage = bundleInstanceRequest.getStorage();
-            if (storage != null) {
-                S3Storage s3 = storage.getS3();
-                if (s3 != null) {
-                    if (s3.getBucket() != null) {
-                        request.addParameter("Storage.S3.Bucket", StringUtils.fromString(s3.getBucket()));
-                    }
+        Storage storageStorage = bundleInstanceRequest.getStorage();
+        if (storageStorage != null) {
+            S3Storage s3StorageS3 = storageStorage.getS3();
+            if (s3StorageS3 != null) {
+                if (s3StorageS3.getBucket() != null) {
+                    request.addParameter("Storage.S3.Bucket", StringUtils.fromString(s3StorageS3.getBucket()));
                 }
-                if (s3 != null) {
-                    if (s3.getPrefix() != null) {
-                        request.addParameter("Storage.S3.Prefix", StringUtils.fromString(s3.getPrefix()));
-                    }
+                if (s3StorageS3.getPrefix() != null) {
+                    request.addParameter("Storage.S3.Prefix", StringUtils.fromString(s3StorageS3.getPrefix()));
                 }
-                if (s3 != null) {
-                    if (s3.getAWSAccessKeyId() != null) {
-                        request.addParameter("Storage.S3.AWSAccessKeyId", StringUtils.fromString(s3.getAWSAccessKeyId()));
-                    }
+                if (s3StorageS3.getAWSAccessKeyId() != null) {
+                    request.addParameter("Storage.S3.AWSAccessKeyId", StringUtils.fromString(s3StorageS3.getAWSAccessKeyId()));
                 }
-                if (s3 != null) {
-                    if (s3.getUploadPolicy() != null) {
-                        request.addParameter("Storage.S3.UploadPolicy", StringUtils.fromString(s3.getUploadPolicy()));
-                    }
+                if (s3StorageS3.getUploadPolicy() != null) {
+                    request.addParameter("Storage.S3.UploadPolicy", StringUtils.fromString(s3StorageS3.getUploadPolicy()));
                 }
-                if (s3 != null) {
-                    if (s3.getUploadPolicySignature() != null) {
-                        request.addParameter("Storage.S3.UploadPolicySignature", StringUtils.fromString(s3.getUploadPolicySignature()));
-                    }
+                if (s3StorageS3.getUploadPolicySignature() != null) {
+                    request.addParameter("Storage.S3.UploadPolicySignature", StringUtils.fromString(s3StorageS3.getUploadPolicySignature()));
                 }
             }
         }

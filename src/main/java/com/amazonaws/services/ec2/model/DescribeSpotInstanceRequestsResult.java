@@ -28,6 +28,7 @@ public class DescribeSpotInstanceRequestsResult {
      * @return The value of the SpotInstanceRequests property for this object.
      */
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
+        
         if (spotInstanceRequests == null) {
             spotInstanceRequests = new java.util.ArrayList<SpotInstanceRequest>();
         }
@@ -58,6 +59,7 @@ public class DescribeSpotInstanceRequestsResult {
      *         together. 
      */
     public DescribeSpotInstanceRequestsResult withSpotInstanceRequests(SpotInstanceRequest... spotInstanceRequests) {
+        if (getSpotInstanceRequests() == null) setSpotInstanceRequests(new java.util.ArrayList<SpotInstanceRequest>());
         for (SpotInstanceRequest value : spotInstanceRequests) {
             getSpotInstanceRequests().add(value);
         }

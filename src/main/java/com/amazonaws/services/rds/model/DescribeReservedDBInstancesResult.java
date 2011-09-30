@@ -72,6 +72,7 @@ public class DescribeReservedDBInstancesResult {
      * @return A list of of reserved DB Instances.
      */
     public java.util.List<ReservedDBInstance> getReservedDBInstances() {
+        
         if (reservedDBInstances == null) {
             reservedDBInstances = new java.util.ArrayList<ReservedDBInstance>();
         }
@@ -102,6 +103,7 @@ public class DescribeReservedDBInstancesResult {
      *         together. 
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(ReservedDBInstance... reservedDBInstances) {
+        if (getReservedDBInstances() == null) setReservedDBInstances(new java.util.ArrayList<ReservedDBInstance>());
         for (ReservedDBInstance value : reservedDBInstances) {
             getReservedDBInstances().add(value);
         }

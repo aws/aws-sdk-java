@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeDBInstancesRequestMarshaller implements Marshaller<Request<DescribeDBInstancesRequest>, DescribeDBInstancesRequest> {
 
     public Request<DescribeDBInstancesRequest> marshall(DescribeDBInstancesRequest describeDBInstancesRequest) {
+
+        if (describeDBInstancesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeDBInstancesRequest> request = new DefaultRequest<DescribeDBInstancesRequest>(describeDBInstancesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBInstances");
         request.addParameter("Version", "2011-04-01");
-        if (describeDBInstancesRequest != null) {
-            if (describeDBInstancesRequest.getDBInstanceIdentifier() != null) {
-                request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBInstancesRequest.getDBInstanceIdentifier()));
-            }
+
+        if (describeDBInstancesRequest.getDBInstanceIdentifier() != null) {
+            request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBInstancesRequest.getDBInstanceIdentifier()));
         }
-        if (describeDBInstancesRequest != null) {
-            if (describeDBInstancesRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBInstancesRequest.getMaxRecords()));
-            }
+        if (describeDBInstancesRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBInstancesRequest.getMaxRecords()));
         }
-        if (describeDBInstancesRequest != null) {
-            if (describeDBInstancesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeDBInstancesRequest.getMarker()));
-            }
+        if (describeDBInstancesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeDBInstancesRequest.getMarker()));
         }
 
 

@@ -36,6 +36,7 @@ public class ListTopicsResult {
      * @return A list of topic ARNs.
      */
     public java.util.List<Topic> getTopics() {
+        
         if (topics == null) {
             topics = new java.util.ArrayList<Topic>();
         }
@@ -66,6 +67,7 @@ public class ListTopicsResult {
      *         together. 
      */
     public ListTopicsResult withTopics(Topic... topics) {
+        if (getTopics() == null) setTopics(new java.util.ArrayList<Topic>());
         for (Topic value : topics) {
             getTopics().add(value);
         }

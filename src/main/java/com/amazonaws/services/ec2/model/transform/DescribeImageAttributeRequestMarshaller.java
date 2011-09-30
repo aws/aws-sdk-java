@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DescribeImageAttributeRequestMarshaller implements Marshaller<Request<DescribeImageAttributeRequest>, DescribeImageAttributeRequest> {
 
     public Request<DescribeImageAttributeRequest> marshall(DescribeImageAttributeRequest describeImageAttributeRequest) {
+
+        if (describeImageAttributeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeImageAttributeRequest> request = new DefaultRequest<DescribeImageAttributeRequest>(describeImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImageAttribute");
         request.addParameter("Version", "2011-05-15");
-        if (describeImageAttributeRequest != null) {
-            if (describeImageAttributeRequest.getImageId() != null) {
-                request.addParameter("ImageId", StringUtils.fromString(describeImageAttributeRequest.getImageId()));
-            }
+
+        if (describeImageAttributeRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(describeImageAttributeRequest.getImageId()));
         }
-        if (describeImageAttributeRequest != null) {
-            if (describeImageAttributeRequest.getAttribute() != null) {
-                request.addParameter("Attribute", StringUtils.fromString(describeImageAttributeRequest.getAttribute()));
-            }
+        if (describeImageAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(describeImageAttributeRequest.getAttribute()));
         }
 
 

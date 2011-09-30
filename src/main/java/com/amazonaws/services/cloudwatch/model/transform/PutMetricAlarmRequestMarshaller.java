@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,115 +31,93 @@ import com.amazonaws.util.StringUtils;
 public class PutMetricAlarmRequestMarshaller implements Marshaller<Request<PutMetricAlarmRequest>, PutMetricAlarmRequest> {
 
     public Request<PutMetricAlarmRequest> marshall(PutMetricAlarmRequest putMetricAlarmRequest) {
+
+        if (putMetricAlarmRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PutMetricAlarmRequest> request = new DefaultRequest<PutMetricAlarmRequest>(putMetricAlarmRequest, "AmazonCloudWatch");
         request.addParameter("Action", "PutMetricAlarm");
         request.addParameter("Version", "2010-08-01");
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getAlarmName() != null) {
-                request.addParameter("AlarmName", StringUtils.fromString(putMetricAlarmRequest.getAlarmName()));
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getAlarmDescription() != null) {
-                request.addParameter("AlarmDescription", StringUtils.fromString(putMetricAlarmRequest.getAlarmDescription()));
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.isActionsEnabled() != null) {
-                request.addParameter("ActionsEnabled", StringUtils.fromBoolean(putMetricAlarmRequest.isActionsEnabled()));
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            java.util.List<String> oKActionsList = putMetricAlarmRequest.getOKActions();
-            int oKActionsListIndex = 1;
 
-            for (String oKActionsListValue : oKActionsList) {
-                if (oKActionsListValue != null) {
-                    request.addParameter("OKActions.member." + oKActionsListIndex, StringUtils.fromString(oKActionsListValue));
-                }
-                oKActionsListIndex++;
-            }
+        if (putMetricAlarmRequest.getAlarmName() != null) {
+            request.addParameter("AlarmName", StringUtils.fromString(putMetricAlarmRequest.getAlarmName()));
         }
-        if (putMetricAlarmRequest != null) {
-            java.util.List<String> alarmActionsList = putMetricAlarmRequest.getAlarmActions();
-            int alarmActionsListIndex = 1;
-
-            for (String alarmActionsListValue : alarmActionsList) {
-                if (alarmActionsListValue != null) {
-                    request.addParameter("AlarmActions.member." + alarmActionsListIndex, StringUtils.fromString(alarmActionsListValue));
-                }
-                alarmActionsListIndex++;
-            }
+        if (putMetricAlarmRequest.getAlarmDescription() != null) {
+            request.addParameter("AlarmDescription", StringUtils.fromString(putMetricAlarmRequest.getAlarmDescription()));
         }
-        if (putMetricAlarmRequest != null) {
-            java.util.List<String> insufficientDataActionsList = putMetricAlarmRequest.getInsufficientDataActions();
-            int insufficientDataActionsListIndex = 1;
-
-            for (String insufficientDataActionsListValue : insufficientDataActionsList) {
-                if (insufficientDataActionsListValue != null) {
-                    request.addParameter("InsufficientDataActions.member." + insufficientDataActionsListIndex, StringUtils.fromString(insufficientDataActionsListValue));
-                }
-                insufficientDataActionsListIndex++;
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getMetricName() != null) {
-                request.addParameter("MetricName", StringUtils.fromString(putMetricAlarmRequest.getMetricName()));
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(putMetricAlarmRequest.getNamespace()));
-            }
-        }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getStatistic() != null) {
-                request.addParameter("Statistic", StringUtils.fromString(putMetricAlarmRequest.getStatistic()));
-            }
+        if (putMetricAlarmRequest.isActionsEnabled() != null) {
+            request.addParameter("ActionsEnabled", StringUtils.fromBoolean(putMetricAlarmRequest.isActionsEnabled()));
         }
 
-        if (putMetricAlarmRequest != null) {
-            java.util.List<Dimension> dimensionsList = putMetricAlarmRequest.getDimensions();
-            int dimensionsListIndex = 1;
-            for (Dimension dimensionsListValue : dimensionsList) {
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getName() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                    }
-                }
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getValue() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
-                    }
-                }
+        java.util.List<String> oKActionsList = putMetricAlarmRequest.getOKActions();
+        int oKActionsListIndex = 1;
+        for (String oKActionsListValue : oKActionsList) {
+            if (oKActionsListValue != null) {
+                request.addParameter("OKActions.member." + oKActionsListIndex, StringUtils.fromString(oKActionsListValue));
+            }
 
-                dimensionsListIndex++;
-            }
+            oKActionsListIndex++;
         }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getPeriod() != null) {
-                request.addParameter("Period", StringUtils.fromInteger(putMetricAlarmRequest.getPeriod()));
+
+        java.util.List<String> alarmActionsList = putMetricAlarmRequest.getAlarmActions();
+        int alarmActionsListIndex = 1;
+        for (String alarmActionsListValue : alarmActionsList) {
+            if (alarmActionsListValue != null) {
+                request.addParameter("AlarmActions.member." + alarmActionsListIndex, StringUtils.fromString(alarmActionsListValue));
             }
+
+            alarmActionsListIndex++;
         }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getUnit() != null) {
-                request.addParameter("Unit", StringUtils.fromString(putMetricAlarmRequest.getUnit()));
+
+        java.util.List<String> insufficientDataActionsList = putMetricAlarmRequest.getInsufficientDataActions();
+        int insufficientDataActionsListIndex = 1;
+        for (String insufficientDataActionsListValue : insufficientDataActionsList) {
+            if (insufficientDataActionsListValue != null) {
+                request.addParameter("InsufficientDataActions.member." + insufficientDataActionsListIndex, StringUtils.fromString(insufficientDataActionsListValue));
             }
+
+            insufficientDataActionsListIndex++;
         }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getEvaluationPeriods() != null) {
-                request.addParameter("EvaluationPeriods", StringUtils.fromInteger(putMetricAlarmRequest.getEvaluationPeriods()));
-            }
+        if (putMetricAlarmRequest.getMetricName() != null) {
+            request.addParameter("MetricName", StringUtils.fromString(putMetricAlarmRequest.getMetricName()));
         }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getThreshold() != null) {
-                request.addParameter("Threshold", StringUtils.fromDouble(putMetricAlarmRequest.getThreshold()));
-            }
+        if (putMetricAlarmRequest.getNamespace() != null) {
+            request.addParameter("Namespace", StringUtils.fromString(putMetricAlarmRequest.getNamespace()));
         }
-        if (putMetricAlarmRequest != null) {
-            if (putMetricAlarmRequest.getComparisonOperator() != null) {
-                request.addParameter("ComparisonOperator", StringUtils.fromString(putMetricAlarmRequest.getComparisonOperator()));
+        if (putMetricAlarmRequest.getStatistic() != null) {
+            request.addParameter("Statistic", StringUtils.fromString(putMetricAlarmRequest.getStatistic()));
+        }
+
+        java.util.List<Dimension> dimensionsList = putMetricAlarmRequest.getDimensions();
+        int dimensionsListIndex = 1;
+        for (Dimension dimensionsListValue : dimensionsList) {
+            Dimension dimensionMember = dimensionsListValue;
+            if (dimensionMember != null) {
+                if (dimensionMember.getName() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionMember.getName()));
+                }
+                if (dimensionMember.getValue() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionMember.getValue()));
+                }
             }
+
+            dimensionsListIndex++;
+        }
+        if (putMetricAlarmRequest.getPeriod() != null) {
+            request.addParameter("Period", StringUtils.fromInteger(putMetricAlarmRequest.getPeriod()));
+        }
+        if (putMetricAlarmRequest.getUnit() != null) {
+            request.addParameter("Unit", StringUtils.fromString(putMetricAlarmRequest.getUnit()));
+        }
+        if (putMetricAlarmRequest.getEvaluationPeriods() != null) {
+            request.addParameter("EvaluationPeriods", StringUtils.fromInteger(putMetricAlarmRequest.getEvaluationPeriods()));
+        }
+        if (putMetricAlarmRequest.getThreshold() != null) {
+            request.addParameter("Threshold", StringUtils.fromDouble(putMetricAlarmRequest.getThreshold()));
+        }
+        if (putMetricAlarmRequest.getComparisonOperator() != null) {
+            request.addParameter("ComparisonOperator", StringUtils.fromString(putMetricAlarmRequest.getComparisonOperator()));
         }
 
 

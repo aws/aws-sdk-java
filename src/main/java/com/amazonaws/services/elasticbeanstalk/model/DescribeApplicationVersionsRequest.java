@@ -110,6 +110,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         that have the specified version labels.
      */
     public java.util.List<String> getVersionLabels() {
+        
         if (versionLabels == null) {
             versionLabels = new java.util.ArrayList<String>();
         }
@@ -144,6 +145,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DescribeApplicationVersionsRequest withVersionLabels(String... versionLabels) {
+        if (getVersionLabels() == null) setVersionLabels(new java.util.ArrayList<String>());
         for (String value : versionLabels) {
             getVersionLabels().add(value);
         }

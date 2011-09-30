@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,68 +31,58 @@ import com.amazonaws.util.StringUtils;
 public class GetMetricStatisticsRequestMarshaller implements Marshaller<Request<GetMetricStatisticsRequest>, GetMetricStatisticsRequest> {
 
     public Request<GetMetricStatisticsRequest> marshall(GetMetricStatisticsRequest getMetricStatisticsRequest) {
+
+        if (getMetricStatisticsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetMetricStatisticsRequest> request = new DefaultRequest<GetMetricStatisticsRequest>(getMetricStatisticsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "GetMetricStatistics");
         request.addParameter("Version", "2010-08-01");
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(getMetricStatisticsRequest.getNamespace()));
-            }
+
+        if (getMetricStatisticsRequest.getNamespace() != null) {
+            request.addParameter("Namespace", StringUtils.fromString(getMetricStatisticsRequest.getNamespace()));
         }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getMetricName() != null) {
-                request.addParameter("MetricName", StringUtils.fromString(getMetricStatisticsRequest.getMetricName()));
-            }
+        if (getMetricStatisticsRequest.getMetricName() != null) {
+            request.addParameter("MetricName", StringUtils.fromString(getMetricStatisticsRequest.getMetricName()));
         }
 
-        if (getMetricStatisticsRequest != null) {
-            java.util.List<Dimension> dimensionsList = getMetricStatisticsRequest.getDimensions();
-            int dimensionsListIndex = 1;
-            for (Dimension dimensionsListValue : dimensionsList) {
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getName() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                    }
+        java.util.List<Dimension> dimensionsList = getMetricStatisticsRequest.getDimensions();
+        int dimensionsListIndex = 1;
+        for (Dimension dimensionsListValue : dimensionsList) {
+            Dimension dimensionMember = dimensionsListValue;
+            if (dimensionMember != null) {
+                if (dimensionMember.getName() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionMember.getName()));
                 }
-                if (dimensionsListValue != null) {
-                    if (dimensionsListValue.getValue() != null) {
-                        request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
-                    }
+                if (dimensionMember.getValue() != null) {
+                    request.addParameter("Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionMember.getValue()));
                 }
+            }
 
-                dimensionsListIndex++;
-            }
+            dimensionsListIndex++;
         }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(getMetricStatisticsRequest.getStartTime()));
-            }
+        if (getMetricStatisticsRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(getMetricStatisticsRequest.getStartTime()));
         }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(getMetricStatisticsRequest.getEndTime()));
-            }
+        if (getMetricStatisticsRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(getMetricStatisticsRequest.getEndTime()));
         }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getPeriod() != null) {
-                request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
-            }
+        if (getMetricStatisticsRequest.getPeriod() != null) {
+            request.addParameter("Period", StringUtils.fromInteger(getMetricStatisticsRequest.getPeriod()));
         }
-        if (getMetricStatisticsRequest != null) {
-            java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
-            int statisticsListIndex = 1;
 
-            for (String statisticsListValue : statisticsList) {
-                if (statisticsListValue != null) {
-                    request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
-                }
-                statisticsListIndex++;
+        java.util.List<String> statisticsList = getMetricStatisticsRequest.getStatistics();
+        int statisticsListIndex = 1;
+        for (String statisticsListValue : statisticsList) {
+            if (statisticsListValue != null) {
+                request.addParameter("Statistics.member." + statisticsListIndex, StringUtils.fromString(statisticsListValue));
             }
+
+            statisticsListIndex++;
         }
-        if (getMetricStatisticsRequest != null) {
-            if (getMetricStatisticsRequest.getUnit() != null) {
-                request.addParameter("Unit", StringUtils.fromString(getMetricStatisticsRequest.getUnit()));
-            }
+        if (getMetricStatisticsRequest.getUnit() != null) {
+            request.addParameter("Unit", StringUtils.fromString(getMetricStatisticsRequest.getUnit()));
         }
 
 

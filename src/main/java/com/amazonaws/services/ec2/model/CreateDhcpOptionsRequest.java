@@ -59,6 +59,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
      * @return A set of one or more DHCP configurations.
      */
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
+        
         if (dhcpConfigurations == null) {
             dhcpConfigurations = new java.util.ArrayList<DhcpConfiguration>();
         }
@@ -89,6 +90,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateDhcpOptionsRequest withDhcpConfigurations(DhcpConfiguration... dhcpConfigurations) {
+        if (getDhcpConfigurations() == null) setDhcpConfigurations(new java.util.ArrayList<DhcpConfiguration>());
         for (DhcpConfiguration value : dhcpConfigurations) {
             getDhcpConfigurations().add(value);
         }

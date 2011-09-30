@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteEnvironmentConfigurationRequestMarshaller implements Marshaller<Request<DeleteEnvironmentConfigurationRequest>, DeleteEnvironmentConfigurationRequest> {
 
     public Request<DeleteEnvironmentConfigurationRequest> marshall(DeleteEnvironmentConfigurationRequest deleteEnvironmentConfigurationRequest) {
+
+        if (deleteEnvironmentConfigurationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteEnvironmentConfigurationRequest> request = new DefaultRequest<DeleteEnvironmentConfigurationRequest>(deleteEnvironmentConfigurationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteEnvironmentConfiguration");
         request.addParameter("Version", "2010-12-01");
-        if (deleteEnvironmentConfigurationRequest != null) {
-            if (deleteEnvironmentConfigurationRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(deleteEnvironmentConfigurationRequest.getApplicationName()));
-            }
+
+        if (deleteEnvironmentConfigurationRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(deleteEnvironmentConfigurationRequest.getApplicationName()));
         }
-        if (deleteEnvironmentConfigurationRequest != null) {
-            if (deleteEnvironmentConfigurationRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(deleteEnvironmentConfigurationRequest.getEnvironmentName()));
-            }
+        if (deleteEnvironmentConfigurationRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(deleteEnvironmentConfigurationRequest.getEnvironmentName()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,33 +31,37 @@ import com.amazonaws.util.StringUtils;
 public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<CreateDhcpOptionsRequest>, CreateDhcpOptionsRequest> {
 
     public Request<CreateDhcpOptionsRequest> marshall(CreateDhcpOptionsRequest createDhcpOptionsRequest) {
+
+        if (createDhcpOptionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(createDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateDhcpOptions");
         request.addParameter("Version", "2011-05-15");
 
-        if (createDhcpOptionsRequest != null) {
-            java.util.List<DhcpConfiguration> dhcpConfigurationsList = createDhcpOptionsRequest.getDhcpConfigurations();
-            int dhcpConfigurationsListIndex = 1;
-            for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
-                if (dhcpConfigurationsListValue != null) {
-                    if (dhcpConfigurationsListValue.getKey() != null) {
-                        request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key", StringUtils.fromString(dhcpConfigurationsListValue.getKey()));
-                    }
-                }
-                if (dhcpConfigurationsListValue != null) {
-                    java.util.List<String> valuesList = dhcpConfigurationsListValue.getValues();
-                    int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+        java.util.List<DhcpConfiguration> dhcpConfigurationsList = createDhcpOptionsRequest.getDhcpConfigurations();
+        int dhcpConfigurationsListIndex = 1;
+        for (DhcpConfiguration dhcpConfigurationsListValue : dhcpConfigurationsList) {
+            DhcpConfiguration dhcpConfigurationMember = dhcpConfigurationsListValue;
+            if (dhcpConfigurationMember != null) {
+                if (dhcpConfigurationMember.getKey() != null) {
+                    request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Key", StringUtils.fromString(dhcpConfigurationMember.getKey()));
                 }
 
-                dhcpConfigurationsListIndex++;
+                java.util.List<String> valuesList = dhcpConfigurationMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("DhcpConfiguration." + dhcpConfigurationsListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
             }
+
+            dhcpConfigurationsListIndex++;
         }
 
 

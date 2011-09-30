@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteConfigurationTemplateRequestMarshaller implements Marshaller<Request<DeleteConfigurationTemplateRequest>, DeleteConfigurationTemplateRequest> {
 
     public Request<DeleteConfigurationTemplateRequest> marshall(DeleteConfigurationTemplateRequest deleteConfigurationTemplateRequest) {
+
+        if (deleteConfigurationTemplateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteConfigurationTemplateRequest> request = new DefaultRequest<DeleteConfigurationTemplateRequest>(deleteConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteConfigurationTemplate");
         request.addParameter("Version", "2010-12-01");
-        if (deleteConfigurationTemplateRequest != null) {
-            if (deleteConfigurationTemplateRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(deleteConfigurationTemplateRequest.getApplicationName()));
-            }
+
+        if (deleteConfigurationTemplateRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(deleteConfigurationTemplateRequest.getApplicationName()));
         }
-        if (deleteConfigurationTemplateRequest != null) {
-            if (deleteConfigurationTemplateRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(deleteConfigurationTemplateRequest.getTemplateName()));
-            }
+        if (deleteConfigurationTemplateRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(deleteConfigurationTemplateRequest.getTemplateName()));
         }
 
 

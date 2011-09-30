@@ -109,6 +109,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
      * @return A list of data describing the metric.
      */
     public java.util.List<MetricDatum> getMetricData() {
+        
         if (metricData == null) {
             metricData = new java.util.ArrayList<MetricDatum>();
         }
@@ -139,6 +140,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricDataRequest withMetricData(MetricDatum... metricData) {
+        if (getMetricData() == null) setMetricData(new java.util.ArrayList<MetricDatum>());
         for (MetricDatum value : metricData) {
             getMetricData().add(value);
         }

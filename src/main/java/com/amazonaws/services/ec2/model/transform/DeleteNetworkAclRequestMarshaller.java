@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteNetworkAclRequestMarshaller implements Marshaller<Request<DeleteNetworkAclRequest>, DeleteNetworkAclRequest> {
 
     public Request<DeleteNetworkAclRequest> marshall(DeleteNetworkAclRequest deleteNetworkAclRequest) {
+
+        if (deleteNetworkAclRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteNetworkAclRequest> request = new DefaultRequest<DeleteNetworkAclRequest>(deleteNetworkAclRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAcl");
         request.addParameter("Version", "2011-05-15");
-        if (deleteNetworkAclRequest != null) {
-            if (deleteNetworkAclRequest.getNetworkAclId() != null) {
-                request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclRequest.getNetworkAclId()));
-            }
+
+        if (deleteNetworkAclRequest.getNetworkAclId() != null) {
+            request.addParameter("NetworkAclId", StringUtils.fromString(deleteNetworkAclRequest.getNetworkAclId()));
         }
 
 

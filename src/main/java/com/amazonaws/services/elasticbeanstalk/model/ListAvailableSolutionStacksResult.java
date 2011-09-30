@@ -38,6 +38,7 @@ public class ListAvailableSolutionStacksResult {
      * @return A list of available solution stacks.
      */
     public java.util.List<String> getSolutionStacks() {
+        
         if (solutionStacks == null) {
             solutionStacks = new java.util.ArrayList<String>();
         }
@@ -68,6 +69,7 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(String... solutionStacks) {
+        if (getSolutionStacks() == null) setSolutionStacks(new java.util.ArrayList<String>());
         for (String value : solutionStacks) {
             getSolutionStacks().add(value);
         }
@@ -102,6 +104,7 @@ public class ListAvailableSolutionStacksResult {
      *         <a>SolutionStackDescription</a>.
      */
     public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
+        
         if (solutionStackDetails == null) {
             solutionStackDetails = new java.util.ArrayList<SolutionStackDescription>();
         }
@@ -136,6 +139,7 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
+        if (getSolutionStackDetails() == null) setSolutionStackDetails(new java.util.ArrayList<SolutionStackDescription>());
         for (SolutionStackDescription value : solutionStackDetails) {
             getSolutionStackDetails().add(value);
         }

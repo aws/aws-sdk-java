@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CreateRouteTableRequestMarshaller implements Marshaller<Request<CreateRouteTableRequest>, CreateRouteTableRequest> {
 
     public Request<CreateRouteTableRequest> marshall(CreateRouteTableRequest createRouteTableRequest) {
+
+        if (createRouteTableRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateRouteTableRequest> request = new DefaultRequest<CreateRouteTableRequest>(createRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRouteTable");
         request.addParameter("Version", "2011-05-15");
-        if (createRouteTableRequest != null) {
-            if (createRouteTableRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(createRouteTableRequest.getVpcId()));
-            }
+
+        if (createRouteTableRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(createRouteTableRequest.getVpcId()));
         }
 
 

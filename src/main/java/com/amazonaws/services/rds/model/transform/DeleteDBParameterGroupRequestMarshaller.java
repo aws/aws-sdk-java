@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteDBParameterGroupRequestMarshaller implements Marshaller<Request<DeleteDBParameterGroupRequest>, DeleteDBParameterGroupRequest> {
 
     public Request<DeleteDBParameterGroupRequest> marshall(DeleteDBParameterGroupRequest deleteDBParameterGroupRequest) {
+
+        if (deleteDBParameterGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteDBParameterGroupRequest> request = new DefaultRequest<DeleteDBParameterGroupRequest>(deleteDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBParameterGroup");
         request.addParameter("Version", "2011-04-01");
-        if (deleteDBParameterGroupRequest != null) {
-            if (deleteDBParameterGroupRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(deleteDBParameterGroupRequest.getDBParameterGroupName()));
-            }
+
+        if (deleteDBParameterGroupRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(deleteDBParameterGroupRequest.getDBParameterGroupName()));
         }
 
 

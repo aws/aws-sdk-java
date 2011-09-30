@@ -64,6 +64,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
      * @return One or more network ACL IDs.
      */
     public java.util.List<String> getNetworkAclIds() {
+        
         if (networkAclIds == null) {
             networkAclIds = new java.util.ArrayList<String>();
         }
@@ -94,6 +95,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeNetworkAclsRequest withNetworkAclIds(String... networkAclIds) {
+        if (getNetworkAclIds() == null) setNetworkAclIds(new java.util.ArrayList<String>());
         for (String value : networkAclIds) {
             getNetworkAclIds().add(value);
         }
@@ -134,6 +136,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -180,6 +183,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeNetworkAclsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

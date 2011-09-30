@@ -119,6 +119,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest {
      *         omit this parameter.
      */
     public java.util.List<String> getScalingProcesses() {
+        
         if (scalingProcesses == null) {
             scalingProcesses = new java.util.ArrayList<String>();
         }
@@ -169,6 +170,7 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SuspendProcessesRequest withScalingProcesses(String... scalingProcesses) {
+        if (getScalingProcesses() == null) setScalingProcesses(new java.util.ArrayList<String>());
         for (String value : scalingProcesses) {
             getScalingProcesses().add(value);
         }

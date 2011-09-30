@@ -71,6 +71,7 @@ public class DhcpConfiguration {
      * @return Contains a set of values for a DHCP option.
      */
     public java.util.List<String> getValues() {
+        
         if (values == null) {
             values = new java.util.ArrayList<String>();
         }
@@ -101,6 +102,7 @@ public class DhcpConfiguration {
      *         together. 
      */
     public DhcpConfiguration withValues(String... values) {
+        if (getValues() == null) setValues(new java.util.ArrayList<String>());
         for (String value : values) {
             getValues().add(value);
         }

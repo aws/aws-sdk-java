@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CheckDNSAvailabilityRequestMarshaller implements Marshaller<Request<CheckDNSAvailabilityRequest>, CheckDNSAvailabilityRequest> {
 
     public Request<CheckDNSAvailabilityRequest> marshall(CheckDNSAvailabilityRequest checkDNSAvailabilityRequest) {
+
+        if (checkDNSAvailabilityRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CheckDNSAvailabilityRequest> request = new DefaultRequest<CheckDNSAvailabilityRequest>(checkDNSAvailabilityRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CheckDNSAvailability");
         request.addParameter("Version", "2010-12-01");
-        if (checkDNSAvailabilityRequest != null) {
-            if (checkDNSAvailabilityRequest.getCNAMEPrefix() != null) {
-                request.addParameter("CNAMEPrefix", StringUtils.fromString(checkDNSAvailabilityRequest.getCNAMEPrefix()));
-            }
+
+        if (checkDNSAvailabilityRequest.getCNAMEPrefix() != null) {
+            request.addParameter("CNAMEPrefix", StringUtils.fromString(checkDNSAvailabilityRequest.getCNAMEPrefix()));
         }
 
 

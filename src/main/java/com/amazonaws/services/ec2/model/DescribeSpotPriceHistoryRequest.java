@@ -155,6 +155,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      * @return Specifies the instance type to return.
      */
     public java.util.List<String> getInstanceTypes() {
+        
         if (instanceTypes == null) {
             instanceTypes = new java.util.ArrayList<String>();
         }
@@ -185,6 +186,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
+        if (getInstanceTypes() == null) setInstanceTypes(new java.util.ArrayList<String>());
         for (String value : instanceTypes) {
             getInstanceTypes().add(value);
         }
@@ -217,6 +219,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      * @return The description of the AMI.
      */
     public java.util.List<String> getProductDescriptions() {
+        
         if (productDescriptions == null) {
             productDescriptions = new java.util.ArrayList<String>();
         }
@@ -247,6 +250,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
+        if (getProductDescriptions() == null) setProductDescriptions(new java.util.ArrayList<String>());
         for (String value : productDescriptions) {
             getProductDescriptions().add(value);
         }
@@ -287,6 +291,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -333,6 +338,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class CreateImageRequestMarshaller implements Marshaller<Request<CreateImageRequest>, CreateImageRequest> {
 
     public Request<CreateImageRequest> marshall(CreateImageRequest createImageRequest) {
+
+        if (createImageRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
         request.addParameter("Version", "2011-05-15");
-        if (createImageRequest != null) {
-            if (createImageRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
-            }
+
+        if (createImageRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
         }
-        if (createImageRequest != null) {
-            if (createImageRequest.getName() != null) {
-                request.addParameter("Name", StringUtils.fromString(createImageRequest.getName()));
-            }
+        if (createImageRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(createImageRequest.getName()));
         }
-        if (createImageRequest != null) {
-            if (createImageRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(createImageRequest.getDescription()));
-            }
+        if (createImageRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createImageRequest.getDescription()));
         }
-        if (createImageRequest != null) {
-            if (createImageRequest.isNoReboot() != null) {
-                request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.isNoReboot()));
-            }
+        if (createImageRequest.isNoReboot() != null) {
+            request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.isNoReboot()));
         }
 
 

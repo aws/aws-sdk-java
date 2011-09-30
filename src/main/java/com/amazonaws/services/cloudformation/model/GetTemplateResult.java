@@ -24,7 +24,7 @@ public class GetTemplateResult {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     * ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
@@ -35,7 +35,7 @@ public class GetTemplateResult {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     * ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
@@ -43,7 +43,7 @@ public class GetTemplateResult {
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
-     *         docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     *         ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      */
     public String getTemplateBody() {
@@ -53,7 +53,7 @@ public class GetTemplateResult {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     * ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * <b>Constraints:</b><br/>
@@ -61,7 +61,7 @@ public class GetTemplateResult {
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     *         ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      */
     public void setTemplateBody(String templateBody) {
@@ -71,7 +71,7 @@ public class GetTemplateResult {
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     * ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -81,7 +81,7 @@ public class GetTemplateResult {
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         docs.amazonwebservices.com/AmazonCloudFormation/latest/UserGuide/">AWS
+     *         ://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/">AWS
      *         CloudFormation User Guide</a>.)
      *
      * @return A reference to this updated object so that method calls can be chained 

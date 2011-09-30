@@ -22,13 +22,15 @@ package com.amazonaws.services.elasticloadbalancing.model;
 public class HealthCheck {
 
     /**
-     * Specifies the instance being checked. The protocol is either TCP or
-     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     * TCP is the default, specified as a TCP: port pair, for example
-     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     * connection to the instance on the specified port. Failure to connect
-     * within the configured timeout is considered unhealthy. <p> For HTTP,
-     * the situation is different. HTTP is specified as a
+     * Specifies the instance being checked. The protocol is either TCP,
+     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     * for example "TCP:5000". In this case a healthcheck simply attempts to
+     * open a TCP connection to the instance on the specified port. Failure
+     * to connect within the configured timeout is considered unhealthy.
+     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
@@ -87,12 +89,14 @@ public class HealthCheck {
      * initialize any additional object members.
      * 
      * @param target Specifies the instance being checked. The protocol is
-     * either TCP or HTTP. The range of valid ports is one (1) through 65535.
-     * <note> <p> TCP is the default, specified as a TCP: port pair, for
-     * example "TCP:5000". In this case a healthcheck simply attempts to open
-     * a TCP connection to the instance on the specified port. Failure to
-     * connect within the configured timeout is considered unhealthy. <p> For
-     * HTTP, the situation is different. HTTP is specified as a
+     * either TCP, HTTP, HTTPS, or SSL. The range of valid ports is one (1)
+     * through 65535. <note> <p> TCP is the default, specified as a TCP: port
+     * pair, for example "TCP:5000". In this case a healthcheck simply
+     * attempts to open a TCP connection to the instance on the specified
+     * port. Failure to connect within the configured timeout is considered
+     * unhealthy. <p>SSL is also specified as SSL: port pair, for example,
+     * SSL:5000. <p> For HTTP or HTTPS protocol, the situation is different.
+     * You have to include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
@@ -120,13 +124,15 @@ public class HealthCheck {
     }
     
     /**
-     * Specifies the instance being checked. The protocol is either TCP or
-     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     * TCP is the default, specified as a TCP: port pair, for example
-     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     * connection to the instance on the specified port. Failure to connect
-     * within the configured timeout is considered unhealthy. <p> For HTTP,
-     * the situation is different. HTTP is specified as a
+     * Specifies the instance being checked. The protocol is either TCP,
+     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     * for example "TCP:5000". In this case a healthcheck simply attempts to
+     * open a TCP connection to the instance on the specified port. Failure
+     * to connect within the configured timeout is considered unhealthy.
+     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
@@ -134,13 +140,15 @@ public class HealthCheck {
      * The total length of the HTTP ping target needs to be 1024 16-bit
      * Unicode characters or less. </note>
      *
-     * @return Specifies the instance being checked. The protocol is either TCP or
-     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     *         TCP is the default, specified as a TCP: port pair, for example
-     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     *         connection to the instance on the specified port. Failure to connect
-     *         within the configured timeout is considered unhealthy. <p> For HTTP,
-     *         the situation is different. HTTP is specified as a
+     * @return Specifies the instance being checked. The protocol is either TCP,
+     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     *         for example "TCP:5000". In this case a healthcheck simply attempts to
+     *         open a TCP connection to the instance on the specified port. Failure
+     *         to connect within the configured timeout is considered unhealthy.
+     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other
@@ -153,13 +161,15 @@ public class HealthCheck {
     }
     
     /**
-     * Specifies the instance being checked. The protocol is either TCP or
-     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     * TCP is the default, specified as a TCP: port pair, for example
-     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     * connection to the instance on the specified port. Failure to connect
-     * within the configured timeout is considered unhealthy. <p> For HTTP,
-     * the situation is different. HTTP is specified as a
+     * Specifies the instance being checked. The protocol is either TCP,
+     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     * for example "TCP:5000". In this case a healthcheck simply attempts to
+     * open a TCP connection to the instance on the specified port. Failure
+     * to connect within the configured timeout is considered unhealthy.
+     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
@@ -167,13 +177,15 @@ public class HealthCheck {
      * The total length of the HTTP ping target needs to be 1024 16-bit
      * Unicode characters or less. </note>
      *
-     * @param target Specifies the instance being checked. The protocol is either TCP or
-     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     *         TCP is the default, specified as a TCP: port pair, for example
-     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     *         connection to the instance on the specified port. Failure to connect
-     *         within the configured timeout is considered unhealthy. <p> For HTTP,
-     *         the situation is different. HTTP is specified as a
+     * @param target Specifies the instance being checked. The protocol is either TCP,
+     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     *         for example "TCP:5000". In this case a healthcheck simply attempts to
+     *         open a TCP connection to the instance on the specified port. Failure
+     *         to connect within the configured timeout is considered unhealthy.
+     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other
@@ -186,13 +198,15 @@ public class HealthCheck {
     }
     
     /**
-     * Specifies the instance being checked. The protocol is either TCP or
-     * HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     * TCP is the default, specified as a TCP: port pair, for example
-     * "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     * connection to the instance on the specified port. Failure to connect
-     * within the configured timeout is considered unhealthy. <p> For HTTP,
-     * the situation is different. HTTP is specified as a
+     * Specifies the instance being checked. The protocol is either TCP,
+     * HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     * 65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     * for example "TCP:5000". In this case a healthcheck simply attempts to
+     * open a TCP connection to the instance on the specified port. Failure
+     * to connect within the configured timeout is considered unhealthy.
+     * <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     * For HTTP or HTTPS protocol, the situation is different. You have to
+     * include a ping path in the string. HTTP is specified as a
      * HTTP:port;/;PathToPing; grouping, for example
      * "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      * issued to the instance on the given port and path. Any answer other
@@ -202,13 +216,15 @@ public class HealthCheck {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param target Specifies the instance being checked. The protocol is either TCP or
-     *         HTTP. The range of valid ports is one (1) through 65535. <note> <p>
-     *         TCP is the default, specified as a TCP: port pair, for example
-     *         "TCP:5000". In this case a healthcheck simply attempts to open a TCP
-     *         connection to the instance on the specified port. Failure to connect
-     *         within the configured timeout is considered unhealthy. <p> For HTTP,
-     *         the situation is different. HTTP is specified as a
+     * @param target Specifies the instance being checked. The protocol is either TCP,
+     *         HTTP, HTTPS, or SSL. The range of valid ports is one (1) through
+     *         65535. <note> <p> TCP is the default, specified as a TCP: port pair,
+     *         for example "TCP:5000". In this case a healthcheck simply attempts to
+     *         open a TCP connection to the instance on the specified port. Failure
+     *         to connect within the configured timeout is considered unhealthy.
+     *         <p>SSL is also specified as SSL: port pair, for example, SSL:5000. <p>
+     *         For HTTP or HTTPS protocol, the situation is different. You have to
+     *         include a ping path in the string. HTTP is specified as a
      *         HTTP:port;/;PathToPing; grouping, for example
      *         "HTTP:80/weather/us/wa/seattle". In this case, a HTTP GET request is
      *         issued to the instance on the given port and path. Any answer other

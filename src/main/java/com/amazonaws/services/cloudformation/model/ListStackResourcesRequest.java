@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest) ListStackResources operation}.
  * <p>
- * Returns descriptions for all resources of the specified stack.
+ * Returns descriptions of all resources of the specified stack.
  * </p>
  * <p>
  * For deleted stacks, ListStackResources returns resource information
@@ -37,7 +37,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest {
 
     /**
      * String that identifies the start of the next list of events, if there
-     * is one.<br></br> Default: There is no default value.
+     * is one. <p> Default: There is no default value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -86,13 +86,13 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest {
     
     /**
      * String that identifies the start of the next list of events, if there
-     * is one.<br></br> Default: There is no default value.
+     * is one. <p> Default: There is no default value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return String that identifies the start of the next list of events, if there
-     *         is one.<br></br> Default: There is no default value.
+     *         is one. <p> Default: There is no default value.
      */
     public String getNextToken() {
         return nextToken;
@@ -100,13 +100,13 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest {
     
     /**
      * String that identifies the start of the next list of events, if there
-     * is one.<br></br> Default: There is no default value.
+     * is one. <p> Default: There is no default value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param nextToken String that identifies the start of the next list of events, if there
-     *         is one.<br></br> Default: There is no default value.
+     *         is one. <p> Default: There is no default value.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
@@ -114,7 +114,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest {
     
     /**
      * String that identifies the start of the next list of events, if there
-     * is one.<br></br> Default: There is no default value.
+     * is one. <p> Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -122,7 +122,7 @@ public class ListStackResourcesRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param nextToken String that identifies the start of the next list of events, if there
-     *         is one.<br></br> Default: There is no default value.
+     *         is one. <p> Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

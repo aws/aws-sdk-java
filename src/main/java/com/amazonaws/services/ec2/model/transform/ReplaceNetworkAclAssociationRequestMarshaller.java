@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ReplaceNetworkAclAssociationRequestMarshaller implements Marshaller<Request<ReplaceNetworkAclAssociationRequest>, ReplaceNetworkAclAssociationRequest> {
 
     public Request<ReplaceNetworkAclAssociationRequest> marshall(ReplaceNetworkAclAssociationRequest replaceNetworkAclAssociationRequest) {
+
+        if (replaceNetworkAclAssociationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ReplaceNetworkAclAssociationRequest> request = new DefaultRequest<ReplaceNetworkAclAssociationRequest>(replaceNetworkAclAssociationRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclAssociation");
         request.addParameter("Version", "2011-05-15");
-        if (replaceNetworkAclAssociationRequest != null) {
-            if (replaceNetworkAclAssociationRequest.getAssociationId() != null) {
-                request.addParameter("AssociationId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getAssociationId()));
-            }
+
+        if (replaceNetworkAclAssociationRequest.getAssociationId() != null) {
+            request.addParameter("AssociationId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getAssociationId()));
         }
-        if (replaceNetworkAclAssociationRequest != null) {
-            if (replaceNetworkAclAssociationRequest.getNetworkAclId() != null) {
-                request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getNetworkAclId()));
-            }
+        if (replaceNetworkAclAssociationRequest.getNetworkAclId() != null) {
+            request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclAssociationRequest.getNetworkAclId()));
         }
 
 

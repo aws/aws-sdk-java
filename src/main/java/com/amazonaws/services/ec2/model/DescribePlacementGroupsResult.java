@@ -31,6 +31,7 @@ public class DescribePlacementGroupsResult {
      * @return Contains information about the specified <code>PlacementGroups</code>.
      */
     public java.util.List<PlacementGroup> getPlacementGroups() {
+        
         if (placementGroups == null) {
             placementGroups = new java.util.ArrayList<PlacementGroup>();
         }
@@ -61,6 +62,7 @@ public class DescribePlacementGroupsResult {
      *         together. 
      */
     public DescribePlacementGroupsResult withPlacementGroups(PlacementGroup... placementGroups) {
+        if (getPlacementGroups() == null) setPlacementGroups(new java.util.ArrayList<PlacementGroup>());
         for (PlacementGroup value : placementGroups) {
             getPlacementGroups().add(value);
         }

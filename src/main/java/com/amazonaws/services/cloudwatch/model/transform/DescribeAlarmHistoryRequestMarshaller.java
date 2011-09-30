@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,38 +31,32 @@ import com.amazonaws.util.StringUtils;
 public class DescribeAlarmHistoryRequestMarshaller implements Marshaller<Request<DescribeAlarmHistoryRequest>, DescribeAlarmHistoryRequest> {
 
     public Request<DescribeAlarmHistoryRequest> marshall(DescribeAlarmHistoryRequest describeAlarmHistoryRequest) {
+
+        if (describeAlarmHistoryRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeAlarmHistoryRequest> request = new DefaultRequest<DescribeAlarmHistoryRequest>(describeAlarmHistoryRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DescribeAlarmHistory");
         request.addParameter("Version", "2010-08-01");
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getAlarmName() != null) {
-                request.addParameter("AlarmName", StringUtils.fromString(describeAlarmHistoryRequest.getAlarmName()));
-            }
+
+        if (describeAlarmHistoryRequest.getAlarmName() != null) {
+            request.addParameter("AlarmName", StringUtils.fromString(describeAlarmHistoryRequest.getAlarmName()));
         }
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getHistoryItemType() != null) {
-                request.addParameter("HistoryItemType", StringUtils.fromString(describeAlarmHistoryRequest.getHistoryItemType()));
-            }
+        if (describeAlarmHistoryRequest.getHistoryItemType() != null) {
+            request.addParameter("HistoryItemType", StringUtils.fromString(describeAlarmHistoryRequest.getHistoryItemType()));
         }
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getStartDate() != null) {
-                request.addParameter("StartDate", StringUtils.fromDate(describeAlarmHistoryRequest.getStartDate()));
-            }
+        if (describeAlarmHistoryRequest.getStartDate() != null) {
+            request.addParameter("StartDate", StringUtils.fromDate(describeAlarmHistoryRequest.getStartDate()));
         }
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getEndDate() != null) {
-                request.addParameter("EndDate", StringUtils.fromDate(describeAlarmHistoryRequest.getEndDate()));
-            }
+        if (describeAlarmHistoryRequest.getEndDate() != null) {
+            request.addParameter("EndDate", StringUtils.fromDate(describeAlarmHistoryRequest.getEndDate()));
         }
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeAlarmHistoryRequest.getMaxRecords()));
-            }
+        if (describeAlarmHistoryRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeAlarmHistoryRequest.getMaxRecords()));
         }
-        if (describeAlarmHistoryRequest != null) {
-            if (describeAlarmHistoryRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeAlarmHistoryRequest.getNextToken()));
-            }
+        if (describeAlarmHistoryRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeAlarmHistoryRequest.getNextToken()));
         }
 
 

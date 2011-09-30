@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class DescribeScalingProcessTypesRequestMarshaller implements Marshaller<Request<DescribeScalingProcessTypesRequest>, DescribeScalingProcessTypesRequest> {
 
     public Request<DescribeScalingProcessTypesRequest> marshall(DescribeScalingProcessTypesRequest describeScalingProcessTypesRequest) {
+
+        if (describeScalingProcessTypesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeScalingProcessTypesRequest> request = new DefaultRequest<DescribeScalingProcessTypesRequest>(describeScalingProcessTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeScalingProcessTypes");
         request.addParameter("Version", "2011-01-01");
+
 
 
         return request;

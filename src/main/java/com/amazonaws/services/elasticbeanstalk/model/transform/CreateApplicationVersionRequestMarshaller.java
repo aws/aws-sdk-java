@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,41 +31,35 @@ import com.amazonaws.util.StringUtils;
 public class CreateApplicationVersionRequestMarshaller implements Marshaller<Request<CreateApplicationVersionRequest>, CreateApplicationVersionRequest> {
 
     public Request<CreateApplicationVersionRequest> marshall(CreateApplicationVersionRequest createApplicationVersionRequest) {
+
+        if (createApplicationVersionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateApplicationVersionRequest> request = new DefaultRequest<CreateApplicationVersionRequest>(createApplicationVersionRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateApplicationVersion");
         request.addParameter("Version", "2010-12-01");
-        if (createApplicationVersionRequest != null) {
-            if (createApplicationVersionRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(createApplicationVersionRequest.getApplicationName()));
+
+        if (createApplicationVersionRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(createApplicationVersionRequest.getApplicationName()));
+        }
+        if (createApplicationVersionRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(createApplicationVersionRequest.getVersionLabel()));
+        }
+        if (createApplicationVersionRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(createApplicationVersionRequest.getDescription()));
+        }
+        S3Location s3LocationSourceBundle = createApplicationVersionRequest.getSourceBundle();
+        if (s3LocationSourceBundle != null) {
+            if (s3LocationSourceBundle.getS3Bucket() != null) {
+                request.addParameter("SourceBundle.S3Bucket", StringUtils.fromString(s3LocationSourceBundle.getS3Bucket()));
+            }
+            if (s3LocationSourceBundle.getS3Key() != null) {
+                request.addParameter("SourceBundle.S3Key", StringUtils.fromString(s3LocationSourceBundle.getS3Key()));
             }
         }
-        if (createApplicationVersionRequest != null) {
-            if (createApplicationVersionRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(createApplicationVersionRequest.getVersionLabel()));
-            }
-        }
-        if (createApplicationVersionRequest != null) {
-            if (createApplicationVersionRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(createApplicationVersionRequest.getDescription()));
-            }
-        }
-        if (createApplicationVersionRequest != null) {
-            S3Location sourceBundle = createApplicationVersionRequest.getSourceBundle();
-            if (sourceBundle != null) {
-                if (sourceBundle.getS3Bucket() != null) {
-                    request.addParameter("SourceBundle.S3Bucket", StringUtils.fromString(sourceBundle.getS3Bucket()));
-                }
-            }
-            if (sourceBundle != null) {
-                if (sourceBundle.getS3Key() != null) {
-                    request.addParameter("SourceBundle.S3Key", StringUtils.fromString(sourceBundle.getS3Key()));
-                }
-            }
-        }
-        if (createApplicationVersionRequest != null) {
-            if (createApplicationVersionRequest.isAutoCreateApplication() != null) {
-                request.addParameter("AutoCreateApplication", StringUtils.fromBoolean(createApplicationVersionRequest.isAutoCreateApplication()));
-            }
+        if (createApplicationVersionRequest.isAutoCreateApplication() != null) {
+            request.addParameter("AutoCreateApplication", StringUtils.fromBoolean(createApplicationVersionRequest.isAutoCreateApplication()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.importexport.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobRequest>, CreateJobRequest> {
 
     public Request<CreateJobRequest> marshall(CreateJobRequest createJobRequest) {
+
+        if (createJobRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateJobRequest> request = new DefaultRequest<CreateJobRequest>(createJobRequest, "AmazonImportExport");
         request.addParameter("Action", "CreateJob");
         request.addParameter("Version", "2010-06-01");
-        if (createJobRequest != null) {
-            if (createJobRequest.getJobType() != null) {
-                request.addParameter("JobType", StringUtils.fromString(createJobRequest.getJobType()));
-            }
+
+        if (createJobRequest.getJobType() != null) {
+            request.addParameter("JobType", StringUtils.fromString(createJobRequest.getJobType()));
         }
-        if (createJobRequest != null) {
-            if (createJobRequest.getManifest() != null) {
-                request.addParameter("Manifest", StringUtils.fromString(createJobRequest.getManifest()));
-            }
+        if (createJobRequest.getManifest() != null) {
+            request.addParameter("Manifest", StringUtils.fromString(createJobRequest.getManifest()));
         }
-        if (createJobRequest != null) {
-            if (createJobRequest.getManifestAddendum() != null) {
-                request.addParameter("ManifestAddendum", StringUtils.fromString(createJobRequest.getManifestAddendum()));
-            }
+        if (createJobRequest.getManifestAddendum() != null) {
+            request.addParameter("ManifestAddendum", StringUtils.fromString(createJobRequest.getManifestAddendum()));
         }
-        if (createJobRequest != null) {
-            if (createJobRequest.isValidateOnly() != null) {
-                request.addParameter("ValidateOnly", StringUtils.fromBoolean(createJobRequest.isValidateOnly()));
-            }
+        if (createJobRequest.isValidateOnly() != null) {
+            request.addParameter("ValidateOnly", StringUtils.fromBoolean(createJobRequest.isValidateOnly()));
         }
 
 

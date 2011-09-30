@@ -31,6 +31,7 @@ public class DescribeTagsResult {
      * @return A list of the tags for the specified resources.
      */
     public java.util.List<TagDescription> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<TagDescription>();
         }
@@ -61,6 +62,7 @@ public class DescribeTagsResult {
      *         together. 
      */
     public DescribeTagsResult withTags(TagDescription... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>());
         for (TagDescription value : tags) {
             getTags().add(value);
         }

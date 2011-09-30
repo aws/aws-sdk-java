@@ -32,6 +32,7 @@ public class DescribeVolumesResult {
      * @return The list of described EBS volumes.
      */
     public java.util.List<Volume> getVolumes() {
+        
         if (volumes == null) {
             volumes = new java.util.ArrayList<Volume>();
         }
@@ -62,6 +63,7 @@ public class DescribeVolumesResult {
      *         together. 
      */
     public DescribeVolumesResult withVolumes(Volume... volumes) {
+        if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>());
         for (Volume value : volumes) {
             getVolumes().add(value);
         }

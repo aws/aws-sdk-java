@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,38 +31,32 @@ import com.amazonaws.util.StringUtils;
 public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Marshaller<Request<DescribeOrderableDBInstanceOptionsRequest>, DescribeOrderableDBInstanceOptionsRequest> {
 
     public Request<DescribeOrderableDBInstanceOptionsRequest> marshall(DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) {
+
+        if (describeOrderableDBInstanceOptionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
         request.addParameter("Version", "2011-04-01");
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getEngine() != null) {
-                request.addParameter("Engine", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngine()));
-            }
+
+        if (describeOrderableDBInstanceOptionsRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngine()));
         }
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getEngineVersion() != null) {
-                request.addParameter("EngineVersion", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngineVersion()));
-            }
+        if (describeOrderableDBInstanceOptionsRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngineVersion()));
         }
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getDBInstanceClass() != null) {
-                request.addParameter("DBInstanceClass", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getDBInstanceClass()));
-            }
+        if (describeOrderableDBInstanceOptionsRequest.getDBInstanceClass() != null) {
+            request.addParameter("DBInstanceClass", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getDBInstanceClass()));
         }
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getLicenseModel() != null) {
-                request.addParameter("LicenseModel", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getLicenseModel()));
-            }
+        if (describeOrderableDBInstanceOptionsRequest.getLicenseModel() != null) {
+            request.addParameter("LicenseModel", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getLicenseModel()));
         }
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeOrderableDBInstanceOptionsRequest.getMaxRecords()));
-            }
+        if (describeOrderableDBInstanceOptionsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeOrderableDBInstanceOptionsRequest.getMaxRecords()));
         }
-        if (describeOrderableDBInstanceOptionsRequest != null) {
-            if (describeOrderableDBInstanceOptionsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getMarker()));
-            }
+        if (describeOrderableDBInstanceOptionsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getMarker()));
         }
 
 

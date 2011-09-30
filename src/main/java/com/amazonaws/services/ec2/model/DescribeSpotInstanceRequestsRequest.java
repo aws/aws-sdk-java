@@ -79,6 +79,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * @return The ID of the request.
      */
     public java.util.List<String> getSpotInstanceRequestIds() {
+        
         if (spotInstanceRequestIds == null) {
             spotInstanceRequestIds = new java.util.ArrayList<String>();
         }
@@ -109,6 +110,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
+        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>());
         for (String value : spotInstanceRequestIds) {
             getSpotInstanceRequestIds().add(value);
         }
@@ -149,6 +151,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -195,6 +198,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

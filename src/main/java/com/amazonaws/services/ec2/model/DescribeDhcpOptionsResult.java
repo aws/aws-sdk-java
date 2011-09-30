@@ -27,6 +27,7 @@ public class DescribeDhcpOptionsResult {
      * @return The value of the DhcpOptions property for this object.
      */
     public java.util.List<DhcpOptions> getDhcpOptions() {
+        
         if (dhcpOptions == null) {
             dhcpOptions = new java.util.ArrayList<DhcpOptions>();
         }
@@ -57,6 +58,7 @@ public class DescribeDhcpOptionsResult {
      *         together. 
      */
     public DescribeDhcpOptionsResult withDhcpOptions(DhcpOptions... dhcpOptions) {
+        if (getDhcpOptions() == null) setDhcpOptions(new java.util.ArrayList<DhcpOptions>());
         for (DhcpOptions value : dhcpOptions) {
             getDhcpOptions().add(value);
         }

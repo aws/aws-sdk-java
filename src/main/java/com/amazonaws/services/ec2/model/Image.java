@@ -358,6 +358,7 @@ public class Image {
      * @return Product codes of the AMI.
      */
     public java.util.List<ProductCode> getProductCodes() {
+        
         if (productCodes == null) {
             productCodes = new java.util.ArrayList<ProductCode>();
         }
@@ -388,6 +389,7 @@ public class Image {
      *         together. 
      */
     public Image withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -818,6 +820,7 @@ public class Image {
      * @return Specifies how block devices are exposed to the instance.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -848,6 +851,7 @@ public class Image {
      *         together. 
      */
     public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -929,6 +933,7 @@ public class Image {
      * @return A list of tags for the Image.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -959,6 +964,7 @@ public class Image {
      *         together. 
      */
     public Image withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

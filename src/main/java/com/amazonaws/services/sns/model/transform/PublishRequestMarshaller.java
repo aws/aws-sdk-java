@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class PublishRequestMarshaller implements Marshaller<Request<PublishRequest>, PublishRequest> {
 
     public Request<PublishRequest> marshall(PublishRequest publishRequest) {
+
+        if (publishRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PublishRequest> request = new DefaultRequest<PublishRequest>(publishRequest, "AmazonSNS");
         request.addParameter("Action", "Publish");
         request.addParameter("Version", "2010-03-31");
-        if (publishRequest != null) {
-            if (publishRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(publishRequest.getTopicArn()));
-            }
+
+        if (publishRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(publishRequest.getTopicArn()));
         }
-        if (publishRequest != null) {
-            if (publishRequest.getMessage() != null) {
-                request.addParameter("Message", StringUtils.fromString(publishRequest.getMessage()));
-            }
+        if (publishRequest.getMessage() != null) {
+            request.addParameter("Message", StringUtils.fromString(publishRequest.getMessage()));
         }
-        if (publishRequest != null) {
-            if (publishRequest.getSubject() != null) {
-                request.addParameter("Subject", StringUtils.fromString(publishRequest.getSubject()));
-            }
+        if (publishRequest.getSubject() != null) {
+            request.addParameter("Subject", StringUtils.fromString(publishRequest.getSubject()));
         }
 
 

@@ -41,6 +41,7 @@ public class DescribeStackEventsResult {
      * @return A list of <code>StackEvents</code> structures.
      */
     public java.util.List<StackEvent> getStackEvents() {
+        
         if (stackEvents == null) {
             stackEvents = new java.util.ArrayList<StackEvent>();
         }
@@ -71,6 +72,7 @@ public class DescribeStackEventsResult {
      *         together. 
      */
     public DescribeStackEventsResult withStackEvents(StackEvent... stackEvents) {
+        if (getStackEvents() == null) setStackEvents(new java.util.ArrayList<StackEvent>());
         for (StackEvent value : stackEvents) {
             getStackEvents().add(value);
         }

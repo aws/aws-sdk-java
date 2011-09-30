@@ -118,6 +118,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *         Availability Zone must be in the same Region as the LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -152,6 +153,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      *         together. 
      */
     public EnableAvailabilityZonesForLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

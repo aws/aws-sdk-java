@@ -32,6 +32,7 @@ public class DescribeSubnetsResult {
      * @return Contains a set of one or more <a>Subnet</a> instances.
      */
     public java.util.List<Subnet> getSubnets() {
+        
         if (subnets == null) {
             subnets = new java.util.ArrayList<Subnet>();
         }
@@ -62,6 +63,7 @@ public class DescribeSubnetsResult {
      *         together. 
      */
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>());
         for (Subnet value : subnets) {
             getSubnets().add(value);
         }

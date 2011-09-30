@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,47 +31,42 @@ import com.amazonaws.util.StringUtils;
 public class ValidateConfigurationSettingsRequestMarshaller implements Marshaller<Request<ValidateConfigurationSettingsRequest>, ValidateConfigurationSettingsRequest> {
 
     public Request<ValidateConfigurationSettingsRequest> marshall(ValidateConfigurationSettingsRequest validateConfigurationSettingsRequest) {
+
+        if (validateConfigurationSettingsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ValidateConfigurationSettingsRequest> request = new DefaultRequest<ValidateConfigurationSettingsRequest>(validateConfigurationSettingsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "ValidateConfigurationSettings");
         request.addParameter("Version", "2010-12-01");
-        if (validateConfigurationSettingsRequest != null) {
-            if (validateConfigurationSettingsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(validateConfigurationSettingsRequest.getApplicationName()));
-            }
+
+        if (validateConfigurationSettingsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(validateConfigurationSettingsRequest.getApplicationName()));
         }
-        if (validateConfigurationSettingsRequest != null) {
-            if (validateConfigurationSettingsRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(validateConfigurationSettingsRequest.getTemplateName()));
-            }
+        if (validateConfigurationSettingsRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(validateConfigurationSettingsRequest.getTemplateName()));
         }
-        if (validateConfigurationSettingsRequest != null) {
-            if (validateConfigurationSettingsRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(validateConfigurationSettingsRequest.getEnvironmentName()));
-            }
+        if (validateConfigurationSettingsRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(validateConfigurationSettingsRequest.getEnvironmentName()));
         }
 
-        if (validateConfigurationSettingsRequest != null) {
-            java.util.List<ConfigurationOptionSetting> optionSettingsList = validateConfigurationSettingsRequest.getOptionSettings();
-            int optionSettingsListIndex = 1;
-            for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getNamespace() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                    }
+        java.util.List<ConfigurationOptionSetting> optionSettingsList = validateConfigurationSettingsRequest.getOptionSettings();
+        int optionSettingsListIndex = 1;
+        for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+            ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
+            if (configurationOptionSettingMember != null) {
+                if (configurationOptionSettingMember.getNamespace() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(configurationOptionSettingMember.getNamespace()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getOptionName() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                    }
+                if (configurationOptionSettingMember.getOptionName() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(configurationOptionSettingMember.getOptionName()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getValue() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
-                    }
+                if (configurationOptionSettingMember.getValue() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(configurationOptionSettingMember.getValue()));
                 }
-
-                optionSettingsListIndex++;
             }
+
+            optionSettingsListIndex++;
         }
 
 

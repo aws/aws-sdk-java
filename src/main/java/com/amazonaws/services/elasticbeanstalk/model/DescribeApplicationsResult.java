@@ -32,6 +32,7 @@ public class DescribeApplicationsResult {
      * @return This parameter contains a list of <a>ApplicationDescription</a>.
      */
     public java.util.List<ApplicationDescription> getApplications() {
+        
         if (applications == null) {
             applications = new java.util.ArrayList<ApplicationDescription>();
         }
@@ -62,6 +63,7 @@ public class DescribeApplicationsResult {
      *         together. 
      */
     public DescribeApplicationsResult withApplications(ApplicationDescription... applications) {
+        if (getApplications() == null) setApplications(new java.util.ArrayList<ApplicationDescription>());
         for (ApplicationDescription value : applications) {
             getApplications().add(value);
         }

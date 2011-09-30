@@ -45,6 +45,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
      *         descriptions to only include those with the specified names.
      */
     public java.util.List<String> getApplicationNames() {
+        
         if (applicationNames == null) {
             applicationNames = new java.util.ArrayList<String>();
         }
@@ -79,6 +80,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeApplicationsRequest withApplicationNames(String... applicationNames) {
+        if (getApplicationNames() == null) setApplicationNames(new java.util.ArrayList<String>());
         for (String value : applicationNames) {
             getApplicationNames().add(value);
         }

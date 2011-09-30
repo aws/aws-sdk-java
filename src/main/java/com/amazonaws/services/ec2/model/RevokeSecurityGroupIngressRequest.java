@@ -426,6 +426,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
      *         offers more flexibility and control.
      */
     public java.util.List<IpPermission> getIpPermissions() {
+        
         if (ipPermissions == null) {
             ipPermissions = new java.util.ArrayList<IpPermission>();
         }
@@ -472,6 +473,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RevokeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
+        if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>());
         for (IpPermission value : ipPermissions) {
             getIpPermissions().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class TerminateInstanceInAutoScalingGroupRequestMarshaller implements Marshaller<Request<TerminateInstanceInAutoScalingGroupRequest>, TerminateInstanceInAutoScalingGroupRequest> {
 
     public Request<TerminateInstanceInAutoScalingGroupRequest> marshall(TerminateInstanceInAutoScalingGroupRequest terminateInstanceInAutoScalingGroupRequest) {
+
+        if (terminateInstanceInAutoScalingGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<TerminateInstanceInAutoScalingGroupRequest> request = new DefaultRequest<TerminateInstanceInAutoScalingGroupRequest>(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "TerminateInstanceInAutoScalingGroup");
         request.addParameter("Version", "2011-01-01");
-        if (terminateInstanceInAutoScalingGroupRequest != null) {
-            if (terminateInstanceInAutoScalingGroupRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(terminateInstanceInAutoScalingGroupRequest.getInstanceId()));
-            }
+
+        if (terminateInstanceInAutoScalingGroupRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(terminateInstanceInAutoScalingGroupRequest.getInstanceId()));
         }
-        if (terminateInstanceInAutoScalingGroupRequest != null) {
-            if (terminateInstanceInAutoScalingGroupRequest.isShouldDecrementDesiredCapacity() != null) {
-                request.addParameter("ShouldDecrementDesiredCapacity", StringUtils.fromBoolean(terminateInstanceInAutoScalingGroupRequest.isShouldDecrementDesiredCapacity()));
-            }
+        if (terminateInstanceInAutoScalingGroupRequest.isShouldDecrementDesiredCapacity() != null) {
+            request.addParameter("ShouldDecrementDesiredCapacity", StringUtils.fromBoolean(terminateInstanceInAutoScalingGroupRequest.isShouldDecrementDesiredCapacity()));
         }
 
 

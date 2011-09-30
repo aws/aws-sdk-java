@@ -41,6 +41,7 @@ public class DescribeOrderableDBInstanceOptionsResult {
      *         about orderable options for the DB Instance.
      */
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
+        
         if (orderableDBInstanceOptions == null) {
             orderableDBInstanceOptions = new java.util.ArrayList<OrderableDBInstanceOption>();
         }
@@ -75,6 +76,7 @@ public class DescribeOrderableDBInstanceOptionsResult {
      *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withOrderableDBInstanceOptions(OrderableDBInstanceOption... orderableDBInstanceOptions) {
+        if (getOrderableDBInstanceOptions() == null) setOrderableDBInstanceOptions(new java.util.ArrayList<OrderableDBInstanceOption>());
         for (OrderableDBInstanceOption value : orderableDBInstanceOptions) {
             getOrderableDBInstanceOptions().add(value);
         }

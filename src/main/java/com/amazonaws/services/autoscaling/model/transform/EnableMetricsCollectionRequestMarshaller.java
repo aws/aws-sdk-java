@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,29 +31,30 @@ import com.amazonaws.util.StringUtils;
 public class EnableMetricsCollectionRequestMarshaller implements Marshaller<Request<EnableMetricsCollectionRequest>, EnableMetricsCollectionRequest> {
 
     public Request<EnableMetricsCollectionRequest> marshall(EnableMetricsCollectionRequest enableMetricsCollectionRequest) {
+
+        if (enableMetricsCollectionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<EnableMetricsCollectionRequest> request = new DefaultRequest<EnableMetricsCollectionRequest>(enableMetricsCollectionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "EnableMetricsCollection");
         request.addParameter("Version", "2011-01-01");
-        if (enableMetricsCollectionRequest != null) {
-            if (enableMetricsCollectionRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(enableMetricsCollectionRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (enableMetricsCollectionRequest != null) {
-            java.util.List<String> metricsList = enableMetricsCollectionRequest.getMetrics();
-            int metricsListIndex = 1;
 
-            for (String metricsListValue : metricsList) {
-                if (metricsListValue != null) {
-                    request.addParameter("Metrics.member." + metricsListIndex, StringUtils.fromString(metricsListValue));
-                }
-                metricsListIndex++;
-            }
+        if (enableMetricsCollectionRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(enableMetricsCollectionRequest.getAutoScalingGroupName()));
         }
-        if (enableMetricsCollectionRequest != null) {
-            if (enableMetricsCollectionRequest.getGranularity() != null) {
-                request.addParameter("Granularity", StringUtils.fromString(enableMetricsCollectionRequest.getGranularity()));
+
+        java.util.List<String> metricsList = enableMetricsCollectionRequest.getMetrics();
+        int metricsListIndex = 1;
+        for (String metricsListValue : metricsList) {
+            if (metricsListValue != null) {
+                request.addParameter("Metrics.member." + metricsListIndex, StringUtils.fromString(metricsListValue));
             }
+
+            metricsListIndex++;
+        }
+        if (enableMetricsCollectionRequest.getGranularity() != null) {
+            request.addParameter("Granularity", StringUtils.fromString(enableMetricsCollectionRequest.getGranularity()));
         }
 
 

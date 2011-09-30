@@ -32,6 +32,7 @@ public class DescribeVpcsResult {
      * @return 
      */
     public java.util.List<Vpc> getVpcs() {
+        
         if (vpcs == null) {
             vpcs = new java.util.ArrayList<Vpc>();
         }
@@ -62,6 +63,7 @@ public class DescribeVpcsResult {
      *         together. 
      */
     public DescribeVpcsResult withVpcs(Vpc... vpcs) {
+        if (getVpcs() == null) setVpcs(new java.util.ArrayList<Vpc>());
         for (Vpc value : vpcs) {
             getVpcs().add(value);
         }

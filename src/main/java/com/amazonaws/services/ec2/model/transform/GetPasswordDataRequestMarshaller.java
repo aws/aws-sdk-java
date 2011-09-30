@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class GetPasswordDataRequestMarshaller implements Marshaller<Request<GetPasswordDataRequest>, GetPasswordDataRequest> {
 
     public Request<GetPasswordDataRequest> marshall(GetPasswordDataRequest getPasswordDataRequest) {
+
+        if (getPasswordDataRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetPasswordDataRequest> request = new DefaultRequest<GetPasswordDataRequest>(getPasswordDataRequest, "AmazonEC2");
         request.addParameter("Action", "GetPasswordData");
         request.addParameter("Version", "2011-05-15");
-        if (getPasswordDataRequest != null) {
-            if (getPasswordDataRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(getPasswordDataRequest.getInstanceId()));
-            }
+
+        if (getPasswordDataRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(getPasswordDataRequest.getInstanceId()));
         }
 
 

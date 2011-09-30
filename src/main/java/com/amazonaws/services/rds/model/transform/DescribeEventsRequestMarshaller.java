@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,43 +31,35 @@ import com.amazonaws.util.StringUtils;
 public class DescribeEventsRequestMarshaller implements Marshaller<Request<DescribeEventsRequest>, DescribeEventsRequest> {
 
     public Request<DescribeEventsRequest> marshall(DescribeEventsRequest describeEventsRequest) {
+
+        if (describeEventsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEvents");
         request.addParameter("Version", "2011-04-01");
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getSourceIdentifier() != null) {
-                request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));
-            }
+
+        if (describeEventsRequest.getSourceIdentifier() != null) {
+            request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getSourceType() != null) {
-                request.addParameter("SourceType", StringUtils.fromString(describeEventsRequest.getSourceType()));
-            }
+        if (describeEventsRequest.getSourceType() != null) {
+            request.addParameter("SourceType", StringUtils.fromString(describeEventsRequest.getSourceType()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(describeEventsRequest.getStartTime()));
-            }
+        if (describeEventsRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(describeEventsRequest.getStartTime()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(describeEventsRequest.getEndTime()));
-            }
+        if (describeEventsRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(describeEventsRequest.getEndTime()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getDuration() != null) {
-                request.addParameter("Duration", StringUtils.fromInteger(describeEventsRequest.getDuration()));
-            }
+        if (describeEventsRequest.getDuration() != null) {
+            request.addParameter("Duration", StringUtils.fromInteger(describeEventsRequest.getDuration()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeEventsRequest.getMaxRecords()));
-            }
+        if (describeEventsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeEventsRequest.getMaxRecords()));
         }
-        if (describeEventsRequest != null) {
-            if (describeEventsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeEventsRequest.getMarker()));
-            }
+        if (describeEventsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeEventsRequest.getMarker()));
         }
 
 

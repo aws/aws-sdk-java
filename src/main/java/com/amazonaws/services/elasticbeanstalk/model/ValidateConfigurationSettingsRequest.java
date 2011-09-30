@@ -251,6 +251,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * @return A list of the options and desired values to evaluate.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
+        
         if (optionSettings == null) {
             optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
         }
@@ -281,6 +282,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      *         together. 
      */
     public ValidateConfigurationSettingsRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }

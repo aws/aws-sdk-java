@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class ListQueuesRequestMarshaller implements Marshaller<Request<ListQueuesRequest>, ListQueuesRequest> {
 
     public Request<ListQueuesRequest> marshall(ListQueuesRequest listQueuesRequest) {
+
+        if (listQueuesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListQueuesRequest> request = new DefaultRequest<ListQueuesRequest>(listQueuesRequest, "AmazonSQS");
         request.addParameter("Action", "ListQueues");
         request.addParameter("Version", "2009-02-01");
-        if (listQueuesRequest != null) {
-            if (listQueuesRequest.getQueueNamePrefix() != null) {
-                request.addParameter("QueueNamePrefix", StringUtils.fromString(listQueuesRequest.getQueueNamePrefix()));
-            }
+
+        if (listQueuesRequest.getQueueNamePrefix() != null) {
+            request.addParameter("QueueNamePrefix", StringUtils.fromString(listQueuesRequest.getQueueNamePrefix()));
         }
 
 

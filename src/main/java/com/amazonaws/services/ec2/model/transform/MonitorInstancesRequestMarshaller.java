@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,19 +31,24 @@ import com.amazonaws.util.StringUtils;
 public class MonitorInstancesRequestMarshaller implements Marshaller<Request<MonitorInstancesRequest>, MonitorInstancesRequest> {
 
     public Request<MonitorInstancesRequest> marshall(MonitorInstancesRequest monitorInstancesRequest) {
+
+        if (monitorInstancesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<MonitorInstancesRequest> request = new DefaultRequest<MonitorInstancesRequest>(monitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "MonitorInstances");
         request.addParameter("Version", "2011-05-15");
-        if (monitorInstancesRequest != null) {
-            java.util.List<String> instanceIdsList = monitorInstancesRequest.getInstanceIds();
-            int instanceIdsListIndex = 1;
 
-            for (String instanceIdsListValue : instanceIdsList) {
-                if (instanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
-                }
-                instanceIdsListIndex++;
+
+        java.util.List<String> instanceIdsList = monitorInstancesRequest.getInstanceIds();
+        int instanceIdsListIndex = 1;
+        for (String instanceIdsListValue : instanceIdsList) {
+            if (instanceIdsListValue != null) {
+                request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
             }
+
+            instanceIdsListIndex++;
         }
 
 

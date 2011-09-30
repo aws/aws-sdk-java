@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,93 +31,75 @@ import com.amazonaws.util.StringUtils;
 public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Request<CreateLaunchConfigurationRequest>, CreateLaunchConfigurationRequest> {
 
     public Request<CreateLaunchConfigurationRequest> marshall(CreateLaunchConfigurationRequest createLaunchConfigurationRequest) {
+
+        if (createLaunchConfigurationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateLaunchConfiguration");
         request.addParameter("Version", "2011-01-01");
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getLaunchConfigurationName() != null) {
-                request.addParameter("LaunchConfigurationName", StringUtils.fromString(createLaunchConfigurationRequest.getLaunchConfigurationName()));
-            }
-        }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getImageId() != null) {
-                request.addParameter("ImageId", StringUtils.fromString(createLaunchConfigurationRequest.getImageId()));
-            }
-        }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getKeyName() != null) {
-                request.addParameter("KeyName", StringUtils.fromString(createLaunchConfigurationRequest.getKeyName()));
-            }
-        }
-        if (createLaunchConfigurationRequest != null) {
-            java.util.List<String> securityGroupsList = createLaunchConfigurationRequest.getSecurityGroups();
-            int securityGroupsListIndex = 1;
 
-            for (String securityGroupsListValue : securityGroupsList) {
-                if (securityGroupsListValue != null) {
-                    request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
-                }
-                securityGroupsListIndex++;
-            }
+        if (createLaunchConfigurationRequest.getLaunchConfigurationName() != null) {
+            request.addParameter("LaunchConfigurationName", StringUtils.fromString(createLaunchConfigurationRequest.getLaunchConfigurationName()));
         }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getUserData() != null) {
-                request.addParameter("UserData", StringUtils.fromString(createLaunchConfigurationRequest.getUserData()));
-            }
+        if (createLaunchConfigurationRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(createLaunchConfigurationRequest.getImageId()));
         }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getInstanceType() != null) {
-                request.addParameter("InstanceType", StringUtils.fromString(createLaunchConfigurationRequest.getInstanceType()));
-            }
-        }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getKernelId() != null) {
-                request.addParameter("KernelId", StringUtils.fromString(createLaunchConfigurationRequest.getKernelId()));
-            }
-        }
-        if (createLaunchConfigurationRequest != null) {
-            if (createLaunchConfigurationRequest.getRamdiskId() != null) {
-                request.addParameter("RamdiskId", StringUtils.fromString(createLaunchConfigurationRequest.getRamdiskId()));
-            }
+        if (createLaunchConfigurationRequest.getKeyName() != null) {
+            request.addParameter("KeyName", StringUtils.fromString(createLaunchConfigurationRequest.getKeyName()));
         }
 
-        if (createLaunchConfigurationRequest != null) {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createLaunchConfigurationRequest.getBlockDeviceMappings();
-            int blockDeviceMappingsListIndex = 1;
-            for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
-                if (blockDeviceMappingsListValue != null) {
-                    if (blockDeviceMappingsListValue.getVirtualName() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
-                    }
-                }
-                if (blockDeviceMappingsListValue != null) {
-                    if (blockDeviceMappingsListValue.getDeviceName() != null) {
-                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
-                    }
-                }
-                if (blockDeviceMappingsListValue != null) {
-                    Ebs ebs = blockDeviceMappingsListValue.getEbs();
-                    if (ebs != null) {
-                        if (ebs.getSnapshotId() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.fromString(ebs.getSnapshotId()));
-                        }
-                    }
-                    if (ebs != null) {
-                        if (ebs.getVolumeSize() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebs.getVolumeSize()));
-                        }
-                    }
-                }
-
-                blockDeviceMappingsListIndex++;
+        java.util.List<String> securityGroupsList = createLaunchConfigurationRequest.getSecurityGroups();
+        int securityGroupsListIndex = 1;
+        for (String securityGroupsListValue : securityGroupsList) {
+            if (securityGroupsListValue != null) {
+                request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
             }
+
+            securityGroupsListIndex++;
         }
-        if (createLaunchConfigurationRequest != null) {
-            InstanceMonitoring instanceMonitoring = createLaunchConfigurationRequest.getInstanceMonitoring();
-            if (instanceMonitoring != null) {
-                if (instanceMonitoring.isEnabled() != null) {
-                    request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoring.isEnabled()));
+        if (createLaunchConfigurationRequest.getUserData() != null) {
+            request.addParameter("UserData", StringUtils.fromString(createLaunchConfigurationRequest.getUserData()));
+        }
+        if (createLaunchConfigurationRequest.getInstanceType() != null) {
+            request.addParameter("InstanceType", StringUtils.fromString(createLaunchConfigurationRequest.getInstanceType()));
+        }
+        if (createLaunchConfigurationRequest.getKernelId() != null) {
+            request.addParameter("KernelId", StringUtils.fromString(createLaunchConfigurationRequest.getKernelId()));
+        }
+        if (createLaunchConfigurationRequest.getRamdiskId() != null) {
+            request.addParameter("RamdiskId", StringUtils.fromString(createLaunchConfigurationRequest.getRamdiskId()));
+        }
+
+        java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createLaunchConfigurationRequest.getBlockDeviceMappings();
+        int blockDeviceMappingsListIndex = 1;
+        for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+            BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
+            if (blockDeviceMappingMember != null) {
+                if (blockDeviceMappingMember.getVirtualName() != null) {
+                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingMember.getVirtualName()));
                 }
+                if (blockDeviceMappingMember.getDeviceName() != null) {
+                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingMember.getDeviceName()));
+                }
+                Ebs ebsEbs = blockDeviceMappingMember.getEbs();
+                if (ebsEbs != null) {
+                    if (ebsEbs.getSnapshotId() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.fromString(ebsEbs.getSnapshotId()));
+                    }
+                    if (ebsEbs.getVolumeSize() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebsEbs.getVolumeSize()));
+                    }
+                }
+            }
+
+            blockDeviceMappingsListIndex++;
+        }
+        InstanceMonitoring instanceMonitoringInstanceMonitoring = createLaunchConfigurationRequest.getInstanceMonitoring();
+        if (instanceMonitoringInstanceMonitoring != null) {
+            if (instanceMonitoringInstanceMonitoring.isEnabled() != null) {
+                request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoringInstanceMonitoring.isEnabled()));
             }
         }
 

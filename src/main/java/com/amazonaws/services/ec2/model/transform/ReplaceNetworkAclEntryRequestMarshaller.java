@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,63 +31,49 @@ import com.amazonaws.util.StringUtils;
 public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Request<ReplaceNetworkAclEntryRequest>, ReplaceNetworkAclEntryRequest> {
 
     public Request<ReplaceNetworkAclEntryRequest> marshall(ReplaceNetworkAclEntryRequest replaceNetworkAclEntryRequest) {
+
+        if (replaceNetworkAclEntryRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ReplaceNetworkAclEntryRequest> request = new DefaultRequest<ReplaceNetworkAclEntryRequest>(replaceNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclEntry");
         request.addParameter("Version", "2011-05-15");
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
-                request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclEntryRequest.getNetworkAclId()));
+
+        if (replaceNetworkAclEntryRequest.getNetworkAclId() != null) {
+            request.addParameter("NetworkAclId", StringUtils.fromString(replaceNetworkAclEntryRequest.getNetworkAclId()));
+        }
+        if (replaceNetworkAclEntryRequest.getRuleNumber() != null) {
+            request.addParameter("RuleNumber", StringUtils.fromInteger(replaceNetworkAclEntryRequest.getRuleNumber()));
+        }
+        if (replaceNetworkAclEntryRequest.getProtocol() != null) {
+            request.addParameter("Protocol", StringUtils.fromString(replaceNetworkAclEntryRequest.getProtocol()));
+        }
+        if (replaceNetworkAclEntryRequest.getRuleAction() != null) {
+            request.addParameter("RuleAction", StringUtils.fromString(replaceNetworkAclEntryRequest.getRuleAction()));
+        }
+        if (replaceNetworkAclEntryRequest.isEgress() != null) {
+            request.addParameter("Egress", StringUtils.fromBoolean(replaceNetworkAclEntryRequest.isEgress()));
+        }
+        if (replaceNetworkAclEntryRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getCidrBlock()));
+        }
+        IcmpTypeCode icmpTypeCodeIcmpTypeCode = replaceNetworkAclEntryRequest.getIcmpTypeCode();
+        if (icmpTypeCodeIcmpTypeCode != null) {
+            if (icmpTypeCodeIcmpTypeCode.getType() != null) {
+                request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCodeIcmpTypeCode.getType()));
+            }
+            if (icmpTypeCodeIcmpTypeCode.getCode() != null) {
+                request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCodeIcmpTypeCode.getCode()));
             }
         }
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.getRuleNumber() != null) {
-                request.addParameter("RuleNumber", StringUtils.fromInteger(replaceNetworkAclEntryRequest.getRuleNumber()));
+        PortRange portRangePortRange = replaceNetworkAclEntryRequest.getPortRange();
+        if (portRangePortRange != null) {
+            if (portRangePortRange.getFrom() != null) {
+                request.addParameter("PortRange.From", StringUtils.fromInteger(portRangePortRange.getFrom()));
             }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.getProtocol() != null) {
-                request.addParameter("Protocol", StringUtils.fromString(replaceNetworkAclEntryRequest.getProtocol()));
-            }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.getRuleAction() != null) {
-                request.addParameter("RuleAction", StringUtils.fromString(replaceNetworkAclEntryRequest.getRuleAction()));
-            }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.isEgress() != null) {
-                request.addParameter("Egress", StringUtils.fromBoolean(replaceNetworkAclEntryRequest.isEgress()));
-            }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            if (replaceNetworkAclEntryRequest.getCidrBlock() != null) {
-                request.addParameter("CidrBlock", StringUtils.fromString(replaceNetworkAclEntryRequest.getCidrBlock()));
-            }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            IcmpTypeCode icmpTypeCode = replaceNetworkAclEntryRequest.getIcmpTypeCode();
-            if (icmpTypeCode != null) {
-                if (icmpTypeCode.getType() != null) {
-                    request.addParameter("Icmp.Type", StringUtils.fromInteger(icmpTypeCode.getType()));
-                }
-            }
-            if (icmpTypeCode != null) {
-                if (icmpTypeCode.getCode() != null) {
-                    request.addParameter("Icmp.Code", StringUtils.fromInteger(icmpTypeCode.getCode()));
-                }
-            }
-        }
-        if (replaceNetworkAclEntryRequest != null) {
-            PortRange portRange = replaceNetworkAclEntryRequest.getPortRange();
-            if (portRange != null) {
-                if (portRange.getFrom() != null) {
-                    request.addParameter("PortRange.From", StringUtils.fromInteger(portRange.getFrom()));
-                }
-            }
-            if (portRange != null) {
-                if (portRange.getTo() != null) {
-                    request.addParameter("PortRange.To", StringUtils.fromInteger(portRange.getTo()));
-                }
+            if (portRangePortRange.getTo() != null) {
+                request.addParameter("PortRange.To", StringUtils.fromInteger(portRangePortRange.getTo()));
             }
         }
 

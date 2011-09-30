@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateVpnGatewayRequestMarshaller implements Marshaller<Request<CreateVpnGatewayRequest>, CreateVpnGatewayRequest> {
 
     public Request<CreateVpnGatewayRequest> marshall(CreateVpnGatewayRequest createVpnGatewayRequest) {
+
+        if (createVpnGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateVpnGatewayRequest> request = new DefaultRequest<CreateVpnGatewayRequest>(createVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnGateway");
         request.addParameter("Version", "2011-05-15");
-        if (createVpnGatewayRequest != null) {
-            if (createVpnGatewayRequest.getType() != null) {
-                request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
-            }
+
+        if (createVpnGatewayRequest.getType() != null) {
+            request.addParameter("Type", StringUtils.fromString(createVpnGatewayRequest.getType()));
         }
-        if (createVpnGatewayRequest != null) {
-            if (createVpnGatewayRequest.getAvailabilityZone() != null) {
-                request.addParameter("AvailabilityZone", StringUtils.fromString(createVpnGatewayRequest.getAvailabilityZone()));
-            }
+        if (createVpnGatewayRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createVpnGatewayRequest.getAvailabilityZone()));
         }
 
 

@@ -192,6 +192,7 @@ public class SecurityGroup {
      * @return The permissions enabled for this security group.
      */
     public java.util.List<IpPermission> getIpPermissions() {
+        
         if (ipPermissions == null) {
             ipPermissions = new java.util.ArrayList<IpPermission>();
         }
@@ -222,6 +223,7 @@ public class SecurityGroup {
      *         together. 
      */
     public SecurityGroup withIpPermissions(IpPermission... ipPermissions) {
+        if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>());
         for (IpPermission value : ipPermissions) {
             getIpPermissions().add(value);
         }
@@ -254,6 +256,7 @@ public class SecurityGroup {
      * @return The value of the IpPermissionsEgress property for this object.
      */
     public java.util.List<IpPermission> getIpPermissionsEgress() {
+        
         if (ipPermissionsEgress == null) {
             ipPermissionsEgress = new java.util.ArrayList<IpPermission>();
         }
@@ -284,6 +287,7 @@ public class SecurityGroup {
      *         together. 
      */
     public SecurityGroup withIpPermissionsEgress(IpPermission... ipPermissionsEgress) {
+        if (getIpPermissionsEgress() == null) setIpPermissionsEgress(new java.util.ArrayList<IpPermission>());
         for (IpPermission value : ipPermissionsEgress) {
             getIpPermissionsEgress().add(value);
         }
@@ -350,6 +354,7 @@ public class SecurityGroup {
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -380,6 +385,7 @@ public class SecurityGroup {
      *         together. 
      */
     public SecurityGroup withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

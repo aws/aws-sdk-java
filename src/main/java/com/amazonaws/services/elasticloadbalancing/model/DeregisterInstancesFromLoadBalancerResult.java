@@ -35,6 +35,7 @@ public class DeregisterInstancesFromLoadBalancerResult {
      *         LoadBalancer.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -69,6 +70,7 @@ public class DeregisterInstancesFromLoadBalancerResult {
      *         together. 
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }

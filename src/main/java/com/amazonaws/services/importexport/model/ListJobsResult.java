@@ -38,6 +38,7 @@ public class ListJobsResult {
      * @return A list container for Jobs returned by the ListJobs operation.
      */
     public java.util.List<Job> getJobs() {
+        
         if (jobs == null) {
             jobs = new java.util.ArrayList<Job>();
         }
@@ -68,6 +69,7 @@ public class ListJobsResult {
      *         together. 
      */
     public ListJobsResult withJobs(Job... jobs) {
+        if (getJobs() == null) setJobs(new java.util.ArrayList<Job>());
         for (Job value : jobs) {
             getJobs().add(value);
         }

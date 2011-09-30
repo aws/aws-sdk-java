@@ -65,6 +65,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      * @return One or more Internet gateway IDs.
      */
     public java.util.List<String> getInternetGatewayIds() {
+        
         if (internetGatewayIds == null) {
             internetGatewayIds = new java.util.ArrayList<String>();
         }
@@ -95,6 +96,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
+        if (getInternetGatewayIds() == null) setInternetGatewayIds(new java.util.ArrayList<String>());
         for (String value : internetGatewayIds) {
             getInternetGatewayIds().add(value);
         }
@@ -135,6 +137,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -181,6 +184,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

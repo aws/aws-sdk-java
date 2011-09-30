@@ -36,6 +36,7 @@ public class ListSubscriptionsResult {
      * @return A list of subscriptions.
      */
     public java.util.List<Subscription> getSubscriptions() {
+        
         if (subscriptions == null) {
             subscriptions = new java.util.ArrayList<Subscription>();
         }
@@ -66,6 +67,7 @@ public class ListSubscriptionsResult {
      *         together. 
      */
     public ListSubscriptionsResult withSubscriptions(Subscription... subscriptions) {
+        if (getSubscriptions() == null) setSubscriptions(new java.util.ArrayList<Subscription>());
         for (Subscription value : subscriptions) {
             getSubscriptions().add(value);
         }

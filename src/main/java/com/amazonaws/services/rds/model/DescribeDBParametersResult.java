@@ -38,6 +38,7 @@ public class DescribeDBParametersResult {
      * @return A list of <a>Parameter</a> instances.
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -68,6 +69,7 @@ public class DescribeDBParametersResult {
      *         together. 
      */
     public DescribeDBParametersResult withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }

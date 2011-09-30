@@ -21,8 +21,8 @@
  * with the same technologies, or running at the same time.
  * </p>
  * <p>
- * Visit <a href="http://aws.amazon.com/sqs/">
- * http://aws.amazon.com/sqs/ </a> for more information.
+ * Visit <a href="http://aws.amazon.com/sqs/"> http://aws.amazon.com/sqs/
+ * </a> for more information.
  * </p>
  */
  package com.amazonaws.services.sqs;

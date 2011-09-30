@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeDBParameterGroupsRequestMarshaller implements Marshaller<Request<DescribeDBParameterGroupsRequest>, DescribeDBParameterGroupsRequest> {
 
     public Request<DescribeDBParameterGroupsRequest> marshall(DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) {
+
+        if (describeDBParameterGroupsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeDBParameterGroupsRequest> request = new DefaultRequest<DescribeDBParameterGroupsRequest>(describeDBParameterGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBParameterGroups");
         request.addParameter("Version", "2011-04-01");
-        if (describeDBParameterGroupsRequest != null) {
-            if (describeDBParameterGroupsRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(describeDBParameterGroupsRequest.getDBParameterGroupName()));
-            }
+
+        if (describeDBParameterGroupsRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(describeDBParameterGroupsRequest.getDBParameterGroupName()));
         }
-        if (describeDBParameterGroupsRequest != null) {
-            if (describeDBParameterGroupsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBParameterGroupsRequest.getMaxRecords()));
-            }
+        if (describeDBParameterGroupsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeDBParameterGroupsRequest.getMaxRecords()));
         }
-        if (describeDBParameterGroupsRequest != null) {
-            if (describeDBParameterGroupsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(describeDBParameterGroupsRequest.getMarker()));
-            }
+        if (describeDBParameterGroupsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(describeDBParameterGroupsRequest.getMarker()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class SubscribeRequestMarshaller implements Marshaller<Request<SubscribeRequest>, SubscribeRequest> {
 
     public Request<SubscribeRequest> marshall(SubscribeRequest subscribeRequest) {
+
+        if (subscribeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SubscribeRequest> request = new DefaultRequest<SubscribeRequest>(subscribeRequest, "AmazonSNS");
         request.addParameter("Action", "Subscribe");
         request.addParameter("Version", "2010-03-31");
-        if (subscribeRequest != null) {
-            if (subscribeRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(subscribeRequest.getTopicArn()));
-            }
+
+        if (subscribeRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(subscribeRequest.getTopicArn()));
         }
-        if (subscribeRequest != null) {
-            if (subscribeRequest.getProtocol() != null) {
-                request.addParameter("Protocol", StringUtils.fromString(subscribeRequest.getProtocol()));
-            }
+        if (subscribeRequest.getProtocol() != null) {
+            request.addParameter("Protocol", StringUtils.fromString(subscribeRequest.getProtocol()));
         }
-        if (subscribeRequest != null) {
-            if (subscribeRequest.getEndpoint() != null) {
-                request.addParameter("Endpoint", StringUtils.fromString(subscribeRequest.getEndpoint()));
-            }
+        if (subscribeRequest.getEndpoint() != null) {
+            request.addParameter("Endpoint", StringUtils.fromString(subscribeRequest.getEndpoint()));
         }
 
 

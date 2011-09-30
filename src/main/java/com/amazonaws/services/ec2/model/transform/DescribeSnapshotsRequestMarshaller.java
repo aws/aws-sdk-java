@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,66 +31,67 @@ import com.amazonaws.util.StringUtils;
 public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<DescribeSnapshotsRequest>, DescribeSnapshotsRequest> {
 
     public Request<DescribeSnapshotsRequest> marshall(DescribeSnapshotsRequest describeSnapshotsRequest) {
+
+        if (describeSnapshotsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeSnapshotsRequest> request = new DefaultRequest<DescribeSnapshotsRequest>(describeSnapshotsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshots");
         request.addParameter("Version", "2011-05-15");
-        if (describeSnapshotsRequest != null) {
-            java.util.List<String> snapshotIdsList = describeSnapshotsRequest.getSnapshotIds();
-            int snapshotIdsListIndex = 1;
 
-            for (String snapshotIdsListValue : snapshotIdsList) {
-                if (snapshotIdsListValue != null) {
-                    request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(snapshotIdsListValue));
-                }
-                snapshotIdsListIndex++;
-            }
-        }
-        if (describeSnapshotsRequest != null) {
-            java.util.List<String> ownerIdsList = describeSnapshotsRequest.getOwnerIds();
-            int ownerIdsListIndex = 1;
 
-            for (String ownerIdsListValue : ownerIdsList) {
-                if (ownerIdsListValue != null) {
-                    request.addParameter("Owner." + ownerIdsListIndex, StringUtils.fromString(ownerIdsListValue));
-                }
-                ownerIdsListIndex++;
+        java.util.List<String> snapshotIdsList = describeSnapshotsRequest.getSnapshotIds();
+        int snapshotIdsListIndex = 1;
+        for (String snapshotIdsListValue : snapshotIdsList) {
+            if (snapshotIdsListValue != null) {
+                request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(snapshotIdsListValue));
             }
-        }
-        if (describeSnapshotsRequest != null) {
-            java.util.List<String> restorableByUserIdsList = describeSnapshotsRequest.getRestorableByUserIds();
-            int restorableByUserIdsListIndex = 1;
 
-            for (String restorableByUserIdsListValue : restorableByUserIdsList) {
-                if (restorableByUserIdsListValue != null) {
-                    request.addParameter("RestorableBy." + restorableByUserIdsListIndex, StringUtils.fromString(restorableByUserIdsListValue));
-                }
-                restorableByUserIdsListIndex++;
-            }
+            snapshotIdsListIndex++;
         }
 
-        if (describeSnapshotsRequest != null) {
-            java.util.List<Filter> filtersList = describeSnapshotsRequest.getFilters();
-            int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) {
-                if (filtersListValue != null) {
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+        java.util.List<String> ownerIdsList = describeSnapshotsRequest.getOwnerIds();
+        int ownerIdsListIndex = 1;
+        for (String ownerIdsListValue : ownerIdsList) {
+            if (ownerIdsListValue != null) {
+                request.addParameter("Owner." + ownerIdsListIndex, StringUtils.fromString(ownerIdsListValue));
+            }
+
+            ownerIdsListIndex++;
+        }
+
+        java.util.List<String> restorableByUserIdsList = describeSnapshotsRequest.getRestorableByUserIds();
+        int restorableByUserIdsListIndex = 1;
+        for (String restorableByUserIdsListValue : restorableByUserIdsList) {
+            if (restorableByUserIdsListValue != null) {
+                request.addParameter("RestorableBy." + restorableByUserIdsListIndex, StringUtils.fromString(restorableByUserIdsListValue));
+            }
+
+            restorableByUserIdsListIndex++;
+        }
+
+        java.util.List<Filter> filtersList = describeSnapshotsRequest.getFilters();
+        int filtersListIndex = 1;
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                }
+
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
-                }
-                if (filtersListValue != null) {
-                    java.util.List<String> valuesList = filtersListValue.getValues();
-                    int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+                    valuesListIndex++;
                 }
-
-                filtersListIndex++;
             }
+
+            filtersListIndex++;
         }
 
 

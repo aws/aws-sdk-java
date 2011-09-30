@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class DescribeConfigurationSettingsRequestMarshaller implements Marshaller<Request<DescribeConfigurationSettingsRequest>, DescribeConfigurationSettingsRequest> {
 
     public Request<DescribeConfigurationSettingsRequest> marshall(DescribeConfigurationSettingsRequest describeConfigurationSettingsRequest) {
+
+        if (describeConfigurationSettingsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeConfigurationSettingsRequest> request = new DefaultRequest<DescribeConfigurationSettingsRequest>(describeConfigurationSettingsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeConfigurationSettings");
         request.addParameter("Version", "2010-12-01");
-        if (describeConfigurationSettingsRequest != null) {
-            if (describeConfigurationSettingsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(describeConfigurationSettingsRequest.getApplicationName()));
-            }
+
+        if (describeConfigurationSettingsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(describeConfigurationSettingsRequest.getApplicationName()));
         }
-        if (describeConfigurationSettingsRequest != null) {
-            if (describeConfigurationSettingsRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(describeConfigurationSettingsRequest.getTemplateName()));
-            }
+        if (describeConfigurationSettingsRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(describeConfigurationSettingsRequest.getTemplateName()));
         }
-        if (describeConfigurationSettingsRequest != null) {
-            if (describeConfigurationSettingsRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(describeConfigurationSettingsRequest.getEnvironmentName()));
-            }
+        if (describeConfigurationSettingsRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(describeConfigurationSettingsRequest.getEnvironmentName()));
         }
 
 

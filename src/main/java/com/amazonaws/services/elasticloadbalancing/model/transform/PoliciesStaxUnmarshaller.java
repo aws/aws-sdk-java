@@ -55,6 +55,10 @@ public class PoliciesStaxUnmarshaller implements Unmarshaller<Policies, StaxUnma
                     policies.getLBCookieStickinessPolicies().add(LBCookieStickinessPolicyStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("OtherPolicies/member", targetDepth)) {
+                    policies.getOtherPolicies().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return policies;

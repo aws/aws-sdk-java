@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<CancelBundleTaskRequest>, CancelBundleTaskRequest> {
 
     public Request<CancelBundleTaskRequest> marshall(CancelBundleTaskRequest cancelBundleTaskRequest) {
+
+        if (cancelBundleTaskRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CancelBundleTaskRequest> request = new DefaultRequest<CancelBundleTaskRequest>(cancelBundleTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelBundleTask");
         request.addParameter("Version", "2011-05-15");
-        if (cancelBundleTaskRequest != null) {
-            if (cancelBundleTaskRequest.getBundleId() != null) {
-                request.addParameter("BundleId", StringUtils.fromString(cancelBundleTaskRequest.getBundleId()));
-            }
+
+        if (cancelBundleTaskRequest.getBundleId() != null) {
+            request.addParameter("BundleId", StringUtils.fromString(cancelBundleTaskRequest.getBundleId()));
         }
 
 

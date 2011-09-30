@@ -77,6 +77,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         to describe.
      */
     public java.util.List<String> getReservedInstancesOfferingIds() {
+        
         if (reservedInstancesOfferingIds == null) {
             reservedInstancesOfferingIds = new java.util.ArrayList<String>();
         }
@@ -111,6 +112,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(String... reservedInstancesOfferingIds) {
+        if (getReservedInstancesOfferingIds() == null) setReservedInstancesOfferingIds(new java.util.ArrayList<String>());
         for (String value : reservedInstancesOfferingIds) {
             getReservedInstancesOfferingIds().add(value);
         }
@@ -270,6 +272,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -316,6 +319,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

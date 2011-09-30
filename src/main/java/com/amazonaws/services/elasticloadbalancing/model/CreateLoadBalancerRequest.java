@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new LoadBalancer.
  * </p>
  * <p>
- * Once the call has completed successfully, a new LoadBalancer is
+ * After the call has completed successfully, a new LoadBalancer is
  * created; however, it will not be usable until at least one instance
  * has been registered. When the LoadBalancer creation is completed, the
  * client can check whether or not it is usable by using the
@@ -31,14 +31,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited
- * to five per Region.
+ * to ten per Region.
  * </p>
  * <p>
- * <b>NOTE:</b> Load balancer DNS names vary depending on the Region
- * they're created in. For load balancers created in the United States,
+ * <b>NOTE:</b> LoadBalancer DNS names vary depending on the Region
+ * they're created in. For LoadBalancers created in the United States,
  * the DNS name ends with: us-east-1.elb.amazonaws.com (for the US
  * Standard Region) us-west-1.elb.amazonaws.com (for the Northern
- * California Region) For load balancers created in the EU (Ireland)
+ * California Region) For LoadBalancers created in the EU (Ireland)
  * Region, the DNS name ends with: eu-west-1.elb.amazonaws.com
  * </p>
  *
@@ -154,6 +154,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         Protocol.
      */
     public java.util.List<Listener> getListeners() {
+        
         if (listeners == null) {
             listeners = new java.util.ArrayList<Listener>();
         }
@@ -188,6 +189,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withListeners(Listener... listeners) {
+        if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>());
         for (Listener value : listeners) {
             getListeners().add(value);
         }
@@ -230,6 +232,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         LoadBalancer.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -276,6 +279,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

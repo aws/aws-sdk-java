@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sqs.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class SendMessageRequestMarshaller implements Marshaller<Request<SendMessageRequest>, SendMessageRequest> {
 
     public Request<SendMessageRequest> marshall(SendMessageRequest sendMessageRequest) {
+
+        if (sendMessageRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SendMessageRequest> request = new DefaultRequest<SendMessageRequest>(sendMessageRequest, "AmazonSQS");
         request.addParameter("Action", "SendMessage");
         request.addParameter("Version", "2009-02-01");
-        if (sendMessageRequest != null) {
-            if (sendMessageRequest.getQueueUrl() != null) {
-                request.addParameter("QueueUrl", StringUtils.fromString(sendMessageRequest.getQueueUrl()));
-            }
+
+        if (sendMessageRequest.getQueueUrl() != null) {
+            request.addParameter("QueueUrl", StringUtils.fromString(sendMessageRequest.getQueueUrl()));
         }
-        if (sendMessageRequest != null) {
-            if (sendMessageRequest.getMessageBody() != null) {
-                request.addParameter("MessageBody", StringUtils.fromString(sendMessageRequest.getMessageBody()));
-            }
+        if (sendMessageRequest.getMessageBody() != null) {
+            request.addParameter("MessageBody", StringUtils.fromString(sendMessageRequest.getMessageBody()));
         }
 
 

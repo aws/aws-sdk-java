@@ -65,6 +65,7 @@ public class InternetGateway {
      * @return The value of the Attachments property for this object.
      */
     public java.util.List<InternetGatewayAttachment> getAttachments() {
+        
         if (attachments == null) {
             attachments = new java.util.ArrayList<InternetGatewayAttachment>();
         }
@@ -95,6 +96,7 @@ public class InternetGateway {
      *         together. 
      */
     public InternetGateway withAttachments(InternetGatewayAttachment... attachments) {
+        if (getAttachments() == null) setAttachments(new java.util.ArrayList<InternetGatewayAttachment>());
         for (InternetGatewayAttachment value : attachments) {
             getAttachments().add(value);
         }
@@ -127,6 +129,7 @@ public class InternetGateway {
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -157,6 +160,7 @@ public class InternetGateway {
      *         together. 
      */
     public InternetGateway withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

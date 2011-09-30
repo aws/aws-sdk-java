@@ -48,6 +48,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
      * @return The optional list of key pair names to describe.
      */
     public java.util.List<String> getKeyNames() {
+        
         if (keyNames == null) {
             keyNames = new java.util.ArrayList<String>();
         }
@@ -78,6 +79,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeKeyPairsRequest withKeyNames(String... keyNames) {
+        if (getKeyNames() == null) setKeyNames(new java.util.ArrayList<String>());
         for (String value : keyNames) {
             getKeyNames().add(value);
         }
@@ -118,6 +120,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -164,6 +167,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeKeyPairsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

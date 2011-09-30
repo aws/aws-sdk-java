@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ConfirmSubscriptionRequestMarshaller implements Marshaller<Request<ConfirmSubscriptionRequest>, ConfirmSubscriptionRequest> {
 
     public Request<ConfirmSubscriptionRequest> marshall(ConfirmSubscriptionRequest confirmSubscriptionRequest) {
+
+        if (confirmSubscriptionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ConfirmSubscriptionRequest> request = new DefaultRequest<ConfirmSubscriptionRequest>(confirmSubscriptionRequest, "AmazonSNS");
         request.addParameter("Action", "ConfirmSubscription");
         request.addParameter("Version", "2010-03-31");
-        if (confirmSubscriptionRequest != null) {
-            if (confirmSubscriptionRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(confirmSubscriptionRequest.getTopicArn()));
-            }
+
+        if (confirmSubscriptionRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(confirmSubscriptionRequest.getTopicArn()));
         }
-        if (confirmSubscriptionRequest != null) {
-            if (confirmSubscriptionRequest.getToken() != null) {
-                request.addParameter("Token", StringUtils.fromString(confirmSubscriptionRequest.getToken()));
-            }
+        if (confirmSubscriptionRequest.getToken() != null) {
+            request.addParameter("Token", StringUtils.fromString(confirmSubscriptionRequest.getToken()));
         }
-        if (confirmSubscriptionRequest != null) {
-            if (confirmSubscriptionRequest.getAuthenticateOnUnsubscribe() != null) {
-                request.addParameter("AuthenticateOnUnsubscribe", StringUtils.fromString(confirmSubscriptionRequest.getAuthenticateOnUnsubscribe()));
-            }
+        if (confirmSubscriptionRequest.getAuthenticateOnUnsubscribe() != null) {
+            request.addParameter("AuthenticateOnUnsubscribe", StringUtils.fromString(confirmSubscriptionRequest.getAuthenticateOnUnsubscribe()));
         }
 
 

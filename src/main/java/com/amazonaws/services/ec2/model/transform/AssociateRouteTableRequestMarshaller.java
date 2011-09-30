@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<AssociateRouteTableRequest>, AssociateRouteTableRequest> {
 
     public Request<AssociateRouteTableRequest> marshall(AssociateRouteTableRequest associateRouteTableRequest) {
+
+        if (associateRouteTableRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AssociateRouteTableRequest> request = new DefaultRequest<AssociateRouteTableRequest>(associateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateRouteTable");
         request.addParameter("Version", "2011-05-15");
-        if (associateRouteTableRequest != null) {
-            if (associateRouteTableRequest.getSubnetId() != null) {
-                request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));
-            }
+
+        if (associateRouteTableRequest.getSubnetId() != null) {
+            request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));
         }
-        if (associateRouteTableRequest != null) {
-            if (associateRouteTableRequest.getRouteTableId() != null) {
-                request.addParameter("RouteTableId", StringUtils.fromString(associateRouteTableRequest.getRouteTableId()));
-            }
+        if (associateRouteTableRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(associateRouteTableRequest.getRouteTableId()));
         }
 
 

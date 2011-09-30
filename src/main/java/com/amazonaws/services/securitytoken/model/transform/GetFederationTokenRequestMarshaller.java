@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.securitytoken.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class GetFederationTokenRequestMarshaller implements Marshaller<Request<GetFederationTokenRequest>, GetFederationTokenRequest> {
 
     public Request<GetFederationTokenRequest> marshall(GetFederationTokenRequest getFederationTokenRequest) {
+
+        if (getFederationTokenRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetFederationTokenRequest> request = new DefaultRequest<GetFederationTokenRequest>(getFederationTokenRequest, "AWSSecurityTokenService");
         request.addParameter("Action", "GetFederationToken");
         request.addParameter("Version", "2011-06-15");
-        if (getFederationTokenRequest != null) {
-            if (getFederationTokenRequest.getName() != null) {
-                request.addParameter("Name", StringUtils.fromString(getFederationTokenRequest.getName()));
-            }
+
+        if (getFederationTokenRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(getFederationTokenRequest.getName()));
         }
-        if (getFederationTokenRequest != null) {
-            if (getFederationTokenRequest.getPolicy() != null) {
-                request.addParameter("Policy", StringUtils.fromString(getFederationTokenRequest.getPolicy()));
-            }
+        if (getFederationTokenRequest.getPolicy() != null) {
+            request.addParameter("Policy", StringUtils.fromString(getFederationTokenRequest.getPolicy()));
         }
-        if (getFederationTokenRequest != null) {
-            if (getFederationTokenRequest.getDurationSeconds() != null) {
-                request.addParameter("DurationSeconds", StringUtils.fromInteger(getFederationTokenRequest.getDurationSeconds()));
-            }
+        if (getFederationTokenRequest.getDurationSeconds() != null) {
+            request.addParameter("DurationSeconds", StringUtils.fromInteger(getFederationTokenRequest.getDurationSeconds()));
         }
 
 

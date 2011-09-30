@@ -32,6 +32,7 @@ public class DescribeReservedInstancesOfferingsResult {
      * @return The list of described Reserved Instance offerings.
      */
     public java.util.List<ReservedInstancesOffering> getReservedInstancesOfferings() {
+        
         if (reservedInstancesOfferings == null) {
             reservedInstancesOfferings = new java.util.ArrayList<ReservedInstancesOffering>();
         }
@@ -62,6 +63,7 @@ public class DescribeReservedInstancesOfferingsResult {
      *         together. 
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(ReservedInstancesOffering... reservedInstancesOfferings) {
+        if (getReservedInstancesOfferings() == null) setReservedInstancesOfferings(new java.util.ArrayList<ReservedInstancesOffering>());
         for (ReservedInstancesOffering value : reservedInstancesOfferings) {
             getReservedInstancesOfferings().add(value);
         }

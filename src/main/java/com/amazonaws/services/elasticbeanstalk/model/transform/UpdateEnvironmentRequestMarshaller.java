@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,76 +31,64 @@ import com.amazonaws.util.StringUtils;
 public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<UpdateEnvironmentRequest>, UpdateEnvironmentRequest> {
 
     public Request<UpdateEnvironmentRequest> marshall(UpdateEnvironmentRequest updateEnvironmentRequest) {
+
+        if (updateEnvironmentRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<UpdateEnvironmentRequest> request = new DefaultRequest<UpdateEnvironmentRequest>(updateEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateEnvironment");
         request.addParameter("Version", "2010-12-01");
-        if (updateEnvironmentRequest != null) {
-            if (updateEnvironmentRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(updateEnvironmentRequest.getEnvironmentId()));
-            }
+
+        if (updateEnvironmentRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(updateEnvironmentRequest.getEnvironmentId()));
         }
-        if (updateEnvironmentRequest != null) {
-            if (updateEnvironmentRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(updateEnvironmentRequest.getEnvironmentName()));
-            }
+        if (updateEnvironmentRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(updateEnvironmentRequest.getEnvironmentName()));
         }
-        if (updateEnvironmentRequest != null) {
-            if (updateEnvironmentRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(updateEnvironmentRequest.getVersionLabel()));
-            }
+        if (updateEnvironmentRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(updateEnvironmentRequest.getVersionLabel()));
         }
-        if (updateEnvironmentRequest != null) {
-            if (updateEnvironmentRequest.getTemplateName() != null) {
-                request.addParameter("TemplateName", StringUtils.fromString(updateEnvironmentRequest.getTemplateName()));
-            }
+        if (updateEnvironmentRequest.getTemplateName() != null) {
+            request.addParameter("TemplateName", StringUtils.fromString(updateEnvironmentRequest.getTemplateName()));
         }
-        if (updateEnvironmentRequest != null) {
-            if (updateEnvironmentRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(updateEnvironmentRequest.getDescription()));
-            }
+        if (updateEnvironmentRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(updateEnvironmentRequest.getDescription()));
         }
 
-        if (updateEnvironmentRequest != null) {
-            java.util.List<ConfigurationOptionSetting> optionSettingsList = updateEnvironmentRequest.getOptionSettings();
-            int optionSettingsListIndex = 1;
-            for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getNamespace() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                    }
+        java.util.List<ConfigurationOptionSetting> optionSettingsList = updateEnvironmentRequest.getOptionSettings();
+        int optionSettingsListIndex = 1;
+        for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+            ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
+            if (configurationOptionSettingMember != null) {
+                if (configurationOptionSettingMember.getNamespace() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace", StringUtils.fromString(configurationOptionSettingMember.getNamespace()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getOptionName() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                    }
+                if (configurationOptionSettingMember.getOptionName() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName", StringUtils.fromString(configurationOptionSettingMember.getOptionName()));
                 }
-                if (optionSettingsListValue != null) {
-                    if (optionSettingsListValue.getValue() != null) {
-                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
-                    }
+                if (configurationOptionSettingMember.getValue() != null) {
+                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value", StringUtils.fromString(configurationOptionSettingMember.getValue()));
                 }
-
-                optionSettingsListIndex++;
             }
+
+            optionSettingsListIndex++;
         }
 
-        if (updateEnvironmentRequest != null) {
-            java.util.List<OptionSpecification> optionsToRemoveList = updateEnvironmentRequest.getOptionsToRemove();
-            int optionsToRemoveListIndex = 1;
-            for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
-                if (optionsToRemoveListValue != null) {
-                    if (optionsToRemoveListValue.getNamespace() != null) {
-                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.fromString(optionsToRemoveListValue.getNamespace()));
-                    }
+        java.util.List<OptionSpecification> optionsToRemoveList = updateEnvironmentRequest.getOptionsToRemove();
+        int optionsToRemoveListIndex = 1;
+        for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
+            OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
+            if (optionSpecificationMember != null) {
+                if (optionSpecificationMember.getNamespace() != null) {
+                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".Namespace", StringUtils.fromString(optionSpecificationMember.getNamespace()));
                 }
-                if (optionsToRemoveListValue != null) {
-                    if (optionsToRemoveListValue.getOptionName() != null) {
-                        request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.fromString(optionsToRemoveListValue.getOptionName()));
-                    }
+                if (optionSpecificationMember.getOptionName() != null) {
+                    request.addParameter("OptionsToRemove.member." + optionsToRemoveListIndex + ".OptionName", StringUtils.fromString(optionSpecificationMember.getOptionName()));
                 }
-
-                optionsToRemoveListIndex++;
             }
+
+            optionsToRemoveListIndex++;
         }
 
 

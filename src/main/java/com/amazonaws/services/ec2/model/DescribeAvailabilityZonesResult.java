@@ -33,6 +33,7 @@ public class DescribeAvailabilityZonesResult {
      * @return The list of described Amazon EC2 availability zones.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<AvailabilityZone>();
         }
@@ -63,6 +64,7 @@ public class DescribeAvailabilityZonesResult {
      *         together. 
      */
     public DescribeAvailabilityZonesResult withAvailabilityZones(AvailabilityZone... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>());
         for (AvailabilityZone value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

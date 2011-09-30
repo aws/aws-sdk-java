@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcRequest>, CreateVpcRequest> {
 
     public Request<CreateVpcRequest> marshall(CreateVpcRequest createVpcRequest) {
+
+        if (createVpcRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateVpcRequest> request = new DefaultRequest<CreateVpcRequest>(createVpcRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpc");
         request.addParameter("Version", "2011-05-15");
-        if (createVpcRequest != null) {
-            if (createVpcRequest.getCidrBlock() != null) {
-                request.addParameter("CidrBlock", StringUtils.fromString(createVpcRequest.getCidrBlock()));
-            }
+
+        if (createVpcRequest.getCidrBlock() != null) {
+            request.addParameter("CidrBlock", StringUtils.fromString(createVpcRequest.getCidrBlock()));
         }
-        if (createVpcRequest != null) {
-            if (createVpcRequest.getInstanceTenancy() != null) {
-                request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
-            }
+        if (createVpcRequest.getInstanceTenancy() != null) {
+            request.addParameter("InstanceTenancy", StringUtils.fromString(createVpcRequest.getInstanceTenancy()));
         }
 
 

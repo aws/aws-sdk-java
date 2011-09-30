@@ -72,6 +72,7 @@ public class DescribeDBSecurityGroupsResult {
      * @return A list of <a>DBSecurityGroup</a> instances.
      */
     public java.util.List<DBSecurityGroup> getDBSecurityGroups() {
+        
         if (dBSecurityGroups == null) {
             dBSecurityGroups = new java.util.ArrayList<DBSecurityGroup>();
         }
@@ -102,6 +103,7 @@ public class DescribeDBSecurityGroupsResult {
      *         together. 
      */
     public DescribeDBSecurityGroupsResult withDBSecurityGroups(DBSecurityGroup... dBSecurityGroups) {
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<DBSecurityGroup>());
         for (DBSecurityGroup value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }

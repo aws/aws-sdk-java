@@ -41,6 +41,7 @@ import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
@@ -48,6 +49,7 @@ import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -56,14 +58,14 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketsRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
-import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListPartsRequest;
-import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
+import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
+import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
@@ -71,6 +73,7 @@ import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
@@ -874,7 +877,7 @@ public interface AmazonS3 {
      * @see Region
      */
     public String getBucketLocation(GetBucketLocationRequest getBucketLocationRequest)
-    	throws AmazonClientException, AmazonServiceException;
+        throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>
@@ -1445,62 +1448,62 @@ public interface AmazonS3 {
     public AccessControlList getBucketAcl(String bucketName) throws AmazonClientException,
             AmazonServiceException;
 
-	/**
-	 * Sets the {@link AccessControlList} for the specified Amazon S3 bucket.
-	 * <p>
-	 * Each bucket and object in Amazon S3 has an ACL that defines its access
-	 * control policy. When a request is made, Amazon S3 authenticates the
-	 * request using its standard authentication procedure and then checks the
-	 * ACL to verify the sender was granted access to the bucket or object. If
-	 * the sender is approved, the request proceeds. Otherwise, Amazon S3
-	 * returns an error.
-	 * <p>
-	 * When constructing a custom <code>AccessControlList</code>, callers
-	 * typically retrieve the existing <code>AccessControlList</code> for a
-	 * bucket ( {@link AmazonS3Client#getBucketAcl(String)}), modify it as
-	 * necessary, and then use this method to upload the new ACL.
-	 * 
-	 * @param setBucketAclRequest
-	 *            The request object containing the bucket to modify and the ACL
-	 *            to set.
-	 * 
-	 * @throws AmazonClientException
-	 *             If any errors are encountered in the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Sets the {@link AccessControlList} for the specified Amazon S3 bucket.
+     * <p>
+     * Each bucket and object in Amazon S3 has an ACL that defines its access
+     * control policy. When a request is made, Amazon S3 authenticates the
+     * request using its standard authentication procedure and then checks the
+     * ACL to verify the sender was granted access to the bucket or object. If
+     * the sender is approved, the request proceeds. Otherwise, Amazon S3
+     * returns an error.
+     * <p>
+     * When constructing a custom <code>AccessControlList</code>, callers
+     * typically retrieve the existing <code>AccessControlList</code> for a
+     * bucket ( {@link AmazonS3Client#getBucketAcl(String)}), modify it as
+     * necessary, and then use this method to upload the new ACL.
+     *
+     * @param setBucketAclRequest
+     *            The request object containing the bucket to modify and the ACL
+     *            to set.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public void setBucketAcl(SetBucketAclRequest setBucketAclRequest)
-    		throws AmazonClientException, AmazonServiceException;
+            throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * Gets the {@link AccessControlList} (ACL) for the specified Amazon S3
-	 * bucket.
-	 * <p>
-	 * Each bucket and object in Amazon S3 has an ACL that defines its access
-	 * control policy. When a request is made, Amazon S3 authenticates the
-	 * request using its standard authentication procedure and then checks the
-	 * ACL to verify the sender was granted access to the bucket or object. If
-	 * the sender is approved, the request proceeds. Otherwise, Amazon S3
-	 * returns an error.
-	 * 
-	 * @param getBucketAclRequest
-	 *            The request containing the name of the bucket whose ACL is
-	 *            being retrieved.
-	 * 
-	 * @return The <code>AccessControlList</code> for the specified S3 bucket.
-	 * 
-	 * @throws AmazonClientException
-	 *             If any errors are encountered in the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Gets the {@link AccessControlList} (ACL) for the specified Amazon S3
+     * bucket.
+     * <p>
+     * Each bucket and object in Amazon S3 has an ACL that defines its access
+     * control policy. When a request is made, Amazon S3 authenticates the
+     * request using its standard authentication procedure and then checks the
+     * ACL to verify the sender was granted access to the bucket or object. If
+     * the sender is approved, the request proceeds. Otherwise, Amazon S3
+     * returns an error.
+     *
+     * @param getBucketAclRequest
+     *            The request containing the name of the bucket whose ACL is
+     *            being retrieved.
+     *
+     * @return The <code>AccessControlList</code> for the specified S3 bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public AccessControlList getBucketAcl(GetBucketAclRequest getBucketAclRequest)
-    		throws AmazonClientException, AmazonServiceException;
-   
+            throws AmazonClientException, AmazonServiceException;
+
     /**
      * <p>
      * Sets the {@link AccessControlList} for the specified Amazon S3 bucket.
@@ -2228,7 +2231,7 @@ public interface AmazonS3 {
 
     /**
      * Copies a source object to a part of a multipart upload.
-     * 
+     *
      * To copy an object, the caller's account must have read access to the source object and
      * write access to the destination bucket.
      * </p>
@@ -2263,7 +2266,7 @@ public interface AmazonS3 {
      */
     public CopyPartResult copyPart(CopyPartRequest copyPartRequest) throws AmazonClientException,
             AmazonServiceException;
-    
+
     /**
      * <p>
      * Deletes the specified object in the specified bucket. Once deleted, the object
@@ -2658,222 +2661,222 @@ public interface AmazonS3 {
     public void setBucketNotificationConfiguration(String bucketName, BucketNotificationConfiguration bucketNotificationConfiguration)
         throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * Returns the website configuration for the specified bucket. Bucket
-	 * website configuration allows you to host your static websites entirely
-	 * out of Amazon S3. To host your website in Amazon S3, create a bucket,
-	 * upload your files, and configure it as a website. Once your bucket has
-	 * been configured as a website, you can access all your content via the
-	 * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
-	 * API will continue to behave the same, regardless of whether or not your
-	 * bucket has been configured to host a website, a new HTTP endpoint has
-	 * been introduced where you can access your content. The bucket content you
-	 * want to make available via the website must be publicly readable.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see:
-	 * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:GetBucketWebsite</code> permission.
-	 * By default, only the bucket owner can read the bucket website
-	 * configuration. However, bucket owners can allow other users to read the
-	 * website configuration by writing a bucket policy granting them the
-	 * <code>S3:GetBucketWebsite</code> permission.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            retrieved.
-	 *
-	 * @return The bucket website configuration for the specified bucket,
-	 *         otherwise null if there is no website configuration set for the
-	 *         specified bucket.
-	 *
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Returns the website configuration for the specified bucket. Bucket
+     * website configuration allows you to host your static websites entirely
+     * out of Amazon S3. To host your website in Amazon S3, create a bucket,
+     * upload your files, and configure it as a website. Once your bucket has
+     * been configured as a website, you can access all your content via the
+     * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
+     * API will continue to behave the same, regardless of whether or not your
+     * bucket has been configured to host a website, a new HTTP endpoint has
+     * been introduced where you can access your content. The bucket content you
+     * want to make available via the website must be publicly readable.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see:
+     * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
+     * <p>
+     * This operation requires the <code>S3:GetBucketWebsite</code> permission.
+     * By default, only the bucket owner can read the bucket website
+     * configuration. However, bucket owners can allow other users to read the
+     * website configuration by writing a bucket policy granting them the
+     * <code>S3:GetBucketWebsite</code> permission.
+     *
+     * @param bucketName
+     *            The name of the bucket whose website configuration is being
+     *            retrieved.
+     *
+     * @return The bucket website configuration for the specified bucket,
+     *         otherwise null if there is no website configuration set for the
+     *         specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public BucketWebsiteConfiguration getBucketWebsiteConfiguration(String bucketName)
-    	throws AmazonClientException, AmazonServiceException;
+        throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * Returns the website configuration for the specified bucket. Bucket
-	 * website configuration allows you to host your static websites entirely
-	 * out of Amazon S3. To host your website in Amazon S3, create a bucket,
-	 * upload your files, and configure it as a website. Once your bucket has
-	 * been configured as a website, you can access all your content via the
-	 * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
-	 * API will continue to behave the same, regardless of whether or not your
-	 * bucket has been configured to host a website, a new HTTP endpoint has
-	 * been introduced where you can access your content. The bucket content you
-	 * want to make available via the website must be publicly readable.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see: <a href=
-	 * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
-	 * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
-	 * html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:GetBucketWebsite</code> permission.
-	 * By default, only the bucket owner can read the bucket website
-	 * configuration. However, bucket owners can allow other users to read the
-	 * website configuration by writing a bucket policy granting them the
-	 * <code>S3:GetBucketWebsite</code> permission.
-	 * 
-	 * @param getBucketWebsiteConfigurationRequest
-	 *            The request object containing all the information on the
-	 *            specific bucket whose website configuration is to be
-	 *            retrieved.
-	 * 
-	 * @return The bucket website configuration for the specified bucket,
-	 *         otherwise null if there is no website configuration set for the
-	 *         specified bucket.
-	 * 
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Returns the website configuration for the specified bucket. Bucket
+     * website configuration allows you to host your static websites entirely
+     * out of Amazon S3. To host your website in Amazon S3, create a bucket,
+     * upload your files, and configure it as a website. Once your bucket has
+     * been configured as a website, you can access all your content via the
+     * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
+     * API will continue to behave the same, regardless of whether or not your
+     * bucket has been configured to host a website, a new HTTP endpoint has
+     * been introduced where you can access your content. The bucket content you
+     * want to make available via the website must be publicly readable.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see: <a href=
+     * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
+     * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
+     * html</a>.
+     * <p>
+     * This operation requires the <code>S3:GetBucketWebsite</code> permission.
+     * By default, only the bucket owner can read the bucket website
+     * configuration. However, bucket owners can allow other users to read the
+     * website configuration by writing a bucket policy granting them the
+     * <code>S3:GetBucketWebsite</code> permission.
+     *
+     * @param getBucketWebsiteConfigurationRequest
+     *            The request object containing all the information on the
+     *            specific bucket whose website configuration is to be
+     *            retrieved.
+     *
+     * @return The bucket website configuration for the specified bucket,
+     *         otherwise null if there is no website configuration set for the
+     *         specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public BucketWebsiteConfiguration getBucketWebsiteConfiguration(GetBucketWebsiteConfigurationRequest getBucketWebsiteConfigurationRequest)
-    	throws AmazonClientException, AmazonServiceException;
+        throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * Sets the website configuration for the specified bucket. Bucket
-	 * website configuration allows you to host your static websites entirely
-	 * out of Amazon S3. To host your website in Amazon S3, create a bucket,
-	 * upload your files, and configure it as a website. Once your bucket has
-	 * been configured as a website, you can access all your content via the
-	 * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
-	 * API will continue to behave the same, regardless of whether or not your
-	 * bucket has been configured to host a website, a new HTTP endpoint has
-	 * been introduced where you can access your content. The bucket content you
-	 * want to make available via the website must be publicly readable.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see:
-	 * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:PutBucketWebsite</code> permission.
-	 * By default, only the bucket owner can configure the website attached to a
-	 * bucket. However, bucket owners can allow other users to set the website
-	 * configuration by writing a bucket policy granting them the
-	 * <code>S3:PutBucketWebsite</code> permission.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            set.
-	 * @param configuration
-	 *            The configuration describing how the specified bucket will
-	 *            serve web requests (i.e. default index page, error page).
-	 *
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Sets the website configuration for the specified bucket. Bucket
+     * website configuration allows you to host your static websites entirely
+     * out of Amazon S3. To host your website in Amazon S3, create a bucket,
+     * upload your files, and configure it as a website. Once your bucket has
+     * been configured as a website, you can access all your content via the
+     * Amazon S3 website endpoint. To ensure that the existing Amazon S3 REST
+     * API will continue to behave the same, regardless of whether or not your
+     * bucket has been configured to host a website, a new HTTP endpoint has
+     * been introduced where you can access your content. The bucket content you
+     * want to make available via the website must be publicly readable.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see:
+     * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
+     * <p>
+     * This operation requires the <code>S3:PutBucketWebsite</code> permission.
+     * By default, only the bucket owner can configure the website attached to a
+     * bucket. However, bucket owners can allow other users to set the website
+     * configuration by writing a bucket policy granting them the
+     * <code>S3:PutBucketWebsite</code> permission.
+     *
+     * @param bucketName
+     *            The name of the bucket whose website configuration is being
+     *            set.
+     * @param configuration
+     *            The configuration describing how the specified bucket will
+     *            serve web requests (i.e. default index page, error page).
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public void setBucketWebsiteConfiguration(String bucketName, BucketWebsiteConfiguration configuration)
-    	throws AmazonClientException, AmazonServiceException;
+        throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * Sets the website configuration for the specified bucket. Bucket website
-	 * configuration allows you to host your static websites entirely out of
-	 * Amazon S3. To host your website in Amazon S3, create a bucket, upload
-	 * your files, and configure it as a website. Once your bucket has been
-	 * configured as a website, you can access all your content via the Amazon
-	 * S3 website endpoint. To ensure that the existing Amazon S3 REST API will
-	 * continue to behave the same, regardless of whether or not your bucket has
-	 * been configured to host a website, a new HTTP endpoint has been
-	 * introduced where you can access your content. The bucket content you want
-	 * to make available via the website must be publicly readable.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see: <a href=
-	 * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
-	 * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
-	 * html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:PutBucketWebsite</code> permission.
-	 * By default, only the bucket owner can configure the website attached to a
-	 * bucket. However, bucket owners can allow other users to set the website
-	 * configuration by writing a bucket policy granting them the
-	 * <code>S3:PutBucketWebsite</code> permission.
-	 * 
-	 * @param setBucketWebsiteConfigurationRequest
-	 *            The request object containing the name of the bucket whose
-	 *            website configuration is being updated, and the new website
-	 *            configuration values.
-	 * 
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * Sets the website configuration for the specified bucket. Bucket website
+     * configuration allows you to host your static websites entirely out of
+     * Amazon S3. To host your website in Amazon S3, create a bucket, upload
+     * your files, and configure it as a website. Once your bucket has been
+     * configured as a website, you can access all your content via the Amazon
+     * S3 website endpoint. To ensure that the existing Amazon S3 REST API will
+     * continue to behave the same, regardless of whether or not your bucket has
+     * been configured to host a website, a new HTTP endpoint has been
+     * introduced where you can access your content. The bucket content you want
+     * to make available via the website must be publicly readable.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see: <a href=
+     * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
+     * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
+     * html</a>.
+     * <p>
+     * This operation requires the <code>S3:PutBucketWebsite</code> permission.
+     * By default, only the bucket owner can configure the website attached to a
+     * bucket. However, bucket owners can allow other users to set the website
+     * configuration by writing a bucket policy granting them the
+     * <code>S3:PutBucketWebsite</code> permission.
+     *
+     * @param setBucketWebsiteConfigurationRequest
+     *            The request object containing the name of the bucket whose
+     *            website configuration is being updated, and the new website
+     *            configuration values.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public void setBucketWebsiteConfiguration(SetBucketWebsiteConfigurationRequest setBucketWebsiteConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * This operation removes the website configuration for a bucket. Calling
-	 * this operation on a bucket with no website configuration does <b>not</b>
-	 * throw an exception. Calling this operation a bucket that does not exist
-	 * <b>will</b> throw an exception.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see:
-	 * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:DeleteBucketWebsite</code>
-	 * permission. By default, only the bucket owner can delete the website
-	 * configuration attached to a bucket. However, bucket owners can grant
-	 * other users permission to delete the website configuration by writing a
-	 * bucket policy granting them the <code>S3:DeleteBucketWebsite</code>
-	 * permission.
-	 *
-	 * @param bucketName
-	 *            The name of the bucket whose website configuration is being
-	 *            deleted.
-	 *
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * This operation removes the website configuration for a bucket. Calling
+     * this operation on a bucket with no website configuration does <b>not</b>
+     * throw an exception. Calling this operation a bucket that does not exist
+     * <b>will</b> throw an exception.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see:
+     * <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html">http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html</a>.
+     * <p>
+     * This operation requires the <code>S3:DeleteBucketWebsite</code>
+     * permission. By default, only the bucket owner can delete the website
+     * configuration attached to a bucket. However, bucket owners can grant
+     * other users permission to delete the website configuration by writing a
+     * bucket policy granting them the <code>S3:DeleteBucketWebsite</code>
+     * permission.
+     *
+     * @param bucketName
+     *            The name of the bucket whose website configuration is being
+     *            deleted.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public void deleteBucketWebsiteConfiguration(String bucketName)
-		throws AmazonClientException, AmazonServiceException;
+        throws AmazonClientException, AmazonServiceException;
 
-	/**
-	 * This operation removes the website configuration for a bucket. Calling
-	 * this operation on a bucket with no website configuration does <b>not</b>
-	 * throw an exception. Calling this operation a bucket that does not exist
-	 * <b>will</b> throw an exception.
-	 * <p>
-	 * For more information on how to host a website on Amazon S3, see: <a href=
-	 * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
-	 * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
-	 * html</a>.
-	 * <p>
-	 * This operation requires the <code>S3:DeleteBucketWebsite</code>
-	 * permission. By default, only the bucket owner can delete the website
-	 * configuration attached to a bucket. However, bucket owners can grant
-	 * other users permission to delete the website configuration by writing a
-	 * bucket policy granting them the <code>S3:DeleteBucketWebsite</code>
-	 * permission.
-	 * 
-	 * @param deleteBucketWebsiteConfigurationRequest
-	 *            The request object specifying the name of the bucket whose
-	 *            website configuration is to be deleted.
-	 * 
-	 * @throws AmazonClientException
-	 *             If any errors are encountered on the client while making the
-	 *             request or handling the response.
-	 * @throws AmazonServiceException
-	 *             If any errors occurred in Amazon S3 while processing the
-	 *             request.
-	 */
+    /**
+     * This operation removes the website configuration for a bucket. Calling
+     * this operation on a bucket with no website configuration does <b>not</b>
+     * throw an exception. Calling this operation a bucket that does not exist
+     * <b>will</b> throw an exception.
+     * <p>
+     * For more information on how to host a website on Amazon S3, see: <a href=
+     * "http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.html"
+     * >http://docs.amazonwebservices.com/AmazonS3/latest/dev/WebsiteHosting.
+     * html</a>.
+     * <p>
+     * This operation requires the <code>S3:DeleteBucketWebsite</code>
+     * permission. By default, only the bucket owner can delete the website
+     * configuration attached to a bucket. However, bucket owners can grant
+     * other users permission to delete the website configuration by writing a
+     * bucket policy granting them the <code>S3:DeleteBucketWebsite</code>
+     * permission.
+     *
+     * @param deleteBucketWebsiteConfigurationRequest
+     *            The request object specifying the name of the bucket whose
+     *            website configuration is to be deleted.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered on the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
     public void deleteBucketWebsiteConfiguration(DeleteBucketWebsiteConfigurationRequest deleteBucketWebsiteConfigurationRequest)
         throws AmazonClientException, AmazonServiceException;
 
@@ -2915,6 +2918,42 @@ public interface AmazonS3 {
 
     /**
      * <p>
+     * Gets the policy for the specified bucket. Only the owner of the bucket
+     * can retrieve the policy. If no policy has been set for the bucket, then
+     * an empty result object with a <code>null</code> policy text field will be
+     * returned.
+     * </p>
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * can be specified per-bucket.
+     * </p>
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     * </p>
+     *
+     * @param getBucketPolicyRequest
+     *            The request object containing all of the details for
+     *            retreiving a bucket's policy.
+     *
+     * @return The Amazon S3 bucket policy for the specified bucket.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3#setBucketPolicy(String, String)
+     */
+    public BucketPolicy getBucketPolicy(GetBucketPolicyRequest getBucketPolicyRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
      * Sets the policy associated with the specified bucket. Only the owner of
      * the bucket can set a bucket policy. If a policy already exists for the
      * specified bucket, the new policy replaces the existing policy.
@@ -2947,6 +2986,37 @@ public interface AmazonS3 {
 
     /**
      * <p>
+     * Sets the policy associated with the specified bucket. Only the owner of
+     * the bucket can set a bucket policy. If a policy already exists for the
+     * specified bucket, the new policy replaces the existing policy.
+     * </p>
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * can be specified per-bucket.
+     * </p>
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     * </p>
+     *
+     * @param setBucketPolicyRequest
+     *            The request object containing the details of the bucket and
+     *            policy to update.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void setBucketPolicy(SetBucketPolicyRequest setBucketPolicyRequest)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
      * Deletes the policy associated with the specified bucket. Only the owner
      * of the bucket can delete the bucket policy.
      * </p>
@@ -2973,6 +3043,36 @@ public interface AmazonS3 {
      *             request.
      */
     public void deleteBucketPolicy(String bucketName)
+        throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * <p>
+     * Deletes the policy associated with the specified bucket. Only the owner
+     * of the bucket can delete the bucket policy.
+     * </p>
+     * <p>
+     * Bucket policies provide access control management at the bucket level for
+     * both the bucket resource and contained object resources. Only one policy
+     * can be specified per-bucket.
+     * </p>
+     * <p>
+     * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
+     * Amazon S3 developer guide</a> for more information on forming bucket
+     * polices.
+     * </p>
+     *
+     * @param deleteBucketPolicyRequest
+     *            The request object containing all the details for deleting a
+     *            bucket's policy.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void deleteBucketPolicy(DeleteBucketPolicyRequest deleteBucketPolicyRequest)
         throws AmazonClientException, AmazonServiceException;
 
     /**

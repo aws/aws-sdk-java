@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class DeleteSpotDatafeedSubscriptionRequestMarshaller implements Marshaller<Request<DeleteSpotDatafeedSubscriptionRequest>, DeleteSpotDatafeedSubscriptionRequest> {
 
     public Request<DeleteSpotDatafeedSubscriptionRequest> marshall(DeleteSpotDatafeedSubscriptionRequest deleteSpotDatafeedSubscriptionRequest) {
+
+        if (deleteSpotDatafeedSubscriptionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DeleteSpotDatafeedSubscriptionRequest>(deleteSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSpotDatafeedSubscription");
         request.addParameter("Version", "2011-05-15");
+
 
 
         return request;

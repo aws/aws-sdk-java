@@ -42,6 +42,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest {
      * @return The names of the alarms to enable actions for.
      */
     public java.util.List<String> getAlarmNames() {
+        
         if (alarmNames == null) {
             alarmNames = new java.util.ArrayList<String>();
         }
@@ -78,6 +79,7 @@ public class EnableAlarmActionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public EnableAlarmActionsRequest withAlarmNames(String... alarmNames) {
+        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>());
         for (String value : alarmNames) {
             getAlarmNames().add(value);
         }

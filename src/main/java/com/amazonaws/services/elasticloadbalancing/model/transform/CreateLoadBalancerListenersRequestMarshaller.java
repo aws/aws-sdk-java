@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,42 +31,42 @@ import com.amazonaws.util.StringUtils;
 public class CreateLoadBalancerListenersRequestMarshaller implements Marshaller<Request<CreateLoadBalancerListenersRequest>, CreateLoadBalancerListenersRequest> {
 
     public Request<CreateLoadBalancerListenersRequest> marshall(CreateLoadBalancerListenersRequest createLoadBalancerListenersRequest) {
+
+        if (createLoadBalancerListenersRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateLoadBalancerListenersRequest> request = new DefaultRequest<CreateLoadBalancerListenersRequest>(createLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancerListeners");
-        request.addParameter("Version", "2011-04-05");
-        if (createLoadBalancerListenersRequest != null) {
-            if (createLoadBalancerListenersRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerListenersRequest.getLoadBalancerName()));
-            }
+        request.addParameter("Version", "2011-08-15");
+
+        if (createLoadBalancerListenersRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(createLoadBalancerListenersRequest.getLoadBalancerName()));
         }
 
-        if (createLoadBalancerListenersRequest != null) {
-            java.util.List<Listener> listenersList = createLoadBalancerListenersRequest.getListeners();
-            int listenersListIndex = 1;
-            for (Listener listenersListValue : listenersList) {
-                if (listenersListValue != null) {
-                    if (listenersListValue.getProtocol() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenersListValue.getProtocol()));
-                    }
+        java.util.List<Listener> listenersList = createLoadBalancerListenersRequest.getListeners();
+        int listenersListIndex = 1;
+        for (Listener listenersListValue : listenersList) {
+            Listener listenerMember = listenersListValue;
+            if (listenerMember != null) {
+                if (listenerMember.getProtocol() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".Protocol", StringUtils.fromString(listenerMember.getProtocol()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getLoadBalancerPort() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.fromInteger(listenersListValue.getLoadBalancerPort()));
-                    }
+                if (listenerMember.getLoadBalancerPort() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".LoadBalancerPort", StringUtils.fromInteger(listenerMember.getLoadBalancerPort()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getInstancePort() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.fromInteger(listenersListValue.getInstancePort()));
-                    }
+                if (listenerMember.getInstanceProtocol() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".InstanceProtocol", StringUtils.fromString(listenerMember.getInstanceProtocol()));
                 }
-                if (listenersListValue != null) {
-                    if (listenersListValue.getSSLCertificateId() != null) {
-                        request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.fromString(listenersListValue.getSSLCertificateId()));
-                    }
+                if (listenerMember.getInstancePort() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".InstancePort", StringUtils.fromInteger(listenerMember.getInstancePort()));
                 }
-
-                listenersListIndex++;
+                if (listenerMember.getSSLCertificateId() != null) {
+                    request.addParameter("Listeners.member." + listenersListIndex + ".SSLCertificateId", StringUtils.fromString(listenerMember.getSSLCertificateId()));
+                }
             }
+
+            listenersListIndex++;
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class ResumeProcessesRequestMarshaller implements Marshaller<Request<ResumeProcessesRequest>, ResumeProcessesRequest> {
 
     public Request<ResumeProcessesRequest> marshall(ResumeProcessesRequest resumeProcessesRequest) {
+
+        if (resumeProcessesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ResumeProcessesRequest> request = new DefaultRequest<ResumeProcessesRequest>(resumeProcessesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ResumeProcesses");
         request.addParameter("Version", "2011-01-01");
-        if (resumeProcessesRequest != null) {
-            if (resumeProcessesRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(resumeProcessesRequest.getAutoScalingGroupName()));
-            }
-        }
-        if (resumeProcessesRequest != null) {
-            java.util.List<String> scalingProcessesList = resumeProcessesRequest.getScalingProcesses();
-            int scalingProcessesListIndex = 1;
 
-            for (String scalingProcessesListValue : scalingProcessesList) {
-                if (scalingProcessesListValue != null) {
-                    request.addParameter("ScalingProcesses.member." + scalingProcessesListIndex, StringUtils.fromString(scalingProcessesListValue));
-                }
-                scalingProcessesListIndex++;
+        if (resumeProcessesRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(resumeProcessesRequest.getAutoScalingGroupName()));
+        }
+
+        java.util.List<String> scalingProcessesList = resumeProcessesRequest.getScalingProcesses();
+        int scalingProcessesListIndex = 1;
+        for (String scalingProcessesListValue : scalingProcessesList) {
+            if (scalingProcessesListValue != null) {
+                request.addParameter("ScalingProcesses.member." + scalingProcessesListIndex, StringUtils.fromString(scalingProcessesListValue));
             }
+
+            scalingProcessesListIndex++;
         }
 
 

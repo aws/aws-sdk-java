@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
  * <p>
  * Sets an attribute of a queue. Currently, you can set only the
- * VisibilityTimeout attribute for a queue.
+ * <code>VisibilityTimeout</code> attribute for a queue.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)
@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      */
     private String queueUrl;
 
@@ -47,7 +47,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
+     * @param queueUrl The URL of the SQS queue to take action on.
      * @param attributes A list of attributes to set.
      */
     public SetQueueAttributesRequest(String queueUrl, java.util.Map<String,String> attributes) {
@@ -56,29 +56,29 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @return 
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -95,6 +95,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
      * @return A list of attributes to set.
      */
     public java.util.Map<String,String> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.HashMap<String,String>();
         }

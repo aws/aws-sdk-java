@@ -18,9 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * The RemovePermission action revokes any permissions in the queue
- * policy that matches the specified <i>Label</i> parameter. Only the
- * owner of the queue can remove permissions.
+ * The <code>RemovePermission</code> action revokes any permissions in
+ * the queue policy that matches the specified <code>Label</code>
+ * parameter. Only the owner of the queue can remove permissions.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest)
@@ -28,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class RemovePermissionRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      */
     private String queueUrl;
 
@@ -49,7 +49,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
+     * @param queueUrl The URL of the SQS queue to take action on.
      * @param label The identfication of the permission to remove. This is
      * the label added with the <a>AddPermission</a> operation.
      */
@@ -59,29 +59,29 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @return 
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

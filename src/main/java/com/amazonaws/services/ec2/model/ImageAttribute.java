@@ -96,6 +96,7 @@ public class ImageAttribute {
      * @return Launch permissions for the associated AMI.
      */
     public java.util.List<LaunchPermission> getLaunchPermissions() {
+        
         if (launchPermissions == null) {
             launchPermissions = new java.util.ArrayList<LaunchPermission>();
         }
@@ -126,6 +127,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withLaunchPermissions(LaunchPermission... launchPermissions) {
+        if (getLaunchPermissions() == null) setLaunchPermissions(new java.util.ArrayList<LaunchPermission>());
         for (LaunchPermission value : launchPermissions) {
             getLaunchPermissions().add(value);
         }
@@ -158,6 +160,7 @@ public class ImageAttribute {
      * @return Product codes for the associated AMI.
      */
     public java.util.List<ProductCode> getProductCodes() {
+        
         if (productCodes == null) {
             productCodes = new java.util.ArrayList<ProductCode>();
         }
@@ -188,6 +191,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -322,6 +326,7 @@ public class ImageAttribute {
      * @return Block device mappings for the associated AMI.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -352,6 +357,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

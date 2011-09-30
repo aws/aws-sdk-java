@@ -280,6 +280,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         specified option value.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
+        
         if (optionSettings == null) {
             optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
         }
@@ -314,6 +315,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }
@@ -352,6 +354,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         configuration options.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
+        
         if (optionsToRemove == null) {
             optionsToRemove = new java.util.ArrayList<OptionSpecification>();
         }
@@ -390,6 +393,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public UpdateConfigurationTemplateRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
+        if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>());
         for (OptionSpecification value : optionsToRemove) {
             getOptionsToRemove().add(value);
         }

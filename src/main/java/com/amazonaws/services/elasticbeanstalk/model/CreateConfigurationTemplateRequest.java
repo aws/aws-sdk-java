@@ -536,6 +536,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         obtained from the solution stack or the source configuration template.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
+        
         if (optionSettings == null) {
             optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
         }
@@ -574,6 +575,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public CreateConfigurationTemplateRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }

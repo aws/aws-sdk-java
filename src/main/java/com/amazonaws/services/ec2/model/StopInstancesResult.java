@@ -36,6 +36,7 @@ public class StopInstancesResult {
      *         changed.
      */
     public java.util.List<InstanceStateChange> getStoppingInstances() {
+        
         if (stoppingInstances == null) {
             stoppingInstances = new java.util.ArrayList<InstanceStateChange>();
         }
@@ -70,6 +71,7 @@ public class StopInstancesResult {
      *         together. 
      */
     public StopInstancesResult withStoppingInstances(InstanceStateChange... stoppingInstances) {
+        if (getStoppingInstances() == null) setStoppingInstances(new java.util.ArrayList<InstanceStateChange>());
         for (InstanceStateChange value : stoppingInstances) {
             getStoppingInstances().add(value);
         }

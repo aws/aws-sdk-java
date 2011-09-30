@@ -29,6 +29,7 @@ public class CreateVolumePermissionModifications {
      * @return The value of the Add property for this object.
      */
     public java.util.List<CreateVolumePermission> getAdd() {
+        
         if (add == null) {
             add = new java.util.ArrayList<CreateVolumePermission>();
         }
@@ -59,6 +60,7 @@ public class CreateVolumePermissionModifications {
      *         together. 
      */
     public CreateVolumePermissionModifications withAdd(CreateVolumePermission... add) {
+        if (getAdd() == null) setAdd(new java.util.ArrayList<CreateVolumePermission>());
         for (CreateVolumePermission value : add) {
             getAdd().add(value);
         }
@@ -91,6 +93,7 @@ public class CreateVolumePermissionModifications {
      * @return The value of the Remove property for this object.
      */
     public java.util.List<CreateVolumePermission> getRemove() {
+        
         if (remove == null) {
             remove = new java.util.ArrayList<CreateVolumePermission>();
         }
@@ -121,6 +124,7 @@ public class CreateVolumePermissionModifications {
      *         together. 
      */
     public CreateVolumePermissionModifications withRemove(CreateVolumePermission... remove) {
+        if (getRemove() == null) setRemove(new java.util.ArrayList<CreateVolumePermission>());
         for (CreateVolumePermission value : remove) {
             getRemove().add(value);
         }

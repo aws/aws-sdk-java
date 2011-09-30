@@ -658,6 +658,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         Default: The default DB Security Group for the database engine.
      */
     public java.util.List<String> getDBSecurityGroups() {
+        
         if (dBSecurityGroups == null) {
             dBSecurityGroups = new java.util.ArrayList<String>();
         }
@@ -692,6 +693,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<String>());
         for (String value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }

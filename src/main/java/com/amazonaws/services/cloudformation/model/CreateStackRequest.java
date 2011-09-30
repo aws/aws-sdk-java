@@ -67,7 +67,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     private String templateURL;
 
     /**
-     * A list of <code>Parameter</code> structures.
+     * A list of <code>Parameter</code> structures that specify input
+     * parameters for the stack.
      */
     private java.util.List<Parameter> parameters;
 
@@ -97,6 +98,23 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 5<br/>
      */
     private java.util.List<String> notificationARNs;
+
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     */
+    private java.util.List<String> capabilities;
 
     /**
      * The name associated with the stack. The name must be unique within
@@ -303,11 +321,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of <code>Parameter</code> structures.
+     * A list of <code>Parameter</code> structures that specify input
+     * parameters for the stack.
      *
-     * @return A list of <code>Parameter</code> structures.
+     * @return A list of <code>Parameter</code> structures that specify input
+     *         parameters for the stack.
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -315,9 +336,11 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <code>Parameter</code> structures.
+     * A list of <code>Parameter</code> structures that specify input
+     * parameters for the stack.
      *
-     * @param parameters A list of <code>Parameter</code> structures.
+     * @param parameters A list of <code>Parameter</code> structures that specify input
+     *         parameters for the stack.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
         java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
@@ -328,16 +351,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <code>Parameter</code> structures.
+     * A list of <code>Parameter</code> structures that specify input
+     * parameters for the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameters A list of <code>Parameter</code> structures.
+     * @param parameters A list of <code>Parameter</code> structures that specify input
+     *         parameters for the stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public CreateStackRequest withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }
@@ -345,11 +371,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of <code>Parameter</code> structures.
+     * A list of <code>Parameter</code> structures that specify input
+     * parameters for the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameters A list of <code>Parameter</code> structures.
+     * @param parameters A list of <code>Parameter</code> structures that specify input
+     *         parameters for the stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -485,6 +513,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         Command Line Interface (CLI).
      */
     public java.util.List<String> getNotificationARNs() {
+        
         if (notificationARNs == null) {
             notificationARNs = new java.util.ArrayList<String>();
         }
@@ -533,6 +562,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
+        if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>());
         for (String value : notificationARNs) {
             getNotificationARNs().add(value);
         }
@@ -569,6 +599,166 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @return The list of capabilities that you want to allow in the stack. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     */
+    public java.util.List<String> getCapabilities() {
+        
+        if (capabilities == null) {
+            capabilities = new java.util.ArrayList<String>();
+        }
+        return capabilities;
+    }
+    
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @param capabilities The list of capabilities that you want to allow in the stack. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     */
+    public void setCapabilities(java.util.Collection<String> capabilities) {
+        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
+        if (capabilities != null) {
+            capabilitiesCopy.addAll(capabilities);
+        }
+        this.capabilities = capabilitiesCopy;
+    }
+    
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The list of capabilities that you want to allow in the stack. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateStackRequest withCapabilities(String... capabilities) {
+        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>());
+        for (String value : capabilities) {
+            getCapabilities().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The list of capabilities that you want to allow in the stack. If your
+     * template contains IAM resources, you must specify the CAPABILITY_IAM
+     * value for this parameter; otherwise, this action returns an
+     * InsufficientCapabilities error. IAM resources are the following: <a
+     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * <a
+     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * <a
+     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * <a
+     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * and <a
+     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param capabilities The list of capabilities that you want to allow in the stack. If your
+     *         template contains IAM resources, you must specify the CAPABILITY_IAM
+     *         value for this parameter; otherwise, this action returns an
+     *         InsufficientCapabilities error. IAM resources are the following: <a
+     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         <a
+     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         <a
+     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         <a
+     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         and <a
+     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
+        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
+        if (capabilities != null) {
+            capabilitiesCopy.addAll(capabilities);
+        }
+        this.capabilities = capabilitiesCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -587,6 +777,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
         sb.append("DisableRollback: " + disableRollback + ", ");
         sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
         sb.append("NotificationARNs: " + notificationARNs + ", ");
+        sb.append("Capabilities: " + capabilities + ", ");
         sb.append("}");
         return sb.toString();
     }

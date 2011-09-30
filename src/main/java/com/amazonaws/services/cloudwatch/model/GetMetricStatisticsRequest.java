@@ -225,6 +225,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      * @return A list of dimensions describing qualities of the metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -261,6 +262,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }
@@ -470,6 +472,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      * @return The metric statistics to return.
      */
     public java.util.List<String> getStatistics() {
+        
         if (statistics == null) {
             statistics = new java.util.ArrayList<String>();
         }
@@ -506,6 +509,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withStatistics(String... statistics) {
+        if (getStatistics() == null) setStatistics(new java.util.ArrayList<String>());
         for (String value : statistics) {
             getStatistics().add(value);
         }

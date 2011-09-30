@@ -46,6 +46,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
      * @return The name of the <code>PlacementGroup</code>.
      */
     public java.util.List<String> getGroupNames() {
+        
         if (groupNames == null) {
             groupNames = new java.util.ArrayList<String>();
         }
@@ -76,6 +77,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribePlacementGroupsRequest withGroupNames(String... groupNames) {
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
         for (String value : groupNames) {
             getGroupNames().add(value);
         }
@@ -116,6 +118,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -162,6 +165,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribePlacementGroupsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

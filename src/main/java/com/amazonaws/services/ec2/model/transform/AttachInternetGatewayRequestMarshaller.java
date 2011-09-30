@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class AttachInternetGatewayRequestMarshaller implements Marshaller<Request<AttachInternetGatewayRequest>, AttachInternetGatewayRequest> {
 
     public Request<AttachInternetGatewayRequest> marshall(AttachInternetGatewayRequest attachInternetGatewayRequest) {
+
+        if (attachInternetGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AttachInternetGatewayRequest> request = new DefaultRequest<AttachInternetGatewayRequest>(attachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachInternetGateway");
         request.addParameter("Version", "2011-05-15");
-        if (attachInternetGatewayRequest != null) {
-            if (attachInternetGatewayRequest.getInternetGatewayId() != null) {
-                request.addParameter("InternetGatewayId", StringUtils.fromString(attachInternetGatewayRequest.getInternetGatewayId()));
-            }
+
+        if (attachInternetGatewayRequest.getInternetGatewayId() != null) {
+            request.addParameter("InternetGatewayId", StringUtils.fromString(attachInternetGatewayRequest.getInternetGatewayId()));
         }
-        if (attachInternetGatewayRequest != null) {
-            if (attachInternetGatewayRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(attachInternetGatewayRequest.getVpcId()));
-            }
+        if (attachInternetGatewayRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(attachInternetGatewayRequest.getVpcId()));
         }
 
 

@@ -83,6 +83,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
      * @return The value of the StackStatusFilters property for this object.
      */
     public java.util.List<String> getStackStatusFilters() {
+        
         if (stackStatusFilters == null) {
             stackStatusFilters = new java.util.ArrayList<String>();
         }
@@ -113,6 +114,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListStacksRequest withStackStatusFilters(String... stackStatusFilters) {
+        if (getStackStatusFilters() == null) setStackStatusFilters(new java.util.ArrayList<String>());
         for (String value : stackStatusFilters) {
             getStackStatusFilters().add(value);
         }

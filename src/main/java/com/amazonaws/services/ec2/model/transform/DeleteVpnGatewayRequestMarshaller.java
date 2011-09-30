@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteVpnGatewayRequestMarshaller implements Marshaller<Request<DeleteVpnGatewayRequest>, DeleteVpnGatewayRequest> {
 
     public Request<DeleteVpnGatewayRequest> marshall(DeleteVpnGatewayRequest deleteVpnGatewayRequest) {
+
+        if (deleteVpnGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteVpnGatewayRequest> request = new DefaultRequest<DeleteVpnGatewayRequest>(deleteVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpnGateway");
         request.addParameter("Version", "2011-05-15");
-        if (deleteVpnGatewayRequest != null) {
-            if (deleteVpnGatewayRequest.getVpnGatewayId() != null) {
-                request.addParameter("VpnGatewayId", StringUtils.fromString(deleteVpnGatewayRequest.getVpnGatewayId()));
-            }
+
+        if (deleteVpnGatewayRequest.getVpnGatewayId() != null) {
+            request.addParameter("VpnGatewayId", StringUtils.fromString(deleteVpnGatewayRequest.getVpnGatewayId()));
         }
 
 

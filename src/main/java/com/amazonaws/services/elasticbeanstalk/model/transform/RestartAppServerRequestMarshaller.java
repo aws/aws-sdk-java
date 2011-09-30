@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class RestartAppServerRequestMarshaller implements Marshaller<Request<RestartAppServerRequest>, RestartAppServerRequest> {
 
     public Request<RestartAppServerRequest> marshall(RestartAppServerRequest restartAppServerRequest) {
+
+        if (restartAppServerRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RestartAppServerRequest> request = new DefaultRequest<RestartAppServerRequest>(restartAppServerRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RestartAppServer");
         request.addParameter("Version", "2010-12-01");
-        if (restartAppServerRequest != null) {
-            if (restartAppServerRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(restartAppServerRequest.getEnvironmentId()));
-            }
+
+        if (restartAppServerRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(restartAppServerRequest.getEnvironmentId()));
         }
-        if (restartAppServerRequest != null) {
-            if (restartAppServerRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(restartAppServerRequest.getEnvironmentName()));
-            }
+        if (restartAppServerRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(restartAppServerRequest.getEnvironmentName()));
         }
 
 

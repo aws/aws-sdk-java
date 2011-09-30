@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,29 +31,30 @@ import com.amazonaws.util.StringUtils;
 public class DescribeNotificationConfigurationsRequestMarshaller implements Marshaller<Request<DescribeNotificationConfigurationsRequest>, DescribeNotificationConfigurationsRequest> {
 
     public Request<DescribeNotificationConfigurationsRequest> marshall(DescribeNotificationConfigurationsRequest describeNotificationConfigurationsRequest) {
+
+        if (describeNotificationConfigurationsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeNotificationConfigurationsRequest> request = new DefaultRequest<DescribeNotificationConfigurationsRequest>(describeNotificationConfigurationsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeNotificationConfigurations");
         request.addParameter("Version", "2011-01-01");
-        if (describeNotificationConfigurationsRequest != null) {
-            java.util.List<String> autoScalingGroupNamesList = describeNotificationConfigurationsRequest.getAutoScalingGroupNames();
-            int autoScalingGroupNamesListIndex = 1;
 
-            for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
-                if (autoScalingGroupNamesListValue != null) {
-                    request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));
-                }
-                autoScalingGroupNamesListIndex++;
+
+        java.util.List<String> autoScalingGroupNamesList = describeNotificationConfigurationsRequest.getAutoScalingGroupNames();
+        int autoScalingGroupNamesListIndex = 1;
+        for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
+            if (autoScalingGroupNamesListValue != null) {
+                request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));
             }
+
+            autoScalingGroupNamesListIndex++;
         }
-        if (describeNotificationConfigurationsRequest != null) {
-            if (describeNotificationConfigurationsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(describeNotificationConfigurationsRequest.getNextToken()));
-            }
+        if (describeNotificationConfigurationsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeNotificationConfigurationsRequest.getNextToken()));
         }
-        if (describeNotificationConfigurationsRequest != null) {
-            if (describeNotificationConfigurationsRequest.getMaxRecords() != null) {
-                request.addParameter("MaxRecords", StringUtils.fromInteger(describeNotificationConfigurationsRequest.getMaxRecords()));
-            }
+        if (describeNotificationConfigurationsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeNotificationConfigurationsRequest.getMaxRecords()));
         }
 
 

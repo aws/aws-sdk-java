@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,50 +31,46 @@ import com.amazonaws.util.StringUtils;
 public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request<DescribeEnvironmentsRequest>, DescribeEnvironmentsRequest> {
 
     public Request<DescribeEnvironmentsRequest> marshall(DescribeEnvironmentsRequest describeEnvironmentsRequest) {
+
+        if (describeEnvironmentsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeEnvironmentsRequest> request = new DefaultRequest<DescribeEnvironmentsRequest>(describeEnvironmentsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEnvironments");
         request.addParameter("Version", "2010-12-01");
-        if (describeEnvironmentsRequest != null) {
-            if (describeEnvironmentsRequest.getApplicationName() != null) {
-                request.addParameter("ApplicationName", StringUtils.fromString(describeEnvironmentsRequest.getApplicationName()));
-            }
-        }
-        if (describeEnvironmentsRequest != null) {
-            if (describeEnvironmentsRequest.getVersionLabel() != null) {
-                request.addParameter("VersionLabel", StringUtils.fromString(describeEnvironmentsRequest.getVersionLabel()));
-            }
-        }
-        if (describeEnvironmentsRequest != null) {
-            java.util.List<String> environmentIdsList = describeEnvironmentsRequest.getEnvironmentIds();
-            int environmentIdsListIndex = 1;
 
-            for (String environmentIdsListValue : environmentIdsList) {
-                if (environmentIdsListValue != null) {
-                    request.addParameter("EnvironmentIds.member." + environmentIdsListIndex, StringUtils.fromString(environmentIdsListValue));
-                }
-                environmentIdsListIndex++;
-            }
+        if (describeEnvironmentsRequest.getApplicationName() != null) {
+            request.addParameter("ApplicationName", StringUtils.fromString(describeEnvironmentsRequest.getApplicationName()));
         }
-        if (describeEnvironmentsRequest != null) {
-            java.util.List<String> environmentNamesList = describeEnvironmentsRequest.getEnvironmentNames();
-            int environmentNamesListIndex = 1;
+        if (describeEnvironmentsRequest.getVersionLabel() != null) {
+            request.addParameter("VersionLabel", StringUtils.fromString(describeEnvironmentsRequest.getVersionLabel()));
+        }
 
-            for (String environmentNamesListValue : environmentNamesList) {
-                if (environmentNamesListValue != null) {
-                    request.addParameter("EnvironmentNames.member." + environmentNamesListIndex, StringUtils.fromString(environmentNamesListValue));
-                }
-                environmentNamesListIndex++;
+        java.util.List<String> environmentIdsList = describeEnvironmentsRequest.getEnvironmentIds();
+        int environmentIdsListIndex = 1;
+        for (String environmentIdsListValue : environmentIdsList) {
+            if (environmentIdsListValue != null) {
+                request.addParameter("EnvironmentIds.member." + environmentIdsListIndex, StringUtils.fromString(environmentIdsListValue));
             }
+
+            environmentIdsListIndex++;
         }
-        if (describeEnvironmentsRequest != null) {
-            if (describeEnvironmentsRequest.isIncludeDeleted() != null) {
-                request.addParameter("IncludeDeleted", StringUtils.fromBoolean(describeEnvironmentsRequest.isIncludeDeleted()));
+
+        java.util.List<String> environmentNamesList = describeEnvironmentsRequest.getEnvironmentNames();
+        int environmentNamesListIndex = 1;
+        for (String environmentNamesListValue : environmentNamesList) {
+            if (environmentNamesListValue != null) {
+                request.addParameter("EnvironmentNames.member." + environmentNamesListIndex, StringUtils.fromString(environmentNamesListValue));
             }
+
+            environmentNamesListIndex++;
         }
-        if (describeEnvironmentsRequest != null) {
-            if (describeEnvironmentsRequest.getIncludedDeletedBackTo() != null) {
-                request.addParameter("IncludedDeletedBackTo", StringUtils.fromDate(describeEnvironmentsRequest.getIncludedDeletedBackTo()));
-            }
+        if (describeEnvironmentsRequest.isIncludeDeleted() != null) {
+            request.addParameter("IncludeDeleted", StringUtils.fromBoolean(describeEnvironmentsRequest.isIncludeDeleted()));
+        }
+        if (describeEnvironmentsRequest.getIncludedDeletedBackTo() != null) {
+            request.addParameter("IncludedDeletedBackTo", StringUtils.fromDate(describeEnvironmentsRequest.getIncludedDeletedBackTo()));
         }
 
 

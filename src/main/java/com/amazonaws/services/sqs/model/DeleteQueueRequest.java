@@ -22,13 +22,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * URL. Use this operation WITH CARE! The queue is deleted even if it is
  * NOT empty.
  * </p>
+ * <p>
+ * Once a queue has been deleted, the queue name is unavailable for use
+ * with new queues for 60 seconds.
+ * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest)
  */
 public class DeleteQueueRequest extends AmazonWebServiceRequest {
 
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      */
     private String queueUrl;
 
@@ -43,36 +47,36 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param queueUrl
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public DeleteQueueRequest(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @return 
+     * @return The URL of the SQS queue to take action on.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * 
+     * The URL of the SQS queue to take action on.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl 
+     * @param queueUrl The URL of the SQS queue to take action on.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

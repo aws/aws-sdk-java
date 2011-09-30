@@ -110,6 +110,7 @@ public class EnvironmentResourceDescription {
      * @return The <code>AutoScalingGroups</code> used by this environment.
      */
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
+        
         if (autoScalingGroups == null) {
             autoScalingGroups = new java.util.ArrayList<AutoScalingGroup>();
         }
@@ -140,6 +141,7 @@ public class EnvironmentResourceDescription {
      *         together. 
      */
     public EnvironmentResourceDescription withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
+        if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>());
         for (AutoScalingGroup value : autoScalingGroups) {
             getAutoScalingGroups().add(value);
         }
@@ -172,6 +174,7 @@ public class EnvironmentResourceDescription {
      * @return The Amazon EC2 instances used by this environment.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -202,6 +205,7 @@ public class EnvironmentResourceDescription {
      *         together. 
      */
     public EnvironmentResourceDescription withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }
@@ -234,6 +238,7 @@ public class EnvironmentResourceDescription {
      * @return The Auto Scaling launch configurations in use by this environment.
      */
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
+        
         if (launchConfigurations == null) {
             launchConfigurations = new java.util.ArrayList<LaunchConfiguration>();
         }
@@ -264,6 +269,7 @@ public class EnvironmentResourceDescription {
      *         together. 
      */
     public EnvironmentResourceDescription withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
+        if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>());
         for (LaunchConfiguration value : launchConfigurations) {
             getLaunchConfigurations().add(value);
         }
@@ -296,6 +302,7 @@ public class EnvironmentResourceDescription {
      * @return The LoadBalancers in use by this environment.
      */
     public java.util.List<LoadBalancer> getLoadBalancers() {
+        
         if (loadBalancers == null) {
             loadBalancers = new java.util.ArrayList<LoadBalancer>();
         }
@@ -326,6 +333,7 @@ public class EnvironmentResourceDescription {
      *         together. 
      */
     public EnvironmentResourceDescription withLoadBalancers(LoadBalancer... loadBalancers) {
+        if (getLoadBalancers() == null) setLoadBalancers(new java.util.ArrayList<LoadBalancer>());
         for (LoadBalancer value : loadBalancers) {
             getLoadBalancers().add(value);
         }
@@ -358,6 +366,7 @@ public class EnvironmentResourceDescription {
      * @return The <code>AutoScaling</code> triggers in use by this environment.
      */
     public java.util.List<Trigger> getTriggers() {
+        
         if (triggers == null) {
             triggers = new java.util.ArrayList<Trigger>();
         }
@@ -388,6 +397,7 @@ public class EnvironmentResourceDescription {
      *         together. 
      */
     public EnvironmentResourceDescription withTriggers(Trigger... triggers) {
+        if (getTriggers() == null) setTriggers(new java.util.ArrayList<Trigger>());
         for (Trigger value : triggers) {
             getTriggers().add(value);
         }

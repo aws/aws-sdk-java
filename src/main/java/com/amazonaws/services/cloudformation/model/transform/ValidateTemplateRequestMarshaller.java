@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudformation.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ValidateTemplateRequestMarshaller implements Marshaller<Request<ValidateTemplateRequest>, ValidateTemplateRequest> {
 
     public Request<ValidateTemplateRequest> marshall(ValidateTemplateRequest validateTemplateRequest) {
+
+        if (validateTemplateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ValidateTemplateRequest> request = new DefaultRequest<ValidateTemplateRequest>(validateTemplateRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ValidateTemplate");
         request.addParameter("Version", "2010-05-15");
-        if (validateTemplateRequest != null) {
-            if (validateTemplateRequest.getTemplateBody() != null) {
-                request.addParameter("TemplateBody", StringUtils.fromString(validateTemplateRequest.getTemplateBody()));
-            }
+
+        if (validateTemplateRequest.getTemplateBody() != null) {
+            request.addParameter("TemplateBody", StringUtils.fromString(validateTemplateRequest.getTemplateBody()));
         }
-        if (validateTemplateRequest != null) {
-            if (validateTemplateRequest.getTemplateURL() != null) {
-                request.addParameter("TemplateURL", StringUtils.fromString(validateTemplateRequest.getTemplateURL()));
-            }
+        if (validateTemplateRequest.getTemplateURL() != null) {
+            request.addParameter("TemplateURL", StringUtils.fromString(validateTemplateRequest.getTemplateURL()));
         }
 
 

@@ -54,6 +54,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
      * @return The list of Amazon EC2 instances on which to disable monitoring.
      */
     public java.util.List<String> getInstanceIds() {
+        
         if (instanceIds == null) {
             instanceIds = new java.util.ArrayList<String>();
         }
@@ -84,6 +85,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UnmonitorInstancesRequest withInstanceIds(String... instanceIds) {
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }

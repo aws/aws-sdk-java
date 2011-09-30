@@ -55,6 +55,10 @@ public class ListenerStaxUnmarshaller implements Unmarshaller<Listener, StaxUnma
                     listener.setLoadBalancerPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("InstanceProtocol", targetDepth)) {
+                    listener.setInstanceProtocol(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("InstancePort", targetDepth)) {
                     listener.setInstancePort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

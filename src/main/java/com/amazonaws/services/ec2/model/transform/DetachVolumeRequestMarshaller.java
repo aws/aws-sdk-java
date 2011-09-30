@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class DetachVolumeRequestMarshaller implements Marshaller<Request<DetachVolumeRequest>, DetachVolumeRequest> {
 
     public Request<DetachVolumeRequest> marshall(DetachVolumeRequest detachVolumeRequest) {
+
+        if (detachVolumeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DetachVolumeRequest> request = new DefaultRequest<DetachVolumeRequest>(detachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVolume");
         request.addParameter("Version", "2011-05-15");
-        if (detachVolumeRequest != null) {
-            if (detachVolumeRequest.getVolumeId() != null) {
-                request.addParameter("VolumeId", StringUtils.fromString(detachVolumeRequest.getVolumeId()));
-            }
+
+        if (detachVolumeRequest.getVolumeId() != null) {
+            request.addParameter("VolumeId", StringUtils.fromString(detachVolumeRequest.getVolumeId()));
         }
-        if (detachVolumeRequest != null) {
-            if (detachVolumeRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(detachVolumeRequest.getInstanceId()));
-            }
+        if (detachVolumeRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(detachVolumeRequest.getInstanceId()));
         }
-        if (detachVolumeRequest != null) {
-            if (detachVolumeRequest.getDevice() != null) {
-                request.addParameter("Device", StringUtils.fromString(detachVolumeRequest.getDevice()));
-            }
+        if (detachVolumeRequest.getDevice() != null) {
+            request.addParameter("Device", StringUtils.fromString(detachVolumeRequest.getDevice()));
         }
-        if (detachVolumeRequest != null) {
-            if (detachVolumeRequest.isForce() != null) {
-                request.addParameter("Force", StringUtils.fromBoolean(detachVolumeRequest.isForce()));
-            }
+        if (detachVolumeRequest.isForce() != null) {
+            request.addParameter("Force", StringUtils.fromBoolean(detachVolumeRequest.isForce()));
         }
 
 

@@ -16,7 +16,7 @@ package com.amazonaws.services.cloudformation.model;
 
 /**
  * <p>
- * The StackResourceSummary data type.
+ * Contains high-level information about the specified stack resource.
  * </p>
  */
 public class StackResourceSummary {

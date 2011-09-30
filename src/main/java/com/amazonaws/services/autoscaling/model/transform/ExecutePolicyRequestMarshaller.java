@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ExecutePolicyRequestMarshaller implements Marshaller<Request<ExecutePolicyRequest>, ExecutePolicyRequest> {
 
     public Request<ExecutePolicyRequest> marshall(ExecutePolicyRequest executePolicyRequest) {
+
+        if (executePolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ExecutePolicyRequest> request = new DefaultRequest<ExecutePolicyRequest>(executePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "ExecutePolicy");
         request.addParameter("Version", "2011-01-01");
-        if (executePolicyRequest != null) {
-            if (executePolicyRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(executePolicyRequest.getAutoScalingGroupName()));
-            }
+
+        if (executePolicyRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(executePolicyRequest.getAutoScalingGroupName()));
         }
-        if (executePolicyRequest != null) {
-            if (executePolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(executePolicyRequest.getPolicyName()));
-            }
+        if (executePolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(executePolicyRequest.getPolicyName()));
         }
-        if (executePolicyRequest != null) {
-            if (executePolicyRequest.isHonorCooldown() != null) {
-                request.addParameter("HonorCooldown", StringUtils.fromBoolean(executePolicyRequest.isHonorCooldown()));
-            }
+        if (executePolicyRequest.isHonorCooldown() != null) {
+            request.addParameter("HonorCooldown", StringUtils.fromBoolean(executePolicyRequest.isHonorCooldown()));
         }
 
 

@@ -15,41 +15,39 @@
 package com.amazonaws.services.sqs.model;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class CreateQueueResult {
 
     /**
-     * The queue URL for the created queue.
+     * The URL for the created SQS queue.
      */
     private String queueUrl;
 
     /**
-     * The queue URL for the created queue.
+     * The URL for the created SQS queue.
      *
-     * @return The queue URL for the created queue.
+     * @return The URL for the created SQS queue.
      */
     public String getQueueUrl() {
         return queueUrl;
     }
     
     /**
-     * The queue URL for the created queue.
+     * The URL for the created SQS queue.
      *
-     * @param queueUrl The queue URL for the created queue.
+     * @param queueUrl The URL for the created SQS queue.
      */
     public void setQueueUrl(String queueUrl) {
         this.queueUrl = queueUrl;
     }
     
     /**
-     * The queue URL for the created queue.
+     * The URL for the created SQS queue.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param queueUrl The queue URL for the created queue.
+     * @param queueUrl The URL for the created SQS queue.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -46,6 +46,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
      * @return The optional list of Reserved Instance IDs to describe.
      */
     public java.util.List<String> getReservedInstancesIds() {
+        
         if (reservedInstancesIds == null) {
             reservedInstancesIds = new java.util.ArrayList<String>();
         }
@@ -76,6 +77,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeReservedInstancesRequest withReservedInstancesIds(String... reservedInstancesIds) {
+        if (getReservedInstancesIds() == null) setReservedInstancesIds(new java.util.ArrayList<String>());
         for (String value : reservedInstancesIds) {
             getReservedInstancesIds().add(value);
         }
@@ -116,6 +118,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -162,6 +165,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeReservedInstancesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

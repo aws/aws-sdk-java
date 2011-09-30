@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<GetConsoleOutputRequest>, GetConsoleOutputRequest> {
 
     public Request<GetConsoleOutputRequest> marshall(GetConsoleOutputRequest getConsoleOutputRequest) {
+
+        if (getConsoleOutputRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetConsoleOutputRequest> request = new DefaultRequest<GetConsoleOutputRequest>(getConsoleOutputRequest, "AmazonEC2");
         request.addParameter("Action", "GetConsoleOutput");
         request.addParameter("Version", "2011-05-15");
-        if (getConsoleOutputRequest != null) {
-            if (getConsoleOutputRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(getConsoleOutputRequest.getInstanceId()));
-            }
+
+        if (getConsoleOutputRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(getConsoleOutputRequest.getInstanceId()));
         }
 
 

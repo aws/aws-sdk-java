@@ -110,6 +110,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         AMIs will be described.
      */
     public java.util.List<String> getImageIds() {
+        
         if (imageIds == null) {
             imageIds = new java.util.ArrayList<String>();
         }
@@ -144,6 +145,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withImageIds(String... imageIds) {
+        if (getImageIds() == null) setImageIds(new java.util.ArrayList<String>());
         for (String value : imageIds) {
             getImageIds().add(value);
         }
@@ -184,6 +186,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         permissions, respectively.
      */
     public java.util.List<String> getOwners() {
+        
         if (owners == null) {
             owners = new java.util.ArrayList<String>();
         }
@@ -226,6 +229,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withOwners(String... owners) {
+        if (getOwners() == null) setOwners(new java.util.ArrayList<String>());
         for (String value : owners) {
             getOwners().add(value);
         }
@@ -270,6 +274,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         permissions, or 'all' to return AMIs with public launch permissions.
      */
     public java.util.List<String> getExecutableUsers() {
+        
         if (executableUsers == null) {
             executableUsers = new java.util.ArrayList<String>();
         }
@@ -312,6 +317,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
+        if (getExecutableUsers() == null) setExecutableUsers(new java.util.ArrayList<String>());
         for (String value : executableUsers) {
             getExecutableUsers().add(value);
         }
@@ -356,6 +362,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -398,6 +405,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

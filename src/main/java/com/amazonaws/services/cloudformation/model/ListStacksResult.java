@@ -29,6 +29,7 @@ public class ListStacksResult {
      * @return The value of the StackSummaries property for this object.
      */
     public java.util.List<StackSummary> getStackSummaries() {
+        
         if (stackSummaries == null) {
             stackSummaries = new java.util.ArrayList<StackSummary>();
         }
@@ -59,6 +60,7 @@ public class ListStacksResult {
      *         together. 
      */
     public ListStacksResult withStackSummaries(StackSummary... stackSummaries) {
+        if (getStackSummaries() == null) setStackSummaries(new java.util.ArrayList<StackSummary>());
         for (StackSummary value : stackSummaries) {
             getStackSummaries().add(value);
         }

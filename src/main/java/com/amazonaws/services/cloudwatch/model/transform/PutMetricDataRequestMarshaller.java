@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.cloudwatch.model.*;
@@ -30,84 +31,70 @@ import com.amazonaws.util.StringUtils;
 public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMetricDataRequest>, PutMetricDataRequest> {
 
     public Request<PutMetricDataRequest> marshall(PutMetricDataRequest putMetricDataRequest) {
+
+        if (putMetricDataRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PutMetricDataRequest> request = new DefaultRequest<PutMetricDataRequest>(putMetricDataRequest, "AmazonCloudWatch");
         request.addParameter("Action", "PutMetricData");
         request.addParameter("Version", "2010-08-01");
-        if (putMetricDataRequest != null) {
-            if (putMetricDataRequest.getNamespace() != null) {
-                request.addParameter("Namespace", StringUtils.fromString(putMetricDataRequest.getNamespace()));
-            }
+
+        if (putMetricDataRequest.getNamespace() != null) {
+            request.addParameter("Namespace", StringUtils.fromString(putMetricDataRequest.getNamespace()));
         }
 
-        if (putMetricDataRequest != null) {
-            java.util.List<MetricDatum> metricDataList = putMetricDataRequest.getMetricData();
-            int metricDataListIndex = 1;
-            for (MetricDatum metricDataListValue : metricDataList) {
-                if (metricDataListValue != null) {
-                    if (metricDataListValue.getMetricName() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".MetricName", StringUtils.fromString(metricDataListValue.getMetricName()));
-                    }
+        java.util.List<MetricDatum> metricDataList = putMetricDataRequest.getMetricData();
+        int metricDataListIndex = 1;
+        for (MetricDatum metricDataListValue : metricDataList) {
+            MetricDatum metricDatumMember = metricDataListValue;
+            if (metricDatumMember != null) {
+                if (metricDatumMember.getMetricName() != null) {
+                    request.addParameter("MetricData.member." + metricDataListIndex + ".MetricName", StringUtils.fromString(metricDatumMember.getMetricName()));
                 }
 
-                if (metricDataListValue != null) {
-                    java.util.List<Dimension> dimensionsList = metricDataListValue.getDimensions();
-                    int dimensionsListIndex = 1;
-                    for (Dimension dimensionsListValue : dimensionsList) {
-                        if (dimensionsListValue != null) {
-                            if (dimensionsListValue.getName() != null) {
-                                request.addParameter("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionsListValue.getName()));
-                            }
+                java.util.List<Dimension> dimensionsList = metricDatumMember.getDimensions();
+                int dimensionsListIndex = 1;
+                for (Dimension dimensionsListValue : dimensionsList) {
+                    Dimension dimensionMember = dimensionsListValue;
+                    if (dimensionMember != null) {
+                        if (dimensionMember.getName() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Name", StringUtils.fromString(dimensionMember.getName()));
                         }
-                        if (dimensionsListValue != null) {
-                            if (dimensionsListValue.getValue() != null) {
-                                request.addParameter("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionsListValue.getValue()));
-                            }
+                        if (dimensionMember.getValue() != null) {
+                            request.addParameter("MetricData.member." + metricDataListIndex + ".Dimensions.member." + dimensionsListIndex + ".Value", StringUtils.fromString(dimensionMember.getValue()));
                         }
+                    }
 
-                        dimensionsListIndex++;
+                    dimensionsListIndex++;
+                }
+                if (metricDatumMember.getTimestamp() != null) {
+                    request.addParameter("MetricData.member." + metricDataListIndex + ".Timestamp", StringUtils.fromDate(metricDatumMember.getTimestamp()));
+                }
+                if (metricDatumMember.getValue() != null) {
+                    request.addParameter("MetricData.member." + metricDataListIndex + ".Value", StringUtils.fromDouble(metricDatumMember.getValue()));
+                }
+                StatisticSet statisticSetStatisticValues = metricDatumMember.getStatisticValues();
+                if (statisticSetStatisticValues != null) {
+                    if (statisticSetStatisticValues.getSampleCount() != null) {
+                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.SampleCount", StringUtils.fromDouble(statisticSetStatisticValues.getSampleCount()));
+                    }
+                    if (statisticSetStatisticValues.getSum() != null) {
+                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Sum", StringUtils.fromDouble(statisticSetStatisticValues.getSum()));
+                    }
+                    if (statisticSetStatisticValues.getMinimum() != null) {
+                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Minimum", StringUtils.fromDouble(statisticSetStatisticValues.getMinimum()));
+                    }
+                    if (statisticSetStatisticValues.getMaximum() != null) {
+                        request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Maximum", StringUtils.fromDouble(statisticSetStatisticValues.getMaximum()));
                     }
                 }
-                if (metricDataListValue != null) {
-                    if (metricDataListValue.getTimestamp() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".Timestamp", StringUtils.fromDate(metricDataListValue.getTimestamp()));
-                    }
+                if (metricDatumMember.getUnit() != null) {
+                    request.addParameter("MetricData.member." + metricDataListIndex + ".Unit", StringUtils.fromString(metricDatumMember.getUnit()));
                 }
-                if (metricDataListValue != null) {
-                    if (metricDataListValue.getValue() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".Value", StringUtils.fromDouble(metricDataListValue.getValue()));
-                    }
-                }
-                if (metricDataListValue != null) {
-                    StatisticSet statisticValues = metricDataListValue.getStatisticValues();
-                    if (statisticValues != null) {
-                        if (statisticValues.getSampleCount() != null) {
-                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.SampleCount", StringUtils.fromDouble(statisticValues.getSampleCount()));
-                        }
-                    }
-                    if (statisticValues != null) {
-                        if (statisticValues.getSum() != null) {
-                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Sum", StringUtils.fromDouble(statisticValues.getSum()));
-                        }
-                    }
-                    if (statisticValues != null) {
-                        if (statisticValues.getMinimum() != null) {
-                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Minimum", StringUtils.fromDouble(statisticValues.getMinimum()));
-                        }
-                    }
-                    if (statisticValues != null) {
-                        if (statisticValues.getMaximum() != null) {
-                            request.addParameter("MetricData.member." + metricDataListIndex + ".StatisticValues.Maximum", StringUtils.fromDouble(statisticValues.getMaximum()));
-                        }
-                    }
-                }
-                if (metricDataListValue != null) {
-                    if (metricDataListValue.getUnit() != null) {
-                        request.addParameter("MetricData.member." + metricDataListIndex + ".Unit", StringUtils.fromString(metricDataListValue.getUnit()));
-                    }
-                }
-
-                metricDataListIndex++;
             }
+
+            metricDataListIndex++;
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ReplaceRouteTableAssociationRequestMarshaller implements Marshaller<Request<ReplaceRouteTableAssociationRequest>, ReplaceRouteTableAssociationRequest> {
 
     public Request<ReplaceRouteTableAssociationRequest> marshall(ReplaceRouteTableAssociationRequest replaceRouteTableAssociationRequest) {
+
+        if (replaceRouteTableAssociationRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ReplaceRouteTableAssociationRequest> request = new DefaultRequest<ReplaceRouteTableAssociationRequest>(replaceRouteTableAssociationRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceRouteTableAssociation");
         request.addParameter("Version", "2011-05-15");
-        if (replaceRouteTableAssociationRequest != null) {
-            if (replaceRouteTableAssociationRequest.getAssociationId() != null) {
-                request.addParameter("AssociationId", StringUtils.fromString(replaceRouteTableAssociationRequest.getAssociationId()));
-            }
+
+        if (replaceRouteTableAssociationRequest.getAssociationId() != null) {
+            request.addParameter("AssociationId", StringUtils.fromString(replaceRouteTableAssociationRequest.getAssociationId()));
         }
-        if (replaceRouteTableAssociationRequest != null) {
-            if (replaceRouteTableAssociationRequest.getRouteTableId() != null) {
-                request.addParameter("RouteTableId", StringUtils.fromString(replaceRouteTableAssociationRequest.getRouteTableId()));
-            }
+        if (replaceRouteTableAssociationRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(replaceRouteTableAssociationRequest.getRouteTableId()));
         }
 
 

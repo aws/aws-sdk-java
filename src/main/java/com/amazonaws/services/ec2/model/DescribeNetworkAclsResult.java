@@ -27,6 +27,7 @@ public class DescribeNetworkAclsResult {
      * @return The value of the NetworkAcls property for this object.
      */
     public java.util.List<NetworkAcl> getNetworkAcls() {
+        
         if (networkAcls == null) {
             networkAcls = new java.util.ArrayList<NetworkAcl>();
         }
@@ -57,6 +58,7 @@ public class DescribeNetworkAclsResult {
      *         together. 
      */
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
+        if (getNetworkAcls() == null) setNetworkAcls(new java.util.ArrayList<NetworkAcl>());
         for (NetworkAcl value : networkAcls) {
             getNetworkAcls().add(value);
         }

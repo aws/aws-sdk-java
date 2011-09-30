@@ -295,6 +295,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *         options.
      */
     public java.util.List<OptionSpecification> getOptions() {
+        
         if (options == null) {
             options = new java.util.ArrayList<OptionSpecification>();
         }
@@ -329,6 +330,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeConfigurationOptionsRequest withOptions(OptionSpecification... options) {
+        if (getOptions() == null) setOptions(new java.util.ArrayList<OptionSpecification>());
         for (OptionSpecification value : options) {
             getOptions().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,66 +31,67 @@ import com.amazonaws.util.StringUtils;
 public class DescribeImagesRequestMarshaller implements Marshaller<Request<DescribeImagesRequest>, DescribeImagesRequest> {
 
     public Request<DescribeImagesRequest> marshall(DescribeImagesRequest describeImagesRequest) {
+
+        if (describeImagesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeImagesRequest> request = new DefaultRequest<DescribeImagesRequest>(describeImagesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImages");
         request.addParameter("Version", "2011-05-15");
-        if (describeImagesRequest != null) {
-            java.util.List<String> imageIdsList = describeImagesRequest.getImageIds();
-            int imageIdsListIndex = 1;
 
-            for (String imageIdsListValue : imageIdsList) {
-                if (imageIdsListValue != null) {
-                    request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(imageIdsListValue));
-                }
-                imageIdsListIndex++;
-            }
-        }
-        if (describeImagesRequest != null) {
-            java.util.List<String> ownersList = describeImagesRequest.getOwners();
-            int ownersListIndex = 1;
 
-            for (String ownersListValue : ownersList) {
-                if (ownersListValue != null) {
-                    request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(ownersListValue));
-                }
-                ownersListIndex++;
+        java.util.List<String> imageIdsList = describeImagesRequest.getImageIds();
+        int imageIdsListIndex = 1;
+        for (String imageIdsListValue : imageIdsList) {
+            if (imageIdsListValue != null) {
+                request.addParameter("ImageId." + imageIdsListIndex, StringUtils.fromString(imageIdsListValue));
             }
-        }
-        if (describeImagesRequest != null) {
-            java.util.List<String> executableUsersList = describeImagesRequest.getExecutableUsers();
-            int executableUsersListIndex = 1;
 
-            for (String executableUsersListValue : executableUsersList) {
-                if (executableUsersListValue != null) {
-                    request.addParameter("ExecutableBy." + executableUsersListIndex, StringUtils.fromString(executableUsersListValue));
-                }
-                executableUsersListIndex++;
-            }
+            imageIdsListIndex++;
         }
 
-        if (describeImagesRequest != null) {
-            java.util.List<Filter> filtersList = describeImagesRequest.getFilters();
-            int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) {
-                if (filtersListValue != null) {
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+        java.util.List<String> ownersList = describeImagesRequest.getOwners();
+        int ownersListIndex = 1;
+        for (String ownersListValue : ownersList) {
+            if (ownersListValue != null) {
+                request.addParameter("Owner." + ownersListIndex, StringUtils.fromString(ownersListValue));
+            }
+
+            ownersListIndex++;
+        }
+
+        java.util.List<String> executableUsersList = describeImagesRequest.getExecutableUsers();
+        int executableUsersListIndex = 1;
+        for (String executableUsersListValue : executableUsersList) {
+            if (executableUsersListValue != null) {
+                request.addParameter("ExecutableBy." + executableUsersListIndex, StringUtils.fromString(executableUsersListValue));
+            }
+
+            executableUsersListIndex++;
+        }
+
+        java.util.List<Filter> filtersList = describeImagesRequest.getFilters();
+        int filtersListIndex = 1;
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                }
+
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
-                }
-                if (filtersListValue != null) {
-                    java.util.List<String> valuesList = filtersListValue.getValues();
-                    int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+                    valuesListIndex++;
                 }
-
-                filtersListIndex++;
             }
+
+            filtersListIndex++;
         }
 
 

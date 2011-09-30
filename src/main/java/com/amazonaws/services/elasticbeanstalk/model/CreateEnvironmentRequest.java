@@ -656,6 +656,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *         stack or the configuration template.
      */
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
+        
         if (optionSettings == null) {
             optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
         }
@@ -698,6 +699,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }
@@ -738,6 +740,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *         configuration set for this new environment.
      */
     public java.util.List<OptionSpecification> getOptionsToRemove() {
+        
         if (optionsToRemove == null) {
             optionsToRemove = new java.util.ArrayList<OptionSpecification>();
         }
@@ -772,6 +775,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
+        if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>());
         for (OptionSpecification value : optionsToRemove) {
             getOptionsToRemove().add(value);
         }

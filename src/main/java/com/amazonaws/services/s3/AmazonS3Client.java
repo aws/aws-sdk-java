@@ -88,6 +88,7 @@ import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
 import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CreateBucketRequest;
+import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
@@ -96,6 +97,7 @@ import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
+import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.GetObjectMetadataRequest;
 import com.amazonaws.services.s3.model.GetObjectRequest;
@@ -124,6 +126,7 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketVersioningConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
@@ -821,11 +824,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         try {
-        	// Multipart Uploads don't have an MD5 calculated on the service side 
+        	// Multipart Uploads don't have an MD5 calculated on the service side
         	if (isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
 	            byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
 	            byte[] serverSideHash = ServiceUtils.fromHex(s3Object.getObjectMetadata().getETag());
-	
+
 	            if (!Arrays.equals(clientSideHash, serverSideHash)) {
 	                throw new AmazonClientException("Unable to verify integrity of data download.  " +
 	                        "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
@@ -838,7 +841,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return s3Object.getObjectMetadata();
     }
-    
+
     private boolean isMultipartUploadETag(String eTag) {
     	return eTag.contains("-");
     }
@@ -1126,10 +1129,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return copyObjectResult;
     }
-    
+
     /**
      * Copies a source object to a part of a multipart upload.
-     * 
+     *
      * To copy an object, the caller's account must have read access to the source object and
      * write access to the destination bucket.
      * </p>
@@ -1172,7 +1175,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         assertParameterNotNull(copyPartRequest.getUploadId(),
                 "The upload id must be specified when copying a part");
         assertParameterNotNull(copyPartRequest.getDestinationKey(),
-                "The destination object key must be specified when copying a part");        
+                "The destination object key must be specified when copying a part");
         assertParameterNotNull(copyPartRequest.getPartNumber(),
                 "The part number must be specified when copying a part");
 
@@ -1183,10 +1186,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 HttpMethodName.PUT);
 
         populateRequestWithCopyPartParameters(request, copyPartRequest);
-        
+
         request.addParameter("uploadId", copyPartRequest.getUploadId());
         request.addParameter("partNumber", Integer.toString(copyPartRequest.getPartNumber()));
-        
+
         /*
          * We can't send the Content-Length header if the user specified it,
          * otherwise it messes up the HTTP connection when the remote server
@@ -1218,7 +1221,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          * and the error is processed like any other error response. 2 - An HTTP
          * 200 OK code is returned, but the response content contains an XML
          * error response.
-         * 
+         *
          * This makes it very difficult for the client runtime to cleanly detect
          * this case and handle it like any other error response. We could
          * extend the runtime to have a more flexible/customizable definition of
@@ -1524,27 +1527,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public BucketPolicy getBucketPolicy(String bucketName)
             throws AmazonClientException, AmazonServiceException {
-        assertParameterNotNull(bucketName,
-            "The bucket name must be specified when getting a bucket policy");
-
-        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
-        request.addParameter("policy", null);
-
-        BucketPolicy result = new BucketPolicy();
-        try {
-            String policyText = invoke(request, new S3StringResponseHandler(), bucketName, null);
-            result.setPolicyText(policyText);
-            return result;
-        } catch (AmazonServiceException ase) {
-            /*
-             * If we receive an error response telling us that no policy has
-             * been set for this bucket, then instead of forcing the user to
-             * deal with the exception, we'll just return an empty result. Any
-             * other exceptions will be rethrown for the user to handle.
-             */
-            if (ase.getErrorCode().equals("NoSuchBucketPolicy")) return result;
-            throw ase;
-        }
+        return getBucketPolicy(new GetBucketPolicyRequest(bucketName));
     }
 
     /* (non-Javadoc)
@@ -1569,14 +1552,85 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public void deleteBucketPolicy(String bucketName)
             throws AmazonClientException, AmazonServiceException {
+        deleteBucketPolicy(new DeleteBucketPolicyRequest(bucketName));
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#getBucketPolicy(com.amazonaws.services.s3.model.GetBucketPolicyRequest)
+     */
+    public BucketPolicy getBucketPolicy(
+            GetBucketPolicyRequest getBucketPolicyRequest)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(getBucketPolicyRequest,
+            "The request object must be specified when getting a bucket policy");
+
+        String bucketName = getBucketPolicyRequest.getBucketName();
         assertParameterNotNull(bucketName,
-                "The bucket name must be specified when deleting a bucket policy");
+            "The bucket name must be specified when getting a bucket policy");
+
+        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
+        request.addParameter("policy", null);
+
+        BucketPolicy result = new BucketPolicy();
+        try {
+            String policyText = invoke(request, new S3StringResponseHandler(), bucketName, null);
+            result.setPolicyText(policyText);
+            return result;
+        } catch (AmazonServiceException ase) {
+            /*
+             * If we receive an error response telling us that no policy has
+             * been set for this bucket, then instead of forcing the user to
+             * deal with the exception, we'll just return an empty result. Any
+             * other exceptions will be rethrown for the user to handle.
+             */
+            if (ase.getErrorCode().equals("NoSuchBucketPolicy")) return result;
+            throw ase;
+        }
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#setBucketPolicy(com.amazonaws.services.s3.model.SetBucketPolicyRequest)
+     */
+    public void setBucketPolicy(SetBucketPolicyRequest setBucketPolicyRequest)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(setBucketPolicyRequest,
+            "The request object must be specified when setting a bucket policy");
+
+        String bucketName = setBucketPolicyRequest.getBucketName();
+        String policyText = setBucketPolicyRequest.getPolicyText();
+
+        assertParameterNotNull(bucketName,
+            "The bucket name must be specified when setting a bucket policy");
+        assertParameterNotNull(policyText,
+            "The policy text must be specified when setting a bucket policy");
+
+        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.PUT);
+        request.addParameter("policy", null);
+        request.setContent(new ByteArrayInputStream(ServiceUtils.toByteArray(policyText)));
+
+        invoke(request, voidResponseHandler, bucketName, null);
+    }
+
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#deleteBucketPolicy(com.amazonaws.services.s3.model.DeleteBucketPolicyRequest)
+     */
+    public void deleteBucketPolicy(
+            DeleteBucketPolicyRequest deleteBucketPolicyRequest)
+            throws AmazonClientException, AmazonServiceException {
+        assertParameterNotNull(deleteBucketPolicyRequest,
+            "The request object must be specified when deleting a bucket policy");
+
+        String bucketName = deleteBucketPolicyRequest.getBucketName();
+        assertParameterNotNull(bucketName,
+            "The bucket name must be specified when deleting a bucket policy");
 
         Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.DELETE);
         request.addParameter("policy", null);
 
         invoke(request, voidResponseHandler, bucketName, null);
     }
+
+
 
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#generatePresignedUrl(java.lang.String, java.lang.String, java.util.Date)
@@ -1819,7 +1873,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } else if (uploadPartRequest.getFile() != null) {
             try {
                 inputStream = new InputSubstream(new RepeatableFileInputStream(uploadPartRequest.getFile()),
-                        uploadPartRequest.getFileOffset(), partSize);
+                        uploadPartRequest.getFileOffset(), partSize, true);
             } catch (FileNotFoundException e) {
                 throw new IllegalArgumentException("The specified file doesn't exist", e);
             }
@@ -2053,7 +2107,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      *            The optional sub-resource being requested as part of the
      *            request (e.g. "location", "acl", "logging", or "torrent").
      */
-    private <T> void presignRequest(Request<T> request, HttpMethod methodName,
+    protected <T> void presignRequest(Request<T> request, HttpMethod methodName,
             String bucketName, String key, Date expiration, String subResource) {
         // Run any additional request handlers if present
         if (requestHandlers != null) {
@@ -2209,7 +2263,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             populateRequestMetadata(request, newObjectMetadata);
         }
     }
-    
+
     /**
      * <p>
      * Populates the specified request with the numerous options available in
@@ -2241,7 +2295,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 copyPartRequest.getMatchingETagConstraints());
         addStringListHeader(request, Headers.COPY_SOURCE_IF_NO_MATCH,
                 copyPartRequest.getNonmatchingETagConstraints());
-        
+
         if ( copyPartRequest.getFirstByte() != null && copyPartRequest.getLastByte() != null ) {
             String range = "bytes=" + copyPartRequest.getFirstByte() + "-" + copyPartRequest.getLastByte();
             request.addHeader(Headers.COPY_PART_RANGE, range);

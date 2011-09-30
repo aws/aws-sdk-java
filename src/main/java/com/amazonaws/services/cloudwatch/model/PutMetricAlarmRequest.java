@@ -329,6 +329,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         Scaling policy.
      */
     public java.util.List<String> getOKActions() {
+        
         if (oKActions == null) {
             oKActions = new java.util.ArrayList<String>();
         }
@@ -381,6 +382,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricAlarmRequest withOKActions(String... oKActions) {
+        if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>());
         for (String value : oKActions) {
             getOKActions().add(value);
         }
@@ -435,6 +437,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         Auto Scaling policy.
      */
     public java.util.List<String> getAlarmActions() {
+        
         if (alarmActions == null) {
             alarmActions = new java.util.ArrayList<String>();
         }
@@ -487,6 +490,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricAlarmRequest withAlarmActions(String... alarmActions) {
+        if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>());
         for (String value : alarmActions) {
             getAlarmActions().add(value);
         }
@@ -541,6 +545,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         Auto Scaling policy.
      */
     public java.util.List<String> getInsufficientDataActions() {
+        
         if (insufficientDataActions == null) {
             insufficientDataActions = new java.util.ArrayList<String>();
         }
@@ -593,6 +598,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricAlarmRequest withInsufficientDataActions(String... insufficientDataActions) {
+        if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>());
         for (String value : insufficientDataActions) {
             getInsufficientDataActions().add(value);
         }
@@ -777,6 +783,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      * @return The dimensions for the alarm's associated metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -813,6 +820,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricAlarmRequest withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }

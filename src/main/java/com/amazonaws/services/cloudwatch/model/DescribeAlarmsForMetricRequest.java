@@ -222,6 +222,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest {
      * @return The list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -258,6 +259,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAlarmsForMetricRequest withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }

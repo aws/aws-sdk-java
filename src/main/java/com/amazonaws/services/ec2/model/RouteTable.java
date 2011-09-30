@@ -103,6 +103,7 @@ public class RouteTable {
      * @return The value of the Routes property for this object.
      */
     public java.util.List<Route> getRoutes() {
+        
         if (routes == null) {
             routes = new java.util.ArrayList<Route>();
         }
@@ -133,6 +134,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withRoutes(Route... routes) {
+        if (getRoutes() == null) setRoutes(new java.util.ArrayList<Route>());
         for (Route value : routes) {
             getRoutes().add(value);
         }
@@ -165,6 +167,7 @@ public class RouteTable {
      * @return The value of the Associations property for this object.
      */
     public java.util.List<RouteTableAssociation> getAssociations() {
+        
         if (associations == null) {
             associations = new java.util.ArrayList<RouteTableAssociation>();
         }
@@ -195,6 +198,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withAssociations(RouteTableAssociation... associations) {
+        if (getAssociations() == null) setAssociations(new java.util.ArrayList<RouteTableAssociation>());
         for (RouteTableAssociation value : associations) {
             getAssociations().add(value);
         }
@@ -227,6 +231,7 @@ public class RouteTable {
      * @return The value of the Tags property for this object.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -257,6 +262,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

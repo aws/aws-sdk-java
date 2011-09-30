@@ -72,6 +72,7 @@ public class DescribeDBParameterGroupsResult {
      * @return A list of <a>DBParameterGroup</a> instances.
      */
     public java.util.List<DBParameterGroup> getDBParameterGroups() {
+        
         if (dBParameterGroups == null) {
             dBParameterGroups = new java.util.ArrayList<DBParameterGroup>();
         }
@@ -102,6 +103,7 @@ public class DescribeDBParameterGroupsResult {
      *         together. 
      */
     public DescribeDBParameterGroupsResult withDBParameterGroups(DBParameterGroup... dBParameterGroups) {
+        if (getDBParameterGroups() == null) setDBParameterGroups(new java.util.ArrayList<DBParameterGroup>());
         for (DBParameterGroup value : dBParameterGroups) {
             getDBParameterGroups().add(value);
         }

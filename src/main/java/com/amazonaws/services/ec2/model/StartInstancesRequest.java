@@ -63,6 +63,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
      * @return The list of Amazon EC2 instances to start.
      */
     public java.util.List<String> getInstanceIds() {
+        
         if (instanceIds == null) {
             instanceIds = new java.util.ArrayList<String>();
         }
@@ -93,6 +94,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public StartInstancesRequest withInstanceIds(String... instanceIds) {
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }

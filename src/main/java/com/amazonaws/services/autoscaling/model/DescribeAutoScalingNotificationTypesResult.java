@@ -45,6 +45,7 @@ public class DescribeAutoScalingNotificationTypesResult {
      *         autoscaling:TEST_NOTIFICATION
      */
     public java.util.List<String> getAutoScalingNotificationTypes() {
+        
         if (autoScalingNotificationTypes == null) {
             autoScalingNotificationTypes = new java.util.ArrayList<String>();
         }
@@ -95,6 +96,7 @@ public class DescribeAutoScalingNotificationTypesResult {
      *         together. 
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(String... autoScalingNotificationTypes) {
+        if (getAutoScalingNotificationTypes() == null) setAutoScalingNotificationTypes(new java.util.ArrayList<String>());
         for (String value : autoScalingNotificationTypes) {
             getAutoScalingNotificationTypes().add(value);
         }

@@ -287,6 +287,7 @@ public class Subnet {
      * @return A list of tags for the Subnet.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -317,6 +318,7 @@ public class Subnet {
      *         together. 
      */
     public Subnet withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

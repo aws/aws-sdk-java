@@ -15,9 +15,7 @@
 package com.amazonaws.services.sqs.model;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class ReceiveMessageResult {
 
@@ -32,6 +30,7 @@ public class ReceiveMessageResult {
      * @return A list of messages.
      */
     public java.util.List<Message> getMessages() {
+        
         if (messages == null) {
             messages = new java.util.ArrayList<Message>();
         }
@@ -62,6 +61,7 @@ public class ReceiveMessageResult {
      *         together. 
      */
     public ReceiveMessageResult withMessages(Message... messages) {
+        if (getMessages() == null) setMessages(new java.util.ArrayList<Message>());
         for (Message value : messages) {
             getMessages().add(value);
         }

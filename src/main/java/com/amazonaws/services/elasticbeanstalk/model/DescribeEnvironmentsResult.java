@@ -32,6 +32,7 @@ public class DescribeEnvironmentsResult {
      * @return Returns an <a>EnvironmentDescription</a> list.
      */
     public java.util.List<EnvironmentDescription> getEnvironments() {
+        
         if (environments == null) {
             environments = new java.util.ArrayList<EnvironmentDescription>();
         }
@@ -62,6 +63,7 @@ public class DescribeEnvironmentsResult {
      *         together. 
      */
     public DescribeEnvironmentsResult withEnvironments(EnvironmentDescription... environments) {
+        if (getEnvironments() == null) setEnvironments(new java.util.ArrayList<EnvironmentDescription>());
         for (EnvironmentDescription value : environments) {
             getEnvironments().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeregisterImageRequestMarshaller implements Marshaller<Request<DeregisterImageRequest>, DeregisterImageRequest> {
 
     public Request<DeregisterImageRequest> marshall(DeregisterImageRequest deregisterImageRequest) {
+
+        if (deregisterImageRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeregisterImageRequest> request = new DefaultRequest<DeregisterImageRequest>(deregisterImageRequest, "AmazonEC2");
         request.addParameter("Action", "DeregisterImage");
         request.addParameter("Version", "2011-05-15");
-        if (deregisterImageRequest != null) {
-            if (deregisterImageRequest.getImageId() != null) {
-                request.addParameter("ImageId", StringUtils.fromString(deregisterImageRequest.getImageId()));
-            }
+
+        if (deregisterImageRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(deregisterImageRequest.getImageId()));
         }
 
 

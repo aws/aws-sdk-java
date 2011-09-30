@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,30 +31,30 @@ import com.amazonaws.util.StringUtils;
 public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marshaller<Request<SetLoadBalancerPoliciesOfListenerRequest>, SetLoadBalancerPoliciesOfListenerRequest> {
 
     public Request<SetLoadBalancerPoliciesOfListenerRequest> marshall(SetLoadBalancerPoliciesOfListenerRequest setLoadBalancerPoliciesOfListenerRequest) {
+
+        if (setLoadBalancerPoliciesOfListenerRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesOfListener");
-        request.addParameter("Version", "2011-04-05");
-        if (setLoadBalancerPoliciesOfListenerRequest != null) {
-            if (setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName()));
-            }
-        }
-        if (setLoadBalancerPoliciesOfListenerRequest != null) {
-            if (setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerPort() != null) {
-                request.addParameter("LoadBalancerPort", StringUtils.fromInteger(setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerPort()));
-            }
-        }
-        if (setLoadBalancerPoliciesOfListenerRequest != null) {
-            java.util.List<String> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.getPolicyNames();
-            int policyNamesListIndex = 1;
+        request.addParameter("Version", "2011-08-15");
 
-            if (policyNamesList.isEmpty()) request.addParameter("PolicyNames", "");
-            for (String policyNamesListValue : policyNamesList) {
-                if (policyNamesListValue != null) {
-                    request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));
-                }
-                policyNamesListIndex++;
+        if (setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName()));
+        }
+        if (setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerPort() != null) {
+            request.addParameter("LoadBalancerPort", StringUtils.fromInteger(setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerPort()));
+        }
+
+        java.util.List<String> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.getPolicyNames();
+        int policyNamesListIndex = 1;
+        for (String policyNamesListValue : policyNamesList) {
+            if (policyNamesListValue != null) {
+                request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));
             }
+
+            policyNamesListIndex++;
         }
 
 

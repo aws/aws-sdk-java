@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.importexport.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsRequest>, ListJobsRequest> {
 
     public Request<ListJobsRequest> marshall(ListJobsRequest listJobsRequest) {
+
+        if (listJobsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListJobsRequest> request = new DefaultRequest<ListJobsRequest>(listJobsRequest, "AmazonImportExport");
         request.addParameter("Action", "ListJobs");
         request.addParameter("Version", "2010-06-01");
-        if (listJobsRequest != null) {
-            if (listJobsRequest.getMaxJobs() != null) {
-                request.addParameter("MaxJobs", StringUtils.fromInteger(listJobsRequest.getMaxJobs()));
-            }
+
+        if (listJobsRequest.getMaxJobs() != null) {
+            request.addParameter("MaxJobs", StringUtils.fromInteger(listJobsRequest.getMaxJobs()));
         }
-        if (listJobsRequest != null) {
-            if (listJobsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listJobsRequest.getMarker()));
-            }
+        if (listJobsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listJobsRequest.getMarker()));
         }
 
 

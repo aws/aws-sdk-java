@@ -57,6 +57,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      * @return A list of launch configuration names.
      */
     public java.util.List<String> getLaunchConfigurationNames() {
+        
         if (launchConfigurationNames == null) {
             launchConfigurationNames = new java.util.ArrayList<String>();
         }
@@ -87,6 +88,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(String... launchConfigurationNames) {
+        if (getLaunchConfigurationNames() == null) setLaunchConfigurationNames(new java.util.ArrayList<String>());
         for (String value : launchConfigurationNames) {
             getLaunchConfigurationNames().add(value);
         }

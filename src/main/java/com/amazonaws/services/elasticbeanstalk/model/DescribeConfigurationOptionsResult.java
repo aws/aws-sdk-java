@@ -83,6 +83,7 @@ public class DescribeConfigurationOptionsResult {
      * @return A list of <a>ConfigurationOptionDescription</a>.
      */
     public java.util.List<ConfigurationOptionDescription> getOptions() {
+        
         if (options == null) {
             options = new java.util.ArrayList<ConfigurationOptionDescription>();
         }
@@ -113,6 +114,7 @@ public class DescribeConfigurationOptionsResult {
      *         together. 
      */
     public DescribeConfigurationOptionsResult withOptions(ConfigurationOptionDescription... options) {
+        if (getOptions() == null) setOptions(new java.util.ArrayList<ConfigurationOptionDescription>());
         for (ConfigurationOptionDescription value : options) {
             getOptions().add(value);
         }

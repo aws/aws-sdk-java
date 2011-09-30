@@ -162,6 +162,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         information, go to <a>DescribeAutoScalingNotificationTypes</a>.
      */
     public java.util.List<String> getNotificationTypes() {
+        
         if (notificationTypes == null) {
             notificationTypes = new java.util.ArrayList<String>();
         }
@@ -196,6 +197,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public PutNotificationConfigurationRequest withNotificationTypes(String... notificationTypes) {
+        if (getNotificationTypes() == null) setNotificationTypes(new java.util.ArrayList<String>());
         for (String value : notificationTypes) {
             getNotificationTypes().add(value);
         }

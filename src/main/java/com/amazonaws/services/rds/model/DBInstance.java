@@ -618,6 +618,7 @@ public class DBInstance {
      *         <code>DBSecurityGroup.Status</code> subelements.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroups() {
+        
         if (dBSecurityGroups == null) {
             dBSecurityGroups = new java.util.ArrayList<DBSecurityGroupMembership>();
         }
@@ -656,6 +657,7 @@ public class DBInstance {
      *         together. 
      */
     public DBInstance withDBSecurityGroups(DBSecurityGroupMembership... dBSecurityGroups) {
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<DBSecurityGroupMembership>());
         for (DBSecurityGroupMembership value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }
@@ -692,6 +694,7 @@ public class DBInstance {
      * @return Provides the list of DB Parameter Groups applied to this DB Instance.
      */
     public java.util.List<DBParameterGroupStatus> getDBParameterGroups() {
+        
         if (dBParameterGroups == null) {
             dBParameterGroups = new java.util.ArrayList<DBParameterGroupStatus>();
         }
@@ -722,6 +725,7 @@ public class DBInstance {
      *         together. 
      */
     public DBInstance withDBParameterGroups(DBParameterGroupStatus... dBParameterGroups) {
+        if (getDBParameterGroups() == null) setDBParameterGroups(new java.util.ArrayList<DBParameterGroupStatus>());
         for (DBParameterGroupStatus value : dBParameterGroups) {
             getDBParameterGroups().add(value);
         }
@@ -1082,6 +1086,7 @@ public class DBInstance {
      *         this DB Instance.
      */
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
+        
         if (readReplicaDBInstanceIdentifiers == null) {
             readReplicaDBInstanceIdentifiers = new java.util.ArrayList<String>();
         }
@@ -1116,6 +1121,7 @@ public class DBInstance {
      *         together. 
      */
     public DBInstance withReadReplicaDBInstanceIdentifiers(String... readReplicaDBInstanceIdentifiers) {
+        if (getReadReplicaDBInstanceIdentifiers() == null) setReadReplicaDBInstanceIdentifiers(new java.util.ArrayList<String>());
         for (String value : readReplicaDBInstanceIdentifiers) {
             getReadReplicaDBInstanceIdentifiers().add(value);
         }

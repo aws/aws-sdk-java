@@ -83,6 +83,7 @@ public class SolutionStackDescription {
      * @return The permitted file types allowed for a solution stack.
      */
     public java.util.List<String> getPermittedFileTypes() {
+        
         if (permittedFileTypes == null) {
             permittedFileTypes = new java.util.ArrayList<String>();
         }
@@ -113,6 +114,7 @@ public class SolutionStackDescription {
      *         together. 
      */
     public SolutionStackDescription withPermittedFileTypes(String... permittedFileTypes) {
+        if (getPermittedFileTypes() == null) setPermittedFileTypes(new java.util.ArrayList<String>());
         for (String value : permittedFileTypes) {
             getPermittedFileTypes().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,104 +31,75 @@ import com.amazonaws.util.StringUtils;
 public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<CreateDBInstanceRequest>, CreateDBInstanceRequest> {
 
     public Request<CreateDBInstanceRequest> marshall(CreateDBInstanceRequest createDBInstanceRequest) {
+
+        if (createDBInstanceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
         request.addParameter("Version", "2011-04-01");
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getDBName() != null) {
-                request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getDBInstanceIdentifier() != null) {
-                request.addParameter("DBInstanceIdentifier", StringUtils.fromString(createDBInstanceRequest.getDBInstanceIdentifier()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getAllocatedStorage() != null) {
-                request.addParameter("AllocatedStorage", StringUtils.fromInteger(createDBInstanceRequest.getAllocatedStorage()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getDBInstanceClass() != null) {
-                request.addParameter("DBInstanceClass", StringUtils.fromString(createDBInstanceRequest.getDBInstanceClass()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getEngine() != null) {
-                request.addParameter("Engine", StringUtils.fromString(createDBInstanceRequest.getEngine()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getMasterUsername() != null) {
-                request.addParameter("MasterUsername", StringUtils.fromString(createDBInstanceRequest.getMasterUsername()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getMasterUserPassword() != null) {
-                request.addParameter("MasterUserPassword", StringUtils.fromString(createDBInstanceRequest.getMasterUserPassword()));
-            }
-        }
-        if (createDBInstanceRequest != null) {
-            java.util.List<String> dBSecurityGroupsList = createDBInstanceRequest.getDBSecurityGroups();
-            int dBSecurityGroupsListIndex = 1;
 
-            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
-                if (dBSecurityGroupsListValue != null) {
-                    request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
-                }
-                dBSecurityGroupsListIndex++;
-            }
+        if (createDBInstanceRequest.getDBName() != null) {
+            request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getAvailabilityZone() != null) {
-                request.addParameter("AvailabilityZone", StringUtils.fromString(createDBInstanceRequest.getAvailabilityZone()));
-            }
+        if (createDBInstanceRequest.getDBInstanceIdentifier() != null) {
+            request.addParameter("DBInstanceIdentifier", StringUtils.fromString(createDBInstanceRequest.getDBInstanceIdentifier()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getPreferredMaintenanceWindow() != null) {
-                request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(createDBInstanceRequest.getPreferredMaintenanceWindow()));
-            }
+        if (createDBInstanceRequest.getAllocatedStorage() != null) {
+            request.addParameter("AllocatedStorage", StringUtils.fromInteger(createDBInstanceRequest.getAllocatedStorage()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBInstanceRequest.getDBParameterGroupName()));
-            }
+        if (createDBInstanceRequest.getDBInstanceClass() != null) {
+            request.addParameter("DBInstanceClass", StringUtils.fromString(createDBInstanceRequest.getDBInstanceClass()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getBackupRetentionPeriod() != null) {
-                request.addParameter("BackupRetentionPeriod", StringUtils.fromInteger(createDBInstanceRequest.getBackupRetentionPeriod()));
-            }
+        if (createDBInstanceRequest.getEngine() != null) {
+            request.addParameter("Engine", StringUtils.fromString(createDBInstanceRequest.getEngine()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getPreferredBackupWindow() != null) {
-                request.addParameter("PreferredBackupWindow", StringUtils.fromString(createDBInstanceRequest.getPreferredBackupWindow()));
-            }
+        if (createDBInstanceRequest.getMasterUsername() != null) {
+            request.addParameter("MasterUsername", StringUtils.fromString(createDBInstanceRequest.getMasterUsername()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getPort() != null) {
-                request.addParameter("Port", StringUtils.fromInteger(createDBInstanceRequest.getPort()));
-            }
+        if (createDBInstanceRequest.getMasterUserPassword() != null) {
+            request.addParameter("MasterUserPassword", StringUtils.fromString(createDBInstanceRequest.getMasterUserPassword()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.isMultiAZ() != null) {
-                request.addParameter("MultiAZ", StringUtils.fromBoolean(createDBInstanceRequest.isMultiAZ()));
+
+        java.util.List<String> dBSecurityGroupsList = createDBInstanceRequest.getDBSecurityGroups();
+        int dBSecurityGroupsListIndex = 1;
+        for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
+            if (dBSecurityGroupsListValue != null) {
+                request.addParameter("DBSecurityGroups.DBSecurityGroupName." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
             }
+
+            dBSecurityGroupsListIndex++;
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getEngineVersion() != null) {
-                request.addParameter("EngineVersion", StringUtils.fromString(createDBInstanceRequest.getEngineVersion()));
-            }
+        if (createDBInstanceRequest.getAvailabilityZone() != null) {
+            request.addParameter("AvailabilityZone", StringUtils.fromString(createDBInstanceRequest.getAvailabilityZone()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
-                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceRequest.isAutoMinorVersionUpgrade()));
-            }
+        if (createDBInstanceRequest.getPreferredMaintenanceWindow() != null) {
+            request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(createDBInstanceRequest.getPreferredMaintenanceWindow()));
         }
-        if (createDBInstanceRequest != null) {
-            if (createDBInstanceRequest.getLicenseModel() != null) {
-                request.addParameter("LicenseModel", StringUtils.fromString(createDBInstanceRequest.getLicenseModel()));
-            }
+        if (createDBInstanceRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBInstanceRequest.getDBParameterGroupName()));
+        }
+        if (createDBInstanceRequest.getBackupRetentionPeriod() != null) {
+            request.addParameter("BackupRetentionPeriod", StringUtils.fromInteger(createDBInstanceRequest.getBackupRetentionPeriod()));
+        }
+        if (createDBInstanceRequest.getPreferredBackupWindow() != null) {
+            request.addParameter("PreferredBackupWindow", StringUtils.fromString(createDBInstanceRequest.getPreferredBackupWindow()));
+        }
+        if (createDBInstanceRequest.getPort() != null) {
+            request.addParameter("Port", StringUtils.fromInteger(createDBInstanceRequest.getPort()));
+        }
+        if (createDBInstanceRequest.isMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(createDBInstanceRequest.isMultiAZ()));
+        }
+        if (createDBInstanceRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(createDBInstanceRequest.getEngineVersion()));
+        }
+        if (createDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
+            request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(createDBInstanceRequest.isAutoMinorVersionUpgrade()));
+        }
+        if (createDBInstanceRequest.getLicenseModel() != null) {
+            request.addParameter("LicenseModel", StringUtils.fromString(createDBInstanceRequest.getLicenseModel()));
         }
 
 

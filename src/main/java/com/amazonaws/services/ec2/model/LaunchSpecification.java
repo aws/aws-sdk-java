@@ -165,6 +165,7 @@ public class LaunchSpecification {
      * @return The value of the AllSecurityGroups property for this object.
      */
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
+        
         if (allSecurityGroups == null) {
             allSecurityGroups = new java.util.ArrayList<GroupIdentifier>();
         }
@@ -195,6 +196,7 @@ public class LaunchSpecification {
      *         together. 
      */
     public LaunchSpecification withAllSecurityGroups(GroupIdentifier... allSecurityGroups) {
+        if (getAllSecurityGroups() == null) setAllSecurityGroups(new java.util.ArrayList<GroupIdentifier>());
         for (GroupIdentifier value : allSecurityGroups) {
             getAllSecurityGroups().add(value);
         }
@@ -227,6 +229,7 @@ public class LaunchSpecification {
      * @return The value of the SecurityGroups property for this object.
      */
     public java.util.List<String> getSecurityGroups() {
+        
         if (securityGroups == null) {
             securityGroups = new java.util.ArrayList<String>();
         }
@@ -257,6 +260,7 @@ public class LaunchSpecification {
      *         together. 
      */
     public LaunchSpecification withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -546,6 +550,7 @@ public class LaunchSpecification {
      *         is made up of a virtualName and a deviceName.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
         }
@@ -580,6 +585,7 @@ public class LaunchSpecification {
      *         together. 
      */
     public LaunchSpecification withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

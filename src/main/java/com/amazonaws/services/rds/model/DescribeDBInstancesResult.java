@@ -72,6 +72,7 @@ public class DescribeDBInstancesResult {
      * @return A list of <a>DBInstance</a> instances.
      */
     public java.util.List<DBInstance> getDBInstances() {
+        
         if (dBInstances == null) {
             dBInstances = new java.util.ArrayList<DBInstance>();
         }
@@ -102,6 +103,7 @@ public class DescribeDBInstancesResult {
      *         together. 
      */
     public DescribeDBInstancesResult withDBInstances(DBInstance... dBInstances) {
+        if (getDBInstances() == null) setDBInstances(new java.util.ArrayList<DBInstance>());
         for (DBInstance value : dBInstances) {
             getDBInstances().add(value);
         }

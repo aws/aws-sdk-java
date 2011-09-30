@@ -111,6 +111,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      *         deregistered.
      */
     public java.util.List<Instance> getInstances() {
+        
         if (instances == null) {
             instances = new java.util.ArrayList<Instance>();
         }
@@ -145,6 +146,7 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
      *         together. 
      */
     public DeregisterInstancesFromLoadBalancerRequest withInstances(Instance... instances) {
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
         for (Instance value : instances) {
             getInstances().add(value);
         }

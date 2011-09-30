@@ -202,6 +202,7 @@ public class OrderableDBInstanceOption {
      * @return A list of availability zones for the orderable DB Instance.
      */
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<AvailabilityZone>();
         }
@@ -232,6 +233,7 @@ public class OrderableDBInstanceOption {
      *         together. 
      */
     public OrderableDBInstanceOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>());
         for (AvailabilityZone value : availabilityZones) {
             getAvailabilityZones().add(value);
         }

@@ -369,6 +369,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * @return A list of availability zones for the Auto Scaling group.
      */
     public java.util.List<String> getAvailabilityZones() {
+        
         if (availabilityZones == null) {
             availabilityZones = new java.util.ArrayList<String>();
         }
@@ -405,6 +406,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -440,6 +442,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * @return A list of LoadBalancers to use.
      */
     public java.util.List<String> getLoadBalancerNames() {
+        
         if (loadBalancerNames == null) {
             loadBalancerNames = new java.util.ArrayList<String>();
         }
@@ -470,6 +473,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateAutoScalingGroupRequest withLoadBalancerNames(String... loadBalancerNames) {
+        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>());
         for (String value : loadBalancerNames) {
             getLoadBalancerNames().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,24 +31,27 @@ import com.amazonaws.util.StringUtils;
 public class StopInstancesRequestMarshaller implements Marshaller<Request<StopInstancesRequest>, StopInstancesRequest> {
 
     public Request<StopInstancesRequest> marshall(StopInstancesRequest stopInstancesRequest) {
+
+        if (stopInstancesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<StopInstancesRequest> request = new DefaultRequest<StopInstancesRequest>(stopInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StopInstances");
         request.addParameter("Version", "2011-05-15");
-        if (stopInstancesRequest != null) {
-            java.util.List<String> instanceIdsList = stopInstancesRequest.getInstanceIds();
-            int instanceIdsListIndex = 1;
 
-            for (String instanceIdsListValue : instanceIdsList) {
-                if (instanceIdsListValue != null) {
-                    request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
-                }
-                instanceIdsListIndex++;
+
+        java.util.List<String> instanceIdsList = stopInstancesRequest.getInstanceIds();
+        int instanceIdsListIndex = 1;
+        for (String instanceIdsListValue : instanceIdsList) {
+            if (instanceIdsListValue != null) {
+                request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));
             }
+
+            instanceIdsListIndex++;
         }
-        if (stopInstancesRequest != null) {
-            if (stopInstancesRequest.isForce() != null) {
-                request.addParameter("Force", StringUtils.fromBoolean(stopInstancesRequest.isForce()));
-            }
+        if (stopInstancesRequest.isForce() != null) {
+            request.addParameter("Force", StringUtils.fromBoolean(stopInstancesRequest.isForce()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteRouteTableRequestMarshaller implements Marshaller<Request<DeleteRouteTableRequest>, DeleteRouteTableRequest> {
 
     public Request<DeleteRouteTableRequest> marshall(DeleteRouteTableRequest deleteRouteTableRequest) {
+
+        if (deleteRouteTableRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteRouteTableRequest> request = new DefaultRequest<DeleteRouteTableRequest>(deleteRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRouteTable");
         request.addParameter("Version", "2011-05-15");
-        if (deleteRouteTableRequest != null) {
-            if (deleteRouteTableRequest.getRouteTableId() != null) {
-                request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteTableRequest.getRouteTableId()));
-            }
+
+        if (deleteRouteTableRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteTableRequest.getRouteTableId()));
         }
 
 

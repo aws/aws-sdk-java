@@ -45,6 +45,7 @@ public class GetTopicAttributesResult {
      *         for notifications to email and email-json endpoints</li> </ul>
      */
     public java.util.Map<String,String> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.HashMap<String,String>();
         }

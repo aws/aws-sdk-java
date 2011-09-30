@@ -23,7 +23,7 @@ public class AppCookieStickinessPolicy {
 
     /**
      * The mnemonic name for the policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * unique within a set of policies for this LoadBalancer.
      */
     private String policyName;
 
@@ -44,7 +44,7 @@ public class AppCookieStickinessPolicy {
      * initialize any additional object members.
      * 
      * @param policyName The mnemonic name for the policy being created. The
-     * name must be unique within the set of policies for this LoadBalancer.
+     * name must be unique within a set of policies for this LoadBalancer.
      * @param cookieName The name of the application cookie used for
      * stickiness.
      */
@@ -55,10 +55,10 @@ public class AppCookieStickinessPolicy {
     
     /**
      * The mnemonic name for the policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * unique within a set of policies for this LoadBalancer.
      *
      * @return The mnemonic name for the policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     *         unique within a set of policies for this LoadBalancer.
      */
     public String getPolicyName() {
         return policyName;
@@ -66,10 +66,10 @@ public class AppCookieStickinessPolicy {
     
     /**
      * The mnemonic name for the policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * unique within a set of policies for this LoadBalancer.
      *
      * @param policyName The mnemonic name for the policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     *         unique within a set of policies for this LoadBalancer.
      */
     public void setPolicyName(String policyName) {
         this.policyName = policyName;
@@ -77,12 +77,12 @@ public class AppCookieStickinessPolicy {
     
     /**
      * The mnemonic name for the policy being created. The name must be
-     * unique within the set of policies for this LoadBalancer.
+     * unique within a set of policies for this LoadBalancer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param policyName The mnemonic name for the policy being created. The name must be
-     *         unique within the set of policies for this LoadBalancer.
+     *         unique within a set of policies for this LoadBalancer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,6 +32,7 @@ public class DescribeRegionsResult {
      * @return The list of described Amazon EC2 regions.
      */
     public java.util.List<Region> getRegions() {
+        
         if (regions == null) {
             regions = new java.util.ArrayList<Region>();
         }
@@ -62,6 +63,7 @@ public class DescribeRegionsResult {
      *         together. 
      */
     public DescribeRegionsResult withRegions(Region... regions) {
+        if (getRegions() == null) setRegions(new java.util.ArrayList<Region>());
         for (Region value : regions) {
             getRegions().add(value);
         }

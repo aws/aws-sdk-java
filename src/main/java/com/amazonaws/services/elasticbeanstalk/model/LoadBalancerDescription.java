@@ -110,6 +110,7 @@ public class LoadBalancerDescription {
      * @return A list of Listeners used by the LoadBalancer.
      */
     public java.util.List<Listener> getListeners() {
+        
         if (listeners == null) {
             listeners = new java.util.ArrayList<Listener>();
         }
@@ -140,6 +141,7 @@ public class LoadBalancerDescription {
      *         together. 
      */
     public LoadBalancerDescription withListeners(Listener... listeners) {
+        if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>());
         for (Listener value : listeners) {
             getListeners().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,53 +31,41 @@ import com.amazonaws.util.StringUtils;
 public class PutScheduledUpdateGroupActionRequestMarshaller implements Marshaller<Request<PutScheduledUpdateGroupActionRequest>, PutScheduledUpdateGroupActionRequest> {
 
     public Request<PutScheduledUpdateGroupActionRequest> marshall(PutScheduledUpdateGroupActionRequest putScheduledUpdateGroupActionRequest) {
+
+        if (putScheduledUpdateGroupActionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<PutScheduledUpdateGroupActionRequest> request = new DefaultRequest<PutScheduledUpdateGroupActionRequest>(putScheduledUpdateGroupActionRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutScheduledUpdateGroupAction");
         request.addParameter("Version", "2011-01-01");
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getAutoScalingGroupName() != null) {
-                request.addParameter("AutoScalingGroupName", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getAutoScalingGroupName()));
-            }
+
+        if (putScheduledUpdateGroupActionRequest.getAutoScalingGroupName() != null) {
+            request.addParameter("AutoScalingGroupName", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getAutoScalingGroupName()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getScheduledActionName() != null) {
-                request.addParameter("ScheduledActionName", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getScheduledActionName()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getScheduledActionName() != null) {
+            request.addParameter("ScheduledActionName", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getScheduledActionName()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getTime() != null) {
-                request.addParameter("Time", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getTime()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getTime() != null) {
+            request.addParameter("Time", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getTime()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getStartTime() != null) {
-                request.addParameter("StartTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getStartTime()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getStartTime() != null) {
+            request.addParameter("StartTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getStartTime()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getEndTime() != null) {
-                request.addParameter("EndTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getEndTime()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getEndTime() != null) {
+            request.addParameter("EndTime", StringUtils.fromDate(putScheduledUpdateGroupActionRequest.getEndTime()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getRecurrence() != null) {
-                request.addParameter("Recurrence", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getRecurrence()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getRecurrence() != null) {
+            request.addParameter("Recurrence", StringUtils.fromString(putScheduledUpdateGroupActionRequest.getRecurrence()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getMinSize() != null) {
-                request.addParameter("MinSize", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getMinSize()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getMinSize() != null) {
+            request.addParameter("MinSize", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getMinSize()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getMaxSize() != null) {
-                request.addParameter("MaxSize", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getMaxSize()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getMaxSize() != null) {
+            request.addParameter("MaxSize", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getMaxSize()));
         }
-        if (putScheduledUpdateGroupActionRequest != null) {
-            if (putScheduledUpdateGroupActionRequest.getDesiredCapacity() != null) {
-                request.addParameter("DesiredCapacity", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getDesiredCapacity()));
-            }
+        if (putScheduledUpdateGroupActionRequest.getDesiredCapacity() != null) {
+            request.addParameter("DesiredCapacity", StringUtils.fromInteger(putScheduledUpdateGroupActionRequest.getDesiredCapacity()));
         }
 
 

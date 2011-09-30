@@ -146,6 +146,7 @@ public class Metric {
      * @return A list of dimensions associated with the metric.
      */
     public java.util.List<Dimension> getDimensions() {
+        
         if (dimensions == null) {
             dimensions = new java.util.ArrayList<Dimension>();
         }
@@ -182,6 +183,7 @@ public class Metric {
      *         together. 
      */
     public Metric withDimensions(Dimension... dimensions) {
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }

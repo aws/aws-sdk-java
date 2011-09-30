@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class CreateInternetGatewayRequestMarshaller implements Marshaller<Request<CreateInternetGatewayRequest>, CreateInternetGatewayRequest> {
 
     public Request<CreateInternetGatewayRequest> marshall(CreateInternetGatewayRequest createInternetGatewayRequest) {
+
+        if (createInternetGatewayRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateInternetGatewayRequest> request = new DefaultRequest<CreateInternetGatewayRequest>(createInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateInternetGateway");
         request.addParameter("Version", "2011-05-15");
+
 
 
         return request;

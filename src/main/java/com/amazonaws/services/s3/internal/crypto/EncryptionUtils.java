@@ -579,14 +579,14 @@ public class EncryptionUtils {
     		InputStream originalInputStream = request.getInputStream();
     		if (request.getFile() != null) {
                 originalInputStream = new InputSubstream(new RepeatableFileInputStream(request.getFile()),
-                        request.getFileOffset(), request.getPartSize());
+                        request.getFileOffset(), request.getPartSize(), request.isLastPart());
     		}
 
     		originalInputStream = new CipherInputStream(originalInputStream, symmetricCipher);
 
     		if (request.isLastPart() == false) {
     			// We want to prevent the final padding from being sent on the stream...
-    			originalInputStream = new InputSubstream(originalInputStream, 0, request.getPartSize());
+    			originalInputStream = new InputSubstream(originalInputStream, 0, request.getPartSize(), false);
     		}
 
     		long partSize = request.getPartSize();

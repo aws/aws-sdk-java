@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,27 +31,30 @@ import com.amazonaws.util.StringUtils;
 public class DescribeInstanceHealthRequestMarshaller implements Marshaller<Request<DescribeInstanceHealthRequest>, DescribeInstanceHealthRequest> {
 
     public Request<DescribeInstanceHealthRequest> marshall(DescribeInstanceHealthRequest describeInstanceHealthRequest) {
+
+        if (describeInstanceHealthRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeInstanceHealthRequest> request = new DefaultRequest<DescribeInstanceHealthRequest>(describeInstanceHealthRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeInstanceHealth");
-        request.addParameter("Version", "2011-04-05");
-        if (describeInstanceHealthRequest != null) {
-            if (describeInstanceHealthRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(describeInstanceHealthRequest.getLoadBalancerName()));
-            }
+        request.addParameter("Version", "2011-08-15");
+
+        if (describeInstanceHealthRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(describeInstanceHealthRequest.getLoadBalancerName()));
         }
 
-        if (describeInstanceHealthRequest != null) {
-            java.util.List<Instance> instancesList = describeInstanceHealthRequest.getInstances();
-            int instancesListIndex = 1;
-            for (Instance instancesListValue : instancesList) {
-                if (instancesListValue != null) {
-                    if (instancesListValue.getInstanceId() != null) {
-                        request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instancesListValue.getInstanceId()));
-                    }
+        java.util.List<Instance> instancesList = describeInstanceHealthRequest.getInstances();
+        int instancesListIndex = 1;
+        for (Instance instancesListValue : instancesList) {
+            Instance instanceMember = instancesListValue;
+            if (instanceMember != null) {
+                if (instanceMember.getInstanceId() != null) {
+                    request.addParameter("Instances.member." + instancesListIndex + ".InstanceId", StringUtils.fromString(instanceMember.getInstanceId()));
                 }
-
-                instancesListIndex++;
             }
+
+            instancesListIndex++;
         }
 
 

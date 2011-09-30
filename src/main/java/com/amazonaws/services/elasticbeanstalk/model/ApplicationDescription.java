@@ -224,6 +224,7 @@ public class ApplicationDescription {
      * @return The names of the versions for this application.
      */
     public java.util.List<String> getVersions() {
+        
         if (versions == null) {
             versions = new java.util.ArrayList<String>();
         }
@@ -254,6 +255,7 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withVersions(String... versions) {
+        if (getVersions() == null) setVersions(new java.util.ArrayList<String>());
         for (String value : versions) {
             getVersions().add(value);
         }
@@ -288,6 +290,7 @@ public class ApplicationDescription {
      *         application.
      */
     public java.util.List<String> getConfigurationTemplates() {
+        
         if (configurationTemplates == null) {
             configurationTemplates = new java.util.ArrayList<String>();
         }
@@ -322,6 +325,7 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withConfigurationTemplates(String... configurationTemplates) {
+        if (getConfigurationTemplates() == null) setConfigurationTemplates(new java.util.ArrayList<String>());
         for (String value : configurationTemplates) {
             getConfigurationTemplates().add(value);
         }

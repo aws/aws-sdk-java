@@ -35,7 +35,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     private String loadBalancerName;
 
     /**
-     * A list of LoadBalancerPort, <code>InstancePort</code>,
+     * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      */
     private java.util.List<Listener> listeners;
@@ -53,7 +53,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * 
      * @param loadBalancerName The name of the new LoadBalancer. The name
      * must be unique within your AWS account.
-     * @param listeners A list of LoadBalancerPort,
+     * @param listeners A list of <code>LoadBalancerPort</code>,
      * <code>InstancePort</code>, <code>Protocol</code>, and
      * <code>SSLCertificateId</code> items.
      */
@@ -103,13 +103,14 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * A list of LoadBalancerPort, <code>InstancePort</code>,
+     * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
-     * @return A list of LoadBalancerPort, <code>InstancePort</code>,
+     * @return A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      */
     public java.util.List<Listener> getListeners() {
+        
         if (listeners == null) {
             listeners = new java.util.ArrayList<Listener>();
         }
@@ -117,10 +118,10 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of LoadBalancerPort, <code>InstancePort</code>,
+     * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
-     * @param listeners A list of LoadBalancerPort, <code>InstancePort</code>,
+     * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
@@ -132,18 +133,19 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of LoadBalancerPort, <code>InstancePort</code>,
+     * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners A list of LoadBalancerPort, <code>InstancePort</code>,
+     * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public CreateLoadBalancerListenersRequest withListeners(Listener... listeners) {
+        if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>());
         for (Listener value : listeners) {
             getListeners().add(value);
         }
@@ -151,12 +153,12 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     }
     
     /**
-     * A list of LoadBalancerPort, <code>InstancePort</code>,
+     * A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      * <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param listeners A list of LoadBalancerPort, <code>InstancePort</code>,
+     * @param listeners A list of <code>LoadBalancerPort</code>, <code>InstancePort</code>,
      *         <code>Protocol</code>, and <code>SSLCertificateId</code> items.
      *
      * @return A reference to this updated object so that method calls can be chained 

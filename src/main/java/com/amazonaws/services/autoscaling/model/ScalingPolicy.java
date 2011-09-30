@@ -379,6 +379,7 @@ public class ScalingPolicy {
      * @return A list of CloudWatch Alarms related to the policy.
      */
     public java.util.List<Alarm> getAlarms() {
+        
         if (alarms == null) {
             alarms = new java.util.ArrayList<Alarm>();
         }
@@ -409,6 +410,7 @@ public class ScalingPolicy {
      *         together. 
      */
     public ScalingPolicy withAlarms(Alarm... alarms) {
+        if (getAlarms() == null) setAlarms(new java.util.ArrayList<Alarm>());
         for (Alarm value : alarms) {
             getAlarms().add(value);
         }

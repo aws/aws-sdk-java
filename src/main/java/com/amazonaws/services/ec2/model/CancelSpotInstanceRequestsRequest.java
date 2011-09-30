@@ -66,6 +66,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
      * @return Specifies the ID of the Spot Instance request.
      */
     public java.util.List<String> getSpotInstanceRequestIds() {
+        
         if (spotInstanceRequestIds == null) {
             spotInstanceRequestIds = new java.util.ArrayList<String>();
         }
@@ -96,6 +97,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
+        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>());
         for (String value : spotInstanceRequestIds) {
             getSpotInstanceRequestIds().add(value);
         }

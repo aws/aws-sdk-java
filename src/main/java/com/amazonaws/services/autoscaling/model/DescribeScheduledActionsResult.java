@@ -46,6 +46,7 @@ public class DescribeScheduledActionsResult {
      * @return A list of scheduled actions designed to update an Auto Scaling group.
      */
     public java.util.List<ScheduledUpdateGroupAction> getScheduledUpdateGroupActions() {
+        
         if (scheduledUpdateGroupActions == null) {
             scheduledUpdateGroupActions = new java.util.ArrayList<ScheduledUpdateGroupAction>();
         }
@@ -76,6 +77,7 @@ public class DescribeScheduledActionsResult {
      *         together. 
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(ScheduledUpdateGroupAction... scheduledUpdateGroupActions) {
+        if (getScheduledUpdateGroupActions() == null) setScheduledUpdateGroupActions(new java.util.ArrayList<ScheduledUpdateGroupAction>());
         for (ScheduledUpdateGroupAction value : scheduledUpdateGroupActions) {
             getScheduledUpdateGroupActions().add(value);
         }

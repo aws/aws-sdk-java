@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticloadbalancing.model.*;
@@ -30,40 +31,34 @@ import com.amazonaws.util.StringUtils;
 public class ConfigureHealthCheckRequestMarshaller implements Marshaller<Request<ConfigureHealthCheckRequest>, ConfigureHealthCheckRequest> {
 
     public Request<ConfigureHealthCheckRequest> marshall(ConfigureHealthCheckRequest configureHealthCheckRequest) {
+
+        if (configureHealthCheckRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ConfigureHealthCheckRequest> request = new DefaultRequest<ConfigureHealthCheckRequest>(configureHealthCheckRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ConfigureHealthCheck");
-        request.addParameter("Version", "2011-04-05");
-        if (configureHealthCheckRequest != null) {
-            if (configureHealthCheckRequest.getLoadBalancerName() != null) {
-                request.addParameter("LoadBalancerName", StringUtils.fromString(configureHealthCheckRequest.getLoadBalancerName()));
-            }
+        request.addParameter("Version", "2011-08-15");
+
+        if (configureHealthCheckRequest.getLoadBalancerName() != null) {
+            request.addParameter("LoadBalancerName", StringUtils.fromString(configureHealthCheckRequest.getLoadBalancerName()));
         }
-        if (configureHealthCheckRequest != null) {
-            HealthCheck healthCheck = configureHealthCheckRequest.getHealthCheck();
-            if (healthCheck != null) {
-                if (healthCheck.getTarget() != null) {
-                    request.addParameter("HealthCheck.Target", StringUtils.fromString(healthCheck.getTarget()));
-                }
+        HealthCheck healthCheckHealthCheck = configureHealthCheckRequest.getHealthCheck();
+        if (healthCheckHealthCheck != null) {
+            if (healthCheckHealthCheck.getTarget() != null) {
+                request.addParameter("HealthCheck.Target", StringUtils.fromString(healthCheckHealthCheck.getTarget()));
             }
-            if (healthCheck != null) {
-                if (healthCheck.getInterval() != null) {
-                    request.addParameter("HealthCheck.Interval", StringUtils.fromInteger(healthCheck.getInterval()));
-                }
+            if (healthCheckHealthCheck.getInterval() != null) {
+                request.addParameter("HealthCheck.Interval", StringUtils.fromInteger(healthCheckHealthCheck.getInterval()));
             }
-            if (healthCheck != null) {
-                if (healthCheck.getTimeout() != null) {
-                    request.addParameter("HealthCheck.Timeout", StringUtils.fromInteger(healthCheck.getTimeout()));
-                }
+            if (healthCheckHealthCheck.getTimeout() != null) {
+                request.addParameter("HealthCheck.Timeout", StringUtils.fromInteger(healthCheckHealthCheck.getTimeout()));
             }
-            if (healthCheck != null) {
-                if (healthCheck.getUnhealthyThreshold() != null) {
-                    request.addParameter("HealthCheck.UnhealthyThreshold", StringUtils.fromInteger(healthCheck.getUnhealthyThreshold()));
-                }
+            if (healthCheckHealthCheck.getUnhealthyThreshold() != null) {
+                request.addParameter("HealthCheck.UnhealthyThreshold", StringUtils.fromInteger(healthCheckHealthCheck.getUnhealthyThreshold()));
             }
-            if (healthCheck != null) {
-                if (healthCheck.getHealthyThreshold() != null) {
-                    request.addParameter("HealthCheck.HealthyThreshold", StringUtils.fromInteger(healthCheck.getHealthyThreshold()));
-                }
+            if (healthCheckHealthCheck.getHealthyThreshold() != null) {
+                request.addParameter("HealthCheck.HealthyThreshold", StringUtils.fromInteger(healthCheckHealthCheck.getHealthyThreshold()));
             }
         }
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class RequestEnvironmentInfoRequestMarshaller implements Marshaller<Request<RequestEnvironmentInfoRequest>, RequestEnvironmentInfoRequest> {
 
     public Request<RequestEnvironmentInfoRequest> marshall(RequestEnvironmentInfoRequest requestEnvironmentInfoRequest) {
+
+        if (requestEnvironmentInfoRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<RequestEnvironmentInfoRequest> request = new DefaultRequest<RequestEnvironmentInfoRequest>(requestEnvironmentInfoRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RequestEnvironmentInfo");
         request.addParameter("Version", "2010-12-01");
-        if (requestEnvironmentInfoRequest != null) {
-            if (requestEnvironmentInfoRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(requestEnvironmentInfoRequest.getEnvironmentId()));
-            }
+
+        if (requestEnvironmentInfoRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(requestEnvironmentInfoRequest.getEnvironmentId()));
         }
-        if (requestEnvironmentInfoRequest != null) {
-            if (requestEnvironmentInfoRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(requestEnvironmentInfoRequest.getEnvironmentName()));
-            }
+        if (requestEnvironmentInfoRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(requestEnvironmentInfoRequest.getEnvironmentName()));
         }
-        if (requestEnvironmentInfoRequest != null) {
-            if (requestEnvironmentInfoRequest.getInfoType() != null) {
-                request.addParameter("InfoType", StringUtils.fromString(requestEnvironmentInfoRequest.getInfoType()));
-            }
+        if (requestEnvironmentInfoRequest.getInfoType() != null) {
+            request.addParameter("InfoType", StringUtils.fromString(requestEnvironmentInfoRequest.getInfoType()));
         }
 
 

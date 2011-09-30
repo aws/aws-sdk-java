@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class AssociateDhcpOptionsRequestMarshaller implements Marshaller<Request<AssociateDhcpOptionsRequest>, AssociateDhcpOptionsRequest> {
 
     public Request<AssociateDhcpOptionsRequest> marshall(AssociateDhcpOptionsRequest associateDhcpOptionsRequest) {
+
+        if (associateDhcpOptionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<AssociateDhcpOptionsRequest> request = new DefaultRequest<AssociateDhcpOptionsRequest>(associateDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateDhcpOptions");
         request.addParameter("Version", "2011-05-15");
-        if (associateDhcpOptionsRequest != null) {
-            if (associateDhcpOptionsRequest.getDhcpOptionsId() != null) {
-                request.addParameter("DhcpOptionsId", StringUtils.fromString(associateDhcpOptionsRequest.getDhcpOptionsId()));
-            }
+
+        if (associateDhcpOptionsRequest.getDhcpOptionsId() != null) {
+            request.addParameter("DhcpOptionsId", StringUtils.fromString(associateDhcpOptionsRequest.getDhcpOptionsId()));
         }
-        if (associateDhcpOptionsRequest != null) {
-            if (associateDhcpOptionsRequest.getVpcId() != null) {
-                request.addParameter("VpcId", StringUtils.fromString(associateDhcpOptionsRequest.getVpcId()));
-            }
+        if (associateDhcpOptionsRequest.getVpcId() != null) {
+            request.addParameter("VpcId", StringUtils.fromString(associateDhcpOptionsRequest.getVpcId()));
         }
 
 

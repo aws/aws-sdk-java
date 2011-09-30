@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.rds.model.*;
@@ -30,84 +31,63 @@ import com.amazonaws.util.StringUtils;
 public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<ModifyDBInstanceRequest>, ModifyDBInstanceRequest> {
 
     public Request<ModifyDBInstanceRequest> marshall(ModifyDBInstanceRequest modifyDBInstanceRequest) {
+
+        if (modifyDBInstanceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
         request.addParameter("Version", "2011-04-01");
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
-                request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
-            }
-        }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getAllocatedStorage() != null) {
-                request.addParameter("AllocatedStorage", StringUtils.fromInteger(modifyDBInstanceRequest.getAllocatedStorage()));
-            }
-        }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getDBInstanceClass() != null) {
-                request.addParameter("DBInstanceClass", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceClass()));
-            }
-        }
-        if (modifyDBInstanceRequest != null) {
-            java.util.List<String> dBSecurityGroupsList = modifyDBInstanceRequest.getDBSecurityGroups();
-            int dBSecurityGroupsListIndex = 1;
 
-            for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
-                if (dBSecurityGroupsListValue != null) {
-                    request.addParameter("DBSecurityGroups.member." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
-                }
-                dBSecurityGroupsListIndex++;
-            }
+        if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
+            request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.isApplyImmediately() != null) {
-                request.addParameter("ApplyImmediately", StringUtils.fromBoolean(modifyDBInstanceRequest.isApplyImmediately()));
-            }
+        if (modifyDBInstanceRequest.getAllocatedStorage() != null) {
+            request.addParameter("AllocatedStorage", StringUtils.fromInteger(modifyDBInstanceRequest.getAllocatedStorage()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getMasterUserPassword() != null) {
-                request.addParameter("MasterUserPassword", StringUtils.fromString(modifyDBInstanceRequest.getMasterUserPassword()));
-            }
+        if (modifyDBInstanceRequest.getDBInstanceClass() != null) {
+            request.addParameter("DBInstanceClass", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceClass()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getDBParameterGroupName() != null) {
-                request.addParameter("DBParameterGroupName", StringUtils.fromString(modifyDBInstanceRequest.getDBParameterGroupName()));
+
+        java.util.List<String> dBSecurityGroupsList = modifyDBInstanceRequest.getDBSecurityGroups();
+        int dBSecurityGroupsListIndex = 1;
+        for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
+            if (dBSecurityGroupsListValue != null) {
+                request.addParameter("DBSecurityGroups.DBSecurityGroupName." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));
             }
+
+            dBSecurityGroupsListIndex++;
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getBackupRetentionPeriod() != null) {
-                request.addParameter("BackupRetentionPeriod", StringUtils.fromInteger(modifyDBInstanceRequest.getBackupRetentionPeriod()));
-            }
+        if (modifyDBInstanceRequest.isApplyImmediately() != null) {
+            request.addParameter("ApplyImmediately", StringUtils.fromBoolean(modifyDBInstanceRequest.isApplyImmediately()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getPreferredBackupWindow() != null) {
-                request.addParameter("PreferredBackupWindow", StringUtils.fromString(modifyDBInstanceRequest.getPreferredBackupWindow()));
-            }
+        if (modifyDBInstanceRequest.getMasterUserPassword() != null) {
+            request.addParameter("MasterUserPassword", StringUtils.fromString(modifyDBInstanceRequest.getMasterUserPassword()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getPreferredMaintenanceWindow() != null) {
-                request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyDBInstanceRequest.getPreferredMaintenanceWindow()));
-            }
+        if (modifyDBInstanceRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(modifyDBInstanceRequest.getDBParameterGroupName()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.isMultiAZ() != null) {
-                request.addParameter("MultiAZ", StringUtils.fromBoolean(modifyDBInstanceRequest.isMultiAZ()));
-            }
+        if (modifyDBInstanceRequest.getBackupRetentionPeriod() != null) {
+            request.addParameter("BackupRetentionPeriod", StringUtils.fromInteger(modifyDBInstanceRequest.getBackupRetentionPeriod()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.getEngineVersion() != null) {
-                request.addParameter("EngineVersion", StringUtils.fromString(modifyDBInstanceRequest.getEngineVersion()));
-            }
+        if (modifyDBInstanceRequest.getPreferredBackupWindow() != null) {
+            request.addParameter("PreferredBackupWindow", StringUtils.fromString(modifyDBInstanceRequest.getPreferredBackupWindow()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.isAllowMajorVersionUpgrade() != null) {
-                request.addParameter("AllowMajorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAllowMajorVersionUpgrade()));
-            }
+        if (modifyDBInstanceRequest.getPreferredMaintenanceWindow() != null) {
+            request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyDBInstanceRequest.getPreferredMaintenanceWindow()));
         }
-        if (modifyDBInstanceRequest != null) {
-            if (modifyDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
-                request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAutoMinorVersionUpgrade()));
-            }
+        if (modifyDBInstanceRequest.isMultiAZ() != null) {
+            request.addParameter("MultiAZ", StringUtils.fromBoolean(modifyDBInstanceRequest.isMultiAZ()));
+        }
+        if (modifyDBInstanceRequest.getEngineVersion() != null) {
+            request.addParameter("EngineVersion", StringUtils.fromString(modifyDBInstanceRequest.getEngineVersion()));
+        }
+        if (modifyDBInstanceRequest.isAllowMajorVersionUpgrade() != null) {
+            request.addParameter("AllowMajorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAllowMajorVersionUpgrade()));
+        }
+        if (modifyDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
+            request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAutoMinorVersionUpgrade()));
         }
 
 

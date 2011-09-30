@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.sns.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ListSubscriptionsByTopicRequestMarshaller implements Marshaller<Request<ListSubscriptionsByTopicRequest>, ListSubscriptionsByTopicRequest> {
 
     public Request<ListSubscriptionsByTopicRequest> marshall(ListSubscriptionsByTopicRequest listSubscriptionsByTopicRequest) {
+
+        if (listSubscriptionsByTopicRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListSubscriptionsByTopicRequest> request = new DefaultRequest<ListSubscriptionsByTopicRequest>(listSubscriptionsByTopicRequest, "AmazonSNS");
         request.addParameter("Action", "ListSubscriptionsByTopic");
         request.addParameter("Version", "2010-03-31");
-        if (listSubscriptionsByTopicRequest != null) {
-            if (listSubscriptionsByTopicRequest.getTopicArn() != null) {
-                request.addParameter("TopicArn", StringUtils.fromString(listSubscriptionsByTopicRequest.getTopicArn()));
-            }
+
+        if (listSubscriptionsByTopicRequest.getTopicArn() != null) {
+            request.addParameter("TopicArn", StringUtils.fromString(listSubscriptionsByTopicRequest.getTopicArn()));
         }
-        if (listSubscriptionsByTopicRequest != null) {
-            if (listSubscriptionsByTopicRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listSubscriptionsByTopicRequest.getNextToken()));
-            }
+        if (listSubscriptionsByTopicRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listSubscriptionsByTopicRequest.getNextToken()));
         }
 
 

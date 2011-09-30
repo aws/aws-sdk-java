@@ -32,6 +32,7 @@ public class DescribeSnapshotsResult {
      * @return The list of described EBS snapshots.
      */
     public java.util.List<Snapshot> getSnapshots() {
+        
         if (snapshots == null) {
             snapshots = new java.util.ArrayList<Snapshot>();
         }
@@ -62,6 +63,7 @@ public class DescribeSnapshotsResult {
      *         together. 
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
+        if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>());
         for (Snapshot value : snapshots) {
             getSnapshots().add(value);
         }

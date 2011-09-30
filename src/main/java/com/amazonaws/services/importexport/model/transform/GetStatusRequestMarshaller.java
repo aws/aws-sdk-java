@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.importexport.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusRequest>, GetStatusRequest> {
 
     public Request<GetStatusRequest> marshall(GetStatusRequest getStatusRequest) {
+
+        if (getStatusRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<GetStatusRequest> request = new DefaultRequest<GetStatusRequest>(getStatusRequest, "AmazonImportExport");
         request.addParameter("Action", "GetStatus");
         request.addParameter("Version", "2010-06-01");
-        if (getStatusRequest != null) {
-            if (getStatusRequest.getJobId() != null) {
-                request.addParameter("JobId", StringUtils.fromString(getStatusRequest.getJobId()));
-            }
+
+        if (getStatusRequest.getJobId() != null) {
+            request.addParameter("JobId", StringUtils.fromString(getStatusRequest.getJobId()));
         }
 
 

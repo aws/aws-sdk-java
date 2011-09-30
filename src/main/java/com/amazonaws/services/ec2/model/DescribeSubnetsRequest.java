@@ -58,6 +58,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
      * @return A set of one or more subnet IDs.
      */
     public java.util.List<String> getSubnetIds() {
+        
         if (subnetIds == null) {
             subnetIds = new java.util.ArrayList<String>();
         }
@@ -88,6 +89,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSubnetsRequest withSubnetIds(String... subnetIds) {
+        if (getSubnetIds() == null) setSubnetIds(new java.util.ArrayList<String>());
         for (String value : subnetIds) {
             getSubnetIds().add(value);
         }
@@ -126,6 +128,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -168,6 +171,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSubnetsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

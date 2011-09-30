@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,107 +31,94 @@ import com.amazonaws.util.StringUtils;
 public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request<ModifyImageAttributeRequest>, ModifyImageAttributeRequest> {
 
     public Request<ModifyImageAttributeRequest> marshall(ModifyImageAttributeRequest modifyImageAttributeRequest) {
+
+        if (modifyImageAttributeRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
         request.addParameter("Version", "2011-05-15");
-        if (modifyImageAttributeRequest != null) {
-            if (modifyImageAttributeRequest.getImageId() != null) {
-                request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));
-            }
-        }
-        if (modifyImageAttributeRequest != null) {
-            if (modifyImageAttributeRequest.getAttribute() != null) {
-                request.addParameter("Attribute", StringUtils.fromString(modifyImageAttributeRequest.getAttribute()));
-            }
-        }
-        if (modifyImageAttributeRequest != null) {
-            if (modifyImageAttributeRequest.getOperationType() != null) {
-                request.addParameter("OperationType", StringUtils.fromString(modifyImageAttributeRequest.getOperationType()));
-            }
-        }
-        if (modifyImageAttributeRequest != null) {
-            java.util.List<String> userIdsList = modifyImageAttributeRequest.getUserIds();
-            int userIdsListIndex = 1;
 
-            for (String userIdsListValue : userIdsList) {
-                if (userIdsListValue != null) {
-                    request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
-                }
-                userIdsListIndex++;
-            }
+        if (modifyImageAttributeRequest.getImageId() != null) {
+            request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));
         }
-        if (modifyImageAttributeRequest != null) {
-            java.util.List<String> userGroupsList = modifyImageAttributeRequest.getUserGroups();
-            int userGroupsListIndex = 1;
+        if (modifyImageAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(modifyImageAttributeRequest.getAttribute()));
+        }
+        if (modifyImageAttributeRequest.getOperationType() != null) {
+            request.addParameter("OperationType", StringUtils.fromString(modifyImageAttributeRequest.getOperationType()));
+        }
 
-            for (String userGroupsListValue : userGroupsList) {
-                if (userGroupsListValue != null) {
-                    request.addParameter("UserGroup." + userGroupsListIndex, StringUtils.fromString(userGroupsListValue));
-                }
-                userGroupsListIndex++;
+        java.util.List<String> userIdsList = modifyImageAttributeRequest.getUserIds();
+        int userIdsListIndex = 1;
+        for (String userIdsListValue : userIdsList) {
+            if (userIdsListValue != null) {
+                request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
             }
-        }
-        if (modifyImageAttributeRequest != null) {
-            java.util.List<String> productCodesList = modifyImageAttributeRequest.getProductCodes();
-            int productCodesListIndex = 1;
 
-            for (String productCodesListValue : productCodesList) {
-                if (productCodesListValue != null) {
-                    request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(productCodesListValue));
-                }
-                productCodesListIndex++;
-            }
+            userIdsListIndex++;
         }
-        if (modifyImageAttributeRequest != null) {
-            if (modifyImageAttributeRequest.getValue() != null) {
-                request.addParameter("Value", StringUtils.fromString(modifyImageAttributeRequest.getValue()));
-            }
-        }
-        if (modifyImageAttributeRequest != null) {
-            LaunchPermissionModifications launchPermission = modifyImageAttributeRequest.getLaunchPermission();
 
-            if (launchPermission != null) {
-                java.util.List<LaunchPermission> addList = launchPermission.getAdd();
-                int addListIndex = 1;
-                for (LaunchPermission addListValue : addList) {
-                    if (addListValue != null) {
-                        if (addListValue.getUserId() != null) {
-                            request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId", StringUtils.fromString(addListValue.getUserId()));
-                        }
+        java.util.List<String> userGroupsList = modifyImageAttributeRequest.getUserGroups();
+        int userGroupsListIndex = 1;
+        for (String userGroupsListValue : userGroupsList) {
+            if (userGroupsListValue != null) {
+                request.addParameter("UserGroup." + userGroupsListIndex, StringUtils.fromString(userGroupsListValue));
+            }
+
+            userGroupsListIndex++;
+        }
+
+        java.util.List<String> productCodesList = modifyImageAttributeRequest.getProductCodes();
+        int productCodesListIndex = 1;
+        for (String productCodesListValue : productCodesList) {
+            if (productCodesListValue != null) {
+                request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(productCodesListValue));
+            }
+
+            productCodesListIndex++;
+        }
+        if (modifyImageAttributeRequest.getValue() != null) {
+            request.addParameter("Value", StringUtils.fromString(modifyImageAttributeRequest.getValue()));
+        }
+        LaunchPermissionModifications launchPermissionModificationsLaunchPermission = modifyImageAttributeRequest.getLaunchPermission();
+        if (launchPermissionModificationsLaunchPermission != null) {
+
+            java.util.List<LaunchPermission> addList = launchPermissionModificationsLaunchPermission.getAdd();
+            int addListIndex = 1;
+            for (LaunchPermission addListValue : addList) {
+                LaunchPermission launchPermissionMember = addListValue;
+                if (launchPermissionMember != null) {
+                    if (launchPermissionMember.getUserId() != null) {
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".UserId", StringUtils.fromString(launchPermissionMember.getUserId()));
                     }
-                    if (addListValue != null) {
-                        if (addListValue.getGroup() != null) {
-                            request.addParameter("LaunchPermission.Add." + addListIndex + ".Group", StringUtils.fromString(addListValue.getGroup()));
-                        }
+                    if (launchPermissionMember.getGroup() != null) {
+                        request.addParameter("LaunchPermission.Add." + addListIndex + ".Group", StringUtils.fromString(launchPermissionMember.getGroup()));
                     }
-
-                    addListIndex++;
                 }
+
+                addListIndex++;
             }
 
-            if (launchPermission != null) {
-                java.util.List<LaunchPermission> removeList = launchPermission.getRemove();
-                int removeListIndex = 1;
-                for (LaunchPermission removeListValue : removeList) {
-                    if (removeListValue != null) {
-                        if (removeListValue.getUserId() != null) {
-                            request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId", StringUtils.fromString(removeListValue.getUserId()));
-                        }
+            java.util.List<LaunchPermission> removeList = launchPermissionModificationsLaunchPermission.getRemove();
+            int removeListIndex = 1;
+            for (LaunchPermission removeListValue : removeList) {
+                LaunchPermission launchPermissionMember = removeListValue;
+                if (launchPermissionMember != null) {
+                    if (launchPermissionMember.getUserId() != null) {
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".UserId", StringUtils.fromString(launchPermissionMember.getUserId()));
                     }
-                    if (removeListValue != null) {
-                        if (removeListValue.getGroup() != null) {
-                            request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(removeListValue.getGroup()));
-                        }
+                    if (launchPermissionMember.getGroup() != null) {
+                        request.addParameter("LaunchPermission.Remove." + removeListIndex + ".Group", StringUtils.fromString(launchPermissionMember.getGroup()));
                     }
-
-                    removeListIndex++;
                 }
+
+                removeListIndex++;
             }
         }
-        if (modifyImageAttributeRequest != null) {
-            if (modifyImageAttributeRequest.getDescription() != null) {
-                request.addParameter("Description", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
-            }
+        if (modifyImageAttributeRequest.getDescription() != null) {
+            request.addParameter("Description", StringUtils.fromString(modifyImageAttributeRequest.getDescription()));
         }
 
 

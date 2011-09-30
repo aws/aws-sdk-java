@@ -32,6 +32,7 @@ public class DescribeStacksResult {
      * @return A list of stack structures.
      */
     public java.util.List<Stack> getStacks() {
+        
         if (stacks == null) {
             stacks = new java.util.ArrayList<Stack>();
         }
@@ -62,6 +63,7 @@ public class DescribeStacksResult {
      *         together. 
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
+        if (getStacks() == null) setStacks(new java.util.ArrayList<Stack>());
         for (Stack value : stacks) {
             getStacks().add(value);
         }

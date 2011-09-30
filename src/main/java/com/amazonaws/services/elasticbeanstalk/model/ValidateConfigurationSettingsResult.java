@@ -32,6 +32,7 @@ public class ValidateConfigurationSettingsResult {
      * @return A list of <a>ValidationMessage</a>.
      */
     public java.util.List<ValidationMessage> getMessages() {
+        
         if (messages == null) {
             messages = new java.util.ArrayList<ValidationMessage>();
         }
@@ -62,6 +63,7 @@ public class ValidateConfigurationSettingsResult {
      *         together. 
      */
     public ValidateConfigurationSettingsResult withMessages(ValidationMessage... messages) {
+        if (getMessages() == null) setMessages(new java.util.ArrayList<ValidationMessage>());
         for (ValidationMessage value : messages) {
             getMessages().add(value);
         }

@@ -289,6 +289,7 @@ public class Volume {
      * @return Information on what this volume is attached to.
      */
     public java.util.List<VolumeAttachment> getAttachments() {
+        
         if (attachments == null) {
             attachments = new java.util.ArrayList<VolumeAttachment>();
         }
@@ -319,6 +320,7 @@ public class Volume {
      *         together. 
      */
     public Volume withAttachments(VolumeAttachment... attachments) {
+        if (getAttachments() == null) setAttachments(new java.util.ArrayList<VolumeAttachment>());
         for (VolumeAttachment value : attachments) {
             getAttachments().add(value);
         }
@@ -351,6 +353,7 @@ public class Volume {
      * @return A list of tags for the Volume.
      */
     public java.util.List<Tag> getTags() {
+        
         if (tags == null) {
             tags = new java.util.ArrayList<Tag>();
         }
@@ -381,6 +384,7 @@ public class Volume {
      *         together. 
      */
     public Volume withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
         for (Tag value : tags) {
             getTags().add(value);
         }

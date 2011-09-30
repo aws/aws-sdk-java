@@ -32,6 +32,7 @@ public class DescribeBundleTasksResult {
      * @return The list of described bundle tasks.
      */
     public java.util.List<BundleTask> getBundleTasks() {
+        
         if (bundleTasks == null) {
             bundleTasks = new java.util.ArrayList<BundleTask>();
         }
@@ -62,6 +63,7 @@ public class DescribeBundleTasksResult {
      *         together. 
      */
     public DescribeBundleTasksResult withBundleTasks(BundleTask... bundleTasks) {
+        if (getBundleTasks() == null) setBundleTasks(new java.util.ArrayList<BundleTask>());
         for (BundleTask value : bundleTasks) {
             getBundleTasks().add(value);
         }

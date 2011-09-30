@@ -32,6 +32,7 @@ public class DescribeLoadBalancersResult {
      * @return A list of LoadBalancer description structures.
      */
     public java.util.List<LoadBalancerDescription> getLoadBalancerDescriptions() {
+        
         if (loadBalancerDescriptions == null) {
             loadBalancerDescriptions = new java.util.ArrayList<LoadBalancerDescription>();
         }
@@ -62,6 +63,7 @@ public class DescribeLoadBalancersResult {
      *         together. 
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(LoadBalancerDescription... loadBalancerDescriptions) {
+        if (getLoadBalancerDescriptions() == null) setLoadBalancerDescriptions(new java.util.ArrayList<LoadBalancerDescription>());
         for (LoadBalancerDescription value : loadBalancerDescriptions) {
             getLoadBalancerDescriptions().add(value);
         }

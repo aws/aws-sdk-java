@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.autoscaling.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class DescribeAutoScalingNotificationTypesRequestMarshaller implements Marshaller<Request<DescribeAutoScalingNotificationTypesRequest>, DescribeAutoScalingNotificationTypesRequest> {
 
     public Request<DescribeAutoScalingNotificationTypesRequest> marshall(DescribeAutoScalingNotificationTypesRequest describeAutoScalingNotificationTypesRequest) {
+
+        if (describeAutoScalingNotificationTypesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeAutoScalingNotificationTypesRequest> request = new DefaultRequest<DescribeAutoScalingNotificationTypesRequest>(describeAutoScalingNotificationTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingNotificationTypes");
         request.addParameter("Version", "2011-01-01");
+
 
 
         return request;

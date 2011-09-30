@@ -118,6 +118,7 @@ public class EngineDefaults {
      * @return Contains a list of engine default parameters.
      */
     public java.util.List<Parameter> getParameters() {
+        
         if (parameters == null) {
             parameters = new java.util.ArrayList<Parameter>();
         }
@@ -148,6 +149,7 @@ public class EngineDefaults {
      *         together. 
      */
     public EngineDefaults withParameters(Parameter... parameters) {
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
         for (Parameter value : parameters) {
             getParameters().add(value);
         }

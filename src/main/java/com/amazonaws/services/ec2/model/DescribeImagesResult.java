@@ -32,6 +32,7 @@ public class DescribeImagesResult {
      * @return The list of the described AMIs.
      */
     public java.util.List<Image> getImages() {
+        
         if (images == null) {
             images = new java.util.ArrayList<Image>();
         }
@@ -62,6 +63,7 @@ public class DescribeImagesResult {
      *         together. 
      */
     public DescribeImagesResult withImages(Image... images) {
+        if (getImages() == null) setImages(new java.util.ArrayList<Image>());
         for (Image value : images) {
             getImages().add(value);
         }

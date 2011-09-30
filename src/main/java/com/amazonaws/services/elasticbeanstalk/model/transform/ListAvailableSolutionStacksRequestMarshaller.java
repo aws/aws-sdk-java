@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class ListAvailableSolutionStacksRequestMarshaller implements Marshaller<Request<ListAvailableSolutionStacksRequest>, ListAvailableSolutionStacksRequest> {
 
     public Request<ListAvailableSolutionStacksRequest> marshall(ListAvailableSolutionStacksRequest listAvailableSolutionStacksRequest) {
+
+        if (listAvailableSolutionStacksRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<ListAvailableSolutionStacksRequest> request = new DefaultRequest<ListAvailableSolutionStacksRequest>(listAvailableSolutionStacksRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "ListAvailableSolutionStacks");
         request.addParameter("Version", "2010-12-01");
+
 
 
         return request;

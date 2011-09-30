@@ -40,6 +40,7 @@ public class DescribeLaunchConfigurationsResult {
      * @return A list of launch configurations.
      */
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
+        
         if (launchConfigurations == null) {
             launchConfigurations = new java.util.ArrayList<LaunchConfiguration>();
         }
@@ -70,6 +71,7 @@ public class DescribeLaunchConfigurationsResult {
      *         together. 
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
+        if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>());
         for (LaunchConfiguration value : launchConfigurations) {
             getLaunchConfigurations().add(value);
         }

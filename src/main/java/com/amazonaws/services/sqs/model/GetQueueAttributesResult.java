@@ -15,9 +15,7 @@
 package com.amazonaws.services.sqs.model;
 
 /**
- * <p>
  * 
- * </p>
  */
 public class GetQueueAttributesResult {
 
@@ -32,6 +30,7 @@ public class GetQueueAttributesResult {
      * @return A list of attributes.
      */
     public java.util.Map<String,String> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.HashMap<String,String>();
         }

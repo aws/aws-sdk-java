@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRouteRequest>, DeleteRouteRequest> {
 
     public Request<DeleteRouteRequest> marshall(DeleteRouteRequest deleteRouteRequest) {
+
+        if (deleteRouteRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteRouteRequest> request = new DefaultRequest<DeleteRouteRequest>(deleteRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRoute");
         request.addParameter("Version", "2011-05-15");
-        if (deleteRouteRequest != null) {
-            if (deleteRouteRequest.getRouteTableId() != null) {
-                request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));
-            }
+
+        if (deleteRouteRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(deleteRouteRequest.getRouteTableId()));
         }
-        if (deleteRouteRequest != null) {
-            if (deleteRouteRequest.getDestinationCidrBlock() != null) {
-                request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationCidrBlock()));
-            }
+        if (deleteRouteRequest.getDestinationCidrBlock() != null) {
+            request.addParameter("DestinationCidrBlock", StringUtils.fromString(deleteRouteRequest.getDestinationCidrBlock()));
         }
 
 

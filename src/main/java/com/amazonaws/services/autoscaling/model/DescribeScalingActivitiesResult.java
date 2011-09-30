@@ -42,6 +42,7 @@ public class DescribeScalingActivitiesResult {
      * @return A list of the requested scaling activities.
      */
     public java.util.List<Activity> getActivities() {
+        
         if (activities == null) {
             activities = new java.util.ArrayList<Activity>();
         }
@@ -72,6 +73,7 @@ public class DescribeScalingActivitiesResult {
      *         together. 
      */
     public DescribeScalingActivitiesResult withActivities(Activity... activities) {
+        if (getActivities() == null) setActivities(new java.util.ArrayList<Activity>());
         for (Activity value : activities) {
             getActivities().add(value);
         }

@@ -379,6 +379,7 @@ public class InstanceAttribute {
      *         up of a virtualName and a deviceName.
      */
     public java.util.List<InstanceBlockDeviceMapping> getBlockDeviceMappings() {
+        
         if (blockDeviceMappings == null) {
             blockDeviceMappings = new java.util.ArrayList<InstanceBlockDeviceMapping>();
         }
@@ -413,6 +414,7 @@ public class InstanceAttribute {
      *         together. 
      */
     public InstanceAttribute withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMapping>());
         for (InstanceBlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }

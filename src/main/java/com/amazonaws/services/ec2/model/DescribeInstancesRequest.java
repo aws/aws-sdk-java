@@ -58,6 +58,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest {
      * @return An optional list of the instances to describe.
      */
     public java.util.List<String> getInstanceIds() {
+        
         if (instanceIds == null) {
             instanceIds = new java.util.ArrayList<String>();
         }
@@ -88,6 +89,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstancesRequest withInstanceIds(String... instanceIds) {
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }
@@ -128,6 +130,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -174,6 +177,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstancesRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }

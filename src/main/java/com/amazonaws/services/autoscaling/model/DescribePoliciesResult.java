@@ -40,6 +40,7 @@ public class DescribePoliciesResult {
      * @return A list of scaling policies.
      */
     public java.util.List<ScalingPolicy> getScalingPolicies() {
+        
         if (scalingPolicies == null) {
             scalingPolicies = new java.util.ArrayList<ScalingPolicy>();
         }
@@ -70,6 +71,7 @@ public class DescribePoliciesResult {
      *         together. 
      */
     public DescribePoliciesResult withScalingPolicies(ScalingPolicy... scalingPolicies) {
+        if (getScalingPolicies() == null) setScalingPolicies(new java.util.ArrayList<ScalingPolicy>());
         for (ScalingPolicy value : scalingPolicies) {
             getScalingPolicies().add(value);
         }

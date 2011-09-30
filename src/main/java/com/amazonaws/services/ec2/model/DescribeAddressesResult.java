@@ -32,6 +32,7 @@ public class DescribeAddressesResult {
      * @return The list of Elastic IPs.
      */
     public java.util.List<Address> getAddresses() {
+        
         if (addresses == null) {
             addresses = new java.util.ArrayList<Address>();
         }
@@ -62,6 +63,7 @@ public class DescribeAddressesResult {
      *         together. 
      */
     public DescribeAddressesResult withAddresses(Address... addresses) {
+        if (getAddresses() == null) setAddresses(new java.util.ArrayList<Address>());
         for (Address value : addresses) {
             getAddresses().add(value);
         }

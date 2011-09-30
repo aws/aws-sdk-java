@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,19 +31,24 @@ import com.amazonaws.util.StringUtils;
 public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<Request<CancelSpotInstanceRequestsRequest>, CancelSpotInstanceRequestsRequest> {
 
     public Request<CancelSpotInstanceRequestsRequest> marshall(CancelSpotInstanceRequestsRequest cancelSpotInstanceRequestsRequest) {
+
+        if (cancelSpotInstanceRequestsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(cancelSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
         request.addParameter("Version", "2011-05-15");
-        if (cancelSpotInstanceRequestsRequest != null) {
-            java.util.List<String> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
-            int spotInstanceRequestIdsListIndex = 1;
 
-            for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
-                if (spotInstanceRequestIdsListValue != null) {
-                    request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
-                }
-                spotInstanceRequestIdsListIndex++;
+
+        java.util.List<String> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
+        int spotInstanceRequestIdsListIndex = 1;
+        for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
+            if (spotInstanceRequestIdsListValue != null) {
+                request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
             }
+
+            spotInstanceRequestIdsListIndex++;
         }
 
 

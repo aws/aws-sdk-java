@@ -36,6 +36,7 @@ public class UnmonitorInstancesResult {
      *         in the request.
      */
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
+        
         if (instanceMonitorings == null) {
             instanceMonitorings = new java.util.ArrayList<InstanceMonitoring>();
         }
@@ -70,6 +71,7 @@ public class UnmonitorInstancesResult {
      *         together. 
      */
     public UnmonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
+        if (getInstanceMonitorings() == null) setInstanceMonitorings(new java.util.ArrayList<InstanceMonitoring>());
         for (InstanceMonitoring value : instanceMonitorings) {
             getInstanceMonitorings().add(value);
         }

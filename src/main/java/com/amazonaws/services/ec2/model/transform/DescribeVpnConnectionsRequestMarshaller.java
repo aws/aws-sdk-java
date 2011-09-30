@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,44 +31,47 @@ import com.amazonaws.util.StringUtils;
 public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Request<DescribeVpnConnectionsRequest>, DescribeVpnConnectionsRequest> {
 
     public Request<DescribeVpnConnectionsRequest> marshall(DescribeVpnConnectionsRequest describeVpnConnectionsRequest) {
+
+        if (describeVpnConnectionsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DescribeVpnConnectionsRequest> request = new DefaultRequest<DescribeVpnConnectionsRequest>(describeVpnConnectionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnConnections");
         request.addParameter("Version", "2011-05-15");
-        if (describeVpnConnectionsRequest != null) {
-            java.util.List<String> vpnConnectionIdsList = describeVpnConnectionsRequest.getVpnConnectionIds();
-            int vpnConnectionIdsListIndex = 1;
 
-            for (String vpnConnectionIdsListValue : vpnConnectionIdsList) {
-                if (vpnConnectionIdsListValue != null) {
-                    request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.fromString(vpnConnectionIdsListValue));
-                }
-                vpnConnectionIdsListIndex++;
+
+        java.util.List<String> vpnConnectionIdsList = describeVpnConnectionsRequest.getVpnConnectionIds();
+        int vpnConnectionIdsListIndex = 1;
+        for (String vpnConnectionIdsListValue : vpnConnectionIdsList) {
+            if (vpnConnectionIdsListValue != null) {
+                request.addParameter("VpnConnectionId." + vpnConnectionIdsListIndex, StringUtils.fromString(vpnConnectionIdsListValue));
             }
+
+            vpnConnectionIdsListIndex++;
         }
 
-        if (describeVpnConnectionsRequest != null) {
-            java.util.List<Filter> filtersList = describeVpnConnectionsRequest.getFilters();
-            int filtersListIndex = 1;
-            for (Filter filtersListValue : filtersList) {
-                if (filtersListValue != null) {
-                    if (filtersListValue.getName() != null) {
-                        request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                    }
-                }
-                if (filtersListValue != null) {
-                    java.util.List<String> valuesList = filtersListValue.getValues();
-                    int valuesListIndex = 1;
-
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
-                        }
-                        valuesListIndex++;
-                    }
+        java.util.List<Filter> filtersList = describeVpnConnectionsRequest.getFilters();
+        int filtersListIndex = 1;
+        for (Filter filtersListValue : filtersList) {
+            Filter filterMember = filtersListValue;
+            if (filterMember != null) {
+                if (filterMember.getName() != null) {
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
 
-                filtersListIndex++;
+                java.util.List<String> valuesList = filterMember.getValues();
+                int valuesListIndex = 1;
+                for (String valuesListValue : valuesList) {
+                    if (valuesListValue != null) {
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                    }
+
+                    valuesListIndex++;
+                }
             }
+
+            filtersListIndex++;
         }
 
 

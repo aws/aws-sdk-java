@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class CreateRouteRequestMarshaller implements Marshaller<Request<CreateRouteRequest>, CreateRouteRequest> {
 
     public Request<CreateRouteRequest> marshall(CreateRouteRequest createRouteRequest) {
+
+        if (createRouteRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<CreateRouteRequest> request = new DefaultRequest<CreateRouteRequest>(createRouteRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRoute");
         request.addParameter("Version", "2011-05-15");
-        if (createRouteRequest != null) {
-            if (createRouteRequest.getRouteTableId() != null) {
-                request.addParameter("RouteTableId", StringUtils.fromString(createRouteRequest.getRouteTableId()));
-            }
+
+        if (createRouteRequest.getRouteTableId() != null) {
+            request.addParameter("RouteTableId", StringUtils.fromString(createRouteRequest.getRouteTableId()));
         }
-        if (createRouteRequest != null) {
-            if (createRouteRequest.getDestinationCidrBlock() != null) {
-                request.addParameter("DestinationCidrBlock", StringUtils.fromString(createRouteRequest.getDestinationCidrBlock()));
-            }
+        if (createRouteRequest.getDestinationCidrBlock() != null) {
+            request.addParameter("DestinationCidrBlock", StringUtils.fromString(createRouteRequest.getDestinationCidrBlock()));
         }
-        if (createRouteRequest != null) {
-            if (createRouteRequest.getGatewayId() != null) {
-                request.addParameter("GatewayId", StringUtils.fromString(createRouteRequest.getGatewayId()));
-            }
+        if (createRouteRequest.getGatewayId() != null) {
+            request.addParameter("GatewayId", StringUtils.fromString(createRouteRequest.getGatewayId()));
         }
-        if (createRouteRequest != null) {
-            if (createRouteRequest.getInstanceId() != null) {
-                request.addParameter("InstanceId", StringUtils.fromString(createRouteRequest.getInstanceId()));
-            }
+        if (createRouteRequest.getInstanceId() != null) {
+            request.addParameter("InstanceId", StringUtils.fromString(createRouteRequest.getInstanceId()));
         }
 
 

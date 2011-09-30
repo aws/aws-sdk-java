@@ -36,6 +36,7 @@ public class StartInstancesResult {
      *         changed.
      */
     public java.util.List<InstanceStateChange> getStartingInstances() {
+        
         if (startingInstances == null) {
             startingInstances = new java.util.ArrayList<InstanceStateChange>();
         }
@@ -70,6 +71,7 @@ public class StartInstancesResult {
      *         together. 
      */
     public StartInstancesResult withStartingInstances(InstanceStateChange... startingInstances) {
+        if (getStartingInstances() == null) setStartingInstances(new java.util.ArrayList<InstanceStateChange>());
         for (InstanceStateChange value : startingInstances) {
             getStartingInstances().add(value);
         }

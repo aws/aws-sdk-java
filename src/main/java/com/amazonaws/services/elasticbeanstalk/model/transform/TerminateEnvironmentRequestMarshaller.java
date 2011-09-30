@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticbeanstalk.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class TerminateEnvironmentRequestMarshaller implements Marshaller<Request<TerminateEnvironmentRequest>, TerminateEnvironmentRequest> {
 
     public Request<TerminateEnvironmentRequest> marshall(TerminateEnvironmentRequest terminateEnvironmentRequest) {
+
+        if (terminateEnvironmentRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<TerminateEnvironmentRequest> request = new DefaultRequest<TerminateEnvironmentRequest>(terminateEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "TerminateEnvironment");
         request.addParameter("Version", "2010-12-01");
-        if (terminateEnvironmentRequest != null) {
-            if (terminateEnvironmentRequest.getEnvironmentId() != null) {
-                request.addParameter("EnvironmentId", StringUtils.fromString(terminateEnvironmentRequest.getEnvironmentId()));
-            }
+
+        if (terminateEnvironmentRequest.getEnvironmentId() != null) {
+            request.addParameter("EnvironmentId", StringUtils.fromString(terminateEnvironmentRequest.getEnvironmentId()));
         }
-        if (terminateEnvironmentRequest != null) {
-            if (terminateEnvironmentRequest.getEnvironmentName() != null) {
-                request.addParameter("EnvironmentName", StringUtils.fromString(terminateEnvironmentRequest.getEnvironmentName()));
-            }
+        if (terminateEnvironmentRequest.getEnvironmentName() != null) {
+            request.addParameter("EnvironmentName", StringUtils.fromString(terminateEnvironmentRequest.getEnvironmentName()));
         }
-        if (terminateEnvironmentRequest != null) {
-            if (terminateEnvironmentRequest.isTerminateResources() != null) {
-                request.addParameter("TerminateResources", StringUtils.fromBoolean(terminateEnvironmentRequest.isTerminateResources()));
-            }
+        if (terminateEnvironmentRequest.isTerminateResources() != null) {
+            request.addParameter("TerminateResources", StringUtils.fromBoolean(terminateEnvironmentRequest.isTerminateResources()));
         }
 
 

@@ -32,7 +32,7 @@ public class QueueNameExistsExceptionUnmarshaller extends StandardErrorUnmarshal
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("QueueNameExists"))
+        if (errorCode == null || !errorCode.equals("AWS.SimpleQueueService.QueueNameExists"))
             return null;
 
         QueueNameExistsException e = (QueueNameExistsException)super.unmarshall(node);

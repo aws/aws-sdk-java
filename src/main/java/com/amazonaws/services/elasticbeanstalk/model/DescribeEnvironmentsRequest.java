@@ -196,6 +196,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         descriptions to include only those that have the specified IDs.
      */
     public java.util.List<String> getEnvironmentIds() {
+        
         if (environmentIds == null) {
             environmentIds = new java.util.ArrayList<String>();
         }
@@ -230,6 +231,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentIds(String... environmentIds) {
+        if (getEnvironmentIds() == null) setEnvironmentIds(new java.util.ArrayList<String>());
         for (String value : environmentIds) {
             getEnvironmentIds().add(value);
         }
@@ -266,6 +268,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         descriptions to include only those that have the specified names.
      */
     public java.util.List<String> getEnvironmentNames() {
+        
         if (environmentNames == null) {
             environmentNames = new java.util.ArrayList<String>();
         }
@@ -300,6 +303,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentNames(String... environmentNames) {
+        if (getEnvironmentNames() == null) setEnvironmentNames(new java.util.ArrayList<String>());
         for (String value : environmentNames) {
             getEnvironmentNames().add(value);
         }

@@ -32,6 +32,7 @@ public class DescribeAlarmsForMetricResult {
      * @return A list of information for each alarm with the specified metric.
      */
     public java.util.List<MetricAlarm> getMetricAlarms() {
+        
         if (metricAlarms == null) {
             metricAlarms = new java.util.ArrayList<MetricAlarm>();
         }
@@ -62,6 +63,7 @@ public class DescribeAlarmsForMetricResult {
      *         together. 
      */
     public DescribeAlarmsForMetricResult withMetricAlarms(MetricAlarm... metricAlarms) {
+        if (getMetricAlarms() == null) setMetricAlarms(new java.util.ArrayList<MetricAlarm>());
         for (MetricAlarm value : metricAlarms) {
             getMetricAlarms().add(value);
         }

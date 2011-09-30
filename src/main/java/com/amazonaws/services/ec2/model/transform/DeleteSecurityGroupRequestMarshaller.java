@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.ec2.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteSecurityGroupRequestMarshaller implements Marshaller<Request<DeleteSecurityGroupRequest>, DeleteSecurityGroupRequest> {
 
     public Request<DeleteSecurityGroupRequest> marshall(DeleteSecurityGroupRequest deleteSecurityGroupRequest) {
+
+        if (deleteSecurityGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+		
         Request<DeleteSecurityGroupRequest> request = new DefaultRequest<DeleteSecurityGroupRequest>(deleteSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSecurityGroup");
         request.addParameter("Version", "2011-05-15");
-        if (deleteSecurityGroupRequest != null) {
-            if (deleteSecurityGroupRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(deleteSecurityGroupRequest.getGroupName()));
-            }
+
+        if (deleteSecurityGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(deleteSecurityGroupRequest.getGroupName()));
         }
-        if (deleteSecurityGroupRequest != null) {
-            if (deleteSecurityGroupRequest.getGroupId() != null) {
-                request.addParameter("GroupId", StringUtils.fromString(deleteSecurityGroupRequest.getGroupId()));
-            }
+        if (deleteSecurityGroupRequest.getGroupId() != null) {
+            request.addParameter("GroupId", StringUtils.fromString(deleteSecurityGroupRequest.getGroupId()));
         }
 
 

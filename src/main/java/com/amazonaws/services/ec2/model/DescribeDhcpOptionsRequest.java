@@ -50,6 +50,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
      * @return The value of the DhcpOptionsIds property for this object.
      */
     public java.util.List<String> getDhcpOptionsIds() {
+        
         if (dhcpOptionsIds == null) {
             dhcpOptionsIds = new java.util.ArrayList<String>();
         }
@@ -80,6 +81,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeDhcpOptionsRequest withDhcpOptionsIds(String... dhcpOptionsIds) {
+        if (getDhcpOptionsIds() == null) setDhcpOptionsIds(new java.util.ArrayList<String>());
         for (String value : dhcpOptionsIds) {
             getDhcpOptionsIds().add(value);
         }
@@ -120,6 +122,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
+        
         if (filters == null) {
             filters = new java.util.ArrayList<Filter>();
         }
@@ -166,6 +169,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeDhcpOptionsRequest withFilters(Filter... filters) {
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
         for (Filter value : filters) {
             getFilters().add(value);
         }
