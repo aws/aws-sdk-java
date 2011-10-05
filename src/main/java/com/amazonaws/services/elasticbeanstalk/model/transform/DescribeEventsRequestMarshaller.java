@@ -35,7 +35,7 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
         if (describeEventsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEvents");
         request.addParameter("Version", "2010-12-01");

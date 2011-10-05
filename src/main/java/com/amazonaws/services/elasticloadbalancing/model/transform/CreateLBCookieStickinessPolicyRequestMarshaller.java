@@ -35,7 +35,7 @@ public class CreateLBCookieStickinessPolicyRequestMarshaller implements Marshall
         if (createLBCookieStickinessPolicyRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateLBCookieStickinessPolicyRequest> request = new DefaultRequest<CreateLBCookieStickinessPolicyRequest>(createLBCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLBCookieStickinessPolicy");
         request.addParameter("Version", "2011-08-15");

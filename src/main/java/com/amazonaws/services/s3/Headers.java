@@ -71,6 +71,9 @@ public interface Headers {
 
     /** Header describing what class of storage a user wants */
     public static final String STORAGE_CLASS = "x-amz-storage-class";
+    
+    /** Header for optional server-side encryption algorithm */
+    public static final String SERVER_SIDE_ENCRYPTION = "x-amz-server-side-encryption";
 
     /** ETag matching constraint header for the copy object request */
     public static final String COPY_SOURCE_IF_MATCH = "x-amz-copy-source-if-match";

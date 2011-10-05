@@ -14,11 +14,13 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+
 /**
  * Contains the details returned from Amazon S3 after calling the UploadPart
  * operation.
  */
-public class UploadPartResult {
+public class UploadPartResult implements ServerSideEncryptionResult {
 
     /** The part number of the newly uploaded part */
     private int partNumber;
@@ -26,7 +28,9 @@ public class UploadPartResult {
     /** The entity tag generated from the content of the upload part */
     private String eTag;
 
-
+    /** The server side encryption algorithm of the new object */
+    private String serverSideEncryption;
+    
     /**
      * Returns the part number of the newly uploaded part.
      *
@@ -76,5 +80,23 @@ public class UploadPartResult {
      */
     public PartETag getPartETag() {
         return new PartETag(partNumber, eTag);
+    }
+    
+    /**
+     * Returns the server-side encryption algorithm for the newly created
+     * object, or null if none was used.
+     */
+    public String getServerSideEncryption() {
+        return serverSideEncryption;
+    }
+
+    /**
+     * Sets the server-side encryption algorithm for the newly created object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the new object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
     }
 }

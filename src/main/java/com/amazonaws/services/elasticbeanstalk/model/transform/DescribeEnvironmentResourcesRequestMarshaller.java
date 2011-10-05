@@ -35,7 +35,7 @@ public class DescribeEnvironmentResourcesRequestMarshaller implements Marshaller
         if (describeEnvironmentResourcesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeEnvironmentResourcesRequest> request = new DefaultRequest<DescribeEnvironmentResourcesRequest>(describeEnvironmentResourcesRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEnvironmentResources");
         request.addParameter("Version", "2010-12-01");

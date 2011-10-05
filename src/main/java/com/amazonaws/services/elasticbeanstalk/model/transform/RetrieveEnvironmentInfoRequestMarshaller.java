@@ -35,7 +35,7 @@ public class RetrieveEnvironmentInfoRequestMarshaller implements Marshaller<Requ
         if (retrieveEnvironmentInfoRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RetrieveEnvironmentInfoRequest> request = new DefaultRequest<RetrieveEnvironmentInfoRequest>(retrieveEnvironmentInfoRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "RetrieveEnvironmentInfo");
         request.addParameter("Version", "2010-12-01");

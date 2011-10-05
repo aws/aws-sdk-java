@@ -35,7 +35,7 @@ public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<
         if (updateConfigurationTemplateRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<UpdateConfigurationTemplateRequest> request = new DefaultRequest<UpdateConfigurationTemplateRequest>(updateConfigurationTemplateRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateConfigurationTemplate");
         request.addParameter("Version", "2010-12-01");
@@ -52,6 +52,7 @@ public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<
 
         java.util.List<ConfigurationOptionSetting> optionSettingsList = updateConfigurationTemplateRequest.getOptionSettings();
         int optionSettingsListIndex = 1;
+
         for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
             ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
             if (configurationOptionSettingMember != null) {
@@ -71,6 +72,7 @@ public class UpdateConfigurationTemplateRequestMarshaller implements Marshaller<
 
         java.util.List<OptionSpecification> optionsToRemoveList = updateConfigurationTemplateRequest.getOptionsToRemove();
         int optionsToRemoveListIndex = 1;
+
         for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
             OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
             if (optionSpecificationMember != null) {

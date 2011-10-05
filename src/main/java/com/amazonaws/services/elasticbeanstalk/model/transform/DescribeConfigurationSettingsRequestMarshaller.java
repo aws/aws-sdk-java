@@ -35,7 +35,7 @@ public class DescribeConfigurationSettingsRequestMarshaller implements Marshalle
         if (describeConfigurationSettingsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeConfigurationSettingsRequest> request = new DefaultRequest<DescribeConfigurationSettingsRequest>(describeConfigurationSettingsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeConfigurationSettings");
         request.addParameter("Version", "2010-12-01");

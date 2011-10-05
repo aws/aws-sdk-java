@@ -35,7 +35,7 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
         if (describeEnvironmentsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeEnvironmentsRequest> request = new DefaultRequest<DescribeEnvironmentsRequest>(describeEnvironmentsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeEnvironments");
         request.addParameter("Version", "2010-12-01");
@@ -49,6 +49,7 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> environmentIdsList = describeEnvironmentsRequest.getEnvironmentIds();
         int environmentIdsListIndex = 1;
+
         for (String environmentIdsListValue : environmentIdsList) {
             if (environmentIdsListValue != null) {
                 request.addParameter("EnvironmentIds.member." + environmentIdsListIndex, StringUtils.fromString(environmentIdsListValue));
@@ -59,6 +60,7 @@ public class DescribeEnvironmentsRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> environmentNamesList = describeEnvironmentsRequest.getEnvironmentNames();
         int environmentNamesListIndex = 1;
+
         for (String environmentNamesListValue : environmentNamesList) {
             if (environmentNamesListValue != null) {
                 request.addParameter("EnvironmentNames.member." + environmentNamesListIndex, StringUtils.fromString(environmentNamesListValue));

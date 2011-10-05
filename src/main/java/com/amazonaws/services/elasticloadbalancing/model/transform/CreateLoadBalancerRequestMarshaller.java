@@ -35,7 +35,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
         if (createLoadBalancerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateLoadBalancerRequest> request = new DefaultRequest<CreateLoadBalancerRequest>(createLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateLoadBalancer");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
 
         java.util.List<Listener> listenersList = createLoadBalancerRequest.getListeners();
         int listenersListIndex = 1;
+
         for (Listener listenersListValue : listenersList) {
             Listener listenerMember = listenersListValue;
             if (listenerMember != null) {
@@ -71,6 +72,7 @@ public class CreateLoadBalancerRequestMarshaller implements Marshaller<Request<C
 
         java.util.List<String> availabilityZonesList = createLoadBalancerRequest.getAvailabilityZones();
         int availabilityZonesListIndex = 1;
+
         for (String availabilityZonesListValue : availabilityZonesList) {
             if (availabilityZonesListValue != null) {
                 request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));

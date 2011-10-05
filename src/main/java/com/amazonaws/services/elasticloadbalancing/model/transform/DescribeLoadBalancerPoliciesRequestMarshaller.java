@@ -35,7 +35,7 @@ public class DescribeLoadBalancerPoliciesRequestMarshaller implements Marshaller
         if (describeLoadBalancerPoliciesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeLoadBalancerPoliciesRequest> request = new DefaultRequest<DescribeLoadBalancerPoliciesRequest>(describeLoadBalancerPoliciesRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DescribeLoadBalancerPolicies");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class DescribeLoadBalancerPoliciesRequestMarshaller implements Marshaller
 
         java.util.List<String> policyNamesList = describeLoadBalancerPoliciesRequest.getPolicyNames();
         int policyNamesListIndex = 1;
+
         for (String policyNamesListValue : policyNamesList) {
             if (policyNamesListValue != null) {
                 request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

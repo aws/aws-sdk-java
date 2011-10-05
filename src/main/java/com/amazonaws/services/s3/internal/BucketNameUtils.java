@@ -98,4 +98,10 @@ public class BucketNameUtils {
         }
     }
 
+    /**
+     * Convience method that allows the DNS rules to be altered for different SDKs.
+     */    
+    public boolean isDNSBucketName(String bucketName) {
+        return isValidV2BucketName( bucketName );
+    }
 }

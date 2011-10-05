@@ -39,6 +39,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
@@ -921,19 +922,19 @@ public class XmlResponsesSaxParser {
     }
 
 
-    public class CopyObjectResultHandler extends DefaultHandler {
+    public class CopyObjectResultHandler extends DefaultHandler implements ServerSideEncryptionResult {
         // Data items for successful copy
         private String etag = null;
         private Date lastModified = null;
         private String versionId = null;
-
+        private String serverSideEncryption;
+       
         // Data items for failed copy
         private String errorCode = null;
         private String errorMessage = null;
         private String errorRequestId = null;
         private String errorHostId = null;
         private boolean receivedErrorResponse = false;
-
 
         private StringBuilder currText = null;
 
@@ -952,6 +953,14 @@ public class XmlResponsesSaxParser {
 
         public void setVersionId(String versionId) {
             this.versionId = versionId;
+        }
+
+        public String getServerSideEncryption() {
+            return serverSideEncryption;
+        }
+        
+        public void setServerSideEncryption(String serverSideEncryption) {
+            this.serverSideEncryption = serverSideEncryption;
         }
 
         public String getETag() {
@@ -1330,11 +1339,23 @@ public class XmlResponsesSaxParser {
      *     <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>
      * </Error>
      */
-    public class CompleteMultipartUploadHandler extends DefaultHandler {
+    public class CompleteMultipartUploadHandler extends DefaultHandler implements ServerSideEncryptionResult {
         private StringBuilder text;
 
         // Successful completion
         private CompleteMultipartUploadResult result;
+        
+        public String getServerSideEncryption() {
+            if ( result != null )
+                return result.getServerSideEncryption();
+            else
+                return null;
+        }
+
+        public void setServerSideEncryption(String serverSideEncryption) {
+            if ( result != null )
+                result.setServerSideEncryption(serverSideEncryption);
+        }
 
         // Error during completion
         private AmazonS3Exception ase;

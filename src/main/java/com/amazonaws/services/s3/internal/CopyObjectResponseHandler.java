@@ -27,7 +27,7 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjec
  * HTTP response headers (version ID).
  */
 public class CopyObjectResponseHandler
-        extends S3XmlResponseHandler<CopyObjectResultHandler> {
+        extends ServerSideEncryptionResponseHandler<CopyObjectResultHandler> {
 
     public CopyObjectResponseHandler() {
         super(new Unmarshallers.CopyObjectUnmarshaller());
@@ -40,7 +40,7 @@ public class CopyObjectResponseHandler
     public AmazonWebServiceResponse<CopyObjectResultHandler> handle(HttpResponse response) throws Exception {
         /*
          * TODO: Might be nice to handle the rest of CopyObject's custom logic
-         *       here, instead of in the AmazonS3Client. We coudl detect an error
+         *       here, instead of in the AmazonS3Client. We could detect an error
          *       XML response and throw the exception, otherwise just return the
          *       fully populated CopyObjectResult object.
          */

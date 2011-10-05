@@ -16,11 +16,13 @@ package com.amazonaws.services.s3.model;
 
 import java.util.Date;
 
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+
 
 /**
  * Result of the copy part operation.
  */
-public class CopyPartResult {
+public class CopyPartResult implements ServerSideEncryptionResult {
 
     /** The ETag value of the new part */
     private String etag;
@@ -39,6 +41,9 @@ public class CopyPartResult {
      * The part number of the copied part
      */
     private int partNumber;
+    
+    /** The server side encryption algorithm of the new object */
+    private String serverSideEncryption;
     
     /**
      * Gets the part number of the newly copied part.
@@ -130,4 +135,21 @@ public class CopyPartResult {
         this.versionId = versionId;
     }
 
+    /**
+     * Returns the server-side encryption algorithm for the newly created
+     * object, or null if none was used.
+     */
+    public String getServerSideEncryption() {
+        return serverSideEncryption;
+    }
+
+    /**
+     * Sets the server-side encryption algorithm for the newly created object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the new object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
+    }
 }

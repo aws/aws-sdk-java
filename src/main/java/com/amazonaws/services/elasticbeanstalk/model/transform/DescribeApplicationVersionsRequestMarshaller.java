@@ -35,7 +35,7 @@ public class DescribeApplicationVersionsRequestMarshaller implements Marshaller<
         if (describeApplicationVersionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeApplicationVersionsRequest> request = new DefaultRequest<DescribeApplicationVersionsRequest>(describeApplicationVersionsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeApplicationVersions");
         request.addParameter("Version", "2010-12-01");
@@ -46,6 +46,7 @@ public class DescribeApplicationVersionsRequestMarshaller implements Marshaller<
 
         java.util.List<String> versionLabelsList = describeApplicationVersionsRequest.getVersionLabels();
         int versionLabelsListIndex = 1;
+
         for (String versionLabelsListValue : versionLabelsList) {
             if (versionLabelsListValue != null) {
                 request.addParameter("VersionLabels.member." + versionLabelsListIndex, StringUtils.fromString(versionLabelsListValue));

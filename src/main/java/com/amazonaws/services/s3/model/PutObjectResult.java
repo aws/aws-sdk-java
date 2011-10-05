@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import com.amazonaws.services.s3.AmazonS3;
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
  * Contains the data returned by Amazon S3 from the <code>putObject</code>
@@ -26,7 +27,7 @@ import com.amazonaws.services.s3.AmazonS3;
  * @see AmazonS3#putObject(String, String, java.io.InputStream, S3ObjectMetadata)
  * @see AmazonS3#putObject(PutObjectRequest)
  */
-public class PutObjectResult {
+public class PutObjectResult implements ServerSideEncryptionResult {
 
     /**
      * The version ID of the new, uploaded object. This field will only be
@@ -37,6 +38,9 @@ public class PutObjectResult {
 
     /** The ETag value of the new object */
     private String eTag;
+    
+    /** The server side encryption algorithm of the new object */
+    private String serverSideEncryption;
 
     /**
      * Gets the optional version ID of the newly uploaded object. This field will 
@@ -51,6 +55,7 @@ public class PutObjectResult {
         return versionId;
     }
 
+    
     /**
      * Sets the optional version ID of the newly uploaded object.
      * 
@@ -85,6 +90,24 @@ public class PutObjectResult {
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
+    }
+
+    /**
+     * Returns the server-side encryption algorithm for the newly created
+     * object, or null if none was used.
+     */
+    public String getServerSideEncryption() {
+        return serverSideEncryption;
+    }
+
+    /**
+     * Sets the server-side encryption algorithm for the newly created object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the new object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
     }
     
 }

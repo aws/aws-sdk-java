@@ -35,7 +35,7 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
         if (createEnvironmentRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateEnvironmentRequest> request = new DefaultRequest<CreateEnvironmentRequest>(createEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CreateEnvironment");
         request.addParameter("Version", "2010-12-01");
@@ -64,6 +64,7 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
 
         java.util.List<ConfigurationOptionSetting> optionSettingsList = createEnvironmentRequest.getOptionSettings();
         int optionSettingsListIndex = 1;
+
         for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
             ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
             if (configurationOptionSettingMember != null) {
@@ -83,6 +84,7 @@ public class CreateEnvironmentRequestMarshaller implements Marshaller<Request<Cr
 
         java.util.List<OptionSpecification> optionsToRemoveList = createEnvironmentRequest.getOptionsToRemove();
         int optionsToRemoveListIndex = 1;
+
         for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
             OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
             if (optionSpecificationMember != null) {

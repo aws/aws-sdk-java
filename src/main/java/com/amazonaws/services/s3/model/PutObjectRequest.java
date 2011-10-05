@@ -131,13 +131,12 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * see the {@link StorageClass} enumeration.
      */
     private String storageClass;
-
+   
     /**
      * The optional progress listener for receiving updates about object upload
      * status.
      */
     private ProgressListener progressListener;
-
     
     /**
      * Constructs a new 
@@ -414,7 +413,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public PutObjectRequest withStorageClass(StorageClass storageClass) {
         setStorageClass(storageClass);
         return this;
-    }
+    }    
 
     /**
      * Gets the path and name of the file

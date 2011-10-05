@@ -35,7 +35,7 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
         if (updateEnvironmentRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<UpdateEnvironmentRequest> request = new DefaultRequest<UpdateEnvironmentRequest>(updateEnvironmentRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateEnvironment");
         request.addParameter("Version", "2010-12-01");
@@ -58,6 +58,7 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
 
         java.util.List<ConfigurationOptionSetting> optionSettingsList = updateEnvironmentRequest.getOptionSettings();
         int optionSettingsListIndex = 1;
+
         for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
             ConfigurationOptionSetting configurationOptionSettingMember = optionSettingsListValue;
             if (configurationOptionSettingMember != null) {
@@ -77,6 +78,7 @@ public class UpdateEnvironmentRequestMarshaller implements Marshaller<Request<Up
 
         java.util.List<OptionSpecification> optionsToRemoveList = updateEnvironmentRequest.getOptionsToRemove();
         int optionsToRemoveListIndex = 1;
+
         for (OptionSpecification optionsToRemoveListValue : optionsToRemoveList) {
             OptionSpecification optionSpecificationMember = optionsToRemoveListValue;
             if (optionSpecificationMember != null) {

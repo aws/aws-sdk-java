@@ -20,13 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
  * Represents the object metadata that is stored with Amazon S3. This includes custom
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata {
+public class ObjectMetadata implements ServerSideEncryptionResult {
 
     /*
      * TODO: Might be nice to get as many of the internal use only methods out
@@ -46,6 +47,8 @@ public class ObjectMetadata {
      * etc.
      */
     private Map<String, Object> metadata = new HashMap<String, Object>();
+
+    public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
 
 	/**
 	 * <p>
@@ -549,6 +552,24 @@ public class ObjectMetadata {
      */
     public String getVersionId() {
         return (String)metadata.get(Headers.S3_VERSION_ID);
+    }
+    
+    /**
+     * Returns the server-side encryption algorithm for the object, or null if
+     * none was used.
+     */
+    public String getServerSideEncryption() {
+        return (String)metadata.get(Headers.SERVER_SIDE_ENCRYPTION);
+    }
+
+    /**
+     * Sets the server-side encryption algorithm for the object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        metadata.put(Headers.SERVER_SIDE_ENCRYPTION, serverSideEncryption);
     }
 
 }

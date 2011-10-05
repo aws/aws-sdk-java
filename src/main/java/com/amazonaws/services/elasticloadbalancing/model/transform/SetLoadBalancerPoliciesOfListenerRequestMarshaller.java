@@ -35,7 +35,7 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
         if (setLoadBalancerPoliciesOfListenerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesOfListener");
         request.addParameter("Version", "2011-08-15");
@@ -49,6 +49,8 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
 
         java.util.List<String> policyNamesList = setLoadBalancerPoliciesOfListenerRequest.getPolicyNames();
         int policyNamesListIndex = 1;
+
+            if (policyNamesList.isEmpty()) request.addParameter("PolicyNames", "");
         for (String policyNamesListValue : policyNamesList) {
             if (policyNamesListValue != null) {
                 request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

@@ -43,7 +43,9 @@ public class CopyObjectResult {
      * was copied.
      */
     private String versionId;
-
+    
+    /** The server side encryption algorithm of the new object */
+    private String serverSideEncryption;
     
     /**
      * Gets the ETag value for the new object that was created in the
@@ -118,4 +120,20 @@ public class CopyObjectResult {
         this.versionId = versionId;
     }
 
+    /**
+     * Returns the server-side encryption algorithm for the newly created object, or null if none was used.
+     */
+    public String getServerSideEncryption() {
+        return serverSideEncryption;
+    }
+
+    /**
+     * Sets the server-side encryption algorithm for the newly created object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the new object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
+    }
 }

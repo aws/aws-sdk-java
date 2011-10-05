@@ -35,7 +35,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements 
         if (enableAvailabilityZonesForLoadBalancerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<EnableAvailabilityZonesForLoadBalancerRequest> request = new DefaultRequest<EnableAvailabilityZonesForLoadBalancerRequest>(enableAvailabilityZonesForLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "EnableAvailabilityZonesForLoadBalancer");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequestMarshaller implements 
 
         java.util.List<String> availabilityZonesList = enableAvailabilityZonesForLoadBalancerRequest.getAvailabilityZones();
         int availabilityZonesListIndex = 1;
+
         for (String availabilityZonesListValue : availabilityZonesList) {
             if (availabilityZonesListValue != null) {
                 request.addParameter("AvailabilityZones.member." + availabilityZonesListIndex, StringUtils.fromString(availabilityZonesListValue));

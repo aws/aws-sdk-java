@@ -35,7 +35,7 @@ public class RegisterInstancesWithLoadBalancerRequestMarshaller implements Marsh
         if (registerInstancesWithLoadBalancerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RegisterInstancesWithLoadBalancerRequest> request = new DefaultRequest<RegisterInstancesWithLoadBalancerRequest>(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "RegisterInstancesWithLoadBalancer");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class RegisterInstancesWithLoadBalancerRequestMarshaller implements Marsh
 
         java.util.List<Instance> instancesList = registerInstancesWithLoadBalancerRequest.getInstances();
         int instancesListIndex = 1;
+
         for (Instance instancesListValue : instancesList) {
             Instance instanceMember = instancesListValue;
             if (instanceMember != null) {

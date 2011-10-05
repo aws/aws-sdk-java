@@ -35,7 +35,7 @@ public class CheckDNSAvailabilityRequestMarshaller implements Marshaller<Request
         if (checkDNSAvailabilityRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CheckDNSAvailabilityRequest> request = new DefaultRequest<CheckDNSAvailabilityRequest>(checkDNSAvailabilityRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "CheckDNSAvailability");
         request.addParameter("Version", "2010-12-01");

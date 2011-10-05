@@ -35,7 +35,7 @@ public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements Mar
         if (deregisterInstancesFromLoadBalancerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeregisterInstancesFromLoadBalancerRequest> request = new DefaultRequest<DeregisterInstancesFromLoadBalancerRequest>(deregisterInstancesFromLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DeregisterInstancesFromLoadBalancer");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class DeregisterInstancesFromLoadBalancerRequestMarshaller implements Mar
 
         java.util.List<Instance> instancesList = deregisterInstancesFromLoadBalancerRequest.getInstances();
         int instancesListIndex = 1;
+
         for (Instance instancesListValue : instancesList) {
             Instance instanceMember = instancesListValue;
             if (instanceMember != null) {

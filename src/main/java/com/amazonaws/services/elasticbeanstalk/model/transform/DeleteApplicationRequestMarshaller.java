@@ -35,7 +35,7 @@ public class DeleteApplicationRequestMarshaller implements Marshaller<Request<De
         if (deleteApplicationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteApplicationRequest> request = new DefaultRequest<DeleteApplicationRequest>(deleteApplicationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DeleteApplication");
         request.addParameter("Version", "2010-12-01");

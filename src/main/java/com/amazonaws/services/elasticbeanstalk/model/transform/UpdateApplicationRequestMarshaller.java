@@ -35,7 +35,7 @@ public class UpdateApplicationRequestMarshaller implements Marshaller<Request<Up
         if (updateApplicationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<UpdateApplicationRequest> request = new DefaultRequest<UpdateApplicationRequest>(updateApplicationRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "UpdateApplication");
         request.addParameter("Version", "2010-12-01");

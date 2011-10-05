@@ -35,7 +35,7 @@ public class DescribeApplicationsRequestMarshaller implements Marshaller<Request
         if (describeApplicationsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeApplicationsRequest> request = new DefaultRequest<DescribeApplicationsRequest>(describeApplicationsRequest, "AWSElasticBeanstalk");
         request.addParameter("Action", "DescribeApplications");
         request.addParameter("Version", "2010-12-01");
@@ -43,6 +43,7 @@ public class DescribeApplicationsRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> applicationNamesList = describeApplicationsRequest.getApplicationNames();
         int applicationNamesListIndex = 1;
+
         for (String applicationNamesListValue : applicationNamesList) {
             if (applicationNamesListValue != null) {
                 request.addParameter("ApplicationNames.member." + applicationNamesListIndex, StringUtils.fromString(applicationNamesListValue));

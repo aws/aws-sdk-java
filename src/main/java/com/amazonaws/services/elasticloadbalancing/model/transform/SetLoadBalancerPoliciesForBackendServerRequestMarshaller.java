@@ -35,7 +35,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller implements
         if (setLoadBalancerPoliciesForBackendServerRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SetLoadBalancerPoliciesForBackendServerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesForBackendServerRequest>(setLoadBalancerPoliciesForBackendServerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesForBackendServer");
         request.addParameter("Version", "2011-08-15");
@@ -49,6 +49,8 @@ public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller implements
 
         java.util.List<String> policyNamesList = setLoadBalancerPoliciesForBackendServerRequest.getPolicyNames();
         int policyNamesListIndex = 1;
+
+            if (policyNamesList.isEmpty()) request.addParameter("PolicyNames", "");
         for (String policyNamesListValue : policyNamesList) {
             if (policyNamesListValue != null) {
                 request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

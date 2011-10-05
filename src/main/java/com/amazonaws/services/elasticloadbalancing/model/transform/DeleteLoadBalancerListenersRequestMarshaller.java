@@ -35,7 +35,7 @@ public class DeleteLoadBalancerListenersRequestMarshaller implements Marshaller<
         if (deleteLoadBalancerListenersRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteLoadBalancerListenersRequest> request = new DefaultRequest<DeleteLoadBalancerListenersRequest>(deleteLoadBalancerListenersRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DeleteLoadBalancerListeners");
         request.addParameter("Version", "2011-08-15");
@@ -46,6 +46,7 @@ public class DeleteLoadBalancerListenersRequestMarshaller implements Marshaller<
 
         java.util.List<Integer> loadBalancerPortsList = deleteLoadBalancerListenersRequest.getLoadBalancerPorts();
         int loadBalancerPortsListIndex = 1;
+
         for (Integer loadBalancerPortsListValue : loadBalancerPortsList) {
             if (loadBalancerPortsListValue != null) {
                 request.addParameter("LoadBalancerPorts.member." + loadBalancerPortsListIndex, StringUtils.fromInteger(loadBalancerPortsListValue));

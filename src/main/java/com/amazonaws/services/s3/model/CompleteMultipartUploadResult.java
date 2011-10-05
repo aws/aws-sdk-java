@@ -14,12 +14,14 @@
  */
 package com.amazonaws.services.s3.model;
 
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
+
 
 /**
  * The CompleteMultipartUploadResult contains all the information about the
  * CompleteMultipartUpload method.
  */
-public class CompleteMultipartUploadResult {
+public class CompleteMultipartUploadResult implements ServerSideEncryptionResult {
 
     /** The name of the bucket containing the completed multipart upload. */
     private String bucketName;
@@ -41,7 +43,9 @@ public class CompleteMultipartUploadResult {
      * enabled for the bucket.
      */
     private String versionId;
-
+    
+    /** The server side encryption algorithm of the new object */
+    private String serverSideEncryption;
 
     /**
      * Returns the URL identifying the new multipart object.
@@ -140,5 +144,22 @@ public class CompleteMultipartUploadResult {
     public void setVersionId(String versionId) {
         this.versionId = versionId;
     }
+    
+    /**
+     * Returns the server-side encryption algorithm for the newly created
+     * object, or null if none was used.
+     */
+    public String getServerSideEncryption() {
+        return serverSideEncryption;
+    }
 
+    /**
+     * Sets the server-side encryption algorithm for the newly created object.
+     * 
+     * @param serverSideEncryption
+     *            The server-side encryption algorithm for the new object.
+     */
+    public void setServerSideEncryption(String serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
+    }
 }

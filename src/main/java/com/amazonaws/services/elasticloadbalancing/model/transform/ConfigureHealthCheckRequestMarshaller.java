@@ -35,7 +35,7 @@ public class ConfigureHealthCheckRequestMarshaller implements Marshaller<Request
         if (configureHealthCheckRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ConfigureHealthCheckRequest> request = new DefaultRequest<ConfigureHealthCheckRequest>(configureHealthCheckRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ConfigureHealthCheck");
         request.addParameter("Version", "2011-08-15");

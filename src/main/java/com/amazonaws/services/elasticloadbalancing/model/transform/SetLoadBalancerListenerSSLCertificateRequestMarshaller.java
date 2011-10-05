@@ -35,7 +35,7 @@ public class SetLoadBalancerListenerSSLCertificateRequestMarshaller implements M
         if (setLoadBalancerListenerSSLCertificateRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SetLoadBalancerListenerSSLCertificateRequest> request = new DefaultRequest<SetLoadBalancerListenerSSLCertificateRequest>(setLoadBalancerListenerSSLCertificateRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerListenerSSLCertificate");
         request.addParameter("Version", "2011-08-15");

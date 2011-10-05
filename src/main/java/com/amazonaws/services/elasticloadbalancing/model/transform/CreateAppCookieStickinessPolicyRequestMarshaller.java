@@ -35,7 +35,7 @@ public class CreateAppCookieStickinessPolicyRequestMarshaller implements Marshal
         if (createAppCookieStickinessPolicyRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateAppCookieStickinessPolicyRequest> request = new DefaultRequest<CreateAppCookieStickinessPolicyRequest>(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateAppCookieStickinessPolicy");
         request.addParameter("Version", "2011-08-15");
