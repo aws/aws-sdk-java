@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -35,7 +35,7 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements Marshaller
         if (authorizeSecurityGroupEgressRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<AuthorizeSecurityGroupEgressRequest> request = new DefaultRequest<AuthorizeSecurityGroupEgressRequest>(authorizeSecurityGroupEgressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupEgress");
         request.addParameter("Version", "2011-05-15");
@@ -100,7 +100,7 @@ public class AuthorizeSecurityGroupEgressRequestMarshaller implements Marshaller
                 int ipRangesListIndex = 1;
                 for (String ipRangesListValue : ipRangesList) {
                     if (ipRangesListValue != null) {
-                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex, StringUtils.fromString(ipRangesListValue));
+                        request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp", StringUtils.fromString(ipRangesListValue));
                     }
 
                     ipRangesListIndex++;
