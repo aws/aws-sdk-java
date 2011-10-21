@@ -35,7 +35,7 @@ public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<Can
         if (cancelBundleTaskRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CancelBundleTaskRequest> request = new DefaultRequest<CancelBundleTaskRequest>(cancelBundleTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelBundleTask");
         request.addParameter("Version", "2011-05-15");

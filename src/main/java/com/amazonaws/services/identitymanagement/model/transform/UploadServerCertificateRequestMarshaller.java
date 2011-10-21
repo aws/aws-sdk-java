@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,33 +31,29 @@ import com.amazonaws.util.StringUtils;
 public class UploadServerCertificateRequestMarshaller implements Marshaller<Request<UploadServerCertificateRequest>, UploadServerCertificateRequest> {
 
     public Request<UploadServerCertificateRequest> marshall(UploadServerCertificateRequest uploadServerCertificateRequest) {
+
+        if (uploadServerCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UploadServerCertificateRequest> request = new DefaultRequest<UploadServerCertificateRequest>(uploadServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UploadServerCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (uploadServerCertificateRequest != null) {
-            if (uploadServerCertificateRequest.getPath() != null) {
-                request.addParameter("Path", StringUtils.fromString(uploadServerCertificateRequest.getPath()));
-            }
+
+        if (uploadServerCertificateRequest.getPath() != null) {
+            request.addParameter("Path", StringUtils.fromString(uploadServerCertificateRequest.getPath()));
         }
-        if (uploadServerCertificateRequest != null) {
-            if (uploadServerCertificateRequest.getServerCertificateName() != null) {
-                request.addParameter("ServerCertificateName", StringUtils.fromString(uploadServerCertificateRequest.getServerCertificateName()));
-            }
+        if (uploadServerCertificateRequest.getServerCertificateName() != null) {
+            request.addParameter("ServerCertificateName", StringUtils.fromString(uploadServerCertificateRequest.getServerCertificateName()));
         }
-        if (uploadServerCertificateRequest != null) {
-            if (uploadServerCertificateRequest.getCertificateBody() != null) {
-                request.addParameter("CertificateBody", StringUtils.fromString(uploadServerCertificateRequest.getCertificateBody()));
-            }
+        if (uploadServerCertificateRequest.getCertificateBody() != null) {
+            request.addParameter("CertificateBody", StringUtils.fromString(uploadServerCertificateRequest.getCertificateBody()));
         }
-        if (uploadServerCertificateRequest != null) {
-            if (uploadServerCertificateRequest.getPrivateKey() != null) {
-                request.addParameter("PrivateKey", StringUtils.fromString(uploadServerCertificateRequest.getPrivateKey()));
-            }
+        if (uploadServerCertificateRequest.getPrivateKey() != null) {
+            request.addParameter("PrivateKey", StringUtils.fromString(uploadServerCertificateRequest.getPrivateKey()));
         }
-        if (uploadServerCertificateRequest != null) {
-            if (uploadServerCertificateRequest.getCertificateChain() != null) {
-                request.addParameter("CertificateChain", StringUtils.fromString(uploadServerCertificateRequest.getCertificateChain()));
-            }
+        if (uploadServerCertificateRequest.getCertificateChain() != null) {
+            request.addParameter("CertificateChain", StringUtils.fromString(uploadServerCertificateRequest.getCertificateChain()));
         }
 
 

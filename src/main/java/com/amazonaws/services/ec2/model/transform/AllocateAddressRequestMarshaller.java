@@ -35,7 +35,7 @@ public class AllocateAddressRequestMarshaller implements Marshaller<Request<Allo
         if (allocateAddressRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<AllocateAddressRequest> request = new DefaultRequest<AllocateAddressRequest>(allocateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AllocateAddress");
         request.addParameter("Version", "2011-05-15");

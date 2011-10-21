@@ -35,7 +35,7 @@ public class DeleteLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (deleteLaunchConfigurationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteLaunchConfigurationRequest> request = new DefaultRequest<DeleteLaunchConfigurationRequest>(deleteLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteLaunchConfiguration");
         request.addParameter("Version", "2011-01-01");

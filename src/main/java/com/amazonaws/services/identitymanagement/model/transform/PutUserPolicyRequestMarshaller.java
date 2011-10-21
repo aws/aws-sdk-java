@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class PutUserPolicyRequestMarshaller implements Marshaller<Request<PutUserPolicyRequest>, PutUserPolicyRequest> {
 
     public Request<PutUserPolicyRequest> marshall(PutUserPolicyRequest putUserPolicyRequest) {
+
+        if (putUserPolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<PutUserPolicyRequest> request = new DefaultRequest<PutUserPolicyRequest>(putUserPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "PutUserPolicy");
         request.addParameter("Version", "2010-05-08");
-        if (putUserPolicyRequest != null) {
-            if (putUserPolicyRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(putUserPolicyRequest.getUserName()));
-            }
+
+        if (putUserPolicyRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(putUserPolicyRequest.getUserName()));
         }
-        if (putUserPolicyRequest != null) {
-            if (putUserPolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(putUserPolicyRequest.getPolicyName()));
-            }
+        if (putUserPolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(putUserPolicyRequest.getPolicyName()));
         }
-        if (putUserPolicyRequest != null) {
-            if (putUserPolicyRequest.getPolicyDocument() != null) {
-                request.addParameter("PolicyDocument", StringUtils.fromString(putUserPolicyRequest.getPolicyDocument()));
-            }
+        if (putUserPolicyRequest.getPolicyDocument() != null) {
+            request.addParameter("PolicyDocument", StringUtils.fromString(putUserPolicyRequest.getPolicyDocument()));
         }
 
 

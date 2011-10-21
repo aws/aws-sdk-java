@@ -35,7 +35,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         if (modifyDBInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
         request.addParameter("Version", "2011-04-01");
@@ -52,6 +52,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         java.util.List<String> dBSecurityGroupsList = modifyDBInstanceRequest.getDBSecurityGroups();
         int dBSecurityGroupsListIndex = 1;
+
         for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
             if (dBSecurityGroupsListValue != null) {
                 request.addParameter("DBSecurityGroups.DBSecurityGroupName." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));

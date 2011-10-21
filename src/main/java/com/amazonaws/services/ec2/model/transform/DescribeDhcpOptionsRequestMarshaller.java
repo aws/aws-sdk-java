@@ -35,7 +35,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
         if (describeDhcpOptionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeDhcpOptionsRequest> request = new DefaultRequest<DescribeDhcpOptionsRequest>(describeDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeDhcpOptions");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
 
         java.util.List<String> dhcpOptionsIdsList = describeDhcpOptionsRequest.getDhcpOptionsIds();
         int dhcpOptionsIdsListIndex = 1;
+
         for (String dhcpOptionsIdsListValue : dhcpOptionsIdsList) {
             if (dhcpOptionsIdsListValue != null) {
                 request.addParameter("DhcpOptionsId." + dhcpOptionsIdsListIndex, StringUtils.fromString(dhcpOptionsIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
 
         java.util.List<Filter> filtersList = describeDhcpOptionsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

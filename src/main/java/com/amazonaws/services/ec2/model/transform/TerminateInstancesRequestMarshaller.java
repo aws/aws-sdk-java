@@ -35,7 +35,7 @@ public class TerminateInstancesRequestMarshaller implements Marshaller<Request<T
         if (terminateInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<TerminateInstancesRequest> request = new DefaultRequest<TerminateInstancesRequest>(terminateInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "TerminateInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class TerminateInstancesRequestMarshaller implements Marshaller<Request<T
 
         java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

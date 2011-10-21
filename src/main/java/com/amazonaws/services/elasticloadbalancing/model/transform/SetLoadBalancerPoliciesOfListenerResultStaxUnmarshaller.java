@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class SetLoadBalancerPoliciesOfListenerResultStaxUnmarshaller implements Unmarshaller<SetLoadBalancerPoliciesOfListenerResult, StaxUnmarshallerContext> {
 
-    
-
     public SetLoadBalancerPoliciesOfListenerResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         SetLoadBalancerPoliciesOfListenerResult setLoadBalancerPoliciesOfListenerResult = new SetLoadBalancerPoliciesOfListenerResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

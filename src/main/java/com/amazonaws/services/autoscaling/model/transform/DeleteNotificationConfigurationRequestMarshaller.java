@@ -35,7 +35,7 @@ public class DeleteNotificationConfigurationRequestMarshaller implements Marshal
         if (deleteNotificationConfigurationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteNotificationConfigurationRequest> request = new DefaultRequest<DeleteNotificationConfigurationRequest>(deleteNotificationConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeleteNotificationConfiguration");
         request.addParameter("Version", "2011-01-01");

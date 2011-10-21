@@ -52,6 +52,7 @@ public class ListServerCertificatesResult {
      * @return A list of server certificates.
      */
     public java.util.List<ServerCertificateMetadata> getServerCertificateMetadataList() {
+        
         if (serverCertificateMetadataList == null) {
             serverCertificateMetadataList = new java.util.ArrayList<ServerCertificateMetadata>();
         }
@@ -82,6 +83,7 @@ public class ListServerCertificatesResult {
      *         together. 
      */
     public ListServerCertificatesResult withServerCertificateMetadataList(ServerCertificateMetadata... serverCertificateMetadataList) {
+        if (getServerCertificateMetadataList() == null) setServerCertificateMetadataList(new java.util.ArrayList<ServerCertificateMetadata>());
         for (ServerCertificateMetadata value : serverCertificateMetadataList) {
             getServerCertificateMetadataList().add(value);
         }

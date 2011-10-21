@@ -35,7 +35,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
         if (describeAddressesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAddressesRequest> request = new DefaultRequest<DescribeAddressesRequest>(describeAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeAddresses");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<String> publicIpsList = describeAddressesRequest.getPublicIps();
         int publicIpsListIndex = 1;
+
         for (String publicIpsListValue : publicIpsList) {
             if (publicIpsListValue != null) {
                 request.addParameter("PublicIp." + publicIpsListIndex, StringUtils.fromString(publicIpsListValue));
@@ -53,6 +54,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<Filter> filtersList = describeAddressesRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
@@ -76,6 +79,7 @@ public class DescribeAddressesRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<String> allocationIdsList = describeAddressesRequest.getAllocationIds();
         int allocationIdsListIndex = 1;
+
         for (String allocationIdsListValue : allocationIdsList) {
             if (allocationIdsListValue != null) {
                 request.addParameter("AllocationId." + allocationIdsListIndex, StringUtils.fromString(allocationIdsListValue));

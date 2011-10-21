@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class S3LocationStaxUnmarshaller implements Unmarshaller<S3Location, StaxUnmarshallerContext> {
 
-    
-
     public S3Location unmarshall(StaxUnmarshallerContext context) throws Exception {
         S3Location s3Location = new S3Location();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

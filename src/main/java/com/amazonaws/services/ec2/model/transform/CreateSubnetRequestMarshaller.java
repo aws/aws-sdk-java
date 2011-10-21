@@ -35,7 +35,7 @@ public class CreateSubnetRequestMarshaller implements Marshaller<Request<CreateS
         if (createSubnetRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateSubnetRequest> request = new DefaultRequest<CreateSubnetRequest>(createSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSubnet");
         request.addParameter("Version", "2011-05-15");

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class GetGroupPolicyRequestMarshaller implements Marshaller<Request<GetGroupPolicyRequest>, GetGroupPolicyRequest> {
 
     public Request<GetGroupPolicyRequest> marshall(GetGroupPolicyRequest getGroupPolicyRequest) {
+
+        if (getGroupPolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetGroupPolicyRequest> request = new DefaultRequest<GetGroupPolicyRequest>(getGroupPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetGroupPolicy");
         request.addParameter("Version", "2010-05-08");
-        if (getGroupPolicyRequest != null) {
-            if (getGroupPolicyRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(getGroupPolicyRequest.getGroupName()));
-            }
+
+        if (getGroupPolicyRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(getGroupPolicyRequest.getGroupName()));
         }
-        if (getGroupPolicyRequest != null) {
-            if (getGroupPolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(getGroupPolicyRequest.getPolicyName()));
-            }
+        if (getGroupPolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(getGroupPolicyRequest.getPolicyName()));
         }
 
 

@@ -56,8 +56,7 @@ public class DefaultErrorResponseHandler
             List<Unmarshaller<AmazonServiceException, Node>> unmarshallerList) {
         this.unmarshallerList = unmarshallerList;
     }
-
-
+    
     /* (non-Javadoc)
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */

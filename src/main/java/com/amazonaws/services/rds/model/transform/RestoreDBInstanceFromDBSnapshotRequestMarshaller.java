@@ -35,7 +35,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         if (restoreDBInstanceFromDBSnapshotRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
         request.addParameter("Version", "2011-04-01");

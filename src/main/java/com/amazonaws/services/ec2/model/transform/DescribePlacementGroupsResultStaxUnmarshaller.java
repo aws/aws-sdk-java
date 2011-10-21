@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribePlacementGroupsResultStaxUnmarshaller implements Unmarshaller<DescribePlacementGroupsResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribePlacementGroupsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribePlacementGroupsResult describePlacementGroupsResult = new DescribePlacementGroupsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

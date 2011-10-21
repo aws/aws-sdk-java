@@ -35,7 +35,7 @@ public class UnmonitorInstancesRequestMarshaller implements Marshaller<Request<U
         if (unmonitorInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<UnmonitorInstancesRequest> request = new DefaultRequest<UnmonitorInstancesRequest>(unmonitorInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "UnmonitorInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class UnmonitorInstancesRequestMarshaller implements Marshaller<Request<U
 
         java.util.List<String> instanceIdsList = unmonitorInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

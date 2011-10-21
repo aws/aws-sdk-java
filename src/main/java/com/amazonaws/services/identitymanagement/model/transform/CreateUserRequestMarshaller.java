@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateUserRequestMarshaller implements Marshaller<Request<CreateUserRequest>, CreateUserRequest> {
 
     public Request<CreateUserRequest> marshall(CreateUserRequest createUserRequest) {
+
+        if (createUserRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<CreateUserRequest> request = new DefaultRequest<CreateUserRequest>(createUserRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateUser");
         request.addParameter("Version", "2010-05-08");
-        if (createUserRequest != null) {
-            if (createUserRequest.getPath() != null) {
-                request.addParameter("Path", StringUtils.fromString(createUserRequest.getPath()));
-            }
+
+        if (createUserRequest.getPath() != null) {
+            request.addParameter("Path", StringUtils.fromString(createUserRequest.getPath()));
         }
-        if (createUserRequest != null) {
-            if (createUserRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
-            }
+        if (createUserRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(createUserRequest.getUserName()));
         }
 
 

@@ -35,7 +35,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
         if (describeRegionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeRegionsRequest> request = new DefaultRequest<DescribeRegionsRequest>(describeRegionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRegions");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
 
         java.util.List<String> regionNamesList = describeRegionsRequest.getRegionNames();
         int regionNamesListIndex = 1;
+
         for (String regionNamesListValue : regionNamesList) {
             if (regionNamesListValue != null) {
                 request.addParameter("RegionName." + regionNamesListIndex, StringUtils.fromString(regionNamesListValue));
@@ -53,6 +54,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
 
         java.util.List<Filter> filtersList = describeRegionsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

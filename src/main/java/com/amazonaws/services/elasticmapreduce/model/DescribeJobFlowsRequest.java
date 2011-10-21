@@ -163,6 +163,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      * @return Return only job flows whose job flow ID is contained in this list.
      */
     public java.util.List<String> getJobFlowIds() {
+        
         if (jobFlowIds == null) {
             jobFlowIds = new java.util.ArrayList<String>();
         }
@@ -193,6 +194,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
+        if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>());
         for (String value : jobFlowIds) {
             getJobFlowIds().add(value);
         }
@@ -225,6 +227,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      * @return Return only job flows whose state is contained in this list.
      */
     public java.util.List<String> getJobFlowStates() {
+        
         if (jobFlowStates == null) {
             jobFlowStates = new java.util.ArrayList<String>();
         }
@@ -255,6 +258,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowStates(String... jobFlowStates) {
+        if (getJobFlowStates() == null) setJobFlowStates(new java.util.ArrayList<String>());
         for (String value : jobFlowStates) {
             getJobFlowStates().add(value);
         }

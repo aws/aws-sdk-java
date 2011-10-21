@@ -35,7 +35,7 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
         if (describeOrderableDBInstanceOptionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
         request.addParameter("Version", "2011-04-01");

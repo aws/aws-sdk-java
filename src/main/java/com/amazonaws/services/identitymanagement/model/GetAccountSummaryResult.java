@@ -90,6 +90,7 @@ public class GetAccountSummaryResult {
      *         keys that can be created per User</li> </ul>
      */
     public java.util.Map<String,Integer> getSummaryMap() {
+        
         if (summaryMap == null) {
             summaryMap = new java.util.HashMap<String,Integer>();
         }

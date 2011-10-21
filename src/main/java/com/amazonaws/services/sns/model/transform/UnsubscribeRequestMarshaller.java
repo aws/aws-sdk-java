@@ -35,7 +35,7 @@ public class UnsubscribeRequestMarshaller implements Marshaller<Request<Unsubscr
         if (unsubscribeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<UnsubscribeRequest> request = new DefaultRequest<UnsubscribeRequest>(unsubscribeRequest, "AmazonSNS");
         request.addParameter("Action", "Unsubscribe");
         request.addParameter("Version", "2010-03-31");

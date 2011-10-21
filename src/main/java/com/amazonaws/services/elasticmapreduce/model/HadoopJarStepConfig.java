@@ -80,6 +80,7 @@ public class HadoopJarStepConfig {
      *         these properties to pass key value pairs to your main function.
      */
     public java.util.List<KeyValue> getProperties() {
+        
         if (properties == null) {
             properties = new java.util.ArrayList<KeyValue>();
         }
@@ -114,6 +115,7 @@ public class HadoopJarStepConfig {
      *         together. 
      */
     public HadoopJarStepConfig withProperties(KeyValue... properties) {
+        if (getProperties() == null) setProperties(new java.util.ArrayList<KeyValue>());
         for (KeyValue value : properties) {
             getProperties().add(value);
         }
@@ -254,6 +256,7 @@ public class HadoopJarStepConfig {
      *         function when executed.
      */
     public java.util.List<String> getArgs() {
+        
         if (args == null) {
             args = new java.util.ArrayList<String>();
         }
@@ -288,6 +291,7 @@ public class HadoopJarStepConfig {
      *         together. 
      */
     public HadoopJarStepConfig withArgs(String... args) {
+        if (getArgs() == null) setArgs(new java.util.ArrayList<String>());
         for (String value : args) {
             getArgs().add(value);
         }

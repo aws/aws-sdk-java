@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection, StaxUnmarshallerContext> {
 
-    
-
     public VpnConnection unmarshall(StaxUnmarshallerContext context) throws Exception {
         VpnConnection vpnConnection = new VpnConnection();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

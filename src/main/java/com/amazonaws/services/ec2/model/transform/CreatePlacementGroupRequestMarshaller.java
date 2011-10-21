@@ -35,7 +35,7 @@ public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request
         if (createPlacementGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreatePlacementGroupRequest> request = new DefaultRequest<CreatePlacementGroupRequest>(createPlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreatePlacementGroup");
         request.addParameter("Version", "2011-05-15");

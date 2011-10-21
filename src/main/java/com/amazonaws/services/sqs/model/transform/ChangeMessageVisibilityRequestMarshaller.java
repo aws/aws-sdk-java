@@ -35,10 +35,10 @@ public class ChangeMessageVisibilityRequestMarshaller implements Marshaller<Requ
         if (changeMessageVisibilityRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ChangeMessageVisibilityRequest> request = new DefaultRequest<ChangeMessageVisibilityRequest>(changeMessageVisibilityRequest, "AmazonSQS");
         request.addParameter("Action", "ChangeMessageVisibility");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (changeMessageVisibilityRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityRequest.getQueueUrl()));

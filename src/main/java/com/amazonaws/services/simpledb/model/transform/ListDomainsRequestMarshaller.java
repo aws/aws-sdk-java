@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ListDomainsRequestMarshaller implements Marshaller<Request<ListDomainsRequest>, ListDomainsRequest> {
 
     public Request<ListDomainsRequest> marshall(ListDomainsRequest listDomainsRequest) {
+
+        if (listDomainsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListDomainsRequest> request = new DefaultRequest<ListDomainsRequest>(listDomainsRequest, "AmazonSimpleDB");
         request.addParameter("Action", "ListDomains");
         request.addParameter("Version", "2009-04-15");
-        if (listDomainsRequest != null) {
-            if (listDomainsRequest.getMaxNumberOfDomains() != null) {
-                request.addParameter("MaxNumberOfDomains", StringUtils.fromInteger(listDomainsRequest.getMaxNumberOfDomains()));
-            }
+
+        if (listDomainsRequest.getMaxNumberOfDomains() != null) {
+            request.addParameter("MaxNumberOfDomains", StringUtils.fromInteger(listDomainsRequest.getMaxNumberOfDomains()));
         }
-        if (listDomainsRequest != null) {
-            if (listDomainsRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(listDomainsRequest.getNextToken()));
-            }
+        if (listDomainsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(listDomainsRequest.getNextToken()));
         }
 
 

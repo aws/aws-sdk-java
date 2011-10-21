@@ -35,7 +35,7 @@ public class DescribeDBSecurityGroupsRequestMarshaller implements Marshaller<Req
         if (describeDBSecurityGroupsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeDBSecurityGroupsRequest> request = new DefaultRequest<DescribeDBSecurityGroupsRequest>(describeDBSecurityGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSecurityGroups");
         request.addParameter("Version", "2011-04-01");

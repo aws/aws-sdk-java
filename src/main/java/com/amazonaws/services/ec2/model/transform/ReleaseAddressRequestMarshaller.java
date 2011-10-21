@@ -35,7 +35,7 @@ public class ReleaseAddressRequestMarshaller implements Marshaller<Request<Relea
         if (releaseAddressRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ReleaseAddressRequest> request = new DefaultRequest<ReleaseAddressRequest>(releaseAddressRequest, "AmazonEC2");
         request.addParameter("Action", "ReleaseAddress");
         request.addParameter("Version", "2011-05-15");

@@ -18,8 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
  * <p>
- * Sets an attribute of a queue. Currently, you can set only the
- * <code>VisibilityTimeout</code> attribute for a queue.
+ * Sets an attribute of a queue. The set of attributes that can be set
+ * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
+ * VisibilityTimeout and Policy.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)
@@ -32,7 +33,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
     private String queueUrl;
 
     /**
-     * A list of attributes to set.
+     * A map of attributes to set.
      */
     private java.util.Map<String,String> attributes;
 
@@ -48,7 +49,7 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param queueUrl The URL of the SQS queue to take action on.
-     * @param attributes A list of attributes to set.
+     * @param attributes A map of attributes to set.
      */
     public SetQueueAttributesRequest(String queueUrl, java.util.Map<String,String> attributes) {
         this.queueUrl = queueUrl;
@@ -90,9 +91,9 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of attributes to set.
+     * A map of attributes to set.
      *
-     * @return A list of attributes to set.
+     * @return A map of attributes to set.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -103,20 +104,20 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to set.
+     * A map of attributes to set.
      *
-     * @param attributes A list of attributes to set.
+     * @param attributes A map of attributes to set.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A list of attributes to set.
+     * A map of attributes to set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A list of attributes to set.
+     * @param attributes A map of attributes to set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

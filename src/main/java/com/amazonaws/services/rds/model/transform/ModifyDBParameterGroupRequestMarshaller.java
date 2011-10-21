@@ -35,7 +35,7 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
         if (modifyDBParameterGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifyDBParameterGroupRequest> request = new DefaultRequest<ModifyDBParameterGroupRequest>(modifyDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBParameterGroup");
         request.addParameter("Version", "2011-04-01");
@@ -46,6 +46,7 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
 
         java.util.List<Parameter> parametersList = modifyDBParameterGroupRequest.getParameters();
         int parametersListIndex = 1;
+
         for (Parameter parametersListValue : parametersList) {
             Parameter parameterMember = parametersListValue;
             if (parameterMember != null) {

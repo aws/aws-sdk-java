@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class SpotInstanceStateFaultStaxUnmarshaller implements Unmarshaller<SpotInstanceStateFault, StaxUnmarshallerContext> {
 
-    
-
     public SpotInstanceStateFault unmarshall(StaxUnmarshallerContext context) throws Exception {
         SpotInstanceStateFault spotInstanceStateFault = new SpotInstanceStateFault();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

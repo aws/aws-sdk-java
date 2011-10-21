@@ -35,7 +35,7 @@ public class DescribeAdjustmentTypesRequestMarshaller implements Marshaller<Requ
         if (describeAdjustmentTypesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAdjustmentTypesRequest> request = new DefaultRequest<DescribeAdjustmentTypesRequest>(describeAdjustmentTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAdjustmentTypes");
         request.addParameter("Version", "2011-01-01");

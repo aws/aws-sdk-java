@@ -35,7 +35,7 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
         if (startInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<StartInstancesRequest> request = new DefaultRequest<StartInstancesRequest>(startInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StartInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
 
         java.util.List<String> instanceIdsList = startInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

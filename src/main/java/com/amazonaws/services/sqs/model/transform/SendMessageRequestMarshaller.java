@@ -35,16 +35,19 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
         if (sendMessageRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SendMessageRequest> request = new DefaultRequest<SendMessageRequest>(sendMessageRequest, "AmazonSQS");
         request.addParameter("Action", "SendMessage");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (sendMessageRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(sendMessageRequest.getQueueUrl()));
         }
         if (sendMessageRequest.getMessageBody() != null) {
             request.addParameter("MessageBody", StringUtils.fromString(sendMessageRequest.getMessageBody()));
+        }
+        if (sendMessageRequest.getDelaySeconds() != null) {
+            request.addParameter("DelaySeconds", StringUtils.fromInteger(sendMessageRequest.getDelaySeconds()));
         }
 
 

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class GetStatusResultStaxUnmarshaller implements Unmarshaller<GetStatusResult, StaxUnmarshallerContext> {
 
-    
-
     public GetStatusResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetStatusResult getStatusResult = new GetStatusResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

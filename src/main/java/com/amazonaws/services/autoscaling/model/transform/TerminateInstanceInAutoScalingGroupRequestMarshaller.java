@@ -35,7 +35,7 @@ public class TerminateInstanceInAutoScalingGroupRequestMarshaller implements Mar
         if (terminateInstanceInAutoScalingGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<TerminateInstanceInAutoScalingGroupRequest> request = new DefaultRequest<TerminateInstanceInAutoScalingGroupRequest>(terminateInstanceInAutoScalingGroupRequest, "AmazonAutoScaling");
         request.addParameter("Action", "TerminateInstanceInAutoScalingGroup");
         request.addParameter("Version", "2011-01-01");

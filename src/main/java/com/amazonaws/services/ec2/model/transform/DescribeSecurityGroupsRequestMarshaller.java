@@ -35,7 +35,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
         if (describeSecurityGroupsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSecurityGroupsRequest> request = new DefaultRequest<DescribeSecurityGroupsRequest>(describeSecurityGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSecurityGroups");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
 
         java.util.List<String> groupNamesList = describeSecurityGroupsRequest.getGroupNames();
         int groupNamesListIndex = 1;
+
         for (String groupNamesListValue : groupNamesList) {
             if (groupNamesListValue != null) {
                 request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
@@ -53,6 +54,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
 
         java.util.List<String> groupIdsList = describeSecurityGroupsRequest.getGroupIds();
         int groupIdsListIndex = 1;
+
         for (String groupIdsListValue : groupIdsList) {
             if (groupIdsListValue != null) {
                 request.addParameter("GroupId." + groupIdsListIndex, StringUtils.fromString(groupIdsListValue));
@@ -63,6 +65,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
 
         java.util.List<Filter> filtersList = describeSecurityGroupsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -72,6 +75,7 @@ public class DescribeSecurityGroupsRequestMarshaller implements Marshaller<Reque
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

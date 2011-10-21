@@ -35,7 +35,7 @@ public class ListStackResourcesRequestMarshaller implements Marshaller<Request<L
         if (listStackResourcesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ListStackResourcesRequest> request = new DefaultRequest<ListStackResourcesRequest>(listStackResourcesRequest, "AmazonCloudFormation");
         request.addParameter("Action", "ListStackResources");
         request.addParameter("Version", "2010-05-15");

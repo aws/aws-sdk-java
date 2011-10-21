@@ -193,6 +193,22 @@ public class DefaultRequest<T> implements Request<T> {
 		this.content = content;
 	}
 
+	/**
+     * @see com.amazonaws.Request#setHeaders(java.util.Map)
+     */
+    public void setHeaders(Map<String, String> headers) {
+        this.headers.clear();
+        this.headers.putAll(headers);
+    }
+
+    /**
+     * @see com.amazonaws.Request#setParameters(java.util.Map)
+     */
+    public void setParameters(Map<String, String> parameters) {
+        this.parameters.clear();
+        this.parameters.putAll(parameters);
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -224,5 +240,5 @@ public class DefaultRequest<T> implements Request<T> {
 
         return builder.toString();
     }
-    
+	
 }

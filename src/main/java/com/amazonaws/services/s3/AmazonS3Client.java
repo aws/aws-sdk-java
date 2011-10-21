@@ -47,12 +47,14 @@ import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpResponseHandler;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.CopyObjectResponseHandler;
@@ -170,12 +172,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** Shared logger for client events */
     private static Log log = LogFactory.getLog(AmazonS3Client.class);
 
-    /**
-     * The AWS credentials (access key ID and secret key) to use when
-     * authenticating with AWS services.
-     */
-    private AWSCredentials awsCredentials;
-
     /** Responsible for handling error responses from all S3 service calls. */
     private S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();
 
@@ -187,6 +183,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Shared factory for converting configuration objects to XML */
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
+
+    /** Provider for AWS credentials. */
+    private AWSCredentialsProvider awsCredentialsProvider;
 
 
     /**
@@ -217,14 +216,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @see AmazonS3Client#AmazonS3Client(AWSCredentials, ClientConfiguration)
      */
     public AmazonS3Client() {
-        this(null);
+        this((AWSCredentials)null);
     }
 
     /**
-     * <p>
      * Constructs a new Amazon S3 client using the specified AWS credentials to
      * access Amazon S3.
-     * </p>
      *
      * @param awsCredentials
      *            The AWS credentials to use when making requests to Amazon S3
@@ -238,10 +235,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     /**
-     * <p>
      * Constructs a new Amazon S3 client using the specified AWS credentials and
      * client configuration to access Amazon S3.
-     * </p>
      *
      * @param awsCredentials
      *            The AWS credentials to use when making requests to Amazon S3
@@ -255,12 +250,44 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      */
     public AmazonS3Client(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
-        this.awsCredentials = awsCredentials;
+        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        init();
+    }
 
+    /**
+     * Constructs a new Amazon S3 client using the specified AWS credentials
+     * provider to access Amazon S3.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     */
+    public AmazonS3Client(AWSCredentialsProvider credentialsProvider) {
+        this(credentialsProvider, new ClientConfiguration());
+    }
+
+    /**
+     * Constructs a new Amazon S3 client using the specified AWS credentials and
+     * client configuration to access Amazon S3.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            The client configuration options controlling how this client
+     *            connects to Amazon S3 (e.g. proxy settings, retry counts, etc).
+     */
+    public AmazonS3Client(AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = credentialsProvider;
+        init();
+    }
+
+    private void init() {
         setEndpoint(Constants.S3_HOSTNAME);
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
-		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
+        requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/s3/request.handlers"));
     }
 
@@ -692,6 +719,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             // it exists and the current account owns it
             return true;
         } catch (AmazonServiceException ase) {
+            /*
+             * If we have no credentials, or we detect a problem with the
+             * credentials we used, go ahead and throw the error so we don't
+             * mask that problem as thinking that the bucket does exist.
+             */
+            if (awsCredentialsProvider.getCredentials() == null) throw ase;
+            if (ase.getErrorCode().equalsIgnoreCase("InvalidAccessKeyId") ||
+                ase.getErrorCode().equalsIgnoreCase("SignatureDoesNotMatch")) {
+                throw ase;
+            }
+
             switch (ase.getStatusCode()) {
             case 403:
                 /*
@@ -826,7 +864,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         try {
         	// Multipart Uploads don't have an MD5 calculated on the service side
-        	if (isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
+        	if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
 	            byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
 	            byte[] serverSideHash = ServiceUtils.fromHex(s3Object.getObjectMetadata().getETag());
 
@@ -841,10 +879,6 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return s3Object.getObjectMetadata();
-    }
-
-    private boolean isMultipartUploadETag(String eTag) {
-    	return eTag.contains("-");
     }
 
     /* (non-Javadoc)
@@ -2128,7 +2162,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ((key != null) ? ServiceUtils.urlEncode(key) : "") +
             ((subResource != null) ? "?" + subResource : "");
 
-        AWSCredentials credentials = awsCredentials;
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
         	credentials = originalRequest.getRequestCredentials();
@@ -2455,7 +2489,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         	request.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
         }
 
-        AWSCredentials credentials = awsCredentials;
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
         	credentials = originalRequest.getRequestCredentials();

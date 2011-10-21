@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class MetricGranularityTypeStaxUnmarshaller implements Unmarshaller<MetricGranularityType, StaxUnmarshallerContext> {
 
-    
-
     public MetricGranularityType unmarshall(StaxUnmarshallerContext context) throws Exception {
         MetricGranularityType metricGranularityType = new MetricGranularityType();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

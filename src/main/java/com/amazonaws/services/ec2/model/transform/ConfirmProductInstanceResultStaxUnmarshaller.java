@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ConfirmProductInstanceResultStaxUnmarshaller implements Unmarshaller<ConfirmProductInstanceResult, StaxUnmarshallerContext> {
 
-    
-
     public ConfirmProductInstanceResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ConfirmProductInstanceResult confirmProductInstanceResult = new ConfirmProductInstanceResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

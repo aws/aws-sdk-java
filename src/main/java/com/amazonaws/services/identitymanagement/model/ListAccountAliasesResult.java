@@ -50,6 +50,7 @@ public class ListAccountAliasesResult {
      * @return 
      */
     public java.util.List<String> getAccountAliases() {
+        
         if (accountAliases == null) {
             accountAliases = new java.util.ArrayList<String>();
         }
@@ -80,6 +81,7 @@ public class ListAccountAliasesResult {
      *         together. 
      */
     public ListAccountAliasesResult withAccountAliases(String... accountAliases) {
+        if (getAccountAliases() == null) setAccountAliases(new java.util.ArrayList<String>());
         for (String value : accountAliases) {
             getAccountAliases().add(value);
         }

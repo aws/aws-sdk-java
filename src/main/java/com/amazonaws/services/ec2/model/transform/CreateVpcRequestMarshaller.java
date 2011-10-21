@@ -35,7 +35,7 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
         if (createVpcRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateVpcRequest> request = new DefaultRequest<CreateVpcRequest>(createVpcRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpc");
         request.addParameter("Version", "2011-05-15");

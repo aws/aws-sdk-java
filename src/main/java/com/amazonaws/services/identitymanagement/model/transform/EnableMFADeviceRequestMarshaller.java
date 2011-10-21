@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class EnableMFADeviceRequestMarshaller implements Marshaller<Request<EnableMFADeviceRequest>, EnableMFADeviceRequest> {
 
     public Request<EnableMFADeviceRequest> marshall(EnableMFADeviceRequest enableMFADeviceRequest) {
+
+        if (enableMFADeviceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<EnableMFADeviceRequest> request = new DefaultRequest<EnableMFADeviceRequest>(enableMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "EnableMFADevice");
         request.addParameter("Version", "2010-05-08");
-        if (enableMFADeviceRequest != null) {
-            if (enableMFADeviceRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(enableMFADeviceRequest.getUserName()));
-            }
+
+        if (enableMFADeviceRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(enableMFADeviceRequest.getUserName()));
         }
-        if (enableMFADeviceRequest != null) {
-            if (enableMFADeviceRequest.getSerialNumber() != null) {
-                request.addParameter("SerialNumber", StringUtils.fromString(enableMFADeviceRequest.getSerialNumber()));
-            }
+        if (enableMFADeviceRequest.getSerialNumber() != null) {
+            request.addParameter("SerialNumber", StringUtils.fromString(enableMFADeviceRequest.getSerialNumber()));
         }
-        if (enableMFADeviceRequest != null) {
-            if (enableMFADeviceRequest.getAuthenticationCode1() != null) {
-                request.addParameter("AuthenticationCode1", StringUtils.fromString(enableMFADeviceRequest.getAuthenticationCode1()));
-            }
+        if (enableMFADeviceRequest.getAuthenticationCode1() != null) {
+            request.addParameter("AuthenticationCode1", StringUtils.fromString(enableMFADeviceRequest.getAuthenticationCode1()));
         }
-        if (enableMFADeviceRequest != null) {
-            if (enableMFADeviceRequest.getAuthenticationCode2() != null) {
-                request.addParameter("AuthenticationCode2", StringUtils.fromString(enableMFADeviceRequest.getAuthenticationCode2()));
-            }
+        if (enableMFADeviceRequest.getAuthenticationCode2() != null) {
+            request.addParameter("AuthenticationCode2", StringUtils.fromString(enableMFADeviceRequest.getAuthenticationCode2()));
         }
 
 

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ValidateConfigurationSettingsResultStaxUnmarshaller implements Unmarshaller<ValidateConfigurationSettingsResult, StaxUnmarshallerContext> {
 
-    
-
     public ValidateConfigurationSettingsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ValidateConfigurationSettingsResult validateConfigurationSettingsResult = new ValidateConfigurationSettingsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

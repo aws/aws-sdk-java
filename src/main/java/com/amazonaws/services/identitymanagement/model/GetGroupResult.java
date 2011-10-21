@@ -90,6 +90,7 @@ public class GetGroupResult {
      * @return A list of Users in the group.
      */
     public java.util.List<User> getUsers() {
+        
         if (users == null) {
             users = new java.util.ArrayList<User>();
         }
@@ -120,6 +121,7 @@ public class GetGroupResult {
      *         together. 
      */
     public GetGroupResult withUsers(User... users) {
+        if (getUsers() == null) setUsers(new java.util.ArrayList<User>());
         for (User value : users) {
             getUsers().add(value);
         }

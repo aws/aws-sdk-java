@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class SendEmailResultStaxUnmarshaller implements Unmarshaller<SendEmailResult, StaxUnmarshallerContext> {
 
-    
-
     public SendEmailResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         SendEmailResult sendEmailResult = new SendEmailResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

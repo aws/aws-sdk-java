@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Readme: AWS SDK for Java - Amazon S3 Sample</title>
+<!--
+These style should be copied directly from the common CSS.
+We include them in the document to make distributing files
+easier.
+-->
+<style type="text/css">
+/* --------------------------------------------- */
+/*  AWS Developer Content Styles                 */
+/* --------------------------------------------- */
+
+body, div, p, td, th {
+    font-family : helvetica,sans-serif, arial;
+    font-size : 12px;
+    color : #000000;
+}
+
+.aws-h1, h1{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+.aws-h2, h2{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 14px;
+    color: #c60;
+}
+.aws-h3, h3{
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #333333;
+}
+
+/*table ID selector styles*/
+#aws-table {
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  width:95%;
+}
+
+#aws-table td{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  vertical-align:top;
+}
+
+#aws-table th {
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  vertical-align:top;
+  background-color: #eeeeee;
+  color: #333333;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/*code, note, and example styles*/
+.aws-code .programlisting{
+    font-family: "Courier New", Courier, mono;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #000066;
+    padding: 5px;
+    background-color: #eff7ff;
+    border: 1px dashed #333;
+    width:99%;
+}
+.aws-code-inline {
+    font-family: "Courier New", Courier, mono;
+    font-size: 11px;
+}
+.aws-note {
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: solid;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-left-style: none;
+    border-top-color: #CCCCCC;
+    border-right-color: #CCCCCC;
+    border-bottom-color: #CCCCCC;
+    border-left-color: #CCCCCC;
+    padding: 10px;
+    width:95%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+</style>
+</head>
+<body>
+<h1>Amazon S3 Sample</h1>
+This is a sample that demonstrates how to make basic requests to Amazon S3 using the AWS SDK for Java.
+<h2>Prerequisites</h2>
+<ul>
+  <li>You must have a valid Amazon Web Services developer account.</li>
+  <li>Requires the AWS SDK for Java. For more information on the AWS SDK for Java, see <a href="http://aws.amazon.com/sdkforjava">http://aws.amazon.com/sdkforjava</a>.</li>
+  <li>You must be signed up to use Amazon S3. For more information on Amazon S3, see <a href="http://aws.amazon.com/s3">http://aws.amazon.com/s3</a>. </li>
+</ul>
+<h2>Running the Sample</h2>
+<p>The basic steps for running the Amazon S3 sample are:</p>
+<ol>
+  <li>Open the AwsCredentials.properties       in the sample folder.</li>
+     <li>Locate the following       section and fill in your Access Key ID and Secret Access Key:<br />
+         <br />
+         <code># Fill in your AWS Access Key ID and Secret Access Key<br />
+       # <a href="http://aws.amazon.com/security-credentials">http://aws.amazon.com/security-credentials</a><br />
+       accessKey =<br />
+       secretKey =</code><br />
+     </li>
+     <li>Save the file.</li>
+  <li>Run the <code>S3Sample.java</code> file, located in the same directory as the properties file. The sample prints information to the standard       output.</li>
+</ol>
+<p class="aws-note"><strong>NOTE:</strong> The sample also includes an  Ant build.xml file to run the sample.</p>
+<p>See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/gsg/">Amazon S3 Getting Started Guide </a>for step-by-step instructions on running this sample.</p>
+</body>
+</html>

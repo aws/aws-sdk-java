@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteSigningCertificateRequestMarshaller implements Marshaller<Request<DeleteSigningCertificateRequest>, DeleteSigningCertificateRequest> {
 
     public Request<DeleteSigningCertificateRequest> marshall(DeleteSigningCertificateRequest deleteSigningCertificateRequest) {
+
+        if (deleteSigningCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteSigningCertificateRequest> request = new DefaultRequest<DeleteSigningCertificateRequest>(deleteSigningCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteSigningCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (deleteSigningCertificateRequest != null) {
-            if (deleteSigningCertificateRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(deleteSigningCertificateRequest.getUserName()));
-            }
+
+        if (deleteSigningCertificateRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(deleteSigningCertificateRequest.getUserName()));
         }
-        if (deleteSigningCertificateRequest != null) {
-            if (deleteSigningCertificateRequest.getCertificateId() != null) {
-                request.addParameter("CertificateId", StringUtils.fromString(deleteSigningCertificateRequest.getCertificateId()));
-            }
+        if (deleteSigningCertificateRequest.getCertificateId() != null) {
+            request.addParameter("CertificateId", StringUtils.fromString(deleteSigningCertificateRequest.getCertificateId()));
         }
 
 

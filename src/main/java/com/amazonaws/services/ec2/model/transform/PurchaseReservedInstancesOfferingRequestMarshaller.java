@@ -35,7 +35,7 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marsh
         if (purchaseReservedInstancesOfferingRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<PurchaseReservedInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedInstancesOfferingRequest>(purchaseReservedInstancesOfferingRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseReservedInstancesOffering");
         request.addParameter("Version", "2011-05-15");

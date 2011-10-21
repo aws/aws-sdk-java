@@ -155,6 +155,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
      * @return The names of the attributes.
      */
     public java.util.List<String> getAttributeNames() {
+        
         if (attributeNames == null) {
             attributeNames = new java.util.ArrayList<String>();
         }
@@ -185,6 +186,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetAttributesRequest withAttributeNames(String... attributeNames) {
+        if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>());
         for (String value : attributeNames) {
             getAttributeNames().add(value);
         }

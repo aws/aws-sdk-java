@@ -35,7 +35,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
         if (describeSpotPriceHistoryRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSpotPriceHistoryRequest> request = new DefaultRequest<DescribeSpotPriceHistoryRequest>(describeSpotPriceHistoryRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotPriceHistory");
         request.addParameter("Version", "2011-05-15");
@@ -49,6 +49,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
 
         java.util.List<String> instanceTypesList = describeSpotPriceHistoryRequest.getInstanceTypes();
         int instanceTypesListIndex = 1;
+
         for (String instanceTypesListValue : instanceTypesList) {
             if (instanceTypesListValue != null) {
                 request.addParameter("InstanceType." + instanceTypesListIndex, StringUtils.fromString(instanceTypesListValue));
@@ -59,6 +60,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
 
         java.util.List<String> productDescriptionsList = describeSpotPriceHistoryRequest.getProductDescriptions();
         int productDescriptionsListIndex = 1;
+
         for (String productDescriptionsListValue : productDescriptionsList) {
             if (productDescriptionsListValue != null) {
                 request.addParameter("ProductDescription." + productDescriptionsListIndex, StringUtils.fromString(productDescriptionsListValue));
@@ -69,6 +71,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
 
         java.util.List<Filter> filtersList = describeSpotPriceHistoryRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -78,6 +81,7 @@ public class DescribeSpotPriceHistoryRequestMarshaller implements Marshaller<Req
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

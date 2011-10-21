@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteGroupPolicyRequestMarshaller implements Marshaller<Request<DeleteGroupPolicyRequest>, DeleteGroupPolicyRequest> {
 
     public Request<DeleteGroupPolicyRequest> marshall(DeleteGroupPolicyRequest deleteGroupPolicyRequest) {
+
+        if (deleteGroupPolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteGroupPolicyRequest> request = new DefaultRequest<DeleteGroupPolicyRequest>(deleteGroupPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteGroupPolicy");
         request.addParameter("Version", "2010-05-08");
-        if (deleteGroupPolicyRequest != null) {
-            if (deleteGroupPolicyRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(deleteGroupPolicyRequest.getGroupName()));
-            }
+
+        if (deleteGroupPolicyRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(deleteGroupPolicyRequest.getGroupName()));
         }
-        if (deleteGroupPolicyRequest != null) {
-            if (deleteGroupPolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(deleteGroupPolicyRequest.getPolicyName()));
-            }
+        if (deleteGroupPolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(deleteGroupPolicyRequest.getPolicyName()));
         }
 
 

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class UpdateAccessKeyRequestMarshaller implements Marshaller<Request<UpdateAccessKeyRequest>, UpdateAccessKeyRequest> {
 
     public Request<UpdateAccessKeyRequest> marshall(UpdateAccessKeyRequest updateAccessKeyRequest) {
+
+        if (updateAccessKeyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UpdateAccessKeyRequest> request = new DefaultRequest<UpdateAccessKeyRequest>(updateAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateAccessKey");
         request.addParameter("Version", "2010-05-08");
-        if (updateAccessKeyRequest != null) {
-            if (updateAccessKeyRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(updateAccessKeyRequest.getUserName()));
-            }
+
+        if (updateAccessKeyRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(updateAccessKeyRequest.getUserName()));
         }
-        if (updateAccessKeyRequest != null) {
-            if (updateAccessKeyRequest.getAccessKeyId() != null) {
-                request.addParameter("AccessKeyId", StringUtils.fromString(updateAccessKeyRequest.getAccessKeyId()));
-            }
+        if (updateAccessKeyRequest.getAccessKeyId() != null) {
+            request.addParameter("AccessKeyId", StringUtils.fromString(updateAccessKeyRequest.getAccessKeyId()));
         }
-        if (updateAccessKeyRequest != null) {
-            if (updateAccessKeyRequest.getStatus() != null) {
-                request.addParameter("Status", StringUtils.fromString(updateAccessKeyRequest.getStatus()));
-            }
+        if (updateAccessKeyRequest.getStatus() != null) {
+            request.addParameter("Status", StringUtils.fromString(updateAccessKeyRequest.getStatus()));
         }
 
 

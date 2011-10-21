@@ -23,6 +23,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 
 import com.amazonaws.services.simpleemail.model.*;
 
@@ -119,7 +120,74 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
-     
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on 
+     * AmazonSimpleEmailService using the specified AWS account credentials provider.
+     * Default client settings will be used, and a default cached thread pool will be 
+     * created for executing the asynchronous tasks.
+     *
+     * <p>
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     */                                      
+    public AmazonSimpleEmailServiceAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+    }
+    
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonSimpleEmailService using the specified AWS account credentials provider
+     * and executor service.  Default client settings will be used.
+     * 
+     * <p> 
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param executorService
+     *            The executor service by which all asynchronous requests will
+     *            be executed.
+     */
+    public AmazonSimpleEmailServiceAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
+        this(awsCredentialsProvider, new ClientConfiguration(), executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonSimpleEmailService using the specified AWS account credentials
+     * provider, executor service, and client configuration options.
+     * 
+     * <p> 
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            Client configuration options (ex: max retry limit, proxy
+     *            settings, etc).
+     * @param executorService
+     *            The executor service by which all asynchronous requests will
+     *            be executed.
+     */
+    public AmazonSimpleEmailServiceAsyncClient(AWSCredentialsProvider awsCredentialsProvider, 
+                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+        super(awsCredentialsProvider, clientConfiguration);
+        this.executorService = executorService;
+    }
+
+
     /**
      * Returns the executor service used by this async client to execute
      * requests.

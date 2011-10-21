@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class UpdateLoginProfileRequestMarshaller implements Marshaller<Request<UpdateLoginProfileRequest>, UpdateLoginProfileRequest> {
 
     public Request<UpdateLoginProfileRequest> marshall(UpdateLoginProfileRequest updateLoginProfileRequest) {
+
+        if (updateLoginProfileRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UpdateLoginProfileRequest> request = new DefaultRequest<UpdateLoginProfileRequest>(updateLoginProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateLoginProfile");
         request.addParameter("Version", "2010-05-08");
-        if (updateLoginProfileRequest != null) {
-            if (updateLoginProfileRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(updateLoginProfileRequest.getUserName()));
-            }
+
+        if (updateLoginProfileRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(updateLoginProfileRequest.getUserName()));
         }
-        if (updateLoginProfileRequest != null) {
-            if (updateLoginProfileRequest.getPassword() != null) {
-                request.addParameter("Password", StringUtils.fromString(updateLoginProfileRequest.getPassword()));
-            }
+        if (updateLoginProfileRequest.getPassword() != null) {
+            request.addParameter("Password", StringUtils.fromString(updateLoginProfileRequest.getPassword()));
         }
 
 

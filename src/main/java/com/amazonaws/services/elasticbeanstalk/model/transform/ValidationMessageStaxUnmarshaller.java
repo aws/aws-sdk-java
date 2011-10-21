@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ValidationMessageStaxUnmarshaller implements Unmarshaller<ValidationMessage, StaxUnmarshallerContext> {
 
-    
-
     public ValidationMessage unmarshall(StaxUnmarshallerContext context) throws Exception {
         ValidationMessage validationMessage = new ValidationMessage();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

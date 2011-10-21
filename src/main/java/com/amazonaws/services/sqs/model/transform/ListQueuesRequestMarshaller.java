@@ -35,10 +35,10 @@ public class ListQueuesRequestMarshaller implements Marshaller<Request<ListQueue
         if (listQueuesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ListQueuesRequest> request = new DefaultRequest<ListQueuesRequest>(listQueuesRequest, "AmazonSQS");
         request.addParameter("Action", "ListQueues");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (listQueuesRequest.getQueueNamePrefix() != null) {
             request.addParameter("QueueNamePrefix", StringUtils.fromString(listQueuesRequest.getQueueNamePrefix()));

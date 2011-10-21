@@ -22,14 +22,13 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
-import com.amazonaws.auth.AWS3Signer;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.QueryStringSigner;
+import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
@@ -55,17 +54,15 @@ import com.amazonaws.services.importexport.model.transform.*;
  */
 public class AmazonImportExportClient extends AmazonWebServiceClient implements AmazonImportExport {
 
-    /**
-     * The AWS credentials (access key ID and secret key) to use when
-     * authenticating with AWS services.
-     */
-    private AWSCredentials awsCredentials;
+    /** Provider for AWS credentials. */
+    private AWSCredentialsProvider awsCredentialsProvider;
 
     /**
      * List of exception unmarshallers for all AmazonImportExport exceptions.
      */
-    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
-
+    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
+            = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
@@ -103,9 +100,49 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
      */
     public AmazonImportExportClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
-        this.awsCredentials = awsCredentials;
+        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        init();
+    }
+    
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonImportExport using the specified AWS account credentials provider.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     */
+    public AmazonImportExportClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, new ClientConfiguration());
+    }
 
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonImportExport using the specified AWS account credentials
+     * provider and client configuration options.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonImportExport
+     *                       (ex: proxy settings, retry counts, etc.).
+     */
+    public AmazonImportExportClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = awsCredentialsProvider;
+        init();
+    }
+
+    private void init() { 
         exceptionUnmarshallers.add(new BucketPermissionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidFileSystemExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MissingCustomsExceptionUnmarshaller());
@@ -133,7 +170,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/importexport/request.handlers"));
     }
-
+    
     
     /**
      * <p>
@@ -377,24 +414,19 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        // Apply any additional service specific request handlers that need to be run
-        if (requestHandlers != null) {
-            for (RequestHandler requestHandler : requestHandlers) {
-                requestHandler.beforeRequest(request);
-            }
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials(); 
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
+        	credentials = originalRequest.getRequestCredentials();
         }
 
-        if (request.getOriginalRequest().getRequestCredentials() != null) {
-	        signer.sign(request, request.getOriginalRequest().getRequestCredentials());
-        } else {
-    	    signer.sign(request, awsCredentials);
-        }
-
+        ExecutionContext executionContext = createExecutionContext();
+        executionContext.setSigner(signer);
+        executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
-        ExecutionContext executionContext = createExecutionContext();
+        
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

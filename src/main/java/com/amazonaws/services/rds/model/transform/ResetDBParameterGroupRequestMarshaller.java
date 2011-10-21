@@ -35,7 +35,7 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
         if (resetDBParameterGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ResetDBParameterGroup");
         request.addParameter("Version", "2011-04-01");
@@ -49,6 +49,7 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
 
         java.util.List<Parameter> parametersList = resetDBParameterGroupRequest.getParameters();
         int parametersListIndex = 1;
+
         for (Parameter parametersListValue : parametersList) {
             Parameter parameterMember = parametersListValue;
             if (parameterMember != null) {

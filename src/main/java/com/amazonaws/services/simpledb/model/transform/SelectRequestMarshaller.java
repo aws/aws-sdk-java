@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class SelectRequestMarshaller implements Marshaller<Request<SelectRequest>, SelectRequest> {
 
     public Request<SelectRequest> marshall(SelectRequest selectRequest) {
+
+        if (selectRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<SelectRequest> request = new DefaultRequest<SelectRequest>(selectRequest, "AmazonSimpleDB");
         request.addParameter("Action", "Select");
         request.addParameter("Version", "2009-04-15");
-        if (selectRequest != null) {
-            if (selectRequest.getSelectExpression() != null) {
-                request.addParameter("SelectExpression", StringUtils.fromString(selectRequest.getSelectExpression()));
-            }
+
+        if (selectRequest.getSelectExpression() != null) {
+            request.addParameter("SelectExpression", StringUtils.fromString(selectRequest.getSelectExpression()));
         }
-        if (selectRequest != null) {
-            if (selectRequest.getNextToken() != null) {
-                request.addParameter("NextToken", StringUtils.fromString(selectRequest.getNextToken()));
-            }
+        if (selectRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(selectRequest.getNextToken()));
         }
-        if (selectRequest != null) {
-            if (selectRequest.isConsistentRead() != null) {
-                request.addParameter("ConsistentRead", StringUtils.fromBoolean(selectRequest.isConsistentRead()));
-            }
+        if (selectRequest.isConsistentRead() != null) {
+            request.addParameter("ConsistentRead", StringUtils.fromBoolean(selectRequest.isConsistentRead()));
         }
 
 

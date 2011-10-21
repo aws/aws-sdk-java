@@ -35,7 +35,7 @@ public class GetTemplateRequestMarshaller implements Marshaller<Request<GetTempl
         if (getTemplateRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<GetTemplateRequest> request = new DefaultRequest<GetTemplateRequest>(getTemplateRequest, "AmazonCloudFormation");
         request.addParameter("Action", "GetTemplate");
         request.addParameter("Version", "2010-05-15");

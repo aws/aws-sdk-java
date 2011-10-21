@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ResetDBParameterGroupResultStaxUnmarshaller implements Unmarshaller<ResetDBParameterGroupResult, StaxUnmarshallerContext> {
 
-    
-
     public ResetDBParameterGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ResetDBParameterGroupResult resetDBParameterGroupResult = new ResetDBParameterGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

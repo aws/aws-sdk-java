@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CreateAccountAliasRequestMarshaller implements Marshaller<Request<CreateAccountAliasRequest>, CreateAccountAliasRequest> {
 
     public Request<CreateAccountAliasRequest> marshall(CreateAccountAliasRequest createAccountAliasRequest) {
+
+        if (createAccountAliasRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<CreateAccountAliasRequest> request = new DefaultRequest<CreateAccountAliasRequest>(createAccountAliasRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateAccountAlias");
         request.addParameter("Version", "2010-05-08");
-        if (createAccountAliasRequest != null) {
-            if (createAccountAliasRequest.getAccountAlias() != null) {
-                request.addParameter("AccountAlias", StringUtils.fromString(createAccountAliasRequest.getAccountAlias()));
-            }
+
+        if (createAccountAliasRequest.getAccountAlias() != null) {
+            request.addParameter("AccountAlias", StringUtils.fromString(createAccountAliasRequest.getAccountAlias()));
         }
 
 

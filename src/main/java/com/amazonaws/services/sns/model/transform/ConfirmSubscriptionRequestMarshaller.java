@@ -35,7 +35,7 @@ public class ConfirmSubscriptionRequestMarshaller implements Marshaller<Request<
         if (confirmSubscriptionRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ConfirmSubscriptionRequest> request = new DefaultRequest<ConfirmSubscriptionRequest>(confirmSubscriptionRequest, "AmazonSNS");
         request.addParameter("Action", "ConfirmSubscription");
         request.addParameter("Version", "2010-03-31");

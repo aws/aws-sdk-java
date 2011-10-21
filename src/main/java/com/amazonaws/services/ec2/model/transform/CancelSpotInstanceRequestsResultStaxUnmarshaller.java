@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CancelSpotInstanceRequestsResultStaxUnmarshaller implements Unmarshaller<CancelSpotInstanceRequestsResult, StaxUnmarshallerContext> {
 
-    
-
     public CancelSpotInstanceRequestsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CancelSpotInstanceRequestsResult cancelSpotInstanceRequestsResult = new CancelSpotInstanceRequestsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

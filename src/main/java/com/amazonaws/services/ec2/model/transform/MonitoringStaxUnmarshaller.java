@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class MonitoringStaxUnmarshaller implements Unmarshaller<Monitoring, StaxUnmarshallerContext> {
 
-    
-
     public Monitoring unmarshall(StaxUnmarshallerContext context) throws Exception {
         Monitoring monitoring = new Monitoring();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

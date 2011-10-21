@@ -35,10 +35,10 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
         if (addPermissionRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AmazonSQS");
         request.addParameter("Action", "AddPermission");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (addPermissionRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(addPermissionRequest.getQueueUrl()));
@@ -49,6 +49,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
         java.util.List<String> aWSAccountIdsList = addPermissionRequest.getAWSAccountIds();
         int aWSAccountIdsListIndex = 1;
+
         for (String aWSAccountIdsListValue : aWSAccountIdsList) {
             if (aWSAccountIdsListValue != null) {
                 request.addParameter("AWSAccountId." + aWSAccountIdsListIndex, StringUtils.fromString(aWSAccountIdsListValue));
@@ -59,6 +60,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
         java.util.List<String> actionsList = addPermissionRequest.getActions();
         int actionsListIndex = 1;
+
         for (String actionsListValue : actionsList) {
             if (actionsListValue != null) {
                 request.addParameter("ActionName." + actionsListIndex, StringUtils.fromString(actionsListValue));

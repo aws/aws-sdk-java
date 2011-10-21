@@ -35,7 +35,7 @@ public class DeregisterImageRequestMarshaller implements Marshaller<Request<Dere
         if (deregisterImageRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeregisterImageRequest> request = new DefaultRequest<DeregisterImageRequest>(deregisterImageRequest, "AmazonEC2");
         request.addParameter("Action", "DeregisterImage");
         request.addParameter("Version", "2011-05-15");

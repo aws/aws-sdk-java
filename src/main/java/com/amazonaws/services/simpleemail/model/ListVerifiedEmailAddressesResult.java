@@ -31,6 +31,7 @@ public class ListVerifiedEmailAddressesResult {
      * @return The value of the VerifiedEmailAddresses property for this object.
      */
     public java.util.List<String> getVerifiedEmailAddresses() {
+        
         if (verifiedEmailAddresses == null) {
             verifiedEmailAddresses = new java.util.ArrayList<String>();
         }
@@ -61,6 +62,7 @@ public class ListVerifiedEmailAddressesResult {
      *         together. 
      */
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(String... verifiedEmailAddresses) {
+        if (getVerifiedEmailAddresses() == null) setVerifiedEmailAddresses(new java.util.ArrayList<String>());
         for (String value : verifiedEmailAddresses) {
             getVerifiedEmailAddresses().add(value);
         }

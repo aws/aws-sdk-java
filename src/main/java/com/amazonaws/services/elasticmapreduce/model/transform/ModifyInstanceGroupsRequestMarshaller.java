@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,27 +31,31 @@ import com.amazonaws.util.StringUtils;
 public class ModifyInstanceGroupsRequestMarshaller implements Marshaller<Request<ModifyInstanceGroupsRequest>, ModifyInstanceGroupsRequest> {
 
     public Request<ModifyInstanceGroupsRequest> marshall(ModifyInstanceGroupsRequest modifyInstanceGroupsRequest) {
+
+        if (modifyInstanceGroupsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ModifyInstanceGroupsRequest> request = new DefaultRequest<ModifyInstanceGroupsRequest>(modifyInstanceGroupsRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "ModifyInstanceGroups");
         request.addParameter("Version", "2009-03-31");
 
-        if (modifyInstanceGroupsRequest != null) {
-            java.util.List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.getInstanceGroups();
-            int instanceGroupsListIndex = 1;
-            for (InstanceGroupModifyConfig instanceGroupsListValue : instanceGroupsList) {
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getInstanceGroupId() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceGroupId", StringUtils.fromString(instanceGroupsListValue.getInstanceGroupId()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getInstanceCount() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupsListValue.getInstanceCount()));
-                    }
-                }
 
-                instanceGroupsListIndex++;
+        java.util.List<InstanceGroupModifyConfig> instanceGroupsList = modifyInstanceGroupsRequest.getInstanceGroups();
+        int instanceGroupsListIndex = 1;
+
+        for (InstanceGroupModifyConfig instanceGroupsListValue : instanceGroupsList) {
+            InstanceGroupModifyConfig instanceGroupModifyConfigMember = instanceGroupsListValue;
+            if (instanceGroupModifyConfigMember != null) {
+                if (instanceGroupModifyConfigMember.getInstanceGroupId() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceGroupId", StringUtils.fromString(instanceGroupModifyConfigMember.getInstanceGroupId()));
+                }
+                if (instanceGroupModifyConfigMember.getInstanceCount() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupModifyConfigMember.getInstanceCount()));
+                }
             }
+
+            instanceGroupsListIndex++;
         }
 
 

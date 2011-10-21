@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class PutGroupPolicyRequestMarshaller implements Marshaller<Request<PutGroupPolicyRequest>, PutGroupPolicyRequest> {
 
     public Request<PutGroupPolicyRequest> marshall(PutGroupPolicyRequest putGroupPolicyRequest) {
+
+        if (putGroupPolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<PutGroupPolicyRequest> request = new DefaultRequest<PutGroupPolicyRequest>(putGroupPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "PutGroupPolicy");
         request.addParameter("Version", "2010-05-08");
-        if (putGroupPolicyRequest != null) {
-            if (putGroupPolicyRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(putGroupPolicyRequest.getGroupName()));
-            }
+
+        if (putGroupPolicyRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(putGroupPolicyRequest.getGroupName()));
         }
-        if (putGroupPolicyRequest != null) {
-            if (putGroupPolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(putGroupPolicyRequest.getPolicyName()));
-            }
+        if (putGroupPolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(putGroupPolicyRequest.getPolicyName()));
         }
-        if (putGroupPolicyRequest != null) {
-            if (putGroupPolicyRequest.getPolicyDocument() != null) {
-                request.addParameter("PolicyDocument", StringUtils.fromString(putGroupPolicyRequest.getPolicyDocument()));
-            }
+        if (putGroupPolicyRequest.getPolicyDocument() != null) {
+            request.addParameter("PolicyDocument", StringUtils.fromString(putGroupPolicyRequest.getPolicyDocument()));
         }
 
 

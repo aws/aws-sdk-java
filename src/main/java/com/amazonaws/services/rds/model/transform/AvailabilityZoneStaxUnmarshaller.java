@@ -32,15 +32,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class AvailabilityZoneStaxUnmarshaller implements Unmarshaller<AvailabilityZone, StaxUnmarshallerContext> {
 
-    
-
     public AvailabilityZone unmarshall(StaxUnmarshallerContext context) throws Exception {
         AvailabilityZone availabilityZone = new AvailabilityZone();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         
+
         if (context.isStartOfDocument()) targetDepth++;
         
 

@@ -22,14 +22,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the URL of an existing one. When you request <code>CreateQueue</code>
  * , you provide a name for the queue. To successfully create a new
  * queue, you must provide a name that is unique within the scope of your
- * own queues. If you provide the name of an existing queue, a new queue
- * isn't created and an error isn't returned. Instead, the request
- * succeeds and the queue URL for the existing queue is returned.
+ * own queues.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>If you provide a value for DefaultVisibilityTimeout
- * that is different from the value for the existing queue, you receive
- * an error.
+ * You may pass one or more attributes in the request. If you do not
+ * provide a value for any attribute, the queue will have the default
+ * value for that attribute. Permitted attributes are the same that can
+ * be set using SetQueueAttributes.
+ * </p>
+ * <p>
+ * If you provide the name of an existing queue, a new queue isn't
+ * created. If the values of attributes provided with the request match
+ * up with those on the existing queue, the queue URL is returned.
+ * Otherwise, a <code>QueueNameExists</code> error is returned.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest)
@@ -42,9 +47,9 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     private String queueName;
 
     /**
-     * The visibility timeout (in seconds) to use for the created queue.
+     * A map of attributes with their corresponding values.
      */
-    private Integer defaultVisibilityTimeout;
+    private java.util.Map<String,String> attributes;
 
     /**
      * Default constructor for a new CreateQueueRequest object.  Callers should use the
@@ -98,38 +103,41 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The visibility timeout (in seconds) to use for the created queue.
+     * A map of attributes with their corresponding values.
      *
-     * @return The visibility timeout (in seconds) to use for the created queue.
+     * @return A map of attributes with their corresponding values.
      */
-    public Integer getDefaultVisibilityTimeout() {
-        return defaultVisibilityTimeout;
+    public java.util.Map<String,String> getAttributes() {
+        
+        if (attributes == null) {
+            attributes = new java.util.HashMap<String,String>();
+        }
+        return attributes;
     }
     
     /**
-     * The visibility timeout (in seconds) to use for the created queue.
+     * A map of attributes with their corresponding values.
      *
-     * @param defaultVisibilityTimeout The visibility timeout (in seconds) to use for the created queue.
+     * @param attributes A map of attributes with their corresponding values.
      */
-    public void setDefaultVisibilityTimeout(Integer defaultVisibilityTimeout) {
-        this.defaultVisibilityTimeout = defaultVisibilityTimeout;
+    public void setAttributes(java.util.Map<String,String> attributes) {
+        this.attributes = attributes;
     }
     
     /**
-     * The visibility timeout (in seconds) to use for the created queue.
+     * A map of attributes with their corresponding values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultVisibilityTimeout The visibility timeout (in seconds) to use for the created queue.
+     * @param attributes A map of attributes with their corresponding values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateQueueRequest withDefaultVisibilityTimeout(Integer defaultVisibilityTimeout) {
-        this.defaultVisibilityTimeout = defaultVisibilityTimeout;
+    public CreateQueueRequest withAttributes(java.util.Map<String,String> attributes) {
+        setAttributes(attributes);
         return this;
     }
-    
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -144,7 +152,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("QueueName: " + queueName + ", ");
-        sb.append("DefaultVisibilityTimeout: " + defaultVisibilityTimeout + ", ");
+        sb.append("Attributes: " + attributes + ", ");
         sb.append("}");
         return sb.toString();
     }

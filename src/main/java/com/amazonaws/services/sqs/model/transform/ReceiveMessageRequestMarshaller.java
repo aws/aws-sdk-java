@@ -35,10 +35,10 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
         if (receiveMessageRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ReceiveMessageRequest> request = new DefaultRequest<ReceiveMessageRequest>(receiveMessageRequest, "AmazonSQS");
         request.addParameter("Action", "ReceiveMessage");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (receiveMessageRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(receiveMessageRequest.getQueueUrl()));
@@ -46,6 +46,7 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
 
         java.util.List<String> attributeNamesList = receiveMessageRequest.getAttributeNames();
         int attributeNamesListIndex = 1;
+
         for (String attributeNamesListValue : attributeNamesList) {
             if (attributeNamesListValue != null) {
                 request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));

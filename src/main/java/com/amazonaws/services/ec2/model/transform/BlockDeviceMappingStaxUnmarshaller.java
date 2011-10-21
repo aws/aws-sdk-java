@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class BlockDeviceMappingStaxUnmarshaller implements Unmarshaller<BlockDeviceMapping, StaxUnmarshallerContext> {
 
-    
-
     public BlockDeviceMapping unmarshall(StaxUnmarshallerContext context) throws Exception {
         BlockDeviceMapping blockDeviceMapping = new BlockDeviceMapping();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

@@ -32,15 +32,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, StaxUnmarshallerContext> {
 
-    
-
     public CacheCluster unmarshall(StaxUnmarshallerContext context) throws Exception {
         CacheCluster cacheCluster = new CacheCluster();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         
+
         if (context.isStartOfDocument()) targetDepth++;
         
 

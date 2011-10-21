@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ListAccountAliasesResultStaxUnmarshaller implements Unmarshaller<ListAccountAliasesResult, StaxUnmarshallerContext> {
 
-    
-
     public ListAccountAliasesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ListAccountAliasesResult listAccountAliasesResult = new ListAccountAliasesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

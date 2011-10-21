@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DomainMetadataResultStaxUnmarshaller implements Unmarshaller<DomainMetadataResult, StaxUnmarshallerContext> {
 
-    
-
     public DomainMetadataResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DomainMetadataResult domainMetadataResult = new DomainMetadataResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

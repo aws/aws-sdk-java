@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteAccessKeyRequestMarshaller implements Marshaller<Request<DeleteAccessKeyRequest>, DeleteAccessKeyRequest> {
 
     public Request<DeleteAccessKeyRequest> marshall(DeleteAccessKeyRequest deleteAccessKeyRequest) {
+
+        if (deleteAccessKeyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteAccessKeyRequest> request = new DefaultRequest<DeleteAccessKeyRequest>(deleteAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteAccessKey");
         request.addParameter("Version", "2010-05-08");
-        if (deleteAccessKeyRequest != null) {
-            if (deleteAccessKeyRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(deleteAccessKeyRequest.getUserName()));
-            }
+
+        if (deleteAccessKeyRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(deleteAccessKeyRequest.getUserName()));
         }
-        if (deleteAccessKeyRequest != null) {
-            if (deleteAccessKeyRequest.getAccessKeyId() != null) {
-                request.addParameter("AccessKeyId", StringUtils.fromString(deleteAccessKeyRequest.getAccessKeyId()));
-            }
+        if (deleteAccessKeyRequest.getAccessKeyId() != null) {
+            request.addParameter("AccessKeyId", StringUtils.fromString(deleteAccessKeyRequest.getAccessKeyId()));
         }
 
 

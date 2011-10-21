@@ -35,7 +35,7 @@ public class DeleteVolumeRequestMarshaller implements Marshaller<Request<DeleteV
         if (deleteVolumeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteVolumeRequest> request = new DefaultRequest<DeleteVolumeRequest>(deleteVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVolume");
         request.addParameter("Version", "2011-05-15");

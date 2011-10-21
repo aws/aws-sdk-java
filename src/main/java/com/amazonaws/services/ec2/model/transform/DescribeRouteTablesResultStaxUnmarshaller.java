@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeRouteTablesResultStaxUnmarshaller implements Unmarshaller<DescribeRouteTablesResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeRouteTablesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeRouteTablesResult describeRouteTablesResult = new DescribeRouteTablesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

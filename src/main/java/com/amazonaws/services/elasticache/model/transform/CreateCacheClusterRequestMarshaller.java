@@ -35,7 +35,7 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
         if (createCacheClusterRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateCacheClusterRequest> request = new DefaultRequest<CreateCacheClusterRequest>(createCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheCluster");
         request.addParameter("Version", "2011-07-15");
@@ -61,6 +61,7 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         java.util.List<String> cacheSecurityGroupNamesList = createCacheClusterRequest.getCacheSecurityGroupNames();
         int cacheSecurityGroupNamesListIndex = 1;
+
         for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
             if (cacheSecurityGroupNamesListValue != null) {
                 request.addParameter("CacheSecurityGroupNames.CacheSecurityGroupName." + cacheSecurityGroupNamesListIndex, StringUtils.fromString(cacheSecurityGroupNamesListValue));

@@ -35,7 +35,7 @@ public class GetPasswordDataRequestMarshaller implements Marshaller<Request<GetP
         if (getPasswordDataRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<GetPasswordDataRequest> request = new DefaultRequest<GetPasswordDataRequest>(getPasswordDataRequest, "AmazonEC2");
         request.addParameter("Action", "GetPasswordData");
         request.addParameter("Version", "2011-05-15");

@@ -35,7 +35,7 @@ public class DescribeInstanceAttributeRequestMarshaller implements Marshaller<Re
         if (describeInstanceAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeInstanceAttributeRequest> request = new DefaultRequest<DescribeInstanceAttributeRequest>(describeInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstanceAttribute");
         request.addParameter("Version", "2011-05-15");

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class LicenseCapacityStaxUnmarshaller implements Unmarshaller<LicenseCapacity, StaxUnmarshallerContext> {
 
-    
-
     public LicenseCapacity unmarshall(StaxUnmarshallerContext context) throws Exception {
         LicenseCapacity licenseCapacity = new LicenseCapacity();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

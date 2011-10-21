@@ -29,7 +29,7 @@ public class SendMessageResult {
     private String mD5OfMessageBody;
 
     /**
-     * The message ID of the message sent to the queue.
+     * The message ID of the message added to the queue.
      */
     private String messageId;
 
@@ -92,29 +92,29 @@ public class SendMessageResult {
     
     
     /**
-     * The message ID of the message sent to the queue.
+     * The message ID of the message added to the queue.
      *
-     * @return The message ID of the message sent to the queue.
+     * @return The message ID of the message added to the queue.
      */
     public String getMessageId() {
         return messageId;
     }
     
     /**
-     * The message ID of the message sent to the queue.
+     * The message ID of the message added to the queue.
      *
-     * @param messageId The message ID of the message sent to the queue.
+     * @param messageId The message ID of the message added to the queue.
      */
     public void setMessageId(String messageId) {
         this.messageId = messageId;
     }
     
     /**
-     * The message ID of the message sent to the queue.
+     * The message ID of the message added to the queue.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param messageId The message ID of the message sent to the queue.
+     * @param messageId The message ID of the message added to the queue.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

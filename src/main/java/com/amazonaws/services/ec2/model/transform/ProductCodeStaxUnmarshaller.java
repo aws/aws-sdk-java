@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ProductCodeStaxUnmarshaller implements Unmarshaller<ProductCode, StaxUnmarshallerContext> {
 
-    
-
     public ProductCode unmarshall(StaxUnmarshallerContext context) throws Exception {
         ProductCode productCode = new ProductCode();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

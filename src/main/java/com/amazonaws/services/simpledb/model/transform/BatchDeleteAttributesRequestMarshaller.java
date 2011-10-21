@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,56 +31,54 @@ import com.amazonaws.util.StringUtils;
 public class BatchDeleteAttributesRequestMarshaller implements Marshaller<Request<BatchDeleteAttributesRequest>, BatchDeleteAttributesRequest> {
 
     public Request<BatchDeleteAttributesRequest> marshall(BatchDeleteAttributesRequest batchDeleteAttributesRequest) {
+
+        if (batchDeleteAttributesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<BatchDeleteAttributesRequest> request = new DefaultRequest<BatchDeleteAttributesRequest>(batchDeleteAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "BatchDeleteAttributes");
         request.addParameter("Version", "2009-04-15");
-        if (batchDeleteAttributesRequest != null) {
-            if (batchDeleteAttributesRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(batchDeleteAttributesRequest.getDomainName()));
-            }
+
+        if (batchDeleteAttributesRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(batchDeleteAttributesRequest.getDomainName()));
         }
 
-        if (batchDeleteAttributesRequest != null) {
-            java.util.List<DeletableItem> itemsList = batchDeleteAttributesRequest.getItems();
-            int itemsListIndex = 1;
-            for (DeletableItem itemsListValue : itemsList) {
-                if (itemsListValue != null) {
-                    if (itemsListValue.getName() != null) {
-                        request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
-                    }
+        java.util.List<DeletableItem> itemsList = batchDeleteAttributesRequest.getItems();
+        int itemsListIndex = 1;
+
+        for (DeletableItem itemsListValue : itemsList) {
+            DeletableItem deletableItemMember = itemsListValue;
+            if (deletableItemMember != null) {
+                if (deletableItemMember.getName() != null) {
+                    request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(deletableItemMember.getName()));
                 }
 
-                if (itemsListValue != null) {
-                    java.util.List<Attribute> attributesList = itemsListValue.getAttributes();
-                    int attributesListIndex = 1;
-                    for (Attribute attributesListValue : attributesList) {
-                        if (attributesListValue != null) {
-                            if (attributesListValue.getName() != null) {
-                                request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
-                            }
-                        }
-                        if (attributesListValue != null) {
-                            if (attributesListValue.getAlternateNameEncoding() != null) {
-                                request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
-                            }
-                        }
-                        if (attributesListValue != null) {
-                            if (attributesListValue.getValue() != null) {
-                                request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                            }
-                        }
-                        if (attributesListValue != null) {
-                            if (attributesListValue.getAlternateValueEncoding() != null) {
-                                request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
-                            }
-                        }
+                java.util.List<Attribute> attributesList = deletableItemMember.getAttributes();
+                int attributesListIndex = 1;
 
-                        attributesListIndex++;
+                for (Attribute attributesListValue : attributesList) {
+                    Attribute attributeMember = attributesListValue;
+                    if (attributeMember != null) {
+                        if (attributeMember.getName() != null) {
+                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributeMember.getName()));
+                        }
+                        if (attributeMember.getAlternateNameEncoding() != null) {
+                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.fromString(attributeMember.getAlternateNameEncoding()));
+                        }
+                        if (attributeMember.getValue() != null) {
+                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributeMember.getValue()));
+                        }
+                        if (attributeMember.getAlternateValueEncoding() != null) {
+                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.fromString(attributeMember.getAlternateValueEncoding()));
+                        }
                     }
-                }
 
-                itemsListIndex++;
+                    attributesListIndex++;
+                }
             }
+
+            itemsListIndex++;
         }
 
 

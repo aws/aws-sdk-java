@@ -20,7 +20,9 @@ import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -37,6 +39,7 @@ import org.apache.http.client.methods.HttpRequestBase;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
@@ -150,15 +153,14 @@ public class AmazonHttpClient {
     		ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
     	long startTime = System.currentTimeMillis();
 
-    	/*
-    	 * TODO: Ideally, we'd run the "beforeRequest" on any request handlers here, but
-    	 *       we have to run that code *before* signing the request, since it could change
-    	 *       request parameters.
-    	 */
-
     	if (executionContext == null) throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
     	List<RequestHandler> requestHandlers = executionContext.getRequestHandlers();
     	if (requestHandlers == null) requestHandlers = new ArrayList<RequestHandler>();
+
+        // Apply any additional service specific request handlers that need to be run
+        for ( RequestHandler requestHandler : requestHandlers ) {
+            requestHandler.beforeRequest(request);
+        }
 
     	try {
     		TimingInfo timingInfo = new TimingInfo(startTime);
@@ -210,12 +212,25 @@ public class AmazonHttpClient {
 
         // Apply whatever request options we know how to handle, such as user-agent.
         applyRequestData(request);
-        
-        int retries = 0;
+
+        int retryCount = 0;
         URI redirectedURI = null;
         HttpEntity entity = null;
         AmazonServiceException exception = null;
+
+        // Make a copy of the original request params and headers so that we can
+        // permute it in this loop and start over with the original every time.
+        Map<String, String> originalParameters = new HashMap<String, String>();
+        originalParameters.putAll(request.getParameters());
+        Map<String, String> originalHeaders = new HashMap<String, String>();
+        originalHeaders.putAll(request.getHeaders());
+
         while (true) {
+            if ( retryCount > 0 ) {
+                request.setParameters(originalParameters);
+                request.setHeaders(originalHeaders);
+            }
+
         	// Sign the request if a signer was provided
         	if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
         		executionContext.getSigner().sign(request, executionContext.getCredentials());
@@ -233,9 +248,15 @@ public class AmazonHttpClient {
 
             org.apache.http.HttpResponse response = null;
             try {
-                if (retries > 0) pauseExponentially(retries, exception);
+                if (retryCount > 0) {
+                    pauseExponentially(retryCount, exception);
+                    if (entity != null && entity.getContent().markSupported()) {
+                        entity.getContent().reset();
+                    }
+                }
+
                 exception = null;
-                retries++;
+                retryCount++;
 
                 response = httpClient.execute(httpRequest);
                 if (isRequestSuccessful(response)) {
@@ -261,14 +282,14 @@ public class AmazonHttpClient {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
                     exception = handleErrorResponse(request, errorResponseHandler, httpRequest, response);
 
-                    if (!shouldRetry(httpRequest, exception, retries)) {
+                    if (!shouldRetry(httpRequest, exception, retryCount)) {
                         throw exception;
                     }
                 }
             } catch (IOException ioe) {
                 log.warn("Unable to execute HTTP request: " + ioe.getMessage());
 
-                if (!shouldRetry(httpRequest, ioe, retries)) {
+                if (!shouldRetry(httpRequest, ioe, retryCount)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 }
             } finally {
@@ -285,7 +306,7 @@ public class AmazonHttpClient {
             }
         }
     }
-    
+
     /**
      * Applies any additional options set in the request.
      */
@@ -298,7 +319,7 @@ public class AmazonHttpClient {
                             .getClientMarker()));
         }
     }
-    
+
     /**
      * Appends the given user-agent string to the existing one and returns it.
      */
@@ -309,7 +330,7 @@ public class AmazonHttpClient {
             return existingUserAgentString + " " + userAgent;
         }
     }
-        
+
     /**
      * Shuts down this HTTP client object, releasing any resources that might be
      * held open. This is an optional method, and callers are not expected to
@@ -334,6 +355,11 @@ public class AmazonHttpClient {
      */
     private boolean shouldRetry(HttpRequestBase method, Exception exception, int retries) {
         if (retries > config.getMaxErrorRetry()) return false;
+
+        if (method instanceof HttpEntityEnclosingRequest) {
+            HttpEntity entity = ((HttpEntityEnclosingRequest)method).getEntity();
+            if (entity != null && !entity.isRepeatable()) return false;
+        }
 
         if (exception instanceof NoHttpResponseException
             || exception instanceof SocketException
@@ -490,9 +516,17 @@ public class AmazonHttpClient {
             exception = errorResponseHandler.handle(response);
             requestLog.info("Received error response: " + exception.toString());
         } catch (Exception e) {
-            String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + ")";
-            log.error(errorMessage, e);
-            throw new AmazonClientException(errorMessage, e);
+        	// If the errorResponseHandler doesn't work, then check for a
+			// VIP spill-over error response before giving up...
+        	if (status == 503 && "Service Unavailable".equalsIgnoreCase(apacheHttpResponse.getStatusLine().getReasonPhrase())) {
+        		exception = new AmazonServiceException("Service Unavailable");
+        		exception.setErrorType(ErrorType.Service);
+        		exception.setErrorCode("Service Unavailable");
+        	} else {
+	            String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + ")";
+	            log.error(errorMessage, e);
+	            throw new AmazonClientException(errorMessage, e);
+        	}
         }
 
         exception.setStatusCode(status);

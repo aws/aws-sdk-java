@@ -35,7 +35,7 @@ public class SetTopicAttributesRequestMarshaller implements Marshaller<Request<S
         if (setTopicAttributesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SetTopicAttributesRequest> request = new DefaultRequest<SetTopicAttributesRequest>(setTopicAttributesRequest, "AmazonSNS");
         request.addParameter("Action", "SetTopicAttributes");
         request.addParameter("Version", "2010-03-31");

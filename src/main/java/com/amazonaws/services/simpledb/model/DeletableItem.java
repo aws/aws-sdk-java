@@ -82,6 +82,7 @@ public class DeletableItem {
      * @return The value of the Attributes property for this object.
      */
     public java.util.List<Attribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<Attribute>();
         }
@@ -112,6 +113,7 @@ public class DeletableItem {
      *         together. 
      */
     public DeletableItem withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>());
         for (Attribute value : attributes) {
             getAttributes().add(value);
         }

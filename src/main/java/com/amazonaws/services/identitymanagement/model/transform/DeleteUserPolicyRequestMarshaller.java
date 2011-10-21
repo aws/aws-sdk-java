@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeleteUserPolicyRequestMarshaller implements Marshaller<Request<DeleteUserPolicyRequest>, DeleteUserPolicyRequest> {
 
     public Request<DeleteUserPolicyRequest> marshall(DeleteUserPolicyRequest deleteUserPolicyRequest) {
+
+        if (deleteUserPolicyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteUserPolicyRequest> request = new DefaultRequest<DeleteUserPolicyRequest>(deleteUserPolicyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteUserPolicy");
         request.addParameter("Version", "2010-05-08");
-        if (deleteUserPolicyRequest != null) {
-            if (deleteUserPolicyRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(deleteUserPolicyRequest.getUserName()));
-            }
+
+        if (deleteUserPolicyRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(deleteUserPolicyRequest.getUserName()));
         }
-        if (deleteUserPolicyRequest != null) {
-            if (deleteUserPolicyRequest.getPolicyName() != null) {
-                request.addParameter("PolicyName", StringUtils.fromString(deleteUserPolicyRequest.getPolicyName()));
-            }
+        if (deleteUserPolicyRequest.getPolicyName() != null) {
+            request.addParameter("PolicyName", StringUtils.fromString(deleteUserPolicyRequest.getPolicyName()));
         }
 
 

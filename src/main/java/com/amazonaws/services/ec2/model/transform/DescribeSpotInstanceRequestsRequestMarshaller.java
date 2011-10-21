@@ -35,7 +35,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
         if (describeSpotInstanceRequestsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(describeSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotInstanceRequests");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
 
         java.util.List<String> spotInstanceRequestIdsList = describeSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
         int spotInstanceRequestIdsListIndex = 1;
+
         for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
             if (spotInstanceRequestIdsListValue != null) {
                 request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
 
         java.util.List<Filter> filtersList = describeSpotInstanceRequestsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

@@ -35,7 +35,7 @@ public class GetConsoleOutputRequestMarshaller implements Marshaller<Request<Get
         if (getConsoleOutputRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<GetConsoleOutputRequest> request = new DefaultRequest<GetConsoleOutputRequest>(getConsoleOutputRequest, "AmazonEC2");
         request.addParameter("Action", "GetConsoleOutput");
         request.addParameter("Version", "2011-05-15");

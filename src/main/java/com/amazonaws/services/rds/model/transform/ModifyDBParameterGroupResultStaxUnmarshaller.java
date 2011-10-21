@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ModifyDBParameterGroupResultStaxUnmarshaller implements Unmarshaller<ModifyDBParameterGroupResult, StaxUnmarshallerContext> {
 
-    
-
     public ModifyDBParameterGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ModifyDBParameterGroupResult modifyDBParameterGroupResult = new ModifyDBParameterGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

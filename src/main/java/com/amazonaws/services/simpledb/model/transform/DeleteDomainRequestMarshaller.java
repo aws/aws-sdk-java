@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteDomainRequestMarshaller implements Marshaller<Request<DeleteDomainRequest>, DeleteDomainRequest> {
 
     public Request<DeleteDomainRequest> marshall(DeleteDomainRequest deleteDomainRequest) {
+
+        if (deleteDomainRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteDomainRequest> request = new DefaultRequest<DeleteDomainRequest>(deleteDomainRequest, "AmazonSimpleDB");
         request.addParameter("Action", "DeleteDomain");
         request.addParameter("Version", "2009-04-15");
-        if (deleteDomainRequest != null) {
-            if (deleteDomainRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(deleteDomainRequest.getDomainName()));
-            }
+
+        if (deleteDomainRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(deleteDomainRequest.getDomainName()));
         }
 
 

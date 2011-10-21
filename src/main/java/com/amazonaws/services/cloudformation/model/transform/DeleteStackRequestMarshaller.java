@@ -35,7 +35,7 @@ public class DeleteStackRequestMarshaller implements Marshaller<Request<DeleteSt
         if (deleteStackRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteStackRequest> request = new DefaultRequest<DeleteStackRequest>(deleteStackRequest, "AmazonCloudFormation");
         request.addParameter("Action", "DeleteStack");
         request.addParameter("Version", "2010-05-15");

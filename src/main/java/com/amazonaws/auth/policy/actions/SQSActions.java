@@ -51,6 +51,13 @@ public enum SQSActions implements Action {
     CreateQueue("sqs:CreateQueue"),
 
     /**
+     * Action for the GetQueueUrl operation on Amazon SQS.
+     *
+     * @see AmazonSQS#getQueueUrl(com.amazonaws.services.sqs.model.GetQueueUrlRequest)
+     */
+    GetQueueUrl("sqs:GetQueueUrl"),
+
+    /**
      * Action for the DeleteMessage operation on Amazon SQS.
      *
      * @see AmazonSQS#deleteMessage(com.amazonaws.services.sqs.model.DeleteMessageRequest)
@@ -104,7 +111,28 @@ public enum SQSActions implements Action {
      *
      * @see AmazonSQS#setQueueAttributes(com.amazonaws.services.sqs.model.SetQueueAttributesRequest)
      */
-    SetQueueAttributes("sqs:SetQueueAttributes");
+    SetQueueAttributes("sqs:SetQueueAttributes"),
+
+    /**
+     * Action for the SendMessageBatch operation on Amazon SQS.
+     *
+     * @see AmazonSQS#sendMessageBatch(com.amazonaws.services.sqs.model.SendMessageBatchRequest)
+     */
+    SendMessageBatch("sqs:SendMessageBatch"),
+
+    /**
+     * Action for the ChangeMessageVisibilityBatch operation on Amazon SQS.
+     *
+     * @see AmazonSQS#changeMessageVisibilityBatch(com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequest)
+     */
+    ChangeMessageVisibilityBatch("sqs:ChangeMessageVisibilityBatch"),
+
+    /**
+     * Action for the DeleteMessageBatch operation on Amazon SQS.
+     *
+     * @see AmazonSQS#deleteMessageBatch(com.amazonaws.services.sqs.model.DeleteMessageBatchRequest)
+     */
+    DeleteMessageBatch("sqs:DeleteMessageBatch");
 
     private final String action;
 

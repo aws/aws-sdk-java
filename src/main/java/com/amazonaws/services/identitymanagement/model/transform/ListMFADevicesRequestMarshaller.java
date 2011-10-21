@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListMFADevicesRequestMarshaller implements Marshaller<Request<ListMFADevicesRequest>, ListMFADevicesRequest> {
 
     public Request<ListMFADevicesRequest> marshall(ListMFADevicesRequest listMFADevicesRequest) {
+
+        if (listMFADevicesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListMFADevicesRequest> request = new DefaultRequest<ListMFADevicesRequest>(listMFADevicesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListMFADevices");
         request.addParameter("Version", "2010-05-08");
-        if (listMFADevicesRequest != null) {
-            if (listMFADevicesRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(listMFADevicesRequest.getUserName()));
-            }
+
+        if (listMFADevicesRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(listMFADevicesRequest.getUserName()));
         }
-        if (listMFADevicesRequest != null) {
-            if (listMFADevicesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listMFADevicesRequest.getMarker()));
-            }
+        if (listMFADevicesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listMFADevicesRequest.getMarker()));
         }
-        if (listMFADevicesRequest != null) {
-            if (listMFADevicesRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listMFADevicesRequest.getMaxItems()));
-            }
+        if (listMFADevicesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listMFADevicesRequest.getMaxItems()));
         }
 
 

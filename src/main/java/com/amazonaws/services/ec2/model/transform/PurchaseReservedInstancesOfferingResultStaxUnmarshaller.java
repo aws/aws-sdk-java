@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class PurchaseReservedInstancesOfferingResultStaxUnmarshaller implements Unmarshaller<PurchaseReservedInstancesOfferingResult, StaxUnmarshallerContext> {
 
-    
-
     public PurchaseReservedInstancesOfferingResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         PurchaseReservedInstancesOfferingResult purchaseReservedInstancesOfferingResult = new PurchaseReservedInstancesOfferingResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

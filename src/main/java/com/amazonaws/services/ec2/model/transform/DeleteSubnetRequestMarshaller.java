@@ -35,7 +35,7 @@ public class DeleteSubnetRequestMarshaller implements Marshaller<Request<DeleteS
         if (deleteSubnetRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteSubnetRequest> request = new DefaultRequest<DeleteSubnetRequest>(deleteSubnetRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSubnet");
         request.addParameter("Version", "2011-05-15");

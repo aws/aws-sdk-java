@@ -35,7 +35,7 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
         if (describeDBSnapshotsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeDBSnapshotsRequest> request = new DefaultRequest<DescribeDBSnapshotsRequest>(describeDBSnapshotsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSnapshots");
         request.addParameter("Version", "2011-04-01");

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CancelJobResultStaxUnmarshaller implements Unmarshaller<CancelJobResult, StaxUnmarshallerContext> {
 
-    
-
     public CancelJobResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CancelJobResult cancelJobResult = new CancelJobResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

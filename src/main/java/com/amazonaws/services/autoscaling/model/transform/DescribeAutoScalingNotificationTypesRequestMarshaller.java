@@ -35,7 +35,7 @@ public class DescribeAutoScalingNotificationTypesRequestMarshaller implements Ma
         if (describeAutoScalingNotificationTypesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAutoScalingNotificationTypesRequest> request = new DefaultRequest<DescribeAutoScalingNotificationTypesRequest>(describeAutoScalingNotificationTypesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingNotificationTypes");
         request.addParameter("Version", "2011-01-01");

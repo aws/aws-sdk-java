@@ -32,15 +32,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DBSecurityGroupStaxUnmarshaller implements Unmarshaller<DBSecurityGroup, StaxUnmarshallerContext> {
 
-    
-
     public DBSecurityGroup unmarshall(StaxUnmarshallerContext context) throws Exception {
         DBSecurityGroup dBSecurityGroup = new DBSecurityGroup();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         
+
         if (context.isStartOfDocument()) targetDepth++;
         
 

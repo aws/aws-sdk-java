@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,24 +31,28 @@ import com.amazonaws.util.StringUtils;
 public class SetTerminationProtectionRequestMarshaller implements Marshaller<Request<SetTerminationProtectionRequest>, SetTerminationProtectionRequest> {
 
     public Request<SetTerminationProtectionRequest> marshall(SetTerminationProtectionRequest setTerminationProtectionRequest) {
+
+        if (setTerminationProtectionRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<SetTerminationProtectionRequest> request = new DefaultRequest<SetTerminationProtectionRequest>(setTerminationProtectionRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "SetTerminationProtection");
         request.addParameter("Version", "2009-03-31");
-        if (setTerminationProtectionRequest != null) {
-            java.util.List<String> jobFlowIdsList = setTerminationProtectionRequest.getJobFlowIds();
-            int jobFlowIdsListIndex = 1;
 
-            for (String jobFlowIdsListValue : jobFlowIdsList) {
-                if (jobFlowIdsListValue != null) {
-                    request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
-                }
-                jobFlowIdsListIndex++;
+
+        java.util.List<String> jobFlowIdsList = setTerminationProtectionRequest.getJobFlowIds();
+        int jobFlowIdsListIndex = 1;
+
+        for (String jobFlowIdsListValue : jobFlowIdsList) {
+            if (jobFlowIdsListValue != null) {
+                request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
             }
+
+            jobFlowIdsListIndex++;
         }
-        if (setTerminationProtectionRequest != null) {
-            if (setTerminationProtectionRequest.isTerminationProtected() != null) {
-                request.addParameter("TerminationProtected", StringUtils.fromBoolean(setTerminationProtectionRequest.isTerminationProtected()));
-            }
+        if (setTerminationProtectionRequest.isTerminationProtected() != null) {
+            request.addParameter("TerminationProtected", StringUtils.fromBoolean(setTerminationProtectionRequest.isTerminationProtected()));
         }
 
 

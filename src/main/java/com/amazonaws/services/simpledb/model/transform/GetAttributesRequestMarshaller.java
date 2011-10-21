@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,34 +31,34 @@ import com.amazonaws.util.StringUtils;
 public class GetAttributesRequestMarshaller implements Marshaller<Request<GetAttributesRequest>, GetAttributesRequest> {
 
     public Request<GetAttributesRequest> marshall(GetAttributesRequest getAttributesRequest) {
+
+        if (getAttributesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetAttributesRequest> request = new DefaultRequest<GetAttributesRequest>(getAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "GetAttributes");
         request.addParameter("Version", "2009-04-15");
-        if (getAttributesRequest != null) {
-            if (getAttributesRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(getAttributesRequest.getDomainName()));
-            }
-        }
-        if (getAttributesRequest != null) {
-            if (getAttributesRequest.getItemName() != null) {
-                request.addParameter("ItemName", StringUtils.fromString(getAttributesRequest.getItemName()));
-            }
-        }
-        if (getAttributesRequest != null) {
-            java.util.List<String> attributeNamesList = getAttributesRequest.getAttributeNames();
-            int attributeNamesListIndex = 1;
 
-            for (String attributeNamesListValue : attributeNamesList) {
-                if (attributeNamesListValue != null) {
-                    request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
-                }
-                attributeNamesListIndex++;
-            }
+        if (getAttributesRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(getAttributesRequest.getDomainName()));
         }
-        if (getAttributesRequest != null) {
-            if (getAttributesRequest.isConsistentRead() != null) {
-                request.addParameter("ConsistentRead", StringUtils.fromBoolean(getAttributesRequest.isConsistentRead()));
+        if (getAttributesRequest.getItemName() != null) {
+            request.addParameter("ItemName", StringUtils.fromString(getAttributesRequest.getItemName()));
+        }
+
+        java.util.List<String> attributeNamesList = getAttributesRequest.getAttributeNames();
+        int attributeNamesListIndex = 1;
+
+        for (String attributeNamesListValue : attributeNamesList) {
+            if (attributeNamesListValue != null) {
+                request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));
             }
+
+            attributeNamesListIndex++;
+        }
+        if (getAttributesRequest.isConsistentRead() != null) {
+            request.addParameter("ConsistentRead", StringUtils.fromBoolean(getAttributesRequest.isConsistentRead()));
         }
 
 

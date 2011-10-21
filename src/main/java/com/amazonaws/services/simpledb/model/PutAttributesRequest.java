@@ -216,6 +216,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
      * @return The list of attributes.
      */
     public java.util.List<ReplaceableAttribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<ReplaceableAttribute>();
         }
@@ -246,6 +247,7 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutAttributesRequest withAttributes(ReplaceableAttribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<ReplaceableAttribute>());
         for (ReplaceableAttribute value : attributes) {
             getAttributes().add(value);
         }

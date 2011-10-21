@@ -35,7 +35,7 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
         if (describeAutoScalingGroupsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAutoScalingGroupsRequest> request = new DefaultRequest<DescribeAutoScalingGroupsRequest>(describeAutoScalingGroupsRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingGroups");
         request.addParameter("Version", "2011-01-01");
@@ -43,6 +43,7 @@ public class DescribeAutoScalingGroupsRequestMarshaller implements Marshaller<Re
 
         java.util.List<String> autoScalingGroupNamesList = describeAutoScalingGroupsRequest.getAutoScalingGroupNames();
         int autoScalingGroupNamesListIndex = 1;
+
         for (String autoScalingGroupNamesListValue : autoScalingGroupNamesList) {
             if (autoScalingGroupNamesListValue != null) {
                 request.addParameter("AutoScalingGroupNames.member." + autoScalingGroupNamesListIndex, StringUtils.fromString(autoScalingGroupNamesListValue));

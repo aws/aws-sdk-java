@@ -35,7 +35,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateLaunchConfigurationRequest> request = new DefaultRequest<CreateLaunchConfigurationRequest>(createLaunchConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "CreateLaunchConfiguration");
         request.addParameter("Version", "2011-01-01");
@@ -52,6 +52,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
 
         java.util.List<String> securityGroupsList = createLaunchConfigurationRequest.getSecurityGroups();
         int securityGroupsListIndex = 1;
+
         for (String securityGroupsListValue : securityGroupsList) {
             if (securityGroupsListValue != null) {
                 request.addParameter("SecurityGroups.member." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
@@ -74,6 +75,7 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
 
         java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createLaunchConfigurationRequest.getBlockDeviceMappings();
         int blockDeviceMappingsListIndex = 1;
+
         for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
             BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
             if (blockDeviceMappingMember != null) {

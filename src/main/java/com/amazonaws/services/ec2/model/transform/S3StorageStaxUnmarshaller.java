@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class S3StorageStaxUnmarshaller implements Unmarshaller<S3Storage, StaxUnmarshallerContext> {
 
-    
-
     public S3Storage unmarshall(StaxUnmarshallerContext context) throws Exception {
         S3Storage s3Storage = new S3Storage();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

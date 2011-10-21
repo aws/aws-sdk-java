@@ -35,7 +35,7 @@ public class DeleteCustomerGatewayRequestMarshaller implements Marshaller<Reques
         if (deleteCustomerGatewayRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteCustomerGatewayRequest> request = new DefaultRequest<DeleteCustomerGatewayRequest>(deleteCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteCustomerGateway");
         request.addParameter("Version", "2011-05-15");

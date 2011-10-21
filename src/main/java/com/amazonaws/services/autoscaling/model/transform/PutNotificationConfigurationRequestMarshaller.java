@@ -35,7 +35,7 @@ public class PutNotificationConfigurationRequestMarshaller implements Marshaller
         if (putNotificationConfigurationRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<PutNotificationConfigurationRequest> request = new DefaultRequest<PutNotificationConfigurationRequest>(putNotificationConfigurationRequest, "AmazonAutoScaling");
         request.addParameter("Action", "PutNotificationConfiguration");
         request.addParameter("Version", "2011-01-01");
@@ -49,6 +49,7 @@ public class PutNotificationConfigurationRequestMarshaller implements Marshaller
 
         java.util.List<String> notificationTypesList = putNotificationConfigurationRequest.getNotificationTypes();
         int notificationTypesListIndex = 1;
+
         for (String notificationTypesListValue : notificationTypesList) {
             if (notificationTypesListValue != null) {
                 request.addParameter("NotificationTypes.member." + notificationTypesListIndex, StringUtils.fromString(notificationTypesListValue));

@@ -35,7 +35,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
         if (describeLicensesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeLicensesRequest> request = new DefaultRequest<DescribeLicensesRequest>(describeLicensesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeLicenses");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
 
         java.util.List<String> licenseIdsList = describeLicensesRequest.getLicenseIds();
         int licenseIdsListIndex = 1;
+
         for (String licenseIdsListValue : licenseIdsList) {
             if (licenseIdsListValue != null) {
                 request.addParameter("LicenseId." + licenseIdsListIndex, StringUtils.fromString(licenseIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
 
         java.util.List<Filter> filtersList = describeLicensesRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

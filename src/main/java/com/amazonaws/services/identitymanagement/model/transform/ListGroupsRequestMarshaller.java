@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListGroupsRequestMarshaller implements Marshaller<Request<ListGroupsRequest>, ListGroupsRequest> {
 
     public Request<ListGroupsRequest> marshall(ListGroupsRequest listGroupsRequest) {
+
+        if (listGroupsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListGroupsRequest> request = new DefaultRequest<ListGroupsRequest>(listGroupsRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListGroups");
         request.addParameter("Version", "2010-05-08");
-        if (listGroupsRequest != null) {
-            if (listGroupsRequest.getPathPrefix() != null) {
-                request.addParameter("PathPrefix", StringUtils.fromString(listGroupsRequest.getPathPrefix()));
-            }
+
+        if (listGroupsRequest.getPathPrefix() != null) {
+            request.addParameter("PathPrefix", StringUtils.fromString(listGroupsRequest.getPathPrefix()));
         }
-        if (listGroupsRequest != null) {
-            if (listGroupsRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listGroupsRequest.getMarker()));
-            }
+        if (listGroupsRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listGroupsRequest.getMarker()));
         }
-        if (listGroupsRequest != null) {
-            if (listGroupsRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listGroupsRequest.getMaxItems()));
-            }
+        if (listGroupsRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listGroupsRequest.getMaxItems()));
         }
 
 

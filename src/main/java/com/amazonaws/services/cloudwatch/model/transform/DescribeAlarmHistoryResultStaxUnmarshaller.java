@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeAlarmHistoryResultStaxUnmarshaller implements Unmarshaller<DescribeAlarmHistoryResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeAlarmHistoryResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeAlarmHistoryResult describeAlarmHistoryResult = new DescribeAlarmHistoryResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

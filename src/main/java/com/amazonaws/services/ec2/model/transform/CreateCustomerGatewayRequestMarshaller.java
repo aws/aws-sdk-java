@@ -35,7 +35,7 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
         if (createCustomerGatewayRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateCustomerGatewayRequest> request = new DefaultRequest<CreateCustomerGatewayRequest>(createCustomerGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "CreateCustomerGateway");
         request.addParameter("Version", "2011-05-15");

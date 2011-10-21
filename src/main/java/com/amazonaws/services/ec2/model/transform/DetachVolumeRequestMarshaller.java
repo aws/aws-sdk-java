@@ -35,7 +35,7 @@ public class DetachVolumeRequestMarshaller implements Marshaller<Request<DetachV
         if (detachVolumeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DetachVolumeRequest> request = new DefaultRequest<DetachVolumeRequest>(detachVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVolume");
         request.addParameter("Version", "2011-05-15");

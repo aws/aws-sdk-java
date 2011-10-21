@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class AttachVolumeResultStaxUnmarshaller implements Unmarshaller<AttachVolumeResult, StaxUnmarshallerContext> {
 
-    
-
     public AttachVolumeResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         AttachVolumeResult attachVolumeResult = new AttachVolumeResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

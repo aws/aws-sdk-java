@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,203 +31,167 @@ import com.amazonaws.util.StringUtils;
 public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlowRequest>, RunJobFlowRequest> {
 
     public Request<RunJobFlowRequest> marshall(RunJobFlowRequest runJobFlowRequest) {
+
+        if (runJobFlowRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<RunJobFlowRequest> request = new DefaultRequest<RunJobFlowRequest>(runJobFlowRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "RunJobFlow");
         request.addParameter("Version", "2009-03-31");
-        if (runJobFlowRequest != null) {
-            if (runJobFlowRequest.getName() != null) {
-                request.addParameter("Name", StringUtils.fromString(runJobFlowRequest.getName()));
-            }
+
+        if (runJobFlowRequest.getName() != null) {
+            request.addParameter("Name", StringUtils.fromString(runJobFlowRequest.getName()));
         }
-        if (runJobFlowRequest != null) {
-            if (runJobFlowRequest.getLogUri() != null) {
-                request.addParameter("LogUri", StringUtils.fromString(runJobFlowRequest.getLogUri()));
-            }
+        if (runJobFlowRequest.getLogUri() != null) {
+            request.addParameter("LogUri", StringUtils.fromString(runJobFlowRequest.getLogUri()));
         }
-        if (runJobFlowRequest != null) {
-            if (runJobFlowRequest.getAdditionalInfo() != null) {
-                request.addParameter("AdditionalInfo", StringUtils.fromString(runJobFlowRequest.getAdditionalInfo()));
-            }
+        if (runJobFlowRequest.getAdditionalInfo() != null) {
+            request.addParameter("AdditionalInfo", StringUtils.fromString(runJobFlowRequest.getAdditionalInfo()));
         }
-        if (runJobFlowRequest != null) {
-            JobFlowInstancesConfig instances = runJobFlowRequest.getInstances();
-            if (instances != null) {
-                if (instances.getMasterInstanceType() != null) {
-                    request.addParameter("Instances.MasterInstanceType", StringUtils.fromString(instances.getMasterInstanceType()));
-                }
+        JobFlowInstancesConfig jobFlowInstancesConfigInstances = runJobFlowRequest.getInstances();
+        if (jobFlowInstancesConfigInstances != null) {
+            if (jobFlowInstancesConfigInstances.getMasterInstanceType() != null) {
+                request.addParameter("Instances.MasterInstanceType", StringUtils.fromString(jobFlowInstancesConfigInstances.getMasterInstanceType()));
             }
-            if (instances != null) {
-                if (instances.getSlaveInstanceType() != null) {
-                    request.addParameter("Instances.SlaveInstanceType", StringUtils.fromString(instances.getSlaveInstanceType()));
-                }
+            if (jobFlowInstancesConfigInstances.getSlaveInstanceType() != null) {
+                request.addParameter("Instances.SlaveInstanceType", StringUtils.fromString(jobFlowInstancesConfigInstances.getSlaveInstanceType()));
             }
-            if (instances != null) {
-                if (instances.getInstanceCount() != null) {
-                    request.addParameter("Instances.InstanceCount", StringUtils.fromInteger(instances.getInstanceCount()));
-                }
+            if (jobFlowInstancesConfigInstances.getInstanceCount() != null) {
+                request.addParameter("Instances.InstanceCount", StringUtils.fromInteger(jobFlowInstancesConfigInstances.getInstanceCount()));
             }
 
-            if (instances != null) {
-                java.util.List<InstanceGroupConfig> instanceGroupsList = instances.getInstanceGroups();
-                int instanceGroupsListIndex = 1;
-                for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getName() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupsListValue.getName()));
-                        }
-                    }
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getMarket() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupsListValue.getMarket()));
-                        }
-                    }
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getInstanceRole() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupsListValue.getInstanceRole()));
-                        }
-                    }
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getBidPrice() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupsListValue.getBidPrice()));
-                        }
-                    }
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getInstanceType() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupsListValue.getInstanceType()));
-                        }
-                    }
-                    if (instanceGroupsListValue != null) {
-                        if (instanceGroupsListValue.getInstanceCount() != null) {
-                            request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupsListValue.getInstanceCount()));
-                        }
-                    }
+            java.util.List<InstanceGroupConfig> instanceGroupsList = jobFlowInstancesConfigInstances.getInstanceGroups();
+            int instanceGroupsListIndex = 1;
 
-                    instanceGroupsListIndex++;
-                }
-            }
-            if (instances != null) {
-                if (instances.getEc2KeyName() != null) {
-                    request.addParameter("Instances.Ec2KeyName", StringUtils.fromString(instances.getEc2KeyName()));
-                }
-            }
-            if (instances != null) {
-                PlacementType placement = instances.getPlacement();
-                if (placement != null) {
-                    if (placement.getAvailabilityZone() != null) {
-                        request.addParameter("Instances.Placement.AvailabilityZone", StringUtils.fromString(placement.getAvailabilityZone()));
+            for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
+                InstanceGroupConfig instanceGroupConfigMember = instanceGroupsListValue;
+                if (instanceGroupConfigMember != null) {
+                    if (instanceGroupConfigMember.getName() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupConfigMember.getName()));
+                    }
+                    if (instanceGroupConfigMember.getMarket() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupConfigMember.getMarket()));
+                    }
+                    if (instanceGroupConfigMember.getInstanceRole() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupConfigMember.getInstanceRole()));
+                    }
+                    if (instanceGroupConfigMember.getBidPrice() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupConfigMember.getBidPrice()));
+                    }
+                    if (instanceGroupConfigMember.getInstanceType() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupConfigMember.getInstanceType()));
+                    }
+                    if (instanceGroupConfigMember.getInstanceCount() != null) {
+                        request.addParameter("Instances.InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupConfigMember.getInstanceCount()));
                     }
                 }
+
+                instanceGroupsListIndex++;
             }
-            if (instances != null) {
-                if (instances.isKeepJobFlowAliveWhenNoSteps() != null) {
-                    request.addParameter("Instances.KeepJobFlowAliveWhenNoSteps", StringUtils.fromBoolean(instances.isKeepJobFlowAliveWhenNoSteps()));
+            if (jobFlowInstancesConfigInstances.getEc2KeyName() != null) {
+                request.addParameter("Instances.Ec2KeyName", StringUtils.fromString(jobFlowInstancesConfigInstances.getEc2KeyName()));
+            }
+            PlacementType placementTypePlacement = jobFlowInstancesConfigInstances.getPlacement();
+            if (placementTypePlacement != null) {
+                if (placementTypePlacement.getAvailabilityZone() != null) {
+                    request.addParameter("Instances.Placement.AvailabilityZone", StringUtils.fromString(placementTypePlacement.getAvailabilityZone()));
                 }
             }
-            if (instances != null) {
-                if (instances.isTerminationProtected() != null) {
-                    request.addParameter("Instances.TerminationProtected", StringUtils.fromBoolean(instances.isTerminationProtected()));
-                }
+            if (jobFlowInstancesConfigInstances.isKeepJobFlowAliveWhenNoSteps() != null) {
+                request.addParameter("Instances.KeepJobFlowAliveWhenNoSteps", StringUtils.fromBoolean(jobFlowInstancesConfigInstances.isKeepJobFlowAliveWhenNoSteps()));
             }
-            if (instances != null) {
-                if (instances.getHadoopVersion() != null) {
-                    request.addParameter("Instances.HadoopVersion", StringUtils.fromString(instances.getHadoopVersion()));
-                }
+            if (jobFlowInstancesConfigInstances.isTerminationProtected() != null) {
+                request.addParameter("Instances.TerminationProtected", StringUtils.fromBoolean(jobFlowInstancesConfigInstances.isTerminationProtected()));
+            }
+            if (jobFlowInstancesConfigInstances.getHadoopVersion() != null) {
+                request.addParameter("Instances.HadoopVersion", StringUtils.fromString(jobFlowInstancesConfigInstances.getHadoopVersion()));
             }
         }
 
-        if (runJobFlowRequest != null) {
-            java.util.List<StepConfig> stepsList = runJobFlowRequest.getSteps();
-            int stepsListIndex = 1;
-            for (StepConfig stepsListValue : stepsList) {
-                if (stepsListValue != null) {
-                    if (stepsListValue.getName() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepsListValue.getName()));
-                    }
-                }
-                if (stepsListValue != null) {
-                    if (stepsListValue.getActionOnFailure() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.fromString(stepsListValue.getActionOnFailure()));
-                    }
-                }
-                if (stepsListValue != null) {
-                    HadoopJarStepConfig hadoopJarStep = stepsListValue.getHadoopJarStep();
+        java.util.List<StepConfig> stepsList = runJobFlowRequest.getSteps();
+        int stepsListIndex = 1;
 
-                    if (hadoopJarStep != null) {
-                        java.util.List<KeyValue> propertiesList = hadoopJarStep.getProperties();
-                        int propertiesListIndex = 1;
-                        for (KeyValue propertiesListValue : propertiesList) {
-                            if (propertiesListValue != null) {
-                                if (propertiesListValue.getKey() != null) {
-                                    request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(propertiesListValue.getKey()));
-                                }
+        for (StepConfig stepsListValue : stepsList) {
+            StepConfig stepConfigMember = stepsListValue;
+            if (stepConfigMember != null) {
+                if (stepConfigMember.getName() != null) {
+                    request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepConfigMember.getName()));
+                }
+                if (stepConfigMember.getActionOnFailure() != null) {
+                    request.addParameter("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.fromString(stepConfigMember.getActionOnFailure()));
+                }
+                HadoopJarStepConfig hadoopJarStepConfigHadoopJarStep = stepConfigMember.getHadoopJarStep();
+                if (hadoopJarStepConfigHadoopJarStep != null) {
+
+                    java.util.List<KeyValue> propertiesList = hadoopJarStepConfigHadoopJarStep.getProperties();
+                    int propertiesListIndex = 1;
+
+                    for (KeyValue propertiesListValue : propertiesList) {
+                        KeyValue keyValueMember = propertiesListValue;
+                        if (keyValueMember != null) {
+                            if (keyValueMember.getKey() != null) {
+                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(keyValueMember.getKey()));
                             }
-                            if (propertiesListValue != null) {
-                                if (propertiesListValue.getValue() != null) {
-                                    request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.fromString(propertiesListValue.getValue()));
-                                }
+                            if (keyValueMember.getValue() != null) {
+                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.fromString(keyValueMember.getValue()));
                             }
+                        }
 
-                            propertiesListIndex++;
-                        }
+                        propertiesListIndex++;
                     }
-                    if (hadoopJarStep != null) {
-                        if (hadoopJarStep.getJar() != null) {
-                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.fromString(hadoopJarStep.getJar()));
-                        }
+                    if (hadoopJarStepConfigHadoopJarStep.getJar() != null) {
+                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getJar()));
                     }
-                    if (hadoopJarStep != null) {
-                        if (hadoopJarStep.getMainClass() != null) {
-                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.fromString(hadoopJarStep.getMainClass()));
-                        }
+                    if (hadoopJarStepConfigHadoopJarStep.getMainClass() != null) {
+                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getMainClass()));
                     }
-                    if (hadoopJarStep != null) {
-                        java.util.List<String> argsList = hadoopJarStep.getArgs();
-                        int argsListIndex = 1;
 
-                        for (String argsListValue : argsList) {
-                            if (argsListValue != null) {
-                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
-                            }
-                            argsListIndex++;
+                    java.util.List<String> argsList = hadoopJarStepConfigHadoopJarStep.getArgs();
+                    int argsListIndex = 1;
+
+                    for (String argsListValue : argsList) {
+                        if (argsListValue != null) {
+                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
                         }
+
+                        argsListIndex++;
                     }
                 }
-
-                stepsListIndex++;
             }
+
+            stepsListIndex++;
         }
 
-        if (runJobFlowRequest != null) {
-            java.util.List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.getBootstrapActions();
-            int bootstrapActionsListIndex = 1;
-            for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
-                if (bootstrapActionsListValue != null) {
-                    if (bootstrapActionsListValue.getName() != null) {
-                        request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.fromString(bootstrapActionsListValue.getName()));
+        java.util.List<BootstrapActionConfig> bootstrapActionsList = runJobFlowRequest.getBootstrapActions();
+        int bootstrapActionsListIndex = 1;
+
+        for (BootstrapActionConfig bootstrapActionsListValue : bootstrapActionsList) {
+            BootstrapActionConfig bootstrapActionConfigMember = bootstrapActionsListValue;
+            if (bootstrapActionConfigMember != null) {
+                if (bootstrapActionConfigMember.getName() != null) {
+                    request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".Name", StringUtils.fromString(bootstrapActionConfigMember.getName()));
+                }
+                ScriptBootstrapActionConfig scriptBootstrapActionConfigScriptBootstrapAction = bootstrapActionConfigMember.getScriptBootstrapAction();
+                if (scriptBootstrapActionConfigScriptBootstrapAction != null) {
+                    if (scriptBootstrapActionConfigScriptBootstrapAction.getPath() != null) {
+                        request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Path", StringUtils.fromString(scriptBootstrapActionConfigScriptBootstrapAction.getPath()));
+                    }
+
+                    java.util.List<String> argsList = scriptBootstrapActionConfigScriptBootstrapAction.getArgs();
+                    int argsListIndex = 1;
+
+                    for (String argsListValue : argsList) {
+                        if (argsListValue != null) {
+                            request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
+                        }
+
+                        argsListIndex++;
                     }
                 }
-                if (bootstrapActionsListValue != null) {
-                    ScriptBootstrapActionConfig scriptBootstrapAction = bootstrapActionsListValue.getScriptBootstrapAction();
-                    if (scriptBootstrapAction != null) {
-                        if (scriptBootstrapAction.getPath() != null) {
-                            request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Path", StringUtils.fromString(scriptBootstrapAction.getPath()));
-                        }
-                    }
-                    if (scriptBootstrapAction != null) {
-                        java.util.List<String> argsList = scriptBootstrapAction.getArgs();
-                        int argsListIndex = 1;
-
-                        for (String argsListValue : argsList) {
-                            if (argsListValue != null) {
-                                request.addParameter("BootstrapActions.member." + bootstrapActionsListIndex + ".ScriptBootstrapAction.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
-                            }
-                            argsListIndex++;
-                        }
-                    }
-                }
-
-                bootstrapActionsListIndex++;
             }
+
+            bootstrapActionsListIndex++;
         }
 
 

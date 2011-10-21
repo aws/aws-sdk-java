@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class InternetGatewayAttachmentStaxUnmarshaller implements Unmarshaller<InternetGatewayAttachment, StaxUnmarshallerContext> {
 
-    
-
     public InternetGatewayAttachment unmarshall(StaxUnmarshallerContext context) throws Exception {
         InternetGatewayAttachment internetGatewayAttachment = new InternetGatewayAttachment();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

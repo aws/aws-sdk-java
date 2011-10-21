@@ -35,7 +35,7 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
         if (createSnapshotRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateSnapshotRequest> request = new DefaultRequest<CreateSnapshotRequest>(createSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSnapshot");
         request.addParameter("Version", "2011-05-15");

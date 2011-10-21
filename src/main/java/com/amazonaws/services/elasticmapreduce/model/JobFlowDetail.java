@@ -352,6 +352,7 @@ public class JobFlowDetail {
      * @return A list of steps run by the job flow.
      */
     public java.util.List<StepDetail> getSteps() {
+        
         if (steps == null) {
             steps = new java.util.ArrayList<StepDetail>();
         }
@@ -382,6 +383,7 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withSteps(StepDetail... steps) {
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepDetail>());
         for (StepDetail value : steps) {
             getSteps().add(value);
         }
@@ -414,6 +416,7 @@ public class JobFlowDetail {
      * @return A list of the bootstrap actions run by the job flow.
      */
     public java.util.List<BootstrapActionDetail> getBootstrapActions() {
+        
         if (bootstrapActions == null) {
             bootstrapActions = new java.util.ArrayList<BootstrapActionDetail>();
         }
@@ -444,6 +447,7 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withBootstrapActions(BootstrapActionDetail... bootstrapActions) {
+        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionDetail>());
         for (BootstrapActionDetail value : bootstrapActions) {
             getBootstrapActions().add(value);
         }

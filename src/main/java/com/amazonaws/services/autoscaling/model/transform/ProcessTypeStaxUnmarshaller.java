@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ProcessTypeStaxUnmarshaller implements Unmarshaller<ProcessType, StaxUnmarshallerContext> {
 
-    
-
     public ProcessType unmarshall(StaxUnmarshallerContext context) throws Exception {
         ProcessType processType = new ProcessType();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

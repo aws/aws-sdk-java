@@ -201,6 +201,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      *         replies to the message, each reply-to address will receive the reply.
      */
     public java.util.List<String> getReplyToAddresses() {
+        
         if (replyToAddresses == null) {
             replyToAddresses = new java.util.ArrayList<String>();
         }
@@ -235,6 +236,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendEmailRequest withReplyToAddresses(String... replyToAddresses) {
+        if (getReplyToAddresses() == null) setReplyToAddresses(new java.util.ArrayList<String>());
         for (String value : replyToAddresses) {
             getReplyToAddresses().add(value);
         }

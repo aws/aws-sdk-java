@@ -35,7 +35,7 @@ public class ReplaceNetworkAclEntryRequestMarshaller implements Marshaller<Reque
         if (replaceNetworkAclEntryRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ReplaceNetworkAclEntryRequest> request = new DefaultRequest<ReplaceNetworkAclEntryRequest>(replaceNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "ReplaceNetworkAclEntry");
         request.addParameter("Version", "2011-05-15");

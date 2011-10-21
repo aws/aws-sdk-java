@@ -225,6 +225,7 @@ public class JobFlowInstancesConfig {
      * @return Configuration for the job flow's instance groups.
      */
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
+        
         if (instanceGroups == null) {
             instanceGroups = new java.util.ArrayList<InstanceGroupConfig>();
         }
@@ -255,6 +256,7 @@ public class JobFlowInstancesConfig {
      *         together. 
      */
     public JobFlowInstancesConfig withInstanceGroups(InstanceGroupConfig... instanceGroups) {
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>());
         for (InstanceGroupConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }

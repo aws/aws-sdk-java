@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,64 +31,54 @@ import com.amazonaws.util.StringUtils;
 public class DeleteAttributesRequestMarshaller implements Marshaller<Request<DeleteAttributesRequest>, DeleteAttributesRequest> {
 
     public Request<DeleteAttributesRequest> marshall(DeleteAttributesRequest deleteAttributesRequest) {
+
+        if (deleteAttributesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteAttributesRequest> request = new DefaultRequest<DeleteAttributesRequest>(deleteAttributesRequest, "AmazonSimpleDB");
         request.addParameter("Action", "DeleteAttributes");
         request.addParameter("Version", "2009-04-15");
-        if (deleteAttributesRequest != null) {
-            if (deleteAttributesRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(deleteAttributesRequest.getDomainName()));
-            }
+
+        if (deleteAttributesRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(deleteAttributesRequest.getDomainName()));
         }
-        if (deleteAttributesRequest != null) {
-            if (deleteAttributesRequest.getItemName() != null) {
-                request.addParameter("ItemName", StringUtils.fromString(deleteAttributesRequest.getItemName()));
-            }
+        if (deleteAttributesRequest.getItemName() != null) {
+            request.addParameter("ItemName", StringUtils.fromString(deleteAttributesRequest.getItemName()));
         }
 
-        if (deleteAttributesRequest != null) {
-            java.util.List<Attribute> attributesList = deleteAttributesRequest.getAttributes();
-            int attributesListIndex = 1;
-            for (Attribute attributesListValue : attributesList) {
-                if (attributesListValue != null) {
-                    if (attributesListValue.getName() != null) {
-                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
-                    }
-                }
-                if (attributesListValue != null) {
-                    if (attributesListValue.getAlternateNameEncoding() != null) {
-                        request.addParameter("Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
-                    }
-                }
-                if (attributesListValue != null) {
-                    if (attributesListValue.getValue() != null) {
-                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                    }
-                }
-                if (attributesListValue != null) {
-                    if (attributesListValue.getAlternateValueEncoding() != null) {
-                        request.addParameter("Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
-                    }
-                }
+        java.util.List<Attribute> attributesList = deleteAttributesRequest.getAttributes();
+        int attributesListIndex = 1;
 
-                attributesListIndex++;
+        for (Attribute attributesListValue : attributesList) {
+            Attribute attributeMember = attributesListValue;
+            if (attributeMember != null) {
+                if (attributeMember.getName() != null) {
+                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributeMember.getName()));
+                }
+                if (attributeMember.getAlternateNameEncoding() != null) {
+                    request.addParameter("Attribute." + attributesListIndex + ".AlternateNameEncoding", StringUtils.fromString(attributeMember.getAlternateNameEncoding()));
+                }
+                if (attributeMember.getValue() != null) {
+                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributeMember.getValue()));
+                }
+                if (attributeMember.getAlternateValueEncoding() != null) {
+                    request.addParameter("Attribute." + attributesListIndex + ".AlternateValueEncoding", StringUtils.fromString(attributeMember.getAlternateValueEncoding()));
+                }
             }
+
+            attributesListIndex++;
         }
-        if (deleteAttributesRequest != null) {
-            UpdateCondition expected = deleteAttributesRequest.getExpected();
-            if (expected != null) {
-                if (expected.getName() != null) {
-                    request.addParameter("Expected.Name", StringUtils.fromString(expected.getName()));
-                }
+        UpdateCondition updateConditionExpected = deleteAttributesRequest.getExpected();
+        if (updateConditionExpected != null) {
+            if (updateConditionExpected.getName() != null) {
+                request.addParameter("Expected.Name", StringUtils.fromString(updateConditionExpected.getName()));
             }
-            if (expected != null) {
-                if (expected.getValue() != null) {
-                    request.addParameter("Expected.Value", StringUtils.fromString(expected.getValue()));
-                }
+            if (updateConditionExpected.getValue() != null) {
+                request.addParameter("Expected.Value", StringUtils.fromString(updateConditionExpected.getValue()));
             }
-            if (expected != null) {
-                if (expected.isExists() != null) {
-                    request.addParameter("Expected.Exists", StringUtils.fromBoolean(expected.isExists()));
-                }
+            if (updateConditionExpected.isExists() != null) {
+                request.addParameter("Expected.Exists", StringUtils.fromBoolean(updateConditionExpected.isExists()));
             }
         }
 

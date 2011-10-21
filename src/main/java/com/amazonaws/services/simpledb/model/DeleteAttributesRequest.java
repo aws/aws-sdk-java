@@ -224,6 +224,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
      *         represent categories of data that can be assigned to items.
      */
     public java.util.List<Attribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<Attribute>();
         }
@@ -258,6 +259,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DeleteAttributesRequest withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>());
         for (Attribute value : attributes) {
             getAttributes().add(value);
         }

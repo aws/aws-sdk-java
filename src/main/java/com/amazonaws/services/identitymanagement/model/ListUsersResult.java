@@ -52,6 +52,7 @@ public class ListUsersResult {
      * @return A list of User names.
      */
     public java.util.List<User> getUsers() {
+        
         if (users == null) {
             users = new java.util.ArrayList<User>();
         }
@@ -82,6 +83,7 @@ public class ListUsersResult {
      *         together. 
      */
     public ListUsersResult withUsers(User... users) {
+        if (getUsers() == null) setUsers(new java.util.ArrayList<User>());
         for (User value : users) {
             getUsers().add(value);
         }

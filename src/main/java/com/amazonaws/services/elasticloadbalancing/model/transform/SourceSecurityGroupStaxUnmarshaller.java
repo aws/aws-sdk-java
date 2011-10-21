@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class SourceSecurityGroupStaxUnmarshaller implements Unmarshaller<SourceSecurityGroup, StaxUnmarshallerContext> {
 
-    
-
     public SourceSecurityGroup unmarshall(StaxUnmarshallerContext context) throws Exception {
         SourceSecurityGroup sourceSecurityGroup = new SourceSecurityGroup();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

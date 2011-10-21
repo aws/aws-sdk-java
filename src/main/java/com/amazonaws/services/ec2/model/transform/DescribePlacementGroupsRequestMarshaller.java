@@ -35,7 +35,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
         if (describePlacementGroupsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribePlacementGroupsRequest> request = new DefaultRequest<DescribePlacementGroupsRequest>(describePlacementGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribePlacementGroups");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
 
         java.util.List<String> groupNamesList = describePlacementGroupsRequest.getGroupNames();
         int groupNamesListIndex = 1;
+
         for (String groupNamesListValue : groupNamesList) {
             if (groupNamesListValue != null) {
                 request.addParameter("GroupName." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
@@ -53,6 +54,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
 
         java.util.List<Filter> filtersList = describePlacementGroupsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

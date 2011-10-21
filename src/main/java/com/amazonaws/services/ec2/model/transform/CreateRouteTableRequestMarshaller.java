@@ -35,7 +35,7 @@ public class CreateRouteTableRequestMarshaller implements Marshaller<Request<Cre
         if (createRouteTableRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateRouteTableRequest> request = new DefaultRequest<CreateRouteTableRequest>(createRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRouteTable");
         request.addParameter("Version", "2011-05-15");

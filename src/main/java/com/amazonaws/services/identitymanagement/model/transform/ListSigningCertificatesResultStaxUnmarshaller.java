@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ListSigningCertificatesResultStaxUnmarshaller implements Unmarshaller<ListSigningCertificatesResult, StaxUnmarshallerContext> {
 
-    
-
     public ListSigningCertificatesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ListSigningCertificatesResult listSigningCertificatesResult = new ListSigningCertificatesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

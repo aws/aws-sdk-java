@@ -35,7 +35,7 @@ public class DescribeAutoScalingInstancesRequestMarshaller implements Marshaller
         if (describeAutoScalingInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAutoScalingInstancesRequest> request = new DefaultRequest<DescribeAutoScalingInstancesRequest>(describeAutoScalingInstancesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribeAutoScalingInstances");
         request.addParameter("Version", "2011-01-01");
@@ -43,6 +43,7 @@ public class DescribeAutoScalingInstancesRequestMarshaller implements Marshaller
 
         java.util.List<String> instanceIdsList = describeAutoScalingInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceIds.member." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

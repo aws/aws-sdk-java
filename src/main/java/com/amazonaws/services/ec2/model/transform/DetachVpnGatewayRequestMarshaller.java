@@ -35,7 +35,7 @@ public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<Det
         if (detachVpnGatewayRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DetachVpnGatewayRequest> request = new DefaultRequest<DetachVpnGatewayRequest>(detachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVpnGateway");
         request.addParameter("Version", "2011-05-15");

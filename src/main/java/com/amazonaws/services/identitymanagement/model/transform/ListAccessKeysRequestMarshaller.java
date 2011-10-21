@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListAccessKeysRequestMarshaller implements Marshaller<Request<ListAccessKeysRequest>, ListAccessKeysRequest> {
 
     public Request<ListAccessKeysRequest> marshall(ListAccessKeysRequest listAccessKeysRequest) {
+
+        if (listAccessKeysRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListAccessKeysRequest> request = new DefaultRequest<ListAccessKeysRequest>(listAccessKeysRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListAccessKeys");
         request.addParameter("Version", "2010-05-08");
-        if (listAccessKeysRequest != null) {
-            if (listAccessKeysRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(listAccessKeysRequest.getUserName()));
-            }
+
+        if (listAccessKeysRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(listAccessKeysRequest.getUserName()));
         }
-        if (listAccessKeysRequest != null) {
-            if (listAccessKeysRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listAccessKeysRequest.getMarker()));
-            }
+        if (listAccessKeysRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listAccessKeysRequest.getMarker()));
         }
-        if (listAccessKeysRequest != null) {
-            if (listAccessKeysRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listAccessKeysRequest.getMaxItems()));
-            }
+        if (listAccessKeysRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listAccessKeysRequest.getMaxItems()));
         }
 
 

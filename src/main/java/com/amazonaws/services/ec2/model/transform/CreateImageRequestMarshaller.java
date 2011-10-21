@@ -35,7 +35,7 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
         if (createImageRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
         request.addParameter("Version", "2011-05-15");

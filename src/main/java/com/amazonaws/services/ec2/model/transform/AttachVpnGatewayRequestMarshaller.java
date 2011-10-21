@@ -35,7 +35,7 @@ public class AttachVpnGatewayRequestMarshaller implements Marshaller<Request<Att
         if (attachVpnGatewayRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<AttachVpnGatewayRequest> request = new DefaultRequest<AttachVpnGatewayRequest>(attachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVpnGateway");
         request.addParameter("Version", "2011-05-15");

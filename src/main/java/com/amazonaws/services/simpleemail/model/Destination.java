@@ -60,6 +60,7 @@ public class Destination {
      * @return The To: field(s) of the message.
      */
     public java.util.List<String> getToAddresses() {
+        
         if (toAddresses == null) {
             toAddresses = new java.util.ArrayList<String>();
         }
@@ -90,6 +91,7 @@ public class Destination {
      *         together. 
      */
     public Destination withToAddresses(String... toAddresses) {
+        if (getToAddresses() == null) setToAddresses(new java.util.ArrayList<String>());
         for (String value : toAddresses) {
             getToAddresses().add(value);
         }
@@ -122,6 +124,7 @@ public class Destination {
      * @return The CC: field(s) of the message.
      */
     public java.util.List<String> getCcAddresses() {
+        
         if (ccAddresses == null) {
             ccAddresses = new java.util.ArrayList<String>();
         }
@@ -152,6 +155,7 @@ public class Destination {
      *         together. 
      */
     public Destination withCcAddresses(String... ccAddresses) {
+        if (getCcAddresses() == null) setCcAddresses(new java.util.ArrayList<String>());
         for (String value : ccAddresses) {
             getCcAddresses().add(value);
         }
@@ -184,6 +188,7 @@ public class Destination {
      * @return The BCC: field(s) of the message.
      */
     public java.util.List<String> getBccAddresses() {
+        
         if (bccAddresses == null) {
             bccAddresses = new java.util.ArrayList<String>();
         }
@@ -214,6 +219,7 @@ public class Destination {
      *         together. 
      */
     public Destination withBccAddresses(String... bccAddresses) {
+        if (getBccAddresses() == null) setBccAddresses(new java.util.ArrayList<String>());
         for (String value : bccAddresses) {
             getBccAddresses().add(value);
         }

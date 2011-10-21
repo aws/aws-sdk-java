@@ -124,6 +124,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
      * @return A list of destinations for the message.
      */
     public java.util.List<String> getDestinations() {
+        
         if (destinations == null) {
             destinations = new java.util.ArrayList<String>();
         }
@@ -154,6 +155,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendRawEmailRequest withDestinations(String... destinations) {
+        if (getDestinations() == null) setDestinations(new java.util.ArrayList<String>());
         for (String value : destinations) {
             getDestinations().add(value);
         }

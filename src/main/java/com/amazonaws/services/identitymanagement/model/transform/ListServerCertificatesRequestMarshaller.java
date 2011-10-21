@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListServerCertificatesRequestMarshaller implements Marshaller<Request<ListServerCertificatesRequest>, ListServerCertificatesRequest> {
 
     public Request<ListServerCertificatesRequest> marshall(ListServerCertificatesRequest listServerCertificatesRequest) {
+
+        if (listServerCertificatesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListServerCertificatesRequest> request = new DefaultRequest<ListServerCertificatesRequest>(listServerCertificatesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListServerCertificates");
         request.addParameter("Version", "2010-05-08");
-        if (listServerCertificatesRequest != null) {
-            if (listServerCertificatesRequest.getPathPrefix() != null) {
-                request.addParameter("PathPrefix", StringUtils.fromString(listServerCertificatesRequest.getPathPrefix()));
-            }
+
+        if (listServerCertificatesRequest.getPathPrefix() != null) {
+            request.addParameter("PathPrefix", StringUtils.fromString(listServerCertificatesRequest.getPathPrefix()));
         }
-        if (listServerCertificatesRequest != null) {
-            if (listServerCertificatesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listServerCertificatesRequest.getMarker()));
-            }
+        if (listServerCertificatesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listServerCertificatesRequest.getMarker()));
         }
-        if (listServerCertificatesRequest != null) {
-            if (listServerCertificatesRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listServerCertificatesRequest.getMaxItems()));
-            }
+        if (listServerCertificatesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listServerCertificatesRequest.getMaxItems()));
         }
 
 

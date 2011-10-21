@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class AccessKeyMetadataStaxUnmarshaller implements Unmarshaller<AccessKeyMetadata, StaxUnmarshallerContext> {
 
-    
-
     public AccessKeyMetadata unmarshall(StaxUnmarshallerContext context) throws Exception {
         AccessKeyMetadata accessKeyMetadata = new AccessKeyMetadata();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

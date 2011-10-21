@@ -35,7 +35,7 @@ public class DeleteDhcpOptionsRequestMarshaller implements Marshaller<Request<De
         if (deleteDhcpOptionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteDhcpOptionsRequest> request = new DefaultRequest<DeleteDhcpOptionsRequest>(deleteDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteDhcpOptions");
         request.addParameter("Version", "2011-05-15");

@@ -32,15 +32,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class EngineDefaultsStaxUnmarshaller implements Unmarshaller<EngineDefaults, StaxUnmarshallerContext> {
 
-    
-
     public EngineDefaults unmarshall(StaxUnmarshallerContext context) throws Exception {
         EngineDefaults engineDefaults = new EngineDefaults();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         
+
         if (context.isStartOfDocument()) targetDepth++;
         
 

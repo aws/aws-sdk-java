@@ -37,6 +37,7 @@ public class SelectResult {
      * @return A list of items that match the select expression.
      */
     public java.util.List<Item> getItems() {
+        
         if (items == null) {
             items = new java.util.ArrayList<Item>();
         }
@@ -67,6 +68,7 @@ public class SelectResult {
      *         together. 
      */
     public SelectResult withItems(Item... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<Item>());
         for (Item value : items) {
             getItems().add(value);
         }

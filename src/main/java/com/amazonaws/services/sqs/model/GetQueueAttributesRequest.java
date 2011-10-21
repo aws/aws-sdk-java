@@ -44,6 +44,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * seconds Amazon SQS retains a message.</li>
  * <li> <code>QueueArn</code> - returns the queue's Amazon resource name
  * (ARN).</li>
+ * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the
+ * approximate number of messages that are pending to be added to the
+ * queue.</li>
+ * <li> <code>DelaySeconds</code> - returns the default delay on the
+ * queue in seconds.</li>
  * 
  * </ul>
  * 
@@ -59,29 +64,7 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     private String queueUrl;
 
     /**
-     * A list of attributes to retrieve information for. The following
-     * attributes are supported: <ul> <li><code>All</code> - returns all
-     * values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     * the approximate number of visible messages in a queue. For more
-     * information, see Resources Required to Process Messages in the Amazon
-     * SQS Developer Guide.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see Resources Required to Process Messages in
-     * the Amazon SQS Developer Guide.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see
-     * Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue
-     * was created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the
-     * queue was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many
-     * bytes a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of
-     * seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     * returns the queue's Amazon resource name (ARN).</li> </ul>
+     * A list of attributes to retrieve information for.
      */
     private java.util.List<String> attributeNames;
 
@@ -137,53 +120,9 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of attributes to retrieve information for. The following
-     * attributes are supported: <ul> <li><code>All</code> - returns all
-     * values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     * the approximate number of visible messages in a queue. For more
-     * information, see Resources Required to Process Messages in the Amazon
-     * SQS Developer Guide.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see Resources Required to Process Messages in
-     * the Amazon SQS Developer Guide.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see
-     * Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue
-     * was created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the
-     * queue was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many
-     * bytes a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of
-     * seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     * returns the queue's Amazon resource name (ARN).</li> </ul>
+     * A list of attributes to retrieve information for.
      *
-     * @return A list of attributes to retrieve information for. The following
-     *         attributes are supported: <ul> <li><code>All</code> - returns all
-     *         values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     *         the approximate number of visible messages in a queue. For more
-     *         information, see Resources Required to Process Messages in the Amazon
-     *         SQS Developer Guide.</li>
-     *         <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     *         approximate number of messages that are not timed-out and not deleted.
-     *         For more information, see Resources Required to Process Messages in
-     *         the Amazon SQS Developer Guide.</li>
-     *         <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     *         for the queue. For more information about visibility timeout, see
-     *         Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     *         <li><code>CreatedTimestamp</code> - returns the time when the queue
-     *         was created (epoch time in seconds).</li>
-     *         <li><code>LastModifiedTimestamp</code> - returns the time when the
-     *         queue was last changed (epoch time in seconds).</li>
-     *         <li><code>Policy</code> - returns the queue's policy.</li>
-     *         <li><code>MaximumMessageSize</code> - returns the limit of how many
-     *         bytes a message can contain before Amazon SQS rejects it.</li>
-     *         <li><code>MessageRetentionPeriod</code> - returns the number of
-     *         seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     *         returns the queue's Amazon resource name (ARN).</li> </ul>
+     * @return A list of attributes to retrieve information for.
      */
     public java.util.List<String> getAttributeNames() {
         
@@ -194,53 +133,9 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for. The following
-     * attributes are supported: <ul> <li><code>All</code> - returns all
-     * values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     * the approximate number of visible messages in a queue. For more
-     * information, see Resources Required to Process Messages in the Amazon
-     * SQS Developer Guide.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see Resources Required to Process Messages in
-     * the Amazon SQS Developer Guide.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see
-     * Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue
-     * was created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the
-     * queue was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many
-     * bytes a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of
-     * seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     * returns the queue's Amazon resource name (ARN).</li> </ul>
+     * A list of attributes to retrieve information for.
      *
-     * @param attributeNames A list of attributes to retrieve information for. The following
-     *         attributes are supported: <ul> <li><code>All</code> - returns all
-     *         values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     *         the approximate number of visible messages in a queue. For more
-     *         information, see Resources Required to Process Messages in the Amazon
-     *         SQS Developer Guide.</li>
-     *         <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     *         approximate number of messages that are not timed-out and not deleted.
-     *         For more information, see Resources Required to Process Messages in
-     *         the Amazon SQS Developer Guide.</li>
-     *         <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     *         for the queue. For more information about visibility timeout, see
-     *         Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     *         <li><code>CreatedTimestamp</code> - returns the time when the queue
-     *         was created (epoch time in seconds).</li>
-     *         <li><code>LastModifiedTimestamp</code> - returns the time when the
-     *         queue was last changed (epoch time in seconds).</li>
-     *         <li><code>Policy</code> - returns the queue's policy.</li>
-     *         <li><code>MaximumMessageSize</code> - returns the limit of how many
-     *         bytes a message can contain before Amazon SQS rejects it.</li>
-     *         <li><code>MessageRetentionPeriod</code> - returns the number of
-     *         seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     *         returns the queue's Amazon resource name (ARN).</li> </ul>
+     * @param attributeNames A list of attributes to retrieve information for.
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>();
@@ -251,55 +146,11 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for. The following
-     * attributes are supported: <ul> <li><code>All</code> - returns all
-     * values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     * the approximate number of visible messages in a queue. For more
-     * information, see Resources Required to Process Messages in the Amazon
-     * SQS Developer Guide.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see Resources Required to Process Messages in
-     * the Amazon SQS Developer Guide.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see
-     * Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue
-     * was created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the
-     * queue was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many
-     * bytes a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of
-     * seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     * returns the queue's Amazon resource name (ARN).</li> </ul>
+     * A list of attributes to retrieve information for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for. The following
-     *         attributes are supported: <ul> <li><code>All</code> - returns all
-     *         values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     *         the approximate number of visible messages in a queue. For more
-     *         information, see Resources Required to Process Messages in the Amazon
-     *         SQS Developer Guide.</li>
-     *         <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     *         approximate number of messages that are not timed-out and not deleted.
-     *         For more information, see Resources Required to Process Messages in
-     *         the Amazon SQS Developer Guide.</li>
-     *         <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     *         for the queue. For more information about visibility timeout, see
-     *         Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     *         <li><code>CreatedTimestamp</code> - returns the time when the queue
-     *         was created (epoch time in seconds).</li>
-     *         <li><code>LastModifiedTimestamp</code> - returns the time when the
-     *         queue was last changed (epoch time in seconds).</li>
-     *         <li><code>Policy</code> - returns the queue's policy.</li>
-     *         <li><code>MaximumMessageSize</code> - returns the limit of how many
-     *         bytes a message can contain before Amazon SQS rejects it.</li>
-     *         <li><code>MessageRetentionPeriod</code> - returns the number of
-     *         seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     *         returns the queue's Amazon resource name (ARN).</li> </ul>
+     * @param attributeNames A list of attributes to retrieve information for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -313,55 +164,11 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for. The following
-     * attributes are supported: <ul> <li><code>All</code> - returns all
-     * values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     * the approximate number of visible messages in a queue. For more
-     * information, see Resources Required to Process Messages in the Amazon
-     * SQS Developer Guide.</li>
-     * <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     * approximate number of messages that are not timed-out and not deleted.
-     * For more information, see Resources Required to Process Messages in
-     * the Amazon SQS Developer Guide.</li>
-     * <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     * for the queue. For more information about visibility timeout, see
-     * Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     * <li><code>CreatedTimestamp</code> - returns the time when the queue
-     * was created (epoch time in seconds).</li>
-     * <li><code>LastModifiedTimestamp</code> - returns the time when the
-     * queue was last changed (epoch time in seconds).</li>
-     * <li><code>Policy</code> - returns the queue's policy.</li>
-     * <li><code>MaximumMessageSize</code> - returns the limit of how many
-     * bytes a message can contain before Amazon SQS rejects it.</li>
-     * <li><code>MessageRetentionPeriod</code> - returns the number of
-     * seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     * returns the queue's Amazon resource name (ARN).</li> </ul>
+     * A list of attributes to retrieve information for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for. The following
-     *         attributes are supported: <ul> <li><code>All</code> - returns all
-     *         values.</li> <li><code>ApproximateNumberOfMessages</code> - returns
-     *         the approximate number of visible messages in a queue. For more
-     *         information, see Resources Required to Process Messages in the Amazon
-     *         SQS Developer Guide.</li>
-     *         <li><code>ApproximateNumberOfMessagesNotVisible</code> - returns the
-     *         approximate number of messages that are not timed-out and not deleted.
-     *         For more information, see Resources Required to Process Messages in
-     *         the Amazon SQS Developer Guide.</li>
-     *         <li><code>VisibilityTimeout</code> - returns the visibility timeout
-     *         for the queue. For more information about visibility timeout, see
-     *         Visibility Timeout in the Amazon SQS Developer Guide.</li>
-     *         <li><code>CreatedTimestamp</code> - returns the time when the queue
-     *         was created (epoch time in seconds).</li>
-     *         <li><code>LastModifiedTimestamp</code> - returns the time when the
-     *         queue was last changed (epoch time in seconds).</li>
-     *         <li><code>Policy</code> - returns the queue's policy.</li>
-     *         <li><code>MaximumMessageSize</code> - returns the limit of how many
-     *         bytes a message can contain before Amazon SQS rejects it.</li>
-     *         <li><code>MessageRetentionPeriod</code> - returns the number of
-     *         seconds Amazon SQS retains a message.</li> <li><code>QueueArn</code> -
-     *         returns the queue's Amazon resource name (ARN).</li> </ul>
+     * @param attributeNames A list of attributes to retrieve information for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

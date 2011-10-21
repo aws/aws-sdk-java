@@ -35,7 +35,7 @@ public class DeleteRouteRequestMarshaller implements Marshaller<Request<DeleteRo
         if (deleteRouteRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteRouteRequest> request = new DefaultRequest<DeleteRouteRequest>(deleteRouteRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteRoute");
         request.addParameter("Version", "2011-05-15");

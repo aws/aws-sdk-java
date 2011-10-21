@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CreateVpnGatewayResultStaxUnmarshaller implements Unmarshaller<CreateVpnGatewayResult, StaxUnmarshallerContext> {
 
-    
-
     public CreateVpnGatewayResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CreateVpnGatewayResult createVpnGatewayResult = new CreateVpnGatewayResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

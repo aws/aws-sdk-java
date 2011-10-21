@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmarshallerContext> {
 
-    
-
     public Address unmarshall(StaxUnmarshallerContext context) throws Exception {
         Address address = new Address();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

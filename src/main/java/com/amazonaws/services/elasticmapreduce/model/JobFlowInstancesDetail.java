@@ -383,6 +383,7 @@ public class JobFlowInstancesDetail {
      * @return Details about the job flow's instance groups.
      */
     public java.util.List<InstanceGroupDetail> getInstanceGroups() {
+        
         if (instanceGroups == null) {
             instanceGroups = new java.util.ArrayList<InstanceGroupDetail>();
         }
@@ -413,6 +414,7 @@ public class JobFlowInstancesDetail {
      *         together. 
      */
     public JobFlowInstancesDetail withInstanceGroups(InstanceGroupDetail... instanceGroups) {
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupDetail>());
         for (InstanceGroupDetail value : instanceGroups) {
             getInstanceGroups().add(value);
         }

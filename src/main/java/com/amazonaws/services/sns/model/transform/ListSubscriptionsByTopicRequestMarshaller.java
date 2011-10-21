@@ -35,7 +35,7 @@ public class ListSubscriptionsByTopicRequestMarshaller implements Marshaller<Req
         if (listSubscriptionsByTopicRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ListSubscriptionsByTopicRequest> request = new DefaultRequest<ListSubscriptionsByTopicRequest>(listSubscriptionsByTopicRequest, "AmazonSNS");
         request.addParameter("Action", "ListSubscriptionsByTopic");
         request.addParameter("Version", "2010-03-31");

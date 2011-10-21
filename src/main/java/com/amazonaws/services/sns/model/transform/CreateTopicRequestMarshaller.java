@@ -35,7 +35,7 @@ public class CreateTopicRequestMarshaller implements Marshaller<Request<CreateTo
         if (createTopicRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateTopicRequest> request = new DefaultRequest<CreateTopicRequest>(createTopicRequest, "AmazonSNS");
         request.addParameter("Action", "CreateTopic");
         request.addParameter("Version", "2010-03-31");

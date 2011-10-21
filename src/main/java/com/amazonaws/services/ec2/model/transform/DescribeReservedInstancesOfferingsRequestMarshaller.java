@@ -35,7 +35,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         if (describeReservedInstancesOfferingsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeReservedInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedInstancesOfferingsRequest>(describeReservedInstancesOfferingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesOfferings");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
 
         java.util.List<String> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.getReservedInstancesOfferingIds();
         int reservedInstancesOfferingIdsListIndex = 1;
+
         for (String reservedInstancesOfferingIdsListValue : reservedInstancesOfferingIdsList) {
             if (reservedInstancesOfferingIdsListValue != null) {
                 request.addParameter("ReservedInstancesOfferingId." + reservedInstancesOfferingIdsListIndex, StringUtils.fromString(reservedInstancesOfferingIdsListValue));
@@ -62,6 +63,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
 
         java.util.List<Filter> filtersList = describeReservedInstancesOfferingsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -71,6 +73,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

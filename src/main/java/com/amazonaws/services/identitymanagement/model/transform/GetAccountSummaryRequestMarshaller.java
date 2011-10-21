@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class GetAccountSummaryRequestMarshaller implements Marshaller<Request<GetAccountSummaryRequest>, GetAccountSummaryRequest> {
 
     public Request<GetAccountSummaryRequest> marshall(GetAccountSummaryRequest getAccountSummaryRequest) {
+
+        if (getAccountSummaryRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetAccountSummaryRequest> request = new DefaultRequest<GetAccountSummaryRequest>(getAccountSummaryRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetAccountSummary");
         request.addParameter("Version", "2010-05-08");
+
 
 
         return request;

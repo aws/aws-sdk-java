@@ -47,9 +47,47 @@ public class StaxUnmarshallerContext {
     private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
 
     private Iterator<?> attributeIterator;
+    private final Map<String, String> headers;
 
+    /**
+     * Constructs a new unmarshaller context using the specified source of XML events.
+     *
+     * @param eventReader
+     *            The source of XML events for this unmarshalling context.
+     */
     public StaxUnmarshallerContext(XMLEventReader eventReader) {
+        this(eventReader, null);
+    }
+
+    /**
+     * Constructs a new unmarshaller context using the specified source of XML
+     * events, and a set of response headers.
+     *
+     * @param eventReader
+     *            The source of XML events for this unmarshalling context.
+     * @param headers
+     *            The set of response headers associated with this unmarshaller
+     *            context.
+     */
+    public StaxUnmarshallerContext(XMLEventReader eventReader, Map<String, String> headers) {
         this.eventReader = eventReader;
+        this.headers = headers;
+    }
+
+    /**
+     * Returns the value of the header with the specified name from the
+     * response, or null if not present.
+     *
+     * @param header
+     *            The name of the header to lookup.
+     *
+     * @return The value of the header with the specified name from the
+     *         response, or null if not present.
+     */
+    public String getHeader(String header) {
+        if (headers == null) return null;
+
+        return headers.get(header);
     }
 
     /**
@@ -64,14 +102,17 @@ public class StaxUnmarshallerContext {
             return attribute.getValue();
         }
 
-        XMLEvent event = eventReader.peek();
-        if (event.getEventType() == XMLStreamConstants.CHARACTERS) {
-            eventReader.nextEvent();
-            return event.asCharacters().getData();
-        } else if (event.getEventType() == XMLStreamConstants.END_ELEMENT) {
-            return "";
-        } else {
-            throw new RuntimeException("Encountered unexpected event: " + event.toString());
+        StringBuilder sb = new StringBuilder();
+        while (true) {
+            XMLEvent event = eventReader.peek();
+            if (event.getEventType() == XMLStreamConstants.CHARACTERS) {
+                eventReader.nextEvent();
+                sb.append(event.asCharacters().getData());
+            } else if (event.getEventType() == XMLStreamConstants.END_ELEMENT) {
+                return sb.toString();
+            } else {
+                throw new RuntimeException("Encountered unexpected event: " + event.toString());
+            }
         }
     }
 

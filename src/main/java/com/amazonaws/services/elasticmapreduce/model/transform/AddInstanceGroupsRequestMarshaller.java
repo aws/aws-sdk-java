@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,52 +31,46 @@ import com.amazonaws.util.StringUtils;
 public class AddInstanceGroupsRequestMarshaller implements Marshaller<Request<AddInstanceGroupsRequest>, AddInstanceGroupsRequest> {
 
     public Request<AddInstanceGroupsRequest> marshall(AddInstanceGroupsRequest addInstanceGroupsRequest) {
+
+        if (addInstanceGroupsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<AddInstanceGroupsRequest> request = new DefaultRequest<AddInstanceGroupsRequest>(addInstanceGroupsRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "AddInstanceGroups");
         request.addParameter("Version", "2009-03-31");
 
-        if (addInstanceGroupsRequest != null) {
-            java.util.List<InstanceGroupConfig> instanceGroupsList = addInstanceGroupsRequest.getInstanceGroups();
-            int instanceGroupsListIndex = 1;
-            for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getName() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupsListValue.getName()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getMarket() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupsListValue.getMarket()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getInstanceRole() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupsListValue.getInstanceRole()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getBidPrice() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupsListValue.getBidPrice()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getInstanceType() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupsListValue.getInstanceType()));
-                    }
-                }
-                if (instanceGroupsListValue != null) {
-                    if (instanceGroupsListValue.getInstanceCount() != null) {
-                        request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupsListValue.getInstanceCount()));
-                    }
-                }
 
-                instanceGroupsListIndex++;
+        java.util.List<InstanceGroupConfig> instanceGroupsList = addInstanceGroupsRequest.getInstanceGroups();
+        int instanceGroupsListIndex = 1;
+
+        for (InstanceGroupConfig instanceGroupsListValue : instanceGroupsList) {
+            InstanceGroupConfig instanceGroupConfigMember = instanceGroupsListValue;
+            if (instanceGroupConfigMember != null) {
+                if (instanceGroupConfigMember.getName() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".Name", StringUtils.fromString(instanceGroupConfigMember.getName()));
+                }
+                if (instanceGroupConfigMember.getMarket() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".Market", StringUtils.fromString(instanceGroupConfigMember.getMarket()));
+                }
+                if (instanceGroupConfigMember.getInstanceRole() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceRole", StringUtils.fromString(instanceGroupConfigMember.getInstanceRole()));
+                }
+                if (instanceGroupConfigMember.getBidPrice() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".BidPrice", StringUtils.fromString(instanceGroupConfigMember.getBidPrice()));
+                }
+                if (instanceGroupConfigMember.getInstanceType() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceType", StringUtils.fromString(instanceGroupConfigMember.getInstanceType()));
+                }
+                if (instanceGroupConfigMember.getInstanceCount() != null) {
+                    request.addParameter("InstanceGroups.member." + instanceGroupsListIndex + ".InstanceCount", StringUtils.fromInteger(instanceGroupConfigMember.getInstanceCount()));
+                }
             }
+
+            instanceGroupsListIndex++;
         }
-        if (addInstanceGroupsRequest != null) {
-            if (addInstanceGroupsRequest.getJobFlowId() != null) {
-                request.addParameter("JobFlowId", StringUtils.fromString(addInstanceGroupsRequest.getJobFlowId()));
-            }
+        if (addInstanceGroupsRequest.getJobFlowId() != null) {
+            request.addParameter("JobFlowId", StringUtils.fromString(addInstanceGroupsRequest.getJobFlowId()));
         }
 
 

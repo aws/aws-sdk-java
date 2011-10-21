@@ -35,7 +35,7 @@ public class DescribeSnapshotAttributeRequestMarshaller implements Marshaller<Re
         if (describeSnapshotAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSnapshotAttributeRequest> request = new DefaultRequest<DescribeSnapshotAttributeRequest>(describeSnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshotAttribute");
         request.addParameter("Version", "2011-05-15");

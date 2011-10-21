@@ -35,7 +35,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
         if (describeSnapshotsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSnapshotsRequest> request = new DefaultRequest<DescribeSnapshotsRequest>(describeSnapshotsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSnapshots");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<String> snapshotIdsList = describeSnapshotsRequest.getSnapshotIds();
         int snapshotIdsListIndex = 1;
+
         for (String snapshotIdsListValue : snapshotIdsList) {
             if (snapshotIdsListValue != null) {
                 request.addParameter("SnapshotId." + snapshotIdsListIndex, StringUtils.fromString(snapshotIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<String> ownerIdsList = describeSnapshotsRequest.getOwnerIds();
         int ownerIdsListIndex = 1;
+
         for (String ownerIdsListValue : ownerIdsList) {
             if (ownerIdsListValue != null) {
                 request.addParameter("Owner." + ownerIdsListIndex, StringUtils.fromString(ownerIdsListValue));
@@ -63,6 +65,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<String> restorableByUserIdsList = describeSnapshotsRequest.getRestorableByUserIds();
         int restorableByUserIdsListIndex = 1;
+
         for (String restorableByUserIdsListValue : restorableByUserIdsList) {
             if (restorableByUserIdsListValue != null) {
                 request.addParameter("RestorableBy." + restorableByUserIdsListIndex, StringUtils.fromString(restorableByUserIdsListValue));
@@ -73,6 +76,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
         java.util.List<Filter> filtersList = describeSnapshotsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -82,6 +86,7 @@ public class DescribeSnapshotsRequestMarshaller implements Marshaller<Request<De
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

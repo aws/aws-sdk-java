@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DisableAvailabilityZonesForLoadBalancerResultStaxUnmarshaller implements Unmarshaller<DisableAvailabilityZonesForLoadBalancerResult, StaxUnmarshallerContext> {
 
-    
-
     public DisableAvailabilityZonesForLoadBalancerResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DisableAvailabilityZonesForLoadBalancerResult disableAvailabilityZonesForLoadBalancerResult = new DisableAvailabilityZonesForLoadBalancerResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

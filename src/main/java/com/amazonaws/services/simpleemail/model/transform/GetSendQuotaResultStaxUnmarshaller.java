@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class GetSendQuotaResultStaxUnmarshaller implements Unmarshaller<GetSendQuotaResult, StaxUnmarshallerContext> {
 
-    
-
     public GetSendQuotaResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetSendQuotaResult getSendQuotaResult = new GetSendQuotaResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

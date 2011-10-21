@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class PendingModifiedValuesStaxUnmarshaller implements Unmarshaller<PendingModifiedValues, StaxUnmarshallerContext> {
 
-    
-
     public PendingModifiedValues unmarshall(StaxUnmarshallerContext context) throws Exception {
         PendingModifiedValues pendingModifiedValues = new PendingModifiedValues();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

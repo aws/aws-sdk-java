@@ -118,6 +118,7 @@ public class ScriptBootstrapActionConfig {
      *         script.
      */
     public java.util.List<String> getArgs() {
+        
         if (args == null) {
             args = new java.util.ArrayList<String>();
         }
@@ -152,6 +153,7 @@ public class ScriptBootstrapActionConfig {
      *         together. 
      */
     public ScriptBootstrapActionConfig withArgs(String... args) {
+        if (getArgs() == null) setArgs(new java.util.ArrayList<String>());
         for (String value : args) {
             getArgs().add(value);
         }

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteLoginProfileRequestMarshaller implements Marshaller<Request<DeleteLoginProfileRequest>, DeleteLoginProfileRequest> {
 
     public Request<DeleteLoginProfileRequest> marshall(DeleteLoginProfileRequest deleteLoginProfileRequest) {
+
+        if (deleteLoginProfileRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteLoginProfileRequest> request = new DefaultRequest<DeleteLoginProfileRequest>(deleteLoginProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteLoginProfile");
         request.addParameter("Version", "2010-05-08");
-        if (deleteLoginProfileRequest != null) {
-            if (deleteLoginProfileRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(deleteLoginProfileRequest.getUserName()));
-            }
+
+        if (deleteLoginProfileRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(deleteLoginProfileRequest.getUserName()));
         }
 
 

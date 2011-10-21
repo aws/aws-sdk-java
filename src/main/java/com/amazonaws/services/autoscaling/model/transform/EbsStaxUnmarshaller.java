@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class EbsStaxUnmarshaller implements Unmarshaller<Ebs, StaxUnmarshallerContext> {
 
-    
-
     public Ebs unmarshall(StaxUnmarshallerContext context) throws Exception {
         Ebs ebs = new Ebs();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

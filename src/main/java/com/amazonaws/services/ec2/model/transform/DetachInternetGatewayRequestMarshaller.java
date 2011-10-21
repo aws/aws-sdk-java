@@ -35,7 +35,7 @@ public class DetachInternetGatewayRequestMarshaller implements Marshaller<Reques
         if (detachInternetGatewayRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DetachInternetGatewayRequest> request = new DefaultRequest<DetachInternetGatewayRequest>(detachInternetGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachInternetGateway");
         request.addParameter("Version", "2011-05-15");

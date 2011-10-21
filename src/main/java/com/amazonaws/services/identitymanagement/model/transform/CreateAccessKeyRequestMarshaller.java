@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CreateAccessKeyRequestMarshaller implements Marshaller<Request<CreateAccessKeyRequest>, CreateAccessKeyRequest> {
 
     public Request<CreateAccessKeyRequest> marshall(CreateAccessKeyRequest createAccessKeyRequest) {
+
+        if (createAccessKeyRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<CreateAccessKeyRequest> request = new DefaultRequest<CreateAccessKeyRequest>(createAccessKeyRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateAccessKey");
         request.addParameter("Version", "2010-05-08");
-        if (createAccessKeyRequest != null) {
-            if (createAccessKeyRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(createAccessKeyRequest.getUserName()));
-            }
+
+        if (createAccessKeyRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(createAccessKeyRequest.getUserName()));
         }
 
 

@@ -165,6 +165,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
      * @return A list of items on which to perform the operation.
      */
     public java.util.List<ReplaceableItem> getItems() {
+        
         if (items == null) {
             items = new java.util.ArrayList<ReplaceableItem>();
         }
@@ -195,6 +196,7 @@ public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public BatchPutAttributesRequest withItems(ReplaceableItem... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<ReplaceableItem>());
         for (ReplaceableItem value : items) {
             getItems().add(value);
         }

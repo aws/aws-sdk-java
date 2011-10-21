@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class AdjustmentTypeStaxUnmarshaller implements Unmarshaller<AdjustmentType, StaxUnmarshallerContext> {
 
-    
-
     public AdjustmentType unmarshall(StaxUnmarshallerContext context) throws Exception {
         AdjustmentType adjustmentType = new AdjustmentType();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

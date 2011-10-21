@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class UpdateUserRequestMarshaller implements Marshaller<Request<UpdateUserRequest>, UpdateUserRequest> {
 
     public Request<UpdateUserRequest> marshall(UpdateUserRequest updateUserRequest) {
+
+        if (updateUserRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UpdateUserRequest> request = new DefaultRequest<UpdateUserRequest>(updateUserRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateUser");
         request.addParameter("Version", "2010-05-08");
-        if (updateUserRequest != null) {
-            if (updateUserRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(updateUserRequest.getUserName()));
-            }
+
+        if (updateUserRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(updateUserRequest.getUserName()));
         }
-        if (updateUserRequest != null) {
-            if (updateUserRequest.getNewPath() != null) {
-                request.addParameter("NewPath", StringUtils.fromString(updateUserRequest.getNewPath()));
-            }
+        if (updateUserRequest.getNewPath() != null) {
+            request.addParameter("NewPath", StringUtils.fromString(updateUserRequest.getNewPath()));
         }
-        if (updateUserRequest != null) {
-            if (updateUserRequest.getNewUserName() != null) {
-                request.addParameter("NewUserName", StringUtils.fromString(updateUserRequest.getNewUserName()));
-            }
+        if (updateUserRequest.getNewUserName() != null) {
+            request.addParameter("NewUserName", StringUtils.fromString(updateUserRequest.getNewUserName()));
         }
 
 

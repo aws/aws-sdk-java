@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListUsersRequestMarshaller implements Marshaller<Request<ListUsersRequest>, ListUsersRequest> {
 
     public Request<ListUsersRequest> marshall(ListUsersRequest listUsersRequest) {
+
+        if (listUsersRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListUsersRequest> request = new DefaultRequest<ListUsersRequest>(listUsersRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListUsers");
         request.addParameter("Version", "2010-05-08");
-        if (listUsersRequest != null) {
-            if (listUsersRequest.getPathPrefix() != null) {
-                request.addParameter("PathPrefix", StringUtils.fromString(listUsersRequest.getPathPrefix()));
-            }
+
+        if (listUsersRequest.getPathPrefix() != null) {
+            request.addParameter("PathPrefix", StringUtils.fromString(listUsersRequest.getPathPrefix()));
         }
-        if (listUsersRequest != null) {
-            if (listUsersRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listUsersRequest.getMarker()));
-            }
+        if (listUsersRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listUsersRequest.getMarker()));
         }
-        if (listUsersRequest != null) {
-            if (listUsersRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listUsersRequest.getMaxItems()));
-            }
+        if (listUsersRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listUsersRequest.getMaxItems()));
         }
 
 

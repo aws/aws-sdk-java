@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class PutScalingPolicyResultStaxUnmarshaller implements Unmarshaller<PutScalingPolicyResult, StaxUnmarshallerContext> {
 
-    
-
     public PutScalingPolicyResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         PutScalingPolicyResult putScalingPolicyResult = new PutScalingPolicyResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

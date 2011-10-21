@@ -15,6 +15,7 @@
 package com.amazonaws.auth;
 
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.security.MessageDigest;
 import java.util.ArrayList;
@@ -33,6 +34,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
+import com.amazonaws.util.StringInputStream;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -83,13 +85,16 @@ public class AWS3Signer extends AbstractAWSSigner {
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
-
         byte[] bytesToSign;
         String stringToSign;
         if (isHttps) {
         	request.addHeader(NONCE_HEADER, nonce);
             stringToSign = date + nonce;
-            bytesToSign = stringToSign.getBytes();
+            try {
+				bytesToSign = stringToSign.getBytes("UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
+			}
         } else {
             stringToSign = "POST\n"
                 + getCanonicalizedResourcePath(request.getEndpoint()) + "\n"
@@ -118,6 +123,12 @@ public class AWS3Signer extends AbstractAWSSigner {
     private String getRequestPayload(Request<?> request) {
         try {
         	InputStream content = request.getContent();
+
+        	if (content instanceof StringInputStream) {
+        		StringInputStream sis = (StringInputStream)content;
+        		return sis.getString();
+        	}
+
         	if (!content.markSupported()) {
         		throw new AmazonClientException("Unable to read request payload to sign request.");
         	}
@@ -150,7 +161,7 @@ public class AWS3Signer extends AbstractAWSSigner {
     private byte[] hash(String text) throws AmazonClientException {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(text.getBytes());
+            md.update(text.getBytes("UTF-8"));
             return md.digest();
         } catch (Exception e) {
             throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
@@ -194,7 +205,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         SortedMap<String, String> sortedHeaderMap = new TreeMap<String, String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
         	if (headersToSign.contains(entry.getKey().toLowerCase())) {
-        		sortedHeaderMap.put(entry.getKey(), entry.getValue());
+        		sortedHeaderMap.put(entry.getKey().toLowerCase(), entry.getValue());
         	}
         }
 

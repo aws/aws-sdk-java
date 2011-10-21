@@ -35,7 +35,7 @@ public class DeleteVpcRequestMarshaller implements Marshaller<Request<DeleteVpcR
         if (deleteVpcRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteVpcRequest> request = new DefaultRequest<DeleteVpcRequest>(deleteVpcRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteVpc");
         request.addParameter("Version", "2011-05-15");

@@ -33,6 +33,27 @@ public class PolicyAttribute {
     private String attributeValue;
 
     /**
+     * Default constructor for a new PolicyAttribute object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public PolicyAttribute() {}
+    
+    /**
+     * Constructs a new PolicyAttribute object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param attributeName The name of the attribute associated with the
+     * policy.
+     * @param attributeValue The value of the attribute associated with the
+     * policy.
+     */
+    public PolicyAttribute(String attributeName, String attributeValue) {
+        this.attributeName = attributeName;
+        this.attributeValue = attributeValue;
+    }
+    
+    /**
      * The name of the attribute associated with the policy.
      *
      * @return The name of the attribute associated with the policy.

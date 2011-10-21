@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpleemail.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class GetSendQuotaRequestMarshaller implements Marshaller<Request<GetSendQuotaRequest>, GetSendQuotaRequest> {
 
     public Request<GetSendQuotaRequest> marshall(GetSendQuotaRequest getSendQuotaRequest) {
+
+        if (getSendQuotaRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetSendQuotaRequest> request = new DefaultRequest<GetSendQuotaRequest>(getSendQuotaRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetSendQuota");
         request.addParameter("Version", "2010-12-01");
+
 
 
         return request;

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpleemail.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class GetSendStatisticsRequestMarshaller implements Marshaller<Request<GetSendStatisticsRequest>, GetSendStatisticsRequest> {
 
     public Request<GetSendStatisticsRequest> marshall(GetSendStatisticsRequest getSendStatisticsRequest) {
+
+        if (getSendStatisticsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetSendStatisticsRequest> request = new DefaultRequest<GetSendStatisticsRequest>(getSendStatisticsRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "GetSendStatistics");
         request.addParameter("Version", "2010-12-01");
+
 
 
         return request;

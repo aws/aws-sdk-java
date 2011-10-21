@@ -35,7 +35,7 @@ public class GetStatusRequestMarshaller implements Marshaller<Request<GetStatusR
         if (getStatusRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<GetStatusRequest> request = new DefaultRequest<GetStatusRequest>(getStatusRequest, "AmazonImportExport");
         request.addParameter("Action", "GetStatus");
         request.addParameter("Version", "2010-06-01");

@@ -35,7 +35,7 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
         if (describeInternetGatewaysRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeInternetGatewaysRequest> request = new DefaultRequest<DescribeInternetGatewaysRequest>(describeInternetGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInternetGateways");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
 
         java.util.List<String> internetGatewayIdsList = describeInternetGatewaysRequest.getInternetGatewayIds();
         int internetGatewayIdsListIndex = 1;
+
         for (String internetGatewayIdsListValue : internetGatewayIdsList) {
             if (internetGatewayIdsListValue != null) {
                 request.addParameter("InternetGatewayId." + internetGatewayIdsListIndex, StringUtils.fromString(internetGatewayIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
 
         java.util.List<Filter> filtersList = describeInternetGatewaysRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeInternetGatewaysRequestMarshaller implements Marshaller<Req
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

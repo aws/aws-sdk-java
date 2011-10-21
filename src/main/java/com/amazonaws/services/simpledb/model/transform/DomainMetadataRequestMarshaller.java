@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DomainMetadataRequestMarshaller implements Marshaller<Request<DomainMetadataRequest>, DomainMetadataRequest> {
 
     public Request<DomainMetadataRequest> marshall(DomainMetadataRequest domainMetadataRequest) {
+
+        if (domainMetadataRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DomainMetadataRequest> request = new DefaultRequest<DomainMetadataRequest>(domainMetadataRequest, "AmazonSimpleDB");
         request.addParameter("Action", "DomainMetadata");
         request.addParameter("Version", "2009-04-15");
-        if (domainMetadataRequest != null) {
-            if (domainMetadataRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(domainMetadataRequest.getDomainName()));
-            }
+
+        if (domainMetadataRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(domainMetadataRequest.getDomainName()));
         }
 
 

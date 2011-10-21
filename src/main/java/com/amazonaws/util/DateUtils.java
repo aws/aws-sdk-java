@@ -37,7 +37,7 @@ public class DateUtils {
         new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
     
     /** Alternate ISO 8601 parser without fractional seconds */
-    protected final SimpleDateFormat alternateIo8601DateParser =
+    protected final SimpleDateFormat alternateIso8601DateParser =
         new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 
     /** RFC 822 parser */
@@ -51,7 +51,7 @@ public class DateUtils {
     public DateUtils() {
         iso8601DateParser.setTimeZone(new SimpleTimeZone(0, "GMT"));
         rfc822DateParser.setTimeZone(new SimpleTimeZone(0, "GMT"));
-        alternateIo8601DateParser.setTimeZone(new SimpleTimeZone(0, "GMT"));
+        alternateIso8601DateParser.setTimeZone(new SimpleTimeZone(0, "GMT"));
     }
 
     /**
@@ -74,8 +74,8 @@ public class DateUtils {
         } catch (ParseException e) {
             // If the first ISO 8601 parser didn't work, try the alternate
             // version which doesn't include fractional seconds
-            synchronized (alternateIo8601DateParser) {
-                return alternateIo8601DateParser.parse(dateString);
+            synchronized (alternateIso8601DateParser) {
+                return alternateIso8601DateParser.parse(dateString);
             }
         }
     }

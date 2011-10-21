@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteServerCertificateRequestMarshaller implements Marshaller<Request<DeleteServerCertificateRequest>, DeleteServerCertificateRequest> {
 
     public Request<DeleteServerCertificateRequest> marshall(DeleteServerCertificateRequest deleteServerCertificateRequest) {
+
+        if (deleteServerCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteServerCertificateRequest> request = new DefaultRequest<DeleteServerCertificateRequest>(deleteServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteServerCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (deleteServerCertificateRequest != null) {
-            if (deleteServerCertificateRequest.getServerCertificateName() != null) {
-                request.addParameter("ServerCertificateName", StringUtils.fromString(deleteServerCertificateRequest.getServerCertificateName()));
-            }
+
+        if (deleteServerCertificateRequest.getServerCertificateName() != null) {
+            request.addParameter("ServerCertificateName", StringUtils.fromString(deleteServerCertificateRequest.getServerCertificateName()));
         }
 
 

@@ -35,7 +35,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
         request.addParameter("Version", "2011-04-01");
@@ -64,6 +64,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         java.util.List<String> dBSecurityGroupsList = createDBInstanceRequest.getDBSecurityGroups();
         int dBSecurityGroupsListIndex = 1;
+
         for (String dBSecurityGroupsListValue : dBSecurityGroupsList) {
             if (dBSecurityGroupsListValue != null) {
                 request.addParameter("DBSecurityGroups.DBSecurityGroupName." + dBSecurityGroupsListIndex, StringUtils.fromString(dBSecurityGroupsListValue));

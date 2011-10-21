@@ -35,7 +35,7 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
         if (describeAlarmsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeAlarmsRequest> request = new DefaultRequest<DescribeAlarmsRequest>(describeAlarmsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DescribeAlarms");
         request.addParameter("Version", "2010-08-01");
@@ -43,6 +43,7 @@ public class DescribeAlarmsRequestMarshaller implements Marshaller<Request<Descr
 
         java.util.List<String> alarmNamesList = describeAlarmsRequest.getAlarmNames();
         int alarmNamesListIndex = 1;
+
         for (String alarmNamesListValue : alarmNamesList) {
             if (alarmNamesListValue != null) {
                 request.addParameter("AlarmNames.member." + alarmNamesListIndex, StringUtils.fromString(alarmNamesListValue));

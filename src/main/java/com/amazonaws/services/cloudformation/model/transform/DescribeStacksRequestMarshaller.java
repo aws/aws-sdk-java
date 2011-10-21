@@ -35,7 +35,7 @@ public class DescribeStacksRequestMarshaller implements Marshaller<Request<Descr
         if (describeStacksRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeStacksRequest> request = new DefaultRequest<DescribeStacksRequest>(describeStacksRequest, "AmazonCloudFormation");
         request.addParameter("Action", "DescribeStacks");
         request.addParameter("Version", "2010-05-15");

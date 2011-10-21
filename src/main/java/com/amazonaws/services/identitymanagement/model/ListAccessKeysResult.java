@@ -52,6 +52,7 @@ public class ListAccessKeysResult {
      * @return A list of access key metadata.
      */
     public java.util.List<AccessKeyMetadata> getAccessKeyMetadata() {
+        
         if (accessKeyMetadata == null) {
             accessKeyMetadata = new java.util.ArrayList<AccessKeyMetadata>();
         }
@@ -82,6 +83,7 @@ public class ListAccessKeysResult {
      *         together. 
      */
     public ListAccessKeysResult withAccessKeyMetadata(AccessKeyMetadata... accessKeyMetadata) {
+        if (getAccessKeyMetadata() == null) setAccessKeyMetadata(new java.util.ArrayList<AccessKeyMetadata>());
         for (AccessKeyMetadata value : accessKeyMetadata) {
             getAccessKeyMetadata().add(value);
         }

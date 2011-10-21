@@ -35,7 +35,7 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
         if (createJobRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateJobRequest> request = new DefaultRequest<CreateJobRequest>(createJobRequest, "AmazonImportExport");
         request.addParameter("Action", "CreateJob");
         request.addParameter("Version", "2010-06-01");

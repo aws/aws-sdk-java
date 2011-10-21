@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,75 +31,71 @@ import com.amazonaws.util.StringUtils;
 public class AddJobFlowStepsRequestMarshaller implements Marshaller<Request<AddJobFlowStepsRequest>, AddJobFlowStepsRequest> {
 
     public Request<AddJobFlowStepsRequest> marshall(AddJobFlowStepsRequest addJobFlowStepsRequest) {
+
+        if (addJobFlowStepsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<AddJobFlowStepsRequest> request = new DefaultRequest<AddJobFlowStepsRequest>(addJobFlowStepsRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "AddJobFlowSteps");
         request.addParameter("Version", "2009-03-31");
-        if (addJobFlowStepsRequest != null) {
-            if (addJobFlowStepsRequest.getJobFlowId() != null) {
-                request.addParameter("JobFlowId", StringUtils.fromString(addJobFlowStepsRequest.getJobFlowId()));
-            }
+
+        if (addJobFlowStepsRequest.getJobFlowId() != null) {
+            request.addParameter("JobFlowId", StringUtils.fromString(addJobFlowStepsRequest.getJobFlowId()));
         }
 
-        if (addJobFlowStepsRequest != null) {
-            java.util.List<StepConfig> stepsList = addJobFlowStepsRequest.getSteps();
-            int stepsListIndex = 1;
-            for (StepConfig stepsListValue : stepsList) {
-                if (stepsListValue != null) {
-                    if (stepsListValue.getName() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepsListValue.getName()));
+        java.util.List<StepConfig> stepsList = addJobFlowStepsRequest.getSteps();
+        int stepsListIndex = 1;
+
+        for (StepConfig stepsListValue : stepsList) {
+            StepConfig stepConfigMember = stepsListValue;
+            if (stepConfigMember != null) {
+                if (stepConfigMember.getName() != null) {
+                    request.addParameter("Steps.member." + stepsListIndex + ".Name", StringUtils.fromString(stepConfigMember.getName()));
+                }
+                if (stepConfigMember.getActionOnFailure() != null) {
+                    request.addParameter("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.fromString(stepConfigMember.getActionOnFailure()));
+                }
+                HadoopJarStepConfig hadoopJarStepConfigHadoopJarStep = stepConfigMember.getHadoopJarStep();
+                if (hadoopJarStepConfigHadoopJarStep != null) {
+
+                    java.util.List<KeyValue> propertiesList = hadoopJarStepConfigHadoopJarStep.getProperties();
+                    int propertiesListIndex = 1;
+
+                    for (KeyValue propertiesListValue : propertiesList) {
+                        KeyValue keyValueMember = propertiesListValue;
+                        if (keyValueMember != null) {
+                            if (keyValueMember.getKey() != null) {
+                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(keyValueMember.getKey()));
+                            }
+                            if (keyValueMember.getValue() != null) {
+                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.fromString(keyValueMember.getValue()));
+                            }
+                        }
+
+                        propertiesListIndex++;
+                    }
+                    if (hadoopJarStepConfigHadoopJarStep.getJar() != null) {
+                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getJar()));
+                    }
+                    if (hadoopJarStepConfigHadoopJarStep.getMainClass() != null) {
+                        request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.fromString(hadoopJarStepConfigHadoopJarStep.getMainClass()));
+                    }
+
+                    java.util.List<String> argsList = hadoopJarStepConfigHadoopJarStep.getArgs();
+                    int argsListIndex = 1;
+
+                    for (String argsListValue : argsList) {
+                        if (argsListValue != null) {
+                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
+                        }
+
+                        argsListIndex++;
                     }
                 }
-                if (stepsListValue != null) {
-                    if (stepsListValue.getActionOnFailure() != null) {
-                        request.addParameter("Steps.member." + stepsListIndex + ".ActionOnFailure", StringUtils.fromString(stepsListValue.getActionOnFailure()));
-                    }
-                }
-                if (stepsListValue != null) {
-                    HadoopJarStepConfig hadoopJarStep = stepsListValue.getHadoopJarStep();
-
-                    if (hadoopJarStep != null) {
-                        java.util.List<KeyValue> propertiesList = hadoopJarStep.getProperties();
-                        int propertiesListIndex = 1;
-                        for (KeyValue propertiesListValue : propertiesList) {
-                            if (propertiesListValue != null) {
-                                if (propertiesListValue.getKey() != null) {
-                                    request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Key", StringUtils.fromString(propertiesListValue.getKey()));
-                                }
-                            }
-                            if (propertiesListValue != null) {
-                                if (propertiesListValue.getValue() != null) {
-                                    request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Properties.member." + propertiesListIndex + ".Value", StringUtils.fromString(propertiesListValue.getValue()));
-                                }
-                            }
-
-                            propertiesListIndex++;
-                        }
-                    }
-                    if (hadoopJarStep != null) {
-                        if (hadoopJarStep.getJar() != null) {
-                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Jar", StringUtils.fromString(hadoopJarStep.getJar()));
-                        }
-                    }
-                    if (hadoopJarStep != null) {
-                        if (hadoopJarStep.getMainClass() != null) {
-                            request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.MainClass", StringUtils.fromString(hadoopJarStep.getMainClass()));
-                        }
-                    }
-                    if (hadoopJarStep != null) {
-                        java.util.List<String> argsList = hadoopJarStep.getArgs();
-                        int argsListIndex = 1;
-
-                        for (String argsListValue : argsList) {
-                            if (argsListValue != null) {
-                                request.addParameter("Steps.member." + stepsListIndex + ".HadoopJarStep.Args.member." + argsListIndex, StringUtils.fromString(argsListValue));
-                            }
-                            argsListIndex++;
-                        }
-                    }
-                }
-
-                stepsListIndex++;
             }
+
+            stepsListIndex++;
         }
 
 

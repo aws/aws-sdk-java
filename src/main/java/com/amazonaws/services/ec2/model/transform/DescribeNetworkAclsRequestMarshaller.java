@@ -35,7 +35,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
         if (describeNetworkAclsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeNetworkAclsRequest> request = new DefaultRequest<DescribeNetworkAclsRequest>(describeNetworkAclsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkAcls");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
 
         java.util.List<String> networkAclIdsList = describeNetworkAclsRequest.getNetworkAclIds();
         int networkAclIdsListIndex = 1;
+
         for (String networkAclIdsListValue : networkAclIdsList) {
             if (networkAclIdsListValue != null) {
                 request.addParameter("NetworkAclId." + networkAclIdsListIndex, StringUtils.fromString(networkAclIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
 
         java.util.List<Filter> filtersList = describeNetworkAclsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeNetworkAclsRequestMarshaller implements Marshaller<Request<
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

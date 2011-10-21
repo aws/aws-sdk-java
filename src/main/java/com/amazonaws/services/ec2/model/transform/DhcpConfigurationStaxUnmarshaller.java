@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DhcpConfigurationStaxUnmarshaller implements Unmarshaller<DhcpConfiguration, StaxUnmarshallerContext> {
 
-    
-
     public DhcpConfiguration unmarshall(StaxUnmarshallerContext context) throws Exception {
         DhcpConfiguration dhcpConfiguration = new DhcpConfiguration();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

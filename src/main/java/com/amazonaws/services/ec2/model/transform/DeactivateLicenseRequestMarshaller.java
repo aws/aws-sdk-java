@@ -35,7 +35,7 @@ public class DeactivateLicenseRequestMarshaller implements Marshaller<Request<De
         if (deactivateLicenseRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeactivateLicenseRequest> request = new DefaultRequest<DeactivateLicenseRequest>(deactivateLicenseRequest, "AmazonEC2");
         request.addParameter("Action", "DeactivateLicense");
         request.addParameter("Version", "2011-05-15");

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class DeactivateMFADeviceRequestMarshaller implements Marshaller<Request<DeactivateMFADeviceRequest>, DeactivateMFADeviceRequest> {
 
     public Request<DeactivateMFADeviceRequest> marshall(DeactivateMFADeviceRequest deactivateMFADeviceRequest) {
+
+        if (deactivateMFADeviceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeactivateMFADeviceRequest> request = new DefaultRequest<DeactivateMFADeviceRequest>(deactivateMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeactivateMFADevice");
         request.addParameter("Version", "2010-05-08");
-        if (deactivateMFADeviceRequest != null) {
-            if (deactivateMFADeviceRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(deactivateMFADeviceRequest.getUserName()));
-            }
+
+        if (deactivateMFADeviceRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(deactivateMFADeviceRequest.getUserName()));
         }
-        if (deactivateMFADeviceRequest != null) {
-            if (deactivateMFADeviceRequest.getSerialNumber() != null) {
-                request.addParameter("SerialNumber", StringUtils.fromString(deactivateMFADeviceRequest.getSerialNumber()));
-            }
+        if (deactivateMFADeviceRequest.getSerialNumber() != null) {
+            request.addParameter("SerialNumber", StringUtils.fromString(deactivateMFADeviceRequest.getSerialNumber()));
         }
 
 

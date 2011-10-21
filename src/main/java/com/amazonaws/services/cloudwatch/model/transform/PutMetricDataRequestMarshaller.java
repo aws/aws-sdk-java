@@ -35,7 +35,7 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
         if (putMetricDataRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<PutMetricDataRequest> request = new DefaultRequest<PutMetricDataRequest>(putMetricDataRequest, "AmazonCloudWatch");
         request.addParameter("Action", "PutMetricData");
         request.addParameter("Version", "2010-08-01");
@@ -46,6 +46,7 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
 
         java.util.List<MetricDatum> metricDataList = putMetricDataRequest.getMetricData();
         int metricDataListIndex = 1;
+
         for (MetricDatum metricDataListValue : metricDataList) {
             MetricDatum metricDatumMember = metricDataListValue;
             if (metricDatumMember != null) {
@@ -55,6 +56,7 @@ public class PutMetricDataRequestMarshaller implements Marshaller<Request<PutMet
 
                 java.util.List<Dimension> dimensionsList = metricDatumMember.getDimensions();
                 int dimensionsListIndex = 1;
+
                 for (Dimension dimensionsListValue : dimensionsList) {
                     Dimension dimensionMember = dimensionsListValue;
                     if (dimensionMember != null) {

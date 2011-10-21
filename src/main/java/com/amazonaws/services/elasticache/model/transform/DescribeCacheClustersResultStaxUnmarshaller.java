@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeCacheClustersResultStaxUnmarshaller implements Unmarshaller<DescribeCacheClustersResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeCacheClustersResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeCacheClustersResult describeCacheClustersResult = new DescribeCacheClustersResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

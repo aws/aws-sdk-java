@@ -25,6 +25,7 @@ package com.amazonaws.util.json;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Date;
 
 /**
  * JSONWriter provides a quick and convenient way of producing JSON text.
@@ -304,9 +305,19 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(long l) throws JSONException {
-        return this.append(Long.toString(l));
+        return this.value(new Long(l));
     }
 
+    /**
+     * Appends a date value, as epoch seconds.
+     *
+     * @param date The date to append.
+     * @return this
+     * @throws JSONException
+     */
+    public JSONWriter value(Date date) throws JSONException {
+        return this.value(new Long(date.getTime() / 1000));
+    }
 
     /**
      * Append an object value.

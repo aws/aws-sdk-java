@@ -87,6 +87,7 @@ public class AddInstanceGroupsResult {
      * @return Instance group IDs of the newly created instance groups.
      */
     public java.util.List<String> getInstanceGroupIds() {
+        
         if (instanceGroupIds == null) {
             instanceGroupIds = new java.util.ArrayList<String>();
         }
@@ -117,6 +118,7 @@ public class AddInstanceGroupsResult {
      *         together. 
      */
     public AddInstanceGroupsResult withInstanceGroupIds(String... instanceGroupIds) {
+        if (getInstanceGroupIds() == null) setInstanceGroupIds(new java.util.ArrayList<String>());
         for (String value : instanceGroupIds) {
             getInstanceGroupIds().add(value);
         }

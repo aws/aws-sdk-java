@@ -64,6 +64,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
      * @return Instance Groups to add.
      */
     public java.util.List<InstanceGroupConfig> getInstanceGroups() {
+        
         if (instanceGroups == null) {
             instanceGroups = new java.util.ArrayList<InstanceGroupConfig>();
         }
@@ -94,6 +95,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddInstanceGroupsRequest withInstanceGroups(InstanceGroupConfig... instanceGroups) {
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>());
         for (InstanceGroupConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }

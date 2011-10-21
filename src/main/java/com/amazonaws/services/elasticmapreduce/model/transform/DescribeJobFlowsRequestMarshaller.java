@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,40 +31,42 @@ import com.amazonaws.util.StringUtils;
 public class DescribeJobFlowsRequestMarshaller implements Marshaller<Request<DescribeJobFlowsRequest>, DescribeJobFlowsRequest> {
 
     public Request<DescribeJobFlowsRequest> marshall(DescribeJobFlowsRequest describeJobFlowsRequest) {
+
+        if (describeJobFlowsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DescribeJobFlowsRequest> request = new DefaultRequest<DescribeJobFlowsRequest>(describeJobFlowsRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "DescribeJobFlows");
         request.addParameter("Version", "2009-03-31");
-        if (describeJobFlowsRequest != null) {
-            if (describeJobFlowsRequest.getCreatedAfter() != null) {
-                request.addParameter("CreatedAfter", StringUtils.fromDate(describeJobFlowsRequest.getCreatedAfter()));
-            }
-        }
-        if (describeJobFlowsRequest != null) {
-            if (describeJobFlowsRequest.getCreatedBefore() != null) {
-                request.addParameter("CreatedBefore", StringUtils.fromDate(describeJobFlowsRequest.getCreatedBefore()));
-            }
-        }
-        if (describeJobFlowsRequest != null) {
-            java.util.List<String> jobFlowIdsList = describeJobFlowsRequest.getJobFlowIds();
-            int jobFlowIdsListIndex = 1;
 
-            for (String jobFlowIdsListValue : jobFlowIdsList) {
-                if (jobFlowIdsListValue != null) {
-                    request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
-                }
-                jobFlowIdsListIndex++;
-            }
+        if (describeJobFlowsRequest.getCreatedAfter() != null) {
+            request.addParameter("CreatedAfter", StringUtils.fromDate(describeJobFlowsRequest.getCreatedAfter()));
         }
-        if (describeJobFlowsRequest != null) {
-            java.util.List<String> jobFlowStatesList = describeJobFlowsRequest.getJobFlowStates();
-            int jobFlowStatesListIndex = 1;
+        if (describeJobFlowsRequest.getCreatedBefore() != null) {
+            request.addParameter("CreatedBefore", StringUtils.fromDate(describeJobFlowsRequest.getCreatedBefore()));
+        }
 
-            for (String jobFlowStatesListValue : jobFlowStatesList) {
-                if (jobFlowStatesListValue != null) {
-                    request.addParameter("JobFlowStates.member." + jobFlowStatesListIndex, StringUtils.fromString(jobFlowStatesListValue));
-                }
-                jobFlowStatesListIndex++;
+        java.util.List<String> jobFlowIdsList = describeJobFlowsRequest.getJobFlowIds();
+        int jobFlowIdsListIndex = 1;
+
+        for (String jobFlowIdsListValue : jobFlowIdsList) {
+            if (jobFlowIdsListValue != null) {
+                request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
             }
+
+            jobFlowIdsListIndex++;
+        }
+
+        java.util.List<String> jobFlowStatesList = describeJobFlowsRequest.getJobFlowStates();
+        int jobFlowStatesListIndex = 1;
+
+        for (String jobFlowStatesListValue : jobFlowStatesList) {
+            if (jobFlowStatesListValue != null) {
+                request.addParameter("JobFlowStates.member." + jobFlowStatesListIndex, StringUtils.fromString(jobFlowStatesListValue));
+            }
+
+            jobFlowStatesListIndex++;
         }
 
 

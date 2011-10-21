@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,28 +31,26 @@ import com.amazonaws.util.StringUtils;
 public class ResyncMFADeviceRequestMarshaller implements Marshaller<Request<ResyncMFADeviceRequest>, ResyncMFADeviceRequest> {
 
     public Request<ResyncMFADeviceRequest> marshall(ResyncMFADeviceRequest resyncMFADeviceRequest) {
+
+        if (resyncMFADeviceRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ResyncMFADeviceRequest> request = new DefaultRequest<ResyncMFADeviceRequest>(resyncMFADeviceRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ResyncMFADevice");
         request.addParameter("Version", "2010-05-08");
-        if (resyncMFADeviceRequest != null) {
-            if (resyncMFADeviceRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(resyncMFADeviceRequest.getUserName()));
-            }
+
+        if (resyncMFADeviceRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(resyncMFADeviceRequest.getUserName()));
         }
-        if (resyncMFADeviceRequest != null) {
-            if (resyncMFADeviceRequest.getSerialNumber() != null) {
-                request.addParameter("SerialNumber", StringUtils.fromString(resyncMFADeviceRequest.getSerialNumber()));
-            }
+        if (resyncMFADeviceRequest.getSerialNumber() != null) {
+            request.addParameter("SerialNumber", StringUtils.fromString(resyncMFADeviceRequest.getSerialNumber()));
         }
-        if (resyncMFADeviceRequest != null) {
-            if (resyncMFADeviceRequest.getAuthenticationCode1() != null) {
-                request.addParameter("AuthenticationCode1", StringUtils.fromString(resyncMFADeviceRequest.getAuthenticationCode1()));
-            }
+        if (resyncMFADeviceRequest.getAuthenticationCode1() != null) {
+            request.addParameter("AuthenticationCode1", StringUtils.fromString(resyncMFADeviceRequest.getAuthenticationCode1()));
         }
-        if (resyncMFADeviceRequest != null) {
-            if (resyncMFADeviceRequest.getAuthenticationCode2() != null) {
-                request.addParameter("AuthenticationCode2", StringUtils.fromString(resyncMFADeviceRequest.getAuthenticationCode2()));
-            }
+        if (resyncMFADeviceRequest.getAuthenticationCode2() != null) {
+            request.addParameter("AuthenticationCode2", StringUtils.fromString(resyncMFADeviceRequest.getAuthenticationCode2()));
         }
 
 

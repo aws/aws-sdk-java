@@ -35,7 +35,7 @@ public class CreateSecurityGroupRequestMarshaller implements Marshaller<Request<
         if (createSecurityGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateSecurityGroupRequest> request = new DefaultRequest<CreateSecurityGroupRequest>(createSecurityGroupRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSecurityGroup");
         request.addParameter("Version", "2011-05-15");

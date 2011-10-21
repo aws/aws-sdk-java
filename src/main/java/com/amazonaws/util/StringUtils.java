@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -14,6 +14,8 @@
  */
 package com.amazonaws.util;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
@@ -53,6 +55,23 @@ public class StringUtils {
 
     public static String fromBoolean(Boolean value) {
         return Boolean.toString(value);
+    }
+
+    public static String fromBigInteger(BigInteger value) {
+    	return value.toString();
+    }
+
+    public static String fromBigDecimal(BigDecimal value) {
+    	return value.toString();
+    }
+
+
+    public static BigInteger toBigInteger(String s) {
+    	return new BigInteger(s);
+    }
+
+    public static BigDecimal toBigDecimal(String s) {
+    	return new BigDecimal(s);
     }
 
     public static String fromFloat(Float value) {
@@ -120,13 +139,13 @@ public class StringUtils {
     public static String replace( String originalString, String partToMatch, String replacement ) {
         StringBuffer buffer = new StringBuffer( originalString.length() );
         buffer.append( originalString );
-    
+
         int indexOf = buffer.indexOf( partToMatch );
         while ( indexOf != -1 ) {
             buffer = buffer.replace( indexOf, indexOf + partToMatch.length(), replacement );
             indexOf = buffer.indexOf( partToMatch );
         }
-        
+
         return buffer.toString();
     }
 

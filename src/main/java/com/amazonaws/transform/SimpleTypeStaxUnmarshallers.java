@@ -15,6 +15,8 @@
 package com.amazonaws.transform;
 
 import java.io.UnsupportedEncodingException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.text.ParseException;
 import java.util.Date;
@@ -48,6 +50,34 @@ public class SimpleTypeStaxUnmarshallers {
         private static StringStaxUnmarshaller instance;
         public static StringStaxUnmarshaller getInstance() {
             if (instance == null) instance = new StringStaxUnmarshaller();
+            return instance;
+        }
+    }
+
+    public static class BigDecimalStaxUnmarshaller implements Unmarshaller<BigDecimal, StaxUnmarshallerContext> {
+		public BigDecimal unmarshall(StaxUnmarshallerContext unmarshallerContext)
+				throws Exception {
+			String s = unmarshallerContext.readText();
+			return (s == null) ? null : new BigDecimal(s);
+		}
+
+        private static BigDecimalStaxUnmarshaller instance;
+        public static BigDecimalStaxUnmarshaller getInstance() {
+            if (instance == null) instance = new BigDecimalStaxUnmarshaller();
+            return instance;
+        }
+    }
+
+    public static class BigIntegerStaxUnmarshaller implements Unmarshaller<BigInteger, StaxUnmarshallerContext> {
+		public BigInteger unmarshall(StaxUnmarshallerContext unmarshallerContext)
+				throws Exception {
+			String s = unmarshallerContext.readText();
+			return (s == null) ? null : new BigInteger(s);
+		}
+
+        private static BigIntegerStaxUnmarshaller instance;
+        public static BigIntegerStaxUnmarshaller getInstance() {
+            if (instance == null) instance = new BigIntegerStaxUnmarshaller();
             return instance;
         }
     }

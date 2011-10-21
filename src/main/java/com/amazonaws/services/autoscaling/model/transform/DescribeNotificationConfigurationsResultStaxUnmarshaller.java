@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeNotificationConfigurationsResultStaxUnmarshaller implements Unmarshaller<DescribeNotificationConfigurationsResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeNotificationConfigurationsResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeNotificationConfigurationsResult describeNotificationConfigurationsResult = new DescribeNotificationConfigurationsResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

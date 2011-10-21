@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class CreateLoginProfileRequestMarshaller implements Marshaller<Request<CreateLoginProfileRequest>, CreateLoginProfileRequest> {
 
     public Request<CreateLoginProfileRequest> marshall(CreateLoginProfileRequest createLoginProfileRequest) {
+
+        if (createLoginProfileRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<CreateLoginProfileRequest> request = new DefaultRequest<CreateLoginProfileRequest>(createLoginProfileRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "CreateLoginProfile");
         request.addParameter("Version", "2010-05-08");
-        if (createLoginProfileRequest != null) {
-            if (createLoginProfileRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(createLoginProfileRequest.getUserName()));
-            }
+
+        if (createLoginProfileRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(createLoginProfileRequest.getUserName()));
         }
-        if (createLoginProfileRequest != null) {
-            if (createLoginProfileRequest.getPassword() != null) {
-                request.addParameter("Password", StringUtils.fromString(createLoginProfileRequest.getPassword()));
-            }
+        if (createLoginProfileRequest.getPassword() != null) {
+            request.addParameter("Password", StringUtils.fromString(createLoginProfileRequest.getPassword()));
         }
 
 

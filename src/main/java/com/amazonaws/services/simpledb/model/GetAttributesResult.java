@@ -30,6 +30,7 @@ public class GetAttributesResult {
      * @return The list of attributes returned by the operation.
      */
     public java.util.List<Attribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<Attribute>();
         }
@@ -60,6 +61,7 @@ public class GetAttributesResult {
      *         together. 
      */
     public GetAttributesResult withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>());
         for (Attribute value : attributes) {
             getAttributes().add(value);
         }

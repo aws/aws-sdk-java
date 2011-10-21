@@ -35,7 +35,7 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         if (createDBInstanceReadReplicaRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateDBInstanceReadReplicaRequest> request = new DefaultRequest<CreateDBInstanceReadReplicaRequest>(createDBInstanceReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstanceReadReplica");
         request.addParameter("Version", "2011-04-01");

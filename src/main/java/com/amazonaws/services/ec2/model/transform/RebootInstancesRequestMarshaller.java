@@ -35,7 +35,7 @@ public class RebootInstancesRequestMarshaller implements Marshaller<Request<Rebo
         if (rebootInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RebootInstancesRequest> request = new DefaultRequest<RebootInstancesRequest>(rebootInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RebootInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class RebootInstancesRequestMarshaller implements Marshaller<Request<Rebo
 
         java.util.List<String> instanceIdsList = rebootInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

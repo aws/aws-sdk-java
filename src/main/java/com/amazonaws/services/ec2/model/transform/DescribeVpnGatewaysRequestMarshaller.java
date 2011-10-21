@@ -35,7 +35,7 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
         if (describeVpnGatewaysRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeVpnGatewaysRequest> request = new DefaultRequest<DescribeVpnGatewaysRequest>(describeVpnGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnGateways");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
 
         java.util.List<String> vpnGatewayIdsList = describeVpnGatewaysRequest.getVpnGatewayIds();
         int vpnGatewayIdsListIndex = 1;
+
         for (String vpnGatewayIdsListValue : vpnGatewayIdsList) {
             if (vpnGatewayIdsListValue != null) {
                 request.addParameter("VpnGatewayId." + vpnGatewayIdsListIndex, StringUtils.fromString(vpnGatewayIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
 
         java.util.List<Filter> filtersList = describeVpnGatewaysRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

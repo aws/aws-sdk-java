@@ -37,6 +37,11 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
     private String messageBody;
 
     /**
+     * The number of seconds the message has to be delayed.
+     */
+    private Integer delaySeconds;
+
+    /**
      * Default constructor for a new SendMessageRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -124,6 +129,40 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The number of seconds the message has to be delayed.
+     *
+     * @return The number of seconds the message has to be delayed.
+     */
+    public Integer getDelaySeconds() {
+        return delaySeconds;
+    }
+    
+    /**
+     * The number of seconds the message has to be delayed.
+     *
+     * @param delaySeconds The number of seconds the message has to be delayed.
+     */
+    public void setDelaySeconds(Integer delaySeconds) {
+        this.delaySeconds = delaySeconds;
+    }
+    
+    /**
+     * The number of seconds the message has to be delayed.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param delaySeconds The number of seconds the message has to be delayed.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public SendMessageRequest withDelaySeconds(Integer delaySeconds) {
+        this.delaySeconds = delaySeconds;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -137,6 +176,7 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
         sb.append("{");
         sb.append("QueueUrl: " + queueUrl + ", ");
         sb.append("MessageBody: " + messageBody + ", ");
+        sb.append("DelaySeconds: " + delaySeconds + ", ");
         sb.append("}");
         return sb.toString();
     }

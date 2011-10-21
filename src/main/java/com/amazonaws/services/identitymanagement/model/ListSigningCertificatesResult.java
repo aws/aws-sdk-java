@@ -52,6 +52,7 @@ public class ListSigningCertificatesResult {
      * @return A list of the User's signing certificate information.
      */
     public java.util.List<SigningCertificate> getCertificates() {
+        
         if (certificates == null) {
             certificates = new java.util.ArrayList<SigningCertificate>();
         }
@@ -82,6 +83,7 @@ public class ListSigningCertificatesResult {
      *         together. 
      */
     public ListSigningCertificatesResult withCertificates(SigningCertificate... certificates) {
+        if (getCertificates() == null) setCertificates(new java.util.ArrayList<SigningCertificate>());
         for (SigningCertificate value : certificates) {
             getCertificates().add(value);
         }

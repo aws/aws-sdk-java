@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class PolicyTypeDescriptionStaxUnmarshaller implements Unmarshaller<PolicyTypeDescription, StaxUnmarshallerContext> {
 
-    
-
     public PolicyTypeDescription unmarshall(StaxUnmarshallerContext context) throws Exception {
         PolicyTypeDescription policyTypeDescription = new PolicyTypeDescription();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

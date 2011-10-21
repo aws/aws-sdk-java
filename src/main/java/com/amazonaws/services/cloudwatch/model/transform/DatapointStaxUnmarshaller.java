@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DatapointStaxUnmarshaller implements Unmarshaller<Datapoint, StaxUnmarshallerContext> {
 
-    
-
     public Datapoint unmarshall(StaxUnmarshallerContext context) throws Exception {
         Datapoint datapoint = new Datapoint();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

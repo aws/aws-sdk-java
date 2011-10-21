@@ -35,7 +35,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
         if (modifyImageAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
         request.addParameter("Version", "2011-05-15");
@@ -52,6 +52,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> userIdsList = modifyImageAttributeRequest.getUserIds();
         int userIdsListIndex = 1;
+
         for (String userIdsListValue : userIdsList) {
             if (userIdsListValue != null) {
                 request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
@@ -62,6 +63,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> userGroupsList = modifyImageAttributeRequest.getUserGroups();
         int userGroupsListIndex = 1;
+
         for (String userGroupsListValue : userGroupsList) {
             if (userGroupsListValue != null) {
                 request.addParameter("UserGroup." + userGroupsListIndex, StringUtils.fromString(userGroupsListValue));
@@ -72,6 +74,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
         java.util.List<String> productCodesList = modifyImageAttributeRequest.getProductCodes();
         int productCodesListIndex = 1;
+
         for (String productCodesListValue : productCodesList) {
             if (productCodesListValue != null) {
                 request.addParameter("ProductCode." + productCodesListIndex, StringUtils.fromString(productCodesListValue));
@@ -87,6 +90,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
             java.util.List<LaunchPermission> addList = launchPermissionModificationsLaunchPermission.getAdd();
             int addListIndex = 1;
+
             for (LaunchPermission addListValue : addList) {
                 LaunchPermission launchPermissionMember = addListValue;
                 if (launchPermissionMember != null) {
@@ -103,6 +107,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
             java.util.List<LaunchPermission> removeList = launchPermissionModificationsLaunchPermission.getRemove();
             int removeListIndex = 1;
+
             for (LaunchPermission removeListValue : removeList) {
                 LaunchPermission launchPermissionMember = removeListValue;
                 if (launchPermissionMember != null) {

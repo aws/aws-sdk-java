@@ -35,7 +35,7 @@ public class ListTopicsRequestMarshaller implements Marshaller<Request<ListTopic
         if (listTopicsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ListTopicsRequest> request = new DefaultRequest<ListTopicsRequest>(listTopicsRequest, "AmazonSNS");
         request.addParameter("Action", "ListTopics");
         request.addParameter("Version", "2010-03-31");

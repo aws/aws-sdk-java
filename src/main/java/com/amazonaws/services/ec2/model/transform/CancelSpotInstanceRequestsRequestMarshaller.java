@@ -35,7 +35,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<R
         if (cancelSpotInstanceRequestsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CancelSpotInstanceRequestsRequest> request = new DefaultRequest<CancelSpotInstanceRequestsRequest>(cancelSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "CancelSpotInstanceRequests");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class CancelSpotInstanceRequestsRequestMarshaller implements Marshaller<R
 
         java.util.List<String> spotInstanceRequestIdsList = cancelSpotInstanceRequestsRequest.getSpotInstanceRequestIds();
         int spotInstanceRequestIdsListIndex = 1;
+
         for (String spotInstanceRequestIdsListValue : spotInstanceRequestIdsList) {
             if (spotInstanceRequestIdsListValue != null) {
                 request.addParameter("SpotInstanceRequestId." + spotInstanceRequestIdsListIndex, StringUtils.fromString(spotInstanceRequestIdsListValue));

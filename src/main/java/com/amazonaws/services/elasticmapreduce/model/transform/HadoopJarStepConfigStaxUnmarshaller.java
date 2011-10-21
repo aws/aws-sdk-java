@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class HadoopJarStepConfigStaxUnmarshaller implements Unmarshaller<HadoopJarStepConfig, StaxUnmarshallerContext> {
 
-    
-
     public HadoopJarStepConfig unmarshall(StaxUnmarshallerContext context) throws Exception {
         HadoopJarStepConfig hadoopJarStepConfig = new HadoopJarStepConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeReservedInstancesResultStaxUnmarshaller implements Unmarshaller<DescribeReservedInstancesResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeReservedInstancesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeReservedInstancesResult describeReservedInstancesResult = new DescribeReservedInstancesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

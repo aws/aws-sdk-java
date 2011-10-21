@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Unknown attribute.
+ * The attribute referred to does not exist.
  * </p>
  */        
 public class InvalidAttributeNameException extends AmazonServiceException {

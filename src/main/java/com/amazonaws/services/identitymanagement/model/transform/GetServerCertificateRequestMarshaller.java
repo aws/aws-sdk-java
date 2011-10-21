@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class GetServerCertificateRequestMarshaller implements Marshaller<Request<GetServerCertificateRequest>, GetServerCertificateRequest> {
 
     public Request<GetServerCertificateRequest> marshall(GetServerCertificateRequest getServerCertificateRequest) {
+
+        if (getServerCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<GetServerCertificateRequest> request = new DefaultRequest<GetServerCertificateRequest>(getServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "GetServerCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (getServerCertificateRequest != null) {
-            if (getServerCertificateRequest.getServerCertificateName() != null) {
-                request.addParameter("ServerCertificateName", StringUtils.fromString(getServerCertificateRequest.getServerCertificateName()));
-            }
+
+        if (getServerCertificateRequest.getServerCertificateName() != null) {
+            request.addParameter("ServerCertificateName", StringUtils.fromString(getServerCertificateRequest.getServerCertificateName()));
         }
 
 

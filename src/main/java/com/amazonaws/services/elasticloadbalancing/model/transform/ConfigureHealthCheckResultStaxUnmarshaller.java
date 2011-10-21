@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ConfigureHealthCheckResultStaxUnmarshaller implements Unmarshaller<ConfigureHealthCheckResult, StaxUnmarshallerContext> {
 
-    
-
     public ConfigureHealthCheckResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ConfigureHealthCheckResult configureHealthCheckResult = new ConfigureHealthCheckResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

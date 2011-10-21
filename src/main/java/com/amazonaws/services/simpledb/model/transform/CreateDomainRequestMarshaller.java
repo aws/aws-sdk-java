@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpledb.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class CreateDomainRequestMarshaller implements Marshaller<Request<CreateDomainRequest>, CreateDomainRequest> {
 
     public Request<CreateDomainRequest> marshall(CreateDomainRequest createDomainRequest) {
+
+        if (createDomainRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<CreateDomainRequest> request = new DefaultRequest<CreateDomainRequest>(createDomainRequest, "AmazonSimpleDB");
         request.addParameter("Action", "CreateDomain");
         request.addParameter("Version", "2009-04-15");
-        if (createDomainRequest != null) {
-            if (createDomainRequest.getDomainName() != null) {
-                request.addParameter("DomainName", StringUtils.fromString(createDomainRequest.getDomainName()));
-            }
+
+        if (createDomainRequest.getDomainName() != null) {
+            request.addParameter("DomainName", StringUtils.fromString(createDomainRequest.getDomainName()));
         }
 
 

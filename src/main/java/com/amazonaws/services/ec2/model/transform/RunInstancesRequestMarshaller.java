@@ -35,7 +35,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
         if (runInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
         request.addParameter("Version", "2011-05-15");
@@ -55,6 +55,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         java.util.List<String> securityGroupsList = runInstancesRequest.getSecurityGroups();
         int securityGroupsListIndex = 1;
+
         for (String securityGroupsListValue : securityGroupsList) {
             if (securityGroupsListValue != null) {
                 request.addParameter("SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
@@ -65,6 +66,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         java.util.List<String> securityGroupIdsList = runInstancesRequest.getSecurityGroupIds();
         int securityGroupIdsListIndex = 1;
+
         for (String securityGroupIdsListValue : securityGroupIdsList) {
             if (securityGroupIdsListValue != null) {
                 request.addParameter("SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
@@ -99,6 +101,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         java.util.List<BlockDeviceMapping> blockDeviceMappingsList = runInstancesRequest.getBlockDeviceMappings();
         int blockDeviceMappingsListIndex = 1;
+
         for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
             BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
             if (blockDeviceMappingMember != null) {

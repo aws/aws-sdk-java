@@ -35,7 +35,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
         if (modifySnapshotAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifySnapshotAttributeRequest> request = new DefaultRequest<ModifySnapshotAttributeRequest>(modifySnapshotAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifySnapshotAttribute");
         request.addParameter("Version", "2011-05-15");
@@ -52,6 +52,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
 
         java.util.List<String> userIdsList = modifySnapshotAttributeRequest.getUserIds();
         int userIdsListIndex = 1;
+
         for (String userIdsListValue : userIdsList) {
             if (userIdsListValue != null) {
                 request.addParameter("UserId." + userIdsListIndex, StringUtils.fromString(userIdsListValue));
@@ -62,6 +63,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
 
         java.util.List<String> groupNamesList = modifySnapshotAttributeRequest.getGroupNames();
         int groupNamesListIndex = 1;
+
         for (String groupNamesListValue : groupNamesList) {
             if (groupNamesListValue != null) {
                 request.addParameter("UserGroup." + groupNamesListIndex, StringUtils.fromString(groupNamesListValue));
@@ -74,6 +76,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
 
             java.util.List<CreateVolumePermission> addList = createVolumePermissionModificationsCreateVolumePermission.getAdd();
             int addListIndex = 1;
+
             for (CreateVolumePermission addListValue : addList) {
                 CreateVolumePermission createVolumePermissionMember = addListValue;
                 if (createVolumePermissionMember != null) {
@@ -90,6 +93,7 @@ public class ModifySnapshotAttributeRequestMarshaller implements Marshaller<Requ
 
             java.util.List<CreateVolumePermission> removeList = createVolumePermissionModificationsCreateVolumePermission.getRemove();
             int removeListIndex = 1;
+
             for (CreateVolumePermission removeListValue : removeList) {
                 CreateVolumePermission createVolumePermissionMember = removeListValue;
                 if (createVolumePermissionMember != null) {

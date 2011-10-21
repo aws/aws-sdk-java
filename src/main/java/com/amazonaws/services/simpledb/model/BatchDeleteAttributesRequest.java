@@ -121,6 +121,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
      * @return A list of items on which to perform the operation.
      */
     public java.util.List<DeletableItem> getItems() {
+        
         if (items == null) {
             items = new java.util.ArrayList<DeletableItem>();
         }
@@ -151,6 +152,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public BatchDeleteAttributesRequest withItems(DeletableItem... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<DeletableItem>());
         for (DeletableItem value : items) {
             getItems().add(value);
         }

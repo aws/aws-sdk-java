@@ -311,6 +311,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * @return A list of steps to be executed by the job flow.
      */
     public java.util.List<StepConfig> getSteps() {
+        
         if (steps == null) {
             steps = new java.util.ArrayList<StepConfig>();
         }
@@ -341,6 +342,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withSteps(StepConfig... steps) {
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>());
         for (StepConfig value : steps) {
             getSteps().add(value);
         }
@@ -375,6 +377,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         on the cluster nodes.
      */
     public java.util.List<BootstrapActionConfig> getBootstrapActions() {
+        
         if (bootstrapActions == null) {
             bootstrapActions = new java.util.ArrayList<BootstrapActionConfig>();
         }
@@ -409,6 +412,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withBootstrapActions(BootstrapActionConfig... bootstrapActions) {
+        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionConfig>());
         for (BootstrapActionConfig value : bootstrapActions) {
             getBootstrapActions().add(value);
         }

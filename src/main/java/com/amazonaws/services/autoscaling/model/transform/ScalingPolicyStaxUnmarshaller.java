@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy, StaxUnmarshallerContext> {
 
-    
-
     public ScalingPolicy unmarshall(StaxUnmarshallerContext context) throws Exception {
         ScalingPolicy scalingPolicy = new ScalingPolicy();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

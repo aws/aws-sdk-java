@@ -35,7 +35,7 @@ public class DescribeSpotDatafeedSubscriptionRequestMarshaller implements Marsha
         if (describeSpotDatafeedSubscriptionRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DescribeSpotDatafeedSubscriptionRequest>(describeSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotDatafeedSubscription");
         request.addParameter("Version", "2011-05-15");

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class EbsInstanceBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsInstanceBlockDevice, StaxUnmarshallerContext> {
 
-    
-
     public EbsInstanceBlockDevice unmarshall(StaxUnmarshallerContext context) throws Exception {
         EbsInstanceBlockDevice ebsInstanceBlockDevice = new EbsInstanceBlockDevice();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

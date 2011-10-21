@@ -52,6 +52,7 @@ public class ListGroupsForUserResult {
      * @return A list of groups.
      */
     public java.util.List<Group> getGroups() {
+        
         if (groups == null) {
             groups = new java.util.ArrayList<Group>();
         }
@@ -82,6 +83,7 @@ public class ListGroupsForUserResult {
      *         together. 
      */
     public ListGroupsForUserResult withGroups(Group... groups) {
+        if (getGroups() == null) setGroups(new java.util.ArrayList<Group>());
         for (Group value : groups) {
             getGroups().add(value);
         }

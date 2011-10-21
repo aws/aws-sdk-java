@@ -35,7 +35,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
         if (describeTagsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeTagsRequest> request = new DefaultRequest<DescribeTagsRequest>(describeTagsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeTags");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
 
         java.util.List<Filter> filtersList = describeTagsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -52,6 +53,7 @@ public class DescribeTagsRequestMarshaller implements Marshaller<Request<Describ
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

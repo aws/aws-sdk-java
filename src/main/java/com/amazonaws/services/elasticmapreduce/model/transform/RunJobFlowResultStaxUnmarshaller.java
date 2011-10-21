@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class RunJobFlowResultStaxUnmarshaller implements Unmarshaller<RunJobFlowResult, StaxUnmarshallerContext> {
 
-    
-
     public RunJobFlowResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         RunJobFlowResult runJobFlowResult = new RunJobFlowResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

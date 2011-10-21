@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class SuspendedProcessStaxUnmarshaller implements Unmarshaller<SuspendedProcess, StaxUnmarshallerContext> {
 
-    
-
     public SuspendedProcess unmarshall(StaxUnmarshallerContext context) throws Exception {
         SuspendedProcess suspendedProcess = new SuspendedProcess();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

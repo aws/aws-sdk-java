@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CreateImageResultStaxUnmarshaller implements Unmarshaller<CreateImageResult, StaxUnmarshallerContext> {
 
-    
-
     public CreateImageResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CreateImageResult createImageResult = new CreateImageResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

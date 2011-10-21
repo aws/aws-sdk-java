@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class NetworkAclAssociationStaxUnmarshaller implements Unmarshaller<NetworkAclAssociation, StaxUnmarshallerContext> {
 
-    
-
     public NetworkAclAssociation unmarshall(StaxUnmarshallerContext context) throws Exception {
         NetworkAclAssociation networkAclAssociation = new NetworkAclAssociation();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

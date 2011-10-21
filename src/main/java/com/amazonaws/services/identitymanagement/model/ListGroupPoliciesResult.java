@@ -52,6 +52,7 @@ public class ListGroupPoliciesResult {
      * @return A list of policy names.
      */
     public java.util.List<String> getPolicyNames() {
+        
         if (policyNames == null) {
             policyNames = new java.util.ArrayList<String>();
         }
@@ -82,6 +83,7 @@ public class ListGroupPoliciesResult {
      *         together. 
      */
     public ListGroupPoliciesResult withPolicyNames(String... policyNames) {
+        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>());
         for (String value : policyNames) {
             getPolicyNames().add(value);
         }

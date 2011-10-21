@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class ListAccountAliasesRequestMarshaller implements Marshaller<Request<ListAccountAliasesRequest>, ListAccountAliasesRequest> {
 
     public Request<ListAccountAliasesRequest> marshall(ListAccountAliasesRequest listAccountAliasesRequest) {
+
+        if (listAccountAliasesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListAccountAliasesRequest> request = new DefaultRequest<ListAccountAliasesRequest>(listAccountAliasesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListAccountAliases");
         request.addParameter("Version", "2010-05-08");
-        if (listAccountAliasesRequest != null) {
-            if (listAccountAliasesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listAccountAliasesRequest.getMarker()));
-            }
+
+        if (listAccountAliasesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listAccountAliasesRequest.getMarker()));
         }
-        if (listAccountAliasesRequest != null) {
-            if (listAccountAliasesRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listAccountAliasesRequest.getMaxItems()));
-            }
+        if (listAccountAliasesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listAccountAliasesRequest.getMaxItems()));
         }
 
 

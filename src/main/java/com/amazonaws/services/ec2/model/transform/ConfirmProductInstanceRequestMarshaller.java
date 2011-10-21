@@ -35,7 +35,7 @@ public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Reque
         if (confirmProductInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ConfirmProductInstanceRequest> request = new DefaultRequest<ConfirmProductInstanceRequest>(confirmProductInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ConfirmProductInstance");
         request.addParameter("Version", "2011-05-15");

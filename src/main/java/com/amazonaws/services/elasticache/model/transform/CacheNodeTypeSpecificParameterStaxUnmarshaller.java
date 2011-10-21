@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CacheNodeTypeSpecificParameterStaxUnmarshaller implements Unmarshaller<CacheNodeTypeSpecificParameter, StaxUnmarshallerContext> {
 
-    
-
     public CacheNodeTypeSpecificParameter unmarshall(StaxUnmarshallerContext context) throws Exception {
         CacheNodeTypeSpecificParameter cacheNodeTypeSpecificParameter = new CacheNodeTypeSpecificParameter();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

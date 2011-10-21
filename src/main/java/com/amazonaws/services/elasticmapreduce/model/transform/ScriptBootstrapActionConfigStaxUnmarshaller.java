@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ScriptBootstrapActionConfigStaxUnmarshaller implements Unmarshaller<ScriptBootstrapActionConfig, StaxUnmarshallerContext> {
 
-    
-
     public ScriptBootstrapActionConfig unmarshall(StaxUnmarshallerContext context) throws Exception {
         ScriptBootstrapActionConfig scriptBootstrapActionConfig = new ScriptBootstrapActionConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

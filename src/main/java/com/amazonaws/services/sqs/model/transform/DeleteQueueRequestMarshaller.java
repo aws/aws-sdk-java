@@ -35,10 +35,10 @@ public class DeleteQueueRequestMarshaller implements Marshaller<Request<DeleteQu
         if (deleteQueueRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteQueueRequest> request = new DefaultRequest<DeleteQueueRequest>(deleteQueueRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteQueue");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (deleteQueueRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(deleteQueueRequest.getQueueUrl()));

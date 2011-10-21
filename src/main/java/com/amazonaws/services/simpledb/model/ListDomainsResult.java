@@ -36,6 +36,7 @@ public class ListDomainsResult {
      * @return A list of domain names that match the expression.
      */
     public java.util.List<String> getDomainNames() {
+        
         if (domainNames == null) {
             domainNames = new java.util.ArrayList<String>();
         }
@@ -66,6 +67,7 @@ public class ListDomainsResult {
      *         together. 
      */
     public ListDomainsResult withDomainNames(String... domainNames) {
+        if (getDomainNames() == null) setDomainNames(new java.util.ArrayList<String>());
         for (String value : domainNames) {
             getDomainNames().add(value);
         }

@@ -35,7 +35,7 @@ public class AssociateDhcpOptionsRequestMarshaller implements Marshaller<Request
         if (associateDhcpOptionsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<AssociateDhcpOptionsRequest> request = new DefaultRequest<AssociateDhcpOptionsRequest>(associateDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateDhcpOptions");
         request.addParameter("Version", "2011-05-15");

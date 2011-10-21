@@ -35,7 +35,7 @@ public class SetDesiredCapacityRequestMarshaller implements Marshaller<Request<S
         if (setDesiredCapacityRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<SetDesiredCapacityRequest> request = new DefaultRequest<SetDesiredCapacityRequest>(setDesiredCapacityRequest, "AmazonAutoScaling");
         request.addParameter("Action", "SetDesiredCapacity");
         request.addParameter("Version", "2011-01-01");

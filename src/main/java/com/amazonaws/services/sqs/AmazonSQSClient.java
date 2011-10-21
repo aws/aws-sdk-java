@@ -22,14 +22,13 @@ import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.*;
-import com.amazonaws.auth.AWS3Signer;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.QueryStringSigner;
+import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.http.StaxResponseHandler;
 import com.amazonaws.http.DefaultErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
+import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
@@ -68,17 +67,15 @@ import com.amazonaws.services.sqs.model.transform.*;
  */
 public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS {
 
-    /**
-     * The AWS credentials (access key ID and secret key) to use when
-     * authenticating with AWS services.
-     */
-    private AWSCredentials awsCredentials;
+    /** Provider for AWS credentials. */
+    private AWSCredentialsProvider awsCredentialsProvider;
 
     /**
      * List of exception unmarshallers for all AmazonSQS exceptions.
      */
-    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers;
-
+    protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
+            = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
@@ -116,14 +113,63 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     public AmazonSQSClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
-        this.awsCredentials = awsCredentials;
+        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
+        init();
+    }
+    
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonSQS using the specified AWS account credentials provider.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     */
+    public AmazonSQSClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, new ClientConfiguration());
+    }
 
-        exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonSQS using the specified AWS account credentials
+     * provider and client configuration options.
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonSQS
+     *                       (ex: proxy settings, retry counts, etc.).
+     */
+    public AmazonSQSClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
+        super(clientConfiguration);
+        this.awsCredentialsProvider = awsCredentialsProvider;
+        init();
+    }
+
+    private void init() { 
         exceptionUnmarshallers.add(new QueueDeletedRecentlyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new QueueNameExistsExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidAttributeNameExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ReceiptHandleIsInvalidExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new EmptyBatchRequestExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidMessageContentsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidBatchEntryIdExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OverLimitExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyEntriesInBatchRequestExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidIdFormatExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new QueueDoesNotExistExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidAttributeNameExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchRequestTooLongExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ReceiptHandleIsInvalidExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new MessageNotInflightExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("queue.amazonaws.com");
@@ -134,38 +180,13 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/sqs/request.handlers"));
     }
-
+    
     
     /**
      * <p>
-     * Returns a list of your queues.
-     * </p>
-     *
-     * @param listQueuesRequest Container for the necessary parameters to
-     *           execute the ListQueues service method on AmazonSQS.
-     * 
-     * @return The response from the ListQueues service method, as returned
-     *         by AmazonSQS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListQueuesRequest> request = new ListQueuesRequestMarshaller().marshall(listQueuesRequest);
-        return invoke(request, new ListQueuesResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Sets an attribute of a queue. Currently, you can set only the
-     * <code>VisibilityTimeout</code> attribute for a queue.
+     * Sets an attribute of a queue. The set of attributes that can be set
+     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
+     * VisibilityTimeout and Policy.
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -186,6 +207,40 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             throws AmazonServiceException, AmazonClientException {
         Request<SetQueueAttributesRequest> request = new SetQueueAttributesRequestMarshaller().marshall(setQueueAttributesRequest);
         invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * This is a batch version of ChangeMessageVisibility. It takes multiple
+     * receipt handles and performs the operation on each of the them. The
+     * result of the operation on each message is reported individually in
+     * the response.
+     * </p>
+     *
+     * @param changeMessageVisibilityBatchRequest Container for the necessary
+     *           parameters to execute the ChangeMessageVisibilityBatch service method
+     *           on AmazonSQS.
+     * 
+     * @return The response from the ChangeMessageVisibilityBatch service
+     *         method, as returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ChangeMessageVisibilityBatchRequest> request = new ChangeMessageVisibilityBatchRequestMarshaller().marshall(changeMessageVisibilityBatchRequest);
+        return invoke(request, new ChangeMessageVisibilityBatchResultStaxUnmarshaller());
     }
     
     /**
@@ -227,6 +282,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *           parameters to execute the ChangeMessageVisibility service method on
      *           AmazonSQS.
      * 
+     * @throws ReceiptHandleIsInvalidException
+     * @throws MessageNotInflightException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -244,28 +301,17 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * The <code>CreateQueue</code> action creates a new queue, or returns
-     * the URL of an existing one. When you request <code>CreateQueue</code>
-     * , you provide a name for the queue. To successfully create a new
-     * queue, you must provide a name that is unique within the scope of your
-     * own queues. If you provide the name of an existing queue, a new queue
-     * isn't created and an error isn't returned. Instead, the request
-     * succeeds and the queue URL for the existing queue is returned.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If you provide a value for DefaultVisibilityTimeout
-     * that is different from the value for the existing queue, you receive
-     * an error.
+     * The <code>GetQueueUrl</code> action returns the URL of an existing
+     * queue.
      * </p>
      *
-     * @param createQueueRequest Container for the necessary parameters to
-     *           execute the CreateQueue service method on AmazonSQS.
+     * @param getQueueUrlRequest Container for the necessary parameters to
+     *           execute the GetQueueUrl service method on AmazonSQS.
      * 
-     * @return The response from the CreateQueue service method, as returned
+     * @return The response from the GetQueueUrl service method, as returned
      *         by AmazonSQS.
      * 
-     * @throws QueueNameExistsException
-     * @throws QueueDeletedRecentlyException
+     * @throws QueueDoesNotExistException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -275,10 +321,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *             If an error response is returned by AmazonSQS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) 
+    public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest getQueueUrlRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<CreateQueueRequest> request = new CreateQueueRequestMarshaller().marshall(createQueueRequest);
-        return invoke(request, new CreateQueueResultStaxUnmarshaller());
+        Request<GetQueueUrlRequest> request = new GetQueueUrlRequestMarshaller().marshall(getQueueUrlRequest);
+        return invoke(request, new GetQueueUrlResultStaxUnmarshaller());
     }
     
     /**
@@ -334,6 +380,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * seconds Amazon SQS retains a message.</li>
      * <li> <code>QueueArn</code> - returns the queue's Amazon resource name
      * (ARN).</li>
+     * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the
+     * approximate number of messages that are pending to be added to the
+     * queue.</li>
+     * <li> <code>DelaySeconds</code> - returns the default delay on the
+     * queue in seconds.</li>
      * 
      * </ul>
      * 
@@ -364,30 +415,22 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * The AddPermission action adds a permission to a queue for a specific
-     * <a
-     * .com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892">
-     * principal </a> . This allows for sharing access to the queue.
-     * </p>
-     * <p>
-     * When you create a queue, you have full control access rights for the
-     * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * om/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html">
-     * Shared Queues </a> in the Amazon SQS Developer Guide.
-     * </p>
-     * <p>
-     * <code>AddPermission</code> writes an SQS-generated policy. If you
-     * want to write your own policy, use SetQueueAttributes to upload your
-     * policy. For more information about writing your own policy, see <a
-     * mpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html">
-     * Appendix: The Access Policy Language </a> in the Amazon SQS Developer
-     * Guide.
+     * This is a batch version of SendMessage. It takes multiple messages and
+     * adds each of them to the queue. The result of each add operation is
+     * reported individually in the response.
      * </p>
      *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission service method on AmazonSQS.
+     * @param sendMessageBatchRequest Container for the necessary parameters
+     *           to execute the SendMessageBatch service method on AmazonSQS.
      * 
+     * @return The response from the SendMessageBatch service method, as
+     *         returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws BatchRequestTooLongException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -397,10 +440,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      *             If an error response is returned by AmazonSQS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void addPermission(AddPermissionRequest addPermissionRequest) 
+    public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<AddPermissionRequest> request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
-        invoke(request, null);
+        Request<SendMessageBatchRequest> request = new SendMessageBatchRequestMarshaller().marshall(sendMessageBatchRequest);
+        return invoke(request, new SendMessageBatchResultStaxUnmarshaller());
     }
     
     /**
@@ -429,33 +472,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     public void deleteQueue(DeleteQueueRequest deleteQueueRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteQueueRequest> request = new DeleteQueueRequestMarshaller().marshall(deleteQueueRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
-     * The <code>DeleteMessage</code> action unconditionally removes the
-     * specified message from the specified queue. Even if the message is
-     * locked by another reader due to the visibility timeout setting, it is
-     * still deleted from the queue.
-     * </p>
-     *
-     * @param deleteMessageRequest Container for the necessary parameters to
-     *           execute the DeleteMessage service method on AmazonSQS.
-     * 
-     * @throws ReceiptHandleIsInvalidException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteMessageRequest> request = new DeleteMessageRequestMarshaller().marshall(deleteMessageRequest);
         invoke(request, null);
     }
     
@@ -492,10 +508,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * Retrieves one or more messages from the specified queue, including the
      * message body and message ID of each message. Messages returned by this
      * action stay in the queue until you delete them. However, once a
-     * message is returned to a <code>ReceiveMessage</code> request, it is
-     * not returned on subsequent <code>ReceiveMessage</code> requests for
-     * the duration of the <code>VisibilityTimeout</code> . If you do not
-     * specify a <code>VisibilityTimeout</code> in the request, the overall
+     * message is returned to a
+     * <code>ReceiveMessage</code> request, it is not
+     * returned on subsequent <code>ReceiveMessage</code> requests for the
+     * duration of the <code>VisibilityTimeout</code> . If you do not specify
+     * a <code>VisibilityTimeout</code> in the request, the overall
      * visibility timeout for the queue is used for the returned messages.
      * </p>
      *
@@ -505,6 +522,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * @return The response from the ReceiveMessage service method, as
      *         returned by AmazonSQS.
      * 
+     * @throws OverLimitException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -518,6 +536,179 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             throws AmazonServiceException, AmazonClientException {
         Request<ReceiveMessageRequest> request = new ReceiveMessageRequestMarshaller().marshall(receiveMessageRequest);
         return invoke(request, new ReceiveMessageResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Returns a list of your queues.
+     * </p>
+     *
+     * @param listQueuesRequest Container for the necessary parameters to
+     *           execute the ListQueues service method on AmazonSQS.
+     * 
+     * @return The response from the ListQueues service method, as returned
+     *         by AmazonSQS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListQueuesRequest> request = new ListQueuesRequestMarshaller().marshall(listQueuesRequest);
+        return invoke(request, new ListQueuesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * This is a batch version of DeleteMessage. It takes multiple receipt
+     * handles and deletes each one of the messages. The result of the delete
+     * operation on each message is reported individually in the response.
+     * </p>
+     *
+     * @param deleteMessageBatchRequest Container for the necessary
+     *           parameters to execute the DeleteMessageBatch service method on
+     *           AmazonSQS.
+     * 
+     * @return The response from the DeleteMessageBatch service method, as
+     *         returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteMessageBatchRequest> request = new DeleteMessageBatchRequestMarshaller().marshall(deleteMessageBatchRequest);
+        return invoke(request, new DeleteMessageBatchResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * The <code>CreateQueue</code> action creates a new queue, or returns
+     * the URL of an existing one. When you request <code>CreateQueue</code>
+     * , you provide a name for the queue. To successfully create a new
+     * queue, you must provide a name that is unique within the scope of your
+     * own queues.
+     * </p>
+     * <p>
+     * You may pass one or more attributes in the request. If you do not
+     * provide a value for any attribute, the queue will have the default
+     * value for that attribute. Permitted attributes are the same that can
+     * be set using SetQueueAttributes.
+     * </p>
+     * <p>
+     * If you provide the name of an existing queue, a new queue isn't
+     * created. If the values of attributes provided with the request match
+     * up with those on the existing queue, the queue URL is returned.
+     * Otherwise, a <code>QueueNameExists</code> error is returned.
+     * </p>
+     *
+     * @param createQueueRequest Container for the necessary parameters to
+     *           execute the CreateQueue service method on AmazonSQS.
+     * 
+     * @return The response from the CreateQueue service method, as returned
+     *         by AmazonSQS.
+     * 
+     * @throws QueueNameExistsException
+     * @throws QueueDeletedRecentlyException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateQueueRequest> request = new CreateQueueRequestMarshaller().marshall(createQueueRequest);
+        return invoke(request, new CreateQueueResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * The AddPermission action adds a permission to a queue for a specific
+     * <a
+     * .com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892">
+     * principal </a> . This allows for sharing access to the queue.
+     * </p>
+     * <p>
+     * When you create a queue, you have full control access rights for the
+     * queue. Only you (as owner of the queue) can grant or deny permissions
+     * to the queue. For more information about these permissions, see <a
+     * om/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html">
+     * Shared Queues </a> in the Amazon SQS Developer Guide.
+     * </p>
+     * <p>
+     * <code>AddPermission</code> writes an SQS-generated policy. If you
+     * want to write your own policy, use SetQueueAttributes to upload your
+     * policy. For more information about writing your own policy, see <a
+     * mpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html">
+     * Appendix: The Access Policy Language </a> in the Amazon SQS Developer
+     * Guide.
+     * </p>
+     *
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission service method on AmazonSQS.
+     * 
+     * @throws OverLimitException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addPermission(AddPermissionRequest addPermissionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<AddPermissionRequest> request = new AddPermissionRequestMarshaller().marshall(addPermissionRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * The <code>DeleteMessage</code> action unconditionally removes the
+     * specified message from the specified queue. Even if the message is
+     * locked by another reader due to the visibility timeout setting, it is
+     * still deleted from the queue.
+     * </p>
+     *
+     * @param deleteMessageRequest Container for the necessary parameters to
+     *           execute the DeleteMessage service method on AmazonSQS.
+     * 
+     * @throws ReceiptHandleIsInvalidException
+     * @throws InvalidIdFormatException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteMessageRequest> request = new DeleteMessageRequestMarshaller().marshall(deleteMessageRequest);
+        invoke(request, null);
     }
     
     /**
@@ -569,24 +760,19 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        // Apply any additional service specific request handlers that need to be run
-        if (requestHandlers != null) {
-            for (RequestHandler requestHandler : requestHandlers) {
-                requestHandler.beforeRequest(request);
-            }
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials(); 
+        AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
+        if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
+        	credentials = originalRequest.getRequestCredentials();
         }
 
-        if (request.getOriginalRequest().getRequestCredentials() != null) {
-	        signer.sign(request, request.getOriginalRequest().getRequestCredentials());
-        } else {
-    	    signer.sign(request, awsCredentials);
-        }
-
+        ExecutionContext executionContext = createExecutionContext();
+        executionContext.setSigner(signer);
+        executionContext.setCredentials(credentials);
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-
-        ExecutionContext executionContext = createExecutionContext();
+        
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

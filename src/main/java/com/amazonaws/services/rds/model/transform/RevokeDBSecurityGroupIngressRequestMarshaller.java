@@ -35,7 +35,7 @@ public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller
         if (revokeDBSecurityGroupIngressRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "RevokeDBSecurityGroupIngress");
         request.addParameter("Version", "2011-04-01");

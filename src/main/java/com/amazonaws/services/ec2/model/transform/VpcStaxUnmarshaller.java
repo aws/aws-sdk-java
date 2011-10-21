@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerContext> {
 
-    
-
     public Vpc unmarshall(StaxUnmarshallerContext context) throws Exception {
         Vpc vpc = new Vpc();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

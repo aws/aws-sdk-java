@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class AddUserToGroupRequestMarshaller implements Marshaller<Request<AddUserToGroupRequest>, AddUserToGroupRequest> {
 
     public Request<AddUserToGroupRequest> marshall(AddUserToGroupRequest addUserToGroupRequest) {
+
+        if (addUserToGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<AddUserToGroupRequest> request = new DefaultRequest<AddUserToGroupRequest>(addUserToGroupRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "AddUserToGroup");
         request.addParameter("Version", "2010-05-08");
-        if (addUserToGroupRequest != null) {
-            if (addUserToGroupRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(addUserToGroupRequest.getGroupName()));
-            }
+
+        if (addUserToGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(addUserToGroupRequest.getGroupName()));
         }
-        if (addUserToGroupRequest != null) {
-            if (addUserToGroupRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(addUserToGroupRequest.getUserName()));
-            }
+        if (addUserToGroupRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(addUserToGroupRequest.getUserName()));
         }
 
 

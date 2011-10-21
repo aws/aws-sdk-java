@@ -35,7 +35,7 @@ public class DeletePolicyRequestMarshaller implements Marshaller<Request<DeleteP
         if (deletePolicyRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeletePolicyRequest> request = new DefaultRequest<DeletePolicyRequest>(deletePolicyRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DeletePolicy");
         request.addParameter("Version", "2011-01-01");

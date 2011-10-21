@@ -35,7 +35,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
         if (modifyCacheClusterRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
         request.addParameter("Version", "2011-07-15");
@@ -49,6 +49,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         java.util.List<String> cacheNodeIdsToRemoveList = modifyCacheClusterRequest.getCacheNodeIdsToRemove();
         int cacheNodeIdsToRemoveListIndex = 1;
+
         for (String cacheNodeIdsToRemoveListValue : cacheNodeIdsToRemoveList) {
             if (cacheNodeIdsToRemoveListValue != null) {
                 request.addParameter("CacheNodeIdsToRemove.CacheNodeId." + cacheNodeIdsToRemoveListIndex, StringUtils.fromString(cacheNodeIdsToRemoveListValue));
@@ -59,6 +60,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         java.util.List<String> cacheSecurityGroupNamesList = modifyCacheClusterRequest.getCacheSecurityGroupNames();
         int cacheSecurityGroupNamesListIndex = 1;
+
         for (String cacheSecurityGroupNamesListValue : cacheSecurityGroupNamesList) {
             if (cacheSecurityGroupNamesListValue != null) {
                 request.addParameter("CacheSecurityGroupNames.CacheSecurityGroupName." + cacheSecurityGroupNamesListIndex, StringUtils.fromString(cacheSecurityGroupNamesListValue));

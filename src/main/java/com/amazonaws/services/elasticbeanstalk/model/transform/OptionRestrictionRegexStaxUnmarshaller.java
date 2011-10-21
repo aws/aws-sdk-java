@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class OptionRestrictionRegexStaxUnmarshaller implements Unmarshaller<OptionRestrictionRegex, StaxUnmarshallerContext> {
 
-    
-
     public OptionRestrictionRegex unmarshall(StaxUnmarshallerContext context) throws Exception {
         OptionRestrictionRegex optionRestrictionRegex = new OptionRestrictionRegex();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

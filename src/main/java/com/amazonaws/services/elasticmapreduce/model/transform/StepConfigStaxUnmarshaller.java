@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class StepConfigStaxUnmarshaller implements Unmarshaller<StepConfig, StaxUnmarshallerContext> {
 
-    
-
     public StepConfig unmarshall(StaxUnmarshallerContext context) throws Exception {
         StepConfig stepConfig = new StepConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

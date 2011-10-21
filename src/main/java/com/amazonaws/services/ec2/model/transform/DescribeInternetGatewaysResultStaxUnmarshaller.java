@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeInternetGatewaysResultStaxUnmarshaller implements Unmarshaller<DescribeInternetGatewaysResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeInternetGatewaysResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeInternetGatewaysResult describeInternetGatewaysResult = new DescribeInternetGatewaysResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

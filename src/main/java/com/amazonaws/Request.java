@@ -50,6 +50,11 @@ public interface Request<T> {
      * @return A map of all the headers included in this request.
      */
     public Map<String, String> getHeaders();
+    
+    /**
+     * Sets all headers, clearing any existing ones.
+     */
+    public void setHeaders(Map<String, String> headers);
 
     /**
      * Sets the path to the resource being requested.
@@ -95,6 +100,11 @@ public interface Request<T> {
      * @return A map of all parameters in this request.
      */
     public Map<String, String> getParameters();
+    
+    /**
+     * Sets all parameters, clearing any existing values.
+     */
+    public void setParameters(Map<String, String> parameters);       
 
     /**
      * Returns the service endpoint (ex: "https://ec2.amazonaws.com") to which

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class MFADeviceStaxUnmarshaller implements Unmarshaller<MFADevice, StaxUnmarshallerContext> {
 
-    
-
     public MFADevice unmarshall(StaxUnmarshallerContext context) throws Exception {
         MFADevice mFADevice = new MFADevice();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

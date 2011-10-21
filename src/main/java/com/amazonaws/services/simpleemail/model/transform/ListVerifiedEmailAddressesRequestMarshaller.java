@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpleemail.model.*;
@@ -30,9 +31,15 @@ import com.amazonaws.util.StringUtils;
 public class ListVerifiedEmailAddressesRequestMarshaller implements Marshaller<Request<ListVerifiedEmailAddressesRequest>, ListVerifiedEmailAddressesRequest> {
 
     public Request<ListVerifiedEmailAddressesRequest> marshall(ListVerifiedEmailAddressesRequest listVerifiedEmailAddressesRequest) {
+
+        if (listVerifiedEmailAddressesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListVerifiedEmailAddressesRequest> request = new DefaultRequest<ListVerifiedEmailAddressesRequest>(listVerifiedEmailAddressesRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "ListVerifiedEmailAddresses");
         request.addParameter("Version", "2010-12-01");
+
 
 
         return request;

@@ -14,6 +14,8 @@
  */
 package com.amazonaws.http;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.util.Map;
 
 import javax.xml.stream.XMLEventReader;
@@ -47,17 +49,6 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     /** Shared factory for creating XML event readers */
     private static XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
 
-    static {
-        /**
-         * It's important that character event coalescing is enabled so that
-         * when we pull character data out of an element, we get all of it in
-         * one event and don't miss any. Without coalescing turned on, some
-         * values (ex: newlines) can cause the data to be split into multiple
-         * character events.
-         */
-        xmlInputFactory.setProperty(XMLInputFactory.IS_COALESCING, true);
-    }
-
 
     /**
      * Constructs a new response handler that will use the specified StAX
@@ -89,10 +80,12 @@ public class StaxResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response XML");
-        XMLEventReader eventReader = xmlInputFactory.createXMLEventReader(response.getContent());
+        InputStream content = response.getContent();
+        if (content == null) content = new ByteArrayInputStream("<eof/>".getBytes());
+        XMLEventReader eventReader = xmlInputFactory.createXMLEventReader(content);
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
-            StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader);
+            StaxUnmarshallerContext unmarshallerContext = new StaxUnmarshallerContext(eventReader, response.getHeaders());
             unmarshallerContext.registerMetadataExpression("ResponseMetadata/RequestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             unmarshallerContext.registerMetadataExpression("requestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             registerAdditionalMetadataExpressions(unmarshallerContext);

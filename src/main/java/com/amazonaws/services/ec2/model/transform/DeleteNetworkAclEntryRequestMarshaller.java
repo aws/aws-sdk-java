@@ -35,7 +35,7 @@ public class DeleteNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         if (deleteNetworkAclEntryRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteNetworkAclEntryRequest> request = new DefaultRequest<DeleteNetworkAclEntryRequest>(deleteNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkAclEntry");
         request.addParameter("Version", "2011-05-15");

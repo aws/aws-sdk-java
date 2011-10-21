@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListGroupsForUserRequestMarshaller implements Marshaller<Request<ListGroupsForUserRequest>, ListGroupsForUserRequest> {
 
     public Request<ListGroupsForUserRequest> marshall(ListGroupsForUserRequest listGroupsForUserRequest) {
+
+        if (listGroupsForUserRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListGroupsForUserRequest> request = new DefaultRequest<ListGroupsForUserRequest>(listGroupsForUserRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListGroupsForUser");
         request.addParameter("Version", "2010-05-08");
-        if (listGroupsForUserRequest != null) {
-            if (listGroupsForUserRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(listGroupsForUserRequest.getUserName()));
-            }
+
+        if (listGroupsForUserRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(listGroupsForUserRequest.getUserName()));
         }
-        if (listGroupsForUserRequest != null) {
-            if (listGroupsForUserRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listGroupsForUserRequest.getMarker()));
-            }
+        if (listGroupsForUserRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listGroupsForUserRequest.getMarker()));
         }
-        if (listGroupsForUserRequest != null) {
-            if (listGroupsForUserRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listGroupsForUserRequest.getMaxItems()));
-            }
+        if (listGroupsForUserRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listGroupsForUserRequest.getMaxItems()));
         }
 
 

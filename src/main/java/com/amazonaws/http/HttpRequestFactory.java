@@ -158,10 +158,12 @@ class HttpRequestFactory {
         // Copy over any other headers already in our request
 		for (Entry<String, String> entry : request.getHeaders().entrySet()) {
 			/*
-			 * HttpClient4 fills in the Content-Length header and complains
-			 * if it's already present, so we skip it here.
+			 * HttpClient4 fills in the Content-Length header and complains if
+			 * it's already present, so we skip it here. We also skip the Host
+			 * header to avoid sending it twice, which will interfere with some
+			 * signing schemes.
 			 */
-			if (entry.getKey().equalsIgnoreCase("Content-Length")) continue;
+			if (entry.getKey().equalsIgnoreCase("Content-Length") || entry.getKey().equalsIgnoreCase("Host")) continue;
 
 			httpRequest.addHeader(entry.getKey(), entry.getValue());
 		}

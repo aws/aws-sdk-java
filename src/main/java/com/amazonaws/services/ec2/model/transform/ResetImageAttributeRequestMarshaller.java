@@ -35,7 +35,7 @@ public class ResetImageAttributeRequestMarshaller implements Marshaller<Request<
         if (resetImageAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ResetImageAttributeRequest> request = new DefaultRequest<ResetImageAttributeRequest>(resetImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetImageAttribute");
         request.addParameter("Version", "2011-05-15");

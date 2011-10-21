@@ -35,7 +35,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
         if (requestSpotInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
         request.addParameter("Version", "2011-05-15");
@@ -72,6 +72,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
             java.util.List<GroupIdentifier> allSecurityGroupsList = launchSpecificationLaunchSpecification.getAllSecurityGroups();
             int allSecurityGroupsListIndex = 1;
+
             for (GroupIdentifier allSecurityGroupsListValue : allSecurityGroupsList) {
                 GroupIdentifier groupIdentifierMember = allSecurityGroupsListValue;
                 if (groupIdentifierMember != null) {
@@ -88,6 +89,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
             java.util.List<String> securityGroupsList = launchSpecificationLaunchSpecification.getSecurityGroups();
             int securityGroupsListIndex = 1;
+
             for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
                     request.addParameter("LaunchSpecification.SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
@@ -122,6 +124,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
             java.util.List<BlockDeviceMapping> blockDeviceMappingsList = launchSpecificationLaunchSpecification.getBlockDeviceMappings();
             int blockDeviceMappingsListIndex = 1;
+
             for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
                 BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
                 if (blockDeviceMappingMember != null) {

@@ -35,7 +35,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
         if (modifyInstanceAttributeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
         request.addParameter("Version", "2011-05-15");
@@ -52,6 +52,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
 
         java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsList = modifyInstanceAttributeRequest.getBlockDeviceMappings();
         int blockDeviceMappingsListIndex = 1;
+
         for (InstanceBlockDeviceMappingSpecification blockDeviceMappingsListValue : blockDeviceMappingsList) {
             InstanceBlockDeviceMappingSpecification instanceBlockDeviceMappingSpecificationMember = blockDeviceMappingsListValue;
             if (instanceBlockDeviceMappingSpecificationMember != null) {
@@ -101,6 +102,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
 
         java.util.List<String> groupsList = modifyInstanceAttributeRequest.getGroups();
         int groupsListIndex = 1;
+
         for (String groupsListValue : groupsList) {
             if (groupsListValue != null) {
                 request.addParameter("GroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));

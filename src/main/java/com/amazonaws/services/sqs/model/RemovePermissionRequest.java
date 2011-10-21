@@ -33,8 +33,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     private String queueUrl;
 
     /**
-     * The identfication of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> operation.
+     * The identification of the permission to remove. This is the label
+     * added with the <a>AddPermission</a> operation.
      */
     private String label;
 
@@ -50,7 +50,7 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param queueUrl The URL of the SQS queue to take action on.
-     * @param label The identfication of the permission to remove. This is
+     * @param label The identification of the permission to remove. This is
      * the label added with the <a>AddPermission</a> operation.
      */
     public RemovePermissionRequest(String queueUrl, String label) {
@@ -93,35 +93,35 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The identfication of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> operation.
+     * The identification of the permission to remove. This is the label
+     * added with the <a>AddPermission</a> operation.
      *
-     * @return The identfication of the permission to remove. This is the label added
-     *         with the <a>AddPermission</a> operation.
+     * @return The identification of the permission to remove. This is the label
+     *         added with the <a>AddPermission</a> operation.
      */
     public String getLabel() {
         return label;
     }
     
     /**
-     * The identfication of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> operation.
+     * The identification of the permission to remove. This is the label
+     * added with the <a>AddPermission</a> operation.
      *
-     * @param label The identfication of the permission to remove. This is the label added
-     *         with the <a>AddPermission</a> operation.
+     * @param label The identification of the permission to remove. This is the label
+     *         added with the <a>AddPermission</a> operation.
      */
     public void setLabel(String label) {
         this.label = label;
     }
     
     /**
-     * The identfication of the permission to remove. This is the label added
-     * with the <a>AddPermission</a> operation.
+     * The identification of the permission to remove. This is the label
+     * added with the <a>AddPermission</a> operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param label The identfication of the permission to remove. This is the label added
-     *         with the <a>AddPermission</a> operation.
+     * @param label The identification of the permission to remove. This is the label
+     *         added with the <a>AddPermission</a> operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

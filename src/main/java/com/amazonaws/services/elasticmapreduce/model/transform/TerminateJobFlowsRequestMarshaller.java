@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.elasticmapreduce.model.*;
@@ -30,19 +31,25 @@ import com.amazonaws.util.StringUtils;
 public class TerminateJobFlowsRequestMarshaller implements Marshaller<Request<TerminateJobFlowsRequest>, TerminateJobFlowsRequest> {
 
     public Request<TerminateJobFlowsRequest> marshall(TerminateJobFlowsRequest terminateJobFlowsRequest) {
+
+        if (terminateJobFlowsRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<TerminateJobFlowsRequest> request = new DefaultRequest<TerminateJobFlowsRequest>(terminateJobFlowsRequest, "AmazonElasticMapReduce");
         request.addParameter("Action", "TerminateJobFlows");
         request.addParameter("Version", "2009-03-31");
-        if (terminateJobFlowsRequest != null) {
-            java.util.List<String> jobFlowIdsList = terminateJobFlowsRequest.getJobFlowIds();
-            int jobFlowIdsListIndex = 1;
 
-            for (String jobFlowIdsListValue : jobFlowIdsList) {
-                if (jobFlowIdsListValue != null) {
-                    request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
-                }
-                jobFlowIdsListIndex++;
+
+        java.util.List<String> jobFlowIdsList = terminateJobFlowsRequest.getJobFlowIds();
+        int jobFlowIdsListIndex = 1;
+
+        for (String jobFlowIdsListValue : jobFlowIdsList) {
+            if (jobFlowIdsListValue != null) {
+                request.addParameter("JobFlowIds.member." + jobFlowIdsListIndex, StringUtils.fromString(jobFlowIdsListValue));
             }
+
+            jobFlowIdsListIndex++;
         }
 
 

@@ -35,7 +35,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
         if (createTagsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateTagsRequest> request = new DefaultRequest<CreateTagsRequest>(createTagsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateTags");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
 
         java.util.List<String> resourcesList = createTagsRequest.getResources();
         int resourcesListIndex = 1;
+
         for (String resourcesListValue : resourcesList) {
             if (resourcesListValue != null) {
                 request.addParameter("ResourceId." + resourcesListIndex, StringUtils.fromString(resourcesListValue));
@@ -53,6 +54,7 @@ public class CreateTagsRequestMarshaller implements Marshaller<Request<CreateTag
 
         java.util.List<Tag> tagsList = createTagsRequest.getTags();
         int tagsListIndex = 1;
+
         for (Tag tagsListValue : tagsList) {
             Tag tagMember = tagsListValue;
             if (tagMember != null) {

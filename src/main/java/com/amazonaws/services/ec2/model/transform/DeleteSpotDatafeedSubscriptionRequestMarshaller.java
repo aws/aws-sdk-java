@@ -35,7 +35,7 @@ public class DeleteSpotDatafeedSubscriptionRequestMarshaller implements Marshall
         if (deleteSpotDatafeedSubscriptionRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DeleteSpotDatafeedSubscriptionRequest>(deleteSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSpotDatafeedSubscription");
         request.addParameter("Version", "2011-05-15");

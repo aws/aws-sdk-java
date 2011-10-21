@@ -35,7 +35,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
         if (describeReservedInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeReservedInstancesRequest> request = new DefaultRequest<DescribeReservedInstancesRequest>(describeReservedInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
 
         java.util.List<String> reservedInstancesIdsList = describeReservedInstancesRequest.getReservedInstancesIds();
         int reservedInstancesIdsListIndex = 1;
+
         for (String reservedInstancesIdsListValue : reservedInstancesIdsList) {
             if (reservedInstancesIdsListValue != null) {
                 request.addParameter("ReservedInstancesId." + reservedInstancesIdsListIndex, StringUtils.fromString(reservedInstancesIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
 
         java.util.List<Filter> filtersList = describeReservedInstancesRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeReservedInstancesRequestMarshaller implements Marshaller<Re
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

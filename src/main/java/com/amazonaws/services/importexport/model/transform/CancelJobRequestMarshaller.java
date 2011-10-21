@@ -35,7 +35,7 @@ public class CancelJobRequestMarshaller implements Marshaller<Request<CancelJobR
         if (cancelJobRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CancelJobRequest> request = new DefaultRequest<CancelJobRequest>(cancelJobRequest, "AmazonImportExport");
         request.addParameter("Action", "CancelJob");
         request.addParameter("Version", "2010-06-01");

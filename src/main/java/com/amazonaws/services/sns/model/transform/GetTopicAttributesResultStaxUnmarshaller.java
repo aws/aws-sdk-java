@@ -31,8 +31,6 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  * Get Topic Attributes Result StAX Unmarshaller
  */
 public class GetTopicAttributesResultStaxUnmarshaller implements Unmarshaller<GetTopicAttributesResult, StaxUnmarshallerContext> {
-
-    
     private static class AttributesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
         @Override
         public Entry<String, String> unmarshall(StaxUnmarshallerContext context) throws Exception {
@@ -74,6 +72,7 @@ public class GetTopicAttributesResultStaxUnmarshaller implements Unmarshaller<Ge
         GetTopicAttributesResult getTopicAttributesResult = new GetTopicAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

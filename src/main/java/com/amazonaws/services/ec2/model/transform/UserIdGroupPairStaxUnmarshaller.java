@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class UserIdGroupPairStaxUnmarshaller implements Unmarshaller<UserIdGroupPair, StaxUnmarshallerContext> {
 
-    
-
     public UserIdGroupPair unmarshall(StaxUnmarshallerContext context) throws Exception {
         UserIdGroupPair userIdGroupPair = new UserIdGroupPair();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

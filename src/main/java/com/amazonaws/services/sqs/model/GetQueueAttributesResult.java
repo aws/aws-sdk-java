@@ -20,14 +20,14 @@ package com.amazonaws.services.sqs.model;
 public class GetQueueAttributesResult {
 
     /**
-     * A list of attributes.
+     * A map of attributes to the respective values.
      */
     private java.util.Map<String,String> attributes;
 
     /**
-     * A list of attributes.
+     * A map of attributes to the respective values.
      *
-     * @return A list of attributes.
+     * @return A map of attributes to the respective values.
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -38,20 +38,20 @@ public class GetQueueAttributesResult {
     }
     
     /**
-     * A list of attributes.
+     * A map of attributes to the respective values.
      *
-     * @param attributes A list of attributes.
+     * @param attributes A map of attributes to the respective values.
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A list of attributes.
+     * A map of attributes to the respective values.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A list of attributes.
+     * @param attributes A map of attributes to the respective values.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

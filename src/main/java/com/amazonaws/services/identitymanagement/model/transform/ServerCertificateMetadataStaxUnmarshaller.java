@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ServerCertificateMetadataStaxUnmarshaller implements Unmarshaller<ServerCertificateMetadata, StaxUnmarshallerContext> {
 
-    
-
     public ServerCertificateMetadata unmarshall(StaxUnmarshallerContext context) throws Exception {
         ServerCertificateMetadata serverCertificateMetadata = new ServerCertificateMetadata();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

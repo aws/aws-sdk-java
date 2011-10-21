@@ -35,7 +35,7 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
         request.addParameter("Version", "2011-04-01");

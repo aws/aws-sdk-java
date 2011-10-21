@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListSigningCertificatesRequestMarshaller implements Marshaller<Request<ListSigningCertificatesRequest>, ListSigningCertificatesRequest> {
 
     public Request<ListSigningCertificatesRequest> marshall(ListSigningCertificatesRequest listSigningCertificatesRequest) {
+
+        if (listSigningCertificatesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListSigningCertificatesRequest> request = new DefaultRequest<ListSigningCertificatesRequest>(listSigningCertificatesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListSigningCertificates");
         request.addParameter("Version", "2010-05-08");
-        if (listSigningCertificatesRequest != null) {
-            if (listSigningCertificatesRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(listSigningCertificatesRequest.getUserName()));
-            }
+
+        if (listSigningCertificatesRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(listSigningCertificatesRequest.getUserName()));
         }
-        if (listSigningCertificatesRequest != null) {
-            if (listSigningCertificatesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listSigningCertificatesRequest.getMarker()));
-            }
+        if (listSigningCertificatesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listSigningCertificatesRequest.getMarker()));
         }
-        if (listSigningCertificatesRequest != null) {
-            if (listSigningCertificatesRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listSigningCertificatesRequest.getMaxItems()));
-            }
+        if (listSigningCertificatesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listSigningCertificatesRequest.getMaxItems()));
         }
 
 

@@ -35,7 +35,7 @@ public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<Del
         if (deleteDBInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteDBInstanceRequest> request = new DefaultRequest<DeleteDBInstanceRequest>(deleteDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBInstance");
         request.addParameter("Version", "2011-04-01");

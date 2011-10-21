@@ -35,7 +35,7 @@ public class RebootDBInstanceRequestMarshaller implements Marshaller<Request<Reb
         if (rebootDBInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RebootDBInstanceRequest> request = new DefaultRequest<RebootDBInstanceRequest>(rebootDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "RebootDBInstance");
         request.addParameter("Version", "2011-04-01");

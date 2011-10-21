@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ResetCacheParameterGroupResultStaxUnmarshaller implements Unmarshaller<ResetCacheParameterGroupResult, StaxUnmarshallerContext> {
 
-    
-
     public ResetCacheParameterGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ResetCacheParameterGroupResult resetCacheParameterGroupResult = new ResetCacheParameterGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

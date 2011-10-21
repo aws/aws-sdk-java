@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CheckDNSAvailabilityResultStaxUnmarshaller implements Unmarshaller<CheckDNSAvailabilityResult, StaxUnmarshallerContext> {
 
-    
-
     public CheckDNSAvailabilityResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CheckDNSAvailabilityResult checkDNSAvailabilityResult = new CheckDNSAvailabilityResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

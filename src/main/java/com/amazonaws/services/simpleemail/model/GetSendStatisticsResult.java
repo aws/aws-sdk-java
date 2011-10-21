@@ -31,6 +31,7 @@ public class GetSendStatisticsResult {
      * @return The value of the SendDataPoints property for this object.
      */
     public java.util.List<SendDataPoint> getSendDataPoints() {
+        
         if (sendDataPoints == null) {
             sendDataPoints = new java.util.ArrayList<SendDataPoint>();
         }
@@ -61,6 +62,7 @@ public class GetSendStatisticsResult {
      *         together. 
      */
     public GetSendStatisticsResult withSendDataPoints(SendDataPoint... sendDataPoints) {
+        if (getSendDataPoints() == null) setSendDataPoints(new java.util.ArrayList<SendDataPoint>());
         for (SendDataPoint value : sendDataPoints) {
             getSendDataPoints().add(value);
         }

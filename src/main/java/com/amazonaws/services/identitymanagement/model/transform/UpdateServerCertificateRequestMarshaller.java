@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class UpdateServerCertificateRequestMarshaller implements Marshaller<Request<UpdateServerCertificateRequest>, UpdateServerCertificateRequest> {
 
     public Request<UpdateServerCertificateRequest> marshall(UpdateServerCertificateRequest updateServerCertificateRequest) {
+
+        if (updateServerCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UpdateServerCertificateRequest> request = new DefaultRequest<UpdateServerCertificateRequest>(updateServerCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateServerCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (updateServerCertificateRequest != null) {
-            if (updateServerCertificateRequest.getServerCertificateName() != null) {
-                request.addParameter("ServerCertificateName", StringUtils.fromString(updateServerCertificateRequest.getServerCertificateName()));
-            }
+
+        if (updateServerCertificateRequest.getServerCertificateName() != null) {
+            request.addParameter("ServerCertificateName", StringUtils.fromString(updateServerCertificateRequest.getServerCertificateName()));
         }
-        if (updateServerCertificateRequest != null) {
-            if (updateServerCertificateRequest.getNewPath() != null) {
-                request.addParameter("NewPath", StringUtils.fromString(updateServerCertificateRequest.getNewPath()));
-            }
+        if (updateServerCertificateRequest.getNewPath() != null) {
+            request.addParameter("NewPath", StringUtils.fromString(updateServerCertificateRequest.getNewPath()));
         }
-        if (updateServerCertificateRequest != null) {
-            if (updateServerCertificateRequest.getNewServerCertificateName() != null) {
-                request.addParameter("NewServerCertificateName", StringUtils.fromString(updateServerCertificateRequest.getNewServerCertificateName()));
-            }
+        if (updateServerCertificateRequest.getNewServerCertificateName() != null) {
+            request.addParameter("NewServerCertificateName", StringUtils.fromString(updateServerCertificateRequest.getNewServerCertificateName()));
         }
 
 

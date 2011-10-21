@@ -72,31 +72,9 @@ public interface AmazonSQS {
     
     /**
      * <p>
-     * Returns a list of your queues.
-     * </p>
-     *
-     * @param listQueuesRequest Container for the necessary parameters to
-     *           execute the ListQueues service method on AmazonSQS.
-     * 
-     * @return The response from the ListQueues service method, as returned
-     *         by AmazonSQS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Sets an attribute of a queue. Currently, you can set only the
-     * <code>VisibilityTimeout</code> attribute for a queue.
+     * Sets an attribute of a queue. The set of attributes that can be set
+     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
+     * VisibilityTimeout and Policy.
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -114,6 +92,37 @@ public interface AmazonSQS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void setQueueAttributes(SetQueueAttributesRequest setQueueAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This is a batch version of ChangeMessageVisibility. It takes multiple
+     * receipt handles and performs the operation on each of the them. The
+     * result of the operation on each message is reported individually in
+     * the response.
+     * </p>
+     *
+     * @param changeMessageVisibilityBatchRequest Container for the necessary
+     *           parameters to execute the ChangeMessageVisibilityBatch service method
+     *           on AmazonSQS.
+     * 
+     * @return The response from the ChangeMessageVisibilityBatch service
+     *         method, as returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ChangeMessageVisibilityBatchResult changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -155,6 +164,8 @@ public interface AmazonSQS {
      *           parameters to execute the ChangeMessageVisibility service method on
      *           AmazonSQS.
      * 
+     * @throws ReceiptHandleIsInvalidException
+     * @throws MessageNotInflightException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -169,28 +180,17 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * The <code>CreateQueue</code> action creates a new queue, or returns
-     * the URL of an existing one. When you request <code>CreateQueue</code>
-     * , you provide a name for the queue. To successfully create a new
-     * queue, you must provide a name that is unique within the scope of your
-     * own queues. If you provide the name of an existing queue, a new queue
-     * isn't created and an error isn't returned. Instead, the request
-     * succeeds and the queue URL for the existing queue is returned.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If you provide a value for DefaultVisibilityTimeout
-     * that is different from the value for the existing queue, you receive
-     * an error.
+     * The <code>GetQueueUrl</code> action returns the URL of an existing
+     * queue.
      * </p>
      *
-     * @param createQueueRequest Container for the necessary parameters to
-     *           execute the CreateQueue service method on AmazonSQS.
+     * @param getQueueUrlRequest Container for the necessary parameters to
+     *           execute the GetQueueUrl service method on AmazonSQS.
      * 
-     * @return The response from the CreateQueue service method, as returned
+     * @return The response from the GetQueueUrl service method, as returned
      *         by AmazonSQS.
      * 
-     * @throws QueueNameExistsException
-     * @throws QueueDeletedRecentlyException
+     * @throws QueueDoesNotExistException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -200,7 +200,7 @@ public interface AmazonSQS {
      *             If an error response is returned by AmazonSQS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) 
+    public GetQueueUrlResult getQueueUrl(GetQueueUrlRequest getQueueUrlRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -253,6 +253,11 @@ public interface AmazonSQS {
      * seconds Amazon SQS retains a message.</li>
      * <li> <code>QueueArn</code> - returns the queue's Amazon resource name
      * (ARN).</li>
+     * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the
+     * approximate number of messages that are pending to be added to the
+     * queue.</li>
+     * <li> <code>DelaySeconds</code> - returns the default delay on the
+     * queue in seconds.</li>
      * 
      * </ul>
      * 
@@ -280,30 +285,22 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * The AddPermission action adds a permission to a queue for a specific
-     * <a
-     * .com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892">
-     * principal </a> . This allows for sharing access to the queue.
-     * </p>
-     * <p>
-     * When you create a queue, you have full control access rights for the
-     * queue. Only you (as owner of the queue) can grant or deny permissions
-     * to the queue. For more information about these permissions, see <a
-     * om/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html">
-     * Shared Queues </a> in the Amazon SQS Developer Guide.
-     * </p>
-     * <p>
-     * <code>AddPermission</code> writes an SQS-generated policy. If you
-     * want to write your own policy, use SetQueueAttributes to upload your
-     * policy. For more information about writing your own policy, see <a
-     * mpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html">
-     * Appendix: The Access Policy Language </a> in the Amazon SQS Developer
-     * Guide.
+     * This is a batch version of SendMessage. It takes multiple messages and
+     * adds each of them to the queue. The result of each add operation is
+     * reported individually in the response.
      * </p>
      *
-     * @param addPermissionRequest Container for the necessary parameters to
-     *           execute the AddPermission service method on AmazonSQS.
+     * @param sendMessageBatchRequest Container for the necessary parameters
+     *           to execute the SendMessageBatch service method on AmazonSQS.
      * 
+     * @return The response from the SendMessageBatch service method, as
+     *         returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws BatchRequestTooLongException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -313,7 +310,7 @@ public interface AmazonSQS {
      *             If an error response is returned by AmazonSQS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void addPermission(AddPermissionRequest addPermissionRequest) 
+    public SendMessageBatchResult sendMessageBatch(SendMessageBatchRequest sendMessageBatchRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -340,30 +337,6 @@ public interface AmazonSQS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteQueue(DeleteQueueRequest deleteQueueRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The <code>DeleteMessage</code> action unconditionally removes the
-     * specified message from the specified queue. Even if the message is
-     * locked by another reader due to the visibility timeout setting, it is
-     * still deleted from the queue.
-     * </p>
-     *
-     * @param deleteMessageRequest Container for the necessary parameters to
-     *           execute the DeleteMessage service method on AmazonSQS.
-     * 
-     * @throws ReceiptHandleIsInvalidException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -396,10 +369,11 @@ public interface AmazonSQS {
      * Retrieves one or more messages from the specified queue, including the
      * message body and message ID of each message. Messages returned by this
      * action stay in the queue until you delete them. However, once a
-     * message is returned to a <code>ReceiveMessage</code> request, it is
-     * not returned on subsequent <code>ReceiveMessage</code> requests for
-     * the duration of the <code>VisibilityTimeout</code> . If you do not
-     * specify a <code>VisibilityTimeout</code> in the request, the overall
+     * message is returned to a
+     * <code>ReceiveMessage</code> request, it is not
+     * returned on subsequent <code>ReceiveMessage</code> requests for the
+     * duration of the <code>VisibilityTimeout</code> . If you do not specify
+     * a <code>VisibilityTimeout</code> in the request, the overall
      * visibility timeout for the queue is used for the returned messages.
      * </p>
      *
@@ -409,6 +383,7 @@ public interface AmazonSQS {
      * @return The response from the ReceiveMessage service method, as
      *         returned by AmazonSQS.
      * 
+     * @throws OverLimitException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -419,6 +394,164 @@ public interface AmazonSQS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ReceiveMessageResult receiveMessage(ReceiveMessageRequest receiveMessageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of your queues.
+     * </p>
+     *
+     * @param listQueuesRequest Container for the necessary parameters to
+     *           execute the ListQueues service method on AmazonSQS.
+     * 
+     * @return The response from the ListQueues service method, as returned
+     *         by AmazonSQS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListQueuesResult listQueues(ListQueuesRequest listQueuesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This is a batch version of DeleteMessage. It takes multiple receipt
+     * handles and deletes each one of the messages. The result of the delete
+     * operation on each message is reported individually in the response.
+     * </p>
+     *
+     * @param deleteMessageBatchRequest Container for the necessary
+     *           parameters to execute the DeleteMessageBatch service method on
+     *           AmazonSQS.
+     * 
+     * @return The response from the DeleteMessageBatch service method, as
+     *         returned by AmazonSQS.
+     * 
+     * @throws BatchEntryIdsNotDistinctException
+     * @throws TooManyEntriesInBatchRequestException
+     * @throws InvalidBatchEntryIdException
+     * @throws EmptyBatchRequestException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>CreateQueue</code> action creates a new queue, or returns
+     * the URL of an existing one. When you request <code>CreateQueue</code>
+     * , you provide a name for the queue. To successfully create a new
+     * queue, you must provide a name that is unique within the scope of your
+     * own queues.
+     * </p>
+     * <p>
+     * You may pass one or more attributes in the request. If you do not
+     * provide a value for any attribute, the queue will have the default
+     * value for that attribute. Permitted attributes are the same that can
+     * be set using SetQueueAttributes.
+     * </p>
+     * <p>
+     * If you provide the name of an existing queue, a new queue isn't
+     * created. If the values of attributes provided with the request match
+     * up with those on the existing queue, the queue URL is returned.
+     * Otherwise, a <code>QueueNameExists</code> error is returned.
+     * </p>
+     *
+     * @param createQueueRequest Container for the necessary parameters to
+     *           execute the CreateQueue service method on AmazonSQS.
+     * 
+     * @return The response from the CreateQueue service method, as returned
+     *         by AmazonSQS.
+     * 
+     * @throws QueueNameExistsException
+     * @throws QueueDeletedRecentlyException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateQueueResult createQueue(CreateQueueRequest createQueueRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The AddPermission action adds a permission to a queue for a specific
+     * <a
+     * .com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892">
+     * principal </a> . This allows for sharing access to the queue.
+     * </p>
+     * <p>
+     * When you create a queue, you have full control access rights for the
+     * queue. Only you (as owner of the queue) can grant or deny permissions
+     * to the queue. For more information about these permissions, see <a
+     * om/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html">
+     * Shared Queues </a> in the Amazon SQS Developer Guide.
+     * </p>
+     * <p>
+     * <code>AddPermission</code> writes an SQS-generated policy. If you
+     * want to write your own policy, use SetQueueAttributes to upload your
+     * policy. For more information about writing your own policy, see <a
+     * mpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html">
+     * Appendix: The Access Policy Language </a> in the Amazon SQS Developer
+     * Guide.
+     * </p>
+     *
+     * @param addPermissionRequest Container for the necessary parameters to
+     *           execute the AddPermission service method on AmazonSQS.
+     * 
+     * @throws OverLimitException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addPermission(AddPermissionRequest addPermissionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The <code>DeleteMessage</code> action unconditionally removes the
+     * specified message from the specified queue. Even if the message is
+     * locked by another reader due to the visibility timeout setting, it is
+     * still deleted from the queue.
+     * </p>
+     *
+     * @param deleteMessageRequest Container for the necessary parameters to
+     *           execute the DeleteMessage service method on AmazonSQS.
+     * 
+     * @throws ReceiptHandleIsInvalidException
+     * @throws InvalidIdFormatException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteMessage(DeleteMessageRequest deleteMessageRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

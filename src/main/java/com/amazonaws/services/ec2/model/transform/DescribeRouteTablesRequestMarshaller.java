@@ -35,7 +35,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
         if (describeRouteTablesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeRouteTablesRequest> request = new DefaultRequest<DescribeRouteTablesRequest>(describeRouteTablesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRouteTables");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
 
         java.util.List<String> routeTableIdsList = describeRouteTablesRequest.getRouteTableIds();
         int routeTableIdsListIndex = 1;
+
         for (String routeTableIdsListValue : routeTableIdsList) {
             if (routeTableIdsListValue != null) {
                 request.addParameter("RouteTableId." + routeTableIdsListIndex, StringUtils.fromString(routeTableIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
 
         java.util.List<Filter> filtersList = describeRouteTablesRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeRouteTablesRequestMarshaller implements Marshaller<Request<
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

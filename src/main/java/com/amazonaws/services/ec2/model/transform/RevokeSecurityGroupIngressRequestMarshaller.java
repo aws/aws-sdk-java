@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- *
+ * 
  *  http://aws.amazon.com/apache2.0
- *
+ * 
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -67,6 +67,7 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
 
         java.util.List<IpPermission> ipPermissionsList = revokeSecurityGroupIngressRequest.getIpPermissions();
         int ipPermissionsListIndex = 1;
+
         for (IpPermission ipPermissionsListValue : ipPermissionsList) {
             IpPermission ipPermissionMember = ipPermissionsListValue;
             if (ipPermissionMember != null) {
@@ -82,6 +83,7 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
 
                 java.util.List<UserIdGroupPair> userIdGroupPairsList = ipPermissionMember.getUserIdGroupPairs();
                 int userIdGroupPairsListIndex = 1;
+
                 for (UserIdGroupPair userIdGroupPairsListValue : userIdGroupPairsList) {
                     UserIdGroupPair userIdGroupPairMember = userIdGroupPairsListValue;
                     if (userIdGroupPairMember != null) {
@@ -101,6 +103,7 @@ public class RevokeSecurityGroupIngressRequestMarshaller implements Marshaller<R
 
                 java.util.List<String> ipRangesList = ipPermissionMember.getIpRanges();
                 int ipRangesListIndex = 1;
+
                 for (String ipRangesListValue : ipRangesList) {
                     if (ipRangesListValue != null) {
                         request.addParameter("IpPermissions." + ipPermissionsListIndex + ".IpRanges." + ipRangesListIndex + ".CidrIp", StringUtils.fromString(ipRangesListValue));

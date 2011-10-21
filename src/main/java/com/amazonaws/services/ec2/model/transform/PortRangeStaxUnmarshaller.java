@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class PortRangeStaxUnmarshaller implements Unmarshaller<PortRange, StaxUnmarshallerContext> {
 
-    
-
     public PortRange unmarshall(StaxUnmarshallerContext context) throws Exception {
         PortRange portRange = new PortRange();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

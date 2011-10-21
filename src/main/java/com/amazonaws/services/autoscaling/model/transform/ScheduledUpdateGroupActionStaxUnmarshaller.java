@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ScheduledUpdateGroupActionStaxUnmarshaller implements Unmarshaller<ScheduledUpdateGroupAction, StaxUnmarshallerContext> {
 
-    
-
     public ScheduledUpdateGroupAction unmarshall(StaxUnmarshallerContext context) throws Exception {
         ScheduledUpdateGroupAction scheduledUpdateGroupAction = new ScheduledUpdateGroupAction();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

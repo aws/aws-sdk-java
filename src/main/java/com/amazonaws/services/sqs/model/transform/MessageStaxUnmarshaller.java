@@ -31,8 +31,6 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  * Message StAX Unmarshaller
  */
 public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmarshallerContext> {
-
-    
     private static class AttributesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
         @Override
         public Entry<String, String> unmarshall(StaxUnmarshallerContext context) throws Exception {
@@ -74,6 +72,7 @@ public class MessageStaxUnmarshaller implements Unmarshaller<Message, StaxUnmars
         Message message = new Message();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteGroupRequestMarshaller implements Marshaller<Request<DeleteGroupRequest>, DeleteGroupRequest> {
 
     public Request<DeleteGroupRequest> marshall(DeleteGroupRequest deleteGroupRequest) {
+
+        if (deleteGroupRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteGroupRequest> request = new DefaultRequest<DeleteGroupRequest>(deleteGroupRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteGroup");
         request.addParameter("Version", "2010-05-08");
-        if (deleteGroupRequest != null) {
-            if (deleteGroupRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(deleteGroupRequest.getGroupName()));
-            }
+
+        if (deleteGroupRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(deleteGroupRequest.getGroupName()));
         }
 
 

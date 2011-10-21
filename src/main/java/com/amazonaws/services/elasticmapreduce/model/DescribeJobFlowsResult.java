@@ -32,6 +32,7 @@ public class DescribeJobFlowsResult {
      * @return A list of job flows matching the parameters supplied.
      */
     public java.util.List<JobFlowDetail> getJobFlows() {
+        
         if (jobFlows == null) {
             jobFlows = new java.util.ArrayList<JobFlowDetail>();
         }
@@ -62,6 +63,7 @@ public class DescribeJobFlowsResult {
      *         together. 
      */
     public DescribeJobFlowsResult withJobFlows(JobFlowDetail... jobFlows) {
+        if (getJobFlows() == null) setJobFlows(new java.util.ArrayList<JobFlowDetail>());
         for (JobFlowDetail value : jobFlows) {
             getJobFlows().add(value);
         }

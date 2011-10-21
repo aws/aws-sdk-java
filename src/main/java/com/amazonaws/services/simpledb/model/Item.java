@@ -128,6 +128,7 @@ public class Item {
      * @return A list of attributes.
      */
     public java.util.List<Attribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<Attribute>();
         }
@@ -158,6 +159,7 @@ public class Item {
      *         together. 
      */
     public Item withAttributes(Attribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<Attribute>());
         for (Attribute value : attributes) {
             getAttributes().add(value);
         }

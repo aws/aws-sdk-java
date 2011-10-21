@@ -25,16 +25,12 @@ import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
-import javax.crypto.Mac;
-import javax.crypto.spec.SecretKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;
@@ -66,6 +62,20 @@ public class ServiceUtils {
 
     public static String formatRfc822Date(Date date) {
         return dateUtils.formatRfc822Date(date);
+    }
+
+    /**
+     * Returns true if the specified ETag was from a multipart upload.
+     *
+     * @param eTag
+     *            The ETag to test.
+     *
+     * @return True if the specified ETag was from a multipart upload, otherwise
+     *         false it if belongs to an object that was uploaded in a single
+     *         part.
+     */
+    public static boolean isMultipartUploadETag(String eTag) {
+        return eTag.contains("-");
     }
 
     /**

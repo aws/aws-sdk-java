@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class KeyPairStaxUnmarshaller implements Unmarshaller<KeyPair, StaxUnmarshallerContext> {
 
-    
-
     public KeyPair unmarshall(StaxUnmarshallerContext context) throws Exception {
         KeyPair keyPair = new KeyPair();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CacheParameterGroupStatusStaxUnmarshaller implements Unmarshaller<CacheParameterGroupStatus, StaxUnmarshallerContext> {
 
-    
-
     public CacheParameterGroupStatus unmarshall(StaxUnmarshallerContext context) throws Exception {
         CacheParameterGroupStatus cacheParameterGroupStatus = new CacheParameterGroupStatus();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

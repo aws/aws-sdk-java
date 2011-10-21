@@ -35,7 +35,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
         if (registerImageRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<RegisterImageRequest> request = new DefaultRequest<RegisterImageRequest>(registerImageRequest, "AmazonEC2");
         request.addParameter("Action", "RegisterImage");
         request.addParameter("Version", "2011-05-15");
@@ -64,6 +64,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
         java.util.List<BlockDeviceMapping> blockDeviceMappingsList = registerImageRequest.getBlockDeviceMappings();
         int blockDeviceMappingsListIndex = 1;
+
         for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
             BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
             if (blockDeviceMappingMember != null) {

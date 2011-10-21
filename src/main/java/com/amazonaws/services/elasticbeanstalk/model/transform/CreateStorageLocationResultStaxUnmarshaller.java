@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CreateStorageLocationResultStaxUnmarshaller implements Unmarshaller<CreateStorageLocationResult, StaxUnmarshallerContext> {
 
-    
-
     public CreateStorageLocationResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CreateStorageLocationResult createStorageLocationResult = new CreateStorageLocationResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

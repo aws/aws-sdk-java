@@ -31,8 +31,6 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  * Get Queue Attributes Result StAX Unmarshaller
  */
 public class GetQueueAttributesResultStaxUnmarshaller implements Unmarshaller<GetQueueAttributesResult, StaxUnmarshallerContext> {
-
-    
     private static class AttributesMapEntryUnmarshaller implements Unmarshaller<Map.Entry<String, String>, StaxUnmarshallerContext> {
         @Override
         public Entry<String, String> unmarshall(StaxUnmarshallerContext context) throws Exception {
@@ -74,6 +72,7 @@ public class GetQueueAttributesResultStaxUnmarshaller implements Unmarshaller<Ge
         GetQueueAttributesResult getQueueAttributesResult = new GetQueueAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

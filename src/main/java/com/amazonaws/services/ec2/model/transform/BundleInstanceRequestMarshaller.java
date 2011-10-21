@@ -35,7 +35,7 @@ public class BundleInstanceRequestMarshaller implements Marshaller<Request<Bundl
         if (bundleInstanceRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<BundleInstanceRequest> request = new DefaultRequest<BundleInstanceRequest>(bundleInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "BundleInstance");
         request.addParameter("Version", "2011-05-15");

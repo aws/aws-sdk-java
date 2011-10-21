@@ -52,6 +52,7 @@ public class ListMFADevicesResult {
      * @return A list of MFA devices.
      */
     public java.util.List<MFADevice> getMFADevices() {
+        
         if (mFADevices == null) {
             mFADevices = new java.util.ArrayList<MFADevice>();
         }
@@ -82,6 +83,7 @@ public class ListMFADevicesResult {
      *         together. 
      */
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
+        if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>());
         for (MFADevice value : mFADevices) {
             getMFADevices().add(value);
         }

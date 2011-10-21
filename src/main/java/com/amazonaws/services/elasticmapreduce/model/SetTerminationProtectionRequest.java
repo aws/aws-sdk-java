@@ -74,6 +74,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest {
      *         obtained from <a>DescribeJobFlows</a> .
      */
     public java.util.List<String> getJobFlowIds() {
+        
         if (jobFlowIds == null) {
             jobFlowIds = new java.util.ArrayList<String>();
         }
@@ -112,6 +113,7 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SetTerminationProtectionRequest withJobFlowIds(String... jobFlowIds) {
+        if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>());
         for (String value : jobFlowIds) {
             getJobFlowIds().add(value);
         }

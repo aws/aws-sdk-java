@@ -35,7 +35,7 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
         if (stopInstancesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<StopInstancesRequest> request = new DefaultRequest<StopInstancesRequest>(stopInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StopInstances");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
 
         java.util.List<String> instanceIdsList = stopInstancesRequest.getInstanceIds();
         int instanceIdsListIndex = 1;
+
         for (String instanceIdsListValue : instanceIdsList) {
             if (instanceIdsListValue != null) {
                 request.addParameter("InstanceId." + instanceIdsListIndex, StringUtils.fromString(instanceIdsListValue));

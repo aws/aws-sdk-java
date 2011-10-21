@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.simpleemail.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteVerifiedEmailAddressRequestMarshaller implements Marshaller<Request<DeleteVerifiedEmailAddressRequest>, DeleteVerifiedEmailAddressRequest> {
 
     public Request<DeleteVerifiedEmailAddressRequest> marshall(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) {
+
+        if (deleteVerifiedEmailAddressRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteVerifiedEmailAddressRequest> request = new DefaultRequest<DeleteVerifiedEmailAddressRequest>(deleteVerifiedEmailAddressRequest, "AmazonSimpleEmailService");
         request.addParameter("Action", "DeleteVerifiedEmailAddress");
         request.addParameter("Version", "2010-12-01");
-        if (deleteVerifiedEmailAddressRequest != null) {
-            if (deleteVerifiedEmailAddressRequest.getEmailAddress() != null) {
-                request.addParameter("EmailAddress", StringUtils.fromString(deleteVerifiedEmailAddressRequest.getEmailAddress()));
-            }
+
+        if (deleteVerifiedEmailAddressRequest.getEmailAddress() != null) {
+            request.addParameter("EmailAddress", StringUtils.fromString(deleteVerifiedEmailAddressRequest.getEmailAddress()));
         }
 
 

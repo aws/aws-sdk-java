@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class ListGroupPoliciesRequestMarshaller implements Marshaller<Request<ListGroupPoliciesRequest>, ListGroupPoliciesRequest> {
 
     public Request<ListGroupPoliciesRequest> marshall(ListGroupPoliciesRequest listGroupPoliciesRequest) {
+
+        if (listGroupPoliciesRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<ListGroupPoliciesRequest> request = new DefaultRequest<ListGroupPoliciesRequest>(listGroupPoliciesRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "ListGroupPolicies");
         request.addParameter("Version", "2010-05-08");
-        if (listGroupPoliciesRequest != null) {
-            if (listGroupPoliciesRequest.getGroupName() != null) {
-                request.addParameter("GroupName", StringUtils.fromString(listGroupPoliciesRequest.getGroupName()));
-            }
+
+        if (listGroupPoliciesRequest.getGroupName() != null) {
+            request.addParameter("GroupName", StringUtils.fromString(listGroupPoliciesRequest.getGroupName()));
         }
-        if (listGroupPoliciesRequest != null) {
-            if (listGroupPoliciesRequest.getMarker() != null) {
-                request.addParameter("Marker", StringUtils.fromString(listGroupPoliciesRequest.getMarker()));
-            }
+        if (listGroupPoliciesRequest.getMarker() != null) {
+            request.addParameter("Marker", StringUtils.fromString(listGroupPoliciesRequest.getMarker()));
         }
-        if (listGroupPoliciesRequest != null) {
-            if (listGroupPoliciesRequest.getMaxItems() != null) {
-                request.addParameter("MaxItems", StringUtils.fromInteger(listGroupPoliciesRequest.getMaxItems()));
-            }
+        if (listGroupPoliciesRequest.getMaxItems() != null) {
+            request.addParameter("MaxItems", StringUtils.fromInteger(listGroupPoliciesRequest.getMaxItems()));
         }
 
 

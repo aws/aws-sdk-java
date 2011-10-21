@@ -35,7 +35,7 @@ public class DeletePlacementGroupRequestMarshaller implements Marshaller<Request
         if (deletePlacementGroupRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeletePlacementGroupRequest> request = new DefaultRequest<DeletePlacementGroupRequest>(deletePlacementGroupRequest, "AmazonEC2");
         request.addParameter("Action", "DeletePlacementGroup");
         request.addParameter("Version", "2011-05-15");

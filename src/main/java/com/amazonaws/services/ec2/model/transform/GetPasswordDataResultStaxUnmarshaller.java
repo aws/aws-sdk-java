@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class GetPasswordDataResultStaxUnmarshaller implements Unmarshaller<GetPasswordDataResult, StaxUnmarshallerContext> {
 
-    
-
     public GetPasswordDataResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetPasswordDataResult getPasswordDataResult = new GetPasswordDataResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

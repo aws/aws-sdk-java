@@ -35,7 +35,7 @@ public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements Mar
         if (purchaseReservedDBInstancesOfferingRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<PurchaseReservedDBInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedDBInstancesOfferingRequest>(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
         request.addParameter("Action", "PurchaseReservedDBInstancesOffering");
         request.addParameter("Version", "2011-04-01");

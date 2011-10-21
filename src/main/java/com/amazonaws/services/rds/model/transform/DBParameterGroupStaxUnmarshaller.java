@@ -32,15 +32,15 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DBParameterGroupStaxUnmarshaller implements Unmarshaller<DBParameterGroup, StaxUnmarshallerContext> {
 
-    
-
     public DBParameterGroup unmarshall(StaxUnmarshallerContext context) throws Exception {
         DBParameterGroup dBParameterGroup = new DBParameterGroup();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         
+
         if (context.isStartOfDocument()) targetDepth++;
         
 

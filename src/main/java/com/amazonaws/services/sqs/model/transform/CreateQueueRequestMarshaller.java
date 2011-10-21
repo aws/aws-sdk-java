@@ -35,16 +35,28 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
         if (createQueueRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateQueueRequest> request = new DefaultRequest<CreateQueueRequest>(createQueueRequest, "AmazonSQS");
         request.addParameter("Action", "CreateQueue");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (createQueueRequest.getQueueName() != null) {
             request.addParameter("QueueName", StringUtils.fromString(createQueueRequest.getQueueName()));
         }
-        if (createQueueRequest.getDefaultVisibilityTimeout() != null) {
-            request.addParameter("DefaultVisibilityTimeout", StringUtils.fromInteger(createQueueRequest.getDefaultVisibilityTimeout()));
+        if (createQueueRequest != null) {
+            if (createQueueRequest.getAttributes() != null) {
+                int attributesListIndex = 1;
+                for (Map.Entry<String, String> attributesListValue : createQueueRequest.getAttributes().entrySet()) {
+
+                    if (attributesListValue.getKey() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getKey()));
+                    }
+                    if (attributesListValue.getValue() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                    }
+                    ++attributesListIndex;
+                }
+            }
         }
 
 

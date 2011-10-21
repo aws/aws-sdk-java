@@ -35,7 +35,7 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
         if (describePoliciesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribePoliciesRequest> request = new DefaultRequest<DescribePoliciesRequest>(describePoliciesRequest, "AmazonAutoScaling");
         request.addParameter("Action", "DescribePolicies");
         request.addParameter("Version", "2011-01-01");
@@ -46,6 +46,7 @@ public class DescribePoliciesRequestMarshaller implements Marshaller<Request<Des
 
         java.util.List<String> policyNamesList = describePoliciesRequest.getPolicyNames();
         int policyNamesListIndex = 1;
+
         for (String policyNamesListValue : policyNamesList) {
             if (policyNamesListValue != null) {
                 request.addParameter("PolicyNames.member." + policyNamesListIndex, StringUtils.fromString(policyNamesListValue));

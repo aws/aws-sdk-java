@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class TerminateInstanceInAutoScalingGroupResultStaxUnmarshaller implements Unmarshaller<TerminateInstanceInAutoScalingGroupResult, StaxUnmarshallerContext> {
 
-    
-
     public TerminateInstanceInAutoScalingGroupResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         TerminateInstanceInAutoScalingGroupResult terminateInstanceInAutoScalingGroupResult = new TerminateInstanceInAutoScalingGroupResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

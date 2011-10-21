@@ -35,7 +35,7 @@ public class DeleteKeyPairRequestMarshaller implements Marshaller<Request<Delete
         if (deleteKeyPairRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteKeyPairRequest> request = new DefaultRequest<DeleteKeyPairRequest>(deleteKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteKeyPair");
         request.addParameter("Version", "2011-05-15");

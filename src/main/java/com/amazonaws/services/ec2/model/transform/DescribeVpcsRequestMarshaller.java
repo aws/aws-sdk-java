@@ -35,7 +35,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
         if (describeVpcsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeVpcsRequest> request = new DefaultRequest<DescribeVpcsRequest>(describeVpcsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpcs");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
 
         java.util.List<String> vpcIdsList = describeVpcsRequest.getVpcIds();
         int vpcIdsListIndex = 1;
+
         for (String vpcIdsListValue : vpcIdsList) {
             if (vpcIdsListValue != null) {
                 request.addParameter("VpcId." + vpcIdsListIndex, StringUtils.fromString(vpcIdsListValue));
@@ -53,6 +54,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
 
         java.util.List<Filter> filtersList = describeVpcsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeVpcsRequestMarshaller implements Marshaller<Request<Describ
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

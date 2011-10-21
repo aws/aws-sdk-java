@@ -55,6 +55,18 @@ public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest 
     public DescribeCacheSecurityGroupsRequest() {}
     
     /**
+     * Constructs a new DescribeCacheSecurityGroupsRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param cacheSecurityGroupName The name of the Cache Security Group to
+     * return details for.
+     */
+    public DescribeCacheSecurityGroupsRequest(String cacheSecurityGroupName) {
+        this.cacheSecurityGroupName = cacheSecurityGroupName;
+    }
+    
+    /**
      * The name of the Cache Security Group to return details for.
      *
      * @return The name of the Cache Security Group to return details for.

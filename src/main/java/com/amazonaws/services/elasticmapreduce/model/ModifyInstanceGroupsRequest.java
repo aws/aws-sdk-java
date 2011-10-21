@@ -56,6 +56,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
      * @return Instance groups to change.
      */
     public java.util.List<InstanceGroupModifyConfig> getInstanceGroups() {
+        
         if (instanceGroups == null) {
             instanceGroups = new java.util.ArrayList<InstanceGroupModifyConfig>();
         }
@@ -86,6 +87,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(InstanceGroupModifyConfig... instanceGroups) {
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupModifyConfig>());
         for (InstanceGroupModifyConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }

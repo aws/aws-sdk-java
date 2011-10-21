@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class GetLoginProfileResultStaxUnmarshaller implements Unmarshaller<GetLoginProfileResult, StaxUnmarshallerContext> {
 
-    
-
     public GetLoginProfileResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         GetLoginProfileResult getLoginProfileResult = new GetLoginProfileResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

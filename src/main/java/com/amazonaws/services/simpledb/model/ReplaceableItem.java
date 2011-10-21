@@ -100,6 +100,7 @@ public class ReplaceableItem {
      * @return The list of attributes for a replaceable item.
      */
     public java.util.List<ReplaceableAttribute> getAttributes() {
+        
         if (attributes == null) {
             attributes = new java.util.ArrayList<ReplaceableAttribute>();
         }
@@ -130,6 +131,7 @@ public class ReplaceableItem {
      *         together. 
      */
     public ReplaceableItem withAttributes(ReplaceableAttribute... attributes) {
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<ReplaceableAttribute>());
         for (ReplaceableAttribute value : attributes) {
             getAttributes().add(value);
         }

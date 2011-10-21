@@ -35,7 +35,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
         if (describeKeyPairsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DescribeKeyPairsRequest> request = new DefaultRequest<DescribeKeyPairsRequest>(describeKeyPairsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeKeyPairs");
         request.addParameter("Version", "2011-05-15");
@@ -43,6 +43,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
 
         java.util.List<String> keyNamesList = describeKeyPairsRequest.getKeyNames();
         int keyNamesListIndex = 1;
+
         for (String keyNamesListValue : keyNamesList) {
             if (keyNamesListValue != null) {
                 request.addParameter("KeyName." + keyNamesListIndex, StringUtils.fromString(keyNamesListValue));
@@ -53,6 +54,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
 
         java.util.List<Filter> filtersList = describeKeyPairsRequest.getFilters();
         int filtersListIndex = 1;
+
         for (Filter filtersListValue : filtersList) {
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
@@ -62,6 +64,7 @@ public class DescribeKeyPairsRequestMarshaller implements Marshaller<Request<Des
 
                 java.util.List<String> valuesList = filterMember.getValues();
                 int valuesListIndex = 1;
+
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
                         request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));

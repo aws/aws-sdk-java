@@ -35,7 +35,7 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
         if (createStackRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateStackRequest> request = new DefaultRequest<CreateStackRequest>(createStackRequest, "AmazonCloudFormation");
         request.addParameter("Action", "CreateStack");
         request.addParameter("Version", "2010-05-15");
@@ -52,6 +52,7 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
 
         java.util.List<Parameter> parametersList = createStackRequest.getParameters();
         int parametersListIndex = 1;
+
         for (Parameter parametersListValue : parametersList) {
             Parameter parameterMember = parametersListValue;
             if (parameterMember != null) {
@@ -74,6 +75,7 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
 
         java.util.List<String> notificationARNsList = createStackRequest.getNotificationARNs();
         int notificationARNsListIndex = 1;
+
         for (String notificationARNsListValue : notificationARNsList) {
             if (notificationARNsListValue != null) {
                 request.addParameter("NotificationARNs.member." + notificationARNsListIndex, StringUtils.fromString(notificationARNsListValue));
@@ -84,6 +86,7 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
 
         java.util.List<String> capabilitiesList = createStackRequest.getCapabilities();
         int capabilitiesListIndex = 1;
+
         for (String capabilitiesListValue : capabilitiesList) {
             if (capabilitiesListValue != null) {
                 request.addParameter("Capabilities.member." + capabilitiesListIndex, StringUtils.fromString(capabilitiesListValue));

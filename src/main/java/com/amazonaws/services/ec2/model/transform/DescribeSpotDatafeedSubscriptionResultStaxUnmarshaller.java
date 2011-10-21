@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DescribeSpotDatafeedSubscriptionResultStaxUnmarshaller implements Unmarshaller<DescribeSpotDatafeedSubscriptionResult, StaxUnmarshallerContext> {
 
-    
-
     public DescribeSpotDatafeedSubscriptionResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscriptionResult = new DescribeSpotDatafeedSubscriptionResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

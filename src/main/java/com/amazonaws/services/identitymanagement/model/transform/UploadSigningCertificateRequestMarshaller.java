@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,18 +31,20 @@ import com.amazonaws.util.StringUtils;
 public class UploadSigningCertificateRequestMarshaller implements Marshaller<Request<UploadSigningCertificateRequest>, UploadSigningCertificateRequest> {
 
     public Request<UploadSigningCertificateRequest> marshall(UploadSigningCertificateRequest uploadSigningCertificateRequest) {
+
+        if (uploadSigningCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UploadSigningCertificateRequest> request = new DefaultRequest<UploadSigningCertificateRequest>(uploadSigningCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UploadSigningCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (uploadSigningCertificateRequest != null) {
-            if (uploadSigningCertificateRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(uploadSigningCertificateRequest.getUserName()));
-            }
+
+        if (uploadSigningCertificateRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(uploadSigningCertificateRequest.getUserName()));
         }
-        if (uploadSigningCertificateRequest != null) {
-            if (uploadSigningCertificateRequest.getCertificateBody() != null) {
-                request.addParameter("CertificateBody", StringUtils.fromString(uploadSigningCertificateRequest.getCertificateBody()));
-            }
+        if (uploadSigningCertificateRequest.getCertificateBody() != null) {
+            request.addParameter("CertificateBody", StringUtils.fromString(uploadSigningCertificateRequest.getCertificateBody()));
         }
 
 

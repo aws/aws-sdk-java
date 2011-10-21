@@ -35,10 +35,10 @@ public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<G
         if (getQueueAttributesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<GetQueueAttributesRequest> request = new DefaultRequest<GetQueueAttributesRequest>(getQueueAttributesRequest, "AmazonSQS");
         request.addParameter("Action", "GetQueueAttributes");
-        request.addParameter("Version", "2009-02-01");
+        request.addParameter("Version", "2011-10-01");
 
         if (getQueueAttributesRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(getQueueAttributesRequest.getQueueUrl()));
@@ -46,6 +46,7 @@ public class GetQueueAttributesRequestMarshaller implements Marshaller<Request<G
 
         java.util.List<String> attributeNamesList = getQueueAttributesRequest.getAttributeNames();
         int attributeNamesListIndex = 1;
+
         for (String attributeNamesListValue : attributeNamesList) {
             if (attributeNamesListValue != null) {
                 request.addParameter("AttributeName." + attributeNamesListIndex, StringUtils.fromString(attributeNamesListValue));

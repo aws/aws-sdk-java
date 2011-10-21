@@ -57,6 +57,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
      * @return A list of job flows to be shutdown.
      */
     public java.util.List<String> getJobFlowIds() {
+        
         if (jobFlowIds == null) {
             jobFlowIds = new java.util.ArrayList<String>();
         }
@@ -87,6 +88,7 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public TerminateJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
+        if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>());
         for (String value : jobFlowIds) {
             getJobFlowIds().add(value);
         }

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class CreateAppCookieStickinessPolicyResultStaxUnmarshaller implements Unmarshaller<CreateAppCookieStickinessPolicyResult, StaxUnmarshallerContext> {
 
-    
-
     public CreateAppCookieStickinessPolicyResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         CreateAppCookieStickinessPolicyResult createAppCookieStickinessPolicyResult = new CreateAppCookieStickinessPolicyResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

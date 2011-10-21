@@ -23,6 +23,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 
 import com.amazonaws.services.sqs.model.*;
 
@@ -129,7 +130,74 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         super(awsCredentials, clientConfiguration);
         this.executorService = executorService;
     }
-     
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on 
+     * AmazonSQS using the specified AWS account credentials provider.
+     * Default client settings will be used, and a default cached thread pool will be 
+     * created for executing the asynchronous tasks.
+     *
+     * <p>
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     */                                      
+    public AmazonSQSAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
+        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+    }
+    
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonSQS using the specified AWS account credentials provider
+     * and executor service.  Default client settings will be used.
+     * 
+     * <p> 
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param executorService
+     *            The executor service by which all asynchronous requests will
+     *            be executed.
+     */
+    public AmazonSQSAsyncClient(AWSCredentialsProvider awsCredentialsProvider, ExecutorService executorService) {
+        this(awsCredentialsProvider, new ClientConfiguration(), executorService);
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonSQS using the specified AWS account credentials
+     * provider, executor service, and client configuration options.
+     * 
+     * <p> 
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     * 
+     * @param awsCredentialsProvider 
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            Client configuration options (ex: max retry limit, proxy
+     *            settings, etc).
+     * @param executorService
+     *            The executor service by which all asynchronous requests will
+     *            be executed.
+     */
+    public AmazonSQSAsyncClient(AWSCredentialsProvider awsCredentialsProvider, 
+                ClientConfiguration clientConfiguration, ExecutorService executorService) {
+        super(awsCredentialsProvider, clientConfiguration);
+        this.executorService = executorService;
+    }
+
+
     /**
      * Returns the executor service used by this async client to execute
      * requests.
@@ -143,36 +211,9 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             
     /**
      * <p>
-     * Returns a list of your queues.
-     * </p>
-     *
-     * @param listQueuesRequest Container for the necessary parameters to
-     *           execute the ListQueues operation on AmazonSQS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListQueues service method, as returned by AmazonSQS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListQueuesResult> listQueuesAsync(final ListQueuesRequest listQueuesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListQueuesResult>() {
-            public ListQueuesResult call() throws Exception {
-                return listQueues(listQueuesRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Sets an attribute of a queue. Currently, you can set only the
-     * <code>VisibilityTimeout</code> attribute for a queue.
+     * Sets an attribute of a queue. The set of attributes that can be set
+     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
+     * VisibilityTimeout and Policy.
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -195,6 +236,38 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 setQueueAttributes(setQueueAttributesRequest);
                 return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * This is a batch version of ChangeMessageVisibility. It takes multiple
+     * receipt handles and performs the operation on each of the them. The
+     * result of the operation on each message is reported individually in
+     * the response.
+     * </p>
+     *
+     * @param changeMessageVisibilityBatchRequest Container for the necessary
+     *           parameters to execute the ChangeMessageVisibilityBatch operation on
+     *           AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ChangeMessageVisibilityBatch service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ChangeMessageVisibilityBatchResult> changeMessageVisibilityBatchAsync(final ChangeMessageVisibilityBatchRequest changeMessageVisibilityBatchRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ChangeMessageVisibilityBatchResult>() {
+            public ChangeMessageVisibilityBatchResult call() throws Exception {
+                return changeMessageVisibilityBatch(changeMessageVisibilityBatchRequest);
 		    }
 		});
     }
@@ -261,25 +334,15 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
     
     /**
      * <p>
-     * The <code>CreateQueue</code> action creates a new queue, or returns
-     * the URL of an existing one. When you request <code>CreateQueue</code>
-     * , you provide a name for the queue. To successfully create a new
-     * queue, you must provide a name that is unique within the scope of your
-     * own queues. If you provide the name of an existing queue, a new queue
-     * isn't created and an error isn't returned. Instead, the request
-     * succeeds and the queue URL for the existing queue is returned.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If you provide a value for DefaultVisibilityTimeout
-     * that is different from the value for the existing queue, you receive
-     * an error.
+     * The <code>GetQueueUrl</code> action returns the URL of an existing
+     * queue.
      * </p>
      *
-     * @param createQueueRequest Container for the necessary parameters to
-     *           execute the CreateQueue operation on AmazonSQS.
+     * @param getQueueUrlRequest Container for the necessary parameters to
+     *           execute the GetQueueUrl operation on AmazonSQS.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateQueue service method, as returned by AmazonSQS.
+     *         GetQueueUrl service method, as returned by AmazonSQS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -289,11 +352,11 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      *             If an error response is returned by AmazonSQS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<CreateQueueResult> createQueueAsync(final CreateQueueRequest createQueueRequest) 
+    public Future<GetQueueUrlResult> getQueueUrlAsync(final GetQueueUrlRequest getQueueUrlRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateQueueResult>() {
-            public CreateQueueResult call() throws Exception {
-                return createQueue(createQueueRequest);
+        return executorService.submit(new Callable<GetQueueUrlResult>() {
+            public GetQueueUrlResult call() throws Exception {
+                return getQueueUrl(getQueueUrlRequest);
 		    }
 		});
     }
@@ -357,6 +420,11 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
      * seconds Amazon SQS retains a message.</li>
      * <li> <code>QueueArn</code> - returns the queue's Amazon resource name
      * (ARN).</li>
+     * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the
+     * approximate number of messages that are pending to be added to the
+     * queue.</li>
+     * <li> <code>DelaySeconds</code> - returns the default delay on the
+     * queue in seconds.</li>
      * 
      * </ul>
      * 
@@ -381,6 +449,238 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
         return executorService.submit(new Callable<GetQueueAttributesResult>() {
             public GetQueueAttributesResult call() throws Exception {
                 return getQueueAttributes(getQueueAttributesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * This is a batch version of SendMessage. It takes multiple messages and
+     * adds each of them to the queue. The result of each add operation is
+     * reported individually in the response.
+     * </p>
+     *
+     * @param sendMessageBatchRequest Container for the necessary parameters
+     *           to execute the SendMessageBatch operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SendMessageBatch service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SendMessageBatchResult> sendMessageBatchAsync(final SendMessageBatchRequest sendMessageBatchRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SendMessageBatchResult>() {
+            public SendMessageBatchResult call() throws Exception {
+                return sendMessageBatch(sendMessageBatchRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * This action unconditionally deletes the queue specified by the queue
+     * URL. Use this operation WITH CARE! The queue is deleted even if it is
+     * NOT empty.
+     * </p>
+     * <p>
+     * Once a queue has been deleted, the queue name is unavailable for use
+     * with new queues for 60 seconds.
+     * </p>
+     *
+     * @param deleteQueueRequest Container for the necessary parameters to
+     *           execute the DeleteQueue operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteQueue service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteQueueAsync(final DeleteQueueRequest deleteQueueRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteQueue(deleteQueueRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>SendMessage</code> action delivers a message to the
+     * specified queue.
+     * </p>
+     *
+     * @param sendMessageRequest Container for the necessary parameters to
+     *           execute the SendMessage operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SendMessage service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SendMessageResult> sendMessageAsync(final SendMessageRequest sendMessageRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SendMessageResult>() {
+            public SendMessageResult call() throws Exception {
+                return sendMessage(sendMessageRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Retrieves one or more messages from the specified queue, including the
+     * message body and message ID of each message. Messages returned by this
+     * action stay in the queue until you delete them. However, once a
+     * message is returned to a
+     * <code>ReceiveMessage</code> request, it is not
+     * returned on subsequent <code>ReceiveMessage</code> requests for the
+     * duration of the <code>VisibilityTimeout</code> . If you do not specify
+     * a <code>VisibilityTimeout</code> in the request, the overall
+     * visibility timeout for the queue is used for the returned messages.
+     * </p>
+     *
+     * @param receiveMessageRequest Container for the necessary parameters to
+     *           execute the ReceiveMessage operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ReceiveMessage service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ReceiveMessageResult> receiveMessageAsync(final ReceiveMessageRequest receiveMessageRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ReceiveMessageResult>() {
+            public ReceiveMessageResult call() throws Exception {
+                return receiveMessage(receiveMessageRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of your queues.
+     * </p>
+     *
+     * @param listQueuesRequest Container for the necessary parameters to
+     *           execute the ListQueues operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListQueues service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListQueuesResult> listQueuesAsync(final ListQueuesRequest listQueuesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListQueuesResult>() {
+            public ListQueuesResult call() throws Exception {
+                return listQueues(listQueuesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * This is a batch version of DeleteMessage. It takes multiple receipt
+     * handles and deletes each one of the messages. The result of the delete
+     * operation on each message is reported individually in the response.
+     * </p>
+     *
+     * @param deleteMessageBatchRequest Container for the necessary
+     *           parameters to execute the DeleteMessageBatch operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteMessageBatch service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeleteMessageBatchResult> deleteMessageBatchAsync(final DeleteMessageBatchRequest deleteMessageBatchRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DeleteMessageBatchResult>() {
+            public DeleteMessageBatchResult call() throws Exception {
+                return deleteMessageBatch(deleteMessageBatchRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The <code>CreateQueue</code> action creates a new queue, or returns
+     * the URL of an existing one. When you request <code>CreateQueue</code>
+     * , you provide a name for the queue. To successfully create a new
+     * queue, you must provide a name that is unique within the scope of your
+     * own queues.
+     * </p>
+     * <p>
+     * You may pass one or more attributes in the request. If you do not
+     * provide a value for any attribute, the queue will have the default
+     * value for that attribute. Permitted attributes are the same that can
+     * be set using SetQueueAttributes.
+     * </p>
+     * <p>
+     * If you provide the name of an existing queue, a new queue isn't
+     * created. If the values of attributes provided with the request match
+     * up with those on the existing queue, the queue URL is returned.
+     * Otherwise, a <code>QueueNameExists</code> error is returned.
+     * </p>
+     *
+     * @param createQueueRequest Container for the necessary parameters to
+     *           execute the CreateQueue operation on AmazonSQS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateQueue service method, as returned by AmazonSQS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSQS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateQueueResult> createQueueAsync(final CreateQueueRequest createQueueRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<CreateQueueResult>() {
+            public CreateQueueResult call() throws Exception {
+                return createQueue(createQueueRequest);
 		    }
 		});
     }
@@ -434,41 +734,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
     
     /**
      * <p>
-     * This action unconditionally deletes the queue specified by the queue
-     * URL. Use this operation WITH CARE! The queue is deleted even if it is
-     * NOT empty.
-     * </p>
-     * <p>
-     * Once a queue has been deleted, the queue name is unavailable for use
-     * with new queues for 60 seconds.
-     * </p>
-     *
-     * @param deleteQueueRequest Container for the necessary parameters to
-     *           execute the DeleteQueue operation on AmazonSQS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteQueue service method, as returned by AmazonSQS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteQueueAsync(final DeleteQueueRequest deleteQueueRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteQueue(deleteQueueRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * The <code>DeleteMessage</code> action unconditionally removes the
      * specified message from the specified queue. Even if the message is
      * locked by another reader due to the visibility timeout setting, it is
@@ -495,70 +760,6 @@ public class AmazonSQSAsyncClient extends AmazonSQSClient
             public Void call() throws Exception {
                 deleteMessage(deleteMessageRequest);
                 return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * The <code>SendMessage</code> action delivers a message to the
-     * specified queue.
-     * </p>
-     *
-     * @param sendMessageRequest Container for the necessary parameters to
-     *           execute the SendMessage operation on AmazonSQS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SendMessage service method, as returned by AmazonSQS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SendMessageResult> sendMessageAsync(final SendMessageRequest sendMessageRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<SendMessageResult>() {
-            public SendMessageResult call() throws Exception {
-                return sendMessage(sendMessageRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Retrieves one or more messages from the specified queue, including the
-     * message body and message ID of each message. Messages returned by this
-     * action stay in the queue until you delete them. However, once a
-     * message is returned to a <code>ReceiveMessage</code> request, it is
-     * not returned on subsequent <code>ReceiveMessage</code> requests for
-     * the duration of the <code>VisibilityTimeout</code> . If you do not
-     * specify a <code>VisibilityTimeout</code> in the request, the overall
-     * visibility timeout for the queue is used for the returned messages.
-     * </p>
-     *
-     * @param receiveMessageRequest Container for the necessary parameters to
-     *           execute the ReceiveMessage operation on AmazonSQS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ReceiveMessage service method, as returned by AmazonSQS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSQS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ReceiveMessageResult> receiveMessageAsync(final ReceiveMessageRequest receiveMessageRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ReceiveMessageResult>() {
-            public ReceiveMessageResult call() throws Exception {
-                return receiveMessage(receiveMessageRequest);
 		    }
 		});
     }

@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class LaunchPermissionStaxUnmarshaller implements Unmarshaller<LaunchPermission, StaxUnmarshallerContext> {
 
-    
-
     public LaunchPermission unmarshall(StaxUnmarshallerContext context) throws Exception {
         LaunchPermission launchPermission = new LaunchPermission();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 1;
         

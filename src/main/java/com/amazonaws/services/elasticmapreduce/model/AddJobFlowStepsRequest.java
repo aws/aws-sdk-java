@@ -169,6 +169,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * @return A list of <a>StepConfig</a> to be executed by the job flow.
      */
     public java.util.List<StepConfig> getSteps() {
+        
         if (steps == null) {
             steps = new java.util.ArrayList<StepConfig>();
         }
@@ -199,6 +200,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>());
         for (StepConfig value : steps) {
             getSteps().add(value);
         }

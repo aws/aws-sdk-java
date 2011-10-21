@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class LBCookieStickinessPolicyStaxUnmarshaller implements Unmarshaller<LBCookieStickinessPolicy, StaxUnmarshallerContext> {
 
-    
-
     public LBCookieStickinessPolicy unmarshall(StaxUnmarshallerContext context) throws Exception {
         LBCookieStickinessPolicy lBCookieStickinessPolicy = new LBCookieStickinessPolicy();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

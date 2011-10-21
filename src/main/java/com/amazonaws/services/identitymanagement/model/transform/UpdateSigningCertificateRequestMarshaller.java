@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,23 +31,23 @@ import com.amazonaws.util.StringUtils;
 public class UpdateSigningCertificateRequestMarshaller implements Marshaller<Request<UpdateSigningCertificateRequest>, UpdateSigningCertificateRequest> {
 
     public Request<UpdateSigningCertificateRequest> marshall(UpdateSigningCertificateRequest updateSigningCertificateRequest) {
+
+        if (updateSigningCertificateRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<UpdateSigningCertificateRequest> request = new DefaultRequest<UpdateSigningCertificateRequest>(updateSigningCertificateRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "UpdateSigningCertificate");
         request.addParameter("Version", "2010-05-08");
-        if (updateSigningCertificateRequest != null) {
-            if (updateSigningCertificateRequest.getUserName() != null) {
-                request.addParameter("UserName", StringUtils.fromString(updateSigningCertificateRequest.getUserName()));
-            }
+
+        if (updateSigningCertificateRequest.getUserName() != null) {
+            request.addParameter("UserName", StringUtils.fromString(updateSigningCertificateRequest.getUserName()));
         }
-        if (updateSigningCertificateRequest != null) {
-            if (updateSigningCertificateRequest.getCertificateId() != null) {
-                request.addParameter("CertificateId", StringUtils.fromString(updateSigningCertificateRequest.getCertificateId()));
-            }
+        if (updateSigningCertificateRequest.getCertificateId() != null) {
+            request.addParameter("CertificateId", StringUtils.fromString(updateSigningCertificateRequest.getCertificateId()));
         }
-        if (updateSigningCertificateRequest != null) {
-            if (updateSigningCertificateRequest.getStatus() != null) {
-                request.addParameter("Status", StringUtils.fromString(updateSigningCertificateRequest.getStatus()));
-            }
+        if (updateSigningCertificateRequest.getStatus() != null) {
+            request.addParameter("Status", StringUtils.fromString(updateSigningCertificateRequest.getStatus()));
         }
 
 

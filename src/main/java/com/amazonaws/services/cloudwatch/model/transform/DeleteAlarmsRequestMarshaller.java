@@ -35,7 +35,7 @@ public class DeleteAlarmsRequestMarshaller implements Marshaller<Request<DeleteA
         if (deleteAlarmsRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<DeleteAlarmsRequest> request = new DefaultRequest<DeleteAlarmsRequest>(deleteAlarmsRequest, "AmazonCloudWatch");
         request.addParameter("Action", "DeleteAlarms");
         request.addParameter("Version", "2010-08-01");
@@ -43,6 +43,7 @@ public class DeleteAlarmsRequestMarshaller implements Marshaller<Request<DeleteA
 
         java.util.List<String> alarmNamesList = deleteAlarmsRequest.getAlarmNames();
         int alarmNamesListIndex = 1;
+
         for (String alarmNamesListValue : alarmNamesList) {
             if (alarmNamesListValue != null) {
                 request.addParameter("AlarmNames.member." + alarmNamesListIndex, StringUtils.fromString(alarmNamesListValue));

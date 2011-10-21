@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class DimensionStaxUnmarshaller implements Unmarshaller<Dimension, StaxUnmarshallerContext> {
 
-    
-
     public Dimension unmarshall(StaxUnmarshallerContext context) throws Exception {
         Dimension dimension = new Dimension();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

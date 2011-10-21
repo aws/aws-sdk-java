@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.services.identitymanagement.model.*;
@@ -30,13 +31,17 @@ import com.amazonaws.util.StringUtils;
 public class DeleteAccountAliasRequestMarshaller implements Marshaller<Request<DeleteAccountAliasRequest>, DeleteAccountAliasRequest> {
 
     public Request<DeleteAccountAliasRequest> marshall(DeleteAccountAliasRequest deleteAccountAliasRequest) {
+
+        if (deleteAccountAliasRequest == null) {
+		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
+		}
+
         Request<DeleteAccountAliasRequest> request = new DefaultRequest<DeleteAccountAliasRequest>(deleteAccountAliasRequest, "AmazonIdentityManagement");
         request.addParameter("Action", "DeleteAccountAlias");
         request.addParameter("Version", "2010-05-08");
-        if (deleteAccountAliasRequest != null) {
-            if (deleteAccountAliasRequest.getAccountAlias() != null) {
-                request.addParameter("AccountAlias", StringUtils.fromString(deleteAccountAliasRequest.getAccountAlias()));
-            }
+
+        if (deleteAccountAliasRequest.getAccountAlias() != null) {
+            request.addParameter("AccountAlias", StringUtils.fromString(deleteAccountAliasRequest.getAccountAlias()));
         }
 
 

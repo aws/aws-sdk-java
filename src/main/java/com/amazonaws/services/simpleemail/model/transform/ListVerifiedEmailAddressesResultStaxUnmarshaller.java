@@ -32,12 +32,11 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
  */
 public class ListVerifiedEmailAddressesResultStaxUnmarshaller implements Unmarshaller<ListVerifiedEmailAddressesResult, StaxUnmarshallerContext> {
 
-    
-
     public ListVerifiedEmailAddressesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
         ListVerifiedEmailAddressesResult listVerifiedEmailAddressesResult = new ListVerifiedEmailAddressesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+
         
         if (context.isStartOfDocument()) targetDepth += 2;
         

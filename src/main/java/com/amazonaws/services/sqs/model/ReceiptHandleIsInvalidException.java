@@ -17,7 +17,9 @@ package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * 
+ * <p>
+ * The receipt handle provided is not valid.
+ * </p>
  */        
 public class ReceiptHandleIsInvalidException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

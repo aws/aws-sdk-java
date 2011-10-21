@@ -35,7 +35,7 @@ public class CreateNetworkAclEntryRequestMarshaller implements Marshaller<Reques
         if (createNetworkAclEntryRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
-		
+
         Request<CreateNetworkAclEntryRequest> request = new DefaultRequest<CreateNetworkAclEntryRequest>(createNetworkAclEntryRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkAclEntry");
         request.addParameter("Version", "2011-05-15");
