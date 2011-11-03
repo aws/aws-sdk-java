@@ -29,7 +29,10 @@ public enum summaryKeyType {
     GroupPolicySizeQuota("GroupPolicySizeQuota"),
     GroupsPerUserQuota("GroupsPerUserQuota"),
     SigningCertificatesPerUserQuota("SigningCertificatesPerUserQuota"),
-    AccessKeysPerUserQuota("AccessKeysPerUserQuota");
+    AccessKeysPerUserQuota("AccessKeysPerUserQuota"),
+    MFADevices("MFADevices"),
+    MFADevicesInUse("MFADevicesInUse"),
+    AccountMFAEnabled("AccountMFAEnabled");
 
     private String value;
 
@@ -75,6 +78,12 @@ public enum summaryKeyType {
             return summaryKeyType.SigningCertificatesPerUserQuota;
         } else if ("AccessKeysPerUserQuota".equals(value)) {
             return summaryKeyType.AccessKeysPerUserQuota;
+        } else if ("MFADevices".equals(value)) {
+            return summaryKeyType.MFADevices;
+        } else if ("MFADevicesInUse".equals(value)) {
+            return summaryKeyType.MFADevicesInUse;
+        } else if ("AccountMFAEnabled".equals(value)) {
+            return summaryKeyType.AccountMFAEnabled;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

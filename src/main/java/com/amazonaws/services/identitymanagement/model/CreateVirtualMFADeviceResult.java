@@ -16,47 +16,47 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the CreateUser
- * action.
+ * Contains the result of a successful invocation of the
+ * CreateVirtualMFADevice action.
  * </p>
  */
-public class CreateUserResult {
+public class CreateVirtualMFADeviceResult {
 
     /**
-     * Information about the user.
+     * A newly created virtual MFA device.
      */
-    private User user;
+    private VirtualMFADevice virtualMFADevice;
 
     /**
-     * Information about the user.
+     * A newly created virtual MFA device.
      *
-     * @return Information about the user.
+     * @return A newly created virtual MFA device.
      */
-    public User getUser() {
-        return user;
+    public VirtualMFADevice getVirtualMFADevice() {
+        return virtualMFADevice;
     }
     
     /**
-     * Information about the user.
+     * A newly created virtual MFA device.
      *
-     * @param user Information about the user.
+     * @param virtualMFADevice A newly created virtual MFA device.
      */
-    public void setUser(User user) {
-        this.user = user;
+    public void setVirtualMFADevice(VirtualMFADevice virtualMFADevice) {
+        this.virtualMFADevice = virtualMFADevice;
     }
     
     /**
-     * Information about the user.
+     * A newly created virtual MFA device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param user Information about the user.
+     * @param virtualMFADevice A newly created virtual MFA device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateUserResult withUser(User user) {
-        this.user = user;
+    public CreateVirtualMFADeviceResult withVirtualMFADevice(VirtualMFADevice virtualMFADevice) {
+        this.virtualMFADevice = virtualMFADevice;
         return this;
     }
     
@@ -73,7 +73,7 @@ public class CreateUserResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("User: " + user + ", ");
+        sb.append("VirtualMFADevice: " + virtualMFADevice + ", ");
         sb.append("}");
         return sb.toString();
     }

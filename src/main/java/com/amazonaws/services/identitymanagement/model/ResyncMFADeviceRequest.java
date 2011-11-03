@@ -26,10 +26,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User whose MFA device you want to resynchronize.
+     * Name of the user whose MFA device you want to resynchronize.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -38,8 +38,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
      * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      */
     private String serialNumber;
 
@@ -72,7 +72,7 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User whose MFA device you want to
+     * @param userName Name of the user whose MFA device you want to
      * resynchronize.
      * @param serialNumber Serial number that uniquely identifies the MFA
      * device.
@@ -89,41 +89,41 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User whose MFA device you want to resynchronize.
+     * Name of the user whose MFA device you want to resynchronize.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User whose MFA device you want to resynchronize.
+     * @return Name of the user whose MFA device you want to resynchronize.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User whose MFA device you want to resynchronize.
+     * Name of the user whose MFA device you want to resynchronize.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA device you want to resynchronize.
+     * @param userName Name of the user whose MFA device you want to resynchronize.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User whose MFA device you want to resynchronize.
+     * Name of the user whose MFA device you want to resynchronize.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA device you want to resynchronize.
+     * @param userName Name of the user whose MFA device you want to resynchronize.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -138,8 +138,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
      * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
      * @return Serial number that uniquely identifies the MFA device.
      */
@@ -151,8 +151,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
      * Serial number that uniquely identifies the MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
      * @param serialNumber Serial number that uniquely identifies the MFA device.
      */
@@ -166,8 +166,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
      * @param serialNumber Serial number that uniquely identifies the MFA device.
      *

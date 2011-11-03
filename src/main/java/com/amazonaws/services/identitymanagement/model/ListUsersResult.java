@@ -23,15 +23,15 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListUsersResult {
 
     /**
-     * A list of User names.
+     * A list of user names.
      */
     private java.util.List<User> users;
 
     /**
-     * A flag that indicates whether there are more User names to list. If
+     * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
-     * more Users in the list.
+     * more users in the list.
      */
     private Boolean isTruncated;
 
@@ -47,9 +47,9 @@ public class ListUsersResult {
     private String marker;
 
     /**
-     * A list of User names.
+     * A list of user names.
      *
-     * @return A list of User names.
+     * @return A list of user names.
      */
     public java.util.List<User> getUsers() {
         
@@ -60,9 +60,9 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of User names.
+     * A list of user names.
      *
-     * @param users A list of User names.
+     * @param users A list of user names.
      */
     public void setUsers(java.util.Collection<User> users) {
         java.util.List<User> usersCopy = new java.util.ArrayList<User>();
@@ -73,11 +73,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of User names.
+     * A list of user names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of User names.
+     * @param users A list of user names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,11 +91,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of User names.
+     * A list of user names.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of User names.
+     * @param users A list of user names.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -111,47 +111,47 @@ public class ListUsersResult {
     }
     
     /**
-     * A flag that indicates whether there are more User names to list. If
+     * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
-     * more Users in the list.
+     * more users in the list.
      *
-     * @return A flag that indicates whether there are more User names to list. If
+     * @return A flag that indicates whether there are more user names to list. If
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
-     *         more Users in the list.
+     *         more users in the list.
      */
     public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more User names to list. If
+     * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
-     * more Users in the list.
+     * more users in the list.
      *
-     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     * @param isTruncated A flag that indicates whether there are more user names to list. If
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
-     *         more Users in the list.
+     *         more users in the list.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more User names to list. If
+     * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
-     * more Users in the list.
+     * more users in the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isTruncated A flag that indicates whether there are more User names to list. If
+     * @param isTruncated A flag that indicates whether there are more user names to list. If
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
-     *         more Users in the list.
+     *         more users in the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -163,15 +163,15 @@ public class ListUsersResult {
     
     
     /**
-     * A flag that indicates whether there are more User names to list. If
+     * A flag that indicates whether there are more user names to list. If
      * your results were truncated, you can make a subsequent pagination
      * request using the <code>Marker</code> request parameter to retrieve
-     * more Users in the list.
+     * more users in the list.
      *
-     * @return A flag that indicates whether there are more User names to list. If
+     * @return A flag that indicates whether there are more user names to list. If
      *         your results were truncated, you can make a subsequent pagination
      *         request using the <code>Marker</code> request parameter to retrieve
-     *         more Users in the list.
+     *         more users in the list.
      */
     public Boolean getIsTruncated() {
         return isTruncated;

@@ -16,24 +16,40 @@ package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createUser(CreateUserRequest) CreateUser operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
  * <p>
- * Creates a new user for your AWS account.
- * </p>
- * <p>
- * For information about limitations on the number of users you can
- * create, see <a
- * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
- * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+ * Creates a new virtual MFA device for the AWS account. After creating
+ * the virtual MFA, use <a
+ * azonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html">
+ * EnableMFADevice </a> to attach the MFA device to an IAM user. For more
+ * information about creating and working with virtual MFA devices, go to
+ * <a
+ * ebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html">
+ * Using a Virtual MFA Device </a> in <i>Using AWS Identity and Access
  * Management</i> .
  * </p>
+ * <p>
+ * For information about limits on the number of MFA devices you can
+ * create, see <a
+ * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+ * Limitations on Entities </a> in <i>Using AWS Identity and Access
+ * Management</i> .
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>The seed information contained in the QR code and the
+ * Base32 string should be treated like any other secret access
+ * information, such as your AWS access keys or your passwords. After you
+ * provision your virtual device, you should ensure that the information
+ * is destroyed following secure procedures.
+ * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createUser(CreateUserRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
  */
-public class CreateUserRequest extends AmazonWebServiceRequest {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest {
 
     /**
-     * The path for the user name. For more information about paths, see <a
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
@@ -46,33 +62,18 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     private String path;
 
     /**
-     * Name of the user to create.
+     * The name of the virtual MFA device. Use with path to uniquely identify
+     * a virtual MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
-    private String userName;
+    private String virtualMFADeviceName;
 
     /**
-     * Default constructor for a new CreateUserRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public CreateUserRequest() {}
-    
-    /**
-     * Constructs a new CreateUserRequest object.
-     * Callers should use the setter or fluent setter (with...) methods to
-     * initialize any additional object members.
-     * 
-     * @param userName Name of the user to create.
-     */
-    public CreateUserRequest(String userName) {
-        this.userName = userName;
-    }
-    
-    /**
-     * The path for the user name. For more information about paths, see <a
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
@@ -82,7 +83,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return The path for the user name. For more information about paths, see <a
+     * @return The path for the virtual MFA device. For more information about paths,
+     *         see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
@@ -93,7 +95,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The path for the user name. For more information about paths, see <a
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
@@ -103,7 +106,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The path for the user name. For more information about paths, see <a
+     * @param path The path for the virtual MFA device. For more information about paths,
+     *         see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
@@ -114,7 +118,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The path for the user name. For more information about paths, see <a
+     * The path for the virtual MFA device. For more information about paths,
+     * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
@@ -126,7 +131,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path The path for the user name. For more information about paths, see <a
+     * @param path The path for the virtual MFA device. For more information about paths,
+     *         see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
@@ -135,54 +141,60 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateUserRequest withPath(String path) {
+    public CreateVirtualMFADeviceRequest withPath(String path) {
         this.path = path;
         return this;
     }
     
     
     /**
-     * Name of the user to create.
+     * The name of the virtual MFA device. Use with path to uniquely identify
+     * a virtual MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user to create.
+     * @return The name of the virtual MFA device. Use with path to uniquely identify
+     *         a virtual MFA device.
      */
-    public String getUserName() {
-        return userName;
+    public String getVirtualMFADeviceName() {
+        return virtualMFADeviceName;
     }
     
     /**
-     * Name of the user to create.
+     * The name of the virtual MFA device. Use with path to uniquely identify
+     * a virtual MFA device.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
+     *         a virtual MFA device.
      */
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setVirtualMFADeviceName(String virtualMFADeviceName) {
+        this.virtualMFADeviceName = virtualMFADeviceName;
     }
     
     /**
-     * Name of the user to create.
+     * The name of the virtual MFA device. Use with path to uniquely identify
+     * a virtual MFA device.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - <br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user to create.
+     * @param virtualMFADeviceName The name of the virtual MFA device. Use with path to uniquely identify
+     *         a virtual MFA device.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateUserRequest withUserName(String userName) {
-        this.userName = userName;
+    public CreateVirtualMFADeviceRequest withVirtualMFADeviceName(String virtualMFADeviceName) {
+        this.virtualMFADeviceName = virtualMFADeviceName;
         return this;
     }
     
@@ -200,7 +212,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("Path: " + path + ", ");
-        sb.append("UserName: " + userName + ", ");
+        sb.append("VirtualMFADeviceName: " + virtualMFADeviceName + ", ");
         sb.append("}");
         return sb.toString();
     }

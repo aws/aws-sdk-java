@@ -23,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListAccountAliasesResult {
 
     /**
-     * 
+     * A list of aliases associated with the account.
      */
     private java.util.List<String> accountAliases;
 
@@ -36,7 +36,10 @@ public class ListAccountAliasesResult {
     private Boolean isTruncated;
 
     /**
-     * 
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
@@ -45,9 +48,9 @@ public class ListAccountAliasesResult {
     private String marker;
 
     /**
-     * 
+     * A list of aliases associated with the account.
      *
-     * @return 
+     * @return A list of aliases associated with the account.
      */
     public java.util.List<String> getAccountAliases() {
         
@@ -58,9 +61,9 @@ public class ListAccountAliasesResult {
     }
     
     /**
-     * 
+     * A list of aliases associated with the account.
      *
-     * @param accountAliases 
+     * @param accountAliases A list of aliases associated with the account.
      */
     public void setAccountAliases(java.util.Collection<String> accountAliases) {
         java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>();
@@ -71,11 +74,11 @@ public class ListAccountAliasesResult {
     }
     
     /**
-     * 
+     * A list of aliases associated with the account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAliases 
+     * @param accountAliases A list of aliases associated with the account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,11 +92,11 @@ public class ListAccountAliasesResult {
     }
     
     /**
-     * 
+     * A list of aliases associated with the account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param accountAliases 
+     * @param accountAliases A list of aliases associated with the account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -176,33 +179,48 @@ public class ListAccountAliasesResult {
     }
     
     /**
-     * 
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @return 
+     * @return Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * 
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker 
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * 
+     * Use this only when paginating results, and only in a subsequent
+     * request after you've received a response where the results are
+     * truncated. Set it to the value of the <code>Marker</code> element in
+     * the response you just received.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -210,7 +228,10 @@ public class ListAccountAliasesResult {
      * <b>Length: </b>1 - 320<br/>
      * <b>Pattern: </b>[\u0020-\u00FF]*<br/>
      *
-     * @param marker 
+     * @param marker Use this only when paginating results, and only in a subsequent
+     *         request after you've received a response where the results are
+     *         truncated. Set it to the value of the <code>Marker</code> element in
+     *         the response you just received.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

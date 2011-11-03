@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest) GetGroup operation}.
  * <p>
- * Returns a list of Users that are in the specified group. You can
+ * Returns a list of users that are in the specified group. You can
  * paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
@@ -50,7 +50,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of User names you want in the response. If there are additional User
+     * of user names you want in the response. If there are additional user
      * names beyond the maximum you specify, the <code>IsTruncated</code>
      * response element is <code>true</code>.
      * <p>
@@ -188,7 +188,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of User names you want in the response. If there are additional User
+     * of user names you want in the response. If there are additional user
      * names beyond the maximum you specify, the <code>IsTruncated</code>
      * response element is <code>true</code>.
      * <p>
@@ -196,7 +196,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of User names you want in the response. If there are additional User
+     *         of user names you want in the response. If there are additional user
      *         names beyond the maximum you specify, the <code>IsTruncated</code>
      *         response element is <code>true</code>.
      */
@@ -206,7 +206,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of User names you want in the response. If there are additional User
+     * of user names you want in the response. If there are additional user
      * names beyond the maximum you specify, the <code>IsTruncated</code>
      * response element is <code>true</code>.
      * <p>
@@ -214,7 +214,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of User names you want in the response. If there are additional User
+     *         of user names you want in the response. If there are additional user
      *         names beyond the maximum you specify, the <code>IsTruncated</code>
      *         response element is <code>true</code>.
      */
@@ -224,7 +224,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of User names you want in the response. If there are additional User
+     * of user names you want in the response. If there are additional user
      * names beyond the maximum you specify, the <code>IsTruncated</code>
      * response element is <code>true</code>.
      * <p>
@@ -234,7 +234,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of User names you want in the response. If there are additional User
+     *         of user names you want in the response. If there are additional user
      *         names beyond the maximum you specify, the <code>IsTruncated</code>
      *         response element is <code>true</code>.
      *

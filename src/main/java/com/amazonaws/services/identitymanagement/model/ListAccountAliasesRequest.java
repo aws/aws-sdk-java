@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest) ListAccountAliases operation}.
  * <p>
  * Lists the account aliases associated with the account. For information
- * about using an AWS Account alias, see <a
+ * about using an AWS account alias, see <a
  * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
  * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
  * and Access Management</i> .

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The request was rejected because it attempted to create resources
- * beyond the current AWS Account limits. The error message describes the
+ * beyond the current AWS account limits. The error message describes the
  * limit exceeded.
  * </p>
  */        

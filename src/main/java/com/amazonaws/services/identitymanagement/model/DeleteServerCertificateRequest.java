@@ -21,14 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified server certificate.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>If your Elastic Load Balancing instances are using a
- * server certificate, deleting the certificate could have implications
- * for your application. If your Elastic Load Balancing instances do not
- * detect the deletion of bound certificates, they may continue to use
- * the certificates. This could cause them to stop accepting traffic.
- * We recommend that you remove the reference to the certificate from
- * your Elastic Load Balancing instances before using this command to
- * delete the certificate.
+ * <b>IMPORTANT:</b>If you are using a server certificate with Elastic
+ * Load Balancing, deleting the certificate could have implications for
+ * your application. If Elastic Load Balancing doesn't detect the
+ * deletion of bound certificates, it may continue to use the
+ * certificates. This could cause Elastic Load Balancing to stop
+ * accepting traffic. We recommend that you remove the reference to the
+ * certificate from Elastic Load Balancing before using this command to
+ * delete the certificate. For more information, go to
+ * DeleteLoadBalancerListeners in the Elastic Load Balancing API
+ * Reference.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteServerCertificate(DeleteServerCertificateRequest)

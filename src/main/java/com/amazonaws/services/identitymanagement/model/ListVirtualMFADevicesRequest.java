@@ -16,33 +16,35 @@ package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest) ListUsers operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest) ListVirtualMFADevices operation}.
  * <p>
- * Lists the users that have the specified path prefix. If there are
- * none, the action returns an empty list.
+ * Lists the virtual MFA devices under the AWS account by assignment
+ * status. If you do not specify an assignment status, the action returns
+ * a list of all virtual MFA devices. Assignment status can be
+ * <code>Assigned</code> ,
+ * 
+ * <code>Unassigned</code> , or <code>Any</code> .
+ * 
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
  * <code>Marker</code> parameters.
  * </p>
  *
- * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest)
+ * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest)
  */
-public class ListUsersRequest extends AmazonWebServiceRequest {
+public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all user names.
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
      */
-    private String pathPrefix;
+    private String assignmentStatus;
 
     /**
      * Use this parameter only when paginating results, and only in a
@@ -68,83 +70,68 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     private Integer maxItems;
 
     /**
-     * Default constructor for a new ListUsersRequest object.  Callers should use the
-     * setter or fluent setter (with...) methods to initialize this object after creating it.
-     */
-    public ListUsersRequest() {}
-    
-    /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all user names.
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
      *
-     * @return The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all user names.
+     * @return The status (unassigned or assigned) of the devices to list. If you do
+     *         not specify an <code>AssignmentStatus</code>, the action defaults to
+     *         <code>Any</code> which lists both assigned and unassigned virtual MFA
+     *         devices.
+     *
+     * @see assignmentStatusType
      */
-    public String getPathPrefix() {
-        return pathPrefix;
+    public String getAssignmentStatus() {
+        return assignmentStatus;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all user names.
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all user names.
+     * @param assignmentStatus The status (unassigned or assigned) of the devices to list. If you do
+     *         not specify an <code>AssignmentStatus</code>, the action defaults to
+     *         <code>Any</code> which lists both assigned and unassigned virtual MFA
+     *         devices.
+     *
+     * @see assignmentStatusType
      */
-    public void setPathPrefix(String pathPrefix) {
-        this.pathPrefix = pathPrefix;
+    public void setAssignmentStatus(String assignmentStatus) {
+        this.assignmentStatus = assignmentStatus;
     }
     
     /**
-     * The path prefix for filtering the results. For example:
-     * <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     * names whose path starts with
-     * <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     * optional. If it is not included, it defaults to a slash (/), listing
-     * all user names.
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 512<br/>
-     * <b>Pattern: </b>\u002F[\u0021-\u007F]*<br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
      *
-     * @param pathPrefix The path prefix for filtering the results. For example:
-     *         <code>/division_abc/subdivision_xyz/</code>, which would get all user
-     *         names whose path starts with
-     *         <code>/division_abc/subdivision_xyz/</code>. <p>This parameter is
-     *         optional. If it is not included, it defaults to a slash (/), listing
-     *         all user names.
+     * @param assignmentStatus The status (unassigned or assigned) of the devices to list. If you do
+     *         not specify an <code>AssignmentStatus</code>, the action defaults to
+     *         <code>Any</code> which lists both assigned and unassigned virtual MFA
+     *         devices.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see assignmentStatusType
      */
-    public ListUsersRequest withPathPrefix(String pathPrefix) {
-        this.pathPrefix = pathPrefix;
+    public ListVirtualMFADevicesRequest withAssignmentStatus(String assignmentStatus) {
+        this.assignmentStatus = assignmentStatus;
         return this;
     }
     
@@ -207,7 +194,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListUsersRequest withMarker(String marker) {
+    public ListVirtualMFADevicesRequest withMarker(String marker) {
         this.marker = marker;
         return this;
     }
@@ -268,7 +255,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListUsersRequest withMaxItems(Integer maxItems) {
+    public ListVirtualMFADevicesRequest withMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
         return this;
     }
@@ -286,7 +273,7 @@ public class ListUsersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("PathPrefix: " + pathPrefix + ", ");
+        sb.append("AssignmentStatus: " + assignmentStatus + ", ");
         sb.append("Marker: " + marker + ", ");
         sb.append("MaxItems: " + maxItems + ", ");
         sb.append("}");

@@ -19,15 +19,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest) PutUserPolicy operation}.
  * <p>
  * Adds (or updates) a policy document associated with the specified
- * User. For information about policies, refer to <a
+ * user. For information about policies, refer to <a
  * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
  * Overview of Policies </a> in <i>Using AWS Identity and Access
  * Management</i> .
  * </p>
  * <p>
  * For information about limits on the number of policies you can
- * associate with a User, see <a
- * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+ * associate with a user, see <a
+ * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
  * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
  * Management</i> .
  * </p>
@@ -42,10 +42,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutUserPolicyRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User to associate the policy with.
+     * Name of the user to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -79,7 +79,7 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User to associate the policy with.
+     * @param userName Name of the user to associate the policy with.
      * @param policyName Name of the policy document.
      * @param policyDocument The policy document.
      */
@@ -90,41 +90,41 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User to associate the policy with.
+     * Name of the user to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User to associate the policy with.
+     * @return Name of the user to associate the policy with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User to associate the policy with.
+     * Name of the user to associate the policy with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User to associate the policy with.
+     * @param userName Name of the user to associate the policy with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User to associate the policy with.
+     * Name of the user to associate the policy with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User to associate the policy with.
+     * @param userName Name of the user to associate the policy with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -23,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListSigningCertificatesResult {
 
     /**
-     * A list of the User's signing certificate information.
+     * A list of the user's signing certificate information.
      */
     private java.util.List<SigningCertificate> certificates;
 
@@ -47,9 +47,9 @@ public class ListSigningCertificatesResult {
     private String marker;
 
     /**
-     * A list of the User's signing certificate information.
+     * A list of the user's signing certificate information.
      *
-     * @return A list of the User's signing certificate information.
+     * @return A list of the user's signing certificate information.
      */
     public java.util.List<SigningCertificate> getCertificates() {
         
@@ -60,9 +60,9 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the User's signing certificate information.
+     * A list of the user's signing certificate information.
      *
-     * @param certificates A list of the User's signing certificate information.
+     * @param certificates A list of the user's signing certificate information.
      */
     public void setCertificates(java.util.Collection<SigningCertificate> certificates) {
         java.util.List<SigningCertificate> certificatesCopy = new java.util.ArrayList<SigningCertificate>();
@@ -73,11 +73,11 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the User's signing certificate information.
+     * A list of the user's signing certificate information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param certificates A list of the User's signing certificate information.
+     * @param certificates A list of the user's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,11 +91,11 @@ public class ListSigningCertificatesResult {
     }
     
     /**
-     * A list of the User's signing certificate information.
+     * A list of the user's signing certificate information.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param certificates A list of the User's signing certificate information.
+     * @param certificates A list of the user's signing certificate information.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

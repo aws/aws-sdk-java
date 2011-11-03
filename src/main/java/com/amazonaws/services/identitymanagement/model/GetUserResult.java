@@ -22,34 +22,34 @@ package com.amazonaws.services.identitymanagement.model;
 public class GetUserResult {
 
     /**
-     * Information about the User.
+     * Information about the user.
      */
     private User user;
 
     /**
-     * Information about the User.
+     * Information about the user.
      *
-     * @return Information about the User.
+     * @return Information about the user.
      */
     public User getUser() {
         return user;
     }
     
     /**
-     * Information about the User.
+     * Information about the user.
      *
-     * @param user Information about the User.
+     * @param user Information about the user.
      */
     public void setUser(User user) {
         this.user = user;
     }
     
     /**
-     * Information about the User.
+     * Information about the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param user Information about the User.
+     * @param user Information about the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest) DeactivateMFADevice operation}.
  * <p>
  * Deactivates the specified MFA device and removes it from association
- * with the User name for which it was originally enabled.
+ * with the user name for which it was originally enabled.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest)
@@ -27,20 +27,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User whose MFA device you want to deactivate.
+     * Name of the user whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
 
     /**
-     * The serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      */
     private String serialNumber;
 
@@ -55,10 +56,10 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User whose MFA device you want to
+     * @param userName Name of the user whose MFA device you want to
      * deactivate.
      * @param serialNumber The serial number that uniquely identifies the MFA
-     * device.
+     * device. For virtual MFA devices, the serial number is the device ARN.
      */
     public DeactivateMFADeviceRequest(String userName, String serialNumber) {
         this.userName = userName;
@@ -66,41 +67,41 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User whose MFA device you want to deactivate.
+     * Name of the user whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User whose MFA device you want to deactivate.
+     * @return Name of the user whose MFA device you want to deactivate.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User whose MFA device you want to deactivate.
+     * Name of the user whose MFA device you want to deactivate.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA device you want to deactivate.
+     * @param userName Name of the user whose MFA device you want to deactivate.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User whose MFA device you want to deactivate.
+     * Name of the user whose MFA device you want to deactivate.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA device you want to deactivate.
+     * @param userName Name of the user whose MFA device you want to deactivate.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -112,41 +113,47 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @return The serial number that uniquely identifies the MFA device.
+     * @return The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      */
     public String getSerialNumber() {
         return serialNumber;
     }
     
     /**
-     * The serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @param serialNumber The serial number that uniquely identifies the MFA device.
+     * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      */
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
     
     /**
-     * The serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @param serialNumber The serial number that uniquely identifies the MFA device.
+     * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

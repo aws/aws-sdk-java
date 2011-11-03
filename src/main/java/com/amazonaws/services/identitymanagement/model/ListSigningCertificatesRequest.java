@@ -19,19 +19,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest) ListSigningCertificates operation}.
  * <p>
  * Returns information about the signing certificates associated with the
- * specified User. If there are none, the action returns an empty list.
+ * specified user. If there are none, the action returns an empty list.
  * </p>
  * <p>
- * Although each User is limited to a small number of signing
+ * Although each user is limited to a small number of signing
  * certificates, you can still paginate the results using the
  * <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the UserName is
+ * If the <code>UserName</code> field is not specified, the user name is
  * determined implicitly based on the AWS Access Key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * Account, this API can be used to manage root credentials even if the
- * AWS Account has no associated Users.
+ * account, this API can be used to manage root credentials even if the
+ * AWS account has no associated users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)
@@ -39,10 +39,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the User.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -77,41 +77,41 @@ public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
     public ListSigningCertificatesRequest() {}
     
     /**
-     * The name of the User.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the User.
+     * @return The name of the user.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the User.
+     * The name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the User.
+     * @param userName The name of the user.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the User.
+     * The name of the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the User.
+     * @param userName The name of the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * The request was rejected because the same certificate is associated to
- * another User under the account.
+ * another user under the account.
  * </p>
  */        
 public class DuplicateCertificateException extends AmazonServiceException {

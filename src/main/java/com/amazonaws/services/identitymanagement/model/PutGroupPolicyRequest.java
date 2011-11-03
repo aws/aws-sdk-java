@@ -27,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * For information about limits on the number of policies you can
  * associate with a group, see <a
- * s.com/IAM/2010-05-08/UserGuide/index.html?LimitationsOnEntities.html">
+ * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
  * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
  * Management</i> .
  * </p>

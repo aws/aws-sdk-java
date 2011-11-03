@@ -27,10 +27,10 @@ package com.amazonaws.services.identitymanagement.model;
 public class SigningCertificate {
 
     /**
-     * Name of the User the signing certificate is associated with.
+     * Name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -79,7 +79,7 @@ public class SigningCertificate {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User the signing certificate is associated
+     * @param userName Name of the user the signing certificate is associated
      * with.
      * @param certificateId The ID for the signing certificate.
      * @param certificateBody The contents of the signing certificate.
@@ -95,41 +95,41 @@ public class SigningCertificate {
     }
     
     /**
-     * Name of the User the signing certificate is associated with.
+     * Name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User the signing certificate is associated with.
+     * @return Name of the user the signing certificate is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User the signing certificate is associated with.
+     * Name of the user the signing certificate is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User the signing certificate is associated with.
+     * @param userName Name of the user the signing certificate is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User the signing certificate is associated with.
+     * Name of the user the signing certificate is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User the signing certificate is associated with.
+     * @param userName Name of the user the signing certificate is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

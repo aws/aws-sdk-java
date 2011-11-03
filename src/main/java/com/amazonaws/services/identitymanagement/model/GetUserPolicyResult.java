@@ -23,10 +23,10 @@ package com.amazonaws.services.identitymanagement.model;
 public class GetUserPolicyResult {
 
     /**
-     * The User the policy is associated with.
+     * The user the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -50,41 +50,41 @@ public class GetUserPolicyResult {
     private String policyDocument;
 
     /**
-     * The User the policy is associated with.
+     * The user the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The User the policy is associated with.
+     * @return The user the policy is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The User the policy is associated with.
+     * The user the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The User the policy is associated with.
+     * @param userName The user the policy is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The User the policy is associated with.
+     * The user the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The User the policy is associated with.
+     * @param userName The user the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

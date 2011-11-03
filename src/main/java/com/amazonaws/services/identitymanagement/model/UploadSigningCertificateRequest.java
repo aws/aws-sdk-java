@@ -19,17 +19,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest) UploadSigningCertificate operation}.
  * <p>
  * Uploads an X.509 signing certificate and associates it with the
- * specified User. Some AWS services use X.509 signing certificates to
+ * specified user. Some AWS services use X.509 signing certificates to
  * validate requests that are signed with a corresponding private key.
  * When you upload the certificate, its default status is
  * <code>Active</code> .
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the User name is
+ * If the <code>UserName</code> field is not specified, the user name is
  * determined implicitly based on the AWS Access Key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * Account, this API can be used to manage root credentials even if the
- * AWS Account has no associated Users.
+ * account, this API can be used to manage root credentials even if the
+ * AWS account has no associated users.
  * </p>
  * <p>
  * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
@@ -43,10 +43,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UploadSigningCertificateRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User the signing certificate is for.
+     * Name of the user the signing certificate is for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -78,41 +78,41 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User the signing certificate is for.
+     * Name of the user the signing certificate is for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User the signing certificate is for.
+     * @return Name of the user the signing certificate is for.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User the signing certificate is for.
+     * Name of the user the signing certificate is for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User the signing certificate is for.
+     * @param userName Name of the user the signing certificate is for.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User the signing certificate is for.
+     * Name of the user the signing certificate is for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User the signing certificate is for.
+     * @param userName Name of the user the signing certificate is for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

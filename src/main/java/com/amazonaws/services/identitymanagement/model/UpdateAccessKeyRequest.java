@@ -19,15 +19,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccessKey(UpdateAccessKeyRequest) UpdateAccessKey operation}.
  * <p>
  * Changes the status of the specified access key from Active to
- * Inactive, or vice versa. This action can be used to disable a User's
- * key as part of a key rotation workflow.
+ * Inactive, or vice versa. This action can be used to disable a user's
+ * key as part of a key rotation work flow.
  * </p>
  * <p>
  * If the <code>UserName</code> field is not specified, the UserName is
  * determined implicitly based on the AWS Access Key ID used to sign the
  * request. Because this action works for access keys under the AWS
- * Account, this API can be used to manage root credentials even if the
- * AWS Account has no associated Users.
+ * account, this API can be used to manage root credentials even if the
+ * AWS account has no associated users.
  * </p>
  * <p>
  * For information about rotating keys, see <a
@@ -41,10 +41,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateAccessKeyRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User whose key you want to update.
+     * Name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -91,41 +91,41 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User whose key you want to update.
+     * Name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User whose key you want to update.
+     * @return Name of the user whose key you want to update.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User whose key you want to update.
+     * Name of the user whose key you want to update.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose key you want to update.
+     * @param userName Name of the user whose key you want to update.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User whose key you want to update.
+     * Name of the user whose key you want to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose key you want to update.
+     * @param userName Name of the user whose key you want to update.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

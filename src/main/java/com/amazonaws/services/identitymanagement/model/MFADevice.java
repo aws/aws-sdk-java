@@ -16,7 +16,8 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The MFADevice data type contains information about an MFA Device.
+ * The <code>MFADevice</code> data type contains information about an MFA
+ * device.
  * </p>
  * <p>
  * This data type is used as a response element in the action
@@ -26,25 +27,26 @@ package com.amazonaws.services.identitymanagement.model;
 public class MFADevice {
 
     /**
-     * The User with whom the MFA device is associated.
+     * The user with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
 
     /**
-     * Serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      */
     private String serialNumber;
 
     /**
-     * The date when the MFA device was enabled for the User.
+     * The date when the MFA device was enabled for the user.
      */
     private java.util.Date enableDate;
 
@@ -59,11 +61,11 @@ public class MFADevice {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName The User with whom the MFA device is associated.
-     * @param serialNumber Serial number that uniquely identifies the MFA
-     * device.
+     * @param userName The user with whom the MFA device is associated.
+     * @param serialNumber The serial number that uniquely identifies the MFA
+     * device. For virtual MFA devices, the serial number is the device ARN.
      * @param enableDate The date when the MFA device was enabled for the
-     * User.
+     * user.
      */
     public MFADevice(String userName, String serialNumber, java.util.Date enableDate) {
         this.userName = userName;
@@ -72,41 +74,41 @@ public class MFADevice {
     }
     
     /**
-     * The User with whom the MFA device is associated.
+     * The user with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The User with whom the MFA device is associated.
+     * @return The user with whom the MFA device is associated.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The User with whom the MFA device is associated.
+     * The user with whom the MFA device is associated.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The User with whom the MFA device is associated.
+     * @param userName The user with whom the MFA device is associated.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The User with whom the MFA device is associated.
+     * The user with whom the MFA device is associated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The User with whom the MFA device is associated.
+     * @param userName The user with whom the MFA device is associated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,41 +120,47 @@ public class MFADevice {
     
     
     /**
-     * Serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @return Serial number that uniquely identifies the MFA device.
+     * @return The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      */
     public String getSerialNumber() {
         return serialNumber;
     }
     
     /**
-     * Serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @param serialNumber Serial number that uniquely identifies the MFA device.
+     * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      */
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
     }
     
     /**
-     * Serial number that uniquely identifies the MFA device.
+     * The serial number that uniquely identifies the MFA device. For virtual
+     * MFA devices, the serial number is the device ARN.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>9 - 48<br/>
-     * <b>Pattern: </b>[\w]*<br/>
+     * <b>Length: </b>9 - 256<br/>
+     * <b>Pattern: </b>[\w+=/:,.@-]*<br/>
      *
-     * @param serialNumber Serial number that uniquely identifies the MFA device.
+     * @param serialNumber The serial number that uniquely identifies the MFA device. For virtual
+     *         MFA devices, the serial number is the device ARN.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -164,29 +172,29 @@ public class MFADevice {
     
     
     /**
-     * The date when the MFA device was enabled for the User.
+     * The date when the MFA device was enabled for the user.
      *
-     * @return The date when the MFA device was enabled for the User.
+     * @return The date when the MFA device was enabled for the user.
      */
     public java.util.Date getEnableDate() {
         return enableDate;
     }
     
     /**
-     * The date when the MFA device was enabled for the User.
+     * The date when the MFA device was enabled for the user.
      *
-     * @param enableDate The date when the MFA device was enabled for the User.
+     * @param enableDate The date when the MFA device was enabled for the user.
      */
     public void setEnableDate(java.util.Date enableDate) {
         this.enableDate = enableDate;
     }
     
     /**
-     * The date when the MFA device was enabled for the User.
+     * The date when the MFA device was enabled for the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enableDate The date when the MFA device was enabled for the User.
+     * @param enableDate The date when the MFA device was enabled for the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -18,7 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest) ListMFADevices operation}.
  * <p>
- * Lists the MFA devices associated with the specified User name.
+ * Lists the MFA devices. If the request includes the user name, then
+ * this action lists all the MFA devices associated with the specified
+ * user name. If you do not specify a user name, IAM determines the user
+ * name implicitly based on the AWS Access Key ID signing the request.
  * </p>
  * <p>
  * You can paginate the results using the <code>MaxItems</code> and
@@ -30,10 +33,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListMFADevicesRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User whose MFA devices you want to list.
+     * Name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -52,9 +55,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
 
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * of MFA devices you want in the response. If there are additional MFA
+     * devices beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
@@ -72,48 +75,48 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User whose MFA devices you want to list.
+     * @param userName Name of the user whose MFA devices you want to list.
      */
     public ListMFADevicesRequest(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User whose MFA devices you want to list.
+     * Name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User whose MFA devices you want to list.
+     * @return Name of the user whose MFA devices you want to list.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User whose MFA devices you want to list.
+     * Name of the user whose MFA devices you want to list.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA devices you want to list.
+     * @param userName Name of the user whose MFA devices you want to list.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User whose MFA devices you want to list.
+     * Name of the user whose MFA devices you want to list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User whose MFA devices you want to list.
+     * @param userName Name of the user whose MFA devices you want to list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -190,17 +193,17 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * of MFA devices you want in the response. If there are additional MFA
+     * devices beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @return Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     *         of MFA devices you want in the response. If there are additional MFA
+     *         devices beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      */
     public Integer getMaxItems() {
         return maxItems;
@@ -208,17 +211,17 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * of MFA devices you want in the response. If there are additional MFA
+     * devices beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     *         of MFA devices you want in the response. If there are additional MFA
+     *         devices beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      */
     public void setMaxItems(Integer maxItems) {
         this.maxItems = maxItems;
@@ -226,9 +229,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this only when paginating results to indicate the maximum number
-     * of keys you want in the response. If there are additional keys beyond
-     * the maximum you specify, the <code>IsTruncated</code> response element
-     * is <code>true</code>.
+     * of MFA devices you want in the response. If there are additional MFA
+     * devices beyond the maximum you specify, the <code>IsTruncated</code>
+     * response element is <code>true</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -236,9 +239,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 1000<br/>
      *
      * @param maxItems Use this only when paginating results to indicate the maximum number
-     *         of keys you want in the response. If there are additional keys beyond
-     *         the maximum you specify, the <code>IsTruncated</code> response element
-     *         is <code>true</code>.
+     *         of MFA devices you want in the response. If there are additional MFA
+     *         devices beyond the maximum you specify, the <code>IsTruncated</code>
+     *         response element is <code>true</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

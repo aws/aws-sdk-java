@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest) GetUserPolicy operation}.
  * <p>
- * Retrieves the specified policy document for the specified User. The
+ * Retrieves the specified policy document for the specified user. The
  * returned policy is URL-encoded according to RFC 3986. For more
  * information about RFC 3986, go to <a
  * href="http://www.faqs.org/rfcs/rfc3986.html">
@@ -30,10 +30,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetUserPolicyRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User who the policy is associated with.
+     * Name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -58,7 +58,7 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User who the policy is associated with.
+     * @param userName Name of the user who the policy is associated with.
      * @param policyName Name of the policy document to get.
      */
     public GetUserPolicyRequest(String userName, String policyName) {
@@ -67,41 +67,41 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Name of the User who the policy is associated with.
+     * Name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User who the policy is associated with.
+     * @return Name of the user who the policy is associated with.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User who the policy is associated with.
+     * Name of the user who the policy is associated with.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User who the policy is associated with.
+     * @param userName Name of the user who the policy is associated with.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User who the policy is associated with.
+     * Name of the user who the policy is associated with.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User who the policy is associated with.
+     * @param userName Name of the user who the policy is associated with.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

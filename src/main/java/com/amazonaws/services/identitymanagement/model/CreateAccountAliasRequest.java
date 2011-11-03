@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest) CreateAccountAlias operation}.
  * <p>
- * This action creates an alias for your AWS Account. For information
- * about using an AWS Account alias, see <a
+ * This action creates an alias for your AWS account. For information
+ * about using an AWS account alias, see <a
  * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
  * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
  * and Access Management</i> .
@@ -30,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class CreateAccountAliasRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the account alias to create
+     * Name of the account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
@@ -49,40 +49,40 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param accountAlias Name of the account alias to create
+     * @param accountAlias Name of the account alias to create.
      */
     public CreateAccountAliasRequest(String accountAlias) {
         this.accountAlias = accountAlias;
     }
     
     /**
-     * Name of the account alias to create
+     * Name of the account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @return Name of the account alias to create
+     * @return Name of the account alias to create.
      */
     public String getAccountAlias() {
         return accountAlias;
     }
     
     /**
-     * Name of the account alias to create
+     * Name of the account alias to create.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias Name of the account alias to create
+     * @param accountAlias Name of the account alias to create.
      */
     public void setAccountAlias(String accountAlias) {
         this.accountAlias = accountAlias;
     }
     
     /**
-     * Name of the account alias to create
+     * Name of the account alias to create.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -90,7 +90,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 63<br/>
      * <b>Pattern: </b>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$<br/>
      *
-     * @param accountAlias Name of the account alias to create
+     * @param accountAlias Name of the account alias to create.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

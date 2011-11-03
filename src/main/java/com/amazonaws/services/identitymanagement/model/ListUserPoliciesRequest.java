@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest) ListUserPolicies operation}.
  * <p>
- * Lists the names of the policies associated with the specified User. If
+ * Lists the names of the policies associated with the specified user. If
  * there are none, the action returns an empty list.
  * </p>
  * <p>
@@ -31,10 +31,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class ListUserPoliciesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the User to list policies for.
+     * The name of the user to list policies for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -73,48 +73,48 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName The name of the User to list policies for.
+     * @param userName The name of the user to list policies for.
      */
     public ListUserPoliciesRequest(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the User to list policies for.
+     * The name of the user to list policies for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the User to list policies for.
+     * @return The name of the user to list policies for.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the User to list policies for.
+     * The name of the user to list policies for.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the User to list policies for.
+     * @param userName The name of the user to list policies for.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the User to list policies for.
+     * The name of the user to list policies for.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the User to list policies for.
+     * @param userName The name of the user to list policies for.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

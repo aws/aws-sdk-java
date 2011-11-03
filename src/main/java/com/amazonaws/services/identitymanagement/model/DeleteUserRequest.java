@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest) DeleteUser operation}.
  * <p>
- * Deletes the specified User. The User must not belong to any groups,
+ * Deletes the specified user. The user must not belong to any groups,
  * have any keys or signing certificates, or have any attached policies.
  * </p>
  *
@@ -27,10 +27,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteUserRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the User to delete.
+     * Name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -46,48 +46,48 @@ public class DeleteUserRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the User to delete.
+     * @param userName Name of the user to delete.
      */
     public DeleteUserRequest(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User to delete.
+     * Name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the User to delete.
+     * @return Name of the user to delete.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the User to delete.
+     * Name of the user to delete.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User to delete.
+     * @param userName Name of the user to delete.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the User to delete.
+     * Name of the user to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the User to delete.
+     * @param userName Name of the user to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

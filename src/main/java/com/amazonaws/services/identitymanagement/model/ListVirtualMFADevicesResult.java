@@ -16,22 +16,19 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the ListMFADevices
- * action.
+ * Contains the result of a successful invocation of the
+ * ListVirtualMFADevices action.
  * </p>
  */
-public class ListMFADevicesResult {
+public class ListVirtualMFADevicesResult {
+
+    private java.util.List<VirtualMFADevice> virtualMFADevices;
 
     /**
-     * A list of MFA devices.
-     */
-    private java.util.List<MFADevice> mFADevices;
-
-    /**
-     * A flag that indicates whether there are more MFA devices to list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more MFA devices in the list.
+     * A flag that indicates whether there are more items to list. If your
+     * results were truncated, you can make a subsequent pagination request
+     * using the <code>Marker</code> request parameter to retrieve more items
+     * the list.
      */
     private Boolean isTruncated;
 
@@ -47,131 +44,131 @@ public class ListMFADevicesResult {
     private String marker;
 
     /**
-     * A list of MFA devices.
+     * Returns the value of the VirtualMFADevices property for this object.
      *
-     * @return A list of MFA devices.
+     * @return The value of the VirtualMFADevices property for this object.
      */
-    public java.util.List<MFADevice> getMFADevices() {
+    public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
         
-        if (mFADevices == null) {
-            mFADevices = new java.util.ArrayList<MFADevice>();
+        if (virtualMFADevices == null) {
+            virtualMFADevices = new java.util.ArrayList<VirtualMFADevice>();
         }
-        return mFADevices;
+        return virtualMFADevices;
     }
     
     /**
-     * A list of MFA devices.
+     * Sets the value of the VirtualMFADevices property for this object.
      *
-     * @param mFADevices A list of MFA devices.
+     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      */
-    public void setMFADevices(java.util.Collection<MFADevice> mFADevices) {
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>();
-        if (mFADevices != null) {
-            mFADevicesCopy.addAll(mFADevices);
+    public void setVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
+        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>();
+        if (virtualMFADevices != null) {
+            virtualMFADevicesCopy.addAll(virtualMFADevices);
         }
-        this.mFADevices = mFADevicesCopy;
+        this.virtualMFADevices = virtualMFADevicesCopy;
     }
     
     /**
-     * A list of MFA devices.
+     * Sets the value of the VirtualMFADevices property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mFADevices A list of MFA devices.
+     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
-        if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>());
-        for (MFADevice value : mFADevices) {
-            getMFADevices().add(value);
+    public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
+        if (getVirtualMFADevices() == null) setVirtualMFADevices(new java.util.ArrayList<VirtualMFADevice>());
+        for (VirtualMFADevice value : virtualMFADevices) {
+            getVirtualMFADevices().add(value);
         }
         return this;
     }
     
     /**
-     * A list of MFA devices.
+     * Sets the value of the VirtualMFADevices property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param mFADevices A list of MFA devices.
+     * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListMFADevicesResult withMFADevices(java.util.Collection<MFADevice> mFADevices) {
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>();
-        if (mFADevices != null) {
-            mFADevicesCopy.addAll(mFADevices);
+    public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
+        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>();
+        if (virtualMFADevices != null) {
+            virtualMFADevicesCopy.addAll(virtualMFADevices);
         }
-        this.mFADevices = mFADevicesCopy;
+        this.virtualMFADevices = virtualMFADevicesCopy;
 
         return this;
     }
     
     /**
-     * A flag that indicates whether there are more MFA devices to list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more MFA devices in the list.
+     * A flag that indicates whether there are more items to list. If your
+     * results were truncated, you can make a subsequent pagination request
+     * using the <code>Marker</code> request parameter to retrieve more items
+     * the list.
      *
-     * @return A flag that indicates whether there are more MFA devices to list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more MFA devices in the list.
+     * @return A flag that indicates whether there are more items to list. If your
+     *         results were truncated, you can make a subsequent pagination request
+     *         using the <code>Marker</code> request parameter to retrieve more items
+     *         the list.
      */
     public Boolean isTruncated() {
         return isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more MFA devices to list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more MFA devices in the list.
+     * A flag that indicates whether there are more items to list. If your
+     * results were truncated, you can make a subsequent pagination request
+     * using the <code>Marker</code> request parameter to retrieve more items
+     * the list.
      *
-     * @param isTruncated A flag that indicates whether there are more MFA devices to list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more MFA devices in the list.
+     * @param isTruncated A flag that indicates whether there are more items to list. If your
+     *         results were truncated, you can make a subsequent pagination request
+     *         using the <code>Marker</code> request parameter to retrieve more items
+     *         the list.
      */
     public void setIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
     }
     
     /**
-     * A flag that indicates whether there are more MFA devices to list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more MFA devices in the list.
+     * A flag that indicates whether there are more items to list. If your
+     * results were truncated, you can make a subsequent pagination request
+     * using the <code>Marker</code> request parameter to retrieve more items
+     * the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param isTruncated A flag that indicates whether there are more MFA devices to list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more MFA devices in the list.
+     * @param isTruncated A flag that indicates whether there are more items to list. If your
+     *         results were truncated, you can make a subsequent pagination request
+     *         using the <code>Marker</code> request parameter to retrieve more items
+     *         the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListMFADevicesResult withIsTruncated(Boolean isTruncated) {
+    public ListVirtualMFADevicesResult withIsTruncated(Boolean isTruncated) {
         this.isTruncated = isTruncated;
         return this;
     }
     
     
     /**
-     * A flag that indicates whether there are more MFA devices to list. If
-     * your results were truncated, you can make a subsequent pagination
-     * request using the <code>Marker</code> request parameter to retrieve
-     * more MFA devices in the list.
+     * A flag that indicates whether there are more items to list. If your
+     * results were truncated, you can make a subsequent pagination request
+     * using the <code>Marker</code> request parameter to retrieve more items
+     * the list.
      *
-     * @return A flag that indicates whether there are more MFA devices to list. If
-     *         your results were truncated, you can make a subsequent pagination
-     *         request using the <code>Marker</code> request parameter to retrieve
-     *         more MFA devices in the list.
+     * @return A flag that indicates whether there are more items to list. If your
+     *         results were truncated, you can make a subsequent pagination request
+     *         using the <code>Marker</code> request parameter to retrieve more items
+     *         the list.
      */
     public Boolean getIsTruncated() {
         return isTruncated;
@@ -229,7 +226,7 @@ public class ListMFADevicesResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListMFADevicesResult withMarker(String marker) {
+    public ListVirtualMFADevicesResult withMarker(String marker) {
         this.marker = marker;
         return this;
     }
@@ -247,7 +244,7 @@ public class ListMFADevicesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MFADevices: " + mFADevices + ", ");
+        sb.append("VirtualMFADevices: " + virtualMFADevices + ", ");
         sb.append("IsTruncated: " + isTruncated + ", ");
         sb.append("Marker: " + marker + ", ");
         sb.append("}");

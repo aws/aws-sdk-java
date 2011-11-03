@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest) UploadServerCertificate operation}.
  * <p>
- * Uploads a server certificate entity for the AWS Account. The server
+ * Uploads a server certificate entity for the AWS account. The server
  * certificate entity includes a public key certificate, a private key,
  * and an optional certificate chain, which should all be PEM-encoded.
  * </p>

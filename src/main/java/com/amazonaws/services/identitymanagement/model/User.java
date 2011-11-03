@@ -16,7 +16,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The User data type contains information about a User.
+ * The User data type contains information about a user.
  * </p>
  * <p>
  * This data type is used as a response element in the following
@@ -42,7 +42,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class User {
 
     /**
-     * Path to the User name. For more information about paths, see <a
+     * Path to the user name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -54,16 +54,16 @@ public class User {
     private String path;
 
     /**
-     * The name identifying the User.
+     * The name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
 
     /**
-     * The stable and unique string identifying the User. For more
+     * The stable and unique string identifying the user. For more
      * information about IDs, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -76,7 +76,7 @@ public class User {
     private String userId;
 
     /**
-     * The Amazon Resource Name (ARN) specifying the User. For more
+     * The Amazon Resource Name (ARN) specifying the user. For more
      * information about ARNs and how to use them in policies, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -88,7 +88,7 @@ public class User {
     private String arn;
 
     /**
-     * The date when the User was created.
+     * The date when the user was created.
      */
     private java.util.Date createDate;
 
@@ -103,23 +103,23 @@ public class User {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param path Path to the User name. For more information about paths,
+     * @param path Path to the user name. For more information about paths,
      * see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
-     * @param userName The name identifying the User.
-     * @param userId The stable and unique string identifying the User. For
+     * @param userName The name identifying the user.
+     * @param userId The stable and unique string identifying the user. For
      * more information about IDs, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
-     * @param arn The Amazon Resource Name (ARN) specifying the User. For
+     * @param arn The Amazon Resource Name (ARN) specifying the user. For
      * more information about ARNs and how to use them in policies, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
-     * @param createDate The date when the User was created.
+     * @param createDate The date when the user was created.
      */
     public User(String path, String userName, String userId, String arn, java.util.Date createDate) {
         this.path = path;
@@ -130,7 +130,7 @@ public class User {
     }
     
     /**
-     * Path to the User name. For more information about paths, see <a
+     * Path to the user name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -139,7 +139,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return Path to the User name. For more information about paths, see <a
+     * @return Path to the user name. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
@@ -149,7 +149,7 @@ public class User {
     }
     
     /**
-     * Path to the User name. For more information about paths, see <a
+     * Path to the user name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -158,7 +158,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the User name. For more information about paths, see <a
+     * @param path Path to the user name. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
@@ -168,7 +168,7 @@ public class User {
     }
     
     /**
-     * Path to the User name. For more information about paths, see <a
+     * Path to the user name. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -179,7 +179,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the User name. For more information about paths, see <a
+     * @param path Path to the user name. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
@@ -194,41 +194,41 @@ public class User {
     
     
     /**
-     * The name identifying the User.
+     * The name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name identifying the User.
+     * @return The name identifying the user.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name identifying the User.
+     * The name identifying the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name identifying the User.
+     * @param userName The name identifying the user.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name identifying the User.
+     * The name identifying the user.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 128<br/>
+     * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name identifying the User.
+     * @param userName The name identifying the user.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -240,7 +240,7 @@ public class User {
     
     
     /**
-     * The stable and unique string identifying the User. For more
+     * The stable and unique string identifying the user. For more
      * information about IDs, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -250,7 +250,7 @@ public class User {
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @return The stable and unique string identifying the User. For more
+     * @return The stable and unique string identifying the user. For more
      *         information about IDs, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -261,7 +261,7 @@ public class User {
     }
     
     /**
-     * The stable and unique string identifying the User. For more
+     * The stable and unique string identifying the user. For more
      * information about IDs, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -271,7 +271,7 @@ public class User {
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param userId The stable and unique string identifying the User. For more
+     * @param userId The stable and unique string identifying the user. For more
      *         information about IDs, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -282,7 +282,7 @@ public class User {
     }
     
     /**
-     * The stable and unique string identifying the User. For more
+     * The stable and unique string identifying the user. For more
      * information about IDs, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -294,7 +294,7 @@ public class User {
      * <b>Length: </b>16 - 32<br/>
      * <b>Pattern: </b>[\w]*<br/>
      *
-     * @param userId The stable and unique string identifying the User. For more
+     * @param userId The stable and unique string identifying the user. For more
      *         information about IDs, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -310,7 +310,7 @@ public class User {
     
     
     /**
-     * The Amazon Resource Name (ARN) specifying the User. For more
+     * The Amazon Resource Name (ARN) specifying the user. For more
      * information about ARNs and how to use them in policies, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -319,7 +319,7 @@ public class User {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @return The Amazon Resource Name (ARN) specifying the User. For more
+     * @return The Amazon Resource Name (ARN) specifying the user. For more
      *         information about ARNs and how to use them in policies, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -330,7 +330,7 @@ public class User {
     }
     
     /**
-     * The Amazon Resource Name (ARN) specifying the User. For more
+     * The Amazon Resource Name (ARN) specifying the user. For more
      * information about ARNs and how to use them in policies, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -339,7 +339,7 @@ public class User {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn The Amazon Resource Name (ARN) specifying the User. For more
+     * @param arn The Amazon Resource Name (ARN) specifying the user. For more
      *         information about ARNs and how to use them in policies, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -350,7 +350,7 @@ public class User {
     }
     
     /**
-     * The Amazon Resource Name (ARN) specifying the User. For more
+     * The Amazon Resource Name (ARN) specifying the user. For more
      * information about ARNs and how to use them in policies, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -361,7 +361,7 @@ public class User {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>20 - 2048<br/>
      *
-     * @param arn The Amazon Resource Name (ARN) specifying the User. For more
+     * @param arn The Amazon Resource Name (ARN) specifying the user. For more
      *         information about ARNs and how to use them in policies, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
@@ -377,29 +377,29 @@ public class User {
     
     
     /**
-     * The date when the User was created.
+     * The date when the user was created.
      *
-     * @return The date when the User was created.
+     * @return The date when the user was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The date when the User was created.
+     * The date when the user was created.
      *
-     * @param createDate The date when the User was created.
+     * @param createDate The date when the user was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The date when the User was created.
+     * The date when the user was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The date when the User was created.
+     * @param createDate The date when the user was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
