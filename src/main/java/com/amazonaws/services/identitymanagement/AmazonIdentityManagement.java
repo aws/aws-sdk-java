@@ -49,7 +49,7 @@ import com.amazonaws.services.identitymanagement.model.*;
  * apply.
  * </p>
  */
-public interface AmazonIdentityManagement {
+public interface AmazonIdentityManagement extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://iam.amazonaws.com").

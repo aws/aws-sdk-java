@@ -33,7 +33,7 @@ import com.amazonaws.http.HttpRequest;
  * Responsible for basic client capabilities that are the same across all AWS
  * SDK Java clients (ex: setting the client endpoint).
  */
-public abstract class AmazonWebServiceClient {
+public abstract class AmazonWebServiceClient implements AmazonWebServicesClientInf {
 
     /** The service endpoint to which this client will send requests. */
     protected URI endpoint;

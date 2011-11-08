@@ -68,7 +68,7 @@ import com.amazonaws.services.cloudwatch.model.*;
  * 
  * </ul>
  */
-public interface AmazonCloudWatch {
+public interface AmazonCloudWatch extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://monitoring.amazonaws.com").

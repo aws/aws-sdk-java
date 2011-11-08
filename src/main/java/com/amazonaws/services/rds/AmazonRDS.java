@@ -41,7 +41,7 @@ import com.amazonaws.services.rds.model.*;
  * you use.
  * </p>
  */
-public interface AmazonRDS {
+public interface AmazonRDS extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://rds.amazonaws.com").

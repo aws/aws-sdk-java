@@ -43,7 +43,7 @@ import com.amazonaws.services.sqs.model.*;
  * </a> for more information.
  * </p>
  */
-public interface AmazonSQS {
+public interface AmazonSQS extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://queue.amazonaws.com").

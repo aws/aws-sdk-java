@@ -52,7 +52,7 @@ import com.amazonaws.services.autoscaling.model.*;
  * Reference.
  * </p>
  */
-public interface AmazonAutoScaling {
+public interface AmazonAutoScaling extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://autoscaling.amazonaws.com").

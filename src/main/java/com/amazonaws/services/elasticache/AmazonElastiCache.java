@@ -38,7 +38,7 @@ import com.amazonaws.services.elasticache.model.*;
  * hot.
  * </p>
  */
-public interface AmazonElastiCache {
+public interface AmazonElastiCache extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://elasticache.us-east-1.amazonaws.com/").

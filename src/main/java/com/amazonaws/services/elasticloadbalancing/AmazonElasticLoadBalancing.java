@@ -29,7 +29,7 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * application.
  * </p>
  */
-public interface AmazonElasticLoadBalancing {
+public interface AmazonElasticLoadBalancing extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://elasticloadbalancing.amazonaws.com").
