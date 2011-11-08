@@ -42,7 +42,7 @@ import com.amazonaws.services.ec2.model.*;
  * http://aws.amazon.com/ec2/ </a> for more information.
  * </p>
  */
-public interface AmazonEC2 {
+public interface AmazonEC2 extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://ec2.amazonaws.com").

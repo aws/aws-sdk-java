@@ -30,7 +30,7 @@ import com.amazonaws.services.importexport.model.*;
  * upgrading your connectivity.
  * </p>
  */
-public interface AmazonImportExport {
+public interface AmazonImportExport extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://importexport.amazonaws.com").

@@ -43,7 +43,7 @@ import com.amazonaws.services.simpledb.model.*;
  * http://aws.amazon.com/simpledb/ </a> for more information.
  * </p>
  */
-public interface AmazonSimpleDB {
+public interface AmazonSimpleDB extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://sdb.amazonaws.com").

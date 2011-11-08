@@ -54,7 +54,7 @@ import com.amazonaws.services.securitytoken.model.*;
  * apply.
  * </p>
  */
-public interface AWSSecurityTokenService {
+public interface AWSSecurityTokenService extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://sts.amazonaws.com").

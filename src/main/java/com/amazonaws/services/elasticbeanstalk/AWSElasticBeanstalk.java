@@ -51,7 +51,7 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * 
  * </ul>
  */
-public interface AWSElasticBeanstalk {
+public interface AWSElasticBeanstalk extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://elasticbeanstalk.us-east-1.amazonaws.com").

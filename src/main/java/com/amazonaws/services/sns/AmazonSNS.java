@@ -22,7 +22,7 @@ import com.amazonaws.services.sns.model.*;
  * Interface for accessing AmazonSNS.
  * Amazon Simple Notification Service
  */
-public interface AmazonSNS {
+public interface AmazonSNS extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://sns.us-east-1.amazonaws.com").

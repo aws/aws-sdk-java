@@ -33,7 +33,7 @@ import com.amazonaws.services.elasticmapreduce.model.*;
  * scientific simulation, and data warehousing.
  * </p>
  */
-public interface AmazonElasticMapReduce {
+public interface AmazonElasticMapReduce extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://elasticmapreduce.amazonaws.com").

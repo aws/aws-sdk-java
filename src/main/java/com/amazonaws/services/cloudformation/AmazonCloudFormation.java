@@ -72,7 +72,7 @@ import com.amazonaws.services.cloudformation.model.*;
  * http://aws.amazon.com/documentation/ </a> .
  * </p>
  */
-public interface AmazonCloudFormation {
+public interface AmazonCloudFormation extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://cloudformation.us-east-1.amazonaws.com").

@@ -33,7 +33,7 @@ import com.amazonaws.services.simpleemail.model.*;
  * Amazon SES Developer Guide </a> .
  * </p>
  */
-public interface AmazonSimpleEmailService {
+public interface AmazonSimpleEmailService extends AmazonWebServicesClientInf {
 
     /**
      * Overrides the default endpoint for this client ("https://email.us-east-1.amazonaws.com").
