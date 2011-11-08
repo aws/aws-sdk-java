@@ -23,17 +23,11 @@ public class ConfigurationOptionDescription {
 
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      */
     private String namespace;
 
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      */
     private String name;
 
@@ -144,9 +138,6 @@ public class ConfigurationOptionDescription {
     
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @return A unique namespace identifying the option's associated AWS resource.
      */
@@ -156,9 +147,6 @@ public class ConfigurationOptionDescription {
     
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      */
@@ -170,9 +158,6 @@ public class ConfigurationOptionDescription {
      * A unique namespace identifying the option's associated AWS resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      *
@@ -187,9 +172,6 @@ public class ConfigurationOptionDescription {
     
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @return The name of the configuration option.
      */
@@ -199,9 +181,6 @@ public class ConfigurationOptionDescription {
     
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param name The name of the configuration option.
      */
@@ -213,9 +192,6 @@ public class ConfigurationOptionDescription {
      * The name of the configuration option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param name The name of the configuration option.
      *

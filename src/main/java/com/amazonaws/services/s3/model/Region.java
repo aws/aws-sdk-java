@@ -62,6 +62,18 @@ public enum Region {
     US_West("us-west-1"),
 
     /**
+     * The US-West-2 (Oregon) Region. This region uses Amazon S3 servers located
+     * in Oregon.
+     * <p>
+     * When using buckets in this region, optionally set the client
+     * endpoint to <code>s3-us-west-2.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of
+     * creating a bucket in this region.
+     * </p>
+     */
+    US_West_2("us-west-2"),
+
+    /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
      * in Ireland.
      * <p>
@@ -95,7 +107,7 @@ public enum Region {
 	 * </p>
 	 */
     AP_Tokyo("ap-northeast-1");
-    
+
 
     /** The unique ID representing each region. */
     private final String regionId;

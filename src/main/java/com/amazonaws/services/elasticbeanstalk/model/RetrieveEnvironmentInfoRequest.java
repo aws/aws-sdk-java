@@ -36,13 +36,19 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
 
     /**
      * The ID of the data's environment. <p> If no such environment is found,
-     * returns an <code>InvalidParameterValue</code> error.
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     * You must specify either this or an EnvironmentName, or both. If you do
+     * not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      */
     private String environmentId;
 
     /**
      * The name of the data's environment. <p> If no such environment is
-     * found, returns an <code>InvalidParameterValue</code> error.
+     * found, returns an <code>InvalidParameterValue</code> error. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
@@ -76,10 +82,16 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The ID of the data's environment. <p> If no such environment is found,
-     * returns an <code>InvalidParameterValue</code> error.
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     * You must specify either this or an EnvironmentName, or both. If you do
+     * not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      *
      * @return The ID of the data's environment. <p> If no such environment is found,
-     *         returns an <code>InvalidParameterValue</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     *         You must specify either this or an EnvironmentName, or both. If you do
+     *         not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentId() {
         return environmentId;
@@ -87,10 +99,16 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The ID of the data's environment. <p> If no such environment is found,
-     * returns an <code>InvalidParameterValue</code> error.
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     * You must specify either this or an EnvironmentName, or both. If you do
+     * not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      *
      * @param environmentId The ID of the data's environment. <p> If no such environment is found,
-     *         returns an <code>InvalidParameterValue</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     *         You must specify either this or an EnvironmentName, or both. If you do
+     *         not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
@@ -98,12 +116,18 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The ID of the data's environment. <p> If no such environment is found,
-     * returns an <code>InvalidParameterValue</code> error.
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     * You must specify either this or an EnvironmentName, or both. If you do
+     * not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param environmentId The ID of the data's environment. <p> If no such environment is found,
-     *         returns an <code>InvalidParameterValue</code> error.
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
+     *         You must specify either this or an EnvironmentName, or both. If you do
+     *         not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -116,13 +140,19 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the data's environment. <p> If no such environment is
-     * found, returns an <code>InvalidParameterValue</code> error.
+     * found, returns an <code>InvalidParameterValue</code> error. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
      * @return The name of the data's environment. <p> If no such environment is
-     *         found, returns an <code>InvalidParameterValue</code> error.
+     *         found, returns an <code>InvalidParameterValue</code> error. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentName() {
         return environmentName;
@@ -130,13 +160,19 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the data's environment. <p> If no such environment is
-     * found, returns an <code>InvalidParameterValue</code> error.
+     * found, returns an <code>InvalidParameterValue</code> error. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of the data's environment. <p> If no such environment is
-     *         found, returns an <code>InvalidParameterValue</code> error.
+     *         found, returns an <code>InvalidParameterValue</code> error. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
@@ -144,7 +180,10 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the data's environment. <p> If no such environment is
-     * found, returns an <code>InvalidParameterValue</code> error.
+     * found, returns an <code>InvalidParameterValue</code> error. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -152,7 +191,10 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>4 - 23<br/>
      *
      * @param environmentName The name of the data's environment. <p> If no such environment is
-     *         found, returns an <code>InvalidParameterValue</code> error.
+     *         found, returns an <code>InvalidParameterValue</code> error. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

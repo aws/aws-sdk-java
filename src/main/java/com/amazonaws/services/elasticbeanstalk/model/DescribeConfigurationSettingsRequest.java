@@ -51,7 +51,12 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     private String applicationName;
 
     /**
-     * The name of the configuration template to describe.
+     * The name of the configuration template to describe. <p> Conditional:
+     * You must specify either this parameter or an EnvironmentName, but not
+     * both. If you specify both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns a
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
@@ -59,7 +64,12 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     private String templateName;
 
     /**
-     * The name of the environment to describe.
+     * The name of the environment to describe. <p> Condition: You must
+     * specify either this or a TemplateName, but not both. If you specify
+     * both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
@@ -128,38 +138,68 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     
     
     /**
-     * The name of the configuration template to describe.
+     * The name of the configuration template to describe. <p> Conditional:
+     * You must specify either this parameter or an EnvironmentName, but not
+     * both. If you specify both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns a
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @return The name of the configuration template to describe.
+     * @return The name of the configuration template to describe. <p> Conditional:
+     *         You must specify either this parameter or an EnvironmentName, but not
+     *         both. If you specify both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns a
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getTemplateName() {
         return templateName;
     }
     
     /**
-     * The name of the configuration template to describe.
+     * The name of the configuration template to describe. <p> Conditional:
+     * You must specify either this parameter or an EnvironmentName, but not
+     * both. If you specify both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns a
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param templateName The name of the configuration template to describe.
+     * @param templateName The name of the configuration template to describe. <p> Conditional:
+     *         You must specify either this parameter or an EnvironmentName, but not
+     *         both. If you specify both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns a
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setTemplateName(String templateName) {
         this.templateName = templateName;
     }
     
     /**
-     * The name of the configuration template to describe.
+     * The name of the configuration template to describe. <p> Conditional:
+     * You must specify either this parameter or an EnvironmentName, but not
+     * both. If you specify both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns a
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 100<br/>
      *
-     * @param templateName The name of the configuration template to describe.
+     * @param templateName The name of the configuration template to describe. <p> Conditional:
+     *         You must specify either this parameter or an EnvironmentName, but not
+     *         both. If you specify both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns a
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -171,38 +211,68 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     
     
     /**
-     * The name of the environment to describe.
+     * The name of the environment to describe. <p> Condition: You must
+     * specify either this or a TemplateName, but not both. If you specify
+     * both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @return The name of the environment to describe.
+     * @return The name of the environment to describe. <p> Condition: You must
+     *         specify either this or a TemplateName, but not both. If you specify
+     *         both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentName() {
         return environmentName;
     }
     
     /**
-     * The name of the environment to describe.
+     * The name of the environment to describe. <p> Condition: You must
+     * specify either this or a TemplateName, but not both. If you specify
+     * both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @param environmentName The name of the environment to describe.
+     * @param environmentName The name of the environment to describe. <p> Condition: You must
+     *         specify either this or a TemplateName, but not both. If you specify
+     *         both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
     
     /**
-     * The name of the environment to describe.
+     * The name of the environment to describe. <p> Condition: You must
+     * specify either this or a TemplateName, but not both. If you specify
+     * both, AWS Elastic Beanstalk returns an
+     * <code>InvalidParameterCombination</code> error. If you do not specify
+     * either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @param environmentName The name of the environment to describe.
+     * @param environmentName The name of the environment to describe. <p> Condition: You must
+     *         specify either this or a TemplateName, but not both. If you specify
+     *         both, AWS Elastic Beanstalk returns an
+     *         <code>InvalidParameterCombination</code> error. If you do not specify
+     *         either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

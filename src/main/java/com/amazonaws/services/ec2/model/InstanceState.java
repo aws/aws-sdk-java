@@ -32,7 +32,7 @@ public class InstanceState {
      * The current state of the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, running, shutting-down, terminated
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
      */
     private String name;
 
@@ -86,7 +86,7 @@ public class InstanceState {
      * The current state of the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, running, shutting-down, terminated
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
      *
      * @return The current state of the instance.
      *
@@ -100,7 +100,7 @@ public class InstanceState {
      * The current state of the instance.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, running, shutting-down, terminated
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
      *
      * @param name The current state of the instance.
      *
@@ -116,7 +116,7 @@ public class InstanceState {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>pending, running, shutting-down, terminated
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
      *
      * @param name The current state of the instance.
      *

@@ -43,17 +43,11 @@ public class ValidationMessage {
 
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      */
     private String namespace;
 
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      */
     private String optionName;
 
@@ -190,9 +184,6 @@ public class ValidationMessage {
     
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @return 
      */
@@ -202,9 +193,6 @@ public class ValidationMessage {
     
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace 
      */
@@ -216,9 +204,6 @@ public class ValidationMessage {
      * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace 
      *
@@ -233,9 +218,6 @@ public class ValidationMessage {
     
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @return 
      */
@@ -245,9 +227,6 @@ public class ValidationMessage {
     
     /**
      * 
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param optionName 
      */
@@ -259,9 +238,6 @@ public class ValidationMessage {
      * 
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param optionName 
      *

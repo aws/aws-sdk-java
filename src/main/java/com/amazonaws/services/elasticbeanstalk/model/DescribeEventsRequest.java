@@ -102,6 +102,15 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     private java.util.Date endTime;
 
     /**
+     * Specifies the maximum number of events that can be returned, beginning
+     * with the most recent event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     */
+    private Integer maxRecords;
+
+    /**
      * Pagination token. If specified, the events return the next batch of
      * results.
      */
@@ -537,6 +546,55 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Specifies the maximum number of events that can be returned, beginning
+     * with the most recent event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     *
+     * @return Specifies the maximum number of events that can be returned, beginning
+     *         with the most recent event.
+     */
+    public Integer getMaxRecords() {
+        return maxRecords;
+    }
+    
+    /**
+     * Specifies the maximum number of events that can be returned, beginning
+     * with the most recent event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     *
+     * @param maxRecords Specifies the maximum number of events that can be returned, beginning
+     *         with the most recent event.
+     */
+    public void setMaxRecords(Integer maxRecords) {
+        this.maxRecords = maxRecords;
+    }
+    
+    /**
+     * Specifies the maximum number of events that can be returned, beginning
+     * with the most recent event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>1 - 1000<br/>
+     *
+     * @param maxRecords Specifies the maximum number of events that can be returned, beginning
+     *         with the most recent event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeEventsRequest withMaxRecords(Integer maxRecords) {
+        this.maxRecords = maxRecords;
+        return this;
+    }
+    
+    
+    /**
      * Pagination token. If specified, the events return the next batch of
      * results.
      *
@@ -597,6 +655,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
         sb.append("Severity: " + severity + ", ");
         sb.append("StartTime: " + startTime + ", ");
         sb.append("EndTime: " + endTime + ", ");
+        sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();

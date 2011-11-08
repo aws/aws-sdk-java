@@ -26,12 +26,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest {
 
     /**
-     * The ID of the environment to retrieve AWS resource usage data.
+     * The ID of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentName, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      */
     private String environmentId;
 
     /**
-     * The name of the environment to retrieve AWS resource usage data.
+     * The name of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
@@ -45,29 +51,47 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
     public DescribeEnvironmentResourcesRequest() {}
     
     /**
-     * The ID of the environment to retrieve AWS resource usage data.
+     * The ID of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentName, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      *
-     * @return The ID of the environment to retrieve AWS resource usage data.
+     * @return The ID of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentName, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentId() {
         return environmentId;
     }
     
     /**
-     * The ID of the environment to retrieve AWS resource usage data.
+     * The ID of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentName, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      *
-     * @param environmentId The ID of the environment to retrieve AWS resource usage data.
+     * @param environmentId The ID of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentName, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentId(String environmentId) {
         this.environmentId = environmentId;
     }
     
     /**
-     * The ID of the environment to retrieve AWS resource usage data.
+     * The ID of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentName, or
+     * both. If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param environmentId The ID of the environment to retrieve AWS resource usage data.
+     * @param environmentId The ID of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentName, or
+     *         both. If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -79,38 +103,56 @@ public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest
     
     
     /**
-     * The name of the environment to retrieve AWS resource usage data.
+     * The name of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @return The name of the environment to retrieve AWS resource usage data.
+     * @return The name of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public String getEnvironmentName() {
         return environmentName;
     }
     
     /**
-     * The name of the environment to retrieve AWS resource usage data.
+     * The name of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @param environmentName The name of the environment to retrieve AWS resource usage data.
+     * @param environmentName The name of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      */
     public void setEnvironmentName(String environmentName) {
         this.environmentName = environmentName;
     }
     
     /**
-     * The name of the environment to retrieve AWS resource usage data.
+     * The name of the environment to retrieve AWS resource usage data. <p>
+     * Condition: You must specify either this or an EnvironmentId, or both.
+     * If you do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>4 - 23<br/>
      *
-     * @param environmentName The name of the environment to retrieve AWS resource usage data.
+     * @param environmentName The name of the environment to retrieve AWS resource usage data. <p>
+     *         Condition: You must specify either this or an EnvironmentId, or both.
+     *         If you do not specify either, AWS Elastic Beanstalk returns
+     *         <code>MissingRequiredParameter</code> error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

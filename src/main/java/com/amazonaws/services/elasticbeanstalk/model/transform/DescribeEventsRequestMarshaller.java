@@ -67,6 +67,9 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
         if (describeEventsRequest.getEndTime() != null) {
             request.addParameter("EndTime", StringUtils.fromDate(describeEventsRequest.getEndTime()));
         }
+        if (describeEventsRequest.getMaxRecords() != null) {
+            request.addParameter("MaxRecords", StringUtils.fromInteger(describeEventsRequest.getMaxRecords()));
+        }
         if (describeEventsRequest.getNextToken() != null) {
             request.addParameter("NextToken", StringUtils.fromString(describeEventsRequest.getNextToken()));
         }

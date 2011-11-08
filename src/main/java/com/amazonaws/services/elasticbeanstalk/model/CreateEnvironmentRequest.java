@@ -68,7 +68,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
     /**
      * The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
      * You must specify either this parameter or a
      * <code>SolutionStackName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -379,7 +379,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
     /**
      * The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
      * You must specify either this parameter or a
      * <code>SolutionStackName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -391,7 +391,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *
      * @return The name of the configuration template to use in deployment. If no
      *         configuration template is found with this name, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
      *         You must specify either this parameter or a
      *         <code>SolutionStackName</code>, but not both. If you specify both, AWS
      *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -405,7 +405,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
     /**
      * The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
      * You must specify either this parameter or a
      * <code>SolutionStackName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -417,7 +417,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *
      * @param templateName The name of the configuration template to use in deployment. If no
      *         configuration template is found with this name, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
      *         You must specify either this parameter or a
      *         <code>SolutionStackName</code>, but not both. If you specify both, AWS
      *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -431,7 +431,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
     /**
      * The name of the configuration template to use in deployment. If no
      * configuration template is found with this name, AWS Elastic Beanstalk
-     * returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     * returns an <code>InvalidParameterValue</code> error. <p> Condition:
      * You must specify either this parameter or a
      * <code>SolutionStackName</code>, but not both. If you specify both, AWS
      * Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
@@ -445,7 +445,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
      *
      * @param templateName The name of the configuration template to use in deployment. If no
      *         configuration template is found with this name, AWS Elastic Beanstalk
-     *         returns an <code>InvalidParameterValue</code> error. <p> Conditional:
+     *         returns an <code>InvalidParameterValue</code> error. <p> Condition:
      *         You must specify either this parameter or a
      *         <code>SolutionStackName</code>, but not both. If you specify both, AWS
      *         Elastic Beanstalk returns an <code>InvalidParameterCombination</code>

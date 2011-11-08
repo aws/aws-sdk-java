@@ -24,25 +24,16 @@ public class ConfigurationOptionSetting {
 
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      */
     private String namespace;
 
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      */
     private String optionName;
 
     /**
      * The current value for the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
      */
     private String value;
 
@@ -70,9 +61,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @return A unique namespace identifying the option's associated AWS resource.
      */
@@ -82,9 +70,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * A unique namespace identifying the option's associated AWS resource.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      */
@@ -96,9 +81,6 @@ public class ConfigurationOptionSetting {
      * A unique namespace identifying the option's associated AWS resource.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
      *
      * @param namespace A unique namespace identifying the option's associated AWS resource.
      *
@@ -113,9 +95,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @return The name of the configuration option.
      */
@@ -125,9 +104,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * The name of the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param optionName The name of the configuration option.
      */
@@ -139,9 +115,6 @@ public class ConfigurationOptionSetting {
      * The name of the configuration option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 100<br/>
      *
      * @param optionName The name of the configuration option.
      *
@@ -156,9 +129,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * The current value for the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
      *
      * @return The current value for the configuration option.
      */
@@ -168,9 +138,6 @@ public class ConfigurationOptionSetting {
     
     /**
      * The current value for the configuration option.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
      *
      * @param value The current value for the configuration option.
      */
@@ -182,9 +149,6 @@ public class ConfigurationOptionSetting {
      * The current value for the configuration option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 200<br/>
      *
      * @param value The current value for the configuration option.
      *
