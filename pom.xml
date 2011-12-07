@@ -49,6 +49,7 @@
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>[1.4,)</version>
+            <optional>true</optional>
         </dependency>
 
         <!-- JDK 1.6 and above include StAX support by default, so these two dependencies
