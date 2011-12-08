@@ -135,6 +135,44 @@ public class TagDescription {
     
     
     /**
+     * The type of resource identified by the associated resource ID (ex:
+     * instance, AMI, EBS volume, etc).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, snapshot, spot-instances-request, subnet, volume, vpc, vpn-connection, vpn-gateway
+     *
+     * @param resourceType The type of resource identified by the associated resource ID (ex:
+     *         instance, AMI, EBS volume, etc).
+     *
+     * @see ResourceType
+     */
+    public void setResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+    }
+    
+    /**
+     * The type of resource identified by the associated resource ID (ex:
+     * instance, AMI, EBS volume, etc).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>customer-gateway, dhcp-options, image, instance, snapshot, spot-instances-request, subnet, volume, vpc, vpn-connection, vpn-gateway
+     *
+     * @param resourceType The type of resource identified by the associated resource ID (ex:
+     *         instance, AMI, EBS volume, etc).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceType
+     */
+    public TagDescription withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+    
+    /**
      * The tag's key.
      *
      * @return The tag's key.

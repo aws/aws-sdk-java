@@ -36,6 +36,8 @@ public class S3OriginStaxUnmarshaller implements Unmarshaller<S3Origin, StaxUnma
         S3Origin s3Origin = new S3Origin();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+        if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

@@ -212,6 +212,40 @@ public class Job {
     
     
     /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @see JobType
+     */
+    public void setJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see JobType
+     */
+    public Job withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

@@ -122,6 +122,8 @@ public class HealthCheck {
         this.unhealthyThreshold = unhealthyThreshold;
         this.healthyThreshold = healthyThreshold;
     }
+
+    
     
     /**
      * Specifies the instance being checked. The protocol is either TCP,

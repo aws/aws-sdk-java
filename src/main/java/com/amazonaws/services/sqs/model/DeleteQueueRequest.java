@@ -52,6 +52,8 @@ public class DeleteQueueRequest extends AmazonWebServiceRequest {
     public DeleteQueueRequest(String queueUrl) {
         this.queueUrl = queueUrl;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

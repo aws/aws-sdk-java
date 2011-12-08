@@ -69,6 +69,8 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest {
         this.groupName = groupName;
         this.description = description;
     }
+
+    
     
     /**
      * Name of the security group.

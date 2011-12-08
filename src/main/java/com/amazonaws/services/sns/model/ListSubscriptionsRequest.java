@@ -51,6 +51,8 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
     public ListSubscriptionsRequest(String nextToken) {
         this.nextToken = nextToken;
     }
+
+    
     
     /**
      * Token returned by the previous ListSubscriptions request.

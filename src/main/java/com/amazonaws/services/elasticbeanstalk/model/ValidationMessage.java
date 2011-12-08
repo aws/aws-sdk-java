@@ -183,6 +183,68 @@ public class ValidationMessage {
     
     
     /**
+     * An indication of the severity of this message: <enumValues> <value
+     * name="error"> <p> error: This message indicates that this is not a
+     * valid setting for an option. </value> <value name="warning"> <p>
+     * warning: This message is providing information you should take into
+     * account. </value> </enumValues> <ul> <li> error: This message
+     * indicates that this is not a valid setting for an option. </li> <li>
+     * warning: This message is providing information you should take into
+     * account. </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>error, warning
+     *
+     * @param severity An indication of the severity of this message: <enumValues> <value
+     *         name="error"> <p> error: This message indicates that this is not a
+     *         valid setting for an option. </value> <value name="warning"> <p>
+     *         warning: This message is providing information you should take into
+     *         account. </value> </enumValues> <ul> <li> error: This message
+     *         indicates that this is not a valid setting for an option. </li> <li>
+     *         warning: This message is providing information you should take into
+     *         account. </li> </ul>
+     *
+     * @see ValidationSeverity
+     */
+    public void setSeverity(ValidationSeverity severity) {
+        this.severity = severity.toString();
+    }
+    
+    /**
+     * An indication of the severity of this message: <enumValues> <value
+     * name="error"> <p> error: This message indicates that this is not a
+     * valid setting for an option. </value> <value name="warning"> <p>
+     * warning: This message is providing information you should take into
+     * account. </value> </enumValues> <ul> <li> error: This message
+     * indicates that this is not a valid setting for an option. </li> <li>
+     * warning: This message is providing information you should take into
+     * account. </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>error, warning
+     *
+     * @param severity An indication of the severity of this message: <enumValues> <value
+     *         name="error"> <p> error: This message indicates that this is not a
+     *         valid setting for an option. </value> <value name="warning"> <p>
+     *         warning: This message is providing information you should take into
+     *         account. </value> </enumValues> <ul> <li> error: This message
+     *         indicates that this is not a valid setting for an option. </li> <li>
+     *         warning: This message is providing information you should take into
+     *         account. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ValidationSeverity
+     */
+    public ValidationMessage withSeverity(ValidationSeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+    
+    /**
      * 
      *
      * @return 

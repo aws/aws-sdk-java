@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -16,12 +16,14 @@ package com.amazonaws.services.s3.model;
 
 import java.io.InputStream;
 
+import com.amazonaws.services.s3.AmazonS3;
+
 /**
- * Represents an object stored in Amazon S3. This object contains 
+ * Represents an object stored in Amazon S3. This object contains
  * the data content
  * and the object metadata stored by Amazon S3, such as content type,
  * content length, etc.
- * 
+ *
  * @see ObjectMetadata
  */
 public class S3Object {
@@ -29,10 +31,10 @@ public class S3Object {
 
     /** The key under which this object is stored */
     private String key = null;
-    
+
     /** The name of the bucket in which this object is contained */
     private String bucketName = null;
-    
+
     /** The metadata stored by Amazon S3 for this object */
     private ObjectMetadata metadata = new ObjectMetadata();
 
@@ -45,9 +47,9 @@ public class S3Object {
      * {@link ObjectMetadata} object includes any custom user metadata supplied by the
      * caller when the object was uploaded, as well as HTTP metadata such as
      * content length and content type.
-     * 
+     *
      * @return The metadata stored by Amazon S3 for this object.
-     * 
+     *
      * @see S3Object#getObjectContent()
      */
     public ObjectMetadata getObjectMetadata() {
@@ -55,13 +57,28 @@ public class S3Object {
     }
 
     /**
+     * Sets the object metadata for this object.
+     * <p>
+     * <b>NOTE:</b> This does not update the object metadata stored in Amazon
+     * S3, but only updates this object in local memory. To update an object's
+     * metadata in S3, use {@link AmazonS3#copyObject(CopyObjectRequest)} to
+     * copy the object to a new (or the same location) and specify new object
+     * metadata then.
+     *
+     * @param metadata The new metadata to set for this object in memory.
+     */
+    public void setObjectMetadata(ObjectMetadata metadata) {
+        this.metadata = metadata;
+    }
+
+    /**
      * Gets an input stream containing the contents of this object. Callers
      * should close this input stream as soon as possible, because the
      * object contents aren't buffered in memory and stream directly from Amazon
      * S3.
-     * 
+     *
      * @return An input stream containing the contents of this object.
-     * 
+     *
      * @see S3Object#getObjectMetadata()
      * @see S3Object#setObjectContent(InputStream)
      */
@@ -71,11 +88,11 @@ public class S3Object {
 
     /**
      * Sets the input stream containing this object's contents.
-     * 
+     *
      * @param objectContent
      *            The input stream containing this object's contents.
-     *            
-     * @see S3Object#getObjectContent()        
+     *
+     * @see S3Object#getObjectContent()
      */
     public void setObjectContent(InputStream objectContent) {
         this.objectContent = objectContent;
@@ -83,10 +100,10 @@ public class S3Object {
 
     /**
      * Gets the name of the bucket in which this object is contained.
-     * 
+     *
      * @return The name of the bucket in which this object is contained.
-     * 
-     * @see S3Object#setBucketName(String)     
+     *
+     * @see S3Object#setBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -94,11 +111,11 @@ public class S3Object {
 
     /**
      * Sets the name of the bucket in which this object is contained.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket containing this object.
-     *            
-     * @see S3Object#getBucketName()      
+     *
+     * @see S3Object#getBucketName()
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -106,9 +123,9 @@ public class S3Object {
 
     /**
      * Gets the key under which this object is stored.
-     * 
+     *
      * @return The key under which this object is stored.
-     * 
+     *
      * @see S3Object#setKey(String)
      */
     public String getKey() {
@@ -117,22 +134,22 @@ public class S3Object {
 
     /**
      * Sets the key under which this object is stored.
-     * 
+     *
      * @param key
      *            The key under which this object is stored.
-     *            
-     * @see S3Object#getKey()           
+     *
+     * @see S3Object#getKey()
      */
     public void setKey(String key) {
         this.key = key;
     }
-    
+
     /**
      * @see java.lang.Object#toString()
      */
     public String toString() {
-        return "S3Object [key=" + getKey() 
-            + ",bucket=" + (bucketName == null ? "<Unknown>" : bucketName)  
+        return "S3Object [key=" + getKey()
+            + ",bucket=" + (bucketName == null ? "<Unknown>" : bucketName)
             + "]";
     }
 }

@@ -46,6 +46,8 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
     public GetCloudFrontOriginAccessIdentityRequest(String id) {
         this.id = id;
     }
+
+    
     
     /**
      * The identity's id.

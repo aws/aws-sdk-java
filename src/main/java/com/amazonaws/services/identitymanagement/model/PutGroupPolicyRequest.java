@@ -88,6 +88,8 @@ public class PutGroupPolicyRequest extends AmazonWebServiceRequest {
         this.policyName = policyName;
         this.policyDocument = policyDocument;
     }
+
+    
     
     /**
      * Name of the group to associate the policy with.

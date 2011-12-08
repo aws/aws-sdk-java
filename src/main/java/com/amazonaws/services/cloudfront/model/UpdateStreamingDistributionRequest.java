@@ -64,6 +64,8 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
         this.id = id;
         this.ifMatch = ifMatch;
     }
+
+    
     
     /**
      * The streaming distribution's configuration information.

@@ -54,6 +54,8 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest {
     public DeleteDomainRequest(String domainName) {
         this.domainName = domainName;
     }
+
+    
     
     /**
      * The name of the domain to delete.

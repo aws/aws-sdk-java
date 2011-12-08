@@ -58,7 +58,7 @@ public class StackResource {
      * Current status of the resource.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
      */
     private String resourceStatus;
 
@@ -298,7 +298,7 @@ public class StackResource {
      * Current status of the resource.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
      *
      * @return Current status of the resource.
      *
@@ -312,7 +312,7 @@ public class StackResource {
      * Current status of the resource.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
      *
      * @param resourceStatus Current status of the resource.
      *
@@ -328,7 +328,7 @@ public class StackResource {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
      *
      * @param resourceStatus Current status of the resource.
      *
@@ -342,6 +342,40 @@ public class StackResource {
         return this;
     }
     
+    
+    /**
+     * Current status of the resource.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
+     *
+     * @param resourceStatus Current status of the resource.
+     *
+     * @see ResourceStatus
+     */
+    public void setResourceStatus(ResourceStatus resourceStatus) {
+        this.resourceStatus = resourceStatus.toString();
+    }
+    
+    /**
+     * Current status of the resource.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_FAILED, UPDATE_COMPLETE
+     *
+     * @param resourceStatus Current status of the resource.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceStatus
+     */
+    public StackResource withResourceStatus(ResourceStatus resourceStatus) {
+        this.resourceStatus = resourceStatus.toString();
+        return this;
+    }
     
     /**
      * Success/failure message associated with the resource.

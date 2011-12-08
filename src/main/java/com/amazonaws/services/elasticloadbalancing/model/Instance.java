@@ -42,6 +42,8 @@ public class Instance {
     public Instance(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
     
     /**
      * Provides an EC2 instance ID.

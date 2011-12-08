@@ -24,7 +24,10 @@ public enum ResourceStatus {
     CREATE_COMPLETE("CREATE_COMPLETE"),
     DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
     DELETE_FAILED("DELETE_FAILED"),
-    DELETE_COMPLETE("DELETE_COMPLETE");
+    DELETE_COMPLETE("DELETE_COMPLETE"),
+    UPDATE_IN_PROGRESS("UPDATE_IN_PROGRESS"),
+    UPDATE_FAILED("UPDATE_FAILED"),
+    UPDATE_COMPLETE("UPDATE_COMPLETE");
 
     private String value;
 
@@ -60,6 +63,12 @@ public enum ResourceStatus {
             return ResourceStatus.DELETE_FAILED;
         } else if ("DELETE_COMPLETE".equals(value)) {
             return ResourceStatus.DELETE_COMPLETE;
+        } else if ("UPDATE_IN_PROGRESS".equals(value)) {
+            return ResourceStatus.UPDATE_IN_PROGRESS;
+        } else if ("UPDATE_FAILED".equals(value)) {
+            return ResourceStatus.UPDATE_FAILED;
+        } else if ("UPDATE_COMPLETE".equals(value)) {
+            return ResourceStatus.UPDATE_COMPLETE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -135,6 +135,40 @@ public class Event {
     
     
     /**
+     * Specifies the source type for this event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     *
+     * @param sourceType Specifies the source type for this event.
+     *
+     * @see SourceType
+     */
+    public void setSourceType(SourceType sourceType) {
+        this.sourceType = sourceType.toString();
+    }
+    
+    /**
+     * Specifies the source type for this event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>db-instance, db-parameter-group, db-security-group, db-snapshot
+     *
+     * @param sourceType Specifies the source type for this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SourceType
+     */
+    public Event withSourceType(SourceType sourceType) {
+        this.sourceType = sourceType.toString();
+        return this;
+    }
+    
+    /**
      * Provides the text of this event.
      *
      * @return Provides the text of this event.

@@ -61,6 +61,8 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest {
         this.userName = userName;
         this.policyName = policyName;
     }
+
+    
     
     /**
      * Name of the user the policy is associated with.

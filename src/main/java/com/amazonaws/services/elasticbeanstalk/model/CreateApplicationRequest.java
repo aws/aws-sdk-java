@@ -68,6 +68,8 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest {
     public CreateApplicationRequest(String applicationName) {
         this.applicationName = applicationName;
     }
+
+    
     
     /**
      * The name of the application. <p> Constraint: This name must be unique

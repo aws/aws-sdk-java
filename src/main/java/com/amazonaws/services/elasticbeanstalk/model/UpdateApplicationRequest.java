@@ -67,6 +67,8 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest {
     public UpdateApplicationRequest(String applicationName) {
         this.applicationName = applicationName;
     }
+
+    
     
     /**
      * The name of the application to update. If no such application is

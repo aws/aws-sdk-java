@@ -63,6 +63,8 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest {
     public DeleteServerCertificateRequest(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
+
+    
     
     /**
      * The name of the server certificate you want to delete.

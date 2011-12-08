@@ -76,6 +76,8 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest {
     public UploadSigningCertificateRequest(String certificateBody) {
         this.certificateBody = certificateBody;
     }
+
+    
     
     /**
      * Name of the user the signing certificate is for.

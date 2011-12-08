@@ -49,6 +49,8 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
     public ModifyInstanceGroupsRequest(java.util.List<InstanceGroupModifyConfig> instanceGroups) {
         this.instanceGroups = instanceGroups;
     }
+
+    
     
     /**
      * Instance groups to change.

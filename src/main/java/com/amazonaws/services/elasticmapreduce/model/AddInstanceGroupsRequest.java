@@ -57,6 +57,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
         this.instanceGroups = instanceGroups;
         this.jobFlowId = jobFlowId;
     }
+
+    
     
     /**
      * Instance Groups to add.

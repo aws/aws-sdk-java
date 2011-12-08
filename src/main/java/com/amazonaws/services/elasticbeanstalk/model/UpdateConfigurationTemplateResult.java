@@ -490,6 +490,112 @@ public class UpdateConfigurationTemplateResult {
     
     
     /**
+     * If this configuration set is associated with an environment, the
+     * <code>DeploymentStatus</code> parameter indicates the deployment
+     * status of this configuration set: <enumValues> <value name="null"> <p>
+     * <code>null</code>: This configuration is not associated with a running
+     * environment. </value> <value name="pending"> <p> <code>pending</code>:
+     * This is a draft configuration that is not deployed to the associated
+     * environment but is in the process of deploying. </value> <value
+     * name="deployed"> <p> <code>deployed</code>: This is the configuration
+     * that is currently deployed to the associated running environment.
+     * </value> <value name="failed"> <p> <code>failed</code>: This is a
+     * draft configuration, that failed to successfully deploy. </value>
+     * </enumValues> <ul> <li> <code>null</code>: This configuration is not
+     * associated with a running environment. </li> <li>
+     * <code>pending</code>: This is a draft configuration that is not
+     * deployed to the associated environment but is in the process of
+     * deploying. </li> <li> <code>deployed</code>: This is the configuration
+     * that is currently deployed to the associated running environment.
+     * </li> <li> <code>failed</code>: This is a draft configuration that
+     * failed to successfully deploy. </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>deployed, pending, failed
+     *
+     * @param deploymentStatus If this configuration set is associated with an environment, the
+     *         <code>DeploymentStatus</code> parameter indicates the deployment
+     *         status of this configuration set: <enumValues> <value name="null"> <p>
+     *         <code>null</code>: This configuration is not associated with a running
+     *         environment. </value> <value name="pending"> <p> <code>pending</code>:
+     *         This is a draft configuration that is not deployed to the associated
+     *         environment but is in the process of deploying. </value> <value
+     *         name="deployed"> <p> <code>deployed</code>: This is the configuration
+     *         that is currently deployed to the associated running environment.
+     *         </value> <value name="failed"> <p> <code>failed</code>: This is a
+     *         draft configuration, that failed to successfully deploy. </value>
+     *         </enumValues> <ul> <li> <code>null</code>: This configuration is not
+     *         associated with a running environment. </li> <li>
+     *         <code>pending</code>: This is a draft configuration that is not
+     *         deployed to the associated environment but is in the process of
+     *         deploying. </li> <li> <code>deployed</code>: This is the configuration
+     *         that is currently deployed to the associated running environment.
+     *         </li> <li> <code>failed</code>: This is a draft configuration that
+     *         failed to successfully deploy. </li> </ul>
+     *
+     * @see ConfigurationDeploymentStatus
+     */
+    public void setDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
+        this.deploymentStatus = deploymentStatus.toString();
+    }
+    
+    /**
+     * If this configuration set is associated with an environment, the
+     * <code>DeploymentStatus</code> parameter indicates the deployment
+     * status of this configuration set: <enumValues> <value name="null"> <p>
+     * <code>null</code>: This configuration is not associated with a running
+     * environment. </value> <value name="pending"> <p> <code>pending</code>:
+     * This is a draft configuration that is not deployed to the associated
+     * environment but is in the process of deploying. </value> <value
+     * name="deployed"> <p> <code>deployed</code>: This is the configuration
+     * that is currently deployed to the associated running environment.
+     * </value> <value name="failed"> <p> <code>failed</code>: This is a
+     * draft configuration, that failed to successfully deploy. </value>
+     * </enumValues> <ul> <li> <code>null</code>: This configuration is not
+     * associated with a running environment. </li> <li>
+     * <code>pending</code>: This is a draft configuration that is not
+     * deployed to the associated environment but is in the process of
+     * deploying. </li> <li> <code>deployed</code>: This is the configuration
+     * that is currently deployed to the associated running environment.
+     * </li> <li> <code>failed</code>: This is a draft configuration that
+     * failed to successfully deploy. </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>deployed, pending, failed
+     *
+     * @param deploymentStatus If this configuration set is associated with an environment, the
+     *         <code>DeploymentStatus</code> parameter indicates the deployment
+     *         status of this configuration set: <enumValues> <value name="null"> <p>
+     *         <code>null</code>: This configuration is not associated with a running
+     *         environment. </value> <value name="pending"> <p> <code>pending</code>:
+     *         This is a draft configuration that is not deployed to the associated
+     *         environment but is in the process of deploying. </value> <value
+     *         name="deployed"> <p> <code>deployed</code>: This is the configuration
+     *         that is currently deployed to the associated running environment.
+     *         </value> <value name="failed"> <p> <code>failed</code>: This is a
+     *         draft configuration, that failed to successfully deploy. </value>
+     *         </enumValues> <ul> <li> <code>null</code>: This configuration is not
+     *         associated with a running environment. </li> <li>
+     *         <code>pending</code>: This is a draft configuration that is not
+     *         deployed to the associated environment but is in the process of
+     *         deploying. </li> <li> <code>deployed</code>: This is the configuration
+     *         that is currently deployed to the associated running environment.
+     *         </li> <li> <code>failed</code>: This is a draft configuration that
+     *         failed to successfully deploy. </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ConfigurationDeploymentStatus
+     */
+    public UpdateConfigurationTemplateResult withDeploymentStatus(ConfigurationDeploymentStatus deploymentStatus) {
+        this.deploymentStatus = deploymentStatus.toString();
+        return this;
+    }
+    
+    /**
      * The date (in UTC time) when this configuration set was created.
      *
      * @return The date (in UTC time) when this configuration set was created.

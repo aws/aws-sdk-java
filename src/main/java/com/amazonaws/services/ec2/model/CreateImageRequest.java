@@ -73,6 +73,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.name = name;
     }
+
+    
     
     /**
      * The ID of the instance from which to create the new image.

@@ -55,6 +55,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest {
     public DeleteTagsRequest(java.util.List<String> resources) {
         this.resources = resources;
     }
+
+    
     
     /**
      * A list of one or more resource IDs. This could be the ID of an AMI, an

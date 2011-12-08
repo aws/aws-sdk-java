@@ -166,7 +166,7 @@ public class AccessKeyMetadata {
      * @return The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public String getStatus() {
         return status;
@@ -182,7 +182,7 @@ public class AccessKeyMetadata {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
@@ -203,13 +203,51 @@ public class AccessKeyMetadata {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      *
-     * @see statusType
+     * @see StatusType
      */
     public AccessKeyMetadata withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * The status of the access key. <code>Active</code> means the key is
+     * valid for API calls, while <code>Inactive</code> means it is not.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the access key. <code>Active</code> means the key is
+     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *
+     * @see StatusType
+     */
+    public void setStatus(StatusType status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The status of the access key. <code>Active</code> means the key is
+     * valid for API calls, while <code>Inactive</code> means it is not.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the access key. <code>Active</code> means the key is
+     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StatusType
+     */
+    public AccessKeyMetadata withStatus(StatusType status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * The date when the access key was created.

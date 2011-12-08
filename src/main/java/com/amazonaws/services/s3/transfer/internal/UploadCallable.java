@@ -75,7 +75,7 @@ public class UploadCallable implements Callable<UploadResult> {
     public boolean isMultipartUpload() {
     	return TransferManagerUtils.shouldUseMultipartUpload(putObjectRequest, configuration);
     }
-    
+
     public UploadResult call() throws Exception {
         if (isMultipartUpload()) {
         	fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
@@ -145,9 +145,9 @@ public class UploadCallable implements Callable<UploadResult> {
      */
     private long getOptimalPartSize(boolean isUsingEncryption) {
         long optimalPartSize = TransferManagerUtils.calculateOptimalPartSize(putObjectRequest, configuration);
-        if (isUsingEncryption) {
-        	// When using encryption, we want to make sure our parts line up correctly along cipher block boundaries
-        	optimalPartSize += optimalPartSize % 32;
+        if (isUsingEncryption && optimalPartSize % 32 > 0) {
+        	// When using encryption, parts must line up correctly along cipher block boundaries
+        	optimalPartSize = optimalPartSize - (optimalPartSize % 32) + 32 ;
         }
         log.debug("Calculated optimal part size: " + optimalPartSize);
         return optimalPartSize;

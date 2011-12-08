@@ -56,6 +56,8 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
     public DisassociateAddressRequest(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
     
     /**
      * The elastic IP address that you are disassociating from the instance.

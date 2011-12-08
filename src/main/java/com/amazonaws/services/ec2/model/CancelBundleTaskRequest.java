@@ -50,6 +50,8 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest {
     public CancelBundleTaskRequest(String bundleId) {
         this.bundleId = bundleId;
     }
+
+    
     
     /**
      * The ID of the bundle task to cancel.

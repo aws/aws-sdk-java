@@ -17,22 +17,17 @@ package com.amazonaws.http;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map.Entry;
 
 import org.apache.http.HttpEntity;
-import org.apache.http.NameValuePair;
 import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpHead;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpRequestBase;
-import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.CoreProtocolPNames;
 
 import com.amazonaws.AmazonClientException;
@@ -42,9 +37,9 @@ import com.amazonaws.util.HttpUtils;
 
 /** Responsible for creating Apache HttpClient 4 request objects. */
 class HttpRequestFactory {
-	
+
 	private static final String DEFAULT_ENCODING = "UTF-8";
-	
+
 	/**
 	 * Creates an HttpClient method object based on the specified request and
 	 * populates any parameters, headers, etc. from the original request.
@@ -70,7 +65,7 @@ class HttpRequestFactory {
 			uri += request.getResourcePath();
 		}
 
-		String encodedParams = encodeParameters(request);
+		String encodedParams = HttpUtils.encodeParameters(request);
 
 		/*
 		 * For all non-POST requests, and any POST requests that already have a
@@ -134,10 +129,10 @@ class HttpRequestFactory {
 		}
 
 		configureHeaders(httpRequest, request, context, clientConfiguration);
-		
+
 		return httpRequest;
 	}
-	
+
 	/** Configures the headers in the specified Apache HTTP request. */
 	private void configureHeaders(HttpRequestBase httpRequest, Request<?> request, ExecutionContext context, ClientConfiguration clientConfiguration) {
         /*
@@ -167,47 +162,20 @@ class HttpRequestFactory {
 
 			httpRequest.addHeader(entry.getKey(), entry.getValue());
 		}
-            
+
         /* Set content type and encoding */
         if (httpRequest.getHeaders("Content-Type") == null || httpRequest.getHeaders("Content-Type").length == 0) {
             httpRequest.addHeader("Content-Type",
                     "application/x-www-form-urlencoded; " +
                     "charset=" + DEFAULT_ENCODING.toLowerCase());
         }
-        
+
 		// Override the user agent string specified in the client params if the context requires it
 		if (context != null && context.getContextUserAgent() != null) {
 			httpRequest.addHeader("User-Agent", createUserAgentString(clientConfiguration, context.getContextUserAgent()));
 		}
 	}
 
-	/**
-	 * Creates an encoded query string from all the parameters in the specified
-	 * request.
-	 * 
-	 * @param request
-	 *            The request containing the parameters to encode.
-	 * 
-	 * @return Null if no parameters were present, otherwise the encoded query
-	 *         string for the parameters present in the specified request.
-	 */
-	private String encodeParameters(Request<?> request) {
-		List<NameValuePair> nameValuePairs = null;
-		if (request.getParameters().size() > 0) {
-			nameValuePairs = new ArrayList<NameValuePair>(request.getParameters().size());
-			for (Entry<String, String> entry : request.getParameters().entrySet()) {
-				nameValuePairs.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
-			}
-		}
-
-		String encodedParams = null;
-		if (nameValuePairs != null) {
-			encodedParams = URLEncodedUtils.format(nameValuePairs, DEFAULT_ENCODING);
-		}
-		
-		return encodedParams;
-	}
-        
 	/** Appends the given user-agent string to the client's existing one and returns it. */
 	private String createUserAgentString(ClientConfiguration clientConfiguration, String contextUserAgent) {
 		if (clientConfiguration.getUserAgent().contains(contextUserAgent)) {
@@ -220,10 +188,10 @@ class HttpRequestFactory {
 	/**
 	 * Utility function for creating a new StringEntity and wrapping any errors
 	 * as an AmazonClientException.
-	 * 
+	 *
 	 * @param s
 	 *            The string contents of the returned HTTP entity.
-	 *            
+	 *
 	 * @return A new StringEntity with the specified contents.
 	 */
 	private HttpEntity newStringEntity(String s) {
@@ -233,14 +201,14 @@ class HttpRequestFactory {
 			throw new AmazonClientException("Unable to create HTTP entity: " + e.getMessage(), e);
 		}
 	}
-	
+
 	/**
 	 * Utility function for creating a new BufferedEntity and wrapping any errors
 	 * as an AmazonClientException.
-	 * 
+	 *
 	 * @param entity
 	 *            The HTTP entity to wrap with a buffered HTTP entity.
-	 *            
+	 *
 	 * @return A new BufferedHttpEntity wrapping the specified entity.
 	 */
 	private HttpEntity newBufferedHttpEntity(HttpEntity entity) {

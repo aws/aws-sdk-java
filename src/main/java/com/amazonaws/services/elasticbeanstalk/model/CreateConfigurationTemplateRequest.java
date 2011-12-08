@@ -135,6 +135,8 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.applicationName = applicationName;
         this.templateName = templateName;
     }
+
+    
     
     /**
      * The name of the application to associate with this configuration

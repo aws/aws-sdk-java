@@ -50,6 +50,10 @@ public class DescribeLoadBalancersResultStaxUnmarshaller implements Unmarshaller
                     describeLoadBalancersResult.getLoadBalancerDescriptions().add(LoadBalancerDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("NextMarker", targetDepth)) {
+                    describeLoadBalancersResult.setNextMarker(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeLoadBalancersResult;

@@ -59,6 +59,8 @@ public class DeleteSecurityGroupRequest extends AmazonWebServiceRequest {
     public DeleteSecurityGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * The name of the Amazon EC2 security group to delete.

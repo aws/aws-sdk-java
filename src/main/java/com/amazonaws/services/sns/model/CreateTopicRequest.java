@@ -55,6 +55,8 @@ public class CreateTopicRequest extends AmazonWebServiceRequest {
     public CreateTopicRequest(String name) {
         this.name = name;
     }
+
+    
     
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names

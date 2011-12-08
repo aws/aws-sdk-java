@@ -59,6 +59,8 @@ public class SendMessageRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.messageBody = messageBody;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

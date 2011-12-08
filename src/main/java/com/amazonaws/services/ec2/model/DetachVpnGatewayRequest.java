@@ -60,6 +60,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest {
         this.vpnGatewayId = vpnGatewayId;
         this.vpcId = vpcId;
     }
+
+    
     
     /**
      * The ID of the VPN gateway to detach from the VPC.

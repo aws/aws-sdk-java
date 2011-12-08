@@ -58,6 +58,8 @@ public class ChangeMessageVisibilityBatchRequest extends AmazonWebServiceRequest
         this.queueUrl = queueUrl;
         this.entries = entries;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

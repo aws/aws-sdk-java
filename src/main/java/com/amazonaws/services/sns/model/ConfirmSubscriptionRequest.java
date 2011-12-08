@@ -70,6 +70,8 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
         this.topicArn = topicArn;
         this.token = token;
     }
+
+    
     
     /**
      * Constructs a new ConfirmSubscriptionRequest object.
@@ -92,6 +94,8 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
         this.token = token;
         this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
     }
+
+    
     
     /**
      * The ARN of the topic for which you wish to confirm a subscription.

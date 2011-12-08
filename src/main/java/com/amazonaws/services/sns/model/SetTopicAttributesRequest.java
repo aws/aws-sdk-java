@@ -63,6 +63,8 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
         this.attributeName = attributeName;
         this.attributeValue = attributeValue;
     }
+
+    
     
     /**
      * The ARN of the topic to modify.

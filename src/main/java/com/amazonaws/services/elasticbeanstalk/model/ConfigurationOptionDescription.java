@@ -665,6 +665,100 @@ public class ConfigurationOptionDescription {
     
     
     /**
+     * An indication of which type of values this option has and whether it
+     * is allowable to select one or more than one of the possible values:
+     * <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values
+     * for this option are a single selection from the possible values, or a
+     * unformatted string or numeric value governed by the MIN/MAX/Regex
+     * constraints: </value> <value name="List"> <p> <code>List</code> :
+     * Values for this option are multiple selections of the possible values.
+     * </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for
+     * this option are either <code>true</code> or <code>false</code> .
+     * </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for
+     * this option are a single selection from the possible values, or an
+     * unformatted string, or numeric value governed by the
+     * <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> :
+     * Values for this option are multiple selections from the possible
+     * values. </li> <li> <code>Boolean</code> : Values for this option are
+     * either <code>true</code> or <code>false</code> . </li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Scalar, List
+     *
+     * @param valueType An indication of which type of values this option has and whether it
+     *         is allowable to select one or more than one of the possible values:
+     *         <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values
+     *         for this option are a single selection from the possible values, or a
+     *         unformatted string or numeric value governed by the MIN/MAX/Regex
+     *         constraints: </value> <value name="List"> <p> <code>List</code> :
+     *         Values for this option are multiple selections of the possible values.
+     *         </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for
+     *         this option are either <code>true</code> or <code>false</code> .
+     *         </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for
+     *         this option are a single selection from the possible values, or an
+     *         unformatted string, or numeric value governed by the
+     *         <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> :
+     *         Values for this option are multiple selections from the possible
+     *         values. </li> <li> <code>Boolean</code> : Values for this option are
+     *         either <code>true</code> or <code>false</code> . </li> </ul>
+     *
+     * @see ConfigurationOptionValueType
+     */
+    public void setValueType(ConfigurationOptionValueType valueType) {
+        this.valueType = valueType.toString();
+    }
+    
+    /**
+     * An indication of which type of values this option has and whether it
+     * is allowable to select one or more than one of the possible values:
+     * <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values
+     * for this option are a single selection from the possible values, or a
+     * unformatted string or numeric value governed by the MIN/MAX/Regex
+     * constraints: </value> <value name="List"> <p> <code>List</code> :
+     * Values for this option are multiple selections of the possible values.
+     * </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for
+     * this option are either <code>true</code> or <code>false</code> .
+     * </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for
+     * this option are a single selection from the possible values, or an
+     * unformatted string, or numeric value governed by the
+     * <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> :
+     * Values for this option are multiple selections from the possible
+     * values. </li> <li> <code>Boolean</code> : Values for this option are
+     * either <code>true</code> or <code>false</code> . </li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Scalar, List
+     *
+     * @param valueType An indication of which type of values this option has and whether it
+     *         is allowable to select one or more than one of the possible values:
+     *         <enumValues> <value name="Scalar"> <p> <code>Scalar</code> : Values
+     *         for this option are a single selection from the possible values, or a
+     *         unformatted string or numeric value governed by the MIN/MAX/Regex
+     *         constraints: </value> <value name="List"> <p> <code>List</code> :
+     *         Values for this option are multiple selections of the possible values.
+     *         </value> <value name="Boolean"> <p> <code>Boolean</code> : Values for
+     *         this option are either <code>true</code> or <code>false</code> .
+     *         </value> </enumValues> <p> <ul> <li> <code>Scalar</code> : Values for
+     *         this option are a single selection from the possible values, or an
+     *         unformatted string, or numeric value governed by the
+     *         <code>MIN/MAX/Regex</code> constraints. </li> <li> <code>List</code> :
+     *         Values for this option are multiple selections from the possible
+     *         values. </li> <li> <code>Boolean</code> : Values for this option are
+     *         either <code>true</code> or <code>false</code> . </li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ConfigurationOptionValueType
+     */
+    public ConfigurationOptionDescription withValueType(ConfigurationOptionValueType valueType) {
+        this.valueType = valueType.toString();
+        return this;
+    }
+    
+    /**
      * If specified, values for the configuration option are selected from
      * this list.
      *

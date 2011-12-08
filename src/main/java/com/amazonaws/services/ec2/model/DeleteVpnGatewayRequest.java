@@ -51,6 +51,8 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
     public DeleteVpnGatewayRequest(String vpnGatewayId) {
         this.vpnGatewayId = vpnGatewayId;
     }
+
+    
     
     /**
      * The ID of the VPN gateway to delete.

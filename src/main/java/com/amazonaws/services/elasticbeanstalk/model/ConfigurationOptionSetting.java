@@ -58,6 +58,8 @@ public class ConfigurationOptionSetting {
         this.optionName = optionName;
         this.value = value;
     }
+
+    
     
     /**
      * A unique namespace identifying the option's associated AWS resource.

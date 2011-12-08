@@ -80,6 +80,8 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
         this.domainName = domainName;
         this.itemName = itemName;
     }
+
+    
     
     /**
      * The name of the domain in which to perform the operation.

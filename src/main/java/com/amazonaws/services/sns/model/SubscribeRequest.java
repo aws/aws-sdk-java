@@ -88,6 +88,8 @@ public class SubscribeRequest extends AmazonWebServiceRequest {
         this.protocol = protocol;
         this.endpoint = endpoint;
     }
+
+    
     
     /**
      * The ARN of topic you want to subscribe to.

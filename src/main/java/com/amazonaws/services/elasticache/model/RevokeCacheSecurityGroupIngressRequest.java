@@ -67,6 +67,8 @@ public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequ
         this.eC2SecurityGroupName = eC2SecurityGroupName;
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
+
+    
     
     /**
      * The name of the Cache Security Group to revoke ingress from.

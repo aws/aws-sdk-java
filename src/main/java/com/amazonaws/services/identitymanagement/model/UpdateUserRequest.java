@@ -84,6 +84,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
     public UpdateUserRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user to update. If you're changing the name of the user,

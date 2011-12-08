@@ -84,6 +84,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
         this.publicIp = publicIp;
         this.bgpAsn = bgpAsn;
     }
+
+    
     
     /**
      * The type of VPN connection this customer gateway supports.

@@ -57,6 +57,8 @@ public class ScriptBootstrapActionConfig {
         this.path = path;
         this.args = args;
     }
+
+    
     
     /**
      * Location of the script to run during a bootstrap action. Can be either

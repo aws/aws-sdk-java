@@ -17,54 +17,72 @@ package com.amazonaws.http;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map.Entry;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
-import com.amazonaws.util.json.JSONException;
+import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.json.JSONObject;
 
 public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServiceException> {
 
+    /**
+     * The list of error response unmarshallers to try to apply to error
+     * responses.
+     */
+    private List<Unmarshaller<AmazonServiceException, JSONObject>> unmarshallerList;
+
+    public JsonErrorResponseHandler(List<Unmarshaller<AmazonServiceException, JSONObject>> exceptionUnmarshallers) {
+        this.unmarshallerList = exceptionUnmarshallers;
+    }
+
 	public AmazonServiceException handle(HttpResponse response) throws Exception {
 		JSONObject jsonErrorMessage = new JSONObject(readStreamContents(response.getContent()));
 
-		String message = null;
-		try {
-			message = jsonErrorMessage.getString("message");
-		} catch (JSONException jsone) {}
+		AmazonServiceException ase = runErrorUnmarshallers(response, jsonErrorMessage);
+		if (ase == null) return null;
 
-		AmazonServiceException exception = new AmazonServiceException(message);
-		exception.setServiceName(response.getRequest().getServiceName());
-		if (jsonErrorMessage.getString("__type") != null) {
-			String type = jsonErrorMessage.getString("__type");
-			int separator = type.lastIndexOf("#");
-			if (separator > 0) {
-				exception.setErrorCode(type.substring(separator + 1));
-			}
-		}
-
-		exception.setStatusCode(response.getStatusCode());
+		ase.setServiceName(response.getRequest().getServiceName());
+		ase.setStatusCode(response.getStatusCode());
 		if (response.getStatusCode() < 500) {
-			exception.setErrorType(ErrorType.Client);
+		    ase.setErrorType(ErrorType.Client);
 		} else {
-			exception.setErrorType(ErrorType.Service);
+		    ase.setErrorType(ErrorType.Service);
 		}
 
 		for (Entry<String, String> headerEntry : response.getHeaders().entrySet()) {
 			if (headerEntry.getKey().equalsIgnoreCase("X-Amzn-RequestId")) {
-				exception.setRequestId(headerEntry.getValue());
+				ase.setRequestId(headerEntry.getValue());
 			}
 		}
 
-		return exception;
+		return ase;
+	}
+
+	protected AmazonServiceException runErrorUnmarshallers(HttpResponse errorResponse, JSONObject json) throws Exception {
+        /*
+         * We need to select which exception unmarshaller is the correct one to
+         * use from all the possible exceptions this operation can throw.
+         * Currently we rely on the unmarshallers to return null if they can't
+         * unmarshall the response, but we might need something a little more
+         * sophisticated in the future.
+         */
+        for (Unmarshaller<AmazonServiceException, JSONObject> unmarshaller : unmarshallerList) {
+            AmazonServiceException ase = unmarshaller.unmarshall(json);
+            if (ase != null) {
+                ase.setStatusCode(errorResponse.getStatusCode());
+                return ase;
+            }
+        }
+
+        return null;
 	}
 
 	public boolean needsConnectionLeftOpen() {
 		return false;
 	}
-
 
 	private String readStreamContents(final InputStream stream) {
 		try {

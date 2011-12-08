@@ -72,6 +72,8 @@ public class PublishRequest extends AmazonWebServiceRequest {
         this.topicArn = topicArn;
         this.message = message;
     }
+
+    
     
     /**
      * Constructs a new PublishRequest object.
@@ -95,6 +97,8 @@ public class PublishRequest extends AmazonWebServiceRequest {
         this.message = message;
         this.subject = subject;
     }
+
+    
     
     /**
      * The topic you want to publish to.

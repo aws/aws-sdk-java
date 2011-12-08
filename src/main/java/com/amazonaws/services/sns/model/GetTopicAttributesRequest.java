@@ -48,6 +48,8 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest {
     public GetTopicAttributesRequest(String topicArn) {
         this.topicArn = topicArn;
     }
+
+    
     
     /**
      * The ARN of the topic whose properties you want to get.

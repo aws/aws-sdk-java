@@ -83,6 +83,8 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
     public SendRawEmailRequest(RawMessage rawMessage) {
         this.rawMessage = rawMessage;
     }
+
+    
     
     /**
      * The sender's email address.

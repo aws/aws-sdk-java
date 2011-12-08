@@ -55,6 +55,8 @@ public class S3Location {
         this.s3Bucket = s3Bucket;
         this.s3Key = s3Key;
     }
+
+    
     
     /**
      * The Amazon S3 bucket where the data is located.

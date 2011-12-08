@@ -66,6 +66,8 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
     public StopInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of Amazon EC2 instances to stop.

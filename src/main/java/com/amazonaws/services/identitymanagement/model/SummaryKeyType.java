@@ -15,9 +15,9 @@
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * summary Key Type
+ * Summary Key Type
  */
-public enum summaryKeyType {
+public enum SummaryKeyType {
     
     Users("Users"),
     UsersQuota("UsersQuota"),
@@ -36,7 +36,7 @@ public enum summaryKeyType {
 
     private String value;
 
-    private summaryKeyType(String value) {
+    private SummaryKeyType(String value) {
         this.value = value;
     }
 
@@ -50,40 +50,40 @@ public enum summaryKeyType {
      *
      * @param value
      *            real value
-     * @return summaryKeyType corresponding to the value
+     * @return SummaryKeyType corresponding to the value
      */
-    public static summaryKeyType fromValue(String value) {
+    public static SummaryKeyType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
         } else if ("Users".equals(value)) {
-            return summaryKeyType.Users;
+            return SummaryKeyType.Users;
         } else if ("UsersQuota".equals(value)) {
-            return summaryKeyType.UsersQuota;
+            return SummaryKeyType.UsersQuota;
         } else if ("Groups".equals(value)) {
-            return summaryKeyType.Groups;
+            return SummaryKeyType.Groups;
         } else if ("GroupsQuota".equals(value)) {
-            return summaryKeyType.GroupsQuota;
+            return SummaryKeyType.GroupsQuota;
         } else if ("ServerCertificates".equals(value)) {
-            return summaryKeyType.ServerCertificates;
+            return SummaryKeyType.ServerCertificates;
         } else if ("ServerCertificatesQuota".equals(value)) {
-            return summaryKeyType.ServerCertificatesQuota;
+            return SummaryKeyType.ServerCertificatesQuota;
         } else if ("UserPolicySizeQuota".equals(value)) {
-            return summaryKeyType.UserPolicySizeQuota;
+            return SummaryKeyType.UserPolicySizeQuota;
         } else if ("GroupPolicySizeQuota".equals(value)) {
-            return summaryKeyType.GroupPolicySizeQuota;
+            return SummaryKeyType.GroupPolicySizeQuota;
         } else if ("GroupsPerUserQuota".equals(value)) {
-            return summaryKeyType.GroupsPerUserQuota;
+            return SummaryKeyType.GroupsPerUserQuota;
         } else if ("SigningCertificatesPerUserQuota".equals(value)) {
-            return summaryKeyType.SigningCertificatesPerUserQuota;
+            return SummaryKeyType.SigningCertificatesPerUserQuota;
         } else if ("AccessKeysPerUserQuota".equals(value)) {
-            return summaryKeyType.AccessKeysPerUserQuota;
+            return SummaryKeyType.AccessKeysPerUserQuota;
         } else if ("MFADevices".equals(value)) {
-            return summaryKeyType.MFADevices;
+            return SummaryKeyType.MFADevices;
         } else if ("MFADevicesInUse".equals(value)) {
-            return summaryKeyType.MFADevicesInUse;
+            return SummaryKeyType.MFADevicesInUse;
         } else if ("AccountMFAEnabled".equals(value)) {
-            return summaryKeyType.AccountMFAEnabled;
+            return SummaryKeyType.AccountMFAEnabled;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -58,6 +58,21 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest {
         this.groupName = groupName;
         this.strategy = strategy;
     }
+
+    
+    
+    /**
+     * Constructs a new CreatePlacementGroupRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param groupName The name of the <code>PlacementGroup</code>.
+     * @param strategy The <code>PlacementGroup</code> strategy.
+     */
+    public CreatePlacementGroupRequest(String groupName, PlacementStrategy strategy) {
+        this.groupName = groupName;
+        this.strategy = strategy.toString();
+    }
     
     /**
      * The name of the <code>PlacementGroup</code>.
@@ -141,6 +156,40 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * The <code>PlacementGroup</code> strategy.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cluster
+     *
+     * @param strategy The <code>PlacementGroup</code> strategy.
+     *
+     * @see PlacementStrategy
+     */
+    public void setStrategy(PlacementStrategy strategy) {
+        this.strategy = strategy.toString();
+    }
+    
+    /**
+     * The <code>PlacementGroup</code> strategy.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cluster
+     *
+     * @param strategy The <code>PlacementGroup</code> strategy.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PlacementStrategy
+     */
+    public CreatePlacementGroupRequest withStrategy(PlacementStrategy strategy) {
+        this.strategy = strategy.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

@@ -106,6 +106,8 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.applicationName = applicationName;
         this.templateName = templateName;
     }
+
+    
     
     /**
      * The name of the application associated with the configuration template

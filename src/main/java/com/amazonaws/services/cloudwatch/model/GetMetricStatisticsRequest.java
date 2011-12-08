@@ -589,6 +589,40 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The unit for the metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
+     *
+     * @param unit The unit for the metric.
+     *
+     * @see StandardUnit
+     */
+    public void setUnit(StandardUnit unit) {
+        this.unit = unit.toString();
+    }
+    
+    /**
+     * The unit for the metric.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
+     *
+     * @param unit The unit for the metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StandardUnit
+     */
+    public GetMetricStatisticsRequest withUnit(StandardUnit unit) {
+        this.unit = unit.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

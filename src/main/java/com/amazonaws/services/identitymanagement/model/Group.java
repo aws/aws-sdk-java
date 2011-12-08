@@ -119,6 +119,8 @@ public class Group {
         this.arn = arn;
         this.createDate = createDate;
     }
+
+    
     
     /**
      * Path to the group. For more information about paths, see <a

@@ -58,6 +58,8 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
         this.loadBalancerName = loadBalancerName;
         this.healthCheck = healthCheck;
     }
+
+    
     
     /**
      * The mnemonic name associated with the LoadBalancer. This name must be

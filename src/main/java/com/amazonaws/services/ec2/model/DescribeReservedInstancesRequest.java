@@ -41,6 +41,11 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<Filter> filters;
 
     /**
+     * The Reserved Instance offering type.
+     */
+    private String offeringType;
+
+    /**
      * The optional list of Reserved Instance IDs to describe.
      *
      * @return The optional list of Reserved Instance IDs to describe.
@@ -201,6 +206,40 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * The Reserved Instance offering type.
+     *
+     * @return The Reserved Instance offering type.
+     */
+    public String getOfferingType() {
+        return offeringType;
+    }
+    
+    /**
+     * The Reserved Instance offering type.
+     *
+     * @param offeringType The Reserved Instance offering type.
+     */
+    public void setOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+    }
+    
+    /**
+     * The Reserved Instance offering type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param offeringType The Reserved Instance offering type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesRequest withOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -214,6 +253,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
         sb.append("{");
         sb.append("ReservedInstancesIds: " + reservedInstancesIds + ", ");
         sb.append("Filters: " + filters + ", ");
+        sb.append("OfferingType: " + offeringType + ", ");
         sb.append("}");
         return sb.toString();
     }

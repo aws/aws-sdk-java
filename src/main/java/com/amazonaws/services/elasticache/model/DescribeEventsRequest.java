@@ -179,6 +179,44 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The event source to retrieve events for. If no value is specified, all
+     * events are returned.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     *
+     * @param sourceType The event source to retrieve events for. If no value is specified, all
+     *         events are returned.
+     *
+     * @see SourceType
+     */
+    public void setSourceType(SourceType sourceType) {
+        this.sourceType = sourceType.toString();
+    }
+    
+    /**
+     * The event source to retrieve events for. If no value is specified, all
+     * events are returned.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     *
+     * @param sourceType The event source to retrieve events for. If no value is specified, all
+     *         events are returned.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SourceType
+     */
+    public DescribeEventsRequest withSourceType(SourceType sourceType) {
+        this.sourceType = sourceType.toString();
+        return this;
+    }
+    
+    /**
      * The beginning of the time interval to retrieve events for, specified
      * in ISO 8601 format.
      *

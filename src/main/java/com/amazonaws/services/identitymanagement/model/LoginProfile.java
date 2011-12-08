@@ -59,6 +59,8 @@ public class LoginProfile {
         this.userName = userName;
         this.createDate = createDate;
     }
+
+    
     
     /**
      * The name of the user, which can be used for logins.

@@ -100,6 +100,40 @@ public class EnvironmentInfoDescription {
     
     
     /**
+     * The type of information retrieved.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tail
+     *
+     * @param infoType The type of information retrieved.
+     *
+     * @see EnvironmentInfoType
+     */
+    public void setInfoType(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
+    }
+    
+    /**
+     * The type of information retrieved.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tail
+     *
+     * @param infoType The type of information retrieved.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EnvironmentInfoType
+     */
+    public EnvironmentInfoDescription withInfoType(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
+        return this;
+    }
+    
+    /**
      * The Amazon EC2 Instance ID for this information.
      *
      * @return The Amazon EC2 Instance ID for this information.

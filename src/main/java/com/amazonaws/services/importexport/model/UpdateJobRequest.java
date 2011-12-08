@@ -171,6 +171,40 @@ public class UpdateJobRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @see JobType
+     */
+    public void setJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see JobType
+     */
+    public UpdateJobRequest withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+    
+    /**
      * Validate the manifest and parameter values in the request but do not
      * actually create a job.
      *

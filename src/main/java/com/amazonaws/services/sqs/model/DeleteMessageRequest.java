@@ -57,6 +57,8 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.receiptHandle = receiptHandle;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

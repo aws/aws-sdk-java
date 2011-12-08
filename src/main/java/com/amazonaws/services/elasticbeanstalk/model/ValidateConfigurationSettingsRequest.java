@@ -85,6 +85,8 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         this.applicationName = applicationName;
         this.optionSettings = optionSettings;
     }
+
+    
     
     /**
      * The name of the application that the configuration template or

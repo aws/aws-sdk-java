@@ -59,6 +59,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
         this.imageId = imageId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the AMI whose attribute is to be described.

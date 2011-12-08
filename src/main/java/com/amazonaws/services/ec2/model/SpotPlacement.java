@@ -52,6 +52,8 @@ public class SpotPlacement {
     public SpotPlacement(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
     
     /**
      * The availability zone in which an Amazon EC2 instance runs.

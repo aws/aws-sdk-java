@@ -59,6 +59,8 @@ public class CloudFrontOriginAccessIdentity {
         this.id = id;
         this.s3CanonicalUserId = s3CanonicalUserId;
     }
+
+    
     
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.

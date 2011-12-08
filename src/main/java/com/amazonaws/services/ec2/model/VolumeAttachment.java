@@ -215,6 +215,40 @@ public class VolumeAttachment {
     
     
     /**
+     * 
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state 
+     *
+     * @see VolumeAttachmentState
+     */
+    public void setState(VolumeAttachmentState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>attaching, attached, detaching, detached
+     *
+     * @param state 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeAttachmentState
+     */
+    public VolumeAttachment withState(VolumeAttachmentState state) {
+        this.state = state.toString();
+        return this;
+    }
+    
+    /**
      * Timestamp when this attachment initiated.
      *
      * @return Timestamp when this attachment initiated.

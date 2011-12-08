@@ -70,6 +70,8 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
     public CreateGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * The path to the group. For more information about paths, see <a

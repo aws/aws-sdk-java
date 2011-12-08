@@ -80,6 +80,8 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest {
     public ResetDBParameterGroupRequest(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
+
+    
     
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be 1

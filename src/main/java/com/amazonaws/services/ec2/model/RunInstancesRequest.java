@@ -115,7 +115,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -216,6 +216,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         this.minCount = minCount;
         this.maxCount = maxCount;
     }
+
+    
     
     /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
@@ -551,7 +553,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return Specifies the instance type for the launched instances.
      *
@@ -565,7 +567,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -581,7 +583,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -595,6 +597,40 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * Specifies the instance type for the launched instances.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType Specifies the instance type for the launched instances.
+     *
+     * @see InstanceType
+     */
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+    
+    /**
+     * Specifies the instance type for the launched instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType Specifies the instance type for the launched instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceType
+     */
+    public RunInstancesRequest withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
     
     /**
      * Specifies the placement constraints (Availability Zones) for launching

@@ -79,6 +79,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
         this.customerGatewayId = customerGatewayId;
         this.vpnGatewayId = vpnGatewayId;
     }
+
+    
     
     /**
      * The type of VPN connection.

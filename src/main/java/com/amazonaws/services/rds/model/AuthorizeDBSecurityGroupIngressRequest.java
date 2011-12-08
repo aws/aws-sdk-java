@@ -79,6 +79,8 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     public AuthorizeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
+
+    
     
     /**
      * The name of the DB Security Group to authorize.

@@ -64,6 +64,8 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest {
         this.id = id;
         this.ifMatch = ifMatch;
     }
+
+    
     
     /**
      * The distribution's configuration information.

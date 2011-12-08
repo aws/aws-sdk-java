@@ -53,6 +53,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
     public SendMessageBatchRequest(String queueUrl) {
         this.queueUrl = queueUrl;
     }
+
+    
     
     /**
      * Constructs a new SendMessageBatchRequest object.
@@ -66,6 +68,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.entries = entries;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

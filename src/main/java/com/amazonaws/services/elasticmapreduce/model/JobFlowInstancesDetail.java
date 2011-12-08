@@ -140,6 +140,8 @@ public class JobFlowInstancesDetail {
         this.slaveInstanceType = slaveInstanceType;
         this.instanceCount = instanceCount;
     }
+
+    
     
     /**
      * The Amazon EC2 master node instance type.

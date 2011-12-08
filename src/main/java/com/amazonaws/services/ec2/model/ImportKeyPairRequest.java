@@ -74,6 +74,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest {
         this.keyName = keyName;
         this.publicKeyMaterial = publicKeyMaterial;
     }
+
+    
     
     /**
      * The unique name for the key pair.

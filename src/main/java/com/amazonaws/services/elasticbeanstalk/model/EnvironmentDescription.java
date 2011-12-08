@@ -692,6 +692,72 @@ public class EnvironmentDescription {
     
     
     /**
+     * The current operational status of the environment: <ul> <li>
+     * <code>Launching</code>: Environment is in the process of initial
+     * deployment. </li> <li> <code>Updating</code>: Environment is in the
+     * process of updating its configuration settings or application version.
+     * </li> <li> <code>Ready</code>: Environment is available to have an
+     * action performed on it, such as update or terminate. </li> <li>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </li> <li> <code>Terminated</code>: Environment is not running. </li>
+     * </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Launching, Updating, Ready, Terminating, Terminated
+     *
+     * @param status The current operational status of the environment: <ul> <li>
+     *         <code>Launching</code>: Environment is in the process of initial
+     *         deployment. </li> <li> <code>Updating</code>: Environment is in the
+     *         process of updating its configuration settings or application version.
+     *         </li> <li> <code>Ready</code>: Environment is available to have an
+     *         action performed on it, such as update or terminate. </li> <li>
+     *         <code>Terminating</code>: Environment is in the shut-down process.
+     *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
+     *         </ul>
+     *
+     * @see EnvironmentStatus
+     */
+    public void setStatus(EnvironmentStatus status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The current operational status of the environment: <ul> <li>
+     * <code>Launching</code>: Environment is in the process of initial
+     * deployment. </li> <li> <code>Updating</code>: Environment is in the
+     * process of updating its configuration settings or application version.
+     * </li> <li> <code>Ready</code>: Environment is available to have an
+     * action performed on it, such as update or terminate. </li> <li>
+     * <code>Terminating</code>: Environment is in the shut-down process.
+     * </li> <li> <code>Terminated</code>: Environment is not running. </li>
+     * </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Launching, Updating, Ready, Terminating, Terminated
+     *
+     * @param status The current operational status of the environment: <ul> <li>
+     *         <code>Launching</code>: Environment is in the process of initial
+     *         deployment. </li> <li> <code>Updating</code>: Environment is in the
+     *         process of updating its configuration settings or application version.
+     *         </li> <li> <code>Ready</code>: Environment is available to have an
+     *         action performed on it, such as update or terminate. </li> <li>
+     *         <code>Terminating</code>: Environment is in the shut-down process.
+     *         </li> <li> <code>Terminated</code>: Environment is not running. </li>
+     *         </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EnvironmentStatus
+     */
+    public EnvironmentDescription withStatus(EnvironmentStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+    
+    /**
      * Describes the health status of the environment. AWS Elastic Beanstalk
      * indicates the failure levels for a running environment: <enumValues>
      * <value name="Red"> <p> <code>Red</code> : Indicates the environment is
@@ -841,6 +907,108 @@ public class EnvironmentDescription {
         return this;
     }
     
+    
+    /**
+     * Describes the health status of the environment. AWS Elastic Beanstalk
+     * indicates the failure levels for a running environment: <enumValues>
+     * <value name="Red"> <p> <code>Red</code> : Indicates the environment is
+     * not working. </value> <value name="Yellow"> <p> <code>Yellow</code>:
+     * Indicates that something is wrong, the application might not be
+     * available, but the instances appear running. </value> <value
+     * name="Green"> <p> <code>Green</code>: Indicates the environment is
+     * healthy and fully functional. </value> </enumValues> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs
+     * when three or more consecutive failures occur for an environment.
+     * </li> <li> <code>Yellow</code>: Indicates that something is wrong.
+     * Occurs when two consecutive failures occur for an environment. </li>
+     * <li> <code>Green</code>: Indicates the environment is healthy and
+     * fully functional. </li> <li> <code>Grey</code>: Default health for a
+     * new environment. The environment is not fully launched and health
+     * checks have not started or health checks are suspended during an
+     * <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Green, Yellow, Red, Grey
+     *
+     * @param health Describes the health status of the environment. AWS Elastic Beanstalk
+     *         indicates the failure levels for a running environment: <enumValues>
+     *         <value name="Red"> <p> <code>Red</code> : Indicates the environment is
+     *         not working. </value> <value name="Yellow"> <p> <code>Yellow</code>:
+     *         Indicates that something is wrong, the application might not be
+     *         available, but the instances appear running. </value> <value
+     *         name="Green"> <p> <code>Green</code>: Indicates the environment is
+     *         healthy and fully functional. </value> </enumValues> <ul> <li>
+     *         <code>Red</code>: Indicates the environment is not responsive. Occurs
+     *         when three or more consecutive failures occur for an environment.
+     *         </li> <li> <code>Yellow</code>: Indicates that something is wrong.
+     *         Occurs when two consecutive failures occur for an environment. </li>
+     *         <li> <code>Green</code>: Indicates the environment is healthy and
+     *         fully functional. </li> <li> <code>Grey</code>: Default health for a
+     *         new environment. The environment is not fully launched and health
+     *         checks have not started or health checks are suspended during an
+     *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     *         request. </li> </ul> <p> Default: <code>Grey</code>
+     *
+     * @see EnvironmentHealth
+     */
+    public void setHealth(EnvironmentHealth health) {
+        this.health = health.toString();
+    }
+    
+    /**
+     * Describes the health status of the environment. AWS Elastic Beanstalk
+     * indicates the failure levels for a running environment: <enumValues>
+     * <value name="Red"> <p> <code>Red</code> : Indicates the environment is
+     * not working. </value> <value name="Yellow"> <p> <code>Yellow</code>:
+     * Indicates that something is wrong, the application might not be
+     * available, but the instances appear running. </value> <value
+     * name="Green"> <p> <code>Green</code>: Indicates the environment is
+     * healthy and fully functional. </value> </enumValues> <ul> <li>
+     * <code>Red</code>: Indicates the environment is not responsive. Occurs
+     * when three or more consecutive failures occur for an environment.
+     * </li> <li> <code>Yellow</code>: Indicates that something is wrong.
+     * Occurs when two consecutive failures occur for an environment. </li>
+     * <li> <code>Green</code>: Indicates the environment is healthy and
+     * fully functional. </li> <li> <code>Grey</code>: Default health for a
+     * new environment. The environment is not fully launched and health
+     * checks have not started or health checks are suspended during an
+     * <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     * request. </li> </ul> <p> Default: <code>Grey</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Green, Yellow, Red, Grey
+     *
+     * @param health Describes the health status of the environment. AWS Elastic Beanstalk
+     *         indicates the failure levels for a running environment: <enumValues>
+     *         <value name="Red"> <p> <code>Red</code> : Indicates the environment is
+     *         not working. </value> <value name="Yellow"> <p> <code>Yellow</code>:
+     *         Indicates that something is wrong, the application might not be
+     *         available, but the instances appear running. </value> <value
+     *         name="Green"> <p> <code>Green</code>: Indicates the environment is
+     *         healthy and fully functional. </value> </enumValues> <ul> <li>
+     *         <code>Red</code>: Indicates the environment is not responsive. Occurs
+     *         when three or more consecutive failures occur for an environment.
+     *         </li> <li> <code>Yellow</code>: Indicates that something is wrong.
+     *         Occurs when two consecutive failures occur for an environment. </li>
+     *         <li> <code>Green</code>: Indicates the environment is healthy and
+     *         fully functional. </li> <li> <code>Grey</code>: Default health for a
+     *         new environment. The environment is not fully launched and health
+     *         checks have not started or health checks are suspended during an
+     *         <code>UpdateEnvironment</code> or <code>RestartEnvironement</code>
+     *         request. </li> </ul> <p> Default: <code>Grey</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EnvironmentHealth
+     */
+    public EnvironmentDescription withHealth(EnvironmentHealth health) {
+        this.health = health.toString();
+        return this;
+    }
     
     /**
      * The description of the AWS resources used by this environment.

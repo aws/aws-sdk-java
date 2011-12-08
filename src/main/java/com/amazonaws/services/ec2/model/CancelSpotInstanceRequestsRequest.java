@@ -59,6 +59,8 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
     public CancelSpotInstanceRequestsRequest(java.util.List<String> spotInstanceRequestIds) {
         this.spotInstanceRequestIds = spotInstanceRequestIds;
     }
+
+    
     
     /**
      * Specifies the ID of the Spot Instance request.

@@ -17,6 +17,7 @@ package com.amazonaws.services.s3.model.transform;
 import java.io.InputStream;
 import java.util.List;
 
+import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -206,6 +207,14 @@ public class Unmarshallers {
         public PartListing unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseListPartsResponse(in)
                 .getListPartsResult();
+        }
+    }
+    
+    public static final class DeleteObjectsResultUnmarshaller implements
+            Unmarshaller<DeleteObjectsResponse, InputStream> {
+
+        public DeleteObjectsResponse unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseDeletedObjectsResult(in).getDeleteObjectResult();
         }
     }
 

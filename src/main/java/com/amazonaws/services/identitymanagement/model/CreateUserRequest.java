@@ -70,6 +70,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest {
     public CreateUserRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * The path for the user name. For more information about paths, see <a

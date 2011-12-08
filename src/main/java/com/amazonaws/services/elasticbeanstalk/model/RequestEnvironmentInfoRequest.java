@@ -87,6 +87,19 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest {
     public RequestEnvironmentInfoRequest(String infoType) {
         this.infoType = infoType;
     }
+
+    
+    
+    /**
+     * Constructs a new RequestEnvironmentInfoRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param infoType The type of information to request.
+     */
+    public RequestEnvironmentInfoRequest(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
+    }
     
     /**
      * The ID of the environment of the requested data. <p> If no such
@@ -273,6 +286,40 @@ public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * The type of information to request.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tail
+     *
+     * @param infoType The type of information to request.
+     *
+     * @see EnvironmentInfoType
+     */
+    public void setInfoType(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
+    }
+    
+    /**
+     * The type of information to request.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>tail
+     *
+     * @param infoType The type of information to request.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EnvironmentInfoType
+     */
+    public RequestEnvironmentInfoRequest withInfoType(EnvironmentInfoType infoType) {
+        this.infoType = infoType.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

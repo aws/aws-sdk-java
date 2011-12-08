@@ -56,6 +56,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest {
         this.snapshotId = snapshotId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the snapshot whose attribute is being reset.

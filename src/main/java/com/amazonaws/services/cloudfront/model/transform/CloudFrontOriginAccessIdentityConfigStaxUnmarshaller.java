@@ -36,6 +36,8 @@ public class CloudFrontOriginAccessIdentityConfigStaxUnmarshaller implements Unm
         CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig = new CloudFrontOriginAccessIdentityConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+        if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

@@ -59,6 +59,8 @@ public class ChangeMessageVisibilityBatchRequestEntry {
         this.id = id;
         this.receiptHandle = receiptHandle;
     }
+
+    
     
     /**
      * An identifier for this particular receipt handle. This is used to

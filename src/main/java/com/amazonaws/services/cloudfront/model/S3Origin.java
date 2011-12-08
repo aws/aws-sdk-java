@@ -47,6 +47,8 @@ public class S3Origin {
     public S3Origin(String dNSName) {
         this.dNSName = dNSName;
     }
+
+    
     
     /**
      * Constructs a new S3Origin object.
@@ -60,6 +62,8 @@ public class S3Origin {
         this.dNSName = dNSName;
         this.originAccessIdentity = originAccessIdentity;
     }
+
+    
     
     /**
      * The DNS name of the S3 origin.

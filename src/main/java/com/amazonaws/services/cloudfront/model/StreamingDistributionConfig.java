@@ -112,6 +112,8 @@ public class StreamingDistributionConfig {
         this.callerReference = callerReference;
         this.enabled = enabled;
     }
+
+    
     
     /**
      * S3 Origin information to associate with the distribution.

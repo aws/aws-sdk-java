@@ -62,6 +62,8 @@ public class PlacementGroup {
     public PlacementGroup(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * The name of this <code>PlacementGroup</code>.
@@ -153,6 +155,44 @@ public class PlacementGroup {
     
     
     /**
+     * The strategy to use when allocating Amazon EC2 instances for the
+     * <code>PlacementGroup</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cluster
+     *
+     * @param strategy The strategy to use when allocating Amazon EC2 instances for the
+     *         <code>PlacementGroup</code>.
+     *
+     * @see PlacementStrategy
+     */
+    public void setStrategy(PlacementStrategy strategy) {
+        this.strategy = strategy.toString();
+    }
+    
+    /**
+     * The strategy to use when allocating Amazon EC2 instances for the
+     * <code>PlacementGroup</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>cluster
+     *
+     * @param strategy The strategy to use when allocating Amazon EC2 instances for the
+     *         <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PlacementStrategy
+     */
+    public PlacementGroup withStrategy(PlacementStrategy strategy) {
+        this.strategy = strategy.toString();
+        return this;
+    }
+    
+    /**
      * The state of this <code>PlacementGroup</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -200,6 +240,40 @@ public class PlacementGroup {
         return this;
     }
     
+    
+    /**
+     * The state of this <code>PlacementGroup</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     *
+     * @param state The state of this <code>PlacementGroup</code>.
+     *
+     * @see PlacementGroupState
+     */
+    public void setState(PlacementGroupState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * The state of this <code>PlacementGroup</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, available, deleting, deleted
+     *
+     * @param state The state of this <code>PlacementGroup</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PlacementGroupState
+     */
+    public PlacementGroup withState(PlacementGroupState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

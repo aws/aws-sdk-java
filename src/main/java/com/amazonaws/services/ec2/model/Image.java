@@ -268,6 +268,52 @@ public class Image {
     
     
     /**
+     * Current state of the AMI. If the operation returns available, the
+     * image is successfully registered and available for launching. If the
+     * operation returns deregistered, the image is deregistered and no
+     * longer available for launching.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, deregistered
+     *
+     * @param state Current state of the AMI. If the operation returns available, the
+     *         image is successfully registered and available for launching. If the
+     *         operation returns deregistered, the image is deregistered and no
+     *         longer available for launching.
+     *
+     * @see ImageState
+     */
+    public void setState(ImageState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Current state of the AMI. If the operation returns available, the
+     * image is successfully registered and available for launching. If the
+     * operation returns deregistered, the image is deregistered and no
+     * longer available for launching.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>available, deregistered
+     *
+     * @param state Current state of the AMI. If the operation returns available, the
+     *         image is successfully registered and available for launching. If the
+     *         operation returns deregistered, the image is deregistered and no
+     *         longer available for launching.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ImageState
+     */
+    public Image withState(ImageState state) {
+        this.state = state.toString();
+        return this;
+    }
+    
+    /**
      * AWS Access Key ID of the image owner.
      *
      * @return AWS Access Key ID of the image owner.
@@ -928,6 +974,40 @@ public class Image {
     
     
     /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public void setVirtualizationType(VirtualizationType virtualizationType) {
+        this.virtualizationType = virtualizationType.toString();
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VirtualizationType
+     */
+    public Image withVirtualizationType(VirtualizationType virtualizationType) {
+        this.virtualizationType = virtualizationType.toString();
+        return this;
+    }
+    
+    /**
      * A list of tags for the Image.
      *
      * @return A list of tags for the Image.
@@ -1039,6 +1119,40 @@ public class Image {
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @see HypervisorType
+     */
+    public void setHypervisor(HypervisorType hypervisor) {
+        this.hypervisor = hypervisor.toString();
+    }
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see HypervisorType
+     */
+    public Image withHypervisor(HypervisorType hypervisor) {
+        this.hypervisor = hypervisor.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

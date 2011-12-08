@@ -148,6 +148,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
         this.targetDBInstanceIdentifier = targetDBInstanceIdentifier;
     }
+
+    
     
     /**
      * The identifier of the source DB Instance from which to restore.

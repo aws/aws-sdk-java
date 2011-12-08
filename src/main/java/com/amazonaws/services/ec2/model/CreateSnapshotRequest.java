@@ -64,6 +64,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
         this.volumeId = volumeId;
         this.description = description;
     }
+
+    
     
     /**
      * The ID of the volume from which to create the snapshot.

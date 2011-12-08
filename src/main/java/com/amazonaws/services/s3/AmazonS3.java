@@ -45,6 +45,8 @@ import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAclRequest;
@@ -61,6 +63,7 @@ import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListPartsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
+import com.amazonaws.services.s3.model.MultiObjectDeleteException;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -2323,6 +2326,29 @@ public interface AmazonS3 {
      */
     public void deleteObject(DeleteObjectRequest deleteObjectRequest)
         throws AmazonClientException, AmazonServiceException;
+
+    /**
+     * Deletes multiple objects in a single bucket from S3.
+     * <p>
+     * In some cases, some objects will be successfully deleted, while some
+     * attempts will cause an error. If any object in the request cannot be
+     * deleted, this method throws a {@link MultiObjectDeleteException} with
+     * details of the error.
+     * 
+     * @param deleteObjectsRequest
+     *            The request object containing all options for deleting
+     *            multiple objects.
+     * @throws MultiObjectDeleteException
+     *             if one or more of the objects couldn't be deleted.
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest) throws AmazonClientException,
+            AmazonServiceException;
 
     /**
      * <p>

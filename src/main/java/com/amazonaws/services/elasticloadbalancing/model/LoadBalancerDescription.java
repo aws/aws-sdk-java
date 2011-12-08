@@ -75,6 +75,16 @@ public class LoadBalancerDescription {
     private java.util.List<String> availabilityZones;
 
     /**
+     * Provides a list of VPC subnet IDs for the LoadBalancer.
+     */
+    private java.util.List<String> subnets;
+
+    /**
+     * Provides the ID of the VPC attached to the LoadBalancer.
+     */
+    private String vPCId;
+
+    /**
      * Provides a list of EC2 instance IDs for the LoadBalancer.
      */
     private java.util.List<Instance> instances;
@@ -93,6 +103,11 @@ public class LoadBalancerDescription {
      * inbound source.
      */
     private SourceSecurityGroup sourceSecurityGroup;
+
+    /**
+     * The security groups the LoadBalancer is a member of (VPC only).
+     */
+    private java.util.List<String> securityGroups;
 
     /**
      * Provides the date and time the LoadBalancer was created.
@@ -544,6 +559,104 @@ public class LoadBalancerDescription {
     }
     
     /**
+     * Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @return Provides a list of VPC subnet IDs for the LoadBalancer.
+     */
+    public java.util.List<String> getSubnets() {
+        
+        if (subnets == null) {
+            subnets = new java.util.ArrayList<String>();
+        }
+        return subnets;
+    }
+    
+    /**
+     * Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @param subnets Provides a list of VPC subnet IDs for the LoadBalancer.
+     */
+    public void setSubnets(java.util.Collection<String> subnets) {
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
+        if (subnets != null) {
+            subnetsCopy.addAll(subnets);
+        }
+        this.subnets = subnetsCopy;
+    }
+    
+    /**
+     * Provides a list of VPC subnet IDs for the LoadBalancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param subnets Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withSubnets(String... subnets) {
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>());
+        for (String value : subnets) {
+            getSubnets().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Provides a list of VPC subnet IDs for the LoadBalancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param subnets Provides a list of VPC subnet IDs for the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withSubnets(java.util.Collection<String> subnets) {
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
+        if (subnets != null) {
+            subnetsCopy.addAll(subnets);
+        }
+        this.subnets = subnetsCopy;
+
+        return this;
+    }
+    
+    /**
+     * Provides the ID of the VPC attached to the LoadBalancer.
+     *
+     * @return Provides the ID of the VPC attached to the LoadBalancer.
+     */
+    public String getVPCId() {
+        return vPCId;
+    }
+    
+    /**
+     * Provides the ID of the VPC attached to the LoadBalancer.
+     *
+     * @param vPCId Provides the ID of the VPC attached to the LoadBalancer.
+     */
+    public void setVPCId(String vPCId) {
+        this.vPCId = vPCId;
+    }
+    
+    /**
+     * Provides the ID of the VPC attached to the LoadBalancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vPCId Provides the ID of the VPC attached to the LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withVPCId(String vPCId) {
+        this.vPCId = vPCId;
+        return this;
+    }
+    
+    
+    /**
      * Provides a list of EC2 instance IDs for the LoadBalancer.
      *
      * @return Provides a list of EC2 instance IDs for the LoadBalancer.
@@ -706,6 +819,70 @@ public class LoadBalancerDescription {
     
     
     /**
+     * The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @return The security groups the LoadBalancer is a member of (VPC only).
+     */
+    public java.util.List<String> getSecurityGroups() {
+        
+        if (securityGroups == null) {
+            securityGroups = new java.util.ArrayList<String>();
+        }
+        return securityGroups;
+    }
+    
+    /**
+     * The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @param securityGroups The security groups the LoadBalancer is a member of (VPC only).
+     */
+    public void setSecurityGroups(java.util.Collection<String> securityGroups) {
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+    }
+    
+    /**
+     * The security groups the LoadBalancer is a member of (VPC only).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
+        for (String value : securityGroups) {
+            getSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The security groups the LoadBalancer is a member of (VPC only).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The security groups the LoadBalancer is a member of (VPC only).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withSecurityGroups(java.util.Collection<String> securityGroups) {
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+
+        return this;
+    }
+    
+    /**
      * Provides the date and time the LoadBalancer was created.
      *
      * @return Provides the date and time the LoadBalancer was created.
@@ -759,9 +936,12 @@ public class LoadBalancerDescription {
         sb.append("Policies: " + policies + ", ");
         sb.append("BackendServerDescriptions: " + backendServerDescriptions + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("Subnets: " + subnets + ", ");
+        sb.append("VPCId: " + vPCId + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("HealthCheck: " + healthCheck + ", ");
         sb.append("SourceSecurityGroup: " + sourceSecurityGroup + ", ");
+        sb.append("SecurityGroups: " + securityGroups + ", ");
         sb.append("CreatedTime: " + createdTime + ", ");
         sb.append("}");
         return sb.toString();

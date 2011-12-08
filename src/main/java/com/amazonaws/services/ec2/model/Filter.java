@@ -60,6 +60,8 @@ public class Filter {
         this.name = name;
         this.values = values;
     }
+
+    
     
     /**
      * Constructs a new Filter object.
@@ -71,6 +73,8 @@ public class Filter {
     public Filter(String name) {
         this.name = name;
     }
+
+    
     
     /**
      * Specifies the name of the filter.

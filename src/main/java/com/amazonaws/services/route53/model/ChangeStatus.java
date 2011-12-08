@@ -12,19 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.identitymanagement.model;
+package com.amazonaws.services.route53.model;
 
 /**
- * status Type
+ * Change Status
  */
-public enum statusType {
+public enum ChangeStatus {
     
-    Active("Active"),
-    Inactive("Inactive");
+    InProgress("InProgress"),
+    Deployed("Deployed");
 
     private String value;
 
-    private statusType(String value) {
+    private ChangeStatus(String value) {
         this.value = value;
     }
 
@@ -38,16 +38,16 @@ public enum statusType {
      *
      * @param value
      *            real value
-     * @return statusType corresponding to the value
+     * @return ChangeStatus corresponding to the value
      */
-    public static statusType fromValue(String value) {
+    public static ChangeStatus fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("Active".equals(value)) {
-            return statusType.Active;
-        } else if ("Inactive".equals(value)) {
-            return statusType.Inactive;
+        } else if ("InProgress".equals(value)) {
+            return ChangeStatus.InProgress;
+        } else if ("Deployed".equals(value)) {
+            return ChangeStatus.Deployed;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

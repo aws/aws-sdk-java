@@ -49,6 +49,8 @@ public class LoggingConfig {
         this.bucket = bucket;
         this.prefix = prefix;
     }
+
+    
     
     /**
      * The bucket to receive access logs.

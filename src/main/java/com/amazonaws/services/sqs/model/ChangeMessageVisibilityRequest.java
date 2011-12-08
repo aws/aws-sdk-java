@@ -93,6 +93,8 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest {
         this.receiptHandle = receiptHandle;
         this.visibilityTimeout = visibilityTimeout;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

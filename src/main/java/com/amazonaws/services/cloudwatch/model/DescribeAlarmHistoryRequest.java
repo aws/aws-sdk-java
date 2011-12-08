@@ -164,6 +164,40 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The type of alarm histories to retrieve.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
+     *
+     * @param historyItemType The type of alarm histories to retrieve.
+     *
+     * @see HistoryItemType
+     */
+    public void setHistoryItemType(HistoryItemType historyItemType) {
+        this.historyItemType = historyItemType.toString();
+    }
+    
+    /**
+     * The type of alarm histories to retrieve.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
+     *
+     * @param historyItemType The type of alarm histories to retrieve.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see HistoryItemType
+     */
+    public DescribeAlarmHistoryRequest withHistoryItemType(HistoryItemType historyItemType) {
+        this.historyItemType = historyItemType.toString();
+        return this;
+    }
+    
+    /**
      * The starting date to retrieve alarm history.
      *
      * @return The starting date to retrieve alarm history.

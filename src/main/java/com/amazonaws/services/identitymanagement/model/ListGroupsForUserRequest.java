@@ -77,6 +77,8 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest {
     public ListGroupsForUserRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * The name of the user to list groups for.

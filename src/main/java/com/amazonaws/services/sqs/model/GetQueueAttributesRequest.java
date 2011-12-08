@@ -84,6 +84,8 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest {
     public GetQueueAttributesRequest(String queueUrl) {
         this.queueUrl = queueUrl;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

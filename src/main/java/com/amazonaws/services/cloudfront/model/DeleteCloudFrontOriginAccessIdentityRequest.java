@@ -55,6 +55,8 @@ public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         this.id = id;
         this.ifMatch = ifMatch;
     }
+
+    
     
     /**
      * The origin access identity's id.

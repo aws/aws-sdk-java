@@ -90,6 +90,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
         this.domainName = domainName;
         this.itemName = itemName;
     }
+
+    
     
     /**
      * Constructs a new DeleteAttributesRequest object.
@@ -110,6 +112,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
         this.itemName = itemName;
         this.attributes = attributes;
     }
+
+    
     
     /**
      * Constructs a new DeleteAttributesRequest object.
@@ -135,6 +139,8 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
         this.attributes = attributes;
         this.expected = expected;
     }
+
+    
     
     /**
      * The name of the domain in which to perform the operation.

@@ -80,6 +80,8 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
         this.domainName = domainName;
         this.items = items;
     }
+
+    
     
     /**
      * The name of the domain in which the attributes are being deleted.

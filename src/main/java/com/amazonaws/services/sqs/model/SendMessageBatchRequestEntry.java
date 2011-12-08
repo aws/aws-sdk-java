@@ -59,6 +59,8 @@ public class SendMessageBatchRequestEntry {
         this.id = id;
         this.messageBody = messageBody;
     }
+
+    
     
     /**
      * An identifier for the message in this batch. This is used to

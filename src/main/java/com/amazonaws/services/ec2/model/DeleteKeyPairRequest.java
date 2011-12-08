@@ -46,6 +46,8 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest {
     public DeleteKeyPairRequest(String keyName) {
         this.keyName = keyName;
     }
+
+    
     
     /**
      * The name of the Amazon EC2 key pair to delete.

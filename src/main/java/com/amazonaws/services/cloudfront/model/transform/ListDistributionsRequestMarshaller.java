@@ -47,20 +47,22 @@ public class ListDistributionsRequestMarshaller implements Marshaller<Request<Li
         String uriResourcePath = "2010-11-01/distribution?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listDistributionsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listDistributionsRequest.getMaxItems())); 
-        request.setResourcePath(uriResourcePath);
-	            
-        StringWriter stringWriter = new StringWriter();
-        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
-        
-        
-
-
-
-        try {
-            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to marshall request to XML", e);
+	    
+        if (uriResourcePath.contains("?")) {
+	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+	
+	        for (String s : queryString.split("&")) {
+	            String[] nameValuePair = s.split("=");
+	            if (nameValuePair.length == 2) {
+	                request.addParameter(nameValuePair[0], nameValuePair[1]);
+	            }
+	        }
         }
+	    
+        request.setResourcePath(uriResourcePath);
+
+        
 
         return request;
     }

@@ -116,6 +116,8 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
         this.certificateBody = certificateBody;
         this.privateKey = privateKey;
     }
+
+    
     
     /**
      * The path for the server certificate. For more information about paths,

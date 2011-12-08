@@ -80,7 +80,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -577,7 +577,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return The instance type. For more information on instance types, please see
      *         the <a
@@ -597,7 +597,7 @@ public class Instance {
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
@@ -619,7 +619,7 @@ public class Instance {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
@@ -636,6 +636,52 @@ public class Instance {
         return this;
     }
     
+    
+    /**
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType The instance type. For more information on instance types, please see
+     *         the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         Amazon Elastic Compute Cloud Developer Guide</a>.
+     *
+     * @see InstanceType
+     */
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+    
+    /**
+     * The instance type. For more information on instance types, please see
+     * the <a
+     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * Amazon Elastic Compute Cloud Developer Guide</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType The instance type. For more information on instance types, please see
+     *         the <a
+     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         Amazon Elastic Compute Cloud Developer Guide</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceType
+     */
+    public Instance withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
     
     /**
      * The time this instance launched.
@@ -1239,6 +1285,40 @@ public class Instance {
     
     
     /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @see VirtualizationType
+     */
+    public void setVirtualizationType(VirtualizationType virtualizationType) {
+        this.virtualizationType = virtualizationType.toString();
+    }
+    
+    /**
+     * Sets the value of the VirtualizationType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>hvm, paravirtual
+     *
+     * @param virtualizationType The new value for the VirtualizationType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VirtualizationType
+     */
+    public Instance withVirtualizationType(VirtualizationType virtualizationType) {
+        this.virtualizationType = virtualizationType.toString();
+        return this;
+    }
+    
+    /**
      * 
      *
      * @return 
@@ -1599,6 +1679,40 @@ public class Instance {
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @see HypervisorType
+     */
+    public void setHypervisor(HypervisorType hypervisor) {
+        this.hypervisor = hypervisor.toString();
+    }
+    
+    /**
+     * Sets the value of the Hypervisor property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ovm, xen
+     *
+     * @param hypervisor The new value for the Hypervisor property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see HypervisorType
+     */
+    public Instance withHypervisor(HypervisorType hypervisor) {
+        this.hypervisor = hypervisor.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

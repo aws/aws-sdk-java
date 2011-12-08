@@ -92,6 +92,25 @@ public class InstanceGroupConfig {
         this.instanceType = instanceType;
         this.instanceCount = instanceCount;
     }
+
+    
+    
+    /**
+     * Constructs a new InstanceGroupConfig object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceRole The role of the instance group in the cluster.
+     * @param instanceType The Amazon EC2 instance type for all instances in
+     * the instance group.
+     * @param instanceCount Target number of instances for the instance
+     * group.
+     */
+    public InstanceGroupConfig(InstanceRoleType instanceRole, String instanceType, Integer instanceCount) {
+        this.instanceRole = instanceRole.toString();
+        this.instanceType = instanceType;
+        this.instanceCount = instanceCount;
+    }
     
     /**
      * Friendly name given to the instance group.
@@ -189,6 +208,40 @@ public class InstanceGroupConfig {
     
     
     /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @see MarketType
+     */
+    public void setMarket(MarketType market) {
+        this.market = market.toString();
+    }
+    
+    /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see MarketType
+     */
+    public InstanceGroupConfig withMarket(MarketType market) {
+        this.market = market.toString();
+        return this;
+    }
+    
+    /**
      * The role of the instance group in the cluster.
      * <p>
      * <b>Constraints:</b><br/>
@@ -236,6 +289,40 @@ public class InstanceGroupConfig {
         return this;
     }
     
+    
+    /**
+     * The role of the instance group in the cluster.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>MASTER, CORE, TASK
+     *
+     * @param instanceRole The role of the instance group in the cluster.
+     *
+     * @see InstanceRoleType
+     */
+    public void setInstanceRole(InstanceRoleType instanceRole) {
+        this.instanceRole = instanceRole.toString();
+    }
+    
+    /**
+     * The role of the instance group in the cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>MASTER, CORE, TASK
+     *
+     * @param instanceRole The role of the instance group in the cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceRoleType
+     */
+    public InstanceGroupConfig withInstanceRole(InstanceRoleType instanceRole) {
+        this.instanceRole = instanceRole.toString();
+        return this;
+    }
     
     /**
      * Bid price for each Amazon EC2 instance in the instance group when

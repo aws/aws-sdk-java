@@ -59,6 +59,8 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     public RebootDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
+
+    
     
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase

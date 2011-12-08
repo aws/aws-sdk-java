@@ -52,6 +52,8 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest {
     public TerminateInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of instances to terminate.

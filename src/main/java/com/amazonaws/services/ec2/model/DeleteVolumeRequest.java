@@ -47,6 +47,8 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest {
     public DeleteVolumeRequest(String volumeId) {
         this.volumeId = volumeId;
     }
+
+    
     
     /**
      * The ID of the EBS volume to delete.

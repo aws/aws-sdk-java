@@ -66,6 +66,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.publicIp = publicIp;
     }
+
+    
     
     /**
      * The instance to associate with the IP address.

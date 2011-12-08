@@ -50,6 +50,8 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
     public TerminateJobFlowsRequest(java.util.List<String> jobFlowIds) {
         this.jobFlowIds = jobFlowIds;
     }
+
+    
     
     /**
      * A list of job flows to be shutdown.

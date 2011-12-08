@@ -132,6 +132,40 @@ public class InstanceState {
     
     
     /**
+     * The current state of the instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
+     *
+     * @param name The current state of the instance.
+     *
+     * @see InstanceStateName
+     */
+    public void setName(InstanceStateName name) {
+        this.name = name.toString();
+    }
+    
+    /**
+     * The current state of the instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, running, shutting-down, terminated, stopping, stopped
+     *
+     * @param name The current state of the instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceStateName
+     */
+    public InstanceState withName(InstanceStateName name) {
+        this.name = name.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

@@ -74,6 +74,8 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest {
         this.applicationName = applicationName;
         this.versionLabel = versionLabel;
     }
+
+    
     
     /**
      * The name of the application to delete releases from.

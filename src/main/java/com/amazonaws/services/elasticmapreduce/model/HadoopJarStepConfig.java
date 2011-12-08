@@ -71,6 +71,8 @@ public class HadoopJarStepConfig {
     public HadoopJarStepConfig(String jar) {
         this.jar = jar;
     }
+
+    
     
     /**
      * A list of Java properties that are set when the step runs. You can use

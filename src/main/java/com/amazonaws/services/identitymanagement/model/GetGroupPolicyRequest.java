@@ -65,6 +65,8 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest {
         this.groupName = groupName;
         this.policyName = policyName;
     }
+
+    
     
     /**
      * Name of the group the policy is associated with.

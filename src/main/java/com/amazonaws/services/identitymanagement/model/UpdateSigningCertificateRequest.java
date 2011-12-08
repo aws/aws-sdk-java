@@ -89,6 +89,24 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
         this.certificateId = certificateId;
         this.status = status;
     }
+
+    
+    
+    /**
+     * Constructs a new UpdateSigningCertificateRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param certificateId The ID of the signing certificate you want to
+     * update.
+     * @param status The status you want to assign to the certificate.
+     * <code>Active</code> means the certificate can be used for API calls to
+     * AWS, while <code>Inactive</code> means the certificate cannot be used.
+     */
+    public UpdateSigningCertificateRequest(String certificateId, StatusType status) {
+        this.certificateId = certificateId;
+        this.status = status.toString();
+    }
     
     /**
      * Name of the user the signing certificate belongs to.
@@ -194,7 +212,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
      *
-     * @see statusType
+     * @see StatusType
      */
     public String getStatus() {
         return status;
@@ -212,7 +230,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
      *         means the certificate can be used for API calls to AWS, while
      *         <code>Inactive</code> means the certificate cannot be used.
      *
-     * @see statusType
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
@@ -235,13 +253,55 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      *
-     * @see statusType
+     * @see StatusType
      */
     public UpdateSigningCertificateRequest withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * The status you want to assign to the certificate. <code>Active</code>
+     * means the certificate can be used for API calls to AWS, while
+     * <code>Inactive</code> means the certificate cannot be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status you want to assign to the certificate. <code>Active</code>
+     *         means the certificate can be used for API calls to AWS, while
+     *         <code>Inactive</code> means the certificate cannot be used.
+     *
+     * @see StatusType
+     */
+    public void setStatus(StatusType status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The status you want to assign to the certificate. <code>Active</code>
+     * means the certificate can be used for API calls to AWS, while
+     * <code>Inactive</code> means the certificate cannot be used.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status you want to assign to the certificate. <code>Active</code>
+     *         means the certificate can be used for API calls to AWS, while
+     *         <code>Inactive</code> means the certificate cannot be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StatusType
+     */
+    public UpdateSigningCertificateRequest withStatus(StatusType status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

@@ -131,6 +131,8 @@ public class DistributionConfig {
         this.callerReference = callerReference;
         this.enabled = enabled;
     }
+
+    
     
     /**
      * Origin information to associate with the distribution. If your

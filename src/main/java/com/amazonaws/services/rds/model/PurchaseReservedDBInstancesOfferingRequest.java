@@ -60,6 +60,8 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     public PurchaseReservedDBInstancesOfferingRequest(String reservedDBInstancesOfferingId) {
         this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
     }
+
+    
     
     /**
      * The ID of the Reserved DB Instance offering to purchase. <p>Example:

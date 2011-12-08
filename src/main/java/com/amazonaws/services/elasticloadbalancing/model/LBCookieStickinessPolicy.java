@@ -56,6 +56,8 @@ public class LBCookieStickinessPolicy {
         this.policyName = policyName;
         this.cookieExpirationPeriod = cookieExpirationPeriod;
     }
+
+    
     
     /**
      * The name for the policy being created. The name must be unique within

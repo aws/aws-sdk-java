@@ -120,6 +120,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         this.name = name;
         this.instances = instances;
     }
+
+    
     
     /**
      * The name of the job flow.

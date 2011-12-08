@@ -47,6 +47,8 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest {
     public DeleteSnapshotRequest(String snapshotId) {
         this.snapshotId = snapshotId;
     }
+
+    
     
     /**
      * The ID of the snapshot to delete.

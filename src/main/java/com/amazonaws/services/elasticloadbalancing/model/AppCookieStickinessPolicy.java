@@ -52,6 +52,8 @@ public class AppCookieStickinessPolicy {
         this.policyName = policyName;
         this.cookieName = cookieName;
     }
+
+    
     
     /**
      * The mnemonic name for the policy being created. The name must be

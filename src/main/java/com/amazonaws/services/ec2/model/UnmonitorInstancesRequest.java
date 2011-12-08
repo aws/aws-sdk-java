@@ -47,6 +47,8 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
     public UnmonitorInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of Amazon EC2 instances on which to disable monitoring.

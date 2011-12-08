@@ -47,6 +47,8 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
     public CreateStreamingDistributionRequest(StreamingDistributionConfig streamingDistributionConfig) {
         this.streamingDistributionConfig = streamingDistributionConfig;
     }
+
+    
     
     /**
      * The streaming distribution's configuration information.

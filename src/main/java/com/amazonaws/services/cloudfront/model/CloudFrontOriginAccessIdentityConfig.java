@@ -69,6 +69,8 @@ public class CloudFrontOriginAccessIdentityConfig {
     public CloudFrontOriginAccessIdentityConfig(String callerReference) {
         this.callerReference = callerReference;
     }
+
+    
     
     /**
      * A unique number that ensures the request can't be replayed. If the

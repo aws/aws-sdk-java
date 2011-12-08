@@ -53,6 +53,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     public CreateVpnGatewayRequest(String type) {
         this.type = type;
     }
+
+    
     
     /**
      * The type of VPN connection this VPN gateway supports.

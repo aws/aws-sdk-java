@@ -775,6 +775,40 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The statistic to apply to the alarm's associated metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
+     *
+     * @param statistic The statistic to apply to the alarm's associated metric.
+     *
+     * @see Statistic
+     */
+    public void setStatistic(Statistic statistic) {
+        this.statistic = statistic.toString();
+    }
+    
+    /**
+     * The statistic to apply to the alarm's associated metric.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SampleCount, Average, Sum, Minimum, Maximum
+     *
+     * @param statistic The statistic to apply to the alarm's associated metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see Statistic
+     */
+    public PutMetricAlarmRequest withStatistic(Statistic statistic) {
+        this.statistic = statistic.toString();
+        return this;
+    }
+    
+    /**
      * The dimensions for the alarm's associated metric.
      * <p>
      * <b>Constraints:</b><br/>
@@ -943,6 +977,40 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The unit for the alarm's associated metric.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
+     *
+     * @param unit The unit for the alarm's associated metric.
+     *
+     * @see StandardUnit
+     */
+    public void setUnit(StandardUnit unit) {
+        this.unit = unit.toString();
+    }
+    
+    /**
+     * The unit for the alarm's associated metric.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, Bytes/Second, Kilobytes/Second, Megabytes/Second, Gigabytes/Second, Terabytes/Second, Bits/Second, Kilobits/Second, Megabits/Second, Gigabits/Second, Terabits/Second, Count/Second, None
+     *
+     * @param unit The unit for the alarm's associated metric.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StandardUnit
+     */
+    public PutMetricAlarmRequest withUnit(StandardUnit unit) {
+        this.unit = unit.toString();
+        return this;
+    }
+    
+    /**
      * The number of periods over which data is compared to the specified
      * threshold.
      * <p>
@@ -1085,6 +1153,48 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * The arithmetic operation to use when comparing the specified
+     * <code>Statistic</code> and <code>Threshold</code>. The specified
+     * <code>Statistic</code> value is used as the first operand.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
+     *
+     * @param comparisonOperator The arithmetic operation to use when comparing the specified
+     *         <code>Statistic</code> and <code>Threshold</code>. The specified
+     *         <code>Statistic</code> value is used as the first operand.
+     *
+     * @see ComparisonOperator
+     */
+    public void setComparisonOperator(ComparisonOperator comparisonOperator) {
+        this.comparisonOperator = comparisonOperator.toString();
+    }
+    
+    /**
+     * The arithmetic operation to use when comparing the specified
+     * <code>Statistic</code> and <code>Threshold</code>. The specified
+     * <code>Statistic</code> value is used as the first operand.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold
+     *
+     * @param comparisonOperator The arithmetic operation to use when comparing the specified
+     *         <code>Statistic</code> and <code>Threshold</code>. The specified
+     *         <code>Statistic</code> value is used as the first operand.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ComparisonOperator
+     */
+    public PutMetricAlarmRequest withComparisonOperator(ComparisonOperator comparisonOperator) {
+        this.comparisonOperator = comparisonOperator.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

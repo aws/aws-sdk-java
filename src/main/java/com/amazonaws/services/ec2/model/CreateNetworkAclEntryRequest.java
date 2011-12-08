@@ -256,6 +256,40 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Whether to allow or deny traffic that matches the rule.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>allow, deny
+     *
+     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     *
+     * @see RuleAction
+     */
+    public void setRuleAction(RuleAction ruleAction) {
+        this.ruleAction = ruleAction.toString();
+    }
+    
+    /**
+     * Whether to allow or deny traffic that matches the rule.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>allow, deny
+     *
+     * @param ruleAction Whether to allow or deny traffic that matches the rule.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RuleAction
+     */
+    public CreateNetworkAclEntryRequest withRuleAction(RuleAction ruleAction) {
+        this.ruleAction = ruleAction.toString();
+        return this;
+    }
+    
+    /**
      * Whether this rule applies to egress traffic from the subnet
      * (<code>true</code>) or ingress traffic to the subnet
      * (<code>false</code>).

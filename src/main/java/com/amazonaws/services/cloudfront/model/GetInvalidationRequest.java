@@ -53,6 +53,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest {
         this.distributionId = distributionId;
         this.id = id;
     }
+
+    
     
     /**
      * The distribution's id.

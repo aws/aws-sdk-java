@@ -65,6 +65,8 @@ public class RebootCacheClusterRequest extends AmazonWebServiceRequest {
         this.cacheClusterId = cacheClusterId;
         this.cacheNodeIdsToReboot = cacheNodeIdsToReboot;
     }
+
+    
     
     /**
      * The Cache Cluster identifier. This parameter is stored as a lowercase

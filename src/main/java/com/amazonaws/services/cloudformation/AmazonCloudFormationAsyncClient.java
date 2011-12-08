@@ -74,8 +74,8 @@ import com.amazonaws.services.cloudformation.model.*;
  * </p>
  * <p>
  * For more information about this product, go to the <a
- * href="http://aws.amazon.com/documentation/cloudformation">
- * CloudFormation Product Page </a> .
+ * href="http://aws.amazon.com/cloudformation/"> CloudFormation Product
+ * Page </a> .
  * </p>
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need
@@ -329,6 +329,38 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         return executorService.submit(new Callable<ValidateTemplateResult>() {
             public ValidateTemplateResult call() throws Exception {
                 return validateTemplate(validateTemplateRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the estimated monthly cost of a template. The return value is
+     * an AWS Simply Monthly Calculator URL with a query string that
+     * describes the resources required to run the template.
+     * </p>
+     *
+     * @param estimateTemplateCostRequest Container for the necessary
+     *           parameters to execute the EstimateTemplateCost operation on
+     *           AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EstimateTemplateCost service method, as returned by
+     *         AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EstimateTemplateCostResult> estimateTemplateCostAsync(final EstimateTemplateCostRequest estimateTemplateCostRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EstimateTemplateCostResult>() {
+            public EstimateTemplateCostResult call() throws Exception {
+                return estimateTemplateCost(estimateTemplateCostRequest);
 		    }
 		});
     }

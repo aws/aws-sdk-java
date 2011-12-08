@@ -61,6 +61,8 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest {
         this.groupName = groupName;
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the group to update.

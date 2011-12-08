@@ -201,6 +201,40 @@ public class GetStatusResult {
     
     
     /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @see JobType
+     */
+    public void setJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+    }
+    
+    /**
+     * Specifies whether the job to initiate is an import or export job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Import, Export
+     *
+     * @param jobType Specifies whether the job to initiate is an import or export job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see JobType
+     */
+    public GetStatusResult withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+    
+    /**
      * Address you ship your storage device to.
      *
      * @return Address you ship your storage device to.

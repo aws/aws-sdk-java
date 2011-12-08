@@ -107,6 +107,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest {
     public RegisterImageRequest(String imageLocation) {
         this.imageLocation = imageLocation;
     }
+
+    
     
     /**
      * The full path to your AMI manifest in Amazon S3 storage.

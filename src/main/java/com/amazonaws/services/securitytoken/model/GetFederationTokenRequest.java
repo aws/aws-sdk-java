@@ -103,6 +103,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     public GetFederationTokenRequest(String name) {
         this.name = name;
     }
+
+    
     
     /**
      * The name of the federated user associated with the credentials. For

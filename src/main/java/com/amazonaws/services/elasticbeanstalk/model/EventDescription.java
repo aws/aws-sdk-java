@@ -413,6 +413,40 @@ public class EventDescription {
     
     
     /**
+     * The severity level of this event.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+     *
+     * @param severity The severity level of this event.
+     *
+     * @see EventSeverity
+     */
+    public void setSeverity(EventSeverity severity) {
+        this.severity = severity.toString();
+    }
+    
+    /**
+     * The severity level of this event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+     *
+     * @param severity The severity level of this event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EventSeverity
+     */
+    public EventDescription withSeverity(EventSeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

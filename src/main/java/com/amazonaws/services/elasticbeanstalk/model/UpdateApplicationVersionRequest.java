@@ -83,6 +83,8 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest {
         this.applicationName = applicationName;
         this.versionLabel = versionLabel;
     }
+
+    
     
     /**
      * The name of the application associated with this version. <p> If no

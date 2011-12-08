@@ -54,6 +54,8 @@ public class InstanceGroupModifyConfig {
         this.instanceGroupId = instanceGroupId;
         this.instanceCount = instanceCount;
     }
+
+    
     
     /**
      * Unique ID of the instance group to expand or shrink.

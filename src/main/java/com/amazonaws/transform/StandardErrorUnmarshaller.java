@@ -4,17 +4,15 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
 package com.amazonaws.transform;
-
-import java.lang.reflect.Constructor;
 
 import org.w3c.dom.Node;
 
@@ -29,22 +27,13 @@ import com.amazonaws.util.XpathUtils;
  *
  * @see LegacyErrorUnmarshaller
  */
-public class StandardErrorUnmarshaller implements Unmarshaller<AmazonServiceException, Node> {
-
-    /**
-     * The type of AmazonServiceException that will be instantiated. Subclasses
-     * specialized for a specific type of exception can control this through the
-     * protected constructor.
-     */
-    protected final Class<? extends AmazonServiceException> exceptionClass;
+public class StandardErrorUnmarshaller extends AbstractErrorUnmarshaller<Node> {
 
     /**
      * Constructs a new unmarshaller that will unmarshall a standard AWS error
      * message as a generic AmazonServiceException object.
      */
-    public StandardErrorUnmarshaller() {
-        this(AmazonServiceException.class);
-    }
+    public StandardErrorUnmarshaller() {}
 
     /**
      * Constructor allowing subclasses to specify a specific type of
@@ -56,7 +45,7 @@ public class StandardErrorUnmarshaller implements Unmarshaller<AmazonServiceExce
      *            when unmarshalling the error message.
      */
     protected StandardErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass) {
-        this.exceptionClass = exceptionClass;
+        super(exceptionClass);
     }
 
     /**
@@ -68,8 +57,7 @@ public class StandardErrorUnmarshaller implements Unmarshaller<AmazonServiceExce
         String requestId = XpathUtils.asString("ErrorResponse/RequestId", in);
         String message = XpathUtils.asString("ErrorResponse/Error/Message", in);
 
-        Constructor<? extends AmazonServiceException> constructor = exceptionClass.getConstructor(String.class);
-        AmazonServiceException ase = constructor.newInstance(message);
+        AmazonServiceException ase = newException(message);
         ase.setErrorCode(errorCode);
         ase.setRequestId(requestId);
 

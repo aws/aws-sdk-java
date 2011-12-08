@@ -36,6 +36,8 @@ public class InvalidationStaxUnmarshaller implements Unmarshaller<Invalidation, 
         Invalidation invalidation = new Invalidation();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+        if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

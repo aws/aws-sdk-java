@@ -38,7 +38,7 @@ public class DescribeSubnetsRequestMarshaller implements Marshaller<Request<Desc
 
         Request<DescribeSubnetsRequest> request = new DefaultRequest<DescribeSubnetsRequest>(describeSubnetsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSubnets");
-        request.addParameter("Version", "2011-05-15");
+        request.addParameter("Version", "2011-11-01");
 
 
         java.util.List<String> subnetIdsList = describeSubnetsRequest.getSubnetIds();

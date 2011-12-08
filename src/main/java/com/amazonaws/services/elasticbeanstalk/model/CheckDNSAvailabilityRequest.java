@@ -49,6 +49,8 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest {
     public CheckDNSAvailabilityRequest(String cNAMEPrefix) {
         this.cNAMEPrefix = cNAMEPrefix;
     }
+
+    
     
     /**
      * The prefix used when this CNAME is reserved.

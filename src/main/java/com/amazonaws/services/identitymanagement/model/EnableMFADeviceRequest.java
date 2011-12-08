@@ -90,6 +90,8 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest {
         this.authenticationCode1 = authenticationCode1;
         this.authenticationCode2 = authenticationCode2;
     }
+
+    
     
     /**
      * Name of the user for whom you want to enable the MFA device.

@@ -84,6 +84,8 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
         this.destination = destination;
         this.message = message;
     }
+
+    
     
     /**
      * The sender's email address.

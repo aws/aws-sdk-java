@@ -66,6 +66,8 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest {
         this.cacheParameterGroupName = cacheParameterGroupName;
         this.parameterNameValues = parameterNameValues;
     }
+
+    
     
     /**
      * The name of the Cache Parameter Group.

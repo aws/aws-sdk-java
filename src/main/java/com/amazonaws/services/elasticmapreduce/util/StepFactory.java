@@ -66,10 +66,12 @@ public class StepFactory {
      *  The available Hive versions.  These are only available on Hadoop 0.20
      *  Hive_0_5 Hive 0.5
      *  Hive_0_7 Hive 0.7
+     *  Hive_0_7_1 Hive 0.7.1
      */
     public static enum HiveVersion {
     	Hive_0_5("0.5"),
-    	Hive_0_7("0.7");
+    	Hive_0_7("0.7"),
+    	Hive_0_7_1("0.7.1");
 
       private String stringVal;
 
@@ -148,10 +150,23 @@ public class StepFactory {
         for (int i = 0; i < hiveVersions.length; i++) {
           versionStrings[i] = hiveVersions[i].toString();
         }
-        return newHivePigStep("hive", "--install-hive", "--hive-versions",
-                StringUtils.join(",", versionStrings));
+        return newInstallHiveStep(versionStrings);
     	}
     	return newHivePigStep("hive", "--install-hive");
+    }
+    
+    /**
+     * Step that installs the specified versions of Hive on your job flow.
+     *
+     * @param hiveVersions the versions of Hive to install
+     * @return HadoopJarStepConfig that can be passed to your job flow.
+     */
+    public HadoopJarStepConfig newInstallHiveStep(String... hiveVersions) {
+      if (hiveVersions.length > 0) {
+        return newHivePigStep("hive", "--install-hive", "--hive-versions",
+                StringUtils.join(",", hiveVersions));
+      }
+      return newHivePigStep("hive", "--install-hive");
     }
 
     /**

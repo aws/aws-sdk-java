@@ -84,6 +84,8 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest {
     public UpdateServerCertificateRequest(String serverCertificateName) {
         this.serverCertificateName = serverCertificateName;
     }
+
+    
     
     /**
      * The name of the server certificate that you want to update.

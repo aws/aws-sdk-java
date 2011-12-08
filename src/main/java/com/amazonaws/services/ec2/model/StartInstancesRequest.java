@@ -56,6 +56,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
     public StartInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of Amazon EC2 instances to start.

@@ -54,6 +54,8 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest {
     public CreateAccountAliasRequest(String accountAlias) {
         this.accountAlias = accountAlias;
     }
+
+    
     
     /**
      * Name of the account alias to create.

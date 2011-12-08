@@ -193,6 +193,40 @@ public class Snapshot {
     
     
     /**
+     * Snapshot state (e.g., pending, completed, or error).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, completed, error
+     *
+     * @param state Snapshot state (e.g., pending, completed, or error).
+     *
+     * @see SnapshotState
+     */
+    public void setState(SnapshotState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * Snapshot state (e.g., pending, completed, or error).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>pending, completed, error
+     *
+     * @param state Snapshot state (e.g., pending, completed, or error).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SnapshotState
+     */
+    public Snapshot withState(SnapshotState state) {
+        this.state = state.toString();
+        return this;
+    }
+    
+    /**
      * Time stamp when the snapshot was initiated.
      *
      * @return Time stamp when the snapshot was initiated.

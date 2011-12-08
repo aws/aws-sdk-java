@@ -49,6 +49,8 @@ public class StepDetail {
         this.stepConfig = stepConfig;
         this.executionStatusDetail = executionStatusDetail;
     }
+
+    
     
     /**
      * The step configuration.

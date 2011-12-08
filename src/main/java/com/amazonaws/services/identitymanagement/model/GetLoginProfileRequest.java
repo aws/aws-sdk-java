@@ -51,6 +51,8 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest {
     public GetLoginProfileRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user whose login profile you want to retrieve.

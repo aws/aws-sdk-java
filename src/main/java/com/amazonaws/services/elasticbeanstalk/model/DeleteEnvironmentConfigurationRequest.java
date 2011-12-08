@@ -71,6 +71,8 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
         this.applicationName = applicationName;
         this.environmentName = environmentName;
     }
+
+    
     
     /**
      * The name of the application the environment is associated with.

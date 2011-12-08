@@ -62,6 +62,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     public CreateVpcRequest(String cidrBlock) {
         this.cidrBlock = cidrBlock;
     }
+
+    
     
     /**
      * A valid CIDR block.

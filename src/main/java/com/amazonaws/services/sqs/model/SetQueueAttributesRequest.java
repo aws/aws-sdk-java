@@ -55,6 +55,8 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.attributes = attributes;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

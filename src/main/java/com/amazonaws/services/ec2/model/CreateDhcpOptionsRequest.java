@@ -52,6 +52,8 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest {
     public CreateDhcpOptionsRequest(java.util.List<DhcpConfiguration> dhcpConfigurations) {
         this.dhcpConfigurations = dhcpConfigurations;
     }
+
+    
     
     /**
      * A set of one or more DHCP configurations.

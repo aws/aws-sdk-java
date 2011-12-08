@@ -38,7 +38,7 @@ public class DescribeSpotDatafeedSubscriptionRequestMarshaller implements Marsha
 
         Request<DescribeSpotDatafeedSubscriptionRequest> request = new DefaultRequest<DescribeSpotDatafeedSubscriptionRequest>(describeSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotDatafeedSubscription");
-        request.addParameter("Version", "2011-05-15");
+        request.addParameter("Version", "2011-11-01");
 
 
 

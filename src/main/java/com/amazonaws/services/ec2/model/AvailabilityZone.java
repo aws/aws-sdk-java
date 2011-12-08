@@ -38,6 +38,11 @@ public class AvailabilityZone {
     private String regionName;
 
     /**
+     * A list of messages about the Availability Zone.
+     */
+    private java.util.List<AvailabilityZoneMessage> messages;
+
+    /**
      * Name of the Availability Zone.
      *
      * @return Name of the Availability Zone.
@@ -140,6 +145,70 @@ public class AvailabilityZone {
     
     
     /**
+     * A list of messages about the Availability Zone.
+     *
+     * @return A list of messages about the Availability Zone.
+     */
+    public java.util.List<AvailabilityZoneMessage> getMessages() {
+        
+        if (messages == null) {
+            messages = new java.util.ArrayList<AvailabilityZoneMessage>();
+        }
+        return messages;
+    }
+    
+    /**
+     * A list of messages about the Availability Zone.
+     *
+     * @param messages A list of messages about the Availability Zone.
+     */
+    public void setMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
+        java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>();
+        if (messages != null) {
+            messagesCopy.addAll(messages);
+        }
+        this.messages = messagesCopy;
+    }
+    
+    /**
+     * A list of messages about the Availability Zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messages A list of messages about the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AvailabilityZone withMessages(AvailabilityZoneMessage... messages) {
+        if (getMessages() == null) setMessages(new java.util.ArrayList<AvailabilityZoneMessage>());
+        for (AvailabilityZoneMessage value : messages) {
+            getMessages().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of messages about the Availability Zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messages A list of messages about the Availability Zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AvailabilityZone withMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
+        java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>();
+        if (messages != null) {
+            messagesCopy.addAll(messages);
+        }
+        this.messages = messagesCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -154,6 +223,7 @@ public class AvailabilityZone {
         sb.append("ZoneName: " + zoneName + ", ");
         sb.append("State: " + state + ", ");
         sb.append("RegionName: " + regionName + ", ");
+        sb.append("Messages: " + messages + ", ");
         sb.append("}");
         return sb.toString();
     }

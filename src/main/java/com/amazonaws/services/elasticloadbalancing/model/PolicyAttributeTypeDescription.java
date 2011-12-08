@@ -49,9 +49,6 @@ public class PolicyAttributeTypeDescription {
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      * are allowed</li> </ul>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ONE, ZERO_OR_ONE, ZERO_OR_MORE, ONE_OR_MORE
      */
     private String cardinality;
 
@@ -197,17 +194,12 @@ public class PolicyAttributeTypeDescription {
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      * are allowed</li> </ul>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ONE, ZERO_OR_ONE, ZERO_OR_MORE, ONE_OR_MORE
      *
      * @return The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      *         are allowed</li> </ul>
-     *
-     * @see Cardinality
      */
     public String getCardinality() {
         return cardinality;
@@ -219,17 +211,12 @@ public class PolicyAttributeTypeDescription {
      * be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      * are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      * are allowed</li> </ul>
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ONE, ZERO_OR_ONE, ZERO_OR_MORE, ONE_OR_MORE
      *
      * @param cardinality The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
      *         be supplied</li> <li>ZERO_OR_MORE(0..*) : Optional. Multiple values
      *         are allowed</li> <li>ONE_OR_MORE(1..*0) : Required. Multiple values
      *         are allowed</li> </ul>
-     *
-     * @see Cardinality
      */
     public void setCardinality(String cardinality) {
         this.cardinality = cardinality;
@@ -243,9 +230,6 @@ public class PolicyAttributeTypeDescription {
      * are allowed</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
-     * <p>
-     * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>ONE, ZERO_OR_ONE, ZERO_OR_MORE, ONE_OR_MORE
      *
      * @param cardinality The cardinality of the attribute. Valid Values: <ul> <li>ONE(1) :
      *         Single value required</li> <li>ZERO_OR_ONE(0..1) : Up to one value can
@@ -255,8 +239,6 @@ public class PolicyAttributeTypeDescription {
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
-     *
-     * @see Cardinality
      */
     public PolicyAttributeTypeDescription withCardinality(String cardinality) {
         this.cardinality = cardinality;

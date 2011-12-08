@@ -48,14 +48,26 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
 
         String uriResourcePath = "2010-11-01/streaming-distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateStreamingDistributionRequest.getId())); 
+	    
+        if (uriResourcePath.contains("?")) {
+	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+	
+	        for (String s : queryString.split("&")) {
+	            String[] nameValuePair = s.split("=");
+	            if (nameValuePair.length == 2) {
+	                request.addParameter(nameValuePair[0], nameValuePair[1]);
+	            }
+	        }
+        }
+	    
         request.setResourcePath(uriResourcePath);
-	            
-        StringWriter stringWriter = new StringWriter();
-        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
-        
-        
 
-        if (updateStreamingDistributionRequest != null) {
+        	            
+	        StringWriter stringWriter = new StringWriter();
+	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
+
+			        if (updateStreamingDistributionRequest != null) {
             StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfigStreamingDistributionConfig != null) {
                 xmlWriter.startElement("StreamingDistributionConfig");
@@ -140,12 +152,15 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
             }
         }
 
-
-        try {
-            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-        } catch (UnsupportedEncodingException e) {
-            throw new AmazonClientException("Unable to marshall request to XML", e);
-        }
+	
+	        try {
+	            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+	            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes().length));
+	            request.addHeader("Content-Type", "application/xml");
+	        } catch (UnsupportedEncodingException e) {
+	            throw new AmazonClientException("Unable to marshall request to XML", e);
+	        }
+		
 
         return request;
     }

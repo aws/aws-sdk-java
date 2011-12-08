@@ -460,6 +460,44 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * If specified, limits the events returned from this call to include
+     * only those with the specified severity or higher.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+     *
+     * @param severity If specified, limits the events returned from this call to include
+     *         only those with the specified severity or higher.
+     *
+     * @see EventSeverity
+     */
+    public void setSeverity(EventSeverity severity) {
+        this.severity = severity.toString();
+    }
+    
+    /**
+     * If specified, limits the events returned from this call to include
+     * only those with the specified severity or higher.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TRACE, DEBUG, INFO, WARN, ERROR, FATAL
+     *
+     * @param severity If specified, limits the events returned from this call to include
+     *         only those with the specified severity or higher.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see EventSeverity
+     */
+    public DescribeEventsRequest withSeverity(EventSeverity severity) {
+        this.severity = severity.toString();
+        return this;
+    }
+    
+    /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to those that occur on or after this time.
      *

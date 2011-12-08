@@ -72,6 +72,8 @@ public class MFADevice {
         this.serialNumber = serialNumber;
         this.enableDate = enableDate;
     }
+
+    
     
     /**
      * The user with whom the MFA device is associated.

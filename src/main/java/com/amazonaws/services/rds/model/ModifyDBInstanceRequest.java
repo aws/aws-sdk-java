@@ -191,6 +191,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
+
+    
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase

@@ -17,6 +17,16 @@ package com.amazonaws.util;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.client.utils.URLEncodedUtils;
+import org.apache.http.message.BasicNameValuePair;
+
+import com.amazonaws.Request;
+import com.amazonaws.http.HttpMethodName;
 
 public class HttpUtils {
 
@@ -56,6 +66,40 @@ public class HttpUtils {
         if (scheme.equals("https") && port == 443) return false;
 
         return true;
+    }
+
+    public static boolean usePayloadForQueryParameters(Request<?> request) {
+        boolean requestIsPOST = HttpMethodName.POST.equals(request.getHttpMethod());
+        boolean requestHasNoPayload = (request.getContent() == null);
+
+        return requestIsPOST && requestHasNoPayload;
+    }
+
+    /**
+     * Creates an encoded query string from all the parameters in the specified
+     * request.
+     *
+     * @param request
+     *            The request containing the parameters to encode.
+     *
+     * @return Null if no parameters were present, otherwise the encoded query
+     *         string for the parameters present in the specified request.
+     */
+    public static String encodeParameters(Request<?> request) {
+        List<NameValuePair> nameValuePairs = null;
+        if (request.getParameters().size() > 0) {
+            nameValuePairs = new ArrayList<NameValuePair>(request.getParameters().size());
+            for (Entry<String, String> entry : request.getParameters().entrySet()) {
+                nameValuePairs.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
+            }
+        }
+
+        String encodedParams = null;
+        if (nameValuePairs != null) {
+            encodedParams = URLEncodedUtils.format(nameValuePairs, DEFAULT_ENCODING);
+        }
+
+        return encodedParams;
     }
 
 }

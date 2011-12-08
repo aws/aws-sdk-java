@@ -75,6 +75,8 @@ public class SelectRequest extends AmazonWebServiceRequest {
     public SelectRequest(String selectExpression) {
         this.selectExpression = selectExpression;
     }
+
+    
     
     /**
      * Constructs a new SelectRequest object.
@@ -92,6 +94,8 @@ public class SelectRequest extends AmazonWebServiceRequest {
         this.selectExpression = selectExpression;
         this.consistentRead = consistentRead;
     }
+
+    
     
     /**
      * The expression used to query the domain.

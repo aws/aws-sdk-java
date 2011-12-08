@@ -6,7 +6,7 @@
     <artifactId>aws-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.2.12</version>
+    <version>1.2.13</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>http://aws.amazon.com/sdkforjava</url>
 
@@ -45,10 +45,14 @@
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
+
+        <!-- JavaMail is only needed if you want to use the JavaMail provider
+             for Amazon Simple Email Service -->
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>[1.4,)</version>
+            <optional>true</optional>
         </dependency>
 
         <!-- JDK 1.6 and above include StAX support by default, so these two dependencies
@@ -57,6 +61,7 @@
             <groupId>stax</groupId>
             <artifactId>stax-api</artifactId>
             <version>1.0.1</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>stax</groupId>

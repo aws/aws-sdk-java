@@ -58,6 +58,7 @@ import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.services.s3.internal.BucketNameUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.CopyObjectResponseHandler;
+import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
@@ -95,6 +96,8 @@ import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
 import com.amazonaws.services.s3.model.DeleteBucketWebsiteConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsRequest;
+import com.amazonaws.services.s3.model.DeleteObjectsResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GenericBucketRequest;
@@ -113,6 +116,7 @@ import com.amazonaws.services.s3.model.ListObjectsRequest;
 import com.amazonaws.services.s3.model.ListPartsRequest;
 import com.amazonaws.services.s3.model.ListVersionsRequest;
 import com.amazonaws.services.s3.model.MultiFactorAuthentication;
+import com.amazonaws.services.s3.model.MultiObjectDeleteException;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
@@ -138,11 +142,13 @@ import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.transform.AclXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
+import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.BinaryUtils;
 
 /**
  * <p>
@@ -866,7 +872,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         	// Multipart Uploads don't have an MD5 calculated on the service side
         	if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
 	            byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
-	            byte[] serverSideHash = ServiceUtils.fromHex(s3Object.getObjectMetadata().getETag());
+	            byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
 
 	            if (!Arrays.equals(clientSideHash, serverSideHash)) {
 	                throw new AmazonClientException("Unable to verify integrity of data download.  " +
@@ -957,7 +963,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             try {
                 fileInputStream = new FileInputStream(file);
                 byte[] md5Hash = ServiceUtils.computeMD5Hash(fileInputStream);
-                metadata.setContentMD5(ServiceUtils.toBase64(md5Hash));
+                metadata.setContentMD5(BinaryUtils.toBase64(md5Hash));
             } catch (Exception e) {
                 throw new AmazonClientException(
                         "Unable to calculate MD5 hash: " + e.getMessage(), e);
@@ -1047,12 +1053,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         String contentMd5 = metadata.getContentMD5();
         if (md5DigestStream != null) {
-            contentMd5 = ServiceUtils.toBase64(md5DigestStream.getMd5Digest());
+            contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
         }
 
         if (returnedMetadata != null && contentMd5 != null) {
-            byte[] clientSideHash = ServiceUtils.fromBase64(contentMd5);
-            byte[] serverSideHash = ServiceUtils.fromHex(returnedMetadata.getETag());
+            byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
+            byte[] serverSideHash = BinaryUtils.fromHex(returnedMetadata.getETag());
 
             if (!Arrays.equals(clientSideHash, serverSideHash)) {
                 fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
@@ -1313,6 +1319,49 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<DeleteObjectRequest> request = createRequest(deleteObjectRequest.getBucketName(), deleteObjectRequest.getKey(), deleteObjectRequest, HttpMethodName.DELETE);
         invoke(request, voidResponseHandler, deleteObjectRequest.getBucketName(), deleteObjectRequest.getKey());
+    }
+    
+    /**
+     * Deletes multiple objects in a single bucket from S3.
+     * <p>
+     * In some cases, some objects will be successfully deleted, while some
+     * attempts will cause an error. If any object in the request cannot be
+     * deleted, this method throws an {@link MultiObjectDeleteException} with
+     * details of the error.
+     * 
+     * @throws MultiObjectDeleteException
+     *             if one or more of the objects couldn't be deleted.
+     */
+    public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest) {
+        Request<DeleteObjectsRequest> request = createRequest(deleteObjectsRequest.getBucketName(), null, deleteObjectsRequest, HttpMethodName.POST);
+        request.addParameter("delete", null);
+        
+        if ( deleteObjectsRequest.getMfa() != null ) {
+            populateRequestWithMfaDetails(request, deleteObjectsRequest.getMfa());
+        }
+        
+        byte[] content = new MultiObjectDeleteXmlFactory().convertToXmlByteArray(deleteObjectsRequest);
+        request.addHeader("Content-Length", String.valueOf(content.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(content));
+        try {
+            byte[] md5 = ServiceUtils.computeMD5Hash(content);
+            String md5Base64 = BinaryUtils.toBase64(md5);
+            request.addHeader("Content-MD5", md5Base64);
+        } catch ( Exception e ) {
+            throw new AmazonClientException("Couldn't compute md5 sum", e);
+        }
+
+        DeleteObjectsResponse response = invoke(request, new Unmarshallers.DeleteObjectsResultUnmarshaller(), deleteObjectsRequest.getBucketName(), null);
+        
+        /*
+         * If the result was only partially successful, throw an exception
+         */
+        if ( !response.getErrors().isEmpty() ) {
+            throw new MultiObjectDeleteException(response.getErrors(), response.getDeletedObjects());
+        }
+        
+        return new DeleteObjectsResult(response.getDeletedObjects());
     }
 
     /* (non-Javadoc)
@@ -1949,9 +1998,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             ObjectMetadata metadata = invoke(request, new S3MetadataResponseHandler(), bucketName, key);
 
             if (metadata != null && md5DigestStream != null) {
-            	String contentMd5 = ServiceUtils.toBase64(md5DigestStream.getMd5Digest());
-                byte[] clientSideHash = ServiceUtils.fromBase64(contentMd5);
-                byte[] serverSideHash = ServiceUtils.fromHex(metadata.getETag());
+            	String contentMd5 = BinaryUtils.toBase64(md5DigestStream.getMd5Digest());
+                byte[] clientSideHash = BinaryUtils.fromBase64(contentMd5);
+                byte[] serverSideHash = BinaryUtils.fromHex(metadata.getETag());
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {
                     fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
@@ -2223,7 +2272,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Map<String, String> userMetadata = metadata.getUserMetadata();
         if (userMetadata != null) {
             for (Entry<String, String> entry : userMetadata.entrySet()) {
-                request.addHeader(Headers.S3_USER_METADATA_PREFIX + entry.getKey(), entry.getValue());
+                String key = entry.getKey();
+                String value = entry.getValue();
+                if (key != null) key = key.trim();
+                if (value != null) value = value.trim();
+                request.addHeader(Headers.S3_USER_METADATA_PREFIX + key, value);
             }
         }
     }

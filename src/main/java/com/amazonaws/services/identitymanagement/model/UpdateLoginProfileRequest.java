@@ -61,6 +61,8 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
     public UpdateLoginProfileRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user whose login profile you want to update.

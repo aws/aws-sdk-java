@@ -64,6 +64,8 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest {
     public ListInvalidationsRequest(String distributionId) {
         this.distributionId = distributionId;
     }
+
+    
     
     /**
      * The distribution's id.

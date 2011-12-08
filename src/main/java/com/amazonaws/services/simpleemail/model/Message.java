@@ -51,6 +51,8 @@ public class Message {
         this.subject = subject;
         this.body = body;
     }
+
+    
     
     /**
      * The subject of the message: A short summary of the content, which will

@@ -93,6 +93,8 @@ public class JobFlowDetail {
         this.executionStatusDetail = executionStatusDetail;
         this.instances = instances;
     }
+
+    
     
     /**
      * The job flow identifier.

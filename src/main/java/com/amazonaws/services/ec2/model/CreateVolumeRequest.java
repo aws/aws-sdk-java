@@ -61,6 +61,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest {
         this.size = size;
         this.availabilityZone = availabilityZone;
     }
+
+    
     
     /**
      * Constructs a new CreateVolumeRequest object.
@@ -76,6 +78,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest {
         this.snapshotId = snapshotId;
         this.availabilityZone = availabilityZone;
     }
+
+    
     
     /**
      * The size of the volume, in gigabytes. Required if you are not creating

@@ -81,6 +81,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         this.aWSAccountIds = aWSAccountIds;
         this.actionNames = actionNames;
     }
+
+    
     
     /**
      * The ARN of the topic whose access control policy you wish to modify.

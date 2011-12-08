@@ -38,7 +38,7 @@ public class SetLoadBalancerPoliciesOfListenerRequestMarshaller implements Marsh
 
         Request<SetLoadBalancerPoliciesOfListenerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesOfListenerRequest>(setLoadBalancerPoliciesOfListenerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesOfListener");
-        request.addParameter("Version", "2011-08-15");
+        request.addParameter("Version", "2011-11-15");
 
         if (setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(setLoadBalancerPoliciesOfListenerRequest.getLoadBalancerName()));

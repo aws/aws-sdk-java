@@ -59,6 +59,8 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
         this.bucket = bucket;
     }
+
+    
     
     /**
      * The Amazon S3 bucket in which to store the Spot Instance datafeed.

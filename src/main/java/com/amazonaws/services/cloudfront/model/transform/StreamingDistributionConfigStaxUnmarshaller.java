@@ -36,6 +36,8 @@ public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller
         StreamingDistributionConfig streamingDistributionConfig = new StreamingDistributionConfig();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
+        if (context.isStartOfDocument()) targetDepth += 1;
+        
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();

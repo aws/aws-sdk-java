@@ -62,6 +62,8 @@ public class StepConfig {
         this.name = name;
         this.hadoopJarStep = hadoopJarStep;
     }
+
+    
     
     /**
      * The name of the job flow step.
@@ -157,6 +159,40 @@ public class StepConfig {
         return this;
     }
     
+    
+    /**
+     * Specifies the action to take if the job flow step fails.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
+     *
+     * @param actionOnFailure Specifies the action to take if the job flow step fails.
+     *
+     * @see ActionOnFailure
+     */
+    public void setActionOnFailure(ActionOnFailure actionOnFailure) {
+        this.actionOnFailure = actionOnFailure.toString();
+    }
+    
+    /**
+     * Specifies the action to take if the job flow step fails.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>TERMINATE_JOB_FLOW, CANCEL_AND_WAIT, CONTINUE
+     *
+     * @param actionOnFailure Specifies the action to take if the job flow step fails.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ActionOnFailure
+     */
+    public StepConfig withActionOnFailure(ActionOnFailure actionOnFailure) {
+        this.actionOnFailure = actionOnFailure.toString();
+        return this;
+    }
     
     /**
      * Specifies the JAR file used for the job flow step.

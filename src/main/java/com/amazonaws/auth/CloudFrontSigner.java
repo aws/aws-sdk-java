@@ -21,10 +21,6 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSSessionCredentials;
-import com.amazonaws.auth.AbstractAWSSigner;
-import com.amazonaws.auth.SigningAlgorithm;
 import com.amazonaws.util.DateUtils;
 
 /**
@@ -48,7 +44,7 @@ public class CloudFrontSigner extends AbstractAWSSigner {
         String canonicalString = date;
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
-        String signature = super.sign(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
+        String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
         request.addHeader("Authorization", "AWS " + sanitizedCredentials.getAWSAccessKeyId() + ":" + signature);
     }
 

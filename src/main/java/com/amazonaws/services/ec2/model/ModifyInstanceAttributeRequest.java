@@ -117,6 +117,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the instance whose attribute is being modified.

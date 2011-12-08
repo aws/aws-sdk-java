@@ -82,6 +82,8 @@ public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceReque
         this.loadBalancerName = loadBalancerName;
         this.policyName = policyName;
     }
+
+    
     
     /**
      * The name associated with the LoadBalancer. The name must be unique

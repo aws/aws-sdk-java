@@ -55,6 +55,8 @@ public class Body {
     public Body(Content text) {
         this.text = text;
     }
+
+    
     
     /**
      * The content of the message, in text format. Use this for text-based

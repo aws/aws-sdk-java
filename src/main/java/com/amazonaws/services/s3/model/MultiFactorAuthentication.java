@@ -14,7 +14,6 @@
  */
 package com.amazonaws.services.s3.model;
 
-import com.amazonaws.services.s3.AmazonS3;
 
 /**
  * Contains Multi-Factor Authentication (MFA) information to be included 

@@ -47,6 +47,8 @@ public class PlacementType {
     public PlacementType(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
+
+    
     
     /**
      * The Amazon EC2 Availability Zone for the job flow.

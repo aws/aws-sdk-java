@@ -41,6 +41,8 @@ public class DeletableItem {
         this.name = name;
         this.attributes = attributes;
     }
+
+    
     
     /**
      * Returns the value of the Name property for this object.

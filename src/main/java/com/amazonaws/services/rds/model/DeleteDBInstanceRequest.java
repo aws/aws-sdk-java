@@ -81,6 +81,8 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     public DeleteDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
+
+    
     
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This

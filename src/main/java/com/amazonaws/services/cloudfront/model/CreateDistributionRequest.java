@@ -47,6 +47,8 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest {
     public CreateDistributionRequest(DistributionConfig distributionConfig) {
         this.distributionConfig = distributionConfig;
     }
+
+    
     
     /**
      * The distribution's configuration information.

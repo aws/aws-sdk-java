@@ -56,6 +56,8 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
     public ListSubscriptionsByTopicRequest(String topicArn) {
         this.topicArn = topicArn;
     }
+
+    
     
     /**
      * Constructs a new ListSubscriptionsByTopicRequest object.
@@ -71,6 +73,8 @@ public class ListSubscriptionsByTopicRequest extends AmazonWebServiceRequest {
         this.topicArn = topicArn;
         this.nextToken = nextToken;
     }
+
+    
     
     /**
      * The ARN of the topic for which you wish to find subscriptions.

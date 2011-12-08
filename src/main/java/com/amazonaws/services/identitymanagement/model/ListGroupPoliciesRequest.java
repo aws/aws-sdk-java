@@ -78,6 +78,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
     public ListGroupPoliciesRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * The name of the group to list policies for.

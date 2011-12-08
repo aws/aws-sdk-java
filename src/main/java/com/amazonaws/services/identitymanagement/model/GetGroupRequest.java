@@ -75,6 +75,8 @@ public class GetGroupRequest extends AmazonWebServiceRequest {
     public GetGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * Name of the group.

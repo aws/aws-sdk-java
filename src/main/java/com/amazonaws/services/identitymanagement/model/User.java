@@ -128,6 +128,8 @@ public class User {
         this.arn = arn;
         this.createDate = createDate;
     }
+
+    
     
     /**
      * Path to the user name. For more information about paths, see <a

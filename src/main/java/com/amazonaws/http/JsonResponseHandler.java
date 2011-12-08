@@ -80,16 +80,13 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContext(jsonParser);
-
-            // TODO: Anything else to do for JSON metadata?
-            unmarshallerContext.registerMetadataExpression("ResponseMetadata/RequestId", 2, ResponseMetadata.AWS_REQUEST_ID);
-            unmarshallerContext.registerMetadataExpression("requestId", 2, ResponseMetadata.AWS_REQUEST_ID);
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
             awsResponse.setResult(result);
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();
+            metadata.put(ResponseMetadata.AWS_REQUEST_ID, response.getHeaders().get("x-amzn-RequestId"));
             awsResponse.setResponseMetadata(new ResponseMetadata(metadata));
 
             log.trace("Done parsing service response");

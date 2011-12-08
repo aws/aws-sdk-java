@@ -85,6 +85,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
         this.attribute = attribute;
         this.operationType = operationType;
     }
+
+    
     
     /**
      * The ID of the EBS snapshot whose attributes are being modified.

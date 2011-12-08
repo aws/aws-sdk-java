@@ -59,6 +59,8 @@ public class ReplaceableAttribute {
         this.value = value;
         this.replace = replace;
     }
+
+    
     
     /**
      * The name of the replaceable attribute.

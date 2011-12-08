@@ -58,6 +58,8 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
     public DeleteVpnConnectionRequest(String vpnConnectionId) {
         this.vpnConnectionId = vpnConnectionId;
     }
+
+    
     
     /**
      * The ID of the VPN connection to delete

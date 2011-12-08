@@ -73,6 +73,8 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     public RevokeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
+
+    
     
     /**
      * The name of the DB Security Group to revoke ingress from.

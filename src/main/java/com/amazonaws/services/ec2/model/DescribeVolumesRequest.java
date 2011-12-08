@@ -56,6 +56,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
     public DescribeVolumesRequest(java.util.List<String> volumeIds) {
         this.volumeIds = volumeIds;
     }
+
+    
     
     /**
      * The optional list of EBS volumes to describe.

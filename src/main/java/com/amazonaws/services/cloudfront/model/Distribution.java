@@ -93,6 +93,8 @@ public class Distribution {
         this.status = status;
         this.domainName = domainName;
     }
+
+    
     
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.

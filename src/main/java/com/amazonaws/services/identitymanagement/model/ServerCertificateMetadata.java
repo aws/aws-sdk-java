@@ -115,6 +115,8 @@ public class ServerCertificateMetadata {
         this.serverCertificateId = serverCertificateId;
         this.arn = arn;
     }
+
+    
     
     /**
      * Path to the server certificate. For more information about paths, see

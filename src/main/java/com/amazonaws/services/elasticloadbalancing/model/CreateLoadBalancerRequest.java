@@ -68,6 +68,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     private java.util.List<String> availabilityZones;
 
     /**
+     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     */
+    private java.util.List<String> subnets;
+
+    /**
+     * The security groups assigned to your LoadBalancer within your VPC.
+     */
+    private java.util.List<String> securityGroups;
+
+    /**
      * Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -84,6 +94,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     public CreateLoadBalancerRequest(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
+
+    
     
     /**
      * Constructs a new CreateLoadBalancerRequest object.
@@ -105,6 +117,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
         this.listeners = listeners;
         this.availabilityZones = availabilityZones;
     }
+
+    
     
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -315,6 +329,134 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     *
+     * @return A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     */
+    public java.util.List<String> getSubnets() {
+        
+        if (subnets == null) {
+            subnets = new java.util.ArrayList<String>();
+        }
+        return subnets;
+    }
+    
+    /**
+     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     *
+     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     */
+    public void setSubnets(java.util.Collection<String> subnets) {
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
+        if (subnets != null) {
+            subnetsCopy.addAll(subnets);
+        }
+        this.subnets = subnetsCopy;
+    }
+    
+    /**
+     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLoadBalancerRequest withSubnets(String... subnets) {
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>());
+        for (String value : subnets) {
+            getSubnets().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLoadBalancerRequest withSubnets(java.util.Collection<String> subnets) {
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
+        if (subnets != null) {
+            subnetsCopy.addAll(subnets);
+        }
+        this.subnets = subnetsCopy;
+
+        return this;
+    }
+    
+    /**
+     * The security groups assigned to your LoadBalancer within your VPC.
+     *
+     * @return The security groups assigned to your LoadBalancer within your VPC.
+     */
+    public java.util.List<String> getSecurityGroups() {
+        
+        if (securityGroups == null) {
+            securityGroups = new java.util.ArrayList<String>();
+        }
+        return securityGroups;
+    }
+    
+    /**
+     * The security groups assigned to your LoadBalancer within your VPC.
+     *
+     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     */
+    public void setSecurityGroups(java.util.Collection<String> securityGroups) {
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+    }
+    
+    /**
+     * The security groups assigned to your LoadBalancer within your VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLoadBalancerRequest withSecurityGroups(String... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
+        for (String value : securityGroups) {
+            getSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The security groups assigned to your LoadBalancer within your VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
+        if (securityGroups != null) {
+            securityGroupsCopy.addAll(securityGroups);
+        }
+        this.securityGroups = securityGroupsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -329,6 +471,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
         sb.append("LoadBalancerName: " + loadBalancerName + ", ");
         sb.append("Listeners: " + listeners + ", ");
         sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        sb.append("Subnets: " + subnets + ", ");
+        sb.append("SecurityGroups: " + securityGroups + ", ");
         sb.append("}");
         return sb.toString();
     }

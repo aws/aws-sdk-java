@@ -93,6 +93,8 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     public DescribeConfigurationSettingsRequest(String applicationName) {
         this.applicationName = applicationName;
     }
+
+    
     
     /**
      * The application for the environment or configuration template.

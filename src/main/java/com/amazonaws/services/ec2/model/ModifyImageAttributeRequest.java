@@ -96,6 +96,8 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
         this.imageId = imageId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the AMI whose attribute you want to modify.

@@ -56,6 +56,8 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest {
         this.licenseId = licenseId;
         this.capacity = capacity;
     }
+
+    
     
     /**
      * Specifies the ID for the specific license to activate against.

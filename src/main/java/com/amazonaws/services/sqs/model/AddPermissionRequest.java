@@ -97,6 +97,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
         this.aWSAccountIds = aWSAccountIds;
         this.actions = actions;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

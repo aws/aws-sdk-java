@@ -77,6 +77,21 @@ public class JobFlowExecutionStatusDetail {
         this.state = state;
         this.creationDateTime = creationDateTime;
     }
+
+    
+    
+    /**
+     * Constructs a new JobFlowExecutionStatusDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param state The state of the job flow.
+     * @param creationDateTime The creation date and time of the job flow.
+     */
+    public JobFlowExecutionStatusDetail(JobFlowExecutionState state, java.util.Date creationDateTime) {
+        this.state = state.toString();
+        this.creationDateTime = creationDateTime;
+    }
     
     /**
      * The state of the job flow.
@@ -126,6 +141,40 @@ public class JobFlowExecutionStatusDetail {
         return this;
     }
     
+    
+    /**
+     * The state of the job flow.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     *
+     * @param state The state of the job flow.
+     *
+     * @see JobFlowExecutionState
+     */
+    public void setState(JobFlowExecutionState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * The state of the job flow.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>COMPLETED, FAILED, TERMINATED, RUNNING, SHUTTING_DOWN, STARTING, WAITING, BOOTSTRAPPING
+     *
+     * @param state The state of the job flow.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see JobFlowExecutionState
+     */
+    public JobFlowExecutionStatusDetail withState(JobFlowExecutionState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * The creation date and time of the job flow.

@@ -56,6 +56,8 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
         this.vpnGatewayId = vpnGatewayId;
         this.vpcId = vpcId;
     }
+
+    
     
     /**
      * The ID of the VPN gateway to attach to the VPC.

@@ -61,6 +61,8 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         this.dBSecurityGroupName = dBSecurityGroupName;
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
     }
+
+    
     
     /**
      * The name for the DB Security Group. This value is stored as a

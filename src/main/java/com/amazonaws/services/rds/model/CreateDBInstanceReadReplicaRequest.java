@@ -104,6 +104,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
     }
+
+    
     
     /**
      * The DB Instance identifier of the Read Replica. This is the unique key

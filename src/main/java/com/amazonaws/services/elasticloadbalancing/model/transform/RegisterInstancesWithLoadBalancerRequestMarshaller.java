@@ -38,7 +38,7 @@ public class RegisterInstancesWithLoadBalancerRequestMarshaller implements Marsh
 
         Request<RegisterInstancesWithLoadBalancerRequest> request = new DefaultRequest<RegisterInstancesWithLoadBalancerRequest>(registerInstancesWithLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "RegisterInstancesWithLoadBalancer");
-        request.addParameter("Version", "2011-08-15");
+        request.addParameter("Version", "2011-11-15");
 
         if (registerInstancesWithLoadBalancerRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(registerInstancesWithLoadBalancerRequest.getLoadBalancerName()));

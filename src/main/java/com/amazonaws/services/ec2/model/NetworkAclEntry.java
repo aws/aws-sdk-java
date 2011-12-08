@@ -157,6 +157,40 @@ public class NetworkAclEntry {
     
     
     /**
+     * Sets the value of the RuleAction property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>allow, deny
+     *
+     * @param ruleAction The new value for the RuleAction property for this object.
+     *
+     * @see RuleAction
+     */
+    public void setRuleAction(RuleAction ruleAction) {
+        this.ruleAction = ruleAction.toString();
+    }
+    
+    /**
+     * Sets the value of the RuleAction property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>allow, deny
+     *
+     * @param ruleAction The new value for the RuleAction property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RuleAction
+     */
+    public NetworkAclEntry withRuleAction(RuleAction ruleAction) {
+        this.ruleAction = ruleAction.toString();
+        return this;
+    }
+    
+    /**
      * Returns the value of the Egress property for this object.
      *
      * @return The value of the Egress property for this object.

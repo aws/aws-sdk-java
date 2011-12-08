@@ -120,6 +120,8 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
         this.itemName = itemName;
         this.attributes = attributes;
     }
+
+    
     
     /**
      * Constructs a new PutAttributesRequest object.
@@ -141,6 +143,8 @@ public class PutAttributesRequest extends AmazonWebServiceRequest {
         this.attributes = attributes;
         this.expected = expected;
     }
+
+    
     
     /**
      * The name of the domain in which to perform the operation.

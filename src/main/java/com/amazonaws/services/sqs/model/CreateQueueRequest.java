@@ -67,6 +67,8 @@ public class CreateQueueRequest extends AmazonWebServiceRequest {
     public CreateQueueRequest(String queueName) {
         this.queueName = queueName;
     }
+
+    
     
     /**
      * The name for the queue to be created.

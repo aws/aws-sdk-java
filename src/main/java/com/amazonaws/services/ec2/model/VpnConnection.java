@@ -64,6 +64,8 @@ public class VpnConnection {
      */
     private java.util.List<Tag> tags;
 
+    private java.util.List<VgwTelemetry> vgwTelemetry;
+
     /**
      * Specifies the ID of the VPN gateway at the VPC end of the VPN
      * connection.
@@ -381,6 +383,70 @@ public class VpnConnection {
     }
     
     /**
+     * Returns the value of the VgwTelemetry property for this object.
+     *
+     * @return The value of the VgwTelemetry property for this object.
+     */
+    public java.util.List<VgwTelemetry> getVgwTelemetry() {
+        
+        if (vgwTelemetry == null) {
+            vgwTelemetry = new java.util.ArrayList<VgwTelemetry>();
+        }
+        return vgwTelemetry;
+    }
+    
+    /**
+     * Sets the value of the VgwTelemetry property for this object.
+     *
+     * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
+     */
+    public void setVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
+        java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>();
+        if (vgwTelemetry != null) {
+            vgwTelemetryCopy.addAll(vgwTelemetry);
+        }
+        this.vgwTelemetry = vgwTelemetryCopy;
+    }
+    
+    /**
+     * Sets the value of the VgwTelemetry property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VpnConnection withVgwTelemetry(VgwTelemetry... vgwTelemetry) {
+        if (getVgwTelemetry() == null) setVgwTelemetry(new java.util.ArrayList<VgwTelemetry>());
+        for (VgwTelemetry value : vgwTelemetry) {
+            getVgwTelemetry().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the VgwTelemetry property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VpnConnection withVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
+        java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>();
+        if (vgwTelemetry != null) {
+            vgwTelemetryCopy.addAll(vgwTelemetry);
+        }
+        this.vgwTelemetry = vgwTelemetryCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -399,6 +465,7 @@ public class VpnConnection {
         sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
         sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
         sb.append("Tags: " + tags + ", ");
+        sb.append("VgwTelemetry: " + vgwTelemetry + ", ");
         sb.append("}");
         return sb.toString();
     }

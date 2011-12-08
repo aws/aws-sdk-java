@@ -43,8 +43,8 @@
  * </p>
  * <p>
  * For more information about this product, go to the <a
- * href="http://aws.amazon.com/documentation/cloudformation">
- * CloudFormation Product Page </a> .
+ * href="http://aws.amazon.com/cloudformation/"> CloudFormation Product
+ * Page </a> .
  * </p>
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need

@@ -68,6 +68,8 @@ public class FederatedUser {
         this.federatedUserId = federatedUserId;
         this.arn = arn;
     }
+
+    
     
     /**
      * The string identifying the federated user associated with the

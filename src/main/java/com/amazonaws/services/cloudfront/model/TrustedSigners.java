@@ -52,6 +52,8 @@ public class TrustedSigners {
     public TrustedSigners(java.util.List<String> awsAccountNumbers) {
         this.awsAccountNumbers = awsAccountNumbers;
     }
+
+    
     
     /**
      * Include this empty element if you want to give your own AWS account

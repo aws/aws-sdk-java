@@ -48,6 +48,8 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest {
     public DeletePlacementGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * The name of the <code>PlacementGroup</code> to delete.

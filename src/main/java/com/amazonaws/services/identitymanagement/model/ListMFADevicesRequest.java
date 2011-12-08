@@ -80,6 +80,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     public ListMFADevicesRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user whose MFA devices you want to list.

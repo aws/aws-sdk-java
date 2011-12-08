@@ -66,6 +66,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest {
         this.userName = userName;
         this.password = password;
     }
+
+    
     
     /**
      * Name of the user to create a login profile for.

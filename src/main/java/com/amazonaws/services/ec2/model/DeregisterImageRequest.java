@@ -47,6 +47,8 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest {
     public DeregisterImageRequest(String imageId) {
         this.imageId = imageId;
     }
+
+    
     
     /**
      * The ID of the AMI to deregister.

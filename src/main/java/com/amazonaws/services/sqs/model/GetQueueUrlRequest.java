@@ -52,6 +52,8 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest {
     public GetQueueUrlRequest(String queueName) {
         this.queueName = queueName;
     }
+
+    
     
     /**
      * The name of the queue whose URL must be fetched.

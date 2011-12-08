@@ -1,0 +1,552 @@
+/*
+ * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+package com.amazonaws.services.route53.model;
+
+/**
+ * <p>
+ * A complex type that contains information about the current resource
+ * record set.
+ * </p>
+ */
+public class ResourceRecordSet {
+
+    /**
+     * The domain name of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 1024<br/>
+     */
+    private String name;
+
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     */
+    private String type;
+
+    /**
+     * <i>Weighted resource record sets only:</i> An identifier that
+     * differentiates among multiple resource record sets that have the same
+     * combination of DNS name and type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     */
+    private String setIdentifier;
+
+    /**
+     * <i>Weighted resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * determines what portion of traffic for the current resource record set
+     * is routed to the associated location.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 255<br/>
+     */
+    private Long weight;
+
+    /**
+     * The cache time to live for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 2147483647<br/>
+     */
+    private Long tTL;
+
+    /**
+     * A complex type that contains the resource records for the current
+     * resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     */
+    private java.util.List<ResourceRecord> resourceRecords;
+
+    /**
+     * <i>Alias resource record sets only:</i> Information about the Elastic
+     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     */
+    private AliasTarget aliasTarget;
+
+    /**
+     * Default constructor for a new ResourceRecordSet object.  Callers should use the
+     * setter or fluent setter (with...) methods to initialize this object after creating it.
+     */
+    public ResourceRecordSet() {}
+    
+    /**
+     * Constructs a new ResourceRecordSet object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The domain name of the current resource record set.
+     * @param type The type of the current resource record set.
+     */
+    public ResourceRecordSet(String name, String type) {
+        this.name = name;
+        this.type = type;
+    }
+
+    
+    
+    /**
+     * Constructs a new ResourceRecordSet object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param name The domain name of the current resource record set.
+     * @param type The type of the current resource record set.
+     */
+    public ResourceRecordSet(String name, RRType type) {
+        this.name = name;
+        this.type = type.toString();
+    }
+    
+    /**
+     * The domain name of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 1024<br/>
+     *
+     * @return The domain name of the current resource record set.
+     */
+    public String getName() {
+        return name;
+    }
+    
+    /**
+     * The domain name of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 1024<br/>
+     *
+     * @param name The domain name of the current resource record set.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    /**
+     * The domain name of the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 1024<br/>
+     *
+     * @param name The domain name of the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withName(String name) {
+        this.name = name;
+        return this;
+    }
+    
+    
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     *
+     * @return The type of the current resource record set.
+     *
+     * @see RRType
+     */
+    public String getType() {
+        return type;
+    }
+    
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     *
+     * @param type The type of the current resource record set.
+     *
+     * @see RRType
+     */
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     *
+     * @param type The type of the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RRType
+     */
+    public ResourceRecordSet withType(String type) {
+        this.type = type;
+        return this;
+    }
+    
+    
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     *
+     * @param type The type of the current resource record set.
+     *
+     * @see RRType
+     */
+    public void setType(RRType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * The type of the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>SOA, A, TXT, NS, CNAME, MX, PTR, SRV, SPF, AAAA
+     *
+     * @param type The type of the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RRType
+     */
+    public ResourceRecordSet withType(RRType type) {
+        this.type = type.toString();
+        return this;
+    }
+    
+    /**
+     * <i>Weighted resource record sets only:</i> An identifier that
+     * differentiates among multiple resource record sets that have the same
+     * combination of DNS name and type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @return <i>Weighted resource record sets only:</i> An identifier that
+     *         differentiates among multiple resource record sets that have the same
+     *         combination of DNS name and type.
+     */
+    public String getSetIdentifier() {
+        return setIdentifier;
+    }
+    
+    /**
+     * <i>Weighted resource record sets only:</i> An identifier that
+     * differentiates among multiple resource record sets that have the same
+     * combination of DNS name and type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @param setIdentifier <i>Weighted resource record sets only:</i> An identifier that
+     *         differentiates among multiple resource record sets that have the same
+     *         combination of DNS name and type.
+     */
+    public void setSetIdentifier(String setIdentifier) {
+        this.setIdentifier = setIdentifier;
+    }
+    
+    /**
+     * <i>Weighted resource record sets only:</i> An identifier that
+     * differentiates among multiple resource record sets that have the same
+     * combination of DNS name and type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 128<br/>
+     *
+     * @param setIdentifier <i>Weighted resource record sets only:</i> An identifier that
+     *         differentiates among multiple resource record sets that have the same
+     *         combination of DNS name and type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withSetIdentifier(String setIdentifier) {
+        this.setIdentifier = setIdentifier;
+        return this;
+    }
+    
+    
+    /**
+     * <i>Weighted resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * determines what portion of traffic for the current resource record set
+     * is routed to the associated location.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 255<br/>
+     *
+     * @return <i>Weighted resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         determines what portion of traffic for the current resource record set
+     *         is routed to the associated location.
+     */
+    public Long getWeight() {
+        return weight;
+    }
+    
+    /**
+     * <i>Weighted resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * determines what portion of traffic for the current resource record set
+     * is routed to the associated location.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 255<br/>
+     *
+     * @param weight <i>Weighted resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         determines what portion of traffic for the current resource record set
+     *         is routed to the associated location.
+     */
+    public void setWeight(Long weight) {
+        this.weight = weight;
+    }
+    
+    /**
+     * <i>Weighted resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * determines what portion of traffic for the current resource record set
+     * is routed to the associated location.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 255<br/>
+     *
+     * @param weight <i>Weighted resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         determines what portion of traffic for the current resource record set
+     *         is routed to the associated location.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withWeight(Long weight) {
+        this.weight = weight;
+        return this;
+    }
+    
+    
+    /**
+     * The cache time to live for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 2147483647<br/>
+     *
+     * @return The cache time to live for the current resource record set.
+     */
+    public Long getTTL() {
+        return tTL;
+    }
+    
+    /**
+     * The cache time to live for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 2147483647<br/>
+     *
+     * @param tTL The cache time to live for the current resource record set.
+     */
+    public void setTTL(Long tTL) {
+        this.tTL = tTL;
+    }
+    
+    /**
+     * The cache time to live for the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>0 - 2147483647<br/>
+     *
+     * @param tTL The cache time to live for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withTTL(Long tTL) {
+        this.tTL = tTL;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains the resource records for the current
+     * resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @return A complex type that contains the resource records for the current
+     *         resource record set.
+     */
+    public java.util.List<ResourceRecord> getResourceRecords() {
+        
+        if (resourceRecords == null) {
+            resourceRecords = new java.util.ArrayList<ResourceRecord>();
+        }
+        return resourceRecords;
+    }
+    
+    /**
+     * A complex type that contains the resource records for the current
+     * resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param resourceRecords A complex type that contains the resource records for the current
+     *         resource record set.
+     */
+    public void setResourceRecords(java.util.Collection<ResourceRecord> resourceRecords) {
+        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>();
+        if (resourceRecords != null) {
+            resourceRecordsCopy.addAll(resourceRecords);
+        }
+        this.resourceRecords = resourceRecordsCopy;
+    }
+    
+    /**
+     * A complex type that contains the resource records for the current
+     * resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param resourceRecords A complex type that contains the resource records for the current
+     *         resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withResourceRecords(ResourceRecord... resourceRecords) {
+        if (getResourceRecords() == null) setResourceRecords(new java.util.ArrayList<ResourceRecord>());
+        for (ResourceRecord value : resourceRecords) {
+            getResourceRecords().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A complex type that contains the resource records for the current
+     * resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - <br/>
+     *
+     * @param resourceRecords A complex type that contains the resource records for the current
+     *         resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withResourceRecords(java.util.Collection<ResourceRecord> resourceRecords) {
+        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>();
+        if (resourceRecords != null) {
+            resourceRecordsCopy.addAll(resourceRecords);
+        }
+        this.resourceRecords = resourceRecordsCopy;
+
+        return this;
+    }
+    
+    /**
+     * <i>Alias resource record sets only:</i> Information about the Elastic
+     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     *
+     * @return <i>Alias resource record sets only:</i> Information about the Elastic
+     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     */
+    public AliasTarget getAliasTarget() {
+        return aliasTarget;
+    }
+    
+    /**
+     * <i>Alias resource record sets only:</i> Information about the Elastic
+     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     *
+     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the Elastic
+     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     */
+    public void setAliasTarget(AliasTarget aliasTarget) {
+        this.aliasTarget = aliasTarget;
+    }
+    
+    /**
+     * <i>Alias resource record sets only:</i> Information about the Elastic
+     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the Elastic
+     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withAliasTarget(AliasTarget aliasTarget) {
+        this.aliasTarget = aliasTarget;
+        return this;
+    }
+    
+    
+    /**
+     * Returns a string representation of this object; useful for testing and
+     * debugging.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        sb.append("Name: " + name + ", ");
+        sb.append("Type: " + type + ", ");
+        sb.append("SetIdentifier: " + setIdentifier + ", ");
+        sb.append("Weight: " + weight + ", ");
+        sb.append("TTL: " + tTL + ", ");
+        sb.append("ResourceRecords: " + resourceRecords + ", ");
+        sb.append("AliasTarget: " + aliasTarget + ", ");
+        sb.append("}");
+        return sb.toString();
+    }
+    
+}
+    

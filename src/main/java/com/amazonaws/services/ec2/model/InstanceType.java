@@ -29,6 +29,7 @@ public enum InstanceType {
     C1Medium("c1.medium"),
     C1Xlarge("c1.xlarge"),
     Cc14xlarge("cc1.4xlarge"),
+    Cc28xlarge("cc2.8xlarge"),
     Cg14xlarge("cg1.4xlarge");
 
     private String value;
@@ -73,6 +74,8 @@ public enum InstanceType {
             return InstanceType.C1Xlarge;
         } else if ("cc1.4xlarge".equals(value)) {
             return InstanceType.Cc14xlarge;
+        } else if ("cc2.8xlarge".equals(value)) {
+            return InstanceType.Cc28xlarge;
         } else if ("cg1.4xlarge".equals(value)) {
             return InstanceType.Cg14xlarge;
         } else {

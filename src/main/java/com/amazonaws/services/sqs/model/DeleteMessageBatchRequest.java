@@ -53,6 +53,8 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest {
     public DeleteMessageBatchRequest(String queueUrl) {
         this.queueUrl = queueUrl;
     }
+
+    
     
     /**
      * Constructs a new DeleteMessageBatchRequest object.
@@ -67,6 +69,8 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.entries = entries;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

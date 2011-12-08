@@ -91,6 +91,44 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
+     *         default, will allocate to EC2.
+     *
+     * @see DomainType
+     */
+    public void setDomain(DomainType domain) {
+        this.domain = domain.toString();
+    }
+    
+    /**
+     * Set to <code>vpc</code> to allocate the address to your VPC. By
+     * default, will allocate to EC2.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain Set to <code>vpc</code> to allocate the address to your VPC. By
+     *         default, will allocate to EC2.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see DomainType
+     */
+    public AllocateAddressRequest withDomain(DomainType domain) {
+        this.domain = domain.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

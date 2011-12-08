@@ -46,6 +46,8 @@ public class GetDistributionRequest extends AmazonWebServiceRequest {
     public GetDistributionRequest(String id) {
         this.id = id;
     }
+
+    
     
     /**
      * The distribution's id.

@@ -66,6 +66,8 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
         this.applicationName = applicationName;
         this.templateName = templateName;
     }
+
+    
     
     /**
      * The name of the application to delete the configuration template from.

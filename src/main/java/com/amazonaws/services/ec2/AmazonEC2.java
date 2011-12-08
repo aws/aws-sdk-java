@@ -2975,6 +2975,96 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2)
+     * instance. Instance status provides information about two types of
+     * scheduled events for an instance that may require your attention:
+     * </p>
+     * 
+     * <ul>
+     * <li> Scheduled Reboot: When Amazon EC2 determines that an instance
+     * must be rebooted, the instance's status will return one of two event
+     * codes: <code>system-reboot</code> or <code>instance-reboot</code> .
+     * System reboot commonly occurs if certain maintenance or upgrade
+     * operations require a reboot of the underlying host that supports an
+     * instance. Instance reboot commonly occurs if the instance must be
+     * rebooted, rather than the underlying host. Rebooting events include a
+     * scheduled start and end time. </li>
+     * <li> Scheduled Retirement: When Amazon EC2 determines that an
+     * instance must be shut down, the instance's status will return an event
+     * code called <code>instance-retirement</code> . Retirement commonly
+     * occurs when the underlying host is degraded and must be replaced.
+     * Retirement events include a scheduled start and end time. You're also
+     * notified by email if one of your instances is set to retiring. The
+     * email message indicates when your instance will be permanently
+     * retired. </li>
+     * 
+     * </ul>
+     * <p>
+     * If your instance is permanently retired, it will not be restarted.
+     * You can avoid retirement by manually restarting your instance when its
+     * event code is <code>instance-retirement</code> . This ensures that
+     * your instance is started on a healthy host.
+     * </p>
+     * <p>
+     * <code>DescribeInstanceStatus</code> returns information only for
+     * instances in the running state.
+     * </p>
+     * <p>
+     * You can filter the results to return information only about instances
+     * that match criteria you specify. For example, you could get
+     * information about instances in a specific Availability Zone. You can
+     * specify multiple values for a filter (e.g., more than one Availability
+     * Zone). An instance must match at least one of the specified values for
+     * it to be included in the results.
+     * </p>
+     * <p>
+     * You can specify multiple filters. An instance must match all the
+     * filters for it to be included in the results. If there's no match, no
+     * special message is returned; the response is simply empty.
+     * </p>
+     * <p>
+     * You can use wildcards with the filter values: <code>*</code> matches
+     * zero or more characters, and <code>?</code> matches exactly one
+     * character. You can escape special characters using a backslash before
+     * the character. For example, a value of <code>\*amazon\?\\</code>
+     * searches for the literal string <code>*amazon?\</code> .
+     * 
+     * </p>
+     * <p>
+     * The following filters are available:
+     * </p>
+     * 
+     * <ul>
+     * <li> <code>availability-zone</code> - Filter on an instance's
+     * availability zone. </li>
+     * <li> <code>instance-state-name</code> - Filter on the intended state
+     * of the instance, e.g., running. </li>
+     * <li> <code>instance-state-code</code> - Filter on the intended state
+     * code of the instance, e.g., 16. </li>
+     * 
+     * </ul>
+     *
+     * @param describeInstanceStatusRequest Container for the necessary
+     *           parameters to execute the DescribeInstanceStatus service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeInstanceStatus service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInstanceStatusResult describeInstanceStatus(DescribeInstanceStatusRequest describeInstanceStatusRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Gives you information about your VPN gateways. You can filter the
      * results to return information only about VPN gateways that match
      * criteria you specify.
@@ -4307,6 +4397,91 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeKeyPairsResult describeKeyPairs() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Describes the status of an Amazon Elastic Compute Cloud (Amazon EC2)
+     * instance. Instance status provides information about two types of
+     * scheduled events for an instance that may require your attention:
+     * </p>
+     * 
+     * <ul>
+     * <li> Scheduled Reboot: When Amazon EC2 determines that an instance
+     * must be rebooted, the instance's status will return one of two event
+     * codes: <code>system-reboot</code> or <code>instance-reboot</code> .
+     * System reboot commonly occurs if certain maintenance or upgrade
+     * operations require a reboot of the underlying host that supports an
+     * instance. Instance reboot commonly occurs if the instance must be
+     * rebooted, rather than the underlying host. Rebooting events include a
+     * scheduled start and end time. </li>
+     * <li> Scheduled Retirement: When Amazon EC2 determines that an
+     * instance must be shut down, the instance's status will return an event
+     * code called <code>instance-retirement</code> . Retirement commonly
+     * occurs when the underlying host is degraded and must be replaced.
+     * Retirement events include a scheduled start and end time. You're also
+     * notified by email if one of your instances is set to retiring. The
+     * email message indicates when your instance will be permanently
+     * retired. </li>
+     * 
+     * </ul>
+     * <p>
+     * If your instance is permanently retired, it will not be restarted.
+     * You can avoid retirement by manually restarting your instance when its
+     * event code is <code>instance-retirement</code> . This ensures that
+     * your instance is started on a healthy host.
+     * </p>
+     * <p>
+     * <code>DescribeInstanceStatus</code> returns information only for
+     * instances in the running state.
+     * </p>
+     * <p>
+     * You can filter the results to return information only about instances
+     * that match criteria you specify. For example, you could get
+     * information about instances in a specific Availability Zone. You can
+     * specify multiple values for a filter (e.g., more than one Availability
+     * Zone). An instance must match at least one of the specified values for
+     * it to be included in the results.
+     * </p>
+     * <p>
+     * You can specify multiple filters. An instance must match all the
+     * filters for it to be included in the results. If there's no match, no
+     * special message is returned; the response is simply empty.
+     * </p>
+     * <p>
+     * You can use wildcards with the filter values: <code>*</code> matches
+     * zero or more characters, and <code>?</code> matches exactly one
+     * character. You can escape special characters using a backslash before
+     * the character. For example, a value of <code>\*amazon\?\\</code>
+     * searches for the literal string <code>*amazon?\</code> .
+     * 
+     * </p>
+     * <p>
+     * The following filters are available:
+     * </p>
+     * 
+     * <ul>
+     * <li> <code>availability-zone</code> - Filter on an instance's
+     * availability zone. </li>
+     * <li> <code>instance-state-name</code> - Filter on the intended state
+     * of the instance, e.g., running. </li>
+     * <li> <code>instance-state-code</code> - Filter on the intended state
+     * code of the instance, e.g., 16. </li>
+     * 
+     * </ul>
+     * 
+     * @return The response from the DescribeInstanceStatus service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeInstanceStatusResult describeInstanceStatus() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

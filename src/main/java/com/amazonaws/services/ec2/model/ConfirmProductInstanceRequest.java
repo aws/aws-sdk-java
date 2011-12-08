@@ -61,6 +61,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
         this.productCode = productCode;
         this.instanceId = instanceId;
     }
+
+    
     
     /**
      * The product code to confirm.

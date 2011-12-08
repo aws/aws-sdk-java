@@ -46,6 +46,8 @@ public class GetStreamingDistributionRequest extends AmazonWebServiceRequest {
     public GetStreamingDistributionRequest(String id) {
         this.id = id;
     }
+
+    
     
     /**
      * The streaming distribution's id.

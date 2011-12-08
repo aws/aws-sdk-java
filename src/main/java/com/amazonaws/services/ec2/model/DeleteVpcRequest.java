@@ -50,6 +50,8 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest {
     public DeleteVpcRequest(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
     
     /**
      * The ID of the VPC you want to delete.

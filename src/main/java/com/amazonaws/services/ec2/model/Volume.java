@@ -250,6 +250,40 @@ public class Volume {
     
     
     /**
+     * State of this volume (e.g., creating, available).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>creating, available, in-use, deleting, error
+     *
+     * @param state State of this volume (e.g., creating, available).
+     *
+     * @see VolumeState
+     */
+    public void setState(VolumeState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * State of this volume (e.g., creating, available).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>creating, available, in-use, deleting, error
+     *
+     * @param state State of this volume (e.g., creating, available).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeState
+     */
+    public Volume withState(VolumeState state) {
+        this.state = state.toString();
+        return this;
+    }
+    
+    /**
      * Timestamp when volume creation was initiated.
      *
      * @return Timestamp when volume creation was initiated.

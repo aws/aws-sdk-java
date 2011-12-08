@@ -15,9 +15,9 @@
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * assignment Status Type
+ * Assignment Status Type
  */
-public enum assignmentStatusType {
+public enum AssignmentStatusType {
     
     Assigned("Assigned"),
     Unassigned("Unassigned"),
@@ -25,7 +25,7 @@ public enum assignmentStatusType {
 
     private String value;
 
-    private assignmentStatusType(String value) {
+    private AssignmentStatusType(String value) {
         this.value = value;
     }
 
@@ -39,18 +39,18 @@ public enum assignmentStatusType {
      *
      * @param value
      *            real value
-     * @return assignmentStatusType corresponding to the value
+     * @return AssignmentStatusType corresponding to the value
      */
-    public static assignmentStatusType fromValue(String value) {
+    public static AssignmentStatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
         } else if ("Assigned".equals(value)) {
-            return assignmentStatusType.Assigned;
+            return AssignmentStatusType.Assigned;
         } else if ("Unassigned".equals(value)) {
-            return assignmentStatusType.Unassigned;
+            return AssignmentStatusType.Unassigned;
         } else if ("Any".equals(value)) {
-            return assignmentStatusType.Any;
+            return AssignmentStatusType.Any;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -188,6 +188,40 @@ public class AlarmHistoryItem {
     
     
     /**
+     * The type of alarm history item.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
+     *
+     * @param historyItemType The type of alarm history item.
+     *
+     * @see HistoryItemType
+     */
+    public void setHistoryItemType(HistoryItemType historyItemType) {
+        this.historyItemType = historyItemType.toString();
+    }
+    
+    /**
+     * The type of alarm history item.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ConfigurationUpdate, StateUpdate, Action
+     *
+     * @param historyItemType The type of alarm history item.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see HistoryItemType
+     */
+    public AlarmHistoryItem withHistoryItemType(HistoryItemType historyItemType) {
+        this.historyItemType = historyItemType.toString();
+        return this;
+    }
+    
+    /**
      * A human-readable summary of the alarm history.
      * <p>
      * <b>Constraints:</b><br/>

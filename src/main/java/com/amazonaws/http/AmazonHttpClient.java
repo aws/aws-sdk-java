@@ -516,12 +516,16 @@ public class AmazonHttpClient {
             exception = errorResponseHandler.handle(response);
             requestLog.info("Received error response: " + exception.toString());
         } catch (Exception e) {
-        	// If the errorResponseHandler doesn't work, then check for a
-			// VIP spill-over error response before giving up...
-        	if (status == 503 && "Service Unavailable".equalsIgnoreCase(apacheHttpResponse.getStatusLine().getReasonPhrase())) {
-        		exception = new AmazonServiceException("Service Unavailable");
+        	// If the errorResponseHandler doesn't work, then check for error
+            // responses that don't have any content
+            if (status == 413) {
+                exception = new AmazonServiceException("Request entity too large");
+                exception.setErrorType(ErrorType.Client);
+                exception.setErrorCode("Request entity too large");
+            } else if (status == 503 && "Service Unavailable".equalsIgnoreCase(apacheHttpResponse.getStatusLine().getReasonPhrase())) {
+        		exception = new AmazonServiceException("Service unavailable");
         		exception.setErrorType(ErrorType.Service);
-        		exception.setErrorCode("Service Unavailable");
+        		exception.setErrorCode("Service unavailable");
         	} else {
 	            String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + ")";
 	            log.error(errorMessage, e);
@@ -604,7 +608,9 @@ public class AmazonHttpClient {
      */
     private boolean isThrottlingException(AmazonServiceException ase) {
         if (ase == null) return false;
-        return "Throttling".equals(ase.getErrorCode());
+        return "Throttling".equals(ase.getErrorCode())
+            || "ThrottlingException".equals(ase.getErrorCode())
+            || "ProvisionedThroughputExceededException".equals(ase.getErrorCode());
     }
 
     @Override

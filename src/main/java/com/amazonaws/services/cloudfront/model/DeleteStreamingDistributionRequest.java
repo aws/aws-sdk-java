@@ -55,6 +55,8 @@ public class DeleteStreamingDistributionRequest extends AmazonWebServiceRequest 
         this.id = id;
         this.ifMatch = ifMatch;
     }
+
+    
     
     /**
      * The distribution id.

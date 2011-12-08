@@ -14,10 +14,8 @@
  */
 package com.amazonaws.auth;
 
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
-import java.security.MessageDigest;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -34,7 +32,6 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.HttpUtils;
-import com.amazonaws.util.StringInputStream;
 
 /**
  * Signer implementation that signs requests with the AWS3 signing protocol.
@@ -68,7 +65,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         SigningAlgorithm algorithm = SigningAlgorithm.HmacSHA256;
         String nonce = UUID.randomUUID().toString();
         String date = dateUtils.formatRfc822Date(new Date());
-        boolean isHttps = isHttpsRequest(request);
+        boolean isHttps = false;
 
         if (overriddenDate != null) date = overriddenDate;
         request.addHeader("Date", date);
@@ -96,16 +93,22 @@ public class AWS3Signer extends AbstractAWSSigner {
 				throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
 			}
         } else {
-            stringToSign = "POST\n"
-                + getCanonicalizedResourcePath(request.getEndpoint()) + "\n"
+            /*
+             * AWS3 requires all query params to be listed on the third line of
+             * the string to sign, even if those query params will be sent in
+             * the request body and not as a query string. POST formatted query
+             * params should *NOT* be included in the request payload.
+             */
+            stringToSign = request.getHttpMethod().toString() + "\n"
+                + getCanonicalizedResourcePath(request.getResourcePath()) + "\n"
                 + getCanonicalizedQueryString(request.getParameters()) + "\n"
                 + getCanonicalizedHeadersForStringToSign(request) + "\n"
-                + getRequestPayload(request);
+                + getRequestPayloadWithoutQueryParams(request);
             bytesToSign = hash(stringToSign);
         }
         log.debug("Calculated StringToSign: " + stringToSign);
 
-        String signature = sign(bytesToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
+        String signature = signAndBase64Encode(bytesToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
 
         StringBuilder builder = new StringBuilder();
         builder.append(isHttps ? HTTPS_SCHEME : HTTP_SCHEME).append(" ");
@@ -120,32 +123,6 @@ public class AWS3Signer extends AbstractAWSSigner {
         request.addHeader(AUTHORIZATION_HEADER, builder.toString());
     }
 
-    private String getRequestPayload(Request<?> request) {
-        try {
-        	InputStream content = request.getContent();
-
-        	if (content instanceof StringInputStream) {
-        		StringInputStream sis = (StringInputStream)content;
-        		return sis.getString();
-        	}
-
-        	if (!content.markSupported()) {
-        		throw new AmazonClientException("Unable to read request payload to sign request.");
-        	}
-
-        	StringBuilder sb = new StringBuilder();
-        	content.mark(-1);
-        	int b;
-        	while ((b = content.read()) > -1) {
-        		sb.append((char)b);
-        	}
-        	content.reset();
-            return sb.toString();
-        } catch (Exception e) {
-        	throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
-        }
-    }
-
     private String getSignedHeadersComponent(Request<?> request) {
     	StringBuilder builder = new StringBuilder();
     	builder.append("SignedHeaders=");
@@ -158,24 +135,13 @@ public class AWS3Signer extends AbstractAWSSigner {
     	return builder.toString();
     }
 
-    private byte[] hash(String text) throws AmazonClientException {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            md.update(text.getBytes("UTF-8"));
-            return md.digest();
-        } catch (Exception e) {
-            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
-        }
-    }
-
     protected List<String> getHeadersForStringToSign(Request<?> request) {
         List<String> headersToSign = new ArrayList<String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
             String key = entry.getKey();
             String lowerCaseKey = key.toLowerCase();
             if (lowerCaseKey.startsWith("x-amz")
-            		|| lowerCaseKey.equals("content-encoding")
-            		|| lowerCaseKey.equals("host")) {
+            	|| lowerCaseKey.equals("host")) {
             	headersToSign.add(key);
             }
         }
@@ -218,7 +184,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         return builder.toString();
     }
 
-    private boolean isHttpsRequest(Request<?> request) throws AmazonClientException {
+    protected boolean shouldUseHttpsScheme(Request<?> request) throws AmazonClientException {
         try {
             String protocol = request.getEndpoint().toURL().getProtocol().toLowerCase();
             if (protocol.equals("http")) {
@@ -238,5 +204,5 @@ public class AWS3Signer extends AbstractAWSSigner {
     protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
-    
+
 }

@@ -27,6 +27,11 @@ public class DescribeLoadBalancersResult {
     private java.util.List<LoadBalancerDescription> loadBalancerDescriptions;
 
     /**
+     * An optional parameter reserved for future use.
+     */
+    private String nextMarker;
+
+    /**
      * A list of LoadBalancer description structures.
      *
      * @return A list of LoadBalancer description structures.
@@ -91,6 +96,40 @@ public class DescribeLoadBalancersResult {
     }
     
     /**
+     * An optional parameter reserved for future use.
+     *
+     * @return An optional parameter reserved for future use.
+     */
+    public String getNextMarker() {
+        return nextMarker;
+    }
+    
+    /**
+     * An optional parameter reserved for future use.
+     *
+     * @param nextMarker An optional parameter reserved for future use.
+     */
+    public void setNextMarker(String nextMarker) {
+        this.nextMarker = nextMarker;
+    }
+    
+    /**
+     * An optional parameter reserved for future use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextMarker An optional parameter reserved for future use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeLoadBalancersResult withNextMarker(String nextMarker) {
+        this.nextMarker = nextMarker;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -103,6 +142,7 @@ public class DescribeLoadBalancersResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
+        sb.append("NextMarker: " + nextMarker + ", ");
         sb.append("}");
         return sb.toString();
     }

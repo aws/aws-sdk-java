@@ -71,6 +71,21 @@ public class StepExecutionStatusDetail {
         this.state = state;
         this.creationDateTime = creationDateTime;
     }
+
+    
+    
+    /**
+     * Constructs a new StepExecutionStatusDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param state The state of the job flow step.
+     * @param creationDateTime The creation date and time of the step.
+     */
+    public StepExecutionStatusDetail(StepExecutionState state, java.util.Date creationDateTime) {
+        this.state = state.toString();
+        this.creationDateTime = creationDateTime;
+    }
     
     /**
      * The state of the job flow step.
@@ -120,6 +135,40 @@ public class StepExecutionStatusDetail {
         return this;
     }
     
+    
+    /**
+     * The state of the job flow step.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
+     *
+     * @param state The state of the job flow step.
+     *
+     * @see StepExecutionState
+     */
+    public void setState(StepExecutionState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * The state of the job flow step.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED
+     *
+     * @param state The state of the job flow step.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StepExecutionState
+     */
+    public StepExecutionStatusDetail withState(StepExecutionState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * The creation date and time of the step.

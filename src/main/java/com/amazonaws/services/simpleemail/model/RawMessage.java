@@ -52,6 +52,8 @@ public class RawMessage {
     public RawMessage(java.nio.ByteBuffer data) {
         this.data = data;
     }
+
+    
     
     /**
      * The raw data of the message. The client must ensure that the message

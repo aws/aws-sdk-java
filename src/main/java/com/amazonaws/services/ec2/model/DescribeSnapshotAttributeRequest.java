@@ -57,6 +57,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
         this.snapshotId = snapshotId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the EBS snapshot whose attribute is being described.

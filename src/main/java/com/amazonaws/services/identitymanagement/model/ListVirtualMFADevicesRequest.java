@@ -83,7 +83,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest {
      *         <code>Any</code> which lists both assigned and unassigned virtual MFA
      *         devices.
      *
-     * @see assignmentStatusType
+     * @see AssignmentStatusType
      */
     public String getAssignmentStatus() {
         return assignmentStatus;
@@ -103,7 +103,7 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest {
      *         <code>Any</code> which lists both assigned and unassigned virtual MFA
      *         devices.
      *
-     * @see assignmentStatusType
+     * @see AssignmentStatusType
      */
     public void setAssignmentStatus(String assignmentStatus) {
         this.assignmentStatus = assignmentStatus;
@@ -128,13 +128,59 @@ public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      *
-     * @see assignmentStatusType
+     * @see AssignmentStatusType
      */
     public ListVirtualMFADevicesRequest withAssignmentStatus(String assignmentStatus) {
         this.assignmentStatus = assignmentStatus;
         return this;
     }
     
+    
+    /**
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
+     *
+     * @param assignmentStatus The status (unassigned or assigned) of the devices to list. If you do
+     *         not specify an <code>AssignmentStatus</code>, the action defaults to
+     *         <code>Any</code> which lists both assigned and unassigned virtual MFA
+     *         devices.
+     *
+     * @see AssignmentStatusType
+     */
+    public void setAssignmentStatus(AssignmentStatusType assignmentStatus) {
+        this.assignmentStatus = assignmentStatus.toString();
+    }
+    
+    /**
+     * The status (unassigned or assigned) of the devices to list. If you do
+     * not specify an <code>AssignmentStatus</code>, the action defaults to
+     * <code>Any</code> which lists both assigned and unassigned virtual MFA
+     * devices.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Assigned, Unassigned, Any
+     *
+     * @param assignmentStatus The status (unassigned or assigned) of the devices to list. If you do
+     *         not specify an <code>AssignmentStatus</code>, the action defaults to
+     *         <code>Any</code> which lists both assigned and unassigned virtual MFA
+     *         devices.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see AssignmentStatusType
+     */
+    public ListVirtualMFADevicesRequest withAssignmentStatus(AssignmentStatusType assignmentStatus) {
+        this.assignmentStatus = assignmentStatus.toString();
+        return this;
+    }
     
     /**
      * Use this parameter only when paginating results, and only in a

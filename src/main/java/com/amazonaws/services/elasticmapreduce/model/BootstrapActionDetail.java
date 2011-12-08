@@ -42,6 +42,8 @@ public class BootstrapActionDetail {
     public BootstrapActionDetail(BootstrapActionConfig bootstrapActionConfig) {
         this.bootstrapActionConfig = bootstrapActionConfig;
     }
+
+    
     
     /**
      * A description of the bootstrap action.

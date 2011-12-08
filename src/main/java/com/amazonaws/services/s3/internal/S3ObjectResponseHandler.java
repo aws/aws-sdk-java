@@ -14,9 +14,12 @@
  */
 package com.amazonaws.services.s3.internal;
 
+
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.util.BinaryUtils;
 
 /**
  * S3 HTTP response handler that knows how to pull S3 object content and
@@ -34,8 +37,19 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
          *       currently.
          */
         S3Object object = new S3Object();
-        object.setObjectContent(response.getContent());
-        populateObjectMetadata(response, object.getObjectMetadata());
+        ObjectMetadata metadata = object.getObjectMetadata();
+        populateObjectMetadata(response, metadata);
+
+        boolean hasServerSideCalculatedChecksum = !ServiceUtils.isMultipartUploadETag(metadata.getETag());
+        boolean responseContainsEntireObject = response.getHeaders().get("Content-Range") == null;
+
+        if (hasServerSideCalculatedChecksum && responseContainsEntireObject) {
+            byte[] expectedChecksum = BinaryUtils.fromHex(metadata.getETag());
+            object.setObjectContent(new ChecksumValidatingInputStream(response.getContent(), expectedChecksum, object.getBucketName() + "/" + object.getKey()));
+        } else {
+            object.setObjectContent(response.getContent());
+        }
+
 
         AmazonWebServiceResponse<S3Object> awsResponse = parseResponseMetadata(response);
         awsResponse.setResult(object);

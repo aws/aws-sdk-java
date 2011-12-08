@@ -69,6 +69,8 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.device = device;
     }
+
+    
     
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be

@@ -55,6 +55,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
         this.topicArn = topicArn;
         this.label = label;
     }
+
+    
     
     /**
      * The ARN of the topic whose access control policy you wish to modify.

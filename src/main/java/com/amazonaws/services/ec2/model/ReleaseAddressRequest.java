@@ -68,6 +68,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     public ReleaseAddressRequest(String publicIp) {
         this.publicIp = publicIp;
     }
+
+    
     
     /**
      * The elastic IP address that you are releasing from your account.

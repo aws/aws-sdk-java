@@ -43,7 +43,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Structure containing the template body. (For more information, go to
      * the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Condition: You must pass
+     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -112,7 +112,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <a
      * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     private java.util.List<String> capabilities;
 
@@ -172,7 +172,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Structure containing the template body. (For more information, go to
      * the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Condition: You must pass
+     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -182,7 +182,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @return Structure containing the template body. (For more information, go to
      *         the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Condition: You must pass
+     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
      */
@@ -194,7 +194,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Structure containing the template body. (For more information, go to
      * the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Condition: You must pass
+     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -204,7 +204,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Condition: You must pass
+     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
      */
@@ -216,7 +216,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Structure containing the template body. (For more information, go to
      * the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     * CloudFormation User Guide</a>.) <p>Condition: You must pass
+     * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
      * <p>
@@ -228,7 +228,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
-     *         CloudFormation User Guide</a>.) <p>Condition: You must pass
+     *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
      *
@@ -611,7 +611,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <a
      * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return The list of capabilities that you want to allow in the stack. If your
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
@@ -625,7 +625,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         <a
      *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public java.util.List<String> getCapabilities() {
         
@@ -648,7 +648,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <a
      * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @param capabilities The list of capabilities that you want to allow in the stack. If your
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
@@ -662,7 +662,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         <a
      *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
@@ -685,7 +685,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <a
      * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -701,7 +701,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         <a
      *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -727,7 +727,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <a
      * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -743,7 +743,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         <a
      *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         test/UserGuide/addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

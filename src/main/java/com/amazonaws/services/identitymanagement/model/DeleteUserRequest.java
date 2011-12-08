@@ -51,6 +51,8 @@ public class DeleteUserRequest extends AmazonWebServiceRequest {
     public DeleteUserRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user to delete.

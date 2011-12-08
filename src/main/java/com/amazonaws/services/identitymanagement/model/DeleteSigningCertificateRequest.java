@@ -67,6 +67,8 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest {
     public DeleteSigningCertificateRequest(String certificateId) {
         this.certificateId = certificateId;
     }
+
+    
     
     /**
      * Name of the user the signing certificate belongs to.

@@ -38,7 +38,7 @@ public class DeleteLoadBalancerPolicyRequestMarshaller implements Marshaller<Req
 
         Request<DeleteLoadBalancerPolicyRequest> request = new DefaultRequest<DeleteLoadBalancerPolicyRequest>(deleteLoadBalancerPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DeleteLoadBalancerPolicy");
-        request.addParameter("Version", "2011-08-15");
+        request.addParameter("Version", "2011-11-15");
 
         if (deleteLoadBalancerPolicyRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(deleteLoadBalancerPolicyRequest.getLoadBalancerName()));

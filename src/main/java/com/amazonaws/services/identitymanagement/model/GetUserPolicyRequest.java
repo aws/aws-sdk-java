@@ -65,6 +65,8 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest {
         this.userName = userName;
         this.policyName = policyName;
     }
+
+    
     
     /**
      * Name of the user who the policy is associated with.

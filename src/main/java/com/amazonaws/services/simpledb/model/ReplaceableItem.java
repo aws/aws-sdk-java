@@ -46,6 +46,8 @@ public class ReplaceableItem {
     public ReplaceableItem(String name) {
         this.name = name;
     }
+
+    
     
     /**
      * Constructs a new ReplaceableItem object.
@@ -59,6 +61,8 @@ public class ReplaceableItem {
         this.name = name;
         this.attributes = attributes;
     }
+
+    
     
     /**
      * The name of the replaceable item.

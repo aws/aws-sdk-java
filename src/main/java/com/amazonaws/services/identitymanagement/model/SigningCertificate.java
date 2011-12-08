@@ -93,6 +93,28 @@ public class SigningCertificate {
         this.certificateBody = certificateBody;
         this.status = status;
     }
+
+    
+    
+    /**
+     * Constructs a new SigningCertificate object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the user the signing certificate is associated
+     * with.
+     * @param certificateId The ID for the signing certificate.
+     * @param certificateBody The contents of the signing certificate.
+     * @param status The status of the signing certificate.
+     * <code>Active</code> means the key is valid for API calls, while
+     * <code>Inactive</code> means it is not.
+     */
+    public SigningCertificate(String userName, String certificateId, String certificateBody, StatusType status) {
+        this.userName = userName;
+        this.certificateId = certificateId;
+        this.certificateBody = certificateBody;
+        this.status = status.toString();
+    }
     
     /**
      * Name of the user the signing certificate is associated with.
@@ -244,7 +266,7 @@ public class SigningCertificate {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public String getStatus() {
         return status;
@@ -262,7 +284,7 @@ public class SigningCertificate {
      *         key is valid for API calls, while <code>Inactive</code> means it is
      *         not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
@@ -285,13 +307,55 @@ public class SigningCertificate {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      *
-     * @see statusType
+     * @see StatusType
      */
     public SigningCertificate withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * The status of the signing certificate. <code>Active</code> means the
+     * key is valid for API calls, while <code>Inactive</code> means it is
+     * not.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the signing certificate. <code>Active</code> means the
+     *         key is valid for API calls, while <code>Inactive</code> means it is
+     *         not.
+     *
+     * @see StatusType
+     */
+    public void setStatus(StatusType status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The status of the signing certificate. <code>Active</code> means the
+     * key is valid for API calls, while <code>Inactive</code> means it is
+     * not.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the signing certificate. <code>Active</code> means the
+     *         key is valid for API calls, while <code>Inactive</code> means it is
+     *         not.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StatusType
+     */
+    public SigningCertificate withStatus(StatusType status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * The date when the signing certificate was uploaded.

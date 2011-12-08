@@ -78,6 +78,8 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest {
     public ListUserPoliciesRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * The name of the user to list policies for.

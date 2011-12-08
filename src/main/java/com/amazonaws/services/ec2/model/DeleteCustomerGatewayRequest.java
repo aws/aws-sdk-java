@@ -53,6 +53,8 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
     public DeleteCustomerGatewayRequest(String customerGatewayId) {
         this.customerGatewayId = customerGatewayId;
     }
+
+    
     
     /**
      * The ID of the customer gateway to delete.

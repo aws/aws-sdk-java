@@ -57,6 +57,8 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest {
         this.licenseId = licenseId;
         this.capacity = capacity;
     }
+
+    
     
     /**
      * Specifies the ID for the specific license to deactivate against.

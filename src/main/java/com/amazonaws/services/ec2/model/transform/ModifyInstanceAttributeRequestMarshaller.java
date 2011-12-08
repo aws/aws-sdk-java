@@ -38,7 +38,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
-        request.addParameter("Version", "2011-05-15");
+        request.addParameter("Version", "2011-11-01");
 
         if (modifyInstanceAttributeRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));
@@ -79,25 +79,25 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
             blockDeviceMappingsListIndex++;
         }
         if (modifyInstanceAttributeRequest.isSourceDestCheck() != null) {
-            request.addParameter("SourceDestCheck", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isSourceDestCheck()));
+            request.addParameter("SourceDestCheck.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isSourceDestCheck()));
         }
         if (modifyInstanceAttributeRequest.isDisableApiTermination() != null) {
-            request.addParameter("DisableApiTermination", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isDisableApiTermination()));
+            request.addParameter("DisableApiTermination.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isDisableApiTermination()));
         }
         if (modifyInstanceAttributeRequest.getInstanceType() != null) {
-            request.addParameter("InstanceType", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceType()));
+            request.addParameter("InstanceType.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceType()));
         }
         if (modifyInstanceAttributeRequest.getKernel() != null) {
-            request.addParameter("Kernel", StringUtils.fromString(modifyInstanceAttributeRequest.getKernel()));
+            request.addParameter("Kernel.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getKernel()));
         }
         if (modifyInstanceAttributeRequest.getRamdisk() != null) {
-            request.addParameter("Ramdisk", StringUtils.fromString(modifyInstanceAttributeRequest.getRamdisk()));
+            request.addParameter("Ramdisk.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getRamdisk()));
         }
         if (modifyInstanceAttributeRequest.getUserData() != null) {
-            request.addParameter("UserData", StringUtils.fromString(modifyInstanceAttributeRequest.getUserData()));
+            request.addParameter("UserData.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getUserData()));
         }
         if (modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior() != null) {
-            request.addParameter("InstanceInitiatedShutdownBehavior", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior()));
+            request.addParameter("InstanceInitiatedShutdownBehavior.Value", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceInitiatedShutdownBehavior()));
         }
 
         java.util.List<String> groupsList = modifyInstanceAttributeRequest.getGroups();

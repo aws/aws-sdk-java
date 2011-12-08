@@ -39,7 +39,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -68,6 +68,11 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * only be launched within a VPC.
      */
     private String instanceTenancy;
+
+    /**
+     * The Reserved Instance offering type.
+     */
+    private String offeringType;
 
     /**
      * An optional list of the unique IDs of the Reserved Instance offerings
@@ -145,7 +150,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return The instance type on which the Reserved Instance can be used.
      *
@@ -159,7 +164,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * The instance type on which the Reserved Instance can be used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
@@ -175,7 +180,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType The instance type on which the Reserved Instance can be used.
      *
@@ -189,6 +194,40 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         return this;
     }
     
+    
+    /**
+     * The instance type on which the Reserved Instance can be used.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType The instance type on which the Reserved Instance can be used.
+     *
+     * @see InstanceType
+     */
+    public void setInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+    }
+    
+    /**
+     * The instance type on which the Reserved Instance can be used.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     *
+     * @param instanceType The instance type on which the Reserved Instance can be used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceType
+     */
+    public DescribeReservedInstancesOfferingsRequest withInstanceType(InstanceType instanceType) {
+        this.instanceType = instanceType.toString();
+        return this;
+    }
     
     /**
      * The Availability Zone in which the Reserved Instance can be used.
@@ -401,6 +440,40 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     
     /**
+     * The Reserved Instance offering type.
+     *
+     * @return The Reserved Instance offering type.
+     */
+    public String getOfferingType() {
+        return offeringType;
+    }
+    
+    /**
+     * The Reserved Instance offering type.
+     *
+     * @param offeringType The Reserved Instance offering type.
+     */
+    public void setOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+    }
+    
+    /**
+     * The Reserved Instance offering type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param offeringType The Reserved Instance offering type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesOfferingsRequest withOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -418,6 +491,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         sb.append("ProductDescription: " + productDescription + ", ");
         sb.append("Filters: " + filters + ", ");
         sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        sb.append("OfferingType: " + offeringType + ", ");
         sb.append("}");
         return sb.toString();
     }

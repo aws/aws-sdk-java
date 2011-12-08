@@ -25,6 +25,7 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 
@@ -39,6 +40,7 @@ import org.xml.sax.helpers.XMLReaderFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
@@ -46,14 +48,19 @@ import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CanonicalGrantee;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.DeleteObjectsResult;
+import com.amazonaws.services.s3.model.DeleteObjectsResult.DeletedObject;
 import com.amazonaws.services.s3.model.EmailAddressGrantee;
 import com.amazonaws.services.s3.model.Grantee;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
+import com.amazonaws.services.s3.model.MultiObjectDeleteException;
+import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
 import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -65,7 +72,6 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
 import com.amazonaws.services.s3.model.VersionListing;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 
 /**
  * XML Sax parser to read XML documents returned by S3 via the REST interface,
@@ -362,6 +368,12 @@ public class XmlResponsesSaxParser {
         throws AmazonClientException
     {
         BucketNotificationConfigurationHandler handler = new BucketNotificationConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+    
+    public DeleteObjectsHandler parseDeletedObjectsResult(InputStream inputStream) {
+        DeleteObjectsHandler handler = new DeleteObjectsHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -1865,6 +1877,117 @@ public class XmlResponsesSaxParser {
     }
 
 
+    /*
+        HTTP/1.1 200 OK
+        x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+        x-amz-request-id: 656c76696e6727732072657175657374
+        Date: Tue, 20 Sep 2011 20:34:56 GMT
+        Content-Type: application/xml
+        Transfer-Encoding: chunked
+        Connection: keep-alive
+        Server: AmazonS3
+        
+        <?xml version="1.0" encoding="UTF-8"?>
+        <DeleteResult>
+            <Deleted>
+               <Key>Key</Key>
+               <VersionId>Version</VersionId>
+            </Deleted>
+            <Error>
+               <Key>Key</Key>
+               <VersionId>Version</VersionId>
+               <Code>Code</Code>
+               <Message>Message</Message>
+            </Error> 
+            <Deleted>
+               <Key>Key</Key>
+               <DeleteMarker>true</DeleteMarker>
+               <DeleteMarkerVersionId>Version</DeleteMarkerVersionId>
+            </Deleted>
+        </DeleteResult>
+     */
+    public class DeleteObjectsHandler extends DefaultHandler {
+        private StringBuilder text;
+        
+        private DeletedObject deletedObject = null;
+        private DeleteError error = null;
+        private List<DeletedObject> deletedObjects = new LinkedList<DeleteObjectsResult.DeletedObject>();
+        private List<DeleteError> deleteErrors = new LinkedList<MultiObjectDeleteException.DeleteError>();
+    
+        public DeleteObjectsResponse getDeleteObjectResult() {
+            return new DeleteObjectsResponse(deletedObjects, deleteErrors);
+        }
+    
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+    
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if ( name.equals("Deleted") ) {
+                deletedObject = new DeletedObject();
+            } else if ( name.equals("Error") ) {
+                error = new DeleteError();
+            } else if ( name.equals("Key") ) {
+            } else if ( name.equals("VersionId") ) {
+            } else if ( name.equals("Code") ) {
+            } else if ( name.equals("Message") ) {
+            } else if ( name.equals("DeleteMarker") ) {
+            } else if ( name.equals("DeleteMarkerVersionId") ) {
+            } else if ( name.equals("DeletedResult") ) {
+            } else {
+                log.warn("Unexpected tag: " + name);
+            }
+            text.setLength(0);
+        }
+    
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if ( name.equals("Deleted") ) {
+                deletedObjects.add(deletedObject);
+                deletedObject = null;
+            } else if ( name.equals("Error") ) {
+                deleteErrors.add(error);
+                error = null;
+            } else if ( name.equals("Key") ) {
+                if ( deletedObject != null ) {
+                    deletedObject.setKey(text.toString());
+                } else if ( error != null ) {
+                    error.setKey(text.toString());
+                }
+            } else if ( name.equals("VersionId") ) {
+                if ( deletedObject != null ) {
+                    deletedObject.setVersionId(text.toString());
+                } else if ( error != null ) {
+                    error.setVersionId(text.toString());
+                }
+            } else if ( name.equals("Code") ) {
+                if ( error != null ) {
+                    error.setCode(text.toString());
+                }
+            } else if ( name.equals("Message") ) {
+                if ( error != null ) {
+                    error.setMessage(text.toString());
+                }
+            } else if ( name.equals("DeleteMarker") ) {
+                if ( deletedObject != null ) {
+                    deletedObject.setDeleteMarker(text.toString().equals("true"));
+                }
+            } else if ( name.equals("DeleteMarkerVersionId") ) {
+                if ( deletedObject != null ) {
+                    deletedObject.setDeleteMarkerVersionId(text.toString());
+                }
+            }
+        }
+    
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+
+
     private static String findAttributeValue( String qnameToFind, Attributes attrs ) {
         for ( int i = 0; i < attrs.getLength(); i++ ) {
             String qname = attrs.getQName( i );
@@ -1875,4 +1998,6 @@ public class XmlResponsesSaxParser {
 
         return null;
     }
+
+
 }

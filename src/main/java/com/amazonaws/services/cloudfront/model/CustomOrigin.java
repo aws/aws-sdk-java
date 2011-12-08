@@ -63,6 +63,22 @@ public class CustomOrigin {
         this.dNSName = dNSName;
         this.originProtocolPolicy = originProtocolPolicy;
     }
+
+    
+    
+    /**
+     * Constructs a new CustomOrigin object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param dNSName The origin to associate with the distribution.
+     * @param originProtocolPolicy The origin protocol policy to apply to
+     * your origin.
+     */
+    public CustomOrigin(String dNSName, OriginProtocolPolicy originProtocolPolicy) {
+        this.dNSName = dNSName;
+        this.originProtocolPolicy = originProtocolPolicy.toString();
+    }
     
     /**
      * The origin to associate with the distribution.
@@ -214,6 +230,40 @@ public class CustomOrigin {
         return this;
     }
     
+    
+    /**
+     * The origin protocol policy to apply to your origin.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>http-only, match-viewer
+     *
+     * @param originProtocolPolicy The origin protocol policy to apply to your origin.
+     *
+     * @see OriginProtocolPolicy
+     */
+    public void setOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
+        this.originProtocolPolicy = originProtocolPolicy.toString();
+    }
+    
+    /**
+     * The origin protocol policy to apply to your origin.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>http-only, match-viewer
+     *
+     * @param originProtocolPolicy The origin protocol policy to apply to your origin.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see OriginProtocolPolicy
+     */
+    public CustomOrigin withOriginProtocolPolicy(OriginProtocolPolicy originProtocolPolicy) {
+        this.originProtocolPolicy = originProtocolPolicy.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

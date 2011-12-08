@@ -156,6 +156,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
         this.applicationName = applicationName;
         this.environmentName = environmentName;
     }
+
+    
     
     /**
      * The name of the application that contains the version to be deployed.

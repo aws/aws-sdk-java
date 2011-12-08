@@ -53,6 +53,8 @@ public class BootstrapActionConfig {
         this.name = name;
         this.scriptBootstrapAction = scriptBootstrapAction;
     }
+
+    
     
     /**
      * The name of the bootstrap action.

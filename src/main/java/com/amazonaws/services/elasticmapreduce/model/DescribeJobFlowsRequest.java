@@ -88,6 +88,8 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     public DescribeJobFlowsRequest(java.util.List<String> jobFlowIds) {
         this.jobFlowIds = jobFlowIds;
     }
+
+    
     
     /**
      * Return only job flows created after this date and time.

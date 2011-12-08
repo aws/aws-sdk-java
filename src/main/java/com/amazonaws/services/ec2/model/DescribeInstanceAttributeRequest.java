@@ -64,6 +64,8 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the instance whose instance attribute is being described.

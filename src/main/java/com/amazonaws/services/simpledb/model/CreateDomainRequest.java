@@ -66,6 +66,8 @@ public class CreateDomainRequest extends AmazonWebServiceRequest {
     public CreateDomainRequest(String domainName) {
         this.domainName = domainName;
     }
+
+    
     
     /**
      * The name of the domain to create. The name can range between 3 and 255

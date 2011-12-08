@@ -72,6 +72,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest {
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
         this.dBInstanceIdentifier = dBInstanceIdentifier;
     }
+
+    
     
     /**
      * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be

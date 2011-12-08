@@ -58,6 +58,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         this.reservedInstancesOfferingId = reservedInstancesOfferingId;
         this.instanceCount = instanceCount;
     }
+
+    
     
     /**
      * The unique ID of the Reserved Instances offering being purchased.

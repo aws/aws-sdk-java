@@ -85,6 +85,8 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest {
     public UpdateGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * Name of the group to update. If you're changing the name of the group,

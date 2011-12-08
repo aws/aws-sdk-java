@@ -56,6 +56,8 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
         this.loadBalancerName = loadBalancerName;
         this.policyName = policyName;
     }
+
+    
     
     /**
      * The mnemonic name associated with the LoadBalancer. The name must be

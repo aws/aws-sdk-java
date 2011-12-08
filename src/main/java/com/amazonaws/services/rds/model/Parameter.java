@@ -468,6 +468,40 @@ public class Parameter {
     
     
     /**
+     * Indicates when to apply parameter updates.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>immediate, pending-reboot
+     *
+     * @param applyMethod Indicates when to apply parameter updates.
+     *
+     * @see ApplyMethod
+     */
+    public void setApplyMethod(ApplyMethod applyMethod) {
+        this.applyMethod = applyMethod.toString();
+    }
+    
+    /**
+     * Indicates when to apply parameter updates.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>immediate, pending-reboot
+     *
+     * @param applyMethod Indicates when to apply parameter updates.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ApplyMethod
+     */
+    public Parameter withApplyMethod(ApplyMethod applyMethod) {
+        this.applyMethod = applyMethod.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *

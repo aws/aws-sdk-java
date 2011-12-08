@@ -59,6 +59,8 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
         this.resources = resources;
         this.tags = tags;
     }
+
+    
     
     /**
      * One or more IDs of resources to tag. This could be the ID of an AMI,

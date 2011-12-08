@@ -51,6 +51,8 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest {
     public DeleteGroupRequest(String groupName) {
         this.groupName = groupName;
     }
+
+    
     
     /**
      * Name of the group to delete.

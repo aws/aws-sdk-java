@@ -59,6 +59,8 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
     public DeleteLoginProfileRequest(String userName) {
         this.userName = userName;
     }
+
+    
     
     /**
      * Name of the user whose login profile you want to delete.

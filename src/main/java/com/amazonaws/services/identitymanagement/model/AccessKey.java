@@ -86,6 +86,27 @@ public class AccessKey {
         this.status = status;
         this.secretAccessKey = secretAccessKey;
     }
+
+    
+    
+    /**
+     * Constructs a new AccessKey object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param userName Name of the user the key is associated with.
+     * @param accessKeyId The ID for this access key.
+     * @param status The status of the access key. <code>Active</code> means
+     * the key is valid for API calls, while <code>Inactive</code> means it
+     * is not.
+     * @param secretAccessKey The secret key used to sign requests.
+     */
+    public AccessKey(String userName, String accessKeyId, StatusType status, String secretAccessKey) {
+        this.userName = userName;
+        this.accessKeyId = accessKeyId;
+        this.status = status.toString();
+        this.secretAccessKey = secretAccessKey;
+    }
     
     /**
      * Name of the user the key is associated with.
@@ -189,7 +210,7 @@ public class AccessKey {
      * @return The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public String getStatus() {
         return status;
@@ -205,7 +226,7 @@ public class AccessKey {
      * @param status The status of the access key. <code>Active</code> means the key is
      *         valid for API calls, while <code>Inactive</code> means it is not.
      *
-     * @see statusType
+     * @see StatusType
      */
     public void setStatus(String status) {
         this.status = status;
@@ -226,13 +247,51 @@ public class AccessKey {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      *
-     * @see statusType
+     * @see StatusType
      */
     public AccessKey withStatus(String status) {
         this.status = status;
         return this;
     }
     
+    
+    /**
+     * The status of the access key. <code>Active</code> means the key is
+     * valid for API calls, while <code>Inactive</code> means it is not.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the access key. <code>Active</code> means the key is
+     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *
+     * @see StatusType
+     */
+    public void setStatus(StatusType status) {
+        this.status = status.toString();
+    }
+    
+    /**
+     * The status of the access key. <code>Active</code> means the key is
+     * valid for API calls, while <code>Inactive</code> means it is not.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Active, Inactive
+     *
+     * @param status The status of the access key. <code>Active</code> means the key is
+     *         valid for API calls, while <code>Inactive</code> means it is not.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StatusType
+     */
+    public AccessKey withStatus(StatusType status) {
+        this.status = status.toString();
+        return this;
+    }
     
     /**
      * The secret key used to sign requests.

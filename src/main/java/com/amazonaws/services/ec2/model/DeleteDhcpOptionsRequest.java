@@ -49,6 +49,8 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     public DeleteDhcpOptionsRequest(String dhcpOptionsId) {
         this.dhcpOptionsId = dhcpOptionsId;
     }
+
+    
     
     /**
      * The ID of the DHCP options set to delete.

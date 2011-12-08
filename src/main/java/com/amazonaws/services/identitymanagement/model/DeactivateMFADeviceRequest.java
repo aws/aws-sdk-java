@@ -65,6 +65,8 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
         this.userName = userName;
         this.serialNumber = serialNumber;
     }
+
+    
     
     /**
      * Name of the user whose MFA device you want to deactivate.

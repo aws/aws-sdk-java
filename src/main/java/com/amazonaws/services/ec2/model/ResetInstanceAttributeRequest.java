@@ -56,6 +56,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.attribute = attribute;
     }
+
+    
     
     /**
      * The ID of the Amazon EC2 instance whose attribute is being reset.

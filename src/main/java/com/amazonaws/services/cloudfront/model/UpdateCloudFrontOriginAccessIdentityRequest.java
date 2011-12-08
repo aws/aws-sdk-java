@@ -63,6 +63,8 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
         this.id = id;
         this.ifMatch = ifMatch;
     }
+
+    
     
     /**
      * The identity's configuration information.

@@ -71,6 +71,8 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
         this.loadBalancerPort = loadBalancerPort;
         this.sSLCertificateId = sSLCertificateId;
     }
+
+    
     
     /**
      * The name of the the LoadBalancer.

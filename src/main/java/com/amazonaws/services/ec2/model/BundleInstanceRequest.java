@@ -57,6 +57,8 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest {
         this.instanceId = instanceId;
         this.storage = storage;
     }
+
+    
     
     /**
      * The ID of the instance to bundle.

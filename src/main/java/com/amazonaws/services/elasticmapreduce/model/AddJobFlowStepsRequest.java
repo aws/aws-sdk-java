@@ -88,6 +88,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     public AddJobFlowStepsRequest(String jobFlowId) {
         this.jobFlowId = jobFlowId;
     }
+
+    
     
     /**
      * Constructs a new AddJobFlowStepsRequest object.
@@ -104,6 +106,8 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
         this.jobFlowId = jobFlowId;
         this.steps = steps;
     }
+
+    
     
     /**
      * A string that uniquely identifies the job flow. This identifier is

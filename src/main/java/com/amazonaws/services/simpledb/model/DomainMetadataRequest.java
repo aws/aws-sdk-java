@@ -49,6 +49,8 @@ public class DomainMetadataRequest extends AmazonWebServiceRequest {
     public DomainMetadataRequest(String domainName) {
         this.domainName = domainName;
     }
+
+    
     
     /**
      * The name of the domain for which to display the metadata of.

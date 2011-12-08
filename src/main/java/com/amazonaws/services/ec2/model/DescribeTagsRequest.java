@@ -46,6 +46,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest {
     public DescribeTagsRequest(java.util.List<Filter> filters) {
         this.filters = filters;
     }
+
+    
     
     /**
      * A list of filters used to match properties for tags.

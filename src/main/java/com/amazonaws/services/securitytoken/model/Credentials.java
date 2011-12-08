@@ -70,6 +70,8 @@ public class Credentials {
         this.sessionToken = sessionToken;
         this.expiration = expiration;
     }
+
+    
     
     /**
      * AccessKeyId ID that identifies the temporary credentials.

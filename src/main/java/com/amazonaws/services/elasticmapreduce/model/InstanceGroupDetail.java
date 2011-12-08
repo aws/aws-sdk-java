@@ -148,6 +148,30 @@ public class InstanceGroupDetail {
         this.state = state;
         this.creationDateTime = creationDateTime;
     }
+
+    
+    
+    /**
+     * Constructs a new InstanceGroupDetail object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceRole Instance group role in the cluster
+     * @param instanceType Amazon EC2 Instance type.
+     * @param instanceRequestCount Target number of instances to run in the
+     * instance group.
+     * @param instanceRunningCount Actual count of running instances.
+     * @param state State of instance group.
+     * @param creationDateTime The date/time the instance group was created.
+     */
+    public InstanceGroupDetail(InstanceRoleType instanceRole, String instanceType, Integer instanceRequestCount, Integer instanceRunningCount, InstanceGroupState state, java.util.Date creationDateTime) {
+        this.instanceRole = instanceRole.toString();
+        this.instanceType = instanceType;
+        this.instanceRequestCount = instanceRequestCount;
+        this.instanceRunningCount = instanceRunningCount;
+        this.state = state.toString();
+        this.creationDateTime = creationDateTime;
+    }
     
     /**
      * Unique identifier for the instance group.
@@ -291,6 +315,40 @@ public class InstanceGroupDetail {
     
     
     /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @see MarketType
+     */
+    public void setMarket(MarketType market) {
+        this.market = market.toString();
+    }
+    
+    /**
+     * Market type of the Amazon EC2 instances used to create a cluster node.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ON_DEMAND, SPOT
+     *
+     * @param market Market type of the Amazon EC2 instances used to create a cluster node.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see MarketType
+     */
+    public InstanceGroupDetail withMarket(MarketType market) {
+        this.market = market.toString();
+        return this;
+    }
+    
+    /**
      * Instance group role in the cluster
      * <p>
      * <b>Constraints:</b><br/>
@@ -338,6 +396,40 @@ public class InstanceGroupDetail {
         return this;
     }
     
+    
+    /**
+     * Instance group role in the cluster
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>MASTER, CORE, TASK
+     *
+     * @param instanceRole Instance group role in the cluster
+     *
+     * @see InstanceRoleType
+     */
+    public void setInstanceRole(InstanceRoleType instanceRole) {
+        this.instanceRole = instanceRole.toString();
+    }
+    
+    /**
+     * Instance group role in the cluster
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>MASTER, CORE, TASK
+     *
+     * @param instanceRole Instance group role in the cluster
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceRoleType
+     */
+    public InstanceGroupDetail withInstanceRole(InstanceRoleType instanceRole) {
+        this.instanceRole = instanceRole.toString();
+        return this;
+    }
     
     /**
      * Bid price for EC2 Instances when launching nodes as Spot Instances,
@@ -553,6 +645,40 @@ public class InstanceGroupDetail {
         return this;
     }
     
+    
+    /**
+     * State of instance group.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     *
+     * @param state State of instance group.
+     *
+     * @see InstanceGroupState
+     */
+    public void setState(InstanceGroupState state) {
+        this.state = state.toString();
+    }
+    
+    /**
+     * State of instance group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
+     *
+     * @param state State of instance group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceGroupState
+     */
+    public InstanceGroupDetail withState(InstanceGroupState state) {
+        this.state = state.toString();
+        return this;
+    }
     
     /**
      * Details regarding the state of the instance group.

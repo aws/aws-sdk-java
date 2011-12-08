@@ -45,6 +45,8 @@ public class ActiveTrustedSigners {
     public ActiveTrustedSigners(java.util.List<Signer> signers) {
         this.signers = signers;
     }
+
+    
     
     /**
      * Each active trusted signer.

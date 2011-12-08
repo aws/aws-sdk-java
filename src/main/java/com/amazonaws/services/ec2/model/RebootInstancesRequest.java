@@ -50,6 +50,8 @@ public class RebootInstancesRequest extends AmazonWebServiceRequest {
     public RebootInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of instances to terminate.

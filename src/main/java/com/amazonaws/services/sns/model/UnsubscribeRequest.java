@@ -53,6 +53,8 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest {
     public UnsubscribeRequest(String subscriptionArn) {
         this.subscriptionArn = subscriptionArn;
     }
+
+    
     
     /**
      * The ARN of the subscription to be deleted.

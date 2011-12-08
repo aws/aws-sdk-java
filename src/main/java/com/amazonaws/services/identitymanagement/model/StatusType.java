@@ -12,21 +12,19 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.elasticloadbalancing.model;
+package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Cardinality
+ * Status Type
  */
-public enum Cardinality {
+public enum StatusType {
     
-    ONE("ONE"),
-    ZERO_OR_ONE("ZERO_OR_ONE"),
-    ZERO_OR_MORE("ZERO_OR_MORE"),
-    ONE_OR_MORE("ONE_OR_MORE");
+    Active("Active"),
+    Inactive("Inactive");
 
     private String value;
 
-    private Cardinality(String value) {
+    private StatusType(String value) {
         this.value = value;
     }
 
@@ -40,20 +38,16 @@ public enum Cardinality {
      *
      * @param value
      *            real value
-     * @return Cardinality corresponding to the value
+     * @return StatusType corresponding to the value
      */
-    public static Cardinality fromValue(String value) {
+    public static StatusType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("ONE".equals(value)) {
-            return Cardinality.ONE;
-        } else if ("ZERO_OR_ONE".equals(value)) {
-            return Cardinality.ZERO_OR_ONE;
-        } else if ("ZERO_OR_MORE".equals(value)) {
-            return Cardinality.ZERO_OR_MORE;
-        } else if ("ONE_OR_MORE".equals(value)) {
-            return Cardinality.ONE_OR_MORE;
+        } else if ("Active".equals(value)) {
+            return StatusType.Active;
+        } else if ("Inactive".equals(value)) {
+            return StatusType.Inactive;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

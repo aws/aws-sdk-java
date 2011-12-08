@@ -57,6 +57,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
         this.queueUrl = queueUrl;
         this.label = label;
     }
+
+    
     
     /**
      * The URL of the SQS queue to take action on.

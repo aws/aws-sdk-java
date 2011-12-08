@@ -177,6 +177,40 @@ public class SpotInstanceRequest {
     
     
     /**
+     * Sets the value of the Type property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>one-time, persistent
+     *
+     * @param type The new value for the Type property for this object.
+     *
+     * @see SpotInstanceType
+     */
+    public void setType(SpotInstanceType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * Sets the value of the Type property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>one-time, persistent
+     *
+     * @param type The new value for the Type property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SpotInstanceType
+     */
+    public SpotInstanceRequest withType(SpotInstanceType type) {
+        this.type = type.toString();
+        return this;
+    }
+    
+    /**
      * Returns the value of the State property for this object.
      *
      * @return The value of the State property for this object.

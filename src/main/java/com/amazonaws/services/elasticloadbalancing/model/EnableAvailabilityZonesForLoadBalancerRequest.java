@@ -69,6 +69,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
         this.loadBalancerName = loadBalancerName;
         this.availabilityZones = availabilityZones;
     }
+
+    
     
     /**
      * The name associated with the LoadBalancer. The name must be unique

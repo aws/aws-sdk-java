@@ -53,6 +53,8 @@ public class Destination {
     public Destination(java.util.List<String> toAddresses) {
         this.toAddresses = toAddresses;
     }
+
+    
     
     /**
      * The To: field(s) of the message.

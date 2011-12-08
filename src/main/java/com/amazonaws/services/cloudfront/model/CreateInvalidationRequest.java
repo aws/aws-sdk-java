@@ -53,6 +53,8 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest {
         this.distributionId = distributionId;
         this.invalidationBatch = invalidationBatch;
     }
+
+    
     
     /**
      * The distribution's id.

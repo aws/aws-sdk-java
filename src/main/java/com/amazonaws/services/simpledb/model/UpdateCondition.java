@@ -73,6 +73,8 @@ public class UpdateCondition {
         this.value = value;
         this.exists = exists;
     }
+
+    
     
     /**
      * The name of the attribute involved in the condition.

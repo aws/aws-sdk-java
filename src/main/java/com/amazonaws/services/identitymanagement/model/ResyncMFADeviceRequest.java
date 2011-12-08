@@ -87,6 +87,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
         this.authenticationCode1 = authenticationCode1;
         this.authenticationCode2 = authenticationCode2;
     }
+
+    
     
     /**
      * Name of the user whose MFA device you want to resynchronize.

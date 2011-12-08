@@ -48,6 +48,8 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest {
     public CreateKeyPairRequest(String keyName) {
         this.keyName = keyName;
     }
+
+    
     
     /**
      * The unique name for the new key pair.

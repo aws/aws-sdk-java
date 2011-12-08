@@ -114,6 +114,40 @@ public class AllocateAddressResult {
     
     
     /**
+     * Sets the value of the Domain property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain The new value for the Domain property for this object.
+     *
+     * @see DomainType
+     */
+    public void setDomain(DomainType domain) {
+        this.domain = domain.toString();
+    }
+    
+    /**
+     * Sets the value of the Domain property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>vpc, standard
+     *
+     * @param domain The new value for the Domain property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see DomainType
+     */
+    public AllocateAddressResult withDomain(DomainType domain) {
+        this.domain = domain.toString();
+        return this;
+    }
+    
+    /**
      * Returns the value of the AllocationId property for this object.
      *
      * @return The value of the AllocationId property for this object.

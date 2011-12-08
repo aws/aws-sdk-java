@@ -49,6 +49,8 @@ public class ListTopicsRequest extends AmazonWebServiceRequest {
     public ListTopicsRequest(String nextToken) {
         this.nextToken = nextToken;
     }
+
+    
     
     /**
      * Token returned by the previous ListTopics request.

@@ -54,6 +54,8 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest {
     public GetConsoleOutputRequest(String instanceId) {
         this.instanceId = instanceId;
     }
+
+    
     
     /**
      * The ID of the instance for which you want console output.

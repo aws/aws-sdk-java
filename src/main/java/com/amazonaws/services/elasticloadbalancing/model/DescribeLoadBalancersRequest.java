@@ -40,6 +40,11 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     private java.util.List<String> loadBalancerNames;
 
     /**
+     * An optional parameter reserved for future use.
+     */
+    private String marker;
+
+    /**
      * Default constructor for a new DescribeLoadBalancersRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -56,6 +61,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     public DescribeLoadBalancersRequest(java.util.List<String> loadBalancerNames) {
         this.loadBalancerNames = loadBalancerNames;
     }
+
+    
     
     /**
      * A list of names associated with the LoadBalancers at creation time.
@@ -122,6 +129,40 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * An optional parameter reserved for future use.
+     *
+     * @return An optional parameter reserved for future use.
+     */
+    public String getMarker() {
+        return marker;
+    }
+    
+    /**
+     * An optional parameter reserved for future use.
+     *
+     * @param marker An optional parameter reserved for future use.
+     */
+    public void setMarker(String marker) {
+        this.marker = marker;
+    }
+    
+    /**
+     * An optional parameter reserved for future use.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param marker An optional parameter reserved for future use.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeLoadBalancersRequest withMarker(String marker) {
+        this.marker = marker;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -134,6 +175,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
     }

@@ -22,17 +22,18 @@ public enum StackStatus {
     CREATE_IN_PROGRESS("CREATE_IN_PROGRESS"),
     CREATE_FAILED("CREATE_FAILED"),
     CREATE_COMPLETE("CREATE_COMPLETE"),
-    UPDATE_IN_PROGRESS("UPDATE_IN_PROGRESS"),
-    UPDATE_FAILED("UPDATE_FAILED"),
-    UPDATE_COMPLETE("UPDATE_COMPLETE"),
     ROLLBACK_IN_PROGRESS("ROLLBACK_IN_PROGRESS"),
     ROLLBACK_FAILED("ROLLBACK_FAILED"),
     ROLLBACK_COMPLETE("ROLLBACK_COMPLETE"),
     DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
     DELETE_FAILED("DELETE_FAILED"),
     DELETE_COMPLETE("DELETE_COMPLETE"),
+    UPDATE_IN_PROGRESS("UPDATE_IN_PROGRESS"),
+    UPDATE_COMPLETE_CLEANUP_IN_PROGRESS("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"),
+    UPDATE_COMPLETE("UPDATE_COMPLETE"),
     UPDATE_ROLLBACK_IN_PROGRESS("UPDATE_ROLLBACK_IN_PROGRESS"),
     UPDATE_ROLLBACK_FAILED("UPDATE_ROLLBACK_FAILED"),
+    UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"),
     UPDATE_ROLLBACK_COMPLETE("UPDATE_ROLLBACK_COMPLETE");
 
     private String value;
@@ -63,12 +64,6 @@ public enum StackStatus {
             return StackStatus.CREATE_FAILED;
         } else if ("CREATE_COMPLETE".equals(value)) {
             return StackStatus.CREATE_COMPLETE;
-        } else if ("UPDATE_IN_PROGRESS".equals(value)) {
-            return StackStatus.UPDATE_IN_PROGRESS;
-        } else if ("UPDATE_FAILED".equals(value)) {
-            return StackStatus.UPDATE_FAILED;
-        } else if ("UPDATE_COMPLETE".equals(value)) {
-            return StackStatus.UPDATE_COMPLETE;
         } else if ("ROLLBACK_IN_PROGRESS".equals(value)) {
             return StackStatus.ROLLBACK_IN_PROGRESS;
         } else if ("ROLLBACK_FAILED".equals(value)) {
@@ -81,10 +76,18 @@ public enum StackStatus {
             return StackStatus.DELETE_FAILED;
         } else if ("DELETE_COMPLETE".equals(value)) {
             return StackStatus.DELETE_COMPLETE;
+        } else if ("UPDATE_IN_PROGRESS".equals(value)) {
+            return StackStatus.UPDATE_IN_PROGRESS;
+        } else if ("UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".equals(value)) {
+            return StackStatus.UPDATE_COMPLETE_CLEANUP_IN_PROGRESS;
+        } else if ("UPDATE_COMPLETE".equals(value)) {
+            return StackStatus.UPDATE_COMPLETE;
         } else if ("UPDATE_ROLLBACK_IN_PROGRESS".equals(value)) {
             return StackStatus.UPDATE_ROLLBACK_IN_PROGRESS;
         } else if ("UPDATE_ROLLBACK_FAILED".equals(value)) {
             return StackStatus.UPDATE_ROLLBACK_FAILED;
+        } else if ("UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".equals(value)) {
+            return StackStatus.UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS;
         } else if ("UPDATE_ROLLBACK_COMPLETE".equals(value)) {
             return StackStatus.UPDATE_ROLLBACK_COMPLETE;
         } else {

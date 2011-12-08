@@ -163,6 +163,40 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The value of the state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
+     *
+     * @param stateValue The value of the state.
+     *
+     * @see StateValue
+     */
+    public void setStateValue(StateValue stateValue) {
+        this.stateValue = stateValue.toString();
+    }
+    
+    /**
+     * The value of the state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
+     *
+     * @param stateValue The value of the state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StateValue
+     */
+    public SetAlarmStateRequest withStateValue(StateValue stateValue) {
+        this.stateValue = stateValue.toString();
+        return this;
+    }
+    
+    /**
      * The reason that this alarm is set to this specific state (in
      * human-readable text format)
      * <p>

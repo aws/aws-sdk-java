@@ -52,6 +52,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest {
     public DeleteCacheClusterRequest(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
     }
+
+    
     
     /**
      * The Cache Cluster identifier for the Cache Cluster to be deleted. This

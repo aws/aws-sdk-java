@@ -66,6 +66,10 @@ public class StackStaxUnmarshaller implements Unmarshaller<Stack, StaxUnmarshall
                     stack.setCreationTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("LastUpdatedTime", targetDepth)) {
+                    stack.setLastUpdatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("StackStatus", targetDepth)) {
                     stack.setStackStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

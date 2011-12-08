@@ -61,6 +61,8 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     public DescribeInstanceHealthRequest(String loadBalancerName) {
         this.loadBalancerName = loadBalancerName;
     }
+
+    
     
     /**
      * The name associated with the LoadBalancer. The name must be unique

@@ -112,6 +112,8 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
         this.groupName = groupName;
         this.ipPermissions = ipPermissions;
     }
+
+    
     
     /**
      * Name of the standard (EC2) security group to modify. The group must

@@ -98,6 +98,14 @@ public class ReservedInstancesStaxUnmarshaller implements Unmarshaller<ReservedI
                     reservedInstances.setCurrencyCode(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("offeringType", targetDepth)) {
+                    reservedInstances.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("recurringCharges/item", targetDepth)) {
+                    reservedInstances.getRecurringCharges().add(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstances;

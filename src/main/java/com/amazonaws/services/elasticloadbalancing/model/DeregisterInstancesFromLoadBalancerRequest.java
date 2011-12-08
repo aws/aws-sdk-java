@@ -62,6 +62,8 @@ public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebService
         this.loadBalancerName = loadBalancerName;
         this.instances = instances;
     }
+
+    
     
     /**
      * The name associated with the LoadBalancer. The name must be unique

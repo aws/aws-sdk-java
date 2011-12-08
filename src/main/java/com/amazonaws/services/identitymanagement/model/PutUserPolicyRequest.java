@@ -88,6 +88,8 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest {
         this.policyName = policyName;
         this.policyDocument = policyDocument;
     }
+
+    
     
     /**
      * Name of the user to associate the policy with.

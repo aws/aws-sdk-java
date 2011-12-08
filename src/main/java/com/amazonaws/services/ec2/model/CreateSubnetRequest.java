@@ -72,6 +72,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
         this.vpcId = vpcId;
         this.cidrBlock = cidrBlock;
     }
+
+    
     
     /**
      * The ID of the VPC to create the subnet in.

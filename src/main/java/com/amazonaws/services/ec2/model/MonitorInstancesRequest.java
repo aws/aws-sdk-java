@@ -47,6 +47,8 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest {
     public MonitorInstancesRequest(java.util.List<String> instanceIds) {
         this.instanceIds = instanceIds;
     }
+
+    
     
     /**
      * The list of Amazon EC2 instances on which to enable monitoring.

@@ -83,8 +83,8 @@ import com.amazonaws.services.cloudformation.model.transform.*;
  * </p>
  * <p>
  * For more information about this product, go to the <a
- * href="http://aws.amazon.com/documentation/cloudformation">
- * CloudFormation Product Page </a> .
+ * href="http://aws.amazon.com/cloudformation/"> CloudFormation Product
+ * Page </a> .
  * </p>
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need
@@ -291,6 +291,35 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             throws AmazonServiceException, AmazonClientException {
         Request<ValidateTemplateRequest> request = new ValidateTemplateRequestMarshaller().marshall(validateTemplateRequest);
         return invoke(request, new ValidateTemplateResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Returns the estimated monthly cost of a template. The return value is
+     * an AWS Simply Monthly Calculator URL with a query string that
+     * describes the resources required to run the template.
+     * </p>
+     *
+     * @param estimateTemplateCostRequest Container for the necessary
+     *           parameters to execute the EstimateTemplateCost service method on
+     *           AmazonCloudFormation.
+     * 
+     * @return The response from the EstimateTemplateCost service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EstimateTemplateCostResult estimateTemplateCost(EstimateTemplateCostRequest estimateTemplateCostRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<EstimateTemplateCostRequest> request = new EstimateTemplateCostRequestMarshaller().marshall(estimateTemplateCostRequest);
+        return invoke(request, new EstimateTemplateCostResultStaxUnmarshaller());
     }
     
     /**
@@ -591,6 +620,29 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      */
     public ListStacksResult listStacks() throws AmazonServiceException, AmazonClientException {
         return listStacks(new ListStacksRequest());
+    }
+    
+    /**
+     * <p>
+     * Returns the estimated monthly cost of a template. The return value is
+     * an AWS Simply Monthly Calculator URL with a query string that
+     * describes the resources required to run the template.
+     * </p>
+     * 
+     * @return The response from the EstimateTemplateCost service method, as
+     *         returned by AmazonCloudFormation.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EstimateTemplateCostResult estimateTemplateCost() throws AmazonServiceException, AmazonClientException {
+        return estimateTemplateCost(new EstimateTemplateCostRequest());
     }
     
     /**

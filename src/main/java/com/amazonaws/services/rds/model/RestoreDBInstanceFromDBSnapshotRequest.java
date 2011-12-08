@@ -131,6 +131,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         this.dBInstanceIdentifier = dBInstanceIdentifier;
         this.dBSnapshotIdentifier = dBSnapshotIdentifier;
     }
+
+    
     
     /**
      * The identifier for the DB Snapshot to restore from. <p>Constraints:

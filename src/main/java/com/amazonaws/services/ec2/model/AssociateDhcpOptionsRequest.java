@@ -60,6 +60,8 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
     public AssociateDhcpOptionsRequest(String vpcId) {
         this.vpcId = vpcId;
     }
+
+    
     
     /**
      * The ID of the DHCP options to associate with the VPC. Specify

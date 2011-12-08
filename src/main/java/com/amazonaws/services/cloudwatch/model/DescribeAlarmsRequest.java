@@ -250,6 +250,40 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The state value to be used in matching alarms.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
+     *
+     * @param stateValue The state value to be used in matching alarms.
+     *
+     * @see StateValue
+     */
+    public void setStateValue(StateValue stateValue) {
+        this.stateValue = stateValue.toString();
+    }
+    
+    /**
+     * The state value to be used in matching alarms.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>OK, ALARM, INSUFFICIENT_DATA
+     *
+     * @param stateValue The state value to be used in matching alarms.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see StateValue
+     */
+    public DescribeAlarmsRequest withStateValue(StateValue stateValue) {
+        this.stateValue = stateValue.toString();
+        return this;
+    }
+    
+    /**
      * The action name prefix.
      * <p>
      * <b>Constraints:</b><br/>

@@ -54,6 +54,8 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest {
     public DeleteApplicationRequest(String applicationName) {
         this.applicationName = applicationName;
     }
+
+    
     
     /**
      * The name of the application to delete.

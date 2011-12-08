@@ -108,6 +108,8 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     public RequestSpotInstancesRequest(String spotPrice) {
         this.spotPrice = spotPrice;
     }
+
+    
     
     /**
      * Specifies the maximum hourly price for any Spot Instance launched to
@@ -231,6 +233,40 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * Specifies the Spot Instance type.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>one-time, persistent
+     *
+     * @param type Specifies the Spot Instance type.
+     *
+     * @see SpotInstanceType
+     */
+    public void setType(SpotInstanceType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * Specifies the Spot Instance type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>one-time, persistent
+     *
+     * @param type Specifies the Spot Instance type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SpotInstanceType
+     */
+    public RequestSpotInstancesRequest withType(SpotInstanceType type) {
+        this.type = type.toString();
+        return this;
+    }
     
     /**
      * Defines the start date of the request. <p> If this is a one-time

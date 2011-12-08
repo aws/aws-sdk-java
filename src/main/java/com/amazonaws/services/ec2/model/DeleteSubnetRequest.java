@@ -48,6 +48,8 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
     public DeleteSubnetRequest(String subnetId) {
         this.subnetId = subnetId;
     }
+
+    
     
     /**
      * The ID of the subnet you want to delete.

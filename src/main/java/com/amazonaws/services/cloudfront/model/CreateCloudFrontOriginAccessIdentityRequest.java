@@ -47,6 +47,8 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
     public CreateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
         this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
     }
+
+    
     
     /**
      * The origin access identity's configuration information.

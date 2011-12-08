@@ -79,6 +79,8 @@ public class InvalidationBatch {
         this.paths = paths;
         this.callerReference = callerReference;
     }
+
+    
     
     /**
      * Constructs a new InvalidationBatch object.
@@ -99,6 +101,8 @@ public class InvalidationBatch {
     public InvalidationBatch(String callerReference) {
         this.callerReference = callerReference;
     }
+
+    
     
     /**
      * The path of the object to invalidate. The path is relative to the

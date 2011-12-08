@@ -69,6 +69,8 @@ public class ServerCertificate {
         this.serverCertificateMetadata = serverCertificateMetadata;
         this.certificateBody = certificateBody;
     }
+
+    
     
     /**
      * The meta information of the server certificate, such as its name,

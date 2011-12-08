@@ -71,6 +71,8 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest {
     public DeleteTopicRequest(String topicArn) {
         this.topicArn = topicArn;
     }
+
+    
     
     /**
      * The ARN of the topic you want to delete. <examples> <queryrequest>

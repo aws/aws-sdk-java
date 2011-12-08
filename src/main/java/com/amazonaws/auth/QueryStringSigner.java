@@ -65,7 +65,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
         request.addParameter("SignatureVersion", version.toString());
         request.addParameter("Timestamp", getFormattedTimestamp());
-        
+
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
@@ -75,12 +75,12 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             stringToSign = calculateStringToSignV1(request.getParameters());
         } else if ( version.equals( SignatureVersion.V2 ) ) {
             request.addParameter("SignatureMethod", algorithm.toString());
-            stringToSign = calculateStringToSignV2(request.getEndpoint(), request.getParameters());
+            stringToSign = calculateStringToSignV2(request);
         } else {
             throw new AmazonClientException("Invalid Signature Version specified");
         }
 
-        String signatureValue = sign(stringToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
+        String signatureValue = signAndBase64Encode(stringToSign, sanitizedCredentials.getAWSSecretKey(), algorithm);
         request.addParameter("Signature", signatureValue);
     }
 
@@ -109,23 +109,22 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
     /**
      * Calculate string to sign for signature version 2.
      *
-     * @param parameters
-     *            request parameters
-     *
-     * @param serviceUrl
-     *            service url
+     * @param request
+     *            The request being signed.
      *
      * @return String to sign
      *
      * @throws AmazonClientException
      *             If the string to sign cannot be calculated.
      */
-    private String calculateStringToSignV2(URI endpoint,
-            Map<String, String> parameters) throws AmazonClientException {
+    private String calculateStringToSignV2(Request<?> request) throws AmazonClientException {
+        URI endpoint = request.getEndpoint();
+        Map<String, String> parameters = request.getParameters();
+
         StringBuilder data = new StringBuilder();
         data.append("POST").append("\n");
         data.append(getCanonicalizedEndpoint(endpoint)).append("\n");
-        data.append(getCanonicalizedResourcePath(endpoint)).append("\n");
+        data.append(getCanonicalizedResourcePath(request.getResourcePath())).append("\n");
         data.append(getCanonicalizedQueryString(parameters));
         return data.toString();
     }
