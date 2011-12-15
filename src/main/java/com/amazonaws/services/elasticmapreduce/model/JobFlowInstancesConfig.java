@@ -78,14 +78,33 @@ public class JobFlowInstancesConfig {
     private Boolean terminationProtected;
 
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     * or "0.20".
+     * Specifies the Hadoop version for the job flow. Valid inputs are
+     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     * default of 0.18 is used, unless the AmiVersion parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that
+     * AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String hadoopVersion;
+
+    /**
+     * To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     * set this parameter to the identifier of the Amazon VPC subnet where
+     * you want the job flow to launch. If you do not specify this value, the
+     * job flow is launched in the normal Amazon Web Services cloud, outside
+     * of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     * compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     * specify the cc1.4xlarge instance type for nodes of a job flow launched
+     * in a Amazon VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String ec2SubnetId;
 
     /**
      * Default constructor for a new JobFlowInstancesConfig object.  Callers should use the
@@ -480,38 +499,53 @@ public class JobFlowInstancesConfig {
     }
     
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     * or "0.20".
+     * Specifies the Hadoop version for the job flow. Valid inputs are
+     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     * default of 0.18 is used, unless the AmiVersion parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that
+     * AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     *         or "0.20".
+     * @return Specifies the Hadoop version for the job flow. Valid inputs are
+     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
+     *         RunJobFlow call, in which case the default version of Hadoop for that
+     *         AMI version is used.
      */
     public String getHadoopVersion() {
         return hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     * or "0.20".
+     * Specifies the Hadoop version for the job flow. Valid inputs are
+     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     * default of 0.18 is used, unless the AmiVersion parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that
+     * AMI version is used.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     *         or "0.20".
+     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are
+     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
+     *         RunJobFlow call, in which case the default version of Hadoop for that
+     *         AMI version is used.
      */
     public void setHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
     }
     
     /**
-     * Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     * or "0.20".
+     * Specifies the Hadoop version for the job flow. Valid inputs are
+     * "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     * default of 0.18 is used, unless the AmiVersion parameter is set in the
+     * RunJobFlow call, in which case the default version of Hadoop for that
+     * AMI version is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -519,14 +553,105 @@ public class JobFlowInstancesConfig {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are "0.18"
-     *         or "0.20".
+     * @param hadoopVersion Specifies the Hadoop version for the job flow. Valid inputs are
+     *         "0.18", "0.20", or "0.20.205". If you do not set this value, the
+     *         default of 0.18 is used, unless the AmiVersion parameter is set in the
+     *         RunJobFlow call, in which case the default version of Hadoop for that
+     *         AMI version is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public JobFlowInstancesConfig withHadoopVersion(String hadoopVersion) {
         this.hadoopVersion = hadoopVersion;
+        return this;
+    }
+    
+    
+    /**
+     * To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     * set this parameter to the identifier of the Amazon VPC subnet where
+     * you want the job flow to launch. If you do not specify this value, the
+     * job flow is launched in the normal Amazon Web Services cloud, outside
+     * of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     * compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     * specify the cc1.4xlarge instance type for nodes of a job flow launched
+     * in a Amazon VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     *         set this parameter to the identifier of the Amazon VPC subnet where
+     *         you want the job flow to launch. If you do not specify this value, the
+     *         job flow is launched in the normal Amazon Web Services cloud, outside
+     *         of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     *         compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     *         specify the cc1.4xlarge instance type for nodes of a job flow launched
+     *         in a Amazon VPC.
+     */
+    public String getEc2SubnetId() {
+        return ec2SubnetId;
+    }
+    
+    /**
+     * To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     * set this parameter to the identifier of the Amazon VPC subnet where
+     * you want the job flow to launch. If you do not specify this value, the
+     * job flow is launched in the normal Amazon Web Services cloud, outside
+     * of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     * compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     * specify the cc1.4xlarge instance type for nodes of a job flow launched
+     * in a Amazon VPC.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param ec2SubnetId To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     *         set this parameter to the identifier of the Amazon VPC subnet where
+     *         you want the job flow to launch. If you do not specify this value, the
+     *         job flow is launched in the normal Amazon Web Services cloud, outside
+     *         of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     *         compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     *         specify the cc1.4xlarge instance type for nodes of a job flow launched
+     *         in a Amazon VPC.
+     */
+    public void setEc2SubnetId(String ec2SubnetId) {
+        this.ec2SubnetId = ec2SubnetId;
+    }
+    
+    /**
+     * To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     * set this parameter to the identifier of the Amazon VPC subnet where
+     * you want the job flow to launch. If you do not specify this value, the
+     * job flow is launched in the normal Amazon Web Services cloud, outside
+     * of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     * compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     * specify the cc1.4xlarge instance type for nodes of a job flow launched
+     * in a Amazon VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param ec2SubnetId To launch the job flow in Amazon Virtual Private Cloud (Amazon VPC),
+     *         set this parameter to the identifier of the Amazon VPC subnet where
+     *         you want the job flow to launch. If you do not specify this value, the
+     *         job flow is launched in the normal Amazon Web Services cloud, outside
+     *         of an Amazon VPC. <p> Amazon VPC currently does not support cluster
+     *         compute quadruple extra large (cc1.4xlarge) instances. Thus you cannot
+     *         specify the cc1.4xlarge instance type for nodes of a job flow launched
+     *         in a Amazon VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowInstancesConfig withEc2SubnetId(String ec2SubnetId) {
+        this.ec2SubnetId = ec2SubnetId;
         return this;
     }
     
@@ -552,6 +677,7 @@ public class JobFlowInstancesConfig {
         sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
         sb.append("TerminationProtected: " + terminationProtected + ", ");
         sb.append("HadoopVersion: " + hadoopVersion + ", ");
+        sb.append("Ec2SubnetId: " + ec2SubnetId + ", ");
         sb.append("}");
         return sb.toString();
     }

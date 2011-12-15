@@ -91,6 +91,17 @@ public class JobFlowInstancesDetail {
     private String ec2KeyName;
 
     /**
+     * For job flows launched within Amazon Virtual Private Cloud, this value
+     * specifies the identifier of the subnet where the job flow was
+     * launched.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String ec2SubnetId;
+
+    /**
      * Specifies the Amazon EC2 Availability Zone for the job flow.
      */
     private PlacementType placement;
@@ -560,6 +571,64 @@ public class JobFlowInstancesDetail {
     
     
     /**
+     * For job flows launched within Amazon Virtual Private Cloud, this value
+     * specifies the identifier of the subnet where the job flow was
+     * launched.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return For job flows launched within Amazon Virtual Private Cloud, this value
+     *         specifies the identifier of the subnet where the job flow was
+     *         launched.
+     */
+    public String getEc2SubnetId() {
+        return ec2SubnetId;
+    }
+    
+    /**
+     * For job flows launched within Amazon Virtual Private Cloud, this value
+     * specifies the identifier of the subnet where the job flow was
+     * launched.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param ec2SubnetId For job flows launched within Amazon Virtual Private Cloud, this value
+     *         specifies the identifier of the subnet where the job flow was
+     *         launched.
+     */
+    public void setEc2SubnetId(String ec2SubnetId) {
+        this.ec2SubnetId = ec2SubnetId;
+    }
+    
+    /**
+     * For job flows launched within Amazon Virtual Private Cloud, this value
+     * specifies the identifier of the subnet where the job flow was
+     * launched.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param ec2SubnetId For job flows launched within Amazon Virtual Private Cloud, this value
+     *         specifies the identifier of the subnet where the job flow was
+     *         launched.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowInstancesDetail withEc2SubnetId(String ec2SubnetId) {
+        this.ec2SubnetId = ec2SubnetId;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the Amazon EC2 Availability Zone for the job flow.
      *
      * @return Specifies the Amazon EC2 Availability Zone for the job flow.
@@ -769,6 +838,7 @@ public class JobFlowInstancesDetail {
         sb.append("InstanceGroups: " + instanceGroups + ", ");
         sb.append("NormalizedInstanceHours: " + normalizedInstanceHours + ", ");
         sb.append("Ec2KeyName: " + ec2KeyName + ", ");
+        sb.append("Ec2SubnetId: " + ec2SubnetId + ", ");
         sb.append("Placement: " + placement + ", ");
         sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
         sb.append("TerminationProtected: " + terminationProtected + ", ");

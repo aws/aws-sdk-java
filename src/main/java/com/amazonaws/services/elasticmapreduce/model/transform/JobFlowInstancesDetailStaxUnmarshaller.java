@@ -78,6 +78,10 @@ public class JobFlowInstancesDetailStaxUnmarshaller implements Unmarshaller<JobF
                     jobFlowInstancesDetail.setEc2KeyName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Ec2SubnetId", targetDepth)) {
+                    jobFlowInstancesDetail.setEc2SubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Placement", targetDepth)) {
                     jobFlowInstancesDetail.setPlacement(PlacementTypeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -22,13 +22,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * will run the steps specified. Once the job flow completes, the cluster
  * is stopped and the HDFS partition is lost. To prevent loss of data,
  * configure the last step of the job flow to store results in Amazon S3.
- * If the JobFlowInstancesDetail <code>KeepJobFlowAliveWhenNoSteps</code>
+ * If the JobFlowInstancesConfig <code>KeepJobFlowAliveWhenNoSteps</code>
  * parameter is set to <code>TRUE</code> , the job flow will transition
  * to the WAITING state rather than shutting down once the steps have
  * completed.
  * </p>
  * <p>
- * For additional protection, you can set the JobFlowInstancesDetail
+ * For additional protection, you can set the JobFlowInstancesConfig
  * <code>TerminationProtected</code> parameter to <code>TRUE</code> to
  * lock the job flow and prevent it from being terminated by API call,
  * user intervention, or in the event of a job flow error.
@@ -85,6 +85,29 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     private String additionalInfo;
 
     /**
+     * The version of the Amazon Machine Image (AMI) to use when launching
+     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String amiVersion;
+
+    /**
      * A specification of the number and type of Amazon EC2 instances on
      * which to run the job flow.
      */
@@ -100,6 +123,14 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * on the cluster nodes.
      */
     private java.util.List<BootstrapActionConfig> bootstrapActions;
+
+    /**
+     * A list of strings used by third-party software to tag the job flow.
+     * Currently the only valid value is "karmasphere-enterprise-utility",
+     * which tags the job flow for management by <a
+     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     */
+    private java.util.List<String> supportedProducts;
 
     /**
      * Default constructor for a new RunJobFlowRequest object.  Callers should use the
@@ -263,6 +294,136 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      */
     public RunJobFlowRequest withAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
+        return this;
+    }
+    
+    
+    /**
+     * The version of the Amazon Machine Image (AMI) to use when launching
+     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The version of the Amazon Machine Image (AMI) to use when launching
+     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
+     */
+    public String getAmiVersion() {
+        return amiVersion;
+    }
+    
+    /**
+     * The version of the Amazon Machine Image (AMI) to use when launching
+     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
+     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
+     */
+    public void setAmiVersion(String amiVersion) {
+        this.amiVersion = amiVersion;
+    }
+    
+    /**
+     * The version of the Amazon Machine Image (AMI) to use when launching
+     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * both Hadoop 0.18 and 0.20) you can use the
+     * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     * modify the version of Hadoop from the defaults shown above. <p>For
+     * details about the AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
+     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
+     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
+     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
+     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
+     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
+     *         modify the version of Hadoop from the defaults shown above. <p>For
+     *         details about the AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunJobFlowRequest withAmiVersion(String amiVersion) {
+        this.amiVersion = amiVersion;
         return this;
     }
     
@@ -444,6 +605,94 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * A list of strings used by third-party software to tag the job flow.
+     * Currently the only valid value is "karmasphere-enterprise-utility",
+     * which tags the job flow for management by <a
+     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     *
+     * @return A list of strings used by third-party software to tag the job flow.
+     *         Currently the only valid value is "karmasphere-enterprise-utility",
+     *         which tags the job flow for management by <a
+     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     */
+    public java.util.List<String> getSupportedProducts() {
+        
+        if (supportedProducts == null) {
+            supportedProducts = new java.util.ArrayList<String>();
+        }
+        return supportedProducts;
+    }
+    
+    /**
+     * A list of strings used by third-party software to tag the job flow.
+     * Currently the only valid value is "karmasphere-enterprise-utility",
+     * which tags the job flow for management by <a
+     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     *
+     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
+     *         Currently the only valid value is "karmasphere-enterprise-utility",
+     *         which tags the job flow for management by <a
+     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     */
+    public void setSupportedProducts(java.util.Collection<String> supportedProducts) {
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
+        if (supportedProducts != null) {
+            supportedProductsCopy.addAll(supportedProducts);
+        }
+        this.supportedProducts = supportedProductsCopy;
+    }
+    
+    /**
+     * A list of strings used by third-party software to tag the job flow.
+     * Currently the only valid value is "karmasphere-enterprise-utility",
+     * which tags the job flow for management by <a
+     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
+     *         Currently the only valid value is "karmasphere-enterprise-utility",
+     *         which tags the job flow for management by <a
+     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
+        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>());
+        for (String value : supportedProducts) {
+            getSupportedProducts().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of strings used by third-party software to tag the job flow.
+     * Currently the only valid value is "karmasphere-enterprise-utility",
+     * which tags the job flow for management by <a
+     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
+     *         Currently the only valid value is "karmasphere-enterprise-utility",
+     *         which tags the job flow for management by <a
+     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunJobFlowRequest withSupportedProducts(java.util.Collection<String> supportedProducts) {
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
+        if (supportedProducts != null) {
+            supportedProductsCopy.addAll(supportedProducts);
+        }
+        this.supportedProducts = supportedProductsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -458,9 +707,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         sb.append("Name: " + name + ", ");
         sb.append("LogUri: " + logUri + ", ");
         sb.append("AdditionalInfo: " + additionalInfo + ", ");
+        sb.append("AmiVersion: " + amiVersion + ", ");
         sb.append("Instances: " + instances + ", ");
         sb.append("Steps: " + steps + ", ");
         sb.append("BootstrapActions: " + bootstrapActions + ", ");
+        sb.append("SupportedProducts: " + supportedProducts + ", ");
         sb.append("}");
         return sb.toString();
     }

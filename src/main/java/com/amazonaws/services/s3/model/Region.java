@@ -106,7 +106,19 @@ public enum Region {
 	 * creating a bucket in this region.
 	 * </p>
 	 */
-    AP_Tokyo("ap-northeast-1");
+    AP_Tokyo("ap-northeast-1"),
+
+    /**
+     * The South America (Sao Paulo) Region. This region uses Amazon S3 servers
+     * located in Sao Paulo.
+     * <p>
+     * When using buckets in this region, optionally set the client endpoint to
+     * <code>s3-sa-east-1.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of creating a
+     * bucket in this region.
+     * </p>
+     */
+    SA_SaoPaulo("sa-east-1");
 
 
     /** The unique ID representing each region. */

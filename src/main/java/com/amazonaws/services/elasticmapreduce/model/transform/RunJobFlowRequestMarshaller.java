@@ -49,6 +49,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         if (runJobFlowRequest.getAdditionalInfo() != null) {
             request.addParameter("AdditionalInfo", StringUtils.fromString(runJobFlowRequest.getAdditionalInfo()));
         }
+        if (runJobFlowRequest.getAmiVersion() != null) {
+            request.addParameter("AmiVersion", StringUtils.fromString(runJobFlowRequest.getAmiVersion()));
+        }
         JobFlowInstancesConfig jobFlowInstancesConfigInstances = runJobFlowRequest.getInstances();
         if (jobFlowInstancesConfigInstances != null) {
             if (jobFlowInstancesConfigInstances.getMasterInstanceType() != null) {
@@ -106,6 +109,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             }
             if (jobFlowInstancesConfigInstances.getHadoopVersion() != null) {
                 request.addParameter("Instances.HadoopVersion", StringUtils.fromString(jobFlowInstancesConfigInstances.getHadoopVersion()));
+            }
+            if (jobFlowInstancesConfigInstances.getEc2SubnetId() != null) {
+                request.addParameter("Instances.Ec2SubnetId", StringUtils.fromString(jobFlowInstancesConfigInstances.getEc2SubnetId()));
             }
         }
 
@@ -192,6 +198,17 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
             }
 
             bootstrapActionsListIndex++;
+        }
+
+        java.util.List<String> supportedProductsList = runJobFlowRequest.getSupportedProducts();
+        int supportedProductsListIndex = 1;
+
+        for (String supportedProductsListValue : supportedProductsList) {
+            if (supportedProductsListValue != null) {
+                request.addParameter("SupportedProducts.member." + supportedProductsListIndex, StringUtils.fromString(supportedProductsListValue));
+            }
+
+            supportedProductsListIndex++;
         }
 
 

@@ -48,6 +48,18 @@ public class JobFlowDetail {
      */
     private String logUri;
 
+    /**
+     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * job flow. For a list of AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 256<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
     private String amiVersion;
 
     /**
@@ -69,6 +81,13 @@ public class JobFlowDetail {
      * A list of the bootstrap actions run by the job flow.
      */
     private java.util.List<BootstrapActionDetail> bootstrapActions;
+
+    /**
+     * A list of strings set by third party software when the job flow is
+     * launched. If you are not using third party software to manage the job
+     * flow this value is empty.
+     */
+    private java.util.List<String> supportedProducts;
 
     /**
      * Default constructor for a new JobFlowDetail object.  Callers should use the
@@ -235,33 +254,58 @@ public class JobFlowDetail {
     
     
     /**
-     * Returns the value of the AmiVersion property for this object.
+     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * job flow. For a list of AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The value of the AmiVersion property for this object.
+     * @return The verison of the AMI used to initialize Amazon EC2 instances in the
+     *         job flow. For a list of AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
      */
     public String getAmiVersion() {
         return amiVersion;
     }
     
     /**
-     * Sets the value of the AmiVersion property for this object.
+     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * job flow. For a list of AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The new value for the AmiVersion property for this object.
+     * @param amiVersion The verison of the AMI used to initialize Amazon EC2 instances in the
+     *         job flow. For a list of AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
      */
     public void setAmiVersion(String amiVersion) {
         this.amiVersion = amiVersion;
     }
     
     /**
-     * Sets the value of the AmiVersion property for this object.
+     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * job flow. For a list of AMI versions currently supported by Amazon
+     * ElasticMapReduce, go to <a
+     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     * MapReduce Developer's Guide.</i>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -269,7 +313,12 @@ public class JobFlowDetail {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The new value for the AmiVersion property for this object.
+     * @param amiVersion The verison of the AMI used to initialize Amazon EC2 instances in the
+     *         job flow. For a list of AMI versions currently supported by Amazon
+     *         ElasticMapReduce, go to <a
+     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
+     *         MapReduce Developer's Guide.</i>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -477,6 +526,86 @@ public class JobFlowDetail {
     }
     
     /**
+     * A list of strings set by third party software when the job flow is
+     * launched. If you are not using third party software to manage the job
+     * flow this value is empty.
+     *
+     * @return A list of strings set by third party software when the job flow is
+     *         launched. If you are not using third party software to manage the job
+     *         flow this value is empty.
+     */
+    public java.util.List<String> getSupportedProducts() {
+        
+        if (supportedProducts == null) {
+            supportedProducts = new java.util.ArrayList<String>();
+        }
+        return supportedProducts;
+    }
+    
+    /**
+     * A list of strings set by third party software when the job flow is
+     * launched. If you are not using third party software to manage the job
+     * flow this value is empty.
+     *
+     * @param supportedProducts A list of strings set by third party software when the job flow is
+     *         launched. If you are not using third party software to manage the job
+     *         flow this value is empty.
+     */
+    public void setSupportedProducts(java.util.Collection<String> supportedProducts) {
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
+        if (supportedProducts != null) {
+            supportedProductsCopy.addAll(supportedProducts);
+        }
+        this.supportedProducts = supportedProductsCopy;
+    }
+    
+    /**
+     * A list of strings set by third party software when the job flow is
+     * launched. If you are not using third party software to manage the job
+     * flow this value is empty.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportedProducts A list of strings set by third party software when the job flow is
+     *         launched. If you are not using third party software to manage the job
+     *         flow this value is empty.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowDetail withSupportedProducts(String... supportedProducts) {
+        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>());
+        for (String value : supportedProducts) {
+            getSupportedProducts().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of strings set by third party software when the job flow is
+     * launched. If you are not using third party software to manage the job
+     * flow this value is empty.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param supportedProducts A list of strings set by third party software when the job flow is
+     *         launched. If you are not using third party software to manage the job
+     *         flow this value is empty.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowDetail withSupportedProducts(java.util.Collection<String> supportedProducts) {
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
+        if (supportedProducts != null) {
+            supportedProductsCopy.addAll(supportedProducts);
+        }
+        this.supportedProducts = supportedProductsCopy;
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -496,6 +625,7 @@ public class JobFlowDetail {
         sb.append("Instances: " + instances + ", ");
         sb.append("Steps: " + steps + ", ");
         sb.append("BootstrapActions: " + bootstrapActions + ", ");
+        sb.append("SupportedProducts: " + supportedProducts + ", ");
         sb.append("}");
         return sb.toString();
     }
