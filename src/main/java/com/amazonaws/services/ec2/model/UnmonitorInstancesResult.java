@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,13 @@ public class UnmonitorInstancesResult {
      *         in the request.
      */
     public void setInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
-        java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>();
-        if (instanceMonitorings != null) {
-            instanceMonitoringsCopy.addAll(instanceMonitorings);
+        if (instanceMonitorings == null) {
+            this.instanceMonitorings = null;
+            return;
         }
+
+        java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.size());
+        instanceMonitoringsCopy.addAll(instanceMonitorings);
         this.instanceMonitorings = instanceMonitoringsCopy;
     }
     
@@ -71,7 +74,7 @@ public class UnmonitorInstancesResult {
      *         together. 
      */
     public UnmonitorInstancesResult withInstanceMonitorings(InstanceMonitoring... instanceMonitorings) {
-        if (getInstanceMonitorings() == null) setInstanceMonitorings(new java.util.ArrayList<InstanceMonitoring>());
+        if (getInstanceMonitorings() == null) setInstanceMonitorings(new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.length));
         for (InstanceMonitoring value : instanceMonitorings) {
             getInstanceMonitorings().add(value);
         }
@@ -91,11 +94,13 @@ public class UnmonitorInstancesResult {
      *         together. 
      */
     public UnmonitorInstancesResult withInstanceMonitorings(java.util.Collection<InstanceMonitoring> instanceMonitorings) {
-        java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>();
-        if (instanceMonitorings != null) {
+        if (instanceMonitorings == null) {
+            this.instanceMonitorings = null;
+        } else {
+            java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.size());
             instanceMonitoringsCopy.addAll(instanceMonitorings);
+            this.instanceMonitorings = instanceMonitoringsCopy;
         }
-        this.instanceMonitorings = instanceMonitoringsCopy;
 
         return this;
     }
@@ -112,9 +117,31 @@ public class UnmonitorInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceMonitorings: " + instanceMonitorings + ", ");
+        if (instanceMonitorings != null) sb.append("InstanceMonitorings: " + instanceMonitorings + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceMonitorings() == null) ? 0 : getInstanceMonitorings().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UnmonitorInstancesResult == false) return false;
+        UnmonitorInstancesResult other = (UnmonitorInstancesResult)obj;
+        
+        if (other.getInstanceMonitorings() == null ^ this.getInstanceMonitorings() == null) return false;
+        if (other.getInstanceMonitorings() != null && other.getInstanceMonitorings().equals(this.getInstanceMonitorings()) == false) return false; 
+        return true;
     }
     
 }

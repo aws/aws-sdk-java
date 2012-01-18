@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeVpcsResult {
      * @param vpcs 
      */
     public void setVpcs(java.util.Collection<Vpc> vpcs) {
-        java.util.List<Vpc> vpcsCopy = new java.util.ArrayList<Vpc>();
-        if (vpcs != null) {
-            vpcsCopy.addAll(vpcs);
+        if (vpcs == null) {
+            this.vpcs = null;
+            return;
         }
+
+        java.util.List<Vpc> vpcsCopy = new java.util.ArrayList<Vpc>(vpcs.size());
+        vpcsCopy.addAll(vpcs);
         this.vpcs = vpcsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeVpcsResult {
      *         together. 
      */
     public DescribeVpcsResult withVpcs(Vpc... vpcs) {
-        if (getVpcs() == null) setVpcs(new java.util.ArrayList<Vpc>());
+        if (getVpcs() == null) setVpcs(new java.util.ArrayList<Vpc>(vpcs.length));
         for (Vpc value : vpcs) {
             getVpcs().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeVpcsResult {
      *         together. 
      */
     public DescribeVpcsResult withVpcs(java.util.Collection<Vpc> vpcs) {
-        java.util.List<Vpc> vpcsCopy = new java.util.ArrayList<Vpc>();
-        if (vpcs != null) {
+        if (vpcs == null) {
+            this.vpcs = null;
+        } else {
+            java.util.List<Vpc> vpcsCopy = new java.util.ArrayList<Vpc>(vpcs.size());
             vpcsCopy.addAll(vpcs);
+            this.vpcs = vpcsCopy;
         }
-        this.vpcs = vpcsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeVpcsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Vpcs: " + vpcs + ", ");
+        if (vpcs != null) sb.append("Vpcs: " + vpcs + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpcs() == null) ? 0 : getVpcs().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeVpcsResult == false) return false;
+        DescribeVpcsResult other = (DescribeVpcsResult)obj;
+        
+        if (other.getVpcs() == null ^ this.getVpcs() == null) return false;
+        if (other.getVpcs() != null && other.getVpcs().equals(this.getVpcs()) == false) return false; 
+        return true;
     }
     
 }

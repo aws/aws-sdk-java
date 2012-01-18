@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeVpnGatewaysResult {
      * @param vpnGateways 
      */
     public void setVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
-        java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>();
-        if (vpnGateways != null) {
-            vpnGatewaysCopy.addAll(vpnGateways);
+        if (vpnGateways == null) {
+            this.vpnGateways = null;
+            return;
         }
+
+        java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>(vpnGateways.size());
+        vpnGatewaysCopy.addAll(vpnGateways);
         this.vpnGateways = vpnGatewaysCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeVpnGatewaysResult {
      *         together. 
      */
     public DescribeVpnGatewaysResult withVpnGateways(VpnGateway... vpnGateways) {
-        if (getVpnGateways() == null) setVpnGateways(new java.util.ArrayList<VpnGateway>());
+        if (getVpnGateways() == null) setVpnGateways(new java.util.ArrayList<VpnGateway>(vpnGateways.length));
         for (VpnGateway value : vpnGateways) {
             getVpnGateways().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeVpnGatewaysResult {
      *         together. 
      */
     public DescribeVpnGatewaysResult withVpnGateways(java.util.Collection<VpnGateway> vpnGateways) {
-        java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>();
-        if (vpnGateways != null) {
+        if (vpnGateways == null) {
+            this.vpnGateways = null;
+        } else {
+            java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>(vpnGateways.size());
             vpnGatewaysCopy.addAll(vpnGateways);
+            this.vpnGateways = vpnGatewaysCopy;
         }
-        this.vpnGateways = vpnGatewaysCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeVpnGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VpnGateways: " + vpnGateways + ", ");
+        if (vpnGateways != null) sb.append("VpnGateways: " + vpnGateways + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpnGateways() == null) ? 0 : getVpnGateways().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeVpnGatewaysResult == false) return false;
+        DescribeVpnGatewaysResult other = (DescribeVpnGatewaysResult)obj;
+        
+        if (other.getVpnGateways() == null ^ this.getVpnGateways() == null) return false;
+        if (other.getVpnGateways() != null && other.getVpnGateways().equals(this.getVpnGateways()) == false) return false; 
+        return true;
     }
     
 }

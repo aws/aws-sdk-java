@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,10 +65,13 @@ public class ListServerCertificatesResult {
      * @param serverCertificateMetadataList A list of server certificates.
      */
     public void setServerCertificateMetadataList(java.util.Collection<ServerCertificateMetadata> serverCertificateMetadataList) {
-        java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>();
-        if (serverCertificateMetadataList != null) {
-            serverCertificateMetadataListCopy.addAll(serverCertificateMetadataList);
+        if (serverCertificateMetadataList == null) {
+            this.serverCertificateMetadataList = null;
+            return;
         }
+
+        java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.size());
+        serverCertificateMetadataListCopy.addAll(serverCertificateMetadataList);
         this.serverCertificateMetadataList = serverCertificateMetadataListCopy;
     }
     
@@ -83,7 +86,7 @@ public class ListServerCertificatesResult {
      *         together. 
      */
     public ListServerCertificatesResult withServerCertificateMetadataList(ServerCertificateMetadata... serverCertificateMetadataList) {
-        if (getServerCertificateMetadataList() == null) setServerCertificateMetadataList(new java.util.ArrayList<ServerCertificateMetadata>());
+        if (getServerCertificateMetadataList() == null) setServerCertificateMetadataList(new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.length));
         for (ServerCertificateMetadata value : serverCertificateMetadataList) {
             getServerCertificateMetadataList().add(value);
         }
@@ -101,11 +104,13 @@ public class ListServerCertificatesResult {
      *         together. 
      */
     public ListServerCertificatesResult withServerCertificateMetadataList(java.util.Collection<ServerCertificateMetadata> serverCertificateMetadataList) {
-        java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>();
-        if (serverCertificateMetadataList != null) {
+        if (serverCertificateMetadataList == null) {
+            this.serverCertificateMetadataList = null;
+        } else {
+            java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.size());
             serverCertificateMetadataListCopy.addAll(serverCertificateMetadataList);
+            this.serverCertificateMetadataList = serverCertificateMetadataListCopy;
         }
-        this.serverCertificateMetadataList = serverCertificateMetadataListCopy;
 
         return this;
     }
@@ -247,11 +252,39 @@ public class ListServerCertificatesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ServerCertificateMetadataList: " + serverCertificateMetadataList + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (serverCertificateMetadataList != null) sb.append("ServerCertificateMetadataList: " + serverCertificateMetadataList + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getServerCertificateMetadataList() == null) ? 0 : getServerCertificateMetadataList().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListServerCertificatesResult == false) return false;
+        ListServerCertificatesResult other = (ListServerCertificatesResult)obj;
+        
+        if (other.getServerCertificateMetadataList() == null ^ this.getServerCertificateMetadataList() == null) return false;
+        if (other.getServerCertificateMetadataList() != null && other.getServerCertificateMetadataList().equals(this.getServerCertificateMetadataList()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

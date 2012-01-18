@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -516,16 +516,59 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SpotPrice: " + spotPrice + ", ");
-        sb.append("InstanceCount: " + instanceCount + ", ");
-        sb.append("Type: " + type + ", ");
-        sb.append("ValidFrom: " + validFrom + ", ");
-        sb.append("ValidUntil: " + validUntil + ", ");
-        sb.append("LaunchGroup: " + launchGroup + ", ");
-        sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
-        sb.append("LaunchSpecification: " + launchSpecification + ", ");
+        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
+        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (type != null) sb.append("Type: " + type + ", ");
+        if (validFrom != null) sb.append("ValidFrom: " + validFrom + ", ");
+        if (validUntil != null) sb.append("ValidUntil: " + validUntil + ", ");
+        if (launchGroup != null) sb.append("LaunchGroup: " + launchGroup + ", ");
+        if (availabilityZoneGroup != null) sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
+        if (launchSpecification != null) sb.append("LaunchSpecification: " + launchSpecification + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
+        hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode()); 
+        hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RequestSpotInstancesRequest == false) return false;
+        RequestSpotInstancesRequest other = (RequestSpotInstancesRequest)obj;
+        
+        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null) return false;
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
+        if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
+        if (other.getType() == null ^ this.getType() == null) return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
+        if (other.getValidFrom() == null ^ this.getValidFrom() == null) return false;
+        if (other.getValidFrom() != null && other.getValidFrom().equals(this.getValidFrom()) == false) return false; 
+        if (other.getValidUntil() == null ^ this.getValidUntil() == null) return false;
+        if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false) return false; 
+        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null) return false;
+        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false) return false; 
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null) return false;
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false) return false; 
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null) return false;
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,12 +19,14 @@ import java.util.List;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.internal.CustomBackoffStrategy;
 import com.amazonaws.util.TimingInfo;
 
 public class ExecutionContext {
 	private List<RequestHandler> requestHandlers;
 	private String contextUserAgent;
 	private TimingInfo timingInfo;
+	private CustomBackoffStrategy backoffStrategy;
 
 	/** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
 	private Signer signer;
@@ -108,4 +110,27 @@ public class ExecutionContext {
 		this.credentials = credentials;
 	}
 
+    /**
+     * Returns the optional custom backoff strategy for controlling how long
+     * between retries on error responses. If no custom backoff strategy is
+     * specified, a default exponential backoff strategy is used.
+     *
+     * @return the optional custom backoff strategy for the associated request.
+     */
+    public CustomBackoffStrategy getCustomBackoffStrategy() {
+        return backoffStrategy;
+    }
+
+    /**
+     * Sets the optional custom backoff strategy for controlling how long
+     * between retries on error responses. If no custom backoff strategy is
+     * specified, a default exponential backoff strategy is used.
+     *
+     * @param backoffStrategy
+     *            The optional custom backoff strategy for the associated
+     *            request.
+     */
+    public void setCustomBackoffStrategy(CustomBackoffStrategy backoffStrategy) {
+        this.backoffStrategy = backoffStrategy;
+    }
 }

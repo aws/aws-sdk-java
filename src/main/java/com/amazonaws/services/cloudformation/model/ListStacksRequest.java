@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,10 +96,13 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
      * @param stackStatusFilters The new value for the StackStatusFilters property for this object.
      */
     public void setStackStatusFilters(java.util.Collection<String> stackStatusFilters) {
-        java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>();
-        if (stackStatusFilters != null) {
-            stackStatusFiltersCopy.addAll(stackStatusFilters);
+        if (stackStatusFilters == null) {
+            this.stackStatusFilters = null;
+            return;
         }
+
+        java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>(stackStatusFilters.size());
+        stackStatusFiltersCopy.addAll(stackStatusFilters);
         this.stackStatusFilters = stackStatusFiltersCopy;
     }
     
@@ -114,7 +117,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListStacksRequest withStackStatusFilters(String... stackStatusFilters) {
-        if (getStackStatusFilters() == null) setStackStatusFilters(new java.util.ArrayList<String>());
+        if (getStackStatusFilters() == null) setStackStatusFilters(new java.util.ArrayList<String>(stackStatusFilters.length));
         for (String value : stackStatusFilters) {
             getStackStatusFilters().add(value);
         }
@@ -132,11 +135,13 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListStacksRequest withStackStatusFilters(java.util.Collection<String> stackStatusFilters) {
-        java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>();
-        if (stackStatusFilters != null) {
+        if (stackStatusFilters == null) {
+            this.stackStatusFilters = null;
+        } else {
+            java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>(stackStatusFilters.size());
             stackStatusFiltersCopy.addAll(stackStatusFilters);
+            this.stackStatusFilters = stackStatusFiltersCopy;
         }
-        this.stackStatusFilters = stackStatusFiltersCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("StackStatusFilters: " + stackStatusFilters + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (stackStatusFilters != null) sb.append("StackStatusFilters: " + stackStatusFilters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getStackStatusFilters() == null) ? 0 : getStackStatusFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListStacksRequest == false) return false;
+        ListStacksRequest other = (ListStacksRequest)obj;
+        
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getStackStatusFilters() == null ^ this.getStackStatusFilters() == null) return false;
+        if (other.getStackStatusFilters() != null && other.getStackStatusFilters().equals(this.getStackStatusFilters()) == false) return false; 
+        return true;
     }
     
 }

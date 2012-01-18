@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,9 +79,31 @@ public class DeleteHostedZoneResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ChangeInfo: " + changeInfo + ", ");
+        if (changeInfo != null) sb.append("ChangeInfo: " + changeInfo + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getChangeInfo() == null) ? 0 : getChangeInfo().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeleteHostedZoneResult == false) return false;
+        DeleteHostedZoneResult other = (DeleteHostedZoneResult)obj;
+        
+        if (other.getChangeInfo() == null ^ this.getChangeInfo() == null) return false;
+        if (other.getChangeInfo() != null && other.getChangeInfo().equals(this.getChangeInfo()) == false) return false; 
+        return true;
     }
     
 }

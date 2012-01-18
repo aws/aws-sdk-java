@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -109,10 +109,13 @@ public class ImageAttribute {
      * @param launchPermissions Launch permissions for the associated AMI.
      */
     public void setLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
-        java.util.List<LaunchPermission> launchPermissionsCopy = new java.util.ArrayList<LaunchPermission>();
-        if (launchPermissions != null) {
-            launchPermissionsCopy.addAll(launchPermissions);
+        if (launchPermissions == null) {
+            this.launchPermissions = null;
+            return;
         }
+
+        java.util.List<LaunchPermission> launchPermissionsCopy = new java.util.ArrayList<LaunchPermission>(launchPermissions.size());
+        launchPermissionsCopy.addAll(launchPermissions);
         this.launchPermissions = launchPermissionsCopy;
     }
     
@@ -127,7 +130,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withLaunchPermissions(LaunchPermission... launchPermissions) {
-        if (getLaunchPermissions() == null) setLaunchPermissions(new java.util.ArrayList<LaunchPermission>());
+        if (getLaunchPermissions() == null) setLaunchPermissions(new java.util.ArrayList<LaunchPermission>(launchPermissions.length));
         for (LaunchPermission value : launchPermissions) {
             getLaunchPermissions().add(value);
         }
@@ -145,11 +148,13 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withLaunchPermissions(java.util.Collection<LaunchPermission> launchPermissions) {
-        java.util.List<LaunchPermission> launchPermissionsCopy = new java.util.ArrayList<LaunchPermission>();
-        if (launchPermissions != null) {
+        if (launchPermissions == null) {
+            this.launchPermissions = null;
+        } else {
+            java.util.List<LaunchPermission> launchPermissionsCopy = new java.util.ArrayList<LaunchPermission>(launchPermissions.size());
             launchPermissionsCopy.addAll(launchPermissions);
+            this.launchPermissions = launchPermissionsCopy;
         }
-        this.launchPermissions = launchPermissionsCopy;
 
         return this;
     }
@@ -173,10 +178,13 @@ public class ImageAttribute {
      * @param productCodes Product codes for the associated AMI.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
-            productCodesCopy.addAll(productCodes);
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
         }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
         this.productCodes = productCodesCopy;
     }
     
@@ -191,7 +199,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withProductCodes(ProductCode... productCodes) {
-        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -209,11 +217,13 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
             productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
         }
-        this.productCodes = productCodesCopy;
 
         return this;
     }
@@ -339,10 +349,13 @@ public class ImageAttribute {
      * @param blockDeviceMappings Block device mappings for the associated AMI.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
         }
+
+        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
     
@@ -357,7 +370,7 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -375,11 +388,13 @@ public class ImageAttribute {
      *         together. 
      */
     public ImageAttribute withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
     }
@@ -396,15 +411,55 @@ public class ImageAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageId: " + imageId + ", ");
-        sb.append("LaunchPermissions: " + launchPermissions + ", ");
-        sb.append("ProductCodes: " + productCodes + ", ");
-        sb.append("KernelId: " + kernelId + ", ");
-        sb.append("RamdiskId: " + ramdiskId + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (launchPermissions != null) sb.append("LaunchPermissions: " + launchPermissions + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
+        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchPermissions() == null) ? 0 : getLaunchPermissions().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ImageAttribute == false) return false;
+        ImageAttribute other = (ImageAttribute)obj;
+        
+        if (other.getImageId() == null ^ this.getImageId() == null) return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
+        if (other.getLaunchPermissions() == null ^ this.getLaunchPermissions() == null) return false;
+        if (other.getLaunchPermissions() != null && other.getLaunchPermissions().equals(this.getLaunchPermissions()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        return true;
     }
     
 }

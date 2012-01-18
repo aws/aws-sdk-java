@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,10 +136,13 @@ public class EngineDefaults {
      * @param parameters Contains a list of engine default parameters.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
-            parametersCopy.addAll(parameters);
+        if (parameters == null) {
+            this.parameters = null;
+            return;
         }
+
+        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
     
@@ -154,7 +157,7 @@ public class EngineDefaults {
      *         together. 
      */
     public EngineDefaults withParameters(Parameter... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
         for (Parameter value : parameters) {
             getParameters().add(value);
         }
@@ -172,11 +175,13 @@ public class EngineDefaults {
      *         together. 
      */
     public EngineDefaults withParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
+        if (parameters == null) {
+            this.parameters = null;
+        } else {
+            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
+            this.parameters = parametersCopy;
         }
-        this.parameters = parametersCopy;
 
         return this;
     }
@@ -200,10 +205,13 @@ public class EngineDefaults {
      * @param cacheNodeTypeSpecificParameters A list of <a>CacheNodeTypeSpecificParameter</a> instances.
      */
     public void setCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {
-        java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>();
-        if (cacheNodeTypeSpecificParameters != null) {
-            cacheNodeTypeSpecificParametersCopy.addAll(cacheNodeTypeSpecificParameters);
+        if (cacheNodeTypeSpecificParameters == null) {
+            this.cacheNodeTypeSpecificParameters = null;
+            return;
         }
+
+        java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
+        cacheNodeTypeSpecificParametersCopy.addAll(cacheNodeTypeSpecificParameters);
         this.cacheNodeTypeSpecificParameters = cacheNodeTypeSpecificParametersCopy;
     }
     
@@ -218,7 +226,7 @@ public class EngineDefaults {
      *         together. 
      */
     public EngineDefaults withCacheNodeTypeSpecificParameters(CacheNodeTypeSpecificParameter... cacheNodeTypeSpecificParameters) {
-        if (getCacheNodeTypeSpecificParameters() == null) setCacheNodeTypeSpecificParameters(new java.util.ArrayList<CacheNodeTypeSpecificParameter>());
+        if (getCacheNodeTypeSpecificParameters() == null) setCacheNodeTypeSpecificParameters(new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.length));
         for (CacheNodeTypeSpecificParameter value : cacheNodeTypeSpecificParameters) {
             getCacheNodeTypeSpecificParameters().add(value);
         }
@@ -236,11 +244,13 @@ public class EngineDefaults {
      *         together. 
      */
     public EngineDefaults withCacheNodeTypeSpecificParameters(java.util.Collection<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParameters) {
-        java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>();
-        if (cacheNodeTypeSpecificParameters != null) {
+        if (cacheNodeTypeSpecificParameters == null) {
+            this.cacheNodeTypeSpecificParameters = null;
+        } else {
+            java.util.List<CacheNodeTypeSpecificParameter> cacheNodeTypeSpecificParametersCopy = new java.util.ArrayList<CacheNodeTypeSpecificParameter>(cacheNodeTypeSpecificParameters.size());
             cacheNodeTypeSpecificParametersCopy.addAll(cacheNodeTypeSpecificParameters);
+            this.cacheNodeTypeSpecificParameters = cacheNodeTypeSpecificParametersCopy;
         }
-        this.cacheNodeTypeSpecificParameters = cacheNodeTypeSpecificParametersCopy;
 
         return this;
     }
@@ -257,12 +267,43 @@ public class EngineDefaults {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheParameterGroupFamily: " + cacheParameterGroupFamily + ", ");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("Parameters: " + parameters + ", ");
-        sb.append("CacheNodeTypeSpecificParameters: " + cacheNodeTypeSpecificParameters + ", ");
+        if (cacheParameterGroupFamily != null) sb.append("CacheParameterGroupFamily: " + cacheParameterGroupFamily + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (parameters != null) sb.append("Parameters: " + parameters + ", ");
+        if (cacheNodeTypeSpecificParameters != null) sb.append("CacheNodeTypeSpecificParameters: " + cacheNodeTypeSpecificParameters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeTypeSpecificParameters() == null) ? 0 : getCacheNodeTypeSpecificParameters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof EngineDefaults == false) return false;
+        EngineDefaults other = (EngineDefaults)obj;
+        
+        if (other.getCacheParameterGroupFamily() == null ^ this.getCacheParameterGroupFamily() == null) return false;
+        if (other.getCacheParameterGroupFamily() != null && other.getCacheParameterGroupFamily().equals(this.getCacheParameterGroupFamily()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getParameters() == null ^ this.getParameters() == null) return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
+        if (other.getCacheNodeTypeSpecificParameters() == null ^ this.getCacheNodeTypeSpecificParameters() == null) return false;
+        if (other.getCacheNodeTypeSpecificParameters() != null && other.getCacheNodeTypeSpecificParameters().equals(this.getCacheNodeTypeSpecificParameters()) == false) return false; 
+        return true;
     }
     
 }

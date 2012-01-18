@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class DescribeAlarmsResult {
      * @param metricAlarms A list of information for the specified alarms.
      */
     public void setMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
-        java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>();
-        if (metricAlarms != null) {
-            metricAlarmsCopy.addAll(metricAlarms);
+        if (metricAlarms == null) {
+            this.metricAlarms = null;
+            return;
         }
+
+        java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>(metricAlarms.size());
+        metricAlarmsCopy.addAll(metricAlarms);
         this.metricAlarms = metricAlarmsCopy;
     }
     
@@ -68,7 +71,7 @@ public class DescribeAlarmsResult {
      *         together. 
      */
     public DescribeAlarmsResult withMetricAlarms(MetricAlarm... metricAlarms) {
-        if (getMetricAlarms() == null) setMetricAlarms(new java.util.ArrayList<MetricAlarm>());
+        if (getMetricAlarms() == null) setMetricAlarms(new java.util.ArrayList<MetricAlarm>(metricAlarms.length));
         for (MetricAlarm value : metricAlarms) {
             getMetricAlarms().add(value);
         }
@@ -86,11 +89,13 @@ public class DescribeAlarmsResult {
      *         together. 
      */
     public DescribeAlarmsResult withMetricAlarms(java.util.Collection<MetricAlarm> metricAlarms) {
-        java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>();
-        if (metricAlarms != null) {
+        if (metricAlarms == null) {
+            this.metricAlarms = null;
+        } else {
+            java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>(metricAlarms.size());
             metricAlarmsCopy.addAll(metricAlarms);
+            this.metricAlarms = metricAlarmsCopy;
         }
-        this.metricAlarms = metricAlarmsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeAlarmsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MetricAlarms: " + metricAlarms + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (metricAlarms != null) sb.append("MetricAlarms: " + metricAlarms + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMetricAlarms() == null) ? 0 : getMetricAlarms().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAlarmsResult == false) return false;
+        DescribeAlarmsResult other = (DescribeAlarmsResult)obj;
+        
+        if (other.getMetricAlarms() == null ^ this.getMetricAlarms() == null) return false;
+        if (other.getMetricAlarms() != null && other.getMetricAlarms().equals(this.getMetricAlarms()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

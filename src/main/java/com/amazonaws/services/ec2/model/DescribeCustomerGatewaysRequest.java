@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,10 +69,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      * @param customerGatewayIds A set of one or more customer gateway IDs.
      */
     public void setCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
-        java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (customerGatewayIds != null) {
-            customerGatewayIdsCopy.addAll(customerGatewayIds);
+        if (customerGatewayIds == null) {
+            this.customerGatewayIds = null;
+            return;
         }
+
+        java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>(customerGatewayIds.size());
+        customerGatewayIdsCopy.addAll(customerGatewayIds);
         this.customerGatewayIds = customerGatewayIdsCopy;
     }
     
@@ -87,7 +90,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(String... customerGatewayIds) {
-        if (getCustomerGatewayIds() == null) setCustomerGatewayIds(new java.util.ArrayList<String>());
+        if (getCustomerGatewayIds() == null) setCustomerGatewayIds(new java.util.ArrayList<String>(customerGatewayIds.length));
         for (String value : customerGatewayIds) {
             getCustomerGatewayIds().add(value);
         }
@@ -105,11 +108,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withCustomerGatewayIds(java.util.Collection<String> customerGatewayIds) {
-        java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (customerGatewayIds != null) {
+        if (customerGatewayIds == null) {
+            this.customerGatewayIds = null;
+        } else {
+            java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>(customerGatewayIds.size());
             customerGatewayIdsCopy.addAll(customerGatewayIds);
+            this.customerGatewayIds = customerGatewayIdsCopy;
         }
-        this.customerGatewayIds = customerGatewayIdsCopy;
 
         return this;
     }
@@ -149,10 +154,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -175,7 +183,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -201,11 +209,13 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeCustomerGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -222,10 +232,35 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CustomerGatewayIds: " + customerGatewayIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (customerGatewayIds != null) sb.append("CustomerGatewayIds: " + customerGatewayIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCustomerGatewayIds() == null) ? 0 : getCustomerGatewayIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeCustomerGatewaysRequest == false) return false;
+        DescribeCustomerGatewaysRequest other = (DescribeCustomerGatewaysRequest)obj;
+        
+        if (other.getCustomerGatewayIds() == null ^ this.getCustomerGatewayIds() == null) return false;
+        if (other.getCustomerGatewayIds() != null && other.getCustomerGatewayIds().equals(this.getCustomerGatewayIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

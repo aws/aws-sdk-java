@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,10 +79,13 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
      * @param instanceGroups Instance Groups to add.
      */
     public void setInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
-        if (instanceGroups != null) {
-            instanceGroupsCopy.addAll(instanceGroups);
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+            return;
         }
+
+        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+        instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
     
@@ -97,7 +100,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddInstanceGroupsRequest withInstanceGroups(InstanceGroupConfig... instanceGroups) {
-        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>());
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.length));
         for (InstanceGroupConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }
@@ -115,11 +118,13 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
-        if (instanceGroups != null) {
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+        } else {
+            java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
+            this.instanceGroups = instanceGroupsCopy;
         }
-        this.instanceGroups = instanceGroupsCopy;
 
         return this;
     }
@@ -182,10 +187,35 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceGroups: " + instanceGroups + ", ");
-        sb.append("JobFlowId: " + jobFlowId + ", ");
+        if (instanceGroups != null) sb.append("InstanceGroups: " + instanceGroups + ", ");
+        if (jobFlowId != null) sb.append("JobFlowId: " + jobFlowId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AddInstanceGroupsRequest == false) return false;
+        AddInstanceGroupsRequest other = (AddInstanceGroupsRequest)obj;
+        
+        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null) return false;
+        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false) return false; 
+        if (other.getJobFlowId() == null ^ this.getJobFlowId() == null) return false;
+        if (other.getJobFlowId() != null && other.getJobFlowId().equals(this.getJobFlowId()) == false) return false; 
+        return true;
     }
     
 }

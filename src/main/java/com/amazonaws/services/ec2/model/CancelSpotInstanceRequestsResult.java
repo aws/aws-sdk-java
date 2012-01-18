@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,10 +44,13 @@ public class CancelSpotInstanceRequestsResult {
      *         object.
      */
     public void setCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
-        java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>();
-        if (cancelledSpotInstanceRequests != null) {
-            cancelledSpotInstanceRequestsCopy.addAll(cancelledSpotInstanceRequests);
+        if (cancelledSpotInstanceRequests == null) {
+            this.cancelledSpotInstanceRequests = null;
+            return;
         }
+
+        java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
+        cancelledSpotInstanceRequestsCopy.addAll(cancelledSpotInstanceRequests);
         this.cancelledSpotInstanceRequests = cancelledSpotInstanceRequestsCopy;
     }
     
@@ -64,7 +67,7 @@ public class CancelSpotInstanceRequestsResult {
      *         together. 
      */
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(CancelledSpotInstanceRequest... cancelledSpotInstanceRequests) {
-        if (getCancelledSpotInstanceRequests() == null) setCancelledSpotInstanceRequests(new java.util.ArrayList<CancelledSpotInstanceRequest>());
+        if (getCancelledSpotInstanceRequests() == null) setCancelledSpotInstanceRequests(new java.util.ArrayList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.length));
         for (CancelledSpotInstanceRequest value : cancelledSpotInstanceRequests) {
             getCancelledSpotInstanceRequests().add(value);
         }
@@ -84,11 +87,13 @@ public class CancelSpotInstanceRequestsResult {
      *         together. 
      */
     public CancelSpotInstanceRequestsResult withCancelledSpotInstanceRequests(java.util.Collection<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests) {
-        java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>();
-        if (cancelledSpotInstanceRequests != null) {
+        if (cancelledSpotInstanceRequests == null) {
+            this.cancelledSpotInstanceRequests = null;
+        } else {
+            java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
             cancelledSpotInstanceRequestsCopy.addAll(cancelledSpotInstanceRequests);
+            this.cancelledSpotInstanceRequests = cancelledSpotInstanceRequestsCopy;
         }
-        this.cancelledSpotInstanceRequests = cancelledSpotInstanceRequestsCopy;
 
         return this;
     }
@@ -105,9 +110,31 @@ public class CancelSpotInstanceRequestsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CancelledSpotInstanceRequests: " + cancelledSpotInstanceRequests + ", ");
+        if (cancelledSpotInstanceRequests != null) sb.append("CancelledSpotInstanceRequests: " + cancelledSpotInstanceRequests + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCancelledSpotInstanceRequests() == null) ? 0 : getCancelledSpotInstanceRequests().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CancelSpotInstanceRequestsResult == false) return false;
+        CancelSpotInstanceRequestsResult other = (CancelSpotInstanceRequestsResult)obj;
+        
+        if (other.getCancelledSpotInstanceRequests() == null ^ this.getCancelledSpotInstanceRequests() == null) return false;
+        if (other.getCancelledSpotInstanceRequests() != null && other.getCancelledSpotInstanceRequests().equals(this.getCancelledSpotInstanceRequests()) == false) return false; 
+        return true;
     }
     
 }

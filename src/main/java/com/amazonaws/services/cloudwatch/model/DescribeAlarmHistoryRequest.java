@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -360,14 +360,51 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmName: " + alarmName + ", ");
-        sb.append("HistoryItemType: " + historyItemType + ", ");
-        sb.append("StartDate: " + startDate + ", ");
-        sb.append("EndDate: " + endDate + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
+        if (historyItemType != null) sb.append("HistoryItemType: " + historyItemType + ", ");
+        if (startDate != null) sb.append("StartDate: " + startDate + ", ");
+        if (endDate != null) sb.append("EndDate: " + endDate + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
+        hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode()); 
+        hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode()); 
+        hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAlarmHistoryRequest == false) return false;
+        DescribeAlarmHistoryRequest other = (DescribeAlarmHistoryRequest)obj;
+        
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
+        if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null) return false;
+        if (other.getHistoryItemType() != null && other.getHistoryItemType().equals(this.getHistoryItemType()) == false) return false; 
+        if (other.getStartDate() == null ^ this.getStartDate() == null) return false;
+        if (other.getStartDate() != null && other.getStartDate().equals(this.getStartDate()) == false) return false; 
+        if (other.getEndDate() == null ^ this.getEndDate() == null) return false;
+        if (other.getEndDate() != null && other.getEndDate().equals(this.getEndDate()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -211,12 +211,43 @@ public class InstanceBlockDeviceMappingSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DeviceName: " + deviceName + ", ");
-        sb.append("Ebs: " + ebs + ", ");
-        sb.append("VirtualName: " + virtualName + ", ");
-        sb.append("NoDevice: " + noDevice + ", ");
+        if (deviceName != null) sb.append("DeviceName: " + deviceName + ", ");
+        if (ebs != null) sb.append("Ebs: " + ebs + ", ");
+        if (virtualName != null) sb.append("VirtualName: " + virtualName + ", ");
+        if (noDevice != null) sb.append("NoDevice: " + noDevice + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDeviceName() == null) ? 0 : getDeviceName().hashCode()); 
+        hashCode = prime * hashCode + ((getEbs() == null) ? 0 : getEbs().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualName() == null) ? 0 : getVirtualName().hashCode()); 
+        hashCode = prime * hashCode + ((getNoDevice() == null) ? 0 : getNoDevice().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof InstanceBlockDeviceMappingSpecification == false) return false;
+        InstanceBlockDeviceMappingSpecification other = (InstanceBlockDeviceMappingSpecification)obj;
+        
+        if (other.getDeviceName() == null ^ this.getDeviceName() == null) return false;
+        if (other.getDeviceName() != null && other.getDeviceName().equals(this.getDeviceName()) == false) return false; 
+        if (other.getEbs() == null ^ this.getEbs() == null) return false;
+        if (other.getEbs() != null && other.getEbs().equals(this.getEbs()) == false) return false; 
+        if (other.getVirtualName() == null ^ this.getVirtualName() == null) return false;
+        if (other.getVirtualName() != null && other.getVirtualName().equals(this.getVirtualName()) == false) return false; 
+        if (other.getNoDevice() == null ^ this.getNoDevice() == null) return false;
+        if (other.getNoDevice() != null && other.getNoDevice().equals(this.getNoDevice()) == false) return false; 
+        return true;
     }
     
 }

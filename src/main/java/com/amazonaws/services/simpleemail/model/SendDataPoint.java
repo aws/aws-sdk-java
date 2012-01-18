@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -229,13 +229,47 @@ public class SendDataPoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Timestamp: " + timestamp + ", ");
-        sb.append("DeliveryAttempts: " + deliveryAttempts + ", ");
-        sb.append("Bounces: " + bounces + ", ");
-        sb.append("Complaints: " + complaints + ", ");
-        sb.append("Rejects: " + rejects + ", ");
+        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (deliveryAttempts != null) sb.append("DeliveryAttempts: " + deliveryAttempts + ", ");
+        if (bounces != null) sb.append("Bounces: " + bounces + ", ");
+        if (complaints != null) sb.append("Complaints: " + complaints + ", ");
+        if (rejects != null) sb.append("Rejects: " + rejects + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getDeliveryAttempts() == null) ? 0 : getDeliveryAttempts().hashCode()); 
+        hashCode = prime * hashCode + ((getBounces() == null) ? 0 : getBounces().hashCode()); 
+        hashCode = prime * hashCode + ((getComplaints() == null) ? 0 : getComplaints().hashCode()); 
+        hashCode = prime * hashCode + ((getRejects() == null) ? 0 : getRejects().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SendDataPoint == false) return false;
+        SendDataPoint other = (SendDataPoint)obj;
+        
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null) return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false) return false; 
+        if (other.getDeliveryAttempts() == null ^ this.getDeliveryAttempts() == null) return false;
+        if (other.getDeliveryAttempts() != null && other.getDeliveryAttempts().equals(this.getDeliveryAttempts()) == false) return false; 
+        if (other.getBounces() == null ^ this.getBounces() == null) return false;
+        if (other.getBounces() != null && other.getBounces().equals(this.getBounces()) == false) return false; 
+        if (other.getComplaints() == null ^ this.getComplaints() == null) return false;
+        if (other.getComplaints() != null && other.getComplaints().equals(this.getComplaints()) == false) return false; 
+        if (other.getRejects() == null ^ this.getRejects() == null) return false;
+        if (other.getRejects() != null && other.getRejects().equals(this.getRejects()) == false) return false; 
+        return true;
     }
     
 }

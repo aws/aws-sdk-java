@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,10 +53,13 @@ public class DescribeAutoScalingGroupsResult {
      * @param autoScalingGroups A list of Auto Scaling groups.
      */
     public void setAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
-        java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>();
-        if (autoScalingGroups != null) {
-            autoScalingGroupsCopy.addAll(autoScalingGroups);
+        if (autoScalingGroups == null) {
+            this.autoScalingGroups = null;
+            return;
         }
+
+        java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
+        autoScalingGroupsCopy.addAll(autoScalingGroups);
         this.autoScalingGroups = autoScalingGroupsCopy;
     }
     
@@ -71,7 +74,7 @@ public class DescribeAutoScalingGroupsResult {
      *         together. 
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(AutoScalingGroup... autoScalingGroups) {
-        if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>());
+        if (getAutoScalingGroups() == null) setAutoScalingGroups(new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.length));
         for (AutoScalingGroup value : autoScalingGroups) {
             getAutoScalingGroups().add(value);
         }
@@ -89,11 +92,13 @@ public class DescribeAutoScalingGroupsResult {
      *         together. 
      */
     public DescribeAutoScalingGroupsResult withAutoScalingGroups(java.util.Collection<AutoScalingGroup> autoScalingGroups) {
-        java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>();
-        if (autoScalingGroups != null) {
+        if (autoScalingGroups == null) {
+            this.autoScalingGroups = null;
+        } else {
+            java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
             autoScalingGroupsCopy.addAll(autoScalingGroups);
+            this.autoScalingGroups = autoScalingGroupsCopy;
         }
-        this.autoScalingGroups = autoScalingGroupsCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class DescribeAutoScalingGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroups: " + autoScalingGroups + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (autoScalingGroups != null) sb.append("AutoScalingGroups: " + autoScalingGroups + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAutoScalingGroupsResult == false) return false;
+        DescribeAutoScalingGroupsResult other = (DescribeAutoScalingGroupsResult)obj;
+        
+        if (other.getAutoScalingGroups() == null ^ this.getAutoScalingGroups() == null) return false;
+        if (other.getAutoScalingGroups() != null && other.getAutoScalingGroups().equals(this.getAutoScalingGroups()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

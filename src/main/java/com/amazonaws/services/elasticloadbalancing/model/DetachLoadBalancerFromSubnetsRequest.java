@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -108,10 +108,13 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      *         the LoadBalancer.
      */
     public void setSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
-            subnetsCopy.addAll(subnets);
+        if (subnets == null) {
+            this.subnets = null;
+            return;
         }
+
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+        subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
     
@@ -128,7 +131,7 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      *         together. 
      */
     public DetachLoadBalancerFromSubnetsRequest withSubnets(String... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>());
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
         for (String value : subnets) {
             getSubnets().add(value);
         }
@@ -148,11 +151,13 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
      *         together. 
      */
     public DetachLoadBalancerFromSubnetsRequest withSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
+        if (subnets == null) {
+            this.subnets = null;
+        } else {
+            java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
             subnetsCopy.addAll(subnets);
+            this.subnets = subnetsCopy;
         }
-        this.subnets = subnetsCopy;
 
         return this;
     }
@@ -169,10 +174,35 @@ public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        sb.append("Subnets: " + subnets + ", ");
+        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DetachLoadBalancerFromSubnetsRequest == false) return false;
+        DetachLoadBalancerFromSubnetsRequest other = (DetachLoadBalancerFromSubnetsRequest)obj;
+        
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
+        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
+        return true;
     }
     
 }

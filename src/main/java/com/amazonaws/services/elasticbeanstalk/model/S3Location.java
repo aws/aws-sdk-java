@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -156,10 +156,35 @@ public class S3Location {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("S3Bucket: " + s3Bucket + ", ");
-        sb.append("S3Key: " + s3Key + ", ");
+        if (s3Bucket != null) sb.append("S3Bucket: " + s3Bucket + ", ");
+        if (s3Key != null) sb.append("S3Key: " + s3Key + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode()); 
+        hashCode = prime * hashCode + ((getS3Key() == null) ? 0 : getS3Key().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof S3Location == false) return false;
+        S3Location other = (S3Location)obj;
+        
+        if (other.getS3Bucket() == null ^ this.getS3Bucket() == null) return false;
+        if (other.getS3Bucket() != null && other.getS3Bucket().equals(this.getS3Bucket()) == false) return false; 
+        if (other.getS3Key() == null ^ this.getS3Key() == null) return false;
+        if (other.getS3Key() != null && other.getS3Key().equals(this.getS3Key()) == false) return false; 
+        return true;
     }
     
 }

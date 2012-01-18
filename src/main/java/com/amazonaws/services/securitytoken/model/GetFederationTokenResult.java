@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -184,11 +184,39 @@ public class GetFederationTokenResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Credentials: " + credentials + ", ");
-        sb.append("FederatedUser: " + federatedUser + ", ");
-        sb.append("PackedPolicySize: " + packedPolicySize + ", ");
+        if (credentials != null) sb.append("Credentials: " + credentials + ", ");
+        if (federatedUser != null) sb.append("FederatedUser: " + federatedUser + ", ");
+        if (packedPolicySize != null) sb.append("PackedPolicySize: " + packedPolicySize + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCredentials() == null) ? 0 : getCredentials().hashCode()); 
+        hashCode = prime * hashCode + ((getFederatedUser() == null) ? 0 : getFederatedUser().hashCode()); 
+        hashCode = prime * hashCode + ((getPackedPolicySize() == null) ? 0 : getPackedPolicySize().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetFederationTokenResult == false) return false;
+        GetFederationTokenResult other = (GetFederationTokenResult)obj;
+        
+        if (other.getCredentials() == null ^ this.getCredentials() == null) return false;
+        if (other.getCredentials() != null && other.getCredentials().equals(this.getCredentials()) == false) return false; 
+        if (other.getFederatedUser() == null ^ this.getFederatedUser() == null) return false;
+        if (other.getFederatedUser() != null && other.getFederatedUser().equals(this.getFederatedUser()) == false) return false; 
+        if (other.getPackedPolicySize() == null ^ this.getPackedPolicySize() == null) return false;
+        if (other.getPackedPolicySize() != null && other.getPackedPolicySize().equals(this.getPackedPolicySize()) == false) return false; 
+        return true;
     }
     
 }

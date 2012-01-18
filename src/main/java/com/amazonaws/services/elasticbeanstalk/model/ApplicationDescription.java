@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,10 +237,13 @@ public class ApplicationDescription {
      * @param versions The names of the versions for this application.
      */
     public void setVersions(java.util.Collection<String> versions) {
-        java.util.List<String> versionsCopy = new java.util.ArrayList<String>();
-        if (versions != null) {
-            versionsCopy.addAll(versions);
+        if (versions == null) {
+            this.versions = null;
+            return;
         }
+
+        java.util.List<String> versionsCopy = new java.util.ArrayList<String>(versions.size());
+        versionsCopy.addAll(versions);
         this.versions = versionsCopy;
     }
     
@@ -255,7 +258,7 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withVersions(String... versions) {
-        if (getVersions() == null) setVersions(new java.util.ArrayList<String>());
+        if (getVersions() == null) setVersions(new java.util.ArrayList<String>(versions.length));
         for (String value : versions) {
             getVersions().add(value);
         }
@@ -273,11 +276,13 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withVersions(java.util.Collection<String> versions) {
-        java.util.List<String> versionsCopy = new java.util.ArrayList<String>();
-        if (versions != null) {
+        if (versions == null) {
+            this.versions = null;
+        } else {
+            java.util.List<String> versionsCopy = new java.util.ArrayList<String>(versions.size());
             versionsCopy.addAll(versions);
+            this.versions = versionsCopy;
         }
-        this.versions = versionsCopy;
 
         return this;
     }
@@ -305,10 +310,13 @@ public class ApplicationDescription {
      *         application.
      */
     public void setConfigurationTemplates(java.util.Collection<String> configurationTemplates) {
-        java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>();
-        if (configurationTemplates != null) {
-            configurationTemplatesCopy.addAll(configurationTemplates);
+        if (configurationTemplates == null) {
+            this.configurationTemplates = null;
+            return;
         }
+
+        java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>(configurationTemplates.size());
+        configurationTemplatesCopy.addAll(configurationTemplates);
         this.configurationTemplates = configurationTemplatesCopy;
     }
     
@@ -325,7 +333,7 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withConfigurationTemplates(String... configurationTemplates) {
-        if (getConfigurationTemplates() == null) setConfigurationTemplates(new java.util.ArrayList<String>());
+        if (getConfigurationTemplates() == null) setConfigurationTemplates(new java.util.ArrayList<String>(configurationTemplates.length));
         for (String value : configurationTemplates) {
             getConfigurationTemplates().add(value);
         }
@@ -345,11 +353,13 @@ public class ApplicationDescription {
      *         together. 
      */
     public ApplicationDescription withConfigurationTemplates(java.util.Collection<String> configurationTemplates) {
-        java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>();
-        if (configurationTemplates != null) {
+        if (configurationTemplates == null) {
+            this.configurationTemplates = null;
+        } else {
+            java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>(configurationTemplates.size());
             configurationTemplatesCopy.addAll(configurationTemplates);
+            this.configurationTemplates = configurationTemplatesCopy;
         }
-        this.configurationTemplates = configurationTemplatesCopy;
 
         return this;
     }
@@ -366,14 +376,51 @@ public class ApplicationDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("DateCreated: " + dateCreated + ", ");
-        sb.append("DateUpdated: " + dateUpdated + ", ");
-        sb.append("Versions: " + versions + ", ");
-        sb.append("ConfigurationTemplates: " + configurationTemplates + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (dateCreated != null) sb.append("DateCreated: " + dateCreated + ", ");
+        if (dateUpdated != null) sb.append("DateUpdated: " + dateUpdated + ", ");
+        if (versions != null) sb.append("Versions: " + versions + ", ");
+        if (configurationTemplates != null) sb.append("ConfigurationTemplates: " + configurationTemplates + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode()); 
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode()); 
+        hashCode = prime * hashCode + ((getVersions() == null) ? 0 : getVersions().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurationTemplates() == null) ? 0 : getConfigurationTemplates().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ApplicationDescription == false) return false;
+        ApplicationDescription other = (ApplicationDescription)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getDateCreated() == null ^ this.getDateCreated() == null) return false;
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false) return false; 
+        if (other.getDateUpdated() == null ^ this.getDateUpdated() == null) return false;
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false) return false; 
+        if (other.getVersions() == null ^ this.getVersions() == null) return false;
+        if (other.getVersions() != null && other.getVersions().equals(this.getVersions()) == false) return false; 
+        if (other.getConfigurationTemplates() == null ^ this.getConfigurationTemplates() == null) return false;
+        if (other.getConfigurationTemplates() != null && other.getConfigurationTemplates().equals(this.getConfigurationTemplates()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,10 +84,13 @@ public class DescribeCacheParameterGroupsResult {
      * @param cacheParameterGroups A list of <a>CacheParameterGroup</a> instances.
      */
     public void setCacheParameterGroups(java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
-        java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>();
-        if (cacheParameterGroups != null) {
-            cacheParameterGroupsCopy.addAll(cacheParameterGroups);
+        if (cacheParameterGroups == null) {
+            this.cacheParameterGroups = null;
+            return;
         }
+
+        java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>(cacheParameterGroups.size());
+        cacheParameterGroupsCopy.addAll(cacheParameterGroups);
         this.cacheParameterGroups = cacheParameterGroupsCopy;
     }
     
@@ -102,7 +105,7 @@ public class DescribeCacheParameterGroupsResult {
      *         together. 
      */
     public DescribeCacheParameterGroupsResult withCacheParameterGroups(CacheParameterGroup... cacheParameterGroups) {
-        if (getCacheParameterGroups() == null) setCacheParameterGroups(new java.util.ArrayList<CacheParameterGroup>());
+        if (getCacheParameterGroups() == null) setCacheParameterGroups(new java.util.ArrayList<CacheParameterGroup>(cacheParameterGroups.length));
         for (CacheParameterGroup value : cacheParameterGroups) {
             getCacheParameterGroups().add(value);
         }
@@ -120,11 +123,13 @@ public class DescribeCacheParameterGroupsResult {
      *         together. 
      */
     public DescribeCacheParameterGroupsResult withCacheParameterGroups(java.util.Collection<CacheParameterGroup> cacheParameterGroups) {
-        java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>();
-        if (cacheParameterGroups != null) {
+        if (cacheParameterGroups == null) {
+            this.cacheParameterGroups = null;
+        } else {
+            java.util.List<CacheParameterGroup> cacheParameterGroupsCopy = new java.util.ArrayList<CacheParameterGroup>(cacheParameterGroups.size());
             cacheParameterGroupsCopy.addAll(cacheParameterGroups);
+            this.cacheParameterGroups = cacheParameterGroupsCopy;
         }
-        this.cacheParameterGroups = cacheParameterGroupsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeCacheParameterGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("CacheParameterGroups: " + cacheParameterGroups + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (cacheParameterGroups != null) sb.append("CacheParameterGroups: " + cacheParameterGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheParameterGroups() == null) ? 0 : getCacheParameterGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeCacheParameterGroupsResult == false) return false;
+        DescribeCacheParameterGroupsResult other = (DescribeCacheParameterGroupsResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getCacheParameterGroups() == null ^ this.getCacheParameterGroups() == null) return false;
+        if (other.getCacheParameterGroups() != null && other.getCacheParameterGroups().equals(this.getCacheParameterGroups()) == false) return false; 
+        return true;
     }
     
 }

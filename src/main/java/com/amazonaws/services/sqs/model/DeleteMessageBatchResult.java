@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -48,10 +48,13 @@ public class DeleteMessageBatchResult {
      * @param successful A list of <a>DeleteMessageBatchResultEntry</a>s.
      */
     public void setSuccessful(java.util.Collection<DeleteMessageBatchResultEntry> successful) {
-        java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>();
-        if (successful != null) {
-            successfulCopy.addAll(successful);
+        if (successful == null) {
+            this.successful = null;
+            return;
         }
+
+        java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>(successful.size());
+        successfulCopy.addAll(successful);
         this.successful = successfulCopy;
     }
     
@@ -66,7 +69,7 @@ public class DeleteMessageBatchResult {
      *         together. 
      */
     public DeleteMessageBatchResult withSuccessful(DeleteMessageBatchResultEntry... successful) {
-        if (getSuccessful() == null) setSuccessful(new java.util.ArrayList<DeleteMessageBatchResultEntry>());
+        if (getSuccessful() == null) setSuccessful(new java.util.ArrayList<DeleteMessageBatchResultEntry>(successful.length));
         for (DeleteMessageBatchResultEntry value : successful) {
             getSuccessful().add(value);
         }
@@ -84,11 +87,13 @@ public class DeleteMessageBatchResult {
      *         together. 
      */
     public DeleteMessageBatchResult withSuccessful(java.util.Collection<DeleteMessageBatchResultEntry> successful) {
-        java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>();
-        if (successful != null) {
+        if (successful == null) {
+            this.successful = null;
+        } else {
+            java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>(successful.size());
             successfulCopy.addAll(successful);
+            this.successful = successfulCopy;
         }
-        this.successful = successfulCopy;
 
         return this;
     }
@@ -112,10 +117,13 @@ public class DeleteMessageBatchResult {
      * @param failed A list of <a>BatchResultErrorEntry</a>s.
      */
     public void setFailed(java.util.Collection<BatchResultErrorEntry> failed) {
-        java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>();
-        if (failed != null) {
-            failedCopy.addAll(failed);
+        if (failed == null) {
+            this.failed = null;
+            return;
         }
+
+        java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
+        failedCopy.addAll(failed);
         this.failed = failedCopy;
     }
     
@@ -130,7 +138,7 @@ public class DeleteMessageBatchResult {
      *         together. 
      */
     public DeleteMessageBatchResult withFailed(BatchResultErrorEntry... failed) {
-        if (getFailed() == null) setFailed(new java.util.ArrayList<BatchResultErrorEntry>());
+        if (getFailed() == null) setFailed(new java.util.ArrayList<BatchResultErrorEntry>(failed.length));
         for (BatchResultErrorEntry value : failed) {
             getFailed().add(value);
         }
@@ -148,11 +156,13 @@ public class DeleteMessageBatchResult {
      *         together. 
      */
     public DeleteMessageBatchResult withFailed(java.util.Collection<BatchResultErrorEntry> failed) {
-        java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>();
-        if (failed != null) {
+        if (failed == null) {
+            this.failed = null;
+        } else {
+            java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
             failedCopy.addAll(failed);
+            this.failed = failedCopy;
         }
-        this.failed = failedCopy;
 
         return this;
     }
@@ -169,10 +179,35 @@ public class DeleteMessageBatchResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Successful: " + successful + ", ");
-        sb.append("Failed: " + failed + ", ");
+        if (successful != null) sb.append("Successful: " + successful + ", ");
+        if (failed != null) sb.append("Failed: " + failed + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSuccessful() == null) ? 0 : getSuccessful().hashCode()); 
+        hashCode = prime * hashCode + ((getFailed() == null) ? 0 : getFailed().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeleteMessageBatchResult == false) return false;
+        DeleteMessageBatchResult other = (DeleteMessageBatchResult)obj;
+        
+        if (other.getSuccessful() == null ^ this.getSuccessful() == null) return false;
+        if (other.getSuccessful() != null && other.getSuccessful().equals(this.getSuccessful()) == false) return false; 
+        if (other.getFailed() == null ^ this.getFailed() == null) return false;
+        if (other.getFailed() != null && other.getFailed().equals(this.getFailed()) == false) return false; 
+        return true;
     }
     
 }

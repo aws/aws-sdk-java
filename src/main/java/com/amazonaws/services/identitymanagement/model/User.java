@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -424,13 +424,47 @@ public class User {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Path: " + path + ", ");
-        sb.append("UserName: " + userName + ", ");
-        sb.append("UserId: " + userId + ", ");
-        sb.append("Arn: " + arn + ", ");
-        sb.append("CreateDate: " + createDate + ", ");
+        if (path != null) sb.append("Path: " + path + ", ");
+        if (userName != null) sb.append("UserName: " + userName + ", ");
+        if (userId != null) sb.append("UserId: " + userId + ", ");
+        if (arn != null) sb.append("Arn: " + arn + ", ");
+        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode()); 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof User == false) return false;
+        User other = (User)obj;
+        
+        if (other.getPath() == null ^ this.getPath() == null) return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
+        if (other.getUserName() == null ^ this.getUserName() == null) return false;
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
+        if (other.getUserId() == null ^ this.getUserId() == null) return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false) return false; 
+        if (other.getArn() == null ^ this.getArn() == null) return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
+        return true;
     }
     
 }

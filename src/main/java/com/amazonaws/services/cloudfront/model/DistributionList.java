@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,10 +257,13 @@ public class DistributionList {
      * @param distributionSummaries An XML structure containing a summary of the distribution.
      */
     public void setDistributionSummaries(java.util.Collection<DistributionSummary> distributionSummaries) {
-        java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>();
-        if (distributionSummaries != null) {
-            distributionSummariesCopy.addAll(distributionSummaries);
+        if (distributionSummaries == null) {
+            this.distributionSummaries = null;
+            return;
         }
+
+        java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>(distributionSummaries.size());
+        distributionSummariesCopy.addAll(distributionSummaries);
         this.distributionSummaries = distributionSummariesCopy;
     }
     
@@ -275,7 +278,7 @@ public class DistributionList {
      *         together. 
      */
     public DistributionList withDistributionSummaries(DistributionSummary... distributionSummaries) {
-        if (getDistributionSummaries() == null) setDistributionSummaries(new java.util.ArrayList<DistributionSummary>());
+        if (getDistributionSummaries() == null) setDistributionSummaries(new java.util.ArrayList<DistributionSummary>(distributionSummaries.length));
         for (DistributionSummary value : distributionSummaries) {
             getDistributionSummaries().add(value);
         }
@@ -293,11 +296,13 @@ public class DistributionList {
      *         together. 
      */
     public DistributionList withDistributionSummaries(java.util.Collection<DistributionSummary> distributionSummaries) {
-        java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>();
-        if (distributionSummaries != null) {
+        if (distributionSummaries == null) {
+            this.distributionSummaries = null;
+        } else {
+            java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>(distributionSummaries.size());
             distributionSummariesCopy.addAll(distributionSummaries);
+            this.distributionSummaries = distributionSummariesCopy;
         }
-        this.distributionSummaries = distributionSummariesCopy;
 
         return this;
     }
@@ -314,13 +319,47 @@ public class DistributionList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("DistributionSummaries: " + distributionSummaries + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (distributionSummaries != null) sb.append("DistributionSummaries: " + distributionSummaries + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getDistributionSummaries() == null) ? 0 : getDistributionSummaries().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DistributionList == false) return false;
+        DistributionList other = (DistributionList)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getDistributionSummaries() == null ^ this.getDistributionSummaries() == null) return false;
+        if (other.getDistributionSummaries() != null && other.getDistributionSummaries().equals(this.getDistributionSummaries()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -316,14 +316,51 @@ public class ApplicationVersionDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("VersionLabel: " + versionLabel + ", ");
-        sb.append("SourceBundle: " + sourceBundle + ", ");
-        sb.append("DateCreated: " + dateCreated + ", ");
-        sb.append("DateUpdated: " + dateUpdated + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
+        if (sourceBundle != null) sb.append("SourceBundle: " + sourceBundle + ", ");
+        if (dateCreated != null) sb.append("DateCreated: " + dateCreated + ", ");
+        if (dateUpdated != null) sb.append("DateUpdated: " + dateUpdated + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceBundle() == null) ? 0 : getSourceBundle().hashCode()); 
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode()); 
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ApplicationVersionDescription == false) return false;
+        ApplicationVersionDescription other = (ApplicationVersionDescription)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
+        if (other.getSourceBundle() == null ^ this.getSourceBundle() == null) return false;
+        if (other.getSourceBundle() != null && other.getSourceBundle().equals(this.getSourceBundle()) == false) return false; 
+        if (other.getDateCreated() == null ^ this.getDateCreated() == null) return false;
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false) return false; 
+        if (other.getDateUpdated() == null ^ this.getDateUpdated() == null) return false;
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -219,11 +219,39 @@ public class MFADevice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("UserName: " + userName + ", ");
-        sb.append("SerialNumber: " + serialNumber + ", ");
-        sb.append("EnableDate: " + enableDate + ", ");
+        if (userName != null) sb.append("UserName: " + userName + ", ");
+        if (serialNumber != null) sb.append("SerialNumber: " + serialNumber + ", ");
+        if (enableDate != null) sb.append("EnableDate: " + enableDate + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
+        hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getEnableDate() == null) ? 0 : getEnableDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof MFADevice == false) return false;
+        MFADevice other = (MFADevice)obj;
+        
+        if (other.getUserName() == null ^ this.getUserName() == null) return false;
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
+        if (other.getSerialNumber() == null ^ this.getSerialNumber() == null) return false;
+        if (other.getSerialNumber() != null && other.getSerialNumber().equals(this.getSerialNumber()) == false) return false; 
+        if (other.getEnableDate() == null ^ this.getEnableDate() == null) return false;
+        if (other.getEnableDate() != null && other.getEnableDate().equals(this.getEnableDate()) == false) return false; 
+        return true;
     }
     
 }

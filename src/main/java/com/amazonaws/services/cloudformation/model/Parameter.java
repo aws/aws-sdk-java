@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,10 +111,35 @@ public class Parameter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ParameterKey: " + parameterKey + ", ");
-        sb.append("ParameterValue: " + parameterValue + ", ");
+        if (parameterKey != null) sb.append("ParameterKey: " + parameterKey + ", ");
+        if (parameterValue != null) sb.append("ParameterValue: " + parameterValue + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getParameterKey() == null) ? 0 : getParameterKey().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Parameter == false) return false;
+        Parameter other = (Parameter)obj;
+        
+        if (other.getParameterKey() == null ^ this.getParameterKey() == null) return false;
+        if (other.getParameterKey() != null && other.getParameterKey().equals(this.getParameterKey()) == false) return false; 
+        if (other.getParameterValue() == null ^ this.getParameterValue() == null) return false;
+        if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false) return false; 
+        return true;
     }
     
 }

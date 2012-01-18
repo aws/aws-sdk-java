@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,10 +118,35 @@ public class Endpoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Address: " + address + ", ");
-        sb.append("Port: " + port + ", ");
+        if (address != null) sb.append("Address: " + address + ", ");
+        if (port != null) sb.append("Port: " + port + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Endpoint == false) return false;
+        Endpoint other = (Endpoint)obj;
+        
+        if (other.getAddress() == null ^ this.getAddress() == null) return false;
+        if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false) return false; 
+        if (other.getPort() == null ^ this.getPort() == null) return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
+        return true;
     }
     
 }

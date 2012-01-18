@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -239,12 +239,43 @@ public class Credentials {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AccessKeyId: " + accessKeyId + ", ");
-        sb.append("SecretAccessKey: " + secretAccessKey + ", ");
-        sb.append("SessionToken: " + sessionToken + ", ");
-        sb.append("Expiration: " + expiration + ", ");
+        if (accessKeyId != null) sb.append("AccessKeyId: " + accessKeyId + ", ");
+        if (secretAccessKey != null) sb.append("SecretAccessKey: " + secretAccessKey + ", ");
+        if (sessionToken != null) sb.append("SessionToken: " + sessionToken + ", ");
+        if (expiration != null) sb.append("Expiration: " + expiration + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getSecretAccessKey() == null) ? 0 : getSecretAccessKey().hashCode()); 
+        hashCode = prime * hashCode + ((getSessionToken() == null) ? 0 : getSessionToken().hashCode()); 
+        hashCode = prime * hashCode + ((getExpiration() == null) ? 0 : getExpiration().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Credentials == false) return false;
+        Credentials other = (Credentials)obj;
+        
+        if (other.getAccessKeyId() == null ^ this.getAccessKeyId() == null) return false;
+        if (other.getAccessKeyId() != null && other.getAccessKeyId().equals(this.getAccessKeyId()) == false) return false; 
+        if (other.getSecretAccessKey() == null ^ this.getSecretAccessKey() == null) return false;
+        if (other.getSecretAccessKey() != null && other.getSecretAccessKey().equals(this.getSecretAccessKey()) == false) return false; 
+        if (other.getSessionToken() == null ^ this.getSessionToken() == null) return false;
+        if (other.getSessionToken() != null && other.getSessionToken().equals(this.getSessionToken()) == false) return false; 
+        if (other.getExpiration() == null ^ this.getExpiration() == null) return false;
+        if (other.getExpiration() != null && other.getExpiration().equals(this.getExpiration()) == false) return false; 
+        return true;
     }
     
 }

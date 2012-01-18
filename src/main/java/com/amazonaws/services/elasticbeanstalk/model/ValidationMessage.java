@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -324,12 +324,43 @@ public class ValidationMessage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Message: " + message + ", ");
-        sb.append("Severity: " + severity + ", ");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("OptionName: " + optionName + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
+        if (severity != null) sb.append("Severity: " + severity + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (optionName != null) sb.append("OptionName: " + optionName + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ValidationMessage == false) return false;
+        ValidationMessage other = (ValidationMessage)obj;
+        
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getSeverity() == null ^ this.getSeverity() == null) return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getOptionName() == null ^ this.getOptionName() == null) return false;
+        if (other.getOptionName() != null && other.getOptionName().equals(this.getOptionName()) == false) return false; 
+        return true;
     }
     
 }

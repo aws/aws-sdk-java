@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -183,10 +183,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         Protocol.
      */
     public void setListeners(java.util.Collection<Listener> listeners) {
-        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>();
-        if (listeners != null) {
-            listenersCopy.addAll(listeners);
+        if (listeners == null) {
+            this.listeners = null;
+            return;
         }
+
+        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>(listeners.size());
+        listenersCopy.addAll(listeners);
         this.listeners = listenersCopy;
     }
     
@@ -203,7 +206,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withListeners(Listener... listeners) {
-        if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>());
+        if (getListeners() == null) setListeners(new java.util.ArrayList<Listener>(listeners.length));
         for (Listener value : listeners) {
             getListeners().add(value);
         }
@@ -223,11 +226,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withListeners(java.util.Collection<Listener> listeners) {
-        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>();
-        if (listeners != null) {
+        if (listeners == null) {
+            this.listeners = null;
+        } else {
+            java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>(listeners.size());
             listenersCopy.addAll(listeners);
+            this.listeners = listenersCopy;
         }
-        this.listeners = listenersCopy;
 
         return this;
     }
@@ -267,10 +272,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         LoadBalancer.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
-            availabilityZonesCopy.addAll(availabilityZones);
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
         }
+
+        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
     
@@ -293,7 +301,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withAvailabilityZones(String... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -319,11 +327,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+        } else {
+            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
+            this.availabilityZones = availabilityZonesCopy;
         }
-        this.availabilityZones = availabilityZonesCopy;
 
         return this;
     }
@@ -347,10 +357,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      * @param subnets A list of subnet IDs in your VPC to attach to your LoadBalancer.
      */
     public void setSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
-            subnetsCopy.addAll(subnets);
+        if (subnets == null) {
+            this.subnets = null;
+            return;
         }
+
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+        subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
     
@@ -365,7 +378,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withSubnets(String... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>());
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
         for (String value : subnets) {
             getSubnets().add(value);
         }
@@ -383,11 +396,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
+        if (subnets == null) {
+            this.subnets = null;
+        } else {
+            java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
             subnetsCopy.addAll(subnets);
+            this.subnets = subnetsCopy;
         }
-        this.subnets = subnetsCopy;
 
         return this;
     }
@@ -411,10 +426,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      * @param securityGroups The security groups assigned to your LoadBalancer within your VPC.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
-        if (securityGroups != null) {
-            securityGroupsCopy.addAll(securityGroups);
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
         }
+
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
     
@@ -429,7 +447,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withSecurityGroups(String... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -447,11 +465,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
-        if (securityGroups != null) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
         }
-        this.securityGroups = securityGroupsCopy;
 
         return this;
     }
@@ -468,13 +488,47 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        sb.append("Listeners: " + listeners + ", ");
-        sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        sb.append("Subnets: " + subnets + ", ");
-        sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (listeners != null) sb.append("Listeners: " + listeners + ", ");
+        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
+        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
+        hashCode = prime * hashCode + ((getListeners() == null) ? 0 : getListeners().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateLoadBalancerRequest == false) return false;
+        CreateLoadBalancerRequest other = (CreateLoadBalancerRequest)obj;
+        
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
+        if (other.getListeners() == null ^ this.getListeners() == null) return false;
+        if (other.getListeners() != null && other.getListeners().equals(this.getListeners()) == false) return false; 
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
+        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        return true;
     }
     
 }

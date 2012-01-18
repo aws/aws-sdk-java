@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -556,10 +556,13 @@ public class CacheCluster {
      *         sub-elements.
      */
     public void setCacheSecurityGroups(java.util.Collection<CacheSecurityGroupMembership> cacheSecurityGroups) {
-        java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>();
-        if (cacheSecurityGroups != null) {
-            cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
+        if (cacheSecurityGroups == null) {
+            this.cacheSecurityGroups = null;
+            return;
         }
+
+        java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
+        cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
         this.cacheSecurityGroups = cacheSecurityGroupsCopy;
     }
     
@@ -578,7 +581,7 @@ public class CacheCluster {
      *         together. 
      */
     public CacheCluster withCacheSecurityGroups(CacheSecurityGroupMembership... cacheSecurityGroups) {
-        if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroupMembership>());
+        if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.length));
         for (CacheSecurityGroupMembership value : cacheSecurityGroups) {
             getCacheSecurityGroups().add(value);
         }
@@ -600,11 +603,13 @@ public class CacheCluster {
      *         together. 
      */
     public CacheCluster withCacheSecurityGroups(java.util.Collection<CacheSecurityGroupMembership> cacheSecurityGroups) {
-        java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>();
-        if (cacheSecurityGroups != null) {
+        if (cacheSecurityGroups == null) {
+            this.cacheSecurityGroups = null;
+        } else {
+            java.util.List<CacheSecurityGroupMembership> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroupMembership>(cacheSecurityGroups.size());
             cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
+            this.cacheSecurityGroups = cacheSecurityGroupsCopy;
         }
-        this.cacheSecurityGroups = cacheSecurityGroupsCopy;
 
         return this;
     }
@@ -668,10 +673,13 @@ public class CacheCluster {
      * @param cacheNodes Specifies the list of Cache Nodes the Cache Cluster contains.
      */
     public void setCacheNodes(java.util.Collection<CacheNode> cacheNodes) {
-        java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>();
-        if (cacheNodes != null) {
-            cacheNodesCopy.addAll(cacheNodes);
+        if (cacheNodes == null) {
+            this.cacheNodes = null;
+            return;
         }
+
+        java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>(cacheNodes.size());
+        cacheNodesCopy.addAll(cacheNodes);
         this.cacheNodes = cacheNodesCopy;
     }
     
@@ -686,7 +694,7 @@ public class CacheCluster {
      *         together. 
      */
     public CacheCluster withCacheNodes(CacheNode... cacheNodes) {
-        if (getCacheNodes() == null) setCacheNodes(new java.util.ArrayList<CacheNode>());
+        if (getCacheNodes() == null) setCacheNodes(new java.util.ArrayList<CacheNode>(cacheNodes.length));
         for (CacheNode value : cacheNodes) {
             getCacheNodes().add(value);
         }
@@ -704,11 +712,13 @@ public class CacheCluster {
      *         together. 
      */
     public CacheCluster withCacheNodes(java.util.Collection<CacheNode> cacheNodes) {
-        java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>();
-        if (cacheNodes != null) {
+        if (cacheNodes == null) {
+            this.cacheNodes = null;
+        } else {
+            java.util.List<CacheNode> cacheNodesCopy = new java.util.ArrayList<CacheNode>(cacheNodes.size());
             cacheNodesCopy.addAll(cacheNodes);
+            this.cacheNodes = cacheNodesCopy;
         }
-        this.cacheNodes = cacheNodesCopy;
 
         return this;
     }
@@ -768,23 +778,87 @@ public class CacheCluster {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        sb.append("Engine: " + engine + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
-        sb.append("CacheClusterStatus: " + cacheClusterStatus + ", ");
-        sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        sb.append("PreferredAvailabilityZone: " + preferredAvailabilityZone + ", ");
-        sb.append("CacheClusterCreateTime: " + cacheClusterCreateTime + ", ");
-        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
-        sb.append("NotificationConfiguration: " + notificationConfiguration + ", ");
-        sb.append("CacheSecurityGroups: " + cacheSecurityGroups + ", ");
-        sb.append("CacheParameterGroup: " + cacheParameterGroup + ", ");
-        sb.append("CacheNodes: " + cacheNodes + ", ");
-        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
+        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
+        if (engine != null) sb.append("Engine: " + engine + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (cacheClusterStatus != null) sb.append("CacheClusterStatus: " + cacheClusterStatus + ", ");
+        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
+        if (preferredAvailabilityZone != null) sb.append("PreferredAvailabilityZone: " + preferredAvailabilityZone + ", ");
+        if (cacheClusterCreateTime != null) sb.append("CacheClusterCreateTime: " + cacheClusterCreateTime + ", ");
+        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        if (pendingModifiedValues != null) sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
+        if (notificationConfiguration != null) sb.append("NotificationConfiguration: " + notificationConfiguration + ", ");
+        if (cacheSecurityGroups != null) sb.append("CacheSecurityGroups: " + cacheSecurityGroups + ", ");
+        if (cacheParameterGroup != null) sb.append("CacheParameterGroup: " + cacheParameterGroup + ", ");
+        if (cacheNodes != null) sb.append("CacheNodes: " + cacheNodes + ", ");
+        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheClusterStatus() == null) ? 0 : getCacheClusterStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheClusterCreateTime() == null) ? 0 : getCacheClusterCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheSecurityGroups() == null) ? 0 : getCacheSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheParameterGroup() == null) ? 0 : getCacheParameterGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodes() == null) ? 0 : getCacheNodes().hashCode()); 
+        hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CacheCluster == false) return false;
+        CacheCluster other = (CacheCluster)obj;
+        
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null) return false;
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
+        if (other.getEngine() == null ^ this.getEngine() == null) return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.getCacheClusterStatus() == null ^ this.getCacheClusterStatus() == null) return false;
+        if (other.getCacheClusterStatus() != null && other.getCacheClusterStatus().equals(this.getCacheClusterStatus()) == false) return false; 
+        if (other.getNumCacheNodes() == null ^ this.getNumCacheNodes() == null) return false;
+        if (other.getNumCacheNodes() != null && other.getNumCacheNodes().equals(this.getNumCacheNodes()) == false) return false; 
+        if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null) return false;
+        if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false) return false; 
+        if (other.getCacheClusterCreateTime() == null ^ this.getCacheClusterCreateTime() == null) return false;
+        if (other.getCacheClusterCreateTime() != null && other.getCacheClusterCreateTime().equals(this.getCacheClusterCreateTime()) == false) return false; 
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
+        if (other.getPendingModifiedValues() == null ^ this.getPendingModifiedValues() == null) return false;
+        if (other.getPendingModifiedValues() != null && other.getPendingModifiedValues().equals(this.getPendingModifiedValues()) == false) return false; 
+        if (other.getNotificationConfiguration() == null ^ this.getNotificationConfiguration() == null) return false;
+        if (other.getNotificationConfiguration() != null && other.getNotificationConfiguration().equals(this.getNotificationConfiguration()) == false) return false; 
+        if (other.getCacheSecurityGroups() == null ^ this.getCacheSecurityGroups() == null) return false;
+        if (other.getCacheSecurityGroups() != null && other.getCacheSecurityGroups().equals(this.getCacheSecurityGroups()) == false) return false; 
+        if (other.getCacheParameterGroup() == null ^ this.getCacheParameterGroup() == null) return false;
+        if (other.getCacheParameterGroup() != null && other.getCacheParameterGroup().equals(this.getCacheParameterGroup()) == false) return false; 
+        if (other.getCacheNodes() == null ^ this.getCacheNodes() == null) return false;
+        if (other.getCacheNodes() != null && other.getCacheNodes().equals(this.getCacheNodes()) == false) return false; 
+        if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
+        if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        return true;
     }
     
 }

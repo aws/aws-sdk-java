@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,10 +85,13 @@ public class DescribeDBInstancesResult {
      * @param dBInstances A list of <a>DBInstance</a> instances.
      */
     public void setDBInstances(java.util.Collection<DBInstance> dBInstances) {
-        java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>();
-        if (dBInstances != null) {
-            dBInstancesCopy.addAll(dBInstances);
+        if (dBInstances == null) {
+            this.dBInstances = null;
+            return;
         }
+
+        java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>(dBInstances.size());
+        dBInstancesCopy.addAll(dBInstances);
         this.dBInstances = dBInstancesCopy;
     }
     
@@ -103,7 +106,7 @@ public class DescribeDBInstancesResult {
      *         together. 
      */
     public DescribeDBInstancesResult withDBInstances(DBInstance... dBInstances) {
-        if (getDBInstances() == null) setDBInstances(new java.util.ArrayList<DBInstance>());
+        if (getDBInstances() == null) setDBInstances(new java.util.ArrayList<DBInstance>(dBInstances.length));
         for (DBInstance value : dBInstances) {
             getDBInstances().add(value);
         }
@@ -121,11 +124,13 @@ public class DescribeDBInstancesResult {
      *         together. 
      */
     public DescribeDBInstancesResult withDBInstances(java.util.Collection<DBInstance> dBInstances) {
-        java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>();
-        if (dBInstances != null) {
+        if (dBInstances == null) {
+            this.dBInstances = null;
+        } else {
+            java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>(dBInstances.size());
             dBInstancesCopy.addAll(dBInstances);
+            this.dBInstances = dBInstancesCopy;
         }
-        this.dBInstances = dBInstancesCopy;
 
         return this;
     }
@@ -142,10 +147,35 @@ public class DescribeDBInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("DBInstances: " + dBInstances + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (dBInstances != null) sb.append("DBInstances: " + dBInstances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstances() == null) ? 0 : getDBInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeDBInstancesResult == false) return false;
+        DescribeDBInstancesResult other = (DescribeDBInstancesResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getDBInstances() == null ^ this.getDBInstances() == null) return false;
+        if (other.getDBInstances() != null && other.getDBInstances().equals(this.getDBInstances()) == false) return false; 
+        return true;
     }
     
 }

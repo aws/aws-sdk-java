@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class DescribeMetricCollectionTypesResult {
      * @param metrics The list of Metrics collected.
      */
     public void setMetrics(java.util.Collection<MetricCollectionType> metrics) {
-        java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>();
-        if (metrics != null) {
-            metricsCopy.addAll(metrics);
+        if (metrics == null) {
+            this.metrics = null;
+            return;
         }
+
+        java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>(metrics.size());
+        metricsCopy.addAll(metrics);
         this.metrics = metricsCopy;
     }
     
@@ -68,7 +71,7 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withMetrics(MetricCollectionType... metrics) {
-        if (getMetrics() == null) setMetrics(new java.util.ArrayList<MetricCollectionType>());
+        if (getMetrics() == null) setMetrics(new java.util.ArrayList<MetricCollectionType>(metrics.length));
         for (MetricCollectionType value : metrics) {
             getMetrics().add(value);
         }
@@ -86,11 +89,13 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withMetrics(java.util.Collection<MetricCollectionType> metrics) {
-        java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>();
-        if (metrics != null) {
+        if (metrics == null) {
+            this.metrics = null;
+        } else {
+            java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>(metrics.size());
             metricsCopy.addAll(metrics);
+            this.metrics = metricsCopy;
         }
-        this.metrics = metricsCopy;
 
         return this;
     }
@@ -114,10 +119,13 @@ public class DescribeMetricCollectionTypesResult {
      * @param granularities A list of Granularities for the listed Metrics.
      */
     public void setGranularities(java.util.Collection<MetricGranularityType> granularities) {
-        java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>();
-        if (granularities != null) {
-            granularitiesCopy.addAll(granularities);
+        if (granularities == null) {
+            this.granularities = null;
+            return;
         }
+
+        java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>(granularities.size());
+        granularitiesCopy.addAll(granularities);
         this.granularities = granularitiesCopy;
     }
     
@@ -132,7 +140,7 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withGranularities(MetricGranularityType... granularities) {
-        if (getGranularities() == null) setGranularities(new java.util.ArrayList<MetricGranularityType>());
+        if (getGranularities() == null) setGranularities(new java.util.ArrayList<MetricGranularityType>(granularities.length));
         for (MetricGranularityType value : granularities) {
             getGranularities().add(value);
         }
@@ -150,11 +158,13 @@ public class DescribeMetricCollectionTypesResult {
      *         together. 
      */
     public DescribeMetricCollectionTypesResult withGranularities(java.util.Collection<MetricGranularityType> granularities) {
-        java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>();
-        if (granularities != null) {
+        if (granularities == null) {
+            this.granularities = null;
+        } else {
+            java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>(granularities.size());
             granularitiesCopy.addAll(granularities);
+            this.granularities = granularitiesCopy;
         }
-        this.granularities = granularitiesCopy;
 
         return this;
     }
@@ -171,10 +181,35 @@ public class DescribeMetricCollectionTypesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Metrics: " + metrics + ", ");
-        sb.append("Granularities: " + granularities + ", ");
+        if (metrics != null) sb.append("Metrics: " + metrics + ", ");
+        if (granularities != null) sb.append("Granularities: " + granularities + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode()); 
+        hashCode = prime * hashCode + ((getGranularities() == null) ? 0 : getGranularities().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeMetricCollectionTypesResult == false) return false;
+        DescribeMetricCollectionTypesResult other = (DescribeMetricCollectionTypesResult)obj;
+        
+        if (other.getMetrics() == null ^ this.getMetrics() == null) return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false) return false; 
+        if (other.getGranularities() == null ^ this.getGranularities() == null) return false;
+        if (other.getGranularities() != null && other.getGranularities().equals(this.getGranularities()) == false) return false; 
+        return true;
     }
     
 }

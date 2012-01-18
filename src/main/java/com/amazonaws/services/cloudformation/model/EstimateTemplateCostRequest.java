@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -235,10 +235,13 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      *         parameters.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
-            parametersCopy.addAll(parameters);
+        if (parameters == null) {
+            this.parameters = null;
+            return;
         }
+
+        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
     
@@ -255,7 +258,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public EstimateTemplateCostRequest withParameters(Parameter... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
         for (Parameter value : parameters) {
             getParameters().add(value);
         }
@@ -275,11 +278,13 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public EstimateTemplateCostRequest withParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
+        if (parameters == null) {
+            this.parameters = null;
+        } else {
+            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
+            this.parameters = parametersCopy;
         }
-        this.parameters = parametersCopy;
 
         return this;
     }
@@ -296,11 +301,39 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TemplateBody: " + templateBody + ", ");
-        sb.append("TemplateURL: " + templateURL + ", ");
-        sb.append("Parameters: " + parameters + ", ");
+        if (templateBody != null) sb.append("TemplateBody: " + templateBody + ", ");
+        if (templateURL != null) sb.append("TemplateURL: " + templateURL + ", ");
+        if (parameters != null) sb.append("Parameters: " + parameters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode()); 
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof EstimateTemplateCostRequest == false) return false;
+        EstimateTemplateCostRequest other = (EstimateTemplateCostRequest)obj;
+        
+        if (other.getTemplateBody() == null ^ this.getTemplateBody() == null) return false;
+        if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false) return false; 
+        if (other.getTemplateURL() == null ^ this.getTemplateURL() == null) return false;
+        if (other.getTemplateURL() != null && other.getTemplateURL().equals(this.getTemplateURL()) == false) return false; 
+        if (other.getParameters() == null ^ this.getParameters() == null) return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
+        return true;
     }
     
 }

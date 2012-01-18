@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -440,10 +440,13 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         configuration options to the requested value.
      */
     public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
-            optionSettingsCopy.addAll(optionSettings);
+        if (optionSettings == null) {
+            this.optionSettings = null;
+            return;
         }
+
+        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
     
@@ -462,7 +465,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateEnvironmentRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
-        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }
@@ -484,11 +487,13 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateEnvironmentRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+        } else {
+            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
+            this.optionSettings = optionSettingsCopy;
         }
-        this.optionSettings = optionSettingsCopy;
 
         return this;
     }
@@ -516,10 +521,13 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         configuration set for this environment.
      */
     public void setOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
-        java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>();
-        if (optionsToRemove != null) {
-            optionsToRemoveCopy.addAll(optionsToRemove);
+        if (optionsToRemove == null) {
+            this.optionsToRemove = null;
+            return;
         }
+
+        java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
+        optionsToRemoveCopy.addAll(optionsToRemove);
         this.optionsToRemove = optionsToRemoveCopy;
     }
     
@@ -536,7 +544,7 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateEnvironmentRequest withOptionsToRemove(OptionSpecification... optionsToRemove) {
-        if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>());
+        if (getOptionsToRemove() == null) setOptionsToRemove(new java.util.ArrayList<OptionSpecification>(optionsToRemove.length));
         for (OptionSpecification value : optionsToRemove) {
             getOptionsToRemove().add(value);
         }
@@ -556,11 +564,13 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateEnvironmentRequest withOptionsToRemove(java.util.Collection<OptionSpecification> optionsToRemove) {
-        java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>();
-        if (optionsToRemove != null) {
+        if (optionsToRemove == null) {
+            this.optionsToRemove = null;
+        } else {
+            java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
             optionsToRemoveCopy.addAll(optionsToRemove);
+            this.optionsToRemove = optionsToRemoveCopy;
         }
-        this.optionsToRemove = optionsToRemoveCopy;
 
         return this;
     }
@@ -577,15 +587,55 @@ public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("EnvironmentId: " + environmentId + ", ");
-        sb.append("EnvironmentName: " + environmentName + ", ");
-        sb.append("VersionLabel: " + versionLabel + ", ");
-        sb.append("TemplateName: " + templateName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("OptionSettings: " + optionSettings + ", ");
-        sb.append("OptionsToRemove: " + optionsToRemove + ", ");
+        if (environmentId != null) sb.append("EnvironmentId: " + environmentId + ", ");
+        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
+        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
+        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (optionSettings != null) sb.append("OptionSettings: " + optionSettings + ", ");
+        if (optionsToRemove != null) sb.append("OptionsToRemove: " + optionsToRemove + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionsToRemove() == null) ? 0 : getOptionsToRemove().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UpdateEnvironmentRequest == false) return false;
+        UpdateEnvironmentRequest other = (UpdateEnvironmentRequest)obj;
+        
+        if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null) return false;
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false) return false; 
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
+        if (other.getOptionsToRemove() == null ^ this.getOptionsToRemove() == null) return false;
+        if (other.getOptionsToRemove() != null && other.getOptionsToRemove().equals(this.getOptionsToRemove()) == false) return false; 
+        return true;
     }
     
 }

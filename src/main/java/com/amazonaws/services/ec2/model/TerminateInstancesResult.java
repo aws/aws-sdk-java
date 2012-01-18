@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,13 @@ public class TerminateInstancesResult {
      *         has changed.
      */
     public void setTerminatingInstances(java.util.Collection<InstanceStateChange> terminatingInstances) {
-        java.util.List<InstanceStateChange> terminatingInstancesCopy = new java.util.ArrayList<InstanceStateChange>();
-        if (terminatingInstances != null) {
-            terminatingInstancesCopy.addAll(terminatingInstances);
+        if (terminatingInstances == null) {
+            this.terminatingInstances = null;
+            return;
         }
+
+        java.util.List<InstanceStateChange> terminatingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(terminatingInstances.size());
+        terminatingInstancesCopy.addAll(terminatingInstances);
         this.terminatingInstances = terminatingInstancesCopy;
     }
     
@@ -71,7 +74,7 @@ public class TerminateInstancesResult {
      *         together. 
      */
     public TerminateInstancesResult withTerminatingInstances(InstanceStateChange... terminatingInstances) {
-        if (getTerminatingInstances() == null) setTerminatingInstances(new java.util.ArrayList<InstanceStateChange>());
+        if (getTerminatingInstances() == null) setTerminatingInstances(new java.util.ArrayList<InstanceStateChange>(terminatingInstances.length));
         for (InstanceStateChange value : terminatingInstances) {
             getTerminatingInstances().add(value);
         }
@@ -91,11 +94,13 @@ public class TerminateInstancesResult {
      *         together. 
      */
     public TerminateInstancesResult withTerminatingInstances(java.util.Collection<InstanceStateChange> terminatingInstances) {
-        java.util.List<InstanceStateChange> terminatingInstancesCopy = new java.util.ArrayList<InstanceStateChange>();
-        if (terminatingInstances != null) {
+        if (terminatingInstances == null) {
+            this.terminatingInstances = null;
+        } else {
+            java.util.List<InstanceStateChange> terminatingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(terminatingInstances.size());
             terminatingInstancesCopy.addAll(terminatingInstances);
+            this.terminatingInstances = terminatingInstancesCopy;
         }
-        this.terminatingInstances = terminatingInstancesCopy;
 
         return this;
     }
@@ -112,9 +117,31 @@ public class TerminateInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TerminatingInstances: " + terminatingInstances + ", ");
+        if (terminatingInstances != null) sb.append("TerminatingInstances: " + terminatingInstances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTerminatingInstances() == null) ? 0 : getTerminatingInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof TerminateInstancesResult == false) return false;
+        TerminateInstancesResult other = (TerminateInstancesResult)obj;
+        
+        if (other.getTerminatingInstances() == null ^ this.getTerminatingInstances() == null) return false;
+        if (other.getTerminatingInstances() != null && other.getTerminatingInstances().equals(this.getTerminatingInstances()) == false) return false; 
+        return true;
     }
     
 }

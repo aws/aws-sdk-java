@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -458,16 +458,59 @@ public class EventDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("EventDate: " + eventDate + ", ");
-        sb.append("Message: " + message + ", ");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("VersionLabel: " + versionLabel + ", ");
-        sb.append("TemplateName: " + templateName + ", ");
-        sb.append("EnvironmentName: " + environmentName + ", ");
-        sb.append("RequestId: " + requestId + ", ");
-        sb.append("Severity: " + severity + ", ");
+        if (eventDate != null) sb.append("EventDate: " + eventDate + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
+        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
+        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
+        if (requestId != null) sb.append("RequestId: " + requestId + ", ");
+        if (severity != null) sb.append("Severity: " + severity + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getEventDate() == null) ? 0 : getEventDate().hashCode()); 
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode()); 
+        hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof EventDescription == false) return false;
+        EventDescription other = (EventDescription)obj;
+        
+        if (other.getEventDate() == null ^ this.getEventDate() == null) return false;
+        if (other.getEventDate() != null && other.getEventDate().equals(this.getEventDate()) == false) return false; 
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
+        if (other.getRequestId() == null ^ this.getRequestId() == null) return false;
+        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false) return false; 
+        if (other.getSeverity() == null ^ this.getSeverity() == null) return false;
+        if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false) return false; 
+        return true;
     }
     
 }

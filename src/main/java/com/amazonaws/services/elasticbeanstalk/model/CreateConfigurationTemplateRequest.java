@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -555,10 +555,13 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         obtained from the solution stack or the source configuration template.
      */
     public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
-            optionSettingsCopy.addAll(optionSettings);
+        if (optionSettings == null) {
+            this.optionSettings = null;
+            return;
         }
+
+        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
     
@@ -577,7 +580,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public CreateConfigurationTemplateRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
-        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }
@@ -599,11 +602,13 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public CreateConfigurationTemplateRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+        } else {
+            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
+            this.optionSettings = optionSettingsCopy;
         }
-        this.optionSettings = optionSettingsCopy;
 
         return this;
     }
@@ -620,15 +625,55 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("TemplateName: " + templateName + ", ");
-        sb.append("SolutionStackName: " + solutionStackName + ", ");
-        sb.append("SourceConfiguration: " + sourceConfiguration + ", ");
-        sb.append("EnvironmentId: " + environmentId + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("OptionSettings: " + optionSettings + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
+        if (solutionStackName != null) sb.append("SolutionStackName: " + solutionStackName + ", ");
+        if (sourceConfiguration != null) sb.append("SourceConfiguration: " + sourceConfiguration + ", ");
+        if (environmentId != null) sb.append("EnvironmentId: " + environmentId + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (optionSettings != null) sb.append("OptionSettings: " + optionSettings + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceConfiguration() == null) ? 0 : getSourceConfiguration().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateConfigurationTemplateRequest == false) return false;
+        CreateConfigurationTemplateRequest other = (CreateConfigurationTemplateRequest)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null) return false;
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false) return false; 
+        if (other.getSourceConfiguration() == null ^ this.getSourceConfiguration() == null) return false;
+        if (other.getSourceConfiguration() != null && other.getSourceConfiguration().equals(this.getSourceConfiguration()) == false) return false; 
+        if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null) return false;
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -249,13 +249,47 @@ public class CacheNode {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheNodeId: " + cacheNodeId + ", ");
-        sb.append("CacheNodeStatus: " + cacheNodeStatus + ", ");
-        sb.append("CacheNodeCreateTime: " + cacheNodeCreateTime + ", ");
-        sb.append("Endpoint: " + endpoint + ", ");
-        sb.append("ParameterGroupStatus: " + parameterGroupStatus + ", ");
+        if (cacheNodeId != null) sb.append("CacheNodeId: " + cacheNodeId + ", ");
+        if (cacheNodeStatus != null) sb.append("CacheNodeStatus: " + cacheNodeStatus + ", ");
+        if (cacheNodeCreateTime != null) sb.append("CacheNodeCreateTime: " + cacheNodeCreateTime + ", ");
+        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
+        if (parameterGroupStatus != null) sb.append("ParameterGroupStatus: " + parameterGroupStatus + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheNodeId() == null) ? 0 : getCacheNodeId().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeStatus() == null) ? 0 : getCacheNodeStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeCreateTime() == null) ? 0 : getCacheNodeCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterGroupStatus() == null) ? 0 : getParameterGroupStatus().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CacheNode == false) return false;
+        CacheNode other = (CacheNode)obj;
+        
+        if (other.getCacheNodeId() == null ^ this.getCacheNodeId() == null) return false;
+        if (other.getCacheNodeId() != null && other.getCacheNodeId().equals(this.getCacheNodeId()) == false) return false; 
+        if (other.getCacheNodeStatus() == null ^ this.getCacheNodeStatus() == null) return false;
+        if (other.getCacheNodeStatus() != null && other.getCacheNodeStatus().equals(this.getCacheNodeStatus()) == false) return false; 
+        if (other.getCacheNodeCreateTime() == null ^ this.getCacheNodeCreateTime() == null) return false;
+        if (other.getCacheNodeCreateTime() != null && other.getCacheNodeCreateTime().equals(this.getCacheNodeCreateTime()) == false) return false; 
+        if (other.getEndpoint() == null ^ this.getEndpoint() == null) return false;
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false) return false; 
+        if (other.getParameterGroupStatus() == null ^ this.getParameterGroupStatus() == null) return false;
+        if (other.getParameterGroupStatus() != null && other.getParameterGroupStatus().equals(this.getParameterGroupStatus()) == false) return false; 
+        return true;
     }
     
 }

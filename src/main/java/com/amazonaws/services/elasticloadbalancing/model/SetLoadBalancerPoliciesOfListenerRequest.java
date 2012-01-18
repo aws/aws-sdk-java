@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -179,10 +179,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *         policy is removed from the listener.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
-        if (policyNames != null) {
-            policyNamesCopy.addAll(policyNames);
+        if (policyNames == null) {
+            this.policyNames = null;
+            return;
         }
+
+        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
     
@@ -201,7 +204,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *         together. 
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(String... policyNames) {
-        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>());
+        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
         for (String value : policyNames) {
             getPolicyNames().add(value);
         }
@@ -223,11 +226,13 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      *         together. 
      */
     public SetLoadBalancerPoliciesOfListenerRequest withPolicyNames(java.util.Collection<String> policyNames) {
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
-        if (policyNames != null) {
+        if (policyNames == null) {
+            this.policyNames = null;
+        } else {
+            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
+            this.policyNames = policyNamesCopy;
         }
-        this.policyNames = policyNamesCopy;
 
         return this;
     }
@@ -244,11 +249,39 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
-        sb.append("PolicyNames: " + policyNames + ", ");
+        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (loadBalancerPort != null) sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
+        if (policyNames != null) sb.append("PolicyNames: " + policyNames + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
+        hashCode = prime * hashCode + ((getLoadBalancerPort() == null) ? 0 : getLoadBalancerPort().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SetLoadBalancerPoliciesOfListenerRequest == false) return false;
+        SetLoadBalancerPoliciesOfListenerRequest other = (SetLoadBalancerPoliciesOfListenerRequest)obj;
+        
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
+        if (other.getLoadBalancerPort() == null ^ this.getLoadBalancerPort() == null) return false;
+        if (other.getLoadBalancerPort() != null && other.getLoadBalancerPort().equals(this.getLoadBalancerPort()) == false) return false; 
+        if (other.getPolicyNames() == null ^ this.getPolicyNames() == null) return false;
+        if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false) return false; 
+        return true;
     }
     
 }

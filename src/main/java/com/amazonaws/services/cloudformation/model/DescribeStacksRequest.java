@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,9 +84,31 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackName: " + stackName + ", ");
+        if (stackName != null) sb.append("StackName: " + stackName + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeStacksRequest == false) return false;
+        DescribeStacksRequest other = (DescribeStacksRequest)obj;
+        
+        if (other.getStackName() == null ^ this.getStackName() == null) return false;
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
+        return true;
     }
     
 }

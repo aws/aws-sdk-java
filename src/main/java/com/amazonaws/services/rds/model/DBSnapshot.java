@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -533,20 +533,75 @@ public class DBSnapshot {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
-        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        sb.append("SnapshotCreateTime: " + snapshotCreateTime + ", ");
-        sb.append("Engine: " + engine + ", ");
-        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("Port: " + port + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
-        sb.append("MasterUsername: " + masterUsername + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
-        sb.append("LicenseModel: " + licenseModel + ", ");
+        if (dBSnapshotIdentifier != null) sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
+        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        if (snapshotCreateTime != null) sb.append("SnapshotCreateTime: " + snapshotCreateTime + ", ");
+        if (engine != null) sb.append("Engine: " + engine + ", ");
+        if (allocatedStorage != null) sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (port != null) sb.append("Port: " + port + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (instanceCreateTime != null) sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
+        if (masterUsername != null) sb.append("MasterUsername: " + masterUsername + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDBSnapshotIdentifier() == null) ? 0 : getDBSnapshotIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotCreateTime() == null) ? 0 : getSnapshotCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceCreateTime() == null) ? 0 : getInstanceCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DBSnapshot == false) return false;
+        DBSnapshot other = (DBSnapshot)obj;
+        
+        if (other.getDBSnapshotIdentifier() == null ^ this.getDBSnapshotIdentifier() == null) return false;
+        if (other.getDBSnapshotIdentifier() != null && other.getDBSnapshotIdentifier().equals(this.getDBSnapshotIdentifier()) == false) return false; 
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
+        if (other.getSnapshotCreateTime() == null ^ this.getSnapshotCreateTime() == null) return false;
+        if (other.getSnapshotCreateTime() != null && other.getSnapshotCreateTime().equals(this.getSnapshotCreateTime()) == false) return false; 
+        if (other.getEngine() == null ^ this.getEngine() == null) return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false) return false; 
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null) return false;
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getPort() == null ^ this.getPort() == null) return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getInstanceCreateTime() == null ^ this.getInstanceCreateTime() == null) return false;
+        if (other.getInstanceCreateTime() != null && other.getInstanceCreateTime().equals(this.getInstanceCreateTime()) == false) return false; 
+        if (other.getMasterUsername() == null ^ this.getMasterUsername() == null) return false;
+        if (other.getMasterUsername() != null && other.getMasterUsername().equals(this.getMasterUsername()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
+        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        return true;
     }
     
 }

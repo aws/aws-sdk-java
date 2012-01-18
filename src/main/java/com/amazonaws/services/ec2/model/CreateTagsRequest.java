@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,10 +85,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         an instance, an EBS volume, or snapshot, etc.
      */
     public void setResources(java.util.Collection<String> resources) {
-        java.util.List<String> resourcesCopy = new java.util.ArrayList<String>();
-        if (resources != null) {
-            resourcesCopy.addAll(resources);
+        if (resources == null) {
+            this.resources = null;
+            return;
         }
+
+        java.util.List<String> resourcesCopy = new java.util.ArrayList<String>(resources.size());
+        resourcesCopy.addAll(resources);
         this.resources = resourcesCopy;
     }
     
@@ -105,7 +108,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withResources(String... resources) {
-        if (getResources() == null) setResources(new java.util.ArrayList<String>());
+        if (getResources() == null) setResources(new java.util.ArrayList<String>(resources.length));
         for (String value : resources) {
             getResources().add(value);
         }
@@ -125,11 +128,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withResources(java.util.Collection<String> resources) {
-        java.util.List<String> resourcesCopy = new java.util.ArrayList<String>();
-        if (resources != null) {
+        if (resources == null) {
+            this.resources = null;
+        } else {
+            java.util.List<String> resourcesCopy = new java.util.ArrayList<String>(resources.size());
             resourcesCopy.addAll(resources);
+            this.resources = resourcesCopy;
         }
-        this.resources = resourcesCopy;
 
         return this;
     }
@@ -157,10 +162,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         item consists of a key-value pair.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -177,7 +185,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -197,11 +205,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateTagsRequest withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -218,10 +228,35 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Resources: " + resources + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (resources != null) sb.append("Resources: " + resources + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateTagsRequest == false) return false;
+        CreateTagsRequest other = (CreateTagsRequest)obj;
+        
+        if (other.getResources() == null ^ this.getResources() == null) return false;
+        if (other.getResources() != null && other.getResources().equals(this.getResources()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

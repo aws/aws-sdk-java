@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,10 +46,13 @@ public class DescribeSpotPriceHistoryResult {
      * @param spotPriceHistory The new value for the SpotPriceHistory property for this object.
      */
     public void setSpotPriceHistory(java.util.Collection<SpotPrice> spotPriceHistory) {
-        java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>();
-        if (spotPriceHistory != null) {
-            spotPriceHistoryCopy.addAll(spotPriceHistory);
+        if (spotPriceHistory == null) {
+            this.spotPriceHistory = null;
+            return;
         }
+
+        java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>(spotPriceHistory.size());
+        spotPriceHistoryCopy.addAll(spotPriceHistory);
         this.spotPriceHistory = spotPriceHistoryCopy;
     }
     
@@ -64,7 +67,7 @@ public class DescribeSpotPriceHistoryResult {
      *         together. 
      */
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(SpotPrice... spotPriceHistory) {
-        if (getSpotPriceHistory() == null) setSpotPriceHistory(new java.util.ArrayList<SpotPrice>());
+        if (getSpotPriceHistory() == null) setSpotPriceHistory(new java.util.ArrayList<SpotPrice>(spotPriceHistory.length));
         for (SpotPrice value : spotPriceHistory) {
             getSpotPriceHistory().add(value);
         }
@@ -82,11 +85,13 @@ public class DescribeSpotPriceHistoryResult {
      *         together. 
      */
     public DescribeSpotPriceHistoryResult withSpotPriceHistory(java.util.Collection<SpotPrice> spotPriceHistory) {
-        java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>();
-        if (spotPriceHistory != null) {
+        if (spotPriceHistory == null) {
+            this.spotPriceHistory = null;
+        } else {
+            java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>(spotPriceHistory.size());
             spotPriceHistoryCopy.addAll(spotPriceHistory);
+            this.spotPriceHistory = spotPriceHistoryCopy;
         }
-        this.spotPriceHistory = spotPriceHistoryCopy;
 
         return this;
     }
@@ -143,10 +148,35 @@ public class DescribeSpotPriceHistoryResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SpotPriceHistory: " + spotPriceHistory + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (spotPriceHistory != null) sb.append("SpotPriceHistory: " + spotPriceHistory + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSpotPriceHistory() == null) ? 0 : getSpotPriceHistory().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSpotPriceHistoryResult == false) return false;
+        DescribeSpotPriceHistoryResult other = (DescribeSpotPriceHistoryResult)obj;
+        
+        if (other.getSpotPriceHistory() == null ^ this.getSpotPriceHistory() == null) return false;
+        if (other.getSpotPriceHistory() != null && other.getSpotPriceHistory().equals(this.getSpotPriceHistory()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

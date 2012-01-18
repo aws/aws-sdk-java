@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -416,10 +416,13 @@ public class JobFlowDetail {
      * @param steps A list of steps run by the job flow.
      */
     public void setSteps(java.util.Collection<StepDetail> steps) {
-        java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>();
-        if (steps != null) {
-            stepsCopy.addAll(steps);
+        if (steps == null) {
+            this.steps = null;
+            return;
         }
+
+        java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>(steps.size());
+        stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
     
@@ -434,7 +437,7 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withSteps(StepDetail... steps) {
-        if (getSteps() == null) setSteps(new java.util.ArrayList<StepDetail>());
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepDetail>(steps.length));
         for (StepDetail value : steps) {
             getSteps().add(value);
         }
@@ -452,11 +455,13 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withSteps(java.util.Collection<StepDetail> steps) {
-        java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>();
-        if (steps != null) {
+        if (steps == null) {
+            this.steps = null;
+        } else {
+            java.util.List<StepDetail> stepsCopy = new java.util.ArrayList<StepDetail>(steps.size());
             stepsCopy.addAll(steps);
+            this.steps = stepsCopy;
         }
-        this.steps = stepsCopy;
 
         return this;
     }
@@ -480,10 +485,13 @@ public class JobFlowDetail {
      * @param bootstrapActions A list of the bootstrap actions run by the job flow.
      */
     public void setBootstrapActions(java.util.Collection<BootstrapActionDetail> bootstrapActions) {
-        java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>();
-        if (bootstrapActions != null) {
-            bootstrapActionsCopy.addAll(bootstrapActions);
+        if (bootstrapActions == null) {
+            this.bootstrapActions = null;
+            return;
         }
+
+        java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>(bootstrapActions.size());
+        bootstrapActionsCopy.addAll(bootstrapActions);
         this.bootstrapActions = bootstrapActionsCopy;
     }
     
@@ -498,7 +506,7 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withBootstrapActions(BootstrapActionDetail... bootstrapActions) {
-        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionDetail>());
+        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionDetail>(bootstrapActions.length));
         for (BootstrapActionDetail value : bootstrapActions) {
             getBootstrapActions().add(value);
         }
@@ -516,11 +524,13 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withBootstrapActions(java.util.Collection<BootstrapActionDetail> bootstrapActions) {
-        java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>();
-        if (bootstrapActions != null) {
+        if (bootstrapActions == null) {
+            this.bootstrapActions = null;
+        } else {
+            java.util.List<BootstrapActionDetail> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionDetail>(bootstrapActions.size());
             bootstrapActionsCopy.addAll(bootstrapActions);
+            this.bootstrapActions = bootstrapActionsCopy;
         }
-        this.bootstrapActions = bootstrapActionsCopy;
 
         return this;
     }
@@ -552,10 +562,13 @@ public class JobFlowDetail {
      *         flow this value is empty.
      */
     public void setSupportedProducts(java.util.Collection<String> supportedProducts) {
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
-        if (supportedProducts != null) {
-            supportedProductsCopy.addAll(supportedProducts);
+        if (supportedProducts == null) {
+            this.supportedProducts = null;
+            return;
         }
+
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+        supportedProductsCopy.addAll(supportedProducts);
         this.supportedProducts = supportedProductsCopy;
     }
     
@@ -574,7 +587,7 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withSupportedProducts(String... supportedProducts) {
-        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>());
+        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>(supportedProducts.length));
         for (String value : supportedProducts) {
             getSupportedProducts().add(value);
         }
@@ -596,11 +609,13 @@ public class JobFlowDetail {
      *         together. 
      */
     public JobFlowDetail withSupportedProducts(java.util.Collection<String> supportedProducts) {
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
-        if (supportedProducts != null) {
+        if (supportedProducts == null) {
+            this.supportedProducts = null;
+        } else {
+            java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
             supportedProductsCopy.addAll(supportedProducts);
+            this.supportedProducts = supportedProductsCopy;
         }
-        this.supportedProducts = supportedProductsCopy;
 
         return this;
     }
@@ -617,17 +632,63 @@ public class JobFlowDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("JobFlowId: " + jobFlowId + ", ");
-        sb.append("Name: " + name + ", ");
-        sb.append("LogUri: " + logUri + ", ");
-        sb.append("AmiVersion: " + amiVersion + ", ");
-        sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
-        sb.append("Instances: " + instances + ", ");
-        sb.append("Steps: " + steps + ", ");
-        sb.append("BootstrapActions: " + bootstrapActions + ", ");
-        sb.append("SupportedProducts: " + supportedProducts + ", ");
+        if (jobFlowId != null) sb.append("JobFlowId: " + jobFlowId + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (logUri != null) sb.append("LogUri: " + logUri + ", ");
+        if (amiVersion != null) sb.append("AmiVersion: " + amiVersion + ", ");
+        if (executionStatusDetail != null) sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
+        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (steps != null) sb.append("Steps: " + steps + ", ");
+        if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
+        if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode()); 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode()); 
+        hashCode = prime * hashCode + ((getAmiVersion() == null) ? 0 : getAmiVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getExecutionStatusDetail() == null) ? 0 : getExecutionStatusDetail().hashCode()); 
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
+        hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
+        hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof JobFlowDetail == false) return false;
+        JobFlowDetail other = (JobFlowDetail)obj;
+        
+        if (other.getJobFlowId() == null ^ this.getJobFlowId() == null) return false;
+        if (other.getJobFlowId() != null && other.getJobFlowId().equals(this.getJobFlowId()) == false) return false; 
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getLogUri() == null ^ this.getLogUri() == null) return false;
+        if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false) return false; 
+        if (other.getAmiVersion() == null ^ this.getAmiVersion() == null) return false;
+        if (other.getAmiVersion() != null && other.getAmiVersion().equals(this.getAmiVersion()) == false) return false; 
+        if (other.getExecutionStatusDetail() == null ^ this.getExecutionStatusDetail() == null) return false;
+        if (other.getExecutionStatusDetail() != null && other.getExecutionStatusDetail().equals(this.getExecutionStatusDetail()) == false) return false; 
+        if (other.getInstances() == null ^ this.getInstances() == null) return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
+        if (other.getSteps() == null ^ this.getSteps() == null) return false;
+        if (other.getSteps() != null && other.getSteps().equals(this.getSteps()) == false) return false; 
+        if (other.getBootstrapActions() == null ^ this.getBootstrapActions() == null) return false;
+        if (other.getBootstrapActions() != null && other.getBootstrapActions().equals(this.getBootstrapActions()) == false) return false; 
+        if (other.getSupportedProducts() == null ^ this.getSupportedProducts() == null) return false;
+        if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
+        return true;
     }
     
 }

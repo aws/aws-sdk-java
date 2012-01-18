@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,10 +56,13 @@ public class RequiredProtocols {
      *         RequiredProtocols element.
      */
     public void setProtocols(java.util.Collection<String> protocols) {
-        java.util.List<String> protocolsCopy = new java.util.ArrayList<String>();
-        if (protocols != null) {
-            protocolsCopy.addAll(protocols);
+        if (protocols == null) {
+            this.protocols = null;
+            return;
         }
+
+        java.util.List<String> protocolsCopy = new java.util.ArrayList<String>(protocols.size());
+        protocolsCopy.addAll(protocols);
         this.protocols = protocolsCopy;
     }
     
@@ -76,7 +79,7 @@ public class RequiredProtocols {
      *         together. 
      */
     public RequiredProtocols withProtocols(String... protocols) {
-        if (getProtocols() == null) setProtocols(new java.util.ArrayList<String>());
+        if (getProtocols() == null) setProtocols(new java.util.ArrayList<String>(protocols.length));
         for (String value : protocols) {
             getProtocols().add(value);
         }
@@ -96,11 +99,13 @@ public class RequiredProtocols {
      *         together. 
      */
     public RequiredProtocols withProtocols(java.util.Collection<String> protocols) {
-        java.util.List<String> protocolsCopy = new java.util.ArrayList<String>();
-        if (protocols != null) {
+        if (protocols == null) {
+            this.protocols = null;
+        } else {
+            java.util.List<String> protocolsCopy = new java.util.ArrayList<String>(protocols.size());
             protocolsCopy.addAll(protocols);
+            this.protocols = protocolsCopy;
         }
-        this.protocols = protocolsCopy;
 
         return this;
     }
@@ -117,9 +122,31 @@ public class RequiredProtocols {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Protocols: " + protocols + ", ");
+        if (protocols != null) sb.append("Protocols: " + protocols + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RequiredProtocols == false) return false;
+        RequiredProtocols other = (RequiredProtocols)obj;
+        
+        if (other.getProtocols() == null ^ this.getProtocols() == null) return false;
+        if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false) return false; 
+        return true;
     }
     
 }

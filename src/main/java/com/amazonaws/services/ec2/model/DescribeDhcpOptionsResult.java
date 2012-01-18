@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,10 +40,13 @@ public class DescribeDhcpOptionsResult {
      * @param dhcpOptions The new value for the DhcpOptions property for this object.
      */
     public void setDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
-        java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>();
-        if (dhcpOptions != null) {
-            dhcpOptionsCopy.addAll(dhcpOptions);
+        if (dhcpOptions == null) {
+            this.dhcpOptions = null;
+            return;
         }
+
+        java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>(dhcpOptions.size());
+        dhcpOptionsCopy.addAll(dhcpOptions);
         this.dhcpOptions = dhcpOptionsCopy;
     }
     
@@ -58,7 +61,7 @@ public class DescribeDhcpOptionsResult {
      *         together. 
      */
     public DescribeDhcpOptionsResult withDhcpOptions(DhcpOptions... dhcpOptions) {
-        if (getDhcpOptions() == null) setDhcpOptions(new java.util.ArrayList<DhcpOptions>());
+        if (getDhcpOptions() == null) setDhcpOptions(new java.util.ArrayList<DhcpOptions>(dhcpOptions.length));
         for (DhcpOptions value : dhcpOptions) {
             getDhcpOptions().add(value);
         }
@@ -76,11 +79,13 @@ public class DescribeDhcpOptionsResult {
      *         together. 
      */
     public DescribeDhcpOptionsResult withDhcpOptions(java.util.Collection<DhcpOptions> dhcpOptions) {
-        java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>();
-        if (dhcpOptions != null) {
+        if (dhcpOptions == null) {
+            this.dhcpOptions = null;
+        } else {
+            java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>(dhcpOptions.size());
             dhcpOptionsCopy.addAll(dhcpOptions);
+            this.dhcpOptions = dhcpOptionsCopy;
         }
-        this.dhcpOptions = dhcpOptionsCopy;
 
         return this;
     }
@@ -97,9 +102,31 @@ public class DescribeDhcpOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DhcpOptions: " + dhcpOptions + ", ");
+        if (dhcpOptions != null) sb.append("DhcpOptions: " + dhcpOptions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDhcpOptions() == null) ? 0 : getDhcpOptions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeDhcpOptionsResult == false) return false;
+        DescribeDhcpOptionsResult other = (DescribeDhcpOptionsResult)obj;
+        
+        if (other.getDhcpOptions() == null ^ this.getDhcpOptions() == null) return false;
+        if (other.getDhcpOptions() != null && other.getDhcpOptions().equals(this.getDhcpOptions()) == false) return false; 
+        return true;
     }
     
 }

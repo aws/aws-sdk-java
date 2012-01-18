@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -75,10 +75,13 @@ public class Destination {
      * @param toAddresses The To: field(s) of the message.
      */
     public void setToAddresses(java.util.Collection<String> toAddresses) {
-        java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>();
-        if (toAddresses != null) {
-            toAddressesCopy.addAll(toAddresses);
+        if (toAddresses == null) {
+            this.toAddresses = null;
+            return;
         }
+
+        java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>(toAddresses.size());
+        toAddressesCopy.addAll(toAddresses);
         this.toAddresses = toAddressesCopy;
     }
     
@@ -93,7 +96,7 @@ public class Destination {
      *         together. 
      */
     public Destination withToAddresses(String... toAddresses) {
-        if (getToAddresses() == null) setToAddresses(new java.util.ArrayList<String>());
+        if (getToAddresses() == null) setToAddresses(new java.util.ArrayList<String>(toAddresses.length));
         for (String value : toAddresses) {
             getToAddresses().add(value);
         }
@@ -111,11 +114,13 @@ public class Destination {
      *         together. 
      */
     public Destination withToAddresses(java.util.Collection<String> toAddresses) {
-        java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>();
-        if (toAddresses != null) {
+        if (toAddresses == null) {
+            this.toAddresses = null;
+        } else {
+            java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>(toAddresses.size());
             toAddressesCopy.addAll(toAddresses);
+            this.toAddresses = toAddressesCopy;
         }
-        this.toAddresses = toAddressesCopy;
 
         return this;
     }
@@ -139,10 +144,13 @@ public class Destination {
      * @param ccAddresses The CC: field(s) of the message.
      */
     public void setCcAddresses(java.util.Collection<String> ccAddresses) {
-        java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>();
-        if (ccAddresses != null) {
-            ccAddressesCopy.addAll(ccAddresses);
+        if (ccAddresses == null) {
+            this.ccAddresses = null;
+            return;
         }
+
+        java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>(ccAddresses.size());
+        ccAddressesCopy.addAll(ccAddresses);
         this.ccAddresses = ccAddressesCopy;
     }
     
@@ -157,7 +165,7 @@ public class Destination {
      *         together. 
      */
     public Destination withCcAddresses(String... ccAddresses) {
-        if (getCcAddresses() == null) setCcAddresses(new java.util.ArrayList<String>());
+        if (getCcAddresses() == null) setCcAddresses(new java.util.ArrayList<String>(ccAddresses.length));
         for (String value : ccAddresses) {
             getCcAddresses().add(value);
         }
@@ -175,11 +183,13 @@ public class Destination {
      *         together. 
      */
     public Destination withCcAddresses(java.util.Collection<String> ccAddresses) {
-        java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>();
-        if (ccAddresses != null) {
+        if (ccAddresses == null) {
+            this.ccAddresses = null;
+        } else {
+            java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>(ccAddresses.size());
             ccAddressesCopy.addAll(ccAddresses);
+            this.ccAddresses = ccAddressesCopy;
         }
-        this.ccAddresses = ccAddressesCopy;
 
         return this;
     }
@@ -203,10 +213,13 @@ public class Destination {
      * @param bccAddresses The BCC: field(s) of the message.
      */
     public void setBccAddresses(java.util.Collection<String> bccAddresses) {
-        java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>();
-        if (bccAddresses != null) {
-            bccAddressesCopy.addAll(bccAddresses);
+        if (bccAddresses == null) {
+            this.bccAddresses = null;
+            return;
         }
+
+        java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>(bccAddresses.size());
+        bccAddressesCopy.addAll(bccAddresses);
         this.bccAddresses = bccAddressesCopy;
     }
     
@@ -221,7 +234,7 @@ public class Destination {
      *         together. 
      */
     public Destination withBccAddresses(String... bccAddresses) {
-        if (getBccAddresses() == null) setBccAddresses(new java.util.ArrayList<String>());
+        if (getBccAddresses() == null) setBccAddresses(new java.util.ArrayList<String>(bccAddresses.length));
         for (String value : bccAddresses) {
             getBccAddresses().add(value);
         }
@@ -239,11 +252,13 @@ public class Destination {
      *         together. 
      */
     public Destination withBccAddresses(java.util.Collection<String> bccAddresses) {
-        java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>();
-        if (bccAddresses != null) {
+        if (bccAddresses == null) {
+            this.bccAddresses = null;
+        } else {
+            java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>(bccAddresses.size());
             bccAddressesCopy.addAll(bccAddresses);
+            this.bccAddresses = bccAddressesCopy;
         }
-        this.bccAddresses = bccAddressesCopy;
 
         return this;
     }
@@ -260,11 +275,39 @@ public class Destination {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ToAddresses: " + toAddresses + ", ");
-        sb.append("CcAddresses: " + ccAddresses + ", ");
-        sb.append("BccAddresses: " + bccAddresses + ", ");
+        if (toAddresses != null) sb.append("ToAddresses: " + toAddresses + ", ");
+        if (ccAddresses != null) sb.append("CcAddresses: " + ccAddresses + ", ");
+        if (bccAddresses != null) sb.append("BccAddresses: " + bccAddresses + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getToAddresses() == null) ? 0 : getToAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getCcAddresses() == null) ? 0 : getCcAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getBccAddresses() == null) ? 0 : getBccAddresses().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Destination == false) return false;
+        Destination other = (Destination)obj;
+        
+        if (other.getToAddresses() == null ^ this.getToAddresses() == null) return false;
+        if (other.getToAddresses() != null && other.getToAddresses().equals(this.getToAddresses()) == false) return false; 
+        if (other.getCcAddresses() == null ^ this.getCcAddresses() == null) return false;
+        if (other.getCcAddresses() != null && other.getCcAddresses().equals(this.getCcAddresses()) == false) return false; 
+        if (other.getBccAddresses() == null ^ this.getBccAddresses() == null) return false;
+        if (other.getBccAddresses() != null && other.getBccAddresses().equals(this.getBccAddresses()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -478,17 +478,63 @@ public class Activity {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ActivityId: " + activityId + ", ");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("Cause: " + cause + ", ");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("EndTime: " + endTime + ", ");
-        sb.append("StatusCode: " + statusCode + ", ");
-        sb.append("StatusMessage: " + statusMessage + ", ");
-        sb.append("Progress: " + progress + ", ");
+        if (activityId != null) sb.append("ActivityId: " + activityId + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (cause != null) sb.append("Cause: " + cause + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
+        if (statusCode != null) sb.append("StatusCode: " + statusCode + ", ");
+        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
+        if (progress != null) sb.append("Progress: " + progress + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getActivityId() == null) ? 0 : getActivityId().hashCode()); 
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getCause() == null) ? 0 : getCause().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
+        hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode()); 
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Activity == false) return false;
+        Activity other = (Activity)obj;
+        
+        if (other.getActivityId() == null ^ this.getActivityId() == null) return false;
+        if (other.getActivityId() != null && other.getActivityId().equals(this.getActivityId()) == false) return false; 
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getCause() == null ^ this.getCause() == null) return false;
+        if (other.getCause() != null && other.getCause().equals(this.getCause()) == false) return false; 
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
+        if (other.getStatusCode() == null ^ this.getStatusCode() == null) return false;
+        if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false) return false; 
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null) return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false) return false; 
+        if (other.getProgress() == null ^ this.getProgress() == null) return false;
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false) return false; 
+        return true;
     }
     
 }

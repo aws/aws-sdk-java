@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,10 +118,13 @@ public class Signer {
      * @param keyPairIds The new value for the KeyPairIds property for this object.
      */
     public void setKeyPairIds(java.util.Collection<String> keyPairIds) {
-        java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>();
-        if (keyPairIds != null) {
-            keyPairIdsCopy.addAll(keyPairIds);
+        if (keyPairIds == null) {
+            this.keyPairIds = null;
+            return;
         }
+
+        java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>(keyPairIds.size());
+        keyPairIdsCopy.addAll(keyPairIds);
         this.keyPairIds = keyPairIdsCopy;
     }
     
@@ -136,7 +139,7 @@ public class Signer {
      *         together. 
      */
     public Signer withKeyPairIds(String... keyPairIds) {
-        if (getKeyPairIds() == null) setKeyPairIds(new java.util.ArrayList<String>());
+        if (getKeyPairIds() == null) setKeyPairIds(new java.util.ArrayList<String>(keyPairIds.length));
         for (String value : keyPairIds) {
             getKeyPairIds().add(value);
         }
@@ -154,11 +157,13 @@ public class Signer {
      *         together. 
      */
     public Signer withKeyPairIds(java.util.Collection<String> keyPairIds) {
-        java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>();
-        if (keyPairIds != null) {
+        if (keyPairIds == null) {
+            this.keyPairIds = null;
+        } else {
+            java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>(keyPairIds.size());
             keyPairIdsCopy.addAll(keyPairIds);
+            this.keyPairIds = keyPairIdsCopy;
         }
-        this.keyPairIds = keyPairIdsCopy;
 
         return this;
     }
@@ -175,11 +180,39 @@ public class Signer {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AwsAccountNumber: " + awsAccountNumber + ", ");
-        sb.append("Self: " + self + ", ");
-        sb.append("KeyPairIds: " + keyPairIds + ", ");
+        if (awsAccountNumber != null) sb.append("AwsAccountNumber: " + awsAccountNumber + ", ");
+        if (self != null) sb.append("Self: " + self + ", ");
+        if (keyPairIds != null) sb.append("KeyPairIds: " + keyPairIds + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAwsAccountNumber() == null) ? 0 : getAwsAccountNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getSelf() == null) ? 0 : getSelf().hashCode()); 
+        hashCode = prime * hashCode + ((getKeyPairIds() == null) ? 0 : getKeyPairIds().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Signer == false) return false;
+        Signer other = (Signer)obj;
+        
+        if (other.getAwsAccountNumber() == null ^ this.getAwsAccountNumber() == null) return false;
+        if (other.getAwsAccountNumber() != null && other.getAwsAccountNumber().equals(this.getAwsAccountNumber()) == false) return false; 
+        if (other.getSelf() == null ^ this.getSelf() == null) return false;
+        if (other.getSelf() != null && other.getSelf().equals(this.getSelf()) == false) return false; 
+        if (other.getKeyPairIds() == null ^ this.getKeyPairIds() == null) return false;
+        if (other.getKeyPairIds() != null && other.getKeyPairIds().equals(this.getKeyPairIds()) == false) return false; 
+        return true;
     }
     
 }

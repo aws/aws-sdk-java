@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,10 +117,35 @@ public class CacheNodeTypeSpecificValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        sb.append("Value: " + value + ", ");
+        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
+        if (value != null) sb.append("Value: " + value + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CacheNodeTypeSpecificValue == false) return false;
+        CacheNodeTypeSpecificValue other = (CacheNodeTypeSpecificValue)obj;
+        
+        if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
+        if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
+        if (other.getValue() == null ^ this.getValue() == null) return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
+        return true;
     }
     
 }

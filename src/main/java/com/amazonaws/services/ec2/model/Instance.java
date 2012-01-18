@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -525,10 +525,13 @@ public class Instance {
      * @param productCodes Product codes attached to this instance.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
-            productCodesCopy.addAll(productCodes);
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
         }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
         this.productCodes = productCodesCopy;
     }
     
@@ -543,7 +546,7 @@ public class Instance {
      *         together. 
      */
     public Instance withProductCodes(ProductCode... productCodes) {
-        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -561,11 +564,13 @@ public class Instance {
      *         together. 
      */
     public Instance withProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
             productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
         }
-        this.productCodes = productCodesCopy;
 
         return this;
     }
@@ -1190,10 +1195,13 @@ public class Instance {
      * @param blockDeviceMappings Block device mapping set.
      */
     public void setBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<InstanceBlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
         }
+
+        java.util.List<InstanceBlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
     
@@ -1208,7 +1216,7 @@ public class Instance {
      *         together. 
      */
     public Instance withBlockDeviceMappings(InstanceBlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMapping>());
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<InstanceBlockDeviceMapping>(blockDeviceMappings.length));
         for (InstanceBlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -1226,11 +1234,13 @@ public class Instance {
      *         together. 
      */
     public Instance withBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<InstanceBlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            java.util.List<InstanceBlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
     }
@@ -1479,10 +1489,13 @@ public class Instance {
      * @param tags A list of tags for the Instance.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -1497,7 +1510,7 @@ public class Instance {
      *         together. 
      */
     public Instance withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -1515,11 +1528,13 @@ public class Instance {
      *         together. 
      */
     public Instance withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -1543,10 +1558,13 @@ public class Instance {
      * @param securityGroups The new value for the SecurityGroups property for this object.
      */
     public void setSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
-        java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
-        if (securityGroups != null) {
-            securityGroupsCopy.addAll(securityGroups);
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
         }
+
+        java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
     
@@ -1561,7 +1579,7 @@ public class Instance {
      *         together. 
      */
     public Instance withSecurityGroups(GroupIdentifier... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<GroupIdentifier>());
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<GroupIdentifier>(securityGroups.length));
         for (GroupIdentifier value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -1579,11 +1597,13 @@ public class Instance {
      *         together. 
      */
     public Instance withSecurityGroups(java.util.Collection<GroupIdentifier> securityGroups) {
-        java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>();
-        if (securityGroups != null) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            java.util.List<GroupIdentifier> securityGroupsCopy = new java.util.ArrayList<GroupIdentifier>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
         }
-        this.securityGroups = securityGroupsCopy;
 
         return this;
     }
@@ -1726,42 +1746,163 @@ public class Instance {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("ImageId: " + imageId + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("PrivateDnsName: " + privateDnsName + ", ");
-        sb.append("PublicDnsName: " + publicDnsName + ", ");
-        sb.append("StateTransitionReason: " + stateTransitionReason + ", ");
-        sb.append("KeyName: " + keyName + ", ");
-        sb.append("AmiLaunchIndex: " + amiLaunchIndex + ", ");
-        sb.append("ProductCodes: " + productCodes + ", ");
-        sb.append("InstanceType: " + instanceType + ", ");
-        sb.append("LaunchTime: " + launchTime + ", ");
-        sb.append("Placement: " + placement + ", ");
-        sb.append("KernelId: " + kernelId + ", ");
-        sb.append("RamdiskId: " + ramdiskId + ", ");
-        sb.append("Platform: " + platform + ", ");
-        sb.append("Monitoring: " + monitoring + ", ");
-        sb.append("SubnetId: " + subnetId + ", ");
-        sb.append("VpcId: " + vpcId + ", ");
-        sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        sb.append("PublicIpAddress: " + publicIpAddress + ", ");
-        sb.append("StateReason: " + stateReason + ", ");
-        sb.append("Architecture: " + architecture + ", ");
-        sb.append("RootDeviceType: " + rootDeviceType + ", ");
-        sb.append("RootDeviceName: " + rootDeviceName + ", ");
-        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        sb.append("VirtualizationType: " + virtualizationType + ", ");
-        sb.append("InstanceLifecycle: " + instanceLifecycle + ", ");
-        sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
-        sb.append("License: " + license + ", ");
-        sb.append("ClientToken: " + clientToken + ", ");
-        sb.append("Tags: " + tags + ", ");
-        sb.append("SecurityGroups: " + securityGroups + ", ");
-        sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
-        sb.append("Hypervisor: " + hypervisor + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (privateDnsName != null) sb.append("PrivateDnsName: " + privateDnsName + ", ");
+        if (publicDnsName != null) sb.append("PublicDnsName: " + publicDnsName + ", ");
+        if (stateTransitionReason != null) sb.append("StateTransitionReason: " + stateTransitionReason + ", ");
+        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
+        if (amiLaunchIndex != null) sb.append("AmiLaunchIndex: " + amiLaunchIndex + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
+        if (launchTime != null) sb.append("LaunchTime: " + launchTime + ", ");
+        if (placement != null) sb.append("Placement: " + placement + ", ");
+        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
+        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
+        if (platform != null) sb.append("Platform: " + platform + ", ");
+        if (monitoring != null) sb.append("Monitoring: " + monitoring + ", ");
+        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
+        if (publicIpAddress != null) sb.append("PublicIpAddress: " + publicIpAddress + ", ");
+        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
+        if (architecture != null) sb.append("Architecture: " + architecture + ", ");
+        if (rootDeviceType != null) sb.append("RootDeviceType: " + rootDeviceType + ", ");
+        if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (virtualizationType != null) sb.append("VirtualizationType: " + virtualizationType + ", ");
+        if (instanceLifecycle != null) sb.append("InstanceLifecycle: " + instanceLifecycle + ", ");
+        if (spotInstanceRequestId != null) sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
+        if (license != null) sb.append("License: " + license + ", ");
+        if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (sourceDestCheck != null) sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
+        if (hypervisor != null) sb.append("Hypervisor: " + hypervisor + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode()); 
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode()); 
+        hashCode = prime * hashCode + ((getStateTransitionReason() == null) ? 0 : getStateTransitionReason().hashCode()); 
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode()); 
+        hashCode = prime * hashCode + ((getAmiLaunchIndex() == null) ? 0 : getAmiLaunchIndex().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchTime() == null) ? 0 : getLaunchTime().hashCode()); 
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
+        hashCode = prime * hashCode + ((getMonitoring() == null) ? 0 : getMonitoring().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getPublicIpAddress() == null) ? 0 : getPublicIpAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceLifecycle() == null) ? 0 : getInstanceLifecycle().hashCode()); 
+        hashCode = prime * hashCode + ((getSpotInstanceRequestId() == null) ? 0 : getSpotInstanceRequestId().hashCode()); 
+        hashCode = prime * hashCode + ((getLicense() == null) ? 0 : getLicense().hashCode()); 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Instance == false) return false;
+        Instance other = (Instance)obj;
+        
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getImageId() == null ^ this.getImageId() == null) return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null) return false;
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false) return false; 
+        if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null) return false;
+        if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false) return false; 
+        if (other.getStateTransitionReason() == null ^ this.getStateTransitionReason() == null) return false;
+        if (other.getStateTransitionReason() != null && other.getStateTransitionReason().equals(this.getStateTransitionReason()) == false) return false; 
+        if (other.getKeyName() == null ^ this.getKeyName() == null) return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false) return false; 
+        if (other.getAmiLaunchIndex() == null ^ this.getAmiLaunchIndex() == null) return false;
+        if (other.getAmiLaunchIndex() != null && other.getAmiLaunchIndex().equals(this.getAmiLaunchIndex()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
+        if (other.getLaunchTime() == null ^ this.getLaunchTime() == null) return false;
+        if (other.getLaunchTime() != null && other.getLaunchTime().equals(this.getLaunchTime()) == false) return false; 
+        if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false) return false; 
+        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
+        if (other.getPlatform() == null ^ this.getPlatform() == null) return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
+        if (other.getMonitoring() == null ^ this.getMonitoring() == null) return false;
+        if (other.getMonitoring() != null && other.getMonitoring().equals(this.getMonitoring()) == false) return false; 
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
+        if (other.getPublicIpAddress() == null ^ this.getPublicIpAddress() == null) return false;
+        if (other.getPublicIpAddress() != null && other.getPublicIpAddress().equals(this.getPublicIpAddress()) == false) return false; 
+        if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
+        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null) return false;
+        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
+        if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null) return false;
+        if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
+        if (other.getInstanceLifecycle() == null ^ this.getInstanceLifecycle() == null) return false;
+        if (other.getInstanceLifecycle() != null && other.getInstanceLifecycle().equals(this.getInstanceLifecycle()) == false) return false; 
+        if (other.getSpotInstanceRequestId() == null ^ this.getSpotInstanceRequestId() == null) return false;
+        if (other.getSpotInstanceRequestId() != null && other.getSpotInstanceRequestId().equals(this.getSpotInstanceRequestId()) == false) return false; 
+        if (other.getLicense() == null ^ this.getLicense() == null) return false;
+        if (other.getLicense() != null && other.getLicense().equals(this.getLicense()) == false) return false; 
+        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.isSourceDestCheck() == null ^ this.isSourceDestCheck() == null) return false;
+        if (other.isSourceDestCheck() != null && other.isSourceDestCheck().equals(this.isSourceDestCheck()) == false) return false; 
+        if (other.getHypervisor() == null ^ this.getHypervisor() == null) return false;
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,12 +1,12 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -32,7 +32,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Indicates who is responsible (if known) for a failed request.
-     * 
+     *
      * <p>For example, if a client is using an invalid AWS access key,
      * the returned exception will indicate that there is an error in the
      * request the caller is sending. Retrying that same request will *not*
@@ -50,7 +50,7 @@ public class AmazonServiceException extends AmazonClientException {
      * problem occurred while processing the request on the service side.
      * Service errors will be accompanied by an HTTP error code in the 5xx
      * range.
-     * 
+     *
      * <p>Finally, if there isn't enough information to determine who's
      * fault the error response is, an Unknown ErrorType will be set.
      */
@@ -66,17 +66,17 @@ public class AmazonServiceException extends AmazonClientException {
      * reporting an error to AWS support team.
      */
     private String requestId;
-    
+
     /**
      * The AWS error code represented by this exception (ex:
-     * InvalidParameterValue).  
+     * InvalidParameterValue).
      */
     private String errorCode;
 
     /**
      * Indicates (if known) whether this exception was the fault of the caller
      * or the service.
-     * 
+     *
      * @see ErrorType
      */
     private ErrorType errorType = ErrorType.Unknown;
@@ -91,7 +91,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Constructs a new AmazonServiceException with the specified message.
-     * 
+     *
      * @param message
      *            An error message describing what went wrong.
      */
@@ -102,7 +102,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Constructs a new AmazonServiceException with the specified message and
      * exception indicating the root cause.
-     * 
+     *
      * @param message
      *            An error message describing what went wrong.
      * @param cause
@@ -111,10 +111,10 @@ public class AmazonServiceException extends AmazonClientException {
     public AmazonServiceException(String message, Exception cause) {
         super(message, cause);
     }
-    
+
     /**
      * Sets the AWS requestId for this exception.
-     * 
+     *
      * @param requestId
      *            The unique identifier for the service request the caller made.
      */
@@ -125,7 +125,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Returns the AWS request ID that uniquely identifies the service request
      * the caller made.
-     * 
+     *
      * @return The AWS request ID that uniquely identifies the service request
      *         the caller made.
      */
@@ -135,7 +135,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Sets the name of the service that sent this error response.
-     * 
+     *
      * @param serviceName
      *            The name of the service that sent this error response.
      */
@@ -145,16 +145,16 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Returns the name of the service that sent this error response.
-     * 
+     *
      * @return The name of the service that sent this error response.
      */
     public String getServiceName() {
         return serviceName;
     }
-    
+
     /**
      * Sets the AWS error code represented by this exception.
-     * 
+     *
      * @param errorCode
      *            The AWS error code represented by this exception.
      */
@@ -164,7 +164,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Returns the AWS error code represented by this exception.
-     * 
+     *
      * @return The AWS error code represented by this exception.
      */
     public String getErrorCode() {
@@ -175,7 +175,7 @@ public class AmazonServiceException extends AmazonClientException {
      * Sets the type of error represented by this exception (sender, receiver,
      * or unknown), indicating if this exception was the caller's fault, or the
      * service's fault.
-     * 
+     *
      * @param errorType
      *            The type of error represented by this exception (sender or
      *            receiver), indicating if this exception was the caller's fault
@@ -188,7 +188,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Indicates who is responsible for this exception (caller, service,
      * or unknown).
-     * 
+     *
      * @return A value indicating who is responsible for this exception (caller, service, or unknown).
      */
     public ErrorType getErrorType() {
@@ -197,7 +197,7 @@ public class AmazonServiceException extends AmazonClientException {
 
     /**
      * Sets the HTTP status code that was returned with this service exception.
-     * 
+     *
      * @param statusCode
      *            The HTTP status code that was returned with this service
      *            exception.
@@ -209,7 +209,7 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Returns the HTTP status code that was returned with this service
      * exception.
-     * 
+     *
      * @return The HTTP status code that was returned with this service
      *         exception.
      */
@@ -220,12 +220,13 @@ public class AmazonServiceException extends AmazonClientException {
     /**
      * Returns a string summary of the details of this exception including the
      * HTTP status code, AWS request ID, AWS error code and error message.
-     * 
+     *
      * @see java.lang.Throwable#toString()
      */
     @Override
     public String toString() {
-        return "Status Code: " + getStatusCode() + ", "  
+        return "Status Code: " + getStatusCode() + ", "
+            + "AWS Service: " + getServiceName() + ", "
             + "AWS Request ID: " + getRequestId() + ", "
             + "AWS Error Code: " + getErrorCode() + ", "
             + "AWS Error Message: " + getMessage();

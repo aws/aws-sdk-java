@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -175,11 +175,39 @@ public class ConfigurationOptionSetting {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("OptionName: " + optionName + ", ");
-        sb.append("Value: " + value + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (optionName != null) sb.append("OptionName: " + optionName + ", ");
+        if (value != null) sb.append("Value: " + value + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode()); 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ConfigurationOptionSetting == false) return false;
+        ConfigurationOptionSetting other = (ConfigurationOptionSetting)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getOptionName() == null ^ this.getOptionName() == null) return false;
+        if (other.getOptionName() != null && other.getOptionName().equals(this.getOptionName()) == false) return false; 
+        if (other.getValue() == null ^ this.getValue() == null) return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
+        return true;
     }
     
 }

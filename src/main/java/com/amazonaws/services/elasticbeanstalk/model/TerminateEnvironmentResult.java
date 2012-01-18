@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1056,22 +1056,83 @@ public class TerminateEnvironmentResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("EnvironmentName: " + environmentName + ", ");
-        sb.append("EnvironmentId: " + environmentId + ", ");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("VersionLabel: " + versionLabel + ", ");
-        sb.append("SolutionStackName: " + solutionStackName + ", ");
-        sb.append("TemplateName: " + templateName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("EndpointURL: " + endpointURL + ", ");
-        sb.append("CNAME: " + cNAME + ", ");
-        sb.append("DateCreated: " + dateCreated + ", ");
-        sb.append("DateUpdated: " + dateUpdated + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("Health: " + health + ", ");
-        sb.append("Resources: " + resources + ", ");
+        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
+        if (environmentId != null) sb.append("EnvironmentId: " + environmentId + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
+        if (solutionStackName != null) sb.append("SolutionStackName: " + solutionStackName + ", ");
+        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (endpointURL != null) sb.append("EndpointURL: " + endpointURL + ", ");
+        if (cNAME != null) sb.append("CNAME: " + cNAME + ", ");
+        if (dateCreated != null) sb.append("DateCreated: " + dateCreated + ", ");
+        if (dateUpdated != null) sb.append("DateUpdated: " + dateUpdated + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (health != null) sb.append("Health: " + health + ", ");
+        if (resources != null) sb.append("Resources: " + resources + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode()); 
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getEndpointURL() == null) ? 0 : getEndpointURL().hashCode()); 
+        hashCode = prime * hashCode + ((getCNAME() == null) ? 0 : getCNAME().hashCode()); 
+        hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode()); 
+        hashCode = prime * hashCode + ((getDateUpdated() == null) ? 0 : getDateUpdated().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode()); 
+        hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof TerminateEnvironmentResult == false) return false;
+        TerminateEnvironmentResult other = (TerminateEnvironmentResult)obj;
+        
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
+        if (other.getEnvironmentId() == null ^ this.getEnvironmentId() == null) return false;
+        if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false) return false; 
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null) return false;
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false) return false; 
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getEndpointURL() == null ^ this.getEndpointURL() == null) return false;
+        if (other.getEndpointURL() != null && other.getEndpointURL().equals(this.getEndpointURL()) == false) return false; 
+        if (other.getCNAME() == null ^ this.getCNAME() == null) return false;
+        if (other.getCNAME() != null && other.getCNAME().equals(this.getCNAME()) == false) return false; 
+        if (other.getDateCreated() == null ^ this.getDateCreated() == null) return false;
+        if (other.getDateCreated() != null && other.getDateCreated().equals(this.getDateCreated()) == false) return false; 
+        if (other.getDateUpdated() == null ^ this.getDateUpdated() == null) return false;
+        if (other.getDateUpdated() != null && other.getDateUpdated().equals(this.getDateUpdated()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getHealth() == null ^ this.getHealth() == null) return false;
+        if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false) return false; 
+        if (other.getResources() == null ^ this.getResources() == null) return false;
+        if (other.getResources() != null && other.getResources().equals(this.getResources()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -138,10 +138,35 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TopicArn: " + topicArn + ", ");
-        sb.append("Label: " + label + ", ");
+        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
+        if (label != null) sb.append("Label: " + label + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode()); 
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RemovePermissionRequest == false) return false;
+        RemovePermissionRequest other = (RemovePermissionRequest)obj;
+        
+        if (other.getTopicArn() == null ^ this.getTopicArn() == null) return false;
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false) return false; 
+        if (other.getLabel() == null ^ this.getLabel() == null) return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false) return false; 
+        return true;
     }
     
 }

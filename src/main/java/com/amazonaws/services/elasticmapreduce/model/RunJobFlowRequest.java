@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -487,10 +487,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * @param steps A list of steps to be executed by the job flow.
      */
     public void setSteps(java.util.Collection<StepConfig> steps) {
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
-        if (steps != null) {
-            stepsCopy.addAll(steps);
+        if (steps == null) {
+            this.steps = null;
+            return;
         }
+
+        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+        stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
     
@@ -505,7 +508,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withSteps(StepConfig... steps) {
-        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>());
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>(steps.length));
         for (StepConfig value : steps) {
             getSteps().add(value);
         }
@@ -523,11 +526,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withSteps(java.util.Collection<StepConfig> steps) {
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
-        if (steps != null) {
+        if (steps == null) {
+            this.steps = null;
+        } else {
+            java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
             stepsCopy.addAll(steps);
+            this.steps = stepsCopy;
         }
-        this.steps = stepsCopy;
 
         return this;
     }
@@ -555,10 +560,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         on the cluster nodes.
      */
     public void setBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
-        java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>();
-        if (bootstrapActions != null) {
-            bootstrapActionsCopy.addAll(bootstrapActions);
+        if (bootstrapActions == null) {
+            this.bootstrapActions = null;
+            return;
         }
+
+        java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.size());
+        bootstrapActionsCopy.addAll(bootstrapActions);
         this.bootstrapActions = bootstrapActionsCopy;
     }
     
@@ -575,7 +583,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withBootstrapActions(BootstrapActionConfig... bootstrapActions) {
-        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionConfig>());
+        if (getBootstrapActions() == null) setBootstrapActions(new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.length));
         for (BootstrapActionConfig value : bootstrapActions) {
             getBootstrapActions().add(value);
         }
@@ -595,11 +603,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withBootstrapActions(java.util.Collection<BootstrapActionConfig> bootstrapActions) {
-        java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>();
-        if (bootstrapActions != null) {
+        if (bootstrapActions == null) {
+            this.bootstrapActions = null;
+        } else {
+            java.util.List<BootstrapActionConfig> bootstrapActionsCopy = new java.util.ArrayList<BootstrapActionConfig>(bootstrapActions.size());
             bootstrapActionsCopy.addAll(bootstrapActions);
+            this.bootstrapActions = bootstrapActionsCopy;
         }
-        this.bootstrapActions = bootstrapActionsCopy;
 
         return this;
     }
@@ -635,10 +645,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
      */
     public void setSupportedProducts(java.util.Collection<String> supportedProducts) {
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
-        if (supportedProducts != null) {
-            supportedProductsCopy.addAll(supportedProducts);
+        if (supportedProducts == null) {
+            this.supportedProducts = null;
+            return;
         }
+
+        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
+        supportedProductsCopy.addAll(supportedProducts);
         this.supportedProducts = supportedProductsCopy;
     }
     
@@ -659,7 +672,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withSupportedProducts(String... supportedProducts) {
-        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>());
+        if (getSupportedProducts() == null) setSupportedProducts(new java.util.ArrayList<String>(supportedProducts.length));
         for (String value : supportedProducts) {
             getSupportedProducts().add(value);
         }
@@ -683,11 +696,13 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunJobFlowRequest withSupportedProducts(java.util.Collection<String> supportedProducts) {
-        java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>();
-        if (supportedProducts != null) {
+        if (supportedProducts == null) {
+            this.supportedProducts = null;
+        } else {
+            java.util.List<String> supportedProductsCopy = new java.util.ArrayList<String>(supportedProducts.size());
             supportedProductsCopy.addAll(supportedProducts);
+            this.supportedProducts = supportedProductsCopy;
         }
-        this.supportedProducts = supportedProductsCopy;
 
         return this;
     }
@@ -704,16 +719,59 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("LogUri: " + logUri + ", ");
-        sb.append("AdditionalInfo: " + additionalInfo + ", ");
-        sb.append("AmiVersion: " + amiVersion + ", ");
-        sb.append("Instances: " + instances + ", ");
-        sb.append("Steps: " + steps + ", ");
-        sb.append("BootstrapActions: " + bootstrapActions + ", ");
-        sb.append("SupportedProducts: " + supportedProducts + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (logUri != null) sb.append("LogUri: " + logUri + ", ");
+        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
+        if (amiVersion != null) sb.append("AmiVersion: " + amiVersion + ", ");
+        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (steps != null) sb.append("Steps: " + steps + ", ");
+        if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
+        if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getLogUri() == null) ? 0 : getLogUri().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
+        hashCode = prime * hashCode + ((getAmiVersion() == null) ? 0 : getAmiVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
+        hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
+        hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RunJobFlowRequest == false) return false;
+        RunJobFlowRequest other = (RunJobFlowRequest)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getLogUri() == null ^ this.getLogUri() == null) return false;
+        if (other.getLogUri() != null && other.getLogUri().equals(this.getLogUri()) == false) return false; 
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
+        if (other.getAmiVersion() == null ^ this.getAmiVersion() == null) return false;
+        if (other.getAmiVersion() != null && other.getAmiVersion().equals(this.getAmiVersion()) == false) return false; 
+        if (other.getInstances() == null ^ this.getInstances() == null) return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
+        if (other.getSteps() == null ^ this.getSteps() == null) return false;
+        if (other.getSteps() != null && other.getSteps().equals(this.getSteps()) == false) return false; 
+        if (other.getBootstrapActions() == null ^ this.getBootstrapActions() == null) return false;
+        if (other.getBootstrapActions() != null && other.getBootstrapActions().equals(this.getBootstrapActions()) == false) return false; 
+        if (other.getSupportedProducts() == null ^ this.getSupportedProducts() == null) return false;
+        if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
+        return true;
     }
     
 }

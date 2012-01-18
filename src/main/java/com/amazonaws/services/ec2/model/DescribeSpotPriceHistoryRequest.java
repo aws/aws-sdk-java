@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -168,10 +168,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      * @param instanceTypes Specifies the instance type to return.
      */
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
-        java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>();
-        if (instanceTypes != null) {
-            instanceTypesCopy.addAll(instanceTypes);
+        if (instanceTypes == null) {
+            this.instanceTypes = null;
+            return;
         }
+
+        java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>(instanceTypes.size());
+        instanceTypesCopy.addAll(instanceTypes);
         this.instanceTypes = instanceTypesCopy;
     }
     
@@ -186,7 +189,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(String... instanceTypes) {
-        if (getInstanceTypes() == null) setInstanceTypes(new java.util.ArrayList<String>());
+        if (getInstanceTypes() == null) setInstanceTypes(new java.util.ArrayList<String>(instanceTypes.length));
         for (String value : instanceTypes) {
             getInstanceTypes().add(value);
         }
@@ -204,11 +207,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withInstanceTypes(java.util.Collection<String> instanceTypes) {
-        java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>();
-        if (instanceTypes != null) {
+        if (instanceTypes == null) {
+            this.instanceTypes = null;
+        } else {
+            java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>(instanceTypes.size());
             instanceTypesCopy.addAll(instanceTypes);
+            this.instanceTypes = instanceTypesCopy;
         }
-        this.instanceTypes = instanceTypesCopy;
 
         return this;
     }
@@ -232,10 +237,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      * @param productDescriptions The description of the AMI.
      */
     public void setProductDescriptions(java.util.Collection<String> productDescriptions) {
-        java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>();
-        if (productDescriptions != null) {
-            productDescriptionsCopy.addAll(productDescriptions);
+        if (productDescriptions == null) {
+            this.productDescriptions = null;
+            return;
         }
+
+        java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>(productDescriptions.size());
+        productDescriptionsCopy.addAll(productDescriptions);
         this.productDescriptions = productDescriptionsCopy;
     }
     
@@ -250,7 +258,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(String... productDescriptions) {
-        if (getProductDescriptions() == null) setProductDescriptions(new java.util.ArrayList<String>());
+        if (getProductDescriptions() == null) setProductDescriptions(new java.util.ArrayList<String>(productDescriptions.length));
         for (String value : productDescriptions) {
             getProductDescriptions().add(value);
         }
@@ -268,11 +276,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withProductDescriptions(java.util.Collection<String> productDescriptions) {
-        java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>();
-        if (productDescriptions != null) {
+        if (productDescriptions == null) {
+            this.productDescriptions = null;
+        } else {
+            java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>(productDescriptions.size());
             productDescriptionsCopy.addAll(productDescriptions);
+            this.productDescriptions = productDescriptionsCopy;
         }
-        this.productDescriptions = productDescriptionsCopy;
 
         return this;
     }
@@ -312,10 +322,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -338,7 +351,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -364,11 +377,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSpotPriceHistoryRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -487,16 +502,59 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("EndTime: " + endTime + ", ");
-        sb.append("InstanceTypes: " + instanceTypes + ", ");
-        sb.append("ProductDescriptions: " + productDescriptions + ", ");
-        sb.append("Filters: " + filters + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("MaxResults: " + maxResults + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
+        if (instanceTypes != null) sb.append("InstanceTypes: " + instanceTypes + ", ");
+        if (productDescriptions != null) sb.append("ProductDescriptions: " + productDescriptions + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode()); 
+        hashCode = prime * hashCode + ((getProductDescriptions() == null) ? 0 : getProductDescriptions().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSpotPriceHistoryRequest == false) return false;
+        DescribeSpotPriceHistoryRequest other = (DescribeSpotPriceHistoryRequest)obj;
+        
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
+        if (other.getInstanceTypes() == null ^ this.getInstanceTypes() == null) return false;
+        if (other.getInstanceTypes() != null && other.getInstanceTypes().equals(this.getInstanceTypes()) == false) return false; 
+        if (other.getProductDescriptions() == null ^ this.getProductDescriptions() == null) return false;
+        if (other.getProductDescriptions() != null && other.getProductDescriptions().equals(this.getProductDescriptions()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

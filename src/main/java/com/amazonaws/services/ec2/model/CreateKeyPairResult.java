@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,9 +72,31 @@ public class CreateKeyPairResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("KeyPair: " + keyPair + ", ");
+        if (keyPair != null) sb.append("KeyPair: " + keyPair + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getKeyPair() == null) ? 0 : getKeyPair().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateKeyPairResult == false) return false;
+        CreateKeyPairResult other = (CreateKeyPairResult)obj;
+        
+        if (other.getKeyPair() == null ^ this.getKeyPair() == null) return false;
+        if (other.getKeyPair() != null && other.getKeyPair().equals(this.getKeyPair()) == false) return false; 
+        return true;
     }
     
 }

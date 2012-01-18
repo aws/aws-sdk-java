@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -402,10 +402,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         launched.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
-        if (securityGroups != null) {
-            securityGroupsCopy.addAll(securityGroups);
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
         }
+
+        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
     
@@ -422,7 +425,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroups(String... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>());
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
         for (String value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -442,11 +445,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>();
-        if (securityGroups != null) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
         }
-        this.securityGroups = securityGroupsCopy;
 
         return this;
     }
@@ -470,10 +475,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * @param securityGroupIds The new value for the SecurityGroupIds property for this object.
      */
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>();
-        if (securityGroupIds != null) {
-            securityGroupIdsCopy.addAll(securityGroupIds);
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
         }
+
+        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        securityGroupIdsCopy.addAll(securityGroupIds);
         this.securityGroupIds = securityGroupIdsCopy;
     }
     
@@ -488,7 +496,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroupIds(String... securityGroupIds) {
-        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>());
+        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
         for (String value : securityGroupIds) {
             getSecurityGroupIds().add(value);
         }
@@ -506,11 +514,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
-        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>();
-        if (securityGroupIds != null) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+        } else {
+            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
             securityGroupIdsCopy.addAll(securityGroupIds);
+            this.securityGroupIds = securityGroupIdsCopy;
         }
-        this.securityGroupIds = securityGroupIdsCopy;
 
         return this;
     }
@@ -787,10 +797,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         is made up of a virtualName and a deviceName.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
         }
+
+        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
     
@@ -807,7 +820,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -827,11 +840,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public RunInstancesRequest withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
     }
@@ -1196,28 +1211,107 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageId: " + imageId + ", ");
-        sb.append("MinCount: " + minCount + ", ");
-        sb.append("MaxCount: " + maxCount + ", ");
-        sb.append("KeyName: " + keyName + ", ");
-        sb.append("SecurityGroups: " + securityGroups + ", ");
-        sb.append("SecurityGroupIds: " + securityGroupIds + ", ");
-        sb.append("UserData: " + userData + ", ");
-        sb.append("InstanceType: " + instanceType + ", ");
-        sb.append("Placement: " + placement + ", ");
-        sb.append("KernelId: " + kernelId + ", ");
-        sb.append("RamdiskId: " + ramdiskId + ", ");
-        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        sb.append("Monitoring: " + monitoring + ", ");
-        sb.append("SubnetId: " + subnetId + ", ");
-        sb.append("DisableApiTermination: " + disableApiTermination + ", ");
-        sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
-        sb.append("License: " + license + ", ");
-        sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        sb.append("ClientToken: " + clientToken + ", ");
-        sb.append("AdditionalInfo: " + additionalInfo + ", ");
+        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (minCount != null) sb.append("MinCount: " + minCount + ", ");
+        if (maxCount != null) sb.append("MaxCount: " + maxCount + ", ");
+        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
+        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (securityGroupIds != null) sb.append("SecurityGroupIds: " + securityGroupIds + ", ");
+        if (userData != null) sb.append("UserData: " + userData + ", ");
+        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
+        if (placement != null) sb.append("Placement: " + placement + ", ");
+        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
+        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
+        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (monitoring != null) sb.append("Monitoring: " + monitoring + ", ");
+        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (disableApiTermination != null) sb.append("DisableApiTermination: " + disableApiTermination + ", ");
+        if (instanceInitiatedShutdownBehavior != null) sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
+        if (license != null) sb.append("License: " + license + ", ");
+        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
+        if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
+        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
+        hashCode = prime * hashCode + ((getMinCount() == null) ? 0 : getMinCount().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxCount() == null) ? 0 : getMaxCount().hashCode()); 
+        hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
+        hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        hashCode = prime * hashCode + ((isMonitoring() == null) ? 0 : isMonitoring().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
+        hashCode = prime * hashCode + ((isDisableApiTermination() == null) ? 0 : isDisableApiTermination().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode()); 
+        hashCode = prime * hashCode + ((getLicense() == null) ? 0 : getLicense().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RunInstancesRequest == false) return false;
+        RunInstancesRequest other = (RunInstancesRequest)obj;
+        
+        if (other.getImageId() == null ^ this.getImageId() == null) return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
+        if (other.getMinCount() == null ^ this.getMinCount() == null) return false;
+        if (other.getMinCount() != null && other.getMinCount().equals(this.getMinCount()) == false) return false; 
+        if (other.getMaxCount() == null ^ this.getMaxCount() == null) return false;
+        if (other.getMaxCount() != null && other.getMaxCount().equals(this.getMaxCount()) == false) return false; 
+        if (other.getKeyName() == null ^ this.getKeyName() == null) return false;
+        if (other.getKeyName() != null && other.getKeyName().equals(this.getKeyName()) == false) return false; 
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
+        if (other.getUserData() == null ^ this.getUserData() == null) return false;
+        if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
+        if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false) return false; 
+        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        if (other.isMonitoring() == null ^ this.isMonitoring() == null) return false;
+        if (other.isMonitoring() != null && other.isMonitoring().equals(this.isMonitoring()) == false) return false; 
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
+        if (other.isDisableApiTermination() == null ^ this.isDisableApiTermination() == null) return false;
+        if (other.isDisableApiTermination() != null && other.isDisableApiTermination().equals(this.isDisableApiTermination()) == false) return false; 
+        if (other.getInstanceInitiatedShutdownBehavior() == null ^ this.getInstanceInitiatedShutdownBehavior() == null) return false;
+        if (other.getInstanceInitiatedShutdownBehavior() != null && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false) return false; 
+        if (other.getLicense() == null ^ this.getLicense() == null) return false;
+        if (other.getLicense() != null && other.getLicense().equals(this.getLicense()) == false) return false; 
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
+        if (other.getClientToken() == null ^ this.getClientToken() == null) return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeBundleTasksResult {
      * @param bundleTasks The list of described bundle tasks.
      */
     public void setBundleTasks(java.util.Collection<BundleTask> bundleTasks) {
-        java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>();
-        if (bundleTasks != null) {
-            bundleTasksCopy.addAll(bundleTasks);
+        if (bundleTasks == null) {
+            this.bundleTasks = null;
+            return;
         }
+
+        java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>(bundleTasks.size());
+        bundleTasksCopy.addAll(bundleTasks);
         this.bundleTasks = bundleTasksCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeBundleTasksResult {
      *         together. 
      */
     public DescribeBundleTasksResult withBundleTasks(BundleTask... bundleTasks) {
-        if (getBundleTasks() == null) setBundleTasks(new java.util.ArrayList<BundleTask>());
+        if (getBundleTasks() == null) setBundleTasks(new java.util.ArrayList<BundleTask>(bundleTasks.length));
         for (BundleTask value : bundleTasks) {
             getBundleTasks().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeBundleTasksResult {
      *         together. 
      */
     public DescribeBundleTasksResult withBundleTasks(java.util.Collection<BundleTask> bundleTasks) {
-        java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>();
-        if (bundleTasks != null) {
+        if (bundleTasks == null) {
+            this.bundleTasks = null;
+        } else {
+            java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>(bundleTasks.size());
             bundleTasksCopy.addAll(bundleTasks);
+            this.bundleTasks = bundleTasksCopy;
         }
-        this.bundleTasks = bundleTasksCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeBundleTasksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("BundleTasks: " + bundleTasks + ", ");
+        if (bundleTasks != null) sb.append("BundleTasks: " + bundleTasks + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getBundleTasks() == null) ? 0 : getBundleTasks().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeBundleTasksResult == false) return false;
+        DescribeBundleTasksResult other = (DescribeBundleTasksResult)obj;
+        
+        if (other.getBundleTasks() == null ^ this.getBundleTasks() == null) return false;
+        if (other.getBundleTasks() != null && other.getBundleTasks().equals(this.getBundleTasks()) == false) return false; 
+        return true;
     }
     
 }

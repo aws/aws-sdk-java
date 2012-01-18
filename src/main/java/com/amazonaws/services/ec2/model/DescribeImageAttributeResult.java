@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,9 +72,31 @@ public class DescribeImageAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageAttribute: " + imageAttribute + ", ");
+        if (imageAttribute != null) sb.append("ImageAttribute: " + imageAttribute + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageAttribute() == null) ? 0 : getImageAttribute().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeImageAttributeResult == false) return false;
+        DescribeImageAttributeResult other = (DescribeImageAttributeResult)obj;
+        
+        if (other.getImageAttribute() == null ^ this.getImageAttribute() == null) return false;
+        if (other.getImageAttribute() != null && other.getImageAttribute().equals(this.getImageAttribute()) == false) return false; 
+        return true;
     }
     
 }

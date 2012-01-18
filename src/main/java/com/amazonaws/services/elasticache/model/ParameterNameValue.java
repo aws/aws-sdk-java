@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -145,10 +145,35 @@ public class ParameterNameValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ParameterName: " + parameterName + ", ");
-        sb.append("ParameterValue: " + parameterValue + ", ");
+        if (parameterName != null) sb.append("ParameterName: " + parameterName + ", ");
+        if (parameterValue != null) sb.append("ParameterValue: " + parameterValue + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ParameterNameValue == false) return false;
+        ParameterNameValue other = (ParameterNameValue)obj;
+        
+        if (other.getParameterName() == null ^ this.getParameterName() == null) return false;
+        if (other.getParameterName() != null && other.getParameterName().equals(this.getParameterName()) == false) return false; 
+        if (other.getParameterValue() == null ^ this.getParameterValue() == null) return false;
+        if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false) return false; 
+        return true;
     }
     
 }

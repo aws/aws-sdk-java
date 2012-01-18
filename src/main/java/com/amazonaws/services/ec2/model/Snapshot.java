@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -455,10 +455,13 @@ public class Snapshot {
      * @param tags A list of tags for the Snapshot.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -473,7 +476,7 @@ public class Snapshot {
      *         together. 
      */
     public Snapshot withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -491,11 +494,13 @@ public class Snapshot {
      *         together. 
      */
     public Snapshot withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -512,18 +517,67 @@ public class Snapshot {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SnapshotId: " + snapshotId + ", ");
-        sb.append("VolumeId: " + volumeId + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("Progress: " + progress + ", ");
-        sb.append("OwnerId: " + ownerId + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("VolumeSize: " + volumeSize + ", ");
-        sb.append("OwnerAlias: " + ownerAlias + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
+        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (progress != null) sb.append("Progress: " + progress + ", ");
+        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (volumeSize != null) sb.append("VolumeSize: " + volumeSize + ", ");
+        if (ownerAlias != null) sb.append("OwnerAlias: " + ownerAlias + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode()); 
+        hashCode = prime * hashCode + ((getOwnerAlias() == null) ? 0 : getOwnerAlias().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Snapshot == false) return false;
+        Snapshot other = (Snapshot)obj;
+        
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null) return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null) return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getProgress() == null ^ this.getProgress() == null) return false;
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false) return false; 
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getVolumeSize() == null ^ this.getVolumeSize() == null) return false;
+        if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false) return false; 
+        if (other.getOwnerAlias() == null ^ this.getOwnerAlias() == null) return false;
+        if (other.getOwnerAlias() != null && other.getOwnerAlias().equals(this.getOwnerAlias()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

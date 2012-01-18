@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -125,10 +125,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         AMIs will be described.
      */
     public void setImageIds(java.util.Collection<String> imageIds) {
-        java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>();
-        if (imageIds != null) {
-            imageIdsCopy.addAll(imageIds);
+        if (imageIds == null) {
+            this.imageIds = null;
+            return;
         }
+
+        java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>(imageIds.size());
+        imageIdsCopy.addAll(imageIds);
         this.imageIds = imageIdsCopy;
     }
     
@@ -145,7 +148,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withImageIds(String... imageIds) {
-        if (getImageIds() == null) setImageIds(new java.util.ArrayList<String>());
+        if (getImageIds() == null) setImageIds(new java.util.ArrayList<String>(imageIds.length));
         for (String value : imageIds) {
             getImageIds().add(value);
         }
@@ -165,11 +168,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withImageIds(java.util.Collection<String> imageIds) {
-        java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>();
-        if (imageIds != null) {
+        if (imageIds == null) {
+            this.imageIds = null;
+        } else {
+            java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>(imageIds.size());
             imageIdsCopy.addAll(imageIds);
+            this.imageIds = imageIdsCopy;
         }
-        this.imageIds = imageIdsCopy;
 
         return this;
     }
@@ -205,10 +210,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         permissions, respectively.
      */
     public void setOwners(java.util.Collection<String> owners) {
-        java.util.List<String> ownersCopy = new java.util.ArrayList<String>();
-        if (owners != null) {
-            ownersCopy.addAll(owners);
+        if (owners == null) {
+            this.owners = null;
+            return;
         }
+
+        java.util.List<String> ownersCopy = new java.util.ArrayList<String>(owners.size());
+        ownersCopy.addAll(owners);
         this.owners = ownersCopy;
     }
     
@@ -229,7 +237,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withOwners(String... owners) {
-        if (getOwners() == null) setOwners(new java.util.ArrayList<String>());
+        if (getOwners() == null) setOwners(new java.util.ArrayList<String>(owners.length));
         for (String value : owners) {
             getOwners().add(value);
         }
@@ -253,11 +261,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withOwners(java.util.Collection<String> owners) {
-        java.util.List<String> ownersCopy = new java.util.ArrayList<String>();
-        if (owners != null) {
+        if (owners == null) {
+            this.owners = null;
+        } else {
+            java.util.List<String> ownersCopy = new java.util.ArrayList<String>(owners.size());
             ownersCopy.addAll(owners);
+            this.owners = ownersCopy;
         }
-        this.owners = ownersCopy;
 
         return this;
     }
@@ -293,10 +303,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         permissions, or 'all' to return AMIs with public launch permissions.
      */
     public void setExecutableUsers(java.util.Collection<String> executableUsers) {
-        java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>();
-        if (executableUsers != null) {
-            executableUsersCopy.addAll(executableUsers);
+        if (executableUsers == null) {
+            this.executableUsers = null;
+            return;
         }
+
+        java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>(executableUsers.size());
+        executableUsersCopy.addAll(executableUsers);
         this.executableUsers = executableUsersCopy;
     }
     
@@ -317,7 +330,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withExecutableUsers(String... executableUsers) {
-        if (getExecutableUsers() == null) setExecutableUsers(new java.util.ArrayList<String>());
+        if (getExecutableUsers() == null) setExecutableUsers(new java.util.ArrayList<String>(executableUsers.length));
         for (String value : executableUsers) {
             getExecutableUsers().add(value);
         }
@@ -341,11 +354,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withExecutableUsers(java.util.Collection<String> executableUsers) {
-        java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>();
-        if (executableUsers != null) {
+        if (executableUsers == null) {
+            this.executableUsers = null;
+        } else {
+            java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>(executableUsers.size());
             executableUsersCopy.addAll(executableUsers);
+            this.executableUsers = executableUsersCopy;
         }
-        this.executableUsers = executableUsersCopy;
 
         return this;
     }
@@ -381,10 +396,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -405,7 +423,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -429,11 +447,13 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeImagesRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -450,12 +470,43 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageIds: " + imageIds + ", ");
-        sb.append("Owners: " + owners + ", ");
-        sb.append("ExecutableUsers: " + executableUsers + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (imageIds != null) sb.append("ImageIds: " + imageIds + ", ");
+        if (owners != null) sb.append("Owners: " + owners + ", ");
+        if (executableUsers != null) sb.append("ExecutableUsers: " + executableUsers + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode()); 
+        hashCode = prime * hashCode + ((getOwners() == null) ? 0 : getOwners().hashCode()); 
+        hashCode = prime * hashCode + ((getExecutableUsers() == null) ? 0 : getExecutableUsers().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeImagesRequest == false) return false;
+        DescribeImagesRequest other = (DescribeImagesRequest)obj;
+        
+        if (other.getImageIds() == null ^ this.getImageIds() == null) return false;
+        if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false) return false; 
+        if (other.getOwners() == null ^ this.getOwners() == null) return false;
+        if (other.getOwners() != null && other.getOwners().equals(this.getOwners()) == false) return false; 
+        if (other.getExecutableUsers() == null ^ this.getExecutableUsers() == null) return false;
+        if (other.getExecutableUsers() != null && other.getExecutableUsers().equals(this.getExecutableUsers()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

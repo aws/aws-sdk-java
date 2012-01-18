@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -319,13 +319,47 @@ public class VirtualMFADevice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SerialNumber: " + serialNumber + ", ");
-        sb.append("Base32StringSeed: " + base32StringSeed + ", ");
-        sb.append("QRCodePNG: " + qRCodePNG + ", ");
-        sb.append("User: " + user + ", ");
-        sb.append("EnableDate: " + enableDate + ", ");
+        if (serialNumber != null) sb.append("SerialNumber: " + serialNumber + ", ");
+        if (base32StringSeed != null) sb.append("Base32StringSeed: " + base32StringSeed + ", ");
+        if (qRCodePNG != null) sb.append("QRCodePNG: " + qRCodePNG + ", ");
+        if (user != null) sb.append("User: " + user + ", ");
+        if (enableDate != null) sb.append("EnableDate: " + enableDate + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getBase32StringSeed() == null) ? 0 : getBase32StringSeed().hashCode()); 
+        hashCode = prime * hashCode + ((getQRCodePNG() == null) ? 0 : getQRCodePNG().hashCode()); 
+        hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode()); 
+        hashCode = prime * hashCode + ((getEnableDate() == null) ? 0 : getEnableDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof VirtualMFADevice == false) return false;
+        VirtualMFADevice other = (VirtualMFADevice)obj;
+        
+        if (other.getSerialNumber() == null ^ this.getSerialNumber() == null) return false;
+        if (other.getSerialNumber() != null && other.getSerialNumber().equals(this.getSerialNumber()) == false) return false; 
+        if (other.getBase32StringSeed() == null ^ this.getBase32StringSeed() == null) return false;
+        if (other.getBase32StringSeed() != null && other.getBase32StringSeed().equals(this.getBase32StringSeed()) == false) return false; 
+        if (other.getQRCodePNG() == null ^ this.getQRCodePNG() == null) return false;
+        if (other.getQRCodePNG() != null && other.getQRCodePNG().equals(this.getQRCodePNG()) == false) return false; 
+        if (other.getUser() == null ^ this.getUser() == null) return false;
+        if (other.getUser() != null && other.getUser().equals(this.getUser()) == false) return false; 
+        if (other.getEnableDate() == null ^ this.getEnableDate() == null) return false;
+        if (other.getEnableDate() != null && other.getEnableDate().equals(this.getEnableDate()) == false) return false; 
+        return true;
     }
     
 }

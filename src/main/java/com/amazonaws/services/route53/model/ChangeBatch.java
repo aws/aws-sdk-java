@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -139,10 +139,13 @@ public class ChangeBatch {
      *         resource record set that you want to create or delete.
      */
     public void setChanges(java.util.Collection<Change> changes) {
-        java.util.List<Change> changesCopy = new java.util.ArrayList<Change>();
-        if (changes != null) {
-            changesCopy.addAll(changes);
+        if (changes == null) {
+            this.changes = null;
+            return;
         }
+
+        java.util.List<Change> changesCopy = new java.util.ArrayList<Change>(changes.size());
+        changesCopy.addAll(changes);
         this.changes = changesCopy;
     }
     
@@ -162,7 +165,7 @@ public class ChangeBatch {
      *         together. 
      */
     public ChangeBatch withChanges(Change... changes) {
-        if (getChanges() == null) setChanges(new java.util.ArrayList<Change>());
+        if (getChanges() == null) setChanges(new java.util.ArrayList<Change>(changes.length));
         for (Change value : changes) {
             getChanges().add(value);
         }
@@ -185,11 +188,13 @@ public class ChangeBatch {
      *         together. 
      */
     public ChangeBatch withChanges(java.util.Collection<Change> changes) {
-        java.util.List<Change> changesCopy = new java.util.ArrayList<Change>();
-        if (changes != null) {
+        if (changes == null) {
+            this.changes = null;
+        } else {
+            java.util.List<Change> changesCopy = new java.util.ArrayList<Change>(changes.size());
             changesCopy.addAll(changes);
+            this.changes = changesCopy;
         }
-        this.changes = changesCopy;
 
         return this;
     }
@@ -206,10 +211,35 @@ public class ChangeBatch {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Comment: " + comment + ", ");
-        sb.append("Changes: " + changes + ", ");
+        if (comment != null) sb.append("Comment: " + comment + ", ");
+        if (changes != null) sb.append("Changes: " + changes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
+        hashCode = prime * hashCode + ((getChanges() == null) ? 0 : getChanges().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ChangeBatch == false) return false;
+        ChangeBatch other = (ChangeBatch)obj;
+        
+        if (other.getComment() == null ^ this.getComment() == null) return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
+        if (other.getChanges() == null ^ this.getChanges() == null) return false;
+        if (other.getChanges() != null && other.getChanges().equals(this.getChanges()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,10 +257,13 @@ public class JobFlowInstancesConfig {
      * @param instanceGroups Configuration for the job flow's instance groups.
      */
     public void setInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
-        if (instanceGroups != null) {
-            instanceGroupsCopy.addAll(instanceGroups);
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+            return;
         }
+
+        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
+        instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
     
@@ -275,7 +278,7 @@ public class JobFlowInstancesConfig {
      *         together. 
      */
     public JobFlowInstancesConfig withInstanceGroups(InstanceGroupConfig... instanceGroups) {
-        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>());
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.length));
         for (InstanceGroupConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }
@@ -293,11 +296,13 @@ public class JobFlowInstancesConfig {
      *         together. 
      */
     public JobFlowInstancesConfig withInstanceGroups(java.util.Collection<InstanceGroupConfig> instanceGroups) {
-        java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>();
-        if (instanceGroups != null) {
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+        } else {
+            java.util.List<InstanceGroupConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
+            this.instanceGroups = instanceGroupsCopy;
         }
-        this.instanceGroups = instanceGroupsCopy;
 
         return this;
     }
@@ -668,18 +673,67 @@ public class JobFlowInstancesConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MasterInstanceType: " + masterInstanceType + ", ");
-        sb.append("SlaveInstanceType: " + slaveInstanceType + ", ");
-        sb.append("InstanceCount: " + instanceCount + ", ");
-        sb.append("InstanceGroups: " + instanceGroups + ", ");
-        sb.append("Ec2KeyName: " + ec2KeyName + ", ");
-        sb.append("Placement: " + placement + ", ");
-        sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
-        sb.append("TerminationProtected: " + terminationProtected + ", ");
-        sb.append("HadoopVersion: " + hadoopVersion + ", ");
-        sb.append("Ec2SubnetId: " + ec2SubnetId + ", ");
+        if (masterInstanceType != null) sb.append("MasterInstanceType: " + masterInstanceType + ", ");
+        if (slaveInstanceType != null) sb.append("SlaveInstanceType: " + slaveInstanceType + ", ");
+        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (instanceGroups != null) sb.append("InstanceGroups: " + instanceGroups + ", ");
+        if (ec2KeyName != null) sb.append("Ec2KeyName: " + ec2KeyName + ", ");
+        if (placement != null) sb.append("Placement: " + placement + ", ");
+        if (keepJobFlowAliveWhenNoSteps != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
+        if (terminationProtected != null) sb.append("TerminationProtected: " + terminationProtected + ", ");
+        if (hadoopVersion != null) sb.append("HadoopVersion: " + hadoopVersion + ", ");
+        if (ec2SubnetId != null) sb.append("Ec2SubnetId: " + ec2SubnetId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMasterInstanceType() == null) ? 0 : getMasterInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getSlaveInstanceType() == null) ? 0 : getSlaveInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getEc2KeyName() == null) ? 0 : getEc2KeyName().hashCode()); 
+        hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
+        hashCode = prime * hashCode + ((isKeepJobFlowAliveWhenNoSteps() == null) ? 0 : isKeepJobFlowAliveWhenNoSteps().hashCode()); 
+        hashCode = prime * hashCode + ((isTerminationProtected() == null) ? 0 : isTerminationProtected().hashCode()); 
+        hashCode = prime * hashCode + ((getHadoopVersion() == null) ? 0 : getHadoopVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getEc2SubnetId() == null) ? 0 : getEc2SubnetId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof JobFlowInstancesConfig == false) return false;
+        JobFlowInstancesConfig other = (JobFlowInstancesConfig)obj;
+        
+        if (other.getMasterInstanceType() == null ^ this.getMasterInstanceType() == null) return false;
+        if (other.getMasterInstanceType() != null && other.getMasterInstanceType().equals(this.getMasterInstanceType()) == false) return false; 
+        if (other.getSlaveInstanceType() == null ^ this.getSlaveInstanceType() == null) return false;
+        if (other.getSlaveInstanceType() != null && other.getSlaveInstanceType().equals(this.getSlaveInstanceType()) == false) return false; 
+        if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
+        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null) return false;
+        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false) return false; 
+        if (other.getEc2KeyName() == null ^ this.getEc2KeyName() == null) return false;
+        if (other.getEc2KeyName() != null && other.getEc2KeyName().equals(this.getEc2KeyName()) == false) return false; 
+        if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
+        if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false) return false; 
+        if (other.isKeepJobFlowAliveWhenNoSteps() == null ^ this.isKeepJobFlowAliveWhenNoSteps() == null) return false;
+        if (other.isKeepJobFlowAliveWhenNoSteps() != null && other.isKeepJobFlowAliveWhenNoSteps().equals(this.isKeepJobFlowAliveWhenNoSteps()) == false) return false; 
+        if (other.isTerminationProtected() == null ^ this.isTerminationProtected() == null) return false;
+        if (other.isTerminationProtected() != null && other.isTerminationProtected().equals(this.isTerminationProtected()) == false) return false; 
+        if (other.getHadoopVersion() == null ^ this.getHadoopVersion() == null) return false;
+        if (other.getHadoopVersion() != null && other.getHadoopVersion().equals(this.getHadoopVersion()) == false) return false; 
+        if (other.getEc2SubnetId() == null ^ this.getEc2SubnetId() == null) return false;
+        if (other.getEc2SubnetId() != null && other.getEc2SubnetId().equals(this.getEc2SubnetId()) == false) return false; 
+        return true;
     }
     
 }

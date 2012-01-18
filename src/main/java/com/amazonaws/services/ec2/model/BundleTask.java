@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -345,16 +345,59 @@ public class BundleTask {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("BundleId: " + bundleId + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("UpdateTime: " + updateTime + ", ");
-        sb.append("Storage: " + storage + ", ");
-        sb.append("Progress: " + progress + ", ");
-        sb.append("BundleTaskError: " + bundleTaskError + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (bundleId != null) sb.append("BundleId: " + bundleId + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (updateTime != null) sb.append("UpdateTime: " + updateTime + ", ");
+        if (storage != null) sb.append("Storage: " + storage + ", ");
+        if (progress != null) sb.append("Progress: " + progress + ", ");
+        if (bundleTaskError != null) sb.append("BundleTaskError: " + bundleTaskError + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getBundleId() == null) ? 0 : getBundleId().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getUpdateTime() == null) ? 0 : getUpdateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getStorage() == null) ? 0 : getStorage().hashCode()); 
+        hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
+        hashCode = prime * hashCode + ((getBundleTaskError() == null) ? 0 : getBundleTaskError().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof BundleTask == false) return false;
+        BundleTask other = (BundleTask)obj;
+        
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getBundleId() == null ^ this.getBundleId() == null) return false;
+        if (other.getBundleId() != null && other.getBundleId().equals(this.getBundleId()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getUpdateTime() == null ^ this.getUpdateTime() == null) return false;
+        if (other.getUpdateTime() != null && other.getUpdateTime().equals(this.getUpdateTime()) == false) return false; 
+        if (other.getStorage() == null ^ this.getStorage() == null) return false;
+        if (other.getStorage() != null && other.getStorage().equals(this.getStorage()) == false) return false; 
+        if (other.getProgress() == null ^ this.getProgress() == null) return false;
+        if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false) return false; 
+        if (other.getBundleTaskError() == null ^ this.getBundleTaskError() == null) return false;
+        if (other.getBundleTaskError() != null && other.getBundleTaskError().equals(this.getBundleTaskError()) == false) return false; 
+        return true;
     }
     
 }

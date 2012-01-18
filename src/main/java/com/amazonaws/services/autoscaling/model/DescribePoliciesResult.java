@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,10 +53,13 @@ public class DescribePoliciesResult {
      * @param scalingPolicies A list of scaling policies.
      */
     public void setScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
-        java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>();
-        if (scalingPolicies != null) {
-            scalingPoliciesCopy.addAll(scalingPolicies);
+        if (scalingPolicies == null) {
+            this.scalingPolicies = null;
+            return;
         }
+
+        java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>(scalingPolicies.size());
+        scalingPoliciesCopy.addAll(scalingPolicies);
         this.scalingPolicies = scalingPoliciesCopy;
     }
     
@@ -71,7 +74,7 @@ public class DescribePoliciesResult {
      *         together. 
      */
     public DescribePoliciesResult withScalingPolicies(ScalingPolicy... scalingPolicies) {
-        if (getScalingPolicies() == null) setScalingPolicies(new java.util.ArrayList<ScalingPolicy>());
+        if (getScalingPolicies() == null) setScalingPolicies(new java.util.ArrayList<ScalingPolicy>(scalingPolicies.length));
         for (ScalingPolicy value : scalingPolicies) {
             getScalingPolicies().add(value);
         }
@@ -89,11 +92,13 @@ public class DescribePoliciesResult {
      *         together. 
      */
     public DescribePoliciesResult withScalingPolicies(java.util.Collection<ScalingPolicy> scalingPolicies) {
-        java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>();
-        if (scalingPolicies != null) {
+        if (scalingPolicies == null) {
+            this.scalingPolicies = null;
+        } else {
+            java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>(scalingPolicies.size());
             scalingPoliciesCopy.addAll(scalingPolicies);
+            this.scalingPolicies = scalingPoliciesCopy;
         }
-        this.scalingPolicies = scalingPoliciesCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class DescribePoliciesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ScalingPolicies: " + scalingPolicies + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (scalingPolicies != null) sb.append("ScalingPolicies: " + scalingPolicies + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getScalingPolicies() == null) ? 0 : getScalingPolicies().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribePoliciesResult == false) return false;
+        DescribePoliciesResult other = (DescribePoliciesResult)obj;
+        
+        if (other.getScalingPolicies() == null ^ this.getScalingPolicies() == null) return false;
+        if (other.getScalingPolicies() != null && other.getScalingPolicies().equals(this.getScalingPolicies()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

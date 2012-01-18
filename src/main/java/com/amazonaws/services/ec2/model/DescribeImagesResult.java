@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeImagesResult {
      * @param images The list of the described AMIs.
      */
     public void setImages(java.util.Collection<Image> images) {
-        java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>();
-        if (images != null) {
-            imagesCopy.addAll(images);
+        if (images == null) {
+            this.images = null;
+            return;
         }
+
+        java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>(images.size());
+        imagesCopy.addAll(images);
         this.images = imagesCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeImagesResult {
      *         together. 
      */
     public DescribeImagesResult withImages(Image... images) {
-        if (getImages() == null) setImages(new java.util.ArrayList<Image>());
+        if (getImages() == null) setImages(new java.util.ArrayList<Image>(images.length));
         for (Image value : images) {
             getImages().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeImagesResult {
      *         together. 
      */
     public DescribeImagesResult withImages(java.util.Collection<Image> images) {
-        java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>();
-        if (images != null) {
+        if (images == null) {
+            this.images = null;
+        } else {
+            java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>(images.size());
             imagesCopy.addAll(images);
+            this.images = imagesCopy;
         }
-        this.images = imagesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeImagesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Images: " + images + ", ");
+        if (images != null) sb.append("Images: " + images + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImages() == null) ? 0 : getImages().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeImagesResult == false) return false;
+        DescribeImagesResult other = (DescribeImagesResult)obj;
+        
+        if (other.getImages() == null ^ this.getImages() == null) return false;
+        if (other.getImages() != null && other.getImages().equals(this.getImages()) == false) return false; 
+        return true;
     }
     
 }

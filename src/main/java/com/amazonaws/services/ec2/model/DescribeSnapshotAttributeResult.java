@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -94,10 +94,13 @@ public class DescribeSnapshotAttributeResult {
      *         createVolumePermission attribute is requested.
      */
     public void setCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
-        java.util.List<CreateVolumePermission> createVolumePermissionsCopy = new java.util.ArrayList<CreateVolumePermission>();
-        if (createVolumePermissions != null) {
-            createVolumePermissionsCopy.addAll(createVolumePermissions);
+        if (createVolumePermissions == null) {
+            this.createVolumePermissions = null;
+            return;
         }
+
+        java.util.List<CreateVolumePermission> createVolumePermissionsCopy = new java.util.ArrayList<CreateVolumePermission>(createVolumePermissions.size());
+        createVolumePermissionsCopy.addAll(createVolumePermissions);
         this.createVolumePermissions = createVolumePermissionsCopy;
     }
     
@@ -116,7 +119,7 @@ public class DescribeSnapshotAttributeResult {
      *         together. 
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(CreateVolumePermission... createVolumePermissions) {
-        if (getCreateVolumePermissions() == null) setCreateVolumePermissions(new java.util.ArrayList<CreateVolumePermission>());
+        if (getCreateVolumePermissions() == null) setCreateVolumePermissions(new java.util.ArrayList<CreateVolumePermission>(createVolumePermissions.length));
         for (CreateVolumePermission value : createVolumePermissions) {
             getCreateVolumePermissions().add(value);
         }
@@ -138,11 +141,13 @@ public class DescribeSnapshotAttributeResult {
      *         together. 
      */
     public DescribeSnapshotAttributeResult withCreateVolumePermissions(java.util.Collection<CreateVolumePermission> createVolumePermissions) {
-        java.util.List<CreateVolumePermission> createVolumePermissionsCopy = new java.util.ArrayList<CreateVolumePermission>();
-        if (createVolumePermissions != null) {
+        if (createVolumePermissions == null) {
+            this.createVolumePermissions = null;
+        } else {
+            java.util.List<CreateVolumePermission> createVolumePermissionsCopy = new java.util.ArrayList<CreateVolumePermission>(createVolumePermissions.size());
             createVolumePermissionsCopy.addAll(createVolumePermissions);
+            this.createVolumePermissions = createVolumePermissionsCopy;
         }
-        this.createVolumePermissions = createVolumePermissionsCopy;
 
         return this;
     }
@@ -159,10 +164,35 @@ public class DescribeSnapshotAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SnapshotId: " + snapshotId + ", ");
-        sb.append("CreateVolumePermissions: " + createVolumePermissions + ", ");
+        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
+        if (createVolumePermissions != null) sb.append("CreateVolumePermissions: " + createVolumePermissions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateVolumePermissions() == null) ? 0 : getCreateVolumePermissions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSnapshotAttributeResult == false) return false;
+        DescribeSnapshotAttributeResult other = (DescribeSnapshotAttributeResult)obj;
+        
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null) return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
+        if (other.getCreateVolumePermissions() == null ^ this.getCreateVolumePermissions() == null) return false;
+        if (other.getCreateVolumePermissions() != null && other.getCreateVolumePermissions().equals(this.getCreateVolumePermissions()) == false) return false; 
+        return true;
     }
     
 }

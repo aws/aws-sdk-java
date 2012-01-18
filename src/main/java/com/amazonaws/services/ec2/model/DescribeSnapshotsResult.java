@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeSnapshotsResult {
      * @param snapshots The list of described EBS snapshots.
      */
     public void setSnapshots(java.util.Collection<Snapshot> snapshots) {
-        java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>();
-        if (snapshots != null) {
-            snapshotsCopy.addAll(snapshots);
+        if (snapshots == null) {
+            this.snapshots = null;
+            return;
         }
+
+        java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
+        snapshotsCopy.addAll(snapshots);
         this.snapshots = snapshotsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeSnapshotsResult {
      *         together. 
      */
     public DescribeSnapshotsResult withSnapshots(Snapshot... snapshots) {
-        if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>());
+        if (getSnapshots() == null) setSnapshots(new java.util.ArrayList<Snapshot>(snapshots.length));
         for (Snapshot value : snapshots) {
             getSnapshots().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeSnapshotsResult {
      *         together. 
      */
     public DescribeSnapshotsResult withSnapshots(java.util.Collection<Snapshot> snapshots) {
-        java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>();
-        if (snapshots != null) {
+        if (snapshots == null) {
+            this.snapshots = null;
+        } else {
+            java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
             snapshotsCopy.addAll(snapshots);
+            this.snapshots = snapshotsCopy;
         }
-        this.snapshots = snapshotsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeSnapshotsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Snapshots: " + snapshots + ", ");
+        if (snapshots != null) sb.append("Snapshots: " + snapshots + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSnapshots() == null) ? 0 : getSnapshots().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSnapshotsResult == false) return false;
+        DescribeSnapshotsResult other = (DescribeSnapshotsResult)obj;
+        
+        if (other.getSnapshots() == null ^ this.getSnapshots() == null) return false;
+        if (other.getSnapshots() != null && other.getSnapshots().equals(this.getSnapshots()) == false) return false; 
+        return true;
     }
     
 }

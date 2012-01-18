@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,10 +49,13 @@ public class ListTopicsResult {
      * @param topics A list of topic ARNs.
      */
     public void setTopics(java.util.Collection<Topic> topics) {
-        java.util.List<Topic> topicsCopy = new java.util.ArrayList<Topic>();
-        if (topics != null) {
-            topicsCopy.addAll(topics);
+        if (topics == null) {
+            this.topics = null;
+            return;
         }
+
+        java.util.List<Topic> topicsCopy = new java.util.ArrayList<Topic>(topics.size());
+        topicsCopy.addAll(topics);
         this.topics = topicsCopy;
     }
     
@@ -67,7 +70,7 @@ public class ListTopicsResult {
      *         together. 
      */
     public ListTopicsResult withTopics(Topic... topics) {
-        if (getTopics() == null) setTopics(new java.util.ArrayList<Topic>());
+        if (getTopics() == null) setTopics(new java.util.ArrayList<Topic>(topics.length));
         for (Topic value : topics) {
             getTopics().add(value);
         }
@@ -85,11 +88,13 @@ public class ListTopicsResult {
      *         together. 
      */
     public ListTopicsResult withTopics(java.util.Collection<Topic> topics) {
-        java.util.List<Topic> topicsCopy = new java.util.ArrayList<Topic>();
-        if (topics != null) {
+        if (topics == null) {
+            this.topics = null;
+        } else {
+            java.util.List<Topic> topicsCopy = new java.util.ArrayList<Topic>(topics.size());
             topicsCopy.addAll(topics);
+            this.topics = topicsCopy;
         }
-        this.topics = topicsCopy;
 
         return this;
     }
@@ -146,10 +151,35 @@ public class ListTopicsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Topics: " + topics + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (topics != null) sb.append("Topics: " + topics + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTopics() == null) ? 0 : getTopics().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListTopicsResult == false) return false;
+        ListTopicsResult other = (ListTopicsResult)obj;
+        
+        if (other.getTopics() == null ^ this.getTopics() == null) return false;
+        if (other.getTopics() != null && other.getTopics().equals(this.getTopics()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

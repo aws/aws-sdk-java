@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,10 +117,13 @@ public class ReplaceableItem {
      * @param attributes The list of attributes for a replaceable item.
      */
     public void setAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
-        java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>();
-        if (attributes != null) {
-            attributesCopy.addAll(attributes);
+        if (attributes == null) {
+            this.attributes = null;
+            return;
         }
+
+        java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>(attributes.size());
+        attributesCopy.addAll(attributes);
         this.attributes = attributesCopy;
     }
     
@@ -135,7 +138,7 @@ public class ReplaceableItem {
      *         together. 
      */
     public ReplaceableItem withAttributes(ReplaceableAttribute... attributes) {
-        if (getAttributes() == null) setAttributes(new java.util.ArrayList<ReplaceableAttribute>());
+        if (getAttributes() == null) setAttributes(new java.util.ArrayList<ReplaceableAttribute>(attributes.length));
         for (ReplaceableAttribute value : attributes) {
             getAttributes().add(value);
         }
@@ -153,11 +156,13 @@ public class ReplaceableItem {
      *         together. 
      */
     public ReplaceableItem withAttributes(java.util.Collection<ReplaceableAttribute> attributes) {
-        java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>();
-        if (attributes != null) {
+        if (attributes == null) {
+            this.attributes = null;
+        } else {
+            java.util.List<ReplaceableAttribute> attributesCopy = new java.util.ArrayList<ReplaceableAttribute>(attributes.size());
             attributesCopy.addAll(attributes);
+            this.attributes = attributesCopy;
         }
-        this.attributes = attributesCopy;
 
         return this;
     }
@@ -174,10 +179,35 @@ public class ReplaceableItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("Attributes: " + attributes + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (attributes != null) sb.append("Attributes: " + attributes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ReplaceableItem == false) return false;
+        ReplaceableItem other = (ReplaceableItem)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
+        return true;
     }
     
 }

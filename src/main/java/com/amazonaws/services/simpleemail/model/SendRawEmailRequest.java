@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -139,10 +139,13 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
      * @param destinations A list of destinations for the message.
      */
     public void setDestinations(java.util.Collection<String> destinations) {
-        java.util.List<String> destinationsCopy = new java.util.ArrayList<String>();
-        if (destinations != null) {
-            destinationsCopy.addAll(destinations);
+        if (destinations == null) {
+            this.destinations = null;
+            return;
         }
+
+        java.util.List<String> destinationsCopy = new java.util.ArrayList<String>(destinations.size());
+        destinationsCopy.addAll(destinations);
         this.destinations = destinationsCopy;
     }
     
@@ -157,7 +160,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendRawEmailRequest withDestinations(String... destinations) {
-        if (getDestinations() == null) setDestinations(new java.util.ArrayList<String>());
+        if (getDestinations() == null) setDestinations(new java.util.ArrayList<String>(destinations.length));
         for (String value : destinations) {
             getDestinations().add(value);
         }
@@ -175,11 +178,13 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendRawEmailRequest withDestinations(java.util.Collection<String> destinations) {
-        java.util.List<String> destinationsCopy = new java.util.ArrayList<String>();
-        if (destinations != null) {
+        if (destinations == null) {
+            this.destinations = null;
+        } else {
+            java.util.List<String> destinationsCopy = new java.util.ArrayList<String>(destinations.size());
             destinationsCopy.addAll(destinations);
+            this.destinations = destinationsCopy;
         }
-        this.destinations = destinationsCopy;
 
         return this;
     }
@@ -278,11 +283,39 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Source: " + source + ", ");
-        sb.append("Destinations: " + destinations + ", ");
-        sb.append("RawMessage: " + rawMessage + ", ");
+        if (source != null) sb.append("Source: " + source + ", ");
+        if (destinations != null) sb.append("Destinations: " + destinations + ", ");
+        if (rawMessage != null) sb.append("RawMessage: " + rawMessage + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode()); 
+        hashCode = prime * hashCode + ((getRawMessage() == null) ? 0 : getRawMessage().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SendRawEmailRequest == false) return false;
+        SendRawEmailRequest other = (SendRawEmailRequest)obj;
+        
+        if (other.getSource() == null ^ this.getSource() == null) return false;
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false) return false; 
+        if (other.getDestinations() == null ^ this.getDestinations() == null) return false;
+        if (other.getDestinations() != null && other.getDestinations().equals(this.getDestinations()) == false) return false; 
+        if (other.getRawMessage() == null ^ this.getRawMessage() == null) return false;
+        if (other.getRawMessage() != null && other.getRawMessage().equals(this.getRawMessage()) == false) return false; 
+        return true;
     }
     
 }

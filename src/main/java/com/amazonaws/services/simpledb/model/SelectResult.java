@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class SelectResult {
      * @param items A list of items that match the select expression.
      */
     public void setItems(java.util.Collection<Item> items) {
-        java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>();
-        if (items != null) {
-            itemsCopy.addAll(items);
+        if (items == null) {
+            this.items = null;
+            return;
         }
+
+        java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>(items.size());
+        itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
     
@@ -68,7 +71,7 @@ public class SelectResult {
      *         together. 
      */
     public SelectResult withItems(Item... items) {
-        if (getItems() == null) setItems(new java.util.ArrayList<Item>());
+        if (getItems() == null) setItems(new java.util.ArrayList<Item>(items.length));
         for (Item value : items) {
             getItems().add(value);
         }
@@ -86,11 +89,13 @@ public class SelectResult {
      *         together. 
      */
     public SelectResult withItems(java.util.Collection<Item> items) {
-        java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>();
-        if (items != null) {
+        if (items == null) {
+            this.items = null;
+        } else {
+            java.util.List<Item> itemsCopy = new java.util.ArrayList<Item>(items.size());
             itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
-        this.items = itemsCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class SelectResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Items: " + items + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SelectResult == false) return false;
+        SelectResult other = (SelectResult)obj;
+        
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

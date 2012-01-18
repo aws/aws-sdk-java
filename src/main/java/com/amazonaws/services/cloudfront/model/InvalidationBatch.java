@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -147,10 +147,13 @@ public class InvalidationBatch {
      *         not invalidate the old version of the updated object.
      */
     public void setPaths(java.util.Collection<String> paths) {
-        java.util.List<String> pathsCopy = new java.util.ArrayList<String>();
-        if (paths != null) {
-            pathsCopy.addAll(paths);
+        if (paths == null) {
+            this.paths = null;
+            return;
         }
+
+        java.util.List<String> pathsCopy = new java.util.ArrayList<String>(paths.size());
+        pathsCopy.addAll(paths);
         this.paths = pathsCopy;
     }
     
@@ -177,7 +180,7 @@ public class InvalidationBatch {
      *         together. 
      */
     public InvalidationBatch withPaths(String... paths) {
-        if (getPaths() == null) setPaths(new java.util.ArrayList<String>());
+        if (getPaths() == null) setPaths(new java.util.ArrayList<String>(paths.length));
         for (String value : paths) {
             getPaths().add(value);
         }
@@ -207,11 +210,13 @@ public class InvalidationBatch {
      *         together. 
      */
     public InvalidationBatch withPaths(java.util.Collection<String> paths) {
-        java.util.List<String> pathsCopy = new java.util.ArrayList<String>();
-        if (paths != null) {
+        if (paths == null) {
+            this.paths = null;
+        } else {
+            java.util.List<String> pathsCopy = new java.util.ArrayList<String>(paths.size());
             pathsCopy.addAll(paths);
+            this.paths = pathsCopy;
         }
-        this.paths = pathsCopy;
 
         return this;
     }
@@ -316,10 +321,35 @@ public class InvalidationBatch {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Paths: " + paths + ", ");
-        sb.append("CallerReference: " + callerReference + ", ");
+        if (paths != null) sb.append("Paths: " + paths + ", ");
+        if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPaths() == null) ? 0 : getPaths().hashCode()); 
+        hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof InvalidationBatch == false) return false;
+        InvalidationBatch other = (InvalidationBatch)obj;
+        
+        if (other.getPaths() == null ^ this.getPaths() == null) return false;
+        if (other.getPaths() != null && other.getPaths().equals(this.getPaths()) == false) return false; 
+        if (other.getCallerReference() == null ^ this.getCallerReference() == null) return false;
+        if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
+        return true;
     }
     
 }

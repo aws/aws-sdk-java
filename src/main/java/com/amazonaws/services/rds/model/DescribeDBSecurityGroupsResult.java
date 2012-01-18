@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,10 +85,13 @@ public class DescribeDBSecurityGroupsResult {
      * @param dBSecurityGroups A list of <a>DBSecurityGroup</a> instances.
      */
     public void setDBSecurityGroups(java.util.Collection<DBSecurityGroup> dBSecurityGroups) {
-        java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>();
-        if (dBSecurityGroups != null) {
-            dBSecurityGroupsCopy.addAll(dBSecurityGroups);
+        if (dBSecurityGroups == null) {
+            this.dBSecurityGroups = null;
+            return;
         }
+
+        java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.size());
+        dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
     
@@ -103,7 +106,7 @@ public class DescribeDBSecurityGroupsResult {
      *         together. 
      */
     public DescribeDBSecurityGroupsResult withDBSecurityGroups(DBSecurityGroup... dBSecurityGroups) {
-        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<DBSecurityGroup>());
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.length));
         for (DBSecurityGroup value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }
@@ -121,11 +124,13 @@ public class DescribeDBSecurityGroupsResult {
      *         together. 
      */
     public DescribeDBSecurityGroupsResult withDBSecurityGroups(java.util.Collection<DBSecurityGroup> dBSecurityGroups) {
-        java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>();
-        if (dBSecurityGroups != null) {
+        if (dBSecurityGroups == null) {
+            this.dBSecurityGroups = null;
+        } else {
+            java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
+            this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
-        this.dBSecurityGroups = dBSecurityGroupsCopy;
 
         return this;
     }
@@ -142,10 +147,35 @@ public class DescribeDBSecurityGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (dBSecurityGroups != null) sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeDBSecurityGroupsResult == false) return false;
+        DescribeDBSecurityGroupsResult other = (DescribeDBSecurityGroupsResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getDBSecurityGroups() == null ^ this.getDBSecurityGroups() == null) return false;
+        if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -125,10 +125,35 @@ public class OptionRestrictionRegex {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Pattern: " + pattern + ", ");
-        sb.append("Label: " + label + ", ");
+        if (pattern != null) sb.append("Pattern: " + pattern + ", ");
+        if (label != null) sb.append("Label: " + label + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPattern() == null) ? 0 : getPattern().hashCode()); 
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof OptionRestrictionRegex == false) return false;
+        OptionRestrictionRegex other = (OptionRestrictionRegex)obj;
+        
+        if (other.getPattern() == null ^ this.getPattern() == null) return false;
+        if (other.getPattern() != null && other.getPattern().equals(this.getPattern()) == false) return false; 
+        if (other.getLabel() == null ^ this.getLabel() == null) return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false) return false; 
+        return true;
     }
     
 }

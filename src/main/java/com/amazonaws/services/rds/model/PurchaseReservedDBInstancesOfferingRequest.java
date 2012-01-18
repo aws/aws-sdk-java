@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -189,11 +189,39 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
-        sb.append("ReservedDBInstanceId: " + reservedDBInstanceId + ", ");
-        sb.append("DBInstanceCount: " + dBInstanceCount + ", ");
+        if (reservedDBInstancesOfferingId != null) sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
+        if (reservedDBInstanceId != null) sb.append("ReservedDBInstanceId: " + reservedDBInstanceId + ", ");
+        if (dBInstanceCount != null) sb.append("DBInstanceCount: " + dBInstanceCount + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedDBInstancesOfferingId() == null) ? 0 : getReservedDBInstancesOfferingId().hashCode()); 
+        hashCode = prime * hashCode + ((getReservedDBInstanceId() == null) ? 0 : getReservedDBInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceCount() == null) ? 0 : getDBInstanceCount().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PurchaseReservedDBInstancesOfferingRequest == false) return false;
+        PurchaseReservedDBInstancesOfferingRequest other = (PurchaseReservedDBInstancesOfferingRequest)obj;
+        
+        if (other.getReservedDBInstancesOfferingId() == null ^ this.getReservedDBInstancesOfferingId() == null) return false;
+        if (other.getReservedDBInstancesOfferingId() != null && other.getReservedDBInstancesOfferingId().equals(this.getReservedDBInstancesOfferingId()) == false) return false; 
+        if (other.getReservedDBInstanceId() == null ^ this.getReservedDBInstanceId() == null) return false;
+        if (other.getReservedDBInstanceId() != null && other.getReservedDBInstanceId().equals(this.getReservedDBInstanceId()) == false) return false; 
+        if (other.getDBInstanceCount() == null ^ this.getDBInstanceCount() == null) return false;
+        if (other.getDBInstanceCount() != null && other.getDBInstanceCount().equals(this.getDBInstanceCount()) == false) return false; 
+        return true;
     }
     
 }

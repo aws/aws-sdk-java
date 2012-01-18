@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -343,10 +343,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         parameters for the stack.
      */
     public void setParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
-            parametersCopy.addAll(parameters);
+        if (parameters == null) {
+            this.parameters = null;
+            return;
         }
+
+        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
     
@@ -363,7 +366,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withParameters(Parameter... parameters) {
-        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>());
+        if (getParameters() == null) setParameters(new java.util.ArrayList<Parameter>(parameters.length));
         for (Parameter value : parameters) {
             getParameters().add(value);
         }
@@ -383,11 +386,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withParameters(java.util.Collection<Parameter> parameters) {
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>();
-        if (parameters != null) {
+        if (parameters == null) {
+            this.parameters = null;
+        } else {
+            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
+            this.parameters = parametersCopy;
         }
-        this.parameters = parametersCopy;
 
         return this;
     }
@@ -535,10 +540,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         Command Line Interface (CLI).
      */
     public void setNotificationARNs(java.util.Collection<String> notificationARNs) {
-        java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>();
-        if (notificationARNs != null) {
-            notificationARNsCopy.addAll(notificationARNs);
+        if (notificationARNs == null) {
+            this.notificationARNs = null;
+            return;
         }
+
+        java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
+        notificationARNsCopy.addAll(notificationARNs);
         this.notificationARNs = notificationARNsCopy;
     }
     
@@ -562,7 +570,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withNotificationARNs(String... notificationARNs) {
-        if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>());
+        if (getNotificationARNs() == null) setNotificationARNs(new java.util.ArrayList<String>(notificationARNs.length));
         for (String value : notificationARNs) {
             getNotificationARNs().add(value);
         }
@@ -589,11 +597,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withNotificationARNs(java.util.Collection<String> notificationARNs) {
-        java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>();
-        if (notificationARNs != null) {
+        if (notificationARNs == null) {
+            this.notificationARNs = null;
+        } else {
+            java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
             notificationARNsCopy.addAll(notificationARNs);
+            this.notificationARNs = notificationARNsCopy;
         }
-        this.notificationARNs = notificationARNsCopy;
 
         return this;
     }
@@ -665,10 +675,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
-        if (capabilities != null) {
-            capabilitiesCopy.addAll(capabilities);
+        if (capabilities == null) {
+            this.capabilities = null;
+            return;
         }
+
+        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+        capabilitiesCopy.addAll(capabilities);
         this.capabilities = capabilitiesCopy;
     }
     
@@ -707,7 +720,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withCapabilities(String... capabilities) {
-        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>());
+        if (getCapabilities() == null) setCapabilities(new java.util.ArrayList<String>(capabilities.length));
         for (String value : capabilities) {
             getCapabilities().add(value);
         }
@@ -749,11 +762,13 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateStackRequest withCapabilities(java.util.Collection<String> capabilities) {
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>();
-        if (capabilities != null) {
+        if (capabilities == null) {
+            this.capabilities = null;
+        } else {
+            java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
             capabilitiesCopy.addAll(capabilities);
+            this.capabilities = capabilitiesCopy;
         }
-        this.capabilities = capabilitiesCopy;
 
         return this;
     }
@@ -770,16 +785,59 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackName: " + stackName + ", ");
-        sb.append("TemplateBody: " + templateBody + ", ");
-        sb.append("TemplateURL: " + templateURL + ", ");
-        sb.append("Parameters: " + parameters + ", ");
-        sb.append("DisableRollback: " + disableRollback + ", ");
-        sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
-        sb.append("NotificationARNs: " + notificationARNs + ", ");
-        sb.append("Capabilities: " + capabilities + ", ");
+        if (stackName != null) sb.append("StackName: " + stackName + ", ");
+        if (templateBody != null) sb.append("TemplateBody: " + templateBody + ", ");
+        if (templateURL != null) sb.append("TemplateURL: " + templateURL + ", ");
+        if (parameters != null) sb.append("Parameters: " + parameters + ", ");
+        if (disableRollback != null) sb.append("DisableRollback: " + disableRollback + ", ");
+        if (timeoutInMinutes != null) sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
+        if (notificationARNs != null) sb.append("NotificationARNs: " + notificationARNs + ", ");
+        if (capabilities != null) sb.append("Capabilities: " + capabilities + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode()); 
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode()); 
+        hashCode = prime * hashCode + ((isDisableRollback() == null) ? 0 : isDisableRollback().hashCode()); 
+        hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode()); 
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateStackRequest == false) return false;
+        CreateStackRequest other = (CreateStackRequest)obj;
+        
+        if (other.getStackName() == null ^ this.getStackName() == null) return false;
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
+        if (other.getTemplateBody() == null ^ this.getTemplateBody() == null) return false;
+        if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false) return false; 
+        if (other.getTemplateURL() == null ^ this.getTemplateURL() == null) return false;
+        if (other.getTemplateURL() != null && other.getTemplateURL().equals(this.getTemplateURL()) == false) return false; 
+        if (other.getParameters() == null ^ this.getParameters() == null) return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false) return false; 
+        if (other.isDisableRollback() == null ^ this.isDisableRollback() == null) return false;
+        if (other.isDisableRollback() != null && other.isDisableRollback().equals(this.isDisableRollback()) == false) return false; 
+        if (other.getTimeoutInMinutes() == null ^ this.getTimeoutInMinutes() == null) return false;
+        if (other.getTimeoutInMinutes() != null && other.getTimeoutInMinutes().equals(this.getTimeoutInMinutes()) == false) return false; 
+        if (other.getNotificationARNs() == null ^ this.getNotificationARNs() == null) return false;
+        if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false) return false; 
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
+        return true;
     }
     
 }

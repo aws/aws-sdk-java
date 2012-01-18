@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class DescribeLoadBalancersResult {
      * @param loadBalancerDescriptions A list of LoadBalancer description structures.
      */
     public void setLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
-        java.util.List<LoadBalancerDescription> loadBalancerDescriptionsCopy = new java.util.ArrayList<LoadBalancerDescription>();
-        if (loadBalancerDescriptions != null) {
-            loadBalancerDescriptionsCopy.addAll(loadBalancerDescriptions);
+        if (loadBalancerDescriptions == null) {
+            this.loadBalancerDescriptions = null;
+            return;
         }
+
+        java.util.List<LoadBalancerDescription> loadBalancerDescriptionsCopy = new java.util.ArrayList<LoadBalancerDescription>(loadBalancerDescriptions.size());
+        loadBalancerDescriptionsCopy.addAll(loadBalancerDescriptions);
         this.loadBalancerDescriptions = loadBalancerDescriptionsCopy;
     }
     
@@ -68,7 +71,7 @@ public class DescribeLoadBalancersResult {
      *         together. 
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(LoadBalancerDescription... loadBalancerDescriptions) {
-        if (getLoadBalancerDescriptions() == null) setLoadBalancerDescriptions(new java.util.ArrayList<LoadBalancerDescription>());
+        if (getLoadBalancerDescriptions() == null) setLoadBalancerDescriptions(new java.util.ArrayList<LoadBalancerDescription>(loadBalancerDescriptions.length));
         for (LoadBalancerDescription value : loadBalancerDescriptions) {
             getLoadBalancerDescriptions().add(value);
         }
@@ -86,11 +89,13 @@ public class DescribeLoadBalancersResult {
      *         together. 
      */
     public DescribeLoadBalancersResult withLoadBalancerDescriptions(java.util.Collection<LoadBalancerDescription> loadBalancerDescriptions) {
-        java.util.List<LoadBalancerDescription> loadBalancerDescriptionsCopy = new java.util.ArrayList<LoadBalancerDescription>();
-        if (loadBalancerDescriptions != null) {
+        if (loadBalancerDescriptions == null) {
+            this.loadBalancerDescriptions = null;
+        } else {
+            java.util.List<LoadBalancerDescription> loadBalancerDescriptionsCopy = new java.util.ArrayList<LoadBalancerDescription>(loadBalancerDescriptions.size());
             loadBalancerDescriptionsCopy.addAll(loadBalancerDescriptions);
+            this.loadBalancerDescriptions = loadBalancerDescriptionsCopy;
         }
-        this.loadBalancerDescriptions = loadBalancerDescriptionsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeLoadBalancersResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
+        if (loadBalancerDescriptions != null) sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerDescriptions() == null) ? 0 : getLoadBalancerDescriptions().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLoadBalancersResult == false) return false;
+        DescribeLoadBalancersResult other = (DescribeLoadBalancersResult)obj;
+        
+        if (other.getLoadBalancerDescriptions() == null ^ this.getLoadBalancerDescriptions() == null) return false;
+        if (other.getLoadBalancerDescriptions() != null && other.getLoadBalancerDescriptions().equals(this.getLoadBalancerDescriptions()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        return true;
     }
     
 }

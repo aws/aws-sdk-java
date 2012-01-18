@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,53 @@ import com.amazonaws.services.sns.model.*;
  * using this client are non-blocking and will immediately return a Java Future.
  * Callers must use the Future object to determine when the service call has actually
  * completed.
- * Amazon Simple Notification Service 
+ * Amazon Simple Notification Service <p>
+ * This is the <i>Amazon Simple Notification Service (Amazon SNS) API
+ * Reference</i> . This guide provides detailed information about Amazon
+ * SNS actions, data types, parameters, and errors. For detailed
+ * information about Amazon SNS features and their associated API calls,
+ * go to the <a href="http://docs.amazonwebservices.com/sns/latest/gsg/">
+ * Amazon SNS Getting Started Guide </a> .
+ * </p>
+ * <p>
+ * Amazon Simple Notification Service is a web service that enables you
+ * to build distributed web-enabled applications. Applications can use
+ * Amazon SNS to easily push real-time notification messages to
+ * interested subscribers over multiple delivery protocols. For more
+ * information about this product go to <a
+ * href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> .
+ * </p>
+ * <p>
+ * Use the following links to get started using the <i>Amazon Simple
+ * Notification Service API Reference</i> :
+ * </p>
+ * 
+ * <ul>
+ * <li> <a
+ * http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html">
+ * Actions </a> : An alphabetical list of all Amazon SNS actions.</li>
+ * <li> <a
+ * ref="http://docs.amazonwebservices.com/sns/latest/api/API_Types.html">
+ * Data Types </a> : An alphabetical list of all Amazon SNS data
+ * types.</li>
+ * <li> <a
+ * tp://docs.amazonwebservices.com/sns/latest/api/CommonParameters.html">
+ * Common Parameters </a> : Parameters that all Query actions can
+ * use.</li>
+ * <li> <a
+ * ="http://docs.amazonwebservices.com/sns/latest/api/CommonErrors.html">
+ * Common Errors </a> : Client and server errors that all actions can
+ * return.</li>
+ * <li> <a
+ * //docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
+ * Regions and Endpoints </a> : Itemized regions and endpoints for all
+ * AWS products.</li>
+ * <li> <a
+ * s-east-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl">
+ * WSDL Location </a> :
+ * ast-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl</li>
+ * 
+ * </ul> 
  */       
 public class AmazonSNSAsyncClient extends AmazonSNSClient
         implements AmazonSNSAsync { 
@@ -257,7 +303,7 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * endpoint a confirmation message. To actually create a subscription,
      * the endpoint owner must call the ConfirmSubscription action with the
      * token from the confirmation message. Confirmation tokens are valid for
-     * twenty-four hours.
+     * three days.
      * </p>
      *
      * @param subscribeRequest Container for the necessary parameters to
@@ -378,10 +424,10 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     /**
      * <p>
      * The ListSubscriptions action returns a list of the requester's
-     * subscriptions. Each call returns a limited list of subscriptions. If
-     * there are more subscriptions, a NextToken is also returned. Use the
-     * NextToken parameter in a new ListSubscriptions call to get further
-     * results.
+     * subscriptions. Each call returns a limited list of subscriptions, up
+     * to 100. If there are more subscriptions, a NextToken is also returned.
+     * Use the NextToken parameter in a new ListSubscriptions call to get
+     * further results.
      * </p>
      *
      * @param listSubscriptionsRequest Container for the necessary parameters
@@ -403,6 +449,37 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
         return executorService.submit(new Callable<ListSubscriptionsResult>() {
             public ListSubscriptionsResult call() throws Exception {
                 return listSubscriptions(listSubscriptionsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * The SetSubscriptionAttributes action allows a subscription owner to
+     * set an attribute of the topic to a new value.
+     * </p>
+     *
+     * @param setSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the SetSubscriptionAttributes operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetSubscriptionAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setSubscriptionAttributesAsync(final SetSubscriptionAttributesRequest setSubscriptionAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setSubscriptionAttributes(setSubscriptionAttributesRequest);
+                return null;
 		    }
 		});
     }
@@ -472,10 +549,40 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
     
     /**
      * <p>
+     * The GetSubscriptionAttribtues action returns all of the properties of
+     * a subscription.
+     * </p>
+     *
+     * @param getSubscriptionAttributesRequest Container for the necessary
+     *           parameters to execute the GetSubscriptionAttributes operation on
+     *           AmazonSNS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSubscriptionAttributes service method, as returned by AmazonSNS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSNS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSubscriptionAttributesResult> getSubscriptionAttributesAsync(final GetSubscriptionAttributesRequest getSubscriptionAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSubscriptionAttributesResult>() {
+            public GetSubscriptionAttributesResult call() throws Exception {
+                return getSubscriptionAttributes(getSubscriptionAttributesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * The ListTopics action returns a list of the requester's topics. Each
-     * call returns a limited list of topics. If there are more topics, a
-     * NextToken is also returned. Use the NextToken parameter in a new
-     * ListTopics call to get further results.
+     * call returns a limited list of topics, up to 100. If there are more
+     * topics, a NextToken is also returned. Use the NextToken parameter in a
+     * new ListTopics call to get further results.
      * </p>
      *
      * @param listTopicsRequest Container for the necessary parameters to
@@ -541,8 +648,8 @@ public class AmazonSNSAsyncClient extends AmazonSNSClient
      * <p>
      * The ListSubscriptionsByTopic action returns a list of the
      * subscriptions to a specific topic. Each call returns a limited list of
-     * subscriptions. If there are more subscriptions, a NextToken is also
-     * returned. Use the NextToken parameter in a new
+     * subscriptions, up to 100. If there are more subscriptions, a NextToken
+     * is also returned. Use the NextToken parameter in a new
      * ListSubscriptionsByTopic call to get further results.
      * </p>
      *

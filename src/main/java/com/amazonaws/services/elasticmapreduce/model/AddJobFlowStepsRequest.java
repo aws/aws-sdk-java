@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -186,10 +186,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      * @param steps A list of <a>StepConfig</a> to be executed by the job flow.
      */
     public void setSteps(java.util.Collection<StepConfig> steps) {
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
-        if (steps != null) {
-            stepsCopy.addAll(steps);
+        if (steps == null) {
+            this.steps = null;
+            return;
         }
+
+        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
+        stepsCopy.addAll(steps);
         this.steps = stepsCopy;
     }
     
@@ -204,7 +207,7 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddJobFlowStepsRequest withSteps(StepConfig... steps) {
-        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>());
+        if (getSteps() == null) setSteps(new java.util.ArrayList<StepConfig>(steps.length));
         for (StepConfig value : steps) {
             getSteps().add(value);
         }
@@ -222,11 +225,13 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public AddJobFlowStepsRequest withSteps(java.util.Collection<StepConfig> steps) {
-        java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>();
-        if (steps != null) {
+        if (steps == null) {
+            this.steps = null;
+        } else {
+            java.util.List<StepConfig> stepsCopy = new java.util.ArrayList<StepConfig>(steps.size());
             stepsCopy.addAll(steps);
+            this.steps = stepsCopy;
         }
-        this.steps = stepsCopy;
 
         return this;
     }
@@ -243,10 +248,35 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("JobFlowId: " + jobFlowId + ", ");
-        sb.append("Steps: " + steps + ", ");
+        if (jobFlowId != null) sb.append("JobFlowId: " + jobFlowId + ", ");
+        if (steps != null) sb.append("Steps: " + steps + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getJobFlowId() == null) ? 0 : getJobFlowId().hashCode()); 
+        hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AddJobFlowStepsRequest == false) return false;
+        AddJobFlowStepsRequest other = (AddJobFlowStepsRequest)obj;
+        
+        if (other.getJobFlowId() == null ^ this.getJobFlowId() == null) return false;
+        if (other.getJobFlowId() != null && other.getJobFlowId().equals(this.getJobFlowId()) == false) return false; 
+        if (other.getSteps() == null ^ this.getSteps() == null) return false;
+        if (other.getSteps() != null && other.getSteps().equals(this.getSteps()) == false) return false; 
+        return true;
     }
     
 }

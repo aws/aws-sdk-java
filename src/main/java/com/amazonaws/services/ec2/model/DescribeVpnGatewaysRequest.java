@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,10 +93,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
-        java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (vpnGatewayIds != null) {
-            vpnGatewayIdsCopy.addAll(vpnGatewayIds);
+        if (vpnGatewayIds == null) {
+            this.vpnGatewayIds = null;
+            return;
         }
+
+        java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>(vpnGatewayIds.size());
+        vpnGatewayIdsCopy.addAll(vpnGatewayIds);
         this.vpnGatewayIds = vpnGatewayIdsCopy;
     }
     
@@ -119,7 +122,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(String... vpnGatewayIds) {
-        if (getVpnGatewayIds() == null) setVpnGatewayIds(new java.util.ArrayList<String>());
+        if (getVpnGatewayIds() == null) setVpnGatewayIds(new java.util.ArrayList<String>(vpnGatewayIds.length));
         for (String value : vpnGatewayIds) {
             getVpnGatewayIds().add(value);
         }
@@ -145,11 +148,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
-        java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (vpnGatewayIds != null) {
+        if (vpnGatewayIds == null) {
+            this.vpnGatewayIds = null;
+        } else {
+            java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>(vpnGatewayIds.size());
             vpnGatewayIdsCopy.addAll(vpnGatewayIds);
+            this.vpnGatewayIds = vpnGatewayIdsCopy;
         }
-        this.vpnGatewayIds = vpnGatewayIdsCopy;
 
         return this;
     }
@@ -189,10 +194,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -215,7 +223,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -241,11 +249,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpnGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -262,10 +272,35 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VpnGatewayIds: " + vpnGatewayIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (vpnGatewayIds != null) sb.append("VpnGatewayIds: " + vpnGatewayIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpnGatewayIds() == null) ? 0 : getVpnGatewayIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeVpnGatewaysRequest == false) return false;
+        DescribeVpnGatewaysRequest other = (DescribeVpnGatewaysRequest)obj;
+        
+        if (other.getVpnGatewayIds() == null ^ this.getVpnGatewayIds() == null) return false;
+        if (other.getVpnGatewayIds() != null && other.getVpnGatewayIds().equals(this.getVpnGatewayIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

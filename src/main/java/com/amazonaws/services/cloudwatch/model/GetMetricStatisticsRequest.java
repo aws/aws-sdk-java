@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -241,10 +241,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      * @param dimensions A list of dimensions describing qualities of the metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
-            dimensionsCopy.addAll(dimensions);
+        if (dimensions == null) {
+            this.dimensions = null;
+            return;
         }
+
+        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
     
@@ -262,7 +265,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withDimensions(Dimension... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }
@@ -283,11 +286,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
+        if (dimensions == null) {
+            this.dimensions = null;
+        } else {
+            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
+            this.dimensions = dimensionsCopy;
         }
-        this.dimensions = dimensionsCopy;
 
         return this;
     }
@@ -488,10 +493,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      * @param statistics The metric statistics to return.
      */
     public void setStatistics(java.util.Collection<String> statistics) {
-        java.util.List<String> statisticsCopy = new java.util.ArrayList<String>();
-        if (statistics != null) {
-            statisticsCopy.addAll(statistics);
+        if (statistics == null) {
+            this.statistics = null;
+            return;
         }
+
+        java.util.List<String> statisticsCopy = new java.util.ArrayList<String>(statistics.size());
+        statisticsCopy.addAll(statistics);
         this.statistics = statisticsCopy;
     }
     
@@ -509,7 +517,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withStatistics(String... statistics) {
-        if (getStatistics() == null) setStatistics(new java.util.ArrayList<String>());
+        if (getStatistics() == null) setStatistics(new java.util.ArrayList<String>(statistics.length));
         for (String value : statistics) {
             getStatistics().add(value);
         }
@@ -530,11 +538,13 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public GetMetricStatisticsRequest withStatistics(java.util.Collection<String> statistics) {
-        java.util.List<String> statisticsCopy = new java.util.ArrayList<String>();
-        if (statistics != null) {
+        if (statistics == null) {
+            this.statistics = null;
+        } else {
+            java.util.List<String> statisticsCopy = new java.util.ArrayList<String>(statistics.size());
             statisticsCopy.addAll(statistics);
+            this.statistics = statisticsCopy;
         }
-        this.statistics = statisticsCopy;
 
         return this;
     }
@@ -634,16 +644,59 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("MetricName: " + metricName + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("EndTime: " + endTime + ", ");
-        sb.append("Period: " + period + ", ");
-        sb.append("Statistics: " + statistics + ", ");
-        sb.append("Unit: " + unit + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
+        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
+        if (period != null) sb.append("Period: " + period + ", ");
+        if (statistics != null) sb.append("Statistics: " + statistics + ", ");
+        if (unit != null) sb.append("Unit: " + unit + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
+        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode()); 
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetMetricStatisticsRequest == false) return false;
+        GetMetricStatisticsRequest other = (GetMetricStatisticsRequest)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
+        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
+        if (other.getPeriod() == null ^ this.getPeriod() == null) return false;
+        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false) return false; 
+        if (other.getStatistics() == null ^ this.getStatistics() == null) return false;
+        if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false) return false; 
+        if (other.getUnit() == null ^ this.getUnit() == null) return false;
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false) return false; 
+        return true;
     }
     
 }

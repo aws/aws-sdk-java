@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,9 +72,31 @@ public class CreateVpcResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Vpc: " + vpc + ", ");
+        if (vpc != null) sb.append("Vpc: " + vpc + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateVpcResult == false) return false;
+        CreateVpcResult other = (CreateVpcResult)obj;
+        
+        if (other.getVpc() == null ^ this.getVpc() == null) return false;
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false) return false; 
+        return true;
     }
     
 }

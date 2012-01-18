@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeRegionsResult {
      * @param regions The list of described Amazon EC2 regions.
      */
     public void setRegions(java.util.Collection<Region> regions) {
-        java.util.List<Region> regionsCopy = new java.util.ArrayList<Region>();
-        if (regions != null) {
-            regionsCopy.addAll(regions);
+        if (regions == null) {
+            this.regions = null;
+            return;
         }
+
+        java.util.List<Region> regionsCopy = new java.util.ArrayList<Region>(regions.size());
+        regionsCopy.addAll(regions);
         this.regions = regionsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeRegionsResult {
      *         together. 
      */
     public DescribeRegionsResult withRegions(Region... regions) {
-        if (getRegions() == null) setRegions(new java.util.ArrayList<Region>());
+        if (getRegions() == null) setRegions(new java.util.ArrayList<Region>(regions.length));
         for (Region value : regions) {
             getRegions().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeRegionsResult {
      *         together. 
      */
     public DescribeRegionsResult withRegions(java.util.Collection<Region> regions) {
-        java.util.List<Region> regionsCopy = new java.util.ArrayList<Region>();
-        if (regions != null) {
+        if (regions == null) {
+            this.regions = null;
+        } else {
+            java.util.List<Region> regionsCopy = new java.util.ArrayList<Region>(regions.size());
             regionsCopy.addAll(regions);
+            this.regions = regionsCopy;
         }
-        this.regions = regionsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeRegionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Regions: " + regions + ", ");
+        if (regions != null) sb.append("Regions: " + regions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeRegionsResult == false) return false;
+        DescribeRegionsResult other = (DescribeRegionsResult)obj;
+        
+        if (other.getRegions() == null ^ this.getRegions() == null) return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false) return false; 
+        return true;
     }
     
 }

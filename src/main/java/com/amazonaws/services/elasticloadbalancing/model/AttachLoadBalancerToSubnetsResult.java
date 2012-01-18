@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class AttachLoadBalancerToSubnetsResult {
      * @param subnets A list of subnet IDs added for the LoadBalancer.
      */
     public void setSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
-            subnetsCopy.addAll(subnets);
+        if (subnets == null) {
+            this.subnets = null;
+            return;
         }
+
+        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+        subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
     
@@ -63,7 +66,7 @@ public class AttachLoadBalancerToSubnetsResult {
      *         together. 
      */
     public AttachLoadBalancerToSubnetsResult withSubnets(String... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>());
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<String>(subnets.length));
         for (String value : subnets) {
             getSubnets().add(value);
         }
@@ -81,11 +84,13 @@ public class AttachLoadBalancerToSubnetsResult {
      *         together. 
      */
     public AttachLoadBalancerToSubnetsResult withSubnets(java.util.Collection<String> subnets) {
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>();
-        if (subnets != null) {
+        if (subnets == null) {
+            this.subnets = null;
+        } else {
+            java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
             subnetsCopy.addAll(subnets);
+            this.subnets = subnetsCopy;
         }
-        this.subnets = subnetsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class AttachLoadBalancerToSubnetsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Subnets: " + subnets + ", ");
+        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AttachLoadBalancerToSubnetsResult == false) return false;
+        AttachLoadBalancerToSubnetsResult other = (AttachLoadBalancerToSubnetsResult)obj;
+        
+        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
+        return true;
     }
     
 }

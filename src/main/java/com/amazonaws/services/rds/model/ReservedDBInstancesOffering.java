@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -361,16 +361,59 @@ public class ReservedDBInstancesOffering {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
-        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        sb.append("Duration: " + duration + ", ");
-        sb.append("FixedPrice: " + fixedPrice + ", ");
-        sb.append("UsagePrice: " + usagePrice + ", ");
-        sb.append("CurrencyCode: " + currencyCode + ", ");
-        sb.append("ProductDescription: " + productDescription + ", ");
-        sb.append("MultiAZ: " + multiAZ + ", ");
+        if (reservedDBInstancesOfferingId != null) sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
+        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        if (duration != null) sb.append("Duration: " + duration + ", ");
+        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
+        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
+        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
+        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedDBInstancesOfferingId() == null) ? 0 : getReservedDBInstancesOfferingId().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode()); 
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode()); 
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ReservedDBInstancesOffering == false) return false;
+        ReservedDBInstancesOffering other = (ReservedDBInstancesOffering)obj;
+        
+        if (other.getReservedDBInstancesOfferingId() == null ^ this.getReservedDBInstancesOfferingId() == null) return false;
+        if (other.getReservedDBInstancesOfferingId() != null && other.getReservedDBInstancesOfferingId().equals(this.getReservedDBInstancesOfferingId()) == false) return false; 
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null) return false;
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
+        if (other.getDuration() == null ^ this.getDuration() == null) return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
+        if (other.getFixedPrice() == null ^ this.getFixedPrice() == null) return false;
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false) return false; 
+        if (other.getUsagePrice() == null ^ this.getUsagePrice() == null) return false;
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false) return false; 
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null) return false;
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false) return false; 
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
+        if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -513,18 +513,67 @@ public class Parameter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ParameterName: " + parameterName + ", ");
-        sb.append("ParameterValue: " + parameterValue + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("Source: " + source + ", ");
-        sb.append("ApplyType: " + applyType + ", ");
-        sb.append("DataType: " + dataType + ", ");
-        sb.append("AllowedValues: " + allowedValues + ", ");
-        sb.append("IsModifiable: " + isModifiable + ", ");
-        sb.append("MinimumEngineVersion: " + minimumEngineVersion + ", ");
-        sb.append("ApplyMethod: " + applyMethod + ", ");
+        if (parameterName != null) sb.append("ParameterName: " + parameterName + ", ");
+        if (parameterValue != null) sb.append("ParameterValue: " + parameterValue + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (source != null) sb.append("Source: " + source + ", ");
+        if (applyType != null) sb.append("ApplyType: " + applyType + ", ");
+        if (dataType != null) sb.append("DataType: " + dataType + ", ");
+        if (allowedValues != null) sb.append("AllowedValues: " + allowedValues + ", ");
+        if (isModifiable != null) sb.append("IsModifiable: " + isModifiable + ", ");
+        if (minimumEngineVersion != null) sb.append("MinimumEngineVersion: " + minimumEngineVersion + ", ");
+        if (applyMethod != null) sb.append("ApplyMethod: " + applyMethod + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getParameterName() == null) ? 0 : getParameterName().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterValue() == null) ? 0 : getParameterValue().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode()); 
+        hashCode = prime * hashCode + ((getApplyType() == null) ? 0 : getApplyType().hashCode()); 
+        hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode()); 
+        hashCode = prime * hashCode + ((getAllowedValues() == null) ? 0 : getAllowedValues().hashCode()); 
+        hashCode = prime * hashCode + ((isModifiable() == null) ? 0 : isModifiable().hashCode()); 
+        hashCode = prime * hashCode + ((getMinimumEngineVersion() == null) ? 0 : getMinimumEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getApplyMethod() == null) ? 0 : getApplyMethod().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Parameter == false) return false;
+        Parameter other = (Parameter)obj;
+        
+        if (other.getParameterName() == null ^ this.getParameterName() == null) return false;
+        if (other.getParameterName() != null && other.getParameterName().equals(this.getParameterName()) == false) return false; 
+        if (other.getParameterValue() == null ^ this.getParameterValue() == null) return false;
+        if (other.getParameterValue() != null && other.getParameterValue().equals(this.getParameterValue()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getSource() == null ^ this.getSource() == null) return false;
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false) return false; 
+        if (other.getApplyType() == null ^ this.getApplyType() == null) return false;
+        if (other.getApplyType() != null && other.getApplyType().equals(this.getApplyType()) == false) return false; 
+        if (other.getDataType() == null ^ this.getDataType() == null) return false;
+        if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false) return false; 
+        if (other.getAllowedValues() == null ^ this.getAllowedValues() == null) return false;
+        if (other.getAllowedValues() != null && other.getAllowedValues().equals(this.getAllowedValues()) == false) return false; 
+        if (other.isModifiable() == null ^ this.isModifiable() == null) return false;
+        if (other.isModifiable() != null && other.isModifiable().equals(this.isModifiable()) == false) return false; 
+        if (other.getMinimumEngineVersion() == null ^ this.getMinimumEngineVersion() == null) return false;
+        if (other.getMinimumEngineVersion() != null && other.getMinimumEngineVersion().equals(this.getMinimumEngineVersion()) == false) return false; 
+        if (other.getApplyMethod() == null ^ this.getApplyMethod() == null) return false;
+        if (other.getApplyMethod() != null && other.getApplyMethod().equals(this.getApplyMethod()) == false) return false; 
+        return true;
     }
     
 }

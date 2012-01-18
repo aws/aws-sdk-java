@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -131,10 +131,13 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest {
      *         a single request.
      */
     public void setParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
-        java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>();
-        if (parameterNameValues != null) {
-            parameterNameValuesCopy.addAll(parameterNameValues);
+        if (parameterNameValues == null) {
+            this.parameterNameValues = null;
+            return;
         }
+
+        java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
+        parameterNameValuesCopy.addAll(parameterNameValues);
         this.parameterNameValues = parameterNameValuesCopy;
     }
     
@@ -155,7 +158,7 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(ParameterNameValue... parameterNameValues) {
-        if (getParameterNameValues() == null) setParameterNameValues(new java.util.ArrayList<ParameterNameValue>());
+        if (getParameterNameValues() == null) setParameterNameValues(new java.util.ArrayList<ParameterNameValue>(parameterNameValues.length));
         for (ParameterNameValue value : parameterNameValues) {
             getParameterNameValues().add(value);
         }
@@ -179,11 +182,13 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheParameterGroupRequest withParameterNameValues(java.util.Collection<ParameterNameValue> parameterNameValues) {
-        java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>();
-        if (parameterNameValues != null) {
+        if (parameterNameValues == null) {
+            this.parameterNameValues = null;
+        } else {
+            java.util.List<ParameterNameValue> parameterNameValuesCopy = new java.util.ArrayList<ParameterNameValue>(parameterNameValues.size());
             parameterNameValuesCopy.addAll(parameterNameValues);
+            this.parameterNameValues = parameterNameValuesCopy;
         }
-        this.parameterNameValues = parameterNameValuesCopy;
 
         return this;
     }
@@ -200,10 +205,35 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
-        sb.append("ParameterNameValues: " + parameterNameValues + ", ");
+        if (cacheParameterGroupName != null) sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
+        if (parameterNameValues != null) sb.append("ParameterNameValues: " + parameterNameValues + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getParameterNameValues() == null) ? 0 : getParameterNameValues().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ModifyCacheParameterGroupRequest == false) return false;
+        ModifyCacheParameterGroupRequest other = (ModifyCacheParameterGroupRequest)obj;
+        
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null) return false;
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false) return false; 
+        if (other.getParameterNameValues() == null ^ this.getParameterNameValues() == null) return false;
+        if (other.getParameterNameValues() != null && other.getParameterNameValues().equals(this.getParameterNameValues()) == false) return false; 
+        return true;
     }
     
 }

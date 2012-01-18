@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,9 +72,31 @@ public class CreateSnapshotResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Snapshot: " + snapshot + ", ");
+        if (snapshot != null) sb.append("Snapshot: " + snapshot + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSnapshot() == null) ? 0 : getSnapshot().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateSnapshotResult == false) return false;
+        CreateSnapshotResult other = (CreateSnapshotResult)obj;
+        
+        if (other.getSnapshot() == null ^ this.getSnapshot() == null) return false;
+        if (other.getSnapshot() != null && other.getSnapshot().equals(this.getSnapshot()) == false) return false; 
+        return true;
     }
     
 }

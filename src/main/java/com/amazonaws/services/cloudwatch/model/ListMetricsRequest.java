@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -182,10 +182,13 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
      * @param dimensions A list of dimensions to filter against.
      */
     public void setDimensions(java.util.Collection<DimensionFilter> dimensions) {
-        java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>();
-        if (dimensions != null) {
-            dimensionsCopy.addAll(dimensions);
+        if (dimensions == null) {
+            this.dimensions = null;
+            return;
         }
+
+        java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>(dimensions.size());
+        dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
     
@@ -203,7 +206,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListMetricsRequest withDimensions(DimensionFilter... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<DimensionFilter>());
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<DimensionFilter>(dimensions.length));
         for (DimensionFilter value : dimensions) {
             getDimensions().add(value);
         }
@@ -224,11 +227,13 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ListMetricsRequest withDimensions(java.util.Collection<DimensionFilter> dimensions) {
-        java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>();
-        if (dimensions != null) {
+        if (dimensions == null) {
+            this.dimensions = null;
+        } else {
+            java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
+            this.dimensions = dimensionsCopy;
         }
-        this.dimensions = dimensionsCopy;
 
         return this;
     }
@@ -285,12 +290,43 @@ public class ListMetricsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("MetricName: " + metricName + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
+        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListMetricsRequest == false) return false;
+        ListMetricsRequest other = (ListMetricsRequest)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
+        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

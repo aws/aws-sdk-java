@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * endpoint a confirmation message. To actually create a subscription,
  * the endpoint owner must call the ConfirmSubscription action with the
  * token from the confirmation message. Confirmation tokens are valid for
- * twenty-four hours.
+ * three days.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#subscribe(SubscribeRequest)
@@ -271,11 +271,39 @@ public class SubscribeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TopicArn: " + topicArn + ", ");
-        sb.append("Protocol: " + protocol + ", ");
-        sb.append("Endpoint: " + endpoint + ", ");
+        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
+        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
+        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode()); 
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SubscribeRequest == false) return false;
+        SubscribeRequest other = (SubscribeRequest)obj;
+        
+        if (other.getTopicArn() == null ^ this.getTopicArn() == null) return false;
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false) return false; 
+        if (other.getProtocol() == null ^ this.getProtocol() == null) return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false) return false; 
+        if (other.getEndpoint() == null ^ this.getEndpoint() == null) return false;
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false) return false; 
+        return true;
     }
     
 }

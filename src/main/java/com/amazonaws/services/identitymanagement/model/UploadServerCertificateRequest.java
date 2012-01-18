@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -403,13 +403,47 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Path: " + path + ", ");
-        sb.append("ServerCertificateName: " + serverCertificateName + ", ");
-        sb.append("CertificateBody: " + certificateBody + ", ");
-        sb.append("PrivateKey: " + privateKey + ", ");
-        sb.append("CertificateChain: " + certificateChain + ", ");
+        if (path != null) sb.append("Path: " + path + ", ");
+        if (serverCertificateName != null) sb.append("ServerCertificateName: " + serverCertificateName + ", ");
+        if (certificateBody != null) sb.append("CertificateBody: " + certificateBody + ", ");
+        if (privateKey != null) sb.append("PrivateKey: " + privateKey + ", ");
+        if (certificateChain != null) sb.append("CertificateChain: " + certificateChain + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
+        hashCode = prime * hashCode + ((getServerCertificateName() == null) ? 0 : getServerCertificateName().hashCode()); 
+        hashCode = prime * hashCode + ((getCertificateBody() == null) ? 0 : getCertificateBody().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode()); 
+        hashCode = prime * hashCode + ((getCertificateChain() == null) ? 0 : getCertificateChain().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UploadServerCertificateRequest == false) return false;
+        UploadServerCertificateRequest other = (UploadServerCertificateRequest)obj;
+        
+        if (other.getPath() == null ^ this.getPath() == null) return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
+        if (other.getServerCertificateName() == null ^ this.getServerCertificateName() == null) return false;
+        if (other.getServerCertificateName() != null && other.getServerCertificateName().equals(this.getServerCertificateName()) == false) return false; 
+        if (other.getCertificateBody() == null ^ this.getCertificateBody() == null) return false;
+        if (other.getCertificateBody() != null && other.getCertificateBody().equals(this.getCertificateBody()) == false) return false; 
+        if (other.getPrivateKey() == null ^ this.getPrivateKey() == null) return false;
+        if (other.getPrivateKey() != null && other.getPrivateKey().equals(this.getPrivateKey()) == false) return false; 
+        if (other.getCertificateChain() == null ^ this.getCertificateChain() == null) return false;
+        if (other.getCertificateChain() != null && other.getCertificateChain().equals(this.getCertificateChain()) == false) return false; 
+        return true;
     }
     
 }

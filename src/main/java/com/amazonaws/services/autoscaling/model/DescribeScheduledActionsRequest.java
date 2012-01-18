@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -154,10 +154,13 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
      *         scheduled actions are requested, they are ignored with no error.
      */
     public void setScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
-        java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>();
-        if (scheduledActionNames != null) {
-            scheduledActionNamesCopy.addAll(scheduledActionNames);
+        if (scheduledActionNames == null) {
+            this.scheduledActionNames = null;
+            return;
         }
+
+        java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>(scheduledActionNames.size());
+        scheduledActionNamesCopy.addAll(scheduledActionNames);
         this.scheduledActionNames = scheduledActionNamesCopy;
     }
     
@@ -180,7 +183,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(String... scheduledActionNames) {
-        if (getScheduledActionNames() == null) setScheduledActionNames(new java.util.ArrayList<String>());
+        if (getScheduledActionNames() == null) setScheduledActionNames(new java.util.ArrayList<String>(scheduledActionNames.length));
         for (String value : scheduledActionNames) {
             getScheduledActionNames().add(value);
         }
@@ -206,11 +209,13 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScheduledActionsRequest withScheduledActionNames(java.util.Collection<String> scheduledActionNames) {
-        java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>();
-        if (scheduledActionNames != null) {
+        if (scheduledActionNames == null) {
+            this.scheduledActionNames = null;
+        } else {
+            java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>(scheduledActionNames.size());
             scheduledActionNamesCopy.addAll(scheduledActionNames);
+            this.scheduledActionNames = scheduledActionNamesCopy;
         }
-        this.scheduledActionNames = scheduledActionNamesCopy;
 
         return this;
     }
@@ -393,14 +398,51 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("ScheduledActionNames: " + scheduledActionNames + ", ");
-        sb.append("StartTime: " + startTime + ", ");
-        sb.append("EndTime: " + endTime + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (scheduledActionNames != null) sb.append("ScheduledActionNames: " + scheduledActionNames + ", ");
+        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
+        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getScheduledActionNames() == null) ? 0 : getScheduledActionNames().hashCode()); 
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
+        hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeScheduledActionsRequest == false) return false;
+        DescribeScheduledActionsRequest other = (DescribeScheduledActionsRequest)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getScheduledActionNames() == null ^ this.getScheduledActionNames() == null) return false;
+        if (other.getScheduledActionNames() != null && other.getScheduledActionNames().equals(this.getScheduledActionNames()) == false) return false; 
+        if (other.getStartTime() == null ^ this.getStartTime() == null) return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false) return false; 
+        if (other.getEndTime() == null ^ this.getEndTime() == null) return false;
+        if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        return true;
     }
     
 }

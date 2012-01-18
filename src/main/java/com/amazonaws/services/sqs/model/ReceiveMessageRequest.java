@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -129,10 +129,13 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
      * @param attributeNames A list of attributes to retrieve information for.
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
-        java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>();
-        if (attributeNames != null) {
-            attributeNamesCopy.addAll(attributeNames);
+        if (attributeNames == null) {
+            this.attributeNames = null;
+            return;
         }
+
+        java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
+        attributeNamesCopy.addAll(attributeNames);
         this.attributeNames = attributeNamesCopy;
     }
     
@@ -147,7 +150,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ReceiveMessageRequest withAttributeNames(String... attributeNames) {
-        if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>());
+        if (getAttributeNames() == null) setAttributeNames(new java.util.ArrayList<String>(attributeNames.length));
         for (String value : attributeNames) {
             getAttributeNames().add(value);
         }
@@ -165,11 +168,13 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ReceiveMessageRequest withAttributeNames(java.util.Collection<String> attributeNames) {
-        java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>();
-        if (attributeNames != null) {
+        if (attributeNames == null) {
+            this.attributeNames = null;
+        } else {
+            java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
             attributeNamesCopy.addAll(attributeNames);
+            this.attributeNames = attributeNamesCopy;
         }
-        this.attributeNames = attributeNamesCopy;
 
         return this;
     }
@@ -278,12 +283,43 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("QueueUrl: " + queueUrl + ", ");
-        sb.append("AttributeNames: " + attributeNames + ", ");
-        sb.append("MaxNumberOfMessages: " + maxNumberOfMessages + ", ");
-        sb.append("VisibilityTimeout: " + visibilityTimeout + ", ");
+        if (queueUrl != null) sb.append("QueueUrl: " + queueUrl + ", ");
+        if (attributeNames != null) sb.append("AttributeNames: " + attributeNames + ", ");
+        if (maxNumberOfMessages != null) sb.append("MaxNumberOfMessages: " + maxNumberOfMessages + ", ");
+        if (visibilityTimeout != null) sb.append("VisibilityTimeout: " + visibilityTimeout + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxNumberOfMessages() == null) ? 0 : getMaxNumberOfMessages().hashCode()); 
+        hashCode = prime * hashCode + ((getVisibilityTimeout() == null) ? 0 : getVisibilityTimeout().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ReceiveMessageRequest == false) return false;
+        ReceiveMessageRequest other = (ReceiveMessageRequest)obj;
+        
+        if (other.getQueueUrl() == null ^ this.getQueueUrl() == null) return false;
+        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false) return false; 
+        if (other.getAttributeNames() == null ^ this.getAttributeNames() == null) return false;
+        if (other.getAttributeNames() != null && other.getAttributeNames().equals(this.getAttributeNames()) == false) return false; 
+        if (other.getMaxNumberOfMessages() == null ^ this.getMaxNumberOfMessages() == null) return false;
+        if (other.getMaxNumberOfMessages() != null && other.getMaxNumberOfMessages().equals(this.getMaxNumberOfMessages()) == false) return false; 
+        if (other.getVisibilityTimeout() == null ^ this.getVisibilityTimeout() == null) return false;
+        if (other.getVisibilityTimeout() != null && other.getVisibilityTimeout().equals(this.getVisibilityTimeout()) == false) return false; 
+        return true;
     }
     
 }

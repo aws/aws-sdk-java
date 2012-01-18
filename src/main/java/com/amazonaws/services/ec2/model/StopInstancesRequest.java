@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,10 +88,13 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
      * @param instanceIds The list of Amazon EC2 instances to stop.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>();
-        if (instanceIds != null) {
-            instanceIdsCopy.addAll(instanceIds);
+        if (instanceIds == null) {
+            this.instanceIds = null;
+            return;
         }
+
+        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
     
@@ -106,7 +109,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public StopInstancesRequest withInstanceIds(String... instanceIds) {
-        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }
@@ -124,11 +127,13 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public StopInstancesRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>();
-        if (instanceIds != null) {
+        if (instanceIds == null) {
+            this.instanceIds = null;
+        } else {
+            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
+            this.instanceIds = instanceIdsCopy;
         }
-        this.instanceIds = instanceIdsCopy;
 
         return this;
     }
@@ -212,10 +217,35 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceIds: " + instanceIds + ", ");
-        sb.append("Force: " + force + ", ");
+        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
+        if (force != null) sb.append("Force: " + force + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
+        hashCode = prime * hashCode + ((isForce() == null) ? 0 : isForce().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StopInstancesRequest == false) return false;
+        StopInstancesRequest other = (StopInstancesRequest)obj;
+        
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
+        if (other.isForce() == null ^ this.isForce() == null) return false;
+        if (other.isForce() != null && other.isForce().equals(this.isForce()) == false) return false; 
+        return true;
     }
     
 }

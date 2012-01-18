@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -267,12 +267,43 @@ public class UpdateJobRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("JobId: " + jobId + ", ");
-        sb.append("Manifest: " + manifest + ", ");
-        sb.append("JobType: " + jobType + ", ");
-        sb.append("ValidateOnly: " + validateOnly + ", ");
+        if (jobId != null) sb.append("JobId: " + jobId + ", ");
+        if (manifest != null) sb.append("Manifest: " + manifest + ", ");
+        if (jobType != null) sb.append("JobType: " + jobType + ", ");
+        if (validateOnly != null) sb.append("ValidateOnly: " + validateOnly + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode()); 
+        hashCode = prime * hashCode + ((getManifest() == null) ? 0 : getManifest().hashCode()); 
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode()); 
+        hashCode = prime * hashCode + ((isValidateOnly() == null) ? 0 : isValidateOnly().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UpdateJobRequest == false) return false;
+        UpdateJobRequest other = (UpdateJobRequest)obj;
+        
+        if (other.getJobId() == null ^ this.getJobId() == null) return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false) return false; 
+        if (other.getManifest() == null ^ this.getManifest() == null) return false;
+        if (other.getManifest() != null && other.getManifest().equals(this.getManifest()) == false) return false; 
+        if (other.getJobType() == null ^ this.getJobType() == null) return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false) return false; 
+        if (other.isValidateOnly() == null ^ this.isValidateOnly() == null) return false;
+        if (other.isValidateOnly() != null && other.isValidateOnly().equals(this.isValidateOnly()) == false) return false; 
+        return true;
     }
     
 }

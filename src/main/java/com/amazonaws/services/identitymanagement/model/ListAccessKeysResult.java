@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,10 +65,13 @@ public class ListAccessKeysResult {
      * @param accessKeyMetadata A list of access key metadata.
      */
     public void setAccessKeyMetadata(java.util.Collection<AccessKeyMetadata> accessKeyMetadata) {
-        java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>();
-        if (accessKeyMetadata != null) {
-            accessKeyMetadataCopy.addAll(accessKeyMetadata);
+        if (accessKeyMetadata == null) {
+            this.accessKeyMetadata = null;
+            return;
         }
+
+        java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.size());
+        accessKeyMetadataCopy.addAll(accessKeyMetadata);
         this.accessKeyMetadata = accessKeyMetadataCopy;
     }
     
@@ -83,7 +86,7 @@ public class ListAccessKeysResult {
      *         together. 
      */
     public ListAccessKeysResult withAccessKeyMetadata(AccessKeyMetadata... accessKeyMetadata) {
-        if (getAccessKeyMetadata() == null) setAccessKeyMetadata(new java.util.ArrayList<AccessKeyMetadata>());
+        if (getAccessKeyMetadata() == null) setAccessKeyMetadata(new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.length));
         for (AccessKeyMetadata value : accessKeyMetadata) {
             getAccessKeyMetadata().add(value);
         }
@@ -101,11 +104,13 @@ public class ListAccessKeysResult {
      *         together. 
      */
     public ListAccessKeysResult withAccessKeyMetadata(java.util.Collection<AccessKeyMetadata> accessKeyMetadata) {
-        java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>();
-        if (accessKeyMetadata != null) {
+        if (accessKeyMetadata == null) {
+            this.accessKeyMetadata = null;
+        } else {
+            java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.size());
             accessKeyMetadataCopy.addAll(accessKeyMetadata);
+            this.accessKeyMetadata = accessKeyMetadataCopy;
         }
-        this.accessKeyMetadata = accessKeyMetadataCopy;
 
         return this;
     }
@@ -247,11 +252,39 @@ public class ListAccessKeysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AccessKeyMetadata: " + accessKeyMetadata + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (accessKeyMetadata != null) sb.append("AccessKeyMetadata: " + accessKeyMetadata + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAccessKeyMetadata() == null) ? 0 : getAccessKeyMetadata().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListAccessKeysResult == false) return false;
+        ListAccessKeysResult other = (ListAccessKeysResult)obj;
+        
+        if (other.getAccessKeyMetadata() == null ^ this.getAccessKeyMetadata() == null) return false;
+        if (other.getAccessKeyMetadata() != null && other.getAccessKeyMetadata().equals(this.getAccessKeyMetadata()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

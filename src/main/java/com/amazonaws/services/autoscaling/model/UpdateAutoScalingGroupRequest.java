@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -388,10 +388,13 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * @param availabilityZones Availability zones for the group.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
-            availabilityZonesCopy.addAll(availabilityZones);
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
         }
+
+        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
     
@@ -409,7 +412,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(String... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -430,11 +433,13 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public UpdateAutoScalingGroupRequest withAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+        } else {
+            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
+            this.availabilityZones = availabilityZonesCopy;
         }
-        this.availabilityZones = availabilityZonesCopy;
 
         return this;
     }
@@ -659,19 +664,71 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
-        sb.append("MinSize: " + minSize + ", ");
-        sb.append("MaxSize: " + maxSize + ", ");
-        sb.append("DesiredCapacity: " + desiredCapacity + ", ");
-        sb.append("DefaultCooldown: " + defaultCooldown + ", ");
-        sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        sb.append("HealthCheckType: " + healthCheckType + ", ");
-        sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
-        sb.append("PlacementGroup: " + placementGroup + ", ");
-        sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (launchConfigurationName != null) sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        if (minSize != null) sb.append("MinSize: " + minSize + ", ");
+        if (maxSize != null) sb.append("MaxSize: " + maxSize + ", ");
+        if (desiredCapacity != null) sb.append("DesiredCapacity: " + desiredCapacity + ", ");
+        if (defaultCooldown != null) sb.append("DefaultCooldown: " + defaultCooldown + ", ");
+        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (healthCheckType != null) sb.append("HealthCheckType: " + healthCheckType + ", ");
+        if (healthCheckGracePeriod != null) sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
+        if (placementGroup != null) sb.append("PlacementGroup: " + placementGroup + ", ");
+        if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode()); 
+        hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode()); 
+        hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckType() == null) ? 0 : getHealthCheckType().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriod() == null) ? 0 : getHealthCheckGracePeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UpdateAutoScalingGroupRequest == false) return false;
+        UpdateAutoScalingGroupRequest other = (UpdateAutoScalingGroupRequest)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null) return false;
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false) return false; 
+        if (other.getMinSize() == null ^ this.getMinSize() == null) return false;
+        if (other.getMinSize() != null && other.getMinSize().equals(this.getMinSize()) == false) return false; 
+        if (other.getMaxSize() == null ^ this.getMaxSize() == null) return false;
+        if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false) return false; 
+        if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null) return false;
+        if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false) return false; 
+        if (other.getDefaultCooldown() == null ^ this.getDefaultCooldown() == null) return false;
+        if (other.getDefaultCooldown() != null && other.getDefaultCooldown().equals(this.getDefaultCooldown()) == false) return false; 
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
+        if (other.getHealthCheckType() == null ^ this.getHealthCheckType() == null) return false;
+        if (other.getHealthCheckType() != null && other.getHealthCheckType().equals(this.getHealthCheckType()) == false) return false; 
+        if (other.getHealthCheckGracePeriod() == null ^ this.getHealthCheckGracePeriod() == null) return false;
+        if (other.getHealthCheckGracePeriod() != null && other.getHealthCheckGracePeriod().equals(this.getHealthCheckGracePeriod()) == false) return false; 
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null) return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false) return false; 
+        if (other.getVPCZoneIdentifier() == null ^ this.getVPCZoneIdentifier() == null) return false;
+        if (other.getVPCZoneIdentifier() != null && other.getVPCZoneIdentifier().equals(this.getVPCZoneIdentifier()) == false) return false; 
+        return true;
     }
     
 }

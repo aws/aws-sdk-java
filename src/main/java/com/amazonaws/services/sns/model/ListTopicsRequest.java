@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,9 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest) ListTopics operation}.
  * <p>
  * The ListTopics action returns a list of the requester's topics. Each
- * call returns a limited list of topics. If there are more topics, a
- * NextToken is also returned. Use the NextToken parameter in a new
- * ListTopics call to get further results.
+ * call returns a limited list of topics, up to 100. If there are more
+ * topics, a NextToken is also returned. Use the NextToken parameter in a
+ * new ListTopics call to get further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listTopics(ListTopicsRequest)
@@ -98,9 +98,31 @@ public class ListTopicsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListTopicsRequest == false) return false;
+        ListTopicsRequest other = (ListTopicsRequest)obj;
+        
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

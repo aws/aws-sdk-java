@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,10 +42,13 @@ public class LaunchPermissionModifications {
      * @param add The new value for the Add property for this object.
      */
     public void setAdd(java.util.Collection<LaunchPermission> add) {
-        java.util.List<LaunchPermission> addCopy = new java.util.ArrayList<LaunchPermission>();
-        if (add != null) {
-            addCopy.addAll(add);
+        if (add == null) {
+            this.add = null;
+            return;
         }
+
+        java.util.List<LaunchPermission> addCopy = new java.util.ArrayList<LaunchPermission>(add.size());
+        addCopy.addAll(add);
         this.add = addCopy;
     }
     
@@ -60,7 +63,7 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withAdd(LaunchPermission... add) {
-        if (getAdd() == null) setAdd(new java.util.ArrayList<LaunchPermission>());
+        if (getAdd() == null) setAdd(new java.util.ArrayList<LaunchPermission>(add.length));
         for (LaunchPermission value : add) {
             getAdd().add(value);
         }
@@ -78,11 +81,13 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withAdd(java.util.Collection<LaunchPermission> add) {
-        java.util.List<LaunchPermission> addCopy = new java.util.ArrayList<LaunchPermission>();
-        if (add != null) {
+        if (add == null) {
+            this.add = null;
+        } else {
+            java.util.List<LaunchPermission> addCopy = new java.util.ArrayList<LaunchPermission>(add.size());
             addCopy.addAll(add);
+            this.add = addCopy;
         }
-        this.add = addCopy;
 
         return this;
     }
@@ -106,10 +111,13 @@ public class LaunchPermissionModifications {
      * @param remove The new value for the Remove property for this object.
      */
     public void setRemove(java.util.Collection<LaunchPermission> remove) {
-        java.util.List<LaunchPermission> removeCopy = new java.util.ArrayList<LaunchPermission>();
-        if (remove != null) {
-            removeCopy.addAll(remove);
+        if (remove == null) {
+            this.remove = null;
+            return;
         }
+
+        java.util.List<LaunchPermission> removeCopy = new java.util.ArrayList<LaunchPermission>(remove.size());
+        removeCopy.addAll(remove);
         this.remove = removeCopy;
     }
     
@@ -124,7 +132,7 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withRemove(LaunchPermission... remove) {
-        if (getRemove() == null) setRemove(new java.util.ArrayList<LaunchPermission>());
+        if (getRemove() == null) setRemove(new java.util.ArrayList<LaunchPermission>(remove.length));
         for (LaunchPermission value : remove) {
             getRemove().add(value);
         }
@@ -142,11 +150,13 @@ public class LaunchPermissionModifications {
      *         together. 
      */
     public LaunchPermissionModifications withRemove(java.util.Collection<LaunchPermission> remove) {
-        java.util.List<LaunchPermission> removeCopy = new java.util.ArrayList<LaunchPermission>();
-        if (remove != null) {
+        if (remove == null) {
+            this.remove = null;
+        } else {
+            java.util.List<LaunchPermission> removeCopy = new java.util.ArrayList<LaunchPermission>(remove.size());
             removeCopy.addAll(remove);
+            this.remove = removeCopy;
         }
-        this.remove = removeCopy;
 
         return this;
     }
@@ -163,10 +173,35 @@ public class LaunchPermissionModifications {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Add: " + add + ", ");
-        sb.append("Remove: " + remove + ", ");
+        if (add != null) sb.append("Add: " + add + ", ");
+        if (remove != null) sb.append("Remove: " + remove + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAdd() == null) ? 0 : getAdd().hashCode()); 
+        hashCode = prime * hashCode + ((getRemove() == null) ? 0 : getRemove().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof LaunchPermissionModifications == false) return false;
+        LaunchPermissionModifications other = (LaunchPermissionModifications)obj;
+        
+        if (other.getAdd() == null ^ this.getAdd() == null) return false;
+        if (other.getAdd() != null && other.getAdd().equals(this.getAdd()) == false) return false; 
+        if (other.getRemove() == null ^ this.getRemove() == null) return false;
+        if (other.getRemove() != null && other.getRemove().equals(this.getRemove()) == false) return false; 
+        return true;
     }
     
 }

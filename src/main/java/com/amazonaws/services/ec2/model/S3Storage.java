@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,13 +257,47 @@ public class S3Storage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Bucket: " + bucket + ", ");
-        sb.append("Prefix: " + prefix + ", ");
-        sb.append("AWSAccessKeyId: " + aWSAccessKeyId + ", ");
-        sb.append("UploadPolicy: " + uploadPolicy + ", ");
-        sb.append("UploadPolicySignature: " + uploadPolicySignature + ", ");
+        if (bucket != null) sb.append("Bucket: " + bucket + ", ");
+        if (prefix != null) sb.append("Prefix: " + prefix + ", ");
+        if (aWSAccessKeyId != null) sb.append("AWSAccessKeyId: " + aWSAccessKeyId + ", ");
+        if (uploadPolicy != null) sb.append("UploadPolicy: " + uploadPolicy + ", ");
+        if (uploadPolicySignature != null) sb.append("UploadPolicySignature: " + uploadPolicySignature + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode()); 
+        hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getAWSAccessKeyId() == null) ? 0 : getAWSAccessKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getUploadPolicy() == null) ? 0 : getUploadPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getUploadPolicySignature() == null) ? 0 : getUploadPolicySignature().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof S3Storage == false) return false;
+        S3Storage other = (S3Storage)obj;
+        
+        if (other.getBucket() == null ^ this.getBucket() == null) return false;
+        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false) return false; 
+        if (other.getPrefix() == null ^ this.getPrefix() == null) return false;
+        if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false) return false; 
+        if (other.getAWSAccessKeyId() == null ^ this.getAWSAccessKeyId() == null) return false;
+        if (other.getAWSAccessKeyId() != null && other.getAWSAccessKeyId().equals(this.getAWSAccessKeyId()) == false) return false; 
+        if (other.getUploadPolicy() == null ^ this.getUploadPolicy() == null) return false;
+        if (other.getUploadPolicy() != null && other.getUploadPolicy().equals(this.getUploadPolicy()) == false) return false; 
+        if (other.getUploadPolicySignature() == null ^ this.getUploadPolicySignature() == null) return false;
+        if (other.getUploadPolicySignature() != null && other.getUploadPolicySignature().equals(this.getUploadPolicySignature()) == false) return false; 
+        return true;
     }
     
 }

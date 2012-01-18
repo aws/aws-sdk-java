@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,10 +257,13 @@ public class CloudFrontOriginAccessIdentityList {
      * @param cloudFrontOriginAccessIdentitySummaries An XML structure containing a summary of the origin access identity.
      */
     public void setCloudFrontOriginAccessIdentitySummaries(java.util.Collection<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummaries) {
-        java.util.List<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummariesCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>();
-        if (cloudFrontOriginAccessIdentitySummaries != null) {
-            cloudFrontOriginAccessIdentitySummariesCopy.addAll(cloudFrontOriginAccessIdentitySummaries);
+        if (cloudFrontOriginAccessIdentitySummaries == null) {
+            this.cloudFrontOriginAccessIdentitySummaries = null;
+            return;
         }
+
+        java.util.List<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummariesCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(cloudFrontOriginAccessIdentitySummaries.size());
+        cloudFrontOriginAccessIdentitySummariesCopy.addAll(cloudFrontOriginAccessIdentitySummaries);
         this.cloudFrontOriginAccessIdentitySummaries = cloudFrontOriginAccessIdentitySummariesCopy;
     }
     
@@ -275,7 +278,7 @@ public class CloudFrontOriginAccessIdentityList {
      *         together. 
      */
     public CloudFrontOriginAccessIdentityList withCloudFrontOriginAccessIdentitySummaries(CloudFrontOriginAccessIdentitySummary... cloudFrontOriginAccessIdentitySummaries) {
-        if (getCloudFrontOriginAccessIdentitySummaries() == null) setCloudFrontOriginAccessIdentitySummaries(new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>());
+        if (getCloudFrontOriginAccessIdentitySummaries() == null) setCloudFrontOriginAccessIdentitySummaries(new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(cloudFrontOriginAccessIdentitySummaries.length));
         for (CloudFrontOriginAccessIdentitySummary value : cloudFrontOriginAccessIdentitySummaries) {
             getCloudFrontOriginAccessIdentitySummaries().add(value);
         }
@@ -293,11 +296,13 @@ public class CloudFrontOriginAccessIdentityList {
      *         together. 
      */
     public CloudFrontOriginAccessIdentityList withCloudFrontOriginAccessIdentitySummaries(java.util.Collection<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummaries) {
-        java.util.List<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummariesCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>();
-        if (cloudFrontOriginAccessIdentitySummaries != null) {
+        if (cloudFrontOriginAccessIdentitySummaries == null) {
+            this.cloudFrontOriginAccessIdentitySummaries = null;
+        } else {
+            java.util.List<CloudFrontOriginAccessIdentitySummary> cloudFrontOriginAccessIdentitySummariesCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(cloudFrontOriginAccessIdentitySummaries.size());
             cloudFrontOriginAccessIdentitySummariesCopy.addAll(cloudFrontOriginAccessIdentitySummaries);
+            this.cloudFrontOriginAccessIdentitySummaries = cloudFrontOriginAccessIdentitySummariesCopy;
         }
-        this.cloudFrontOriginAccessIdentitySummaries = cloudFrontOriginAccessIdentitySummariesCopy;
 
         return this;
     }
@@ -314,13 +319,47 @@ public class CloudFrontOriginAccessIdentityList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("CloudFrontOriginAccessIdentitySummaries: " + cloudFrontOriginAccessIdentitySummaries + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (cloudFrontOriginAccessIdentitySummaries != null) sb.append("CloudFrontOriginAccessIdentitySummaries: " + cloudFrontOriginAccessIdentitySummaries + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getCloudFrontOriginAccessIdentitySummaries() == null) ? 0 : getCloudFrontOriginAccessIdentitySummaries().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CloudFrontOriginAccessIdentityList == false) return false;
+        CloudFrontOriginAccessIdentityList other = (CloudFrontOriginAccessIdentityList)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getCloudFrontOriginAccessIdentitySummaries() == null ^ this.getCloudFrontOriginAccessIdentitySummaries() == null) return false;
+        if (other.getCloudFrontOriginAccessIdentitySummaries() != null && other.getCloudFrontOriginAccessIdentitySummaries().equals(this.getCloudFrontOriginAccessIdentitySummaries()) == false) return false; 
+        return true;
     }
     
 }

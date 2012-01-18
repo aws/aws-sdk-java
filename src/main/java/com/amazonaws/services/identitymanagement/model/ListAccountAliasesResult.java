@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -66,10 +66,13 @@ public class ListAccountAliasesResult {
      * @param accountAliases A list of aliases associated with the account.
      */
     public void setAccountAliases(java.util.Collection<String> accountAliases) {
-        java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>();
-        if (accountAliases != null) {
-            accountAliasesCopy.addAll(accountAliases);
+        if (accountAliases == null) {
+            this.accountAliases = null;
+            return;
         }
+
+        java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>(accountAliases.size());
+        accountAliasesCopy.addAll(accountAliases);
         this.accountAliases = accountAliasesCopy;
     }
     
@@ -84,7 +87,7 @@ public class ListAccountAliasesResult {
      *         together. 
      */
     public ListAccountAliasesResult withAccountAliases(String... accountAliases) {
-        if (getAccountAliases() == null) setAccountAliases(new java.util.ArrayList<String>());
+        if (getAccountAliases() == null) setAccountAliases(new java.util.ArrayList<String>(accountAliases.length));
         for (String value : accountAliases) {
             getAccountAliases().add(value);
         }
@@ -102,11 +105,13 @@ public class ListAccountAliasesResult {
      *         together. 
      */
     public ListAccountAliasesResult withAccountAliases(java.util.Collection<String> accountAliases) {
-        java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>();
-        if (accountAliases != null) {
+        if (accountAliases == null) {
+            this.accountAliases = null;
+        } else {
+            java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>(accountAliases.size());
             accountAliasesCopy.addAll(accountAliases);
+            this.accountAliases = accountAliasesCopy;
         }
-        this.accountAliases = accountAliasesCopy;
 
         return this;
     }
@@ -254,11 +259,39 @@ public class ListAccountAliasesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AccountAliases: " + accountAliases + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (accountAliases != null) sb.append("AccountAliases: " + accountAliases + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAccountAliases() == null) ? 0 : getAccountAliases().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListAccountAliasesResult == false) return false;
+        ListAccountAliasesResult other = (ListAccountAliasesResult)obj;
+        
+        if (other.getAccountAliases() == null ^ this.getAccountAliases() == null) return false;
+        if (other.getAccountAliases() != null && other.getAccountAliases().equals(this.getAccountAliases()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

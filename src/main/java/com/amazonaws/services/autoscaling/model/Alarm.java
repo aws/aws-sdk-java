@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -143,10 +143,35 @@ public class Alarm {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmName: " + alarmName + ", ");
-        sb.append("AlarmARN: " + alarmARN + ", ");
+        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
+        if (alarmARN != null) sb.append("AlarmARN: " + alarmARN + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmARN() == null) ? 0 : getAlarmARN().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Alarm == false) return false;
+        Alarm other = (Alarm)obj;
+        
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
+        if (other.getAlarmARN() == null ^ this.getAlarmARN() == null) return false;
+        if (other.getAlarmARN() != null && other.getAlarmARN().equals(this.getAlarmARN()) == false) return false; 
+        return true;
     }
     
 }

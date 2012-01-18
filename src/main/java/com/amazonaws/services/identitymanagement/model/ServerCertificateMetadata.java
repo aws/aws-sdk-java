@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -417,13 +417,47 @@ public class ServerCertificateMetadata {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Path: " + path + ", ");
-        sb.append("ServerCertificateName: " + serverCertificateName + ", ");
-        sb.append("ServerCertificateId: " + serverCertificateId + ", ");
-        sb.append("Arn: " + arn + ", ");
-        sb.append("UploadDate: " + uploadDate + ", ");
+        if (path != null) sb.append("Path: " + path + ", ");
+        if (serverCertificateName != null) sb.append("ServerCertificateName: " + serverCertificateName + ", ");
+        if (serverCertificateId != null) sb.append("ServerCertificateId: " + serverCertificateId + ", ");
+        if (arn != null) sb.append("Arn: " + arn + ", ");
+        if (uploadDate != null) sb.append("UploadDate: " + uploadDate + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode()); 
+        hashCode = prime * hashCode + ((getServerCertificateName() == null) ? 0 : getServerCertificateName().hashCode()); 
+        hashCode = prime * hashCode + ((getServerCertificateId() == null) ? 0 : getServerCertificateId().hashCode()); 
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode()); 
+        hashCode = prime * hashCode + ((getUploadDate() == null) ? 0 : getUploadDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ServerCertificateMetadata == false) return false;
+        ServerCertificateMetadata other = (ServerCertificateMetadata)obj;
+        
+        if (other.getPath() == null ^ this.getPath() == null) return false;
+        if (other.getPath() != null && other.getPath().equals(this.getPath()) == false) return false; 
+        if (other.getServerCertificateName() == null ^ this.getServerCertificateName() == null) return false;
+        if (other.getServerCertificateName() != null && other.getServerCertificateName().equals(this.getServerCertificateName()) == false) return false; 
+        if (other.getServerCertificateId() == null ^ this.getServerCertificateId() == null) return false;
+        if (other.getServerCertificateId() != null && other.getServerCertificateId().equals(this.getServerCertificateId()) == false) return false; 
+        if (other.getArn() == null ^ this.getArn() == null) return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false) return false; 
+        if (other.getUploadDate() == null ^ this.getUploadDate() == null) return false;
+        if (other.getUploadDate() != null && other.getUploadDate().equals(this.getUploadDate()) == false) return false; 
+        return true;
     }
     
 }

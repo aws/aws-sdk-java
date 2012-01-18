@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -347,14 +347,51 @@ public class CreateJobResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("JobId: " + jobId + ", ");
-        sb.append("JobType: " + jobType + ", ");
-        sb.append("AwsShippingAddress: " + awsShippingAddress + ", ");
-        sb.append("Signature: " + signature + ", ");
-        sb.append("SignatureFileContents: " + signatureFileContents + ", ");
-        sb.append("WarningMessage: " + warningMessage + ", ");
+        if (jobId != null) sb.append("JobId: " + jobId + ", ");
+        if (jobType != null) sb.append("JobType: " + jobType + ", ");
+        if (awsShippingAddress != null) sb.append("AwsShippingAddress: " + awsShippingAddress + ", ");
+        if (signature != null) sb.append("Signature: " + signature + ", ");
+        if (signatureFileContents != null) sb.append("SignatureFileContents: " + signatureFileContents + ", ");
+        if (warningMessage != null) sb.append("WarningMessage: " + warningMessage + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode()); 
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode()); 
+        hashCode = prime * hashCode + ((getAwsShippingAddress() == null) ? 0 : getAwsShippingAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getSignature() == null) ? 0 : getSignature().hashCode()); 
+        hashCode = prime * hashCode + ((getSignatureFileContents() == null) ? 0 : getSignatureFileContents().hashCode()); 
+        hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateJobResult == false) return false;
+        CreateJobResult other = (CreateJobResult)obj;
+        
+        if (other.getJobId() == null ^ this.getJobId() == null) return false;
+        if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false) return false; 
+        if (other.getJobType() == null ^ this.getJobType() == null) return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false) return false; 
+        if (other.getAwsShippingAddress() == null ^ this.getAwsShippingAddress() == null) return false;
+        if (other.getAwsShippingAddress() != null && other.getAwsShippingAddress().equals(this.getAwsShippingAddress()) == false) return false; 
+        if (other.getSignature() == null ^ this.getSignature() == null) return false;
+        if (other.getSignature() != null && other.getSignature().equals(this.getSignature()) == false) return false; 
+        if (other.getSignatureFileContents() == null ^ this.getSignatureFileContents() == null) return false;
+        if (other.getSignatureFileContents() != null && other.getSignatureFileContents().equals(this.getSignatureFileContents()) == false) return false; 
+        if (other.getWarningMessage() == null ^ this.getWarningMessage() == null) return false;
+        if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false) return false; 
+        return true;
     }
     
 }

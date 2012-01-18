@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,10 +44,13 @@ public class ListVerifiedEmailAddressesResult {
      * @param verifiedEmailAddresses The new value for the VerifiedEmailAddresses property for this object.
      */
     public void setVerifiedEmailAddresses(java.util.Collection<String> verifiedEmailAddresses) {
-        java.util.List<String> verifiedEmailAddressesCopy = new java.util.ArrayList<String>();
-        if (verifiedEmailAddresses != null) {
-            verifiedEmailAddressesCopy.addAll(verifiedEmailAddresses);
+        if (verifiedEmailAddresses == null) {
+            this.verifiedEmailAddresses = null;
+            return;
         }
+
+        java.util.List<String> verifiedEmailAddressesCopy = new java.util.ArrayList<String>(verifiedEmailAddresses.size());
+        verifiedEmailAddressesCopy.addAll(verifiedEmailAddresses);
         this.verifiedEmailAddresses = verifiedEmailAddressesCopy;
     }
     
@@ -62,7 +65,7 @@ public class ListVerifiedEmailAddressesResult {
      *         together. 
      */
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(String... verifiedEmailAddresses) {
-        if (getVerifiedEmailAddresses() == null) setVerifiedEmailAddresses(new java.util.ArrayList<String>());
+        if (getVerifiedEmailAddresses() == null) setVerifiedEmailAddresses(new java.util.ArrayList<String>(verifiedEmailAddresses.length));
         for (String value : verifiedEmailAddresses) {
             getVerifiedEmailAddresses().add(value);
         }
@@ -80,11 +83,13 @@ public class ListVerifiedEmailAddressesResult {
      *         together. 
      */
     public ListVerifiedEmailAddressesResult withVerifiedEmailAddresses(java.util.Collection<String> verifiedEmailAddresses) {
-        java.util.List<String> verifiedEmailAddressesCopy = new java.util.ArrayList<String>();
-        if (verifiedEmailAddresses != null) {
+        if (verifiedEmailAddresses == null) {
+            this.verifiedEmailAddresses = null;
+        } else {
+            java.util.List<String> verifiedEmailAddressesCopy = new java.util.ArrayList<String>(verifiedEmailAddresses.size());
             verifiedEmailAddressesCopy.addAll(verifiedEmailAddresses);
+            this.verifiedEmailAddresses = verifiedEmailAddressesCopy;
         }
-        this.verifiedEmailAddresses = verifiedEmailAddressesCopy;
 
         return this;
     }
@@ -101,9 +106,31 @@ public class ListVerifiedEmailAddressesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VerifiedEmailAddresses: " + verifiedEmailAddresses + ", ");
+        if (verifiedEmailAddresses != null) sb.append("VerifiedEmailAddresses: " + verifiedEmailAddresses + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVerifiedEmailAddresses() == null) ? 0 : getVerifiedEmailAddresses().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListVerifiedEmailAddressesResult == false) return false;
+        ListVerifiedEmailAddressesResult other = (ListVerifiedEmailAddressesResult)obj;
+        
+        if (other.getVerifiedEmailAddresses() == null ^ this.getVerifiedEmailAddresses() == null) return false;
+        if (other.getVerifiedEmailAddresses() != null && other.getVerifiedEmailAddresses().equals(this.getVerifiedEmailAddresses()) == false) return false; 
+        return true;
     }
     
 }

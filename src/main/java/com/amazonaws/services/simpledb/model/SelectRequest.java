@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -258,11 +258,39 @@ public class SelectRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SelectExpression: " + selectExpression + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("ConsistentRead: " + consistentRead + ", ");
+        if (selectExpression != null) sb.append("SelectExpression: " + selectExpression + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (consistentRead != null) sb.append("ConsistentRead: " + consistentRead + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSelectExpression() == null) ? 0 : getSelectExpression().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((isConsistentRead() == null) ? 0 : isConsistentRead().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SelectRequest == false) return false;
+        SelectRequest other = (SelectRequest)obj;
+        
+        if (other.getSelectExpression() == null ^ this.getSelectExpression() == null) return false;
+        if (other.getSelectExpression() != null && other.getSelectExpression().equals(this.getSelectExpression()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.isConsistentRead() == null ^ this.isConsistentRead() == null) return false;
+        if (other.isConsistentRead() != null && other.isConsistentRead().equals(this.isConsistentRead()) == false) return false; 
+        return true;
     }
     
 }

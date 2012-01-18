@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class DeregisterInstancesFromLoadBalancerResult {
      *         LoadBalancer.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
-            instancesCopy.addAll(instances);
+        if (instances == null) {
+            this.instances = null;
+            return;
         }
+
+        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
     
@@ -70,7 +73,7 @@ public class DeregisterInstancesFromLoadBalancerResult {
      *         together. 
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(Instance... instances) {
-        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
         for (Instance value : instances) {
             getInstances().add(value);
         }
@@ -90,11 +93,13 @@ public class DeregisterInstancesFromLoadBalancerResult {
      *         together. 
      */
     public DeregisterInstancesFromLoadBalancerResult withInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
+        if (instances == null) {
+            this.instances = null;
+        } else {
+            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
             instancesCopy.addAll(instances);
+            this.instances = instancesCopy;
         }
-        this.instances = instancesCopy;
 
         return this;
     }
@@ -111,9 +116,31 @@ public class DeregisterInstancesFromLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Instances: " + instances + ", ");
+        if (instances != null) sb.append("Instances: " + instances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeregisterInstancesFromLoadBalancerResult == false) return false;
+        DeregisterInstancesFromLoadBalancerResult other = (DeregisterInstancesFromLoadBalancerResult)obj;
+        
+        if (other.getInstances() == null ^ this.getInstances() == null) return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
+        return true;
     }
     
 }

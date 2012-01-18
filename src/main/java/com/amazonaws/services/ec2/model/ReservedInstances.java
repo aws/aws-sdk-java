@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -515,10 +515,13 @@ public class ReservedInstances {
      * @param tags A list of tags for the ReservedInstances.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -533,7 +536,7 @@ public class ReservedInstances {
      *         together. 
      */
     public ReservedInstances withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -551,11 +554,13 @@ public class ReservedInstances {
      *         together. 
      */
     public ReservedInstances withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -687,10 +692,13 @@ public class ReservedInstances {
      * @param recurringCharges The recurring charge tag assigned to the resource.
      */
     public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
-        java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>();
-        if (recurringCharges != null) {
-            recurringChargesCopy.addAll(recurringCharges);
+        if (recurringCharges == null) {
+            this.recurringCharges = null;
+            return;
         }
+
+        java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
+        recurringChargesCopy.addAll(recurringCharges);
         this.recurringCharges = recurringChargesCopy;
     }
     
@@ -705,7 +713,7 @@ public class ReservedInstances {
      *         together. 
      */
     public ReservedInstances withRecurringCharges(RecurringCharge... recurringCharges) {
-        if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>());
+        if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
         for (RecurringCharge value : recurringCharges) {
             getRecurringCharges().add(value);
         }
@@ -723,11 +731,13 @@ public class ReservedInstances {
      *         together. 
      */
     public ReservedInstances withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
-        java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>();
-        if (recurringCharges != null) {
+        if (recurringCharges == null) {
+            this.recurringCharges = null;
+        } else {
+            java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
             recurringChargesCopy.addAll(recurringCharges);
+            this.recurringCharges = recurringChargesCopy;
         }
-        this.recurringCharges = recurringChargesCopy;
 
         return this;
     }
@@ -744,23 +754,87 @@ public class ReservedInstances {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
-        sb.append("InstanceType: " + instanceType + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("Start: " + start + ", ");
-        sb.append("Duration: " + duration + ", ");
-        sb.append("UsagePrice: " + usagePrice + ", ");
-        sb.append("FixedPrice: " + fixedPrice + ", ");
-        sb.append("InstanceCount: " + instanceCount + ", ");
-        sb.append("ProductDescription: " + productDescription + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("Tags: " + tags + ", ");
-        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
-        sb.append("CurrencyCode: " + currencyCode + ", ");
-        sb.append("OfferingType: " + offeringType + ", ");
-        sb.append("RecurringCharges: " + recurringCharges + ", ");
+        if (reservedInstancesId != null) sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
+        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (start != null) sb.append("Start: " + start + ", ");
+        if (duration != null) sb.append("Duration: " + duration + ", ");
+        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
+        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
+        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
+        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
+        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedInstancesId() == null) ? 0 : getReservedInstancesId().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getStart() == null) ? 0 : getStart().hashCode()); 
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
+        hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode()); 
+        hashCode = prime * hashCode + ((getFixedPrice() == null) ? 0 : getFixedPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode()); 
+        hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode()); 
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ReservedInstances == false) return false;
+        ReservedInstances other = (ReservedInstances)obj;
+        
+        if (other.getReservedInstancesId() == null ^ this.getReservedInstancesId() == null) return false;
+        if (other.getReservedInstancesId() != null && other.getReservedInstancesId().equals(this.getReservedInstancesId()) == false) return false; 
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getStart() == null ^ this.getStart() == null) return false;
+        if (other.getStart() != null && other.getStart().equals(this.getStart()) == false) return false; 
+        if (other.getDuration() == null ^ this.getDuration() == null) return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
+        if (other.getUsagePrice() == null ^ this.getUsagePrice() == null) return false;
+        if (other.getUsagePrice() != null && other.getUsagePrice().equals(this.getUsagePrice()) == false) return false; 
+        if (other.getFixedPrice() == null ^ this.getFixedPrice() == null) return false;
+        if (other.getFixedPrice() != null && other.getFixedPrice().equals(this.getFixedPrice()) == false) return false; 
+        if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
+        if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null) return false;
+        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false) return false; 
+        if (other.getCurrencyCode() == null ^ this.getCurrencyCode() == null) return false;
+        if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false) return false; 
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null) return false;
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
+        return true;
     }
     
 }

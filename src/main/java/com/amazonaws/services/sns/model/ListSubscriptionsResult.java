@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,10 +49,13 @@ public class ListSubscriptionsResult {
      * @param subscriptions A list of subscriptions.
      */
     public void setSubscriptions(java.util.Collection<Subscription> subscriptions) {
-        java.util.List<Subscription> subscriptionsCopy = new java.util.ArrayList<Subscription>();
-        if (subscriptions != null) {
-            subscriptionsCopy.addAll(subscriptions);
+        if (subscriptions == null) {
+            this.subscriptions = null;
+            return;
         }
+
+        java.util.List<Subscription> subscriptionsCopy = new java.util.ArrayList<Subscription>(subscriptions.size());
+        subscriptionsCopy.addAll(subscriptions);
         this.subscriptions = subscriptionsCopy;
     }
     
@@ -67,7 +70,7 @@ public class ListSubscriptionsResult {
      *         together. 
      */
     public ListSubscriptionsResult withSubscriptions(Subscription... subscriptions) {
-        if (getSubscriptions() == null) setSubscriptions(new java.util.ArrayList<Subscription>());
+        if (getSubscriptions() == null) setSubscriptions(new java.util.ArrayList<Subscription>(subscriptions.length));
         for (Subscription value : subscriptions) {
             getSubscriptions().add(value);
         }
@@ -85,11 +88,13 @@ public class ListSubscriptionsResult {
      *         together. 
      */
     public ListSubscriptionsResult withSubscriptions(java.util.Collection<Subscription> subscriptions) {
-        java.util.List<Subscription> subscriptionsCopy = new java.util.ArrayList<Subscription>();
-        if (subscriptions != null) {
+        if (subscriptions == null) {
+            this.subscriptions = null;
+        } else {
+            java.util.List<Subscription> subscriptionsCopy = new java.util.ArrayList<Subscription>(subscriptions.size());
             subscriptionsCopy.addAll(subscriptions);
+            this.subscriptions = subscriptionsCopy;
         }
-        this.subscriptions = subscriptionsCopy;
 
         return this;
     }
@@ -146,10 +151,35 @@ public class ListSubscriptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Subscriptions: " + subscriptions + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (subscriptions != null) sb.append("Subscriptions: " + subscriptions + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSubscriptions() == null) ? 0 : getSubscriptions().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListSubscriptionsResult == false) return false;
+        ListSubscriptionsResult other = (ListSubscriptionsResult)obj;
+        
+        if (other.getSubscriptions() == null ^ this.getSubscriptions() == null) return false;
+        if (other.getSubscriptions() != null && other.getSubscriptions().equals(this.getSubscriptions()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

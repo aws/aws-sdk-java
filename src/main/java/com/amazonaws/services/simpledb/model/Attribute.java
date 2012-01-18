@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -209,12 +209,43 @@ public class Attribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
-        sb.append("Value: " + value + ", ");
-        sb.append("AlternateValueEncoding: " + alternateValueEncoding + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (alternateNameEncoding != null) sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
+        if (value != null) sb.append("Value: " + value + ", ");
+        if (alternateValueEncoding != null) sb.append("AlternateValueEncoding: " + alternateValueEncoding + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getAlternateNameEncoding() == null) ? 0 : getAlternateNameEncoding().hashCode()); 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+        hashCode = prime * hashCode + ((getAlternateValueEncoding() == null) ? 0 : getAlternateValueEncoding().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Attribute == false) return false;
+        Attribute other = (Attribute)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getAlternateNameEncoding() == null ^ this.getAlternateNameEncoding() == null) return false;
+        if (other.getAlternateNameEncoding() != null && other.getAlternateNameEncoding().equals(this.getAlternateNameEncoding()) == false) return false; 
+        if (other.getValue() == null ^ this.getValue() == null) return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
+        if (other.getAlternateValueEncoding() == null ^ this.getAlternateValueEncoding() == null) return false;
+        if (other.getAlternateValueEncoding() != null && other.getAlternateValueEncoding().equals(this.getAlternateValueEncoding()) == false) return false; 
+        return true;
     }
     
 }

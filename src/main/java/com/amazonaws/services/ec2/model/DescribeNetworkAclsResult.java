@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,10 +40,13 @@ public class DescribeNetworkAclsResult {
      * @param networkAcls The new value for the NetworkAcls property for this object.
      */
     public void setNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
-        java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>();
-        if (networkAcls != null) {
-            networkAclsCopy.addAll(networkAcls);
+        if (networkAcls == null) {
+            this.networkAcls = null;
+            return;
         }
+
+        java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>(networkAcls.size());
+        networkAclsCopy.addAll(networkAcls);
         this.networkAcls = networkAclsCopy;
     }
     
@@ -58,7 +61,7 @@ public class DescribeNetworkAclsResult {
      *         together. 
      */
     public DescribeNetworkAclsResult withNetworkAcls(NetworkAcl... networkAcls) {
-        if (getNetworkAcls() == null) setNetworkAcls(new java.util.ArrayList<NetworkAcl>());
+        if (getNetworkAcls() == null) setNetworkAcls(new java.util.ArrayList<NetworkAcl>(networkAcls.length));
         for (NetworkAcl value : networkAcls) {
             getNetworkAcls().add(value);
         }
@@ -76,11 +79,13 @@ public class DescribeNetworkAclsResult {
      *         together. 
      */
     public DescribeNetworkAclsResult withNetworkAcls(java.util.Collection<NetworkAcl> networkAcls) {
-        java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>();
-        if (networkAcls != null) {
+        if (networkAcls == null) {
+            this.networkAcls = null;
+        } else {
+            java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>(networkAcls.size());
             networkAclsCopy.addAll(networkAcls);
+            this.networkAcls = networkAclsCopy;
         }
-        this.networkAcls = networkAclsCopy;
 
         return this;
     }
@@ -97,9 +102,31 @@ public class DescribeNetworkAclsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NetworkAcls: " + networkAcls + ", ");
+        if (networkAcls != null) sb.append("NetworkAcls: " + networkAcls + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNetworkAcls() == null) ? 0 : getNetworkAcls().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeNetworkAclsResult == false) return false;
+        DescribeNetworkAclsResult other = (DescribeNetworkAclsResult)obj;
+        
+        if (other.getNetworkAcls() == null ^ this.getNetworkAcls() == null) return false;
+        if (other.getNetworkAcls() != null && other.getNetworkAcls().equals(this.getNetworkAcls()) == false) return false; 
+        return true;
     }
     
 }

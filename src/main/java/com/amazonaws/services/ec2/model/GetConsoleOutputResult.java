@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -150,11 +150,39 @@ public class GetConsoleOutputResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("Timestamp: " + timestamp + ", ");
-        sb.append("Output: " + output + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (output != null) sb.append("Output: " + output + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetConsoleOutputResult == false) return false;
+        GetConsoleOutputResult other = (GetConsoleOutputResult)obj;
+        
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null) return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false) return false; 
+        if (other.getOutput() == null ^ this.getOutput() == null) return false;
+        if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false) return false; 
+        return true;
     }
     
 }

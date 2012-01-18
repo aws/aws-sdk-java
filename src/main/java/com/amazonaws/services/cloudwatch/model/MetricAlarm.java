@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -450,10 +450,13 @@ public class MetricAlarm {
      *         Scaling policy.
      */
     public void setOKActions(java.util.Collection<String> oKActions) {
-        java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>();
-        if (oKActions != null) {
-            oKActionsCopy.addAll(oKActions);
+        if (oKActions == null) {
+            this.oKActions = null;
+            return;
         }
+
+        java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>(oKActions.size());
+        oKActionsCopy.addAll(oKActions);
         this.oKActions = oKActionsCopy;
     }
     
@@ -479,7 +482,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withOKActions(String... oKActions) {
-        if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>());
+        if (getOKActions() == null) setOKActions(new java.util.ArrayList<String>(oKActions.length));
         for (String value : oKActions) {
             getOKActions().add(value);
         }
@@ -508,11 +511,13 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withOKActions(java.util.Collection<String> oKActions) {
-        java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>();
-        if (oKActions != null) {
+        if (oKActions == null) {
+            this.oKActions = null;
+        } else {
+            java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>(oKActions.size());
             oKActionsCopy.addAll(oKActions);
+            this.oKActions = oKActionsCopy;
         }
-        this.oKActions = oKActionsCopy;
 
         return this;
     }
@@ -558,10 +563,13 @@ public class MetricAlarm {
      *         an Auto Scaling policy.
      */
     public void setAlarmActions(java.util.Collection<String> alarmActions) {
-        java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>();
-        if (alarmActions != null) {
-            alarmActionsCopy.addAll(alarmActions);
+        if (alarmActions == null) {
+            this.alarmActions = null;
+            return;
         }
+
+        java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>(alarmActions.size());
+        alarmActionsCopy.addAll(alarmActions);
         this.alarmActions = alarmActionsCopy;
     }
     
@@ -587,7 +595,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withAlarmActions(String... alarmActions) {
-        if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>());
+        if (getAlarmActions() == null) setAlarmActions(new java.util.ArrayList<String>(alarmActions.length));
         for (String value : alarmActions) {
             getAlarmActions().add(value);
         }
@@ -616,11 +624,13 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withAlarmActions(java.util.Collection<String> alarmActions) {
-        java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>();
-        if (alarmActions != null) {
+        if (alarmActions == null) {
+            this.alarmActions = null;
+        } else {
+            java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>(alarmActions.size());
             alarmActionsCopy.addAll(alarmActions);
+            this.alarmActions = alarmActionsCopy;
         }
-        this.alarmActions = alarmActionsCopy;
 
         return this;
     }
@@ -666,10 +676,13 @@ public class MetricAlarm {
      *         an Auto Scaling policy.
      */
     public void setInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
-        java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>();
-        if (insufficientDataActions != null) {
-            insufficientDataActionsCopy.addAll(insufficientDataActions);
+        if (insufficientDataActions == null) {
+            this.insufficientDataActions = null;
+            return;
         }
+
+        java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>(insufficientDataActions.size());
+        insufficientDataActionsCopy.addAll(insufficientDataActions);
         this.insufficientDataActions = insufficientDataActionsCopy;
     }
     
@@ -695,7 +708,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withInsufficientDataActions(String... insufficientDataActions) {
-        if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>());
+        if (getInsufficientDataActions() == null) setInsufficientDataActions(new java.util.ArrayList<String>(insufficientDataActions.length));
         for (String value : insufficientDataActions) {
             getInsufficientDataActions().add(value);
         }
@@ -724,11 +737,13 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withInsufficientDataActions(java.util.Collection<String> insufficientDataActions) {
-        java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>();
-        if (insufficientDataActions != null) {
+        if (insufficientDataActions == null) {
+            this.insufficientDataActions = null;
+        } else {
+            java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>(insufficientDataActions.size());
             insufficientDataActionsCopy.addAll(insufficientDataActions);
+            this.insufficientDataActions = insufficientDataActionsCopy;
         }
-        this.insufficientDataActions = insufficientDataActionsCopy;
 
         return this;
     }
@@ -1133,10 +1148,13 @@ public class MetricAlarm {
      * @param dimensions The list of dimensions associated with the alarm's associated metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
-            dimensionsCopy.addAll(dimensions);
+        if (dimensions == null) {
+            this.dimensions = null;
+            return;
         }
+
+        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
     
@@ -1154,7 +1172,7 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withDimensions(Dimension... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }
@@ -1175,11 +1193,13 @@ public class MetricAlarm {
      *         together. 
      */
     public MetricAlarm withDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
+        if (dimensions == null) {
+            this.dimensions = null;
+        } else {
+            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
+            this.dimensions = dimensionsCopy;
         }
-        this.dimensions = dimensionsCopy;
 
         return this;
     }
@@ -1508,29 +1528,111 @@ public class MetricAlarm {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmName: " + alarmName + ", ");
-        sb.append("AlarmArn: " + alarmArn + ", ");
-        sb.append("AlarmDescription: " + alarmDescription + ", ");
-        sb.append("AlarmConfigurationUpdatedTimestamp: " + alarmConfigurationUpdatedTimestamp + ", ");
-        sb.append("ActionsEnabled: " + actionsEnabled + ", ");
-        sb.append("OKActions: " + oKActions + ", ");
-        sb.append("AlarmActions: " + alarmActions + ", ");
-        sb.append("InsufficientDataActions: " + insufficientDataActions + ", ");
-        sb.append("StateValue: " + stateValue + ", ");
-        sb.append("StateReason: " + stateReason + ", ");
-        sb.append("StateReasonData: " + stateReasonData + ", ");
-        sb.append("StateUpdatedTimestamp: " + stateUpdatedTimestamp + ", ");
-        sb.append("MetricName: " + metricName + ", ");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("Statistic: " + statistic + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
-        sb.append("Period: " + period + ", ");
-        sb.append("Unit: " + unit + ", ");
-        sb.append("EvaluationPeriods: " + evaluationPeriods + ", ");
-        sb.append("Threshold: " + threshold + ", ");
-        sb.append("ComparisonOperator: " + comparisonOperator + ", ");
+        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
+        if (alarmArn != null) sb.append("AlarmArn: " + alarmArn + ", ");
+        if (alarmDescription != null) sb.append("AlarmDescription: " + alarmDescription + ", ");
+        if (alarmConfigurationUpdatedTimestamp != null) sb.append("AlarmConfigurationUpdatedTimestamp: " + alarmConfigurationUpdatedTimestamp + ", ");
+        if (actionsEnabled != null) sb.append("ActionsEnabled: " + actionsEnabled + ", ");
+        if (oKActions != null) sb.append("OKActions: " + oKActions + ", ");
+        if (alarmActions != null) sb.append("AlarmActions: " + alarmActions + ", ");
+        if (insufficientDataActions != null) sb.append("InsufficientDataActions: " + insufficientDataActions + ", ");
+        if (stateValue != null) sb.append("StateValue: " + stateValue + ", ");
+        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
+        if (stateReasonData != null) sb.append("StateReasonData: " + stateReasonData + ", ");
+        if (stateUpdatedTimestamp != null) sb.append("StateUpdatedTimestamp: " + stateUpdatedTimestamp + ", ");
+        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (statistic != null) sb.append("Statistic: " + statistic + ", ");
+        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
+        if (period != null) sb.append("Period: " + period + ", ");
+        if (unit != null) sb.append("Unit: " + unit + ", ");
+        if (evaluationPeriods != null) sb.append("EvaluationPeriods: " + evaluationPeriods + ", ");
+        if (threshold != null) sb.append("Threshold: " + threshold + ", ");
+        if (comparisonOperator != null) sb.append("ComparisonOperator: " + comparisonOperator + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmArn() == null) ? 0 : getAlarmArn().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmDescription() == null) ? 0 : getAlarmDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmConfigurationUpdatedTimestamp() == null) ? 0 : getAlarmConfigurationUpdatedTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((isActionsEnabled() == null) ? 0 : isActionsEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getOKActions() == null) ? 0 : getOKActions().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmActions() == null) ? 0 : getAlarmActions().hashCode()); 
+        hashCode = prime * hashCode + ((getInsufficientDataActions() == null) ? 0 : getInsufficientDataActions().hashCode()); 
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReasonData() == null) ? 0 : getStateReasonData().hashCode()); 
+        hashCode = prime * hashCode + ((getStateUpdatedTimestamp() == null) ? 0 : getStateUpdatedTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode()); 
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
+        hashCode = prime * hashCode + ((getPeriod() == null) ? 0 : getPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode()); 
+        hashCode = prime * hashCode + ((getEvaluationPeriods() == null) ? 0 : getEvaluationPeriods().hashCode()); 
+        hashCode = prime * hashCode + ((getThreshold() == null) ? 0 : getThreshold().hashCode()); 
+        hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof MetricAlarm == false) return false;
+        MetricAlarm other = (MetricAlarm)obj;
+        
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
+        if (other.getAlarmArn() == null ^ this.getAlarmArn() == null) return false;
+        if (other.getAlarmArn() != null && other.getAlarmArn().equals(this.getAlarmArn()) == false) return false; 
+        if (other.getAlarmDescription() == null ^ this.getAlarmDescription() == null) return false;
+        if (other.getAlarmDescription() != null && other.getAlarmDescription().equals(this.getAlarmDescription()) == false) return false; 
+        if (other.getAlarmConfigurationUpdatedTimestamp() == null ^ this.getAlarmConfigurationUpdatedTimestamp() == null) return false;
+        if (other.getAlarmConfigurationUpdatedTimestamp() != null && other.getAlarmConfigurationUpdatedTimestamp().equals(this.getAlarmConfigurationUpdatedTimestamp()) == false) return false; 
+        if (other.isActionsEnabled() == null ^ this.isActionsEnabled() == null) return false;
+        if (other.isActionsEnabled() != null && other.isActionsEnabled().equals(this.isActionsEnabled()) == false) return false; 
+        if (other.getOKActions() == null ^ this.getOKActions() == null) return false;
+        if (other.getOKActions() != null && other.getOKActions().equals(this.getOKActions()) == false) return false; 
+        if (other.getAlarmActions() == null ^ this.getAlarmActions() == null) return false;
+        if (other.getAlarmActions() != null && other.getAlarmActions().equals(this.getAlarmActions()) == false) return false; 
+        if (other.getInsufficientDataActions() == null ^ this.getInsufficientDataActions() == null) return false;
+        if (other.getInsufficientDataActions() != null && other.getInsufficientDataActions().equals(this.getInsufficientDataActions()) == false) return false; 
+        if (other.getStateValue() == null ^ this.getStateValue() == null) return false;
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false) return false; 
+        if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
+        if (other.getStateReasonData() == null ^ this.getStateReasonData() == null) return false;
+        if (other.getStateReasonData() != null && other.getStateReasonData().equals(this.getStateReasonData()) == false) return false; 
+        if (other.getStateUpdatedTimestamp() == null ^ this.getStateUpdatedTimestamp() == null) return false;
+        if (other.getStateUpdatedTimestamp() != null && other.getStateUpdatedTimestamp().equals(this.getStateUpdatedTimestamp()) == false) return false; 
+        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getStatistic() == null ^ this.getStatistic() == null) return false;
+        if (other.getStatistic() != null && other.getStatistic().equals(this.getStatistic()) == false) return false; 
+        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
+        if (other.getPeriod() == null ^ this.getPeriod() == null) return false;
+        if (other.getPeriod() != null && other.getPeriod().equals(this.getPeriod()) == false) return false; 
+        if (other.getUnit() == null ^ this.getUnit() == null) return false;
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false) return false; 
+        if (other.getEvaluationPeriods() == null ^ this.getEvaluationPeriods() == null) return false;
+        if (other.getEvaluationPeriods() != null && other.getEvaluationPeriods().equals(this.getEvaluationPeriods()) == false) return false; 
+        if (other.getThreshold() == null ^ this.getThreshold() == null) return false;
+        if (other.getThreshold() != null && other.getThreshold().equals(this.getThreshold()) == false) return false; 
+        if (other.getComparisonOperator() == null ^ this.getComparisonOperator() == null) return false;
+        if (other.getComparisonOperator() != null && other.getComparisonOperator().equals(this.getComparisonOperator()) == false) return false; 
+        return true;
     }
     
 }

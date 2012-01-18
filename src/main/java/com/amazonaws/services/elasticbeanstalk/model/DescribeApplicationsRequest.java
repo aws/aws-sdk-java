@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,10 +60,13 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
      *         descriptions to only include those with the specified names.
      */
     public void setApplicationNames(java.util.Collection<String> applicationNames) {
-        java.util.List<String> applicationNamesCopy = new java.util.ArrayList<String>();
-        if (applicationNames != null) {
-            applicationNamesCopy.addAll(applicationNames);
+        if (applicationNames == null) {
+            this.applicationNames = null;
+            return;
         }
+
+        java.util.List<String> applicationNamesCopy = new java.util.ArrayList<String>(applicationNames.size());
+        applicationNamesCopy.addAll(applicationNames);
         this.applicationNames = applicationNamesCopy;
     }
     
@@ -80,7 +83,7 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeApplicationsRequest withApplicationNames(String... applicationNames) {
-        if (getApplicationNames() == null) setApplicationNames(new java.util.ArrayList<String>());
+        if (getApplicationNames() == null) setApplicationNames(new java.util.ArrayList<String>(applicationNames.length));
         for (String value : applicationNames) {
             getApplicationNames().add(value);
         }
@@ -100,11 +103,13 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeApplicationsRequest withApplicationNames(java.util.Collection<String> applicationNames) {
-        java.util.List<String> applicationNamesCopy = new java.util.ArrayList<String>();
-        if (applicationNames != null) {
+        if (applicationNames == null) {
+            this.applicationNames = null;
+        } else {
+            java.util.List<String> applicationNamesCopy = new java.util.ArrayList<String>(applicationNames.size());
             applicationNamesCopy.addAll(applicationNames);
+            this.applicationNames = applicationNamesCopy;
         }
-        this.applicationNames = applicationNamesCopy;
 
         return this;
     }
@@ -121,9 +126,31 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationNames: " + applicationNames + ", ");
+        if (applicationNames != null) sb.append("ApplicationNames: " + applicationNames + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationNames() == null) ? 0 : getApplicationNames().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeApplicationsRequest == false) return false;
+        DescribeApplicationsRequest other = (DescribeApplicationsRequest)obj;
+        
+        if (other.getApplicationNames() == null ^ this.getApplicationNames() == null) return false;
+        if (other.getApplicationNames() != null && other.getApplicationNames().equals(this.getApplicationNames()) == false) return false; 
+        return true;
     }
     
 }

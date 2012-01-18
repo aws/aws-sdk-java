@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -71,10 +71,13 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
      * @param instanceGroups Instance groups to change.
      */
     public void setInstanceGroups(java.util.Collection<InstanceGroupModifyConfig> instanceGroups) {
-        java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>();
-        if (instanceGroups != null) {
-            instanceGroupsCopy.addAll(instanceGroups);
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+            return;
         }
+
+        java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.size());
+        instanceGroupsCopy.addAll(instanceGroups);
         this.instanceGroups = instanceGroupsCopy;
     }
     
@@ -89,7 +92,7 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(InstanceGroupModifyConfig... instanceGroups) {
-        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupModifyConfig>());
+        if (getInstanceGroups() == null) setInstanceGroups(new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.length));
         for (InstanceGroupModifyConfig value : instanceGroups) {
             getInstanceGroups().add(value);
         }
@@ -107,11 +110,13 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyInstanceGroupsRequest withInstanceGroups(java.util.Collection<InstanceGroupModifyConfig> instanceGroups) {
-        java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>();
-        if (instanceGroups != null) {
+        if (instanceGroups == null) {
+            this.instanceGroups = null;
+        } else {
+            java.util.List<InstanceGroupModifyConfig> instanceGroupsCopy = new java.util.ArrayList<InstanceGroupModifyConfig>(instanceGroups.size());
             instanceGroupsCopy.addAll(instanceGroups);
+            this.instanceGroups = instanceGroupsCopy;
         }
-        this.instanceGroups = instanceGroupsCopy;
 
         return this;
     }
@@ -128,9 +133,31 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceGroups: " + instanceGroups + ", ");
+        if (instanceGroups != null) sb.append("InstanceGroups: " + instanceGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceGroups() == null) ? 0 : getInstanceGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ModifyInstanceGroupsRequest == false) return false;
+        ModifyInstanceGroupsRequest other = (ModifyInstanceGroupsRequest)obj;
+        
+        if (other.getInstanceGroups() == null ^ this.getInstanceGroups() == null) return false;
+        if (other.getInstanceGroups() != null && other.getInstanceGroups().equals(this.getInstanceGroups()) == false) return false; 
+        return true;
     }
     
 }

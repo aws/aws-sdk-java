@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -391,16 +391,59 @@ public class StackSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackId: " + stackId + ", ");
-        sb.append("StackName: " + stackName + ", ");
-        sb.append("TemplateDescription: " + templateDescription + ", ");
-        sb.append("CreationTime: " + creationTime + ", ");
-        sb.append("LastUpdatedTime: " + lastUpdatedTime + ", ");
-        sb.append("DeletionTime: " + deletionTime + ", ");
-        sb.append("StackStatus: " + stackStatus + ", ");
-        sb.append("StackStatusReason: " + stackStatusReason + ", ");
+        if (stackId != null) sb.append("StackId: " + stackId + ", ");
+        if (stackName != null) sb.append("StackName: " + stackName + ", ");
+        if (templateDescription != null) sb.append("TemplateDescription: " + templateDescription + ", ");
+        if (creationTime != null) sb.append("CreationTime: " + creationTime + ", ");
+        if (lastUpdatedTime != null) sb.append("LastUpdatedTime: " + lastUpdatedTime + ", ");
+        if (deletionTime != null) sb.append("DeletionTime: " + deletionTime + ", ");
+        if (stackStatus != null) sb.append("StackStatus: " + stackStatus + ", ");
+        if (stackStatusReason != null) sb.append("StackStatusReason: " + stackStatusReason + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateDescription() == null) ? 0 : getTemplateDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode()); 
+        hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode()); 
+        hashCode = prime * hashCode + ((getDeletionTime() == null) ? 0 : getDeletionTime().hashCode()); 
+        hashCode = prime * hashCode + ((getStackStatus() == null) ? 0 : getStackStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getStackStatusReason() == null) ? 0 : getStackStatusReason().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StackSummary == false) return false;
+        StackSummary other = (StackSummary)obj;
+        
+        if (other.getStackId() == null ^ this.getStackId() == null) return false;
+        if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
+        if (other.getStackName() == null ^ this.getStackName() == null) return false;
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
+        if (other.getTemplateDescription() == null ^ this.getTemplateDescription() == null) return false;
+        if (other.getTemplateDescription() != null && other.getTemplateDescription().equals(this.getTemplateDescription()) == false) return false; 
+        if (other.getCreationTime() == null ^ this.getCreationTime() == null) return false;
+        if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false) return false; 
+        if (other.getLastUpdatedTime() == null ^ this.getLastUpdatedTime() == null) return false;
+        if (other.getLastUpdatedTime() != null && other.getLastUpdatedTime().equals(this.getLastUpdatedTime()) == false) return false; 
+        if (other.getDeletionTime() == null ^ this.getDeletionTime() == null) return false;
+        if (other.getDeletionTime() != null && other.getDeletionTime().equals(this.getDeletionTime()) == false) return false; 
+        if (other.getStackStatus() == null ^ this.getStackStatus() == null) return false;
+        if (other.getStackStatus() != null && other.getStackStatus().equals(this.getStackStatus()) == false) return false; 
+        if (other.getStackStatusReason() == null ^ this.getStackStatusReason() == null) return false;
+        if (other.getStackStatusReason() != null && other.getStackStatusReason().equals(this.getStackStatusReason()) == false) return false; 
+        return true;
     }
     
 }

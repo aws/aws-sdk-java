@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -125,10 +125,13 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         that have the specified version labels.
      */
     public void setVersionLabels(java.util.Collection<String> versionLabels) {
-        java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>();
-        if (versionLabels != null) {
-            versionLabelsCopy.addAll(versionLabels);
+        if (versionLabels == null) {
+            this.versionLabels = null;
+            return;
         }
+
+        java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>(versionLabels.size());
+        versionLabelsCopy.addAll(versionLabels);
         this.versionLabels = versionLabelsCopy;
     }
     
@@ -145,7 +148,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DescribeApplicationVersionsRequest withVersionLabels(String... versionLabels) {
-        if (getVersionLabels() == null) setVersionLabels(new java.util.ArrayList<String>());
+        if (getVersionLabels() == null) setVersionLabels(new java.util.ArrayList<String>(versionLabels.length));
         for (String value : versionLabels) {
             getVersionLabels().add(value);
         }
@@ -165,11 +168,13 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DescribeApplicationVersionsRequest withVersionLabels(java.util.Collection<String> versionLabels) {
-        java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>();
-        if (versionLabels != null) {
+        if (versionLabels == null) {
+            this.versionLabels = null;
+        } else {
+            java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>(versionLabels.size());
             versionLabelsCopy.addAll(versionLabels);
+            this.versionLabels = versionLabelsCopy;
         }
-        this.versionLabels = versionLabelsCopy;
 
         return this;
     }
@@ -186,10 +191,35 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("VersionLabels: " + versionLabels + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (versionLabels != null) sb.append("VersionLabels: " + versionLabels + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabels() == null) ? 0 : getVersionLabels().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeApplicationVersionsRequest == false) return false;
+        DescribeApplicationVersionsRequest other = (DescribeApplicationVersionsRequest)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getVersionLabels() == null ^ this.getVersionLabels() == null) return false;
+        if (other.getVersionLabels() != null && other.getVersionLabels().equals(this.getVersionLabels()) == false) return false; 
+        return true;
     }
     
 }

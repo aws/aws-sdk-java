@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,13 @@ public class ListJobsResult {
      * @param jobs A list container for Jobs returned by the ListJobs operation.
      */
     public void setJobs(java.util.Collection<Job> jobs) {
-        java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>();
-        if (jobs != null) {
-            jobsCopy.addAll(jobs);
+        if (jobs == null) {
+            this.jobs = null;
+            return;
         }
+
+        java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
+        jobsCopy.addAll(jobs);
         this.jobs = jobsCopy;
     }
     
@@ -69,7 +72,7 @@ public class ListJobsResult {
      *         together. 
      */
     public ListJobsResult withJobs(Job... jobs) {
-        if (getJobs() == null) setJobs(new java.util.ArrayList<Job>());
+        if (getJobs() == null) setJobs(new java.util.ArrayList<Job>(jobs.length));
         for (Job value : jobs) {
             getJobs().add(value);
         }
@@ -87,11 +90,13 @@ public class ListJobsResult {
      *         together. 
      */
     public ListJobsResult withJobs(java.util.Collection<Job> jobs) {
-        java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>();
-        if (jobs != null) {
+        if (jobs == null) {
+            this.jobs = null;
+        } else {
+            java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
             jobsCopy.addAll(jobs);
+            this.jobs = jobsCopy;
         }
-        this.jobs = jobsCopy;
 
         return this;
     }
@@ -159,10 +164,35 @@ public class ListJobsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Jobs: " + jobs + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
+        if (jobs != null) sb.append("Jobs: " + jobs + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getJobs() == null) ? 0 : getJobs().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListJobsResult == false) return false;
+        ListJobsResult other = (ListJobsResult)obj;
+        
+        if (other.getJobs() == null ^ this.getJobs() == null) return false;
+        if (other.getJobs() != null && other.getJobs().equals(this.getJobs()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        return true;
     }
     
 }

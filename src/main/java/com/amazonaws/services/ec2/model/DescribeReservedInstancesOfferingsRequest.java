@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -97,10 +97,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         to describe.
      */
     public void setReservedInstancesOfferingIds(java.util.Collection<String> reservedInstancesOfferingIds) {
-        java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>();
-        if (reservedInstancesOfferingIds != null) {
-            reservedInstancesOfferingIdsCopy.addAll(reservedInstancesOfferingIds);
+        if (reservedInstancesOfferingIds == null) {
+            this.reservedInstancesOfferingIds = null;
+            return;
         }
+
+        java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>(reservedInstancesOfferingIds.size());
+        reservedInstancesOfferingIdsCopy.addAll(reservedInstancesOfferingIds);
         this.reservedInstancesOfferingIds = reservedInstancesOfferingIdsCopy;
     }
     
@@ -117,7 +120,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(String... reservedInstancesOfferingIds) {
-        if (getReservedInstancesOfferingIds() == null) setReservedInstancesOfferingIds(new java.util.ArrayList<String>());
+        if (getReservedInstancesOfferingIds() == null) setReservedInstancesOfferingIds(new java.util.ArrayList<String>(reservedInstancesOfferingIds.length));
         for (String value : reservedInstancesOfferingIds) {
             getReservedInstancesOfferingIds().add(value);
         }
@@ -137,11 +140,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withReservedInstancesOfferingIds(java.util.Collection<String> reservedInstancesOfferingIds) {
-        java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>();
-        if (reservedInstancesOfferingIds != null) {
+        if (reservedInstancesOfferingIds == null) {
+            this.reservedInstancesOfferingIds = null;
+        } else {
+            java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>(reservedInstancesOfferingIds.size());
             reservedInstancesOfferingIdsCopy.addAll(reservedInstancesOfferingIds);
+            this.reservedInstancesOfferingIds = reservedInstancesOfferingIdsCopy;
         }
-        this.reservedInstancesOfferingIds = reservedInstancesOfferingIdsCopy;
 
         return this;
     }
@@ -332,10 +337,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -358,7 +366,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -384,11 +392,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeReservedInstancesOfferingsRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -485,15 +495,55 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedInstancesOfferingIds: " + reservedInstancesOfferingIds + ", ");
-        sb.append("InstanceType: " + instanceType + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("ProductDescription: " + productDescription + ", ");
-        sb.append("Filters: " + filters + ", ");
-        sb.append("InstanceTenancy: " + instanceTenancy + ", ");
-        sb.append("OfferingType: " + offeringType + ", ");
+        if (reservedInstancesOfferingIds != null) sb.append("ReservedInstancesOfferingIds: " + reservedInstancesOfferingIds + ", ");
+        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedInstancesOfferingIds() == null) ? 0 : getReservedInstancesOfferingIds().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode()); 
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeReservedInstancesOfferingsRequest == false) return false;
+        DescribeReservedInstancesOfferingsRequest other = (DescribeReservedInstancesOfferingsRequest)obj;
+        
+        if (other.getReservedInstancesOfferingIds() == null ^ this.getReservedInstancesOfferingIds() == null) return false;
+        if (other.getReservedInstancesOfferingIds() != null && other.getReservedInstancesOfferingIds().equals(this.getReservedInstancesOfferingIds()) == false) return false; 
+        if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
+        if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null) return false;
+        if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false) return false; 
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
+        return true;
     }
     
 }

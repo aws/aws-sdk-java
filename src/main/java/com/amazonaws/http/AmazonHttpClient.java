@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,6 +46,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.internal.CustomBackoffStrategy;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
@@ -249,7 +250,7 @@ public class AmazonHttpClient {
             org.apache.http.HttpResponse response = null;
             try {
                 if (retryCount > 0) {
-                    pauseExponentially(retryCount, exception);
+                    pauseExponentially(retryCount, exception, executionContext.getCustomBackoffStrategy());
                     if (entity != null && entity.getContent().markSupported()) {
                         entity.getContent().reset();
                     }
@@ -484,6 +485,7 @@ public class AmazonHttpClient {
         }
     }
 
+
     /**
      * Responsible for handling an error response, including unmarshalling the
      * error response into the most specific exception type possible, and
@@ -520,10 +522,14 @@ public class AmazonHttpClient {
             // responses that don't have any content
             if (status == 413) {
                 exception = new AmazonServiceException("Request entity too large");
+                exception.setServiceName(request.getServiceName());
+                exception.setStatusCode(413);
                 exception.setErrorType(ErrorType.Client);
                 exception.setErrorCode("Request entity too large");
             } else if (status == 503 && "Service Unavailable".equalsIgnoreCase(apacheHttpResponse.getStatusLine().getReasonPhrase())) {
         		exception = new AmazonServiceException("Service unavailable");
+        		exception.setServiceName(request.getServiceName());
+        		exception.setStatusCode(503);
         		exception.setErrorType(ErrorType.Service);
         		exception.setErrorCode("Service unavailable");
         	} else {
@@ -580,12 +586,17 @@ public class AmazonHttpClient {
      * @param previousException
      *            Exception information for the previous attempt, if any.
      */
-    private void pauseExponentially(int retries, AmazonServiceException previousException) {
-        long scaleFactor = 300;
-        if ( isThrottlingException(previousException) ) {
-            scaleFactor = 500 + random.nextInt(100);
+    private void pauseExponentially(int retries, AmazonServiceException previousException, CustomBackoffStrategy backoffStrategy) {
+        long delay = 0;
+        if (backoffStrategy != null) {
+            delay = backoffStrategy.getBackoffPeriod(retries);
+        } else {
+            long scaleFactor = 300;
+            if ( isThrottlingException(previousException) ) {
+                scaleFactor = 500 + random.nextInt(100);
+            }
+            delay = (long) (Math.pow(2, retries) * scaleFactor);
         }
-        long delay = (long) (Math.pow(2, retries) * scaleFactor);
 
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
         log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);

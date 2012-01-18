@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -211,10 +211,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         descriptions to include only those that have the specified IDs.
      */
     public void setEnvironmentIds(java.util.Collection<String> environmentIds) {
-        java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>();
-        if (environmentIds != null) {
-            environmentIdsCopy.addAll(environmentIds);
+        if (environmentIds == null) {
+            this.environmentIds = null;
+            return;
         }
+
+        java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>(environmentIds.size());
+        environmentIdsCopy.addAll(environmentIds);
         this.environmentIds = environmentIdsCopy;
     }
     
@@ -231,7 +234,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentIds(String... environmentIds) {
-        if (getEnvironmentIds() == null) setEnvironmentIds(new java.util.ArrayList<String>());
+        if (getEnvironmentIds() == null) setEnvironmentIds(new java.util.ArrayList<String>(environmentIds.length));
         for (String value : environmentIds) {
             getEnvironmentIds().add(value);
         }
@@ -251,11 +254,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentIds(java.util.Collection<String> environmentIds) {
-        java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>();
-        if (environmentIds != null) {
+        if (environmentIds == null) {
+            this.environmentIds = null;
+        } else {
+            java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>(environmentIds.size());
             environmentIdsCopy.addAll(environmentIds);
+            this.environmentIds = environmentIdsCopy;
         }
-        this.environmentIds = environmentIdsCopy;
 
         return this;
     }
@@ -283,10 +288,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         descriptions to include only those that have the specified names.
      */
     public void setEnvironmentNames(java.util.Collection<String> environmentNames) {
-        java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>();
-        if (environmentNames != null) {
-            environmentNamesCopy.addAll(environmentNames);
+        if (environmentNames == null) {
+            this.environmentNames = null;
+            return;
         }
+
+        java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>(environmentNames.size());
+        environmentNamesCopy.addAll(environmentNames);
         this.environmentNames = environmentNamesCopy;
     }
     
@@ -303,7 +311,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentNames(String... environmentNames) {
-        if (getEnvironmentNames() == null) setEnvironmentNames(new java.util.ArrayList<String>());
+        if (getEnvironmentNames() == null) setEnvironmentNames(new java.util.ArrayList<String>(environmentNames.length));
         for (String value : environmentNames) {
             getEnvironmentNames().add(value);
         }
@@ -323,11 +331,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeEnvironmentsRequest withEnvironmentNames(java.util.Collection<String> environmentNames) {
-        java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>();
-        if (environmentNames != null) {
+        if (environmentNames == null) {
+            this.environmentNames = null;
+        } else {
+            java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>(environmentNames.size());
             environmentNamesCopy.addAll(environmentNames);
+            this.environmentNames = environmentNamesCopy;
         }
-        this.environmentNames = environmentNamesCopy;
 
         return this;
     }
@@ -457,14 +467,51 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("VersionLabel: " + versionLabel + ", ");
-        sb.append("EnvironmentIds: " + environmentIds + ", ");
-        sb.append("EnvironmentNames: " + environmentNames + ", ");
-        sb.append("IncludeDeleted: " + includeDeleted + ", ");
-        sb.append("IncludedDeletedBackTo: " + includedDeletedBackTo + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
+        if (environmentIds != null) sb.append("EnvironmentIds: " + environmentIds + ", ");
+        if (environmentNames != null) sb.append("EnvironmentNames: " + environmentNames + ", ");
+        if (includeDeleted != null) sb.append("IncludeDeleted: " + includeDeleted + ", ");
+        if (includedDeletedBackTo != null) sb.append("IncludedDeletedBackTo: " + includedDeletedBackTo + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getVersionLabel() == null) ? 0 : getVersionLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentIds() == null) ? 0 : getEnvironmentIds().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentNames() == null) ? 0 : getEnvironmentNames().hashCode()); 
+        hashCode = prime * hashCode + ((isIncludeDeleted() == null) ? 0 : isIncludeDeleted().hashCode()); 
+        hashCode = prime * hashCode + ((getIncludedDeletedBackTo() == null) ? 0 : getIncludedDeletedBackTo().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeEnvironmentsRequest == false) return false;
+        DescribeEnvironmentsRequest other = (DescribeEnvironmentsRequest)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getVersionLabel() == null ^ this.getVersionLabel() == null) return false;
+        if (other.getVersionLabel() != null && other.getVersionLabel().equals(this.getVersionLabel()) == false) return false; 
+        if (other.getEnvironmentIds() == null ^ this.getEnvironmentIds() == null) return false;
+        if (other.getEnvironmentIds() != null && other.getEnvironmentIds().equals(this.getEnvironmentIds()) == false) return false; 
+        if (other.getEnvironmentNames() == null ^ this.getEnvironmentNames() == null) return false;
+        if (other.getEnvironmentNames() != null && other.getEnvironmentNames().equals(this.getEnvironmentNames()) == false) return false; 
+        if (other.isIncludeDeleted() == null ^ this.isIncludeDeleted() == null) return false;
+        if (other.isIncludeDeleted() != null && other.isIncludeDeleted().equals(this.isIncludeDeleted()) == false) return false; 
+        if (other.getIncludedDeletedBackTo() == null ^ this.getIncludedDeletedBackTo() == null) return false;
+        if (other.getIncludedDeletedBackTo() != null && other.getIncludedDeletedBackTo().equals(this.getIncludedDeletedBackTo()) == false) return false; 
+        return true;
     }
     
 }

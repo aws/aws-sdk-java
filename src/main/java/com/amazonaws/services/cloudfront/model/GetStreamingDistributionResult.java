@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,10 +118,35 @@ public class GetStreamingDistributionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StreamingDistribution: " + streamingDistribution + ", ");
-        sb.append("ETag: " + eTag + ", ");
+        if (streamingDistribution != null) sb.append("StreamingDistribution: " + streamingDistribution + ", ");
+        if (eTag != null) sb.append("ETag: " + eTag + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStreamingDistribution() == null) ? 0 : getStreamingDistribution().hashCode()); 
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetStreamingDistributionResult == false) return false;
+        GetStreamingDistributionResult other = (GetStreamingDistributionResult)obj;
+        
+        if (other.getStreamingDistribution() == null ^ this.getStreamingDistribution() == null) return false;
+        if (other.getStreamingDistribution() != null && other.getStreamingDistribution().equals(this.getStreamingDistribution()) == false) return false; 
+        if (other.getETag() == null ^ this.getETag() == null) return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,10 +44,13 @@ public class DescribeTagsResult {
      * @param tags A list of the tags for the specified resources.
      */
     public void setTags(java.util.Collection<TagDescription> tags) {
-        java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -62,7 +65,7 @@ public class DescribeTagsResult {
      *         together. 
      */
     public DescribeTagsResult withTags(TagDescription... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>());
+        if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>(tags.length));
         for (TagDescription value : tags) {
             getTags().add(value);
         }
@@ -80,11 +83,13 @@ public class DescribeTagsResult {
      *         together. 
      */
     public DescribeTagsResult withTags(java.util.Collection<TagDescription> tags) {
-        java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -101,9 +106,31 @@ public class DescribeTagsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Tags: " + tags + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeTagsResult == false) return false;
+        DescribeTagsResult other = (DescribeTagsResult)obj;
+        
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

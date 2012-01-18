@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,10 +136,13 @@ public class MetricDatum {
      * @param dimensions A list of dimensions associated with the metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
-            dimensionsCopy.addAll(dimensions);
+        if (dimensions == null) {
+            this.dimensions = null;
+            return;
         }
+
+        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
     
@@ -157,7 +160,7 @@ public class MetricDatum {
      *         together. 
      */
     public MetricDatum withDimensions(Dimension... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }
@@ -178,11 +181,13 @@ public class MetricDatum {
      *         together. 
      */
     public MetricDatum withDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
+        if (dimensions == null) {
+            this.dimensions = null;
+        } else {
+            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
+            this.dimensions = dimensionsCopy;
         }
-        this.dimensions = dimensionsCopy;
 
         return this;
     }
@@ -420,14 +425,51 @@ public class MetricDatum {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MetricName: " + metricName + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
-        sb.append("Timestamp: " + timestamp + ", ");
-        sb.append("Value: " + value + ", ");
-        sb.append("StatisticValues: " + statisticValues + ", ");
-        sb.append("Unit: " + unit + ", ");
+        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
+        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
+        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (value != null) sb.append("Value: " + value + ", ");
+        if (statisticValues != null) sb.append("StatisticValues: " + statisticValues + ", ");
+        if (unit != null) sb.append("Unit: " + unit + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+        hashCode = prime * hashCode + ((getStatisticValues() == null) ? 0 : getStatisticValues().hashCode()); 
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof MetricDatum == false) return false;
+        MetricDatum other = (MetricDatum)obj;
+        
+        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
+        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null) return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false) return false; 
+        if (other.getValue() == null ^ this.getValue() == null) return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
+        if (other.getStatisticValues() == null ^ this.getStatisticValues() == null) return false;
+        if (other.getStatisticValues() != null && other.getStatisticValues().equals(this.getStatisticValues()) == false) return false; 
+        if (other.getUnit() == null ^ this.getUnit() == null) return false;
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false) return false; 
+        return true;
     }
     
 }

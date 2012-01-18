@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -81,10 +81,13 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
      * @param spotInstanceRequestIds Specifies the ID of the Spot Instance request.
      */
     public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>();
-        if (spotInstanceRequestIds != null) {
-            spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
+        if (spotInstanceRequestIds == null) {
+            this.spotInstanceRequestIds = null;
+            return;
         }
+
+        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
+        spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
         this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
     }
     
@@ -99,7 +102,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
-        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>());
+        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>(spotInstanceRequestIds.length));
         for (String value : spotInstanceRequestIds) {
             getSpotInstanceRequestIds().add(value);
         }
@@ -117,11 +120,13 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CancelSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>();
-        if (spotInstanceRequestIds != null) {
+        if (spotInstanceRequestIds == null) {
+            this.spotInstanceRequestIds = null;
+        } else {
+            java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
             spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
+            this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
         }
-        this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
 
         return this;
     }
@@ -138,9 +143,31 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
+        if (spotInstanceRequestIds != null) sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSpotInstanceRequestIds() == null) ? 0 : getSpotInstanceRequestIds().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CancelSpotInstanceRequestsRequest == false) return false;
+        CancelSpotInstanceRequestsRequest other = (CancelSpotInstanceRequestsRequest)obj;
+        
+        if (other.getSpotInstanceRequestIds() == null ^ this.getSpotInstanceRequestIds() == null) return false;
+        if (other.getSpotInstanceRequestIds() != null && other.getSpotInstanceRequestIds().equals(this.getSpotInstanceRequestIds()) == false) return false; 
+        return true;
     }
     
 }

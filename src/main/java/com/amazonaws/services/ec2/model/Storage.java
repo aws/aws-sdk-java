@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,9 +73,31 @@ public class Storage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("S3: " + s3 + ", ");
+        if (s3 != null) sb.append("S3: " + s3 + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getS3() == null) ? 0 : getS3().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Storage == false) return false;
+        Storage other = (Storage)obj;
+        
+        if (other.getS3() == null ^ this.getS3() == null) return false;
+        if (other.getS3() != null && other.getS3().equals(this.getS3()) == false) return false; 
+        return true;
     }
     
 }

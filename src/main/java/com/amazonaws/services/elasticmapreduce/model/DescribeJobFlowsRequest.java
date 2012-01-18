@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -178,10 +178,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      * @param jobFlowIds Return only job flows whose job flow ID is contained in this list.
      */
     public void setJobFlowIds(java.util.Collection<String> jobFlowIds) {
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>();
-        if (jobFlowIds != null) {
-            jobFlowIdsCopy.addAll(jobFlowIds);
+        if (jobFlowIds == null) {
+            this.jobFlowIds = null;
+            return;
         }
+
+        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
+        jobFlowIdsCopy.addAll(jobFlowIds);
         this.jobFlowIds = jobFlowIdsCopy;
     }
     
@@ -196,7 +199,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowIds(String... jobFlowIds) {
-        if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>());
+        if (getJobFlowIds() == null) setJobFlowIds(new java.util.ArrayList<String>(jobFlowIds.length));
         for (String value : jobFlowIds) {
             getJobFlowIds().add(value);
         }
@@ -214,11 +217,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowIds(java.util.Collection<String> jobFlowIds) {
-        java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>();
-        if (jobFlowIds != null) {
+        if (jobFlowIds == null) {
+            this.jobFlowIds = null;
+        } else {
+            java.util.List<String> jobFlowIdsCopy = new java.util.ArrayList<String>(jobFlowIds.size());
             jobFlowIdsCopy.addAll(jobFlowIds);
+            this.jobFlowIds = jobFlowIdsCopy;
         }
-        this.jobFlowIds = jobFlowIdsCopy;
 
         return this;
     }
@@ -242,10 +247,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      * @param jobFlowStates Return only job flows whose state is contained in this list.
      */
     public void setJobFlowStates(java.util.Collection<String> jobFlowStates) {
-        java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>();
-        if (jobFlowStates != null) {
-            jobFlowStatesCopy.addAll(jobFlowStates);
+        if (jobFlowStates == null) {
+            this.jobFlowStates = null;
+            return;
         }
+
+        java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>(jobFlowStates.size());
+        jobFlowStatesCopy.addAll(jobFlowStates);
         this.jobFlowStates = jobFlowStatesCopy;
     }
     
@@ -260,7 +268,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowStates(String... jobFlowStates) {
-        if (getJobFlowStates() == null) setJobFlowStates(new java.util.ArrayList<String>());
+        if (getJobFlowStates() == null) setJobFlowStates(new java.util.ArrayList<String>(jobFlowStates.length));
         for (String value : jobFlowStates) {
             getJobFlowStates().add(value);
         }
@@ -278,11 +286,13 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeJobFlowsRequest withJobFlowStates(java.util.Collection<String> jobFlowStates) {
-        java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>();
-        if (jobFlowStates != null) {
+        if (jobFlowStates == null) {
+            this.jobFlowStates = null;
+        } else {
+            java.util.List<String> jobFlowStatesCopy = new java.util.ArrayList<String>(jobFlowStates.size());
             jobFlowStatesCopy.addAll(jobFlowStates);
+            this.jobFlowStates = jobFlowStatesCopy;
         }
-        this.jobFlowStates = jobFlowStatesCopy;
 
         return this;
     }
@@ -299,12 +309,43 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CreatedAfter: " + createdAfter + ", ");
-        sb.append("CreatedBefore: " + createdBefore + ", ");
-        sb.append("JobFlowIds: " + jobFlowIds + ", ");
-        sb.append("JobFlowStates: " + jobFlowStates + ", ");
+        if (createdAfter != null) sb.append("CreatedAfter: " + createdAfter + ", ");
+        if (createdBefore != null) sb.append("CreatedBefore: " + createdBefore + ", ");
+        if (jobFlowIds != null) sb.append("JobFlowIds: " + jobFlowIds + ", ");
+        if (jobFlowStates != null) sb.append("JobFlowStates: " + jobFlowStates + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCreatedAfter() == null) ? 0 : getCreatedAfter().hashCode()); 
+        hashCode = prime * hashCode + ((getCreatedBefore() == null) ? 0 : getCreatedBefore().hashCode()); 
+        hashCode = prime * hashCode + ((getJobFlowIds() == null) ? 0 : getJobFlowIds().hashCode()); 
+        hashCode = prime * hashCode + ((getJobFlowStates() == null) ? 0 : getJobFlowStates().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeJobFlowsRequest == false) return false;
+        DescribeJobFlowsRequest other = (DescribeJobFlowsRequest)obj;
+        
+        if (other.getCreatedAfter() == null ^ this.getCreatedAfter() == null) return false;
+        if (other.getCreatedAfter() != null && other.getCreatedAfter().equals(this.getCreatedAfter()) == false) return false; 
+        if (other.getCreatedBefore() == null ^ this.getCreatedBefore() == null) return false;
+        if (other.getCreatedBefore() != null && other.getCreatedBefore().equals(this.getCreatedBefore()) == false) return false; 
+        if (other.getJobFlowIds() == null ^ this.getJobFlowIds() == null) return false;
+        if (other.getJobFlowIds() != null && other.getJobFlowIds().equals(this.getJobFlowIds()) == false) return false; 
+        if (other.getJobFlowStates() == null ^ this.getJobFlowStates() == null) return false;
+        if (other.getJobFlowStates() != null && other.getJobFlowStates().equals(this.getJobFlowStates()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,10 +67,13 @@ public class ActiveTrustedSigners {
      * @param signers Each active trusted signer.
      */
     public void setSigners(java.util.Collection<Signer> signers) {
-        java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>();
-        if (signers != null) {
-            signersCopy.addAll(signers);
+        if (signers == null) {
+            this.signers = null;
+            return;
         }
+
+        java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>(signers.size());
+        signersCopy.addAll(signers);
         this.signers = signersCopy;
     }
     
@@ -85,7 +88,7 @@ public class ActiveTrustedSigners {
      *         together. 
      */
     public ActiveTrustedSigners withSigners(Signer... signers) {
-        if (getSigners() == null) setSigners(new java.util.ArrayList<Signer>());
+        if (getSigners() == null) setSigners(new java.util.ArrayList<Signer>(signers.length));
         for (Signer value : signers) {
             getSigners().add(value);
         }
@@ -103,11 +106,13 @@ public class ActiveTrustedSigners {
      *         together. 
      */
     public ActiveTrustedSigners withSigners(java.util.Collection<Signer> signers) {
-        java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>();
-        if (signers != null) {
+        if (signers == null) {
+            this.signers = null;
+        } else {
+            java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>(signers.size());
             signersCopy.addAll(signers);
+            this.signers = signersCopy;
         }
-        this.signers = signersCopy;
 
         return this;
     }
@@ -124,9 +129,31 @@ public class ActiveTrustedSigners {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Signers: " + signers + ", ");
+        if (signers != null) sb.append("Signers: " + signers + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSigners() == null) ? 0 : getSigners().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ActiveTrustedSigners == false) return false;
+        ActiveTrustedSigners other = (ActiveTrustedSigners)obj;
+        
+        if (other.getSigners() == null ^ this.getSigners() == null) return false;
+        if (other.getSigners() != null && other.getSigners().equals(this.getSigners()) == false) return false; 
+        return true;
     }
     
 }

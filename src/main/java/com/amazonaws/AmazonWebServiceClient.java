@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -39,13 +39,14 @@ public abstract class AmazonWebServiceClient {
     protected URI endpoint;
 
     /** The client configuration */
-    protected final ClientConfiguration clientConfiguration;
+    protected ClientConfiguration clientConfiguration;
 
     /** Low level client for sending requests to AWS services. */
-    protected final AmazonHttpClient client;
+    protected AmazonHttpClient client;
 
     /** Optional request handlers for additional request processing. */
     protected final List<RequestHandler> requestHandlers;
+
 
     /**
      * Constructs a new AmazonWebServiceClient object using the specified
@@ -98,6 +99,11 @@ public abstract class AmazonWebServiceClient {
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
+    }
+
+    public void setConfiguration(ClientConfiguration clientConfiguration) {
+        this.clientConfiguration = clientConfiguration;
+        client = new AmazonHttpClient(clientConfiguration);
     }
 
     /**
@@ -154,7 +160,7 @@ public abstract class AmazonWebServiceClient {
     public void addRequestHandler(RequestHandler requestHandler) {
     	requestHandlers.add(requestHandler);
     }
-    
+
     /**
      * Removes a request handler from the list of registered handlers that are run
      * as part of a request's lifecycle.
@@ -171,5 +177,5 @@ public abstract class AmazonWebServiceClient {
         ExecutionContext executionContext = new ExecutionContext(requestHandlers);
         return executionContext;
     }
-    
+
 }

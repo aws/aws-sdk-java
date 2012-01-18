@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -56,10 +56,13 @@ public class DescribeOrderableDBInstanceOptionsResult {
      *         about orderable options for the DB Instance.
      */
     public void setOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
-        java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>();
-        if (orderableDBInstanceOptions != null) {
-            orderableDBInstanceOptionsCopy.addAll(orderableDBInstanceOptions);
+        if (orderableDBInstanceOptions == null) {
+            this.orderableDBInstanceOptions = null;
+            return;
         }
+
+        java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
+        orderableDBInstanceOptionsCopy.addAll(orderableDBInstanceOptions);
         this.orderableDBInstanceOptions = orderableDBInstanceOptionsCopy;
     }
     
@@ -76,7 +79,7 @@ public class DescribeOrderableDBInstanceOptionsResult {
      *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withOrderableDBInstanceOptions(OrderableDBInstanceOption... orderableDBInstanceOptions) {
-        if (getOrderableDBInstanceOptions() == null) setOrderableDBInstanceOptions(new java.util.ArrayList<OrderableDBInstanceOption>());
+        if (getOrderableDBInstanceOptions() == null) setOrderableDBInstanceOptions(new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.length));
         for (OrderableDBInstanceOption value : orderableDBInstanceOptions) {
             getOrderableDBInstanceOptions().add(value);
         }
@@ -96,11 +99,13 @@ public class DescribeOrderableDBInstanceOptionsResult {
      *         together. 
      */
     public DescribeOrderableDBInstanceOptionsResult withOrderableDBInstanceOptions(java.util.Collection<OrderableDBInstanceOption> orderableDBInstanceOptions) {
-        java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>();
-        if (orderableDBInstanceOptions != null) {
+        if (orderableDBInstanceOptions == null) {
+            this.orderableDBInstanceOptions = null;
+        } else {
+            java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
             orderableDBInstanceOptionsCopy.addAll(orderableDBInstanceOptions);
+            this.orderableDBInstanceOptions = orderableDBInstanceOptionsCopy;
         }
-        this.orderableDBInstanceOptions = orderableDBInstanceOptionsCopy;
 
         return this;
     }
@@ -151,10 +156,35 @@ public class DescribeOrderableDBInstanceOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("OrderableDBInstanceOptions: " + orderableDBInstanceOptions + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (orderableDBInstanceOptions != null) sb.append("OrderableDBInstanceOptions: " + orderableDBInstanceOptions + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getOrderableDBInstanceOptions() == null) ? 0 : getOrderableDBInstanceOptions().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeOrderableDBInstanceOptionsResult == false) return false;
+        DescribeOrderableDBInstanceOptionsResult other = (DescribeOrderableDBInstanceOptionsResult)obj;
+        
+        if (other.getOrderableDBInstanceOptions() == null ^ this.getOrderableDBInstanceOptions() == null) return false;
+        if (other.getOrderableDBInstanceOptions() != null && other.getOrderableDBInstanceOptions().equals(this.getOrderableDBInstanceOptions()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

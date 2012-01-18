@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,9 +72,31 @@ public class ListDistributionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DistributionList: " + distributionList + ", ");
+        if (distributionList != null) sb.append("DistributionList: " + distributionList + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDistributionList() == null) ? 0 : getDistributionList().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListDistributionsResult == false) return false;
+        ListDistributionsResult other = (ListDistributionsResult)obj;
+        
+        if (other.getDistributionList() == null ^ this.getDistributionList() == null) return false;
+        if (other.getDistributionList() != null && other.getDistributionList().equals(this.getDistributionList()) == false) return false; 
+        return true;
     }
     
 }

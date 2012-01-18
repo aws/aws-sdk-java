@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -337,10 +337,13 @@ public class VpnConnection {
      * @param tags A list of tags for the VpnConnection.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -355,7 +358,7 @@ public class VpnConnection {
      *         together. 
      */
     public VpnConnection withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -373,11 +376,13 @@ public class VpnConnection {
      *         together. 
      */
     public VpnConnection withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -401,10 +406,13 @@ public class VpnConnection {
      * @param vgwTelemetry The new value for the VgwTelemetry property for this object.
      */
     public void setVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
-        java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>();
-        if (vgwTelemetry != null) {
-            vgwTelemetryCopy.addAll(vgwTelemetry);
+        if (vgwTelemetry == null) {
+            this.vgwTelemetry = null;
+            return;
         }
+
+        java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>(vgwTelemetry.size());
+        vgwTelemetryCopy.addAll(vgwTelemetry);
         this.vgwTelemetry = vgwTelemetryCopy;
     }
     
@@ -419,7 +427,7 @@ public class VpnConnection {
      *         together. 
      */
     public VpnConnection withVgwTelemetry(VgwTelemetry... vgwTelemetry) {
-        if (getVgwTelemetry() == null) setVgwTelemetry(new java.util.ArrayList<VgwTelemetry>());
+        if (getVgwTelemetry() == null) setVgwTelemetry(new java.util.ArrayList<VgwTelemetry>(vgwTelemetry.length));
         for (VgwTelemetry value : vgwTelemetry) {
             getVgwTelemetry().add(value);
         }
@@ -437,11 +445,13 @@ public class VpnConnection {
      *         together. 
      */
     public VpnConnection withVgwTelemetry(java.util.Collection<VgwTelemetry> vgwTelemetry) {
-        java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>();
-        if (vgwTelemetry != null) {
+        if (vgwTelemetry == null) {
+            this.vgwTelemetry = null;
+        } else {
+            java.util.List<VgwTelemetry> vgwTelemetryCopy = new java.util.ArrayList<VgwTelemetry>(vgwTelemetry.size());
             vgwTelemetryCopy.addAll(vgwTelemetry);
+            this.vgwTelemetry = vgwTelemetryCopy;
         }
-        this.vgwTelemetry = vgwTelemetryCopy;
 
         return this;
     }
@@ -458,16 +468,59 @@ public class VpnConnection {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("CustomerGatewayConfiguration: " + customerGatewayConfiguration + ", ");
-        sb.append("Type: " + type + ", ");
-        sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
-        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
-        sb.append("Tags: " + tags + ", ");
-        sb.append("VgwTelemetry: " + vgwTelemetry + ", ");
+        if (vpnConnectionId != null) sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (customerGatewayConfiguration != null) sb.append("CustomerGatewayConfiguration: " + customerGatewayConfiguration + ", ");
+        if (type != null) sb.append("Type: " + type + ", ");
+        if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (vgwTelemetry != null) sb.append("VgwTelemetry: " + vgwTelemetry + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomerGatewayConfiguration() == null) ? 0 : getCustomerGatewayConfiguration().hashCode()); 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getVgwTelemetry() == null) ? 0 : getVgwTelemetry().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof VpnConnection == false) return false;
+        VpnConnection other = (VpnConnection)obj;
+        
+        if (other.getVpnConnectionId() == null ^ this.getVpnConnectionId() == null) return false;
+        if (other.getVpnConnectionId() != null && other.getVpnConnectionId().equals(this.getVpnConnectionId()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getCustomerGatewayConfiguration() == null ^ this.getCustomerGatewayConfiguration() == null) return false;
+        if (other.getCustomerGatewayConfiguration() != null && other.getCustomerGatewayConfiguration().equals(this.getCustomerGatewayConfiguration()) == false) return false; 
+        if (other.getType() == null ^ this.getType() == null) return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
+        if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null) return false;
+        if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false) return false; 
+        if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null) return false;
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getVgwTelemetry() == null ^ this.getVgwTelemetry() == null) return false;
+        if (other.getVgwTelemetry() != null && other.getVgwTelemetry().equals(this.getVgwTelemetry()) == false) return false; 
+        return true;
     }
     
 }

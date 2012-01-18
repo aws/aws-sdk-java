@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,10 +55,13 @@ public class DescribeScalingActivitiesResult {
      * @param activities A list of the requested scaling activities.
      */
     public void setActivities(java.util.Collection<Activity> activities) {
-        java.util.List<Activity> activitiesCopy = new java.util.ArrayList<Activity>();
-        if (activities != null) {
-            activitiesCopy.addAll(activities);
+        if (activities == null) {
+            this.activities = null;
+            return;
         }
+
+        java.util.List<Activity> activitiesCopy = new java.util.ArrayList<Activity>(activities.size());
+        activitiesCopy.addAll(activities);
         this.activities = activitiesCopy;
     }
     
@@ -73,7 +76,7 @@ public class DescribeScalingActivitiesResult {
      *         together. 
      */
     public DescribeScalingActivitiesResult withActivities(Activity... activities) {
-        if (getActivities() == null) setActivities(new java.util.ArrayList<Activity>());
+        if (getActivities() == null) setActivities(new java.util.ArrayList<Activity>(activities.length));
         for (Activity value : activities) {
             getActivities().add(value);
         }
@@ -91,11 +94,13 @@ public class DescribeScalingActivitiesResult {
      *         together. 
      */
     public DescribeScalingActivitiesResult withActivities(java.util.Collection<Activity> activities) {
-        java.util.List<Activity> activitiesCopy = new java.util.ArrayList<Activity>();
-        if (activities != null) {
+        if (activities == null) {
+            this.activities = null;
+        } else {
+            java.util.List<Activity> activitiesCopy = new java.util.ArrayList<Activity>(activities.size());
             activitiesCopy.addAll(activities);
+            this.activities = activitiesCopy;
         }
-        this.activities = activitiesCopy;
 
         return this;
     }
@@ -167,10 +172,35 @@ public class DescribeScalingActivitiesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Activities: " + activities + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (activities != null) sb.append("Activities: " + activities + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getActivities() == null) ? 0 : getActivities().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeScalingActivitiesResult == false) return false;
+        DescribeScalingActivitiesResult other = (DescribeScalingActivitiesResult)obj;
+        
+        if (other.getActivities() == null ^ this.getActivities() == null) return false;
+        if (other.getActivities() != null && other.getActivities().equals(this.getActivities()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

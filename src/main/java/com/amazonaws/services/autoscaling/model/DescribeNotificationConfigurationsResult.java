@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,10 +54,13 @@ public class DescribeNotificationConfigurationsResult {
      * @param notificationConfigurations The list of notification configurations.
      */
     public void setNotificationConfigurations(java.util.Collection<NotificationConfiguration> notificationConfigurations) {
-        java.util.List<NotificationConfiguration> notificationConfigurationsCopy = new java.util.ArrayList<NotificationConfiguration>();
-        if (notificationConfigurations != null) {
-            notificationConfigurationsCopy.addAll(notificationConfigurations);
+        if (notificationConfigurations == null) {
+            this.notificationConfigurations = null;
+            return;
         }
+
+        java.util.List<NotificationConfiguration> notificationConfigurationsCopy = new java.util.ArrayList<NotificationConfiguration>(notificationConfigurations.size());
+        notificationConfigurationsCopy.addAll(notificationConfigurations);
         this.notificationConfigurations = notificationConfigurationsCopy;
     }
     
@@ -72,7 +75,7 @@ public class DescribeNotificationConfigurationsResult {
      *         together. 
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(NotificationConfiguration... notificationConfigurations) {
-        if (getNotificationConfigurations() == null) setNotificationConfigurations(new java.util.ArrayList<NotificationConfiguration>());
+        if (getNotificationConfigurations() == null) setNotificationConfigurations(new java.util.ArrayList<NotificationConfiguration>(notificationConfigurations.length));
         for (NotificationConfiguration value : notificationConfigurations) {
             getNotificationConfigurations().add(value);
         }
@@ -90,11 +93,13 @@ public class DescribeNotificationConfigurationsResult {
      *         together. 
      */
     public DescribeNotificationConfigurationsResult withNotificationConfigurations(java.util.Collection<NotificationConfiguration> notificationConfigurations) {
-        java.util.List<NotificationConfiguration> notificationConfigurationsCopy = new java.util.ArrayList<NotificationConfiguration>();
-        if (notificationConfigurations != null) {
+        if (notificationConfigurations == null) {
+            this.notificationConfigurations = null;
+        } else {
+            java.util.List<NotificationConfiguration> notificationConfigurationsCopy = new java.util.ArrayList<NotificationConfiguration>(notificationConfigurations.size());
             notificationConfigurationsCopy.addAll(notificationConfigurations);
+            this.notificationConfigurations = notificationConfigurationsCopy;
         }
-        this.notificationConfigurations = notificationConfigurationsCopy;
 
         return this;
     }
@@ -160,10 +165,35 @@ public class DescribeNotificationConfigurationsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NotificationConfigurations: " + notificationConfigurations + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (notificationConfigurations != null) sb.append("NotificationConfigurations: " + notificationConfigurations + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNotificationConfigurations() == null) ? 0 : getNotificationConfigurations().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeNotificationConfigurationsResult == false) return false;
+        DescribeNotificationConfigurationsResult other = (DescribeNotificationConfigurationsResult)obj;
+        
+        if (other.getNotificationConfigurations() == null ^ this.getNotificationConfigurations() == null) return false;
+        if (other.getNotificationConfigurations() != null && other.getNotificationConfigurations().equals(this.getNotificationConfigurations()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

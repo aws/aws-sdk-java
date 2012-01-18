@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -100,10 +100,13 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
      * @param alarmNames A list of alarm names to retrieve information for.
      */
     public void setAlarmNames(java.util.Collection<String> alarmNames) {
-        java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>();
-        if (alarmNames != null) {
-            alarmNamesCopy.addAll(alarmNames);
+        if (alarmNames == null) {
+            this.alarmNames = null;
+            return;
         }
+
+        java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>(alarmNames.size());
+        alarmNamesCopy.addAll(alarmNames);
         this.alarmNames = alarmNamesCopy;
     }
     
@@ -121,7 +124,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAlarmsRequest withAlarmNames(String... alarmNames) {
-        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>());
+        if (getAlarmNames() == null) setAlarmNames(new java.util.ArrayList<String>(alarmNames.length));
         for (String value : alarmNames) {
             getAlarmNames().add(value);
         }
@@ -142,11 +145,13 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeAlarmsRequest withAlarmNames(java.util.Collection<String> alarmNames) {
-        java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>();
-        if (alarmNames != null) {
+        if (alarmNames == null) {
+            this.alarmNames = null;
+        } else {
+            java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>(alarmNames.size());
             alarmNamesCopy.addAll(alarmNames);
+            this.alarmNames = alarmNamesCopy;
         }
-        this.alarmNames = alarmNamesCopy;
 
         return this;
     }
@@ -421,14 +426,51 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmNames: " + alarmNames + ", ");
-        sb.append("AlarmNamePrefix: " + alarmNamePrefix + ", ");
-        sb.append("StateValue: " + stateValue + ", ");
-        sb.append("ActionPrefix: " + actionPrefix + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (alarmNames != null) sb.append("AlarmNames: " + alarmNames + ", ");
+        if (alarmNamePrefix != null) sb.append("AlarmNamePrefix: " + alarmNamePrefix + ", ");
+        if (stateValue != null) sb.append("StateValue: " + stateValue + ", ");
+        if (actionPrefix != null) sb.append("ActionPrefix: " + actionPrefix + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmNames() == null) ? 0 : getAlarmNames().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarmNamePrefix() == null) ? 0 : getAlarmNamePrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode()); 
+        hashCode = prime * hashCode + ((getActionPrefix() == null) ? 0 : getActionPrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAlarmsRequest == false) return false;
+        DescribeAlarmsRequest other = (DescribeAlarmsRequest)obj;
+        
+        if (other.getAlarmNames() == null ^ this.getAlarmNames() == null) return false;
+        if (other.getAlarmNames() != null && other.getAlarmNames().equals(this.getAlarmNames()) == false) return false; 
+        if (other.getAlarmNamePrefix() == null ^ this.getAlarmNamePrefix() == null) return false;
+        if (other.getAlarmNamePrefix() != null && other.getAlarmNamePrefix().equals(this.getAlarmNamePrefix()) == false) return false; 
+        if (other.getStateValue() == null ^ this.getStateValue() == null) return false;
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false) return false; 
+        if (other.getActionPrefix() == null ^ this.getActionPrefix() == null) return false;
+        if (other.getActionPrefix() != null && other.getActionPrefix().equals(this.getActionPrefix()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

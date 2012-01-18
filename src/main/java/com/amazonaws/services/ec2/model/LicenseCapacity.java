@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -217,12 +217,43 @@ public class LicenseCapacity {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Capacity: " + capacity + ", ");
-        sb.append("InstanceCapacity: " + instanceCapacity + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("EarliestAllowedDeactivationTime: " + earliestAllowedDeactivationTime + ", ");
+        if (capacity != null) sb.append("Capacity: " + capacity + ", ");
+        if (instanceCapacity != null) sb.append("InstanceCapacity: " + instanceCapacity + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (earliestAllowedDeactivationTime != null) sb.append("EarliestAllowedDeactivationTime: " + earliestAllowedDeactivationTime + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCapacity() == null) ? 0 : getCapacity().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceCapacity() == null) ? 0 : getInstanceCapacity().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getEarliestAllowedDeactivationTime() == null) ? 0 : getEarliestAllowedDeactivationTime().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof LicenseCapacity == false) return false;
+        LicenseCapacity other = (LicenseCapacity)obj;
+        
+        if (other.getCapacity() == null ^ this.getCapacity() == null) return false;
+        if (other.getCapacity() != null && other.getCapacity().equals(this.getCapacity()) == false) return false; 
+        if (other.getInstanceCapacity() == null ^ this.getInstanceCapacity() == null) return false;
+        if (other.getInstanceCapacity() != null && other.getInstanceCapacity().equals(this.getInstanceCapacity()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getEarliestAllowedDeactivationTime() == null ^ this.getEarliestAllowedDeactivationTime() == null) return false;
+        if (other.getEarliestAllowedDeactivationTime() != null && other.getEarliestAllowedDeactivationTime().equals(this.getEarliestAllowedDeactivationTime()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -96,10 +96,13 @@ public class DescribeConfigurationOptionsResult {
      * @param options A list of <a>ConfigurationOptionDescription</a>.
      */
     public void setOptions(java.util.Collection<ConfigurationOptionDescription> options) {
-        java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>();
-        if (options != null) {
-            optionsCopy.addAll(options);
+        if (options == null) {
+            this.options = null;
+            return;
         }
+
+        java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>(options.size());
+        optionsCopy.addAll(options);
         this.options = optionsCopy;
     }
     
@@ -114,7 +117,7 @@ public class DescribeConfigurationOptionsResult {
      *         together. 
      */
     public DescribeConfigurationOptionsResult withOptions(ConfigurationOptionDescription... options) {
-        if (getOptions() == null) setOptions(new java.util.ArrayList<ConfigurationOptionDescription>());
+        if (getOptions() == null) setOptions(new java.util.ArrayList<ConfigurationOptionDescription>(options.length));
         for (ConfigurationOptionDescription value : options) {
             getOptions().add(value);
         }
@@ -132,11 +135,13 @@ public class DescribeConfigurationOptionsResult {
      *         together. 
      */
     public DescribeConfigurationOptionsResult withOptions(java.util.Collection<ConfigurationOptionDescription> options) {
-        java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>();
-        if (options != null) {
+        if (options == null) {
+            this.options = null;
+        } else {
+            java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>(options.size());
             optionsCopy.addAll(options);
+            this.options = optionsCopy;
         }
-        this.options = optionsCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class DescribeConfigurationOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SolutionStackName: " + solutionStackName + ", ");
-        sb.append("Options: " + options + ", ");
+        if (solutionStackName != null) sb.append("SolutionStackName: " + solutionStackName + ", ");
+        if (options != null) sb.append("Options: " + options + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSolutionStackName() == null) ? 0 : getSolutionStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeConfigurationOptionsResult == false) return false;
+        DescribeConfigurationOptionsResult other = (DescribeConfigurationOptionsResult)obj;
+        
+        if (other.getSolutionStackName() == null ^ this.getSolutionStackName() == null) return false;
+        if (other.getSolutionStackName() != null && other.getSolutionStackName().equals(this.getSolutionStackName()) == false) return false; 
+        if (other.getOptions() == null ^ this.getOptions() == null) return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false; 
+        return true;
     }
     
 }

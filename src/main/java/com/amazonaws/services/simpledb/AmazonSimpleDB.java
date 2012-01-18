@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ import com.amazonaws.services.simpledb.model.*;
 public interface AmazonSimpleDB {
 
     /**
-     * Overrides the default endpoint for this client ("https://sdb.amazonaws.com").
+     * Overrides the default endpoint for this client ("http://sdb.amazonaws.com").
      * Callers can use this method to control which AWS region they want to work with.
      * <p>
      * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full

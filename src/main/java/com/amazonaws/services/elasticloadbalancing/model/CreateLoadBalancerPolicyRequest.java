@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -198,10 +198,13 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
      * @param policyAttributes A list of attributes associated with the policy being created.
      */
     public void setPolicyAttributes(java.util.Collection<PolicyAttribute> policyAttributes) {
-        java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>();
-        if (policyAttributes != null) {
-            policyAttributesCopy.addAll(policyAttributes);
+        if (policyAttributes == null) {
+            this.policyAttributes = null;
+            return;
         }
+
+        java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>(policyAttributes.size());
+        policyAttributesCopy.addAll(policyAttributes);
         this.policyAttributes = policyAttributesCopy;
     }
     
@@ -216,7 +219,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerPolicyRequest withPolicyAttributes(PolicyAttribute... policyAttributes) {
-        if (getPolicyAttributes() == null) setPolicyAttributes(new java.util.ArrayList<PolicyAttribute>());
+        if (getPolicyAttributes() == null) setPolicyAttributes(new java.util.ArrayList<PolicyAttribute>(policyAttributes.length));
         for (PolicyAttribute value : policyAttributes) {
             getPolicyAttributes().add(value);
         }
@@ -234,11 +237,13 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public CreateLoadBalancerPolicyRequest withPolicyAttributes(java.util.Collection<PolicyAttribute> policyAttributes) {
-        java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>();
-        if (policyAttributes != null) {
+        if (policyAttributes == null) {
+            this.policyAttributes = null;
+        } else {
+            java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>(policyAttributes.size());
             policyAttributesCopy.addAll(policyAttributes);
+            this.policyAttributes = policyAttributesCopy;
         }
-        this.policyAttributes = policyAttributesCopy;
 
         return this;
     }
@@ -255,12 +260,43 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        sb.append("PolicyName: " + policyName + ", ");
-        sb.append("PolicyTypeName: " + policyTypeName + ", ");
-        sb.append("PolicyAttributes: " + policyAttributes + ", ");
+        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
+        if (policyTypeName != null) sb.append("PolicyTypeName: " + policyTypeName + ", ");
+        if (policyAttributes != null) sb.append("PolicyAttributes: " + policyAttributes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyTypeName() == null) ? 0 : getPolicyTypeName().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyAttributes() == null) ? 0 : getPolicyAttributes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateLoadBalancerPolicyRequest == false) return false;
+        CreateLoadBalancerPolicyRequest other = (CreateLoadBalancerPolicyRequest)obj;
+        
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
+        if (other.getPolicyName() == null ^ this.getPolicyName() == null) return false;
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false) return false; 
+        if (other.getPolicyTypeName() == null ^ this.getPolicyTypeName() == null) return false;
+        if (other.getPolicyTypeName() != null && other.getPolicyTypeName().equals(this.getPolicyTypeName()) == false) return false; 
+        if (other.getPolicyAttributes() == null ^ this.getPolicyAttributes() == null) return false;
+        if (other.getPolicyAttributes() != null && other.getPolicyAttributes().equals(this.getPolicyAttributes()) == false) return false; 
+        return true;
     }
     
 }

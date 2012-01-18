@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -218,10 +218,13 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      *         replies to the message, each reply-to address will receive the reply.
      */
     public void setReplyToAddresses(java.util.Collection<String> replyToAddresses) {
-        java.util.List<String> replyToAddressesCopy = new java.util.ArrayList<String>();
-        if (replyToAddresses != null) {
-            replyToAddressesCopy.addAll(replyToAddresses);
+        if (replyToAddresses == null) {
+            this.replyToAddresses = null;
+            return;
         }
+
+        java.util.List<String> replyToAddressesCopy = new java.util.ArrayList<String>(replyToAddresses.size());
+        replyToAddressesCopy.addAll(replyToAddresses);
         this.replyToAddresses = replyToAddressesCopy;
     }
     
@@ -238,7 +241,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendEmailRequest withReplyToAddresses(String... replyToAddresses) {
-        if (getReplyToAddresses() == null) setReplyToAddresses(new java.util.ArrayList<String>());
+        if (getReplyToAddresses() == null) setReplyToAddresses(new java.util.ArrayList<String>(replyToAddresses.length));
         for (String value : replyToAddresses) {
             getReplyToAddresses().add(value);
         }
@@ -258,11 +261,13 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendEmailRequest withReplyToAddresses(java.util.Collection<String> replyToAddresses) {
-        java.util.List<String> replyToAddressesCopy = new java.util.ArrayList<String>();
-        if (replyToAddresses != null) {
+        if (replyToAddresses == null) {
+            this.replyToAddresses = null;
+        } else {
+            java.util.List<String> replyToAddressesCopy = new java.util.ArrayList<String>(replyToAddresses.size());
             replyToAddressesCopy.addAll(replyToAddresses);
+            this.replyToAddresses = replyToAddressesCopy;
         }
-        this.replyToAddresses = replyToAddressesCopy;
 
         return this;
     }
@@ -337,13 +342,47 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Source: " + source + ", ");
-        sb.append("Destination: " + destination + ", ");
-        sb.append("Message: " + message + ", ");
-        sb.append("ReplyToAddresses: " + replyToAddresses + ", ");
-        sb.append("ReturnPath: " + returnPath + ", ");
+        if (source != null) sb.append("Source: " + source + ", ");
+        if (destination != null) sb.append("Destination: " + destination + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
+        if (replyToAddresses != null) sb.append("ReplyToAddresses: " + replyToAddresses + ", ");
+        if (returnPath != null) sb.append("ReturnPath: " + returnPath + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSource() == null) ? 0 : getSource().hashCode()); 
+        hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode()); 
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getReplyToAddresses() == null) ? 0 : getReplyToAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getReturnPath() == null) ? 0 : getReturnPath().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SendEmailRequest == false) return false;
+        SendEmailRequest other = (SendEmailRequest)obj;
+        
+        if (other.getSource() == null ^ this.getSource() == null) return false;
+        if (other.getSource() != null && other.getSource().equals(this.getSource()) == false) return false; 
+        if (other.getDestination() == null ^ this.getDestination() == null) return false;
+        if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false) return false; 
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getReplyToAddresses() == null ^ this.getReplyToAddresses() == null) return false;
+        if (other.getReplyToAddresses() != null && other.getReplyToAddresses().equals(this.getReplyToAddresses()) == false) return false; 
+        if (other.getReturnPath() == null ^ this.getReturnPath() == null) return false;
+        if (other.getReturnPath() != null && other.getReturnPath().equals(this.getReturnPath()) == false) return false; 
+        return true;
     }
     
 }

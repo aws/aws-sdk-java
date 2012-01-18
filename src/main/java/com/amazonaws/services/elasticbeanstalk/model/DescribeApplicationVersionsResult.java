@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeApplicationVersionsResult {
      * @param applicationVersions A list of <a>ApplicationVersionDescription</a> .
      */
     public void setApplicationVersions(java.util.Collection<ApplicationVersionDescription> applicationVersions) {
-        java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>();
-        if (applicationVersions != null) {
-            applicationVersionsCopy.addAll(applicationVersions);
+        if (applicationVersions == null) {
+            this.applicationVersions = null;
+            return;
         }
+
+        java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.size());
+        applicationVersionsCopy.addAll(applicationVersions);
         this.applicationVersions = applicationVersionsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeApplicationVersionsResult {
      *         together. 
      */
     public DescribeApplicationVersionsResult withApplicationVersions(ApplicationVersionDescription... applicationVersions) {
-        if (getApplicationVersions() == null) setApplicationVersions(new java.util.ArrayList<ApplicationVersionDescription>());
+        if (getApplicationVersions() == null) setApplicationVersions(new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.length));
         for (ApplicationVersionDescription value : applicationVersions) {
             getApplicationVersions().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeApplicationVersionsResult {
      *         together. 
      */
     public DescribeApplicationVersionsResult withApplicationVersions(java.util.Collection<ApplicationVersionDescription> applicationVersions) {
-        java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>();
-        if (applicationVersions != null) {
+        if (applicationVersions == null) {
+            this.applicationVersions = null;
+        } else {
+            java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.size());
             applicationVersionsCopy.addAll(applicationVersions);
+            this.applicationVersions = applicationVersionsCopy;
         }
-        this.applicationVersions = applicationVersionsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeApplicationVersionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationVersions: " + applicationVersions + ", ");
+        if (applicationVersions != null) sb.append("ApplicationVersions: " + applicationVersions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationVersions() == null) ? 0 : getApplicationVersions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeApplicationVersionsResult == false) return false;
+        DescribeApplicationVersionsResult other = (DescribeApplicationVersionsResult)obj;
+        
+        if (other.getApplicationVersions() == null ^ this.getApplicationVersions() == null) return false;
+        if (other.getApplicationVersions() != null && other.getApplicationVersions().equals(this.getApplicationVersions()) == false) return false; 
+        return true;
     }
     
 }

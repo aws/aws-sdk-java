@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,10 +54,13 @@ public class ListStackResourcesResult {
      * @param stackResourceSummaries A list of <code>StackResourceSummary</code> structures.
      */
     public void setStackResourceSummaries(java.util.Collection<StackResourceSummary> stackResourceSummaries) {
-        java.util.List<StackResourceSummary> stackResourceSummariesCopy = new java.util.ArrayList<StackResourceSummary>();
-        if (stackResourceSummaries != null) {
-            stackResourceSummariesCopy.addAll(stackResourceSummaries);
+        if (stackResourceSummaries == null) {
+            this.stackResourceSummaries = null;
+            return;
         }
+
+        java.util.List<StackResourceSummary> stackResourceSummariesCopy = new java.util.ArrayList<StackResourceSummary>(stackResourceSummaries.size());
+        stackResourceSummariesCopy.addAll(stackResourceSummaries);
         this.stackResourceSummaries = stackResourceSummariesCopy;
     }
     
@@ -72,7 +75,7 @@ public class ListStackResourcesResult {
      *         together. 
      */
     public ListStackResourcesResult withStackResourceSummaries(StackResourceSummary... stackResourceSummaries) {
-        if (getStackResourceSummaries() == null) setStackResourceSummaries(new java.util.ArrayList<StackResourceSummary>());
+        if (getStackResourceSummaries() == null) setStackResourceSummaries(new java.util.ArrayList<StackResourceSummary>(stackResourceSummaries.length));
         for (StackResourceSummary value : stackResourceSummaries) {
             getStackResourceSummaries().add(value);
         }
@@ -90,11 +93,13 @@ public class ListStackResourcesResult {
      *         together. 
      */
     public ListStackResourcesResult withStackResourceSummaries(java.util.Collection<StackResourceSummary> stackResourceSummaries) {
-        java.util.List<StackResourceSummary> stackResourceSummariesCopy = new java.util.ArrayList<StackResourceSummary>();
-        if (stackResourceSummaries != null) {
+        if (stackResourceSummaries == null) {
+            this.stackResourceSummaries = null;
+        } else {
+            java.util.List<StackResourceSummary> stackResourceSummariesCopy = new java.util.ArrayList<StackResourceSummary>(stackResourceSummaries.size());
             stackResourceSummariesCopy.addAll(stackResourceSummaries);
+            this.stackResourceSummaries = stackResourceSummariesCopy;
         }
-        this.stackResourceSummaries = stackResourceSummariesCopy;
 
         return this;
     }
@@ -160,10 +165,35 @@ public class ListStackResourcesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackResourceSummaries: " + stackResourceSummaries + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (stackResourceSummaries != null) sb.append("StackResourceSummaries: " + stackResourceSummaries + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackResourceSummaries() == null) ? 0 : getStackResourceSummaries().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListStackResourcesResult == false) return false;
+        ListStackResourcesResult other = (ListStackResourcesResult)obj;
+        
+        if (other.getStackResourceSummaries() == null ^ this.getStackResourceSummaries() == null) return false;
+        if (other.getStackResourceSummaries() != null && other.getStackResourceSummaries().equals(this.getStackResourceSummaries()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

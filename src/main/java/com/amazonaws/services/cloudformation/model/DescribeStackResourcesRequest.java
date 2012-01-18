@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -238,11 +238,39 @@ public class DescribeStackResourcesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackName: " + stackName + ", ");
-        sb.append("LogicalResourceId: " + logicalResourceId + ", ");
-        sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
+        if (stackName != null) sb.append("StackName: " + stackName + ", ");
+        if (logicalResourceId != null) sb.append("LogicalResourceId: " + logicalResourceId + ", ");
+        if (physicalResourceId != null) sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode()); 
+        hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeStackResourcesRequest == false) return false;
+        DescribeStackResourcesRequest other = (DescribeStackResourcesRequest)obj;
+        
+        if (other.getStackName() == null ^ this.getStackName() == null) return false;
+        if (other.getStackName() != null && other.getStackName().equals(this.getStackName()) == false) return false; 
+        if (other.getLogicalResourceId() == null ^ this.getLogicalResourceId() == null) return false;
+        if (other.getLogicalResourceId() != null && other.getLogicalResourceId().equals(this.getLogicalResourceId()) == false) return false; 
+        if (other.getPhysicalResourceId() == null ^ this.getPhysicalResourceId() == null) return false;
+        if (other.getPhysicalResourceId() != null && other.getPhysicalResourceId().equals(this.getPhysicalResourceId()) == false) return false; 
+        return true;
     }
     
 }

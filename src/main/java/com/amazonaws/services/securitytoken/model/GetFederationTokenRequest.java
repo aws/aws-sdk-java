@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -331,11 +331,39 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("Policy: " + policy + ", ");
-        sb.append("DurationSeconds: " + durationSeconds + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (policy != null) sb.append("Policy: " + policy + ", ");
+        if (durationSeconds != null) sb.append("DurationSeconds: " + durationSeconds + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode()); 
+        hashCode = prime * hashCode + ((getDurationSeconds() == null) ? 0 : getDurationSeconds().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetFederationTokenRequest == false) return false;
+        GetFederationTokenRequest other = (GetFederationTokenRequest)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getPolicy() == null ^ this.getPolicy() == null) return false;
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false) return false; 
+        if (other.getDurationSeconds() == null ^ this.getDurationSeconds() == null) return false;
+        if (other.getDurationSeconds() != null && other.getDurationSeconds().equals(this.getDurationSeconds()) == false) return false; 
+        return true;
     }
     
 }

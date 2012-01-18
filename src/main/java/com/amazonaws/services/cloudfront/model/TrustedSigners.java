@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -122,10 +122,13 @@ public class TrustedSigners {
      *         AwsAccountNumber element.
      */
     public void setAwsAccountNumbers(java.util.Collection<String> awsAccountNumbers) {
-        java.util.List<String> awsAccountNumbersCopy = new java.util.ArrayList<String>();
-        if (awsAccountNumbers != null) {
-            awsAccountNumbersCopy.addAll(awsAccountNumbers);
+        if (awsAccountNumbers == null) {
+            this.awsAccountNumbers = null;
+            return;
         }
+
+        java.util.List<String> awsAccountNumbersCopy = new java.util.ArrayList<String>(awsAccountNumbers.size());
+        awsAccountNumbersCopy.addAll(awsAccountNumbers);
         this.awsAccountNumbers = awsAccountNumbersCopy;
     }
     
@@ -144,7 +147,7 @@ public class TrustedSigners {
      *         together. 
      */
     public TrustedSigners withAwsAccountNumbers(String... awsAccountNumbers) {
-        if (getAwsAccountNumbers() == null) setAwsAccountNumbers(new java.util.ArrayList<String>());
+        if (getAwsAccountNumbers() == null) setAwsAccountNumbers(new java.util.ArrayList<String>(awsAccountNumbers.length));
         for (String value : awsAccountNumbers) {
             getAwsAccountNumbers().add(value);
         }
@@ -166,11 +169,13 @@ public class TrustedSigners {
      *         together. 
      */
     public TrustedSigners withAwsAccountNumbers(java.util.Collection<String> awsAccountNumbers) {
-        java.util.List<String> awsAccountNumbersCopy = new java.util.ArrayList<String>();
-        if (awsAccountNumbers != null) {
+        if (awsAccountNumbers == null) {
+            this.awsAccountNumbers = null;
+        } else {
+            java.util.List<String> awsAccountNumbersCopy = new java.util.ArrayList<String>(awsAccountNumbers.size());
             awsAccountNumbersCopy.addAll(awsAccountNumbers);
+            this.awsAccountNumbers = awsAccountNumbersCopy;
         }
-        this.awsAccountNumbers = awsAccountNumbersCopy;
 
         return this;
     }
@@ -187,10 +192,35 @@ public class TrustedSigners {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Self: " + self + ", ");
-        sb.append("AwsAccountNumbers: " + awsAccountNumbers + ", ");
+        if (self != null) sb.append("Self: " + self + ", ");
+        if (awsAccountNumbers != null) sb.append("AwsAccountNumbers: " + awsAccountNumbers + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSelf() == null) ? 0 : getSelf().hashCode()); 
+        hashCode = prime * hashCode + ((getAwsAccountNumbers() == null) ? 0 : getAwsAccountNumbers().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof TrustedSigners == false) return false;
+        TrustedSigners other = (TrustedSigners)obj;
+        
+        if (other.getSelf() == null ^ this.getSelf() == null) return false;
+        if (other.getSelf() != null && other.getSelf().equals(this.getSelf()) == false) return false; 
+        if (other.getAwsAccountNumbers() == null ^ this.getAwsAccountNumbers() == null) return false;
+        if (other.getAwsAccountNumbers() != null && other.getAwsAccountNumbers().equals(this.getAwsAccountNumbers()) == false) return false; 
+        return true;
     }
     
 }

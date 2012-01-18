@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -185,10 +185,13 @@ public class Reservation {
      *         reservation.
      */
     public void setGroups(java.util.Collection<GroupIdentifier> groups) {
-        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>();
-        if (groups != null) {
-            groupsCopy.addAll(groups);
+        if (groups == null) {
+            this.groups = null;
+            return;
         }
+
+        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+        groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
     
@@ -205,7 +208,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroups(GroupIdentifier... groups) {
-        if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>());
+        if (getGroups() == null) setGroups(new java.util.ArrayList<GroupIdentifier>(groups.length));
         for (GroupIdentifier value : groups) {
             getGroups().add(value);
         }
@@ -225,11 +228,13 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroups(java.util.Collection<GroupIdentifier> groups) {
-        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>();
-        if (groups != null) {
+        if (groups == null) {
+            this.groups = null;
+        } else {
+            java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
             groupsCopy.addAll(groups);
+            this.groups = groupsCopy;
         }
-        this.groups = groupsCopy;
 
         return this;
     }
@@ -257,10 +262,13 @@ public class Reservation {
      *         reservation.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>();
-        if (groupNames != null) {
-            groupNamesCopy.addAll(groupNames);
+        if (groupNames == null) {
+            this.groupNames = null;
+            return;
         }
+
+        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+        groupNamesCopy.addAll(groupNames);
         this.groupNames = groupNamesCopy;
     }
     
@@ -277,7 +285,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroupNames(String... groupNames) {
-        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
         for (String value : groupNames) {
             getGroupNames().add(value);
         }
@@ -297,11 +305,13 @@ public class Reservation {
      *         together. 
      */
     public Reservation withGroupNames(java.util.Collection<String> groupNames) {
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>();
-        if (groupNames != null) {
+        if (groupNames == null) {
+            this.groupNames = null;
+        } else {
+            java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
+            this.groupNames = groupNamesCopy;
         }
-        this.groupNames = groupNamesCopy;
 
         return this;
     }
@@ -325,10 +335,13 @@ public class Reservation {
      * @param instances The list of Amazon EC2 instances included in this reservation.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
-            instancesCopy.addAll(instances);
+        if (instances == null) {
+            this.instances = null;
+            return;
         }
+
+        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
     
@@ -343,7 +356,7 @@ public class Reservation {
      *         together. 
      */
     public Reservation withInstances(Instance... instances) {
-        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
         for (Instance value : instances) {
             getInstances().add(value);
         }
@@ -361,11 +374,13 @@ public class Reservation {
      *         together. 
      */
     public Reservation withInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
+        if (instances == null) {
+            this.instances = null;
+        } else {
+            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
             instancesCopy.addAll(instances);
+            this.instances = instancesCopy;
         }
-        this.instances = instancesCopy;
 
         return this;
     }
@@ -382,14 +397,51 @@ public class Reservation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservationId: " + reservationId + ", ");
-        sb.append("OwnerId: " + ownerId + ", ");
-        sb.append("RequesterId: " + requesterId + ", ");
-        sb.append("Groups: " + groups + ", ");
-        sb.append("GroupNames: " + groupNames + ", ");
-        sb.append("Instances: " + instances + ", ");
+        if (reservationId != null) sb.append("ReservationId: " + reservationId + ", ");
+        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (requesterId != null) sb.append("RequesterId: " + requesterId + ", ");
+        if (groups != null) sb.append("Groups: " + groups + ", ");
+        if (groupNames != null) sb.append("GroupNames: " + groupNames + ", ");
+        if (instances != null) sb.append("Instances: " + instances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservationId() == null) ? 0 : getReservationId().hashCode()); 
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getRequesterId() == null) ? 0 : getRequesterId().hashCode()); 
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Reservation == false) return false;
+        Reservation other = (Reservation)obj;
+        
+        if (other.getReservationId() == null ^ this.getReservationId() == null) return false;
+        if (other.getReservationId() != null && other.getReservationId().equals(this.getReservationId()) == false) return false; 
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.getRequesterId() == null ^ this.getRequesterId() == null) return false;
+        if (other.getRequesterId() != null && other.getRequesterId().equals(this.getRequesterId()) == false) return false; 
+        if (other.getGroups() == null ^ this.getGroups() == null) return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false) return false; 
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null) return false;
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false) return false; 
+        if (other.getInstances() == null ^ this.getInstances() == null) return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
+        return true;
     }
     
 }

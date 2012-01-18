@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -184,10 +184,35 @@ public class CheckDNSAvailabilityResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Available: " + available + ", ");
-        sb.append("FullyQualifiedCNAME: " + fullyQualifiedCNAME + ", ");
+        if (available != null) sb.append("Available: " + available + ", ");
+        if (fullyQualifiedCNAME != null) sb.append("FullyQualifiedCNAME: " + fullyQualifiedCNAME + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((isAvailable() == null) ? 0 : isAvailable().hashCode()); 
+        hashCode = prime * hashCode + ((getFullyQualifiedCNAME() == null) ? 0 : getFullyQualifiedCNAME().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CheckDNSAvailabilityResult == false) return false;
+        CheckDNSAvailabilityResult other = (CheckDNSAvailabilityResult)obj;
+        
+        if (other.isAvailable() == null ^ this.isAvailable() == null) return false;
+        if (other.isAvailable() != null && other.isAvailable().equals(this.isAvailable()) == false) return false; 
+        if (other.getFullyQualifiedCNAME() == null ^ this.getFullyQualifiedCNAME() == null) return false;
+        if (other.getFullyQualifiedCNAME() != null && other.getFullyQualifiedCNAME().equals(this.getFullyQualifiedCNAME()) == false) return false; 
+        return true;
     }
     
 }

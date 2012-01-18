@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -417,10 +417,13 @@ public class Image {
      * @param productCodes Product codes of the AMI.
      */
     public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
-            productCodesCopy.addAll(productCodes);
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
         }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
         this.productCodes = productCodesCopy;
     }
     
@@ -435,7 +438,7 @@ public class Image {
      *         together. 
      */
     public Image withProductCodes(ProductCode... productCodes) {
-        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>());
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
         for (ProductCode value : productCodes) {
             getProductCodes().add(value);
         }
@@ -453,11 +456,13 @@ public class Image {
      *         together. 
      */
     public Image withProductCodes(java.util.Collection<ProductCode> productCodes) {
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>();
-        if (productCodes != null) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
             productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
         }
-        this.productCodes = productCodesCopy;
 
         return this;
     }
@@ -879,10 +884,13 @@ public class Image {
      * @param blockDeviceMappings Specifies how block devices are exposed to the instance.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+            return;
         }
+
+        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
     
@@ -897,7 +905,7 @@ public class Image {
      *         together. 
      */
     public Image withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>());
+        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
         for (BlockDeviceMapping value : blockDeviceMappings) {
             getBlockDeviceMappings().add(value);
         }
@@ -915,11 +923,13 @@ public class Image {
      *         together. 
      */
     public Image withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>();
-        if (blockDeviceMappings != null) {
+        if (blockDeviceMappings == null) {
+            this.blockDeviceMappings = null;
+        } else {
+            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
+            this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
 
         return this;
     }
@@ -1026,10 +1036,13 @@ public class Image {
      * @param tags A list of tags for the Image.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -1044,7 +1057,7 @@ public class Image {
      *         together. 
      */
     public Image withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -1062,11 +1075,13 @@ public class Image {
      *         together. 
      */
     public Image withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -1166,29 +1181,111 @@ public class Image {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageId: " + imageId + ", ");
-        sb.append("ImageLocation: " + imageLocation + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("OwnerId: " + ownerId + ", ");
-        sb.append("Public: " + publicValue + ", ");
-        sb.append("ProductCodes: " + productCodes + ", ");
-        sb.append("Architecture: " + architecture + ", ");
-        sb.append("ImageType: " + imageType + ", ");
-        sb.append("KernelId: " + kernelId + ", ");
-        sb.append("RamdiskId: " + ramdiskId + ", ");
-        sb.append("Platform: " + platform + ", ");
-        sb.append("StateReason: " + stateReason + ", ");
-        sb.append("ImageOwnerAlias: " + imageOwnerAlias + ", ");
-        sb.append("Name: " + name + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("RootDeviceType: " + rootDeviceType + ", ");
-        sb.append("RootDeviceName: " + rootDeviceName + ", ");
-        sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        sb.append("VirtualizationType: " + virtualizationType + ", ");
-        sb.append("Tags: " + tags + ", ");
-        sb.append("Hypervisor: " + hypervisor + ", ");
+        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (imageLocation != null) sb.append("ImageLocation: " + imageLocation + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (publicValue != null) sb.append("Public: " + publicValue + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (architecture != null) sb.append("Architecture: " + architecture + ", ");
+        if (imageType != null) sb.append("ImageType: " + imageType + ", ");
+        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
+        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
+        if (platform != null) sb.append("Platform: " + platform + ", ");
+        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
+        if (imageOwnerAlias != null) sb.append("ImageOwnerAlias: " + imageOwnerAlias + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (rootDeviceType != null) sb.append("RootDeviceType: " + rootDeviceType + ", ");
+        if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
+        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (virtualizationType != null) sb.append("VirtualizationType: " + virtualizationType + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (hypervisor != null) sb.append("Hypervisor: " + hypervisor + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
+        hashCode = prime * hashCode + ((getImageLocation() == null) ? 0 : getImageLocation().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((isPublic() == null) ? 0 : isPublic().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
+        hashCode = prime * hashCode + ((getImageType() == null) ? 0 : getImageType().hashCode()); 
+        hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
+        hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
+        hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
+        hashCode = prime * hashCode + ((getImageOwnerAlias() == null) ? 0 : getImageOwnerAlias().hashCode()); 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
+        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        hashCode = prime * hashCode + ((getVirtualizationType() == null) ? 0 : getVirtualizationType().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Image == false) return false;
+        Image other = (Image)obj;
+        
+        if (other.getImageId() == null ^ this.getImageId() == null) return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
+        if (other.getImageLocation() == null ^ this.getImageLocation() == null) return false;
+        if (other.getImageLocation() != null && other.getImageLocation().equals(this.getImageLocation()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.isPublic() == null ^ this.isPublic() == null) return false;
+        if (other.isPublic() != null && other.isPublic().equals(this.isPublic()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
+        if (other.getImageType() == null ^ this.getImageType() == null) return false;
+        if (other.getImageType() != null && other.getImageType().equals(this.getImageType()) == false) return false; 
+        if (other.getKernelId() == null ^ this.getKernelId() == null) return false;
+        if (other.getKernelId() != null && other.getKernelId().equals(this.getKernelId()) == false) return false; 
+        if (other.getRamdiskId() == null ^ this.getRamdiskId() == null) return false;
+        if (other.getRamdiskId() != null && other.getRamdiskId().equals(this.getRamdiskId()) == false) return false; 
+        if (other.getPlatform() == null ^ this.getPlatform() == null) return false;
+        if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false) return false; 
+        if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
+        if (other.getImageOwnerAlias() == null ^ this.getImageOwnerAlias() == null) return false;
+        if (other.getImageOwnerAlias() != null && other.getImageOwnerAlias().equals(this.getImageOwnerAlias()) == false) return false; 
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null) return false;
+        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
+        if (other.getRootDeviceName() == null ^ this.getRootDeviceName() == null) return false;
+        if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false) return false; 
+        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
+        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        if (other.getVirtualizationType() == null ^ this.getVirtualizationType() == null) return false;
+        if (other.getVirtualizationType() != null && other.getVirtualizationType().equals(this.getVirtualizationType()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getHypervisor() == null ^ this.getHypervisor() == null) return false;
+        if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -215,10 +215,13 @@ public class OrderableDBInstanceOption {
      * @param availabilityZones A list of availability zones for the orderable DB Instance.
      */
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
-        java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>();
-        if (availabilityZones != null) {
-            availabilityZonesCopy.addAll(availabilityZones);
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
         }
+
+        java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
+        availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
     
@@ -233,7 +236,7 @@ public class OrderableDBInstanceOption {
      *         together. 
      */
     public OrderableDBInstanceOption withAvailabilityZones(AvailabilityZone... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>());
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<AvailabilityZone>(availabilityZones.length));
         for (AvailabilityZone value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -251,11 +254,13 @@ public class OrderableDBInstanceOption {
      *         together. 
      */
     public OrderableDBInstanceOption withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
-        java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>();
-        if (availabilityZones != null) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+        } else {
+            java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
+            this.availabilityZones = availabilityZonesCopy;
         }
-        this.availabilityZones = availabilityZonesCopy;
 
         return this;
     }
@@ -358,15 +363,55 @@ public class OrderableDBInstanceOption {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Engine: " + engine + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
-        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        sb.append("LicenseModel: " + licenseModel + ", ");
-        sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        sb.append("MultiAZCapable: " + multiAZCapable + ", ");
-        sb.append("ReadReplicaCapable: " + readReplicaCapable + ", ");
+        if (engine != null) sb.append("Engine: " + engine + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (multiAZCapable != null) sb.append("MultiAZCapable: " + multiAZCapable + ", ");
+        if (readReplicaCapable != null) sb.append("ReadReplicaCapable: " + readReplicaCapable + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
+        hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
+        hashCode = prime * hashCode + ((isMultiAZCapable() == null) ? 0 : isMultiAZCapable().hashCode()); 
+        hashCode = prime * hashCode + ((isReadReplicaCapable() == null) ? 0 : isReadReplicaCapable().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof OrderableDBInstanceOption == false) return false;
+        OrderableDBInstanceOption other = (OrderableDBInstanceOption)obj;
+        
+        if (other.getEngine() == null ^ this.getEngine() == null) return false;
+        if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null) return false;
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
+        if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
+        if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
+        if (other.isMultiAZCapable() == null ^ this.isMultiAZCapable() == null) return false;
+        if (other.isMultiAZCapable() != null && other.isMultiAZCapable().equals(this.isMultiAZCapable()) == false) return false; 
+        if (other.isReadReplicaCapable() == null ^ this.isReadReplicaCapable() == null) return false;
+        if (other.isReadReplicaCapable() != null && other.isReadReplicaCapable().equals(this.isReadReplicaCapable()) == false) return false; 
+        return true;
     }
     
 }

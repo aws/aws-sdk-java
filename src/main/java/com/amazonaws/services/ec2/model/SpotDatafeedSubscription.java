@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -235,13 +235,47 @@ public class SpotDatafeedSubscription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("OwnerId: " + ownerId + ", ");
-        sb.append("Bucket: " + bucket + ", ");
-        sb.append("Prefix: " + prefix + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("Fault: " + fault + ", ");
+        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (bucket != null) sb.append("Bucket: " + bucket + ", ");
+        if (prefix != null) sb.append("Prefix: " + prefix + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (fault != null) sb.append("Fault: " + fault + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode()); 
+        hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getFault() == null) ? 0 : getFault().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SpotDatafeedSubscription == false) return false;
+        SpotDatafeedSubscription other = (SpotDatafeedSubscription)obj;
+        
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.getBucket() == null ^ this.getBucket() == null) return false;
+        if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false) return false; 
+        if (other.getPrefix() == null ^ this.getPrefix() == null) return false;
+        if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getFault() == null ^ this.getFault() == null) return false;
+        if (other.getFault() != null && other.getFault().equals(this.getFault()) == false) return false; 
+        return true;
     }
     
 }

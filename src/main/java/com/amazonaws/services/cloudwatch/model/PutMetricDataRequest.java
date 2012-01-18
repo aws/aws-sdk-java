@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -122,10 +122,13 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
      * @param metricData A list of data describing the metric.
      */
     public void setMetricData(java.util.Collection<MetricDatum> metricData) {
-        java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>();
-        if (metricData != null) {
-            metricDataCopy.addAll(metricData);
+        if (metricData == null) {
+            this.metricData = null;
+            return;
         }
+
+        java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>(metricData.size());
+        metricDataCopy.addAll(metricData);
         this.metricData = metricDataCopy;
     }
     
@@ -140,7 +143,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricDataRequest withMetricData(MetricDatum... metricData) {
-        if (getMetricData() == null) setMetricData(new java.util.ArrayList<MetricDatum>());
+        if (getMetricData() == null) setMetricData(new java.util.ArrayList<MetricDatum>(metricData.length));
         for (MetricDatum value : metricData) {
             getMetricData().add(value);
         }
@@ -158,11 +161,13 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public PutMetricDataRequest withMetricData(java.util.Collection<MetricDatum> metricData) {
-        java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>();
-        if (metricData != null) {
+        if (metricData == null) {
+            this.metricData = null;
+        } else {
+            java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>(metricData.size());
             metricDataCopy.addAll(metricData);
+            this.metricData = metricDataCopy;
         }
-        this.metricData = metricDataCopy;
 
         return this;
     }
@@ -179,10 +184,35 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("MetricData: " + metricData + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (metricData != null) sb.append("MetricData: " + metricData + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getMetricData() == null) ? 0 : getMetricData().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PutMetricDataRequest == false) return false;
+        PutMetricDataRequest other = (PutMetricDataRequest)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getMetricData() == null ^ this.getMetricData() == null) return false;
+        if (other.getMetricData() != null && other.getMetricData().equals(this.getMetricData()) == false) return false; 
+        return true;
     }
     
 }

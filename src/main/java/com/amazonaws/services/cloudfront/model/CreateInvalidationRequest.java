@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,10 +136,35 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DistributionId: " + distributionId + ", ");
-        sb.append("InvalidationBatch: " + invalidationBatch + ", ");
+        if (distributionId != null) sb.append("DistributionId: " + distributionId + ", ");
+        if (invalidationBatch != null) sb.append("InvalidationBatch: " + invalidationBatch + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDistributionId() == null) ? 0 : getDistributionId().hashCode()); 
+        hashCode = prime * hashCode + ((getInvalidationBatch() == null) ? 0 : getInvalidationBatch().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateInvalidationRequest == false) return false;
+        CreateInvalidationRequest other = (CreateInvalidationRequest)obj;
+        
+        if (other.getDistributionId() == null ^ this.getDistributionId() == null) return false;
+        if (other.getDistributionId() != null && other.getDistributionId().equals(this.getDistributionId()) == false) return false; 
+        if (other.getInvalidationBatch() == null ^ this.getInvalidationBatch() == null) return false;
+        if (other.getInvalidationBatch() != null && other.getInvalidationBatch().equals(this.getInvalidationBatch()) == false) return false; 
+        return true;
     }
     
 }

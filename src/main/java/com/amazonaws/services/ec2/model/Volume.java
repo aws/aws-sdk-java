@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -336,10 +336,13 @@ public class Volume {
      * @param attachments Information on what this volume is attached to.
      */
     public void setAttachments(java.util.Collection<VolumeAttachment> attachments) {
-        java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>();
-        if (attachments != null) {
-            attachmentsCopy.addAll(attachments);
+        if (attachments == null) {
+            this.attachments = null;
+            return;
         }
+
+        java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>(attachments.size());
+        attachmentsCopy.addAll(attachments);
         this.attachments = attachmentsCopy;
     }
     
@@ -354,7 +357,7 @@ public class Volume {
      *         together. 
      */
     public Volume withAttachments(VolumeAttachment... attachments) {
-        if (getAttachments() == null) setAttachments(new java.util.ArrayList<VolumeAttachment>());
+        if (getAttachments() == null) setAttachments(new java.util.ArrayList<VolumeAttachment>(attachments.length));
         for (VolumeAttachment value : attachments) {
             getAttachments().add(value);
         }
@@ -372,11 +375,13 @@ public class Volume {
      *         together. 
      */
     public Volume withAttachments(java.util.Collection<VolumeAttachment> attachments) {
-        java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>();
-        if (attachments != null) {
+        if (attachments == null) {
+            this.attachments = null;
+        } else {
+            java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>(attachments.size());
             attachmentsCopy.addAll(attachments);
+            this.attachments = attachmentsCopy;
         }
-        this.attachments = attachmentsCopy;
 
         return this;
     }
@@ -400,10 +405,13 @@ public class Volume {
      * @param tags A list of tags for the Volume.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -418,7 +426,7 @@ public class Volume {
      *         together. 
      */
     public Volume withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -436,11 +444,13 @@ public class Volume {
      *         together. 
      */
     public Volume withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -457,16 +467,59 @@ public class Volume {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VolumeId: " + volumeId + ", ");
-        sb.append("Size: " + size + ", ");
-        sb.append("SnapshotId: " + snapshotId + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("CreateTime: " + createTime + ", ");
-        sb.append("Attachments: " + attachments + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
+        if (size != null) sb.append("Size: " + size + ", ");
+        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
+        if (attachments != null) sb.append("Attachments: " + attachments + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
+        hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Volume == false) return false;
+        Volume other = (Volume)obj;
+        
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null) return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
+        if (other.getSize() == null ^ this.getSize() == null) return false;
+        if (other.getSize() != null && other.getSize().equals(this.getSize()) == false) return false; 
+        if (other.getSnapshotId() == null ^ this.getSnapshotId() == null) return false;
+        if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getCreateTime() == null ^ this.getCreateTime() == null) return false;
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false) return false; 
+        if (other.getAttachments() == null ^ this.getAttachments() == null) return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

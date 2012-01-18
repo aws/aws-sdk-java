@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,10 +49,13 @@ public class DescribeLicensesResult {
      *         instance.
      */
     public void setLicenses(java.util.Collection<License> licenses) {
-        java.util.List<License> licensesCopy = new java.util.ArrayList<License>();
-        if (licenses != null) {
-            licensesCopy.addAll(licenses);
+        if (licenses == null) {
+            this.licenses = null;
+            return;
         }
+
+        java.util.List<License> licensesCopy = new java.util.ArrayList<License>(licenses.size());
+        licensesCopy.addAll(licenses);
         this.licenses = licensesCopy;
     }
     
@@ -69,7 +72,7 @@ public class DescribeLicensesResult {
      *         together. 
      */
     public DescribeLicensesResult withLicenses(License... licenses) {
-        if (getLicenses() == null) setLicenses(new java.util.ArrayList<License>());
+        if (getLicenses() == null) setLicenses(new java.util.ArrayList<License>(licenses.length));
         for (License value : licenses) {
             getLicenses().add(value);
         }
@@ -89,11 +92,13 @@ public class DescribeLicensesResult {
      *         together. 
      */
     public DescribeLicensesResult withLicenses(java.util.Collection<License> licenses) {
-        java.util.List<License> licensesCopy = new java.util.ArrayList<License>();
-        if (licenses != null) {
+        if (licenses == null) {
+            this.licenses = null;
+        } else {
+            java.util.List<License> licensesCopy = new java.util.ArrayList<License>(licenses.size());
             licensesCopy.addAll(licenses);
+            this.licenses = licensesCopy;
         }
-        this.licenses = licensesCopy;
 
         return this;
     }
@@ -110,9 +115,31 @@ public class DescribeLicensesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Licenses: " + licenses + ", ");
+        if (licenses != null) sb.append("Licenses: " + licenses + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLicenses() == null) ? 0 : getLicenses().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLicensesResult == false) return false;
+        DescribeLicensesResult other = (DescribeLicensesResult)obj;
+        
+        if (other.getLicenses() == null ^ this.getLicenses() == null) return false;
+        if (other.getLicenses() != null && other.getLicenses().equals(this.getLicenses()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,10 +65,13 @@ public class ListGroupsResult {
      * @param groups A list of groups.
      */
     public void setGroups(java.util.Collection<Group> groups) {
-        java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>();
-        if (groups != null) {
-            groupsCopy.addAll(groups);
+        if (groups == null) {
+            this.groups = null;
+            return;
         }
+
+        java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>(groups.size());
+        groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
     
@@ -83,7 +86,7 @@ public class ListGroupsResult {
      *         together. 
      */
     public ListGroupsResult withGroups(Group... groups) {
-        if (getGroups() == null) setGroups(new java.util.ArrayList<Group>());
+        if (getGroups() == null) setGroups(new java.util.ArrayList<Group>(groups.length));
         for (Group value : groups) {
             getGroups().add(value);
         }
@@ -101,11 +104,13 @@ public class ListGroupsResult {
      *         together. 
      */
     public ListGroupsResult withGroups(java.util.Collection<Group> groups) {
-        java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>();
-        if (groups != null) {
+        if (groups == null) {
+            this.groups = null;
+        } else {
+            java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>(groups.size());
             groupsCopy.addAll(groups);
+            this.groups = groupsCopy;
         }
-        this.groups = groupsCopy;
 
         return this;
     }
@@ -247,11 +252,39 @@ public class ListGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Groups: " + groups + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (groups != null) sb.append("Groups: " + groups + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListGroupsResult == false) return false;
+        ListGroupsResult other = (ListGroupsResult)obj;
+        
+        if (other.getGroups() == null ^ this.getGroups() == null) return false;
+        if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -55,10 +55,13 @@ public class DescribeLoadBalancerPolicyTypesResult {
      *         of all the policy types defined by Elastic Load Balancing service.
      */
     public void setPolicyTypeDescriptions(java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
-        java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>();
-        if (policyTypeDescriptions != null) {
-            policyTypeDescriptionsCopy.addAll(policyTypeDescriptions);
+        if (policyTypeDescriptions == null) {
+            this.policyTypeDescriptions = null;
+            return;
         }
+
+        java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>(policyTypeDescriptions.size());
+        policyTypeDescriptionsCopy.addAll(policyTypeDescriptions);
         this.policyTypeDescriptions = policyTypeDescriptionsCopy;
     }
     
@@ -77,7 +80,7 @@ public class DescribeLoadBalancerPolicyTypesResult {
      *         together. 
      */
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(PolicyTypeDescription... policyTypeDescriptions) {
-        if (getPolicyTypeDescriptions() == null) setPolicyTypeDescriptions(new java.util.ArrayList<PolicyTypeDescription>());
+        if (getPolicyTypeDescriptions() == null) setPolicyTypeDescriptions(new java.util.ArrayList<PolicyTypeDescription>(policyTypeDescriptions.length));
         for (PolicyTypeDescription value : policyTypeDescriptions) {
             getPolicyTypeDescriptions().add(value);
         }
@@ -99,11 +102,13 @@ public class DescribeLoadBalancerPolicyTypesResult {
      *         together. 
      */
     public DescribeLoadBalancerPolicyTypesResult withPolicyTypeDescriptions(java.util.Collection<PolicyTypeDescription> policyTypeDescriptions) {
-        java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>();
-        if (policyTypeDescriptions != null) {
+        if (policyTypeDescriptions == null) {
+            this.policyTypeDescriptions = null;
+        } else {
+            java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>(policyTypeDescriptions.size());
             policyTypeDescriptionsCopy.addAll(policyTypeDescriptions);
+            this.policyTypeDescriptions = policyTypeDescriptionsCopy;
         }
-        this.policyTypeDescriptions = policyTypeDescriptionsCopy;
 
         return this;
     }
@@ -120,9 +125,31 @@ public class DescribeLoadBalancerPolicyTypesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("PolicyTypeDescriptions: " + policyTypeDescriptions + ", ");
+        if (policyTypeDescriptions != null) sb.append("PolicyTypeDescriptions: " + policyTypeDescriptions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPolicyTypeDescriptions() == null) ? 0 : getPolicyTypeDescriptions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLoadBalancerPolicyTypesResult == false) return false;
+        DescribeLoadBalancerPolicyTypesResult other = (DescribeLoadBalancerPolicyTypesResult)obj;
+        
+        if (other.getPolicyTypeDescriptions() == null ^ this.getPolicyTypeDescriptions() == null) return false;
+        if (other.getPolicyTypeDescriptions() != null && other.getPolicyTypeDescriptions().equals(this.getPolicyTypeDescriptions()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -230,12 +230,43 @@ public class CreateHostedZoneResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("HostedZone: " + hostedZone + ", ");
-        sb.append("ChangeInfo: " + changeInfo + ", ");
-        sb.append("DelegationSet: " + delegationSet + ", ");
-        sb.append("Location: " + location + ", ");
+        if (hostedZone != null) sb.append("HostedZone: " + hostedZone + ", ");
+        if (changeInfo != null) sb.append("ChangeInfo: " + changeInfo + ", ");
+        if (delegationSet != null) sb.append("DelegationSet: " + delegationSet + ", ");
+        if (location != null) sb.append("Location: " + location + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getHostedZone() == null) ? 0 : getHostedZone().hashCode()); 
+        hashCode = prime * hashCode + ((getChangeInfo() == null) ? 0 : getChangeInfo().hashCode()); 
+        hashCode = prime * hashCode + ((getDelegationSet() == null) ? 0 : getDelegationSet().hashCode()); 
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateHostedZoneResult == false) return false;
+        CreateHostedZoneResult other = (CreateHostedZoneResult)obj;
+        
+        if (other.getHostedZone() == null ^ this.getHostedZone() == null) return false;
+        if (other.getHostedZone() != null && other.getHostedZone().equals(this.getHostedZone()) == false) return false; 
+        if (other.getChangeInfo() == null ^ this.getChangeInfo() == null) return false;
+        if (other.getChangeInfo() != null && other.getChangeInfo().equals(this.getChangeInfo()) == false) return false; 
+        if (other.getDelegationSet() == null ^ this.getDelegationSet() == null) return false;
+        if (other.getDelegationSet() != null && other.getDelegationSet().equals(this.getDelegationSet()) == false) return false; 
+        if (other.getLocation() == null ^ this.getLocation() == null) return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false) return false; 
+        return true;
     }
     
 }

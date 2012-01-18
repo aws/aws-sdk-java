@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -340,14 +340,51 @@ public class StackResourceSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LogicalResourceId: " + logicalResourceId + ", ");
-        sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
-        sb.append("ResourceType: " + resourceType + ", ");
-        sb.append("LastUpdatedTimestamp: " + lastUpdatedTimestamp + ", ");
-        sb.append("ResourceStatus: " + resourceStatus + ", ");
-        sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
+        if (logicalResourceId != null) sb.append("LogicalResourceId: " + logicalResourceId + ", ");
+        if (physicalResourceId != null) sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
+        if (resourceType != null) sb.append("ResourceType: " + resourceType + ", ");
+        if (lastUpdatedTimestamp != null) sb.append("LastUpdatedTimestamp: " + lastUpdatedTimestamp + ", ");
+        if (resourceStatus != null) sb.append("ResourceStatus: " + resourceStatus + ", ");
+        if (resourceStatusReason != null) sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLogicalResourceId() == null) ? 0 : getLogicalResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getPhysicalResourceId() == null) ? 0 : getPhysicalResourceId().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode()); 
+        hashCode = prime * hashCode + ((getLastUpdatedTimestamp() == null) ? 0 : getLastUpdatedTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceStatus() == null) ? 0 : getResourceStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceStatusReason() == null) ? 0 : getResourceStatusReason().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StackResourceSummary == false) return false;
+        StackResourceSummary other = (StackResourceSummary)obj;
+        
+        if (other.getLogicalResourceId() == null ^ this.getLogicalResourceId() == null) return false;
+        if (other.getLogicalResourceId() != null && other.getLogicalResourceId().equals(this.getLogicalResourceId()) == false) return false; 
+        if (other.getPhysicalResourceId() == null ^ this.getPhysicalResourceId() == null) return false;
+        if (other.getPhysicalResourceId() != null && other.getPhysicalResourceId().equals(this.getPhysicalResourceId()) == false) return false; 
+        if (other.getResourceType() == null ^ this.getResourceType() == null) return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false) return false; 
+        if (other.getLastUpdatedTimestamp() == null ^ this.getLastUpdatedTimestamp() == null) return false;
+        if (other.getLastUpdatedTimestamp() != null && other.getLastUpdatedTimestamp().equals(this.getLastUpdatedTimestamp()) == false) return false; 
+        if (other.getResourceStatus() == null ^ this.getResourceStatus() == null) return false;
+        if (other.getResourceStatus() != null && other.getResourceStatus().equals(this.getResourceStatus()) == false) return false; 
+        if (other.getResourceStatusReason() == null ^ this.getResourceStatusReason() == null) return false;
+        if (other.getResourceStatusReason() != null && other.getResourceStatusReason().equals(this.getResourceStatusReason()) == false) return false; 
+        return true;
     }
     
 }

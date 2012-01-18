@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,10 +53,13 @@ public class DescribeLaunchConfigurationsResult {
      * @param launchConfigurations A list of launch configurations.
      */
     public void setLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
-        java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>();
-        if (launchConfigurations != null) {
-            launchConfigurationsCopy.addAll(launchConfigurations);
+        if (launchConfigurations == null) {
+            this.launchConfigurations = null;
+            return;
         }
+
+        java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.size());
+        launchConfigurationsCopy.addAll(launchConfigurations);
         this.launchConfigurations = launchConfigurationsCopy;
     }
     
@@ -71,7 +74,7 @@ public class DescribeLaunchConfigurationsResult {
      *         together. 
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(LaunchConfiguration... launchConfigurations) {
-        if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>());
+        if (getLaunchConfigurations() == null) setLaunchConfigurations(new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.length));
         for (LaunchConfiguration value : launchConfigurations) {
             getLaunchConfigurations().add(value);
         }
@@ -89,11 +92,13 @@ public class DescribeLaunchConfigurationsResult {
      *         together. 
      */
     public DescribeLaunchConfigurationsResult withLaunchConfigurations(java.util.Collection<LaunchConfiguration> launchConfigurations) {
-        java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>();
-        if (launchConfigurations != null) {
+        if (launchConfigurations == null) {
+            this.launchConfigurations = null;
+        } else {
+            java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.size());
             launchConfigurationsCopy.addAll(launchConfigurations);
+            this.launchConfigurations = launchConfigurationsCopy;
         }
-        this.launchConfigurations = launchConfigurationsCopy;
 
         return this;
     }
@@ -153,10 +158,35 @@ public class DescribeLaunchConfigurationsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LaunchConfigurations: " + launchConfigurations + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (launchConfigurations != null) sb.append("LaunchConfigurations: " + launchConfigurations + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLaunchConfigurations() == null) ? 0 : getLaunchConfigurations().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLaunchConfigurationsResult == false) return false;
+        DescribeLaunchConfigurationsResult other = (DescribeLaunchConfigurationsResult)obj;
+        
+        if (other.getLaunchConfigurations() == null ^ this.getLaunchConfigurations() == null) return false;
+        if (other.getLaunchConfigurations() != null && other.getLaunchConfigurations().equals(this.getLaunchConfigurations()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

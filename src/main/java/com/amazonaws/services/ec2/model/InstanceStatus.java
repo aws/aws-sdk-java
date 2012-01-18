@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,10 +128,13 @@ public class InstanceStatus {
      * @param events Events that affect the status of the associated Amazon EC2 instance.
      */
     public void setEvents(java.util.Collection<InstanceStatusEvent> events) {
-        java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>();
-        if (events != null) {
-            eventsCopy.addAll(events);
+        if (events == null) {
+            this.events = null;
+            return;
         }
+
+        java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>(events.size());
+        eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
     
@@ -146,7 +149,7 @@ public class InstanceStatus {
      *         together. 
      */
     public InstanceStatus withEvents(InstanceStatusEvent... events) {
-        if (getEvents() == null) setEvents(new java.util.ArrayList<InstanceStatusEvent>());
+        if (getEvents() == null) setEvents(new java.util.ArrayList<InstanceStatusEvent>(events.length));
         for (InstanceStatusEvent value : events) {
             getEvents().add(value);
         }
@@ -164,11 +167,13 @@ public class InstanceStatus {
      *         together. 
      */
     public InstanceStatus withEvents(java.util.Collection<InstanceStatusEvent> events) {
-        java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>();
-        if (events != null) {
+        if (events == null) {
+            this.events = null;
+        } else {
+            java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>(events.size());
             eventsCopy.addAll(events);
+            this.events = eventsCopy;
         }
-        this.events = eventsCopy;
 
         return this;
     }
@@ -219,12 +224,43 @@ public class InstanceStatus {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("Events: " + events + ", ");
-        sb.append("InstanceState: " + instanceState + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (events != null) sb.append("Events: " + events + ", ");
+        if (instanceState != null) sb.append("InstanceState: " + instanceState + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof InstanceStatus == false) return false;
+        InstanceStatus other = (InstanceStatus)obj;
+        
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getEvents() == null ^ this.getEvents() == null) return false;
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false) return false; 
+        if (other.getInstanceState() == null ^ this.getInstanceState() == null) return false;
+        if (other.getInstanceState() != null && other.getInstanceState().equals(this.getInstanceState()) == false) return false; 
+        return true;
     }
     
 }

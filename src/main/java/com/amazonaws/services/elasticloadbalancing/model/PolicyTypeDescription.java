@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,10 +128,13 @@ public class PolicyTypeDescription {
      *         LoadBalancer policies defined by the Elastic Load Balancing service.
      */
     public void setPolicyAttributeTypeDescriptions(java.util.Collection<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions) {
-        java.util.List<PolicyAttributeTypeDescription> policyAttributeTypeDescriptionsCopy = new java.util.ArrayList<PolicyAttributeTypeDescription>();
-        if (policyAttributeTypeDescriptions != null) {
-            policyAttributeTypeDescriptionsCopy.addAll(policyAttributeTypeDescriptions);
+        if (policyAttributeTypeDescriptions == null) {
+            this.policyAttributeTypeDescriptions = null;
+            return;
         }
+
+        java.util.List<PolicyAttributeTypeDescription> policyAttributeTypeDescriptionsCopy = new java.util.ArrayList<PolicyAttributeTypeDescription>(policyAttributeTypeDescriptions.size());
+        policyAttributeTypeDescriptionsCopy.addAll(policyAttributeTypeDescriptions);
         this.policyAttributeTypeDescriptions = policyAttributeTypeDescriptionsCopy;
     }
     
@@ -148,7 +151,7 @@ public class PolicyTypeDescription {
      *         together. 
      */
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(PolicyAttributeTypeDescription... policyAttributeTypeDescriptions) {
-        if (getPolicyAttributeTypeDescriptions() == null) setPolicyAttributeTypeDescriptions(new java.util.ArrayList<PolicyAttributeTypeDescription>());
+        if (getPolicyAttributeTypeDescriptions() == null) setPolicyAttributeTypeDescriptions(new java.util.ArrayList<PolicyAttributeTypeDescription>(policyAttributeTypeDescriptions.length));
         for (PolicyAttributeTypeDescription value : policyAttributeTypeDescriptions) {
             getPolicyAttributeTypeDescriptions().add(value);
         }
@@ -168,11 +171,13 @@ public class PolicyTypeDescription {
      *         together. 
      */
     public PolicyTypeDescription withPolicyAttributeTypeDescriptions(java.util.Collection<PolicyAttributeTypeDescription> policyAttributeTypeDescriptions) {
-        java.util.List<PolicyAttributeTypeDescription> policyAttributeTypeDescriptionsCopy = new java.util.ArrayList<PolicyAttributeTypeDescription>();
-        if (policyAttributeTypeDescriptions != null) {
+        if (policyAttributeTypeDescriptions == null) {
+            this.policyAttributeTypeDescriptions = null;
+        } else {
+            java.util.List<PolicyAttributeTypeDescription> policyAttributeTypeDescriptionsCopy = new java.util.ArrayList<PolicyAttributeTypeDescription>(policyAttributeTypeDescriptions.size());
             policyAttributeTypeDescriptionsCopy.addAll(policyAttributeTypeDescriptions);
+            this.policyAttributeTypeDescriptions = policyAttributeTypeDescriptionsCopy;
         }
-        this.policyAttributeTypeDescriptions = policyAttributeTypeDescriptionsCopy;
 
         return this;
     }
@@ -189,11 +194,39 @@ public class PolicyTypeDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("PolicyTypeName: " + policyTypeName + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("PolicyAttributeTypeDescriptions: " + policyAttributeTypeDescriptions + ", ");
+        if (policyTypeName != null) sb.append("PolicyTypeName: " + policyTypeName + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (policyAttributeTypeDescriptions != null) sb.append("PolicyAttributeTypeDescriptions: " + policyAttributeTypeDescriptions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPolicyTypeName() == null) ? 0 : getPolicyTypeName().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyAttributeTypeDescriptions() == null) ? 0 : getPolicyAttributeTypeDescriptions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PolicyTypeDescription == false) return false;
+        PolicyTypeDescription other = (PolicyTypeDescription)obj;
+        
+        if (other.getPolicyTypeName() == null ^ this.getPolicyTypeName() == null) return false;
+        if (other.getPolicyTypeName() != null && other.getPolicyTypeName().equals(this.getPolicyTypeName()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getPolicyAttributeTypeDescriptions() == null ^ this.getPolicyAttributeTypeDescriptions() == null) return false;
+        if (other.getPolicyAttributeTypeDescriptions() != null && other.getPolicyAttributeTypeDescriptions().equals(this.getPolicyAttributeTypeDescriptions()) == false) return false; 
+        return true;
     }
     
 }

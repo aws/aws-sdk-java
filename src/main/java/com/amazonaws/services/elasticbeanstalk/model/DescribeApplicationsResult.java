@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeApplicationsResult {
      * @param applications This parameter contains a list of <a>ApplicationDescription</a>.
      */
     public void setApplications(java.util.Collection<ApplicationDescription> applications) {
-        java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>();
-        if (applications != null) {
-            applicationsCopy.addAll(applications);
+        if (applications == null) {
+            this.applications = null;
+            return;
         }
+
+        java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>(applications.size());
+        applicationsCopy.addAll(applications);
         this.applications = applicationsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeApplicationsResult {
      *         together. 
      */
     public DescribeApplicationsResult withApplications(ApplicationDescription... applications) {
-        if (getApplications() == null) setApplications(new java.util.ArrayList<ApplicationDescription>());
+        if (getApplications() == null) setApplications(new java.util.ArrayList<ApplicationDescription>(applications.length));
         for (ApplicationDescription value : applications) {
             getApplications().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeApplicationsResult {
      *         together. 
      */
     public DescribeApplicationsResult withApplications(java.util.Collection<ApplicationDescription> applications) {
-        java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>();
-        if (applications != null) {
+        if (applications == null) {
+            this.applications = null;
+        } else {
+            java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>(applications.size());
             applicationsCopy.addAll(applications);
+            this.applications = applicationsCopy;
         }
-        this.applications = applicationsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeApplicationsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Applications: " + applications + ", ");
+        if (applications != null) sb.append("Applications: " + applications + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeApplicationsResult == false) return false;
+        DescribeApplicationsResult other = (DescribeApplicationsResult)obj;
+        
+        if (other.getApplications() == null ^ this.getApplications() == null) return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false) return false; 
+        return true;
     }
     
 }

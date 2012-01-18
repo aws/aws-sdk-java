@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -162,10 +162,13 @@ public class Metric {
      * @param dimensions A list of dimensions associated with the metric.
      */
     public void setDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
-            dimensionsCopy.addAll(dimensions);
+        if (dimensions == null) {
+            this.dimensions = null;
+            return;
         }
+
+        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
     
@@ -183,7 +186,7 @@ public class Metric {
      *         together. 
      */
     public Metric withDimensions(Dimension... dimensions) {
-        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>());
+        if (getDimensions() == null) setDimensions(new java.util.ArrayList<Dimension>(dimensions.length));
         for (Dimension value : dimensions) {
             getDimensions().add(value);
         }
@@ -204,11 +207,13 @@ public class Metric {
      *         together. 
      */
     public Metric withDimensions(java.util.Collection<Dimension> dimensions) {
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>();
-        if (dimensions != null) {
+        if (dimensions == null) {
+            this.dimensions = null;
+        } else {
+            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
+            this.dimensions = dimensionsCopy;
         }
-        this.dimensions = dimensionsCopy;
 
         return this;
     }
@@ -225,11 +230,39 @@ public class Metric {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("MetricName: " + metricName + ", ");
-        sb.append("Dimensions: " + dimensions + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
+        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getMetricName() == null) ? 0 : getMetricName().hashCode()); 
+        hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Metric == false) return false;
+        Metric other = (Metric)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getMetricName() == null ^ this.getMetricName() == null) return false;
+        if (other.getMetricName() != null && other.getMetricName().equals(this.getMetricName()) == false) return false; 
+        if (other.getDimensions() == null ^ this.getDimensions() == null) return false;
+        if (other.getDimensions() != null && other.getDimensions().equals(this.getDimensions()) == false) return false; 
+        return true;
     }
     
 }

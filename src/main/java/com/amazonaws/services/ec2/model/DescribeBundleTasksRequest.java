@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -61,10 +61,13 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      * @param bundleIds The list of bundle task IDs to describe.
      */
     public void setBundleIds(java.util.Collection<String> bundleIds) {
-        java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>();
-        if (bundleIds != null) {
-            bundleIdsCopy.addAll(bundleIds);
+        if (bundleIds == null) {
+            this.bundleIds = null;
+            return;
         }
+
+        java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>(bundleIds.size());
+        bundleIdsCopy.addAll(bundleIds);
         this.bundleIds = bundleIdsCopy;
     }
     
@@ -79,7 +82,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withBundleIds(String... bundleIds) {
-        if (getBundleIds() == null) setBundleIds(new java.util.ArrayList<String>());
+        if (getBundleIds() == null) setBundleIds(new java.util.ArrayList<String>(bundleIds.length));
         for (String value : bundleIds) {
             getBundleIds().add(value);
         }
@@ -97,11 +100,13 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withBundleIds(java.util.Collection<String> bundleIds) {
-        java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>();
-        if (bundleIds != null) {
+        if (bundleIds == null) {
+            this.bundleIds = null;
+        } else {
+            java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>(bundleIds.size());
             bundleIdsCopy.addAll(bundleIds);
+            this.bundleIds = bundleIdsCopy;
         }
-        this.bundleIds = bundleIdsCopy;
 
         return this;
     }
@@ -141,10 +146,13 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -167,7 +175,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -193,11 +201,13 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeBundleTasksRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -214,10 +224,35 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("BundleIds: " + bundleIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (bundleIds != null) sb.append("BundleIds: " + bundleIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getBundleIds() == null) ? 0 : getBundleIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeBundleTasksRequest == false) return false;
+        DescribeBundleTasksRequest other = (DescribeBundleTasksRequest)obj;
+        
+        if (other.getBundleIds() == null ^ this.getBundleIds() == null) return false;
+        if (other.getBundleIds() != null && other.getBundleIds().equals(this.getBundleIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

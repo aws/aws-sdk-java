@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -570,10 +570,13 @@ public class SpotInstanceRequest {
      * @param tags A list of tags for this spot instance request.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -588,7 +591,7 @@ public class SpotInstanceRequest {
      *         together. 
      */
     public SpotInstanceRequest withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -606,11 +609,13 @@ public class SpotInstanceRequest {
      *         together. 
      */
     public SpotInstanceRequest withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -661,23 +666,87 @@ public class SpotInstanceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
-        sb.append("SpotPrice: " + spotPrice + ", ");
-        sb.append("Type: " + type + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("Fault: " + fault + ", ");
-        sb.append("ValidFrom: " + validFrom + ", ");
-        sb.append("ValidUntil: " + validUntil + ", ");
-        sb.append("LaunchGroup: " + launchGroup + ", ");
-        sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
-        sb.append("LaunchSpecification: " + launchSpecification + ", ");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("CreateTime: " + createTime + ", ");
-        sb.append("ProductDescription: " + productDescription + ", ");
-        sb.append("Tags: " + tags + ", ");
-        sb.append("LaunchedAvailabilityZone: " + launchedAvailabilityZone + ", ");
+        if (spotInstanceRequestId != null) sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
+        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
+        if (type != null) sb.append("Type: " + type + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (fault != null) sb.append("Fault: " + fault + ", ");
+        if (validFrom != null) sb.append("ValidFrom: " + validFrom + ", ");
+        if (validUntil != null) sb.append("ValidUntil: " + validUntil + ", ");
+        if (launchGroup != null) sb.append("LaunchGroup: " + launchGroup + ", ");
+        if (availabilityZoneGroup != null) sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
+        if (launchSpecification != null) sb.append("LaunchSpecification: " + launchSpecification + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
+        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (launchedAvailabilityZone != null) sb.append("LaunchedAvailabilityZone: " + launchedAvailabilityZone + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSpotInstanceRequestId() == null) ? 0 : getSpotInstanceRequestId().hashCode()); 
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getFault() == null) ? 0 : getFault().hashCode()); 
+        hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode()); 
+        hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZoneGroup() == null) ? 0 : getAvailabilityZoneGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchSpecification() == null) ? 0 : getLaunchSpecification().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode()); 
+        hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchedAvailabilityZone() == null) ? 0 : getLaunchedAvailabilityZone().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SpotInstanceRequest == false) return false;
+        SpotInstanceRequest other = (SpotInstanceRequest)obj;
+        
+        if (other.getSpotInstanceRequestId() == null ^ this.getSpotInstanceRequestId() == null) return false;
+        if (other.getSpotInstanceRequestId() != null && other.getSpotInstanceRequestId().equals(this.getSpotInstanceRequestId()) == false) return false; 
+        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null) return false;
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
+        if (other.getType() == null ^ this.getType() == null) return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getFault() == null ^ this.getFault() == null) return false;
+        if (other.getFault() != null && other.getFault().equals(this.getFault()) == false) return false; 
+        if (other.getValidFrom() == null ^ this.getValidFrom() == null) return false;
+        if (other.getValidFrom() != null && other.getValidFrom().equals(this.getValidFrom()) == false) return false; 
+        if (other.getValidUntil() == null ^ this.getValidUntil() == null) return false;
+        if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false) return false; 
+        if (other.getLaunchGroup() == null ^ this.getLaunchGroup() == null) return false;
+        if (other.getLaunchGroup() != null && other.getLaunchGroup().equals(this.getLaunchGroup()) == false) return false; 
+        if (other.getAvailabilityZoneGroup() == null ^ this.getAvailabilityZoneGroup() == null) return false;
+        if (other.getAvailabilityZoneGroup() != null && other.getAvailabilityZoneGroup().equals(this.getAvailabilityZoneGroup()) == false) return false; 
+        if (other.getLaunchSpecification() == null ^ this.getLaunchSpecification() == null) return false;
+        if (other.getLaunchSpecification() != null && other.getLaunchSpecification().equals(this.getLaunchSpecification()) == false) return false; 
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getCreateTime() == null ^ this.getCreateTime() == null) return false;
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false) return false; 
+        if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
+        if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getLaunchedAvailabilityZone() == null ^ this.getLaunchedAvailabilityZone() == null) return false;
+        if (other.getLaunchedAvailabilityZone() != null && other.getLaunchedAvailabilityZone().equals(this.getLaunchedAvailabilityZone()) == false) return false; 
+        return true;
     }
     
 }

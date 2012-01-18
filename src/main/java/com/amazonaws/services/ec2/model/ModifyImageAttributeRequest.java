@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -240,10 +240,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         attribute is being modified.
      */
     public void setUserIds(java.util.Collection<String> userIds) {
-        java.util.List<String> userIdsCopy = new java.util.ArrayList<String>();
-        if (userIds != null) {
-            userIdsCopy.addAll(userIds);
+        if (userIds == null) {
+            this.userIds = null;
+            return;
         }
+
+        java.util.List<String> userIdsCopy = new java.util.ArrayList<String>(userIds.size());
+        userIdsCopy.addAll(userIds);
         this.userIds = userIdsCopy;
     }
     
@@ -262,7 +265,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserIds(String... userIds) {
-        if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>());
+        if (getUserIds() == null) setUserIds(new java.util.ArrayList<String>(userIds.length));
         for (String value : userIds) {
             getUserIds().add(value);
         }
@@ -284,11 +287,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserIds(java.util.Collection<String> userIds) {
-        java.util.List<String> userIdsCopy = new java.util.ArrayList<String>();
-        if (userIds != null) {
+        if (userIds == null) {
+            this.userIds = null;
+        } else {
+            java.util.List<String> userIdsCopy = new java.util.ArrayList<String>(userIds.size());
             userIdsCopy.addAll(userIds);
+            this.userIds = userIdsCopy;
         }
-        this.userIds = userIdsCopy;
 
         return this;
     }
@@ -324,10 +329,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         groups: <code>all</code>
      */
     public void setUserGroups(java.util.Collection<String> userGroups) {
-        java.util.List<String> userGroupsCopy = new java.util.ArrayList<String>();
-        if (userGroups != null) {
-            userGroupsCopy.addAll(userGroups);
+        if (userGroups == null) {
+            this.userGroups = null;
+            return;
         }
+
+        java.util.List<String> userGroupsCopy = new java.util.ArrayList<String>(userGroups.size());
+        userGroupsCopy.addAll(userGroups);
         this.userGroups = userGroupsCopy;
     }
     
@@ -348,7 +356,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserGroups(String... userGroups) {
-        if (getUserGroups() == null) setUserGroups(new java.util.ArrayList<String>());
+        if (getUserGroups() == null) setUserGroups(new java.util.ArrayList<String>(userGroups.length));
         for (String value : userGroups) {
             getUserGroups().add(value);
         }
@@ -372,11 +380,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withUserGroups(java.util.Collection<String> userGroups) {
-        java.util.List<String> userGroupsCopy = new java.util.ArrayList<String>();
-        if (userGroups != null) {
+        if (userGroups == null) {
+            this.userGroups = null;
+        } else {
+            java.util.List<String> userGroupsCopy = new java.util.ArrayList<String>(userGroups.size());
             userGroupsCopy.addAll(userGroups);
+            this.userGroups = userGroupsCopy;
         }
-        this.userGroups = userGroupsCopy;
 
         return this;
     }
@@ -404,10 +414,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         AMI. Only valid when the productCodes attribute is being modified.
      */
     public void setProductCodes(java.util.Collection<String> productCodes) {
-        java.util.List<String> productCodesCopy = new java.util.ArrayList<String>();
-        if (productCodes != null) {
-            productCodesCopy.addAll(productCodes);
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
         }
+
+        java.util.List<String> productCodesCopy = new java.util.ArrayList<String>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
         this.productCodes = productCodesCopy;
     }
     
@@ -424,7 +437,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withProductCodes(String... productCodes) {
-        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<String>());
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<String>(productCodes.length));
         for (String value : productCodes) {
             getProductCodes().add(value);
         }
@@ -444,11 +457,13 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyImageAttributeRequest withProductCodes(java.util.Collection<String> productCodes) {
-        java.util.List<String> productCodesCopy = new java.util.ArrayList<String>();
-        if (productCodes != null) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<String> productCodesCopy = new java.util.ArrayList<String>(productCodes.size());
             productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
         }
-        this.productCodes = productCodesCopy;
 
         return this;
     }
@@ -573,17 +588,63 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ImageId: " + imageId + ", ");
-        sb.append("Attribute: " + attribute + ", ");
-        sb.append("OperationType: " + operationType + ", ");
-        sb.append("UserIds: " + userIds + ", ");
-        sb.append("UserGroups: " + userGroups + ", ");
-        sb.append("ProductCodes: " + productCodes + ", ");
-        sb.append("Value: " + value + ", ");
-        sb.append("LaunchPermission: " + launchPermission + ", ");
-        sb.append("Description: " + description + ", ");
+        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (attribute != null) sb.append("Attribute: " + attribute + ", ");
+        if (operationType != null) sb.append("OperationType: " + operationType + ", ");
+        if (userIds != null) sb.append("UserIds: " + userIds + ", ");
+        if (userGroups != null) sb.append("UserGroups: " + userGroups + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (value != null) sb.append("Value: " + value + ", ");
+        if (launchPermission != null) sb.append("LaunchPermission: " + launchPermission + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode()); 
+        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode()); 
+        hashCode = prime * hashCode + ((getOperationType() == null) ? 0 : getOperationType().hashCode()); 
+        hashCode = prime * hashCode + ((getUserIds() == null) ? 0 : getUserIds().hashCode()); 
+        hashCode = prime * hashCode + ((getUserGroups() == null) ? 0 : getUserGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchPermission() == null) ? 0 : getLaunchPermission().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ModifyImageAttributeRequest == false) return false;
+        ModifyImageAttributeRequest other = (ModifyImageAttributeRequest)obj;
+        
+        if (other.getImageId() == null ^ this.getImageId() == null) return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false) return false; 
+        if (other.getAttribute() == null ^ this.getAttribute() == null) return false;
+        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false) return false; 
+        if (other.getOperationType() == null ^ this.getOperationType() == null) return false;
+        if (other.getOperationType() != null && other.getOperationType().equals(this.getOperationType()) == false) return false; 
+        if (other.getUserIds() == null ^ this.getUserIds() == null) return false;
+        if (other.getUserIds() != null && other.getUserIds().equals(this.getUserIds()) == false) return false; 
+        if (other.getUserGroups() == null ^ this.getUserGroups() == null) return false;
+        if (other.getUserGroups() != null && other.getUserGroups().equals(this.getUserGroups()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.getValue() == null ^ this.getValue() == null) return false;
+        if (other.getValue() != null && other.getValue().equals(this.getValue()) == false) return false; 
+        if (other.getLaunchPermission() == null ^ this.getLaunchPermission() == null) return false;
+        if (other.getLaunchPermission() != null && other.getLaunchPermission().equals(this.getLaunchPermission()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        return true;
     }
     
 }

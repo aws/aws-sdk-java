@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -93,10 +93,13 @@ public class ListHostedZonesResult {
      *         associated with the current AWS account.
      */
     public void setHostedZones(java.util.Collection<HostedZone> hostedZones) {
-        java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>();
-        if (hostedZones != null) {
-            hostedZonesCopy.addAll(hostedZones);
+        if (hostedZones == null) {
+            this.hostedZones = null;
+            return;
         }
+
+        java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>(hostedZones.size());
+        hostedZonesCopy.addAll(hostedZones);
         this.hostedZones = hostedZonesCopy;
     }
     
@@ -113,7 +116,7 @@ public class ListHostedZonesResult {
      *         together. 
      */
     public ListHostedZonesResult withHostedZones(HostedZone... hostedZones) {
-        if (getHostedZones() == null) setHostedZones(new java.util.ArrayList<HostedZone>());
+        if (getHostedZones() == null) setHostedZones(new java.util.ArrayList<HostedZone>(hostedZones.length));
         for (HostedZone value : hostedZones) {
             getHostedZones().add(value);
         }
@@ -133,11 +136,13 @@ public class ListHostedZonesResult {
      *         together. 
      */
     public ListHostedZonesResult withHostedZones(java.util.Collection<HostedZone> hostedZones) {
-        java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>();
-        if (hostedZones != null) {
+        if (hostedZones == null) {
+            this.hostedZones = null;
+        } else {
+            java.util.List<HostedZone> hostedZonesCopy = new java.util.ArrayList<HostedZone>(hostedZones.size());
             hostedZonesCopy.addAll(hostedZones);
+            this.hostedZones = hostedZonesCopy;
         }
-        this.hostedZones = hostedZonesCopy;
 
         return this;
     }
@@ -425,13 +430,47 @@ public class ListHostedZonesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("HostedZones: " + hostedZones + ", ");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
+        if (hostedZones != null) sb.append("HostedZones: " + hostedZones + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getHostedZones() == null) ? 0 : getHostedZones().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListHostedZonesResult == false) return false;
+        ListHostedZonesResult other = (ListHostedZonesResult)obj;
+        
+        if (other.getHostedZones() == null ^ this.getHostedZones() == null) return false;
+        if (other.getHostedZones() != null && other.getHostedZones().equals(this.getHostedZones()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        return true;
     }
     
 }

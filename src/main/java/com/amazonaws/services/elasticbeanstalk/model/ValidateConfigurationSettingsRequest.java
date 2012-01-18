@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -266,10 +266,13 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * @param optionSettings A list of the options and desired values to evaluate.
      */
     public void setOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
-            optionSettingsCopy.addAll(optionSettings);
+        if (optionSettings == null) {
+            this.optionSettings = null;
+            return;
         }
+
+        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
     
@@ -284,7 +287,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      *         together. 
      */
     public ValidateConfigurationSettingsRequest withOptionSettings(ConfigurationOptionSetting... optionSettings) {
-        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>());
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.length));
         for (ConfigurationOptionSetting value : optionSettings) {
             getOptionSettings().add(value);
         }
@@ -302,11 +305,13 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      *         together. 
      */
     public ValidateConfigurationSettingsRequest withOptionSettings(java.util.Collection<ConfigurationOptionSetting> optionSettings) {
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>();
-        if (optionSettings != null) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+        } else {
+            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
+            this.optionSettings = optionSettingsCopy;
         }
-        this.optionSettings = optionSettingsCopy;
 
         return this;
     }
@@ -323,12 +328,43 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ApplicationName: " + applicationName + ", ");
-        sb.append("TemplateName: " + templateName + ", ");
-        sb.append("EnvironmentName: " + environmentName + ", ");
-        sb.append("OptionSettings: " + optionSettings + ", ");
+        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
+        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
+        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
+        if (optionSettings != null) sb.append("OptionSettings: " + optionSettings + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getApplicationName() == null) ? 0 : getApplicationName().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode()); 
+        hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ValidateConfigurationSettingsRequest == false) return false;
+        ValidateConfigurationSettingsRequest other = (ValidateConfigurationSettingsRequest)obj;
+        
+        if (other.getApplicationName() == null ^ this.getApplicationName() == null) return false;
+        if (other.getApplicationName() != null && other.getApplicationName().equals(this.getApplicationName()) == false) return false; 
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null) return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false) return false; 
+        if (other.getEnvironmentName() == null ^ this.getEnvironmentName() == null) return false;
+        if (other.getEnvironmentName() != null && other.getEnvironmentName().equals(this.getEnvironmentName()) == false) return false; 
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
+        return true;
     }
     
 }

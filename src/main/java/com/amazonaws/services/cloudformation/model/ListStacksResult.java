@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,10 +42,13 @@ public class ListStacksResult {
      * @param stackSummaries The new value for the StackSummaries property for this object.
      */
     public void setStackSummaries(java.util.Collection<StackSummary> stackSummaries) {
-        java.util.List<StackSummary> stackSummariesCopy = new java.util.ArrayList<StackSummary>();
-        if (stackSummaries != null) {
-            stackSummariesCopy.addAll(stackSummaries);
+        if (stackSummaries == null) {
+            this.stackSummaries = null;
+            return;
         }
+
+        java.util.List<StackSummary> stackSummariesCopy = new java.util.ArrayList<StackSummary>(stackSummaries.size());
+        stackSummariesCopy.addAll(stackSummaries);
         this.stackSummaries = stackSummariesCopy;
     }
     
@@ -60,7 +63,7 @@ public class ListStacksResult {
      *         together. 
      */
     public ListStacksResult withStackSummaries(StackSummary... stackSummaries) {
-        if (getStackSummaries() == null) setStackSummaries(new java.util.ArrayList<StackSummary>());
+        if (getStackSummaries() == null) setStackSummaries(new java.util.ArrayList<StackSummary>(stackSummaries.length));
         for (StackSummary value : stackSummaries) {
             getStackSummaries().add(value);
         }
@@ -78,11 +81,13 @@ public class ListStacksResult {
      *         together. 
      */
     public ListStacksResult withStackSummaries(java.util.Collection<StackSummary> stackSummaries) {
-        java.util.List<StackSummary> stackSummariesCopy = new java.util.ArrayList<StackSummary>();
-        if (stackSummaries != null) {
+        if (stackSummaries == null) {
+            this.stackSummaries = null;
+        } else {
+            java.util.List<StackSummary> stackSummariesCopy = new java.util.ArrayList<StackSummary>(stackSummaries.size());
             stackSummariesCopy.addAll(stackSummaries);
+            this.stackSummaries = stackSummariesCopy;
         }
-        this.stackSummaries = stackSummariesCopy;
 
         return this;
     }
@@ -142,10 +147,35 @@ public class ListStacksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackSummaries: " + stackSummaries + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (stackSummaries != null) sb.append("StackSummaries: " + stackSummaries + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackSummaries() == null) ? 0 : getStackSummaries().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListStacksResult == false) return false;
+        ListStacksResult other = (ListStacksResult)obj;
+        
+        if (other.getStackSummaries() == null ^ this.getStackSummaries() == null) return false;
+        if (other.getStackSummaries() != null && other.getStackSummaries().equals(this.getStackSummaries()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

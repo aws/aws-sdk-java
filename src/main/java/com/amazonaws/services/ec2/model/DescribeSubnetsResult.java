@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeSubnetsResult {
      * @param subnets Contains a set of one or more <a>Subnet</a> instances.
      */
     public void setSubnets(java.util.Collection<Subnet> subnets) {
-        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>();
-        if (subnets != null) {
-            subnetsCopy.addAll(subnets);
+        if (subnets == null) {
+            this.subnets = null;
+            return;
         }
+
+        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+        subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeSubnetsResult {
      *         together. 
      */
     public DescribeSubnetsResult withSubnets(Subnet... subnets) {
-        if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>());
+        if (getSubnets() == null) setSubnets(new java.util.ArrayList<Subnet>(subnets.length));
         for (Subnet value : subnets) {
             getSubnets().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeSubnetsResult {
      *         together. 
      */
     public DescribeSubnetsResult withSubnets(java.util.Collection<Subnet> subnets) {
-        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>();
-        if (subnets != null) {
+        if (subnets == null) {
+            this.subnets = null;
+        } else {
+            java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
             subnetsCopy.addAll(subnets);
+            this.subnets = subnetsCopy;
         }
-        this.subnets = subnetsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeSubnetsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Subnets: " + subnets + ", ");
+        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSubnetsResult == false) return false;
+        DescribeSubnetsResult other = (DescribeSubnetsResult)obj;
+        
+        if (other.getSubnets() == null ^ this.getSubnets() == null) return false;
+        if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
+        return true;
     }
     
 }

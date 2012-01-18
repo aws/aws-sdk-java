@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -254,10 +254,35 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("HostedZoneId: " + hostedZoneId + ", ");
-        sb.append("ChangeBatch: " + changeBatch + ", ");
+        if (hostedZoneId != null) sb.append("HostedZoneId: " + hostedZoneId + ", ");
+        if (changeBatch != null) sb.append("ChangeBatch: " + changeBatch + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
+        hashCode = prime * hashCode + ((getChangeBatch() == null) ? 0 : getChangeBatch().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ChangeResourceRecordSetsRequest == false) return false;
+        ChangeResourceRecordSetsRequest other = (ChangeResourceRecordSetsRequest)obj;
+        
+        if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null) return false;
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
+        if (other.getChangeBatch() == null ^ this.getChangeBatch() == null) return false;
+        if (other.getChangeBatch() != null && other.getChangeBatch().equals(this.getChangeBatch()) == false) return false; 
+        return true;
     }
     
 }

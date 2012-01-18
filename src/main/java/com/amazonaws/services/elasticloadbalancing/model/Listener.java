@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -402,13 +402,47 @@ public class Listener {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Protocol: " + protocol + ", ");
-        sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
-        sb.append("InstanceProtocol: " + instanceProtocol + ", ");
-        sb.append("InstancePort: " + instancePort + ", ");
-        sb.append("SSLCertificateId: " + sSLCertificateId + ", ");
+        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
+        if (loadBalancerPort != null) sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
+        if (instanceProtocol != null) sb.append("InstanceProtocol: " + instanceProtocol + ", ");
+        if (instancePort != null) sb.append("InstancePort: " + instancePort + ", ");
+        if (sSLCertificateId != null) sb.append("SSLCertificateId: " + sSLCertificateId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getLoadBalancerPort() == null) ? 0 : getLoadBalancerPort().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceProtocol() == null) ? 0 : getInstanceProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getInstancePort() == null) ? 0 : getInstancePort().hashCode()); 
+        hashCode = prime * hashCode + ((getSSLCertificateId() == null) ? 0 : getSSLCertificateId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Listener == false) return false;
+        Listener other = (Listener)obj;
+        
+        if (other.getProtocol() == null ^ this.getProtocol() == null) return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false) return false; 
+        if (other.getLoadBalancerPort() == null ^ this.getLoadBalancerPort() == null) return false;
+        if (other.getLoadBalancerPort() != null && other.getLoadBalancerPort().equals(this.getLoadBalancerPort()) == false) return false; 
+        if (other.getInstanceProtocol() == null ^ this.getInstanceProtocol() == null) return false;
+        if (other.getInstanceProtocol() != null && other.getInstanceProtocol().equals(this.getInstanceProtocol()) == false) return false; 
+        if (other.getInstancePort() == null ^ this.getInstancePort() == null) return false;
+        if (other.getInstancePort() != null && other.getInstancePort().equals(this.getInstancePort()) == false) return false; 
+        if (other.getSSLCertificateId() == null ^ this.getSSLCertificateId() == null) return false;
+        if (other.getSSLCertificateId() != null && other.getSSLCertificateId().equals(this.getSSLCertificateId()) == false) return false; 
+        return true;
     }
     
 }

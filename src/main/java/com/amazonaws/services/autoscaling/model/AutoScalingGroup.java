@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -454,10 +454,13 @@ public class AutoScalingGroup {
      * @param availabilityZones Contains a list of availability zones for the group.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
-            availabilityZonesCopy.addAll(availabilityZones);
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+            return;
         }
+
+        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
     
@@ -475,7 +478,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withAvailabilityZones(String... availabilityZones) {
-        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>());
+        if (getAvailabilityZones() == null) setAvailabilityZones(new java.util.ArrayList<String>(availabilityZones.length));
         for (String value : availabilityZones) {
             getAvailabilityZones().add(value);
         }
@@ -496,11 +499,13 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withAvailabilityZones(java.util.Collection<String> availabilityZones) {
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>();
-        if (availabilityZones != null) {
+        if (availabilityZones == null) {
+            this.availabilityZones = null;
+        } else {
+            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
+            this.availabilityZones = availabilityZonesCopy;
         }
-        this.availabilityZones = availabilityZonesCopy;
 
         return this;
     }
@@ -524,10 +529,13 @@ public class AutoScalingGroup {
      * @param loadBalancerNames A list of load balancers associated with this Auto Scaling group.
      */
     public void setLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
-        java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>();
-        if (loadBalancerNames != null) {
-            loadBalancerNamesCopy.addAll(loadBalancerNames);
+        if (loadBalancerNames == null) {
+            this.loadBalancerNames = null;
+            return;
         }
+
+        java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>(loadBalancerNames.size());
+        loadBalancerNamesCopy.addAll(loadBalancerNames);
         this.loadBalancerNames = loadBalancerNamesCopy;
     }
     
@@ -542,7 +550,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withLoadBalancerNames(String... loadBalancerNames) {
-        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>());
+        if (getLoadBalancerNames() == null) setLoadBalancerNames(new java.util.ArrayList<String>(loadBalancerNames.length));
         for (String value : loadBalancerNames) {
             getLoadBalancerNames().add(value);
         }
@@ -560,11 +568,13 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withLoadBalancerNames(java.util.Collection<String> loadBalancerNames) {
-        java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>();
-        if (loadBalancerNames != null) {
+        if (loadBalancerNames == null) {
+            this.loadBalancerNames = null;
+        } else {
+            java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>(loadBalancerNames.size());
             loadBalancerNamesCopy.addAll(loadBalancerNames);
+            this.loadBalancerNames = loadBalancerNamesCopy;
         }
-        this.loadBalancerNames = loadBalancerNamesCopy;
 
         return this;
     }
@@ -686,10 +696,13 @@ public class AutoScalingGroup {
      * @param instances Provides a summary list of EC2 instances.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
-            instancesCopy.addAll(instances);
+        if (instances == null) {
+            this.instances = null;
+            return;
         }
+
+        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
     
@@ -704,7 +717,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withInstances(Instance... instances) {
-        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>());
+        if (getInstances() == null) setInstances(new java.util.ArrayList<Instance>(instances.length));
         for (Instance value : instances) {
             getInstances().add(value);
         }
@@ -722,11 +735,13 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withInstances(java.util.Collection<Instance> instances) {
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>();
-        if (instances != null) {
+        if (instances == null) {
+            this.instances = null;
+        } else {
+            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
             instancesCopy.addAll(instances);
+            this.instances = instancesCopy;
         }
-        this.instances = instancesCopy;
 
         return this;
     }
@@ -784,10 +799,13 @@ public class AutoScalingGroup {
      * @param suspendedProcesses Suspended processes associated with this Auto Scaling group.
      */
     public void setSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
-        java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>();
-        if (suspendedProcesses != null) {
-            suspendedProcessesCopy.addAll(suspendedProcesses);
+        if (suspendedProcesses == null) {
+            this.suspendedProcesses = null;
+            return;
         }
+
+        java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>(suspendedProcesses.size());
+        suspendedProcessesCopy.addAll(suspendedProcesses);
         this.suspendedProcesses = suspendedProcessesCopy;
     }
     
@@ -802,7 +820,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withSuspendedProcesses(SuspendedProcess... suspendedProcesses) {
-        if (getSuspendedProcesses() == null) setSuspendedProcesses(new java.util.ArrayList<SuspendedProcess>());
+        if (getSuspendedProcesses() == null) setSuspendedProcesses(new java.util.ArrayList<SuspendedProcess>(suspendedProcesses.length));
         for (SuspendedProcess value : suspendedProcesses) {
             getSuspendedProcesses().add(value);
         }
@@ -820,11 +838,13 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withSuspendedProcesses(java.util.Collection<SuspendedProcess> suspendedProcesses) {
-        java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>();
-        if (suspendedProcesses != null) {
+        if (suspendedProcesses == null) {
+            this.suspendedProcesses = null;
+        } else {
+            java.util.List<SuspendedProcess> suspendedProcessesCopy = new java.util.ArrayList<SuspendedProcess>(suspendedProcesses.size());
             suspendedProcessesCopy.addAll(suspendedProcesses);
+            this.suspendedProcesses = suspendedProcessesCopy;
         }
-        this.suspendedProcesses = suspendedProcessesCopy;
 
         return this;
     }
@@ -958,10 +978,13 @@ public class AutoScalingGroup {
      * @param enabledMetrics A list of metrics enabled for this Auto Scaling group.
      */
     public void setEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
-        java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>();
-        if (enabledMetrics != null) {
-            enabledMetricsCopy.addAll(enabledMetrics);
+        if (enabledMetrics == null) {
+            this.enabledMetrics = null;
+            return;
         }
+
+        java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>(enabledMetrics.size());
+        enabledMetricsCopy.addAll(enabledMetrics);
         this.enabledMetrics = enabledMetricsCopy;
     }
     
@@ -976,7 +999,7 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withEnabledMetrics(EnabledMetric... enabledMetrics) {
-        if (getEnabledMetrics() == null) setEnabledMetrics(new java.util.ArrayList<EnabledMetric>());
+        if (getEnabledMetrics() == null) setEnabledMetrics(new java.util.ArrayList<EnabledMetric>(enabledMetrics.length));
         for (EnabledMetric value : enabledMetrics) {
             getEnabledMetrics().add(value);
         }
@@ -994,11 +1017,13 @@ public class AutoScalingGroup {
      *         together. 
      */
     public AutoScalingGroup withEnabledMetrics(java.util.Collection<EnabledMetric> enabledMetrics) {
-        java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>();
-        if (enabledMetrics != null) {
+        if (enabledMetrics == null) {
+            this.enabledMetrics = null;
+        } else {
+            java.util.List<EnabledMetric> enabledMetricsCopy = new java.util.ArrayList<EnabledMetric>(enabledMetrics.size());
             enabledMetricsCopy.addAll(enabledMetrics);
+            this.enabledMetrics = enabledMetricsCopy;
         }
-        this.enabledMetrics = enabledMetricsCopy;
 
         return this;
     }
@@ -1061,26 +1086,99 @@ public class AutoScalingGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("AutoScalingGroupARN: " + autoScalingGroupARN + ", ");
-        sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
-        sb.append("MinSize: " + minSize + ", ");
-        sb.append("MaxSize: " + maxSize + ", ");
-        sb.append("DesiredCapacity: " + desiredCapacity + ", ");
-        sb.append("DefaultCooldown: " + defaultCooldown + ", ");
-        sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
-        sb.append("HealthCheckType: " + healthCheckType + ", ");
-        sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
-        sb.append("Instances: " + instances + ", ");
-        sb.append("CreatedTime: " + createdTime + ", ");
-        sb.append("SuspendedProcesses: " + suspendedProcesses + ", ");
-        sb.append("PlacementGroup: " + placementGroup + ", ");
-        sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
-        sb.append("EnabledMetrics: " + enabledMetrics + ", ");
-        sb.append("Status: " + status + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (autoScalingGroupARN != null) sb.append("AutoScalingGroupARN: " + autoScalingGroupARN + ", ");
+        if (launchConfigurationName != null) sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        if (minSize != null) sb.append("MinSize: " + minSize + ", ");
+        if (maxSize != null) sb.append("MaxSize: " + maxSize + ", ");
+        if (desiredCapacity != null) sb.append("DesiredCapacity: " + desiredCapacity + ", ");
+        if (defaultCooldown != null) sb.append("DefaultCooldown: " + defaultCooldown + ", ");
+        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (loadBalancerNames != null) sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
+        if (healthCheckType != null) sb.append("HealthCheckType: " + healthCheckType + ", ");
+        if (healthCheckGracePeriod != null) sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
+        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
+        if (suspendedProcesses != null) sb.append("SuspendedProcesses: " + suspendedProcesses + ", ");
+        if (placementGroup != null) sb.append("PlacementGroup: " + placementGroup + ", ");
+        if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
+        if (enabledMetrics != null) sb.append("EnabledMetrics: " + enabledMetrics + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getAutoScalingGroupARN() == null) ? 0 : getAutoScalingGroupARN().hashCode()); 
+        hashCode = prime * hashCode + ((getLaunchConfigurationName() == null) ? 0 : getLaunchConfigurationName().hashCode()); 
+        hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode()); 
+        hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
+        hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckType() == null) ? 0 : getHealthCheckType().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckGracePeriod() == null) ? 0 : getHealthCheckGracePeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode()); 
+        hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
+        hashCode = prime * hashCode + ((getSuspendedProcesses() == null) ? 0 : getSuspendedProcesses().hashCode()); 
+        hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getEnabledMetrics() == null) ? 0 : getEnabledMetrics().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AutoScalingGroup == false) return false;
+        AutoScalingGroup other = (AutoScalingGroup)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getAutoScalingGroupARN() == null ^ this.getAutoScalingGroupARN() == null) return false;
+        if (other.getAutoScalingGroupARN() != null && other.getAutoScalingGroupARN().equals(this.getAutoScalingGroupARN()) == false) return false; 
+        if (other.getLaunchConfigurationName() == null ^ this.getLaunchConfigurationName() == null) return false;
+        if (other.getLaunchConfigurationName() != null && other.getLaunchConfigurationName().equals(this.getLaunchConfigurationName()) == false) return false; 
+        if (other.getMinSize() == null ^ this.getMinSize() == null) return false;
+        if (other.getMinSize() != null && other.getMinSize().equals(this.getMinSize()) == false) return false; 
+        if (other.getMaxSize() == null ^ this.getMaxSize() == null) return false;
+        if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false) return false; 
+        if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null) return false;
+        if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false) return false; 
+        if (other.getDefaultCooldown() == null ^ this.getDefaultCooldown() == null) return false;
+        if (other.getDefaultCooldown() != null && other.getDefaultCooldown().equals(this.getDefaultCooldown()) == false) return false; 
+        if (other.getAvailabilityZones() == null ^ this.getAvailabilityZones() == null) return false;
+        if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false) return false; 
+        if (other.getLoadBalancerNames() == null ^ this.getLoadBalancerNames() == null) return false;
+        if (other.getLoadBalancerNames() != null && other.getLoadBalancerNames().equals(this.getLoadBalancerNames()) == false) return false; 
+        if (other.getHealthCheckType() == null ^ this.getHealthCheckType() == null) return false;
+        if (other.getHealthCheckType() != null && other.getHealthCheckType().equals(this.getHealthCheckType()) == false) return false; 
+        if (other.getHealthCheckGracePeriod() == null ^ this.getHealthCheckGracePeriod() == null) return false;
+        if (other.getHealthCheckGracePeriod() != null && other.getHealthCheckGracePeriod().equals(this.getHealthCheckGracePeriod()) == false) return false; 
+        if (other.getInstances() == null ^ this.getInstances() == null) return false;
+        if (other.getInstances() != null && other.getInstances().equals(this.getInstances()) == false) return false; 
+        if (other.getCreatedTime() == null ^ this.getCreatedTime() == null) return false;
+        if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
+        if (other.getSuspendedProcesses() == null ^ this.getSuspendedProcesses() == null) return false;
+        if (other.getSuspendedProcesses() != null && other.getSuspendedProcesses().equals(this.getSuspendedProcesses()) == false) return false; 
+        if (other.getPlacementGroup() == null ^ this.getPlacementGroup() == null) return false;
+        if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false) return false; 
+        if (other.getVPCZoneIdentifier() == null ^ this.getVPCZoneIdentifier() == null) return false;
+        if (other.getVPCZoneIdentifier() != null && other.getVPCZoneIdentifier().equals(this.getVPCZoneIdentifier()) == false) return false; 
+        if (other.getEnabledMetrics() == null ^ this.getEnabledMetrics() == null) return false;
+        if (other.getEnabledMetrics() != null && other.getEnabledMetrics().equals(this.getEnabledMetrics()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        return true;
     }
     
 }

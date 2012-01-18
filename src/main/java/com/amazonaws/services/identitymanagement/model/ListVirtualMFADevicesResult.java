@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,10 +62,13 @@ public class ListVirtualMFADevicesResult {
      * @param virtualMFADevices The new value for the VirtualMFADevices property for this object.
      */
     public void setVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
-        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>();
-        if (virtualMFADevices != null) {
-            virtualMFADevicesCopy.addAll(virtualMFADevices);
+        if (virtualMFADevices == null) {
+            this.virtualMFADevices = null;
+            return;
         }
+
+        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
+        virtualMFADevicesCopy.addAll(virtualMFADevices);
         this.virtualMFADevices = virtualMFADevicesCopy;
     }
     
@@ -80,7 +83,7 @@ public class ListVirtualMFADevicesResult {
      *         together. 
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(VirtualMFADevice... virtualMFADevices) {
-        if (getVirtualMFADevices() == null) setVirtualMFADevices(new java.util.ArrayList<VirtualMFADevice>());
+        if (getVirtualMFADevices() == null) setVirtualMFADevices(new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.length));
         for (VirtualMFADevice value : virtualMFADevices) {
             getVirtualMFADevices().add(value);
         }
@@ -98,11 +101,13 @@ public class ListVirtualMFADevicesResult {
      *         together. 
      */
     public ListVirtualMFADevicesResult withVirtualMFADevices(java.util.Collection<VirtualMFADevice> virtualMFADevices) {
-        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>();
-        if (virtualMFADevices != null) {
+        if (virtualMFADevices == null) {
+            this.virtualMFADevices = null;
+        } else {
+            java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
             virtualMFADevicesCopy.addAll(virtualMFADevices);
+            this.virtualMFADevices = virtualMFADevicesCopy;
         }
-        this.virtualMFADevices = virtualMFADevicesCopy;
 
         return this;
     }
@@ -244,11 +249,39 @@ public class ListVirtualMFADevicesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VirtualMFADevices: " + virtualMFADevices + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (virtualMFADevices != null) sb.append("VirtualMFADevices: " + virtualMFADevices + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVirtualMFADevices() == null) ? 0 : getVirtualMFADevices().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListVirtualMFADevicesResult == false) return false;
+        ListVirtualMFADevicesResult other = (ListVirtualMFADevicesResult)obj;
+        
+        if (other.getVirtualMFADevices() == null ^ this.getVirtualMFADevices() == null) return false;
+        if (other.getVirtualMFADevices() != null && other.getVirtualMFADevices().equals(this.getVirtualMFADevices()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -273,10 +273,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         and the new NumCacheNodes requested.
      */
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
-        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>();
-        if (cacheNodeIdsToRemove != null) {
-            cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
+        if (cacheNodeIdsToRemove == null) {
+            this.cacheNodeIdsToRemove = null;
+            return;
         }
+
+        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
+        cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
         this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
     }
     
@@ -299,7 +302,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
-        if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>());
+        if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>(cacheNodeIdsToRemove.length));
         for (String value : cacheNodeIdsToRemove) {
             getCacheNodeIdsToRemove().add(value);
         }
@@ -325,11 +328,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheClusterRequest withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
-        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>();
-        if (cacheNodeIdsToRemove != null) {
+        if (cacheNodeIdsToRemove == null) {
+            this.cacheNodeIdsToRemove = null;
+        } else {
+            java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
             cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
+            this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
         }
-        this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
 
         return this;
     }
@@ -365,10 +370,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         Must not be "Default".
      */
     public void setCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
-        java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>();
-        if (cacheSecurityGroupNames != null) {
-            cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
+        if (cacheSecurityGroupNames == null) {
+            this.cacheSecurityGroupNames = null;
+            return;
         }
+
+        java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>(cacheSecurityGroupNames.size());
+        cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
         this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
     }
     
@@ -389,7 +397,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(String... cacheSecurityGroupNames) {
-        if (getCacheSecurityGroupNames() == null) setCacheSecurityGroupNames(new java.util.ArrayList<String>());
+        if (getCacheSecurityGroupNames() == null) setCacheSecurityGroupNames(new java.util.ArrayList<String>(cacheSecurityGroupNames.length));
         for (String value : cacheSecurityGroupNames) {
             getCacheSecurityGroupNames().add(value);
         }
@@ -413,11 +421,13 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyCacheClusterRequest withCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
-        java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>();
-        if (cacheSecurityGroupNames != null) {
+        if (cacheSecurityGroupNames == null) {
+            this.cacheSecurityGroupNames = null;
+        } else {
+            java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>(cacheSecurityGroupNames.size());
             cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
+            this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
         }
-        this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
 
         return this;
     }
@@ -820,19 +830,71 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        sb.append("CacheNodeIdsToRemove: " + cacheNodeIdsToRemove + ", ");
-        sb.append("CacheSecurityGroupNames: " + cacheSecurityGroupNames + ", ");
-        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        sb.append("NotificationTopicArn: " + notificationTopicArn + ", ");
-        sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
-        sb.append("NotificationTopicStatus: " + notificationTopicStatus + ", ");
-        sb.append("ApplyImmediately: " + applyImmediately + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
-        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
+        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
+        if (cacheNodeIdsToRemove != null) sb.append("CacheNodeIdsToRemove: " + cacheNodeIdsToRemove + ", ");
+        if (cacheSecurityGroupNames != null) sb.append("CacheSecurityGroupNames: " + cacheSecurityGroupNames + ", ");
+        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        if (notificationTopicArn != null) sb.append("NotificationTopicArn: " + notificationTopicArn + ", ");
+        if (cacheParameterGroupName != null) sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
+        if (notificationTopicStatus != null) sb.append("NotificationTopicStatus: " + notificationTopicStatus + ", ");
+        if (applyImmediately != null) sb.append("ApplyImmediately: " + applyImmediately + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
+        hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationTopicArn() == null) ? 0 : getNotificationTopicArn().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationTopicStatus() == null) ? 0 : getNotificationTopicStatus().hashCode()); 
+        hashCode = prime * hashCode + ((isApplyImmediately() == null) ? 0 : isApplyImmediately().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ModifyCacheClusterRequest == false) return false;
+        ModifyCacheClusterRequest other = (ModifyCacheClusterRequest)obj;
+        
+        if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null) return false;
+        if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
+        if (other.getNumCacheNodes() == null ^ this.getNumCacheNodes() == null) return false;
+        if (other.getNumCacheNodes() != null && other.getNumCacheNodes().equals(this.getNumCacheNodes()) == false) return false; 
+        if (other.getCacheNodeIdsToRemove() == null ^ this.getCacheNodeIdsToRemove() == null) return false;
+        if (other.getCacheNodeIdsToRemove() != null && other.getCacheNodeIdsToRemove().equals(this.getCacheNodeIdsToRemove()) == false) return false; 
+        if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null) return false;
+        if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
+        if (other.getNotificationTopicArn() == null ^ this.getNotificationTopicArn() == null) return false;
+        if (other.getNotificationTopicArn() != null && other.getNotificationTopicArn().equals(this.getNotificationTopicArn()) == false) return false; 
+        if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null) return false;
+        if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false) return false; 
+        if (other.getNotificationTopicStatus() == null ^ this.getNotificationTopicStatus() == null) return false;
+        if (other.getNotificationTopicStatus() != null && other.getNotificationTopicStatus().equals(this.getNotificationTopicStatus()) == false) return false; 
+        if (other.isApplyImmediately() == null ^ this.isApplyImmediately() == null) return false;
+        if (other.isApplyImmediately() != null && other.isApplyImmediately().equals(this.isApplyImmediately()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
+        if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        return true;
     }
     
 }

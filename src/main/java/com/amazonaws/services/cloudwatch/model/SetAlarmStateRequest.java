@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -306,12 +306,43 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmName: " + alarmName + ", ");
-        sb.append("StateValue: " + stateValue + ", ");
-        sb.append("StateReason: " + stateReason + ", ");
-        sb.append("StateReasonData: " + stateReasonData + ", ");
+        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
+        if (stateValue != null) sb.append("StateValue: " + stateValue + ", ");
+        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
+        if (stateReasonData != null) sb.append("StateReasonData: " + stateReasonData + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
+        hashCode = prime * hashCode + ((getStateValue() == null) ? 0 : getStateValue().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode()); 
+        hashCode = prime * hashCode + ((getStateReasonData() == null) ? 0 : getStateReasonData().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SetAlarmStateRequest == false) return false;
+        SetAlarmStateRequest other = (SetAlarmStateRequest)obj;
+        
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
+        if (other.getStateValue() == null ^ this.getStateValue() == null) return false;
+        if (other.getStateValue() != null && other.getStateValue().equals(this.getStateValue()) == false) return false; 
+        if (other.getStateReason() == null ^ this.getStateReason() == null) return false;
+        if (other.getStateReason() != null && other.getStateReason().equals(this.getStateReason()) == false) return false; 
+        if (other.getStateReasonData() == null ^ this.getStateReasonData() == null) return false;
+        if (other.getStateReasonData() != null && other.getStateReasonData().equals(this.getStateReasonData()) == false) return false; 
+        return true;
     }
     
 }

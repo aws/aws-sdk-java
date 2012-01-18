@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeStacksResult {
      * @param stacks A list of stack structures.
      */
     public void setStacks(java.util.Collection<Stack> stacks) {
-        java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>();
-        if (stacks != null) {
-            stacksCopy.addAll(stacks);
+        if (stacks == null) {
+            this.stacks = null;
+            return;
         }
+
+        java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>(stacks.size());
+        stacksCopy.addAll(stacks);
         this.stacks = stacksCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeStacksResult {
      *         together. 
      */
     public DescribeStacksResult withStacks(Stack... stacks) {
-        if (getStacks() == null) setStacks(new java.util.ArrayList<Stack>());
+        if (getStacks() == null) setStacks(new java.util.ArrayList<Stack>(stacks.length));
         for (Stack value : stacks) {
             getStacks().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeStacksResult {
      *         together. 
      */
     public DescribeStacksResult withStacks(java.util.Collection<Stack> stacks) {
-        java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>();
-        if (stacks != null) {
+        if (stacks == null) {
+            this.stacks = null;
+        } else {
+            java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>(stacks.size());
             stacksCopy.addAll(stacks);
+            this.stacks = stacksCopy;
         }
-        this.stacks = stacksCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeStacksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Stacks: " + stacks + ", ");
+        if (stacks != null) sb.append("Stacks: " + stacks + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStacks() == null) ? 0 : getStacks().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeStacksResult == false) return false;
+        DescribeStacksResult other = (DescribeStacksResult)obj;
+        
+        if (other.getStacks() == null ^ this.getStacks() == null) return false;
+        if (other.getStacks() != null && other.getStacks().equals(this.getStacks()) == false) return false; 
+        return true;
     }
     
 }

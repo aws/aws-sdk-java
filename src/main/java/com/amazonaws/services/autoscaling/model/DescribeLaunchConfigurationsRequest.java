@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,10 +70,13 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      * @param launchConfigurationNames A list of launch configuration names.
      */
     public void setLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
-        java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>();
-        if (launchConfigurationNames != null) {
-            launchConfigurationNamesCopy.addAll(launchConfigurationNames);
+        if (launchConfigurationNames == null) {
+            this.launchConfigurationNames = null;
+            return;
         }
+
+        java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>(launchConfigurationNames.size());
+        launchConfigurationNamesCopy.addAll(launchConfigurationNames);
         this.launchConfigurationNames = launchConfigurationNamesCopy;
     }
     
@@ -88,7 +91,7 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(String... launchConfigurationNames) {
-        if (getLaunchConfigurationNames() == null) setLaunchConfigurationNames(new java.util.ArrayList<String>());
+        if (getLaunchConfigurationNames() == null) setLaunchConfigurationNames(new java.util.ArrayList<String>(launchConfigurationNames.length));
         for (String value : launchConfigurationNames) {
             getLaunchConfigurationNames().add(value);
         }
@@ -106,11 +109,13 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeLaunchConfigurationsRequest withLaunchConfigurationNames(java.util.Collection<String> launchConfigurationNames) {
-        java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>();
-        if (launchConfigurationNames != null) {
+        if (launchConfigurationNames == null) {
+            this.launchConfigurationNames = null;
+        } else {
+            java.util.List<String> launchConfigurationNamesCopy = new java.util.ArrayList<String>(launchConfigurationNames.size());
             launchConfigurationNamesCopy.addAll(launchConfigurationNames);
+            this.launchConfigurationNames = launchConfigurationNamesCopy;
         }
-        this.launchConfigurationNames = launchConfigurationNamesCopy;
 
         return this;
     }
@@ -213,11 +218,39 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LaunchConfigurationNames: " + launchConfigurationNames + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
+        if (launchConfigurationNames != null) sb.append("LaunchConfigurationNames: " + launchConfigurationNames + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLaunchConfigurationNames() == null) ? 0 : getLaunchConfigurationNames().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLaunchConfigurationsRequest == false) return false;
+        DescribeLaunchConfigurationsRequest other = (DescribeLaunchConfigurationsRequest)obj;
+        
+        if (other.getLaunchConfigurationNames() == null ^ this.getLaunchConfigurationNames() == null) return false;
+        if (other.getLaunchConfigurationNames() != null && other.getLaunchConfigurationNames().equals(this.getLaunchConfigurationNames()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        return true;
     }
     
 }

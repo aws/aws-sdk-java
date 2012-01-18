@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -213,10 +213,35 @@ public class Change {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Action: " + action + ", ");
-        sb.append("ResourceRecordSet: " + resourceRecordSet + ", ");
+        if (action != null) sb.append("Action: " + action + ", ");
+        if (resourceRecordSet != null) sb.append("ResourceRecordSet: " + resourceRecordSet + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceRecordSet() == null) ? 0 : getResourceRecordSet().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Change == false) return false;
+        Change other = (Change)obj;
+        
+        if (other.getAction() == null ^ this.getAction() == null) return false;
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false) return false; 
+        if (other.getResourceRecordSet() == null ^ this.getResourceRecordSet() == null) return false;
+        if (other.getResourceRecordSet() != null && other.getResourceRecordSet().equals(this.getResourceRecordSet()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -135,10 +135,35 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("QueueName: " + queueName + ", ");
-        sb.append("QueueOwnerAWSAccountId: " + queueOwnerAWSAccountId + ", ");
+        if (queueName != null) sb.append("QueueName: " + queueName + ", ");
+        if (queueOwnerAWSAccountId != null) sb.append("QueueOwnerAWSAccountId: " + queueOwnerAWSAccountId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getQueueName() == null) ? 0 : getQueueName().hashCode()); 
+        hashCode = prime * hashCode + ((getQueueOwnerAWSAccountId() == null) ? 0 : getQueueOwnerAWSAccountId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetQueueUrlRequest == false) return false;
+        GetQueueUrlRequest other = (GetQueueUrlRequest)obj;
+        
+        if (other.getQueueName() == null ^ this.getQueueName() == null) return false;
+        if (other.getQueueName() != null && other.getQueueName().equals(this.getQueueName()) == false) return false; 
+        if (other.getQueueOwnerAWSAccountId() == null ^ this.getQueueOwnerAWSAccountId() == null) return false;
+        if (other.getQueueOwnerAWSAccountId() != null && other.getQueueOwnerAWSAccountId().equals(this.getQueueOwnerAWSAccountId()) == false) return false; 
+        return true;
     }
     
 }

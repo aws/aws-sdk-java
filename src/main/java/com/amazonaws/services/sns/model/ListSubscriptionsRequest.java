@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -19,10 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
  * <p>
  * The ListSubscriptions action returns a list of the requester's
- * subscriptions. Each call returns a limited list of subscriptions. If
- * there are more subscriptions, a NextToken is also returned. Use the
- * NextToken parameter in a new ListSubscriptions call to get further
- * results.
+ * subscriptions. Each call returns a limited list of subscriptions, up
+ * to 100. If there are more subscriptions, a NextToken is also returned.
+ * Use the NextToken parameter in a new ListSubscriptions call to get
+ * further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)
@@ -100,9 +100,31 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListSubscriptionsRequest == false) return false;
+        ListSubscriptionsRequest other = (ListSubscriptionsRequest)obj;
+        
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

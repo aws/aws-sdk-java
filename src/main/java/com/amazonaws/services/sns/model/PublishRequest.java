@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,6 +51,29 @@ public class PublishRequest extends AmazonWebServiceRequest {
      * long.
      */
     private String subject;
+
+    /**
+     * Optional parameter. It will have one valid value: "json". If this
+     * option, Message is present and set to "json", the value of Message
+     * must: be a syntactically valid JSON object. It must contain at least a
+     * top level JSON key of "default" with a value that is a string. For any
+     * other top level key that matches one of our transport protocols (e.g.
+     * "http"), then the corresponding value (if it is a string) will be used
+     * for the message published for that protocol <p>Constraints: Keys in
+     * the JSON object that correspond to supported transport protocols must
+     * have simple JSON string values. The values will be parsed (unescaped)
+     * before they are used in outgoing messages. Typically, outbound
+     * notifications are JSON encoded (meaning, the characters will be
+     * reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     * length of 0 (the empty string, "", is allowed). Values have a maximum
+     * length bounded by the overall message size (so, including multiple
+     * protocols may limit message sizes). Non-string values will cause the
+     * key to be ignored. Keys that do not correspond to supported transport
+     * protocols will be ignored. Duplicate keys are not allowed. Failure to
+     * parse or validate any key or value in the message will cause the
+     * Publish call to return an error (no partial delivery).
+     */
+    private String messageStructure;
 
     /**
      * Default constructor for a new PublishRequest object.  Callers should use the
@@ -251,6 +274,148 @@ public class PublishRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Optional parameter. It will have one valid value: "json". If this
+     * option, Message is present and set to "json", the value of Message
+     * must: be a syntactically valid JSON object. It must contain at least a
+     * top level JSON key of "default" with a value that is a string. For any
+     * other top level key that matches one of our transport protocols (e.g.
+     * "http"), then the corresponding value (if it is a string) will be used
+     * for the message published for that protocol <p>Constraints: Keys in
+     * the JSON object that correspond to supported transport protocols must
+     * have simple JSON string values. The values will be parsed (unescaped)
+     * before they are used in outgoing messages. Typically, outbound
+     * notifications are JSON encoded (meaning, the characters will be
+     * reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     * length of 0 (the empty string, "", is allowed). Values have a maximum
+     * length bounded by the overall message size (so, including multiple
+     * protocols may limit message sizes). Non-string values will cause the
+     * key to be ignored. Keys that do not correspond to supported transport
+     * protocols will be ignored. Duplicate keys are not allowed. Failure to
+     * parse or validate any key or value in the message will cause the
+     * Publish call to return an error (no partial delivery).
+     *
+     * @return Optional parameter. It will have one valid value: "json". If this
+     *         option, Message is present and set to "json", the value of Message
+     *         must: be a syntactically valid JSON object. It must contain at least a
+     *         top level JSON key of "default" with a value that is a string. For any
+     *         other top level key that matches one of our transport protocols (e.g.
+     *         "http"), then the corresponding value (if it is a string) will be used
+     *         for the message published for that protocol <p>Constraints: Keys in
+     *         the JSON object that correspond to supported transport protocols must
+     *         have simple JSON string values. The values will be parsed (unescaped)
+     *         before they are used in outgoing messages. Typically, outbound
+     *         notifications are JSON encoded (meaning, the characters will be
+     *         reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     *         length of 0 (the empty string, "", is allowed). Values have a maximum
+     *         length bounded by the overall message size (so, including multiple
+     *         protocols may limit message sizes). Non-string values will cause the
+     *         key to be ignored. Keys that do not correspond to supported transport
+     *         protocols will be ignored. Duplicate keys are not allowed. Failure to
+     *         parse or validate any key or value in the message will cause the
+     *         Publish call to return an error (no partial delivery).
+     */
+    public String getMessageStructure() {
+        return messageStructure;
+    }
+    
+    /**
+     * Optional parameter. It will have one valid value: "json". If this
+     * option, Message is present and set to "json", the value of Message
+     * must: be a syntactically valid JSON object. It must contain at least a
+     * top level JSON key of "default" with a value that is a string. For any
+     * other top level key that matches one of our transport protocols (e.g.
+     * "http"), then the corresponding value (if it is a string) will be used
+     * for the message published for that protocol <p>Constraints: Keys in
+     * the JSON object that correspond to supported transport protocols must
+     * have simple JSON string values. The values will be parsed (unescaped)
+     * before they are used in outgoing messages. Typically, outbound
+     * notifications are JSON encoded (meaning, the characters will be
+     * reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     * length of 0 (the empty string, "", is allowed). Values have a maximum
+     * length bounded by the overall message size (so, including multiple
+     * protocols may limit message sizes). Non-string values will cause the
+     * key to be ignored. Keys that do not correspond to supported transport
+     * protocols will be ignored. Duplicate keys are not allowed. Failure to
+     * parse or validate any key or value in the message will cause the
+     * Publish call to return an error (no partial delivery).
+     *
+     * @param messageStructure Optional parameter. It will have one valid value: "json". If this
+     *         option, Message is present and set to "json", the value of Message
+     *         must: be a syntactically valid JSON object. It must contain at least a
+     *         top level JSON key of "default" with a value that is a string. For any
+     *         other top level key that matches one of our transport protocols (e.g.
+     *         "http"), then the corresponding value (if it is a string) will be used
+     *         for the message published for that protocol <p>Constraints: Keys in
+     *         the JSON object that correspond to supported transport protocols must
+     *         have simple JSON string values. The values will be parsed (unescaped)
+     *         before they are used in outgoing messages. Typically, outbound
+     *         notifications are JSON encoded (meaning, the characters will be
+     *         reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     *         length of 0 (the empty string, "", is allowed). Values have a maximum
+     *         length bounded by the overall message size (so, including multiple
+     *         protocols may limit message sizes). Non-string values will cause the
+     *         key to be ignored. Keys that do not correspond to supported transport
+     *         protocols will be ignored. Duplicate keys are not allowed. Failure to
+     *         parse or validate any key or value in the message will cause the
+     *         Publish call to return an error (no partial delivery).
+     */
+    public void setMessageStructure(String messageStructure) {
+        this.messageStructure = messageStructure;
+    }
+    
+    /**
+     * Optional parameter. It will have one valid value: "json". If this
+     * option, Message is present and set to "json", the value of Message
+     * must: be a syntactically valid JSON object. It must contain at least a
+     * top level JSON key of "default" with a value that is a string. For any
+     * other top level key that matches one of our transport protocols (e.g.
+     * "http"), then the corresponding value (if it is a string) will be used
+     * for the message published for that protocol <p>Constraints: Keys in
+     * the JSON object that correspond to supported transport protocols must
+     * have simple JSON string values. The values will be parsed (unescaped)
+     * before they are used in outgoing messages. Typically, outbound
+     * notifications are JSON encoded (meaning, the characters will be
+     * reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     * length of 0 (the empty string, "", is allowed). Values have a maximum
+     * length bounded by the overall message size (so, including multiple
+     * protocols may limit message sizes). Non-string values will cause the
+     * key to be ignored. Keys that do not correspond to supported transport
+     * protocols will be ignored. Duplicate keys are not allowed. Failure to
+     * parse or validate any key or value in the message will cause the
+     * Publish call to return an error (no partial delivery).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param messageStructure Optional parameter. It will have one valid value: "json". If this
+     *         option, Message is present and set to "json", the value of Message
+     *         must: be a syntactically valid JSON object. It must contain at least a
+     *         top level JSON key of "default" with a value that is a string. For any
+     *         other top level key that matches one of our transport protocols (e.g.
+     *         "http"), then the corresponding value (if it is a string) will be used
+     *         for the message published for that protocol <p>Constraints: Keys in
+     *         the JSON object that correspond to supported transport protocols must
+     *         have simple JSON string values. The values will be parsed (unescaped)
+     *         before they are used in outgoing messages. Typically, outbound
+     *         notifications are JSON encoded (meaning, the characters will be
+     *         reescaped for sending). JSON strings are UTF-8. Values have a minimum
+     *         length of 0 (the empty string, "", is allowed). Values have a maximum
+     *         length bounded by the overall message size (so, including multiple
+     *         protocols may limit message sizes). Non-string values will cause the
+     *         key to be ignored. Keys that do not correspond to supported transport
+     *         protocols will be ignored. Duplicate keys are not allowed. Failure to
+     *         parse or validate any key or value in the message will cause the
+     *         Publish call to return an error (no partial delivery).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PublishRequest withMessageStructure(String messageStructure) {
+        this.messageStructure = messageStructure;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -262,11 +427,43 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TopicArn: " + topicArn + ", ");
-        sb.append("Message: " + message + ", ");
-        sb.append("Subject: " + subject + ", ");
+        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
+        if (subject != null) sb.append("Subject: " + subject + ", ");
+        if (messageStructure != null) sb.append("MessageStructure: " + messageStructure + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode()); 
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode()); 
+        hashCode = prime * hashCode + ((getMessageStructure() == null) ? 0 : getMessageStructure().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PublishRequest == false) return false;
+        PublishRequest other = (PublishRequest)obj;
+        
+        if (other.getTopicArn() == null ^ this.getTopicArn() == null) return false;
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false) return false; 
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getSubject() == null ^ this.getSubject() == null) return false;
+        if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false) return false; 
+        if (other.getMessageStructure() == null ^ this.getMessageStructure() == null) return false;
+        if (other.getMessageStructure() != null && other.getMessageStructure().equals(this.getMessageStructure()) == false) return false; 
+        return true;
     }
     
 }

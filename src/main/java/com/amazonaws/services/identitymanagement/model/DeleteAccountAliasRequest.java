@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -115,9 +115,31 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AccountAlias: " + accountAlias + ", ");
+        if (accountAlias != null) sb.append("AccountAlias: " + accountAlias + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAccountAlias() == null) ? 0 : getAccountAlias().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeleteAccountAliasRequest == false) return false;
+        DeleteAccountAliasRequest other = (DeleteAccountAliasRequest)obj;
+        
+        if (other.getAccountAlias() == null ^ this.getAccountAlias() == null) return false;
+        if (other.getAccountAlias() != null && other.getAccountAlias().equals(this.getAccountAlias()) == false) return false; 
+        return true;
     }
     
 }

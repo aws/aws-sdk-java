@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeAddressesResult {
      * @param addresses The list of Elastic IPs.
      */
     public void setAddresses(java.util.Collection<Address> addresses) {
-        java.util.List<Address> addressesCopy = new java.util.ArrayList<Address>();
-        if (addresses != null) {
-            addressesCopy.addAll(addresses);
+        if (addresses == null) {
+            this.addresses = null;
+            return;
         }
+
+        java.util.List<Address> addressesCopy = new java.util.ArrayList<Address>(addresses.size());
+        addressesCopy.addAll(addresses);
         this.addresses = addressesCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeAddressesResult {
      *         together. 
      */
     public DescribeAddressesResult withAddresses(Address... addresses) {
-        if (getAddresses() == null) setAddresses(new java.util.ArrayList<Address>());
+        if (getAddresses() == null) setAddresses(new java.util.ArrayList<Address>(addresses.length));
         for (Address value : addresses) {
             getAddresses().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeAddressesResult {
      *         together. 
      */
     public DescribeAddressesResult withAddresses(java.util.Collection<Address> addresses) {
-        java.util.List<Address> addressesCopy = new java.util.ArrayList<Address>();
-        if (addresses != null) {
+        if (addresses == null) {
+            this.addresses = null;
+        } else {
+            java.util.List<Address> addressesCopy = new java.util.ArrayList<Address>(addresses.size());
             addressesCopy.addAll(addresses);
+            this.addresses = addressesCopy;
         }
-        this.addresses = addressesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeAddressesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Addresses: " + addresses + ", ");
+        if (addresses != null) sb.append("Addresses: " + addresses + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAddresses() == null) ? 0 : getAddresses().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAddressesResult == false) return false;
+        DescribeAddressesResult other = (DescribeAddressesResult)obj;
+        
+        if (other.getAddresses() == null ^ this.getAddresses() == null) return false;
+        if (other.getAddresses() != null && other.getAddresses().equals(this.getAddresses()) == false) return false; 
+        return true;
     }
     
 }

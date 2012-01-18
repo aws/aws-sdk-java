@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -469,10 +469,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         contain two consecutive hyphens</li> </ul>
      */
     public void setDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
-        java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>();
-        if (dBSecurityGroups != null) {
-            dBSecurityGroupsCopy.addAll(dBSecurityGroups);
+        if (dBSecurityGroups == null) {
+            this.dBSecurityGroups = null;
+            return;
         }
+
+        java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
+        dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
     
@@ -495,7 +498,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyDBInstanceRequest withDBSecurityGroups(String... dBSecurityGroups) {
-        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<String>());
+        if (getDBSecurityGroups() == null) setDBSecurityGroups(new java.util.ArrayList<String>(dBSecurityGroups.length));
         for (String value : dBSecurityGroups) {
             getDBSecurityGroups().add(value);
         }
@@ -521,11 +524,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public ModifyDBInstanceRequest withDBSecurityGroups(java.util.Collection<String> dBSecurityGroups) {
-        java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>();
-        if (dBSecurityGroups != null) {
+        if (dBSecurityGroups == null) {
+            this.dBSecurityGroups = null;
+        } else {
+            java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
+            this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
-        this.dBSecurityGroups = dBSecurityGroupsCopy;
 
         return this;
     }
@@ -1218,22 +1223,83 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        sb.append("AllocatedStorage: " + allocatedStorage + ", ");
-        sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
-        sb.append("ApplyImmediately: " + applyImmediately + ", ");
-        sb.append("MasterUserPassword: " + masterUserPassword + ", ");
-        sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
-        sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
-        sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
-        sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        sb.append("MultiAZ: " + multiAZ + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
-        sb.append("AllowMajorVersionUpgrade: " + allowMajorVersionUpgrade + ", ");
-        sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        if (allocatedStorage != null) sb.append("AllocatedStorage: " + allocatedStorage + ", ");
+        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
+        if (dBSecurityGroups != null) sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
+        if (applyImmediately != null) sb.append("ApplyImmediately: " + applyImmediately + ", ");
+        if (masterUserPassword != null) sb.append("MasterUserPassword: " + masterUserPassword + ", ");
+        if (dBParameterGroupName != null) sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
+        if (backupRetentionPeriod != null) sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
+        if (preferredBackupWindow != null) sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
+        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
+        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (allowMajorVersionUpgrade != null) sb.append("AllowMajorVersionUpgrade: " + allowMajorVersionUpgrade + ", ");
+        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((isApplyImmediately() == null) ? 0 : isApplyImmediately().hashCode()); 
+        hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode()); 
+        hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode()); 
+        hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
+        hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((isAllowMajorVersionUpgrade() == null) ? 0 : isAllowMajorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ModifyDBInstanceRequest == false) return false;
+        ModifyDBInstanceRequest other = (ModifyDBInstanceRequest)obj;
+        
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null) return false;
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false) return false; 
+        if (other.getDBInstanceClass() == null ^ this.getDBInstanceClass() == null) return false;
+        if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
+        if (other.getDBSecurityGroups() == null ^ this.getDBSecurityGroups() == null) return false;
+        if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false) return false; 
+        if (other.isApplyImmediately() == null ^ this.isApplyImmediately() == null) return false;
+        if (other.isApplyImmediately() != null && other.isApplyImmediately().equals(this.isApplyImmediately()) == false) return false; 
+        if (other.getMasterUserPassword() == null ^ this.getMasterUserPassword() == null) return false;
+        if (other.getMasterUserPassword() != null && other.getMasterUserPassword().equals(this.getMasterUserPassword()) == false) return false; 
+        if (other.getDBParameterGroupName() == null ^ this.getDBParameterGroupName() == null) return false;
+        if (other.getDBParameterGroupName() != null && other.getDBParameterGroupName().equals(this.getDBParameterGroupName()) == false) return false; 
+        if (other.getBackupRetentionPeriod() == null ^ this.getBackupRetentionPeriod() == null) return false;
+        if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false) return false; 
+        if (other.getPreferredBackupWindow() == null ^ this.getPreferredBackupWindow() == null) return false;
+        if (other.getPreferredBackupWindow() != null && other.getPreferredBackupWindow().equals(this.getPreferredBackupWindow()) == false) return false; 
+        if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
+        if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
+        if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
+        if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.isAllowMajorVersionUpgrade() == null ^ this.isAllowMajorVersionUpgrade() == null) return false;
+        if (other.isAllowMajorVersionUpgrade() != null && other.isAllowMajorVersionUpgrade().equals(this.isAllowMajorVersionUpgrade()) == false) return false; 
+        if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
+        if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        return true;
     }
     
 }

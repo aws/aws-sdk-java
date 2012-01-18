@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,10 +85,13 @@ public class DescribeDBSnapshotsResult {
      * @param dBSnapshots A list of <a>DBSnapshot</a> instances.
      */
     public void setDBSnapshots(java.util.Collection<DBSnapshot> dBSnapshots) {
-        java.util.List<DBSnapshot> dBSnapshotsCopy = new java.util.ArrayList<DBSnapshot>();
-        if (dBSnapshots != null) {
-            dBSnapshotsCopy.addAll(dBSnapshots);
+        if (dBSnapshots == null) {
+            this.dBSnapshots = null;
+            return;
         }
+
+        java.util.List<DBSnapshot> dBSnapshotsCopy = new java.util.ArrayList<DBSnapshot>(dBSnapshots.size());
+        dBSnapshotsCopy.addAll(dBSnapshots);
         this.dBSnapshots = dBSnapshotsCopy;
     }
     
@@ -103,7 +106,7 @@ public class DescribeDBSnapshotsResult {
      *         together. 
      */
     public DescribeDBSnapshotsResult withDBSnapshots(DBSnapshot... dBSnapshots) {
-        if (getDBSnapshots() == null) setDBSnapshots(new java.util.ArrayList<DBSnapshot>());
+        if (getDBSnapshots() == null) setDBSnapshots(new java.util.ArrayList<DBSnapshot>(dBSnapshots.length));
         for (DBSnapshot value : dBSnapshots) {
             getDBSnapshots().add(value);
         }
@@ -121,11 +124,13 @@ public class DescribeDBSnapshotsResult {
      *         together. 
      */
     public DescribeDBSnapshotsResult withDBSnapshots(java.util.Collection<DBSnapshot> dBSnapshots) {
-        java.util.List<DBSnapshot> dBSnapshotsCopy = new java.util.ArrayList<DBSnapshot>();
-        if (dBSnapshots != null) {
+        if (dBSnapshots == null) {
+            this.dBSnapshots = null;
+        } else {
+            java.util.List<DBSnapshot> dBSnapshotsCopy = new java.util.ArrayList<DBSnapshot>(dBSnapshots.size());
             dBSnapshotsCopy.addAll(dBSnapshots);
+            this.dBSnapshots = dBSnapshotsCopy;
         }
-        this.dBSnapshots = dBSnapshotsCopy;
 
         return this;
     }
@@ -142,10 +147,35 @@ public class DescribeDBSnapshotsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("DBSnapshots: " + dBSnapshots + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (dBSnapshots != null) sb.append("DBSnapshots: " + dBSnapshots + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSnapshots() == null) ? 0 : getDBSnapshots().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeDBSnapshotsResult == false) return false;
+        DescribeDBSnapshotsResult other = (DescribeDBSnapshotsResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getDBSnapshots() == null ^ this.getDBSnapshots() == null) return false;
+        if (other.getDBSnapshots() != null && other.getDBSnapshots().equals(this.getDBSnapshots()) == false) return false; 
+        return true;
     }
     
 }

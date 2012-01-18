@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -98,10 +98,13 @@ public class ListResourceRecordSetsResult {
      *         sets that are returned by the request.
      */
     public void setResourceRecordSets(java.util.Collection<ResourceRecordSet> resourceRecordSets) {
-        java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>();
-        if (resourceRecordSets != null) {
-            resourceRecordSetsCopy.addAll(resourceRecordSets);
+        if (resourceRecordSets == null) {
+            this.resourceRecordSets = null;
+            return;
         }
+
+        java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.size());
+        resourceRecordSetsCopy.addAll(resourceRecordSets);
         this.resourceRecordSets = resourceRecordSetsCopy;
     }
     
@@ -118,7 +121,7 @@ public class ListResourceRecordSetsResult {
      *         together. 
      */
     public ListResourceRecordSetsResult withResourceRecordSets(ResourceRecordSet... resourceRecordSets) {
-        if (getResourceRecordSets() == null) setResourceRecordSets(new java.util.ArrayList<ResourceRecordSet>());
+        if (getResourceRecordSets() == null) setResourceRecordSets(new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.length));
         for (ResourceRecordSet value : resourceRecordSets) {
             getResourceRecordSets().add(value);
         }
@@ -138,11 +141,13 @@ public class ListResourceRecordSetsResult {
      *         together. 
      */
     public ListResourceRecordSetsResult withResourceRecordSets(java.util.Collection<ResourceRecordSet> resourceRecordSets) {
-        java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>();
-        if (resourceRecordSets != null) {
+        if (resourceRecordSets == null) {
+            this.resourceRecordSets = null;
+        } else {
+            java.util.List<ResourceRecordSet> resourceRecordSetsCopy = new java.util.ArrayList<ResourceRecordSet>(resourceRecordSets.size());
             resourceRecordSetsCopy.addAll(resourceRecordSets);
+            this.resourceRecordSets = resourceRecordSetsCopy;
         }
-        this.resourceRecordSets = resourceRecordSetsCopy;
 
         return this;
     }
@@ -493,14 +498,51 @@ public class ListResourceRecordSetsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ResourceRecordSets: " + resourceRecordSets + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("NextRecordName: " + nextRecordName + ", ");
-        sb.append("NextRecordType: " + nextRecordType + ", ");
-        sb.append("NextRecordIdentifier: " + nextRecordIdentifier + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
+        if (resourceRecordSets != null) sb.append("ResourceRecordSets: " + resourceRecordSets + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (nextRecordName != null) sb.append("NextRecordName: " + nextRecordName + ", ");
+        if (nextRecordType != null) sb.append("NextRecordType: " + nextRecordType + ", ");
+        if (nextRecordIdentifier != null) sb.append("NextRecordIdentifier: " + nextRecordIdentifier + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getResourceRecordSets() == null) ? 0 : getResourceRecordSets().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getNextRecordName() == null) ? 0 : getNextRecordName().hashCode()); 
+        hashCode = prime * hashCode + ((getNextRecordType() == null) ? 0 : getNextRecordType().hashCode()); 
+        hashCode = prime * hashCode + ((getNextRecordIdentifier() == null) ? 0 : getNextRecordIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListResourceRecordSetsResult == false) return false;
+        ListResourceRecordSetsResult other = (ListResourceRecordSetsResult)obj;
+        
+        if (other.getResourceRecordSets() == null ^ this.getResourceRecordSets() == null) return false;
+        if (other.getResourceRecordSets() != null && other.getResourceRecordSets().equals(this.getResourceRecordSets()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getNextRecordName() == null ^ this.getNextRecordName() == null) return false;
+        if (other.getNextRecordName() != null && other.getNextRecordName().equals(this.getNextRecordName()) == false) return false; 
+        if (other.getNextRecordType() == null ^ this.getNextRecordType() == null) return false;
+        if (other.getNextRecordType() != null && other.getNextRecordType().equals(this.getNextRecordType()) == false) return false; 
+        if (other.getNextRecordIdentifier() == null ^ this.getNextRecordIdentifier() == null) return false;
+        if (other.getNextRecordIdentifier() != null && other.getNextRecordIdentifier().equals(this.getNextRecordIdentifier()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        return true;
     }
     
 }

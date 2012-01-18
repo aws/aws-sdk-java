@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -252,12 +252,43 @@ public class CreateRouteRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("RouteTableId: " + routeTableId + ", ");
-        sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
-        sb.append("GatewayId: " + gatewayId + ", ");
-        sb.append("InstanceId: " + instanceId + ", ");
+        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
+        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateRouteRequest == false) return false;
+        CreateRouteRequest other = (CreateRouteRequest)obj;
+        
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null) return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false) return false; 
+        if (other.getDestinationCidrBlock() == null ^ this.getDestinationCidrBlock() == null) return false;
+        if (other.getDestinationCidrBlock() != null && other.getDestinationCidrBlock().equals(this.getDestinationCidrBlock()) == false) return false; 
+        if (other.getGatewayId() == null ^ this.getGatewayId() == null) return false;
+        if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false) return false; 
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        return true;
     }
     
 }

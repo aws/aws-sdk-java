@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -92,10 +92,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * @param spotInstanceRequestIds The ID of the request.
      */
     public void setSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>();
-        if (spotInstanceRequestIds != null) {
-            spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
+        if (spotInstanceRequestIds == null) {
+            this.spotInstanceRequestIds = null;
+            return;
         }
+
+        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
+        spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
         this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
     }
     
@@ -110,7 +113,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(String... spotInstanceRequestIds) {
-        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>());
+        if (getSpotInstanceRequestIds() == null) setSpotInstanceRequestIds(new java.util.ArrayList<String>(spotInstanceRequestIds.length));
         for (String value : spotInstanceRequestIds) {
             getSpotInstanceRequestIds().add(value);
         }
@@ -128,11 +131,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withSpotInstanceRequestIds(java.util.Collection<String> spotInstanceRequestIds) {
-        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>();
-        if (spotInstanceRequestIds != null) {
+        if (spotInstanceRequestIds == null) {
+            this.spotInstanceRequestIds = null;
+        } else {
+            java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
             spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
+            this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
         }
-        this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
 
         return this;
     }
@@ -172,10 +177,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -198,7 +206,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -224,11 +232,13 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public DescribeSpotInstanceRequestsRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -245,10 +255,35 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (spotInstanceRequestIds != null) sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSpotInstanceRequestIds() == null) ? 0 : getSpotInstanceRequestIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSpotInstanceRequestsRequest == false) return false;
+        DescribeSpotInstanceRequestsRequest other = (DescribeSpotInstanceRequestsRequest)obj;
+        
+        if (other.getSpotInstanceRequestIds() == null ^ this.getSpotInstanceRequestIds() == null) return false;
+        if (other.getSpotInstanceRequestIds() != null && other.getSpotInstanceRequestIds().equals(this.getSpotInstanceRequestIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

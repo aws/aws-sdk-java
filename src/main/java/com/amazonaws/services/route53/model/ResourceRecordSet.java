@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -430,10 +430,13 @@ public class ResourceRecordSet {
      *         resource record set.
      */
     public void setResourceRecords(java.util.Collection<ResourceRecord> resourceRecords) {
-        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>();
-        if (resourceRecords != null) {
-            resourceRecordsCopy.addAll(resourceRecords);
+        if (resourceRecords == null) {
+            this.resourceRecords = null;
+            return;
         }
+
+        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>(resourceRecords.size());
+        resourceRecordsCopy.addAll(resourceRecords);
         this.resourceRecords = resourceRecordsCopy;
     }
     
@@ -453,7 +456,7 @@ public class ResourceRecordSet {
      *         together. 
      */
     public ResourceRecordSet withResourceRecords(ResourceRecord... resourceRecords) {
-        if (getResourceRecords() == null) setResourceRecords(new java.util.ArrayList<ResourceRecord>());
+        if (getResourceRecords() == null) setResourceRecords(new java.util.ArrayList<ResourceRecord>(resourceRecords.length));
         for (ResourceRecord value : resourceRecords) {
             getResourceRecords().add(value);
         }
@@ -476,11 +479,13 @@ public class ResourceRecordSet {
      *         together. 
      */
     public ResourceRecordSet withResourceRecords(java.util.Collection<ResourceRecord> resourceRecords) {
-        java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>();
-        if (resourceRecords != null) {
+        if (resourceRecords == null) {
+            this.resourceRecords = null;
+        } else {
+            java.util.List<ResourceRecord> resourceRecordsCopy = new java.util.ArrayList<ResourceRecord>(resourceRecords.size());
             resourceRecordsCopy.addAll(resourceRecords);
+            this.resourceRecords = resourceRecordsCopy;
         }
-        this.resourceRecords = resourceRecordsCopy;
 
         return this;
     }
@@ -537,15 +542,55 @@ public class ResourceRecordSet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("Type: " + type + ", ");
-        sb.append("SetIdentifier: " + setIdentifier + ", ");
-        sb.append("Weight: " + weight + ", ");
-        sb.append("TTL: " + tTL + ", ");
-        sb.append("ResourceRecords: " + resourceRecords + ", ");
-        sb.append("AliasTarget: " + aliasTarget + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (type != null) sb.append("Type: " + type + ", ");
+        if (setIdentifier != null) sb.append("SetIdentifier: " + setIdentifier + ", ");
+        if (weight != null) sb.append("Weight: " + weight + ", ");
+        if (tTL != null) sb.append("TTL: " + tTL + ", ");
+        if (resourceRecords != null) sb.append("ResourceRecords: " + resourceRecords + ", ");
+        if (aliasTarget != null) sb.append("AliasTarget: " + aliasTarget + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
+        hashCode = prime * hashCode + ((getSetIdentifier() == null) ? 0 : getSetIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getWeight() == null) ? 0 : getWeight().hashCode()); 
+        hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode()); 
+        hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ResourceRecordSet == false) return false;
+        ResourceRecordSet other = (ResourceRecordSet)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getType() == null ^ this.getType() == null) return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
+        if (other.getSetIdentifier() == null ^ this.getSetIdentifier() == null) return false;
+        if (other.getSetIdentifier() != null && other.getSetIdentifier().equals(this.getSetIdentifier()) == false) return false; 
+        if (other.getWeight() == null ^ this.getWeight() == null) return false;
+        if (other.getWeight() != null && other.getWeight().equals(this.getWeight()) == false) return false; 
+        if (other.getTTL() == null ^ this.getTTL() == null) return false;
+        if (other.getTTL() != null && other.getTTL().equals(this.getTTL()) == false) return false; 
+        if (other.getResourceRecords() == null ^ this.getResourceRecords() == null) return false;
+        if (other.getResourceRecords() != null && other.getResourceRecords().equals(this.getResourceRecords()) == false) return false; 
+        if (other.getAliasTarget() == null ^ this.getAliasTarget() == null) return false;
+        if (other.getAliasTarget() != null && other.getAliasTarget().equals(this.getAliasTarget()) == false) return false; 
+        return true;
     }
     
 }

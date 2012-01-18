@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -247,12 +247,43 @@ public class EnvironmentInfoDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InfoType: " + infoType + ", ");
-        sb.append("Ec2InstanceId: " + ec2InstanceId + ", ");
-        sb.append("SampleTimestamp: " + sampleTimestamp + ", ");
-        sb.append("Message: " + message + ", ");
+        if (infoType != null) sb.append("InfoType: " + infoType + ", ");
+        if (ec2InstanceId != null) sb.append("Ec2InstanceId: " + ec2InstanceId + ", ");
+        if (sampleTimestamp != null) sb.append("SampleTimestamp: " + sampleTimestamp + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInfoType() == null) ? 0 : getInfoType().hashCode()); 
+        hashCode = prime * hashCode + ((getEc2InstanceId() == null) ? 0 : getEc2InstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getSampleTimestamp() == null) ? 0 : getSampleTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof EnvironmentInfoDescription == false) return false;
+        EnvironmentInfoDescription other = (EnvironmentInfoDescription)obj;
+        
+        if (other.getInfoType() == null ^ this.getInfoType() == null) return false;
+        if (other.getInfoType() != null && other.getInfoType().equals(this.getInfoType()) == false) return false; 
+        if (other.getEc2InstanceId() == null ^ this.getEc2InstanceId() == null) return false;
+        if (other.getEc2InstanceId() != null && other.getEc2InstanceId().equals(this.getEc2InstanceId()) == false) return false; 
+        if (other.getSampleTimestamp() == null ^ this.getSampleTimestamp() == null) return false;
+        if (other.getSampleTimestamp() != null && other.getSampleTimestamp().equals(this.getSampleTimestamp()) == false) return false; 
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        return true;
     }
     
 }

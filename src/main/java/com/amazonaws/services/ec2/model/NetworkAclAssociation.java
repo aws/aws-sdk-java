@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -144,11 +144,39 @@ public class NetworkAclAssociation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NetworkAclAssociationId: " + networkAclAssociationId + ", ");
-        sb.append("NetworkAclId: " + networkAclId + ", ");
-        sb.append("SubnetId: " + subnetId + ", ");
+        if (networkAclAssociationId != null) sb.append("NetworkAclAssociationId: " + networkAclAssociationId + ", ");
+        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
+        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNetworkAclAssociationId() == null) ? 0 : getNetworkAclAssociationId().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof NetworkAclAssociation == false) return false;
+        NetworkAclAssociation other = (NetworkAclAssociation)obj;
+        
+        if (other.getNetworkAclAssociationId() == null ^ this.getNetworkAclAssociationId() == null) return false;
+        if (other.getNetworkAclAssociationId() != null && other.getNetworkAclAssociationId().equals(this.getNetworkAclAssociationId()) == false) return false; 
+        if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null) return false;
+        if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false) return false; 
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
+        return true;
     }
     
 }

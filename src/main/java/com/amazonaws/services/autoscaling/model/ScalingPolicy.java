@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -392,10 +392,13 @@ public class ScalingPolicy {
      * @param alarms A list of CloudWatch Alarms related to the policy.
      */
     public void setAlarms(java.util.Collection<Alarm> alarms) {
-        java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>();
-        if (alarms != null) {
-            alarmsCopy.addAll(alarms);
+        if (alarms == null) {
+            this.alarms = null;
+            return;
         }
+
+        java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>(alarms.size());
+        alarmsCopy.addAll(alarms);
         this.alarms = alarmsCopy;
     }
     
@@ -410,7 +413,7 @@ public class ScalingPolicy {
      *         together. 
      */
     public ScalingPolicy withAlarms(Alarm... alarms) {
-        if (getAlarms() == null) setAlarms(new java.util.ArrayList<Alarm>());
+        if (getAlarms() == null) setAlarms(new java.util.ArrayList<Alarm>(alarms.length));
         for (Alarm value : alarms) {
             getAlarms().add(value);
         }
@@ -428,11 +431,13 @@ public class ScalingPolicy {
      *         together. 
      */
     public ScalingPolicy withAlarms(java.util.Collection<Alarm> alarms) {
-        java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>();
-        if (alarms != null) {
+        if (alarms == null) {
+            this.alarms = null;
+        } else {
+            java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>(alarms.size());
             alarmsCopy.addAll(alarms);
+            this.alarms = alarmsCopy;
         }
-        this.alarms = alarmsCopy;
 
         return this;
     }
@@ -449,15 +454,55 @@ public class ScalingPolicy {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("PolicyName: " + policyName + ", ");
-        sb.append("ScalingAdjustment: " + scalingAdjustment + ", ");
-        sb.append("AdjustmentType: " + adjustmentType + ", ");
-        sb.append("Cooldown: " + cooldown + ", ");
-        sb.append("PolicyARN: " + policyARN + ", ");
-        sb.append("Alarms: " + alarms + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
+        if (scalingAdjustment != null) sb.append("ScalingAdjustment: " + scalingAdjustment + ", ");
+        if (adjustmentType != null) sb.append("AdjustmentType: " + adjustmentType + ", ");
+        if (cooldown != null) sb.append("Cooldown: " + cooldown + ", ");
+        if (policyARN != null) sb.append("PolicyARN: " + policyARN + ", ");
+        if (alarms != null) sb.append("Alarms: " + alarms + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyName() == null) ? 0 : getPolicyName().hashCode()); 
+        hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode()); 
+        hashCode = prime * hashCode + ((getAdjustmentType() == null) ? 0 : getAdjustmentType().hashCode()); 
+        hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode()); 
+        hashCode = prime * hashCode + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode()); 
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ScalingPolicy == false) return false;
+        ScalingPolicy other = (ScalingPolicy)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getPolicyName() == null ^ this.getPolicyName() == null) return false;
+        if (other.getPolicyName() != null && other.getPolicyName().equals(this.getPolicyName()) == false) return false; 
+        if (other.getScalingAdjustment() == null ^ this.getScalingAdjustment() == null) return false;
+        if (other.getScalingAdjustment() != null && other.getScalingAdjustment().equals(this.getScalingAdjustment()) == false) return false; 
+        if (other.getAdjustmentType() == null ^ this.getAdjustmentType() == null) return false;
+        if (other.getAdjustmentType() != null && other.getAdjustmentType().equals(this.getAdjustmentType()) == false) return false; 
+        if (other.getCooldown() == null ^ this.getCooldown() == null) return false;
+        if (other.getCooldown() != null && other.getCooldown().equals(this.getCooldown()) == false) return false; 
+        if (other.getPolicyARN() == null ^ this.getPolicyARN() == null) return false;
+        if (other.getPolicyARN() != null && other.getPolicyARN().equals(this.getPolicyARN()) == false) return false; 
+        if (other.getAlarms() == null ^ this.getAlarms() == null) return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false) return false; 
+        return true;
     }
     
 }

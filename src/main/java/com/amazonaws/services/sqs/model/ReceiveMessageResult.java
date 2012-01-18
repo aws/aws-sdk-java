@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,10 +43,13 @@ public class ReceiveMessageResult {
      * @param messages A list of messages.
      */
     public void setMessages(java.util.Collection<Message> messages) {
-        java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>();
-        if (messages != null) {
-            messagesCopy.addAll(messages);
+        if (messages == null) {
+            this.messages = null;
+            return;
         }
+
+        java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>(messages.size());
+        messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
     
@@ -61,7 +64,7 @@ public class ReceiveMessageResult {
      *         together. 
      */
     public ReceiveMessageResult withMessages(Message... messages) {
-        if (getMessages() == null) setMessages(new java.util.ArrayList<Message>());
+        if (getMessages() == null) setMessages(new java.util.ArrayList<Message>(messages.length));
         for (Message value : messages) {
             getMessages().add(value);
         }
@@ -79,11 +82,13 @@ public class ReceiveMessageResult {
      *         together. 
      */
     public ReceiveMessageResult withMessages(java.util.Collection<Message> messages) {
-        java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>();
-        if (messages != null) {
+        if (messages == null) {
+            this.messages = null;
+        } else {
+            java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>(messages.size());
             messagesCopy.addAll(messages);
+            this.messages = messagesCopy;
         }
-        this.messages = messagesCopy;
 
         return this;
     }
@@ -100,9 +105,31 @@ public class ReceiveMessageResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Messages: " + messages + ", ");
+        if (messages != null) sb.append("Messages: " + messages + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ReceiveMessageResult == false) return false;
+        ReceiveMessageResult other = (ReceiveMessageResult)obj;
+        
+        if (other.getMessages() == null ^ this.getMessages() == null) return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false) return false; 
+        return true;
     }
     
 }

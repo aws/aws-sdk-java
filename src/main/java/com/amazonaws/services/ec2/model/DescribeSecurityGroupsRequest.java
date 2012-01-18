@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,10 +67,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      * @param groupNames The optional list of Amazon EC2 security groups to describe.
      */
     public void setGroupNames(java.util.Collection<String> groupNames) {
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>();
-        if (groupNames != null) {
-            groupNamesCopy.addAll(groupNames);
+        if (groupNames == null) {
+            this.groupNames = null;
+            return;
         }
+
+        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+        groupNamesCopy.addAll(groupNames);
         this.groupNames = groupNamesCopy;
     }
     
@@ -85,7 +88,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupNames(String... groupNames) {
-        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>());
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
         for (String value : groupNames) {
             getGroupNames().add(value);
         }
@@ -103,11 +106,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupNames(java.util.Collection<String> groupNames) {
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>();
-        if (groupNames != null) {
+        if (groupNames == null) {
+            this.groupNames = null;
+        } else {
+            java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
+            this.groupNames = groupNamesCopy;
         }
-        this.groupNames = groupNamesCopy;
 
         return this;
     }
@@ -131,10 +136,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      * @param groupIds The new value for the GroupIds property for this object.
      */
     public void setGroupIds(java.util.Collection<String> groupIds) {
-        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>();
-        if (groupIds != null) {
-            groupIdsCopy.addAll(groupIds);
+        if (groupIds == null) {
+            this.groupIds = null;
+            return;
         }
+
+        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>(groupIds.size());
+        groupIdsCopy.addAll(groupIds);
         this.groupIds = groupIdsCopy;
     }
     
@@ -149,7 +157,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupIds(String... groupIds) {
-        if (getGroupIds() == null) setGroupIds(new java.util.ArrayList<String>());
+        if (getGroupIds() == null) setGroupIds(new java.util.ArrayList<String>(groupIds.length));
         for (String value : groupIds) {
             getGroupIds().add(value);
         }
@@ -167,11 +175,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withGroupIds(java.util.Collection<String> groupIds) {
-        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>();
-        if (groupIds != null) {
+        if (groupIds == null) {
+            this.groupIds = null;
+        } else {
+            java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>(groupIds.size());
             groupIdsCopy.addAll(groupIds);
+            this.groupIds = groupIdsCopy;
         }
-        this.groupIds = groupIdsCopy;
 
         return this;
     }
@@ -211,10 +221,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -237,7 +250,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -263,11 +276,13 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeSecurityGroupsRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -284,11 +299,39 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("GroupNames: " + groupNames + ", ");
-        sb.append("GroupIds: " + groupIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (groupNames != null) sb.append("GroupNames: " + groupNames + ", ");
+        if (groupIds != null) sb.append("GroupIds: " + groupIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getGroupIds() == null) ? 0 : getGroupIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSecurityGroupsRequest == false) return false;
+        DescribeSecurityGroupsRequest other = (DescribeSecurityGroupsRequest)obj;
+        
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null) return false;
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false) return false; 
+        if (other.getGroupIds() == null ^ this.getGroupIds() == null) return false;
+        if (other.getGroupIds() != null && other.getGroupIds().equals(this.getGroupIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

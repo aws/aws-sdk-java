@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -68,10 +68,13 @@ public class DescribeAutoScalingNotificationTypesResult {
      *         autoscaling:TEST_NOTIFICATION
      */
     public void setAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {
-        java.util.List<String> autoScalingNotificationTypesCopy = new java.util.ArrayList<String>();
-        if (autoScalingNotificationTypes != null) {
-            autoScalingNotificationTypesCopy.addAll(autoScalingNotificationTypes);
+        if (autoScalingNotificationTypes == null) {
+            this.autoScalingNotificationTypes = null;
+            return;
         }
+
+        java.util.List<String> autoScalingNotificationTypesCopy = new java.util.ArrayList<String>(autoScalingNotificationTypes.size());
+        autoScalingNotificationTypesCopy.addAll(autoScalingNotificationTypes);
         this.autoScalingNotificationTypes = autoScalingNotificationTypesCopy;
     }
     
@@ -96,7 +99,7 @@ public class DescribeAutoScalingNotificationTypesResult {
      *         together. 
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(String... autoScalingNotificationTypes) {
-        if (getAutoScalingNotificationTypes() == null) setAutoScalingNotificationTypes(new java.util.ArrayList<String>());
+        if (getAutoScalingNotificationTypes() == null) setAutoScalingNotificationTypes(new java.util.ArrayList<String>(autoScalingNotificationTypes.length));
         for (String value : autoScalingNotificationTypes) {
             getAutoScalingNotificationTypes().add(value);
         }
@@ -124,11 +127,13 @@ public class DescribeAutoScalingNotificationTypesResult {
      *         together. 
      */
     public DescribeAutoScalingNotificationTypesResult withAutoScalingNotificationTypes(java.util.Collection<String> autoScalingNotificationTypes) {
-        java.util.List<String> autoScalingNotificationTypesCopy = new java.util.ArrayList<String>();
-        if (autoScalingNotificationTypes != null) {
+        if (autoScalingNotificationTypes == null) {
+            this.autoScalingNotificationTypes = null;
+        } else {
+            java.util.List<String> autoScalingNotificationTypesCopy = new java.util.ArrayList<String>(autoScalingNotificationTypes.size());
             autoScalingNotificationTypesCopy.addAll(autoScalingNotificationTypes);
+            this.autoScalingNotificationTypes = autoScalingNotificationTypesCopy;
         }
-        this.autoScalingNotificationTypes = autoScalingNotificationTypesCopy;
 
         return this;
     }
@@ -145,9 +150,31 @@ public class DescribeAutoScalingNotificationTypesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingNotificationTypes: " + autoScalingNotificationTypes + ", ");
+        if (autoScalingNotificationTypes != null) sb.append("AutoScalingNotificationTypes: " + autoScalingNotificationTypes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingNotificationTypes() == null) ? 0 : getAutoScalingNotificationTypes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAutoScalingNotificationTypesResult == false) return false;
+        DescribeAutoScalingNotificationTypesResult other = (DescribeAutoScalingNotificationTypesResult)obj;
+        
+        if (other.getAutoScalingNotificationTypes() == null ^ this.getAutoScalingNotificationTypes() == null) return false;
+        if (other.getAutoScalingNotificationTypes() != null && other.getAutoScalingNotificationTypes().equals(this.getAutoScalingNotificationTypes()) == false) return false; 
+        return true;
     }
     
 }

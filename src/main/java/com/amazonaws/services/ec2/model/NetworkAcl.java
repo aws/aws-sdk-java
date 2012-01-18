@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -161,10 +161,13 @@ public class NetworkAcl {
      * @param entries The new value for the Entries property for this object.
      */
     public void setEntries(java.util.Collection<NetworkAclEntry> entries) {
-        java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>();
-        if (entries != null) {
-            entriesCopy.addAll(entries);
+        if (entries == null) {
+            this.entries = null;
+            return;
         }
+
+        java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>(entries.size());
+        entriesCopy.addAll(entries);
         this.entries = entriesCopy;
     }
     
@@ -179,7 +182,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withEntries(NetworkAclEntry... entries) {
-        if (getEntries() == null) setEntries(new java.util.ArrayList<NetworkAclEntry>());
+        if (getEntries() == null) setEntries(new java.util.ArrayList<NetworkAclEntry>(entries.length));
         for (NetworkAclEntry value : entries) {
             getEntries().add(value);
         }
@@ -197,11 +200,13 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withEntries(java.util.Collection<NetworkAclEntry> entries) {
-        java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>();
-        if (entries != null) {
+        if (entries == null) {
+            this.entries = null;
+        } else {
+            java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>(entries.size());
             entriesCopy.addAll(entries);
+            this.entries = entriesCopy;
         }
-        this.entries = entriesCopy;
 
         return this;
     }
@@ -225,10 +230,13 @@ public class NetworkAcl {
      * @param associations The new value for the Associations property for this object.
      */
     public void setAssociations(java.util.Collection<NetworkAclAssociation> associations) {
-        java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>();
-        if (associations != null) {
-            associationsCopy.addAll(associations);
+        if (associations == null) {
+            this.associations = null;
+            return;
         }
+
+        java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>(associations.size());
+        associationsCopy.addAll(associations);
         this.associations = associationsCopy;
     }
     
@@ -243,7 +251,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withAssociations(NetworkAclAssociation... associations) {
-        if (getAssociations() == null) setAssociations(new java.util.ArrayList<NetworkAclAssociation>());
+        if (getAssociations() == null) setAssociations(new java.util.ArrayList<NetworkAclAssociation>(associations.length));
         for (NetworkAclAssociation value : associations) {
             getAssociations().add(value);
         }
@@ -261,11 +269,13 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withAssociations(java.util.Collection<NetworkAclAssociation> associations) {
-        java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>();
-        if (associations != null) {
+        if (associations == null) {
+            this.associations = null;
+        } else {
+            java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>(associations.size());
             associationsCopy.addAll(associations);
+            this.associations = associationsCopy;
         }
-        this.associations = associationsCopy;
 
         return this;
     }
@@ -289,10 +299,13 @@ public class NetworkAcl {
      * @param tags The new value for the Tags property for this object.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -307,7 +320,7 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -325,11 +338,13 @@ public class NetworkAcl {
      *         together. 
      */
     public NetworkAcl withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -346,14 +361,51 @@ public class NetworkAcl {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NetworkAclId: " + networkAclId + ", ");
-        sb.append("VpcId: " + vpcId + ", ");
-        sb.append("IsDefault: " + isDefault + ", ");
-        sb.append("Entries: " + entries + ", ");
-        sb.append("Associations: " + associations + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (isDefault != null) sb.append("IsDefault: " + isDefault + ", ");
+        if (entries != null) sb.append("Entries: " + entries + ", ");
+        if (associations != null) sb.append("Associations: " + associations + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNetworkAclId() == null) ? 0 : getNetworkAclId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
+        hashCode = prime * hashCode + ((isDefault() == null) ? 0 : isDefault().hashCode()); 
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode()); 
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof NetworkAcl == false) return false;
+        NetworkAcl other = (NetworkAcl)obj;
+        
+        if (other.getNetworkAclId() == null ^ this.getNetworkAclId() == null) return false;
+        if (other.getNetworkAclId() != null && other.getNetworkAclId().equals(this.getNetworkAclId()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
+        if (other.isDefault() == null ^ this.isDefault() == null) return false;
+        if (other.isDefault() != null && other.isDefault().equals(this.isDefault()) == false) return false; 
+        if (other.getEntries() == null ^ this.getEntries() == null) return false;
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false) return false; 
+        if (other.getAssociations() == null ^ this.getAssociations() == null) return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

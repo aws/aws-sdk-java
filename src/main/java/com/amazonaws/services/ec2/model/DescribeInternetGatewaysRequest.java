@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -78,10 +78,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      * @param internetGatewayIds One or more Internet gateway IDs.
      */
     public void setInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
-        java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (internetGatewayIds != null) {
-            internetGatewayIdsCopy.addAll(internetGatewayIds);
+        if (internetGatewayIds == null) {
+            this.internetGatewayIds = null;
+            return;
         }
+
+        java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>(internetGatewayIds.size());
+        internetGatewayIdsCopy.addAll(internetGatewayIds);
         this.internetGatewayIds = internetGatewayIdsCopy;
     }
     
@@ -96,7 +99,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(String... internetGatewayIds) {
-        if (getInternetGatewayIds() == null) setInternetGatewayIds(new java.util.ArrayList<String>());
+        if (getInternetGatewayIds() == null) setInternetGatewayIds(new java.util.ArrayList<String>(internetGatewayIds.length));
         for (String value : internetGatewayIds) {
             getInternetGatewayIds().add(value);
         }
@@ -114,11 +117,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withInternetGatewayIds(java.util.Collection<String> internetGatewayIds) {
-        java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>();
-        if (internetGatewayIds != null) {
+        if (internetGatewayIds == null) {
+            this.internetGatewayIds = null;
+        } else {
+            java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>(internetGatewayIds.size());
             internetGatewayIdsCopy.addAll(internetGatewayIds);
+            this.internetGatewayIds = internetGatewayIdsCopy;
         }
-        this.internetGatewayIds = internetGatewayIdsCopy;
 
         return this;
     }
@@ -158,10 +163,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -184,7 +192,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -210,11 +218,13 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInternetGatewaysRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -231,10 +241,35 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InternetGatewayIds: " + internetGatewayIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (internetGatewayIds != null) sb.append("InternetGatewayIds: " + internetGatewayIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInternetGatewayIds() == null) ? 0 : getInternetGatewayIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeInternetGatewaysRequest == false) return false;
+        DescribeInternetGatewaysRequest other = (DescribeInternetGatewaysRequest)obj;
+        
+        if (other.getInternetGatewayIds() == null ^ this.getInternetGatewayIds() == null) return false;
+        if (other.getInternetGatewayIds() != null && other.getInternetGatewayIds().equals(this.getInternetGatewayIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

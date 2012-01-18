@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeVolumesResult {
      * @param volumes The list of described EBS volumes.
      */
     public void setVolumes(java.util.Collection<Volume> volumes) {
-        java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>();
-        if (volumes != null) {
-            volumesCopy.addAll(volumes);
+        if (volumes == null) {
+            this.volumes = null;
+            return;
         }
+
+        java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>(volumes.size());
+        volumesCopy.addAll(volumes);
         this.volumes = volumesCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeVolumesResult {
      *         together. 
      */
     public DescribeVolumesResult withVolumes(Volume... volumes) {
-        if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>());
+        if (getVolumes() == null) setVolumes(new java.util.ArrayList<Volume>(volumes.length));
         for (Volume value : volumes) {
             getVolumes().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeVolumesResult {
      *         together. 
      */
     public DescribeVolumesResult withVolumes(java.util.Collection<Volume> volumes) {
-        java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>();
-        if (volumes != null) {
+        if (volumes == null) {
+            this.volumes = null;
+        } else {
+            java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>(volumes.size());
             volumesCopy.addAll(volumes);
+            this.volumes = volumesCopy;
         }
-        this.volumes = volumesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeVolumesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Volumes: " + volumes + ", ");
+        if (volumes != null) sb.append("Volumes: " + volumes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVolumes() == null) ? 0 : getVolumes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeVolumesResult == false) return false;
+        DescribeVolumesResult other = (DescribeVolumesResult)obj;
+        
+        if (other.getVolumes() == null ^ this.getVolumes() == null) return false;
+        if (other.getVolumes() != null && other.getVolumes().equals(this.getVolumes()) == false) return false; 
+        return true;
     }
     
 }

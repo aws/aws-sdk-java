@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -210,11 +210,39 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VolumeId: " + volumeId + ", ");
-        sb.append("InstanceId: " + instanceId + ", ");
-        sb.append("Device: " + device + ", ");
+        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
+        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (device != null) sb.append("Device: " + device + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getDevice() == null) ? 0 : getDevice().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AttachVolumeRequest == false) return false;
+        AttachVolumeRequest other = (AttachVolumeRequest)obj;
+        
+        if (other.getVolumeId() == null ^ this.getVolumeId() == null) return false;
+        if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
+        if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
+        if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getDevice() == null ^ this.getDevice() == null) return false;
+        if (other.getDevice() != null && other.getDevice().equals(this.getDevice()) == false) return false; 
+        return true;
     }
     
 }

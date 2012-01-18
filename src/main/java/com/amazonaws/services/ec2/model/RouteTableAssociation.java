@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -189,12 +189,43 @@ public class RouteTableAssociation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("RouteTableAssociationId: " + routeTableAssociationId + ", ");
-        sb.append("RouteTableId: " + routeTableId + ", ");
-        sb.append("SubnetId: " + subnetId + ", ");
-        sb.append("Main: " + main + ", ");
+        if (routeTableAssociationId != null) sb.append("RouteTableAssociationId: " + routeTableAssociationId + ", ");
+        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (main != null) sb.append("Main: " + main + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getRouteTableAssociationId() == null) ? 0 : getRouteTableAssociationId().hashCode()); 
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode()); 
+        hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
+        hashCode = prime * hashCode + ((isMain() == null) ? 0 : isMain().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RouteTableAssociation == false) return false;
+        RouteTableAssociation other = (RouteTableAssociation)obj;
+        
+        if (other.getRouteTableAssociationId() == null ^ this.getRouteTableAssociationId() == null) return false;
+        if (other.getRouteTableAssociationId() != null && other.getRouteTableAssociationId().equals(this.getRouteTableAssociationId()) == false) return false; 
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null) return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false) return false; 
+        if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
+        if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
+        if (other.isMain() == null ^ this.isMain() == null) return false;
+        if (other.isMain() != null && other.isMain().equals(this.isMain()) == false) return false; 
+        return true;
     }
     
 }

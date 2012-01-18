@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,10 +257,13 @@ public class StreamingDistributionList {
      * @param streamingDistributionSummaries An XML structure containing a summary of the streaming distribution.
      */
     public void setStreamingDistributionSummaries(java.util.Collection<StreamingDistributionSummary> streamingDistributionSummaries) {
-        java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>();
-        if (streamingDistributionSummaries != null) {
-            streamingDistributionSummariesCopy.addAll(streamingDistributionSummaries);
+        if (streamingDistributionSummaries == null) {
+            this.streamingDistributionSummaries = null;
+            return;
         }
+
+        java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.size());
+        streamingDistributionSummariesCopy.addAll(streamingDistributionSummaries);
         this.streamingDistributionSummaries = streamingDistributionSummariesCopy;
     }
     
@@ -275,7 +278,7 @@ public class StreamingDistributionList {
      *         together. 
      */
     public StreamingDistributionList withStreamingDistributionSummaries(StreamingDistributionSummary... streamingDistributionSummaries) {
-        if (getStreamingDistributionSummaries() == null) setStreamingDistributionSummaries(new java.util.ArrayList<StreamingDistributionSummary>());
+        if (getStreamingDistributionSummaries() == null) setStreamingDistributionSummaries(new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.length));
         for (StreamingDistributionSummary value : streamingDistributionSummaries) {
             getStreamingDistributionSummaries().add(value);
         }
@@ -293,11 +296,13 @@ public class StreamingDistributionList {
      *         together. 
      */
     public StreamingDistributionList withStreamingDistributionSummaries(java.util.Collection<StreamingDistributionSummary> streamingDistributionSummaries) {
-        java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>();
-        if (streamingDistributionSummaries != null) {
+        if (streamingDistributionSummaries == null) {
+            this.streamingDistributionSummaries = null;
+        } else {
+            java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.size());
             streamingDistributionSummariesCopy.addAll(streamingDistributionSummaries);
+            this.streamingDistributionSummaries = streamingDistributionSummariesCopy;
         }
-        this.streamingDistributionSummaries = streamingDistributionSummariesCopy;
 
         return this;
     }
@@ -314,13 +319,47 @@ public class StreamingDistributionList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("StreamingDistributionSummaries: " + streamingDistributionSummaries + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (streamingDistributionSummaries != null) sb.append("StreamingDistributionSummaries: " + streamingDistributionSummaries + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getStreamingDistributionSummaries() == null) ? 0 : getStreamingDistributionSummaries().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StreamingDistributionList == false) return false;
+        StreamingDistributionList other = (StreamingDistributionList)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getStreamingDistributionSummaries() == null ^ this.getStreamingDistributionSummaries() == null) return false;
+        if (other.getStreamingDistributionSummaries() != null && other.getStreamingDistributionSummaries().equals(this.getStreamingDistributionSummaries()) == false) return false; 
+        return true;
     }
     
 }

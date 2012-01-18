@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -329,12 +329,43 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SourceEnvironmentId: " + sourceEnvironmentId + ", ");
-        sb.append("SourceEnvironmentName: " + sourceEnvironmentName + ", ");
-        sb.append("DestinationEnvironmentId: " + destinationEnvironmentId + ", ");
-        sb.append("DestinationEnvironmentName: " + destinationEnvironmentName + ", ");
+        if (sourceEnvironmentId != null) sb.append("SourceEnvironmentId: " + sourceEnvironmentId + ", ");
+        if (sourceEnvironmentName != null) sb.append("SourceEnvironmentName: " + sourceEnvironmentName + ", ");
+        if (destinationEnvironmentId != null) sb.append("DestinationEnvironmentId: " + destinationEnvironmentId + ", ");
+        if (destinationEnvironmentName != null) sb.append("DestinationEnvironmentName: " + destinationEnvironmentName + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSourceEnvironmentId() == null) ? 0 : getSourceEnvironmentId().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceEnvironmentName() == null) ? 0 : getSourceEnvironmentName().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinationEnvironmentId() == null) ? 0 : getDestinationEnvironmentId().hashCode()); 
+        hashCode = prime * hashCode + ((getDestinationEnvironmentName() == null) ? 0 : getDestinationEnvironmentName().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SwapEnvironmentCNAMEsRequest == false) return false;
+        SwapEnvironmentCNAMEsRequest other = (SwapEnvironmentCNAMEsRequest)obj;
+        
+        if (other.getSourceEnvironmentId() == null ^ this.getSourceEnvironmentId() == null) return false;
+        if (other.getSourceEnvironmentId() != null && other.getSourceEnvironmentId().equals(this.getSourceEnvironmentId()) == false) return false; 
+        if (other.getSourceEnvironmentName() == null ^ this.getSourceEnvironmentName() == null) return false;
+        if (other.getSourceEnvironmentName() != null && other.getSourceEnvironmentName().equals(this.getSourceEnvironmentName()) == false) return false; 
+        if (other.getDestinationEnvironmentId() == null ^ this.getDestinationEnvironmentId() == null) return false;
+        if (other.getDestinationEnvironmentId() != null && other.getDestinationEnvironmentId().equals(this.getDestinationEnvironmentId()) == false) return false; 
+        if (other.getDestinationEnvironmentName() == null ^ this.getDestinationEnvironmentName() == null) return false;
+        if (other.getDestinationEnvironmentName() != null && other.getDestinationEnvironmentName().equals(this.getDestinationEnvironmentName()) == false) return false; 
+        return true;
     }
     
 }

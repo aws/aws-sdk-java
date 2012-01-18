@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeStackResourcesResult {
      * @param stackResources A list of <code>StackResource</code> structures.
      */
     public void setStackResources(java.util.Collection<StackResource> stackResources) {
-        java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>();
-        if (stackResources != null) {
-            stackResourcesCopy.addAll(stackResources);
+        if (stackResources == null) {
+            this.stackResources = null;
+            return;
         }
+
+        java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>(stackResources.size());
+        stackResourcesCopy.addAll(stackResources);
         this.stackResources = stackResourcesCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeStackResourcesResult {
      *         together. 
      */
     public DescribeStackResourcesResult withStackResources(StackResource... stackResources) {
-        if (getStackResources() == null) setStackResources(new java.util.ArrayList<StackResource>());
+        if (getStackResources() == null) setStackResources(new java.util.ArrayList<StackResource>(stackResources.length));
         for (StackResource value : stackResources) {
             getStackResources().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeStackResourcesResult {
      *         together. 
      */
     public DescribeStackResourcesResult withStackResources(java.util.Collection<StackResource> stackResources) {
-        java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>();
-        if (stackResources != null) {
+        if (stackResources == null) {
+            this.stackResources = null;
+        } else {
+            java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>(stackResources.size());
             stackResourcesCopy.addAll(stackResources);
+            this.stackResources = stackResourcesCopy;
         }
-        this.stackResources = stackResourcesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeStackResourcesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StackResources: " + stackResources + ", ");
+        if (stackResources != null) sb.append("StackResources: " + stackResources + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStackResources() == null) ? 0 : getStackResources().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeStackResourcesResult == false) return false;
+        DescribeStackResourcesResult other = (DescribeStackResourcesResult)obj;
+        
+        if (other.getStackResources() == null ^ this.getStackResources() == null) return false;
+        if (other.getStackResources() != null && other.getStackResources().equals(this.getStackResources()) == false) return false; 
+        return true;
     }
     
 }

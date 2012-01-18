@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -116,10 +116,13 @@ public class RouteTable {
      * @param routes The new value for the Routes property for this object.
      */
     public void setRoutes(java.util.Collection<Route> routes) {
-        java.util.List<Route> routesCopy = new java.util.ArrayList<Route>();
-        if (routes != null) {
-            routesCopy.addAll(routes);
+        if (routes == null) {
+            this.routes = null;
+            return;
         }
+
+        java.util.List<Route> routesCopy = new java.util.ArrayList<Route>(routes.size());
+        routesCopy.addAll(routes);
         this.routes = routesCopy;
     }
     
@@ -134,7 +137,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withRoutes(Route... routes) {
-        if (getRoutes() == null) setRoutes(new java.util.ArrayList<Route>());
+        if (getRoutes() == null) setRoutes(new java.util.ArrayList<Route>(routes.length));
         for (Route value : routes) {
             getRoutes().add(value);
         }
@@ -152,11 +155,13 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withRoutes(java.util.Collection<Route> routes) {
-        java.util.List<Route> routesCopy = new java.util.ArrayList<Route>();
-        if (routes != null) {
+        if (routes == null) {
+            this.routes = null;
+        } else {
+            java.util.List<Route> routesCopy = new java.util.ArrayList<Route>(routes.size());
             routesCopy.addAll(routes);
+            this.routes = routesCopy;
         }
-        this.routes = routesCopy;
 
         return this;
     }
@@ -180,10 +185,13 @@ public class RouteTable {
      * @param associations The new value for the Associations property for this object.
      */
     public void setAssociations(java.util.Collection<RouteTableAssociation> associations) {
-        java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>();
-        if (associations != null) {
-            associationsCopy.addAll(associations);
+        if (associations == null) {
+            this.associations = null;
+            return;
         }
+
+        java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>(associations.size());
+        associationsCopy.addAll(associations);
         this.associations = associationsCopy;
     }
     
@@ -198,7 +206,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withAssociations(RouteTableAssociation... associations) {
-        if (getAssociations() == null) setAssociations(new java.util.ArrayList<RouteTableAssociation>());
+        if (getAssociations() == null) setAssociations(new java.util.ArrayList<RouteTableAssociation>(associations.length));
         for (RouteTableAssociation value : associations) {
             getAssociations().add(value);
         }
@@ -216,11 +224,13 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withAssociations(java.util.Collection<RouteTableAssociation> associations) {
-        java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>();
-        if (associations != null) {
+        if (associations == null) {
+            this.associations = null;
+        } else {
+            java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>(associations.size());
             associationsCopy.addAll(associations);
+            this.associations = associationsCopy;
         }
-        this.associations = associationsCopy;
 
         return this;
     }
@@ -244,10 +254,13 @@ public class RouteTable {
      * @param tags The new value for the Tags property for this object.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -262,7 +275,7 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -280,11 +293,13 @@ public class RouteTable {
      *         together. 
      */
     public RouteTable withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -301,13 +316,47 @@ public class RouteTable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("RouteTableId: " + routeTableId + ", ");
-        sb.append("VpcId: " + vpcId + ", ");
-        sb.append("Routes: " + routes + ", ");
-        sb.append("Associations: " + associations + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (routes != null) sb.append("Routes: " + routes + ", ");
+        if (associations != null) sb.append("Associations: " + associations + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getRouteTableId() == null) ? 0 : getRouteTableId().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
+        hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode()); 
+        hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof RouteTable == false) return false;
+        RouteTable other = (RouteTable)obj;
+        
+        if (other.getRouteTableId() == null ^ this.getRouteTableId() == null) return false;
+        if (other.getRouteTableId() != null && other.getRouteTableId().equals(this.getRouteTableId()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
+        if (other.getRoutes() == null ^ this.getRoutes() == null) return false;
+        if (other.getRoutes() != null && other.getRoutes().equals(this.getRoutes()) == false) return false; 
+        if (other.getAssociations() == null ^ this.getAssociations() == null) return false;
+        if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

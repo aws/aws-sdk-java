@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,10 +84,13 @@ public class GetMetricStatisticsResult {
      * @param datapoints The datapoints for the specified metric.
      */
     public void setDatapoints(java.util.Collection<Datapoint> datapoints) {
-        java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>();
-        if (datapoints != null) {
-            datapointsCopy.addAll(datapoints);
+        if (datapoints == null) {
+            this.datapoints = null;
+            return;
         }
+
+        java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>(datapoints.size());
+        datapointsCopy.addAll(datapoints);
         this.datapoints = datapointsCopy;
     }
     
@@ -102,7 +105,7 @@ public class GetMetricStatisticsResult {
      *         together. 
      */
     public GetMetricStatisticsResult withDatapoints(Datapoint... datapoints) {
-        if (getDatapoints() == null) setDatapoints(new java.util.ArrayList<Datapoint>());
+        if (getDatapoints() == null) setDatapoints(new java.util.ArrayList<Datapoint>(datapoints.length));
         for (Datapoint value : datapoints) {
             getDatapoints().add(value);
         }
@@ -120,11 +123,13 @@ public class GetMetricStatisticsResult {
      *         together. 
      */
     public GetMetricStatisticsResult withDatapoints(java.util.Collection<Datapoint> datapoints) {
-        java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>();
-        if (datapoints != null) {
+        if (datapoints == null) {
+            this.datapoints = null;
+        } else {
+            java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>(datapoints.size());
             datapointsCopy.addAll(datapoints);
+            this.datapoints = datapointsCopy;
         }
-        this.datapoints = datapointsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class GetMetricStatisticsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Label: " + label + ", ");
-        sb.append("Datapoints: " + datapoints + ", ");
+        if (label != null) sb.append("Label: " + label + ", ");
+        if (datapoints != null) sb.append("Datapoints: " + datapoints + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode()); 
+        hashCode = prime * hashCode + ((getDatapoints() == null) ? 0 : getDatapoints().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetMetricStatisticsResult == false) return false;
+        GetMetricStatisticsResult other = (GetMetricStatisticsResult)obj;
+        
+        if (other.getLabel() == null ^ this.getLabel() == null) return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false) return false; 
+        if (other.getDatapoints() == null ^ this.getDatapoints() == null) return false;
+        if (other.getDatapoints() != null && other.getDatapoints().equals(this.getDatapoints()) == false) return false; 
+        return true;
     }
     
 }

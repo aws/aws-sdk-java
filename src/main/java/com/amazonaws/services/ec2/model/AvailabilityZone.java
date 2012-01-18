@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -163,10 +163,13 @@ public class AvailabilityZone {
      * @param messages A list of messages about the Availability Zone.
      */
     public void setMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
-        java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>();
-        if (messages != null) {
-            messagesCopy.addAll(messages);
+        if (messages == null) {
+            this.messages = null;
+            return;
         }
+
+        java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>(messages.size());
+        messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
     
@@ -181,7 +184,7 @@ public class AvailabilityZone {
      *         together. 
      */
     public AvailabilityZone withMessages(AvailabilityZoneMessage... messages) {
-        if (getMessages() == null) setMessages(new java.util.ArrayList<AvailabilityZoneMessage>());
+        if (getMessages() == null) setMessages(new java.util.ArrayList<AvailabilityZoneMessage>(messages.length));
         for (AvailabilityZoneMessage value : messages) {
             getMessages().add(value);
         }
@@ -199,11 +202,13 @@ public class AvailabilityZone {
      *         together. 
      */
     public AvailabilityZone withMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
-        java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>();
-        if (messages != null) {
+        if (messages == null) {
+            this.messages = null;
+        } else {
+            java.util.List<AvailabilityZoneMessage> messagesCopy = new java.util.ArrayList<AvailabilityZoneMessage>(messages.size());
             messagesCopy.addAll(messages);
+            this.messages = messagesCopy;
         }
-        this.messages = messagesCopy;
 
         return this;
     }
@@ -220,12 +225,43 @@ public class AvailabilityZone {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ZoneName: " + zoneName + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("RegionName: " + regionName + ", ");
-        sb.append("Messages: " + messages + ", ");
+        if (zoneName != null) sb.append("ZoneName: " + zoneName + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (regionName != null) sb.append("RegionName: " + regionName + ", ");
+        if (messages != null) sb.append("Messages: " + messages + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getZoneName() == null) ? 0 : getZoneName().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode()); 
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AvailabilityZone == false) return false;
+        AvailabilityZone other = (AvailabilityZone)obj;
+        
+        if (other.getZoneName() == null ^ this.getZoneName() == null) return false;
+        if (other.getZoneName() != null && other.getZoneName().equals(this.getZoneName()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getRegionName() == null ^ this.getRegionName() == null) return false;
+        if (other.getRegionName() != null && other.getRegionName().equals(this.getRegionName()) == false) return false; 
+        if (other.getMessages() == null ^ this.getMessages() == null) return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false) return false; 
+        return true;
     }
     
 }

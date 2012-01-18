@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -262,10 +262,13 @@ public class InvalidationList {
      *         request.
      */
     public void setInvalidationSummaries(java.util.Collection<InvalidationSummary> invalidationSummaries) {
-        java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>();
-        if (invalidationSummaries != null) {
-            invalidationSummariesCopy.addAll(invalidationSummaries);
+        if (invalidationSummaries == null) {
+            this.invalidationSummaries = null;
+            return;
         }
+
+        java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.size());
+        invalidationSummariesCopy.addAll(invalidationSummaries);
         this.invalidationSummaries = invalidationSummariesCopy;
     }
     
@@ -282,7 +285,7 @@ public class InvalidationList {
      *         together. 
      */
     public InvalidationList withInvalidationSummaries(InvalidationSummary... invalidationSummaries) {
-        if (getInvalidationSummaries() == null) setInvalidationSummaries(new java.util.ArrayList<InvalidationSummary>());
+        if (getInvalidationSummaries() == null) setInvalidationSummaries(new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.length));
         for (InvalidationSummary value : invalidationSummaries) {
             getInvalidationSummaries().add(value);
         }
@@ -302,11 +305,13 @@ public class InvalidationList {
      *         together. 
      */
     public InvalidationList withInvalidationSummaries(java.util.Collection<InvalidationSummary> invalidationSummaries) {
-        java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>();
-        if (invalidationSummaries != null) {
+        if (invalidationSummaries == null) {
+            this.invalidationSummaries = null;
+        } else {
+            java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.size());
             invalidationSummariesCopy.addAll(invalidationSummaries);
+            this.invalidationSummaries = invalidationSummariesCopy;
         }
-        this.invalidationSummaries = invalidationSummariesCopy;
 
         return this;
     }
@@ -323,13 +328,47 @@ public class InvalidationList {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("NextMarker: " + nextMarker + ", ");
-        sb.append("MaxItems: " + maxItems + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("InvalidationSummaries: " + invalidationSummaries + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (invalidationSummaries != null) sb.append("InvalidationSummaries: " + invalidationSummaries + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getInvalidationSummaries() == null) ? 0 : getInvalidationSummaries().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof InvalidationList == false) return false;
+        InvalidationList other = (InvalidationList)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getNextMarker() == null ^ this.getNextMarker() == null) return false;
+        if (other.getNextMarker() != null && other.getNextMarker().equals(this.getNextMarker()) == false) return false; 
+        if (other.getMaxItems() == null ^ this.getMaxItems() == null) return false;
+        if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getInvalidationSummaries() == null ^ this.getInvalidationSummaries() == null) return false;
+        if (other.getInvalidationSummaries() != null && other.getInvalidationSummaries().equals(this.getInvalidationSummaries()) == false) return false; 
+        return true;
     }
     
 }

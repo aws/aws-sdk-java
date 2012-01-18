@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -158,11 +158,39 @@ public class GetSendQuotaResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Max24HourSend: " + max24HourSend + ", ");
-        sb.append("MaxSendRate: " + maxSendRate + ", ");
-        sb.append("SentLast24Hours: " + sentLast24Hours + ", ");
+        if (max24HourSend != null) sb.append("Max24HourSend: " + max24HourSend + ", ");
+        if (maxSendRate != null) sb.append("MaxSendRate: " + maxSendRate + ", ");
+        if (sentLast24Hours != null) sb.append("SentLast24Hours: " + sentLast24Hours + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMax24HourSend() == null) ? 0 : getMax24HourSend().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxSendRate() == null) ? 0 : getMaxSendRate().hashCode()); 
+        hashCode = prime * hashCode + ((getSentLast24Hours() == null) ? 0 : getSentLast24Hours().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetSendQuotaResult == false) return false;
+        GetSendQuotaResult other = (GetSendQuotaResult)obj;
+        
+        if (other.getMax24HourSend() == null ^ this.getMax24HourSend() == null) return false;
+        if (other.getMax24HourSend() != null && other.getMax24HourSend().equals(this.getMax24HourSend()) == false) return false; 
+        if (other.getMaxSendRate() == null ^ this.getMaxSendRate() == null) return false;
+        if (other.getMaxSendRate() != null && other.getMaxSendRate().equals(this.getMaxSendRate()) == false) return false; 
+        if (other.getSentLast24Hours() == null ^ this.getSentLast24Hours() == null) return false;
+        if (other.getSentLast24Hours() != null && other.getSentLast24Hours().equals(this.getSentLast24Hours()) == false) return false; 
+        return true;
     }
     
 }

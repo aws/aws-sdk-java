@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -438,10 +438,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      *         authorizing permissions since it offers more flexibility and control.
      */
     public void setIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
-        java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>();
-        if (ipPermissions != null) {
-            ipPermissionsCopy.addAll(ipPermissions);
+        if (ipPermissions == null) {
+            this.ipPermissions = null;
+            return;
         }
+
+        java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
+        ipPermissionsCopy.addAll(ipPermissions);
         this.ipPermissions = ipPermissionsCopy;
     }
     
@@ -460,7 +463,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      *         together. 
      */
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(IpPermission... ipPermissions) {
-        if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>());
+        if (getIpPermissions() == null) setIpPermissions(new java.util.ArrayList<IpPermission>(ipPermissions.length));
         for (IpPermission value : ipPermissions) {
             getIpPermissions().add(value);
         }
@@ -482,11 +485,13 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      *         together. 
      */
     public AuthorizeSecurityGroupIngressRequest withIpPermissions(java.util.Collection<IpPermission> ipPermissions) {
-        java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>();
-        if (ipPermissions != null) {
+        if (ipPermissions == null) {
+            this.ipPermissions = null;
+        } else {
+            java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
             ipPermissionsCopy.addAll(ipPermissions);
+            this.ipPermissions = ipPermissionsCopy;
         }
-        this.ipPermissions = ipPermissionsCopy;
 
         return this;
     }
@@ -503,17 +508,63 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("GroupName: " + groupName + ", ");
-        sb.append("GroupId: " + groupId + ", ");
-        sb.append("SourceSecurityGroupName: " + sourceSecurityGroupName + ", ");
-        sb.append("SourceSecurityGroupOwnerId: " + sourceSecurityGroupOwnerId + ", ");
-        sb.append("IpProtocol: " + ipProtocol + ", ");
-        sb.append("FromPort: " + fromPort + ", ");
-        sb.append("ToPort: " + toPort + ", ");
-        sb.append("CidrIp: " + cidrIp + ", ");
-        sb.append("IpPermissions: " + ipPermissions + ", ");
+        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
+        if (groupId != null) sb.append("GroupId: " + groupId + ", ");
+        if (sourceSecurityGroupName != null) sb.append("SourceSecurityGroupName: " + sourceSecurityGroupName + ", ");
+        if (sourceSecurityGroupOwnerId != null) sb.append("SourceSecurityGroupOwnerId: " + sourceSecurityGroupOwnerId + ", ");
+        if (ipProtocol != null) sb.append("IpProtocol: " + ipProtocol + ", ");
+        if (fromPort != null) sb.append("FromPort: " + fromPort + ", ");
+        if (toPort != null) sb.append("ToPort: " + toPort + ", ");
+        if (cidrIp != null) sb.append("CidrIp: " + cidrIp + ", ");
+        if (ipPermissions != null) sb.append("IpPermissions: " + ipPermissions + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceSecurityGroupName() == null) ? 0 : getSourceSecurityGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceSecurityGroupOwnerId() == null) ? 0 : getSourceSecurityGroupOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode()); 
+        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode()); 
+        hashCode = prime * hashCode + ((getCidrIp() == null) ? 0 : getCidrIp().hashCode()); 
+        hashCode = prime * hashCode + ((getIpPermissions() == null) ? 0 : getIpPermissions().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AuthorizeSecurityGroupIngressRequest == false) return false;
+        AuthorizeSecurityGroupIngressRequest other = (AuthorizeSecurityGroupIngressRequest)obj;
+        
+        if (other.getGroupName() == null ^ this.getGroupName() == null) return false;
+        if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false) return false; 
+        if (other.getGroupId() == null ^ this.getGroupId() == null) return false;
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false) return false; 
+        if (other.getSourceSecurityGroupName() == null ^ this.getSourceSecurityGroupName() == null) return false;
+        if (other.getSourceSecurityGroupName() != null && other.getSourceSecurityGroupName().equals(this.getSourceSecurityGroupName()) == false) return false; 
+        if (other.getSourceSecurityGroupOwnerId() == null ^ this.getSourceSecurityGroupOwnerId() == null) return false;
+        if (other.getSourceSecurityGroupOwnerId() != null && other.getSourceSecurityGroupOwnerId().equals(this.getSourceSecurityGroupOwnerId()) == false) return false; 
+        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null) return false;
+        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false) return false; 
+        if (other.getFromPort() == null ^ this.getFromPort() == null) return false;
+        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false) return false; 
+        if (other.getToPort() == null ^ this.getToPort() == null) return false;
+        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false) return false; 
+        if (other.getCidrIp() == null ^ this.getCidrIp() == null) return false;
+        if (other.getCidrIp() != null && other.getCidrIp().equals(this.getCidrIp()) == false) return false; 
+        if (other.getIpPermissions() == null ^ this.getIpPermissions() == null) return false;
+        if (other.getIpPermissions() != null && other.getIpPermissions().equals(this.getIpPermissions()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,13 @@ public class StopInstancesResult {
      *         changed.
      */
     public void setStoppingInstances(java.util.Collection<InstanceStateChange> stoppingInstances) {
-        java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>();
-        if (stoppingInstances != null) {
-            stoppingInstancesCopy.addAll(stoppingInstances);
+        if (stoppingInstances == null) {
+            this.stoppingInstances = null;
+            return;
         }
+
+        java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(stoppingInstances.size());
+        stoppingInstancesCopy.addAll(stoppingInstances);
         this.stoppingInstances = stoppingInstancesCopy;
     }
     
@@ -71,7 +74,7 @@ public class StopInstancesResult {
      *         together. 
      */
     public StopInstancesResult withStoppingInstances(InstanceStateChange... stoppingInstances) {
-        if (getStoppingInstances() == null) setStoppingInstances(new java.util.ArrayList<InstanceStateChange>());
+        if (getStoppingInstances() == null) setStoppingInstances(new java.util.ArrayList<InstanceStateChange>(stoppingInstances.length));
         for (InstanceStateChange value : stoppingInstances) {
             getStoppingInstances().add(value);
         }
@@ -91,11 +94,13 @@ public class StopInstancesResult {
      *         together. 
      */
     public StopInstancesResult withStoppingInstances(java.util.Collection<InstanceStateChange> stoppingInstances) {
-        java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>();
-        if (stoppingInstances != null) {
+        if (stoppingInstances == null) {
+            this.stoppingInstances = null;
+        } else {
+            java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(stoppingInstances.size());
             stoppingInstancesCopy.addAll(stoppingInstances);
+            this.stoppingInstances = stoppingInstancesCopy;
         }
-        this.stoppingInstances = stoppingInstancesCopy;
 
         return this;
     }
@@ -112,9 +117,31 @@ public class StopInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StoppingInstances: " + stoppingInstances + ", ");
+        if (stoppingInstances != null) sb.append("StoppingInstances: " + stoppingInstances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStoppingInstances() == null) ? 0 : getStoppingInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StopInstancesResult == false) return false;
+        StopInstancesResult other = (StopInstancesResult)obj;
+        
+        if (other.getStoppingInstances() == null ^ this.getStoppingInstances() == null) return false;
+        if (other.getStoppingInstances() != null && other.getStoppingInstances().equals(this.getStoppingInstances()) == false) return false; 
+        return true;
     }
     
 }

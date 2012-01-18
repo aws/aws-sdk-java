@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,10 +53,13 @@ public class DescribeInstanceStatusResult {
      *         instances.
      */
     public void setInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
-        java.util.List<InstanceStatus> instanceStatusesCopy = new java.util.ArrayList<InstanceStatus>();
-        if (instanceStatuses != null) {
-            instanceStatusesCopy.addAll(instanceStatuses);
+        if (instanceStatuses == null) {
+            this.instanceStatuses = null;
+            return;
         }
+
+        java.util.List<InstanceStatus> instanceStatusesCopy = new java.util.ArrayList<InstanceStatus>(instanceStatuses.size());
+        instanceStatusesCopy.addAll(instanceStatuses);
         this.instanceStatuses = instanceStatusesCopy;
     }
     
@@ -73,7 +76,7 @@ public class DescribeInstanceStatusResult {
      *         together. 
      */
     public DescribeInstanceStatusResult withInstanceStatuses(InstanceStatus... instanceStatuses) {
-        if (getInstanceStatuses() == null) setInstanceStatuses(new java.util.ArrayList<InstanceStatus>());
+        if (getInstanceStatuses() == null) setInstanceStatuses(new java.util.ArrayList<InstanceStatus>(instanceStatuses.length));
         for (InstanceStatus value : instanceStatuses) {
             getInstanceStatuses().add(value);
         }
@@ -93,11 +96,13 @@ public class DescribeInstanceStatusResult {
      *         together. 
      */
     public DescribeInstanceStatusResult withInstanceStatuses(java.util.Collection<InstanceStatus> instanceStatuses) {
-        java.util.List<InstanceStatus> instanceStatusesCopy = new java.util.ArrayList<InstanceStatus>();
-        if (instanceStatuses != null) {
+        if (instanceStatuses == null) {
+            this.instanceStatuses = null;
+        } else {
+            java.util.List<InstanceStatus> instanceStatusesCopy = new java.util.ArrayList<InstanceStatus>(instanceStatuses.size());
             instanceStatusesCopy.addAll(instanceStatuses);
+            this.instanceStatuses = instanceStatusesCopy;
         }
-        this.instanceStatuses = instanceStatusesCopy;
 
         return this;
     }
@@ -148,10 +153,35 @@ public class DescribeInstanceStatusResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceStatuses: " + instanceStatuses + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (instanceStatuses != null) sb.append("InstanceStatuses: " + instanceStatuses + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceStatuses() == null) ? 0 : getInstanceStatuses().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeInstanceStatusResult == false) return false;
+        DescribeInstanceStatusResult other = (DescribeInstanceStatusResult)obj;
+        
+        if (other.getInstanceStatuses() == null ^ this.getInstanceStatuses() == null) return false;
+        if (other.getInstanceStatuses() != null && other.getInstanceStatuses().equals(this.getInstanceStatuses()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

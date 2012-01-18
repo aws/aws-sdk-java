@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -329,10 +329,13 @@ public class DistributionSummary {
      * @param cNAME The CNAMEs associated with this distribution.
      */
     public void setCNAME(java.util.Collection<String> cNAME) {
-        java.util.List<String> cNAMECopy = new java.util.ArrayList<String>();
-        if (cNAME != null) {
-            cNAMECopy.addAll(cNAME);
+        if (cNAME == null) {
+            this.cNAME = null;
+            return;
         }
+
+        java.util.List<String> cNAMECopy = new java.util.ArrayList<String>(cNAME.size());
+        cNAMECopy.addAll(cNAME);
         this.cNAME = cNAMECopy;
     }
     
@@ -347,7 +350,7 @@ public class DistributionSummary {
      *         together. 
      */
     public DistributionSummary withCNAME(String... cNAME) {
-        if (getCNAME() == null) setCNAME(new java.util.ArrayList<String>());
+        if (getCNAME() == null) setCNAME(new java.util.ArrayList<String>(cNAME.length));
         for (String value : cNAME) {
             getCNAME().add(value);
         }
@@ -365,11 +368,13 @@ public class DistributionSummary {
      *         together. 
      */
     public DistributionSummary withCNAME(java.util.Collection<String> cNAME) {
-        java.util.List<String> cNAMECopy = new java.util.ArrayList<String>();
-        if (cNAME != null) {
+        if (cNAME == null) {
+            this.cNAME = null;
+        } else {
+            java.util.List<String> cNAMECopy = new java.util.ArrayList<String>(cNAME.size());
             cNAMECopy.addAll(cNAME);
+            this.cNAME = cNAMECopy;
         }
-        this.cNAME = cNAMECopy;
 
         return this;
     }
@@ -505,18 +510,67 @@ public class DistributionSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Id: " + id + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
-        sb.append("DomainName: " + domainName + ", ");
-        sb.append("S3Origin: " + s3Origin + ", ");
-        sb.append("CustomOrigin: " + customOrigin + ", ");
-        sb.append("CNAME: " + cNAME + ", ");
-        sb.append("Comment: " + comment + ", ");
-        sb.append("Enabled: " + enabled + ", ");
-        sb.append("TrustedSigners: " + trustedSigners + ", ");
+        if (id != null) sb.append("Id: " + id + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (lastModifiedTime != null) sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
+        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
+        if (s3Origin != null) sb.append("S3Origin: " + s3Origin + ", ");
+        if (customOrigin != null) sb.append("CustomOrigin: " + customOrigin + ", ");
+        if (cNAME != null) sb.append("CNAME: " + cNAME + ", ");
+        if (comment != null) sb.append("Comment: " + comment + ", ");
+        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
+        if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getS3Origin() == null) ? 0 : getS3Origin().hashCode()); 
+        hashCode = prime * hashCode + ((getCustomOrigin() == null) ? 0 : getCustomOrigin().hashCode()); 
+        hashCode = prime * hashCode + ((getCNAME() == null) ? 0 : getCNAME().hashCode()); 
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
+        hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DistributionSummary == false) return false;
+        DistributionSummary other = (DistributionSummary)obj;
+        
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null) return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false) return false; 
+        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getS3Origin() == null ^ this.getS3Origin() == null) return false;
+        if (other.getS3Origin() != null && other.getS3Origin().equals(this.getS3Origin()) == false) return false; 
+        if (other.getCustomOrigin() == null ^ this.getCustomOrigin() == null) return false;
+        if (other.getCustomOrigin() != null && other.getCustomOrigin().equals(this.getCustomOrigin()) == false) return false; 
+        if (other.getCNAME() == null ^ this.getCNAME() == null) return false;
+        if (other.getCNAME() != null && other.getCNAME().equals(this.getCNAME()) == false) return false; 
+        if (other.getComment() == null ^ this.getComment() == null) return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
+        if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
+        if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
+        if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null) return false;
+        if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
+        return true;
     }
     
 }

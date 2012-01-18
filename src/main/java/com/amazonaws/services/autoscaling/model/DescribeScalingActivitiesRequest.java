@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,10 +111,13 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      *         error.
      */
     public void setActivityIds(java.util.Collection<String> activityIds) {
-        java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>();
-        if (activityIds != null) {
-            activityIdsCopy.addAll(activityIds);
+        if (activityIds == null) {
+            this.activityIds = null;
+            return;
         }
+
+        java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>(activityIds.size());
+        activityIdsCopy.addAll(activityIds);
         this.activityIds = activityIdsCopy;
     }
     
@@ -139,7 +142,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScalingActivitiesRequest withActivityIds(String... activityIds) {
-        if (getActivityIds() == null) setActivityIds(new java.util.ArrayList<String>());
+        if (getActivityIds() == null) setActivityIds(new java.util.ArrayList<String>(activityIds.length));
         for (String value : activityIds) {
             getActivityIds().add(value);
         }
@@ -167,11 +170,13 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeScalingActivitiesRequest withActivityIds(java.util.Collection<String> activityIds) {
-        java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>();
-        if (activityIds != null) {
+        if (activityIds == null) {
+            this.activityIds = null;
+        } else {
+            java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>(activityIds.size());
             activityIdsCopy.addAll(activityIds);
+            this.activityIds = activityIdsCopy;
         }
-        this.activityIds = activityIdsCopy;
 
         return this;
     }
@@ -326,12 +331,43 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ActivityIds: " + activityIds + ", ");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (activityIds != null) sb.append("ActivityIds: " + activityIds + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getActivityIds() == null) ? 0 : getActivityIds().hashCode()); 
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeScalingActivitiesRequest == false) return false;
+        DescribeScalingActivitiesRequest other = (DescribeScalingActivitiesRequest)obj;
+        
+        if (other.getActivityIds() == null ^ this.getActivityIds() == null) return false;
+        if (other.getActivityIds() != null && other.getActivityIds().equals(this.getActivityIds()) == false) return false; 
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

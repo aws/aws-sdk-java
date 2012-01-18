@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeReservedInstancesOfferingsResult {
      * @param reservedInstancesOfferings The list of described Reserved Instance offerings.
      */
     public void setReservedInstancesOfferings(java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
-        java.util.List<ReservedInstancesOffering> reservedInstancesOfferingsCopy = new java.util.ArrayList<ReservedInstancesOffering>();
-        if (reservedInstancesOfferings != null) {
-            reservedInstancesOfferingsCopy.addAll(reservedInstancesOfferings);
+        if (reservedInstancesOfferings == null) {
+            this.reservedInstancesOfferings = null;
+            return;
         }
+
+        java.util.List<ReservedInstancesOffering> reservedInstancesOfferingsCopy = new java.util.ArrayList<ReservedInstancesOffering>(reservedInstancesOfferings.size());
+        reservedInstancesOfferingsCopy.addAll(reservedInstancesOfferings);
         this.reservedInstancesOfferings = reservedInstancesOfferingsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeReservedInstancesOfferingsResult {
      *         together. 
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(ReservedInstancesOffering... reservedInstancesOfferings) {
-        if (getReservedInstancesOfferings() == null) setReservedInstancesOfferings(new java.util.ArrayList<ReservedInstancesOffering>());
+        if (getReservedInstancesOfferings() == null) setReservedInstancesOfferings(new java.util.ArrayList<ReservedInstancesOffering>(reservedInstancesOfferings.length));
         for (ReservedInstancesOffering value : reservedInstancesOfferings) {
             getReservedInstancesOfferings().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeReservedInstancesOfferingsResult {
      *         together. 
      */
     public DescribeReservedInstancesOfferingsResult withReservedInstancesOfferings(java.util.Collection<ReservedInstancesOffering> reservedInstancesOfferings) {
-        java.util.List<ReservedInstancesOffering> reservedInstancesOfferingsCopy = new java.util.ArrayList<ReservedInstancesOffering>();
-        if (reservedInstancesOfferings != null) {
+        if (reservedInstancesOfferings == null) {
+            this.reservedInstancesOfferings = null;
+        } else {
+            java.util.List<ReservedInstancesOffering> reservedInstancesOfferingsCopy = new java.util.ArrayList<ReservedInstancesOffering>(reservedInstancesOfferings.size());
             reservedInstancesOfferingsCopy.addAll(reservedInstancesOfferings);
+            this.reservedInstancesOfferings = reservedInstancesOfferingsCopy;
         }
-        this.reservedInstancesOfferings = reservedInstancesOfferingsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeReservedInstancesOfferingsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedInstancesOfferings: " + reservedInstancesOfferings + ", ");
+        if (reservedInstancesOfferings != null) sb.append("ReservedInstancesOfferings: " + reservedInstancesOfferings + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedInstancesOfferings() == null) ? 0 : getReservedInstancesOfferings().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeReservedInstancesOfferingsResult == false) return false;
+        DescribeReservedInstancesOfferingsResult other = (DescribeReservedInstancesOfferingsResult)obj;
+        
+        if (other.getReservedInstancesOfferings() == null ^ this.getReservedInstancesOfferings() == null) return false;
+        if (other.getReservedInstancesOfferings() != null && other.getReservedInstancesOfferings().equals(this.getReservedInstancesOfferings()) == false) return false; 
+        return true;
     }
     
 }

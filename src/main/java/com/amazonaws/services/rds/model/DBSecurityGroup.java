@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -180,10 +180,13 @@ public class DBSecurityGroup {
      * @param eC2SecurityGroups Contains a list of <a>EC2SecurityGroup</a> elements.
      */
     public void setEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
-        java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>();
-        if (eC2SecurityGroups != null) {
-            eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
+        if (eC2SecurityGroups == null) {
+            this.eC2SecurityGroups = null;
+            return;
         }
+
+        java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
+        eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
         this.eC2SecurityGroups = eC2SecurityGroupsCopy;
     }
     
@@ -198,7 +201,7 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withEC2SecurityGroups(EC2SecurityGroup... eC2SecurityGroups) {
-        if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>());
+        if (getEC2SecurityGroups() == null) setEC2SecurityGroups(new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.length));
         for (EC2SecurityGroup value : eC2SecurityGroups) {
             getEC2SecurityGroups().add(value);
         }
@@ -216,11 +219,13 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withEC2SecurityGroups(java.util.Collection<EC2SecurityGroup> eC2SecurityGroups) {
-        java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>();
-        if (eC2SecurityGroups != null) {
+        if (eC2SecurityGroups == null) {
+            this.eC2SecurityGroups = null;
+        } else {
+            java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
             eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
+            this.eC2SecurityGroups = eC2SecurityGroupsCopy;
         }
-        this.eC2SecurityGroups = eC2SecurityGroupsCopy;
 
         return this;
     }
@@ -244,10 +249,13 @@ public class DBSecurityGroup {
      * @param iPRanges Contains a list of <a>IPRange</a> elements.
      */
     public void setIPRanges(java.util.Collection<IPRange> iPRanges) {
-        java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>();
-        if (iPRanges != null) {
-            iPRangesCopy.addAll(iPRanges);
+        if (iPRanges == null) {
+            this.iPRanges = null;
+            return;
         }
+
+        java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>(iPRanges.size());
+        iPRangesCopy.addAll(iPRanges);
         this.iPRanges = iPRangesCopy;
     }
     
@@ -262,7 +270,7 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withIPRanges(IPRange... iPRanges) {
-        if (getIPRanges() == null) setIPRanges(new java.util.ArrayList<IPRange>());
+        if (getIPRanges() == null) setIPRanges(new java.util.ArrayList<IPRange>(iPRanges.length));
         for (IPRange value : iPRanges) {
             getIPRanges().add(value);
         }
@@ -280,11 +288,13 @@ public class DBSecurityGroup {
      *         together. 
      */
     public DBSecurityGroup withIPRanges(java.util.Collection<IPRange> iPRanges) {
-        java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>();
-        if (iPRanges != null) {
+        if (iPRanges == null) {
+            this.iPRanges = null;
+        } else {
+            java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>(iPRanges.size());
             iPRangesCopy.addAll(iPRanges);
+            this.iPRanges = iPRangesCopy;
         }
-        this.iPRanges = iPRangesCopy;
 
         return this;
     }
@@ -301,13 +311,47 @@ public class DBSecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("OwnerId: " + ownerId + ", ");
-        sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
-        sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
-        sb.append("EC2SecurityGroups: " + eC2SecurityGroups + ", ");
-        sb.append("IPRanges: " + iPRanges + ", ");
+        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
+        if (dBSecurityGroupDescription != null) sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
+        if (eC2SecurityGroups != null) sb.append("EC2SecurityGroups: " + eC2SecurityGroups + ", ");
+        if (iPRanges != null) sb.append("IPRanges: " + iPRanges + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSecurityGroupDescription() == null) ? 0 : getDBSecurityGroupDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getEC2SecurityGroups() == null) ? 0 : getEC2SecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getIPRanges() == null) ? 0 : getIPRanges().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DBSecurityGroup == false) return false;
+        DBSecurityGroup other = (DBSecurityGroup)obj;
+        
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null) return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false) return false; 
+        if (other.getDBSecurityGroupName() == null ^ this.getDBSecurityGroupName() == null) return false;
+        if (other.getDBSecurityGroupName() != null && other.getDBSecurityGroupName().equals(this.getDBSecurityGroupName()) == false) return false; 
+        if (other.getDBSecurityGroupDescription() == null ^ this.getDBSecurityGroupDescription() == null) return false;
+        if (other.getDBSecurityGroupDescription() != null && other.getDBSecurityGroupDescription().equals(this.getDBSecurityGroupDescription()) == false) return false; 
+        if (other.getEC2SecurityGroups() == null ^ this.getEC2SecurityGroups() == null) return false;
+        if (other.getEC2SecurityGroups() != null && other.getEC2SecurityGroups().equals(this.getEC2SecurityGroups()) == false) return false; 
+        if (other.getIPRanges() == null ^ this.getIPRanges() == null) return false;
+        if (other.getIPRanges() != null && other.getIPRanges().equals(this.getIPRanges()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -67,10 +67,13 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      * @param autoScalingGroupNames The name of the Auto Scaling group.
      */
     public void setAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
-        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>();
-        if (autoScalingGroupNames != null) {
-            autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
+        if (autoScalingGroupNames == null) {
+            this.autoScalingGroupNames = null;
+            return;
         }
+
+        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>(autoScalingGroupNames.size());
+        autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
         this.autoScalingGroupNames = autoScalingGroupNamesCopy;
     }
     
@@ -85,7 +88,7 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(String... autoScalingGroupNames) {
-        if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>());
+        if (getAutoScalingGroupNames() == null) setAutoScalingGroupNames(new java.util.ArrayList<String>(autoScalingGroupNames.length));
         for (String value : autoScalingGroupNames) {
             getAutoScalingGroupNames().add(value);
         }
@@ -103,11 +106,13 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
      *         together. 
      */
     public DescribeNotificationConfigurationsRequest withAutoScalingGroupNames(java.util.Collection<String> autoScalingGroupNames) {
-        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>();
-        if (autoScalingGroupNames != null) {
+        if (autoScalingGroupNames == null) {
+            this.autoScalingGroupNames = null;
+        } else {
+            java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>(autoScalingGroupNames.size());
             autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
+            this.autoScalingGroupNames = autoScalingGroupNamesCopy;
         }
-        this.autoScalingGroupNames = autoScalingGroupNamesCopy;
 
         return this;
     }
@@ -216,11 +221,39 @@ public class DescribeNotificationConfigurationsRequest extends AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupNames: " + autoScalingGroupNames + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("MaxRecords: " + maxRecords + ", ");
+        if (autoScalingGroupNames != null) sb.append("AutoScalingGroupNames: " + autoScalingGroupNames + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupNames() == null) ? 0 : getAutoScalingGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeNotificationConfigurationsRequest == false) return false;
+        DescribeNotificationConfigurationsRequest other = (DescribeNotificationConfigurationsRequest)obj;
+        
+        if (other.getAutoScalingGroupNames() == null ^ this.getAutoScalingGroupNames() == null) return false;
+        if (other.getAutoScalingGroupNames() != null && other.getAutoScalingGroupNames().equals(this.getAutoScalingGroupNames()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
+        if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
+        return true;
     }
     
 }

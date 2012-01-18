@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,10 +46,13 @@ public class DescribeReservedInstancesResult {
      * @param reservedInstances The list of described Reserved Instances.
      */
     public void setReservedInstances(java.util.Collection<ReservedInstances> reservedInstances) {
-        java.util.List<ReservedInstances> reservedInstancesCopy = new java.util.ArrayList<ReservedInstances>();
-        if (reservedInstances != null) {
-            reservedInstancesCopy.addAll(reservedInstances);
+        if (reservedInstances == null) {
+            this.reservedInstances = null;
+            return;
         }
+
+        java.util.List<ReservedInstances> reservedInstancesCopy = new java.util.ArrayList<ReservedInstances>(reservedInstances.size());
+        reservedInstancesCopy.addAll(reservedInstances);
         this.reservedInstances = reservedInstancesCopy;
     }
     
@@ -64,7 +67,7 @@ public class DescribeReservedInstancesResult {
      *         together. 
      */
     public DescribeReservedInstancesResult withReservedInstances(ReservedInstances... reservedInstances) {
-        if (getReservedInstances() == null) setReservedInstances(new java.util.ArrayList<ReservedInstances>());
+        if (getReservedInstances() == null) setReservedInstances(new java.util.ArrayList<ReservedInstances>(reservedInstances.length));
         for (ReservedInstances value : reservedInstances) {
             getReservedInstances().add(value);
         }
@@ -82,11 +85,13 @@ public class DescribeReservedInstancesResult {
      *         together. 
      */
     public DescribeReservedInstancesResult withReservedInstances(java.util.Collection<ReservedInstances> reservedInstances) {
-        java.util.List<ReservedInstances> reservedInstancesCopy = new java.util.ArrayList<ReservedInstances>();
-        if (reservedInstances != null) {
+        if (reservedInstances == null) {
+            this.reservedInstances = null;
+        } else {
+            java.util.List<ReservedInstances> reservedInstancesCopy = new java.util.ArrayList<ReservedInstances>(reservedInstances.size());
             reservedInstancesCopy.addAll(reservedInstances);
+            this.reservedInstances = reservedInstancesCopy;
         }
-        this.reservedInstances = reservedInstancesCopy;
 
         return this;
     }
@@ -103,9 +108,31 @@ public class DescribeReservedInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ReservedInstances: " + reservedInstances + ", ");
+        if (reservedInstances != null) sb.append("ReservedInstances: " + reservedInstances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getReservedInstances() == null) ? 0 : getReservedInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeReservedInstancesResult == false) return false;
+        DescribeReservedInstancesResult other = (DescribeReservedInstancesResult)obj;
+        
+        if (other.getReservedInstances() == null ^ this.getReservedInstances() == null) return false;
+        if (other.getReservedInstances() != null && other.getReservedInstances().equals(this.getReservedInstances()) == false) return false; 
+        return true;
     }
     
 }

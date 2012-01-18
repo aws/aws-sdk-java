@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -781,10 +781,13 @@ public class ConfigurationOptionDescription {
      *         this list.
      */
     public void setValueOptions(java.util.Collection<String> valueOptions) {
-        java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>();
-        if (valueOptions != null) {
-            valueOptionsCopy.addAll(valueOptions);
+        if (valueOptions == null) {
+            this.valueOptions = null;
+            return;
         }
+
+        java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>(valueOptions.size());
+        valueOptionsCopy.addAll(valueOptions);
         this.valueOptions = valueOptionsCopy;
     }
     
@@ -801,7 +804,7 @@ public class ConfigurationOptionDescription {
      *         together. 
      */
     public ConfigurationOptionDescription withValueOptions(String... valueOptions) {
-        if (getValueOptions() == null) setValueOptions(new java.util.ArrayList<String>());
+        if (getValueOptions() == null) setValueOptions(new java.util.ArrayList<String>(valueOptions.length));
         for (String value : valueOptions) {
             getValueOptions().add(value);
         }
@@ -821,11 +824,13 @@ public class ConfigurationOptionDescription {
      *         together. 
      */
     public ConfigurationOptionDescription withValueOptions(java.util.Collection<String> valueOptions) {
-        java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>();
-        if (valueOptions != null) {
+        if (valueOptions == null) {
+            this.valueOptions = null;
+        } else {
+            java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>(valueOptions.size());
             valueOptionsCopy.addAll(valueOptions);
+            this.valueOptions = valueOptionsCopy;
         }
-        this.valueOptions = valueOptionsCopy;
 
         return this;
     }
@@ -1002,19 +1007,71 @@ public class ConfigurationOptionDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Namespace: " + namespace + ", ");
-        sb.append("Name: " + name + ", ");
-        sb.append("DefaultValue: " + defaultValue + ", ");
-        sb.append("ChangeSeverity: " + changeSeverity + ", ");
-        sb.append("UserDefined: " + userDefined + ", ");
-        sb.append("ValueType: " + valueType + ", ");
-        sb.append("ValueOptions: " + valueOptions + ", ");
-        sb.append("MinValue: " + minValue + ", ");
-        sb.append("MaxValue: " + maxValue + ", ");
-        sb.append("MaxLength: " + maxLength + ", ");
-        sb.append("Regex: " + regex + ", ");
+        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
+        if (changeSeverity != null) sb.append("ChangeSeverity: " + changeSeverity + ", ");
+        if (userDefined != null) sb.append("UserDefined: " + userDefined + ", ");
+        if (valueType != null) sb.append("ValueType: " + valueType + ", ");
+        if (valueOptions != null) sb.append("ValueOptions: " + valueOptions + ", ");
+        if (minValue != null) sb.append("MinValue: " + minValue + ", ");
+        if (maxValue != null) sb.append("MaxValue: " + maxValue + ", ");
+        if (maxLength != null) sb.append("MaxLength: " + maxLength + ", ");
+        if (regex != null) sb.append("Regex: " + regex + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode()); 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode()); 
+        hashCode = prime * hashCode + ((getChangeSeverity() == null) ? 0 : getChangeSeverity().hashCode()); 
+        hashCode = prime * hashCode + ((isUserDefined() == null) ? 0 : isUserDefined().hashCode()); 
+        hashCode = prime * hashCode + ((getValueType() == null) ? 0 : getValueType().hashCode()); 
+        hashCode = prime * hashCode + ((getValueOptions() == null) ? 0 : getValueOptions().hashCode()); 
+        hashCode = prime * hashCode + ((getMinValue() == null) ? 0 : getMinValue().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxValue() == null) ? 0 : getMaxValue().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxLength() == null) ? 0 : getMaxLength().hashCode()); 
+        hashCode = prime * hashCode + ((getRegex() == null) ? 0 : getRegex().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ConfigurationOptionDescription == false) return false;
+        ConfigurationOptionDescription other = (ConfigurationOptionDescription)obj;
+        
+        if (other.getNamespace() == null ^ this.getNamespace() == null) return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false) return false; 
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null) return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false) return false; 
+        if (other.getChangeSeverity() == null ^ this.getChangeSeverity() == null) return false;
+        if (other.getChangeSeverity() != null && other.getChangeSeverity().equals(this.getChangeSeverity()) == false) return false; 
+        if (other.isUserDefined() == null ^ this.isUserDefined() == null) return false;
+        if (other.isUserDefined() != null && other.isUserDefined().equals(this.isUserDefined()) == false) return false; 
+        if (other.getValueType() == null ^ this.getValueType() == null) return false;
+        if (other.getValueType() != null && other.getValueType().equals(this.getValueType()) == false) return false; 
+        if (other.getValueOptions() == null ^ this.getValueOptions() == null) return false;
+        if (other.getValueOptions() != null && other.getValueOptions().equals(this.getValueOptions()) == false) return false; 
+        if (other.getMinValue() == null ^ this.getMinValue() == null) return false;
+        if (other.getMinValue() != null && other.getMinValue().equals(this.getMinValue()) == false) return false; 
+        if (other.getMaxValue() == null ^ this.getMaxValue() == null) return false;
+        if (other.getMaxValue() != null && other.getMaxValue().equals(this.getMaxValue()) == false) return false; 
+        if (other.getMaxLength() == null ^ this.getMaxLength() == null) return false;
+        if (other.getMaxLength() != null && other.getMaxLength().equals(this.getMaxLength()) == false) return false; 
+        if (other.getRegex() == null ^ this.getRegex() == null) return false;
+        if (other.getRegex() != null && other.getRegex().equals(this.getRegex()) == false) return false; 
+        return true;
     }
     
 }

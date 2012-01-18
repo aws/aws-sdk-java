@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -211,13 +211,47 @@ public class VgwTelemetry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("OutsideIpAddress: " + outsideIpAddress + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("LastStatusChange: " + lastStatusChange + ", ");
-        sb.append("StatusMessage: " + statusMessage + ", ");
-        sb.append("AcceptedRouteCount: " + acceptedRouteCount + ", ");
+        if (outsideIpAddress != null) sb.append("OutsideIpAddress: " + outsideIpAddress + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (lastStatusChange != null) sb.append("LastStatusChange: " + lastStatusChange + ", ");
+        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
+        if (acceptedRouteCount != null) sb.append("AcceptedRouteCount: " + acceptedRouteCount + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getOutsideIpAddress() == null) ? 0 : getOutsideIpAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getLastStatusChange() == null) ? 0 : getLastStatusChange().hashCode()); 
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getAcceptedRouteCount() == null) ? 0 : getAcceptedRouteCount().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof VgwTelemetry == false) return false;
+        VgwTelemetry other = (VgwTelemetry)obj;
+        
+        if (other.getOutsideIpAddress() == null ^ this.getOutsideIpAddress() == null) return false;
+        if (other.getOutsideIpAddress() != null && other.getOutsideIpAddress().equals(this.getOutsideIpAddress()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getLastStatusChange() == null ^ this.getLastStatusChange() == null) return false;
+        if (other.getLastStatusChange() != null && other.getLastStatusChange().equals(this.getLastStatusChange()) == false) return false; 
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null) return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false) return false; 
+        if (other.getAcceptedRouteCount() == null ^ this.getAcceptedRouteCount() == null) return false;
+        if (other.getAcceptedRouteCount() != null && other.getAcceptedRouteCount().equals(this.getAcceptedRouteCount()) == false) return false; 
+        return true;
     }
     
 }

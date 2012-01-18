@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -103,10 +103,13 @@ public class GetGroupResult {
      * @param users A list of users in the group.
      */
     public void setUsers(java.util.Collection<User> users) {
-        java.util.List<User> usersCopy = new java.util.ArrayList<User>();
-        if (users != null) {
-            usersCopy.addAll(users);
+        if (users == null) {
+            this.users = null;
+            return;
         }
+
+        java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
+        usersCopy.addAll(users);
         this.users = usersCopy;
     }
     
@@ -121,7 +124,7 @@ public class GetGroupResult {
      *         together. 
      */
     public GetGroupResult withUsers(User... users) {
-        if (getUsers() == null) setUsers(new java.util.ArrayList<User>());
+        if (getUsers() == null) setUsers(new java.util.ArrayList<User>(users.length));
         for (User value : users) {
             getUsers().add(value);
         }
@@ -139,11 +142,13 @@ public class GetGroupResult {
      *         together. 
      */
     public GetGroupResult withUsers(java.util.Collection<User> users) {
-        java.util.List<User> usersCopy = new java.util.ArrayList<User>();
-        if (users != null) {
+        if (users == null) {
+            this.users = null;
+        } else {
+            java.util.List<User> usersCopy = new java.util.ArrayList<User>(users.size());
             usersCopy.addAll(users);
+            this.users = usersCopy;
         }
-        this.users = usersCopy;
 
         return this;
     }
@@ -285,12 +290,43 @@ public class GetGroupResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Group: " + group + ", ");
-        sb.append("Users: " + users + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (group != null) sb.append("Group: " + group + ", ");
+        if (users != null) sb.append("Users: " + users + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getUsers() == null) ? 0 : getUsers().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetGroupResult == false) return false;
+        GetGroupResult other = (GetGroupResult)obj;
+        
+        if (other.getGroup() == null ^ this.getGroup() == null) return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false) return false; 
+        if (other.getUsers() == null ^ this.getUsers() == null) return false;
+        if (other.getUsers() != null && other.getUsers().equals(this.getUsers()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

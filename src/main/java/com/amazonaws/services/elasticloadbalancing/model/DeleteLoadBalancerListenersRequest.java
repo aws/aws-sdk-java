@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -116,10 +116,13 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         removed.
      */
     public void setLoadBalancerPorts(java.util.Collection<Integer> loadBalancerPorts) {
-        java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>();
-        if (loadBalancerPorts != null) {
-            loadBalancerPortsCopy.addAll(loadBalancerPorts);
+        if (loadBalancerPorts == null) {
+            this.loadBalancerPorts = null;
+            return;
         }
+
+        java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>(loadBalancerPorts.size());
+        loadBalancerPortsCopy.addAll(loadBalancerPorts);
         this.loadBalancerPorts = loadBalancerPortsCopy;
     }
     
@@ -136,7 +139,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(Integer... loadBalancerPorts) {
-        if (getLoadBalancerPorts() == null) setLoadBalancerPorts(new java.util.ArrayList<Integer>());
+        if (getLoadBalancerPorts() == null) setLoadBalancerPorts(new java.util.ArrayList<Integer>(loadBalancerPorts.length));
         for (Integer value : loadBalancerPorts) {
             getLoadBalancerPorts().add(value);
         }
@@ -156,11 +159,13 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      *         together. 
      */
     public DeleteLoadBalancerListenersRequest withLoadBalancerPorts(java.util.Collection<Integer> loadBalancerPorts) {
-        java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>();
-        if (loadBalancerPorts != null) {
+        if (loadBalancerPorts == null) {
+            this.loadBalancerPorts = null;
+        } else {
+            java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>(loadBalancerPorts.size());
             loadBalancerPortsCopy.addAll(loadBalancerPorts);
+            this.loadBalancerPorts = loadBalancerPortsCopy;
         }
-        this.loadBalancerPorts = loadBalancerPortsCopy;
 
         return this;
     }
@@ -177,10 +182,35 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        sb.append("LoadBalancerPorts: " + loadBalancerPorts + ", ");
+        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (loadBalancerPorts != null) sb.append("LoadBalancerPorts: " + loadBalancerPorts + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLoadBalancerName() == null) ? 0 : getLoadBalancerName().hashCode()); 
+        hashCode = prime * hashCode + ((getLoadBalancerPorts() == null) ? 0 : getLoadBalancerPorts().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeleteLoadBalancerListenersRequest == false) return false;
+        DeleteLoadBalancerListenersRequest other = (DeleteLoadBalancerListenersRequest)obj;
+        
+        if (other.getLoadBalancerName() == null ^ this.getLoadBalancerName() == null) return false;
+        if (other.getLoadBalancerName() != null && other.getLoadBalancerName().equals(this.getLoadBalancerName()) == false) return false; 
+        if (other.getLoadBalancerPorts() == null ^ this.getLoadBalancerPorts() == null) return false;
+        if (other.getLoadBalancerPorts() != null && other.getLoadBalancerPorts().equals(this.getLoadBalancerPorts()) == false) return false; 
+        return true;
     }
     
 }

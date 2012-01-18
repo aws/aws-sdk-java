@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,10 +65,13 @@ public class ListMFADevicesResult {
      * @param mFADevices A list of MFA devices.
      */
     public void setMFADevices(java.util.Collection<MFADevice> mFADevices) {
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>();
-        if (mFADevices != null) {
-            mFADevicesCopy.addAll(mFADevices);
+        if (mFADevices == null) {
+            this.mFADevices = null;
+            return;
         }
+
+        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
+        mFADevicesCopy.addAll(mFADevices);
         this.mFADevices = mFADevicesCopy;
     }
     
@@ -83,7 +86,7 @@ public class ListMFADevicesResult {
      *         together. 
      */
     public ListMFADevicesResult withMFADevices(MFADevice... mFADevices) {
-        if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>());
+        if (getMFADevices() == null) setMFADevices(new java.util.ArrayList<MFADevice>(mFADevices.length));
         for (MFADevice value : mFADevices) {
             getMFADevices().add(value);
         }
@@ -101,11 +104,13 @@ public class ListMFADevicesResult {
      *         together. 
      */
     public ListMFADevicesResult withMFADevices(java.util.Collection<MFADevice> mFADevices) {
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>();
-        if (mFADevices != null) {
+        if (mFADevices == null) {
+            this.mFADevices = null;
+        } else {
+            java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
             mFADevicesCopy.addAll(mFADevices);
+            this.mFADevices = mFADevicesCopy;
         }
-        this.mFADevices = mFADevicesCopy;
 
         return this;
     }
@@ -247,11 +252,39 @@ public class ListMFADevicesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MFADevices: " + mFADevices + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (mFADevices != null) sb.append("MFADevices: " + mFADevices + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMFADevices() == null) ? 0 : getMFADevices().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListMFADevicesResult == false) return false;
+        ListMFADevicesResult other = (ListMFADevicesResult)obj;
+        
+        if (other.getMFADevices() == null ^ this.getMFADevices() == null) return false;
+        if (other.getMFADevices() != null && other.getMFADevices().equals(this.getMFADevices()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

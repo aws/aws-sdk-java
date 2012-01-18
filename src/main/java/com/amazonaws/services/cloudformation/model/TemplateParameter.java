@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -207,12 +207,43 @@ public class TemplateParameter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ParameterKey: " + parameterKey + ", ");
-        sb.append("DefaultValue: " + defaultValue + ", ");
-        sb.append("NoEcho: " + noEcho + ", ");
-        sb.append("Description: " + description + ", ");
+        if (parameterKey != null) sb.append("ParameterKey: " + parameterKey + ", ");
+        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
+        if (noEcho != null) sb.append("NoEcho: " + noEcho + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getParameterKey() == null) ? 0 : getParameterKey().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode()); 
+        hashCode = prime * hashCode + ((isNoEcho() == null) ? 0 : isNoEcho().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof TemplateParameter == false) return false;
+        TemplateParameter other = (TemplateParameter)obj;
+        
+        if (other.getParameterKey() == null ^ this.getParameterKey() == null) return false;
+        if (other.getParameterKey() != null && other.getParameterKey().equals(this.getParameterKey()) == false) return false; 
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null) return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false) return false; 
+        if (other.isNoEcho() == null ^ this.isNoEcho() == null) return false;
+        if (other.isNoEcho() != null && other.isNoEcho().equals(this.isNoEcho()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        return true;
     }
     
 }

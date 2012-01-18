@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -70,10 +70,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      * @param vpcIds The ID of a VPC you want information about.
      */
     public void setVpcIds(java.util.Collection<String> vpcIds) {
-        java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>();
-        if (vpcIds != null) {
-            vpcIdsCopy.addAll(vpcIds);
+        if (vpcIds == null) {
+            this.vpcIds = null;
+            return;
         }
+
+        java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>(vpcIds.size());
+        vpcIdsCopy.addAll(vpcIds);
         this.vpcIds = vpcIdsCopy;
     }
     
@@ -88,7 +91,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withVpcIds(String... vpcIds) {
-        if (getVpcIds() == null) setVpcIds(new java.util.ArrayList<String>());
+        if (getVpcIds() == null) setVpcIds(new java.util.ArrayList<String>(vpcIds.length));
         for (String value : vpcIds) {
             getVpcIds().add(value);
         }
@@ -106,11 +109,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withVpcIds(java.util.Collection<String> vpcIds) {
-        java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>();
-        if (vpcIds != null) {
+        if (vpcIds == null) {
+            this.vpcIds = null;
+        } else {
+            java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>(vpcIds.size());
             vpcIdsCopy.addAll(vpcIds);
+            this.vpcIds = vpcIdsCopy;
         }
-        this.vpcIds = vpcIdsCopy;
 
         return this;
     }
@@ -146,10 +151,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -170,7 +178,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -194,11 +202,13 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeVpcsRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -215,10 +225,35 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VpcIds: " + vpcIds + ", ");
-        sb.append("Filters: " + filters + ", ");
+        if (vpcIds != null) sb.append("VpcIds: " + vpcIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpcIds() == null) ? 0 : getVpcIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeVpcsRequest == false) return false;
+        DescribeVpcsRequest other = (DescribeVpcsRequest)obj;
+        
+        if (other.getVpcIds() == null ^ this.getVpcIds() == null) return false;
+        if (other.getVpcIds() != null && other.getVpcIds().equals(this.getVpcIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        return true;
     }
     
 }

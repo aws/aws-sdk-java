@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -235,13 +235,47 @@ public class Message {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("MessageId: " + messageId + ", ");
-        sb.append("ReceiptHandle: " + receiptHandle + ", ");
-        sb.append("MD5OfBody: " + mD5OfBody + ", ");
-        sb.append("Body: " + body + ", ");
-        sb.append("Attributes: " + attributes + ", ");
+        if (messageId != null) sb.append("MessageId: " + messageId + ", ");
+        if (receiptHandle != null) sb.append("ReceiptHandle: " + receiptHandle + ", ");
+        if (mD5OfBody != null) sb.append("MD5OfBody: " + mD5OfBody + ", ");
+        if (body != null) sb.append("Body: " + body + ", ");
+        if (attributes != null) sb.append("Attributes: " + attributes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode()); 
+        hashCode = prime * hashCode + ((getReceiptHandle() == null) ? 0 : getReceiptHandle().hashCode()); 
+        hashCode = prime * hashCode + ((getMD5OfBody() == null) ? 0 : getMD5OfBody().hashCode()); 
+        hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Message == false) return false;
+        Message other = (Message)obj;
+        
+        if (other.getMessageId() == null ^ this.getMessageId() == null) return false;
+        if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false) return false; 
+        if (other.getReceiptHandle() == null ^ this.getReceiptHandle() == null) return false;
+        if (other.getReceiptHandle() != null && other.getReceiptHandle().equals(this.getReceiptHandle()) == false) return false; 
+        if (other.getMD5OfBody() == null ^ this.getMD5OfBody() == null) return false;
+        if (other.getMD5OfBody() != null && other.getMD5OfBody().equals(this.getMD5OfBody()) == false) return false; 
+        if (other.getBody() == null ^ this.getBody() == null) return false;
+        if (other.getBody() != null && other.getBody().equals(this.getBody()) == false) return false; 
+        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -135,10 +135,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      *         described.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>();
-        if (instanceIds != null) {
-            instanceIdsCopy.addAll(instanceIds);
+        if (instanceIds == null) {
+            this.instanceIds = null;
+            return;
         }
+
+        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
     
@@ -155,7 +158,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstanceStatusRequest withInstanceIds(String... instanceIds) {
-        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>());
+        if (getInstanceIds() == null) setInstanceIds(new java.util.ArrayList<String>(instanceIds.length));
         for (String value : instanceIds) {
             getInstanceIds().add(value);
         }
@@ -175,11 +178,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstanceStatusRequest withInstanceIds(java.util.Collection<String> instanceIds) {
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>();
-        if (instanceIds != null) {
+        if (instanceIds == null) {
+            this.instanceIds = null;
+        } else {
+            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
+            this.instanceIds = instanceIdsCopy;
         }
-        this.instanceIds = instanceIdsCopy;
 
         return this;
     }
@@ -203,10 +208,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      * @param filters The list of filters to limit returned results.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
-            filtersCopy.addAll(filters);
+        if (filters == null) {
+            this.filters = null;
+            return;
         }
+
+        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
     
@@ -221,7 +229,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstanceStatusRequest withFilters(Filter... filters) {
-        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>());
+        if (getFilters() == null) setFilters(new java.util.ArrayList<Filter>(filters.length));
         for (Filter value : filters) {
             getFilters().add(value);
         }
@@ -239,11 +247,13 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public DescribeInstanceStatusRequest withFilters(java.util.Collection<Filter> filters) {
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>();
-        if (filters != null) {
+        if (filters == null) {
+            this.filters = null;
+        } else {
+            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
             filtersCopy.addAll(filters);
+            this.filters = filtersCopy;
         }
-        this.filters = filtersCopy;
 
         return this;
     }
@@ -328,12 +338,43 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InstanceIds: " + instanceIds + ", ");
-        sb.append("Filters: " + filters + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
-        sb.append("MaxResults: " + maxResults + ", ");
+        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
+        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeInstanceStatusRequest == false) return false;
+        DescribeInstanceStatusRequest other = (DescribeInstanceStatusRequest)obj;
+        
+        if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
+        if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
+        if (other.getFilters() == null ^ this.getFilters() == null) return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
+        return true;
     }
     
 }

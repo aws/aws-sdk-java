@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -63,10 +63,13 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         Load Balancing service.
      */
     public void setPolicyTypeNames(java.util.Collection<String> policyTypeNames) {
-        java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>();
-        if (policyTypeNames != null) {
-            policyTypeNamesCopy.addAll(policyTypeNames);
+        if (policyTypeNames == null) {
+            this.policyTypeNames = null;
+            return;
         }
+
+        java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>(policyTypeNames.size());
+        policyTypeNamesCopy.addAll(policyTypeNames);
         this.policyTypeNames = policyTypeNamesCopy;
     }
     
@@ -85,7 +88,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         together. 
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(String... policyTypeNames) {
-        if (getPolicyTypeNames() == null) setPolicyTypeNames(new java.util.ArrayList<String>());
+        if (getPolicyTypeNames() == null) setPolicyTypeNames(new java.util.ArrayList<String>(policyTypeNames.length));
         for (String value : policyTypeNames) {
             getPolicyTypeNames().add(value);
         }
@@ -107,11 +110,13 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      *         together. 
      */
     public DescribeLoadBalancerPolicyTypesRequest withPolicyTypeNames(java.util.Collection<String> policyTypeNames) {
-        java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>();
-        if (policyTypeNames != null) {
+        if (policyTypeNames == null) {
+            this.policyTypeNames = null;
+        } else {
+            java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>(policyTypeNames.size());
             policyTypeNamesCopy.addAll(policyTypeNames);
+            this.policyTypeNames = policyTypeNamesCopy;
         }
-        this.policyTypeNames = policyTypeNamesCopy;
 
         return this;
     }
@@ -128,9 +133,31 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("PolicyTypeNames: " + policyTypeNames + ", ");
+        if (policyTypeNames != null) sb.append("PolicyTypeNames: " + policyTypeNames + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPolicyTypeNames() == null) ? 0 : getPolicyTypeNames().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeLoadBalancerPolicyTypesRequest == false) return false;
+        DescribeLoadBalancerPolicyTypesRequest other = (DescribeLoadBalancerPolicyTypesRequest)obj;
+        
+        if (other.getPolicyTypeNames() == null ^ this.getPolicyTypeNames() == null) return false;
+        if (other.getPolicyTypeNames() != null && other.getPolicyTypeNames().equals(this.getPolicyTypeNames()) == false) return false; 
+        return true;
     }
     
 }

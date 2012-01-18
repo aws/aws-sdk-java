@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -65,10 +65,13 @@ public class ListGroupPoliciesResult {
      * @param policyNames A list of policy names.
      */
     public void setPolicyNames(java.util.Collection<String> policyNames) {
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
-        if (policyNames != null) {
-            policyNamesCopy.addAll(policyNames);
+        if (policyNames == null) {
+            this.policyNames = null;
+            return;
         }
+
+        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
     
@@ -83,7 +86,7 @@ public class ListGroupPoliciesResult {
      *         together. 
      */
     public ListGroupPoliciesResult withPolicyNames(String... policyNames) {
-        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>());
+        if (getPolicyNames() == null) setPolicyNames(new java.util.ArrayList<String>(policyNames.length));
         for (String value : policyNames) {
             getPolicyNames().add(value);
         }
@@ -101,11 +104,13 @@ public class ListGroupPoliciesResult {
      *         together. 
      */
     public ListGroupPoliciesResult withPolicyNames(java.util.Collection<String> policyNames) {
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>();
-        if (policyNames != null) {
+        if (policyNames == null) {
+            this.policyNames = null;
+        } else {
+            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
+            this.policyNames = policyNamesCopy;
         }
-        this.policyNames = policyNamesCopy;
 
         return this;
     }
@@ -247,11 +252,39 @@ public class ListGroupPoliciesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("PolicyNames: " + policyNames + ", ");
-        sb.append("IsTruncated: " + isTruncated + ", ");
-        sb.append("Marker: " + marker + ", ");
+        if (policyNames != null) sb.append("PolicyNames: " + policyNames + ", ");
+        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getPolicyNames() == null) ? 0 : getPolicyNames().hashCode()); 
+        hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListGroupPoliciesResult == false) return false;
+        ListGroupPoliciesResult other = (ListGroupPoliciesResult)obj;
+        
+        if (other.getPolicyNames() == null ^ this.getPolicyNames() == null) return false;
+        if (other.getPolicyNames() != null && other.getPolicyNames().equals(this.getPolicyNames()) == false) return false; 
+        if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
+        if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class ValidateConfigurationSettingsResult {
      * @param messages A list of <a>ValidationMessage</a>.
      */
     public void setMessages(java.util.Collection<ValidationMessage> messages) {
-        java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>();
-        if (messages != null) {
-            messagesCopy.addAll(messages);
+        if (messages == null) {
+            this.messages = null;
+            return;
         }
+
+        java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>(messages.size());
+        messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
     
@@ -63,7 +66,7 @@ public class ValidateConfigurationSettingsResult {
      *         together. 
      */
     public ValidateConfigurationSettingsResult withMessages(ValidationMessage... messages) {
-        if (getMessages() == null) setMessages(new java.util.ArrayList<ValidationMessage>());
+        if (getMessages() == null) setMessages(new java.util.ArrayList<ValidationMessage>(messages.length));
         for (ValidationMessage value : messages) {
             getMessages().add(value);
         }
@@ -81,11 +84,13 @@ public class ValidateConfigurationSettingsResult {
      *         together. 
      */
     public ValidateConfigurationSettingsResult withMessages(java.util.Collection<ValidationMessage> messages) {
-        java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>();
-        if (messages != null) {
+        if (messages == null) {
+            this.messages = null;
+        } else {
+            java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>(messages.size());
             messagesCopy.addAll(messages);
+            this.messages = messagesCopy;
         }
-        this.messages = messagesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class ValidateConfigurationSettingsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Messages: " + messages + ", ");
+        if (messages != null) sb.append("Messages: " + messages + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMessages() == null) ? 0 : getMessages().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ValidateConfigurationSettingsResult == false) return false;
+        ValidateConfigurationSettingsResult other = (ValidateConfigurationSettingsResult)obj;
+        
+        if (other.getMessages() == null ^ this.getMessages() == null) return false;
+        if (other.getMessages() != null && other.getMessages().equals(this.getMessages()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,7 +25,15 @@ public class GetTopicAttributesResult {
      * AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      * serialization of the topic's access control policy</li>
      * <li>DisplayName -- the human-readable name used in the "From" field
-     * for notifications to email and email-json endpoints</li> </ul>
+     * for notifications to email and email-json endpoints</li>
+     * <li>SubscriptionsPending -- the number of subscriptions pending
+     * confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     * number of confirmed subscriptions on this topic</li>
+     * <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     * this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     * topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     * serialization of the effective delivery policy which takes into
+     * account system defaults</li> </ul>
      */
     private java.util.Map<String,String> attributes;
 
@@ -35,14 +43,30 @@ public class GetTopicAttributesResult {
      * AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      * serialization of the topic's access control policy</li>
      * <li>DisplayName -- the human-readable name used in the "From" field
-     * for notifications to email and email-json endpoints</li> </ul>
+     * for notifications to email and email-json endpoints</li>
+     * <li>SubscriptionsPending -- the number of subscriptions pending
+     * confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     * number of confirmed subscriptions on this topic</li>
+     * <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     * this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     * topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     * serialization of the effective delivery policy which takes into
+     * account system defaults</li> </ul>
      *
      * @return A map of the topic's attributes. Attributes in this map include the
      *         following: <ul> <li>TopicArn -- the topic's ARN</li> <li>Owner -- the
      *         AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      *         serialization of the topic's access control policy</li>
      *         <li>DisplayName -- the human-readable name used in the "From" field
-     *         for notifications to email and email-json endpoints</li> </ul>
+     *         for notifications to email and email-json endpoints</li>
+     *         <li>SubscriptionsPending -- the number of subscriptions pending
+     *         confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     *         number of confirmed subscriptions on this topic</li>
+     *         <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     *         this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     *         topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     *         serialization of the effective delivery policy which takes into
+     *         account system defaults</li> </ul>
      */
     public java.util.Map<String,String> getAttributes() {
         
@@ -58,14 +82,30 @@ public class GetTopicAttributesResult {
      * AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      * serialization of the topic's access control policy</li>
      * <li>DisplayName -- the human-readable name used in the "From" field
-     * for notifications to email and email-json endpoints</li> </ul>
+     * for notifications to email and email-json endpoints</li>
+     * <li>SubscriptionsPending -- the number of subscriptions pending
+     * confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     * number of confirmed subscriptions on this topic</li>
+     * <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     * this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     * topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     * serialization of the effective delivery policy which takes into
+     * account system defaults</li> </ul>
      *
      * @param attributes A map of the topic's attributes. Attributes in this map include the
      *         following: <ul> <li>TopicArn -- the topic's ARN</li> <li>Owner -- the
      *         AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      *         serialization of the topic's access control policy</li>
      *         <li>DisplayName -- the human-readable name used in the "From" field
-     *         for notifications to email and email-json endpoints</li> </ul>
+     *         for notifications to email and email-json endpoints</li>
+     *         <li>SubscriptionsPending -- the number of subscriptions pending
+     *         confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     *         number of confirmed subscriptions on this topic</li>
+     *         <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     *         this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     *         topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     *         serialization of the effective delivery policy which takes into
+     *         account system defaults</li> </ul>
      */
     public void setAttributes(java.util.Map<String,String> attributes) {
         this.attributes = attributes;
@@ -77,7 +117,15 @@ public class GetTopicAttributesResult {
      * AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      * serialization of the topic's access control policy</li>
      * <li>DisplayName -- the human-readable name used in the "From" field
-     * for notifications to email and email-json endpoints</li> </ul>
+     * for notifications to email and email-json endpoints</li>
+     * <li>SubscriptionsPending -- the number of subscriptions pending
+     * confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     * number of confirmed subscriptions on this topic</li>
+     * <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     * this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     * topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     * serialization of the effective delivery policy which takes into
+     * account system defaults</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -86,7 +134,15 @@ public class GetTopicAttributesResult {
      *         AWS account ID of the topic's owner</li> <li>Policy -- the JSON
      *         serialization of the topic's access control policy</li>
      *         <li>DisplayName -- the human-readable name used in the "From" field
-     *         for notifications to email and email-json endpoints</li> </ul>
+     *         for notifications to email and email-json endpoints</li>
+     *         <li>SubscriptionsPending -- the number of subscriptions pending
+     *         confirmation on this topic</li> <li>SubscriptionsConfirmed -- the
+     *         number of confirmed subscriptions on this topic</li>
+     *         <li>SubscriptionsDeleted -- the number of deleted subscriptions on
+     *         this topic</li> <li>DeliveryPolicy -- the JSON serialization of the
+     *         topic's delivery policy</li> <li>EffectiveDeliveryPolicy -- the JSON
+     *         serialization of the effective delivery policy which takes into
+     *         account system defaults</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -108,9 +164,31 @@ public class GetTopicAttributesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Attributes: " + attributes + ", ");
+        if (attributes != null) sb.append("Attributes: " + attributes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetTopicAttributesResult == false) return false;
+        GetTopicAttributesResult other = (GetTopicAttributesResult)obj;
+        
+        if (other.getAttributes() == null ^ this.getAttributes() == null) return false;
+        if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false) return false; 
+        return true;
     }
     
 }

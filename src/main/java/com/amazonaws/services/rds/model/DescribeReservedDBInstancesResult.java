@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -85,10 +85,13 @@ public class DescribeReservedDBInstancesResult {
      * @param reservedDBInstances A list of of reserved DB Instances.
      */
     public void setReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {
-        java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>();
-        if (reservedDBInstances != null) {
-            reservedDBInstancesCopy.addAll(reservedDBInstances);
+        if (reservedDBInstances == null) {
+            this.reservedDBInstances = null;
+            return;
         }
+
+        java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.size());
+        reservedDBInstancesCopy.addAll(reservedDBInstances);
         this.reservedDBInstances = reservedDBInstancesCopy;
     }
     
@@ -103,7 +106,7 @@ public class DescribeReservedDBInstancesResult {
      *         together. 
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(ReservedDBInstance... reservedDBInstances) {
-        if (getReservedDBInstances() == null) setReservedDBInstances(new java.util.ArrayList<ReservedDBInstance>());
+        if (getReservedDBInstances() == null) setReservedDBInstances(new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.length));
         for (ReservedDBInstance value : reservedDBInstances) {
             getReservedDBInstances().add(value);
         }
@@ -121,11 +124,13 @@ public class DescribeReservedDBInstancesResult {
      *         together. 
      */
     public DescribeReservedDBInstancesResult withReservedDBInstances(java.util.Collection<ReservedDBInstance> reservedDBInstances) {
-        java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>();
-        if (reservedDBInstances != null) {
+        if (reservedDBInstances == null) {
+            this.reservedDBInstances = null;
+        } else {
+            java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.size());
             reservedDBInstancesCopy.addAll(reservedDBInstances);
+            this.reservedDBInstances = reservedDBInstancesCopy;
         }
-        this.reservedDBInstances = reservedDBInstancesCopy;
 
         return this;
     }
@@ -142,10 +147,35 @@ public class DescribeReservedDBInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("ReservedDBInstances: " + reservedDBInstances + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (reservedDBInstances != null) sb.append("ReservedDBInstances: " + reservedDBInstances + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getReservedDBInstances() == null) ? 0 : getReservedDBInstances().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeReservedDBInstancesResult == false) return false;
+        DescribeReservedDBInstancesResult other = (DescribeReservedDBInstancesResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getReservedDBInstances() == null ^ this.getReservedDBInstances() == null) return false;
+        if (other.getReservedDBInstances() != null && other.getReservedDBInstances().equals(this.getReservedDBInstances()) == false) return false; 
+        return true;
     }
     
 }

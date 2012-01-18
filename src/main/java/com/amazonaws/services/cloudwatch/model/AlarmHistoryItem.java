@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -319,13 +319,47 @@ public class AlarmHistoryItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmName: " + alarmName + ", ");
-        sb.append("Timestamp: " + timestamp + ", ");
-        sb.append("HistoryItemType: " + historyItemType + ", ");
-        sb.append("HistorySummary: " + historySummary + ", ");
-        sb.append("HistoryData: " + historyData + ", ");
+        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
+        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (historyItemType != null) sb.append("HistoryItemType: " + historyItemType + ", ");
+        if (historySummary != null) sb.append("HistorySummary: " + historySummary + ", ");
+        if (historyData != null) sb.append("HistoryData: " + historyData + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmName() == null) ? 0 : getAlarmName().hashCode()); 
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getHistoryItemType() == null) ? 0 : getHistoryItemType().hashCode()); 
+        hashCode = prime * hashCode + ((getHistorySummary() == null) ? 0 : getHistorySummary().hashCode()); 
+        hashCode = prime * hashCode + ((getHistoryData() == null) ? 0 : getHistoryData().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AlarmHistoryItem == false) return false;
+        AlarmHistoryItem other = (AlarmHistoryItem)obj;
+        
+        if (other.getAlarmName() == null ^ this.getAlarmName() == null) return false;
+        if (other.getAlarmName() != null && other.getAlarmName().equals(this.getAlarmName()) == false) return false; 
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null) return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false) return false; 
+        if (other.getHistoryItemType() == null ^ this.getHistoryItemType() == null) return false;
+        if (other.getHistoryItemType() != null && other.getHistoryItemType().equals(this.getHistoryItemType()) == false) return false; 
+        if (other.getHistorySummary() == null ^ this.getHistorySummary() == null) return false;
+        if (other.getHistorySummary() != null && other.getHistorySummary().equals(this.getHistorySummary()) == false) return false; 
+        if (other.getHistoryData() == null ^ this.getHistoryData() == null) return false;
+        if (other.getHistoryData() != null && other.getHistoryData().equals(this.getHistoryData()) == false) return false; 
+        return true;
     }
     
 }

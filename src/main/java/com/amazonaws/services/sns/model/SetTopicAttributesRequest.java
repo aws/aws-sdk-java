@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -33,7 +33,7 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the attribute you want to set. Only a subset of the
-     * topic's attributes are mutable.
+     * topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      */
     private String attributeName;
 
@@ -55,7 +55,8 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
      * 
      * @param topicArn The ARN of the topic to modify.
      * @param attributeName The name of the attribute you want to set. Only a
-     * subset of the topic's attributes are mutable.
+     * subset of the topic's attributes are mutable. <p>Valid values: Policy
+     * | DisplayName
      * @param attributeValue The new value for the attribute.
      */
     public SetTopicAttributesRequest(String topicArn, String attributeName, String attributeValue) {
@@ -102,10 +103,10 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute you want to set. Only a subset of the
-     * topic's attributes are mutable.
+     * topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      *
      * @return The name of the attribute you want to set. Only a subset of the
-     *         topic's attributes are mutable.
+     *         topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      */
     public String getAttributeName() {
         return attributeName;
@@ -113,10 +114,10 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute you want to set. Only a subset of the
-     * topic's attributes are mutable.
+     * topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      *
      * @param attributeName The name of the attribute you want to set. Only a subset of the
-     *         topic's attributes are mutable.
+     *         topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
@@ -124,12 +125,12 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the attribute you want to set. Only a subset of the
-     * topic's attributes are mutable.
+     * topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param attributeName The name of the attribute you want to set. Only a subset of the
-     *         topic's attributes are mutable.
+     *         topic's attributes are mutable. <p>Valid values: Policy | DisplayName
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -186,11 +187,39 @@ public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TopicArn: " + topicArn + ", ");
-        sb.append("AttributeName: " + attributeName + ", ");
-        sb.append("AttributeValue: " + attributeValue + ", ");
+        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
+        if (attributeName != null) sb.append("AttributeName: " + attributeName + ", ");
+        if (attributeValue != null) sb.append("AttributeValue: " + attributeValue + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributeValue() == null) ? 0 : getAttributeValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SetTopicAttributesRequest == false) return false;
+        SetTopicAttributesRequest other = (SetTopicAttributesRequest)obj;
+        
+        if (other.getTopicArn() == null ^ this.getTopicArn() == null) return false;
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false) return false; 
+        if (other.getAttributeName() == null ^ this.getAttributeName() == null) return false;
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false) return false; 
+        if (other.getAttributeValue() == null ^ this.getAttributeValue() == null) return false;
+        if (other.getAttributeValue() != null && other.getAttributeValue().equals(this.getAttributeValue()) == false) return false; 
+        return true;
     }
     
 }

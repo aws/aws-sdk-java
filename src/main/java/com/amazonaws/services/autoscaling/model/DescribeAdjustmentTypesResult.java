@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeAdjustmentTypesResult {
      * @param adjustmentTypes A list of specific policy adjustment types.
      */
     public void setAdjustmentTypes(java.util.Collection<AdjustmentType> adjustmentTypes) {
-        java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>();
-        if (adjustmentTypes != null) {
-            adjustmentTypesCopy.addAll(adjustmentTypes);
+        if (adjustmentTypes == null) {
+            this.adjustmentTypes = null;
+            return;
         }
+
+        java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>(adjustmentTypes.size());
+        adjustmentTypesCopy.addAll(adjustmentTypes);
         this.adjustmentTypes = adjustmentTypesCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeAdjustmentTypesResult {
      *         together. 
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(AdjustmentType... adjustmentTypes) {
-        if (getAdjustmentTypes() == null) setAdjustmentTypes(new java.util.ArrayList<AdjustmentType>());
+        if (getAdjustmentTypes() == null) setAdjustmentTypes(new java.util.ArrayList<AdjustmentType>(adjustmentTypes.length));
         for (AdjustmentType value : adjustmentTypes) {
             getAdjustmentTypes().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeAdjustmentTypesResult {
      *         together. 
      */
     public DescribeAdjustmentTypesResult withAdjustmentTypes(java.util.Collection<AdjustmentType> adjustmentTypes) {
-        java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>();
-        if (adjustmentTypes != null) {
+        if (adjustmentTypes == null) {
+            this.adjustmentTypes = null;
+        } else {
+            java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>(adjustmentTypes.size());
             adjustmentTypesCopy.addAll(adjustmentTypes);
+            this.adjustmentTypes = adjustmentTypesCopy;
         }
-        this.adjustmentTypes = adjustmentTypesCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeAdjustmentTypesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AdjustmentTypes: " + adjustmentTypes + ", ");
+        if (adjustmentTypes != null) sb.append("AdjustmentTypes: " + adjustmentTypes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAdjustmentTypes() == null) ? 0 : getAdjustmentTypes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAdjustmentTypesResult == false) return false;
+        DescribeAdjustmentTypesResult other = (DescribeAdjustmentTypesResult)obj;
+        
+        if (other.getAdjustmentTypes() == null ^ this.getAdjustmentTypes() == null) return false;
+        if (other.getAdjustmentTypes() != null && other.getAdjustmentTypes().equals(this.getAdjustmentTypes()) == false) return false; 
+        return true;
     }
     
 }

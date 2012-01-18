@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeKeyPairsResult {
      * @param keyPairs The list of described key pairs.
      */
     public void setKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {
-        java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>();
-        if (keyPairs != null) {
-            keyPairsCopy.addAll(keyPairs);
+        if (keyPairs == null) {
+            this.keyPairs = null;
+            return;
         }
+
+        java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>(keyPairs.size());
+        keyPairsCopy.addAll(keyPairs);
         this.keyPairs = keyPairsCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeKeyPairsResult {
      *         together. 
      */
     public DescribeKeyPairsResult withKeyPairs(KeyPairInfo... keyPairs) {
-        if (getKeyPairs() == null) setKeyPairs(new java.util.ArrayList<KeyPairInfo>());
+        if (getKeyPairs() == null) setKeyPairs(new java.util.ArrayList<KeyPairInfo>(keyPairs.length));
         for (KeyPairInfo value : keyPairs) {
             getKeyPairs().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeKeyPairsResult {
      *         together. 
      */
     public DescribeKeyPairsResult withKeyPairs(java.util.Collection<KeyPairInfo> keyPairs) {
-        java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>();
-        if (keyPairs != null) {
+        if (keyPairs == null) {
+            this.keyPairs = null;
+        } else {
+            java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>(keyPairs.size());
             keyPairsCopy.addAll(keyPairs);
+            this.keyPairs = keyPairsCopy;
         }
-        this.keyPairs = keyPairsCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeKeyPairsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("KeyPairs: " + keyPairs + ", ");
+        if (keyPairs != null) sb.append("KeyPairs: " + keyPairs + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getKeyPairs() == null) ? 0 : getKeyPairs().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeKeyPairsResult == false) return false;
+        DescribeKeyPairsResult other = (DescribeKeyPairsResult)obj;
+        
+        if (other.getKeyPairs() == null ^ this.getKeyPairs() == null) return false;
+        if (other.getKeyPairs() != null && other.getKeyPairs().equals(this.getKeyPairs()) == false) return false; 
+        return true;
     }
     
 }

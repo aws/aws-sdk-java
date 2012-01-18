@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -44,10 +44,13 @@ public class GetSendStatisticsResult {
      * @param sendDataPoints The new value for the SendDataPoints property for this object.
      */
     public void setSendDataPoints(java.util.Collection<SendDataPoint> sendDataPoints) {
-        java.util.List<SendDataPoint> sendDataPointsCopy = new java.util.ArrayList<SendDataPoint>();
-        if (sendDataPoints != null) {
-            sendDataPointsCopy.addAll(sendDataPoints);
+        if (sendDataPoints == null) {
+            this.sendDataPoints = null;
+            return;
         }
+
+        java.util.List<SendDataPoint> sendDataPointsCopy = new java.util.ArrayList<SendDataPoint>(sendDataPoints.size());
+        sendDataPointsCopy.addAll(sendDataPoints);
         this.sendDataPoints = sendDataPointsCopy;
     }
     
@@ -62,7 +65,7 @@ public class GetSendStatisticsResult {
      *         together. 
      */
     public GetSendStatisticsResult withSendDataPoints(SendDataPoint... sendDataPoints) {
-        if (getSendDataPoints() == null) setSendDataPoints(new java.util.ArrayList<SendDataPoint>());
+        if (getSendDataPoints() == null) setSendDataPoints(new java.util.ArrayList<SendDataPoint>(sendDataPoints.length));
         for (SendDataPoint value : sendDataPoints) {
             getSendDataPoints().add(value);
         }
@@ -80,11 +83,13 @@ public class GetSendStatisticsResult {
      *         together. 
      */
     public GetSendStatisticsResult withSendDataPoints(java.util.Collection<SendDataPoint> sendDataPoints) {
-        java.util.List<SendDataPoint> sendDataPointsCopy = new java.util.ArrayList<SendDataPoint>();
-        if (sendDataPoints != null) {
+        if (sendDataPoints == null) {
+            this.sendDataPoints = null;
+        } else {
+            java.util.List<SendDataPoint> sendDataPointsCopy = new java.util.ArrayList<SendDataPoint>(sendDataPoints.size());
             sendDataPointsCopy.addAll(sendDataPoints);
+            this.sendDataPoints = sendDataPointsCopy;
         }
-        this.sendDataPoints = sendDataPointsCopy;
 
         return this;
     }
@@ -101,9 +106,31 @@ public class GetSendStatisticsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SendDataPoints: " + sendDataPoints + ", ");
+        if (sendDataPoints != null) sb.append("SendDataPoints: " + sendDataPoints + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSendDataPoints() == null) ? 0 : getSendDataPoints().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof GetSendStatisticsResult == false) return false;
+        GetSendStatisticsResult other = (GetSendStatisticsResult)obj;
+        
+        if (other.getSendDataPoints() == null ^ this.getSendDataPoints() == null) return false;
+        if (other.getSendDataPoints() != null && other.getSendDataPoints().equals(this.getSendDataPoints()) == false) return false; 
+        return true;
     }
     
 }

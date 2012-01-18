@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -164,11 +164,39 @@ public class CreateDistributionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Distribution: " + distribution + ", ");
-        sb.append("Location: " + location + ", ");
-        sb.append("ETag: " + eTag + ", ");
+        if (distribution != null) sb.append("Distribution: " + distribution + ", ");
+        if (location != null) sb.append("Location: " + location + ", ");
+        if (eTag != null) sb.append("ETag: " + eTag + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDistribution() == null) ? 0 : getDistribution().hashCode()); 
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode()); 
+        hashCode = prime * hashCode + ((getETag() == null) ? 0 : getETag().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateDistributionResult == false) return false;
+        CreateDistributionResult other = (CreateDistributionResult)obj;
+        
+        if (other.getDistribution() == null ^ this.getDistribution() == null) return false;
+        if (other.getDistribution() != null && other.getDistribution().equals(this.getDistribution()) == false) return false; 
+        if (other.getLocation() == null ^ this.getLocation() == null) return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false) return false; 
+        if (other.getETag() == null ^ this.getETag() == null) return false;
+        if (other.getETag() != null && other.getETag().equals(this.getETag()) == false) return false; 
+        return true;
     }
     
 }

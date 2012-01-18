@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -347,15 +347,55 @@ public class NetworkAclEntry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("RuleNumber: " + ruleNumber + ", ");
-        sb.append("Protocol: " + protocol + ", ");
-        sb.append("RuleAction: " + ruleAction + ", ");
-        sb.append("Egress: " + egress + ", ");
-        sb.append("CidrBlock: " + cidrBlock + ", ");
-        sb.append("IcmpTypeCode: " + icmpTypeCode + ", ");
-        sb.append("PortRange: " + portRange + ", ");
+        if (ruleNumber != null) sb.append("RuleNumber: " + ruleNumber + ", ");
+        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
+        if (ruleAction != null) sb.append("RuleAction: " + ruleAction + ", ");
+        if (egress != null) sb.append("Egress: " + egress + ", ");
+        if (cidrBlock != null) sb.append("CidrBlock: " + cidrBlock + ", ");
+        if (icmpTypeCode != null) sb.append("IcmpTypeCode: " + icmpTypeCode + ", ");
+        if (portRange != null) sb.append("PortRange: " + portRange + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getRuleNumber() == null) ? 0 : getRuleNumber().hashCode()); 
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getRuleAction() == null) ? 0 : getRuleAction().hashCode()); 
+        hashCode = prime * hashCode + ((isEgress() == null) ? 0 : isEgress().hashCode()); 
+        hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode()); 
+        hashCode = prime * hashCode + ((getIcmpTypeCode() == null) ? 0 : getIcmpTypeCode().hashCode()); 
+        hashCode = prime * hashCode + ((getPortRange() == null) ? 0 : getPortRange().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof NetworkAclEntry == false) return false;
+        NetworkAclEntry other = (NetworkAclEntry)obj;
+        
+        if (other.getRuleNumber() == null ^ this.getRuleNumber() == null) return false;
+        if (other.getRuleNumber() != null && other.getRuleNumber().equals(this.getRuleNumber()) == false) return false; 
+        if (other.getProtocol() == null ^ this.getProtocol() == null) return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false) return false; 
+        if (other.getRuleAction() == null ^ this.getRuleAction() == null) return false;
+        if (other.getRuleAction() != null && other.getRuleAction().equals(this.getRuleAction()) == false) return false; 
+        if (other.isEgress() == null ^ this.isEgress() == null) return false;
+        if (other.isEgress() != null && other.isEgress().equals(this.isEgress()) == false) return false; 
+        if (other.getCidrBlock() == null ^ this.getCidrBlock() == null) return false;
+        if (other.getCidrBlock() != null && other.getCidrBlock().equals(this.getCidrBlock()) == false) return false; 
+        if (other.getIcmpTypeCode() == null ^ this.getIcmpTypeCode() == null) return false;
+        if (other.getIcmpTypeCode() != null && other.getIcmpTypeCode().equals(this.getIcmpTypeCode()) == false) return false; 
+        if (other.getPortRange() == null ^ this.getPortRange() == null) return false;
+        if (other.getPortRange() != null && other.getPortRange().equals(this.getPortRange()) == false) return false; 
+        return true;
     }
     
 }

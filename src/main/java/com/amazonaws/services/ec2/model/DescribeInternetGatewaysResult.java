@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -40,10 +40,13 @@ public class DescribeInternetGatewaysResult {
      * @param internetGateways The new value for the InternetGateways property for this object.
      */
     public void setInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
-        java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>();
-        if (internetGateways != null) {
-            internetGatewaysCopy.addAll(internetGateways);
+        if (internetGateways == null) {
+            this.internetGateways = null;
+            return;
         }
+
+        java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>(internetGateways.size());
+        internetGatewaysCopy.addAll(internetGateways);
         this.internetGateways = internetGatewaysCopy;
     }
     
@@ -58,7 +61,7 @@ public class DescribeInternetGatewaysResult {
      *         together. 
      */
     public DescribeInternetGatewaysResult withInternetGateways(InternetGateway... internetGateways) {
-        if (getInternetGateways() == null) setInternetGateways(new java.util.ArrayList<InternetGateway>());
+        if (getInternetGateways() == null) setInternetGateways(new java.util.ArrayList<InternetGateway>(internetGateways.length));
         for (InternetGateway value : internetGateways) {
             getInternetGateways().add(value);
         }
@@ -76,11 +79,13 @@ public class DescribeInternetGatewaysResult {
      *         together. 
      */
     public DescribeInternetGatewaysResult withInternetGateways(java.util.Collection<InternetGateway> internetGateways) {
-        java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>();
-        if (internetGateways != null) {
+        if (internetGateways == null) {
+            this.internetGateways = null;
+        } else {
+            java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>(internetGateways.size());
             internetGatewaysCopy.addAll(internetGateways);
+            this.internetGateways = internetGatewaysCopy;
         }
-        this.internetGateways = internetGatewaysCopy;
 
         return this;
     }
@@ -97,9 +102,31 @@ public class DescribeInternetGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("InternetGateways: " + internetGateways + ", ");
+        if (internetGateways != null) sb.append("InternetGateways: " + internetGateways + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getInternetGateways() == null) ? 0 : getInternetGateways().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeInternetGatewaysResult == false) return false;
+        DescribeInternetGatewaysResult other = (DescribeInternetGatewaysResult)obj;
+        
+        if (other.getInternetGateways() == null ^ this.getInternetGateways() == null) return false;
+        if (other.getInternetGateways() != null && other.getInternetGateways().equals(this.getInternetGateways()) == false) return false; 
+        return true;
     }
     
 }

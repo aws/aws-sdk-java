@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -186,11 +186,39 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CloudFrontOriginAccessIdentityConfig: " + cloudFrontOriginAccessIdentityConfig + ", ");
-        sb.append("Id: " + id + ", ");
-        sb.append("IfMatch: " + ifMatch + ", ");
+        if (cloudFrontOriginAccessIdentityConfig != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + cloudFrontOriginAccessIdentityConfig + ", ");
+        if (id != null) sb.append("Id: " + id + ", ");
+        if (ifMatch != null) sb.append("IfMatch: " + ifMatch + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCloudFrontOriginAccessIdentityConfig() == null) ? 0 : getCloudFrontOriginAccessIdentityConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getIfMatch() == null) ? 0 : getIfMatch().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UpdateCloudFrontOriginAccessIdentityRequest == false) return false;
+        UpdateCloudFrontOriginAccessIdentityRequest other = (UpdateCloudFrontOriginAccessIdentityRequest)obj;
+        
+        if (other.getCloudFrontOriginAccessIdentityConfig() == null ^ this.getCloudFrontOriginAccessIdentityConfig() == null) return false;
+        if (other.getCloudFrontOriginAccessIdentityConfig() != null && other.getCloudFrontOriginAccessIdentityConfig().equals(this.getCloudFrontOriginAccessIdentityConfig()) == false) return false; 
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getIfMatch() == null ^ this.getIfMatch() == null) return false;
+        if (other.getIfMatch() != null && other.getIfMatch().equals(this.getIfMatch()) == false) return false; 
+        return true;
     }
     
 }

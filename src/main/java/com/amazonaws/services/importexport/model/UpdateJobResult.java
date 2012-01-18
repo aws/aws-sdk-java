@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,10 +136,35 @@ public class UpdateJobResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Success: " + success + ", ");
-        sb.append("WarningMessage: " + warningMessage + ", ");
+        if (success != null) sb.append("Success: " + success + ", ");
+        if (warningMessage != null) sb.append("WarningMessage: " + warningMessage + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((isSuccess() == null) ? 0 : isSuccess().hashCode()); 
+        hashCode = prime * hashCode + ((getWarningMessage() == null) ? 0 : getWarningMessage().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof UpdateJobResult == false) return false;
+        UpdateJobResult other = (UpdateJobResult)obj;
+        
+        if (other.isSuccess() == null ^ this.isSuccess() == null) return false;
+        if (other.isSuccess() != null && other.isSuccess().equals(this.isSuccess()) == false) return false; 
+        if (other.getWarningMessage() == null ^ this.getWarningMessage() == null) return false;
+        if (other.getWarningMessage() != null && other.getWarningMessage().equals(this.getWarningMessage()) == false) return false; 
+        return true;
     }
     
 }

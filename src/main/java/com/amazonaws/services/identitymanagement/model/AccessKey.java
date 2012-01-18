@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -373,13 +373,47 @@ public class AccessKey {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("UserName: " + userName + ", ");
-        sb.append("AccessKeyId: " + accessKeyId + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("SecretAccessKey: " + secretAccessKey + ", ");
-        sb.append("CreateDate: " + createDate + ", ");
+        if (userName != null) sb.append("UserName: " + userName + ", ");
+        if (accessKeyId != null) sb.append("AccessKeyId: " + accessKeyId + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (secretAccessKey != null) sb.append("SecretAccessKey: " + secretAccessKey + ", ");
+        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode()); 
+        hashCode = prime * hashCode + ((getAccessKeyId() == null) ? 0 : getAccessKeyId().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getSecretAccessKey() == null) ? 0 : getSecretAccessKey().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof AccessKey == false) return false;
+        AccessKey other = (AccessKey)obj;
+        
+        if (other.getUserName() == null ^ this.getUserName() == null) return false;
+        if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false) return false; 
+        if (other.getAccessKeyId() == null ^ this.getAccessKeyId() == null) return false;
+        if (other.getAccessKeyId() != null && other.getAccessKeyId().equals(this.getAccessKeyId()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getSecretAccessKey() == null ^ this.getSecretAccessKey() == null) return false;
+        if (other.getSecretAccessKey() != null && other.getSecretAccessKey().equals(this.getSecretAccessKey()) == false) return false; 
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null) return false;
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false) return false; 
+        return true;
     }
     
 }

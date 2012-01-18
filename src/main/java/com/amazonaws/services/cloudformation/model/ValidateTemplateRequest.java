@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -216,10 +216,35 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("TemplateBody: " + templateBody + ", ");
-        sb.append("TemplateURL: " + templateURL + ", ");
+        if (templateBody != null) sb.append("TemplateBody: " + templateBody + ", ");
+        if (templateURL != null) sb.append("TemplateURL: " + templateURL + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTemplateBody() == null) ? 0 : getTemplateBody().hashCode()); 
+        hashCode = prime * hashCode + ((getTemplateURL() == null) ? 0 : getTemplateURL().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ValidateTemplateRequest == false) return false;
+        ValidateTemplateRequest other = (ValidateTemplateRequest)obj;
+        
+        if (other.getTemplateBody() == null ^ this.getTemplateBody() == null) return false;
+        if (other.getTemplateBody() != null && other.getTemplateBody().equals(this.getTemplateBody()) == false) return false; 
+        if (other.getTemplateURL() == null ^ this.getTemplateURL() == null) return false;
+        if (other.getTemplateURL() != null && other.getTemplateURL().equals(this.getTemplateURL()) == false) return false; 
+        return true;
     }
     
 }

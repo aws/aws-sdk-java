@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -136,10 +136,13 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
      * @param items A list of items on which to perform the operation.
      */
     public void setItems(java.util.Collection<DeletableItem> items) {
-        java.util.List<DeletableItem> itemsCopy = new java.util.ArrayList<DeletableItem>();
-        if (items != null) {
-            itemsCopy.addAll(items);
+        if (items == null) {
+            this.items = null;
+            return;
         }
+
+        java.util.List<DeletableItem> itemsCopy = new java.util.ArrayList<DeletableItem>(items.size());
+        itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
     
@@ -154,7 +157,7 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public BatchDeleteAttributesRequest withItems(DeletableItem... items) {
-        if (getItems() == null) setItems(new java.util.ArrayList<DeletableItem>());
+        if (getItems() == null) setItems(new java.util.ArrayList<DeletableItem>(items.length));
         for (DeletableItem value : items) {
             getItems().add(value);
         }
@@ -172,11 +175,13 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public BatchDeleteAttributesRequest withItems(java.util.Collection<DeletableItem> items) {
-        java.util.List<DeletableItem> itemsCopy = new java.util.ArrayList<DeletableItem>();
-        if (items != null) {
+        if (items == null) {
+            this.items = null;
+        } else {
+            java.util.List<DeletableItem> itemsCopy = new java.util.ArrayList<DeletableItem>(items.size());
             itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
-        this.items = itemsCopy;
 
         return this;
     }
@@ -193,10 +198,35 @@ public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DomainName: " + domainName + ", ");
-        sb.append("Items: " + items + ", ");
+        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof BatchDeleteAttributesRequest == false) return false;
+        BatchDeleteAttributesRequest other = (BatchDeleteAttributesRequest)obj;
+        
+        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
+        return true;
     }
     
 }

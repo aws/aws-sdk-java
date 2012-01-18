@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -411,12 +411,43 @@ public class ChangeInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Id: " + id + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("SubmittedAt: " + submittedAt + ", ");
-        sb.append("Comment: " + comment + ", ");
+        if (id != null) sb.append("Id: " + id + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (submittedAt != null) sb.append("SubmittedAt: " + submittedAt + ", ");
+        if (comment != null) sb.append("Comment: " + comment + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getSubmittedAt() == null) ? 0 : getSubmittedAt().hashCode()); 
+        hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ChangeInfo == false) return false;
+        ChangeInfo other = (ChangeInfo)obj;
+        
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getSubmittedAt() == null ^ this.getSubmittedAt() == null) return false;
+        if (other.getSubmittedAt() != null && other.getSubmittedAt().equals(this.getSubmittedAt()) == false) return false; 
+        if (other.getComment() == null ^ this.getComment() == null) return false;
+        if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
+        return true;
     }
     
 }

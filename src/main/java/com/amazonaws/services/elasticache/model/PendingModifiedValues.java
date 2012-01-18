@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -109,10 +109,13 @@ public class PendingModifiedValues {
      *         will be applied or is in progress.
      */
     public void setCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
-        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>();
-        if (cacheNodeIdsToRemove != null) {
-            cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
+        if (cacheNodeIdsToRemove == null) {
+            this.cacheNodeIdsToRemove = null;
+            return;
         }
+
+        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
+        cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
         this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
     }
     
@@ -129,7 +132,7 @@ public class PendingModifiedValues {
      *         together. 
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(String... cacheNodeIdsToRemove) {
-        if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>());
+        if (getCacheNodeIdsToRemove() == null) setCacheNodeIdsToRemove(new java.util.ArrayList<String>(cacheNodeIdsToRemove.length));
         for (String value : cacheNodeIdsToRemove) {
             getCacheNodeIdsToRemove().add(value);
         }
@@ -149,11 +152,13 @@ public class PendingModifiedValues {
      *         together. 
      */
     public PendingModifiedValues withCacheNodeIdsToRemove(java.util.Collection<String> cacheNodeIdsToRemove) {
-        java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>();
-        if (cacheNodeIdsToRemove != null) {
+        if (cacheNodeIdsToRemove == null) {
+            this.cacheNodeIdsToRemove = null;
+        } else {
+            java.util.List<String> cacheNodeIdsToRemoveCopy = new java.util.ArrayList<String>(cacheNodeIdsToRemove.size());
             cacheNodeIdsToRemoveCopy.addAll(cacheNodeIdsToRemove);
+            this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
         }
-        this.cacheNodeIdsToRemove = cacheNodeIdsToRemoveCopy;
 
         return this;
     }
@@ -210,11 +215,39 @@ public class PendingModifiedValues {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        sb.append("CacheNodeIdsToRemove: " + cacheNodeIdsToRemove + ", ");
-        sb.append("EngineVersion: " + engineVersion + ", ");
+        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
+        if (cacheNodeIdsToRemove != null) sb.append("CacheNodeIdsToRemove: " + cacheNodeIdsToRemove + ", ");
+        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode()); 
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PendingModifiedValues == false) return false;
+        PendingModifiedValues other = (PendingModifiedValues)obj;
+        
+        if (other.getNumCacheNodes() == null ^ this.getNumCacheNodes() == null) return false;
+        if (other.getNumCacheNodes() != null && other.getNumCacheNodes().equals(this.getNumCacheNodes()) == false) return false; 
+        if (other.getCacheNodeIdsToRemove() == null ^ this.getCacheNodeIdsToRemove() == null) return false;
+        if (other.getCacheNodeIdsToRemove() != null && other.getCacheNodeIdsToRemove().equals(this.getCacheNodeIdsToRemove()) == false) return false; 
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        return true;
     }
     
 }

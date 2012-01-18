@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -59,10 +59,13 @@ public class DescribeScheduledActionsResult {
      * @param scheduledUpdateGroupActions A list of scheduled actions designed to update an Auto Scaling group.
      */
     public void setScheduledUpdateGroupActions(java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
-        java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>();
-        if (scheduledUpdateGroupActions != null) {
-            scheduledUpdateGroupActionsCopy.addAll(scheduledUpdateGroupActions);
+        if (scheduledUpdateGroupActions == null) {
+            this.scheduledUpdateGroupActions = null;
+            return;
         }
+
+        java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
+        scheduledUpdateGroupActionsCopy.addAll(scheduledUpdateGroupActions);
         this.scheduledUpdateGroupActions = scheduledUpdateGroupActionsCopy;
     }
     
@@ -77,7 +80,7 @@ public class DescribeScheduledActionsResult {
      *         together. 
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(ScheduledUpdateGroupAction... scheduledUpdateGroupActions) {
-        if (getScheduledUpdateGroupActions() == null) setScheduledUpdateGroupActions(new java.util.ArrayList<ScheduledUpdateGroupAction>());
+        if (getScheduledUpdateGroupActions() == null) setScheduledUpdateGroupActions(new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.length));
         for (ScheduledUpdateGroupAction value : scheduledUpdateGroupActions) {
             getScheduledUpdateGroupActions().add(value);
         }
@@ -95,11 +98,13 @@ public class DescribeScheduledActionsResult {
      *         together. 
      */
     public DescribeScheduledActionsResult withScheduledUpdateGroupActions(java.util.Collection<ScheduledUpdateGroupAction> scheduledUpdateGroupActions) {
-        java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>();
-        if (scheduledUpdateGroupActions != null) {
+        if (scheduledUpdateGroupActions == null) {
+            this.scheduledUpdateGroupActions = null;
+        } else {
+            java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
             scheduledUpdateGroupActionsCopy.addAll(scheduledUpdateGroupActions);
+            this.scheduledUpdateGroupActions = scheduledUpdateGroupActionsCopy;
         }
-        this.scheduledUpdateGroupActions = scheduledUpdateGroupActionsCopy;
 
         return this;
     }
@@ -159,10 +164,35 @@ public class DescribeScheduledActionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("ScheduledUpdateGroupActions: " + scheduledUpdateGroupActions + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (scheduledUpdateGroupActions != null) sb.append("ScheduledUpdateGroupActions: " + scheduledUpdateGroupActions + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getScheduledUpdateGroupActions() == null) ? 0 : getScheduledUpdateGroupActions().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeScheduledActionsResult == false) return false;
+        DescribeScheduledActionsResult other = (DescribeScheduledActionsResult)obj;
+        
+        if (other.getScheduledUpdateGroupActions() == null ^ this.getScheduledUpdateGroupActions() == null) return false;
+        if (other.getScheduledUpdateGroupActions() != null && other.getScheduledUpdateGroupActions().equals(this.getScheduledUpdateGroupActions()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

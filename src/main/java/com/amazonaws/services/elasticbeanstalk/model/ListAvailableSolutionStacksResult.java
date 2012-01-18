@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -51,10 +51,13 @@ public class ListAvailableSolutionStacksResult {
      * @param solutionStacks A list of available solution stacks.
      */
     public void setSolutionStacks(java.util.Collection<String> solutionStacks) {
-        java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>();
-        if (solutionStacks != null) {
-            solutionStacksCopy.addAll(solutionStacks);
+        if (solutionStacks == null) {
+            this.solutionStacks = null;
+            return;
         }
+
+        java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>(solutionStacks.size());
+        solutionStacksCopy.addAll(solutionStacks);
         this.solutionStacks = solutionStacksCopy;
     }
     
@@ -69,7 +72,7 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(String... solutionStacks) {
-        if (getSolutionStacks() == null) setSolutionStacks(new java.util.ArrayList<String>());
+        if (getSolutionStacks() == null) setSolutionStacks(new java.util.ArrayList<String>(solutionStacks.length));
         for (String value : solutionStacks) {
             getSolutionStacks().add(value);
         }
@@ -87,11 +90,13 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStacks(java.util.Collection<String> solutionStacks) {
-        java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>();
-        if (solutionStacks != null) {
+        if (solutionStacks == null) {
+            this.solutionStacks = null;
+        } else {
+            java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>(solutionStacks.size());
             solutionStacksCopy.addAll(solutionStacks);
+            this.solutionStacks = solutionStacksCopy;
         }
-        this.solutionStacks = solutionStacksCopy;
 
         return this;
     }
@@ -119,10 +124,13 @@ public class ListAvailableSolutionStacksResult {
      *         <a>SolutionStackDescription</a>.
      */
     public void setSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
-        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>();
-        if (solutionStackDetails != null) {
-            solutionStackDetailsCopy.addAll(solutionStackDetails);
+        if (solutionStackDetails == null) {
+            this.solutionStackDetails = null;
+            return;
         }
+
+        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.size());
+        solutionStackDetailsCopy.addAll(solutionStackDetails);
         this.solutionStackDetails = solutionStackDetailsCopy;
     }
     
@@ -139,7 +147,7 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(SolutionStackDescription... solutionStackDetails) {
-        if (getSolutionStackDetails() == null) setSolutionStackDetails(new java.util.ArrayList<SolutionStackDescription>());
+        if (getSolutionStackDetails() == null) setSolutionStackDetails(new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.length));
         for (SolutionStackDescription value : solutionStackDetails) {
             getSolutionStackDetails().add(value);
         }
@@ -159,11 +167,13 @@ public class ListAvailableSolutionStacksResult {
      *         together. 
      */
     public ListAvailableSolutionStacksResult withSolutionStackDetails(java.util.Collection<SolutionStackDescription> solutionStackDetails) {
-        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>();
-        if (solutionStackDetails != null) {
+        if (solutionStackDetails == null) {
+            this.solutionStackDetails = null;
+        } else {
+            java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.size());
             solutionStackDetailsCopy.addAll(solutionStackDetails);
+            this.solutionStackDetails = solutionStackDetailsCopy;
         }
-        this.solutionStackDetails = solutionStackDetailsCopy;
 
         return this;
     }
@@ -180,10 +190,35 @@ public class ListAvailableSolutionStacksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SolutionStacks: " + solutionStacks + ", ");
-        sb.append("SolutionStackDetails: " + solutionStackDetails + ", ");
+        if (solutionStacks != null) sb.append("SolutionStacks: " + solutionStacks + ", ");
+        if (solutionStackDetails != null) sb.append("SolutionStackDetails: " + solutionStackDetails + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSolutionStacks() == null) ? 0 : getSolutionStacks().hashCode()); 
+        hashCode = prime * hashCode + ((getSolutionStackDetails() == null) ? 0 : getSolutionStackDetails().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListAvailableSolutionStacksResult == false) return false;
+        ListAvailableSolutionStacksResult other = (ListAvailableSolutionStacksResult)obj;
+        
+        if (other.getSolutionStacks() == null ^ this.getSolutionStacks() == null) return false;
+        if (other.getSolutionStacks() != null && other.getSolutionStacks().equals(this.getSolutionStacks()) == false) return false; 
+        if (other.getSolutionStackDetails() == null ^ this.getSolutionStackDetails() == null) return false;
+        if (other.getSolutionStackDetails() != null && other.getSolutionStackDetails().equals(this.getSolutionStackDetails()) == false) return false; 
+        return true;
     }
     
 }

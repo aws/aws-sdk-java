@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -91,10 +91,13 @@ public class DelegationSet {
      *         assigned to your hosted zone.
      */
     public void setNameServers(java.util.Collection<String> nameServers) {
-        java.util.List<String> nameServersCopy = new java.util.ArrayList<String>();
-        if (nameServers != null) {
-            nameServersCopy.addAll(nameServers);
+        if (nameServers == null) {
+            this.nameServers = null;
+            return;
         }
+
+        java.util.List<String> nameServersCopy = new java.util.ArrayList<String>(nameServers.size());
+        nameServersCopy.addAll(nameServers);
         this.nameServers = nameServersCopy;
     }
     
@@ -118,7 +121,7 @@ public class DelegationSet {
      *         together. 
      */
     public DelegationSet withNameServers(String... nameServers) {
-        if (getNameServers() == null) setNameServers(new java.util.ArrayList<String>());
+        if (getNameServers() == null) setNameServers(new java.util.ArrayList<String>(nameServers.length));
         for (String value : nameServers) {
             getNameServers().add(value);
         }
@@ -145,11 +148,13 @@ public class DelegationSet {
      *         together. 
      */
     public DelegationSet withNameServers(java.util.Collection<String> nameServers) {
-        java.util.List<String> nameServersCopy = new java.util.ArrayList<String>();
-        if (nameServers != null) {
+        if (nameServers == null) {
+            this.nameServers = null;
+        } else {
+            java.util.List<String> nameServersCopy = new java.util.ArrayList<String>(nameServers.size());
             nameServersCopy.addAll(nameServers);
+            this.nameServers = nameServersCopy;
         }
-        this.nameServers = nameServersCopy;
 
         return this;
     }
@@ -166,9 +171,31 @@ public class DelegationSet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("NameServers: " + nameServers + ", ");
+        if (nameServers != null) sb.append("NameServers: " + nameServers + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getNameServers() == null) ? 0 : getNameServers().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DelegationSet == false) return false;
+        DelegationSet other = (DelegationSet)obj;
+        
+        if (other.getNameServers() == null ^ this.getNameServers() == null) return false;
+        if (other.getNameServers() != null && other.getNameServers().equals(this.getNameServers()) == false) return false; 
+        return true;
     }
     
 }

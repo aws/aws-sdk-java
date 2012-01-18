@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -177,10 +177,13 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         information, go to <a>DescribeAutoScalingNotificationTypes</a>.
      */
     public void setNotificationTypes(java.util.Collection<String> notificationTypes) {
-        java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>();
-        if (notificationTypes != null) {
-            notificationTypesCopy.addAll(notificationTypes);
+        if (notificationTypes == null) {
+            this.notificationTypes = null;
+            return;
         }
+
+        java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>(notificationTypes.size());
+        notificationTypesCopy.addAll(notificationTypes);
         this.notificationTypes = notificationTypesCopy;
     }
     
@@ -197,7 +200,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public PutNotificationConfigurationRequest withNotificationTypes(String... notificationTypes) {
-        if (getNotificationTypes() == null) setNotificationTypes(new java.util.ArrayList<String>());
+        if (getNotificationTypes() == null) setNotificationTypes(new java.util.ArrayList<String>(notificationTypes.length));
         for (String value : notificationTypes) {
             getNotificationTypes().add(value);
         }
@@ -217,11 +220,13 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      *         together. 
      */
     public PutNotificationConfigurationRequest withNotificationTypes(java.util.Collection<String> notificationTypes) {
-        java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>();
-        if (notificationTypes != null) {
+        if (notificationTypes == null) {
+            this.notificationTypes = null;
+        } else {
+            java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>(notificationTypes.size());
             notificationTypesCopy.addAll(notificationTypes);
+            this.notificationTypes = notificationTypesCopy;
         }
-        this.notificationTypes = notificationTypesCopy;
 
         return this;
     }
@@ -238,11 +243,39 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("TopicARN: " + topicARN + ", ");
-        sb.append("NotificationTypes: " + notificationTypes + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (topicARN != null) sb.append("TopicARN: " + topicARN + ", ");
+        if (notificationTypes != null) sb.append("NotificationTypes: " + notificationTypes + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getTopicARN() == null) ? 0 : getTopicARN().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationTypes() == null) ? 0 : getNotificationTypes().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PutNotificationConfigurationRequest == false) return false;
+        PutNotificationConfigurationRequest other = (PutNotificationConfigurationRequest)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getTopicARN() == null ^ this.getTopicARN() == null) return false;
+        if (other.getTopicARN() != null && other.getTopicARN().equals(this.getTopicARN()) == false) return false; 
+        if (other.getNotificationTypes() == null ^ this.getNotificationTypes() == null) return false;
+        if (other.getNotificationTypes() != null && other.getNotificationTypes().equals(this.getNotificationTypes()) == false) return false; 
+        return true;
     }
     
 }

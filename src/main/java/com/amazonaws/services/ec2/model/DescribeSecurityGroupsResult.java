@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -46,10 +46,13 @@ public class DescribeSecurityGroupsResult {
      * @param securityGroups The list of described Amazon EC2 security groups.
      */
     public void setSecurityGroups(java.util.Collection<SecurityGroup> securityGroups) {
-        java.util.List<SecurityGroup> securityGroupsCopy = new java.util.ArrayList<SecurityGroup>();
-        if (securityGroups != null) {
-            securityGroupsCopy.addAll(securityGroups);
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
         }
+
+        java.util.List<SecurityGroup> securityGroupsCopy = new java.util.ArrayList<SecurityGroup>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
     
@@ -64,7 +67,7 @@ public class DescribeSecurityGroupsResult {
      *         together. 
      */
     public DescribeSecurityGroupsResult withSecurityGroups(SecurityGroup... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroup>());
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroup>(securityGroups.length));
         for (SecurityGroup value : securityGroups) {
             getSecurityGroups().add(value);
         }
@@ -82,11 +85,13 @@ public class DescribeSecurityGroupsResult {
      *         together. 
      */
     public DescribeSecurityGroupsResult withSecurityGroups(java.util.Collection<SecurityGroup> securityGroups) {
-        java.util.List<SecurityGroup> securityGroupsCopy = new java.util.ArrayList<SecurityGroup>();
-        if (securityGroups != null) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            java.util.List<SecurityGroup> securityGroupsCopy = new java.util.ArrayList<SecurityGroup>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
         }
-        this.securityGroups = securityGroupsCopy;
 
         return this;
     }
@@ -103,9 +108,31 @@ public class DescribeSecurityGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeSecurityGroupsResult == false) return false;
+        DescribeSecurityGroupsResult other = (DescribeSecurityGroupsResult)obj;
+        
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        return true;
     }
     
 }

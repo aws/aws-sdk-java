@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -307,11 +307,39 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        sb.append("SkipFinalSnapshot: " + skipFinalSnapshot + ", ");
-        sb.append("FinalDBSnapshotIdentifier: " + finalDBSnapshotIdentifier + ", ");
+        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        if (skipFinalSnapshot != null) sb.append("SkipFinalSnapshot: " + skipFinalSnapshot + ", ");
+        if (finalDBSnapshotIdentifier != null) sb.append("FinalDBSnapshotIdentifier: " + finalDBSnapshotIdentifier + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((isSkipFinalSnapshot() == null) ? 0 : isSkipFinalSnapshot().hashCode()); 
+        hashCode = prime * hashCode + ((getFinalDBSnapshotIdentifier() == null) ? 0 : getFinalDBSnapshotIdentifier().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DeleteDBInstanceRequest == false) return false;
+        DeleteDBInstanceRequest other = (DeleteDBInstanceRequest)obj;
+        
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
+        if (other.isSkipFinalSnapshot() == null ^ this.isSkipFinalSnapshot() == null) return false;
+        if (other.isSkipFinalSnapshot() != null && other.isSkipFinalSnapshot().equals(this.isSkipFinalSnapshot()) == false) return false; 
+        if (other.getFinalDBSnapshotIdentifier() == null ^ this.getFinalDBSnapshotIdentifier() == null) return false;
+        if (other.getFinalDBSnapshotIdentifier() != null && other.getFinalDBSnapshotIdentifier().equals(this.getFinalDBSnapshotIdentifier()) == false) return false; 
+        return true;
     }
     
 }

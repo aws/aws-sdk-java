@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -234,13 +234,47 @@ public class Subscription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SubscriptionArn: " + subscriptionArn + ", ");
-        sb.append("Owner: " + owner + ", ");
-        sb.append("Protocol: " + protocol + ", ");
-        sb.append("Endpoint: " + endpoint + ", ");
-        sb.append("TopicArn: " + topicArn + ", ");
+        if (subscriptionArn != null) sb.append("SubscriptionArn: " + subscriptionArn + ", ");
+        if (owner != null) sb.append("Owner: " + owner + ", ");
+        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
+        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
+        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSubscriptionArn() == null) ? 0 : getSubscriptionArn().hashCode()); 
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode()); 
+        hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode()); 
+        hashCode = prime * hashCode + ((getTopicArn() == null) ? 0 : getTopicArn().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Subscription == false) return false;
+        Subscription other = (Subscription)obj;
+        
+        if (other.getSubscriptionArn() == null ^ this.getSubscriptionArn() == null) return false;
+        if (other.getSubscriptionArn() != null && other.getSubscriptionArn().equals(this.getSubscriptionArn()) == false) return false; 
+        if (other.getOwner() == null ^ this.getOwner() == null) return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false) return false; 
+        if (other.getProtocol() == null ^ this.getProtocol() == null) return false;
+        if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false) return false; 
+        if (other.getEndpoint() == null ^ this.getEndpoint() == null) return false;
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false) return false; 
+        if (other.getTopicArn() == null ^ this.getTopicArn() == null) return false;
+        if (other.getTopicArn() != null && other.getTopicArn().equals(this.getTopicArn()) == false) return false; 
+        return true;
     }
     
 }

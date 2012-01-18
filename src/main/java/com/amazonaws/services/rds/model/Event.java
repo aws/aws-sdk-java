@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -248,12 +248,43 @@ public class Event {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("SourceIdentifier: " + sourceIdentifier + ", ");
-        sb.append("SourceType: " + sourceType + ", ");
-        sb.append("Message: " + message + ", ");
-        sb.append("Date: " + date + ", ");
+        if (sourceIdentifier != null) sb.append("SourceIdentifier: " + sourceIdentifier + ", ");
+        if (sourceType != null) sb.append("SourceType: " + sourceType + ", ");
+        if (message != null) sb.append("Message: " + message + ", ");
+        if (date != null) sb.append("Date: " + date + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Event == false) return false;
+        Event other = (Event)obj;
+        
+        if (other.getSourceIdentifier() == null ^ this.getSourceIdentifier() == null) return false;
+        if (other.getSourceIdentifier() != null && other.getSourceIdentifier().equals(this.getSourceIdentifier()) == false) return false; 
+        if (other.getSourceType() == null ^ this.getSourceType() == null) return false;
+        if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
+        if (other.getMessage() == null ^ this.getMessage() == null) return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getDate() == null ^ this.getDate() == null) return false;
+        if (other.getDate() != null && other.getDate().equals(this.getDate()) == false) return false; 
+        return true;
     }
     
 }

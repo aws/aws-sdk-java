@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -357,14 +357,51 @@ public class StreamingDistribution {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Id: " + id + ", ");
-        sb.append("Status: " + status + ", ");
-        sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
-        sb.append("DomainName: " + domainName + ", ");
-        sb.append("ActiveTrustedSigners: " + activeTrustedSigners + ", ");
-        sb.append("StreamingDistributionConfig: " + streamingDistributionConfig + ", ");
+        if (id != null) sb.append("Id: " + id + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
+        if (lastModifiedTime != null) sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
+        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
+        if (activeTrustedSigners != null) sb.append("ActiveTrustedSigners: " + activeTrustedSigners + ", ");
+        if (streamingDistributionConfig != null) sb.append("StreamingDistributionConfig: " + streamingDistributionConfig + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
+        hashCode = prime * hashCode + ((getActiveTrustedSigners() == null) ? 0 : getActiveTrustedSigners().hashCode()); 
+        hashCode = prime * hashCode + ((getStreamingDistributionConfig() == null) ? 0 : getStreamingDistributionConfig().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StreamingDistribution == false) return false;
+        StreamingDistribution other = (StreamingDistribution)obj;
+        
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getLastModifiedTime() == null ^ this.getLastModifiedTime() == null) return false;
+        if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false) return false; 
+        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
+        if (other.getActiveTrustedSigners() == null ^ this.getActiveTrustedSigners() == null) return false;
+        if (other.getActiveTrustedSigners() != null && other.getActiveTrustedSigners().equals(this.getActiveTrustedSigners()) == false) return false; 
+        if (other.getStreamingDistributionConfig() == null ^ this.getStreamingDistributionConfig() == null) return false;
+        if (other.getStreamingDistributionConfig() != null && other.getStreamingDistributionConfig().equals(this.getStreamingDistributionConfig()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -258,13 +258,47 @@ public class PolicyAttributeTypeDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AttributeName: " + attributeName + ", ");
-        sb.append("AttributeType: " + attributeType + ", ");
-        sb.append("Description: " + description + ", ");
-        sb.append("DefaultValue: " + defaultValue + ", ");
-        sb.append("Cardinality: " + cardinality + ", ");
+        if (attributeName != null) sb.append("AttributeName: " + attributeName + ", ");
+        if (attributeType != null) sb.append("AttributeType: " + attributeType + ", ");
+        if (description != null) sb.append("Description: " + description + ", ");
+        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
+        if (cardinality != null) sb.append("Cardinality: " + cardinality + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributeType() == null) ? 0 : getAttributeType().hashCode()); 
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode()); 
+        hashCode = prime * hashCode + ((getCardinality() == null) ? 0 : getCardinality().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PolicyAttributeTypeDescription == false) return false;
+        PolicyAttributeTypeDescription other = (PolicyAttributeTypeDescription)obj;
+        
+        if (other.getAttributeName() == null ^ this.getAttributeName() == null) return false;
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false) return false; 
+        if (other.getAttributeType() == null ^ this.getAttributeType() == null) return false;
+        if (other.getAttributeType() != null && other.getAttributeType().equals(this.getAttributeType()) == false) return false; 
+        if (other.getDescription() == null ^ this.getDescription() == null) return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
+        if (other.getDefaultValue() == null ^ this.getDefaultValue() == null) return false;
+        if (other.getDefaultValue() != null && other.getDefaultValue().equals(this.getDefaultValue()) == false) return false; 
+        if (other.getCardinality() == null ^ this.getCardinality() == null) return false;
+        if (other.getCardinality() != null && other.getCardinality().equals(this.getCardinality()) == false) return false; 
+        return true;
     }
     
 }

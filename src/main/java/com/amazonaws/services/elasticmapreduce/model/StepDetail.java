@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -132,10 +132,35 @@ public class StepDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("StepConfig: " + stepConfig + ", ");
-        sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
+        if (stepConfig != null) sb.append("StepConfig: " + stepConfig + ", ");
+        if (executionStatusDetail != null) sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getStepConfig() == null) ? 0 : getStepConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getExecutionStatusDetail() == null) ? 0 : getExecutionStatusDetail().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof StepDetail == false) return false;
+        StepDetail other = (StepDetail)obj;
+        
+        if (other.getStepConfig() == null ^ this.getStepConfig() == null) return false;
+        if (other.getStepConfig() != null && other.getStepConfig().equals(this.getStepConfig()) == false) return false; 
+        if (other.getExecutionStatusDetail() == null ^ this.getExecutionStatusDetail() == null) return false;
+        if (other.getExecutionStatusDetail() != null && other.getExecutionStatusDetail().equals(this.getExecutionStatusDetail()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -124,10 +124,13 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
      * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
      */
     public void setEntries(java.util.Collection<SendMessageBatchRequestEntry> entries) {
-        java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>();
-        if (entries != null) {
-            entriesCopy.addAll(entries);
+        if (entries == null) {
+            this.entries = null;
+            return;
         }
+
+        java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.size());
+        entriesCopy.addAll(entries);
         this.entries = entriesCopy;
     }
     
@@ -142,7 +145,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendMessageBatchRequest withEntries(SendMessageBatchRequestEntry... entries) {
-        if (getEntries() == null) setEntries(new java.util.ArrayList<SendMessageBatchRequestEntry>());
+        if (getEntries() == null) setEntries(new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.length));
         for (SendMessageBatchRequestEntry value : entries) {
             getEntries().add(value);
         }
@@ -160,11 +163,13 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
      *         together. 
      */
     public SendMessageBatchRequest withEntries(java.util.Collection<SendMessageBatchRequestEntry> entries) {
-        java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>();
-        if (entries != null) {
+        if (entries == null) {
+            this.entries = null;
+        } else {
+            java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.size());
             entriesCopy.addAll(entries);
+            this.entries = entriesCopy;
         }
-        this.entries = entriesCopy;
 
         return this;
     }
@@ -181,10 +186,35 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("QueueUrl: " + queueUrl + ", ");
-        sb.append("Entries: " + entries + ", ");
+        if (queueUrl != null) sb.append("QueueUrl: " + queueUrl + ", ");
+        if (entries != null) sb.append("Entries: " + entries + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getQueueUrl() == null) ? 0 : getQueueUrl().hashCode()); 
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof SendMessageBatchRequest == false) return false;
+        SendMessageBatchRequest other = (SendMessageBatchRequest)obj;
+        
+        if (other.getQueueUrl() == null ^ this.getQueueUrl() == null) return false;
+        if (other.getQueueUrl() != null && other.getQueueUrl().equals(this.getQueueUrl()) == false) return false; 
+        if (other.getEntries() == null ^ this.getEntries() == null) return false;
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false) return false; 
+        return true;
     }
     
 }

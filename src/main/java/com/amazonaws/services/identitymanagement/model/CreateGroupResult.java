@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -73,9 +73,31 @@ public class CreateGroupResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Group: " + group + ", ");
+        if (group != null) sb.append("Group: " + group + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateGroupResult == false) return false;
+        CreateGroupResult other = (CreateGroupResult)obj;
+        
+        if (other.getGroup() == null ^ this.getGroup() == null) return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false) return false; 
+        return true;
     }
     
 }

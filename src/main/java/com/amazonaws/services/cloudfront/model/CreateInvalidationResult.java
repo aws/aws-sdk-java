@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -118,10 +118,35 @@ public class CreateInvalidationResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Location: " + location + ", ");
-        sb.append("Invalidation: " + invalidation + ", ");
+        if (location != null) sb.append("Location: " + location + ", ");
+        if (invalidation != null) sb.append("Invalidation: " + invalidation + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode()); 
+        hashCode = prime * hashCode + ((getInvalidation() == null) ? 0 : getInvalidation().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CreateInvalidationResult == false) return false;
+        CreateInvalidationResult other = (CreateInvalidationResult)obj;
+        
+        if (other.getLocation() == null ^ this.getLocation() == null) return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false) return false; 
+        if (other.getInvalidation() == null ^ this.getInvalidation() == null) return false;
+        if (other.getInvalidation() != null && other.getInvalidation().equals(this.getInvalidation()) == false) return false; 
+        return true;
     }
     
 }

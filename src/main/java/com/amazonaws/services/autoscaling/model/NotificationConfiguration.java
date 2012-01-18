@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -205,11 +205,39 @@ public class NotificationConfiguration {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        sb.append("TopicARN: " + topicARN + ", ");
-        sb.append("NotificationType: " + notificationType + ", ");
+        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
+        if (topicARN != null) sb.append("TopicARN: " + topicARN + ", ");
+        if (notificationType != null) sb.append("NotificationType: " + notificationType + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAutoScalingGroupName() == null) ? 0 : getAutoScalingGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getTopicARN() == null) ? 0 : getTopicARN().hashCode()); 
+        hashCode = prime * hashCode + ((getNotificationType() == null) ? 0 : getNotificationType().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof NotificationConfiguration == false) return false;
+        NotificationConfiguration other = (NotificationConfiguration)obj;
+        
+        if (other.getAutoScalingGroupName() == null ^ this.getAutoScalingGroupName() == null) return false;
+        if (other.getAutoScalingGroupName() != null && other.getAutoScalingGroupName().equals(this.getAutoScalingGroupName()) == false) return false; 
+        if (other.getTopicARN() == null ^ this.getTopicARN() == null) return false;
+        if (other.getTopicARN() != null && other.getTopicARN().equals(this.getTopicARN()) == false) return false; 
+        if (other.getNotificationType() == null ^ this.getNotificationType() == null) return false;
+        if (other.getNotificationType() != null && other.getNotificationType().equals(this.getNotificationType()) == false) return false; 
+        return true;
     }
     
 }

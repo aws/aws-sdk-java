@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class DescribeAlarmHistoryResult {
      * @param alarmHistoryItems A list of alarm histories in JSON format.
      */
     public void setAlarmHistoryItems(java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
-        java.util.List<AlarmHistoryItem> alarmHistoryItemsCopy = new java.util.ArrayList<AlarmHistoryItem>();
-        if (alarmHistoryItems != null) {
-            alarmHistoryItemsCopy.addAll(alarmHistoryItems);
+        if (alarmHistoryItems == null) {
+            this.alarmHistoryItems = null;
+            return;
         }
+
+        java.util.List<AlarmHistoryItem> alarmHistoryItemsCopy = new java.util.ArrayList<AlarmHistoryItem>(alarmHistoryItems.size());
+        alarmHistoryItemsCopy.addAll(alarmHistoryItems);
         this.alarmHistoryItems = alarmHistoryItemsCopy;
     }
     
@@ -68,7 +71,7 @@ public class DescribeAlarmHistoryResult {
      *         together. 
      */
     public DescribeAlarmHistoryResult withAlarmHistoryItems(AlarmHistoryItem... alarmHistoryItems) {
-        if (getAlarmHistoryItems() == null) setAlarmHistoryItems(new java.util.ArrayList<AlarmHistoryItem>());
+        if (getAlarmHistoryItems() == null) setAlarmHistoryItems(new java.util.ArrayList<AlarmHistoryItem>(alarmHistoryItems.length));
         for (AlarmHistoryItem value : alarmHistoryItems) {
             getAlarmHistoryItems().add(value);
         }
@@ -86,11 +89,13 @@ public class DescribeAlarmHistoryResult {
      *         together. 
      */
     public DescribeAlarmHistoryResult withAlarmHistoryItems(java.util.Collection<AlarmHistoryItem> alarmHistoryItems) {
-        java.util.List<AlarmHistoryItem> alarmHistoryItemsCopy = new java.util.ArrayList<AlarmHistoryItem>();
-        if (alarmHistoryItems != null) {
+        if (alarmHistoryItems == null) {
+            this.alarmHistoryItems = null;
+        } else {
+            java.util.List<AlarmHistoryItem> alarmHistoryItemsCopy = new java.util.ArrayList<AlarmHistoryItem>(alarmHistoryItems.size());
             alarmHistoryItemsCopy.addAll(alarmHistoryItems);
+            this.alarmHistoryItems = alarmHistoryItemsCopy;
         }
-        this.alarmHistoryItems = alarmHistoryItemsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeAlarmHistoryResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AlarmHistoryItems: " + alarmHistoryItems + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (alarmHistoryItems != null) sb.append("AlarmHistoryItems: " + alarmHistoryItems + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAlarmHistoryItems() == null) ? 0 : getAlarmHistoryItems().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeAlarmHistoryResult == false) return false;
+        DescribeAlarmHistoryResult other = (DescribeAlarmHistoryResult)obj;
+        
+        if (other.getAlarmHistoryItems() == null ^ this.getAlarmHistoryItems() == null) return false;
+        if (other.getAlarmHistoryItems() != null && other.getAlarmHistoryItems().equals(this.getAlarmHistoryItems()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -145,10 +145,35 @@ public class S3Origin {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DNSName: " + dNSName + ", ");
-        sb.append("OriginAccessIdentity: " + originAccessIdentity + ", ");
+        if (dNSName != null) sb.append("DNSName: " + dNSName + ", ");
+        if (originAccessIdentity != null) sb.append("OriginAccessIdentity: " + originAccessIdentity + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode()); 
+        hashCode = prime * hashCode + ((getOriginAccessIdentity() == null) ? 0 : getOriginAccessIdentity().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof S3Origin == false) return false;
+        S3Origin other = (S3Origin)obj;
+        
+        if (other.getDNSName() == null ^ this.getDNSName() == null) return false;
+        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false) return false; 
+        if (other.getOriginAccessIdentity() == null ^ this.getOriginAccessIdentity() == null) return false;
+        if (other.getOriginAccessIdentity() != null && other.getOriginAccessIdentity().equals(this.getOriginAccessIdentity()) == false) return false; 
+        return true;
     }
     
 }

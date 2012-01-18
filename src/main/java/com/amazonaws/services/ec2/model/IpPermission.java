@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -203,10 +203,13 @@ public class IpPermission {
      * @param userIdGroupPairs The list of AWS user IDs and groups included in this permission.
      */
     public void setUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
-        java.util.List<UserIdGroupPair> userIdGroupPairsCopy = new java.util.ArrayList<UserIdGroupPair>();
-        if (userIdGroupPairs != null) {
-            userIdGroupPairsCopy.addAll(userIdGroupPairs);
+        if (userIdGroupPairs == null) {
+            this.userIdGroupPairs = null;
+            return;
         }
+
+        java.util.List<UserIdGroupPair> userIdGroupPairsCopy = new java.util.ArrayList<UserIdGroupPair>(userIdGroupPairs.size());
+        userIdGroupPairsCopy.addAll(userIdGroupPairs);
         this.userIdGroupPairs = userIdGroupPairsCopy;
     }
     
@@ -221,7 +224,7 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withUserIdGroupPairs(UserIdGroupPair... userIdGroupPairs) {
-        if (getUserIdGroupPairs() == null) setUserIdGroupPairs(new java.util.ArrayList<UserIdGroupPair>());
+        if (getUserIdGroupPairs() == null) setUserIdGroupPairs(new java.util.ArrayList<UserIdGroupPair>(userIdGroupPairs.length));
         for (UserIdGroupPair value : userIdGroupPairs) {
             getUserIdGroupPairs().add(value);
         }
@@ -239,11 +242,13 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withUserIdGroupPairs(java.util.Collection<UserIdGroupPair> userIdGroupPairs) {
-        java.util.List<UserIdGroupPair> userIdGroupPairsCopy = new java.util.ArrayList<UserIdGroupPair>();
-        if (userIdGroupPairs != null) {
+        if (userIdGroupPairs == null) {
+            this.userIdGroupPairs = null;
+        } else {
+            java.util.List<UserIdGroupPair> userIdGroupPairsCopy = new java.util.ArrayList<UserIdGroupPair>(userIdGroupPairs.size());
             userIdGroupPairsCopy.addAll(userIdGroupPairs);
+            this.userIdGroupPairs = userIdGroupPairsCopy;
         }
-        this.userIdGroupPairs = userIdGroupPairsCopy;
 
         return this;
     }
@@ -267,10 +272,13 @@ public class IpPermission {
      * @param ipRanges The list of CIDR IP ranges included in this permission.
      */
     public void setIpRanges(java.util.Collection<String> ipRanges) {
-        java.util.List<String> ipRangesCopy = new java.util.ArrayList<String>();
-        if (ipRanges != null) {
-            ipRangesCopy.addAll(ipRanges);
+        if (ipRanges == null) {
+            this.ipRanges = null;
+            return;
         }
+
+        java.util.List<String> ipRangesCopy = new java.util.ArrayList<String>(ipRanges.size());
+        ipRangesCopy.addAll(ipRanges);
         this.ipRanges = ipRangesCopy;
     }
     
@@ -285,7 +293,7 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withIpRanges(String... ipRanges) {
-        if (getIpRanges() == null) setIpRanges(new java.util.ArrayList<String>());
+        if (getIpRanges() == null) setIpRanges(new java.util.ArrayList<String>(ipRanges.length));
         for (String value : ipRanges) {
             getIpRanges().add(value);
         }
@@ -303,11 +311,13 @@ public class IpPermission {
      *         together. 
      */
     public IpPermission withIpRanges(java.util.Collection<String> ipRanges) {
-        java.util.List<String> ipRangesCopy = new java.util.ArrayList<String>();
-        if (ipRanges != null) {
+        if (ipRanges == null) {
+            this.ipRanges = null;
+        } else {
+            java.util.List<String> ipRangesCopy = new java.util.ArrayList<String>(ipRanges.size());
             ipRangesCopy.addAll(ipRanges);
+            this.ipRanges = ipRangesCopy;
         }
-        this.ipRanges = ipRangesCopy;
 
         return this;
     }
@@ -324,13 +334,47 @@ public class IpPermission {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("IpProtocol: " + ipProtocol + ", ");
-        sb.append("FromPort: " + fromPort + ", ");
-        sb.append("ToPort: " + toPort + ", ");
-        sb.append("UserIdGroupPairs: " + userIdGroupPairs + ", ");
-        sb.append("IpRanges: " + ipRanges + ", ");
+        if (ipProtocol != null) sb.append("IpProtocol: " + ipProtocol + ", ");
+        if (fromPort != null) sb.append("FromPort: " + fromPort + ", ");
+        if (toPort != null) sb.append("ToPort: " + toPort + ", ");
+        if (userIdGroupPairs != null) sb.append("UserIdGroupPairs: " + userIdGroupPairs + ", ");
+        if (ipRanges != null) sb.append("IpRanges: " + ipRanges + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getIpProtocol() == null) ? 0 : getIpProtocol().hashCode()); 
+        hashCode = prime * hashCode + ((getFromPort() == null) ? 0 : getFromPort().hashCode()); 
+        hashCode = prime * hashCode + ((getToPort() == null) ? 0 : getToPort().hashCode()); 
+        hashCode = prime * hashCode + ((getUserIdGroupPairs() == null) ? 0 : getUserIdGroupPairs().hashCode()); 
+        hashCode = prime * hashCode + ((getIpRanges() == null) ? 0 : getIpRanges().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof IpPermission == false) return false;
+        IpPermission other = (IpPermission)obj;
+        
+        if (other.getIpProtocol() == null ^ this.getIpProtocol() == null) return false;
+        if (other.getIpProtocol() != null && other.getIpProtocol().equals(this.getIpProtocol()) == false) return false; 
+        if (other.getFromPort() == null ^ this.getFromPort() == null) return false;
+        if (other.getFromPort() != null && other.getFromPort().equals(this.getFromPort()) == false) return false; 
+        if (other.getToPort() == null ^ this.getToPort() == null) return false;
+        if (other.getToPort() != null && other.getToPort().equals(this.getToPort()) == false) return false; 
+        if (other.getUserIdGroupPairs() == null ^ this.getUserIdGroupPairs() == null) return false;
+        if (other.getUserIdGroupPairs() != null && other.getUserIdGroupPairs().equals(this.getUserIdGroupPairs()) == false) return false; 
+        if (other.getIpRanges() == null ^ this.getIpRanges() == null) return false;
+        if (other.getIpRanges() != null && other.getIpRanges().equals(this.getIpRanges()) == false) return false; 
+        return true;
     }
     
 }

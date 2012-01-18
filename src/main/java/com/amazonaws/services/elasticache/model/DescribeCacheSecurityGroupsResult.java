@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,10 +84,13 @@ public class DescribeCacheSecurityGroupsResult {
      * @param cacheSecurityGroups A list of <a>CacheSecurityGroup</a> instances.
      */
     public void setCacheSecurityGroups(java.util.Collection<CacheSecurityGroup> cacheSecurityGroups) {
-        java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>();
-        if (cacheSecurityGroups != null) {
-            cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
+        if (cacheSecurityGroups == null) {
+            this.cacheSecurityGroups = null;
+            return;
         }
+
+        java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.size());
+        cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
         this.cacheSecurityGroups = cacheSecurityGroupsCopy;
     }
     
@@ -102,7 +105,7 @@ public class DescribeCacheSecurityGroupsResult {
      *         together. 
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(CacheSecurityGroup... cacheSecurityGroups) {
-        if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroup>());
+        if (getCacheSecurityGroups() == null) setCacheSecurityGroups(new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.length));
         for (CacheSecurityGroup value : cacheSecurityGroups) {
             getCacheSecurityGroups().add(value);
         }
@@ -120,11 +123,13 @@ public class DescribeCacheSecurityGroupsResult {
      *         together. 
      */
     public DescribeCacheSecurityGroupsResult withCacheSecurityGroups(java.util.Collection<CacheSecurityGroup> cacheSecurityGroups) {
-        java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>();
-        if (cacheSecurityGroups != null) {
+        if (cacheSecurityGroups == null) {
+            this.cacheSecurityGroups = null;
+        } else {
+            java.util.List<CacheSecurityGroup> cacheSecurityGroupsCopy = new java.util.ArrayList<CacheSecurityGroup>(cacheSecurityGroups.size());
             cacheSecurityGroupsCopy.addAll(cacheSecurityGroups);
+            this.cacheSecurityGroups = cacheSecurityGroupsCopy;
         }
-        this.cacheSecurityGroups = cacheSecurityGroupsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeCacheSecurityGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("CacheSecurityGroups: " + cacheSecurityGroups + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (cacheSecurityGroups != null) sb.append("CacheSecurityGroups: " + cacheSecurityGroups + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheSecurityGroups() == null) ? 0 : getCacheSecurityGroups().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeCacheSecurityGroupsResult == false) return false;
+        DescribeCacheSecurityGroupsResult other = (DescribeCacheSecurityGroupsResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getCacheSecurityGroups() == null ^ this.getCacheSecurityGroups() == null) return false;
+        if (other.getCacheSecurityGroups() != null && other.getCacheSecurityGroups().equals(this.getCacheSecurityGroups()) == false) return false; 
+        return true;
     }
     
 }

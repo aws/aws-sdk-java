@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -129,10 +129,13 @@ public class Filter {
      * @param values Contains one or more values for the filter.
      */
     public void setValues(java.util.Collection<String> values) {
-        java.util.List<String> valuesCopy = new java.util.ArrayList<String>();
-        if (values != null) {
-            valuesCopy.addAll(values);
+        if (values == null) {
+            this.values = null;
+            return;
         }
+
+        java.util.List<String> valuesCopy = new java.util.ArrayList<String>(values.size());
+        valuesCopy.addAll(values);
         this.values = valuesCopy;
     }
     
@@ -147,7 +150,7 @@ public class Filter {
      *         together. 
      */
     public Filter withValues(String... values) {
-        if (getValues() == null) setValues(new java.util.ArrayList<String>());
+        if (getValues() == null) setValues(new java.util.ArrayList<String>(values.length));
         for (String value : values) {
             getValues().add(value);
         }
@@ -165,11 +168,13 @@ public class Filter {
      *         together. 
      */
     public Filter withValues(java.util.Collection<String> values) {
-        java.util.List<String> valuesCopy = new java.util.ArrayList<String>();
-        if (values != null) {
+        if (values == null) {
+            this.values = null;
+        } else {
+            java.util.List<String> valuesCopy = new java.util.ArrayList<String>(values.size());
             valuesCopy.addAll(values);
+            this.values = valuesCopy;
         }
-        this.values = valuesCopy;
 
         return this;
     }
@@ -186,10 +191,35 @@ public class Filter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Name: " + name + ", ");
-        sb.append("Values: " + values + ", ");
+        if (name != null) sb.append("Name: " + name + ", ");
+        if (values != null) sb.append("Values: " + values + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Filter == false) return false;
+        Filter other = (Filter)obj;
+        
+        if (other.getName() == null ^ this.getName() == null) return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.getValues() == null ^ this.getValues() == null) return false;
+        if (other.getValues() != null && other.getValues().equals(this.getValues()) == false) return false; 
+        return true;
     }
     
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,9 +79,31 @@ public class EstimateTemplateCostResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Url: " + url + ", ");
+        if (url != null) sb.append("Url: " + url + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof EstimateTemplateCostResult == false) return false;
+        EstimateTemplateCostResult other = (EstimateTemplateCostResult)obj;
+        
+        if (other.getUrl() == null ^ this.getUrl() == null) return false;
+        if (other.getUrl() != null && other.getUrl().equals(this.getUrl()) == false) return false; 
+        return true;
     }
     
 }

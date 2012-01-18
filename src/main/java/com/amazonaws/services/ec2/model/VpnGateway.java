@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -220,10 +220,13 @@ public class VpnGateway {
      * @param vpcAttachments Contains information about the VPCs attached to the VPN gateway.
      */
     public void setVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
-        java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>();
-        if (vpcAttachments != null) {
-            vpcAttachmentsCopy.addAll(vpcAttachments);
+        if (vpcAttachments == null) {
+            this.vpcAttachments = null;
+            return;
         }
+
+        java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>(vpcAttachments.size());
+        vpcAttachmentsCopy.addAll(vpcAttachments);
         this.vpcAttachments = vpcAttachmentsCopy;
     }
     
@@ -238,7 +241,7 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withVpcAttachments(VpcAttachment... vpcAttachments) {
-        if (getVpcAttachments() == null) setVpcAttachments(new java.util.ArrayList<VpcAttachment>());
+        if (getVpcAttachments() == null) setVpcAttachments(new java.util.ArrayList<VpcAttachment>(vpcAttachments.length));
         for (VpcAttachment value : vpcAttachments) {
             getVpcAttachments().add(value);
         }
@@ -256,11 +259,13 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withVpcAttachments(java.util.Collection<VpcAttachment> vpcAttachments) {
-        java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>();
-        if (vpcAttachments != null) {
+        if (vpcAttachments == null) {
+            this.vpcAttachments = null;
+        } else {
+            java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>(vpcAttachments.size());
             vpcAttachmentsCopy.addAll(vpcAttachments);
+            this.vpcAttachments = vpcAttachmentsCopy;
         }
-        this.vpcAttachments = vpcAttachmentsCopy;
 
         return this;
     }
@@ -284,10 +289,13 @@ public class VpnGateway {
      * @param tags A list of tags for the VpnGateway.
      */
     public void setTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
-            tagsCopy.addAll(tags);
+        if (tags == null) {
+            this.tags = null;
+            return;
         }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
     
@@ -302,7 +310,7 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withTags(Tag... tags) {
-        if (getTags() == null) setTags(new java.util.ArrayList<Tag>());
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
         for (Tag value : tags) {
             getTags().add(value);
         }
@@ -320,11 +328,13 @@ public class VpnGateway {
      *         together. 
      */
     public VpnGateway withTags(java.util.Collection<Tag> tags) {
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>();
-        if (tags != null) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
             tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
         }
-        this.tags = tagsCopy;
 
         return this;
     }
@@ -341,14 +351,51 @@ public class VpnGateway {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
-        sb.append("State: " + state + ", ");
-        sb.append("Type: " + type + ", ");
-        sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        sb.append("VpcAttachments: " + vpcAttachments + ", ");
-        sb.append("Tags: " + tags + ", ");
+        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        if (state != null) sb.append("State: " + state + ", ");
+        if (type != null) sb.append("Type: " + type + ", ");
+        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (vpcAttachments != null) sb.append("VpcAttachments: " + vpcAttachments + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcAttachments() == null) ? 0 : getVpcAttachments().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof VpnGateway == false) return false;
+        VpnGateway other = (VpnGateway)obj;
+        
+        if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null) return false;
+        if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false) return false; 
+        if (other.getState() == null ^ this.getState() == null) return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
+        if (other.getType() == null ^ this.getType() == null) return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false) return false; 
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getVpcAttachments() == null ^ this.getVpcAttachments() == null) return false;
+        if (other.getVpcAttachments() != null && other.getVpcAttachments().equals(this.getVpcAttachments()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        return true;
     }
     
 }

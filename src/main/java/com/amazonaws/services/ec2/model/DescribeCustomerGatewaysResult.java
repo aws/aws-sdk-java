@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,10 +45,13 @@ public class DescribeCustomerGatewaysResult {
      * @param customerGateways 
      */
     public void setCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
-        java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>();
-        if (customerGateways != null) {
-            customerGatewaysCopy.addAll(customerGateways);
+        if (customerGateways == null) {
+            this.customerGateways = null;
+            return;
         }
+
+        java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>(customerGateways.size());
+        customerGatewaysCopy.addAll(customerGateways);
         this.customerGateways = customerGatewaysCopy;
     }
     
@@ -63,7 +66,7 @@ public class DescribeCustomerGatewaysResult {
      *         together. 
      */
     public DescribeCustomerGatewaysResult withCustomerGateways(CustomerGateway... customerGateways) {
-        if (getCustomerGateways() == null) setCustomerGateways(new java.util.ArrayList<CustomerGateway>());
+        if (getCustomerGateways() == null) setCustomerGateways(new java.util.ArrayList<CustomerGateway>(customerGateways.length));
         for (CustomerGateway value : customerGateways) {
             getCustomerGateways().add(value);
         }
@@ -81,11 +84,13 @@ public class DescribeCustomerGatewaysResult {
      *         together. 
      */
     public DescribeCustomerGatewaysResult withCustomerGateways(java.util.Collection<CustomerGateway> customerGateways) {
-        java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>();
-        if (customerGateways != null) {
+        if (customerGateways == null) {
+            this.customerGateways = null;
+        } else {
+            java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>(customerGateways.size());
             customerGatewaysCopy.addAll(customerGateways);
+            this.customerGateways = customerGatewaysCopy;
         }
-        this.customerGateways = customerGatewaysCopy;
 
         return this;
     }
@@ -102,9 +107,31 @@ public class DescribeCustomerGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("CustomerGateways: " + customerGateways + ", ");
+        if (customerGateways != null) sb.append("CustomerGateways: " + customerGateways + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getCustomerGateways() == null) ? 0 : getCustomerGateways().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeCustomerGatewaysResult == false) return false;
+        DescribeCustomerGatewaysResult other = (DescribeCustomerGatewaysResult)obj;
+        
+        if (other.getCustomerGateways() == null ^ this.getCustomerGateways() == null) return false;
+        if (other.getCustomerGateways() != null && other.getCustomerGateways().equals(this.getCustomerGateways()) == false) return false; 
+        return true;
     }
     
 }

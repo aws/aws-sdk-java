@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -135,10 +135,35 @@ public class PolicyAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("AttributeName: " + attributeName + ", ");
-        sb.append("AttributeValue: " + attributeValue + ", ");
+        if (attributeName != null) sb.append("AttributeName: " + attributeName + ", ");
+        if (attributeValue != null) sb.append("AttributeValue: " + attributeValue + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getAttributeName() == null) ? 0 : getAttributeName().hashCode()); 
+        hashCode = prime * hashCode + ((getAttributeValue() == null) ? 0 : getAttributeValue().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof PolicyAttribute == false) return false;
+        PolicyAttribute other = (PolicyAttribute)obj;
+        
+        if (other.getAttributeName() == null ^ this.getAttributeName() == null) return false;
+        if (other.getAttributeName() != null && other.getAttributeName().equals(this.getAttributeName()) == false) return false; 
+        if (other.getAttributeValue() == null ^ this.getAttributeValue() == null) return false;
+        if (other.getAttributeValue() != null && other.getAttributeValue().equals(this.getAttributeValue()) == false) return false; 
+        return true;
     }
     
 }

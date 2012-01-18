@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,10 +84,13 @@ public class DescribeEventsResult {
      * @param events A list of <a>Event</a> instances.
      */
     public void setEvents(java.util.Collection<Event> events) {
-        java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>();
-        if (events != null) {
-            eventsCopy.addAll(events);
+        if (events == null) {
+            this.events = null;
+            return;
         }
+
+        java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>(events.size());
+        eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
     
@@ -102,7 +105,7 @@ public class DescribeEventsResult {
      *         together. 
      */
     public DescribeEventsResult withEvents(Event... events) {
-        if (getEvents() == null) setEvents(new java.util.ArrayList<Event>());
+        if (getEvents() == null) setEvents(new java.util.ArrayList<Event>(events.length));
         for (Event value : events) {
             getEvents().add(value);
         }
@@ -120,11 +123,13 @@ public class DescribeEventsResult {
      *         together. 
      */
     public DescribeEventsResult withEvents(java.util.Collection<Event> events) {
-        java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>();
-        if (events != null) {
+        if (events == null) {
+            this.events = null;
+        } else {
+            java.util.List<Event> eventsCopy = new java.util.ArrayList<Event>(events.size());
             eventsCopy.addAll(events);
+            this.events = eventsCopy;
         }
-        this.events = eventsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeEventsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("Events: " + events + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (events != null) sb.append("Events: " + events + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeEventsResult == false) return false;
+        DescribeEventsResult other = (DescribeEventsResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getEvents() == null ^ this.getEvents() == null) return false;
+        if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false) return false; 
+        return true;
     }
     
 }

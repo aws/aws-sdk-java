@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -366,15 +366,55 @@ public class Datapoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Timestamp: " + timestamp + ", ");
-        sb.append("SampleCount: " + sampleCount + ", ");
-        sb.append("Average: " + average + ", ");
-        sb.append("Sum: " + sum + ", ");
-        sb.append("Minimum: " + minimum + ", ");
-        sb.append("Maximum: " + maximum + ", ");
-        sb.append("Unit: " + unit + ", ");
+        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (sampleCount != null) sb.append("SampleCount: " + sampleCount + ", ");
+        if (average != null) sb.append("Average: " + average + ", ");
+        if (sum != null) sb.append("Sum: " + sum + ", ");
+        if (minimum != null) sb.append("Minimum: " + minimum + ", ");
+        if (maximum != null) sb.append("Maximum: " + maximum + ", ");
+        if (unit != null) sb.append("Unit: " + unit + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode()); 
+        hashCode = prime * hashCode + ((getSampleCount() == null) ? 0 : getSampleCount().hashCode()); 
+        hashCode = prime * hashCode + ((getAverage() == null) ? 0 : getAverage().hashCode()); 
+        hashCode = prime * hashCode + ((getSum() == null) ? 0 : getSum().hashCode()); 
+        hashCode = prime * hashCode + ((getMinimum() == null) ? 0 : getMinimum().hashCode()); 
+        hashCode = prime * hashCode + ((getMaximum() == null) ? 0 : getMaximum().hashCode()); 
+        hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof Datapoint == false) return false;
+        Datapoint other = (Datapoint)obj;
+        
+        if (other.getTimestamp() == null ^ this.getTimestamp() == null) return false;
+        if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false) return false; 
+        if (other.getSampleCount() == null ^ this.getSampleCount() == null) return false;
+        if (other.getSampleCount() != null && other.getSampleCount().equals(this.getSampleCount()) == false) return false; 
+        if (other.getAverage() == null ^ this.getAverage() == null) return false;
+        if (other.getAverage() != null && other.getAverage().equals(this.getAverage()) == false) return false; 
+        if (other.getSum() == null ^ this.getSum() == null) return false;
+        if (other.getSum() != null && other.getSum().equals(this.getSum()) == false) return false; 
+        if (other.getMinimum() == null ^ this.getMinimum() == null) return false;
+        if (other.getMinimum() != null && other.getMinimum().equals(this.getMinimum()) == false) return false; 
+        if (other.getMaximum() == null ^ this.getMaximum() == null) return false;
+        if (other.getMaximum() != null && other.getMaximum().equals(this.getMaximum()) == false) return false; 
+        if (other.getUnit() == null ^ this.getUnit() == null) return false;
+        if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false) return false; 
+        return true;
     }
     
 }

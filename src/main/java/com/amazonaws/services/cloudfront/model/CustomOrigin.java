@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -277,12 +277,43 @@ public class CustomOrigin {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("DNSName: " + dNSName + ", ");
-        sb.append("HTTPPort: " + hTTPPort + ", ");
-        sb.append("HTTPSPort: " + hTTPSPort + ", ");
-        sb.append("OriginProtocolPolicy: " + originProtocolPolicy + ", ");
+        if (dNSName != null) sb.append("DNSName: " + dNSName + ", ");
+        if (hTTPPort != null) sb.append("HTTPPort: " + hTTPPort + ", ");
+        if (hTTPSPort != null) sb.append("HTTPSPort: " + hTTPSPort + ", ");
+        if (originProtocolPolicy != null) sb.append("OriginProtocolPolicy: " + originProtocolPolicy + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode()); 
+        hashCode = prime * hashCode + ((getHTTPPort() == null) ? 0 : getHTTPPort().hashCode()); 
+        hashCode = prime * hashCode + ((getHTTPSPort() == null) ? 0 : getHTTPSPort().hashCode()); 
+        hashCode = prime * hashCode + ((getOriginProtocolPolicy() == null) ? 0 : getOriginProtocolPolicy().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof CustomOrigin == false) return false;
+        CustomOrigin other = (CustomOrigin)obj;
+        
+        if (other.getDNSName() == null ^ this.getDNSName() == null) return false;
+        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false) return false; 
+        if (other.getHTTPPort() == null ^ this.getHTTPPort() == null) return false;
+        if (other.getHTTPPort() != null && other.getHTTPPort().equals(this.getHTTPPort()) == false) return false; 
+        if (other.getHTTPSPort() == null ^ this.getHTTPSPort() == null) return false;
+        if (other.getHTTPSPort() != null && other.getHTTPSPort().equals(this.getHTTPSPort()) == false) return false; 
+        if (other.getOriginProtocolPolicy() == null ^ this.getOriginProtocolPolicy() == null) return false;
+        if (other.getOriginProtocolPolicy() != null && other.getOriginProtocolPolicy().equals(this.getOriginProtocolPolicy()) == false) return false; 
+        return true;
     }
     
 }

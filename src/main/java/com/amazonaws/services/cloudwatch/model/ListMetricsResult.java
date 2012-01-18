@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,10 +50,13 @@ public class ListMetricsResult {
      * @param metrics A list of metrics used to generate statistics for an AWS account.
      */
     public void setMetrics(java.util.Collection<Metric> metrics) {
-        java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>();
-        if (metrics != null) {
-            metricsCopy.addAll(metrics);
+        if (metrics == null) {
+            this.metrics = null;
+            return;
         }
+
+        java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>(metrics.size());
+        metricsCopy.addAll(metrics);
         this.metrics = metricsCopy;
     }
     
@@ -68,7 +71,7 @@ public class ListMetricsResult {
      *         together. 
      */
     public ListMetricsResult withMetrics(Metric... metrics) {
-        if (getMetrics() == null) setMetrics(new java.util.ArrayList<Metric>());
+        if (getMetrics() == null) setMetrics(new java.util.ArrayList<Metric>(metrics.length));
         for (Metric value : metrics) {
             getMetrics().add(value);
         }
@@ -86,11 +89,13 @@ public class ListMetricsResult {
      *         together. 
      */
     public ListMetricsResult withMetrics(java.util.Collection<Metric> metrics) {
-        java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>();
-        if (metrics != null) {
+        if (metrics == null) {
+            this.metrics = null;
+        } else {
+            java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>(metrics.size());
             metricsCopy.addAll(metrics);
+            this.metrics = metricsCopy;
         }
-        this.metrics = metricsCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class ListMetricsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Metrics: " + metrics + ", ");
-        sb.append("NextToken: " + nextToken + ", ");
+        if (metrics != null) sb.append("Metrics: " + metrics + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof ListMetricsResult == false) return false;
+        ListMetricsResult other = (ListMetricsResult)obj;
+        
+        if (other.getMetrics() == null ^ this.getMetrics() == null) return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        return true;
     }
     
 }

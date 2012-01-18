@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2011 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -84,10 +84,13 @@ public class DescribeCacheClustersResult {
      * @param cacheClusters A list of CacheClusters.
      */
     public void setCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {
-        java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>();
-        if (cacheClusters != null) {
-            cacheClustersCopy.addAll(cacheClusters);
+        if (cacheClusters == null) {
+            this.cacheClusters = null;
+            return;
         }
+
+        java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>(cacheClusters.size());
+        cacheClustersCopy.addAll(cacheClusters);
         this.cacheClusters = cacheClustersCopy;
     }
     
@@ -102,7 +105,7 @@ public class DescribeCacheClustersResult {
      *         together. 
      */
     public DescribeCacheClustersResult withCacheClusters(CacheCluster... cacheClusters) {
-        if (getCacheClusters() == null) setCacheClusters(new java.util.ArrayList<CacheCluster>());
+        if (getCacheClusters() == null) setCacheClusters(new java.util.ArrayList<CacheCluster>(cacheClusters.length));
         for (CacheCluster value : cacheClusters) {
             getCacheClusters().add(value);
         }
@@ -120,11 +123,13 @@ public class DescribeCacheClustersResult {
      *         together. 
      */
     public DescribeCacheClustersResult withCacheClusters(java.util.Collection<CacheCluster> cacheClusters) {
-        java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>();
-        if (cacheClusters != null) {
+        if (cacheClusters == null) {
+            this.cacheClusters = null;
+        } else {
+            java.util.List<CacheCluster> cacheClustersCopy = new java.util.ArrayList<CacheCluster>(cacheClusters.size());
             cacheClustersCopy.addAll(cacheClusters);
+            this.cacheClusters = cacheClustersCopy;
         }
-        this.cacheClusters = cacheClustersCopy;
 
         return this;
     }
@@ -141,10 +146,35 @@ public class DescribeCacheClustersResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        sb.append("Marker: " + marker + ", ");
-        sb.append("CacheClusters: " + cacheClusters + ", ");
+        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (cacheClusters != null) sb.append("CacheClusters: " + cacheClusters + ", ");
         sb.append("}");
         return sb.toString();
+    }
+    
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+        
+        hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheClusters() == null) ? 0 : getCacheClusters().hashCode()); 
+        return hashCode;
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+    
+        if (obj instanceof DescribeCacheClustersResult == false) return false;
+        DescribeCacheClustersResult other = (DescribeCacheClustersResult)obj;
+        
+        if (other.getMarker() == null ^ this.getMarker() == null) return false;
+        if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
+        if (other.getCacheClusters() == null ^ this.getCacheClusters() == null) return false;
+        if (other.getCacheClusters() != null && other.getCacheClusters().equals(this.getCacheClusters()) == false) return false; 
+        return true;
     }
     
 }
