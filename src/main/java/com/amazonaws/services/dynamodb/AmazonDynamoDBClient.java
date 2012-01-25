@@ -118,7 +118,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             awsCredentials instanceof NoSessionSupportCredentials) {
             this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         } else {
-            this.awsCredentialsProvider = new com.amazonaws.auth.STSSessionCredentialsProvider(awsCredentials);
+            this.awsCredentialsProvider = new com.amazonaws.auth.STSSessionCredentialsProvider(awsCredentials, clientConfiguration);
         }
         
         init();

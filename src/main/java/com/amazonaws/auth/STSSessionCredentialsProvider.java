@@ -17,6 +17,7 @@ package com.amazonaws.auth;
 
 import java.util.Date;
 
+import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSSessionCredentials;
@@ -57,7 +58,24 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
      *            The main AWS credentials for a user's account.
      */
     public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials) {
-        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentials);
+        this(longLivedCredentials, new ClientConfiguration());
+    }
+    
+    /**
+     * Constructs a new STSSessionCredentialsProvider, which will use the
+     * specified long lived AWS credentials to make a request to the AWS
+     * Security Token Service (STS) to request short lived session credentials,
+     * which will then be returned by this class's {@link #getCredentials()}
+     * method.
+     *
+     * @param longLivedCredentials
+     *            The main AWS credentials for a user's account.
+     *            
+     * @param clientConfiguration
+     *            Client configuration connection parameters.
+     */
+    public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials, ClientConfiguration clientConfiguration) {
+        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentials, clientConfiguration);
     }
 
     /**
