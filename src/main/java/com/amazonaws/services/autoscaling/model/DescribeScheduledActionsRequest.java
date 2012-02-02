@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScheduledActions(DescribeScheduledActionsRequest) DescribeScheduledActions operation}.
  * <p>
  * Lists all the actions scheduled for your Auto Scaling group that
- * haven't been executed. To see a list of action already executed, see
+ * haven't been executed. To see a list of actions already executed, see
  * the activity record returned in DescribeScalingActivities.
  * </p>
  *
@@ -53,7 +53,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
 
     /**
      * The latest scheduled start time to return. If scheduled action names
-     * are provided, this field will be ignored.
+     * are provided, this field is ignored.
      */
     private java.util.Date endTime;
 
@@ -262,10 +262,10 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
     
     /**
      * The latest scheduled start time to return. If scheduled action names
-     * are provided, this field will be ignored.
+     * are provided, this field is ignored.
      *
      * @return The latest scheduled start time to return. If scheduled action names
-     *         are provided, this field will be ignored.
+     *         are provided, this field is ignored.
      */
     public java.util.Date getEndTime() {
         return endTime;
@@ -273,10 +273,10 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
     
     /**
      * The latest scheduled start time to return. If scheduled action names
-     * are provided, this field will be ignored.
+     * are provided, this field is ignored.
      *
      * @param endTime The latest scheduled start time to return. If scheduled action names
-     *         are provided, this field will be ignored.
+     *         are provided, this field is ignored.
      */
     public void setEndTime(java.util.Date endTime) {
         this.endTime = endTime;
@@ -284,12 +284,12 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest {
     
     /**
      * The latest scheduled start time to return. If scheduled action names
-     * are provided, this field will be ignored.
+     * are provided, this field is ignored.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param endTime The latest scheduled start time to return. If scheduled action names
-     *         are provided, this field will be ignored.
+     *         are provided, this field is ignored.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

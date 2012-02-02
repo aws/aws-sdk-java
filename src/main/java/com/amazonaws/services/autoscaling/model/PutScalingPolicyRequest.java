@@ -29,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -47,11 +47,11 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     private String policyName;
 
     /**
-     * The number of instances by which to scale. AdjustmentType determines
-     * the interpretation of this number (e.g., as an absolute number or as a
-     * percentage of the existing Auto Scaling group size). A positive
-     * increment adds to the current capacity and a negative value removes
-     * from the current capacity.
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (e.g., as an absolute
+     * number or as a percentage of the existing Auto Scaling group size). A
+     * positive increment adds to the current capacity and a negative value
+     * removes from the current capacity.
      */
     private Integer scalingAdjustment;
 
@@ -74,33 +74,33 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     private Integer cooldown;
 
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name or ARN of the Auto Scaling Group.
+     * @return The name or ARN of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling Group.
+     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -108,7 +108,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling Group.
+     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -166,53 +166,53 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The number of instances by which to scale. AdjustmentType determines
-     * the interpretation of this number (e.g., as an absolute number or as a
-     * percentage of the existing Auto Scaling group size). A positive
-     * increment adds to the current capacity and a negative value removes
-     * from the current capacity.
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (e.g., as an absolute
+     * number or as a percentage of the existing Auto Scaling group size). A
+     * positive increment adds to the current capacity and a negative value
+     * removes from the current capacity.
      *
-     * @return The number of instances by which to scale. AdjustmentType determines
-     *         the interpretation of this number (e.g., as an absolute number or as a
-     *         percentage of the existing Auto Scaling group size). A positive
-     *         increment adds to the current capacity and a negative value removes
-     *         from the current capacity.
+     * @return The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (e.g., as an absolute
+     *         number or as a percentage of the existing Auto Scaling group size). A
+     *         positive increment adds to the current capacity and a negative value
+     *         removes from the current capacity.
      */
     public Integer getScalingAdjustment() {
         return scalingAdjustment;
     }
     
     /**
-     * The number of instances by which to scale. AdjustmentType determines
-     * the interpretation of this number (e.g., as an absolute number or as a
-     * percentage of the existing Auto Scaling group size). A positive
-     * increment adds to the current capacity and a negative value removes
-     * from the current capacity.
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (e.g., as an absolute
+     * number or as a percentage of the existing Auto Scaling group size). A
+     * positive increment adds to the current capacity and a negative value
+     * removes from the current capacity.
      *
-     * @param scalingAdjustment The number of instances by which to scale. AdjustmentType determines
-     *         the interpretation of this number (e.g., as an absolute number or as a
-     *         percentage of the existing Auto Scaling group size). A positive
-     *         increment adds to the current capacity and a negative value removes
-     *         from the current capacity.
+     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (e.g., as an absolute
+     *         number or as a percentage of the existing Auto Scaling group size). A
+     *         positive increment adds to the current capacity and a negative value
+     *         removes from the current capacity.
      */
     public void setScalingAdjustment(Integer scalingAdjustment) {
         this.scalingAdjustment = scalingAdjustment;
     }
     
     /**
-     * The number of instances by which to scale. AdjustmentType determines
-     * the interpretation of this number (e.g., as an absolute number or as a
-     * percentage of the existing Auto Scaling group size). A positive
-     * increment adds to the current capacity and a negative value removes
-     * from the current capacity.
+     * The number of instances by which to scale. <code>AdjustmentType</code>
+     * determines the interpretation of this number (e.g., as an absolute
+     * number or as a percentage of the existing Auto Scaling group size). A
+     * positive increment adds to the current capacity and a negative value
+     * removes from the current capacity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingAdjustment The number of instances by which to scale. AdjustmentType determines
-     *         the interpretation of this number (e.g., as an absolute number or as a
-     *         percentage of the existing Auto Scaling group size). A positive
-     *         increment adds to the current capacity and a negative value removes
-     *         from the current capacity.
+     * @param scalingAdjustment The number of instances by which to scale. <code>AdjustmentType</code>
+     *         determines the interpretation of this number (e.g., as an absolute
+     *         number or as a percentage of the existing Auto Scaling group size). A
+     *         positive increment adds to the current capacity and a negative value
+     *         removes from the current capacity.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

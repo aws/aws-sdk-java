@@ -15,30 +15,39 @@
 package com.amazonaws.services.s3.internal;
 
 import java.io.InputStream;
+import java.util.Arrays;
+import java.util.List;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
-import com.amazonaws.services.s3.Headers;
 import com.amazonaws.transform.Unmarshaller;
 
 
 /**
- * Base request handler for responses that include a server-side encryption
- * header
+ * An XML response handler that can also process an arbitrary number of headers
+ * in the response.
  */
-public class ServerSideEncryptionResponseHandler <T extends ServerSideEncryptionResult> extends S3XmlResponseHandler<T>{
+public class ResponseHeaderHandlerChain <T> extends S3XmlResponseHandler<T> {
 
-    public ServerSideEncryptionResponseHandler(Unmarshaller<T, InputStream> responseUnmarshaller) {
+    private final List<HeaderHandler<T>> headerHandlers;
+    
+    public ResponseHeaderHandlerChain(Unmarshaller<T, InputStream> responseUnmarshaller, HeaderHandler<T>... headerHandlers) {
         super(responseUnmarshaller);
+        this.headerHandlers = Arrays.asList(headerHandlers);
     }
 
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.internal.S3XmlResponseHandler#handle(com.amazonaws.http.HttpResponse)
+     */
     @Override
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         AmazonWebServiceResponse<T> awsResponse = super.handle(response);
         
         T result = awsResponse.getResult();
         if (result != null) {
-            result.setServerSideEncryption(response.getHeaders().get(Headers.SERVER_SIDE_ENCRYPTION));
+            for (HeaderHandler<T> handler : headerHandlers) {
+                handler.handle(result, response);
+            }
         }
         
         return awsResponse;

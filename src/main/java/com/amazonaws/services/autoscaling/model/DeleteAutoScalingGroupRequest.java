@@ -18,7 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest) DeleteAutoScalingGroup operation}.
  * <p>
- * Deletes the specified auto scaling group if the group has no
+ * Deletes the specified Auto Scaling group if the group has no
  * instances and no scaling activities in progress.
  * </p>
  * <p>

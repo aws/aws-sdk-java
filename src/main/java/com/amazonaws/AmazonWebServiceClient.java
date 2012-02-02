@@ -65,22 +65,26 @@ public abstract class AmazonWebServiceClient {
      * Overrides the default endpoint for this client. Callers can use this
      * method to control which AWS region they want to work with.
      * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
      * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
      * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see:
+     * a complete list of all available endpoints for all AWS services, see: 
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     *
+     * 
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
      *            including the protocol (ex: "https://ec2.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
-     *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */

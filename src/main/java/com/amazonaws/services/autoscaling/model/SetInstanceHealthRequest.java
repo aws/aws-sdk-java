@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SetInstanceHealthRequest extends AmazonWebServiceRequest {
 
     /**
-     * The identifier of the EC2 instance.
+     * The identifier of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -52,33 +52,33 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest {
     private Boolean shouldRespectGracePeriod;
 
     /**
-     * The identifier of the EC2 instance.
+     * The identifier of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier of the EC2 instance.
+     * @return The identifier of the Amazon EC2 instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The identifier of the EC2 instance.
+     * The identifier of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The identifier of the EC2 instance.
+     * @param instanceId The identifier of the Amazon EC2 instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The identifier of the EC2 instance.
+     * The identifier of the Amazon EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -86,7 +86,7 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The identifier of the EC2 instance.
+     * @param instanceId The identifier of the Amazon EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

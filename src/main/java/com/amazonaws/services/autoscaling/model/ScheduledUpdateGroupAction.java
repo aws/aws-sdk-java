@@ -16,8 +16,8 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * This data type stores information about an scheduled update to an
- * Auto Scaling group.
+ * This data type stores information about a scheduled update to an Auto
+ * Scaling group.
  * </p>
  */
 public class ScheduledUpdateGroupAction {
@@ -49,11 +49,18 @@ public class ScheduledUpdateGroupAction {
      */
     private String scheduledActionARN;
 
+    /**
+     * <code>Time</code> is deprecated. <p>The time that the action is
+     * scheduled to begin. <code>Time</code> is an alias for
+     * <code>StartTime</code>.
+     */
     private java.util.Date time;
 
     /**
      * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future.
+     * to one month in the future. <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     * form the boundaries of when the recurring action will start and stop.
      */
     private java.util.Date startTime;
 
@@ -227,29 +234,41 @@ public class ScheduledUpdateGroupAction {
     
     
     /**
-     * Returns the value of the Time property for this object.
+     * <code>Time</code> is deprecated. <p>The time that the action is
+     * scheduled to begin. <code>Time</code> is an alias for
+     * <code>StartTime</code>.
      *
-     * @return The value of the Time property for this object.
+     * @return <code>Time</code> is deprecated. <p>The time that the action is
+     *         scheduled to begin. <code>Time</code> is an alias for
+     *         <code>StartTime</code>.
      */
     public java.util.Date getTime() {
         return time;
     }
     
     /**
-     * Sets the value of the Time property for this object.
+     * <code>Time</code> is deprecated. <p>The time that the action is
+     * scheduled to begin. <code>Time</code> is an alias for
+     * <code>StartTime</code>.
      *
-     * @param time The new value for the Time property for this object.
+     * @param time <code>Time</code> is deprecated. <p>The time that the action is
+     *         scheduled to begin. <code>Time</code> is an alias for
+     *         <code>StartTime</code>.
      */
     public void setTime(java.util.Date time) {
         this.time = time;
     }
     
     /**
-     * Sets the value of the Time property for this object.
+     * <code>Time</code> is deprecated. <p>The time that the action is
+     * scheduled to begin. <code>Time</code> is an alias for
+     * <code>StartTime</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param time The new value for the Time property for this object.
+     * @param time <code>Time</code> is deprecated. <p>The time that the action is
+     *         scheduled to begin. <code>Time</code> is an alias for
+     *         <code>StartTime</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -262,10 +281,14 @@ public class ScheduledUpdateGroupAction {
     
     /**
      * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future.
+     * to one month in the future. <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     * form the boundaries of when the recurring action will start and stop.
      *
      * @return The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future.
+     *         to one month in the future. <p>When <code>StartTime</code> and
+     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     *         form the boundaries of when the recurring action will start and stop.
      */
     public java.util.Date getStartTime() {
         return startTime;
@@ -273,10 +296,14 @@ public class ScheduledUpdateGroupAction {
     
     /**
      * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future.
+     * to one month in the future. <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     * form the boundaries of when the recurring action will start and stop.
      *
      * @param startTime The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future.
+     *         to one month in the future. <p>When <code>StartTime</code> and
+     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     *         form the boundaries of when the recurring action will start and stop.
      */
     public void setStartTime(java.util.Date startTime) {
         this.startTime = startTime;
@@ -284,12 +311,16 @@ public class ScheduledUpdateGroupAction {
     
     /**
      * The time that the action is scheduled to begin. This value can be up
-     * to one month in the future.
+     * to one month in the future. <p>When <code>StartTime</code> and
+     * <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     * form the boundaries of when the recurring action will start and stop.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param startTime The time that the action is scheduled to begin. This value can be up
-     *         to one month in the future.
+     *         to one month in the future. <p>When <code>StartTime</code> and
+     *         <code>EndTime</code> are specified with <code>Recurrence</code>, they
+     *         form the boundaries of when the recurring action will start and stop.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

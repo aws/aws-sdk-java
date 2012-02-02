@@ -19,6 +19,7 @@ import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.BinaryUtils;
 
 /**
@@ -45,11 +46,11 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
 
         if (hasServerSideCalculatedChecksum && responseContainsEntireObject) {
             byte[] expectedChecksum = BinaryUtils.fromHex(metadata.getETag());
-            object.setObjectContent(new ChecksumValidatingInputStream(response.getContent(), expectedChecksum, object.getBucketName() + "/" + object.getKey()));
+            object.setObjectContent(new S3ObjectInputStream(new ChecksumValidatingInputStream(response.getContent(),
+                    expectedChecksum, object.getBucketName() + "/" + object.getKey()), response.getHttpRequest()));
         } else {
-            object.setObjectContent(response.getContent());
+            object.setObjectContent(new S3ObjectInputStream(response.getContent(), response.getHttpRequest()));
         }
-
 
         AmazonWebServiceResponse<S3Object> awsResponse = parseResponseMetadata(response);
         awsResponse.setResult(object);
@@ -66,6 +67,6 @@ public class S3ObjectResponseHandler extends AbstractS3ResponseHandler<S3Object>
     @Override
     public boolean needsConnectionLeftOpen() {
         return true;
-    }
+    }        
 
 }

@@ -82,6 +82,10 @@ public class ActivityStaxUnmarshaller implements Unmarshaller<Activity, StaxUnma
                     activity.setProgress(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Details", targetDepth)) {
+                    activity.setDetails(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return activity;

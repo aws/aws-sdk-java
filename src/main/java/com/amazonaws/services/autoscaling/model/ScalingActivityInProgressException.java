@@ -18,7 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You cannot delete an AutoScalingGroup while there are scaling
+ * You cannot delete an Auto Scaling group while there are scaling
  * activities in progress for that group.
  * </p>
  */        

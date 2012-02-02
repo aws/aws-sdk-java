@@ -26,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * This action supports pagination by returning a token if there are
  * more pages to retrieve. To get the next page, call this action again
- * with the returned token as the NextToken parameter.
+ * with the returned token as the <code>NextToken</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingGroups(DescribeAutoScalingGroupsRequest)

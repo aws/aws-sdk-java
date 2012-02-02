@@ -18,10 +18,6 @@ package com.amazonaws.auth;
 import java.util.Date;
 
 import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.AWSCredentialsProvider;
-import com.amazonaws.auth.AWSSessionCredentials;
-import com.amazonaws.auth.BasicSessionCredentials;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.model.Credentials;
@@ -60,7 +56,7 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
     public STSSessionCredentialsProvider(AWSCredentials longLivedCredentials) {
         this(longLivedCredentials, new ClientConfiguration());
     }
-    
+
     /**
      * Constructs a new STSSessionCredentialsProvider, which will use the
      * specified long lived AWS credentials to make a request to the AWS
@@ -70,7 +66,6 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
      *
      * @param longLivedCredentials
      *            The main AWS credentials for a user's account.
-     *            
      * @param clientConfiguration
      *            Client configuration connection parameters.
      */
@@ -91,6 +86,23 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
      */
     public STSSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider) {
         securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider);
+    }
+
+    /**
+     * Constructs a new STSSessionCredentialsProvider, which will use the
+     * specified credentials provider (which vends long lived AWS credentials)
+     * to make a request to the AWS Security Token Service (STS) to request
+     * short lived session credentials, which will then be returned by this
+     * class's {@link #getCredentials()} method.
+     *
+     * @param longLivedCredentialsProvider
+     *            Credentials provider for the main AWS credentials for a user's
+     *            account.
+     * @param clientConfiguration
+     *            Client configuration connection parameters.
+     */
+    public STSSessionCredentialsProvider(AWSCredentialsProvider longLivedCredentialsProvider, ClientConfiguration clientConfiguration) {
+        securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration);
     }
 
     @Override

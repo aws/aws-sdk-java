@@ -118,6 +118,10 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
                     autoScalingGroup.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Tags/member", targetDepth)) {
+                    autoScalingGroup.getTags().add(TagDescriptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return autoScalingGroup;

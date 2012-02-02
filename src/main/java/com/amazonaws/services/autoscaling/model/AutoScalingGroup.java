@@ -49,17 +49,17 @@ public class AutoScalingGroup {
     private String launchConfigurationName;
 
     /**
-     * Contains the minimum size of the AutoScalingGroup.
+     * Contains the minimum size of the Auto Scaling group.
      */
     private Integer minSize;
 
     /**
-     * Contains the maximum size of the AutoScalingGroup.
+     * Contains the maximum size of the Auto Scaling group.
      */
     private Integer maxSize;
 
     /**
-     * Specifies the desired capacity for the AutoScalingGroup.
+     * Specifies the desired capacity for the Auto Scaling group.
      */
     private Integer desiredCapacity;
 
@@ -70,7 +70,7 @@ public class AutoScalingGroup {
     private Integer defaultCooldown;
 
     /**
-     * Contains a list of availability zones for the group.
+     * Contains a list of Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -100,7 +100,7 @@ public class AutoScalingGroup {
     private Integer healthCheckGracePeriod;
 
     /**
-     * Provides a summary list of EC2 instances.
+     * Provides a summary list of Amazon EC2 instances.
      */
     private java.util.List<Instance> instances;
 
@@ -127,7 +127,11 @@ public class AutoScalingGroup {
     private String placementGroup;
 
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -148,6 +152,11 @@ public class AutoScalingGroup {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      */
     private String status;
+
+    /**
+     * A list of tags for the Auto Scaling group.
+     */
+    private java.util.List<TagDescription> tags;
 
     /**
      * Specifies the name of the group.
@@ -288,29 +297,29 @@ public class AutoScalingGroup {
     
     
     /**
-     * Contains the minimum size of the AutoScalingGroup.
+     * Contains the minimum size of the Auto Scaling group.
      *
-     * @return Contains the minimum size of the AutoScalingGroup.
+     * @return Contains the minimum size of the Auto Scaling group.
      */
     public Integer getMinSize() {
         return minSize;
     }
     
     /**
-     * Contains the minimum size of the AutoScalingGroup.
+     * Contains the minimum size of the Auto Scaling group.
      *
-     * @param minSize Contains the minimum size of the AutoScalingGroup.
+     * @param minSize Contains the minimum size of the Auto Scaling group.
      */
     public void setMinSize(Integer minSize) {
         this.minSize = minSize;
     }
     
     /**
-     * Contains the minimum size of the AutoScalingGroup.
+     * Contains the minimum size of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param minSize Contains the minimum size of the AutoScalingGroup.
+     * @param minSize Contains the minimum size of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -322,29 +331,29 @@ public class AutoScalingGroup {
     
     
     /**
-     * Contains the maximum size of the AutoScalingGroup.
+     * Contains the maximum size of the Auto Scaling group.
      *
-     * @return Contains the maximum size of the AutoScalingGroup.
+     * @return Contains the maximum size of the Auto Scaling group.
      */
     public Integer getMaxSize() {
         return maxSize;
     }
     
     /**
-     * Contains the maximum size of the AutoScalingGroup.
+     * Contains the maximum size of the Auto Scaling group.
      *
-     * @param maxSize Contains the maximum size of the AutoScalingGroup.
+     * @param maxSize Contains the maximum size of the Auto Scaling group.
      */
     public void setMaxSize(Integer maxSize) {
         this.maxSize = maxSize;
     }
     
     /**
-     * Contains the maximum size of the AutoScalingGroup.
+     * Contains the maximum size of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxSize Contains the maximum size of the AutoScalingGroup.
+     * @param maxSize Contains the maximum size of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -356,29 +365,29 @@ public class AutoScalingGroup {
     
     
     /**
-     * Specifies the desired capacity for the AutoScalingGroup.
+     * Specifies the desired capacity for the Auto Scaling group.
      *
-     * @return Specifies the desired capacity for the AutoScalingGroup.
+     * @return Specifies the desired capacity for the Auto Scaling group.
      */
     public Integer getDesiredCapacity() {
         return desiredCapacity;
     }
     
     /**
-     * Specifies the desired capacity for the AutoScalingGroup.
+     * Specifies the desired capacity for the Auto Scaling group.
      *
-     * @param desiredCapacity Specifies the desired capacity for the AutoScalingGroup.
+     * @param desiredCapacity Specifies the desired capacity for the Auto Scaling group.
      */
     public void setDesiredCapacity(Integer desiredCapacity) {
         this.desiredCapacity = desiredCapacity;
     }
     
     /**
-     * Specifies the desired capacity for the AutoScalingGroup.
+     * Specifies the desired capacity for the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param desiredCapacity Specifies the desired capacity for the AutoScalingGroup.
+     * @param desiredCapacity Specifies the desired capacity for the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -430,12 +439,12 @@ public class AutoScalingGroup {
     
     
     /**
-     * Contains a list of availability zones for the group.
+     * Contains a list of Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Contains a list of availability zones for the group.
+     * @return Contains a list of Availability Zones for the group.
      */
     public java.util.List<String> getAvailabilityZones() {
         
@@ -446,12 +455,12 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Contains a list of availability zones for the group.
+     * Contains a list of Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Contains a list of availability zones for the group.
+     * @param availabilityZones Contains a list of Availability Zones for the group.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -465,14 +474,14 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Contains a list of availability zones for the group.
+     * Contains a list of Availability Zones for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Contains a list of availability zones for the group.
+     * @param availabilityZones Contains a list of Availability Zones for the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -486,14 +495,14 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Contains a list of availability zones for the group.
+     * Contains a list of Availability Zones for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Contains a list of availability zones for the group.
+     * @param availabilityZones Contains a list of Availability Zones for the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -678,9 +687,9 @@ public class AutoScalingGroup {
     
     
     /**
-     * Provides a summary list of EC2 instances.
+     * Provides a summary list of Amazon EC2 instances.
      *
-     * @return Provides a summary list of EC2 instances.
+     * @return Provides a summary list of Amazon EC2 instances.
      */
     public java.util.List<Instance> getInstances() {
         
@@ -691,9 +700,9 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Provides a summary list of EC2 instances.
+     * Provides a summary list of Amazon EC2 instances.
      *
-     * @param instances Provides a summary list of EC2 instances.
+     * @param instances Provides a summary list of Amazon EC2 instances.
      */
     public void setInstances(java.util.Collection<Instance> instances) {
         if (instances == null) {
@@ -707,11 +716,11 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Provides a summary list of EC2 instances.
+     * Provides a summary list of Amazon EC2 instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances Provides a summary list of EC2 instances.
+     * @param instances Provides a summary list of Amazon EC2 instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -725,11 +734,11 @@ public class AutoScalingGroup {
     }
     
     /**
-     * Provides a summary list of EC2 instances.
+     * Provides a summary list of Amazon EC2 instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instances Provides a summary list of EC2 instances.
+     * @param instances Provides a summary list of Amazon EC2 instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -914,33 +923,53 @@ public class AutoScalingGroup {
     
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier for the VPC connection, if applicable.
+     * @return The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      */
     public String getVPCZoneIdentifier() {
         return vPCZoneIdentifier;
     }
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     * @param vPCZoneIdentifier The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      */
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
     }
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -948,7 +977,11 @@ public class AutoScalingGroup {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     * @param vPCZoneIdentifier The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1075,6 +1108,75 @@ public class AutoScalingGroup {
     
     
     /**
+     * A list of tags for the Auto Scaling group.
+     *
+     * @return A list of tags for the Auto Scaling group.
+     */
+    public java.util.List<TagDescription> getTags() {
+        
+        if (tags == null) {
+            tags = new java.util.ArrayList<TagDescription>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of tags for the Auto Scaling group.
+     *
+     * @param tags A list of tags for the Auto Scaling group.
+     */
+    public void setTags(java.util.Collection<TagDescription> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of tags for the Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withTags(TagDescription... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<TagDescription>(tags.length));
+        for (TagDescription value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of tags for the Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of tags for the Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withTags(java.util.Collection<TagDescription> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1104,6 +1206,7 @@ public class AutoScalingGroup {
         if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
         if (enabledMetrics != null) sb.append("EnabledMetrics: " + enabledMetrics + ", ");
         if (status != null) sb.append("Status: " + status + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1131,6 +1234,7 @@ public class AutoScalingGroup {
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getEnabledMetrics() == null) ? 0 : getEnabledMetrics().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -1178,6 +1282,8 @@ public class AutoScalingGroup {
         if (other.getEnabledMetrics() != null && other.getEnabledMetrics().equals(this.getEnabledMetrics()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

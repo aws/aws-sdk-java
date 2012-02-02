@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The LaunchConfiguration data type.
+ * The <code>LaunchConfiguration</code> data type.
  * </p>
  */
 public class LaunchConfiguration {
@@ -50,7 +50,7 @@ public class LaunchConfiguration {
     private String imageId;
 
     /**
-     * Provides the name of the EC2 key pair.
+     * Provides the name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -59,13 +59,13 @@ public class LaunchConfiguration {
     private String keyName;
 
     /**
-     * A description of the security groups to associate with the EC2
+     * A description of the security groups to associate with the Amazon EC2
      * instances.
      */
     private java.util.List<String> securityGroups;
 
     /**
-     * The user data available to the launched EC2 instances.
+     * The user data available to the launched Amazon EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
@@ -74,7 +74,7 @@ public class LaunchConfiguration {
     private String userData;
 
     /**
-     * Specifies the instance type of the EC2 instance.
+     * Specifies the instance type of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -83,7 +83,7 @@ public class LaunchConfiguration {
     private String instanceType;
 
     /**
-     * Provides the ID of the kernel associated with the EC2 AMI.
+     * Provides the ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -92,7 +92,7 @@ public class LaunchConfiguration {
     private String kernelId;
 
     /**
-     * Provides ID of the RAM disk associated with the EC2 AMI.
+     * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -262,33 +262,33 @@ public class LaunchConfiguration {
     
     
     /**
-     * Provides the name of the EC2 key pair.
+     * Provides the name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Provides the name of the EC2 key pair.
+     * @return Provides the name of the Amazon EC2 key pair.
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * Provides the name of the EC2 key pair.
+     * Provides the name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param keyName Provides the name of the EC2 key pair.
+     * @param keyName Provides the name of the Amazon EC2 key pair.
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * Provides the name of the EC2 key pair.
+     * Provides the name of the Amazon EC2 key pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -296,7 +296,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param keyName Provides the name of the EC2 key pair.
+     * @param keyName Provides the name of the Amazon EC2 key pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -308,10 +308,10 @@ public class LaunchConfiguration {
     
     
     /**
-     * A description of the security groups to associate with the EC2
+     * A description of the security groups to associate with the Amazon EC2
      * instances.
      *
-     * @return A description of the security groups to associate with the EC2
+     * @return A description of the security groups to associate with the Amazon EC2
      *         instances.
      */
     public java.util.List<String> getSecurityGroups() {
@@ -323,10 +323,10 @@ public class LaunchConfiguration {
     }
     
     /**
-     * A description of the security groups to associate with the EC2
+     * A description of the security groups to associate with the Amazon EC2
      * instances.
      *
-     * @param securityGroups A description of the security groups to associate with the EC2
+     * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -341,12 +341,12 @@ public class LaunchConfiguration {
     }
     
     /**
-     * A description of the security groups to associate with the EC2
+     * A description of the security groups to associate with the Amazon EC2
      * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups A description of the security groups to associate with the EC2
+     * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -361,12 +361,12 @@ public class LaunchConfiguration {
     }
     
     /**
-     * A description of the security groups to associate with the EC2
+     * A description of the security groups to associate with the Amazon EC2
      * instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups A description of the security groups to associate with the EC2
+     * @param securityGroups A description of the security groups to associate with the Amazon EC2
      *         instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -385,33 +385,33 @@ public class LaunchConfiguration {
     }
     
     /**
-     * The user data available to the launched EC2 instances.
+     * The user data available to the launched Amazon EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The user data available to the launched EC2 instances.
+     * @return The user data available to the launched Amazon EC2 instances.
      */
     public String getUserData() {
         return userData;
     }
     
     /**
-     * The user data available to the launched EC2 instances.
+     * The user data available to the launched Amazon EC2 instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the launched EC2 instances.
+     * @param userData The user data available to the launched Amazon EC2 instances.
      */
     public void setUserData(String userData) {
         this.userData = userData;
     }
     
     /**
-     * The user data available to the launched EC2 instances.
+     * The user data available to the launched Amazon EC2 instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -419,7 +419,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>0 - 21847<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param userData The user data available to the launched EC2 instances.
+     * @param userData The user data available to the launched Amazon EC2 instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -431,33 +431,33 @@ public class LaunchConfiguration {
     
     
     /**
-     * Specifies the instance type of the EC2 instance.
+     * Specifies the instance type of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the instance type of the EC2 instance.
+     * @return Specifies the instance type of the Amazon EC2 instance.
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * Specifies the instance type of the EC2 instance.
+     * Specifies the instance type of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType Specifies the instance type of the EC2 instance.
+     * @param instanceType Specifies the instance type of the Amazon EC2 instance.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * Specifies the instance type of the EC2 instance.
+     * Specifies the instance type of the Amazon EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -465,7 +465,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType Specifies the instance type of the EC2 instance.
+     * @param instanceType Specifies the instance type of the Amazon EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -477,33 +477,33 @@ public class LaunchConfiguration {
     
     
     /**
-     * Provides the ID of the kernel associated with the EC2 AMI.
+     * Provides the ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Provides the ID of the kernel associated with the EC2 AMI.
+     * @return Provides the ID of the kernel associated with the Amazon EC2 AMI.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * Provides the ID of the kernel associated with the EC2 AMI.
+     * Provides the ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param kernelId Provides the ID of the kernel associated with the EC2 AMI.
+     * @param kernelId Provides the ID of the kernel associated with the Amazon EC2 AMI.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * Provides the ID of the kernel associated with the EC2 AMI.
+     * Provides the ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -511,7 +511,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param kernelId Provides the ID of the kernel associated with the EC2 AMI.
+     * @param kernelId Provides the ID of the kernel associated with the Amazon EC2 AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -523,33 +523,33 @@ public class LaunchConfiguration {
     
     
     /**
-     * Provides ID of the RAM disk associated with the EC2 AMI.
+     * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Provides ID of the RAM disk associated with the EC2 AMI.
+     * @return Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * Provides ID of the RAM disk associated with the EC2 AMI.
+     * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ramdiskId Provides ID of the RAM disk associated with the EC2 AMI.
+     * @param ramdiskId Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * Provides ID of the RAM disk associated with the EC2 AMI.
+     * Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -557,7 +557,7 @@ public class LaunchConfiguration {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ramdiskId Provides ID of the RAM disk associated with the EC2 AMI.
+     * @param ramdiskId Provides ID of the RAM disk associated with the Amazon EC2 AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

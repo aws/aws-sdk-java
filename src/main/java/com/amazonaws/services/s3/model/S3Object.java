@@ -39,8 +39,7 @@ public class S3Object {
     private ObjectMetadata metadata = new ObjectMetadata();
 
     /** The stream containing the contents of this object from S3 */
-    private InputStream objectContent;
-
+    private S3ObjectInputStream objectContent;
 
     /**
      * Gets the metadata stored by Amazon S3 for this object. The
@@ -82,7 +81,7 @@ public class S3Object {
      * @see S3Object#getObjectMetadata()
      * @see S3Object#setObjectContent(InputStream)
      */
-    public InputStream getObjectContent() {
+    public S3ObjectInputStream getObjectContent() {
         return objectContent;
     }
 
@@ -94,7 +93,7 @@ public class S3Object {
      *
      * @see S3Object#getObjectContent()
      */
-    public void setObjectContent(InputStream objectContent) {
+    public void setObjectContent(S3ObjectInputStream objectContent) {
         this.objectContent = objectContent;
     }
 

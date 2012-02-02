@@ -16,13 +16,13 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The Instance data type.
+ * The <code>Instance</code> data type.
  * </p>
  */
 public class Instance {
 
     /**
-     * Specifies the EC2 instance ID.
+     * Specifies the ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -31,7 +31,7 @@ public class Instance {
     private String instanceId;
 
     /**
-     * Availability zones associated with this instance.
+     * Availability Zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -67,33 +67,33 @@ public class Instance {
     private String launchConfigurationName;
 
     /**
-     * Specifies the EC2 instance ID.
+     * Specifies the ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the EC2 instance ID.
+     * @return Specifies the ID of the Amazon EC2 instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * Specifies the EC2 instance ID.
+     * Specifies the ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId Specifies the EC2 instance ID.
+     * @param instanceId Specifies the ID of the Amazon EC2 instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * Specifies the EC2 instance ID.
+     * Specifies the ID of the Amazon EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -101,7 +101,7 @@ public class Instance {
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId Specifies the EC2 instance ID.
+     * @param instanceId Specifies the ID of the Amazon EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -113,33 +113,33 @@ public class Instance {
     
     
     /**
-     * Availability zones associated with this instance.
+     * Availability Zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Availability zones associated with this instance.
+     * @return Availability Zones associated with this instance.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * Availability zones associated with this instance.
+     * Availability Zones associated with this instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone Availability zones associated with this instance.
+     * @param availabilityZone Availability Zones associated with this instance.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * Availability zones associated with this instance.
+     * Availability Zones associated with this instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -147,7 +147,7 @@ public class Instance {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone Availability zones associated with this instance.
+     * @param availabilityZone Availability Zones associated with this instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

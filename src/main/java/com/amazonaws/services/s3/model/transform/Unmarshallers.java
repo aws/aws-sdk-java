@@ -20,6 +20,7 @@ import java.util.List;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
@@ -215,6 +216,14 @@ public class Unmarshallers {
 
         public DeleteObjectsResponse unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseDeletedObjectsResult(in).getDeleteObjectResult();
+        }
+    }
+    
+    public static final class BucketLifecycleConfigurationUnmarshaller implements
+            Unmarshaller<BucketLifecycleConfiguration, InputStream> {
+
+        public BucketLifecycleConfiguration unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseBucketLifecycleConfigurationResponse(in).getConfiguration();
         }
     }
 

@@ -28,15 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * You can create a launch configuration with Amazon EC2 security groups
  * or with Amazon VPC security groups. However, you can't use Amazon EC2
  * security groups together with Amazon VPC security groups, or vice
- * versa. In addition, you can only create Auto Scaling launch
- * configurations with Amazon VPC security groups in the Regions where
- * Amazon VPC is supported. Amazon VPC is currently available only in the
- * Amazon EC2 US-East (Northern Virginia) Region, and in the Amazon EC2
- * EU-West (Ireland) Region.
+ * versa.
  * </p>
  * <p>
  * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't
- * support compressed (e.g. gzipped) user data files.
+ * support compressed (e.g. zipped) user data files.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)
@@ -56,7 +52,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
      * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -65,7 +61,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String imageId;
 
     /**
-     * The name of the EC2 key pair.
+     * The name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -101,8 +97,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String userData;
 
     /**
-     * The instance type of the EC2 instance. For more information about
-     * Amazon EC2 instance types, please see <a
+     * The instance type of the Amazon EC2 instance. For more information
+     * about Amazon EC2 instance types, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
@@ -113,7 +109,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String instanceType;
 
     /**
-     * The ID of the kernel associated with the EC2 AMI.
+     * The ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -122,7 +118,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private String kernelId;
 
     /**
-     * The ID of the RAM disk associated with the EC2 AMI.
+     * The ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -135,14 +131,20 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
-     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * more information about Amazon EC2 BlockDeviceMappings, go to <a
      * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
 
     /**
-     * Enables detailed monitoring.
+     * Enables detailed monitoring, which is enabled by default. <p> When
+     * detailed monitoring is enabled, CloudWatch will generate metrics every
+     * minute and your account will be charged a fee. When you disable
+     * detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     * generate metrics every 5 minutes. For information about monitoring,
+     * see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     * CloudWatch</a> product page.
      */
     private InstanceMonitoring instanceMonitoring;
 
@@ -196,7 +198,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
      * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -205,7 +207,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @return Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
      *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         documentation</a>.
      */
     public String getImageId() {
         return imageId;
@@ -215,7 +217,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
      * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * documentation</a>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -224,7 +226,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
      *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         documentation</a>.
      */
     public void setImageId(String imageId) {
         this.imageId = imageId;
@@ -234,7 +236,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      * during registration. For more information about Amazon EC2 images,
      * please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     * documentation</a>
+     * documentation</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -245,7 +247,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @param imageId Unique ID of the <i>Amazon Machine Image</i> (AMI) which was assigned
      *         during registration. For more information about Amazon EC2 images,
      *         please see <a href="http://aws.amazon.com/ec2/"> Amazon EC2 product
-     *         documentation</a>
+     *         documentation</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -257,33 +259,33 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of the EC2 key pair.
+     * The name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the EC2 key pair.
+     * @return The name of the Amazon EC2 key pair.
      */
     public String getKeyName() {
         return keyName;
     }
     
     /**
-     * The name of the EC2 key pair.
+     * The name of the Amazon EC2 key pair.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param keyName The name of the EC2 key pair.
+     * @param keyName The name of the Amazon EC2 key pair.
      */
     public void setKeyName(String keyName) {
         this.keyName = keyName;
     }
     
     /**
-     * The name of the EC2 key pair.
+     * The name of the Amazon EC2 key pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -291,7 +293,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param keyName The name of the EC2 key pair.
+     * @param keyName The name of the Amazon EC2 key pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -516,8 +518,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The instance type of the EC2 instance. For more information about
-     * Amazon EC2 instance types, please see <a
+     * The instance type of the Amazon EC2 instance. For more information
+     * about Amazon EC2 instance types, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
@@ -525,8 +527,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The instance type of the EC2 instance. For more information about
-     *         Amazon EC2 instance types, please see <a
+     * @return The instance type of the Amazon EC2 instance. For more information
+     *         about Amazon EC2 instance types, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
@@ -535,8 +537,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The instance type of the EC2 instance. For more information about
-     * Amazon EC2 instance types, please see <a
+     * The instance type of the Amazon EC2 instance. For more information
+     * about Amazon EC2 instance types, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
@@ -544,8 +546,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType The instance type of the EC2 instance. For more information about
-     *         Amazon EC2 instance types, please see <a
+     * @param instanceType The instance type of the Amazon EC2 instance. For more information
+     *         about Amazon EC2 instance types, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      */
@@ -554,8 +556,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The instance type of the EC2 instance. For more information about
-     * Amazon EC2 instance types, please see <a
+     * The instance type of the Amazon EC2 instance. For more information
+     * about Amazon EC2 instance types, please see <a
      * href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      * documentation</a>
      * <p>
@@ -565,8 +567,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceType The instance type of the EC2 instance. For more information about
-     *         Amazon EC2 instance types, please see <a
+     * @param instanceType The instance type of the Amazon EC2 instance. For more information
+     *         about Amazon EC2 instance types, please see <a
      *         href="http://aws.amazon.com/ec2/"> Amazon EC2 product
      *         documentation</a>
      *
@@ -580,33 +582,33 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The ID of the kernel associated with the EC2 AMI.
+     * The ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The ID of the kernel associated with the EC2 AMI.
+     * @return The ID of the kernel associated with the Amazon EC2 AMI.
      */
     public String getKernelId() {
         return kernelId;
     }
     
     /**
-     * The ID of the kernel associated with the EC2 AMI.
+     * The ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param kernelId The ID of the kernel associated with the EC2 AMI.
+     * @param kernelId The ID of the kernel associated with the Amazon EC2 AMI.
      */
     public void setKernelId(String kernelId) {
         this.kernelId = kernelId;
     }
     
     /**
-     * The ID of the kernel associated with the EC2 AMI.
+     * The ID of the kernel associated with the Amazon EC2 AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -614,7 +616,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param kernelId The ID of the kernel associated with the EC2 AMI.
+     * @param kernelId The ID of the kernel associated with the Amazon EC2 AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -626,33 +628,33 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The ID of the RAM disk associated with the EC2 AMI.
+     * The ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The ID of the RAM disk associated with the EC2 AMI.
+     * @return The ID of the RAM disk associated with the Amazon EC2 AMI.
      */
     public String getRamdiskId() {
         return ramdiskId;
     }
     
     /**
-     * The ID of the RAM disk associated with the EC2 AMI.
+     * The ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ramdiskId The ID of the RAM disk associated with the EC2 AMI.
+     * @param ramdiskId The ID of the RAM disk associated with the Amazon EC2 AMI.
      */
     public void setRamdiskId(String ramdiskId) {
         this.ramdiskId = ramdiskId;
     }
     
     /**
-     * The ID of the RAM disk associated with the EC2 AMI.
+     * The ID of the RAM disk associated with the Amazon EC2 AMI.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -660,7 +662,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param ramdiskId The ID of the RAM disk associated with the EC2 AMI.
+     * @param ramdiskId The ID of the RAM disk associated with the Amazon EC2 AMI.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -676,7 +678,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
-     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * more information about Amazon EC2 BlockDeviceMappings, go to <a
      * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
@@ -684,7 +686,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         instance. Each mapping is made up of a <i>VirtualName</i>, a
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
-     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
@@ -701,7 +703,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
-     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * more information about Amazon EC2 BlockDeviceMappings, go to <a
      * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
@@ -709,7 +711,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         instance. Each mapping is made up of a <i>VirtualName</i>, a
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
-     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
@@ -729,7 +731,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
-     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * more information about Amazon EC2 BlockDeviceMappings, go to <a
      * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
@@ -739,7 +741,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         instance. Each mapping is made up of a <i>VirtualName</i>, a
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
-     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
@@ -759,7 +761,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * instance. Each mapping is made up of a <i>VirtualName</i>, a
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
-     * more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     * more information about Amazon EC2 BlockDeviceMappings, go to <a
      * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
@@ -769,7 +771,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         instance. Each mapping is made up of a <i>VirtualName</i>, a
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
-     *         more information about Amazon EC2 BlockDeviceMappings, please go to <a
+     *         more information about Amazon EC2 BlockDeviceMappings, go to <a
      *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
@@ -789,29 +791,65 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Enables detailed monitoring.
+     * Enables detailed monitoring, which is enabled by default. <p> When
+     * detailed monitoring is enabled, CloudWatch will generate metrics every
+     * minute and your account will be charged a fee. When you disable
+     * detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     * generate metrics every 5 minutes. For information about monitoring,
+     * see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     * CloudWatch</a> product page.
      *
-     * @return Enables detailed monitoring.
+     * @return Enables detailed monitoring, which is enabled by default. <p> When
+     *         detailed monitoring is enabled, CloudWatch will generate metrics every
+     *         minute and your account will be charged a fee. When you disable
+     *         detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     *         generate metrics every 5 minutes. For information about monitoring,
+     *         see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     *         CloudWatch</a> product page.
      */
     public InstanceMonitoring getInstanceMonitoring() {
         return instanceMonitoring;
     }
     
     /**
-     * Enables detailed monitoring.
+     * Enables detailed monitoring, which is enabled by default. <p> When
+     * detailed monitoring is enabled, CloudWatch will generate metrics every
+     * minute and your account will be charged a fee. When you disable
+     * detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     * generate metrics every 5 minutes. For information about monitoring,
+     * see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     * CloudWatch</a> product page.
      *
-     * @param instanceMonitoring Enables detailed monitoring.
+     * @param instanceMonitoring Enables detailed monitoring, which is enabled by default. <p> When
+     *         detailed monitoring is enabled, CloudWatch will generate metrics every
+     *         minute and your account will be charged a fee. When you disable
+     *         detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     *         generate metrics every 5 minutes. For information about monitoring,
+     *         see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     *         CloudWatch</a> product page.
      */
     public void setInstanceMonitoring(InstanceMonitoring instanceMonitoring) {
         this.instanceMonitoring = instanceMonitoring;
     }
     
     /**
-     * Enables detailed monitoring.
+     * Enables detailed monitoring, which is enabled by default. <p> When
+     * detailed monitoring is enabled, CloudWatch will generate metrics every
+     * minute and your account will be charged a fee. When you disable
+     * detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     * generate metrics every 5 minutes. For information about monitoring,
+     * see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     * CloudWatch</a> product page.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceMonitoring Enables detailed monitoring.
+     * @param instanceMonitoring Enables detailed monitoring, which is enabled by default. <p> When
+     *         detailed monitoring is enabled, CloudWatch will generate metrics every
+     *         minute and your account will be charged a fee. When you disable
+     *         detailed monitoring, by specifying <code>False</code>, Cloudwatch will
+     *         generate metrics every 5 minutes. For information about monitoring,
+     *         see the <a href="http://aws.amazon.com/cloudwatch/">Amazon
+     *         CloudWatch</a> product page.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

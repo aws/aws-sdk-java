@@ -124,6 +124,8 @@ public abstract class AbstractS3ResponseHandler<T>
                 }
             } else if (key.equals(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
+            } else if (key.equals(Headers.EXPIRATION)) {
+                new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);
             } else {
                 metadata.setHeader(key, header.getValue());
             }

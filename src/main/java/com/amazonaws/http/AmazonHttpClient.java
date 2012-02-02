@@ -15,6 +15,7 @@
 package com.amazonaws.http;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.SocketException;
 import java.net.SocketTimeoutException;
 import java.net.URI;
@@ -249,10 +250,13 @@ public class AmazonHttpClient {
 
             org.apache.http.HttpResponse response = null;
             try {
-                if (retryCount > 0) {
+                if ( retryCount > 0 ) {
                     pauseExponentially(retryCount, exception, executionContext.getCustomBackoffStrategy());
-                    if (entity != null && entity.getContent().markSupported()) {
-                        entity.getContent().reset();
+                    if ( entity != null ) {
+                        InputStream content = entity.getContent();
+                        if ( content.markSupported() ) {
+                            content.reset();
+                        }
                     }
                 }
 
@@ -562,7 +566,7 @@ public class AmazonHttpClient {
      *             from the HttpClient method object.
      */
     private HttpResponse createResponse(HttpRequestBase method, Request<?> request, org.apache.http.HttpResponse apacheHttpResponse) throws IOException {
-        HttpResponse httpResponse = new HttpResponse(request);
+        HttpResponse httpResponse = new HttpResponse(request, method);
 
         if (apacheHttpResponse.getEntity() != null) {
         	httpResponse.setContent(apacheHttpResponse.getEntity().getContent());

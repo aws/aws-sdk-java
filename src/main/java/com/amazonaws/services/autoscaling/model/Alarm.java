@@ -22,7 +22,7 @@ package com.amazonaws.services.autoscaling.model;
 public class Alarm {
 
     /**
-     * The name of the alarm
+     * The name of the alarm.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -40,33 +40,33 @@ public class Alarm {
     private String alarmARN;
 
     /**
-     * The name of the alarm
+     * The name of the alarm.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the alarm
+     * @return The name of the alarm.
      */
     public String getAlarmName() {
         return alarmName;
     }
     
     /**
-     * The name of the alarm
+     * The name of the alarm.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param alarmName The name of the alarm
+     * @param alarmName The name of the alarm.
      */
     public void setAlarmName(String alarmName) {
         this.alarmName = alarmName;
     }
     
     /**
-     * The name of the alarm
+     * The name of the alarm.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -74,7 +74,7 @@ public class Alarm {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param alarmName The name of the alarm
+     * @param alarmName The name of the alarm.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -16,40 +16,40 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The InstanceMonitoring Data Type.
+ * The <code>InstanceMonitoring</code> data type.
  * </p>
  */
 public class InstanceMonitoring {
 
     /**
-     * If true, instance monitoring is enabled.
+     * If <code>True</code>, instance monitoring is enabled.
      */
     private Boolean enabled;
 
     /**
-     * If true, instance monitoring is enabled.
+     * If <code>True</code>, instance monitoring is enabled.
      *
-     * @return If true, instance monitoring is enabled.
+     * @return If <code>True</code>, instance monitoring is enabled.
      */
     public Boolean isEnabled() {
         return enabled;
     }
     
     /**
-     * If true, instance monitoring is enabled.
+     * If <code>True</code>, instance monitoring is enabled.
      *
-     * @param enabled If true, instance monitoring is enabled.
+     * @param enabled If <code>True</code>, instance monitoring is enabled.
      */
     public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
     
     /**
-     * If true, instance monitoring is enabled.
+     * If <code>True</code>, instance monitoring is enabled.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param enabled If true, instance monitoring is enabled.
+     * @param enabled If <code>True</code>, instance monitoring is enabled.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -61,9 +61,9 @@ public class InstanceMonitoring {
     
     
     /**
-     * If true, instance monitoring is enabled.
+     * If <code>True</code>, instance monitoring is enabled.
      *
-     * @return If true, instance monitoring is enabled.
+     * @return If <code>True</code>, instance monitoring is enabled.
      */
     public Boolean getEnabled() {
         return enabled;

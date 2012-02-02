@@ -17,6 +17,8 @@ package com.amazonaws.services.s3.model;
 import java.util.Date;
 
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
  * <p>
@@ -29,7 +31,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see AmazonS3Client#copyObject(String, String, String, String)
  * @see AmazonS3Client#copyObject(com.amazonaws.services.s3.model.CopyObjectRequest)
  */
-public class CopyObjectResult {
+public class CopyObjectResult implements ServerSideEncryptionResult, ObjectExpirationResult {
 
     /** The ETag value of the new object */
     private String etag;
@@ -46,6 +48,12 @@ public class CopyObjectResult {
     
     /** The server side encryption algorithm of the new object */
     private String serverSideEncryption;
+    
+    /** The time this object expires, or null if it has no expiration */
+    private Date expirationTime;
+    
+    /** The expiration rule for this object */
+    private String expirationTimeRuleId;
     
     /**
      * Gets the ETag value for the new object that was created in the
@@ -135,5 +143,41 @@ public class CopyObjectResult {
      */
     public void setServerSideEncryption(String serverSideEncryption) {
         this.serverSideEncryption = serverSideEncryption;
+    }
+    
+    /**
+     * Returns the expiration time for this object, or null if it doesn't expire.
+     */
+    public Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    /**
+     * Sets the expiration time for the object.
+     * 
+     * @param expirationTime
+     *            The expiration time for the object.
+     */
+    public void setExpirationTime(Date expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    /**
+     * Returns the {@link BucketLifecycleConfiguration} rule ID for this
+     * object's expiration, or null if it doesn't expire.
+     */
+    public String getExpirationTimeRuleId() {
+        return expirationTimeRuleId;
+    }
+
+    /**
+     * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
+     * expiration
+     * 
+     * @param expirationTimeRuleId
+     *            The rule ID for this object's expiration
+     */
+    public void setExpirationTimeRuleId(String expirationTimeRuleId) {
+        this.expirationTimeRuleId = expirationTimeRuleId;
     }
 }

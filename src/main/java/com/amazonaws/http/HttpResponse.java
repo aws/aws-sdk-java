@@ -18,6 +18,8 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.http.client.methods.HttpRequestBase;
+
 import com.amazonaws.Request;
 
 /**
@@ -25,7 +27,10 @@ import com.amazonaws.Request;
  * service request.
  */
 public class HttpResponse {
-    private Request<?> request;
+    
+    private final Request<?> request;
+    private final HttpRequestBase httpRequest;
+    
     private String statusText;
     private int statusCode;
     private InputStream content;
@@ -33,21 +38,33 @@ public class HttpResponse {
 
     /**
      * Constructs a new HttpResponse associated with the specified request.
-     *
+     * 
      * @param request
      *            The associated request that generated this response.
+     * @param httpRequest
+     *            The underlying http request that generated this response.
      */
-    public HttpResponse(Request<?> request) {
+    public HttpResponse(Request<?> request, HttpRequestBase httpRequest) {
         this.request = request;
+        this.httpRequest = httpRequest;
     }
 
     /**
-     * Returns the HttpRequest associated with this response.
+     * Returns the original request associated with this response.
      *
-     * @return The HttpRequest associated with this response.
+     * @return The original request associated with this response.
      */
     public Request<?> getRequest() {
         return request;
+    }
+
+    /**
+     * Returns the original http request associated with this response.
+     *
+     * @return The original http request associated with this response.
+     */
+    public HttpRequestBase getHttpRequest() {
+        return httpRequest;
     }
 
     /**

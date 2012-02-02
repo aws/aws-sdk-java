@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The LaunchConfigurationsType data type.
+ * The <code>LaunchConfigurationsType</code> data type.
  * </p>
  */
 public class DescribeLaunchConfigurationsResult {

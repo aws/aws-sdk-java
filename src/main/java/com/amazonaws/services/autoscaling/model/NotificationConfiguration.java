@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The NotificationConfiguration data type.
+ * The <code>NotificationConfiguration</code> data type.
  * </p>
  */
 public class NotificationConfiguration {

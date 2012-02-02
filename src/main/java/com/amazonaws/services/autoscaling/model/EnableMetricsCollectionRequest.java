@@ -19,13 +19,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#enableMetricsCollection(EnableMetricsCollectionRequest) EnableMetricsCollection operation}.
  * <p>
  * Enables monitoring of group metrics for the Auto Scaling group
- * specified in AutoScalingGroupName. You can specify the list of enabled
- * metrics with the Metrics parameter.
+ * specified in <code>AutoScalingGroupName</code> .
+ * You can specify the list of enabled metrics with the
+ * <code>Metrics</code> parameter.
  * </p>
  * <p>
  * Auto scaling metrics collection can be turned on only if the
- * <code>InstanceMonitoring.Enabled</code> flag, in the Auto Scaling
- * group's launch configuration, is set to <code>true</code> .
+ * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
+ * launch configuration, is set to <code>True</code> .
  * 
  * </p>
  *
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -64,33 +65,33 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
     private String granularity;
 
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name or ARN of the Auto Scaling Group.
+     * @return The name or ARN of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling Group.
+     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name or ARN of the Auto Scaling Group.
+     * The name or ARN of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -98,7 +99,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name or ARN of the Auto Scaling Group.
+     * @param autoScalingGroupName The name or ARN of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

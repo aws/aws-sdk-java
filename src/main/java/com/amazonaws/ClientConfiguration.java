@@ -121,7 +121,7 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the protocol (i.e. HTTP or HTTPS) to use when connecting to
+     * Returns the protocol (HTTP or HTTPS) to use when connecting to
      * Amazon Web Services.
      * <p>
      * The default configuration is to use HTTPS for all requests for increased

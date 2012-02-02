@@ -93,6 +93,32 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("VPCZoneIdentifier", StringUtils.fromString(createAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
+        java.util.List<Tag> tagsList = createAutoScalingGroupRequest.getTags();
+        int tagsListIndex = 1;
+
+        for (Tag tagsListValue : tagsList) {
+            Tag tagMember = tagsListValue;
+            if (tagMember != null) {
+                if (tagMember.getResourceId() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagMember.getResourceId()));
+                }
+                if (tagMember.getResourceType() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagMember.getResourceType()));
+                }
+                if (tagMember.getKey() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagMember.getKey()));
+                }
+                if (tagMember.getValue() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagMember.getValue()));
+                }
+                if (tagMember.isPropagateAtLaunch() != null) {
+                    request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.fromBoolean(tagMember.isPropagateAtLaunch()));
+                }
+            }
+
+            tagsListIndex++;
+        }
+
 
         return request;
     }

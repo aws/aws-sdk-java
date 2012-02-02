@@ -310,7 +310,7 @@ public class TransferManager {
      */
     public Upload upload(final PutObjectRequest putObjectRequest)
         throws AmazonServiceException, AmazonClientException {
-        
+
         appendUserAgent(putObjectRequest, USER_AGENT);
 
         if (putObjectRequest.getMetadata() == null)
@@ -339,10 +339,8 @@ public class TransferManager {
 
         UploadImpl upload = new UploadImpl(description, transferProgress, listenerChain);
 
-        UploadCallable uploadCallable = new UploadCallable(this, threadPool, putObjectRequest,
-                listenerChain);
-        UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest,
-                listenerChain);
+        UploadCallable uploadCallable = new UploadCallable(this, threadPool, putObjectRequest, listenerChain);
+        UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest, listenerChain);
         upload.setMonitor(watcher);
 
         return upload;
@@ -408,11 +406,11 @@ public class TransferManager {
             ((AmazonS3Client)s3).shutdown();
         }
     }
-    
+
     public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
         request.getRequestClientOptions().addClientMarker(USER_AGENT);
         return request;
     }
-    
+
     private static final String USER_AGENT = TransferManager.class.getName() + "/" + VersionInfoUtils.getVersion();
 }

@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * A Scaling Activity is a long-running process that represents a change
+ * A scaling Activity is a long-running process that represents a change
  * to your AutoScalingGroup, such as changing the size of the group. It
  * can also be a process to replace an instance, or a process to perform
  * any other long-running operations supported by the API.
@@ -90,6 +90,14 @@ public class Activity {
      * activity.
      */
     private Integer progress;
+
+    /**
+     * Contains details of the scaling activity.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String details;
 
     /**
      * Specifies the ID of the activity.
@@ -467,6 +475,49 @@ public class Activity {
     
     
     /**
+     * Contains details of the scaling activity.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return Contains details of the scaling activity.
+     */
+    public String getDetails() {
+        return details;
+    }
+    
+    /**
+     * Contains details of the scaling activity.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param details Contains details of the scaling activity.
+     */
+    public void setDetails(String details) {
+        this.details = details;
+    }
+    
+    /**
+     * Contains details of the scaling activity.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param details Contains details of the scaling activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Activity withDetails(String details) {
+        this.details = details;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -487,6 +538,7 @@ public class Activity {
         if (statusCode != null) sb.append("StatusCode: " + statusCode + ", ");
         if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
         if (progress != null) sb.append("Progress: " + progress + ", ");
+        if (details != null) sb.append("Details: " + details + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -505,6 +557,7 @@ public class Activity {
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode()); 
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode()); 
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode()); 
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode()); 
         return hashCode;
     }
     
@@ -534,6 +587,8 @@ public class Activity {
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false) return false; 
         if (other.getProgress() == null ^ this.getProgress() == null) return false;
         if (other.getProgress() != null && other.getProgress().equals(this.getProgress()) == false) return false; 
+        if (other.getDetails() == null ^ this.getDetails() == null) return false;
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false) return false; 
         return true;
     }
     

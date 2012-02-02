@@ -61,13 +61,17 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
     }
 
     public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
+
+        if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
+            addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
+        }
+        
         String expirationInSeconds = Long.toString(expiration.getTime() / 1000L);
 
         String canonicalString = RestUtils.makeS3CanonicalString(
                 httpVerb, resourcePath, request, expirationInSeconds);
-
-        AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
-
+        
         String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);
 
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
@@ -75,11 +79,8 @@ public class S3QueryStringSigner<T> extends AbstractAWSSigner {
         request.addParameter("Signature", signature);
     }
 
-    /**
-     * Session credentials for pre-signed URLs are not supported.
-     */
     @Override
     protected void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials) {
-        throw new RuntimeException("Session credentials are not supported for pre-signed URLs");
+        request.addParameter("x-amz-security-token", credentials.getSessionToken());
     }
 }

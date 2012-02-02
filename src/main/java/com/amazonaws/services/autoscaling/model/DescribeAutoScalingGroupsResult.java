@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The AutoScalingGroupsType data type.
+ * The <code>AutoScalingGroupsType</code> data type.
  * </p>
  */
 public class DescribeAutoScalingGroupsResult {

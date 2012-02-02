@@ -49,8 +49,12 @@ package com.amazonaws.services.autoscaling.model;
  * to the load balancer. If you resume the <code>AddToLoadBalancer</code>
  * process, Auto Scaling will also resume adding new instances to the
  * load balancer when they are launched. However, Auto Scaling will not
- * add running instances that were launched when the process was
- * suspended.
+ * add running instances that were launched while the process was
+ * suspended; those instances must be added manually using the the <a
+ * ncing/latest/APIReference/API_RegisterInstancesWithLoadBalancer.html">
+ * RegisterInstancesWithLoadBalancer </a> call in the <i>Elastic Load
+ * Balancing API Reference</i> .
+ * 
  * </p>
  * <p>
  * The <code>AlarmNotifications</code> process type accepts

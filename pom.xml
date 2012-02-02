@@ -41,17 +41,18 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-asl</artifactId>
-            <version>[1.4,)</version>
+            <version>[1.8,)</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
-            <version>[1.5.1,)</version>
+            <version>[1.8.)</version>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
+
 
         <!-- JavaMail is only needed if you want to use the JavaMail provider
              for Amazon Simple Email Service -->
@@ -61,6 +62,7 @@
             <version>[1.4,)</version>
             <optional>true</optional>
         </dependency>
+
 
         <!-- JDK 1.6 and above include StAX support by default, so these two dependencies
              are only needed for compiling/running against a 1.5 JVM.  -->

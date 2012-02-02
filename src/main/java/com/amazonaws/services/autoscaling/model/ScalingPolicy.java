@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The ScalingPolicy data type.
+ * The <code>ScalingPolicy</code> data type.
  * </p>
  */
 public class ScalingPolicy {
@@ -41,15 +41,15 @@ public class ScalingPolicy {
     private String policyName;
 
     /**
-     * The number associated with the specified AdjustmentType. A positive
+     * The number associated with the specified adjustment type. A positive
      * value adds to the current capacity and a negative value removes from
      * the current capacity.
      */
     private Integer scalingAdjustment;
 
     /**
-     * Specifies whether the ScalingAdjustment is an absolute number or a
-     * percentage of the current capacity. Valid values are
+     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentOfCapacity</code>.
      * <p>
@@ -178,11 +178,11 @@ public class ScalingPolicy {
     
     
     /**
-     * The number associated with the specified AdjustmentType. A positive
+     * The number associated with the specified adjustment type. A positive
      * value adds to the current capacity and a negative value removes from
      * the current capacity.
      *
-     * @return The number associated with the specified AdjustmentType. A positive
+     * @return The number associated with the specified adjustment type. A positive
      *         value adds to the current capacity and a negative value removes from
      *         the current capacity.
      */
@@ -191,11 +191,11 @@ public class ScalingPolicy {
     }
     
     /**
-     * The number associated with the specified AdjustmentType. A positive
+     * The number associated with the specified adjustment type. A positive
      * value adds to the current capacity and a negative value removes from
      * the current capacity.
      *
-     * @param scalingAdjustment The number associated with the specified AdjustmentType. A positive
+     * @param scalingAdjustment The number associated with the specified adjustment type. A positive
      *         value adds to the current capacity and a negative value removes from
      *         the current capacity.
      */
@@ -204,13 +204,13 @@ public class ScalingPolicy {
     }
     
     /**
-     * The number associated with the specified AdjustmentType. A positive
+     * The number associated with the specified adjustment type. A positive
      * value adds to the current capacity and a negative value removes from
      * the current capacity.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param scalingAdjustment The number associated with the specified AdjustmentType. A positive
+     * @param scalingAdjustment The number associated with the specified adjustment type. A positive
      *         value adds to the current capacity and a negative value removes from
      *         the current capacity.
      *
@@ -224,8 +224,8 @@ public class ScalingPolicy {
     
     
     /**
-     * Specifies whether the ScalingAdjustment is an absolute number or a
-     * percentage of the current capacity. Valid values are
+     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentOfCapacity</code>.
      * <p>
@@ -233,8 +233,8 @@ public class ScalingPolicy {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies whether the ScalingAdjustment is an absolute number or a
-     *         percentage of the current capacity. Valid values are
+     * @return Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentOfCapacity</code>.
      */
@@ -243,8 +243,8 @@ public class ScalingPolicy {
     }
     
     /**
-     * Specifies whether the ScalingAdjustment is an absolute number or a
-     * percentage of the current capacity. Valid values are
+     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentOfCapacity</code>.
      * <p>
@@ -252,8 +252,8 @@ public class ScalingPolicy {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param adjustmentType Specifies whether the ScalingAdjustment is an absolute number or a
-     *         percentage of the current capacity. Valid values are
+     * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentOfCapacity</code>.
      */
@@ -262,8 +262,8 @@ public class ScalingPolicy {
     }
     
     /**
-     * Specifies whether the ScalingAdjustment is an absolute number or a
-     * percentage of the current capacity. Valid values are
+     * Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      * <code>PercentOfCapacity</code>.
      * <p>
@@ -273,8 +273,8 @@ public class ScalingPolicy {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param adjustmentType Specifies whether the ScalingAdjustment is an absolute number or a
-     *         percentage of the current capacity. Valid values are
+     * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
+     *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentOfCapacity</code>.
      *

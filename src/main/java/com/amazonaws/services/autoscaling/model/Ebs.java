@@ -22,7 +22,7 @@ package com.amazonaws.services.autoscaling.model;
 public class Ebs {
 
     /**
-     * The Snapshot ID.
+     * The snapshot ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -31,7 +31,7 @@ public class Ebs {
     private String snapshotId;
 
     /**
-     * The volume size, in GigaBytes.
+     * The volume size, in gigabytes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
@@ -39,33 +39,33 @@ public class Ebs {
     private Integer volumeSize;
 
     /**
-     * The Snapshot ID.
+     * The snapshot ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The Snapshot ID.
+     * @return The snapshot ID.
      */
     public String getSnapshotId() {
         return snapshotId;
     }
     
     /**
-     * The Snapshot ID.
+     * The snapshot ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param snapshotId The Snapshot ID.
+     * @param snapshotId The snapshot ID.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
     }
     
     /**
-     * The Snapshot ID.
+     * The snapshot ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -73,7 +73,7 @@ public class Ebs {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param snapshotId The Snapshot ID.
+     * @param snapshotId The snapshot ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -85,38 +85,38 @@ public class Ebs {
     
     
     /**
-     * The volume size, in GigaBytes.
+     * The volume size, in gigabytes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
-     * @return The volume size, in GigaBytes.
+     * @return The volume size, in gigabytes.
      */
     public Integer getVolumeSize() {
         return volumeSize;
     }
     
     /**
-     * The volume size, in GigaBytes.
+     * The volume size, in gigabytes.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
-     * @param volumeSize The volume size, in GigaBytes.
+     * @param volumeSize The volume size, in gigabytes.
      */
     public void setVolumeSize(Integer volumeSize) {
         this.volumeSize = volumeSize;
     }
     
     /**
-     * The volume size, in GigaBytes.
+     * The volume size, in gigabytes.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 1024<br/>
      *
-     * @param volumeSize The volume size, in GigaBytes.
+     * @param volumeSize The volume size, in gigabytes.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

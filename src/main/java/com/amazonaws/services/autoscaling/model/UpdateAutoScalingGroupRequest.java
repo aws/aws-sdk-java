@@ -22,10 +22,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>NOTE:</b> To update an Auto Scaling group with a launch
- * configuration that has the InstanceMonitoring.enabled flag set to
- * false, you must first ensure that collection of group metrics is
- * disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you
- * have previously enabled group metrics collection, you can disable
+ * configuration that has the InstanceMonitoring flag set to False, you
+ * must first ensure that collection of group metrics is disabled.
+ * Otherwise, calls to UpdateAutoScalingGroup will fail. If you have
+ * previously enabled group metrics collection, you can disable
  * collection of all group metrics by calling DisableMetricsCollection.
  * </p>
  * <p>
@@ -84,7 +84,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private Integer defaultCooldown;
 
     /**
-     * Availability zones for the group.
+     * Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -121,7 +121,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private String placementGroup;
 
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -364,12 +368,12 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Availability zones for the group.
+     * Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Availability zones for the group.
+     * @return Availability Zones for the group.
      */
     public java.util.List<String> getAvailabilityZones() {
         
@@ -380,12 +384,12 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Availability zones for the group.
+     * Availability Zones for the group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Availability zones for the group.
+     * @param availabilityZones Availability Zones for the group.
      */
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
         if (availabilityZones == null) {
@@ -399,14 +403,14 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Availability zones for the group.
+     * Availability Zones for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Availability zones for the group.
+     * @param availabilityZones Availability Zones for the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -420,14 +424,14 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Availability zones for the group.
+     * Availability Zones for the group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param availabilityZones Availability zones for the group.
+     * @param availabilityZones Availability Zones for the group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -607,33 +611,53 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The identifier for the VPC connection, if applicable.
+     * @return The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      */
     public String getVPCZoneIdentifier() {
         return vPCZoneIdentifier;
     }
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     * @param vPCZoneIdentifier The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      */
     public void setVPCZoneIdentifier(String vPCZoneIdentifier) {
         this.vPCZoneIdentifier = vPCZoneIdentifier;
     }
     
     /**
-     * The identifier for the VPC connection, if applicable.
+     * The subnet identifier for the Amazon VPC connection, if applicable.
+     * You can specify several subnets in a comma-separated list. <p> When
+     * you specify <code>VPCZoneIdentifier</code> with
+     * <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     * Zones match the values you specify for <code>AvailabilityZones</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -641,7 +665,11 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param vPCZoneIdentifier The identifier for the VPC connection, if applicable.
+     * @param vPCZoneIdentifier The subnet identifier for the Amazon VPC connection, if applicable.
+     *         You can specify several subnets in a comma-separated list. <p> When
+     *         you specify <code>VPCZoneIdentifier</code> with
+     *         <code>AvailabilityZones</code>, ensure that the subnets' Availability
+     *         Zones match the values you specify for <code>AvailabilityZones</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

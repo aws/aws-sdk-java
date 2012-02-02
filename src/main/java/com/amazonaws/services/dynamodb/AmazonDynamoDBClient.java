@@ -54,10 +54,12 @@ import com.amazonaws.services.dynamodb.model.transform.*;
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
 
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;
+    private AWSCredentialsProvider awsCredentialsProvider;    
+
+    /** Long-term credentials used to obtain the session credentials provider */
+    private AWSCredentials longTermCredentials;
 
     private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
-
 
     /**
      * List of exception unmarshallers for all AmazonDynamoDB exceptions.
@@ -78,6 +80,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
      * session management will be handled automatically by the SDK.  Callers are encouraged
      * to use long-term credentials and let the SDK handle starting and renewing sessions.
+     * <p>
+     * Automatically managed sessions will be shared among all clients that use
+     * the same credentials and service endpoint. To opt out of this behavior,
+     * explicitly provide an instance of {@link AWSCredentialsProvider} that
+     * returns {@link AWSSessionCredentials}.
      * 
      * <p>
      * All service calls made using this new client object are blocking, and will not
@@ -100,6 +107,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
      * session management will be handled automatically by the SDK.  Callers are encouraged
      * to use long-term credentials and let the SDK handle starting and renewing sessions.
+     * <p>
+     * Automatically managed sessions will be shared among all clients that use
+     * the same credentials and service endpoint. To opt out of this behavior,
+     * explicitly provide an instance of {@link AWSCredentialsProvider} that
+     * returns {@link AWSSessionCredentials}.
      * 
      * <p>
      * All service calls made using this new client object are blocking, and will not
@@ -118,7 +130,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             awsCredentials instanceof NoSessionSupportCredentials) {
             this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         } else {
-            this.awsCredentialsProvider = new com.amazonaws.auth.STSSessionCredentialsProvider(awsCredentials, clientConfiguration);
+            this.longTermCredentials = awsCredentials;
         }
         
         init();
@@ -133,6 +145,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
      * session management will be handled automatically by the SDK.  Callers are encouraged
      * to use long-term credentials and let the SDK handle starting and renewing sessions.
+     * <p>
+     * Automatically managed sessions will be shared among all clients that use
+     * the same credentials and service endpoint. To opt out of this behavior,
+     * explicitly provide an instance of {@link AWSCredentialsProvider} that
+     * returns {@link AWSSessionCredentials}.
      * 
      * <p>
      * All service calls made using this new client object are blocking, and will not
@@ -156,6 +173,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
      * session management will be handled automatically by the SDK.  Callers are encouraged
      * to use long-term credentials and let the SDK handle starting and renewing sessions.
+     * <p>
+     * Automatically managed sessions will be shared among all clients that use
+     * the same credentials and service endpoint. To opt out of this behavior,
+     * explicitly provide an instance of {@link AWSCredentialsProvider} that
+     * returns {@link AWSSessionCredentials}.
      * 
      * <p>
      * All service calls made using this new client object are blocking, and will not
@@ -175,7 +197,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             awsCredentialsProvider.getCredentials() instanceof NoSessionSupportCredentials) {
             this.awsCredentialsProvider = awsCredentialsProvider;
         } else {
-            this.awsCredentialsProvider = new com.amazonaws.auth.STSSessionCredentialsProvider(awsCredentialsProvider);
+            this.longTermCredentials = awsCredentialsProvider.getCredentials();
         }
         
         init();
@@ -634,7 +656,20 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         return listTables(new ListTablesRequest());
     }
     
-
+    /**
+     * Setting the endpoint will also change the session credentials provider,
+     * if it's being automatically managed.
+     */
+    @Override
+    public void setEndpoint(String endpoint) throws IllegalArgumentException {
+        super.setEndpoint(endpoint);
+        
+        if ( this.longTermCredentials != null ) {
+            this.awsCredentialsProvider = SessionCredentialsProviderFactory.getSessionCredentialsProvider(
+                    this.longTermCredentials, endpoint, clientConfiguration);
+        }
+    }
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

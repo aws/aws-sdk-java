@@ -43,9 +43,10 @@ import com.amazonaws.services.autoscaling.model.*;
  * </p>
  * <p>
  * Auto Scaling is a web service designed to automatically launch or
- * terminate EC2 instances based on user-defined policies, schedules, and
- * health checks. This service is used in conjunction with Amazon
- * CloudWatch and Elastic Load Balancing services.
+ * terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on
+ * user-defined policies, schedules, and health checks. This service is
+ * used in conjunction with Amazon CloudWatch and Elastic Load Balancing
+ * services.
  * </p>
  * <p>
  * This reference is based on the current WSDL, which is available at:
@@ -217,6 +218,18 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     public ExecutorService getExecutorService() {
         return executorService;
     }
+    
+    /**
+     * Shuts down the client, releasing all managed resources. This includes
+     * forcibly terminating all pending asynchronous service calls. Clients who
+     * wish to give pending asynchronous service calls time to complete should
+     * call getExecutorService().shutdown() prior to calling this method.
+     */
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        executorService.shutdownNow();
+    }
             
     /**
      * <p>
@@ -228,7 +241,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * This action supports pagination by returning a token if there are
      * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the NextToken parameter.
+     * with the returned token as the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeAutoScalingGroupsRequest Container for the necessary
@@ -259,13 +272,14 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     /**
      * <p>
      * Enables monitoring of group metrics for the Auto Scaling group
-     * specified in AutoScalingGroupName. You can specify the list of enabled
-     * metrics with the Metrics parameter.
+     * specified in <code>AutoScalingGroupName</code> .
+     * You can specify the list of enabled metrics with the
+     * <code>Metrics</code> parameter.
      * </p>
      * <p>
      * Auto scaling metrics collection can be turned on only if the
-     * <code>InstanceMonitoring.Enabled</code> flag, in the Auto Scaling
-     * group's launch configuration, is set to <code>true</code> .
+     * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
+     * launch configuration, is set to <code>True</code> .
      * 
      * </p>
      *
@@ -366,7 +380,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Returns descriptions of what each policy does. This action supports
      * pagination. If the response includes a token, there are more records
      * available. To get the additional records, repeat the request with the
-     * response token as the NextToken parameter.
+     * response token as the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describePoliciesRequest Container for the necessary parameters
@@ -425,9 +439,9 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Creates a new Auto Scaling group with the specified name. When the
-     * creation request is completed, the Auto Scaling group is ready to be
-     * used in other calls.
+     * Creates a new Auto Scaling group with the specified name and other
+     * attributes. When the creation request is completed, the Auto Scaling
+     * group is ready to be used in other calls.
      * </p>
      * <p>
      * <b>NOTE:</b> The Auto Scaling group name must be unique within the
@@ -466,15 +480,16 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * Returns the scaling activities for the specified Auto Scaling group.
      * </p>
      * <p>
-     * If the specified <i>ActivityIds</i> list is empty, all the activities
-     * from the past six weeks are returned. Activities are sorted by
-     * completion time. Activities still in progress appear first on the
+     * If the specified <code>ActivityIds</code> list is empty, all the
+     * activities from the past six weeks are returned. Activities are sorted
+     * by completion time. Activities still in progress appear first on the
      * list.
      * </p>
      * <p>
      * This action supports pagination. If the response includes a token,
      * there are more records available. To get the additional records,
-     * repeat the request with the response token as the NextToken parameter.
+     * repeat the request with the response token as the
+     * <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeScalingActivitiesRequest Container for the necessary
@@ -535,6 +550,46 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
+     * Lists the Auto Scaling group tags.
+     * </p>
+     * <p>
+     * You can use filters to limit results when describing tags. For
+     * example, you can query for tags of a particular Auto Scaling group.
+     * You can specify multiple values for a filter. A tag must match at
+     * least one of the specified values for it to be included in the
+     * results.
+     * </p>
+     * <p>
+     * You can also specify multiple filters. The result includes
+     * information for a particular tag only if it matches all your filters.
+     * If there's no match, no special message is returned.
+     * </p>
+     *
+     * @param describeTagsRequest Container for the necessary parameters to
+     *           execute the DescribeTags operation on AmazonAutoScaling.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeTags service method, as returned by AmazonAutoScaling.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeTagsResult> describeTagsAsync(final DescribeTagsRequest describeTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeTagsResult>() {
+            public DescribeTagsResult call() throws Exception {
+                return describeTags(describeTagsRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Runs the policy you create for your Auto Scaling group in
      * PutScalingPolicy.
      * </p>
@@ -558,6 +613,35 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
                 executePolicy(executePolicyRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Removes the specified tags or a set of tags from a set of resources.
+     * </p>
+     *
+     * @param deleteTagsRequest Container for the necessary parameters to
+     *           execute the DeleteTags operation on AmazonAutoScaling.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteTags service method, as returned by AmazonAutoScaling.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteTagsAsync(final DeleteTagsRequest deleteTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteTags(deleteTagsRequest);
                 return null;
 		    }
 		});
@@ -633,7 +717,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Deletes a policy created by PutScalingPolicy
+     * Deletes a policy created by PutScalingPolicy.
      * </p>
      *
      * @param deletePolicyRequest Container for the necessary parameters to
@@ -785,6 +869,42 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
+     * Creates new tags or updates existing tags for an Auto Scaling group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource
+     * type, key and value, and the propagate flag. Value and the propagate
+     * flag are optional parameters. See the Request Parameters for more
+     * information.
+     * </p>
+     *
+     * @param createOrUpdateTagsRequest Container for the necessary
+     *           parameters to execute the CreateOrUpdateTags operation on
+     *           AmazonAutoScaling.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateOrUpdateTags service method, as returned by AmazonAutoScaling.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createOrUpdateTagsAsync(final CreateOrUpdateTagsRequest createOrUpdateTagsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                createOrUpdateTags(createOrUpdateTagsRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Suspends Auto Scaling processes for an Auto Scaling group. To suspend
      * specific process types, specify them by name with the
      * <code>ScalingProcesses.member.N</code> parameter. To suspend all
@@ -828,14 +948,14 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     /**
      * <p>
      * Returns a description of each Auto Scaling instance in the
-     * InstanceIds list. If a list is not provided, the service returns the
-     * full details of all instances up to a maximum of fifty. By default,
-     * the service returns a list of 20 items.
+     * <code>InstanceIds</code> list. If a list is not provided, the service
+     * returns the full details of all instances up to a maximum of 50. By
+     * default, the service returns a list of 20 items.
      * </p>
      * <p>
      * This action supports pagination by returning a token if there are
      * more pages to retrieve. To get the next page, call this action again
-     * with the returned token as the NextToken parameter.
+     * with the returned token as the <code>NextToken</code> parameter.
      * </p>
      *
      * @param describeAutoScalingInstancesRequest Container for the necessary
@@ -875,15 +995,11 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * You can create a launch configuration with Amazon EC2 security groups
      * or with Amazon VPC security groups. However, you can't use Amazon EC2
      * security groups together with Amazon VPC security groups, or vice
-     * versa. In addition, you can only create Auto Scaling launch
-     * configurations with Amazon VPC security groups in the Regions where
-     * Amazon VPC is supported. Amazon VPC is currently available only in the
-     * Amazon EC2 US-East (Northern Virginia) Region, and in the Amazon EC2
-     * EU-West (Ireland) Region.
+     * versa.
      * </p>
      * <p>
      * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't
-     * support compressed (e.g. gzipped) user data files.
+     * support compressed (e.g. zipped) user data files.
      * </p>
      *
      * @param createLaunchConfigurationRequest Container for the necessary
@@ -914,7 +1030,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Deletes the specified auto scaling group if the group has no
+     * Deletes the specified Auto Scaling group if the group has no
      * instances and no scaling activities in progress.
      * </p>
      * <p>
@@ -952,8 +1068,9 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     /**
      * <p>
      * Disables monitoring of group metrics for the Auto Scaling group
-     * specified in AutoScalingGroupName. You can specify the list of
-     * affected metrics with the Metrics parameter.
+     * specified in <code>AutoScalingGroupName</code> .
+     * You can specify the list of affected metrics with the
+     * <code>Metrics</code> parameter.
      * </p>
      *
      * @param disableMetricsCollectionRequest Container for the necessary
@@ -988,10 +1105,10 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * </p>
      * <p>
      * <b>NOTE:</b> To update an Auto Scaling group with a launch
-     * configuration that has the InstanceMonitoring.enabled flag set to
-     * false, you must first ensure that collection of group metrics is
-     * disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you
-     * have previously enabled group metrics collection, you can disable
+     * configuration that has the InstanceMonitoring flag set to False, you
+     * must first ensure that collection of group metrics is disabled.
+     * Otherwise, calls to UpdateAutoScalingGroup will fail. If you have
+     * previously enabled group metrics collection, you can disable
      * collection of all group metrics by calling DisableMetricsCollection.
      * </p>
      * <p>
@@ -1034,11 +1151,11 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Returns a full description of the launch configurations given the
-     * specified names.
+     * Returns a full description of the launch configurations, or the
+     * specified launch configurations, if they exist.
      * </p>
      * <p>
-     * If no names are specified, then the full details of all launch
+     * If no name is specified, then the full details of all launch
      * configurations are returned.
      * </p>
      *
@@ -1101,7 +1218,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     /**
      * <p>
      * Lists all the actions scheduled for your Auto Scaling group that
-     * haven't been executed. To see a list of action already executed, see
+     * haven't been executed. To see a list of actions already executed, see
      * the activity record returned in DescribeScalingActivities.
      * </p>
      *
@@ -1132,7 +1249,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
     
     /**
      * <p>
-     * Creates a scheduled scaling action for a Auto Scaling group. If you
+     * Creates a scheduled scaling action for an Auto Scaling group. If you
      * leave a parameter unspecified, the corresponding value remains
      * unchanged in the affected Auto Scaling group.
      * </p>
@@ -1198,8 +1315,8 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * <p>
      * Adjusts the desired size of the AutoScalingGroup by initiating
      * scaling activities. When reducing the size of the group, it is not
-     * possible to define which EC2 instances will be terminated. This
-     * applies to any auto-scaling decisions that might result in terminating
+     * possible to define which Amazon EC2 instances will be terminated. This
+     * applies to any Auto Scaling decisions that might result in terminating
      * instances.
      * </p>
      * <p>
@@ -1214,7 +1331,7 @@ public class AmazonAutoScalingAsyncClient extends AmazonAutoScalingClient
      * group without regard to the cooldown period. This could be useful, for
      * example, if Auto Scaling did something unexpected for some reason. If
      * your cooldown period is 10 minutes, Auto Scaling would normally reject
-     * requests to change the size of the group for that entire 10 minute
+     * requests to change the size of the group for that entire 10-minute
      * period. The <code>SetDesiredCapacity</code> command allows you to
      * circumvent this restriction and change the size of the group before
      * the end of the cooldown period.

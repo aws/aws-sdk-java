@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
@@ -27,7 +28,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata implements ServerSideEncryptionResult {
+public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirationResult {
 
     /*
      * TODO: Might be nice to get as many of the internal use only methods out
@@ -49,6 +50,17 @@ public class ObjectMetadata implements ServerSideEncryptionResult {
     private Map<String, Object> metadata = new HashMap<String, Object>();
 
     public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
+    
+    /**
+     * The time this object expires, or null if it has no expiration.
+     * <p>
+     * This and the expiration time rule aren't stored in the metadata map
+     * because the header contains both the time and the rule.
+     */
+    private Date expirationTime;
+    
+    /** The expiration rule for this object */
+    private String expirationTimeRuleId;
 
 	/**
 	 * <p>
@@ -89,30 +101,27 @@ public class ObjectMetadata implements ServerSideEncryptionResult {
      * </p>
      * <p>
      * Amazon S3 can store additional metadata on objects by internally
-     * representing it as HTTP headers prefixed with "x-amz-meta-".
-     * Use user-metadata to store arbitrary metadata alongside their data in
-     * Amazon S3. When setting user metadata, callers <i>should not</i> include
-     * the internal "x-amz-meta-" prefix; this library will handle that for
-     * them. Likewise, when callers retrieve custom user-metadata, they will not
-     * see the "x-amz-meta-" header prefix.
+     * representing it as HTTP headers prefixed with "x-amz-meta-". Use
+     * user-metadata to store arbitrary metadata alongside their data in Amazon
+     * S3. When setting user metadata, callers <i>should not</i> include the
+     * internal "x-amz-meta-" prefix; this library will handle that for them.
+     * Likewise, when callers retrieve custom user-metadata, they will not see
+     * the "x-amz-meta-" header prefix.
      * </p>
-	 * <p>
-	 * User-metadata keys are <b>case insensitive</b> and will be returned as
-	 * lowercase strings, even if they were originally specified with uppercase
-	 * strings.
-	 * </p>
+     * <p>
+     * User-metadata keys are <b>case insensitive</b> and will be returned as
+     * lowercase strings, even if they were originally specified with uppercase
+     * strings.
+     * </p>
      * <p>
      * Note that user-metadata for an object is limited by the HTTP request
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
      * </p>
-     *
+     * 
      * @param userMetadata
-     *            The custom user-metadata for the associated object.
-     *            Note that the key
-     *            should not include
-     *            the internal S3 HTTP header prefix.
-     *
+     *            The custom user-metadata for the associated object. Note that
+     *            the key should not include the internal S3 HTTP header prefix.
      * @see ObjectMetadata#getUserMetadata()
      * @see ObjectMetadata#addUserMetadata(String, String)
      */
@@ -570,6 +579,42 @@ public class ObjectMetadata implements ServerSideEncryptionResult {
      */
     public void setServerSideEncryption(String serverSideEncryption) {
         metadata.put(Headers.SERVER_SIDE_ENCRYPTION, serverSideEncryption);
+    }
+    
+    /**
+     * Returns the expiration time for this object, or null if it doesn't expire.
+     */
+    public Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    /**
+     * Sets the expiration time for the object.
+     * 
+     * @param expirationTime
+     *            The expiration time for the object.
+     */
+    public void setExpirationTime(Date expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    /**
+     * Returns the {@link BucketLifecycleConfiguration} rule ID for this
+     * object's expiration, or null if it doesn't expire.
+     */
+    public String getExpirationTimeRuleId() {
+        return expirationTimeRuleId;
+    }
+
+    /**
+     * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
+     * expiration
+     * 
+     * @param expirationTimeRuleId
+     *            The rule ID for this object's expiration
+     */
+    public void setExpirationTimeRuleId(String expirationTimeRuleId) {
+        this.expirationTimeRuleId = expirationTimeRuleId;
     }
 
 }

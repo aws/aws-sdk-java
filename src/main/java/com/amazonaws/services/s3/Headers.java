@@ -74,6 +74,9 @@ public interface Headers {
     
     /** Header for optional server-side encryption algorithm */
     public static final String SERVER_SIDE_ENCRYPTION = "x-amz-server-side-encryption";
+    
+    /** Header for optional object expiration */
+    public static final String EXPIRATION = "x-amz-expiration";
 
     /** ETag matching constraint header for the copy object request */
     public static final String COPY_SOURCE_IF_MATCH = "x-amz-copy-source-if-match";

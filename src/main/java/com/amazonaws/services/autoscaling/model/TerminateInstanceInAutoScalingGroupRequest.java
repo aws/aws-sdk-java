@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The ID of the EC2 instance to be terminated.
+     * The ID of the Amazon EC2 instance to be terminated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -47,33 +47,33 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
     private Boolean shouldDecrementDesiredCapacity;
 
     /**
-     * The ID of the EC2 instance to be terminated.
+     * The ID of the Amazon EC2 instance to be terminated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The ID of the EC2 instance to be terminated.
+     * @return The ID of the Amazon EC2 instance to be terminated.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The ID of the EC2 instance to be terminated.
+     * The ID of the Amazon EC2 instance to be terminated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The ID of the EC2 instance to be terminated.
+     * @param instanceId The ID of the Amazon EC2 instance to be terminated.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The ID of the EC2 instance to be terminated.
+     * The ID of the Amazon EC2 instance to be terminated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +81,7 @@ public class TerminateInstanceInAutoScalingGroupRequest extends AmazonWebService
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The ID of the EC2 instance to be terminated.
+     * @param instanceId The ID of the Amazon EC2 instance to be terminated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

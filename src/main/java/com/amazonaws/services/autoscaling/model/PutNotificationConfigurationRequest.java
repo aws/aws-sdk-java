@@ -32,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the Auto Scaling Group.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -57,33 +57,33 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     private java.util.List<String> notificationTypes;
 
     /**
-     * The name of the Auto Scaling Group.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The name of the Auto Scaling Group.
+     * @return The name of the Auto Scaling group.
      */
     public String getAutoScalingGroupName() {
         return autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling Group.
+     * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling Group.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      */
     public void setAutoScalingGroupName(String autoScalingGroupName) {
         this.autoScalingGroupName = autoScalingGroupName;
     }
     
     /**
-     * The name of the Auto Scaling Group.
+     * The name of the Auto Scaling group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -91,7 +91,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param autoScalingGroupName The name of the Auto Scaling Group.
+     * @param autoScalingGroupName The name of the Auto Scaling group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

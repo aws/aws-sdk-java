@@ -16,11 +16,14 @@ package com.amazonaws.services.s3.model.transform;
 
 import java.util.List;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 
@@ -145,4 +148,51 @@ public class BucketConfigurationXmlFactory {
         xml.end();
         return xml.getBytes();
     }
+    
+    /**
+     * Converts the specified {@link BucketLifecycleConfiguration} object to an XML fragment that
+     * can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link BucketLifecycleConfiguration}
+     */
+    /*
+     * <LifecycleConfiguration>
+        <Rule>
+            <ID>Expire object after 10 days</ID>
+            <Prefix>prefix</Prefix>
+            <Status>Enabled</Status>
+            <Expiration>
+                <Days>10</Days>
+            </Expiration>
+        </Rule>
+    </LifecycleConfiguration>    
+    */    
+    public byte[] convertToXmlByteArray(BucketLifecycleConfiguration config) throws AmazonClientException {
+        
+        XmlWriter xml = new XmlWriter();
+        xml.start("LifecycleConfiguration");
+        
+        for (Rule rule : config.getRules()) {
+            writeRule(xml, rule);
+        }
+
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeRule(XmlWriter xml, Rule rule) {
+        xml.start("Rule");
+        if ( rule.getId() != null ) {
+            xml.start("ID").value(rule.getId()).end();
+        }
+        xml.start("Prefix").value(rule.getPrefix()).end();
+        xml.start("Status").value(rule.getStatus()).end();
+        xml.start("Expiration");
+        xml.start("Days").value("" + rule.getExpirationInDays()).end();
+        xml.end(); // </Expiration>
+        xml.end(); // </Rule>
+    }
+
 }

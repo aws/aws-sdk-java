@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The PoliciesType data type.
+ * The <code>PoliciesType</code> data type.
  * </p>
  */
 public class DescribePoliciesResult {

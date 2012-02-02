@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The PolicyARNType data type.
+ * The <code>PolicyARNType</code> data type.
  * </p>
  */
 public class PutScalingPolicyResult {

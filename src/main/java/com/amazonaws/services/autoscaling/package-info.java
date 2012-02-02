@@ -12,9 +12,10 @@
  * </p>
  * <p>
  * Auto Scaling is a web service designed to automatically launch or
- * terminate EC2 instances based on user-defined policies, schedules, and
- * health checks. This service is used in conjunction with Amazon
- * CloudWatch and Elastic Load Balancing services.
+ * terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on
+ * user-defined policies, schedules, and health checks. This service is
+ * used in conjunction with Amazon CloudWatch and Elastic Load Balancing
+ * services.
  * </p>
  * <p>
  * This reference is based on the current WSDL, which is available at:

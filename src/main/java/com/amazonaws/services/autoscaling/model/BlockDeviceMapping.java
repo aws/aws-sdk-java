@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The BlockDeviceMapping data type.
+ * The <code>BlockDeviceMapping</code> data type.
  * </p>
  */
 public class BlockDeviceMapping {

@@ -16,13 +16,13 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The AutoScalingInstanceDetails data type.
+ * The <code>AutoScalingInstanceDetails</code> data type.
  * </p>
  */
 public class AutoScalingInstanceDetails {
 
     /**
-     * The instance's Amazon EC2 instance ID.
+     * The instance ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
@@ -40,7 +40,7 @@ public class AutoScalingInstanceDetails {
     private String autoScalingGroupName;
 
     /**
-     * The availability zone in which this instance resides.
+     * The Availability Zone in which this instance resides.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -78,33 +78,33 @@ public class AutoScalingInstanceDetails {
     private String launchConfigurationName;
 
     /**
-     * The instance's Amazon EC2 instance ID.
+     * The instance ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The instance's Amazon EC2 instance ID.
+     * @return The instance ID of the Amazon EC2 instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance's Amazon EC2 instance ID.
+     * The instance ID of the Amazon EC2 instance.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The instance's Amazon EC2 instance ID.
+     * @param instanceId The instance ID of the Amazon EC2 instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance's Amazon EC2 instance ID.
+     * The instance ID of the Amazon EC2 instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -112,7 +112,7 @@ public class AutoScalingInstanceDetails {
      * <b>Length: </b>1 - 16<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param instanceId The instance's Amazon EC2 instance ID.
+     * @param instanceId The instance ID of the Amazon EC2 instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -170,33 +170,33 @@ public class AutoScalingInstanceDetails {
     
     
     /**
-     * The availability zone in which this instance resides.
+     * The Availability Zone in which this instance resides.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The availability zone in which this instance resides.
+     * @return The Availability Zone in which this instance resides.
      */
     public String getAvailabilityZone() {
         return availabilityZone;
     }
     
     /**
-     * The availability zone in which this instance resides.
+     * The Availability Zone in which this instance resides.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone The availability zone in which this instance resides.
+     * @param availabilityZone The Availability Zone in which this instance resides.
      */
     public void setAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
     }
     
     /**
-     * The availability zone in which this instance resides.
+     * The Availability Zone in which this instance resides.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -204,7 +204,7 @@ public class AutoScalingInstanceDetails {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param availabilityZone The availability zone in which this instance resides.
+     * @param availabilityZone The Availability Zone in which this instance resides.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

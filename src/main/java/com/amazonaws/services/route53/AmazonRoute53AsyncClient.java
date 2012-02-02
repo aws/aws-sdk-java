@@ -187,6 +187,18 @@ public class AmazonRoute53AsyncClient extends AmazonRoute53Client
     public ExecutorService getExecutorService() {
         return executorService;
     }
+    
+    /**
+     * Shuts down the client, releasing all managed resources. This includes
+     * forcibly terminating all pending asynchronous service calls. Clients who
+     * wish to give pending asynchronous service calls time to complete should
+     * call getExecutorService().shutdown() prior to calling this method.
+     */
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        executorService.shutdownNow();
+    }
             
     /**
      * <p>

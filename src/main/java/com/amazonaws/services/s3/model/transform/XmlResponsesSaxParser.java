@@ -41,11 +41,14 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
+import com.amazonaws.services.s3.internal.ObjectExpirationResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
@@ -336,6 +339,13 @@ public class XmlResponsesSaxParser {
         throws AmazonClientException
     {
         BucketLoggingConfigurationHandler handler = new BucketLoggingConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+    
+    public BucketLifecycleConfigurationHandler parseBucketLifecycleConfigurationResponse(InputStream inputStream) 
+    {
+        BucketLifecycleConfigurationHandler handler = new BucketLifecycleConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -934,13 +944,16 @@ public class XmlResponsesSaxParser {
     }
 
 
-    public class CopyObjectResultHandler extends DefaultHandler implements ServerSideEncryptionResult {
+    public class CopyObjectResultHandler extends DefaultHandler implements ServerSideEncryptionResult, ObjectExpirationResult {       
+
         // Data items for successful copy
         private String etag = null;
         private Date lastModified = null;
         private String versionId = null;
         private String serverSideEncryption;
-       
+        private Date expirationTime;
+        private String expirationTimeRuleId;
+        
         // Data items for failed copy
         private String errorCode = null;
         private String errorMessage = null;
@@ -970,9 +983,25 @@ public class XmlResponsesSaxParser {
         public String getServerSideEncryption() {
             return serverSideEncryption;
         }
-        
+
         public void setServerSideEncryption(String serverSideEncryption) {
             this.serverSideEncryption = serverSideEncryption;
+        }
+
+        public Date getExpirationTime() {
+            return expirationTime;
+        }
+
+        public void setExpirationTime(Date expirationTime) {
+            this.expirationTime = expirationTime;
+        }
+
+        public String getExpirationTimeRuleId() {
+            return expirationTimeRuleId;
+        }
+
+        public void setExpirationTimeRuleId(String expirationTimeRuleId) {
+            this.expirationTimeRuleId = expirationTimeRuleId;
         }
 
         public String getETag() {
@@ -1351,7 +1380,9 @@ public class XmlResponsesSaxParser {
      *     <HostId>Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==</HostId>
      * </Error>
      */
-    public class CompleteMultipartUploadHandler extends DefaultHandler implements ServerSideEncryptionResult {
+    public class CompleteMultipartUploadHandler extends DefaultHandler implements ServerSideEncryptionResult,
+            ObjectExpirationResult {
+
         private StringBuilder text;
 
         // Successful completion
@@ -1367,6 +1398,40 @@ public class XmlResponsesSaxParser {
         public void setServerSideEncryption(String serverSideEncryption) {
             if ( result != null )
                 result.setServerSideEncryption(serverSideEncryption);
+        }
+
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#getExpirationTime()
+         */
+        public Date getExpirationTime() {
+            if ( result != null )
+                return result.getExpirationTime();
+            return null;
+        }
+        
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTime(java.util.Date)
+         */
+        public void setExpirationTime(Date expirationTime) {
+            if ( result != null )
+                result.setExpirationTime(expirationTime);
+        }
+        
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#getExpirationTimeRuleId()
+         */
+        public String getExpirationTimeRuleId() {
+            if ( result != null )
+                return result.getExpirationTimeRuleId();
+            return null;
+        }
+        
+        /**
+         * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTimeRuleId(java.lang.String)
+         */        
+        public void setExpirationTimeRuleId(String expirationTimeRuleId) {
+            if ( result != null )
+                result.setExpirationTimeRuleId(expirationTimeRuleId);
         }
 
         // Error during completion
@@ -1876,12 +1941,11 @@ public class XmlResponsesSaxParser {
         }
     }
 
-
     /*
         HTTP/1.1 200 OK
         x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
         x-amz-request-id: 656c76696e6727732072657175657374
-        Date: Tue, 20 Sep 2011 20:34:56 GMT
+        Date: Tue, 20 Sep 2012 20:34:56 GMT
         Content-Type: application/xml
         Transfer-Encoding: chunked
         Connection: keep-alive
@@ -1986,7 +2050,82 @@ public class XmlResponsesSaxParser {
             this.text.append(ch, start, length);
         }
     }
-
+    
+    /*
+    HTTP/1.1 200 OK
+    x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+    x-amz-request-id: 656c76696e6727732072657175657374
+    Date: Tue, 20 Sep 2012 20:34:56 GMT
+    Content-Length: xxx
+    Connection: keep-alive
+    Server: AmazonS3
+    
+    <LifecycleConfiguration>
+        <Rule>
+            <ID>Expire object after 10 days</ID>
+            <Prefix>prefix</Prefix>
+            <Status>Enabled</Status>
+            <Expiration>
+                <Days>10</Days>
+            </Expiration>
+        </Rule>
+    </LifecycleConfiguration>
+    */
+    public class BucketLifecycleConfigurationHandler extends DefaultHandler {
+        private StringBuilder text;
+        private Rule rule;
+        private List<Rule> rules = new LinkedList<Rule>();
+        
+        public BucketLifecycleConfiguration getConfiguration() {
+            return new BucketLifecycleConfiguration(rules);
+        }
+        
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+    
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if ( name.equals("LifecycleConfiguration") ) {
+            } else if ( name.equals("Rule") ) {
+                rule = new Rule();
+            } else if ( name.equals("ID") ) {
+            } else if ( name.equals("Prefix") ) {
+            } else if ( name.equals("Status") ) {
+            } else if ( name.equals("Expiration") ) {
+            } else if ( name.equals("Days") ) {
+            } else {
+                log.warn("Unexpected tag: " + name);
+            }
+            text.setLength(0);
+        }
+    
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if ( name.equals("LifecycleConfiguration") ) {
+            } else if ( name.equals("Rule") ) {
+                rules.add(rule);
+                rule = null;
+            } else if ( name.equals("ID") ) {
+                rule.setId(text.toString());
+            } else if ( name.equals("Prefix") ) {
+                rule.setPrefix(text.toString());
+            } else if ( name.equals("Status") ) {
+                rule.setStatus(text.toString());
+            } else if ( name.equals("Expiration") ) {
+            } else if ( name.equals("Days") ) {
+                rule.setExpirationInDays(Integer.parseInt(text.toString()));
+            } else {
+                log.warn("Unexpected tag: " + name);
+            }
+        }
+    
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
 
     private static String findAttributeValue( String qnameToFind, Attributes attrs ) {
         for ( int i = 0; i < attrs.getLength(); i++ ) {

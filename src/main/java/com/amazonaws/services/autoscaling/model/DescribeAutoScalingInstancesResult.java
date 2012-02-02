@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The AutoScalingInstancesType data type.
+ * The <code>AutoScalingInstancesType</code> data type.
  * </p>
  */
 public class DescribeAutoScalingInstancesResult {

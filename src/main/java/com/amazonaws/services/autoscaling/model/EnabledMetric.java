@@ -16,7 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * The EnabledMetric data type.
+ * The <code>EnabledMetric</code> data type.
  * </p>
  */
 public class EnabledMetric {

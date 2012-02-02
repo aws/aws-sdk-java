@@ -49,6 +49,7 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
@@ -296,8 +297,9 @@ public class EncryptionUtils {
      *      The updated object where the object content input stream contains the decrypted contents.
      */
     public static S3Object decryptObjectUsingInstruction(S3Object object, EncryptionInstruction instruction) {
-        InputStream decryptedInputStream = new CipherInputStream(object.getObjectContent(), instruction.getSymmetricCipher());
-        object.setObjectContent(decryptedInputStream);
+        S3ObjectInputStream objectContent = object.getObjectContent();
+        InputStream decryptedInputStream = new CipherInputStream(objectContent, instruction.getSymmetricCipher());
+        object.setObjectContent(new S3ObjectInputStream(decryptedInputStream, objectContent.getHttpRequest()));
         return object;
     }
 
@@ -456,8 +458,9 @@ public class EncryptionUtils {
             return object;
         } else {
             try {
-                InputStream adjustedRangeContents = new AdjustedRangeInputStream(object.getObjectContent(), range[0], range[1]);
-                object.setObjectContent(adjustedRangeContents);
+                S3ObjectInputStream objectContent = object.getObjectContent();
+                InputStream adjustedRangeContents = new AdjustedRangeInputStream(objectContent, range[0], range[1]);
+                object.setObjectContent(new S3ObjectInputStream(adjustedRangeContents, objectContent.getHttpRequest()));
                 return object;
             } catch (IOException e) {
                 throw new AmazonClientException("Error adjusting output to desired byte range: " + e.getMessage());
