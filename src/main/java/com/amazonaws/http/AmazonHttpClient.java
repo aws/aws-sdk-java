@@ -358,7 +358,7 @@ public class AmazonHttpClient {
      *
      * @return True if the failed request should be retried.
      */
-    private boolean shouldRetry(HttpRequestBase method, Exception exception, int retries) {
+    protected boolean shouldRetry(HttpRequestBase method, Exception exception, int retries) {
         if (retries > config.getMaxErrorRetry()) return false;
 
         if (method instanceof HttpEntityEnclosingRequest) {
@@ -621,7 +621,7 @@ public class AmazonHttpClient {
      * @return True if the exception resulted from a throttling error message
      *         from a service, otherwise false.
      */
-    private boolean isThrottlingException(AmazonServiceException ase) {
+    protected boolean isThrottlingException(AmazonServiceException ase) {
         if (ase == null) return false;
         return "Throttling".equals(ase.getErrorCode())
             || "ThrottlingException".equals(ase.getErrorCode())
