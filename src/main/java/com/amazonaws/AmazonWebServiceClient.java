@@ -57,9 +57,27 @@ public abstract class AmazonWebServiceClient {
      */
     public AmazonWebServiceClient(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration);
+        client = createHttpClient( clientConfiguration );
         requestHandlers = Collections.synchronizedList(new LinkedList<RequestHandler>());
     }
+
+	/**
+	 * Constructs the HTTP client instance to be used in this web service
+	 * client. The default implementation returns an instance of
+	 * {@link AmazonHttpClient} but derived classes may override this method in
+	 * order to customize the actual HTTP client to a subclass of
+	 * {@link AmazonHttpClient}.
+	 * 
+	 * @param clientConfiguration
+	 *            The client configuration for this client.
+	 * 
+	 * @return an instance of {@link AmazonHttpClient} or a subclass thereof,
+	 *         initialized with the given client configuration
+	 */
+	protected AmazonHttpClient createHttpClient(ClientConfiguration clientConfiguration)
+	{
+		return new AmazonHttpClient(clientConfiguration);
+	}
 
     /**
      * Overrides the default endpoint for this client. Callers can use this
@@ -107,7 +125,7 @@ public abstract class AmazonWebServiceClient {
 
     public void setConfiguration(ClientConfiguration clientConfiguration) {
         this.clientConfiguration = clientConfiguration;
-        client = new AmazonHttpClient(clientConfiguration);
+        client = createHttpClient( clientConfiguration );
     }
 
     /**
