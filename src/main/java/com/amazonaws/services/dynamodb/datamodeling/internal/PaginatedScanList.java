@@ -60,7 +60,7 @@ public class PaginatedScanList<T> extends PaginatedList<T> {
     @Override
     protected synchronized void loadNextResult() {
         scanRequest.setExclusiveStartKey(scanResult.getLastEvaluatedKey());
-        scanResult = dynamo.scan(scanRequest);
+        scanResult = dynamo.scan(applyUserAgent(scanRequest));
         unmarshallResults(scanResult.getItems());
     }
 

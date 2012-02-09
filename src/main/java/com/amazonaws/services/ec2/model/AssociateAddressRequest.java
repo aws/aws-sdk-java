@@ -48,6 +48,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
      */
     private String allocationId;
 
+    private String networkInterfaceId;
+
     /**
      * Default constructor for a new AssociateAddressRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -178,6 +180,40 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the NetworkInterfaceId property for this object.
+     *
+     * @return The value of the NetworkInterfaceId property for this object.
+     */
+    public String getNetworkInterfaceId() {
+        return networkInterfaceId;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaceId property for this object.
+     *
+     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     */
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaceId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AssociateAddressRequest withNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -192,6 +228,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
         if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
         if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
         if (allocationId != null) sb.append("AllocationId: " + allocationId + ", ");
+        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -204,6 +241,7 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode()); 
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         return hashCode;
     }
     
@@ -221,6 +259,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest {
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false) return false; 
         if (other.getAllocationId() == null ^ this.getAllocationId() == null) return false;
         if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false) return false; 
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null) return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         return true;
     }
     

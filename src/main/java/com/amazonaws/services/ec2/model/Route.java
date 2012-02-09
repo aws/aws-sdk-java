@@ -25,6 +25,10 @@ public class Route {
 
     private String instanceId;
 
+    private String instanceOwnerId;
+
+    private String networkInterfaceId;
+
     private String state;
 
     /**
@@ -131,6 +135,74 @@ public class Route {
     
     
     /**
+     * Returns the value of the InstanceOwnerId property for this object.
+     *
+     * @return The value of the InstanceOwnerId property for this object.
+     */
+    public String getInstanceOwnerId() {
+        return instanceOwnerId;
+    }
+    
+    /**
+     * Sets the value of the InstanceOwnerId property for this object.
+     *
+     * @param instanceOwnerId The new value for the InstanceOwnerId property for this object.
+     */
+    public void setInstanceOwnerId(String instanceOwnerId) {
+        this.instanceOwnerId = instanceOwnerId;
+    }
+    
+    /**
+     * Sets the value of the InstanceOwnerId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceOwnerId The new value for the InstanceOwnerId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Route withInstanceOwnerId(String instanceOwnerId) {
+        this.instanceOwnerId = instanceOwnerId;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the NetworkInterfaceId property for this object.
+     *
+     * @return The value of the NetworkInterfaceId property for this object.
+     */
+    public String getNetworkInterfaceId() {
+        return networkInterfaceId;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaceId property for this object.
+     *
+     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     */
+    public void setNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaceId property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaceId The new value for the NetworkInterfaceId property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Route withNetworkInterfaceId(String networkInterfaceId) {
+        this.networkInterfaceId = networkInterfaceId;
+        return this;
+    }
+    
+    
+    /**
      * Returns the value of the State property for this object.
      *
      * @return The value of the State property for this object.
@@ -179,6 +251,8 @@ public class Route {
         if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
         if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
         if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (instanceOwnerId != null) sb.append("InstanceOwnerId: " + instanceOwnerId + ", ");
+        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
         if (state != null) sb.append("State: " + state + ", ");
         sb.append("}");
         return sb.toString();
@@ -192,6 +266,8 @@ public class Route {
         hashCode = prime * hashCode + ((getDestinationCidrBlock() == null) ? 0 : getDestinationCidrBlock().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayId() == null) ? 0 : getGatewayId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
         return hashCode;
     }
@@ -210,6 +286,10 @@ public class Route {
         if (other.getGatewayId() != null && other.getGatewayId().equals(this.getGatewayId()) == false) return false; 
         if (other.getInstanceId() == null ^ this.getInstanceId() == null) return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false) return false; 
+        if (other.getInstanceOwnerId() == null ^ this.getInstanceOwnerId() == null) return false;
+        if (other.getInstanceOwnerId() != null && other.getInstanceOwnerId().equals(this.getInstanceOwnerId()) == false) return false; 
+        if (other.getNetworkInterfaceId() == null ^ this.getNetworkInterfaceId() == null) return false;
+        if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         if (other.getState() == null ^ this.getState() == null) return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
         return true;

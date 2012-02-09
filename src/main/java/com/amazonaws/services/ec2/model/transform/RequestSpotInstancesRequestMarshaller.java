@@ -38,7 +38,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
@@ -158,6 +158,46 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
             }
             if (launchSpecificationLaunchSpecification.getSubnetId() != null) {
                 request.addParameter("LaunchSpecification.SubnetId", StringUtils.fromString(launchSpecificationLaunchSpecification.getSubnetId()));
+            }
+
+            java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesList = launchSpecificationLaunchSpecification.getNetworkInterfaces();
+            int networkInterfacesListIndex = 1;
+
+            for (InstanceNetworkInterfaceSpecification networkInterfacesListValue : networkInterfacesList) {
+                InstanceNetworkInterfaceSpecification instanceNetworkInterfaceSpecificationMember = networkInterfacesListValue;
+                if (instanceNetworkInterfaceSpecificationMember != null) {
+                    if (instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId()));
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.getDeviceIndex() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getDeviceIndex()));
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.getSubnetId() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SubnetId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getSubnetId()));
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.getDescription() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".Description", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getDescription()));
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress()));
+                    }
+
+                    java.util.List<String> groupsList = instanceNetworkInterfaceSpecificationMember.getGroups();
+                    int groupsListIndex = 1;
+
+                    for (String groupsListValue : groupsList) {
+                        if (groupsListValue != null) {
+                            request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+                        }
+
+                        groupsListIndex++;
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
+                    }
+                }
+
+                networkInterfacesListIndex++;
             }
         }
 

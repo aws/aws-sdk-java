@@ -192,6 +192,8 @@ public class Instance {
 
     private String hypervisor;
 
+    private java.util.List<InstanceNetworkInterface> networkInterfaces;
+
     /**
      * Unique ID of the instance launched.
      *
@@ -1735,6 +1737,75 @@ public class Instance {
     }
     
     /**
+     * Returns the value of the NetworkInterfaces property for this object.
+     *
+     * @return The value of the NetworkInterfaces property for this object.
+     */
+    public java.util.List<InstanceNetworkInterface> getNetworkInterfaces() {
+        
+        if (networkInterfaces == null) {
+            networkInterfaces = new java.util.ArrayList<InstanceNetworkInterface>();
+        }
+        return networkInterfaces;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     */
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        java.util.List<InstanceNetworkInterface> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterface>(networkInterfaces.size());
+        networkInterfacesCopy.addAll(networkInterfaces);
+        this.networkInterfaces = networkInterfacesCopy;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withNetworkInterfaces(InstanceNetworkInterface... networkInterfaces) {
+        if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterface>(networkInterfaces.length));
+        for (InstanceNetworkInterface value : networkInterfaces) {
+            getNetworkInterfaces().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withNetworkInterfaces(java.util.Collection<InstanceNetworkInterface> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+        } else {
+            java.util.List<InstanceNetworkInterface> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterface>(networkInterfaces.size());
+            networkInterfacesCopy.addAll(networkInterfaces);
+            this.networkInterfaces = networkInterfacesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1780,6 +1851,7 @@ public class Instance {
         if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
         if (sourceDestCheck != null) sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
         if (hypervisor != null) sb.append("Hypervisor: " + hypervisor + ", ");
+        if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1823,6 +1895,7 @@ public class Instance {
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
         return hashCode;
     }
     
@@ -1902,6 +1975,8 @@ public class Instance {
         if (other.isSourceDestCheck() != null && other.isSourceDestCheck().equals(this.isSourceDestCheck()) == false) return false; 
         if (other.getHypervisor() == null ^ this.getHypervisor() == null) return false;
         if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false) return false; 
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
         return true;
     }
     

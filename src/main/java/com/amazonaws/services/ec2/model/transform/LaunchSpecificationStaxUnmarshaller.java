@@ -98,6 +98,10 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     launchSpecification.setSubnetId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("networkInterfaceSet/item", targetDepth)) {
+                    launchSpecification.getNetworkInterfaces().add(InstanceNetworkInterfaceSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchSpecification;

@@ -41,6 +41,10 @@ public class InstanceStatus {
      */
     private InstanceState instanceState;
 
+    private InstanceStatusSummary systemStatus;
+
+    private InstanceStatusSummary instanceStatus;
+
     /**
      * The ID of the Amazon EC2 instance.
      *
@@ -213,6 +217,74 @@ public class InstanceStatus {
     
     
     /**
+     * Returns the value of the SystemStatus property for this object.
+     *
+     * @return The value of the SystemStatus property for this object.
+     */
+    public InstanceStatusSummary getSystemStatus() {
+        return systemStatus;
+    }
+    
+    /**
+     * Sets the value of the SystemStatus property for this object.
+     *
+     * @param systemStatus The new value for the SystemStatus property for this object.
+     */
+    public void setSystemStatus(InstanceStatusSummary systemStatus) {
+        this.systemStatus = systemStatus;
+    }
+    
+    /**
+     * Sets the value of the SystemStatus property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param systemStatus The new value for the SystemStatus property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceStatus withSystemStatus(InstanceStatusSummary systemStatus) {
+        this.systemStatus = systemStatus;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the InstanceStatus property for this object.
+     *
+     * @return The value of the InstanceStatus property for this object.
+     */
+    public InstanceStatusSummary getInstanceStatus() {
+        return instanceStatus;
+    }
+    
+    /**
+     * Sets the value of the InstanceStatus property for this object.
+     *
+     * @param instanceStatus The new value for the InstanceStatus property for this object.
+     */
+    public void setInstanceStatus(InstanceStatusSummary instanceStatus) {
+        this.instanceStatus = instanceStatus;
+    }
+    
+    /**
+     * Sets the value of the InstanceStatus property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param instanceStatus The new value for the InstanceStatus property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceStatus withInstanceStatus(InstanceStatusSummary instanceStatus) {
+        this.instanceStatus = instanceStatus;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -228,6 +300,8 @@ public class InstanceStatus {
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
         if (events != null) sb.append("Events: " + events + ", ");
         if (instanceState != null) sb.append("InstanceState: " + instanceState + ", ");
+        if (systemStatus != null) sb.append("SystemStatus: " + systemStatus + ", ");
+        if (instanceStatus != null) sb.append("InstanceStatus: " + instanceStatus + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +315,8 @@ public class InstanceStatus {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getEvents() == null) ? 0 : getEvents().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceState() == null) ? 0 : getInstanceState().hashCode()); 
+        hashCode = prime * hashCode + ((getSystemStatus() == null) ? 0 : getSystemStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getInstanceStatus() == null) ? 0 : getInstanceStatus().hashCode()); 
         return hashCode;
     }
     
@@ -260,6 +336,10 @@ public class InstanceStatus {
         if (other.getEvents() != null && other.getEvents().equals(this.getEvents()) == false) return false; 
         if (other.getInstanceState() == null ^ this.getInstanceState() == null) return false;
         if (other.getInstanceState() != null && other.getInstanceState().equals(this.getInstanceState()) == false) return false; 
+        if (other.getSystemStatus() == null ^ this.getSystemStatus() == null) return false;
+        if (other.getSystemStatus() != null && other.getSystemStatus().equals(this.getSystemStatus()) == false) return false; 
+        if (other.getInstanceStatus() == null ^ this.getInstanceStatus() == null) return false;
+        if (other.getInstanceStatus() != null && other.getInstanceStatus().equals(this.getInstanceStatus()) == false) return false; 
         return true;
     }
     

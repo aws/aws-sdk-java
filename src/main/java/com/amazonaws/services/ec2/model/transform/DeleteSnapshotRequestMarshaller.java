@@ -38,7 +38,7 @@ public class DeleteSnapshotRequestMarshaller implements Marshaller<Request<Delet
 
         Request<DeleteSnapshotRequest> request = new DefaultRequest<DeleteSnapshotRequest>(deleteSnapshotRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteSnapshot");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
         if (deleteSnapshotRequest.getSnapshotId() != null) {
             request.addParameter("SnapshotId", StringUtils.fromString(deleteSnapshotRequest.getSnapshotId()));

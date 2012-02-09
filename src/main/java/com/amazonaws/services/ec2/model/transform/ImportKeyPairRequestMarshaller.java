@@ -38,7 +38,7 @@ public class ImportKeyPairRequestMarshaller implements Marshaller<Request<Import
 
         Request<ImportKeyPairRequest> request = new DefaultRequest<ImportKeyPairRequest>(importKeyPairRequest, "AmazonEC2");
         request.addParameter("Action", "ImportKeyPair");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
         if (importKeyPairRequest.getKeyName() != null) {
             request.addParameter("KeyName", StringUtils.fromString(importKeyPairRequest.getKeyName()));

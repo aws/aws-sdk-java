@@ -111,6 +111,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private String userData;
 
+    private String addressingType;
+
     /**
      * Specifies the instance type for the launched instances.
      * <p>
@@ -190,6 +192,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     private String clientToken;
 
     private String additionalInfo;
+
+    private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
     /**
      * Default constructor for a new RunInstancesRequest object.  Callers should use the
@@ -555,6 +559,40 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     public RunInstancesRequest withUserData(String userData) {
         this.userData = userData;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AddressingType property for this object.
+     *
+     * @return The value of the AddressingType property for this object.
+     */
+    public String getAddressingType() {
+        return addressingType;
+    }
+    
+    /**
+     * Sets the value of the AddressingType property for this object.
+     *
+     * @param addressingType The new value for the AddressingType property for this object.
+     */
+    public void setAddressingType(String addressingType) {
+        this.addressingType = addressingType;
+    }
+    
+    /**
+     * Sets the value of the AddressingType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param addressingType The new value for the AddressingType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withAddressingType(String addressingType) {
+        this.addressingType = addressingType;
         return this;
     }
     
@@ -1200,6 +1238,75 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the NetworkInterfaces property for this object.
+     *
+     * @return The value of the NetworkInterfaces property for this object.
+     */
+    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
+        
+        if (networkInterfaces == null) {
+            networkInterfaces = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>();
+        }
+        return networkInterfaces;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     */
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+        networkInterfacesCopy.addAll(networkInterfaces);
+        this.networkInterfaces = networkInterfacesCopy;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
+        if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
+        for (InstanceNetworkInterfaceSpecification value : networkInterfaces) {
+            getNetworkInterfaces().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+        } else {
+            java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+            networkInterfacesCopy.addAll(networkInterfaces);
+            this.networkInterfaces = networkInterfacesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1218,6 +1325,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
         if (securityGroupIds != null) sb.append("SecurityGroupIds: " + securityGroupIds + ", ");
         if (userData != null) sb.append("UserData: " + userData + ", ");
+        if (addressingType != null) sb.append("AddressingType: " + addressingType + ", ");
         if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
         if (placement != null) sb.append("Placement: " + placement + ", ");
         if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
@@ -1231,6 +1339,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
         if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
         if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
+        if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1247,6 +1356,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
+        hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
@@ -1260,6 +1370,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
         return hashCode;
     }
     
@@ -1285,6 +1396,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;
         if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
+        if (other.getAddressingType() == null ^ this.getAddressingType() == null) return false;
+        if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false) return false; 
         if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
         if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
@@ -1311,6 +1424,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false) return false; 
         if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
         return true;
     }
     

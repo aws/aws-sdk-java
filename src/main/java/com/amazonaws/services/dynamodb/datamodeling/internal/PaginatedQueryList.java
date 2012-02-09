@@ -60,7 +60,7 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
     @Override
     protected void loadNextResult() {
         queryRequest.setExclusiveStartKey(queryResult.getLastEvaluatedKey());
-        queryResult = dynamo.query(queryRequest);
+        queryResult = dynamo.query(applyUserAgent(queryRequest));
         unmarshallResults(queryResult.getItems());        
     }
 

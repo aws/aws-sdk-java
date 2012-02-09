@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.dynamodb.AmazonDynamoDB;
 import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.ConsistentReads;
 import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.SaveBehavior;
@@ -43,6 +44,7 @@ import com.amazonaws.services.dynamodb.model.QueryResult;
 import com.amazonaws.services.dynamodb.model.ScanRequest;
 import com.amazonaws.services.dynamodb.model.ScanResult;
 import com.amazonaws.services.dynamodb.model.UpdateItemRequest;
+import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * Object mapper for domain-object interaction with DynamoDB.
@@ -103,8 +105,9 @@ import com.amazonaws.services.dynamodb.model.UpdateItemRequest;
  * 
  * <pre>
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
- * Long key = 105L;
- * TestClass obj = mapper.load(TestClass.class, key);
+ * Long hashKey = 105L;
+ * double rangeKey = 1.0d;
+ * TestClass obj = mapper.load(TestClass.class, hashKey, rangeKey);
  * obj.getIntegerAttribute().add(42);
  * mapper.save(obj);
  * mapper.delete(obj);
@@ -133,6 +136,12 @@ public class DynamoDBMapper {
     private final DynamoDBMapperConfig config;
     private static final DynamoDBReflector reflector = new DynamoDBReflector();
 
+    /**
+     * User agent for requests made using the {@link DynamoDBMapper}. Intended
+     * for internal use only.
+     */
+    public static final String USER_AGENT = DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
+    
     /**
      * Constructs a new mapper with the service object given, using the default
      * configuration.
@@ -225,9 +234,9 @@ public class DynamoDBMapper {
             rangeKeyElement = getRangeKeyElement(rangeKey, rangeKeyMethod);
         }
 
-        GetItemResult item = db.getItem(new GetItemRequest().withTableName(tableName)
+        GetItemResult item = db.getItem(applyUserAgent(new GetItemRequest().withTableName(tableName)
                 .withKey(new Key().withHashKeyElement(hashKeyElement).withRangeKeyElement(rangeKeyElement))
-                .withConsistentRead(config.getConsistentReads() == ConsistentReads.CONSISTENT));
+                .withConsistentRead(config.getConsistentReads() == ConsistentReads.CONSISTENT)));
         Map<String, AttributeValue> itemAttributes = item.getItem();
         if ( itemAttributes == null ) {
             return null;
@@ -454,11 +463,11 @@ public class DynamoDBMapper {
          * the default), we need to munge the data type.
          */
         if ( config.getSaveBehavior() == SaveBehavior.CLOBBER || forcePut ) {
-            db.putItem(new PutItemRequest().withTableName(tableName).withItem(convertToItem(updateValues))
-                    .withExpected(expectedValues));
+            db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(convertToItem(updateValues))
+                    .withExpected(expectedValues)));
         } else {
-            db.updateItem(new UpdateItemRequest().withTableName(tableName).withKey(objectKey)
-                    .withAttributeUpdates(updateValues).withExpected(expectedValues));
+            db.updateItem(applyUserAgent(new UpdateItemRequest().withTableName(tableName).withKey(objectKey)
+                    .withAttributeUpdates(updateValues).withExpected(expectedValues)));
         }
 
         /*
@@ -528,7 +537,7 @@ public class DynamoDBMapper {
             }
         }
         
-        db.deleteItem(new DeleteItemRequest().withKey(objectKey).withTableName(tableName).withExpected(expectedValues));
+        db.deleteItem(applyUserAgent(new DeleteItemRequest().withKey(objectKey).withTableName(tableName).withExpected(expectedValues)));
     }
     
     /**
@@ -627,7 +636,7 @@ public class DynamoDBMapper {
     public <T> List<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression) throws Exception {
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression);
 
-        ScanResult scanResult = db.scan(scanRequest);
+        ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
         int count = scanResult.getCount();
 
         // If the results are truncated, figure out the count
@@ -670,7 +679,7 @@ public class DynamoDBMapper {
     public <T> List<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression) throws Exception {
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression);
 
-        QueryResult queryResult = db.query(queryRequest);
+        QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         int count = queryResult.getCount();
 
         // If the results are truncated, figure out the count
@@ -705,7 +714,7 @@ public class DynamoDBMapper {
         int count = 0;
         ScanResult scanResult = null;
         do {
-            scanResult = db.scan(scanRequest);
+            scanResult = db.scan(applyUserAgent(scanRequest));
             count += scanResult.getCount();
             scanRequest.setExclusiveStartKey(scanResult.getLastEvaluatedKey());
         } while (scanResult.getLastEvaluatedKey() != null);
@@ -721,7 +730,7 @@ public class DynamoDBMapper {
         int count = 0;
         QueryResult queryResult = null;
         do {
-            queryResult = db.query(queryRequest);
+            queryResult = db.query(applyUserAgent(queryRequest));
             count += queryResult.getCount();
             queryRequest.setExclusiveStartKey(queryResult.getLastEvaluatedKey());
         } while (queryResult.getLastEvaluatedKey() != null);
@@ -750,5 +759,10 @@ public class DynamoDBMapper {
         queryRequest.setRangeKeyCondition(queryExpression.getRangeKeyCondition());
 
         return queryRequest;
+    }
+    
+    static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
+        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        return request;
     }
 }

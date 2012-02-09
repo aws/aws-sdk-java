@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -163,7 +164,17 @@ public class UploadCallable implements Callable<UploadResult> {
 
         while (requestFactory.hasMoreRequests()) {
             if (threadPool.isShutdown()) throw new CancellationException("TransferManager has been shutdown");
-            partETags.add(s3.uploadPart(requestFactory.getNextUploadPartRequest()).getPartETag());
+            UploadPartRequest uploadPartRequest = requestFactory.getNextUploadPartRequest();
+            // Mark the stream in case we need to reset it
+            InputStream inputStream = uploadPartRequest.getInputStream();
+            if (inputStream != null && inputStream.markSupported()) {
+                if (uploadPartRequest.getPartSize() >= Integer.MAX_VALUE) {
+                    inputStream.mark(Integer.MAX_VALUE);
+                } else {
+                    inputStream.mark((int)uploadPartRequest.getPartSize());
+                }
+            }
+            partETags.add(s3.uploadPart(uploadPartRequest).getPartETag());
         }
 
         CompleteMultipartUploadResult completeMultipartUploadResult = s3

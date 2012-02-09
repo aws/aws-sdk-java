@@ -58,6 +58,14 @@ public class RouteStaxUnmarshaller implements Unmarshaller<Route, StaxUnmarshall
                     route.setInstanceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("instanceOwnerId", targetDepth)) {
+                    route.setInstanceOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("networkInterfaceId", targetDepth)) {
+                    route.setNetworkInterfaceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("state", targetDepth)) {
                     route.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

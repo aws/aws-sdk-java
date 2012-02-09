@@ -38,7 +38,7 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
 
         Request<DescribeInstanceStatusRequest> request = new DefaultRequest<DescribeInstanceStatusRequest>(describeInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstanceStatus");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
 
         java.util.List<String> instanceIdsList = describeInstanceStatusRequest.getInstanceIds();
@@ -59,7 +59,7 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
                 if (filterMember.getName() != null) {
-                    request.addParameter("Filters." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
 
                 java.util.List<String> valuesList = filterMember.getValues();
@@ -67,7 +67,7 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
 
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
-                        request.addParameter("Filters." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
 
                     valuesListIndex++;

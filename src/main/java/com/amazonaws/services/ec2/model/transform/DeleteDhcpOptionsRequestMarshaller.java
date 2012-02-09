@@ -38,7 +38,7 @@ public class DeleteDhcpOptionsRequestMarshaller implements Marshaller<Request<De
 
         Request<DeleteDhcpOptionsRequest> request = new DefaultRequest<DeleteDhcpOptionsRequest>(deleteDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteDhcpOptions");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
         if (deleteDhcpOptionsRequest.getDhcpOptionsId() != null) {
             request.addParameter("DhcpOptionsId", StringUtils.fromString(deleteDhcpOptionsRequest.getDhcpOptionsId()));

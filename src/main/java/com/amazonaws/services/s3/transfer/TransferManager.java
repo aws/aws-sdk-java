@@ -17,6 +17,8 @@ package com.amazonaws.services.s3.transfer;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import com.amazonaws.AmazonClientException;
@@ -89,6 +91,10 @@ public class TransferManager {
     /** The thread pool in which transfers are uploaded or downloaded. */
     private ThreadPoolExecutor threadPool;
 
+    /** Thread used for periodicially checking transfers and updating thier state. */
+    private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1);
+    
+    
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
      * the specified AWS security credentials.
@@ -341,6 +347,7 @@ public class TransferManager {
 
         UploadCallable uploadCallable = new UploadCallable(this, threadPool, putObjectRequest, listenerChain);
         UploadMonitor watcher = new UploadMonitor(this, upload, threadPool, uploadCallable, putObjectRequest, listenerChain);
+        watcher.setTimedThreadPool(timedThreadPool);
         upload.setMonitor(watcher);
 
         return upload;
@@ -400,7 +407,7 @@ public class TransferManager {
      */
     public void shutdownNow() {
         threadPool.shutdownNow();
-        UploadMonitor.shutdownNow();
+        timedThreadPool.shutdownNow();
 
         if (s3 instanceof AmazonS3Client) {
             ((AmazonS3Client)s3).shutdown();

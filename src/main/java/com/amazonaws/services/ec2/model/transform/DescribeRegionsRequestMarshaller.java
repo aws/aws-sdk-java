@@ -38,7 +38,7 @@ public class DescribeRegionsRequestMarshaller implements Marshaller<Request<Desc
 
         Request<DescribeRegionsRequest> request = new DefaultRequest<DescribeRegionsRequest>(describeRegionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeRegions");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
 
         java.util.List<String> regionNamesList = describeRegionsRequest.getRegionNames();

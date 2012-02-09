@@ -91,6 +91,8 @@ public class LaunchSpecification {
      */
     private String subnetId;
 
+    private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
+
     /**
      * The AMI ID.
      *
@@ -747,6 +749,75 @@ public class LaunchSpecification {
     
     
     /**
+     * Returns the value of the NetworkInterfaces property for this object.
+     *
+     * @return The value of the NetworkInterfaces property for this object.
+     */
+    public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
+        
+        if (networkInterfaces == null) {
+            networkInterfaces = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>();
+        }
+        return networkInterfaces;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     */
+    public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+            return;
+        }
+
+        java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+        networkInterfacesCopy.addAll(networkInterfaces);
+        this.networkInterfaces = networkInterfacesCopy;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchSpecification withNetworkInterfaces(InstanceNetworkInterfaceSpecification... networkInterfaces) {
+        if (getNetworkInterfaces() == null) setNetworkInterfaces(new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.length));
+        for (InstanceNetworkInterfaceSpecification value : networkInterfaces) {
+            getNetworkInterfaces().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the NetworkInterfaces property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param networkInterfaces The new value for the NetworkInterfaces property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchSpecification withNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
+        if (networkInterfaces == null) {
+            this.networkInterfaces = null;
+        } else {
+            java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+            networkInterfacesCopy.addAll(networkInterfaces);
+            this.networkInterfaces = networkInterfacesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -771,6 +842,7 @@ public class LaunchSpecification {
         if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         if (monitoringEnabled != null) sb.append("MonitoringEnabled: " + monitoringEnabled + ", ");
         if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -793,6 +865,7 @@ public class LaunchSpecification {
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((isMonitoringEnabled() == null) ? 0 : isMonitoringEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
+        hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
         return hashCode;
     }
     
@@ -830,6 +903,8 @@ public class LaunchSpecification {
         if (other.isMonitoringEnabled() != null && other.isMonitoringEnabled().equals(this.isMonitoringEnabled()) == false) return false; 
         if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
+        if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
+        if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
         return true;
     }
     

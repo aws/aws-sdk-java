@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
 
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.services.dynamodb.AmazonDynamoDB;
 import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.dynamodb.model.AttributeValue;
@@ -252,5 +253,9 @@ public abstract class PaginatedList<T> implements List<T> {
             }
         }
     }
-
+    
+    static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
+        request.getRequestClientOptions().addClientMarker(DynamoDBMapper.USER_AGENT);
+        return request;
+    }
 }

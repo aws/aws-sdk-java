@@ -38,7 +38,7 @@ public class DescribePlacementGroupsRequestMarshaller implements Marshaller<Requ
 
         Request<DescribePlacementGroupsRequest> request = new DefaultRequest<DescribePlacementGroupsRequest>(describePlacementGroupsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribePlacementGroups");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
 
         java.util.List<String> groupNamesList = describePlacementGroupsRequest.getGroupNames();

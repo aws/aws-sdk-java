@@ -21,7 +21,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
@@ -48,30 +47,16 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  */
 public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
-    private static ScheduledExecutorService timedThreadPoool;
-
-    /*
-     * Returns shared the scheduled executor, initializing it first if
-     * necessary.
-     */
-    private static synchronized ScheduledExecutorService getDelayExecutor() {
-        if ( timedThreadPoool == null )
-            timedThreadPoool = new ScheduledThreadPoolExecutor(1);
-        return timedThreadPoool;
-    }
-
-    public static synchronized void shutdownNow() {
-    	if (timedThreadPoool != null) timedThreadPoool.shutdownNow();
-    }
 
     private final AmazonS3 s3;
     private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;
+    private ScheduledExecutorService timedThreadPool;
 
     private static final Log log = LogFactory.getLog(UploadMonitor.class);
     private final TransferManagerConfiguration configuration;
     private final ProgressListenerChain progressListenerChain;
-    private final UploadCallable mulipartUploadCallable;
+    private final UploadCallable multipartUploadCallable;
     private final UploadImpl transfer;
 
     /*
@@ -132,13 +117,17 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
         this.s3 = manager.getAmazonS3Client();
         this.configuration = manager.getConfiguration();
 
-        this.mulipartUploadCallable = multipartUploadCallable;
+        this.multipartUploadCallable = multipartUploadCallable;
         this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
         this.progressListenerChain = progressListenerChain;
         this.transfer = transfer;
 
         setNextFuture(threadPool.submit(this));
+    }
+
+    public void setTimedThreadPool(ScheduledExecutorService timedThreadPool) {
+        this.timedThreadPool = timedThreadPool;
     }
 
     @Override
@@ -187,13 +176,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
      */
     private UploadResult upload() throws Exception, InterruptedException {
 
-        UploadResult result = mulipartUploadCallable.call();
+        UploadResult result = multipartUploadCallable.call();
 
         if ( result != null ) {
             uploadComplete();
         } else {
-            uploadId = mulipartUploadCallable.getMultipartUploadId();
-            futures.addAll(mulipartUploadCallable.getFutures());
+            uploadId = multipartUploadCallable.getMultipartUploadId();
+            futures.addAll(multipartUploadCallable.getFutures());
             reschedule();
         }
 
@@ -206,13 +195,13 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
 
         // AmazonS3Client takes care of all the events for single part uploads,
         // so we only need to send a completed event for multipart uploads.
-        if (mulipartUploadCallable.isMultipartUpload()) {
+        if (multipartUploadCallable.isMultipartUpload()) {
         	fireProgressEvent(ProgressEvent.COMPLETED_EVENT_CODE);
         }
     }
 
     private void reschedule()  {
-        setNextFuture(getDelayExecutor().schedule(new Callable<UploadResult>() {
+        setNextFuture(timedThreadPool.schedule(new Callable<UploadResult>() {
             public UploadResult call() throws Exception {
                 setNextFuture(threadPool.submit(UploadMonitor.this));
                 return null;

@@ -38,7 +38,7 @@ public class CancelBundleTaskRequestMarshaller implements Marshaller<Request<Can
 
         Request<CancelBundleTaskRequest> request = new DefaultRequest<CancelBundleTaskRequest>(cancelBundleTaskRequest, "AmazonEC2");
         request.addParameter("Action", "CancelBundleTask");
-        request.addParameter("Version", "2011-11-01");
+        request.addParameter("Version", "2011-12-15");
 
         if (cancelBundleTaskRequest.getBundleId() != null) {
             request.addParameter("BundleId", StringUtils.fromString(cancelBundleTaskRequest.getBundleId()));
