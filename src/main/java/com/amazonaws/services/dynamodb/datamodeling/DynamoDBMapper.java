@@ -742,7 +742,7 @@ public class DynamoDBMapper {
         DynamoDBTable table = reflector.getTable(clazz);
 
         ScanRequest scanRequest = new ScanRequest();
-        scanRequest.setTableName(table.tableName());
+        scanRequest.setTableName(getTableName(clazz, config));
         scanRequest.setScanFilter(scanExpression.getScanFilter());
 
         return scanRequest;
@@ -753,7 +753,7 @@ public class DynamoDBMapper {
 
         QueryRequest queryRequest = new QueryRequest();
         queryRequest.setConsistentRead(queryExpression.isConsistentRead());
-        queryRequest.setTableName(table.tableName());
+        queryRequest.setTableName(getTableName(clazz, config));
         queryRequest.setHashKeyValue(queryExpression.getHashKeyValue());
         queryRequest.setScanIndexForward(queryExpression.isScanIndexForward());
         queryRequest.setRangeKeyCondition(queryExpression.getRangeKeyCondition());
