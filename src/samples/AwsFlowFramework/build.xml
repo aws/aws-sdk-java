@@ -1,0 +1,69 @@
+<!--
+ Ant build script for compiling AWS Flow Framework samples.
+     Don't forget to fill in your AWS access credentials in access.properties
+     before trying to run it.  
+-->
+<project name="AWS Flow Framework Samples" default="compile" basedir=".">
+    <path id="aws.java.sdk.classpath">
+        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
+        <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
+        <pathelement location="."/>
+    </path>
+	<property name="sources.dir" value="src" />
+	<property name="output.dir" value="bin" />
+	<property name="classes.dir" value="${output.dir}/classes" />
+	<property name="apt.generated.src" value="${output.dir}/private/apt_generated" />
+	<property name="tmp.dir" value="tmp" />
+	<property name="aspectj.weaver" value="${basedir}/../../third-party/aspectj-1.6/aspectjweaver.jar" />
+	
+    <target name="compile">
+        <mkdir dir="${output.dir}" />
+        <mkdir dir="${tmp.dir}" />
+    	<mkdir dir="${classes.dir}" />
+    	<mkdir dir="${apt.generated.src}"/>
+    	
+        <javac destdir="${classes.dir}"
+          source="1.6"
+          target="1.6"
+          classpathref="aws.java.sdk.classpath">
+          
+        	<compilerarg value="-proc:only" />
+        	<compilerarg value="-s" />
+        	<compilerarg value="${apt.generated.src}" />
+        	
+        	<src path="${sources.dir}" />
+        </javac>
+    	
+    	<javac destdir="${classes.dir}"
+          source="1.6"
+          target="1.6"
+          classpathref="aws.java.sdk.classpath">
+          
+        	<compilerarg value="-proc:none" />
+        	
+        	<src path="${sources.dir}" />
+        	<src path="${apt.generated.src}" />
+        </javac>
+    	
+        <copy todir="${classes.dir}">
+    	    <fileset dir="${sources.dir}" excludes="**/*.java"/>
+        </copy>
+    	
+    </target>
+	
+    <target name="run" depends="compile">
+        <java classname="${main-class}" fork="true">
+            <classpath>
+                <path refid="aws.java.sdk.classpath" />
+            	<path location="${classes.dir}" />
+            </classpath>
+        	<jvmarg value="-javaagent:${aspectj.weaver}" />
+        </java>
+    </target>
+	
+    <target name="clean">
+    	<delete dir="${output.dir}" />
+        <delete dir="${tmp.dir}" />
+    </target>
+	
+</project>

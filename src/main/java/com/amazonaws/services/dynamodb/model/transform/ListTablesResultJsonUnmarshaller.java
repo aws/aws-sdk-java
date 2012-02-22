@@ -35,7 +35,7 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
     public ListTablesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListTablesResult listTablesResult = new ListTablesResult();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -52,7 +52,7 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
                     listTablesResult.setLastEvaluatedTableName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return listTablesResult;
                 }
             }

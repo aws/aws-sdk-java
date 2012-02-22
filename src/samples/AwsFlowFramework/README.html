@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Readme: AWS Flow Framework for Java Samples</title>
+<style type="text/css">
+/* --------------------------------------------- */
+/*  AWS Developer Content Styles                 */
+/* --------------------------------------------- */
+
+body, div, p, td, th {
+    font-family : helvetica,sans-serif, arial;
+    font-size : 12px;
+    color : #000000;
+}
+
+.aws-h1, h1{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000000;
+}
+.aws-h2, h2{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 14px;
+	color: #c60;
+}
+.aws-h3, h3{
+	font-family: verdana, arial, helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #333333;
+}
+
+/*table ID selector styles*/
+#aws-table {
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  width:95%;
+}
+
+#aws-table td{
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  vertical-align:top;
+}
+
+#aws-table th {
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  border-bottom: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  vertical-align:top;
+  background-color: #eeeeee;
+  color: #333333;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/*code, note, and example styles*/
+.aws-code .programlisting{
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	color: #000066;
+	padding: 5px;
+	background-color: #eff7ff;
+	border: 1px dashed #333;
+	width:99%;
+}
+.aws-code-inline {
+	font-family: "Courier New", Courier, mono;
+	font-size: 11px;
+}
+.aws-note {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: none;
+	border-bottom-style: solid;
+	border-left-style: none;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	padding: 10px;
+	width:95%;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+</style>
+</head>
+<body>
+<h1>AWS Flow Framework Samples</h1>
+These samples demonstrate how to use AWS Flow Framework. The following samples are included:
+<ul>
+<li>HelloWorld – this sample includes a very simple workflow that calls an activity to print hello world to the console. It shows the basic usage of AWS Flow Framework, including defining contracts, implementation of activities and workflow coordination logic and worker programs to host them.</li>
+<li>Booking – shows an example workflow for making a reservation, including flight and rental car. </li>
+<li>FileProcessing – shows a workflow for media processing use case. The sample workflow downloads a file from an Amazon S3 bucket, creates a zip file and uploads that zip file back to S3. The sample uses the task routing feature.</li>
+<li>PeriodicWorkflow – shows how to create a workflow that periodically executes an activity. The workflow can run for extended periods and hence it uses the continue as new execution feature.</li>
+<li>SplitMerge – the workflow in this sample processes a large data set by splitting it up into smaller data sets. The sample calculates the average of a large set of numbers stored in a file in S3. The smaller data sets are assigned to workers and the results of processing are merged to produce the final result.</li>
+<li>Deployment – the workflow in this sample shows deployment of interdependent components.</li>
+</ul>
+<h2>Prerequisites</h2>
+<ul>
+  <li>You must have a valid Amazon Web Services developer account.</li>
+  <li>Requires the AWS SDK for Java. For more information on the AWS SDK for Java, see <a href="http://aws.amazon.com/sdkforjava">http://aws.amazon.com/sdkforjava</a>.</li>
+  <li>You must be signed up for the following services:
+    <ul>
+      <li>Amazon Simple Workflow Service (SWF). For more information, see <a href="http://aws.amazon.com/swf">http://aws.amazon.com/swf</a>.</li>
+      <li>Amazon Simple Storage Service (S3). For more information, see <a href="http://aws.amazon.com/s3">http://aws.amazon.com/s3</a>.</li>      
+    </ul>
+  </li>
+  <li>JUnit (version 4.7) is required to run the samples. The jar file must be in the classpath. For more information, see <a href="http://www.junit.org/">http://www.junit.org/</a> </li>
+  <li>org.springframework.test (version 3.0) is required to run the samples. The jar file must be in the classpath. For more information, see <a href="http://www.springsource.org/">http://www.springsource.org/</a> </li>
+  <li>Log4j (version 1.2.15) is required to run the samples. The jar file must be in the classpath. For more information, see <a href="http://logging.apache.org/log4j/1.2/">http://logging.apache.org/log4j/1.2/</a> </li>
+  </ul>
+<h2>Running the Samples</h2>
+<p>The steps for running the AWS Flow Framework samples are:</p>
+<ol>
+  <li>Create the Samples domain
+  	<ol STYLE="list-style-type: lower-roman">
+  		<li>Go to the SWF Management Console (https://console.aws.amazon.com/swf/home).</li>
+  		<li>Follow the on-screen instructions to log in.</li>
+  		<li>Click Manage Domains and register a new domain with the name Samples.</li>
+  	</ol>
+  	
+  </li>
+  <li>Open the access.properties in the samples folder.</li>
+  <li>Locate the following sections and fill in your Access Key ID and Secret Access Key. You can use the same values for SWF and S3:<br />
+      <br />
+      <code># Fill in your AWS Access Key ID and Secret Access Key for SWF
+# http://aws.amazon.com/security-credentials<br/>
+AWS.Access.ID=&lt;Your AWS Access Key&gt;<br/>
+AWS.Secret.Key=&lt;Your AWS Secret Key&gt;<br/>
+AWS.Account.ID=&lt;Your AWS Account ID&gt;<br/>
+<br/>
+# Fill in your AWS Access Key ID and Secret Access Key for S3<br/>
+# http://aws.amazon.com/security-credentials<br/>
+S3.Access.ID=&lt;Your AWS Access Key&gt;<br/>
+S3.Secret.Key=&lt;Your AWS Secret Key&gt;<br/>
+S3.Account.ID=&lt;Your AWS Account ID&gt;<br/>
+</code><br />
+  </li>
+  
+  <li>Some samples upload files to S3. Locate the following section and fill in the name of S3 bucket that you want the samples to use:<br/>
+<code>####### FileProcessing Sample Config Values ##########<br/>
+Workflow.Input.TargetBucketName=&lt;Your S3 bucket name&gt;</code><br/>
+  
+  </li>
+  
+  <li>Save the file.</li>
+  <li>Set the environment variable AWS_SWF_SAMPLES_CONFIG to the full path of the directory containing the access.properties file. For example on windows run this command:<br/>
+  <code>set AWS_SWF_SAMPLES_CONFIG=&lt;Your SDK Directrory&gt;/samples/AwsFlowFramework</code><br><br>
+  and on linux use this command to set the environment variable:<br>
+  <code>export AWS_SWF_SAMPLES_CONFIG=&lt;Your SDK Directrory&gt;/samples/AwsFlowFramework</code>
+  
+  </li>
+  <li>Compile the samples by using the Ant build.xml file. This will create binaries in bin directory under the samples directory.</li>
+  <li>To run the samples follow these instructions:<br/>
+Hello World Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console.<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.helloworld.WorkflowExecutionStarter" run<br/> 
+<br/>
+Booking Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.ActivityHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.booking.WorkflowExecutionStarter" run<br/> 
+<br/>
+Split Merge Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.splitmerge.WorkflowExecutionStarter" run<br/> 
+<br/>
+Periodic Workflow Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.periodicworkflow.WorkflowExecutionStarter" run<br/> 
+<br/>
+File Processing Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowExecutionStarter" run<br/> 
+<br/>
+</li>  
+</ol>
+</body>
+</html>

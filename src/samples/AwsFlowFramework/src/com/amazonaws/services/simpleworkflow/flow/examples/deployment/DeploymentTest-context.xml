@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+		<property name="scopes">
+			<map>
+				<entry key="workflow">
+					<bean
+						class="com.amazonaws.services.simpleworkflow.flow.spring.WorkflowScope" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="activitiesClient"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentActivitiesClientImpl"
+		scope="workflow">
+	</bean>
+
+	<bean id="workflowImpl"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentWorkflowImpl"
+		scope="workflow">
+		<aop:scoped-proxy proxy-target-class="false" />
+	</bean>
+	
+	<bean id="activitiesImplHost1"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentTest.TestDeploymentActivities">
+		<constructor-arg>
+			<value>host1</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="activitiesImplHost2"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentTest.TestDeploymentActivities">
+		<constructor-arg>
+			<value>host2</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="activitiesImplHost3"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentTest.TestDeploymentActivities">
+		<constructor-arg>
+			<value>host3</value>
+		</constructor-arg>
+	</bean>
+
+	<bean id="workflowTest"
+		class="com.amazonaws.services.simpleworkflow.flow.junit.spring.SpringWorkflowTest">
+		<property name="workflowImplementations">
+			<list>
+				<ref bean="workflowImpl" />
+			</list>
+		</property>
+		<property name="taskListActivitiesImplementationMap">
+			<map>
+				<entry>
+					<key>
+						<value>host1</value>
+					</key>
+					<ref bean="activitiesImplHost1" />
+				</entry>
+				<entry>
+					<key>
+						<value>host2</value>
+					</key>
+					<ref bean="activitiesImplHost2" />
+				</entry>
+				<entry>
+					<key>
+						<value>host3</value>
+					</key>
+					<ref bean="activitiesImplHost3" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="workflowClientFactory"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentWorkflowClientFactoryImpl">
+	</bean>
+</beans>

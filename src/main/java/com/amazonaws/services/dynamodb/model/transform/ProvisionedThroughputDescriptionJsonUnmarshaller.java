@@ -35,7 +35,7 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
     public ProvisionedThroughputDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -61,7 +61,7 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
                     provisionedThroughputDescription.setWriteCapacityUnits(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return provisionedThroughputDescription;
                 }
             }

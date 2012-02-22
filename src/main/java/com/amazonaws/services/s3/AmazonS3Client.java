@@ -133,6 +133,7 @@ import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
@@ -805,6 +806,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         addStringListHeader(request, Headers.GET_OBJECT_IF_NONE_MATCH,
                 getObjectRequest.getNonmatchingETagConstraints());
 
+        ProgressListener progressListener = getObjectRequest.getProgressListener();
         try {
             S3Object s3Object = invoke(request, new S3ObjectResponseHandler(), getObjectRequest.getBucketName(), getObjectRequest.getKey());
 
@@ -815,6 +817,15 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              */
             s3Object.setBucketName(getObjectRequest.getBucketName());
             s3Object.setKey(getObjectRequest.getKey());
+
+            if (progressListener != null) {
+                S3ObjectInputStream input = s3Object.getObjectContent();
+                ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(input, progressListener);
+                progressReportingInputStream.setFireCompletedEvent(true);
+                input = new S3ObjectInputStream(progressReportingInputStream, input.getHttpRequest());
+                s3Object.setObjectContent(input);
+                fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
+            }
 
             /*
              * TODO: It'd be nice to check the integrity of the data was received from S3,
@@ -836,9 +847,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              * use constraints.
              */
             if (ase.getStatusCode() == 412 || ase.getStatusCode() == 304) {
+                fireProgressEvent(progressListener, ProgressEvent.CANCELED_EVENT_CODE);
                 return null;
             }
 
+            fireProgressEvent(progressListener, ProgressEvent.FAILED_EVENT_CODE);
             throw ase;
         }
     }
