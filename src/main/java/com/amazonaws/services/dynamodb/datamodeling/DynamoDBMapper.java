@@ -467,11 +467,16 @@ public class DynamoDBMapper {
 
         /*
          * Do a put or an update, according to the configuration. For a put (not
-         * the default), we need to munge the data type.
+         * the default), we need to munge the data type and add range if needed
          */
         if ( config.getSaveBehavior() == SaveBehavior.CLOBBER || forcePut ) {
-            db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(convertToItem(updateValues))
-                    .withExpected(expectedValues)));
+            Map<String,AttributeValue> items = convertToItem(updateValues);
+            if ( rangeKeyGetter != null  ) {
+                    String rangeName = reflector.getAttributeName(rangeKeyGetter);
+                    items.put(rangeName, rangeKeyElement);
+            }
+        db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(items)
+                .withExpected(expectedValues)));
         } else if ( !nonKeyAttributePresent ) {
             keyOnlyPut(tableName, objectKey, hashKeyGetter, rangeKeyGetter);
         } else {

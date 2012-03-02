@@ -655,7 +655,7 @@ public class DynamoDBReflector {
 
                                 @Override
                                 public AttributeValue marshall(Object obj) {
-                                	if(((String) obj).length() == 0)
+                                	if( obj == null || ((String) obj).length() == 0)
                                 		return null;
                                 		
                                     return new AttributeValue().withS(String.valueOf(obj));
