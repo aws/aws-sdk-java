@@ -64,7 +64,7 @@ class HttpRequestFactory {
 			}
 			uri += request.getResourcePath();
 		} else {
-			uri += "/";
+		    uri += "/";
 		}
 
 		String encodedParams = HttpUtils.encodeParameters(request);

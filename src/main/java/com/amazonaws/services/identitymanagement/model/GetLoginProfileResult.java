@@ -23,34 +23,34 @@ package com.amazonaws.services.identitymanagement.model;
 public class GetLoginProfileResult {
 
     /**
-     * Login profile for the user name.
+     * Password for the user name.
      */
     private LoginProfile loginProfile;
 
     /**
-     * Login profile for the user name.
+     * Password for the user name.
      *
-     * @return Login profile for the user name.
+     * @return Password for the user name.
      */
     public LoginProfile getLoginProfile() {
         return loginProfile;
     }
     
     /**
-     * Login profile for the user name.
+     * Password for the user name.
      *
-     * @param loginProfile Login profile for the user name.
+     * @param loginProfile Password for the user name.
      */
     public void setLoginProfile(LoginProfile loginProfile) {
         this.loginProfile = loginProfile;
     }
     
     /**
-     * Login profile for the user name.
+     * Password for the user name.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param loginProfile Login profile for the user name.
+     * @param loginProfile Password for the user name.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

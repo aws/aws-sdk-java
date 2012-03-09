@@ -22,6 +22,16 @@
  * there are no up-front investments, and you pay only for the resources
  * you use.
  * </p>
+ * <p>
+ * This is the <i>Amazon RDS API Reference</i> . It contains a
+ * comprehensive description of all Amazon RDS Query APIs and data types.
+ * To get started with Amazon RDS, go to the <a
+ * p://docs.amazonwebservices.com/AmazonRDS/latest/GettingStartedGuide/">
+ * Amazon RDS Getting Started Guide </a> . For more information on Amazon
+ * RDS concepts and usage scenarios, go to the <a
+ * href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/">
+ * Amazon RDS User Guide </a> .
+ * </p>
  */
  package com.amazonaws.services.rds;
         

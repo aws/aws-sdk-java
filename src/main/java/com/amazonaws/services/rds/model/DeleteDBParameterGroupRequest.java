@@ -22,8 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * associated with any RDS instances to be deleted.
  * </p>
  * <p>
- * <b>NOTE:</b> The specified database parameter group cannot be
- * associated with any DB Instances.
+ * <b>NOTE:</b> The specified DB Parameter Group cannot be associated
+ * with any DB Instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
@@ -33,7 +33,8 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> </ul>
+     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
      */
     private String dBParameterGroupName;
 
@@ -51,7 +52,7 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
      * @param dBParameterGroupName The name of the DB Parameter Group.
      * <p>Constraints: <ul> <li>Must be the name of an existing DB Parameter
      * Group</li> <li>You cannot delete a default DB Parameter Group</li>
-     * </ul>
+     * <li>Cannot be associated with any DB Instances</li> </ul>
      */
     public DeleteDBParameterGroupRequest(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -62,11 +63,13 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> </ul>
+     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
      *
      * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> </ul>
+     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     *         Instances</li> </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
@@ -75,11 +78,13 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> </ul>
+     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
      *
      * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> </ul>
+     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     *         Instances</li> </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
@@ -88,13 +93,15 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      * the name of an existing DB Parameter Group</li> <li>You cannot delete
-     * a default DB Parameter Group</li> </ul>
+     * a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     * Instances</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
      *         the name of an existing DB Parameter Group</li> <li>You cannot delete
-     *         a default DB Parameter Group</li> </ul>
+     *         a default DB Parameter Group</li> <li>Cannot be associated with any DB
+     *         Instances</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

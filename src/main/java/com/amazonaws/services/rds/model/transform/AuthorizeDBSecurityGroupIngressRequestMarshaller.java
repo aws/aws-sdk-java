@@ -38,7 +38,7 @@ public class AuthorizeDBSecurityGroupIngressRequestMarshaller implements Marshal
 
         Request<AuthorizeDBSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeDBSecurityGroupIngressRequest>(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "AuthorizeDBSecurityGroupIngress");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (authorizeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));
@@ -48,6 +48,9 @@ public class AuthorizeDBSecurityGroupIngressRequestMarshaller implements Marshal
         }
         if (authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupName() != null) {
             request.addParameter("EC2SecurityGroupName", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupName()));
+        }
+        if (authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupId() != null) {
+            request.addParameter("EC2SecurityGroupId", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupId()));
         }
         if (authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
             request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));

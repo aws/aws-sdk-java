@@ -105,6 +105,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private String availabilityZone;
 
     /**
+     * A DB Subnet Group to associate with this DB Instance. <p> If there is
+     * no DB Subnet Group, then it is a non-VPC DB instance.
+     */
+    private String dBSubnetGroupName;
+
+    /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
@@ -121,10 +127,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private String preferredMaintenanceWindow;
 
     /**
-     * The name of the database parameter group to associate with this DB
-     * instance. If this argument is omitted, the default DBParameterGroup
-     * for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * The name of the DB Parameter Group to associate with this DB instance.
+     * If this argument is omitted, the default DBParameterGroup for the
+     * specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     * 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
      */
@@ -794,6 +800,46 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * A DB Subnet Group to associate with this DB Instance. <p> If there is
+     * no DB Subnet Group, then it is a non-VPC DB instance.
+     *
+     * @return A DB Subnet Group to associate with this DB Instance. <p> If there is
+     *         no DB Subnet Group, then it is a non-VPC DB instance.
+     */
+    public String getDBSubnetGroupName() {
+        return dBSubnetGroupName;
+    }
+    
+    /**
+     * A DB Subnet Group to associate with this DB Instance. <p> If there is
+     * no DB Subnet Group, then it is a non-VPC DB instance.
+     *
+     * @param dBSubnetGroupName A DB Subnet Group to associate with this DB Instance. <p> If there is
+     *         no DB Subnet Group, then it is a non-VPC DB instance.
+     */
+    public void setDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
+    }
+    
+    /**
+     * A DB Subnet Group to associate with this DB Instance. <p> If there is
+     * no DB Subnet Group, then it is a non-VPC DB instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBSubnetGroupName A DB Subnet Group to associate with this DB Instance. <p> If there is
+     *         no DB Subnet Group, then it is a non-VPC DB instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
+        return this;
+    }
+    
+    
+    /**
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
@@ -894,17 +940,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of the database parameter group to associate with this DB
-     * instance. If this argument is omitted, the default DBParameterGroup
-     * for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * The name of the DB Parameter Group to associate with this DB instance.
+     * If this argument is omitted, the default DBParameterGroup for the
+     * specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     * 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
      *
-     * @return The name of the database parameter group to associate with this DB
-     *         instance. If this argument is omitted, the default DBParameterGroup
-     *         for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * @return The name of the DB Parameter Group to associate with this DB instance.
+     *         If this argument is omitted, the default DBParameterGroup for the
+     *         specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     *         255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      */
@@ -913,17 +959,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of the database parameter group to associate with this DB
-     * instance. If this argument is omitted, the default DBParameterGroup
-     * for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * The name of the DB Parameter Group to associate with this DB instance.
+     * If this argument is omitted, the default DBParameterGroup for the
+     * specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     * 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
      *
-     * @param dBParameterGroupName The name of the database parameter group to associate with this DB
-     *         instance. If this argument is omitted, the default DBParameterGroup
-     *         for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * @param dBParameterGroupName The name of the DB Parameter Group to associate with this DB instance.
+     *         If this argument is omitted, the default DBParameterGroup for the
+     *         specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     *         255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      */
@@ -932,19 +978,19 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of the database parameter group to associate with this DB
-     * instance. If this argument is omitted, the default DBParameterGroup
-     * for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     * be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * The name of the DB Parameter Group to associate with this DB instance.
+     * If this argument is omitted, the default DBParameterGroup for the
+     * specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     * 255 alphanumeric characters</li> <li>First character must be a
      * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the database parameter group to associate with this DB
-     *         instance. If this argument is omitted, the default DBParameterGroup
-     *         for the specified engine will be used. <p> Constraints: <ul> <li>Must
-     *         be 1 to 255 alphanumeric characters</li> <li>First character must be a
+     * @param dBParameterGroupName The name of the DB Parameter Group to associate with this DB instance.
+     *         If this argument is omitted, the default DBParameterGroup for the
+     *         specified engine will be used. <p> Constraints: <ul> <li>Must be 1 to
+     *         255 alphanumeric characters</li> <li>First character must be a
      *         letter</li> <li>Cannot end with a hyphen or contain two consecutive
      *         hyphens</li> </ul>
      *
@@ -1416,6 +1462,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (masterUserPassword != null) sb.append("MasterUserPassword: " + masterUserPassword + ", ");
         if (dBSecurityGroups != null) sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (dBSubnetGroupName != null) sb.append("DBSubnetGroupName: " + dBSubnetGroupName + ", ");
         if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
         if (dBParameterGroupName != null) sb.append("DBParameterGroupName: " + dBParameterGroupName + ", ");
         if (backupRetentionPeriod != null) sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
@@ -1443,6 +1490,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode()); 
@@ -1481,6 +1529,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null) return false;
+        if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getDBParameterGroupName() == null ^ this.getDBParameterGroupName() == null) return false;

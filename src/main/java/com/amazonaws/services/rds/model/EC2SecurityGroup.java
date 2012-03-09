@@ -40,6 +40,11 @@ public class EC2SecurityGroup {
     private String eC2SecurityGroupName;
 
     /**
+     * Specifies the id of the EC2 Security Group.
+     */
+    private String eC2SecurityGroupId;
+
+    /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
      * in the <code>EC2SecurityGroupName</code> field.
      */
@@ -120,6 +125,40 @@ public class EC2SecurityGroup {
     
     
     /**
+     * Specifies the id of the EC2 Security Group.
+     *
+     * @return Specifies the id of the EC2 Security Group.
+     */
+    public String getEC2SecurityGroupId() {
+        return eC2SecurityGroupId;
+    }
+    
+    /**
+     * Specifies the id of the EC2 Security Group.
+     *
+     * @param eC2SecurityGroupId Specifies the id of the EC2 Security Group.
+     */
+    public void setEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+    }
+    
+    /**
+     * Specifies the id of the EC2 Security Group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eC2SecurityGroupId Specifies the id of the EC2 Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public EC2SecurityGroup withEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the AWS ID of the owner of the EC2 security group specified
      * in the <code>EC2SecurityGroupName</code> field.
      *
@@ -173,6 +212,7 @@ public class EC2SecurityGroup {
         sb.append("{");
         if (status != null) sb.append("Status: " + status + ", ");
         if (eC2SecurityGroupName != null) sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
+        if (eC2SecurityGroupId != null) sb.append("EC2SecurityGroupId: " + eC2SecurityGroupId + ", ");
         if (eC2SecurityGroupOwnerId != null) sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
         sb.append("}");
         return sb.toString();
@@ -185,6 +225,7 @@ public class EC2SecurityGroup {
         
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupName() == null) ? 0 : getEC2SecurityGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getEC2SecurityGroupId() == null) ? 0 : getEC2SecurityGroupId().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupOwnerId() == null) ? 0 : getEC2SecurityGroupOwnerId().hashCode()); 
         return hashCode;
     }
@@ -201,6 +242,8 @@ public class EC2SecurityGroup {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getEC2SecurityGroupName() == null ^ this.getEC2SecurityGroupName() == null) return false;
         if (other.getEC2SecurityGroupName() != null && other.getEC2SecurityGroupName().equals(this.getEC2SecurityGroupName()) == false) return false; 
+        if (other.getEC2SecurityGroupId() == null ^ this.getEC2SecurityGroupId() == null) return false;
+        if (other.getEC2SecurityGroupId() != null && other.getEC2SecurityGroupId().equals(this.getEC2SecurityGroupId()) == false) return false; 
         if (other.getEC2SecurityGroupOwnerId() == null ^ this.getEC2SecurityGroupOwnerId() == null) return false;
         if (other.getEC2SecurityGroupOwnerId() != null && other.getEC2SecurityGroupOwnerId().equals(this.getEC2SecurityGroupOwnerId()) == false) return false; 
         return true;

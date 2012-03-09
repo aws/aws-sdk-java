@@ -31,7 +31,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
 
     private java.util.Date endTime;
 
-    private java.util.List<ReasonCode> reasonCodes;
+    private java.util.List<String> reasonCodes;
 
     private String description;
 
@@ -211,10 +211,10 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
      *
      * @return The value of the ReasonCodes property for this object.
      */
-    public java.util.List<ReasonCode> getReasonCodes() {
+    public java.util.List<String> getReasonCodes() {
         
         if (reasonCodes == null) {
-            reasonCodes = new java.util.ArrayList<ReasonCode>();
+            reasonCodes = new java.util.ArrayList<String>();
         }
         return reasonCodes;
     }
@@ -224,13 +224,13 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
      *
      * @param reasonCodes The new value for the ReasonCodes property for this object.
      */
-    public void setReasonCodes(java.util.Collection<ReasonCode> reasonCodes) {
+    public void setReasonCodes(java.util.Collection<String> reasonCodes) {
         if (reasonCodes == null) {
             this.reasonCodes = null;
             return;
         }
 
-        java.util.List<ReasonCode> reasonCodesCopy = new java.util.ArrayList<ReasonCode>(reasonCodes.size());
+        java.util.List<String> reasonCodesCopy = new java.util.ArrayList<String>(reasonCodes.size());
         reasonCodesCopy.addAll(reasonCodes);
         this.reasonCodes = reasonCodesCopy;
     }
@@ -245,9 +245,9 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ReportInstanceStatusRequest withReasonCodes(ReasonCode... reasonCodes) {
-        if (getReasonCodes() == null) setReasonCodes(new java.util.ArrayList<ReasonCode>(reasonCodes.length));
-        for (ReasonCode value : reasonCodes) {
+    public ReportInstanceStatusRequest withReasonCodes(String... reasonCodes) {
+        if (getReasonCodes() == null) setReasonCodes(new java.util.ArrayList<String>(reasonCodes.length));
+        for (String value : reasonCodes) {
             getReasonCodes().add(value);
         }
         return this;
@@ -263,11 +263,11 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ReportInstanceStatusRequest withReasonCodes(java.util.Collection<ReasonCode> reasonCodes) {
+    public ReportInstanceStatusRequest withReasonCodes(java.util.Collection<String> reasonCodes) {
         if (reasonCodes == null) {
             this.reasonCodes = null;
         } else {
-            java.util.List<ReasonCode> reasonCodesCopy = new java.util.ArrayList<ReasonCode>(reasonCodes.size());
+            java.util.List<String> reasonCodesCopy = new java.util.ArrayList<String>(reasonCodes.size());
             reasonCodesCopy.addAll(reasonCodes);
             this.reasonCodes = reasonCodesCopy;
         }

@@ -12,45 +12,45 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package com.amazonaws.services.ec2.model;
+package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Reason Code
+ * Get Account Password Policy Result
  */
-public class ReasonCode {
+public class GetAccountPasswordPolicyResult {
 
-    private String reasonCode;
+    private PasswordPolicy passwordPolicy;
 
     /**
-     * Returns the value of the ReasonCode property for this object.
+     * Returns the value of the PasswordPolicy property for this object.
      *
-     * @return The value of the ReasonCode property for this object.
+     * @return The value of the PasswordPolicy property for this object.
      */
-    public String getReasonCode() {
-        return reasonCode;
+    public PasswordPolicy getPasswordPolicy() {
+        return passwordPolicy;
     }
     
     /**
-     * Sets the value of the ReasonCode property for this object.
+     * Sets the value of the PasswordPolicy property for this object.
      *
-     * @param reasonCode The new value for the ReasonCode property for this object.
+     * @param passwordPolicy The new value for the PasswordPolicy property for this object.
      */
-    public void setReasonCode(String reasonCode) {
-        this.reasonCode = reasonCode;
+    public void setPasswordPolicy(PasswordPolicy passwordPolicy) {
+        this.passwordPolicy = passwordPolicy;
     }
     
     /**
-     * Sets the value of the ReasonCode property for this object.
+     * Sets the value of the PasswordPolicy property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reasonCode The new value for the ReasonCode property for this object.
+     * @param passwordPolicy The new value for the PasswordPolicy property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ReasonCode withReasonCode(String reasonCode) {
-        this.reasonCode = reasonCode;
+    public GetAccountPasswordPolicyResult withPasswordPolicy(PasswordPolicy passwordPolicy) {
+        this.passwordPolicy = passwordPolicy;
         return this;
     }
     
@@ -67,7 +67,7 @@ public class ReasonCode {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reasonCode != null) sb.append("ReasonCode: " + reasonCode + ", ");
+        if (passwordPolicy != null) sb.append("PasswordPolicy: " + passwordPolicy + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -77,7 +77,7 @@ public class ReasonCode {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getReasonCode() == null) ? 0 : getReasonCode().hashCode()); 
+        hashCode = prime * hashCode + ((getPasswordPolicy() == null) ? 0 : getPasswordPolicy().hashCode()); 
         return hashCode;
     }
     
@@ -86,11 +86,11 @@ public class ReasonCode {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof ReasonCode == false) return false;
-        ReasonCode other = (ReasonCode)obj;
+        if (obj instanceof GetAccountPasswordPolicyResult == false) return false;
+        GetAccountPasswordPolicyResult other = (GetAccountPasswordPolicyResult)obj;
         
-        if (other.getReasonCode() == null ^ this.getReasonCode() == null) return false;
-        if (other.getReasonCode() != null && other.getReasonCode().equals(this.getReasonCode()) == false) return false; 
+        if (other.getPasswordPolicy() == null ^ this.getPasswordPolicy() == null) return false;
+        if (other.getPasswordPolicy() != null && other.getPasswordPolicy().equals(this.getPasswordPolicy()) == false) return false; 
         return true;
     }
     

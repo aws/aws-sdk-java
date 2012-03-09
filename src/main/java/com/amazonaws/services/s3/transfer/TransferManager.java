@@ -17,6 +17,8 @@ package com.amazonaws.services.s3.transfer;
 import java.io.File;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.concurrent.Callable;
+import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -28,12 +30,18 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.internal.Mimetypes;
+import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
+import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.ListMultipartUploadsRequest;
 import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.transfer.Transfer.TransferState;
+import com.amazonaws.services.s3.transfer.internal.DownloadImpl;
+import com.amazonaws.services.s3.transfer.internal.DownloadMonitor;
 import com.amazonaws.services.s3.transfer.internal.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.internal.TransferManagerUtils;
 import com.amazonaws.services.s3.transfer.internal.TransferProgressImpl;
@@ -93,8 +101,8 @@ public class TransferManager {
 
     /** Thread used for periodicially checking transfers and updating thier state. */
     private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1);
-    
-    
+
+
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
      * the specified AWS security credentials.
@@ -194,7 +202,7 @@ public class TransferManager {
 
     /**
      * <p>
-     * Schedules a new transfer to upload options to Amazon S3. This method is
+     * Schedules a new transfer to upload data to Amazon S3. This method is
      * non-blocking and returns immediately (i.e. before the upload has
      * finished).
      * </p>
@@ -248,7 +256,7 @@ public class TransferManager {
     }
 
     /**
-     * Schedules a new transfer to upload options to Amazon S3. This method is
+     * Schedules a new transfer to upload data to Amazon S3. This method is
      * non-blocking and returns immediately (i.e. before the upload has
      * finished).
      * <p>
@@ -285,7 +293,7 @@ public class TransferManager {
 
     /**
      * <p>
-     * Schedules a new transfer to upload options to Amazon S3. This method is
+     * Schedules a new transfer to upload data to Amazon S3. This method is
      * non-blocking and returns immediately (i.e. before the upload has
      * finished).
      * </p>
@@ -351,6 +359,111 @@ public class TransferManager {
         upload.setMonitor(watcher);
 
         return upload;
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     *
+     * @param bucket
+     *            The name of the bucket containing the object to download.
+     * @param key
+     *            The key under which the object to download is stored.
+     * @param file
+     *            The file to download the object's data to.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(String bucket, String key, File file) {
+        return download(new GetObjectRequest(bucket, key), file);
+    }
+
+    /**
+     * Schedules a new transfer to download data from Amazon S3 and save it to
+     * the specified file. This method is non-blocking and returns immediately
+     * (i.e. before the data has been fully downloaded).
+     * <p>
+     * Use the returned Download object to query the progress of the transfer,
+     * add listeners for progress events, and wait for the download to complete.
+     *
+     * @param getObjectRequest
+     *            The request containing all the parameters for the download.
+     * @param file
+     *            The file to download the object data to.
+     *
+     * @return A new <code>Download</code> object to use to check the state of
+     *         the download, listen for progress notifications, and otherwise
+     *         manage the download.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public Download download(final GetObjectRequest getObjectRequest, final File file) {
+        appendUserAgent(getObjectRequest, USER_AGENT);
+
+        String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
+
+        // Add our own transfer progress listener
+        TransferProgressImpl transferProgress = new TransferProgressImpl();
+        ProgressListenerChain listenerChain = new ProgressListenerChain(new TransferProgressUpdatingListener(
+                transferProgress), getObjectRequest.getProgressListener());
+        getObjectRequest.setProgressListener(listenerChain);
+
+        final S3Object s3Object = s3.getObject(getObjectRequest);
+        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, s3Object);
+
+        // null is returned when constraints aren't met
+        if (s3Object == null) {
+            download.setState(TransferState.Canceled);
+            download.setMonitor(new DownloadMonitor(download, null));
+            return download;
+        }
+
+        long contentLength = s3Object.getObjectMetadata().getContentLength();
+        if (getObjectRequest.getRange() != null && getObjectRequest.getRange().length == 2) {
+            long startingByte = getObjectRequest.getRange()[0];
+            long lastByte     = getObjectRequest.getRange()[1];
+            contentLength     = lastByte - startingByte;
+        }
+        transferProgress.setTotalBytesToTransfer(contentLength);
+
+        Future<?> future = threadPool.submit(new Callable<Object>() {
+            @Override
+            public Object call() throws Exception {
+                try {
+                    download.setState(TransferState.InProgress);
+                    ServiceUtils.downloadObjectToFile(s3Object, file);
+                    download.setState(TransferState.Completed);
+                    return true;
+                } catch (Throwable t) {
+                    // Downloads aren't allowed to move from canceled to failed
+                    if (download.getState() != TransferState.Canceled) {
+                        download.setState(TransferState.Failed);
+                    }
+                    return false;
+                }
+            }
+        });
+        download.setMonitor(new DownloadMonitor(download, future));
+
+        return download;
     }
 
     /**

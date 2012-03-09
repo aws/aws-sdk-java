@@ -18,9 +18,14 @@
 package com.amazonaws.services.s3.internal;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -28,6 +33,7 @@ import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +42,9 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
+import com.amazonaws.services.s3.AmazonS3Client;
+import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
 
 /**
@@ -239,4 +248,48 @@ public class ServiceUtils {
         return result;
     }
 
+    /**
+     * Downloads an S3Object, as returned from
+     * {@link AmazonS3Client#getObject(com.amazonaws.services.s3.model.GetObjectRequest)}
+     * , to the specified file.
+     *
+     * @param s3Object
+     *            The S3Object containing a reference to an InputStream
+     *            containing the object's data.
+     * @param destinationFile
+     *            The file to store the object's data in.
+     */
+    public static void downloadObjectToFile(S3Object s3Object, File destinationFile) {
+        OutputStream outputStream = null;
+        try {
+            outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
+            byte[] buffer = new byte[1024*10];
+            int bytesRead;
+            while ((bytesRead = s3Object.getObjectContent().read(buffer)) > -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+        } catch (IOException e) {
+            throw new AmazonClientException(
+                    "Unable to store object contents to disk: " + e.getMessage(), e);
+        } finally {
+            try {outputStream.close();} catch (Exception e) {}
+            try {s3Object.getObjectContent().close();} catch (Exception e) {}
+        }
+
+        try {
+            // Multipart Uploads don't have an MD5 calculated on the service side
+            if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
+                byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
+                byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
+
+                if (!Arrays.equals(clientSideHash, serverSideHash)) {
+                    throw new AmazonClientException("Unable to verify integrity of data download.  " +
+                            "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
+                            "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
+                }
+            }
+        } catch (Exception e) {
+            log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
+        }
+    }
 }

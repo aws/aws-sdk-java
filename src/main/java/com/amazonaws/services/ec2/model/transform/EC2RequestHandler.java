@@ -27,6 +27,7 @@ import com.amazonaws.services.ec2.model.DescribeSpotInstanceRequestsResult;
 import com.amazonaws.services.ec2.model.GroupIdentifier;
 import com.amazonaws.services.ec2.model.ImportKeyPairRequest;
 import com.amazonaws.services.ec2.model.LaunchSpecification;
+import com.amazonaws.services.ec2.model.RequestSpotInstancesRequest;
 import com.amazonaws.services.ec2.model.RequestSpotInstancesResult;
 import com.amazonaws.services.ec2.model.Reservation;
 import com.amazonaws.services.ec2.model.RunInstancesResult;
@@ -42,6 +43,23 @@ public class EC2RequestHandler extends AbstractRequestHandler {
     		String publicKeyMaterial = importKeyPairRequest.getPublicKeyMaterial();
     		String encodedKeyMaterial = new String(Base64.encodeBase64(publicKeyMaterial.getBytes()));
     		request.addParameter("PublicKeyMaterial", encodedKeyMaterial);
+    	}
+
+    	// Request -> Query string marshalling for RequestSpotInstancesRequest is a little tricky since
+    	// the query string params follow a different form than the XML responses, so we manually set the parameters here.
+    	else if (originalRequest instanceof RequestSpotInstancesRequest) {
+    	    RequestSpotInstancesRequest requestSpotInstancesRequest = (RequestSpotInstancesRequest)originalRequest;
+    	    int count = 1;
+    	    for (GroupIdentifier group : requestSpotInstancesRequest.getLaunchSpecification().getAllSecurityGroups()) {
+    	        if (group.getGroupId() != null) {
+    	            request.addParameter("LaunchSpecification.SecurityGroupId." + count++, group.getGroupId());
+    	        }
+    	    }
+
+    	    // Remove any of the incorrect parameters.
+    	    for (String parameter : request.getParameters().keySet()) {
+    	        if (parameter.startsWith("LaunchSpecification.GroupSet.")) request.getParameters().remove(parameter);
+    	    }
     	}
     }
 

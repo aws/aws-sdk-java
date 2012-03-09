@@ -3,9 +3,8 @@
  * Synchronous and asynchronous client classes for accessing AmazonIdentityManagement.
  *
  * AWS Identity and Access Management <p>
- * This is the Amazon Web Services (AWS) Identity and Access Management
- * (IAM) API Reference. This guide provides descriptions of the IAM API
- * as well as links to related content in the guide, <a
+ * This guide provides descriptions of the Identity and Access Management
+ * (IAM) API as well as links to related content in the guide, <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/"> Using
  * IAM </a> .
  * </p>
@@ -24,11 +23,6 @@
  * specific AWS product, you can find the product's technical
  * documentation at <a href="http://aws.amazon.com/documentation/">
  * http://aws.amazon.com/documentation/ </a> .
- * </p>
- * <p>
- * We will refer to Amazon AWS Identity and Access Management using the
- * abbreviated form IAM. All copyrights and legal protections still
- * apply.
  * </p>
  */
  package com.amazonaws.services.identitymanagement;

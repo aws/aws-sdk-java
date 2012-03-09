@@ -22,7 +22,6 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.model.ProgressListener;
 import com.amazonaws.services.s3.transfer.internal.ProgressListenerChain;
 import com.amazonaws.services.s3.transfer.internal.TransferMonitor;
-import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
  * Represents an asynchronous upload to or download from Amazon S3.
@@ -62,7 +61,7 @@ public abstract class Transfer {
     protected volatile TransferState state = TransferState.Waiting;
 
     protected TransferMonitor monitor;
-    
+
     /** The progress of this transfer. */
     private final TransferProgress transferProgress;
 
@@ -107,11 +106,11 @@ public abstract class Transfer {
     public void waitForCompletion()
             throws AmazonClientException, AmazonServiceException, InterruptedException {
         try {
-            UploadResult result = null;
+            Object result = null;
             while (!monitor.isDone() || result == null) {
                 Future<?> f = monitor.getFuture();
-                result = (UploadResult)f.get();
-            }            
+                result = f.get();
+            }
         } catch (ExecutionException e) {
             rethrowExecutionException(e);
         }
@@ -133,7 +132,7 @@ public abstract class Transfer {
      */
     public AmazonClientException waitForException() throws InterruptedException {
         try {
-            
+
             while (!monitor.isDone()) {
                 monitor.getFuture().get();
             }

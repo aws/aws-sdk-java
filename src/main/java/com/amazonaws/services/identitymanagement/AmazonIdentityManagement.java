@@ -21,9 +21,8 @@ import com.amazonaws.services.identitymanagement.model.*;
 /**
  * Interface for accessing AmazonIdentityManagement.
  * AWS Identity and Access Management <p>
- * This is the Amazon Web Services (AWS) Identity and Access Management
- * (IAM) API Reference. This guide provides descriptions of the IAM API
- * as well as links to related content in the guide, <a
+ * This guide provides descriptions of the Identity and Access Management
+ * (IAM) API as well as links to related content in the guide, <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/"> Using
  * IAM </a> .
  * </p>
@@ -42,11 +41,6 @@ import com.amazonaws.services.identitymanagement.model.*;
  * specific AWS product, you can find the product's technical
  * documentation at <a href="http://aws.amazon.com/documentation/">
  * http://aws.amazon.com/documentation/ </a> .
- * </p>
- * <p>
- * We will refer to Amazon AWS Identity and Access Management using the
- * abbreviated form IAM. All copyrights and legal protections still
- * apply.
  * </p>
  */
 public interface AmazonIdentityManagement {
@@ -76,6 +70,32 @@ public interface AmazonIdentityManagement {
      */
     public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
     
+    /**
+     * <p>
+     * Deletes the specified AWS account alias. For information about using
+     * an AWS account alias, see <a
+     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     *
+     * @param deleteAccountAliasRequest Container for the necessary
+     *           parameters to execute the DeleteAccountAlias service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
     /**
      * <p>
      * Lists the groups that have the specified path prefix.
@@ -130,32 +150,6 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteAccessKey(DeleteAccessKeyRequest deleteAccessKeyRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified AWS account alias. For information about using
-     * an AWS account alias, see <a
-     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
-     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
-     * and Access Management</i> .
-     * </p>
-     *
-     * @param deleteAccountAliasRequest Container for the necessary
-     *           parameters to execute the DeleteAccountAlias service method on
-     *           AmazonIdentityManagement.
-     * 
-     * @throws NoSuchEntityException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteAccountAlias(DeleteAccountAliasRequest deleteAccountAliasRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -561,7 +555,29 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Retrieves the login profile for the specified user.
+     * Deletes the password policy for the AWS account.
+     * </p>
+     *
+     * @param deleteAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteAccountPasswordPolicy service method
+     *           on AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves the password for the specified user.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -1197,14 +1213,14 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Updates the login profile for the specified user. Use this API to
-     * change the user's password.
+     * Changes the password for the specified user.
      * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
      *           parameters to execute the UpdateLoginProfile service method on
      *           AmazonIdentityManagement.
      * 
+     * @throws PasswordPolicyViolationException
      * @throws EntityTemporarilyUnmodifiableException
      * @throws NoSuchEntityException
      *
@@ -1221,13 +1237,14 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Deletes the login profile for the specified user, which terminates the
-     * user's ability to access AWS services through the IAM login page.
+     * Deletes the password for the specified user, which terminates the
+     * user's ability to access AWS services through the AWS Management
+     * Console.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deleting a user's login profile does not prevent a
-     * user from accessing IAM through the command line interface or the API.
-     * To prevent all user access you must also either make the access key
+     * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+     * from accessing IAM through the command line interface or the API. To
+     * prevent all user access you must also either make the access key
      * inactive or delete it. For more information about making keys
      * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
      * </p>
@@ -1248,6 +1265,31 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteLoginProfile(DeleteLoginProfileRequest deleteLoginProfileRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Changes the password of the IAM user who is currently signed in. The
+     * root account password is not affected by this action. For information
+     * about modifying passwords, see <a
+     * amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html">
+     * Managing Passwords </a> .
+     * </p>
+     *
+     * @param changePasswordRequest Container for the necessary parameters to
+     *           execute the ChangePassword service method on AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void changePassword(ChangePasswordRequest changePasswordRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1538,12 +1580,11 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Creates a login profile for the specified user, giving the user the
-     * ability to access AWS services such as the AWS Management Console.
-     * For more information about login profiles, see <a
+     * Creates a password for the specified user, giving the user the ability
+     * to access AWS services through the AWS Management Console. For more
+     * information about managing passwords, see <a
      * rvices.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html">
-     * Creating or Deleting a User Login Profile </a> in <i>Using AWS
-     * Identity and Access Management</i> .
+     * Managing Passwords </a> in <i>Using IAM</i> .
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -1553,6 +1594,7 @@ public interface AmazonIdentityManagement {
      * @return The response from the CreateLoginProfile service method, as
      *         returned by AmazonIdentityManagement.
      * 
+     * @throws PasswordPolicyViolationException
      * @throws NoSuchEntityException
      * @throws EntityAlreadyExistsException
      *
@@ -1565,6 +1607,29 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreateLoginProfileResult createLoginProfile(CreateLoginProfileRequest createLoginProfileRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Updates the password policy settings for the account.
+     * </p>
+     *
+     * @param updateAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAccountPasswordPolicy service method
+     *           on AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1596,6 +1661,31 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetAccountSummaryResult getAccountSummary(GetAccountSummaryRequest getAccountSummaryRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Retrieves the password policy for the AWS account.
+     * </p>
+     *
+     * @param getAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the GetAccountPasswordPolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetAccountPasswordPolicy service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetAccountPasswordPolicyResult getAccountPasswordPolicy(GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1668,6 +1758,23 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListUsersResult listUsers() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Deletes the password policy for the AWS account.
+     * </p>
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteAccountPasswordPolicy() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -1916,6 +2023,26 @@ public interface AmazonIdentityManagement {
      *             either a problem with the data in the request, or a server side issue.
      */
     public GetAccountSummaryResult getAccountSummary() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Retrieves the password policy for the AWS account.
+     * </p>
+     * 
+     * @return The response from the GetAccountPasswordPolicy service method,
+     *         as returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetAccountPasswordPolicyResult getAccountPasswordPolicy() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

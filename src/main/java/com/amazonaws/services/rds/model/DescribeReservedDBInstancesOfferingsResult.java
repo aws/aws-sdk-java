@@ -28,7 +28,7 @@ public class DescribeReservedDBInstancesOfferingsResult {
     private String marker;
 
     /**
-     * A list of DB Instance offerings.
+     * A list of reserved DB Instance offerings.
      */
     private java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferings;
 
@@ -67,9 +67,9 @@ public class DescribeReservedDBInstancesOfferingsResult {
     
     
     /**
-     * A list of DB Instance offerings.
+     * A list of reserved DB Instance offerings.
      *
-     * @return A list of DB Instance offerings.
+     * @return A list of reserved DB Instance offerings.
      */
     public java.util.List<ReservedDBInstancesOffering> getReservedDBInstancesOfferings() {
         
@@ -80,9 +80,9 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * A list of DB Instance offerings.
+     * A list of reserved DB Instance offerings.
      *
-     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
+     * @param reservedDBInstancesOfferings A list of reserved DB Instance offerings.
      */
     public void setReservedDBInstancesOfferings(java.util.Collection<ReservedDBInstancesOffering> reservedDBInstancesOfferings) {
         if (reservedDBInstancesOfferings == null) {
@@ -96,11 +96,11 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * A list of DB Instance offerings.
+     * A list of reserved DB Instance offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
+     * @param reservedDBInstancesOfferings A list of reserved DB Instance offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -114,11 +114,11 @@ public class DescribeReservedDBInstancesOfferingsResult {
     }
     
     /**
-     * A list of DB Instance offerings.
+     * A list of reserved DB Instance offerings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param reservedDBInstancesOfferings A list of DB Instance offerings.
+     * @param reservedDBInstancesOfferings A list of reserved DB Instance offerings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

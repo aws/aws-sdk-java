@@ -105,6 +105,10 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DBSubnetGroup", targetDepth)) {
+                    dBInstance.setDBSubnetGroup(DBSubnetGroupStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("PreferredMaintenanceWindow", targetDepth)) {
                     dBInstance.setPreferredMaintenanceWindow(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

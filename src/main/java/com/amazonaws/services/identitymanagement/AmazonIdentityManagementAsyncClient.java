@@ -34,9 +34,8 @@ import com.amazonaws.services.identitymanagement.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * AWS Identity and Access Management <p>
- * This is the Amazon Web Services (AWS) Identity and Access Management
- * (IAM) API Reference. This guide provides descriptions of the IAM API
- * as well as links to related content in the guide, <a
+ * This guide provides descriptions of the Identity and Access Management
+ * (IAM) API as well as links to related content in the guide, <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/"> Using
  * IAM </a> .
  * </p>
@@ -55,11 +54,6 @@ import com.amazonaws.services.identitymanagement.model.*;
  * specific AWS product, you can find the product's technical
  * documentation at <a href="http://aws.amazon.com/documentation/">
  * http://aws.amazon.com/documentation/ </a> .
- * </p>
- * <p>
- * We will refer to Amazon AWS Identity and Access Management using the
- * abbreviated form IAM. All copyrights and legal protections still
- * apply.
  * </p> 
  */       
 public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagementClient
@@ -229,6 +223,41 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
             
     /**
      * <p>
+     * Deletes the specified AWS account alias. For information about using
+     * an AWS account alias, see <a
+     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
+     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+     * and Access Management</i> .
+     * </p>
+     *
+     * @param deleteAccountAliasRequest Container for the necessary
+     *           parameters to execute the DeleteAccountAlias operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteAccountAlias service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteAccountAliasAsync(final DeleteAccountAliasRequest deleteAccountAliasRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteAccountAlias(deleteAccountAliasRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Lists the groups that have the specified path prefix.
      * </p>
      * <p>
@@ -291,41 +320,6 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
                 deleteAccessKey(deleteAccessKeyRequest);
-                return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified AWS account alias. For information about using
-     * an AWS account alias, see <a
-     * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
-     * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
-     * and Access Management</i> .
-     * </p>
-     *
-     * @param deleteAccountAliasRequest Container for the necessary
-     *           parameters to execute the DeleteAccountAlias operation on
-     *           AmazonIdentityManagement.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteAccountAlias service method, as returned by
-     *         AmazonIdentityManagement.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteAccountAliasAsync(final DeleteAccountAliasRequest deleteAccountAliasRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteAccountAlias(deleteAccountAliasRequest);
                 return null;
 		    }
 		});
@@ -816,7 +810,38 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Retrieves the login profile for the specified user.
+     * Deletes the password policy for the AWS account.
+     * </p>
+     *
+     * @param deleteAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the DeleteAccountPasswordPolicy operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteAccountPasswordPolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteAccountPasswordPolicyAsync(final DeleteAccountPasswordPolicyRequest deleteAccountPasswordPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteAccountPasswordPolicy(deleteAccountPasswordPolicyRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Retrieves the password for the specified user.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -1562,8 +1587,7 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Updates the login profile for the specified user. Use this API to
-     * change the user's password.
+     * Changes the password for the specified user.
      * </p>
      *
      * @param updateLoginProfileRequest Container for the necessary
@@ -1594,13 +1618,14 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Deletes the login profile for the specified user, which terminates the
-     * user's ability to access AWS services through the IAM login page.
+     * Deletes the password for the specified user, which terminates the
+     * user's ability to access AWS services through the AWS Management
+     * Console.
      * </p>
      * <p>
-     * <b>IMPORTANT:</b>Deleting a user's login profile does not prevent a
-     * user from accessing IAM through the command line interface or the API.
-     * To prevent all user access you must also either make the access key
+     * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+     * from accessing IAM through the command line interface or the API. To
+     * prevent all user access you must also either make the access key
      * inactive or delete it. For more information about making keys
      * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
      * </p>
@@ -1626,6 +1651,40 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<Void>() {
             public Void call() throws Exception {
                 deleteLoginProfile(deleteLoginProfileRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Changes the password of the IAM user who is currently signed in. The
+     * root account password is not affected by this action. For information
+     * about modifying passwords, see <a
+     * amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html">
+     * Managing Passwords </a> .
+     * </p>
+     *
+     * @param changePasswordRequest Container for the necessary parameters to
+     *           execute the ChangePassword operation on AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ChangePassword service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> changePasswordAsync(final ChangePasswordRequest changePasswordRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                changePassword(changePasswordRequest);
                 return null;
 		    }
 		});
@@ -1970,12 +2029,11 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
     
     /**
      * <p>
-     * Creates a login profile for the specified user, giving the user the
-     * ability to access AWS services such as the AWS Management Console.
-     * For more information about login profiles, see <a
+     * Creates a password for the specified user, giving the user the ability
+     * to access AWS services through the AWS Management Console. For more
+     * information about managing passwords, see <a
      * rvices.com/IAM/latest/UserGuide/index.html?Using_ManagingLogins.html">
-     * Creating or Deleting a User Login Profile </a> in <i>Using AWS
-     * Identity and Access Management</i> .
+     * Managing Passwords </a> in <i>Using IAM</i> .
      * </p>
      *
      * @param createLoginProfileRequest Container for the necessary
@@ -1999,6 +2057,37 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<CreateLoginProfileResult>() {
             public CreateLoginProfileResult call() throws Exception {
                 return createLoginProfile(createLoginProfileRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Updates the password policy settings for the account.
+     * </p>
+     *
+     * @param updateAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAccountPasswordPolicy operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdateAccountPasswordPolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> updateAccountPasswordPolicyAsync(final UpdateAccountPasswordPolicyRequest updateAccountPasswordPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                updateAccountPasswordPolicy(updateAccountPasswordPolicyRequest);
+                return null;
 		    }
 		});
     }
@@ -2036,6 +2125,36 @@ public class AmazonIdentityManagementAsyncClient extends AmazonIdentityManagemen
         return executorService.submit(new Callable<GetAccountSummaryResult>() {
             public GetAccountSummaryResult call() throws Exception {
                 return getAccountSummary(getAccountSummaryRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Retrieves the password policy for the AWS account.
+     * </p>
+     *
+     * @param getAccountPasswordPolicyRequest Container for the necessary
+     *           parameters to execute the GetAccountPasswordPolicy operation on
+     *           AmazonIdentityManagement.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetAccountPasswordPolicy service method, as returned by
+     *         AmazonIdentityManagement.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetAccountPasswordPolicyResult> getAccountPasswordPolicyAsync(final GetAccountPasswordPolicyRequest getAccountPasswordPolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetAccountPasswordPolicyResult>() {
+            public GetAccountPasswordPolicyResult call() throws Exception {
+                return getAccountPasswordPolicy(getAccountPasswordPolicyRequest);
 		    }
 		});
     }

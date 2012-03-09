@@ -16,8 +16,8 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The LoginProfile data type contains information about a login profile
- * for a user.
+ * The LoginProfile data type contains information about a password for a
+ * user.
  * </p>
  * <p>
  * This data type is used as a response element in the actions
@@ -27,7 +27,8 @@ package com.amazonaws.services.identitymanagement.model;
 public class LoginProfile {
 
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the user, which can be used for signing into the AWS
+     * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -36,7 +37,7 @@ public class LoginProfile {
     private String userName;
 
     /**
-     * The date when the login profile for the user was created.
+     * The date when the password for the user was created.
      */
     private java.util.Date createDate;
 
@@ -51,9 +52,9 @@ public class LoginProfile {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName The name of the user, which can be used for logins.
-     * @param createDate The date when the login profile for the user was
-     * created.
+     * @param userName The name of the user, which can be used for signing
+     * into the AWS Management Console.
+     * @param createDate The date when the password for the user was created.
      */
     public LoginProfile(String userName, java.util.Date createDate) {
         this.userName = userName;
@@ -63,33 +64,38 @@ public class LoginProfile {
     
     
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the user, which can be used for signing into the AWS
+     * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return The name of the user, which can be used for logins.
+     * @return The name of the user, which can be used for signing into the AWS
+     *         Management Console.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the user, which can be used for signing into the AWS
+     * Management Console.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for logins.
+     * @param userName The name of the user, which can be used for signing into the AWS
+     *         Management Console.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * The name of the user, which can be used for logins.
+     * The name of the user, which can be used for signing into the AWS
+     * Management Console.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -97,7 +103,8 @@ public class LoginProfile {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName The name of the user, which can be used for logins.
+     * @param userName The name of the user, which can be used for signing into the AWS
+     *         Management Console.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -109,29 +116,29 @@ public class LoginProfile {
     
     
     /**
-     * The date when the login profile for the user was created.
+     * The date when the password for the user was created.
      *
-     * @return The date when the login profile for the user was created.
+     * @return The date when the password for the user was created.
      */
     public java.util.Date getCreateDate() {
         return createDate;
     }
     
     /**
-     * The date when the login profile for the user was created.
+     * The date when the password for the user was created.
      *
-     * @param createDate The date when the login profile for the user was created.
+     * @param createDate The date when the password for the user was created.
      */
     public void setCreateDate(java.util.Date createDate) {
         this.createDate = createDate;
     }
     
     /**
-     * The date when the login profile for the user was created.
+     * The date when the password for the user was created.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param createDate The date when the login profile for the user was created.
+     * @param createDate The date when the password for the user was created.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

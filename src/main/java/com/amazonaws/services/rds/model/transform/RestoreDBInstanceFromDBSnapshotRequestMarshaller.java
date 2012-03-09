@@ -38,7 +38,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
 
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));
@@ -54,6 +54,9 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         }
         if (restoreDBInstanceFromDBSnapshotRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getAvailabilityZone()));
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest.getDBSubnetGroupName() != null) {
+            request.addParameter("DBSubnetGroupName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBSubnetGroupName()));
         }
         if (restoreDBInstanceFromDBSnapshotRequest.isMultiAZ() != null) {
             request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreDBInstanceFromDBSnapshotRequest.isMultiAZ()));

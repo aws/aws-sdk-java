@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest) UpdateLoginProfile operation}.
  * <p>
- * Updates the login profile for the specified user. Use this API to
- * change the user's password.
+ * Changes the password for the specified user.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateLoginProfile(UpdateLoginProfileRequest)
@@ -27,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose login profile you want to update.
+     * Name of the user whose password you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -55,8 +54,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose login profile you want to
-     * update.
+     * @param userName Name of the user whose password you want to update.
      */
     public UpdateLoginProfileRequest(String userName) {
         this.userName = userName;
@@ -65,33 +63,33 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Name of the user whose login profile you want to update.
+     * Name of the user whose password you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose login profile you want to update.
+     * @return Name of the user whose password you want to update.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose login profile you want to update.
+     * Name of the user whose password you want to update.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to update.
+     * @param userName Name of the user whose password you want to update.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose login profile you want to update.
+     * Name of the user whose password you want to update.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -99,7 +97,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to update.
+     * @param userName Name of the user whose password you want to update.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
