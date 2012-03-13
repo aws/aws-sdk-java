@@ -19,8 +19,6 @@ import java.util.concurrent.Future;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AsyncServiceHandler;
-import com.amazonaws.services.dynamodb.model.ScanRequest;
-import com.amazonaws.services.dynamodb.model.ScanResult;
 import com.amazonaws.services.simpledb.model.*;
 
 /**
