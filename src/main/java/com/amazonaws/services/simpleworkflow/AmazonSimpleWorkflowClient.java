@@ -457,7 +457,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         exceptionUnmarshallers.add(new TypeAlreadyExistsExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
-        setEndpoint("swf.amazonaws.com");
+        setEndpoint("swf.us-east-1.amazonaws.com");
 
         signer = new AWS3Signer();
 

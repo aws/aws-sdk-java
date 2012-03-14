@@ -38,7 +38,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
         if (runInstancesRequest.getImageId() != null) {
             request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -168,19 +168,19 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             InstanceNetworkInterfaceSpecification instanceNetworkInterfaceSpecificationMember = networkInterfacesListValue;
             if (instanceNetworkInterfaceSpecificationMember != null) {
                 if (instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".NetworkInterfaceId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getNetworkInterfaceId()));
                 }
                 if (instanceNetworkInterfaceSpecificationMember.getDeviceIndex() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getDeviceIndex()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".DeviceIndex", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getDeviceIndex()));
                 }
                 if (instanceNetworkInterfaceSpecificationMember.getSubnetId() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".SubnetId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getSubnetId()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".SubnetId", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getSubnetId()));
                 }
                 if (instanceNetworkInterfaceSpecificationMember.getDescription() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".Description", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getDescription()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".Description", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getDescription()));
                 }
                 if (instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddress", StringUtils.fromString(instanceNetworkInterfaceSpecificationMember.getPrivateIpAddress()));
                 }
 
                 java.util.List<String> groupsList = instanceNetworkInterfaceSpecificationMember.getGroups();
@@ -188,13 +188,13 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
                 for (String groupsListValue : groupsList) {
                     if (groupsListValue != null) {
-                        request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
+                        request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".SecurityGroupId." + groupsListIndex, StringUtils.fromString(groupsListValue));
                     }
 
                     groupsListIndex++;
                 }
                 if (instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination() != null) {
-                    request.addParameter("NetworkInterface." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
+                    request.addParameter("NetworkInterfaceSet." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
                 }
             }
 

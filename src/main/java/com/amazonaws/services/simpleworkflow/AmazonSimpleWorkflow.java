@@ -327,7 +327,7 @@ import com.amazonaws.services.simpleworkflow.model.*;
 public interface AmazonSimpleWorkflow {
 
     /**
-     * Overrides the default endpoint for this client ("https://swf.amazonaws.com").
+     * Overrides the default endpoint for this client ("https://swf.us-east-1.amazonaws.com").
      * Callers can use this method to control which AWS region they want to work with.
      * <p>
      * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full

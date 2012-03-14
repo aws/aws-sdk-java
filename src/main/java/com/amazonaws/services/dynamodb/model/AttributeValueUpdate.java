@@ -17,13 +17,15 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * <p>
  * Specifies the attribute to update and how to perform the update.
- * Possible values: PUT (default), ADD or DELETE.
+ * Possible values: <code>PUT</code> (default), <code>ADD</code> or
+ * <code>DELETE</code> .
  * </p>
  */
 public class AttributeValueUpdate {
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * AttributeValue can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      */
     private AttributeValue value;
 
@@ -53,8 +55,8 @@ public class AttributeValueUpdate {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param value AttributeValue can be String, Number, StringSet,
-     * NumberSet.
+     * @param value AttributeValue can be <code>String</code>,
+     * <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>.
      * @param action The type of action for an item update operation. Only
      * use the add action for numbers or sets; the specified value is added
      * to the existing value. If a set of values is specified, the values are
@@ -76,8 +78,8 @@ public class AttributeValueUpdate {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param value AttributeValue can be String, Number, StringSet,
-     * NumberSet.
+     * @param value AttributeValue can be <code>String</code>,
+     * <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>.
      * @param action The type of action for an item update operation. Only
      * use the add action for numbers or sets; the specified value is added
      * to the existing value. If a set of values is specified, the values are
@@ -93,29 +95,35 @@ public class AttributeValueUpdate {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * AttributeValue can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet.
+     * @return AttributeValue can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      */
     public AttributeValue getValue() {
         return value;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * AttributeValue can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      *
-     * @param value AttributeValue can be String, Number, StringSet, NumberSet.
+     * @param value AttributeValue can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      */
     public void setValue(AttributeValue value) {
         this.value = value;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * AttributeValue can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value AttributeValue can be String, Number, StringSet, NumberSet.
+     * @param value AttributeValue can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -18,17 +18,29 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteTable(DeleteTableRequest) DeleteTable operation}.
  * <p>
- * The DeleteTable operation deletes a table and all of its items. If
- * the table is in the ACTIVE state, you can delete it. If a table is in
- * CREATING or UPDATING states, then DeleteTable returns a
- * ResourceInUseException. If the specified table does not exist, Amazon
- * DynamoDB returns a ResourceNotFoundException.
+ * Deletes a table and all of its items.
+ * </p>
+ * <p>
+ * If the table is in the <code>ACTIVE</code> state, you can delete it.
+ * If a table is in <code>CREATING</code> or <code>UPDATING</code> states
+ * then Amazon DynamoDB returns a <code>ResourceInUseException</code> .
+ * If the specified table does not exist, Amazon DynamoDB returns a
+ * <code>ResourceNotFoundException</code> .
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteTable(DeleteTableRequest)
  */
 public class DeleteTableRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table you want to delete. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
@@ -42,7 +54,10 @@ public class DeleteTableRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName
+     * @param tableName The name of the table you want to delete. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      */
     public DeleteTableRequest(String tableName) {
         this.tableName = tableName;
@@ -51,33 +66,43 @@ public class DeleteTableRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table you want to delete. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table you want to delete. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to delete. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to delete. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to delete. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -85,7 +110,9 @@ public class DeleteTableRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to delete. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

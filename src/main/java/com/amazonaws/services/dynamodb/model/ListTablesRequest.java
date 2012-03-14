@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest) ListTables operation}.
  * <p>
- * Returns a paginated list of table names created by the AWS Account of
- * the caller in the AWS Region (e.g. us-east-1).
+ * Retrieves a paginated list of table names created by the AWS Account
+ * of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest)
@@ -28,8 +28,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the table that starts the list. If you already ran a
-     * ListTables operation and recieved a LastEvaluatedTableName value in
-     * the response, use that value here to continue the list.
+     * <code>ListTables</code> operation and received a
+     * <code>LastEvaluatedTableName</code> value in the response, use that
+     * value here to continue the list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -47,16 +48,18 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
 
     /**
      * The name of the table that starts the list. If you already ran a
-     * ListTables operation and recieved a LastEvaluatedTableName value in
-     * the response, use that value here to continue the list.
+     * <code>ListTables</code> operation and received a
+     * <code>LastEvaluatedTableName</code> value in the response, use that
+     * value here to continue the list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @return The name of the table that starts the list. If you already ran a
-     *         ListTables operation and recieved a LastEvaluatedTableName value in
-     *         the response, use that value here to continue the list.
+     *         <code>ListTables</code> operation and received a
+     *         <code>LastEvaluatedTableName</code> value in the response, use that
+     *         value here to continue the list.
      */
     public String getExclusiveStartTableName() {
         return exclusiveStartTableName;
@@ -64,16 +67,18 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the table that starts the list. If you already ran a
-     * ListTables operation and recieved a LastEvaluatedTableName value in
-     * the response, use that value here to continue the list.
+     * <code>ListTables</code> operation and received a
+     * <code>LastEvaluatedTableName</code> value in the response, use that
+     * value here to continue the list.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param exclusiveStartTableName The name of the table that starts the list. If you already ran a
-     *         ListTables operation and recieved a LastEvaluatedTableName value in
-     *         the response, use that value here to continue the list.
+     *         <code>ListTables</code> operation and received a
+     *         <code>LastEvaluatedTableName</code> value in the response, use that
+     *         value here to continue the list.
      */
     public void setExclusiveStartTableName(String exclusiveStartTableName) {
         this.exclusiveStartTableName = exclusiveStartTableName;
@@ -81,8 +86,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
     
     /**
      * The name of the table that starts the list. If you already ran a
-     * ListTables operation and recieved a LastEvaluatedTableName value in
-     * the response, use that value here to continue the list.
+     * <code>ListTables</code> operation and received a
+     * <code>LastEvaluatedTableName</code> value in the response, use that
+     * value here to continue the list.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -91,8 +97,9 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param exclusiveStartTableName The name of the table that starts the list. If you already ran a
-     *         ListTables operation and recieved a LastEvaluatedTableName value in
-     *         the response, use that value here to continue the list.
+     *         <code>ListTables</code> operation and received a
+     *         <code>LastEvaluatedTableName</code> value in the response, use that
+     *         value here to continue the list.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

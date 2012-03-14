@@ -16,19 +16,24 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * Exists : Use this parameter to specify whether or not a value already
- * exists for the attribute name-value pair. Value : Use this parameter
- * to specify whether or not a value already exists and has a specific
- * content for the attribute name-value pair.
+ * Allows you to provide an attribute name, and whether or not Amazon
+ * DynamoDB should check to see if the attribute value already exists; or
+ * if the attribute value exists and has a particular value before
+ * changing it.
  * </p>
  */
 public class ExpectedAttributeValue {
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * Specify whether or not a value already exists and has a specific
+     * content for the attribute name-value pair.
      */
     private AttributeValue value;
 
+    /**
+     * Specify whether or not a value already exists for the attribute
+     * name-value pair.
+     */
     private Boolean exists;
 
     /**
@@ -42,8 +47,8 @@ public class ExpectedAttributeValue {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param value AttributeValue can be String, Number, StringSet,
-     * NumberSet.
+     * @param value Specify whether or not a value already exists and has a
+     * specific content for the attribute name-value pair.
      */
     public ExpectedAttributeValue(AttributeValue value) {
         this.value = value;
@@ -56,7 +61,8 @@ public class ExpectedAttributeValue {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param exists
+     * @param exists Specify whether or not a value already exists for the
+     * attribute name-value pair.
      */
     public ExpectedAttributeValue(Boolean exists) {
         this.exists = exists;
@@ -65,29 +71,35 @@ public class ExpectedAttributeValue {
     
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * Specify whether or not a value already exists and has a specific
+     * content for the attribute name-value pair.
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet.
+     * @return Specify whether or not a value already exists and has a specific
+     *         content for the attribute name-value pair.
      */
     public AttributeValue getValue() {
         return value;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * Specify whether or not a value already exists and has a specific
+     * content for the attribute name-value pair.
      *
-     * @param value AttributeValue can be String, Number, StringSet, NumberSet.
+     * @param value Specify whether or not a value already exists and has a specific
+     *         content for the attribute name-value pair.
      */
     public void setValue(AttributeValue value) {
         this.value = value;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet.
+     * Specify whether or not a value already exists and has a specific
+     * content for the attribute name-value pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param value AttributeValue can be String, Number, StringSet, NumberSet.
+     * @param value Specify whether or not a value already exists and has a specific
+     *         content for the attribute name-value pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -99,29 +111,35 @@ public class ExpectedAttributeValue {
     
     
     /**
-     * Returns the value of the Exists property for this object.
+     * Specify whether or not a value already exists for the attribute
+     * name-value pair.
      *
-     * @return The value of the Exists property for this object.
+     * @return Specify whether or not a value already exists for the attribute
+     *         name-value pair.
      */
     public Boolean isExists() {
         return exists;
     }
     
     /**
-     * Sets the value of the Exists property for this object.
+     * Specify whether or not a value already exists for the attribute
+     * name-value pair.
      *
-     * @param exists The new value for the Exists property for this object.
+     * @param exists Specify whether or not a value already exists for the attribute
+     *         name-value pair.
      */
     public void setExists(Boolean exists) {
         this.exists = exists;
     }
     
     /**
-     * Sets the value of the Exists property for this object.
+     * Specify whether or not a value already exists for the attribute
+     * name-value pair.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exists The new value for the Exists property for this object.
+     * @param exists Specify whether or not a value already exists for the attribute
+     *         name-value pair.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -133,9 +151,11 @@ public class ExpectedAttributeValue {
     
     
     /**
-     * Returns the value of the Exists property for this object.
+     * Specify whether or not a value already exists for the attribute
+     * name-value pair.
      *
-     * @return The value of the Exists property for this object.
+     * @return Specify whether or not a value already exists for the attribute
+     *         name-value pair.
      */
     public Boolean getExists() {
         return exists;

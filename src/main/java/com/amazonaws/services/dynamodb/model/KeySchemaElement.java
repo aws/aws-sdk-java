@@ -15,12 +15,28 @@
 package com.amazonaws.services.dynamodb.model;
 
 /**
- * Key Schema Element
+ * <p>
+ * <code>KeySchemaElement</code> is the primary key (hash or
+ * hash-and-range) structure for the table.
+ * </p>
  */
 public class KeySchemaElement {
 
+    /**
+     * The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
     private String attributeName;
 
+    /**
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>S, N
+     */
     private String attributeType;
 
     /**
@@ -30,38 +46,38 @@ public class KeySchemaElement {
     public KeySchemaElement() {}
     
     /**
-     * Returns the value of the AttributeName property for this object.
+     * The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return The value of the AttributeName property for this object.
+     * @return The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      */
     public String getAttributeName() {
         return attributeName;
     }
     
     /**
-     * Sets the value of the AttributeName property for this object.
+     * The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param attributeName The new value for the AttributeName property for this object.
+     * @param attributeName The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      */
     public void setAttributeName(String attributeName) {
         this.attributeName = attributeName;
     }
     
     /**
-     * Sets the value of the AttributeName property for this object.
+     * The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param attributeName The new value for the AttributeName property for this object.
+     * @param attributeName The <code>AttributeName</code> of the <code>KeySchemaElement</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -73,12 +89,14 @@ public class KeySchemaElement {
     
     
     /**
-     * Returns the value of the AttributeType property for this object.
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>S, N
      *
-     * @return The value of the AttributeType property for this object.
+     * @return The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     *         which can be a <code>String</code> or a <code>Number</code>.
      *
      * @see ScalarAttributeType
      */
@@ -87,12 +105,14 @@ public class KeySchemaElement {
     }
     
     /**
-     * Sets the value of the AttributeType property for this object.
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>S, N
      *
-     * @param attributeType The new value for the AttributeType property for this object.
+     * @param attributeType The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     *         which can be a <code>String</code> or a <code>Number</code>.
      *
      * @see ScalarAttributeType
      */
@@ -101,14 +121,16 @@ public class KeySchemaElement {
     }
     
     /**
-     * Sets the value of the AttributeType property for this object.
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>S, N
      *
-     * @param attributeType The new value for the AttributeType property for this object.
+     * @param attributeType The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     *         which can be a <code>String</code> or a <code>Number</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,12 +144,14 @@ public class KeySchemaElement {
     
     
     /**
-     * Sets the value of the AttributeType property for this object.
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>S, N
      *
-     * @param attributeType The new value for the AttributeType property for this object.
+     * @param attributeType The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     *         which can be a <code>String</code> or a <code>Number</code>.
      *
      * @see ScalarAttributeType
      */
@@ -136,14 +160,16 @@ public class KeySchemaElement {
     }
     
     /**
-     * Sets the value of the AttributeType property for this object.
+     * The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     * which can be a <code>String</code> or a <code>Number</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>S, N
      *
-     * @param attributeType The new value for the AttributeType property for this object.
+     * @param attributeType The <code>AttributeType</code> of the <code>KeySchemaElement</code>
+     *         which can be a <code>String</code> or a <code>Number</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

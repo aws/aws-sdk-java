@@ -18,57 +18,79 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#updateTable(UpdateTableRequest) UpdateTable operation}.
  * <p>
- * Updates the provisioned throughput for the given table. Setting the
- * throughput for a table helps you manage performance and is part of the
- * Provisioned Capacity feature of Amazon DynamoDB.
+ * Updates the provisioned throughput for the given table.
+ * </p>
+ * <p>
+ * Setting the throughput for a table helps you manage performance and is
+ * part of the Provisioned Throughput feature of Amazon DynamoDB.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#updateTable(UpdateTableRequest)
  */
 public class UpdateTableRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table you want to update. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
      * Provisioned throughput reserves the required read and write resources
-     * for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     * Values for provisioned throughput depend upon your expected read/write
-     * rates, item size, and consistency. Provide the expected number of read
-     * and write operations, assuming an item size of 1KB and strictly
-     * consistent reads. For 2KB item size, double the value, 3KB, triple the
-     * value, etc. Eventually consistent reads consume half the resources of
-     * strictly consistent reads.
+     * for your table in terms of <code>ReadCapacityUnits</code> and
+     * <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     * depend upon your expected read/write rates, item size, and
+     * consistency. Provide the expected number of read and write operations,
+     * assuming an item size of 1k and strictly consistent reads. For 2k item
+     * size, double the value. For 3k, triple the value, etc.
+     * Eventually-consistent reads consume half the resources of strictly
+     * consistent reads.
      */
     private ProvisionedThroughput provisionedThroughput;
 
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table you want to update. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table you want to update. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to update. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to update. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to update. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -76,7 +98,9 @@ public class UpdateTableRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to update. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,22 +113,24 @@ public class UpdateTableRequest extends AmazonWebServiceRequest {
     
     /**
      * Provisioned throughput reserves the required read and write resources
-     * for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     * Values for provisioned throughput depend upon your expected read/write
-     * rates, item size, and consistency. Provide the expected number of read
-     * and write operations, assuming an item size of 1KB and strictly
-     * consistent reads. For 2KB item size, double the value, 3KB, triple the
-     * value, etc. Eventually consistent reads consume half the resources of
-     * strictly consistent reads.
+     * for your table in terms of <code>ReadCapacityUnits</code> and
+     * <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     * depend upon your expected read/write rates, item size, and
+     * consistency. Provide the expected number of read and write operations,
+     * assuming an item size of 1k and strictly consistent reads. For 2k item
+     * size, double the value. For 3k, triple the value, etc.
+     * Eventually-consistent reads consume half the resources of strictly
+     * consistent reads.
      *
      * @return Provisioned throughput reserves the required read and write resources
-     *         for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     *         Values for provisioned throughput depend upon your expected read/write
-     *         rates, item size, and consistency. Provide the expected number of read
-     *         and write operations, assuming an item size of 1KB and strictly
-     *         consistent reads. For 2KB item size, double the value, 3KB, triple the
-     *         value, etc. Eventually consistent reads consume half the resources of
-     *         strictly consistent reads.
+     *         for your table in terms of <code>ReadCapacityUnits</code> and
+     *         <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     *         depend upon your expected read/write rates, item size, and
+     *         consistency. Provide the expected number of read and write operations,
+     *         assuming an item size of 1k and strictly consistent reads. For 2k item
+     *         size, double the value. For 3k, triple the value, etc.
+     *         Eventually-consistent reads consume half the resources of strictly
+     *         consistent reads.
      */
     public ProvisionedThroughput getProvisionedThroughput() {
         return provisionedThroughput;
@@ -112,22 +138,24 @@ public class UpdateTableRequest extends AmazonWebServiceRequest {
     
     /**
      * Provisioned throughput reserves the required read and write resources
-     * for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     * Values for provisioned throughput depend upon your expected read/write
-     * rates, item size, and consistency. Provide the expected number of read
-     * and write operations, assuming an item size of 1KB and strictly
-     * consistent reads. For 2KB item size, double the value, 3KB, triple the
-     * value, etc. Eventually consistent reads consume half the resources of
-     * strictly consistent reads.
+     * for your table in terms of <code>ReadCapacityUnits</code> and
+     * <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     * depend upon your expected read/write rates, item size, and
+     * consistency. Provide the expected number of read and write operations,
+     * assuming an item size of 1k and strictly consistent reads. For 2k item
+     * size, double the value. For 3k, triple the value, etc.
+     * Eventually-consistent reads consume half the resources of strictly
+     * consistent reads.
      *
      * @param provisionedThroughput Provisioned throughput reserves the required read and write resources
-     *         for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     *         Values for provisioned throughput depend upon your expected read/write
-     *         rates, item size, and consistency. Provide the expected number of read
-     *         and write operations, assuming an item size of 1KB and strictly
-     *         consistent reads. For 2KB item size, double the value, 3KB, triple the
-     *         value, etc. Eventually consistent reads consume half the resources of
-     *         strictly consistent reads.
+     *         for your table in terms of <code>ReadCapacityUnits</code> and
+     *         <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     *         depend upon your expected read/write rates, item size, and
+     *         consistency. Provide the expected number of read and write operations,
+     *         assuming an item size of 1k and strictly consistent reads. For 2k item
+     *         size, double the value. For 3k, triple the value, etc.
+     *         Eventually-consistent reads consume half the resources of strictly
+     *         consistent reads.
      */
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -135,24 +163,26 @@ public class UpdateTableRequest extends AmazonWebServiceRequest {
     
     /**
      * Provisioned throughput reserves the required read and write resources
-     * for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     * Values for provisioned throughput depend upon your expected read/write
-     * rates, item size, and consistency. Provide the expected number of read
-     * and write operations, assuming an item size of 1KB and strictly
-     * consistent reads. For 2KB item size, double the value, 3KB, triple the
-     * value, etc. Eventually consistent reads consume half the resources of
-     * strictly consistent reads.
+     * for your table in terms of <code>ReadCapacityUnits</code> and
+     * <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     * depend upon your expected read/write rates, item size, and
+     * consistency. Provide the expected number of read and write operations,
+     * assuming an item size of 1k and strictly consistent reads. For 2k item
+     * size, double the value. For 3k, triple the value, etc.
+     * Eventually-consistent reads consume half the resources of strictly
+     * consistent reads.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param provisionedThroughput Provisioned throughput reserves the required read and write resources
-     *         for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
-     *         Values for provisioned throughput depend upon your expected read/write
-     *         rates, item size, and consistency. Provide the expected number of read
-     *         and write operations, assuming an item size of 1KB and strictly
-     *         consistent reads. For 2KB item size, double the value, 3KB, triple the
-     *         value, etc. Eventually consistent reads consume half the resources of
-     *         strictly consistent reads.
+     *         for your table in terms of <code>ReadCapacityUnits</code> and
+     *         <code>WriteCapacityUnits</code>. Values for provisioned throughput
+     *         depend upon your expected read/write rates, item size, and
+     *         consistency. Provide the expected number of read and write operations,
+     *         assuming an item size of 1k and strictly consistent reads. For 2k item
+     *         size, double the value. For 3k, triple the value, etc.
+     *         Eventually-consistent reads consume half the resources of strictly
+     *         consistent reads.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
