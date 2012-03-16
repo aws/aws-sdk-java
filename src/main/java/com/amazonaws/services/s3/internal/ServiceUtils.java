@@ -250,8 +250,8 @@ public class ServiceUtils {
 
     /**
      * Downloads an S3Object, as returned from
-     * {@link AmazonS3Client#getObject(com.amazonaws.services.s3.model.GetObjectRequest)}
-     * , to the specified file.
+     * {@link AmazonS3Client#getObject(com.amazonaws.services.s3.model.GetObjectRequest)},
+     * to the specified file.
      *
      * @param s3Object
      *            The S3Object containing a reference to an InputStream
@@ -260,6 +260,13 @@ public class ServiceUtils {
      *            The file to store the object's data in.
      */
     public static void downloadObjectToFile(S3Object s3Object, File destinationFile) {
+
+        // attempt to create the parent if it doesn't exist
+        File parentDirectory = destinationFile.getParentFile();
+        if ( parentDirectory != null && !parentDirectory.exists() ) {
+            parentDirectory.mkdirs();
+        }
+        
         OutputStream outputStream = null;
         try {
             outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
@@ -269,6 +276,11 @@ public class ServiceUtils {
                 outputStream.write(buffer, 0, bytesRead);
             }
         } catch (IOException e) {
+            try {
+                s3Object.getObjectContent().abort();
+            } catch ( IOException abortException ) {
+                log.warn("Couldn't abort stream", e);
+            }
             throw new AmazonClientException(
                     "Unable to store object contents to disk: " + e.getMessage(), e);
         } finally {

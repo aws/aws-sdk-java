@@ -52,11 +52,13 @@ import com.amazonaws.services.identitymanagement.model.transform.*;
  * IAM is a web service that enables AWS customers to manage users and
  * user permissions under their AWS account. For more information about
  * this product go to <a href="http://aws.amazon.com/iam/"> AWS Identity
- * and Access Management (IAM) </a> . For specific information about
- * setting up signatures and authorization through the API, go to <a
+ * and Access Management (IAM) </a> . For information about setting up
+ * signatures and authorization through the API, go to <a
+ * mazonwebservices.com/general/latest/gr/signing_aws_api_requests.html">
+ * Signing AWS API Requests </a> in the <i>AWS General Reference</i> .
+ * For general information about using the Query API with IAM, go to <a
  * cs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">
- * Making Query Requests </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * Making Query Requests </a> in <i>Using IAM</i> .
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
@@ -78,7 +80,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     
     /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
+    private AWS4Signer signer;
 
 
     /**
@@ -157,6 +159,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 
     private void init() { 
         exceptionUnmarshallers.add(new DuplicateCertificateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidUserTypeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EntityAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KeyPairMismatchExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DeleteConflictExceptionUnmarshaller());
@@ -172,7 +175,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
         setEndpoint("iam.amazonaws.com");
 
-        signer = new QueryStringSigner();
+        signer = new AWS4Signer();
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -738,7 +741,8 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves the password for the specified user.
+     * Retrieves the user name and password create date for the specified
+     * user.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -1496,9 +1500,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Changes the password of the IAM user who is currently signed in. The
-     * root account password is not affected by this action. For information
-     * about modifying passwords, see <a
+     * Changes the password of the IAM user calling
+     * <code>ChangePassword</code> . The root account password is not
+     * affected by this action. For information about modifying passwords,
+     * see <a
      * amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html">
      * Managing Passwords </a> .
      * </p>
@@ -1507,6 +1512,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      *           execute the ChangePassword service method on AmazonIdentityManagement.
      * 
      * @throws NoSuchEntityException
+     * @throws InvalidUserTypeException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1871,7 +1877,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Updates the password policy settings for the account.
+     * Updates the password policy settings for the account. For more
+     * information about using a password policy, go to <a
+     * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
+     * Managing an IAM Password Policy </a> .
      * </p>
      *
      * @param updateAccountPasswordPolicyRequest Container for the necessary
@@ -1931,7 +1940,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves the password policy for the AWS account.
+     * Retrieves the password policy for the AWS account. For more
+     * information about using a password policy, go to <a
+     * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
+     * Managing an IAM Password Policy </a> .
      * </p>
      *
      * @param getAccountPasswordPolicyRequest Container for the necessary
@@ -2319,7 +2331,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
-     * Retrieves the password policy for the AWS account.
+     * Retrieves the password policy for the AWS account. For more
+     * information about using a password policy, go to <a
+     * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
+     * Managing an IAM Password Policy </a> .
      * </p>
      * 
      * @return The response from the GetAccountPasswordPolicy service method,
@@ -2337,6 +2352,47 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     public GetAccountPasswordPolicyResult getAccountPasswordPolicy() throws AmazonServiceException, AmazonClientException {
         return getAccountPasswordPolicy(new GetAccountPasswordPolicyRequest());
+    }
+    
+    /**
+     * Overrides the default endpoint for this client and explicitly provides 
+     * an AWS region ID and AWS service name to use when the client calculates a signature
+     * for requests.  In almost all cases, this region ID and service name
+     * are automatically determined from the endpoint, and callers should use the simpler
+     * one-argument form of setEndpoint instead of this method.   
+     * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
+     * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see: 
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * 
+     * @param endpoint
+     *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://ec2.amazonaws.com") of
+     *            the region specific AWS endpoint this client will communicate
+     *            with.
+     * @param serviceName 
+     *            The name of the AWS service to use when signing requests.
+     * @param regionId 
+     *            The ID of the region in which this service resides.
+     *      
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     */
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        setEndpoint(endpoint);
+        signer.setServiceName(serviceName);
+        signer.setRegionName(regionId);
     }
     
 

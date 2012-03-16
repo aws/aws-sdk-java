@@ -14,33 +14,60 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import java.io.IOException;
+
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.Download;
 import com.amazonaws.services.s3.transfer.TransferProgress;
 
-public class DownloadImpl extends Download {
+public class DownloadImpl extends AbstractTransfer implements Download {
+    
+    final S3Object s3Object;
+
     public DownloadImpl(String description, TransferProgress transferProgress,
-            ProgressListenerChain progressListenerChain, S3Object s3Object) {
-        super(description, transferProgress, progressListenerChain, s3Object);
+            ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
+        super(description, transferProgress, progressListenerChain, listener);
+        this.s3Object = s3Object;
     }
-
+    
     /**
-     * Sets the state of this transfer - callers should <b>never</b> call this
-     * method directly, it's only intended for the library to use when updating
-     * a transfer's state.
+     * Returns the ObjectMetadata for the object being downloaded.
      *
-     * @param state
-     *            The new state of this transfer.
+     * @return The ObjectMetadata for the object being downloaded.
      */
-    public void setState(TransferState state) {
-        if (super.state == state) return;
-        super.state = state;
+    public ObjectMetadata getObjectMetadata() {
+        return s3Object.getObjectMetadata();
     }
 
     /**
-     * Sets the monitor used to poll for transfer completion.
+     * The name of the bucket where the object is being downloaded from.
+     *
+     * @return The name of the bucket where the object is being downloaded from.
      */
-    public void setMonitor(TransferMonitor monitor) {
-        super.monitor = monitor;
+    public String getBucketName() {
+        return s3Object.getBucketName();
     }
+
+    /**
+     * The key under which this object was stored in Amazon S3.
+     *
+     * @return The key under which this object was stored in Amazon S3.
+     */
+    public String getKey() {
+        return s3Object.getKey();
+    }
+
+    /**
+     * Cancels this download.
+     *
+     * @throws IOException
+     */
+    public void abort() throws IOException {
+        s3Object.getObjectContent().abort();
+        setState(TransferState.Canceled);
+    }
+
+
+    
 }

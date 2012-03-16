@@ -29,6 +29,8 @@ public class PasswordPolicy {
 
     private Boolean requireLowercaseCharacters;
 
+    private Boolean allowUsersToChangePassword;
+
     /**
      * Returns the value of the MinimumPasswordLength property for this
      * object.
@@ -258,6 +260,55 @@ public class PasswordPolicy {
     }
     
     /**
+     * Returns the value of the AllowUsersToChangePassword property for this
+     * object.
+     *
+     * @return The value of the AllowUsersToChangePassword property for this object.
+     */
+    public Boolean isAllowUsersToChangePassword() {
+        return allowUsersToChangePassword;
+    }
+    
+    /**
+     * Sets the value of the AllowUsersToChangePassword property for this
+     * object.
+     *
+     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
+     *         object.
+     */
+    public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
+        this.allowUsersToChangePassword = allowUsersToChangePassword;
+    }
+    
+    /**
+     * Sets the value of the AllowUsersToChangePassword property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PasswordPolicy withAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
+        this.allowUsersToChangePassword = allowUsersToChangePassword;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the AllowUsersToChangePassword property for this
+     * object.
+     *
+     * @return The value of the AllowUsersToChangePassword property for this object.
+     */
+    public Boolean getAllowUsersToChangePassword() {
+        return allowUsersToChangePassword;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -274,6 +325,7 @@ public class PasswordPolicy {
         if (requireNumbers != null) sb.append("RequireNumbers: " + requireNumbers + ", ");
         if (requireUppercaseCharacters != null) sb.append("RequireUppercaseCharacters: " + requireUppercaseCharacters + ", ");
         if (requireLowercaseCharacters != null) sb.append("RequireLowercaseCharacters: " + requireLowercaseCharacters + ", ");
+        if (allowUsersToChangePassword != null) sb.append("AllowUsersToChangePassword: " + allowUsersToChangePassword + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +340,7 @@ public class PasswordPolicy {
         hashCode = prime * hashCode + ((isRequireNumbers() == null) ? 0 : isRequireNumbers().hashCode()); 
         hashCode = prime * hashCode + ((isRequireUppercaseCharacters() == null) ? 0 : isRequireUppercaseCharacters().hashCode()); 
         hashCode = prime * hashCode + ((isRequireLowercaseCharacters() == null) ? 0 : isRequireLowercaseCharacters().hashCode()); 
+        hashCode = prime * hashCode + ((isAllowUsersToChangePassword() == null) ? 0 : isAllowUsersToChangePassword().hashCode()); 
         return hashCode;
     }
     
@@ -309,6 +362,8 @@ public class PasswordPolicy {
         if (other.isRequireUppercaseCharacters() != null && other.isRequireUppercaseCharacters().equals(this.isRequireUppercaseCharacters()) == false) return false; 
         if (other.isRequireLowercaseCharacters() == null ^ this.isRequireLowercaseCharacters() == null) return false;
         if (other.isRequireLowercaseCharacters() != null && other.isRequireLowercaseCharacters().equals(this.isRequireLowercaseCharacters()) == false) return false; 
+        if (other.isAllowUsersToChangePassword() == null ^ this.isAllowUsersToChangePassword() == null) return false;
+        if (other.isAllowUsersToChangePassword() != null && other.isAllowUsersToChangePassword().equals(this.isAllowUsersToChangePassword()) == false) return false; 
         return true;
     }
     

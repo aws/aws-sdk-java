@@ -18,20 +18,20 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the provided password did not meet
- * the requirements imposed by the account password policy.
+ * The request was rejected because the type of user for the transaction
+ * was incorrect.
  * </p>
  */        
-public class PasswordPolicyViolationException extends AmazonServiceException {
+public class InvalidUserTypeException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new PasswordPolicyViolationException with the specified error
+     * Constructs a new InvalidUserTypeException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public PasswordPolicyViolationException(String message) {
+    public InvalidUserTypeException(String message) {
         super(message);
     }
     

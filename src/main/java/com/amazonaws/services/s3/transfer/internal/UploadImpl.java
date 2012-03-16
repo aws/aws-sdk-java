@@ -14,31 +14,52 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.transfer.Upload;
+import com.amazonaws.services.s3.transfer.model.UploadResult;
 
-public class UploadImpl extends Upload {
-    public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
-            ProgressListenerChain progressListenerChain) {
-        super(description, transferProgressInternalState, progressListenerChain);
-    }
-
-    /**
-     * Sets the state of this transfer - callers should <b>never</b> call this
-     * method directly, it's only intended for the library to use when updating
-     * a transfer's state.
-     *
-     * @param state
-     *            The new state of this transfer.
-     */
-    public void setState(TransferState state) {
-        if (super.state == state) return;
-        super.state = state;
-    }
+public class UploadImpl extends AbstractTransfer implements Upload {
     
-    /**
-     * Sets the monitor used to poll for upload completion.
-     */
-    public void setMonitor(TransferMonitor monitor) {
-        super.monitor = monitor;
+    public UploadImpl(String description, TransferProgressImpl transferProgressInternalState,
+            ProgressListenerChain progressListenerChain, TransferStateChangeListener listener) {
+        super(description, transferProgressInternalState, progressListenerChain, listener);
     }
+
+    /**
+     * Waits for this upload to complete and returns the result of this
+     * upload. Be prepared to handle errors when calling this method. Any
+     * errors that occurred during the asynchronous transfer will be re-thrown
+     * through this method.
+     * 
+     * @return The result of this transfer.
+     * 
+     * @throws AmazonClientException
+     *             If any errors were encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws InterruptedException
+     *             If this thread is interrupted while waiting for the upload to
+     *             complete.
+     */
+    public UploadResult waitForUploadResult() 
+            throws AmazonClientException, AmazonServiceException, InterruptedException {
+        try {
+            UploadResult result = null;
+            while (!monitor.isDone() || result == null) {
+                Future<?> f = monitor.getFuture();
+                result = (UploadResult)f.get();
+            }
+            return result;
+        } catch (ExecutionException e) {
+            rethrowExecutionException(e);
+            return null;
+        }
+    }
+
 }

@@ -33,11 +33,13 @@ import com.amazonaws.services.identitymanagement.model.*;
  * IAM is a web service that enables AWS customers to manage users and
  * user permissions under their AWS account. For more information about
  * this product go to <a href="http://aws.amazon.com/iam/"> AWS Identity
- * and Access Management (IAM) </a> . For specific information about
- * setting up signatures and authorization through the API, go to <a
+ * and Access Management (IAM) </a> . For information about setting up
+ * signatures and authorization through the API, go to <a
+ * mazonwebservices.com/general/latest/gr/signing_aws_api_requests.html">
+ * Signing AWS API Requests </a> in the <i>AWS General Reference</i> .
+ * For general information about using the Query API with IAM, go to <a
  * cs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">
- * Making Query Requests </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * Making Query Requests </a> in <i>Using IAM</i> .
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
@@ -553,7 +555,8 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves the password for the specified user.
+     * Retrieves the user name and password create date for the specified
+     * user.
      * </p>
      *
      * @param getLoginProfileRequest Container for the necessary parameters
@@ -1227,9 +1230,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Changes the password of the IAM user who is currently signed in. The
-     * root account password is not affected by this action. For information
-     * about modifying passwords, see <a
+     * Changes the password of the IAM user calling
+     * <code>ChangePassword</code> . The root account password is not
+     * affected by this action. For information about modifying passwords,
+     * see <a
      * amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingLogins.html">
      * Managing Passwords </a> .
      * </p>
@@ -1563,7 +1567,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Updates the password policy settings for the account.
+     * Updates the password policy settings for the account. For more
+     * information about using a password policy, go to <a
+     * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
+     * Managing an IAM Password Policy </a> .
      * </p>
      *
      * @param updateAccountPasswordPolicyRequest Container for the necessary
@@ -1618,7 +1625,10 @@ public interface AmazonIdentityManagementAsync extends AmazonIdentityManagement 
 
     /**
      * <p>
-     * Retrieves the password policy for the AWS account.
+     * Retrieves the password policy for the AWS account. For more
+     * information about using a password policy, go to <a
+     * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
+     * Managing an IAM Password Policy </a> .
      * </p>
      *
      * @param getAccountPasswordPolicyRequest Container for the necessary

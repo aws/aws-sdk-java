@@ -55,6 +55,9 @@ public class UpdateAccountPasswordPolicyRequestMarshaller implements Marshaller<
         if (updateAccountPasswordPolicyRequest.isRequireLowercaseCharacters() != null) {
             request.addParameter("RequireLowercaseCharacters", StringUtils.fromBoolean(updateAccountPasswordPolicyRequest.isRequireLowercaseCharacters()));
         }
+        if (updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword() != null) {
+            request.addParameter("AllowUsersToChangePassword", StringUtils.fromBoolean(updateAccountPasswordPolicyRequest.isAllowUsersToChangePassword()));
+        }
 
 
         return request;

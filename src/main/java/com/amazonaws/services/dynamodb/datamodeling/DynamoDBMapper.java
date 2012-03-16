@@ -215,8 +215,7 @@ public class DynamoDBMapper {
      *            construction.
      */
     public <T extends Object> T load(Class<T> clazz, Object hashKey, Object rangeKey, DynamoDBMapperConfig config) {
-        if ( config != this.config )
-            config = new DynamoDBMapperConfig(this.config, config);
+        config = mergeConfig(config);
         
         String tableName = getTableName(clazz, config);
 
@@ -371,8 +370,7 @@ public class DynamoDBMapper {
      *            at object construction.
      */
     public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
-        if ( config != this.config )
-            config = new DynamoDBMapperConfig(this.config, config);
+        config = mergeConfig(config);
         
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
@@ -580,8 +578,7 @@ public class DynamoDBMapper {
      *            the object.
      */
     public void delete(Object object, DynamoDBMapperConfig config) {
-        if ( this.config != config )
-            config = new DynamoDBMapperConfig(this.config, config);
+        config = mergeConfig(config);
         
         Class<?> clazz = object.getClass();
 
@@ -691,6 +688,16 @@ public class DynamoDBMapper {
 
     /**
      * Scans through an AWS DynamoDB table and returns the matching results as
+     * an unmodifiable list of instantiated objects, using the default configuration.
+     * 
+     * @see DynamoDBMapper#scan(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
+     */
+    public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression) {
+        return scan(clazz, scanExpression, config);
+    }
+    
+    /**
+     * Scans through an AWS DynamoDB table and returns the matching results as
      * an unmodifiable list of instantiated objects. The table to scan is
      * determined by looking at the annotations on the specified class, which
      * declares where to store the object data in AWS DynamoDB, and the scan
@@ -712,18 +719,34 @@ public class DynamoDBMapper {
      * @param scanExpression
      *            Details on how to run the scan, including any filters to apply
      *            to limit results.
+     * @param config
+     *            The configuration to use for this scan, which overrides the
+     *            default provided at object construction.
      * @return An unmodifiable list of the objects constructed from the results
      *         of the scan operation.
-     *         
      * @see PaginatedScanList
      */
-    public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression) {
-        ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression);
+    public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
+        config = mergeConfig(config);
+        
+        ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
 
         ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
         return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult);
     }
 
+    /**
+     * Queries an AWS DynamoDB table and returns the matching results as an
+     * unmodifiable list of instantiated objects, using the default
+     * configuration.
+     * 
+     * @see DynamoDBMapper#query(Class, DynamoDBQueryExpression,
+     *      DynamoDBMapperConfig)
+     */
+    public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression) {
+        return query(clazz, queryExpression, config);
+    }
+    
     /**
      * Queries an AWS DynamoDB table and returns the matching results as an
      * unmodifiable list of instantiated objects. The table to query is
@@ -747,18 +770,33 @@ public class DynamoDBMapper {
      * @param queryExpression
      *            Details on how to run the query, including any filters to
      *            apply to limit the results.
+     * @param config
+     *            The configuration to use for this query, which overrides the
+     *            default provided at object construction.
      * @return An unmodifiable list of the objects constructed from the results
      *         of the query operation.
      *         
      * @see PaginatedQueryList        
      */
-    public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression) {
-        QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression);
+    public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {
+        config = mergeConfig(config);
+        
+        QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
 
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
         return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult);
     }
 
+    /**
+     * Evaluates the specified scan expression and returns the count of matching
+     * items, without returning any of the actual item data, using the default configuration.
+     * 
+     * @see DynamoDBMapper#count(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
+     */
+    public int count(Class<?> clazz, DynamoDBScanExpression scanExpression) {
+        return count(clazz, scanExpression, config);
+    }
+    
     /**
      * Evaluates the specified scan expression and returns the count of matching
      * items, without returning any of the actual item data.
@@ -770,11 +808,16 @@ public class DynamoDBMapper {
      *            The class mapped to a DynamoDB table.
      * @param scanExpression
      *            The parameters for running the scan.
+     * @param config
+     *            The configuration to use for this scan, which overrides the
+     *            default provided at object construction.
      * @return The count of matching items, without returning any of the actual
      *         item data.
      */
-    public int count(Class<?> clazz, DynamoDBScanExpression scanExpression) {
-        ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression);
+    public int count(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
+        config = mergeConfig(config);
+        
+        ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
         scanRequest.setCount(true);
 
         // Count scans can also be truncated for large datasets
@@ -789,20 +832,35 @@ public class DynamoDBMapper {
         return count;
     }
 
+
     /**
      * Evaluates the specified query expression and returns the count of matching
-     * items, without returning any of the actual item data.
-     *
+     * items, without returning any of the actual item data, using the default configuration.
+     * 
+     * @see DynamoDBMapper#count(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
+     */
+    public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression) {
+        return count(clazz, queryExpression, config);
+    }
+    
+    /**
+     * Evaluates the specified query expression and returns the count of
+     * matching items, without returning any of the actual item data.
+     * 
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param scanExpression
      *            The parameters for running the scan.
-     *
+     * @param config
+     *            The mapper configuration to use for the query, which overrides
+     *            the default provided at object construction.
      * @return The count of matching items, without returning any of the actual
      *         item data.
      */
-    public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression) {
-        QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression);
+    public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {        
+        config = mergeConfig(config);
+
+        QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
         queryRequest.setCount(true);
 
         // Count queries can also be truncated for large datasets
@@ -817,7 +875,17 @@ public class DynamoDBMapper {
         return count;
     }
 
-    private ScanRequest createScanRequestFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression) {
+    /**
+     * Merges the config object given with the one specified at construction and
+     * returns the result.
+     */
+    private DynamoDBMapperConfig mergeConfig(DynamoDBMapperConfig config) {
+        if ( config != this.config )
+            config = new DynamoDBMapperConfig(this.config, config);
+        return config;
+    }
+
+    private ScanRequest createScanRequestFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         ScanRequest scanRequest = new ScanRequest();
         scanRequest.setTableName(getTableName(clazz, config));
         scanRequest.setScanFilter(scanExpression.getScanFilter());
@@ -825,7 +893,7 @@ public class DynamoDBMapper {
         return scanRequest;
     }
 
-    private QueryRequest createQueryRequestFromExpression(Class<?> clazz, DynamoDBQueryExpression queryExpression) {
+    private QueryRequest createQueryRequestFromExpression(Class<?> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {
         QueryRequest queryRequest = new QueryRequest();
         queryRequest.setConsistentRead(queryExpression.isConsistentRead());
         queryRequest.setTableName(getTableName(clazz, config));

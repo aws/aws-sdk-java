@@ -16,8 +16,8 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The LoginProfile data type contains information about a password for a
- * user.
+ * The LoginProfile data type contains the user name and password create
+ * date for a user.
  * </p>
  * <p>
  * This data type is used as a response element in the actions

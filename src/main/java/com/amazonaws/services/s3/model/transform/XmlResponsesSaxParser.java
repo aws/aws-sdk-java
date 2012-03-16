@@ -342,8 +342,8 @@ public class XmlResponsesSaxParser {
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
-    
-    public BucketLifecycleConfigurationHandler parseBucketLifecycleConfigurationResponse(InputStream inputStream) 
+
+    public BucketLifecycleConfigurationHandler parseBucketLifecycleConfigurationResponse(InputStream inputStream)
     {
         BucketLifecycleConfigurationHandler handler = new BucketLifecycleConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
@@ -381,7 +381,7 @@ public class XmlResponsesSaxParser {
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
-    
+
     public DeleteObjectsHandler parseDeletedObjectsResult(InputStream inputStream) {
         DeleteObjectsHandler handler = new DeleteObjectsHandler();
         parseXmlInputStream(handler, inputStream);
@@ -944,7 +944,7 @@ public class XmlResponsesSaxParser {
     }
 
 
-    public class CopyObjectResultHandler extends DefaultHandler implements ServerSideEncryptionResult, ObjectExpirationResult {       
+    public class CopyObjectResultHandler extends DefaultHandler implements ServerSideEncryptionResult, ObjectExpirationResult {
 
         // Data items for successful copy
         private String etag = null;
@@ -953,7 +953,7 @@ public class XmlResponsesSaxParser {
         private String serverSideEncryption;
         private Date expirationTime;
         private String expirationTimeRuleId;
-        
+
         // Data items for failed copy
         private String errorCode = null;
         private String errorMessage = null;
@@ -1387,7 +1387,7 @@ public class XmlResponsesSaxParser {
 
         // Successful completion
         private CompleteMultipartUploadResult result;
-        
+
         public String getServerSideEncryption() {
             if ( result != null )
                 return result.getServerSideEncryption();
@@ -1408,7 +1408,7 @@ public class XmlResponsesSaxParser {
                 return result.getExpirationTime();
             return null;
         }
-        
+
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTime(java.util.Date)
          */
@@ -1416,7 +1416,7 @@ public class XmlResponsesSaxParser {
             if ( result != null )
                 result.setExpirationTime(expirationTime);
         }
-        
+
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#getExpirationTimeRuleId()
          */
@@ -1425,10 +1425,10 @@ public class XmlResponsesSaxParser {
                 return result.getExpirationTimeRuleId();
             return null;
         }
-        
+
         /**
          * @see com.amazonaws.services.s3.model.CompleteMultipartUploadResult#setExpirationTimeRuleId(java.lang.String)
-         */        
+         */
         public void setExpirationTimeRuleId(String expirationTimeRuleId) {
             if ( result != null )
                 result.setExpirationTimeRuleId(expirationTimeRuleId);
@@ -1950,7 +1950,7 @@ public class XmlResponsesSaxParser {
         Transfer-Encoding: chunked
         Connection: keep-alive
         Server: AmazonS3
-        
+
         <?xml version="1.0" encoding="UTF-8"?>
         <DeleteResult>
             <Deleted>
@@ -1962,7 +1962,7 @@ public class XmlResponsesSaxParser {
                <VersionId>Version</VersionId>
                <Code>Code</Code>
                <Message>Message</Message>
-            </Error> 
+            </Error>
             <Deleted>
                <Key>Key</Key>
                <DeleteMarker>true</DeleteMarker>
@@ -1972,21 +1972,21 @@ public class XmlResponsesSaxParser {
      */
     public class DeleteObjectsHandler extends DefaultHandler {
         private StringBuilder text;
-        
+
         private DeletedObject deletedObject = null;
         private DeleteError error = null;
         private List<DeletedObject> deletedObjects = new LinkedList<DeleteObjectsResult.DeletedObject>();
         private List<DeleteError> deleteErrors = new LinkedList<MultiObjectDeleteException.DeleteError>();
-    
+
         public DeleteObjectsResponse getDeleteObjectResult() {
             return new DeleteObjectsResponse(deletedObjects, deleteErrors);
         }
-    
+
         @Override
         public void startDocument() {
             text = new StringBuilder();
         }
-    
+
         @Override
         public void startElement(String uri, String name, String qName, Attributes attrs) {
             if ( name.equals("Deleted") ) {
@@ -1999,13 +1999,13 @@ public class XmlResponsesSaxParser {
             } else if ( name.equals("Message") ) {
             } else if ( name.equals("DeleteMarker") ) {
             } else if ( name.equals("DeleteMarkerVersionId") ) {
-            } else if ( name.equals("DeletedResult") ) {
+            } else if ( name.equals("DeleteResult") ) {
             } else {
                 log.warn("Unexpected tag: " + name);
             }
             text.setLength(0);
         }
-    
+
         @Override
         public void endElement(String uri, String name, String qName) throws SAXException {
             if ( name.equals("Deleted") ) {
@@ -2044,13 +2044,13 @@ public class XmlResponsesSaxParser {
                 }
             }
         }
-    
+
         @Override
         public void characters(char ch[], int start, int length) {
             this.text.append(ch, start, length);
         }
     }
-    
+
     /*
     HTTP/1.1 200 OK
     x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
@@ -2059,7 +2059,7 @@ public class XmlResponsesSaxParser {
     Content-Length: xxx
     Connection: keep-alive
     Server: AmazonS3
-    
+
     <LifecycleConfiguration>
         <Rule>
             <ID>Expire object after 10 days</ID>
@@ -2075,16 +2075,16 @@ public class XmlResponsesSaxParser {
         private StringBuilder text;
         private Rule rule;
         private List<Rule> rules = new LinkedList<Rule>();
-        
+
         public BucketLifecycleConfiguration getConfiguration() {
             return new BucketLifecycleConfiguration(rules);
         }
-        
+
         @Override
         public void startDocument() {
             text = new StringBuilder();
         }
-    
+
         @Override
         public void startElement(String uri, String name, String qName, Attributes attrs) {
             if ( name.equals("LifecycleConfiguration") ) {
@@ -2100,7 +2100,7 @@ public class XmlResponsesSaxParser {
             }
             text.setLength(0);
         }
-    
+
         @Override
         public void endElement(String uri, String name, String qName) throws SAXException {
             if ( name.equals("LifecycleConfiguration") ) {
@@ -2120,7 +2120,7 @@ public class XmlResponsesSaxParser {
                 log.warn("Unexpected tag: " + name);
             }
         }
-    
+
         @Override
         public void characters(char ch[], int start, int length) {
             this.text.append(ch, start, length);
