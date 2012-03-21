@@ -18,15 +18,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteItem(DeleteItemRequest) DeleteItem operation}.
  * <p>
- * Deletes a single item in a table by primary key. You can perform a
- * conditional delete operation that deletes the item if it exists, or if
- * it has an expected attribute value.
+ * Deletes a single item in a table by primary key.
+ * </p>
+ * <p>
+ * You can perform a conditional delete operation that deletes the item
+ * if it exists, or if it has an expected attribute value.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteItem(DeleteItemRequest)
  */
 public class DeleteItemRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table in which you want to delete an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
@@ -37,25 +49,29 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     private Key key;
 
     /**
-     * Designates an attribute for a conditional modification. The Expected
-     * parameter allows you to provide an attribute name, and whether or not
-     * Amazon DynamoDB should check to see if the attribute has a particular
-     * value before modifying it.
+     * Designates an attribute for a conditional modification. The
+     * <code>Expected</code> parameter allows you to provide an attribute
+     * name, and whether or not Amazon DynamoDB should check to see if the
+     * attribute has a particular value before modifying it.
      */
     private java.util.Map<String,ExpectedAttributeValue> expected;
 
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -73,7 +89,10 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName
+     * @param tableName The name of the table in which you want to delete an
+     * item. Allowed characters are <code>a-z</code>, <code>A-Z</code>,
+     * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
+     * and <code>.</code> (period).
      * @param key The primary key that uniquely identifies each item in a
      * table. A primary key can be a one attribute (hash) primary key or a
      * two attribute (hash-and-range) primary key.
@@ -86,33 +105,48 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table in which you want to delete an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table in which you want to delete an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to delete an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to delete an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to delete an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -120,7 +154,10 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to delete an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -178,15 +215,15 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Designates an attribute for a conditional modification. The Expected
-     * parameter allows you to provide an attribute name, and whether or not
-     * Amazon DynamoDB should check to see if the attribute has a particular
-     * value before modifying it.
+     * Designates an attribute for a conditional modification. The
+     * <code>Expected</code> parameter allows you to provide an attribute
+     * name, and whether or not Amazon DynamoDB should check to see if the
+     * attribute has a particular value before modifying it.
      *
-     * @return Designates an attribute for a conditional modification. The Expected
-     *         parameter allows you to provide an attribute name, and whether or not
-     *         Amazon DynamoDB should check to see if the attribute has a particular
-     *         value before modifying it.
+     * @return Designates an attribute for a conditional modification. The
+     *         <code>Expected</code> parameter allows you to provide an attribute
+     *         name, and whether or not Amazon DynamoDB should check to see if the
+     *         attribute has a particular value before modifying it.
      */
     public java.util.Map<String,ExpectedAttributeValue> getExpected() {
         
@@ -194,32 +231,32 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Designates an attribute for a conditional modification. The Expected
-     * parameter allows you to provide an attribute name, and whether or not
-     * Amazon DynamoDB should check to see if the attribute has a particular
-     * value before modifying it.
+     * Designates an attribute for a conditional modification. The
+     * <code>Expected</code> parameter allows you to provide an attribute
+     * name, and whether or not Amazon DynamoDB should check to see if the
+     * attribute has a particular value before modifying it.
      *
-     * @param expected Designates an attribute for a conditional modification. The Expected
-     *         parameter allows you to provide an attribute name, and whether or not
-     *         Amazon DynamoDB should check to see if the attribute has a particular
-     *         value before modifying it.
+     * @param expected Designates an attribute for a conditional modification. The
+     *         <code>Expected</code> parameter allows you to provide an attribute
+     *         name, and whether or not Amazon DynamoDB should check to see if the
+     *         attribute has a particular value before modifying it.
      */
     public void setExpected(java.util.Map<String,ExpectedAttributeValue> expected) {
         this.expected = expected;
     }
     
     /**
-     * Designates an attribute for a conditional modification. The Expected
-     * parameter allows you to provide an attribute name, and whether or not
-     * Amazon DynamoDB should check to see if the attribute has a particular
-     * value before modifying it.
+     * Designates an attribute for a conditional modification. The
+     * <code>Expected</code> parameter allows you to provide an attribute
+     * name, and whether or not Amazon DynamoDB should check to see if the
+     * attribute has a particular value before modifying it.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param expected Designates an attribute for a conditional modification. The Expected
-     *         parameter allows you to provide an attribute name, and whether or not
-     *         Amazon DynamoDB should check to see if the attribute has a particular
-     *         value before modifying it.
+     * @param expected Designates an attribute for a conditional modification. The
+     *         <code>Expected</code> parameter allows you to provide an attribute
+     *         name, and whether or not Amazon DynamoDB should check to see if the
+     *         attribute has a particular value before modifying it.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -231,31 +268,39 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @return Use this parameter if you want to get the attribute name-value pairs
-     *         before or after they are modified. For put operations, the possible
-     *         parameter values are NONE (default) or ALL_OLD. For update operations,
-     *         the possible parameter values are NONE (default) or ALL_OLD,
-     *         UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     *         ALL_OLD : Returns the attributes of the item as they were before the
-     *         operation. UPDATED_OLD : Returns the values of the updated attributes,
-     *         only, as they were before the operation. ALL_NEW : Returns all the
-     *         attributes and their new values after the operation. UPDATED_NEW :
-     *         Returns the values of the updated attributes, only, as they are after
-     *         the operation.
+     *         before or after they are modified. For <code>PUT</code> operations,
+     *         the possible parameter values are <code>NONE</code> (default) or
+     *         <code>ALL_OLD</code>. For update operations, the possible parameter
+     *         values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     *         <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     *         <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     *         returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     *         item as they were before the operation.</li>
+     *         <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     *         attributes, only, as they were before the operation.</li>
+     *         <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     *         values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     *         the values of the updated attributes, only, as they are after the
+     *         operation.</li> </ul>
      *
      * @see ReturnValue
      */
@@ -265,31 +310,39 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use this parameter if you want to get the attribute name-value pairs
-     *         before or after they are modified. For put operations, the possible
-     *         parameter values are NONE (default) or ALL_OLD. For update operations,
-     *         the possible parameter values are NONE (default) or ALL_OLD,
-     *         UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     *         ALL_OLD : Returns the attributes of the item as they were before the
-     *         operation. UPDATED_OLD : Returns the values of the updated attributes,
-     *         only, as they were before the operation. ALL_NEW : Returns all the
-     *         attributes and their new values after the operation. UPDATED_NEW :
-     *         Returns the values of the updated attributes, only, as they are after
-     *         the operation.
+     *         before or after they are modified. For <code>PUT</code> operations,
+     *         the possible parameter values are <code>NONE</code> (default) or
+     *         <code>ALL_OLD</code>. For update operations, the possible parameter
+     *         values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     *         <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     *         <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     *         returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     *         item as they were before the operation.</li>
+     *         <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     *         attributes, only, as they were before the operation.</li>
+     *         <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     *         values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     *         the values of the updated attributes, only, as they are after the
+     *         operation.</li> </ul>
      *
      * @see ReturnValue
      */
@@ -299,16 +352,20 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -316,16 +373,20 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use this parameter if you want to get the attribute name-value pairs
-     *         before or after they are modified. For put operations, the possible
-     *         parameter values are NONE (default) or ALL_OLD. For update operations,
-     *         the possible parameter values are NONE (default) or ALL_OLD,
-     *         UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     *         ALL_OLD : Returns the attributes of the item as they were before the
-     *         operation. UPDATED_OLD : Returns the values of the updated attributes,
-     *         only, as they were before the operation. ALL_NEW : Returns all the
-     *         attributes and their new values after the operation. UPDATED_NEW :
-     *         Returns the values of the updated attributes, only, as they are after
-     *         the operation.
+     *         before or after they are modified. For <code>PUT</code> operations,
+     *         the possible parameter values are <code>NONE</code> (default) or
+     *         <code>ALL_OLD</code>. For update operations, the possible parameter
+     *         values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     *         <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     *         <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     *         returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     *         item as they were before the operation.</li>
+     *         <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     *         attributes, only, as they were before the operation.</li>
+     *         <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     *         values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     *         the values of the updated attributes, only, as they are after the
+     *         operation.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -340,31 +401,39 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use this parameter if you want to get the attribute name-value pairs
-     *         before or after they are modified. For put operations, the possible
-     *         parameter values are NONE (default) or ALL_OLD. For update operations,
-     *         the possible parameter values are NONE (default) or ALL_OLD,
-     *         UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     *         ALL_OLD : Returns the attributes of the item as they were before the
-     *         operation. UPDATED_OLD : Returns the values of the updated attributes,
-     *         only, as they were before the operation. ALL_NEW : Returns all the
-     *         attributes and their new values after the operation. UPDATED_NEW :
-     *         Returns the values of the updated attributes, only, as they are after
-     *         the operation.
+     *         before or after they are modified. For <code>PUT</code> operations,
+     *         the possible parameter values are <code>NONE</code> (default) or
+     *         <code>ALL_OLD</code>. For update operations, the possible parameter
+     *         values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     *         <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     *         <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     *         returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     *         item as they were before the operation.</li>
+     *         <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     *         attributes, only, as they were before the operation.</li>
+     *         <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     *         values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     *         the values of the updated attributes, only, as they are after the
+     *         operation.</li> </ul>
      *
      * @see ReturnValue
      */
@@ -374,16 +443,20 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     
     /**
      * Use this parameter if you want to get the attribute name-value pairs
-     * before or after they are modified. For put operations, the possible
-     * parameter values are NONE (default) or ALL_OLD. For update operations,
-     * the possible parameter values are NONE (default) or ALL_OLD,
-     * UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     * ALL_OLD : Returns the attributes of the item as they were before the
-     * operation. UPDATED_OLD : Returns the values of the updated attributes,
-     * only, as they were before the operation. ALL_NEW : Returns all the
-     * attributes and their new values after the operation. UPDATED_NEW :
-     * Returns the values of the updated attributes, only, as they are after
-     * the operation.
+     * before or after they are modified. For <code>PUT</code> operations,
+     * the possible parameter values are <code>NONE</code> (default) or
+     * <code>ALL_OLD</code>. For update operations, the possible parameter
+     * values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     * <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     * <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     * returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     * item as they were before the operation.</li>
+     * <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     * attributes, only, as they were before the operation.</li>
+     * <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     * values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     * the values of the updated attributes, only, as they are after the
+     * operation.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -391,16 +464,20 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use this parameter if you want to get the attribute name-value pairs
-     *         before or after they are modified. For put operations, the possible
-     *         parameter values are NONE (default) or ALL_OLD. For update operations,
-     *         the possible parameter values are NONE (default) or ALL_OLD,
-     *         UPDATED_OLD, ALL_NEW or UPDATED_NEW. NONE : Nothing is returned.
-     *         ALL_OLD : Returns the attributes of the item as they were before the
-     *         operation. UPDATED_OLD : Returns the values of the updated attributes,
-     *         only, as they were before the operation. ALL_NEW : Returns all the
-     *         attributes and their new values after the operation. UPDATED_NEW :
-     *         Returns the values of the updated attributes, only, as they are after
-     *         the operation.
+     *         before or after they are modified. For <code>PUT</code> operations,
+     *         the possible parameter values are <code>NONE</code> (default) or
+     *         <code>ALL_OLD</code>. For update operations, the possible parameter
+     *         values are <code>NONE</code> (default) or <code>ALL_OLD</code>,
+     *         <code>UPDATED_OLD</code>, <code>ALL_NEW</code> or
+     *         <code>UPDATED_NEW</code>. <ul> <li><code>NONE</code>: Nothing is
+     *         returned.</li> <li><code>ALL_OLD</code>: Returns the attributes of the
+     *         item as they were before the operation.</li>
+     *         <li><code>UPDATED_OLD</code>: Returns the values of the updated
+     *         attributes, only, as they were before the operation.</li>
+     *         <li><code>ALL_NEW</code>: Returns all the attributes and their new
+     *         values after the operation.</li> <li><code>UPDATED_NEW</code>: Returns
+     *         the values of the updated attributes, only, as they are after the
+     *         operation.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

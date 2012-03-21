@@ -20,10 +20,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Returns events related to DB Instances, DB Security Groups, DB
  * Snapshots and DB Parameter Groups for the past 14 days. Events
- * specific to a particular DB Instance, database security group,
- * database snapshot or database parameter group can be obtained by
- * providing the name as a parameter. By default, the past hour of events
- * are returned.
+ * specific to a particular DB Instance, DB Security Group, database
+ * snapshot or DB Parameter Group can be obtained by providing the name
+ * as a parameter. By default, the past hour of events are returned.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)
@@ -83,10 +82,9 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous DescribeEvents request. If
+     * this parameter is specified, the response includes only records beyond
+     * the marker, up to the value specified by <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -468,47 +466,41 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous DescribeEvents request. If
+     * this parameter is specified, the response includes only records beyond
+     * the marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional marker provided in the previous DescribeEvents request. If
+     *         this parameter is specified, the response includes only records beyond
+     *         the marker, up to the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous DescribeEvents request. If
+     * this parameter is specified, the response includes only records beyond
+     * the marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker provided in the previous DescribeEvents request. If
+     *         this parameter is specified, the response includes only records beyond
+     *         the marker, up to the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous DescribeEvents request. If
+     * this parameter is specified, the response includes only records beyond
+     * the marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker provided in the previous DescribeEvents request. If
+     *         this parameter is specified, the response includes only records beyond
+     *         the marker, up to the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

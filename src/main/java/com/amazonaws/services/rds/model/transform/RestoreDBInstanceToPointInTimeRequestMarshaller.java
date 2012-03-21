@@ -38,7 +38,7 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
 
         Request<RestoreDBInstanceToPointInTimeRequest> request = new DefaultRequest<RestoreDBInstanceToPointInTimeRequest>(restoreDBInstanceToPointInTimeRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceToPointInTime");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier() != null) {
             request.addParameter("SourceDBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getSourceDBInstanceIdentifier()));
@@ -60,6 +60,9 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         }
         if (restoreDBInstanceToPointInTimeRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getAvailabilityZone()));
+        }
+        if (restoreDBInstanceToPointInTimeRequest.getDBSubnetGroupName() != null) {
+            request.addParameter("DBSubnetGroupName", StringUtils.fromString(restoreDBInstanceToPointInTimeRequest.getDBSubnetGroupName()));
         }
         if (restoreDBInstanceToPointInTimeRequest.isMultiAZ() != null) {
             request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isMultiAZ()));

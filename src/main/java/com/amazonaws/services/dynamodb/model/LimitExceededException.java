@@ -19,7 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * This exception is thrown when the subscriber exceeded the limits on
- * the number of objects or operations
+ * the number of objects or operations.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

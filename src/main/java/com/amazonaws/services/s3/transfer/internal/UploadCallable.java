@@ -39,6 +39,7 @@ import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.transfer.TransferManager;
 import com.amazonaws.services.s3.transfer.TransferManagerConfiguration;
+import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 public class UploadCallable implements Callable<UploadResult> {
@@ -46,19 +47,21 @@ public class UploadCallable implements Callable<UploadResult> {
     private final ExecutorService threadPool;
     private final PutObjectRequest putObjectRequest;
     private String multipartUploadId;
+    private final UploadImpl upload;
 
     private static final Log log = LogFactory.getLog(UploadCallable.class);
     private final TransferManagerConfiguration configuration;
     private final ProgressListenerChain progressListenerChain;
     private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();
 
-    public UploadCallable(TransferManager transferManager, ExecutorService threadPool, PutObjectRequest putObjectRequest, ProgressListenerChain progressListenerChain) {
+    public UploadCallable(TransferManager transferManager, ExecutorService threadPool, UploadImpl upload, PutObjectRequest putObjectRequest, ProgressListenerChain progressListenerChain) {
         this.s3 = transferManager.getAmazonS3Client();
         this.configuration = transferManager.getConfiguration();
 
         this.threadPool = threadPool;
         this.putObjectRequest = putObjectRequest;
         this.progressListenerChain = progressListenerChain;
+        this.upload = upload;
     }
 
     List<Future<PartETag>> getFutures() {
@@ -78,8 +81,9 @@ public class UploadCallable implements Callable<UploadResult> {
     }
 
     public UploadResult call() throws Exception {
-        if (isMultipartUpload()) {
-        	fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
+        upload.setState(TransferState.InProgress);
+        if ( isMultipartUpload() ) {
+            fireProgressEvent(ProgressEvent.STARTED_EVENT_CODE);
             return uploadInParts();
         } else {
             return uploadInOneChunk();

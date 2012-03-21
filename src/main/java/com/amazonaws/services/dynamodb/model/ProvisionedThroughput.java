@@ -17,22 +17,24 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * <p>
  * Provisioned throughput reserves the required read and write resources
- * for your table in terms of ReadCapacityUnits and WriteCapacityUnits.
- * Values for provisioned throughput depend upon your expected read/write
- * rates, item size, and consistency. Provide the expected number of read
- * and write operations, assuming an item size of 1KB and strictly
- * consistent reads. For 2KB item size, double the value, 3KB, triple the
- * value, etc. Eventually consistent reads consume half the resources of
- * strictly consistent reads.
+ * for your table in terms of <code>ReadCapacityUnits</code> and
+ * <code>WriteCapacityUnits</code> . Values for provisioned throughput
+ * depend upon your expected read/write rates, item size, and
+ * consistency. Provide the expected number of read and write operations,
+ * assuming an item size of 1k and strictly consistent reads. For 2k item
+ * size, double the value. For 3k, triple the value, etc.
+ * Eventually-consistent reads consume half the resources of strictly
+ * consistent reads.
  * </p>
  */
 public class ProvisionedThroughput {
 
     /**
-     * ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     * Eventually consistent reads only require half the ReadCapacityUnits of
-     * stirctly consistent reads.
+     * <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     * require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     * reads.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -40,8 +42,9 @@ public class ProvisionedThroughput {
     private Long readCapacityUnits;
 
     /**
-     * WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -49,56 +52,62 @@ public class ProvisionedThroughput {
     private Long writeCapacityUnits;
 
     /**
-     * ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     * Eventually consistent reads only require half the ReadCapacityUnits of
-     * stirctly consistent reads.
+     * <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     * require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     * reads.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @return ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     *         Eventually consistent reads only require half the ReadCapacityUnits of
-     *         stirctly consistent reads.
+     * @return <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     *         require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     *         reads.
      */
     public Long getReadCapacityUnits() {
         return readCapacityUnits;
     }
     
     /**
-     * ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     * Eventually consistent reads only require half the ReadCapacityUnits of
-     * stirctly consistent reads.
+     * <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     * require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     * reads.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param readCapacityUnits ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     *         Eventually consistent reads only require half the ReadCapacityUnits of
-     *         stirctly consistent reads.
+     * @param readCapacityUnits <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     *         require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     *         reads.
      */
     public void setReadCapacityUnits(Long readCapacityUnits) {
         this.readCapacityUnits = readCapacityUnits;
     }
     
     /**
-     * ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     * Eventually consistent reads only require half the ReadCapacityUnits of
-     * stirctly consistent reads.
+     * <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     * require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     * reads.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param readCapacityUnits ReadCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the ReadCapacityUnits.
-     *         Eventually consistent reads only require half the ReadCapacityUnits of
-     *         stirctly consistent reads.
+     * @param readCapacityUnits <code>ReadCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>ReadCapacityUnits</code>. Eventually-consistent reads only
+     *         require half the <code>ReadCapacityUnits</code> of stirctly consistent
+     *         reads.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,44 +119,50 @@ public class ProvisionedThroughput {
     
     
     /**
-     * WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @return WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * @return <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>WriteCapacityUnits</code>.
      */
     public Long getWriteCapacityUnits() {
         return writeCapacityUnits;
     }
     
     /**
-     * WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param writeCapacityUnits WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * @param writeCapacityUnits <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>WriteCapacityUnits</code>.
      */
     public void setWriteCapacityUnits(Long writeCapacityUnits) {
         this.writeCapacityUnits = writeCapacityUnits;
     }
     
     /**
-     * WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     * items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     * reads, assuming items of 1k. 2k items require twice the
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
-     * @param writeCapacityUnits WriteCapacityUnits are in terms of strictly consistent reads, assuming
-     *         items of 1KB. 2KB items require twice the WriteCapacityUnits.
+     * @param writeCapacityUnits <code>WriteCapacityUnits</code> are in terms of strictly consistent
+     *         reads, assuming items of 1k. 2k items require twice the
+     *         <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

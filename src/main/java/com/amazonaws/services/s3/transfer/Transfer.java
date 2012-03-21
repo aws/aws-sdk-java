@@ -14,15 +14,9 @@
  */
 package com.amazonaws.services.s3.transfer;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.model.ProgressListener;
-import com.amazonaws.services.s3.transfer.internal.ProgressListenerChain;
-import com.amazonaws.services.s3.transfer.internal.TransferMonitor;
-import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
  * Represents an asynchronous upload to or download from Amazon S3.
@@ -36,7 +30,7 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  * @see TransferManager#upload(String, String, java.io.File)
  * @see TransferManager#upload(com.amazonaws.services.s3.model.PutObjectRequest)
  */
-public abstract class Transfer {
+public interface Transfer {
 
     /**
      * Enumeration of the possible transfer states.
@@ -58,25 +52,6 @@ public abstract class Transfer {
         Failed;
     }
 
-    /** The current state of this transfer. */
-    protected volatile TransferState state = TransferState.Waiting;
-
-    protected TransferMonitor monitor;
-    
-    /** The progress of this transfer. */
-    private final TransferProgress transferProgress;
-
-    private final String description;
-
-    /** Hook for adding/removing more progress listeners. */
-    protected ProgressListenerChain progressListenerChain;
-
-    Transfer(String description, TransferProgress transferProgress, ProgressListenerChain progressListenerChain) {
-        this.description = description;
-        this.progressListenerChain = progressListenerChain;
-        this.transferProgress = transferProgress;
-    }
-
     /**
      * Returns whether or not the transfer is finished (i.e. completed successfully,
      * failed, or was canceled).
@@ -84,11 +59,7 @@ public abstract class Transfer {
      * @return Returns <code>true</code> if this transfer is finished (i.e. completed successfully,
      *         failed, or was canceled).  Returns <code>false</code> if otherwise.
      */
-    public synchronized boolean isDone() {
-        return (state == TransferState.Failed ||
-                state == TransferState.Completed ||
-                state == TransferState.Canceled);
-    }
+    public boolean isDone();
 
     /**
      * Waits for this transfer to complete. This is a blocking call; the current
@@ -105,18 +76,8 @@ public abstract class Transfer {
      *             to complete.
      */
     public void waitForCompletion()
-            throws AmazonClientException, AmazonServiceException, InterruptedException {
-        try {
-            UploadResult result = null;
-            while (!monitor.isDone() || result == null) {
-                Future<?> f = monitor.getFuture();
-                result = (UploadResult)f.get();
-            }            
-        } catch (ExecutionException e) {
-            rethrowExecutionException(e);
-        }
-    }
-
+            throws AmazonClientException, AmazonServiceException, InterruptedException;
+    
     /**
      * Waits for this transfer to finish and returns any error that occurred, or
      * returns <code>null</code> if no errors occurred.
@@ -131,36 +92,21 @@ public abstract class Transfer {
      *             If this thread is interrupted while waiting for the transfer
      *             to complete.
      */
-    public AmazonClientException waitForException() throws InterruptedException {
-        try {
-            
-            while (!monitor.isDone()) {
-                monitor.getFuture().get();
-            }
-            monitor.getFuture().get();
-            return null;
-        } catch (ExecutionException e) {
-            return unwrapExecutionException(e);
-        }
-    }
-
+    public AmazonClientException waitForException() throws InterruptedException;
+    
     /**
      * Returns a human-readable description of this transfer.
      *
      * @return A human-readable description of this transfer.
      */
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription();
 
     /**
      * Returns the current state of this transfer.
      *
      * @return The current state of this transfer.
      */
-    public synchronized TransferState getState() {
-        return state;
-    }
+    public TransferState getState();
 
     /**
      * Adds the specified progress listener to the list of listeners
@@ -169,9 +115,7 @@ public abstract class Transfer {
      * @param listener
      *            The progress listener to add.
      */
-    public synchronized void addProgressListener(ProgressListener listener) {
-        progressListenerChain.addProgressListener(listener);
-    }
+    public void addProgressListener(ProgressListener listener);
 
     /**
      * Removes the specified progress listener from the list of progress
@@ -180,50 +124,12 @@ public abstract class Transfer {
      * @param listener
      *            The progress listener to remove.
      */
-    public synchronized void removeProgressListener(ProgressListener listener) {
-        progressListenerChain.removeProgressListener(listener);
-    }
+    public void removeProgressListener(ProgressListener listener);
 
     /**
      * Returns progress information about this transfer.
      *
      * @return The progress information about this transfer.
      */
-    public TransferProgress getProgress() {
-        return transferProgress;
-    }
-
-
-    /*
-     * Non-Public Interface
-     */
-
-    /**
-     * Examines the cause of the specified ExecutionException and either
-     * rethrows it directly (if it's a type of AmazonClientException) or wraps
-     * it in an AmazonClientException and rethrows it.
-     *
-     * @param e
-     *            The execution exception to examine.
-     */
-    protected void rethrowExecutionException(ExecutionException e) {
-        throw unwrapExecutionException(e);
-    }
-
-    /**
-     * Unwraps the root exception that caused the specified ExecutionException
-     * and returns it. If it was not an instance of AmazonClientException, it is
-     * wrapped as an AmazonClientException.
-     *
-     * @param e
-     *            The ExecutionException to unwrap.
-     *
-     * @return The root exception that caused the specified ExecutionException.
-     */
-    protected AmazonClientException unwrapExecutionException(ExecutionException e) {
-        Throwable t = e.getCause();
-        if (t instanceof AmazonClientException) return (AmazonClientException)t;
-        return new AmazonClientException("Unable to complete transfer: " + t.getMessage(), t);
-    }
-
+    public TransferProgress getProgress();
 }

@@ -42,7 +42,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * this is the original user name.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -92,7 +92,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * this is the original user name.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @return Name of the user to update. If you're changing the name of the user,
@@ -107,7 +107,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * this is the original user name.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to update. If you're changing the name of the user,
@@ -124,7 +124,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user to update. If you're changing the name of the user,

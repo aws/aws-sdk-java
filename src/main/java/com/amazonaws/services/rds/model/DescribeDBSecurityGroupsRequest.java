@@ -46,7 +46,7 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeDBInstances
+     * An optional marker provided in the previous DescribeDBSecurityGroups
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
@@ -146,12 +146,12 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
+     * An optional marker provided in the previous DescribeDBSecurityGroups
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      *
-     * @return An optional marker provided in the previous DescribeDBInstances
+     * @return An optional marker provided in the previous DescribeDBSecurityGroups
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.
@@ -161,12 +161,12 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
+     * An optional marker provided in the previous DescribeDBSecurityGroups
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
+     * @param marker An optional marker provided in the previous DescribeDBSecurityGroups
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.
@@ -176,14 +176,14 @@ public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
+     * An optional marker provided in the previous DescribeDBSecurityGroups
      * request. If this parameter is specified, the response includes only
      * records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
+     * @param marker An optional marker provided in the previous DescribeDBSecurityGroups
      *         request. If this parameter is specified, the response includes only
      *         records beyond the marker, up to the value specified by
      *         <code>MaxRecords</code>.

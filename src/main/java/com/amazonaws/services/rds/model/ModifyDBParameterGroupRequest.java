@@ -23,17 +23,22 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
  * modified in a single request.
  * </p>
+ * <p>
+ * <b>NOTE:</b> The apply-immediate method can only be used for dynamic
+ * parameters; the pending-reboot method can be used for either dynamic
+ * or static parameters.
+ * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest)
  */
 public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the database parameter group. <p>Constraints: <ul>
-     * <li>Must be the name of an existing database parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     * must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      */
     private String dBParameterGroupName;
 
@@ -60,11 +65,11 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBParameterGroupName The name of the database parameter group.
-     * <p>Constraints: <ul> <li>Must be the name of an existing database
-     * parameter group</li> <li>Must be 1 to 255 alphanumeric characters</li>
-     * <li>First character must be a letter</li> <li>Cannot end with a hyphen
-     * or contain two consecutive hyphens</li> </ul>
+     * @param dBParameterGroupName The name of the DB Parameter Group.
+     * <p>Constraints: <ul> <li>Must be the name of an existing DB Parameter
+     * Group</li> <li>Must be 1 to 255 alphanumeric characters</li> <li>First
+     * character must be a letter</li> <li>Cannot end with a hyphen or
+     * contain two consecutive hyphens</li> </ul>
      * @param parameters An array of parameter names, values, and the apply
      * method for the parameter update. At least one parameter name, value,
      * and apply method must be supplied; subsequent arguments are optional.
@@ -83,53 +88,53 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of the database parameter group. <p>Constraints: <ul>
-     * <li>Must be the name of an existing database parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     * must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      *
-     * @return The name of the database parameter group. <p>Constraints: <ul>
-     *         <li>Must be the name of an existing database parameter group</li>
-     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
-     *         consecutive hyphens</li> </ul>
+     * @return The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      */
     public String getDBParameterGroupName() {
         return dBParameterGroupName;
     }
     
     /**
-     * The name of the database parameter group. <p>Constraints: <ul>
-     * <li>Must be the name of an existing database parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     * must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      *
-     * @param dBParameterGroupName The name of the database parameter group. <p>Constraints: <ul>
-     *         <li>Must be the name of an existing database parameter group</li>
-     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
-     *         consecutive hyphens</li> </ul>
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      */
     public void setDBParameterGroupName(String dBParameterGroupName) {
         this.dBParameterGroupName = dBParameterGroupName;
     }
     
     /**
-     * The name of the database parameter group. <p>Constraints: <ul>
-     * <li>Must be the name of an existing database parameter group</li>
-     * <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     * must be a letter</li> <li>Cannot end with a hyphen or contain two
-     * consecutive hyphens</li> </ul>
+     * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     * the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     * alphanumeric characters</li> <li>First character must be a letter</li>
+     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupName The name of the database parameter group. <p>Constraints: <ul>
-     *         <li>Must be the name of an existing database parameter group</li>
-     *         <li>Must be 1 to 255 alphanumeric characters</li> <li>First character
-     *         must be a letter</li> <li>Cannot end with a hyphen or contain two
-     *         consecutive hyphens</li> </ul>
+     * @param dBParameterGroupName The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be
+     *         the name of an existing DB Parameter Group</li> <li>Must be 1 to 255
+     *         alphanumeric characters</li> <li>First character must be a letter</li>
+     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

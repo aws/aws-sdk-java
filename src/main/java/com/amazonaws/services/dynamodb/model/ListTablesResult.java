@@ -23,9 +23,9 @@ public class ListTablesResult {
 
     /**
      * The name of the last table in the current list. Use this value as the
-     * ExclusiveStartTableName in a new request to continue the list until
-     * all the table names are returned. If this value is null, all table
-     * names have been returned.
+     * <code>ExclusiveStartTableName</code> in a new request to continue the
+     * list until all the table names are returned. If this value is null,
+     * all table names have been returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
@@ -101,18 +101,18 @@ public class ListTablesResult {
     
     /**
      * The name of the last table in the current list. Use this value as the
-     * ExclusiveStartTableName in a new request to continue the list until
-     * all the table names are returned. If this value is null, all table
-     * names have been returned.
+     * <code>ExclusiveStartTableName</code> in a new request to continue the
+     * list until all the table names are returned. If this value is null,
+     * all table names have been returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @return The name of the last table in the current list. Use this value as the
-     *         ExclusiveStartTableName in a new request to continue the list until
-     *         all the table names are returned. If this value is null, all table
-     *         names have been returned.
+     *         <code>ExclusiveStartTableName</code> in a new request to continue the
+     *         list until all the table names are returned. If this value is null,
+     *         all table names have been returned.
      */
     public String getLastEvaluatedTableName() {
         return lastEvaluatedTableName;
@@ -120,18 +120,18 @@ public class ListTablesResult {
     
     /**
      * The name of the last table in the current list. Use this value as the
-     * ExclusiveStartTableName in a new request to continue the list until
-     * all the table names are returned. If this value is null, all table
-     * names have been returned.
+     * <code>ExclusiveStartTableName</code> in a new request to continue the
+     * list until all the table names are returned. If this value is null,
+     * all table names have been returned.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param lastEvaluatedTableName The name of the last table in the current list. Use this value as the
-     *         ExclusiveStartTableName in a new request to continue the list until
-     *         all the table names are returned. If this value is null, all table
-     *         names have been returned.
+     *         <code>ExclusiveStartTableName</code> in a new request to continue the
+     *         list until all the table names are returned. If this value is null,
+     *         all table names have been returned.
      */
     public void setLastEvaluatedTableName(String lastEvaluatedTableName) {
         this.lastEvaluatedTableName = lastEvaluatedTableName;
@@ -139,9 +139,9 @@ public class ListTablesResult {
     
     /**
      * The name of the last table in the current list. Use this value as the
-     * ExclusiveStartTableName in a new request to continue the list until
-     * all the table names are returned. If this value is null, all table
-     * names have been returned.
+     * <code>ExclusiveStartTableName</code> in a new request to continue the
+     * list until all the table names are returned. If this value is null,
+     * all table names have been returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -150,9 +150,9 @@ public class ListTablesResult {
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
      * @param lastEvaluatedTableName The name of the last table in the current list. Use this value as the
-     *         ExclusiveStartTableName in a new request to continue the list until
-     *         all the table names are returned. If this value is null, all table
-     *         names have been returned.
+     *         <code>ExclusiveStartTableName</code> in a new request to continue the
+     *         list until all the table names are returned. If this value is null,
+     *         all table names have been returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

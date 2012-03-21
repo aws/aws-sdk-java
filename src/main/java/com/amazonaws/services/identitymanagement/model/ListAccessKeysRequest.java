@@ -46,7 +46,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
      * Name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      */
     private String userName;
@@ -84,7 +84,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
      * Name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @return Name of the user.
@@ -97,7 +97,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
      * Name of the user.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user.
@@ -112,7 +112,7 @@ public class ListAccessKeysRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 64<br/>
+     * <b>Length: </b>1 - 128<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
      * @param userName Name of the user.

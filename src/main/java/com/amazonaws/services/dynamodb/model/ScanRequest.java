@@ -18,21 +18,33 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
  * <p>
- * The Scan operation returns one or more items and its attributes by
- * performing a full scan of a table. Limit the returned results by
- * specifying a filter.
+ * Retrieves one or more items and its attributes by performing a full
+ * scan of a table.
+ * </p>
+ * <p>
+ * Provide a <code>ScanFilter</code> to get more specific results.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest)
  */
 public class ScanRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table in which you want to scan. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -42,12 +54,12 @@ public class ScanRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while scanning the table, it stops the scan and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the scan. Also, if the scanned data
-     * set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     * the scan and returns the matching values up to the limit, and a
-     * LastEvaluatedKey to apply in a subsequent operation to continue the
-     * scan.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the scan. Also, if the
+     * scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     * limit, it stops the scan and returns the matching values up to the
+     * limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     * operation to continue the scan.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -55,11 +67,12 @@ public class ScanRequest extends AmazonWebServiceRequest {
     private Integer limit;
 
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items for
-     * the Scan operation, even if the operation has no matching items for
-     * the assigned filter. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items for the <code>Scan</code> operation, even if the operation has
+     * no matching items for the assigned filter. Do not set
+     * <code>Count</code> to <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      */
     private Boolean count;
 
@@ -72,9 +85,9 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * Primary key of the item from which to continue an earlier scan. An
      * earlier scan might provide this value if that scan operation was
      * interrupted before scanning the entire table; either because of the
-     * result set size or the Limit parameter. The LastEvaluatedKey can be
-     * passed back in a new scan request to continue the operation from that
-     * point.
+     * result set size or the <code>Limit</code> parameter. The
+     * <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     * to continue the operation from that point.
      */
     private Key exclusiveStartKey;
 
@@ -89,7 +102,10 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName
+     * @param tableName The name of the table in which you want to scan.
+     * Allowed characters are <code>a-z</code>, <code>A-Z</code>,
+     * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
+     * and <code>.</code> (period).
      */
     public ScanRequest(String tableName) {
         this.tableName = tableName;
@@ -98,33 +114,48 @@ public class ScanRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table in which you want to scan. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table in which you want to scan. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to scan. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to scan. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to scan. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -132,7 +163,10 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to scan. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -144,16 +178,16 @@ public class ScanRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @return List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public java.util.List<String> getAttributesToGet() {
         
@@ -161,16 +195,16 @@ public class ScanRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -184,18 +218,18 @@ public class ScanRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -209,18 +243,18 @@ public class ScanRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -240,24 +274,24 @@ public class ScanRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while scanning the table, it stops the scan and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the scan. Also, if the scanned data
-     * set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     * the scan and returns the matching values up to the limit, and a
-     * LastEvaluatedKey to apply in a subsequent operation to continue the
-     * scan.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the scan. Also, if the
+     * scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     * limit, it stops the scan and returns the matching values up to the
+     * limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     * operation to continue the scan.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @return The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while scanning the table, it stops the scan and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the scan. Also, if the scanned data
-     *         set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     *         the scan and returns the matching values up to the limit, and a
-     *         LastEvaluatedKey to apply in a subsequent operation to continue the
-     *         scan.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the scan. Also, if the
+     *         scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     *         limit, it stops the scan and returns the matching values up to the
+     *         limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     *         operation to continue the scan.
      */
     public Integer getLimit() {
         return limit;
@@ -266,24 +300,24 @@ public class ScanRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while scanning the table, it stops the scan and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the scan. Also, if the scanned data
-     * set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     * the scan and returns the matching values up to the limit, and a
-     * LastEvaluatedKey to apply in a subsequent operation to continue the
-     * scan.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the scan. Also, if the
+     * scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     * limit, it stops the scan and returns the matching values up to the
+     * limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     * operation to continue the scan.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @param limit The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while scanning the table, it stops the scan and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the scan. Also, if the scanned data
-     *         set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     *         the scan and returns the matching values up to the limit, and a
-     *         LastEvaluatedKey to apply in a subsequent operation to continue the
-     *         scan.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the scan. Also, if the
+     *         scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     *         limit, it stops the scan and returns the matching values up to the
+     *         limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     *         operation to continue the scan.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -292,12 +326,12 @@ public class ScanRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while scanning the table, it stops the scan and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the scan. Also, if the scanned data
-     * set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     * the scan and returns the matching values up to the limit, and a
-     * LastEvaluatedKey to apply in a subsequent operation to continue the
-     * scan.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the scan. Also, if the
+     * scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     * limit, it stops the scan and returns the matching values up to the
+     * limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     * operation to continue the scan.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -306,12 +340,12 @@ public class ScanRequest extends AmazonWebServiceRequest {
      *
      * @param limit The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while scanning the table, it stops the scan and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the scan. Also, if the scanned data
-     *         set size exceeds 1MB before Amazon DynamoDB hits this limit, it stops
-     *         the scan and returns the matching values up to the limit, and a
-     *         LastEvaluatedKey to apply in a subsequent operation to continue the
-     *         scan.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the scan. Also, if the
+     *         scanned data set size exceeds 1 MB before Amazon DynamoDB hits this
+     *         limit, it stops the scan and returns the matching values up to the
+     *         limit, and a <code>LastEvaluatedKey</code> to apply in a subsequent
+     *         operation to continue the scan.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -323,53 +357,59 @@ public class ScanRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items for
-     * the Scan operation, even if the operation has no matching items for
-     * the assigned filter. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items for the <code>Scan</code> operation, even if the operation has
+     * no matching items for the assigned filter. Do not set
+     * <code>Count</code> to <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @return If set to true, Amazon DynamoDB returns a total number of items for
-     *         the Scan operation, even if the operation has no matching items for
-     *         the assigned filter. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @return If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items for the <code>Scan</code> operation, even if the operation has
+     *         no matching items for the assigned filter. Do not set
+     *         <code>Count</code> to <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public Boolean isCount() {
         return count;
     }
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items for
-     * the Scan operation, even if the operation has no matching items for
-     * the assigned filter. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items for the <code>Scan</code> operation, even if the operation has
+     * no matching items for the assigned filter. Do not set
+     * <code>Count</code> to <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @param count If set to true, Amazon DynamoDB returns a total number of items for
-     *         the Scan operation, even if the operation has no matching items for
-     *         the assigned filter. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @param count If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items for the <code>Scan</code> operation, even if the operation has
+     *         no matching items for the assigned filter. Do not set
+     *         <code>Count</code> to <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public void setCount(Boolean count) {
         this.count = count;
     }
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items for
-     * the Scan operation, even if the operation has no matching items for
-     * the assigned filter. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items for the <code>Scan</code> operation, even if the operation has
+     * no matching items for the assigned filter. Do not set
+     * <code>Count</code> to <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count If set to true, Amazon DynamoDB returns a total number of items for
-     *         the Scan operation, even if the operation has no matching items for
-     *         the assigned filter. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @param count If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items for the <code>Scan</code> operation, even if the operation has
+     *         no matching items for the assigned filter. Do not set
+     *         <code>Count</code> to <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -381,17 +421,19 @@ public class ScanRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items for
-     * the Scan operation, even if the operation has no matching items for
-     * the assigned filter. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items for the <code>Scan</code> operation, even if the operation has
+     * no matching items for the assigned filter. Do not set
+     * <code>Count</code> to <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @return If set to true, Amazon DynamoDB returns a total number of items for
-     *         the Scan operation, even if the operation has no matching items for
-     *         the assigned filter. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @return If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items for the <code>Scan</code> operation, even if the operation has
+     *         no matching items for the assigned filter. Do not set
+     *         <code>Count</code> to <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public Boolean getCount() {
         return count;
@@ -435,16 +477,16 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * Primary key of the item from which to continue an earlier scan. An
      * earlier scan might provide this value if that scan operation was
      * interrupted before scanning the entire table; either because of the
-     * result set size or the Limit parameter. The LastEvaluatedKey can be
-     * passed back in a new scan request to continue the operation from that
-     * point.
+     * result set size or the <code>Limit</code> parameter. The
+     * <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     * to continue the operation from that point.
      *
      * @return Primary key of the item from which to continue an earlier scan. An
      *         earlier scan might provide this value if that scan operation was
      *         interrupted before scanning the entire table; either because of the
-     *         result set size or the Limit parameter. The LastEvaluatedKey can be
-     *         passed back in a new scan request to continue the operation from that
-     *         point.
+     *         result set size or the <code>Limit</code> parameter. The
+     *         <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     *         to continue the operation from that point.
      */
     public Key getExclusiveStartKey() {
         return exclusiveStartKey;
@@ -454,16 +496,16 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * Primary key of the item from which to continue an earlier scan. An
      * earlier scan might provide this value if that scan operation was
      * interrupted before scanning the entire table; either because of the
-     * result set size or the Limit parameter. The LastEvaluatedKey can be
-     * passed back in a new scan request to continue the operation from that
-     * point.
+     * result set size or the <code>Limit</code> parameter. The
+     * <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     * to continue the operation from that point.
      *
      * @param exclusiveStartKey Primary key of the item from which to continue an earlier scan. An
      *         earlier scan might provide this value if that scan operation was
      *         interrupted before scanning the entire table; either because of the
-     *         result set size or the Limit parameter. The LastEvaluatedKey can be
-     *         passed back in a new scan request to continue the operation from that
-     *         point.
+     *         result set size or the <code>Limit</code> parameter. The
+     *         <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     *         to continue the operation from that point.
      */
     public void setExclusiveStartKey(Key exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
@@ -473,18 +515,18 @@ public class ScanRequest extends AmazonWebServiceRequest {
      * Primary key of the item from which to continue an earlier scan. An
      * earlier scan might provide this value if that scan operation was
      * interrupted before scanning the entire table; either because of the
-     * result set size or the Limit parameter. The LastEvaluatedKey can be
-     * passed back in a new scan request to continue the operation from that
-     * point.
+     * result set size or the <code>Limit</code> parameter. The
+     * <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     * to continue the operation from that point.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exclusiveStartKey Primary key of the item from which to continue an earlier scan. An
      *         earlier scan might provide this value if that scan operation was
      *         interrupted before scanning the entire table; either because of the
-     *         result set size or the Limit parameter. The LastEvaluatedKey can be
-     *         passed back in a new scan request to continue the operation from that
-     *         point.
+     *         result set size or the <code>Limit</code> parameter. The
+     *         <code>LastEvaluatedKey</code> can be passed back in a new scan request
+     *         to continue the operation from that point.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

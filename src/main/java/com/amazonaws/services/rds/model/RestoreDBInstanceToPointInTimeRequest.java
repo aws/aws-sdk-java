@@ -18,10 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest) RestoreDBInstanceToPointInTime operation}.
  * <p>
- * Creates a new DB Instance from a point-in-time system snapshot. The
- * target database is created from the source database restore point with
- * the same configuration as the original source database, except that
- * the new RDS instance is created with the default security group.
+ * Restores a DB Instance to an arbitrary point-in-time. Users can
+ * restore to any point in time before the latestRestorableTime for up to
+ * backupRetentionPeriod days. The target database is created from the
+ * source database with the same configuration as the original database
+ * except that the DB instance is created with the default DB security
+ * group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)
@@ -47,9 +49,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     private String targetDBInstanceIdentifier;
 
     /**
-     * The date and time from to restore from. <p>Valid Values: Value must be
-     * a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     * restorable time for the DB Instance</li> <li>Cannot be specified if
+     * The date and time to restore from. <p>Valid Values: Value must be a
+     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     * time for the DB Instance</li> <li>Cannot be specified if
      * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      * <code>2009-09-07T23:45:00Z</code>
      */
@@ -73,7 +75,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
 
     /**
      * The port number on which the database accepts connections.
-     * <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     * <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      * same port as the original DB Instance.
      */
     private Integer port;
@@ -86,6 +88,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      * <code>us-east-1a</code>
      */
     private String availabilityZone;
+
+    /**
+     * The DB subnet group name to use for the new instance.
+     */
+    private String dBSubnetGroupName;
 
     /**
      * Specifies if the DB Instance is a Multi-AZ deployment. <p>Constraint:
@@ -268,15 +275,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     
     /**
-     * The date and time from to restore from. <p>Valid Values: Value must be
-     * a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     * restorable time for the DB Instance</li> <li>Cannot be specified if
+     * The date and time to restore from. <p>Valid Values: Value must be a
+     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     * time for the DB Instance</li> <li>Cannot be specified if
      * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      * <code>2009-09-07T23:45:00Z</code>
      *
-     * @return The date and time from to restore from. <p>Valid Values: Value must be
-     *         a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     *         restorable time for the DB Instance</li> <li>Cannot be specified if
+     * @return The date and time to restore from. <p>Valid Values: Value must be a
+     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     *         time for the DB Instance</li> <li>Cannot be specified if
      *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      *         <code>2009-09-07T23:45:00Z</code>
      */
@@ -285,15 +292,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
     
     /**
-     * The date and time from to restore from. <p>Valid Values: Value must be
-     * a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     * restorable time for the DB Instance</li> <li>Cannot be specified if
+     * The date and time to restore from. <p>Valid Values: Value must be a
+     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     * time for the DB Instance</li> <li>Cannot be specified if
      * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      * <code>2009-09-07T23:45:00Z</code>
      *
-     * @param restoreTime The date and time from to restore from. <p>Valid Values: Value must be
-     *         a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     *         restorable time for the DB Instance</li> <li>Cannot be specified if
+     * @param restoreTime The date and time to restore from. <p>Valid Values: Value must be a
+     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     *         time for the DB Instance</li> <li>Cannot be specified if
      *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      *         <code>2009-09-07T23:45:00Z</code>
      */
@@ -302,17 +309,17 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
     
     /**
-     * The date and time from to restore from. <p>Valid Values: Value must be
-     * a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     * restorable time for the DB Instance</li> <li>Cannot be specified if
+     * The date and time to restore from. <p>Valid Values: Value must be a
+     * UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     * time for the DB Instance</li> <li>Cannot be specified if
      * UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      * <code>2009-09-07T23:45:00Z</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param restoreTime The date and time from to restore from. <p>Valid Values: Value must be
-     *         a UTC time <p>Constraints: <ul> <li>Must be after the latest
-     *         restorable time for the DB Instance</li> <li>Cannot be specified if
+     * @param restoreTime The date and time to restore from. <p>Valid Values: Value must be a
+     *         UTC time <p>Constraints: <ul> <li>Must be before the latest restorable
+     *         time for the DB Instance</li> <li>Cannot be specified if
      *         UseLatestRestorableTime parameter is true</li> </ul> <p>Example:
      *         <code>2009-09-07T23:45:00Z</code>
      *
@@ -446,11 +453,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The port number on which the database accepts connections.
-     * <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     * <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      * same port as the original DB Instance.
      *
      * @return The port number on which the database accepts connections.
-     *         <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     *         <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      *         same port as the original DB Instance.
      */
     public Integer getPort() {
@@ -459,11 +466,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The port number on which the database accepts connections.
-     * <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     * <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      * same port as the original DB Instance.
      *
      * @param port The port number on which the database accepts connections.
-     *         <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     *         <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      *         same port as the original DB Instance.
      */
     public void setPort(Integer port) {
@@ -472,13 +479,13 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     
     /**
      * The port number on which the database accepts connections.
-     * <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     * <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      * same port as the original DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The port number on which the database accepts connections.
-     *         <p>Constraints: Value must be <code>1115-65535</code> <p>Default: The
+     *         <p>Constraints: Value must be <code>1150-65535</code> <p>Default: The
      *         same port as the original DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -544,6 +551,40 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      */
     public RestoreDBInstanceToPointInTimeRequest withAvailabilityZone(String availabilityZone) {
         this.availabilityZone = availabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * The DB subnet group name to use for the new instance.
+     *
+     * @return The DB subnet group name to use for the new instance.
+     */
+    public String getDBSubnetGroupName() {
+        return dBSubnetGroupName;
+    }
+    
+    /**
+     * The DB subnet group name to use for the new instance.
+     *
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
+     */
+    public void setDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
+    }
+    
+    /**
+     * The DB subnet group name to use for the new instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBSubnetGroupName The DB subnet group name to use for the new instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withDBSubnetGroupName(String dBSubnetGroupName) {
+        this.dBSubnetGroupName = dBSubnetGroupName;
         return this;
     }
     
@@ -815,6 +856,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
         if (port != null) sb.append("Port: " + port + ", ");
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (dBSubnetGroupName != null) sb.append("DBSubnetGroupName: " + dBSubnetGroupName + ", ");
         if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
         if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
@@ -836,6 +878,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
@@ -866,6 +909,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null) return false;
+        if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false) return false; 
         if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
         if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;

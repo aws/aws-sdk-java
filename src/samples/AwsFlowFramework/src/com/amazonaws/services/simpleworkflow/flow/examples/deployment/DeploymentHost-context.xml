@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<import resource="DeploymentCommon-context.xml" />
+
+	<bean id="activitiesClient"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentActivitiesClientImpl"
+		scope="workflow">
+	</bean>
+
+	<bean id="workflowImpl"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentWorkflowImpl"
+		scope="workflow">
+		<aop:scoped-proxy proxy-target-class="false" />
+	</bean>
+
+	<bean id="workflowWorker"
+		class="com.amazonaws.services.simpleworkflow.flow.spring.SpringWorkflowWorker">
+		<constructor-arg ref="swfClient" />
+		<constructor-arg value="${domain}" />
+		<constructor-arg value="deployment" />
+		<property name="registerDomain" value="true" />
+		<property name="domainRetentionPeriodInDays" value="1" />
+		<property name="workflowImplementations">
+			<list>
+				<ref bean="workflowImpl" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="activitiesImpl"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.DeploymentActivitiesImpl">
+	</bean>
+
+	<bean id="activityWorker"
+		class="com.amazonaws.services.simpleworkflow.flow.spring.SpringActivityWorker">
+		<constructor-arg ref="swfClient" />
+		<constructor-arg value="${domain}" />
+		<constructor-arg value="${DEPLOYMENT_TARGET}" />
+		<property name="registerDomain" value="true" />
+		<property name="domainRetentionPeriodInDays" value="1" />
+		<property name="activitiesImplementations">
+			<list>
+				<ref bean="activitiesImpl" />
+			</list>
+		</property>
+	</bean>
+
+</beans>

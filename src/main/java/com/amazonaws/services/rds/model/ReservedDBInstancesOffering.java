@@ -58,9 +58,19 @@ public class ReservedDBInstancesOffering {
     private String productDescription;
 
     /**
+     * The offering type.
+     */
+    private String offeringType;
+
+    /**
      * Indicates if the offering applies to Multi-AZ deployments.
      */
     private Boolean multiAZ;
+
+    /**
+     * The recurring price charged to run this reserved DB Instance.
+     */
+    private java.util.List<RecurringCharge> recurringCharges;
 
     /**
      * Default constructor for a new ReservedDBInstancesOffering object.  Callers should use the
@@ -307,6 +317,40 @@ public class ReservedDBInstancesOffering {
     
     
     /**
+     * The offering type.
+     *
+     * @return The offering type.
+     */
+    public String getOfferingType() {
+        return offeringType;
+    }
+    
+    /**
+     * The offering type.
+     *
+     * @param offeringType The offering type.
+     */
+    public void setOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+    }
+    
+    /**
+     * The offering type.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param offeringType The offering type.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedDBInstancesOffering withOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+        return this;
+    }
+    
+    
+    /**
      * Indicates if the offering applies to Multi-AZ deployments.
      *
      * @return Indicates if the offering applies to Multi-AZ deployments.
@@ -350,6 +394,75 @@ public class ReservedDBInstancesOffering {
     }
     
     /**
+     * The recurring price charged to run this reserved DB Instance.
+     *
+     * @return The recurring price charged to run this reserved DB Instance.
+     */
+    public java.util.List<RecurringCharge> getRecurringCharges() {
+        
+        if (recurringCharges == null) {
+            recurringCharges = new java.util.ArrayList<RecurringCharge>();
+        }
+        return recurringCharges;
+    }
+    
+    /**
+     * The recurring price charged to run this reserved DB Instance.
+     *
+     * @param recurringCharges The recurring price charged to run this reserved DB Instance.
+     */
+    public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
+        if (recurringCharges == null) {
+            this.recurringCharges = null;
+            return;
+        }
+
+        java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
+        recurringChargesCopy.addAll(recurringCharges);
+        this.recurringCharges = recurringChargesCopy;
+    }
+    
+    /**
+     * The recurring price charged to run this reserved DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param recurringCharges The recurring price charged to run this reserved DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedDBInstancesOffering withRecurringCharges(RecurringCharge... recurringCharges) {
+        if (getRecurringCharges() == null) setRecurringCharges(new java.util.ArrayList<RecurringCharge>(recurringCharges.length));
+        for (RecurringCharge value : recurringCharges) {
+            getRecurringCharges().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The recurring price charged to run this reserved DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param recurringCharges The recurring price charged to run this reserved DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedDBInstancesOffering withRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
+        if (recurringCharges == null) {
+            this.recurringCharges = null;
+        } else {
+            java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
+            recurringChargesCopy.addAll(recurringCharges);
+            this.recurringCharges = recurringChargesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -368,7 +481,9 @@ public class ReservedDBInstancesOffering {
         if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
         if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
         if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
         if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
+        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -385,7 +500,9 @@ public class ReservedDBInstancesOffering {
         hashCode = prime * hashCode + ((getUsagePrice() == null) ? 0 : getUsagePrice().hashCode()); 
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode()); 
         hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
+        hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode()); 
         return hashCode;
     }
     
@@ -411,8 +528,12 @@ public class ReservedDBInstancesOffering {
         if (other.getCurrencyCode() != null && other.getCurrencyCode().equals(this.getCurrencyCode()) == false) return false; 
         if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
         if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
         if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
         if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
+        if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null) return false;
+        if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
         return true;
     }
     

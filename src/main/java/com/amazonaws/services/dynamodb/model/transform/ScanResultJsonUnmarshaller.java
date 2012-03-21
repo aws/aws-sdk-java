@@ -35,7 +35,7 @@ public class ScanResultJsonUnmarshaller implements Unmarshaller<ScanResult, Json
     public ScanResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ScanResult scanResult = new ScanResult();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -64,7 +64,7 @@ public class ScanResultJsonUnmarshaller implements Unmarshaller<ScanResult, Json
                     scanResult.setConsumedCapacityUnits(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return scanResult;
                 }
             }

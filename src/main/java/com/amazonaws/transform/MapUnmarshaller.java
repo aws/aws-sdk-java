@@ -37,7 +37,6 @@ public class MapUnmarshaller<K, V> implements Unmarshaller<Map<K, V>, JsonUnmars
 	public Map<K, V> unmarshall(JsonUnmarshallerContext context) throws Exception {
 		Map<K, V> map = new HashMap<K, V>();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth + 1;
 
         while (true) {
             JsonToken token = context.nextToken();
@@ -48,7 +47,7 @@ public class MapUnmarshaller<K, V> implements Unmarshaller<Map<K, V>, JsonUnmars
             	V v = valueUnmarshaller.unmarshall(context);
             	map.put(k, v);
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) return map;
+                if (context.getCurrentDepth() <= originalDepth) return map;
             }
         }
 	}

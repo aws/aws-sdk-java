@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+	http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<bean id="database1"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.Database">
+		<property name="host">
+			<value>host1</value>
+		</property>
+	</bean>
+
+	<bean id="database2"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.Database">
+		<property name="host">
+			<value>host2</value>
+		</property>
+	</bean>
+
+	<bean id="appServer1"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.AppServer">
+		<property name="host">
+			<value>host3</value>
+		</property>
+		<property name="databases">
+			<list>
+				<ref bean="database1" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="appServer2"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.AppServer">
+		<property name="host">
+			<value>host2</value>
+		</property>
+		<property name="databases">
+			<list>
+				<ref bean="database2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="appServer3"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.AppServer">
+		<property name="host">
+			<value>host3</value>
+		</property>
+		<property name="databases">
+			<list>
+				<ref bean="database1" />
+				<ref bean="database2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="webServer1"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.WebServer">
+		<property name="host">
+			<value>host1</value>
+		</property>
+		<property name="databases">
+			<list>
+				<ref bean="database2" />
+			</list>
+		</property>
+		<property name="appServers">
+			<list>
+				<ref bean="appServer1" />
+				<ref bean="appServer2" />
+				<ref bean="appServer3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="webServer2"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.WebServer">
+		<property name="host">
+			<value>host2</value>
+		</property>
+		<property name="databases">
+			<list>
+				<ref bean="database1" />
+			</list>
+		</property>
+		<property name="appServers">
+			<list>
+				<ref bean="appServer2" />
+				<ref bean="appServer3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="loadBalancer"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.LoadBalancer">
+		<property name="host">
+			<value>host2</value>
+		</property>
+		<property name="webServers">
+			<list>
+				<ref bean="webServer1" />
+				<ref bean="webServer2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="applicationStack"
+		class="com.amazonaws.services.simpleworkflow.flow.examples.deployment.ApplicationStack">
+		<property name="components">
+<!-- 				This list is intentionally is unordered to show that ordering is -->
+<!-- 				done through dependencies. -->
+			<list>
+				<ref bean="appServer2" />
+				<ref bean="appServer3" />
+				<ref bean="webServer2" />
+				<ref bean="loadBalancer" />
+				<ref bean="database1" />
+				<ref bean="webServer1" />
+				<ref bean="database2" />
+				<ref bean="appServer1" />
+			</list>
+		</property>
+		<property name="frontendComponent">
+			<ref bean="loadBalancer" />
+		</property>
+	</bean>
+
+
+</beans>

@@ -35,7 +35,7 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
     public BatchGetItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         BatchGetItemResult batchGetItemResult = new BatchGetItemResult();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -51,7 +51,7 @@ public class BatchGetItemResultJsonUnmarshaller implements Unmarshaller<BatchGet
                     batchGetItemResult.setUnprocessedKeys(new MapUnmarshaller<String,KeysAndAttributes>(StringJsonUnmarshaller.getInstance(), KeysAndAttributesJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return batchGetItemResult;
                 }
             }

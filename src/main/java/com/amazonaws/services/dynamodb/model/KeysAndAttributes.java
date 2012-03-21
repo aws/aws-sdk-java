@@ -22,9 +22,9 @@ public class KeysAndAttributes {
     private java.util.List<Key> keys;
 
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -110,16 +110,16 @@ public class KeysAndAttributes {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @return List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public java.util.List<String> getAttributesToGet() {
         
@@ -127,16 +127,16 @@ public class KeysAndAttributes {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -150,18 +150,18 @@ public class KeysAndAttributes {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -175,18 +175,18 @@ public class KeysAndAttributes {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

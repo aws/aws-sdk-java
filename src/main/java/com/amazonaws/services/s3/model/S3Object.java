@@ -96,6 +96,19 @@ public class S3Object {
     public void setObjectContent(S3ObjectInputStream objectContent) {
         this.objectContent = objectContent;
     }
+    
+    /**
+     * Sets the input stream containing this object's contents.
+     * 
+     * @param objectContent
+     *            The input stream containing this object's contents. Will get
+     *            wrapped in an S3ObjectInputStream.
+     * @see S3Object#getObjectContent()
+     */
+    public void setObjectContent(InputStream objectContent) {
+        setObjectContent(new S3ObjectInputStream(objectContent,
+                this.objectContent != null ? this.objectContent.getHttpRequest() : null));
+    }
 
     /**
      * Gets the name of the bucket in which this object is contained.

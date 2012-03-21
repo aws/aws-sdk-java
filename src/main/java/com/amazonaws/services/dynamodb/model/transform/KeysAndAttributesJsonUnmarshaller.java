@@ -35,7 +35,7 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
     public KeysAndAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -51,7 +51,7 @@ public class KeysAndAttributesJsonUnmarshaller implements Unmarshaller<KeysAndAt
                     keysAndAttributes.setAttributesToGet(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return keysAndAttributes;
                 }
             }

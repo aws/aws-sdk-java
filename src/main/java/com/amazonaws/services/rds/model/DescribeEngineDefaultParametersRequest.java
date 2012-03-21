@@ -40,10 +40,10 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous
+     * DescribeEngineDefaultParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -154,47 +154,47 @@ public class DescribeEngineDefaultParametersRequest extends AmazonWebServiceRequ
     
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous
+     * DescribeEngineDefaultParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      *
-     * @return An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @return An optional marker provided in the previous
+     *         DescribeEngineDefaultParameters request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous
+     * DescribeEngineDefaultParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker provided in the previous
+     *         DescribeEngineDefaultParameters request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeDBInstances
-     * request. If this parameter is specified, the response includes only
-     * records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.
+     * An optional marker provided in the previous
+     * DescribeEngineDefaultParameters request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to
+     * the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeDBInstances
-     *         request. If this parameter is specified, the response includes only
-     *         records beyond the marker, up to the value specified by
-     *         <code>MaxRecords</code>.
+     * @param marker An optional marker provided in the previous
+     *         DescribeEngineDefaultParameters request. If this parameter is
+     *         specified, the response includes only records beyond the marker, up to
+     *         the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -61,6 +61,22 @@ public class OrderableDBInstanceOption {
     private Boolean readReplicaCapable;
 
     /**
+     * Indicates whether this orderable DB Instance is VPC capable.
+     */
+    private Boolean vpcCapable;
+
+    /**
+     * Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     */
+    private Boolean vpcMultiAZCapable;
+
+    /**
+     * Indicates whether this orderable DB Instance can have a VPC read
+     * replica.
+     */
+    private Boolean vpcReadReplicaCapable;
+
+    /**
      * The engine type of the orderable DB Instance.
      *
      * @return The engine type of the orderable DB Instance.
@@ -352,6 +368,143 @@ public class OrderableDBInstanceOption {
     }
     
     /**
+     * Indicates whether this orderable DB Instance is VPC capable.
+     *
+     * @return Indicates whether this orderable DB Instance is VPC capable.
+     */
+    public Boolean isVpcCapable() {
+        return vpcCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC capable.
+     *
+     * @param vpcCapable Indicates whether this orderable DB Instance is VPC capable.
+     */
+    public void setVpcCapable(Boolean vpcCapable) {
+        this.vpcCapable = vpcCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC capable.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcCapable Indicates whether this orderable DB Instance is VPC capable.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OrderableDBInstanceOption withVpcCapable(Boolean vpcCapable) {
+        this.vpcCapable = vpcCapable;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC capable.
+     *
+     * @return Indicates whether this orderable DB Instance is VPC capable.
+     */
+    public Boolean getVpcCapable() {
+        return vpcCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     *
+     * @return Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     */
+    public Boolean isVpcMultiAZCapable() {
+        return vpcMultiAZCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     *
+     * @param vpcMultiAZCapable Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     */
+    public void setVpcMultiAZCapable(Boolean vpcMultiAZCapable) {
+        this.vpcMultiAZCapable = vpcMultiAZCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcMultiAZCapable Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OrderableDBInstanceOption withVpcMultiAZCapable(Boolean vpcMultiAZCapable) {
+        this.vpcMultiAZCapable = vpcMultiAZCapable;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     *
+     * @return Indicates whether this orderable DB Instance is VPC multi-AZ capable.
+     */
+    public Boolean getVpcMultiAZCapable() {
+        return vpcMultiAZCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance can have a VPC read
+     * replica.
+     *
+     * @return Indicates whether this orderable DB Instance can have a VPC read
+     *         replica.
+     */
+    public Boolean isVpcReadReplicaCapable() {
+        return vpcReadReplicaCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance can have a VPC read
+     * replica.
+     *
+     * @param vpcReadReplicaCapable Indicates whether this orderable DB Instance can have a VPC read
+     *         replica.
+     */
+    public void setVpcReadReplicaCapable(Boolean vpcReadReplicaCapable) {
+        this.vpcReadReplicaCapable = vpcReadReplicaCapable;
+    }
+    
+    /**
+     * Indicates whether this orderable DB Instance can have a VPC read
+     * replica.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcReadReplicaCapable Indicates whether this orderable DB Instance can have a VPC read
+     *         replica.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OrderableDBInstanceOption withVpcReadReplicaCapable(Boolean vpcReadReplicaCapable) {
+        this.vpcReadReplicaCapable = vpcReadReplicaCapable;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether this orderable DB Instance can have a VPC read
+     * replica.
+     *
+     * @return Indicates whether this orderable DB Instance can have a VPC read
+     *         replica.
+     */
+    public Boolean getVpcReadReplicaCapable() {
+        return vpcReadReplicaCapable;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -370,6 +523,9 @@ public class OrderableDBInstanceOption {
         if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
         if (multiAZCapable != null) sb.append("MultiAZCapable: " + multiAZCapable + ", ");
         if (readReplicaCapable != null) sb.append("ReadReplicaCapable: " + readReplicaCapable + ", ");
+        if (vpcCapable != null) sb.append("VpcCapable: " + vpcCapable + ", ");
+        if (vpcMultiAZCapable != null) sb.append("VpcMultiAZCapable: " + vpcMultiAZCapable + ", ");
+        if (vpcReadReplicaCapable != null) sb.append("VpcReadReplicaCapable: " + vpcReadReplicaCapable + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +542,9 @@ public class OrderableDBInstanceOption {
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZCapable() == null) ? 0 : isMultiAZCapable().hashCode()); 
         hashCode = prime * hashCode + ((isReadReplicaCapable() == null) ? 0 : isReadReplicaCapable().hashCode()); 
+        hashCode = prime * hashCode + ((isVpcCapable() == null) ? 0 : isVpcCapable().hashCode()); 
+        hashCode = prime * hashCode + ((isVpcMultiAZCapable() == null) ? 0 : isVpcMultiAZCapable().hashCode()); 
+        hashCode = prime * hashCode + ((isVpcReadReplicaCapable() == null) ? 0 : isVpcReadReplicaCapable().hashCode()); 
         return hashCode;
     }
     
@@ -411,6 +570,12 @@ public class OrderableDBInstanceOption {
         if (other.isMultiAZCapable() != null && other.isMultiAZCapable().equals(this.isMultiAZCapable()) == false) return false; 
         if (other.isReadReplicaCapable() == null ^ this.isReadReplicaCapable() == null) return false;
         if (other.isReadReplicaCapable() != null && other.isReadReplicaCapable().equals(this.isReadReplicaCapable()) == false) return false; 
+        if (other.isVpcCapable() == null ^ this.isVpcCapable() == null) return false;
+        if (other.isVpcCapable() != null && other.isVpcCapable().equals(this.isVpcCapable()) == false) return false; 
+        if (other.isVpcMultiAZCapable() == null ^ this.isVpcMultiAZCapable() == null) return false;
+        if (other.isVpcMultiAZCapable() != null && other.isVpcMultiAZCapable().equals(this.isVpcMultiAZCapable()) == false) return false; 
+        if (other.isVpcReadReplicaCapable() == null ^ this.isVpcReadReplicaCapable() == null) return false;
+        if (other.isVpcReadReplicaCapable() != null && other.isVpcReadReplicaCapable().equals(this.isVpcReadReplicaCapable()) == false) return false; 
         return true;
     }
     

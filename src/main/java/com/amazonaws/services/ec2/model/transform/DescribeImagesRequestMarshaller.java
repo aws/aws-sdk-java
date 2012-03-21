@@ -38,7 +38,7 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
 
         Request<DescribeImagesRequest> request = new DefaultRequest<DescribeImagesRequest>(describeImagesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeImages");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
 
         java.util.List<String> imageIdsList = describeImagesRequest.getImageIds();

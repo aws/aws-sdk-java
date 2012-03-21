@@ -38,7 +38,7 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
 
         Request<DescribeNetworkInterfacesRequest> request = new DefaultRequest<DescribeNetworkInterfacesRequest>(describeNetworkInterfacesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeNetworkInterfaces");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
 
         java.util.List<String> networkInterfaceIdsList = describeNetworkInterfacesRequest.getNetworkInterfaceIds();
@@ -59,7 +59,7 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
             Filter filterMember = filtersListValue;
             if (filterMember != null) {
                 if (filterMember.getName() != null) {
-                    request.addParameter("FilterSet." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
+                    request.addParameter("Filter." + filtersListIndex + ".Name", StringUtils.fromString(filterMember.getName()));
                 }
 
                 java.util.List<String> valuesList = filterMember.getValues();
@@ -67,7 +67,7 @@ public class DescribeNetworkInterfacesRequestMarshaller implements Marshaller<Re
 
                 for (String valuesListValue : valuesList) {
                     if (valuesListValue != null) {
-                        request.addParameter("FilterSet." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
+                        request.addParameter("Filter." + filtersListIndex + ".Value." + valuesListIndex, StringUtils.fromString(valuesListValue));
                     }
 
                     valuesListIndex++;

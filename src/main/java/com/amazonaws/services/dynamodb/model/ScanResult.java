@@ -28,24 +28,29 @@ public class ScanResult {
 
     /**
      * Number of items in the complete scan before any filters are applied. A
-     * high ScannedCount value with few, or no, Count results indicates an
-     * inefficient Scan operation.
+     * high <code>ScannedCount</code> value with few, or no,
+     * <code>Count</code> results indicates an inefficient <code>Scan</code>
+     * operation.
      */
     private Integer scannedCount;
 
     /**
      * Primary key of the item where the scan operation stopped. Provide this
      * value in a subsequent scan operation to continue the operation from
-     * that point. The LastEvaluatedKey is null when the entire scan result
-     * set is complete (i.e. the operation processed the "last page").
+     * that point. The <code>LastEvaluatedKey</code> is null when the entire
+     * scan result set is complete (i.e. the operation processed the "last
+     * page").
      */
     private Key lastEvaluatedKey;
 
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      */
     private Double consumedCapacityUnits;
 
@@ -151,12 +156,14 @@ public class ScanResult {
     
     /**
      * Number of items in the complete scan before any filters are applied. A
-     * high ScannedCount value with few, or no, Count results indicates an
-     * inefficient Scan operation.
+     * high <code>ScannedCount</code> value with few, or no,
+     * <code>Count</code> results indicates an inefficient <code>Scan</code>
+     * operation.
      *
      * @return Number of items in the complete scan before any filters are applied. A
-     *         high ScannedCount value with few, or no, Count results indicates an
-     *         inefficient Scan operation.
+     *         high <code>ScannedCount</code> value with few, or no,
+     *         <code>Count</code> results indicates an inefficient <code>Scan</code>
+     *         operation.
      */
     public Integer getScannedCount() {
         return scannedCount;
@@ -164,12 +171,14 @@ public class ScanResult {
     
     /**
      * Number of items in the complete scan before any filters are applied. A
-     * high ScannedCount value with few, or no, Count results indicates an
-     * inefficient Scan operation.
+     * high <code>ScannedCount</code> value with few, or no,
+     * <code>Count</code> results indicates an inefficient <code>Scan</code>
+     * operation.
      *
      * @param scannedCount Number of items in the complete scan before any filters are applied. A
-     *         high ScannedCount value with few, or no, Count results indicates an
-     *         inefficient Scan operation.
+     *         high <code>ScannedCount</code> value with few, or no,
+     *         <code>Count</code> results indicates an inefficient <code>Scan</code>
+     *         operation.
      */
     public void setScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
@@ -177,14 +186,16 @@ public class ScanResult {
     
     /**
      * Number of items in the complete scan before any filters are applied. A
-     * high ScannedCount value with few, or no, Count results indicates an
-     * inefficient Scan operation.
+     * high <code>ScannedCount</code> value with few, or no,
+     * <code>Count</code> results indicates an inefficient <code>Scan</code>
+     * operation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scannedCount Number of items in the complete scan before any filters are applied. A
-     *         high ScannedCount value with few, or no, Count results indicates an
-     *         inefficient Scan operation.
+     *         high <code>ScannedCount</code> value with few, or no,
+     *         <code>Count</code> results indicates an inefficient <code>Scan</code>
+     *         operation.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -198,13 +209,15 @@ public class ScanResult {
     /**
      * Primary key of the item where the scan operation stopped. Provide this
      * value in a subsequent scan operation to continue the operation from
-     * that point. The LastEvaluatedKey is null when the entire scan result
-     * set is complete (i.e. the operation processed the "last page").
+     * that point. The <code>LastEvaluatedKey</code> is null when the entire
+     * scan result set is complete (i.e. the operation processed the "last
+     * page").
      *
      * @return Primary key of the item where the scan operation stopped. Provide this
      *         value in a subsequent scan operation to continue the operation from
-     *         that point. The LastEvaluatedKey is null when the entire scan result
-     *         set is complete (i.e. the operation processed the "last page").
+     *         that point. The <code>LastEvaluatedKey</code> is null when the entire
+     *         scan result set is complete (i.e. the operation processed the "last
+     *         page").
      */
     public Key getLastEvaluatedKey() {
         return lastEvaluatedKey;
@@ -213,13 +226,15 @@ public class ScanResult {
     /**
      * Primary key of the item where the scan operation stopped. Provide this
      * value in a subsequent scan operation to continue the operation from
-     * that point. The LastEvaluatedKey is null when the entire scan result
-     * set is complete (i.e. the operation processed the "last page").
+     * that point. The <code>LastEvaluatedKey</code> is null when the entire
+     * scan result set is complete (i.e. the operation processed the "last
+     * page").
      *
      * @param lastEvaluatedKey Primary key of the item where the scan operation stopped. Provide this
      *         value in a subsequent scan operation to continue the operation from
-     *         that point. The LastEvaluatedKey is null when the entire scan result
-     *         set is complete (i.e. the operation processed the "last page").
+     *         that point. The <code>LastEvaluatedKey</code> is null when the entire
+     *         scan result set is complete (i.e. the operation processed the "last
+     *         page").
      */
     public void setLastEvaluatedKey(Key lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
@@ -228,15 +243,17 @@ public class ScanResult {
     /**
      * Primary key of the item where the scan operation stopped. Provide this
      * value in a subsequent scan operation to continue the operation from
-     * that point. The LastEvaluatedKey is null when the entire scan result
-     * set is complete (i.e. the operation processed the "last page").
+     * that point. The <code>LastEvaluatedKey</code> is null when the entire
+     * scan result set is complete (i.e. the operation processed the "last
+     * page").
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastEvaluatedKey Primary key of the item where the scan operation stopped. Provide this
      *         value in a subsequent scan operation to continue the operation from
-     *         that point. The LastEvaluatedKey is null when the entire scan result
-     *         set is complete (i.e. the operation processed the "last page").
+     *         that point. The <code>LastEvaluatedKey</code> is null when the entire
+     *         scan result set is complete (i.e. the operation processed the "last
+     *         page").
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -249,14 +266,20 @@ public class ScanResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @return The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public Double getConsumedCapacityUnits() {
         return consumedCapacityUnits;
@@ -264,14 +287,20 @@ public class ScanResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public void setConsumedCapacityUnits(Double consumedCapacityUnits) {
         this.consumedCapacityUnits = consumedCapacityUnits;
@@ -279,16 +308,22 @@ public class ScanResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -45,9 +45,14 @@ public class DBSecurityGroup {
     private String dBSecurityGroupName;
 
     /**
-     * Provides the description of the database security group.
+     * Provides the description of the DB Security Group.
      */
     private String dBSecurityGroupDescription;
+
+    /**
+     * Provides the VpcId of the DB Security Group.
+     */
+    private String vpcId;
 
     /**
      * Contains a list of <a>EC2SecurityGroup</a> elements.
@@ -128,35 +133,69 @@ public class DBSecurityGroup {
     
     
     /**
-     * Provides the description of the database security group.
+     * Provides the description of the DB Security Group.
      *
-     * @return Provides the description of the database security group.
+     * @return Provides the description of the DB Security Group.
      */
     public String getDBSecurityGroupDescription() {
         return dBSecurityGroupDescription;
     }
     
     /**
-     * Provides the description of the database security group.
+     * Provides the description of the DB Security Group.
      *
-     * @param dBSecurityGroupDescription Provides the description of the database security group.
+     * @param dBSecurityGroupDescription Provides the description of the DB Security Group.
      */
     public void setDBSecurityGroupDescription(String dBSecurityGroupDescription) {
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
     }
     
     /**
-     * Provides the description of the database security group.
+     * Provides the description of the DB Security Group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupDescription Provides the description of the database security group.
+     * @param dBSecurityGroupDescription Provides the description of the DB Security Group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public DBSecurityGroup withDBSecurityGroupDescription(String dBSecurityGroupDescription) {
         this.dBSecurityGroupDescription = dBSecurityGroupDescription;
+        return this;
+    }
+    
+    
+    /**
+     * Provides the VpcId of the DB Security Group.
+     *
+     * @return Provides the VpcId of the DB Security Group.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * Provides the VpcId of the DB Security Group.
+     *
+     * @param vpcId Provides the VpcId of the DB Security Group.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * Provides the VpcId of the DB Security Group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId Provides the VpcId of the DB Security Group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSecurityGroup withVpcId(String vpcId) {
+        this.vpcId = vpcId;
         return this;
     }
     
@@ -314,6 +353,7 @@ public class DBSecurityGroup {
         if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
         if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
         if (dBSecurityGroupDescription != null) sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
         if (eC2SecurityGroups != null) sb.append("EC2SecurityGroups: " + eC2SecurityGroups + ", ");
         if (iPRanges != null) sb.append("IPRanges: " + iPRanges + ", ");
         sb.append("}");
@@ -328,6 +368,7 @@ public class DBSecurityGroup {
         hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupDescription() == null) ? 0 : getDBSecurityGroupDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroups() == null) ? 0 : getEC2SecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getIPRanges() == null) ? 0 : getIPRanges().hashCode()); 
         return hashCode;
@@ -347,6 +388,8 @@ public class DBSecurityGroup {
         if (other.getDBSecurityGroupName() != null && other.getDBSecurityGroupName().equals(this.getDBSecurityGroupName()) == false) return false; 
         if (other.getDBSecurityGroupDescription() == null ^ this.getDBSecurityGroupDescription() == null) return false;
         if (other.getDBSecurityGroupDescription() != null && other.getDBSecurityGroupDescription().equals(this.getDBSecurityGroupDescription()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.getEC2SecurityGroups() == null ^ this.getEC2SecurityGroups() == null) return false;
         if (other.getEC2SecurityGroups() != null && other.getEC2SecurityGroups().equals(this.getEC2SecurityGroups()) == false) return false; 
         if (other.getIPRanges() == null ^ this.getIPRanges() == null) return false;
