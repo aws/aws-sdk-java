@@ -35,7 +35,7 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
     public Key unmarshall(JsonUnmarshallerContext context) throws Exception {
         Key key = new Key();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -53,7 +53,7 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
                     key.setRangeKeyElement(AttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return key;
                 }
             }

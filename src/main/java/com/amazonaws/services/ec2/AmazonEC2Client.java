@@ -1119,6 +1119,29 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Enable IO on the volume after an event has occured.
+     * </p>
+     *
+     * @param enableVolumeIORequest Container for the necessary parameters to
+     *           execute the EnableVolumeIO service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void enableVolumeIO(EnableVolumeIORequest enableVolumeIORequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<EnableVolumeIORequest> request = new EnableVolumeIORequestMarshaller().marshall(enableVolumeIORequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Deletes a VPN gateway. Use this when you want to delete a VPC and all
      * its associated components because you no longer need them. We
      * recommend that before you delete a VPN gateway, you detach it from the
@@ -1197,6 +1220,33 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeLicensesRequest> request = new DescribeLicensesRequestMarshaller().marshall(describeLicensesRequest);
         return invoke(request, new DescribeLicensesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Describes the status of a volume.
+     * </p>
+     *
+     * @param describeVolumeStatusRequest Container for the necessary
+     *           parameters to execute the DescribeVolumeStatus service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeVolumeStatus service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumeStatusResult describeVolumeStatus(DescribeVolumeStatusRequest describeVolumeStatusRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeVolumeStatusRequest> request = new DescribeVolumeStatusRequestMarshaller().marshall(describeVolumeStatusRequest);
+        return invoke(request, new DescribeVolumeStatusResultStaxUnmarshaller());
     }
     
     /**
@@ -2520,6 +2570,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param modifyVolumeAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyVolumeAttribute service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyVolumeAttribute(ModifyVolumeAttributeRequest modifyVolumeAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ModifyVolumeAttributeRequest> request = new ModifyVolumeAttributeRequestMarshaller().marshall(modifyVolumeAttributeRequest);
+        invoke(request, null);
+    }
+    
+    /**
      * <p>
      * The DescribeImages operation returns information about AMIs, AKIs,
      * and ARIs available to the user. Information returned includes image
@@ -3053,6 +3124,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<AttachNetworkInterfaceRequest> request = new AttachNetworkInterfaceRequestMarshaller().marshall(attachNetworkInterfaceRequest);
         return invoke(request, new AttachNetworkInterfaceResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param describeVolumeAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeVolumeAttribute service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeVolumeAttribute service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumeAttributeResult describeVolumeAttribute(DescribeVolumeAttributeRequest describeVolumeAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeVolumeAttributeRequest> request = new DescribeVolumeAttributeRequestMarshaller().marshall(describeVolumeAttributeRequest);
+        return invoke(request, new DescribeVolumeAttributeResultStaxUnmarshaller());
     }
     
     /**
@@ -4578,6 +4673,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * Describes the status of a volume.
+     * </p>
+     * 
+     * @return The response from the DescribeVolumeStatus service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVolumeStatusResult describeVolumeStatus() throws AmazonServiceException, AmazonClientException {
+        return describeVolumeStatus(new DescribeVolumeStatusRequest());
+    }
+    
+    /**
+     * <p>
      * Gives you information about your VPN connections.
      * </p>
      * <p>
@@ -5525,7 +5641,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         return registerImage(new RegisterImageRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

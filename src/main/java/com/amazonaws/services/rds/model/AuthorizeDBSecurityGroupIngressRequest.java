@@ -19,16 +19,19 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#authorizeDBSecurityGroupIngress(AuthorizeDBSecurityGroupIngressRequest) AuthorizeDBSecurityGroupIngress operation}.
  * <p>
  * Enables ingress to a DBSecurityGroup using one of two forms of
- * authorization. First, EC2 Security Groups can be added to the
+ * authorization. First, EC2 or VPC Security Groups can be added to the
  * DBSecurityGroup if the application using the database is running on
- * EC2 instances. Second, IP ranges are available if the application
- * accessing your database is running on the Internet. Required
- * parameters for this API are one of CIDR range or (EC2SecurityGroupName
- * AND EC2SecurityGroupOwnerId).
+ * EC2 or VPC instances. Second, IP ranges are available if the
+ * application accessing your database is running on the Internet.
+ * Required parameters for this API are one of CIDR range,
+ * EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either
+ * EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).
  * </p>
  * <p>
  * <b>NOTE:</b> You cannot authorize ingress from an EC2 security group
- * in one Region to an Amazon RDS DB Instance in another.
+ * in one Region to an Amazon RDS DB Instance in another. You cannot
+ * authorize ingress from a VPC security group in one VPC to an Amazon
+ * RDS DB Instance in another.
  * </p>
  * <p>
  * For an overview of CIDR ranges, go to the <a
@@ -41,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name of the DB Security Group to authorize.
+     * The name of the DB Security Group to add authorization to.
      */
     private String dBSecurityGroupName;
 
@@ -51,14 +54,28 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     private String cIDRIP;
 
     /**
-     * Name of the EC2 Security Group to authorize.
+     * Name of the EC2 Security Group to authorize. For VPC DB Security
+     * Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
+     */
+    private String eC2SecurityGroupId;
+
+    /**
+     * AWS Account Number of the owner of the EC2 Security Group specified in
+     * the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     * acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -73,8 +90,8 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dBSecurityGroupName The name of the DB Security Group to
-     * authorize.
+     * @param dBSecurityGroupName The name of the DB Security Group to add
+     * authorization to.
      */
     public AuthorizeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
@@ -83,29 +100,29 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The name of the DB Security Group to authorize.
+     * The name of the DB Security Group to add authorization to.
      *
-     * @return The name of the DB Security Group to authorize.
+     * @return The name of the DB Security Group to add authorization to.
      */
     public String getDBSecurityGroupName() {
         return dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group to authorize.
+     * The name of the DB Security Group to add authorization to.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group to authorize.
+     * @param dBSecurityGroupName The name of the DB Security Group to add authorization to.
      */
     public void setDBSecurityGroupName(String dBSecurityGroupName) {
         this.dBSecurityGroupName = dBSecurityGroupName;
     }
     
     /**
-     * The name of the DB Security Group to authorize.
+     * The name of the DB Security Group to add authorization to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupName The name of the DB Security Group to authorize.
+     * @param dBSecurityGroupName The name of the DB Security Group to add authorization to.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -151,29 +168,47 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Name of the EC2 Security Group to authorize.
+     * Name of the EC2 Security Group to authorize. For VPC DB Security
+     * Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @return Name of the EC2 Security Group to authorize.
+     * @return Name of the EC2 Security Group to authorize. For VPC DB Security
+     *         Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * Name of the EC2 Security Group to authorize.
+     * Name of the EC2 Security Group to authorize. For VPC DB Security
+     * Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @param eC2SecurityGroupName Name of the EC2 Security Group to authorize.
+     * @param eC2SecurityGroupName Name of the EC2 Security Group to authorize. For VPC DB Security
+     *         Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * Name of the EC2 Security Group to authorize.
+     * Name of the EC2 Security Group to authorize. For VPC DB Security
+     * Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName Name of the EC2 Security Group to authorize.
+     * @param eC2SecurityGroupName Name of the EC2 Security Group to authorize. For VPC DB Security
+     *         Groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -185,41 +220,111 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @return AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @return Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
+     */
+    public String getEC2SecurityGroupId() {
+        return eC2SecurityGroupId;
+    }
+    
+    /**
+     * Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @param eC2SecurityGroupId Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
+     */
+    public void setEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+    }
+    
+    /**
+     * Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eC2SecurityGroupId Id of the EC2 Security Group to authorize. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AuthorizeDBSecurityGroupIngressRequest withEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+        return this;
+    }
+    
+    
+    /**
+     * AWS Account Number of the owner of the EC2 Security Group specified in
+     * the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     * acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return AWS Account Number of the owner of the EC2 Security Group specified in
+     *         the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     *         acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
     }
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * AWS Account Number of the owner of the EC2 Security Group specified in
+     * the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     * acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the EC2 Security Group specified in
+     *         the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     *         acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
     
     /**
-     * AWS Account Number of the owner of the security group specified in the
-     * EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     * acceptable value.
+     * AWS Account Number of the owner of the EC2 Security Group specified in
+     * the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     * acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the security group specified in the
-     *         EC2SecurityGroupName parameter. The AWS Access Key ID is not an
-     *         acceptable value.
+     * @param eC2SecurityGroupOwnerId AWS Account Number of the owner of the EC2 Security Group specified in
+     *         the EC2SecurityGroupName parameter. The AWS Access Key ID is not an
+     *         acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -245,6 +350,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
         if (cIDRIP != null) sb.append("CIDRIP: " + cIDRIP + ", ");
         if (eC2SecurityGroupName != null) sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
+        if (eC2SecurityGroupId != null) sb.append("EC2SecurityGroupId: " + eC2SecurityGroupId + ", ");
         if (eC2SecurityGroupOwnerId != null) sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
         sb.append("}");
         return sb.toString();
@@ -258,6 +364,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCIDRIP() == null) ? 0 : getCIDRIP().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupName() == null) ? 0 : getEC2SecurityGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getEC2SecurityGroupId() == null) ? 0 : getEC2SecurityGroupId().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupOwnerId() == null) ? 0 : getEC2SecurityGroupOwnerId().hashCode()); 
         return hashCode;
     }
@@ -276,6 +383,8 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
         if (other.getCIDRIP() != null && other.getCIDRIP().equals(this.getCIDRIP()) == false) return false; 
         if (other.getEC2SecurityGroupName() == null ^ this.getEC2SecurityGroupName() == null) return false;
         if (other.getEC2SecurityGroupName() != null && other.getEC2SecurityGroupName().equals(this.getEC2SecurityGroupName()) == false) return false; 
+        if (other.getEC2SecurityGroupId() == null ^ this.getEC2SecurityGroupId() == null) return false;
+        if (other.getEC2SecurityGroupId() != null && other.getEC2SecurityGroupId().equals(this.getEC2SecurityGroupId()) == false) return false; 
         if (other.getEC2SecurityGroupOwnerId() == null ^ this.getEC2SecurityGroupOwnerId() == null) return false;
         if (other.getEC2SecurityGroupOwnerId() != null && other.getEC2SecurityGroupOwnerId().equals(this.getEC2SecurityGroupOwnerId()) == false) return false; 
         return true;

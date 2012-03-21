@@ -29,17 +29,20 @@ public class QueryResult {
     /**
      * Primary key of the item where the query operation stopped, inclusive
      * of the previous result set. Use this value to start a new operation
-     * excluding this value in the new request. The LastEvaluatedKey is null
-     * when the entire query result set is complete (i.e. the operation
-     * processed the "last page").
+     * excluding this value in the new request. The
+     * <code>LastEvaluatedKey</code> is null when the entire query result set
+     * is complete (i.e. the operation processed the "last page").
      */
     private Key lastEvaluatedKey;
 
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      */
     private Double consumedCapacityUnits;
 
@@ -146,15 +149,15 @@ public class QueryResult {
     /**
      * Primary key of the item where the query operation stopped, inclusive
      * of the previous result set. Use this value to start a new operation
-     * excluding this value in the new request. The LastEvaluatedKey is null
-     * when the entire query result set is complete (i.e. the operation
-     * processed the "last page").
+     * excluding this value in the new request. The
+     * <code>LastEvaluatedKey</code> is null when the entire query result set
+     * is complete (i.e. the operation processed the "last page").
      *
      * @return Primary key of the item where the query operation stopped, inclusive
      *         of the previous result set. Use this value to start a new operation
-     *         excluding this value in the new request. The LastEvaluatedKey is null
-     *         when the entire query result set is complete (i.e. the operation
-     *         processed the "last page").
+     *         excluding this value in the new request. The
+     *         <code>LastEvaluatedKey</code> is null when the entire query result set
+     *         is complete (i.e. the operation processed the "last page").
      */
     public Key getLastEvaluatedKey() {
         return lastEvaluatedKey;
@@ -163,15 +166,15 @@ public class QueryResult {
     /**
      * Primary key of the item where the query operation stopped, inclusive
      * of the previous result set. Use this value to start a new operation
-     * excluding this value in the new request. The LastEvaluatedKey is null
-     * when the entire query result set is complete (i.e. the operation
-     * processed the "last page").
+     * excluding this value in the new request. The
+     * <code>LastEvaluatedKey</code> is null when the entire query result set
+     * is complete (i.e. the operation processed the "last page").
      *
      * @param lastEvaluatedKey Primary key of the item where the query operation stopped, inclusive
      *         of the previous result set. Use this value to start a new operation
-     *         excluding this value in the new request. The LastEvaluatedKey is null
-     *         when the entire query result set is complete (i.e. the operation
-     *         processed the "last page").
+     *         excluding this value in the new request. The
+     *         <code>LastEvaluatedKey</code> is null when the entire query result set
+     *         is complete (i.e. the operation processed the "last page").
      */
     public void setLastEvaluatedKey(Key lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
@@ -180,17 +183,17 @@ public class QueryResult {
     /**
      * Primary key of the item where the query operation stopped, inclusive
      * of the previous result set. Use this value to start a new operation
-     * excluding this value in the new request. The LastEvaluatedKey is null
-     * when the entire query result set is complete (i.e. the operation
-     * processed the "last page").
+     * excluding this value in the new request. The
+     * <code>LastEvaluatedKey</code> is null when the entire query result set
+     * is complete (i.e. the operation processed the "last page").
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param lastEvaluatedKey Primary key of the item where the query operation stopped, inclusive
      *         of the previous result set. Use this value to start a new operation
-     *         excluding this value in the new request. The LastEvaluatedKey is null
-     *         when the entire query result set is complete (i.e. the operation
-     *         processed the "last page").
+     *         excluding this value in the new request. The
+     *         <code>LastEvaluatedKey</code> is null when the entire query result set
+     *         is complete (i.e. the operation processed the "last page").
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -203,14 +206,20 @@ public class QueryResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @return The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public Double getConsumedCapacityUnits() {
         return consumedCapacityUnits;
@@ -218,14 +227,20 @@ public class QueryResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public void setConsumedCapacityUnits(Double consumedCapacityUnits) {
         this.consumedCapacityUnits = consumedCapacityUnits;
@@ -233,16 +248,22 @@ public class QueryResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

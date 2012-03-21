@@ -38,7 +38,7 @@ public class DescribeDBInstancesRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeDBInstancesRequest> request = new DefaultRequest<DescribeDBInstancesRequest>(describeDBInstancesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBInstances");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (describeDBInstancesRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBInstancesRequest.getDBInstanceIdentifier()));

@@ -14,13 +14,8 @@
  */
 package com.amazonaws.services.s3.transfer;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.services.s3.transfer.internal.ProgressListenerChain;
-import com.amazonaws.services.s3.transfer.internal.TransferProgressImpl;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**
@@ -32,14 +27,8 @@ import com.amazonaws.services.s3.transfer.model.UploadResult;
  * @see TransferManager#upload(String, String, java.io.File)
  * @see TransferManager#upload(com.amazonaws.services.s3.model.PutObjectRequest)
  */
-public class Upload extends Transfer {
+public interface Upload extends Transfer {
     
-    protected Upload(String description, 
-           TransferProgressImpl transferProgressInternalState,
-           ProgressListenerChain progressListenerChain) {
-        super(description, transferProgressInternalState, progressListenerChain);
-    }
-
     /**
      * Waits for this upload to complete and returns the result of this
      * upload. Be prepared to handle errors when calling this method. Any
@@ -59,17 +48,5 @@ public class Upload extends Transfer {
      *             complete.
      */
     public UploadResult waitForUploadResult() 
-            throws AmazonClientException, AmazonServiceException, InterruptedException {
-        try {
-            UploadResult result = null;
-            while (!monitor.isDone() || result == null) {
-                Future<?> f = monitor.getFuture();
-                result = (UploadResult)f.get();
-            }
-            return result;
-        } catch (ExecutionException e) {
-            rethrowExecutionException(e);
-            return null;
-        }
-    }
+            throws AmazonClientException, AmazonServiceException, InterruptedException;
 }

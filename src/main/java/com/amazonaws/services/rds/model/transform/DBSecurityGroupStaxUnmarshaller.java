@@ -61,6 +61,10 @@ public class DBSecurityGroupStaxUnmarshaller implements Unmarshaller<DBSecurityG
                     dBSecurityGroup.setDBSecurityGroupDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("VpcId", targetDepth)) {
+                    dBSecurityGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth)) {
                     dBSecurityGroup.getEC2SecurityGroups().add(EC2SecurityGroupStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

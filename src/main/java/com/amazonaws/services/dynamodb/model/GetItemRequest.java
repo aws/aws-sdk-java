@@ -18,10 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest) GetItem operation}.
  * <p>
- * The GetItem operation returns a set of Attributes for an item that
- * matches the primary key. The GetItem operation provides an eventually
- * consistent read by default. If eventually consistent reads are not
- * acceptable for your application, use ConsistentRead. Although this
+ * Retrieves a set of Attributes for an item that matches the primary
+ * key.
+ * </p>
+ * <p>
+ * The <code>GetItem</code> operation provides an eventually-consistent
+ * read by default. If eventually-consistent reads are not acceptable for
+ * your application, use <code>ConsistentRead</code> . Although this
  * operation might take longer than a standard read, it always returns
  * the last updated value.
  * </p>
@@ -30,6 +33,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  */
 public class GetItemRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table in which you want to get an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
@@ -40,9 +53,9 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     private Key key;
 
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -50,8 +63,8 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     private java.util.List<String> attributesToGet;
 
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      */
     private Boolean consistentRead;
 
@@ -66,7 +79,10 @@ public class GetItemRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName
+     * @param tableName The name of the table in which you want to get an
+     * item. Allowed characters are <code>a-z</code>, <code>A-Z</code>,
+     * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
+     * and <code>.</code> (period).
      * @param key The primary key that uniquely identifies each item in a
      * table. A primary key can be a one attribute (hash) primary key or a
      * two attribute (hash-and-range) primary key.
@@ -79,33 +95,48 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table in which you want to get an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table in which you want to get an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to get an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to get an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to get an item. Allowed
+     * characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -113,7 +144,10 @@ public class GetItemRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to get an item. Allowed
+     *         characters are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -171,16 +205,16 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @return List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public java.util.List<String> getAttributesToGet() {
         
@@ -188,16 +222,16 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -211,18 +245,18 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -236,18 +270,18 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -265,35 +299,35 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @return If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public Boolean isConsistentRead() {
         return consistentRead;
     }
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @param consistentRead If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consistentRead If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -305,11 +339,11 @@ public class GetItemRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @return If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public Boolean getConsistentRead() {
         return consistentRead;

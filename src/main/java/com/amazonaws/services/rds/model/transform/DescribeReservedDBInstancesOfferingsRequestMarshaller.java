@@ -38,7 +38,7 @@ public class DescribeReservedDBInstancesOfferingsRequestMarshaller implements Ma
 
         Request<DescribeReservedDBInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedDBInstancesOfferingsRequest>(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeReservedDBInstancesOfferings");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (describeReservedDBInstancesOfferingsRequest.getReservedDBInstancesOfferingId() != null) {
             request.addParameter("ReservedDBInstancesOfferingId", StringUtils.fromString(describeReservedDBInstancesOfferingsRequest.getReservedDBInstancesOfferingId()));
@@ -51,6 +51,9 @@ public class DescribeReservedDBInstancesOfferingsRequestMarshaller implements Ma
         }
         if (describeReservedDBInstancesOfferingsRequest.getProductDescription() != null) {
             request.addParameter("ProductDescription", StringUtils.fromString(describeReservedDBInstancesOfferingsRequest.getProductDescription()));
+        }
+        if (describeReservedDBInstancesOfferingsRequest.getOfferingType() != null) {
+            request.addParameter("OfferingType", StringUtils.fromString(describeReservedDBInstancesOfferingsRequest.getOfferingType()));
         }
         if (describeReservedDBInstancesOfferingsRequest.isMultiAZ() != null) {
             request.addParameter("MultiAZ", StringUtils.fromBoolean(describeReservedDBInstancesOfferingsRequest.isMultiAZ()));

@@ -118,6 +118,13 @@ public class DBInstance {
     private String availabilityZone;
 
     /**
+     * Provides the inforamtion of the subnet group associated with the DB
+     * instance, including the name, descrption and subnets in the subnet
+     * group.
+     */
+    private DBSubnetGroup dBSubnetGroup;
+
+    /**
      * Specifies the weekly time range (in UTC) during which system
      * maintenance can occur.
      */
@@ -803,6 +810,52 @@ public class DBInstance {
     
     
     /**
+     * Provides the inforamtion of the subnet group associated with the DB
+     * instance, including the name, descrption and subnets in the subnet
+     * group.
+     *
+     * @return Provides the inforamtion of the subnet group associated with the DB
+     *         instance, including the name, descrption and subnets in the subnet
+     *         group.
+     */
+    public DBSubnetGroup getDBSubnetGroup() {
+        return dBSubnetGroup;
+    }
+    
+    /**
+     * Provides the inforamtion of the subnet group associated with the DB
+     * instance, including the name, descrption and subnets in the subnet
+     * group.
+     *
+     * @param dBSubnetGroup Provides the inforamtion of the subnet group associated with the DB
+     *         instance, including the name, descrption and subnets in the subnet
+     *         group.
+     */
+    public void setDBSubnetGroup(DBSubnetGroup dBSubnetGroup) {
+        this.dBSubnetGroup = dBSubnetGroup;
+    }
+    
+    /**
+     * Provides the inforamtion of the subnet group associated with the DB
+     * instance, including the name, descrption and subnets in the subnet
+     * group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBSubnetGroup Provides the inforamtion of the subnet group associated with the DB
+     *         instance, including the name, descrption and subnets in the subnet
+     *         group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withDBSubnetGroup(DBSubnetGroup dBSubnetGroup) {
+        this.dBSubnetGroup = dBSubnetGroup;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the weekly time range (in UTC) during which system
      * maintenance can occur.
      *
@@ -1225,6 +1278,7 @@ public class DBInstance {
         if (dBSecurityGroups != null) sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
         if (dBParameterGroups != null) sb.append("DBParameterGroups: " + dBParameterGroups + ", ");
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (dBSubnetGroup != null) sb.append("DBSubnetGroup: " + dBSubnetGroup + ", ");
         if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
         if (pendingModifiedValues != null) sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
         if (latestRestorableTime != null) sb.append("LatestRestorableTime: " + latestRestorableTime + ", ");
@@ -1257,6 +1311,7 @@ public class DBInstance {
         hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getDBParameterGroups() == null) ? 0 : getDBParameterGroups().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getDBSubnetGroup() == null) ? 0 : getDBSubnetGroup().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode()); 
         hashCode = prime * hashCode + ((getLatestRestorableTime() == null) ? 0 : getLatestRestorableTime().hashCode()); 
@@ -1305,6 +1360,8 @@ public class DBInstance {
         if (other.getDBParameterGroups() != null && other.getDBParameterGroups().equals(this.getDBParameterGroups()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getDBSubnetGroup() == null ^ this.getDBSubnetGroup() == null) return false;
+        if (other.getDBSubnetGroup() != null && other.getDBSubnetGroup().equals(this.getDBSubnetGroup()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getPendingModifiedValues() == null ^ this.getPendingModifiedValues() == null) return false;

@@ -38,7 +38,7 @@ public class AssociateRouteTableRequestMarshaller implements Marshaller<Request<
 
         Request<AssociateRouteTableRequest> request = new DefaultRequest<AssociateRouteTableRequest>(associateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateRouteTable");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
         if (associateRouteTableRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(associateRouteTableRequest.getSubnetId()));

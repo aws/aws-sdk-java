@@ -19,8 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest) RevokeDBSecurityGroupIngress operation}.
  * <p>
  * Revokes ingress from a DBSecurityGroup for previously authorized IP
- * ranges or EC2 Security Groups. Required parameters for this API are
- * one of CIDRIP or (EC2SecurityGroupName AND EC2SecurityGroupOwnerId).
+ * ranges or EC2 or VPC Security Groups. Required parameters for this API
+ * are one of CIDRIP, EC2SecurityGroupId for VPC, or
+ * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
+ * EC2SecurityGroupId).
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest)
@@ -34,25 +36,37 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
 
     /**
      * The IP range to revoke access from. Must be a valid CIDR range. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     * <code>EC2SecurityGroupId</code> and
+     * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     private String cIDRIP;
 
     /**
-     * The name of the EC2 Security Group to revoke access from. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
      */
     private String eC2SecurityGroupName;
 
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified <code>EC2SecurityGroupName</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The id of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
+     */
+    private String eC2SecurityGroupId;
+
+    /**
+     * The AWS Account Number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      */
     private String eC2SecurityGroupOwnerId;
 
@@ -112,12 +126,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The IP range to revoke access from. Must be a valid CIDR range. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     * <code>EC2SecurityGroupId</code> and
+     * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
      * @return The IP range to revoke access from. Must be a valid CIDR range. If
-     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     *         <code>EC2SecurityGroupId</code> and
+     *         <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     public String getCIDRIP() {
         return cIDRIP;
@@ -125,12 +141,14 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The IP range to revoke access from. Must be a valid CIDR range. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     * <code>EC2SecurityGroupId</code> and
+     * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
      * @param cIDRIP The IP range to revoke access from. Must be a valid CIDR range. If
-     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     *         <code>EC2SecurityGroupId</code> and
+     *         <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      */
     public void setCIDRIP(String cIDRIP) {
         this.cIDRIP = cIDRIP;
@@ -138,14 +156,16 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     /**
      * The IP range to revoke access from. Must be a valid CIDR range. If
-     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     * and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     * <code>EC2SecurityGroupId</code> and
+     * <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cIDRIP The IP range to revoke access from. Must be a valid CIDR range. If
-     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-     *         and <code>EC2SecurityGroupOwnerId</code> cannot be provided.
+     *         <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     *         <code>EC2SecurityGroupId</code> and
+     *         <code>EC2SecurityGroupOwnerId</code> cannot be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -157,47 +177,53 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     
     /**
-     * The name of the EC2 Security Group to revoke access from. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
      *
-     * @return The name of the EC2 Security Group to revoke access from. If
-     *         <code>EC2SecurityGroupName</code> is specified,
-     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @return The name of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
      */
     public String getEC2SecurityGroupName() {
         return eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. If
-     *         <code>EC2SecurityGroupName</code> is specified,
-     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
      */
     public void setEC2SecurityGroupName(String eC2SecurityGroupName) {
         this.eC2SecurityGroupName = eC2SecurityGroupName;
     }
     
     /**
-     * The name of the EC2 Security Group to revoke access from. If
-     * <code>EC2SecurityGroupName</code> is specified,
-     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The name of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. If
-     *         <code>EC2SecurityGroupName</code> is specified,
-     *         <code>EC2SecurityGroupOwnerId</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @param eC2SecurityGroupName The name of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -209,53 +235,117 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
     
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified <code>EC2SecurityGroupName</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The id of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
      *
-     * @return The AWS Account Number of the owner of the security group specified in
-     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     *         specified <code>EC2SecurityGroupName</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @return The id of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
+     */
+    public String getEC2SecurityGroupId() {
+        return eC2SecurityGroupId;
+    }
+    
+    /**
+     * The id of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
+     *
+     * @param eC2SecurityGroupId The id of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
+     */
+    public void setEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+    }
+    
+    /**
+     * The id of the EC2 Security Group to revoke access from. For VPC DB
+     * Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     * Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     * must be provided.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eC2SecurityGroupId The id of the EC2 Security Group to revoke access from. For VPC DB
+     *         Security Groups, <code>EC2SecurityGroupId</code> must be provided.
+     *         Otherwise, EC2SecurityGroupOwnerId and either
+     *         <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code>
+     *         must be provided.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RevokeDBSecurityGroupIngressRequest withEC2SecurityGroupId(String eC2SecurityGroupId) {
+        this.eC2SecurityGroupId = eC2SecurityGroupId;
+        return this;
+    }
+    
+    
+    /**
+     * The AWS Account Number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
+     *
+     * @return The AWS Account Number of the owner of the EC2 security group
+     *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public String getEC2SecurityGroupOwnerId() {
         return eC2SecurityGroupOwnerId;
     }
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified <code>EC2SecurityGroupName</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS Account Number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      *
-     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     *         specified <code>EC2SecurityGroupName</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the EC2 security group
+     *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      */
     public void setEC2SecurityGroupOwnerId(String eC2SecurityGroupOwnerId) {
         this.eC2SecurityGroupOwnerId = eC2SecurityGroupOwnerId;
     }
     
     /**
-     * The AWS Account Number of the owner of the security group specified in
-     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     * is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     * specified <code>EC2SecurityGroupName</code> must also be provided and
-     * <code>CIDRIP</code> cannot be provided.
+     * The AWS Account Number of the owner of the EC2 security group
+     * specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     * Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     * <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     * or <code>EC2SecurityGroupId</code> must be provided.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the security group specified in
-     *         the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID
-     *         is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is
-     *         specified <code>EC2SecurityGroupName</code> must also be provided and
-     *         <code>CIDRIP</code> cannot be provided.
+     * @param eC2SecurityGroupOwnerId The AWS Account Number of the owner of the EC2 security group
+     *         specified in the <code>EC2SecurityGroupName</code> parameter. The AWS
+     *         Access Key ID is not an acceptable value. For VPC DB Security Groups,
+     *         <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     *         EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code>
+     *         or <code>EC2SecurityGroupId</code> must be provided.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -281,6 +371,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
         if (cIDRIP != null) sb.append("CIDRIP: " + cIDRIP + ", ");
         if (eC2SecurityGroupName != null) sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
+        if (eC2SecurityGroupId != null) sb.append("EC2SecurityGroupId: " + eC2SecurityGroupId + ", ");
         if (eC2SecurityGroupOwnerId != null) sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
         sb.append("}");
         return sb.toString();
@@ -294,6 +385,7 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCIDRIP() == null) ? 0 : getCIDRIP().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupName() == null) ? 0 : getEC2SecurityGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getEC2SecurityGroupId() == null) ? 0 : getEC2SecurityGroupId().hashCode()); 
         hashCode = prime * hashCode + ((getEC2SecurityGroupOwnerId() == null) ? 0 : getEC2SecurityGroupOwnerId().hashCode()); 
         return hashCode;
     }
@@ -312,6 +404,8 @@ public class RevokeDBSecurityGroupIngressRequest extends AmazonWebServiceRequest
         if (other.getCIDRIP() != null && other.getCIDRIP().equals(this.getCIDRIP()) == false) return false; 
         if (other.getEC2SecurityGroupName() == null ^ this.getEC2SecurityGroupName() == null) return false;
         if (other.getEC2SecurityGroupName() != null && other.getEC2SecurityGroupName().equals(this.getEC2SecurityGroupName()) == false) return false; 
+        if (other.getEC2SecurityGroupId() == null ^ this.getEC2SecurityGroupId() == null) return false;
+        if (other.getEC2SecurityGroupId() != null && other.getEC2SecurityGroupId().equals(this.getEC2SecurityGroupId()) == false) return false; 
         if (other.getEC2SecurityGroupOwnerId() == null ^ this.getEC2SecurityGroupOwnerId() == null) return false;
         if (other.getEC2SecurityGroupOwnerId() != null && other.getEC2SecurityGroupOwnerId().equals(this.getEC2SecurityGroupOwnerId()) == false) return false; 
         return true;

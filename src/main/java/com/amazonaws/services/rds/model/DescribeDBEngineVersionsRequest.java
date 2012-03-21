@@ -36,8 +36,8 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     private String engineVersion;
 
     /**
-     * The name of a specific database parameter group family to return
-     * details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * The name of a specific DB Parameter Group family to return details
+     * for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      * characters</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul>
      */
@@ -139,13 +139,13 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The name of a specific database parameter group family to return
-     * details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * The name of a specific DB Parameter Group family to return details
+     * for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      * characters</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @return The name of a specific database parameter group family to return
-     *         details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * @return The name of a specific DB Parameter Group family to return details
+     *         for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
      */
@@ -154,13 +154,13 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of a specific database parameter group family to return
-     * details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * The name of a specific DB Parameter Group family to return details
+     * for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      * characters</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul>
      *
-     * @param dBParameterGroupFamily The name of a specific database parameter group family to return
-     *         details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * @param dBParameterGroupFamily The name of a specific DB Parameter Group family to return details
+     *         for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
      */
@@ -169,15 +169,15 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * The name of a specific database parameter group family to return
-     * details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * The name of a specific DB Parameter Group family to return details
+     * for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      * characters</li> <li>First character must be a letter</li> <li>Cannot
      * end with a hyphen or contain two consecutive hyphens</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBParameterGroupFamily The name of a specific database parameter group family to return
-     *         details for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
+     * @param dBParameterGroupFamily The name of a specific DB Parameter Group family to return details
+     *         for. <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric
      *         characters</li> <li>First character must be a letter</li> <li>Cannot
      *         end with a hyphen or contain two consecutive hyphens</li> </ul>
      *

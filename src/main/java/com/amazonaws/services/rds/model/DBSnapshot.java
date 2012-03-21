@@ -76,6 +76,11 @@ public class DBSnapshot {
     private String availabilityZone;
 
     /**
+     * Provides the Vpc Id associated with the DB Snapshot.
+     */
+    private String vpcId;
+
+    /**
      * Specifies the time (UTC) when the snapshot was taken.
      */
     private java.util.Date instanceCreateTime;
@@ -94,6 +99,11 @@ public class DBSnapshot {
      * License model information for the restored DB Instance.
      */
     private String licenseModel;
+
+    /**
+     * Provides the type of the DB Snapshot.
+     */
+    private String snapshotType;
 
     /**
      * Specifies the identifier for the DB Snapshot.
@@ -386,6 +396,40 @@ public class DBSnapshot {
     
     
     /**
+     * Provides the Vpc Id associated with the DB Snapshot.
+     *
+     * @return Provides the Vpc Id associated with the DB Snapshot.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * Provides the Vpc Id associated with the DB Snapshot.
+     *
+     * @param vpcId Provides the Vpc Id associated with the DB Snapshot.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * Provides the Vpc Id associated with the DB Snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId Provides the Vpc Id associated with the DB Snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSnapshot withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the time (UTC) when the snapshot was taken.
      *
      * @return Specifies the time (UTC) when the snapshot was taken.
@@ -522,6 +566,40 @@ public class DBSnapshot {
     
     
     /**
+     * Provides the type of the DB Snapshot.
+     *
+     * @return Provides the type of the DB Snapshot.
+     */
+    public String getSnapshotType() {
+        return snapshotType;
+    }
+    
+    /**
+     * Provides the type of the DB Snapshot.
+     *
+     * @param snapshotType Provides the type of the DB Snapshot.
+     */
+    public void setSnapshotType(String snapshotType) {
+        this.snapshotType = snapshotType;
+    }
+    
+    /**
+     * Provides the type of the DB Snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param snapshotType Provides the type of the DB Snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSnapshot withSnapshotType(String snapshotType) {
+        this.snapshotType = snapshotType;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -541,10 +619,12 @@ public class DBSnapshot {
         if (status != null) sb.append("Status: " + status + ", ");
         if (port != null) sb.append("Port: " + port + ", ");
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
         if (instanceCreateTime != null) sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
         if (masterUsername != null) sb.append("MasterUsername: " + masterUsername + ", ");
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (snapshotType != null) sb.append("SnapshotType: " + snapshotType + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -562,10 +642,12 @@ public class DBSnapshot {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceCreateTime() == null) ? 0 : getInstanceCreateTime().hashCode()); 
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode()); 
         return hashCode;
     }
     
@@ -593,6 +675,8 @@ public class DBSnapshot {
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         if (other.getInstanceCreateTime() == null ^ this.getInstanceCreateTime() == null) return false;
         if (other.getInstanceCreateTime() != null && other.getInstanceCreateTime().equals(this.getInstanceCreateTime()) == false) return false; 
         if (other.getMasterUsername() == null ^ this.getMasterUsername() == null) return false;
@@ -601,6 +685,8 @@ public class DBSnapshot {
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.getSnapshotType() == null ^ this.getSnapshotType() == null) return false;
+        if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false) return false; 
         return true;
     }
     

@@ -21,6 +21,7 @@ public enum InstanceType {
     
     T1Micro("t1.micro"),
     M1Small("m1.small"),
+    M1Medium("m1.medium"),
     M1Large("m1.large"),
     M1Xlarge("m1.xlarge"),
     M2Xlarge("m2.xlarge"),
@@ -58,6 +59,8 @@ public enum InstanceType {
             return InstanceType.T1Micro;
         } else if ("m1.small".equals(value)) {
             return InstanceType.M1Small;
+        } else if ("m1.medium".equals(value)) {
+            return InstanceType.M1Medium;
         } else if ("m1.large".equals(value)) {
             return InstanceType.M1Large;
         } else if ("m1.xlarge".equals(value)) {

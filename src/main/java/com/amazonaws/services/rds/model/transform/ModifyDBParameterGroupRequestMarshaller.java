@@ -38,7 +38,7 @@ public class ModifyDBParameterGroupRequestMarshaller implements Marshaller<Reque
 
         Request<ModifyDBParameterGroupRequest> request = new DefaultRequest<ModifyDBParameterGroupRequest>(modifyDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBParameterGroup");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (modifyDBParameterGroupRequest.getDBParameterGroupName() != null) {
             request.addParameter("DBParameterGroupName", StringUtils.fromString(modifyDBParameterGroupRequest.getDBParameterGroupName()));

@@ -18,46 +18,67 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#describeTable(DescribeTableRequest) DescribeTable operation}.
  * <p>
- * Returns information about the table, including the current status of
- * the table, the primary key schema and when the table was created. If
- * the table does not exist, the server returns a
- * ResourceNotFoundException.
+ * Retrieves information about the table, including the current status of
+ * the table, the primary key schema and when the table was created.
+ * </p>
+ * <p>
+ * If the table does not exist, Amazon DynamoDB returns a
+ * <code>ResourceNotFoundException</code> .
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#describeTable(DescribeTableRequest)
  */
 public class DescribeTableRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table you want to describe. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table you want to describe. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table you want to describe. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to describe. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to describe. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table you want to describe. Allowed characters are
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     * (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -65,7 +86,9 @@ public class DescribeTableRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table you want to describe. Allowed characters are
+     *         <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, <code>_</code>
+     *         (underscore), <code>-</code> (hyphen) and <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

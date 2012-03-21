@@ -3,9 +3,8 @@
  * Synchronous and asynchronous client classes for accessing AmazonIdentityManagement.
  *
  * AWS Identity and Access Management <p>
- * This is the Amazon Web Services (AWS) Identity and Access Management
- * (IAM) API Reference. This guide provides descriptions of the IAM API
- * as well as links to related content in the guide, <a
+ * This guide provides descriptions of the Identity and Access Management
+ * (IAM) API as well as links to related content in the guide, <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/"> Using
  * IAM </a> .
  * </p>
@@ -13,22 +12,19 @@
  * IAM is a web service that enables AWS customers to manage users and
  * user permissions under their AWS account. For more information about
  * this product go to <a href="http://aws.amazon.com/iam/"> AWS Identity
- * and Access Management (IAM) </a> . For specific information about
- * setting up signatures and authorization through the API, go to <a
+ * and Access Management (IAM) </a> . For information about setting up
+ * signatures and authorization through the API, go to <a
+ * mazonwebservices.com/general/latest/gr/signing_aws_api_requests.html">
+ * Signing AWS API Requests </a> in the <i>AWS General Reference</i> .
+ * For general information about using the Query API with IAM, go to <a
  * cs.amazonwebservices.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">
- * Making Query Requests </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * Making Query Requests </a> in <i>Using IAM</i> .
  * </p>
  * <p>
  * If you're new to AWS and need additional technical information about a
  * specific AWS product, you can find the product's technical
  * documentation at <a href="http://aws.amazon.com/documentation/">
  * http://aws.amazon.com/documentation/ </a> .
- * </p>
- * <p>
- * We will refer to Amazon AWS Identity and Access Management using the
- * abbreviated form IAM. All copyrights and legal protections still
- * apply.
  * </p>
  */
  package com.amazonaws.services.identitymanagement;

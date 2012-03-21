@@ -20,25 +20,31 @@ package com.amazonaws.services.dynamodb.model;
 public class UpdateItemResult {
 
     /**
-     * A map of attribute name-value pairs, but only if the ReturnValues
-     * parameter is specified as something other than NONE in the request.
+     * A map of attribute name-value pairs, but only if the
+     * <code>ReturnValues</code> parameter is specified as something other
+     * than <code>NONE</code> in the request.
      */
     private java.util.Map<String,AttributeValue> attributes;
 
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      */
     private Double consumedCapacityUnits;
 
     /**
-     * A map of attribute name-value pairs, but only if the ReturnValues
-     * parameter is specified as something other than NONE in the request.
+     * A map of attribute name-value pairs, but only if the
+     * <code>ReturnValues</code> parameter is specified as something other
+     * than <code>NONE</code> in the request.
      *
-     * @return A map of attribute name-value pairs, but only if the ReturnValues
-     *         parameter is specified as something other than NONE in the request.
+     * @return A map of attribute name-value pairs, but only if the
+     *         <code>ReturnValues</code> parameter is specified as something other
+     *         than <code>NONE</code> in the request.
      */
     public java.util.Map<String,AttributeValue> getAttributes() {
         
@@ -46,24 +52,28 @@ public class UpdateItemResult {
     }
     
     /**
-     * A map of attribute name-value pairs, but only if the ReturnValues
-     * parameter is specified as something other than NONE in the request.
+     * A map of attribute name-value pairs, but only if the
+     * <code>ReturnValues</code> parameter is specified as something other
+     * than <code>NONE</code> in the request.
      *
-     * @param attributes A map of attribute name-value pairs, but only if the ReturnValues
-     *         parameter is specified as something other than NONE in the request.
+     * @param attributes A map of attribute name-value pairs, but only if the
+     *         <code>ReturnValues</code> parameter is specified as something other
+     *         than <code>NONE</code> in the request.
      */
     public void setAttributes(java.util.Map<String,AttributeValue> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A map of attribute name-value pairs, but only if the ReturnValues
-     * parameter is specified as something other than NONE in the request.
+     * A map of attribute name-value pairs, but only if the
+     * <code>ReturnValues</code> parameter is specified as something other
+     * than <code>NONE</code> in the request.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A map of attribute name-value pairs, but only if the ReturnValues
-     *         parameter is specified as something other than NONE in the request.
+     * @param attributes A map of attribute name-value pairs, but only if the
+     *         <code>ReturnValues</code> parameter is specified as something other
+     *         than <code>NONE</code> in the request.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,14 +85,20 @@ public class UpdateItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @return The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public Double getConsumedCapacityUnits() {
         return consumedCapacityUnits;
@@ -90,14 +106,20 @@ public class UpdateItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public void setConsumedCapacityUnits(Double consumedCapacityUnits) {
         this.consumedCapacityUnits = consumedCapacityUnits;
@@ -105,16 +127,22 @@ public class UpdateItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

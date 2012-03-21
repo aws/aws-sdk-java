@@ -38,7 +38,7 @@ public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller
 
         Request<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "RevokeDBSecurityGroupIngress");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));
@@ -48,6 +48,9 @@ public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller
         }
         if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName() != null) {
             request.addParameter("EC2SecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupName()));
+        }
+        if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupId() != null) {
+            request.addParameter("EC2SecurityGroupId", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupId()));
         }
         if (revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId() != null) {
             request.addParameter("EC2SecurityGroupOwnerId", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getEC2SecurityGroupOwnerId()));

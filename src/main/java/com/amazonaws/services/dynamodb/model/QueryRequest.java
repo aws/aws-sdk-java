@@ -18,23 +18,36 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest) Query operation}.
  * <p>
- * The Query operation gets the values of one or more items and its
- * attributes by primary key (composite primary key, only). Narrow the
- * scope of the query using comparison operators on the RangeKeyValue of
- * the composite key. Use the ScanIndexForward parameter to get results
- * in forward or reverse order by range key.
+ * Gets the values of one or more items and its attributes by primary key
+ * (composite primary key, only).
+ * </p>
+ * <p>
+ * Narrow the scope of the query using comparison operators on the
+ * <code>RangeKeyValue</code> of the composite key. Use the
+ * <code>ScanIndexForward</code> parameter to get results in forward or
+ * reverse order by range key.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest)
  */
 public class QueryRequest extends AmazonWebServiceRequest {
 
+    /**
+     * The name of the table in which you want to query. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
@@ -44,11 +57,12 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while querying the table, it stops the query and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the query. Also, if the result set
-     * size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     * query and returns the matching values, and a LastEvaluatedKey to apply
-     * in a subsequent operation to continue the query.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the query. Also, if the
+     * result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     * stops the query and returns the matching values, and a
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     * continue the query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -56,17 +70,18 @@ public class QueryRequest extends AmazonWebServiceRequest {
     private Integer limit;
 
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      */
     private Boolean consistentRead;
 
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items that
-     * match the query parameters, instead of a list of the matching items
-     * and their attributes. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items that match the query parameters, instead of a list of the
+     * matching items and their attributes. Do not set <code>Count</code> to
+     * <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      */
     private Boolean count;
 
@@ -84,17 +99,18 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * Specifies forward or backward traversal of the index. Amazon DynamoDB
      * returns results reflecting the requested order, determined by the
-     * range key. Default is true (forward).
+     * range key. The default value is <code>true</code> (forward).
      */
     private Boolean scanIndexForward;
 
     /**
      * Primary key of the item from which to continue an earlier query. An
-     * earlier query might provide this value as the LastEvaluatedKey if that
-     * query operation was interrupted before completing the query; either
-     * because of the result set size or the Limit parameter. The
-     * LastEvaluatedKey can be passed back in a new query request to continue
-     * the operation from that point.
+     * earlier query might provide this value as the
+     * <code>LastEvaluatedKey</code> if that query operation was interrupted
+     * before completing the query; either because of the result set size or
+     * the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     * can be passed back in a new query request to continue the operation
+     * from that point.
      */
     private Key exclusiveStartKey;
 
@@ -109,7 +125,10 @@ public class QueryRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param tableName
+     * @param tableName The name of the table in which you want to query.
+     * Allowed characters are <code>a-z</code>, <code>A-Z</code>,
+     * <code>0-9</code>, <code>_</code> (underscore), <code>-</code> (hyphen)
+     * and <code>.</code> (period).
      * @param hashKeyValue Attribute value of the hash component of the
      * composite primary key.
      */
@@ -121,33 +140,48 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table in which you want to query. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table in which you want to query. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to query. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to query. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table in which you want to query. Allowed characters
+     * are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     * <code>_</code> (underscore), <code>-</code> (hyphen) and
+     * <code>.</code> (period).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -155,7 +189,10 @@ public class QueryRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table in which you want to query. Allowed characters
+     *         are <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>,
+     *         <code>_</code> (underscore), <code>-</code> (hyphen) and
+     *         <code>.</code> (period).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -167,16 +204,16 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @return Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @return List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public java.util.List<String> getAttributesToGet() {
         
@@ -184,16 +221,16 @@ public class QueryRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      */
     public void setAttributesToGet(java.util.Collection<String> attributesToGet) {
         if (attributesToGet == null) {
@@ -207,18 +244,18 @@ public class QueryRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -232,18 +269,18 @@ public class QueryRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Array of Attribute names. If attribute names are not specified then
-     * all attributes will be returned. If some attributes are not found,
-     * they will not appear in the result.
+     * List of <code>Attribute</code> names. If attribute names are not
+     * specified then all attributes will be returned. If some attributes are
+     * not found, they will not appear in the result.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      *
-     * @param attributesToGet Array of Attribute names. If attribute names are not specified then
-     *         all attributes will be returned. If some attributes are not found,
-     *         they will not appear in the result.
+     * @param attributesToGet List of <code>Attribute</code> names. If attribute names are not
+     *         specified then all attributes will be returned. If some attributes are
+     *         not found, they will not appear in the result.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -263,22 +300,24 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while querying the table, it stops the query and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the query. Also, if the result set
-     * size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     * query and returns the matching values, and a LastEvaluatedKey to apply
-     * in a subsequent operation to continue the query.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the query. Also, if the
+     * result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     * stops the query and returns the matching values, and a
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     * continue the query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @return The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while querying the table, it stops the query and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the query. Also, if the result set
-     *         size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     *         query and returns the matching values, and a LastEvaluatedKey to apply
-     *         in a subsequent operation to continue the query.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the query. Also, if the
+     *         result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     *         stops the query and returns the matching values, and a
+     *         <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     *         continue the query.
      */
     public Integer getLimit() {
         return limit;
@@ -287,22 +326,24 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while querying the table, it stops the query and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the query. Also, if the result set
-     * size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     * query and returns the matching values, and a LastEvaluatedKey to apply
-     * in a subsequent operation to continue the query.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the query. Also, if the
+     * result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     * stops the query and returns the matching values, and a
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     * continue the query.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @param limit The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while querying the table, it stops the query and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the query. Also, if the result set
-     *         size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     *         query and returns the matching values, and a LastEvaluatedKey to apply
-     *         in a subsequent operation to continue the query.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the query. Also, if the
+     *         result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     *         stops the query and returns the matching values, and a
+     *         <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     *         continue the query.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -311,11 +352,12 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of items to return. If Amazon DynamoDB hits this
      * limit while querying the table, it stops the query and returns the
-     * matching values up to the limit, and a LastEvaluatedKey to apply in a
-     * subsequent operation to continue the query. Also, if the result set
-     * size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     * query and returns the matching values, and a LastEvaluatedKey to apply
-     * in a subsequent operation to continue the query.
+     * matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     * to apply in a subsequent operation to continue the query. Also, if the
+     * result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     * stops the query and returns the matching values, and a
+     * <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     * continue the query.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -324,11 +366,12 @@ public class QueryRequest extends AmazonWebServiceRequest {
      *
      * @param limit The maximum number of items to return. If Amazon DynamoDB hits this
      *         limit while querying the table, it stops the query and returns the
-     *         matching values up to the limit, and a LastEvaluatedKey to apply in a
-     *         subsequent operation to continue the query. Also, if the result set
-     *         size exceeds 1MB before Amazon DynamoDB hits this limit, it stops the
-     *         query and returns the matching values, and a LastEvaluatedKey to apply
-     *         in a subsequent operation to continue the query.
+     *         matching values up to the limit, and a <code>LastEvaluatedKey</code>
+     *         to apply in a subsequent operation to continue the query. Also, if the
+     *         result set size exceeds 1MB before Amazon DynamoDB hits this limit, it
+     *         stops the query and returns the matching values, and a
+     *         <code>LastEvaluatedKey</code> to apply in a subsequent operation to
+     *         continue the query.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -340,35 +383,35 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @return If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public Boolean isConsistentRead() {
         return consistentRead;
     }
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @param consistentRead If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public void setConsistentRead(Boolean consistentRead) {
         this.consistentRead = consistentRead;
     }
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param consistentRead If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -380,64 +423,70 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, then a consistent read is issued, otherwise eventually
-     * consistent is used.
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
      *
-     * @return If set to true, then a consistent read is issued, otherwise eventually
-     *         consistent is used.
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
      */
     public Boolean getConsistentRead() {
         return consistentRead;
     }
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items that
-     * match the query parameters, instead of a list of the matching items
-     * and their attributes. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items that match the query parameters, instead of a list of the
+     * matching items and their attributes. Do not set <code>Count</code> to
+     * <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @return If set to true, Amazon DynamoDB returns a total number of items that
-     *         match the query parameters, instead of a list of the matching items
-     *         and their attributes. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @return If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items that match the query parameters, instead of a list of the
+     *         matching items and their attributes. Do not set <code>Count</code> to
+     *         <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public Boolean isCount() {
         return count;
     }
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items that
-     * match the query parameters, instead of a list of the matching items
-     * and their attributes. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items that match the query parameters, instead of a list of the
+     * matching items and their attributes. Do not set <code>Count</code> to
+     * <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @param count If set to true, Amazon DynamoDB returns a total number of items that
-     *         match the query parameters, instead of a list of the matching items
-     *         and their attributes. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @param count If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items that match the query parameters, instead of a list of the
+     *         matching items and their attributes. Do not set <code>Count</code> to
+     *         <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public void setCount(Boolean count) {
         this.count = count;
     }
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items that
-     * match the query parameters, instead of a list of the matching items
-     * and their attributes. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items that match the query parameters, instead of a list of the
+     * matching items and their attributes. Do not set <code>Count</code> to
+     * <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param count If set to true, Amazon DynamoDB returns a total number of items that
-     *         match the query parameters, instead of a list of the matching items
-     *         and their attributes. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @param count If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items that match the query parameters, instead of a list of the
+     *         matching items and their attributes. Do not set <code>Count</code> to
+     *         <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -449,17 +498,19 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * If set to true, Amazon DynamoDB returns a total number of items that
-     * match the query parameters, instead of a list of the matching items
-     * and their attributes. Do not set Count to true while providing a list
-     * of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     * error.
+     * If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     * items that match the query parameters, instead of a list of the
+     * matching items and their attributes. Do not set <code>Count</code> to
+     * <code>true</code> while providing a list of
+     * <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     * validation error.
      *
-     * @return If set to true, Amazon DynamoDB returns a total number of items that
-     *         match the query parameters, instead of a list of the matching items
-     *         and their attributes. Do not set Count to true while providing a list
-     *         of AttributesToGet, otherwise Amazon DynamoDB returns a validation
-     *         error.
+     * @return If set to <code>true</code>, Amazon DynamoDB returns a total number of
+     *         items that match the query parameters, instead of a list of the
+     *         matching items and their attributes. Do not set <code>Count</code> to
+     *         <code>true</code> while providing a list of
+     *         <code>AttributesToGet</code>, otherwise Amazon DynamoDB returns a
+     *         validation error.
      */
     public Boolean getCount() {
         return count;
@@ -542,11 +593,11 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * Specifies forward or backward traversal of the index. Amazon DynamoDB
      * returns results reflecting the requested order, determined by the
-     * range key. Default is true (forward).
+     * range key. The default value is <code>true</code> (forward).
      *
      * @return Specifies forward or backward traversal of the index. Amazon DynamoDB
      *         returns results reflecting the requested order, determined by the
-     *         range key. Default is true (forward).
+     *         range key. The default value is <code>true</code> (forward).
      */
     public Boolean isScanIndexForward() {
         return scanIndexForward;
@@ -555,11 +606,11 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * Specifies forward or backward traversal of the index. Amazon DynamoDB
      * returns results reflecting the requested order, determined by the
-     * range key. Default is true (forward).
+     * range key. The default value is <code>true</code> (forward).
      *
      * @param scanIndexForward Specifies forward or backward traversal of the index. Amazon DynamoDB
      *         returns results reflecting the requested order, determined by the
-     *         range key. Default is true (forward).
+     *         range key. The default value is <code>true</code> (forward).
      */
     public void setScanIndexForward(Boolean scanIndexForward) {
         this.scanIndexForward = scanIndexForward;
@@ -568,13 +619,13 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * Specifies forward or backward traversal of the index. Amazon DynamoDB
      * returns results reflecting the requested order, determined by the
-     * range key. Default is true (forward).
+     * range key. The default value is <code>true</code> (forward).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param scanIndexForward Specifies forward or backward traversal of the index. Amazon DynamoDB
      *         returns results reflecting the requested order, determined by the
-     *         range key. Default is true (forward).
+     *         range key. The default value is <code>true</code> (forward).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -588,11 +639,11 @@ public class QueryRequest extends AmazonWebServiceRequest {
     /**
      * Specifies forward or backward traversal of the index. Amazon DynamoDB
      * returns results reflecting the requested order, determined by the
-     * range key. Default is true (forward).
+     * range key. The default value is <code>true</code> (forward).
      *
      * @return Specifies forward or backward traversal of the index. Amazon DynamoDB
      *         returns results reflecting the requested order, determined by the
-     *         range key. Default is true (forward).
+     *         range key. The default value is <code>true</code> (forward).
      */
     public Boolean getScanIndexForward() {
         return scanIndexForward;
@@ -600,18 +651,20 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     /**
      * Primary key of the item from which to continue an earlier query. An
-     * earlier query might provide this value as the LastEvaluatedKey if that
-     * query operation was interrupted before completing the query; either
-     * because of the result set size or the Limit parameter. The
-     * LastEvaluatedKey can be passed back in a new query request to continue
-     * the operation from that point.
+     * earlier query might provide this value as the
+     * <code>LastEvaluatedKey</code> if that query operation was interrupted
+     * before completing the query; either because of the result set size or
+     * the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     * can be passed back in a new query request to continue the operation
+     * from that point.
      *
      * @return Primary key of the item from which to continue an earlier query. An
-     *         earlier query might provide this value as the LastEvaluatedKey if that
-     *         query operation was interrupted before completing the query; either
-     *         because of the result set size or the Limit parameter. The
-     *         LastEvaluatedKey can be passed back in a new query request to continue
-     *         the operation from that point.
+     *         earlier query might provide this value as the
+     *         <code>LastEvaluatedKey</code> if that query operation was interrupted
+     *         before completing the query; either because of the result set size or
+     *         the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     *         can be passed back in a new query request to continue the operation
+     *         from that point.
      */
     public Key getExclusiveStartKey() {
         return exclusiveStartKey;
@@ -619,18 +672,20 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     /**
      * Primary key of the item from which to continue an earlier query. An
-     * earlier query might provide this value as the LastEvaluatedKey if that
-     * query operation was interrupted before completing the query; either
-     * because of the result set size or the Limit parameter. The
-     * LastEvaluatedKey can be passed back in a new query request to continue
-     * the operation from that point.
+     * earlier query might provide this value as the
+     * <code>LastEvaluatedKey</code> if that query operation was interrupted
+     * before completing the query; either because of the result set size or
+     * the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     * can be passed back in a new query request to continue the operation
+     * from that point.
      *
      * @param exclusiveStartKey Primary key of the item from which to continue an earlier query. An
-     *         earlier query might provide this value as the LastEvaluatedKey if that
-     *         query operation was interrupted before completing the query; either
-     *         because of the result set size or the Limit parameter. The
-     *         LastEvaluatedKey can be passed back in a new query request to continue
-     *         the operation from that point.
+     *         earlier query might provide this value as the
+     *         <code>LastEvaluatedKey</code> if that query operation was interrupted
+     *         before completing the query; either because of the result set size or
+     *         the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     *         can be passed back in a new query request to continue the operation
+     *         from that point.
      */
     public void setExclusiveStartKey(Key exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
@@ -638,20 +693,22 @@ public class QueryRequest extends AmazonWebServiceRequest {
     
     /**
      * Primary key of the item from which to continue an earlier query. An
-     * earlier query might provide this value as the LastEvaluatedKey if that
-     * query operation was interrupted before completing the query; either
-     * because of the result set size or the Limit parameter. The
-     * LastEvaluatedKey can be passed back in a new query request to continue
-     * the operation from that point.
+     * earlier query might provide this value as the
+     * <code>LastEvaluatedKey</code> if that query operation was interrupted
+     * before completing the query; either because of the result set size or
+     * the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     * can be passed back in a new query request to continue the operation
+     * from that point.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param exclusiveStartKey Primary key of the item from which to continue an earlier query. An
-     *         earlier query might provide this value as the LastEvaluatedKey if that
-     *         query operation was interrupted before completing the query; either
-     *         because of the result set size or the Limit parameter. The
-     *         LastEvaluatedKey can be passed back in a new query request to continue
-     *         the operation from that point.
+     *         earlier query might provide this value as the
+     *         <code>LastEvaluatedKey</code> if that query operation was interrupted
+     *         before completing the query; either because of the result set size or
+     *         the <code>Limit</code> parameter. The <code>LastEvaluatedKey</code>
+     *         can be passed back in a new query request to continue the operation
+     *         from that point.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

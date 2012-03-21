@@ -19,14 +19,22 @@ package com.amazonaws.services.dynamodb.model;
  */
 public class TableDescription {
 
+    /**
+     * The name of the table being described.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>3 - 255<br/>
+     * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
+     */
     private String tableName;
 
     /**
-     * KeySchema: The KeySchema identifies the primary key as a one attribute
-     * primary key (hash) or a composite two attribute (hash-and-range)
-     * primary key. Single attribute primary keys have one index value: a
-     * HashKeyElement. A composite hash-and-range primary key contains two
-     * attribute values: a HashKeyElement and a RangeKeyElement.
+     * The KeySchema identifies the primary key as a one attribute primary
+     * key (hash) or a composite two attribute (hash-and-range) primary key.
+     * Single attribute primary keys have one index value: a
+     * <code>HashKeyElement</code>. A composite hash-and-range primary key
+     * contains two attribute values: a <code>HashKeyElement</code> and a
+     * <code>RangeKeyElement</code>.
      */
     private KeySchema keySchema;
 
@@ -47,33 +55,33 @@ public class TableDescription {
     public TableDescription() {}
     
     /**
-     * Returns the value of the TableName property for this object.
+     * The name of the table being described.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @return The value of the TableName property for this object.
+     * @return The name of the table being described.
      */
     public String getTableName() {
         return tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table being described.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table being described.
      */
     public void setTableName(String tableName) {
         this.tableName = tableName;
     }
     
     /**
-     * Sets the value of the TableName property for this object.
+     * The name of the table being described.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -81,7 +89,7 @@ public class TableDescription {
      * <b>Length: </b>3 - 255<br/>
      * <b>Pattern: </b>[a-zA-Z0-9_.-]+<br/>
      *
-     * @param tableName The new value for the TableName property for this object.
+     * @param tableName The name of the table being described.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,53 +101,59 @@ public class TableDescription {
     
     
     /**
-     * KeySchema: The KeySchema identifies the primary key as a one attribute
-     * primary key (hash) or a composite two attribute (hash-and-range)
-     * primary key. Single attribute primary keys have one index value: a
-     * HashKeyElement. A composite hash-and-range primary key contains two
-     * attribute values: a HashKeyElement and a RangeKeyElement.
+     * The KeySchema identifies the primary key as a one attribute primary
+     * key (hash) or a composite two attribute (hash-and-range) primary key.
+     * Single attribute primary keys have one index value: a
+     * <code>HashKeyElement</code>. A composite hash-and-range primary key
+     * contains two attribute values: a <code>HashKeyElement</code> and a
+     * <code>RangeKeyElement</code>.
      *
-     * @return KeySchema: The KeySchema identifies the primary key as a one attribute
-     *         primary key (hash) or a composite two attribute (hash-and-range)
-     *         primary key. Single attribute primary keys have one index value: a
-     *         HashKeyElement. A composite hash-and-range primary key contains two
-     *         attribute values: a HashKeyElement and a RangeKeyElement.
+     * @return The KeySchema identifies the primary key as a one attribute primary
+     *         key (hash) or a composite two attribute (hash-and-range) primary key.
+     *         Single attribute primary keys have one index value: a
+     *         <code>HashKeyElement</code>. A composite hash-and-range primary key
+     *         contains two attribute values: a <code>HashKeyElement</code> and a
+     *         <code>RangeKeyElement</code>.
      */
     public KeySchema getKeySchema() {
         return keySchema;
     }
     
     /**
-     * KeySchema: The KeySchema identifies the primary key as a one attribute
-     * primary key (hash) or a composite two attribute (hash-and-range)
-     * primary key. Single attribute primary keys have one index value: a
-     * HashKeyElement. A composite hash-and-range primary key contains two
-     * attribute values: a HashKeyElement and a RangeKeyElement.
+     * The KeySchema identifies the primary key as a one attribute primary
+     * key (hash) or a composite two attribute (hash-and-range) primary key.
+     * Single attribute primary keys have one index value: a
+     * <code>HashKeyElement</code>. A composite hash-and-range primary key
+     * contains two attribute values: a <code>HashKeyElement</code> and a
+     * <code>RangeKeyElement</code>.
      *
-     * @param keySchema KeySchema: The KeySchema identifies the primary key as a one attribute
-     *         primary key (hash) or a composite two attribute (hash-and-range)
-     *         primary key. Single attribute primary keys have one index value: a
-     *         HashKeyElement. A composite hash-and-range primary key contains two
-     *         attribute values: a HashKeyElement and a RangeKeyElement.
+     * @param keySchema The KeySchema identifies the primary key as a one attribute primary
+     *         key (hash) or a composite two attribute (hash-and-range) primary key.
+     *         Single attribute primary keys have one index value: a
+     *         <code>HashKeyElement</code>. A composite hash-and-range primary key
+     *         contains two attribute values: a <code>HashKeyElement</code> and a
+     *         <code>RangeKeyElement</code>.
      */
     public void setKeySchema(KeySchema keySchema) {
         this.keySchema = keySchema;
     }
     
     /**
-     * KeySchema: The KeySchema identifies the primary key as a one attribute
-     * primary key (hash) or a composite two attribute (hash-and-range)
-     * primary key. Single attribute primary keys have one index value: a
-     * HashKeyElement. A composite hash-and-range primary key contains two
-     * attribute values: a HashKeyElement and a RangeKeyElement.
+     * The KeySchema identifies the primary key as a one attribute primary
+     * key (hash) or a composite two attribute (hash-and-range) primary key.
+     * Single attribute primary keys have one index value: a
+     * <code>HashKeyElement</code>. A composite hash-and-range primary key
+     * contains two attribute values: a <code>HashKeyElement</code> and a
+     * <code>RangeKeyElement</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keySchema KeySchema: The KeySchema identifies the primary key as a one attribute
-     *         primary key (hash) or a composite two attribute (hash-and-range)
-     *         primary key. Single attribute primary keys have one index value: a
-     *         HashKeyElement. A composite hash-and-range primary key contains two
-     *         attribute values: a HashKeyElement and a RangeKeyElement.
+     * @param keySchema The KeySchema identifies the primary key as a one attribute primary
+     *         key (hash) or a composite two attribute (hash-and-range) primary key.
+     *         Single attribute primary keys have one index value: a
+     *         <code>HashKeyElement</code>. A composite hash-and-range primary key
+     *         contains two attribute values: a <code>HashKeyElement</code> and a
+     *         <code>RangeKeyElement</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

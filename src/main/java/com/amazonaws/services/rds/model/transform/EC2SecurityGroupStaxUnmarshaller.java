@@ -54,6 +54,10 @@ public class EC2SecurityGroupStaxUnmarshaller implements Unmarshaller<EC2Securit
                     eC2SecurityGroup.setEC2SecurityGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EC2SecurityGroupId", targetDepth)) {
+                    eC2SecurityGroup.setEC2SecurityGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("EC2SecurityGroupOwnerId", targetDepth)) {
                     eC2SecurityGroup.setEC2SecurityGroupOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

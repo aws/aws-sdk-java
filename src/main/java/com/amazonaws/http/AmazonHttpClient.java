@@ -210,7 +210,9 @@ public class AmazonHttpClient {
         // connections so that they don't sit around in CLOSE_WAIT.
         httpClient.getConnectionManager().closeIdleConnections(30, TimeUnit.SECONDS);
 
-        requestLog.debug("Sending Request: " + request.toString());
+        if (requestLog.isDebugEnabled()) {
+            requestLog.debug("Sending Request: " + request.toString());
+        }
 
         // Apply whatever request options we know how to handle, such as user-agent.
         applyRequestData(request);
@@ -369,8 +371,10 @@ public class AmazonHttpClient {
         if (exception instanceof NoHttpResponseException
             || exception instanceof SocketException
             || exception instanceof SocketTimeoutException) {
-            log.debug("Retrying on " + exception.getClass().getName()
-                    + ": " + exception.getMessage());
+            if (log.isDebugEnabled()) {
+                log.debug("Retrying on " + exception.getClass().getName()
+                        + ": " + exception.getMessage());
+            }
             return true;
         }
 
@@ -478,8 +482,10 @@ public class AmazonHttpClient {
 
             responseMetadataCache.add(request.getOriginalRequest(), awsResponse.getResponseMetadata());
 
-            requestLog.debug("Received successful response: " + apacheHttpResponse.getStatusLine().getStatusCode()
-                    + ", AWS Request ID: " + awsResponse.getRequestId());
+            if (requestLog.isDebugEnabled()) {
+                requestLog.debug("Received successful response: " + apacheHttpResponse.getStatusLine().getStatusCode()
+                        + ", AWS Request ID: " + awsResponse.getRequestId());
+            }
 
             return awsResponse.getResult();
         } catch (Exception e) {
@@ -603,7 +609,10 @@ public class AmazonHttpClient {
         }
 
         delay = Math.min(delay, MAX_BACKOFF_IN_MILLISECONDS);
-        log.debug("Retriable error detected, will retry in " + delay + "ms, attempt number: " + retries);
+        if (log.isDebugEnabled()) {
+            log.debug("Retriable error detected, " +
+            		"will retry in " + delay + "ms, attempt number: " + retries);
+        }
 
         try {
             Thread.sleep(delay);

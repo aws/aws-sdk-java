@@ -38,7 +38,7 @@ public class TerminateInstancesRequestMarshaller implements Marshaller<Request<T
 
         Request<TerminateInstancesRequest> request = new DefaultRequest<TerminateInstancesRequest>(terminateInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "TerminateInstances");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
 
         java.util.List<String> instanceIdsList = terminateInstancesRequest.getInstanceIds();

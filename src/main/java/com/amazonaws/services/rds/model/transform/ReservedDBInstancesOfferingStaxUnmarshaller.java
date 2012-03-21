@@ -77,8 +77,16 @@ public class ReservedDBInstancesOfferingStaxUnmarshaller implements Unmarshaller
                     reservedDBInstancesOffering.setProductDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("OfferingType", targetDepth)) {
+                    reservedDBInstancesOffering.setOfferingType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("MultiAZ", targetDepth)) {
                     reservedDBInstancesOffering.setMultiAZ(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("RecurringCharges/RecurringCharge", targetDepth)) {
+                    reservedDBInstancesOffering.getRecurringCharges().add(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -18,13 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest) DeleteLoginProfile operation}.
  * <p>
- * Deletes the login profile for the specified user, which terminates the
- * user's ability to access AWS services through the IAM login page.
+ * Deletes the password for the specified user, which terminates the
+ * user's ability to access AWS services through the AWS Management
+ * Console.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Deleting a user's login profile does not prevent a
- * user from accessing IAM through the command line interface or the API.
- * To prevent all user access you must also either make the access key
+ * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
+ * from accessing IAM through the command line interface or the API. To
+ * prevent all user access you must also either make the access key
  * inactive or delete it. For more information about making keys
  * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
  * </p>
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
 
     /**
-     * Name of the user whose login profile you want to delete.
+     * Name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
@@ -53,8 +54,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param userName Name of the user whose login profile you want to
-     * delete.
+     * @param userName Name of the user whose password you want to delete.
      */
     public DeleteLoginProfileRequest(String userName) {
         this.userName = userName;
@@ -63,33 +63,33 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Name of the user whose login profile you want to delete.
+     * Name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @return Name of the user whose login profile you want to delete.
+     * @return Name of the user whose password you want to delete.
      */
     public String getUserName() {
         return userName;
     }
     
     /**
-     * Name of the user whose login profile you want to delete.
+     * Name of the user whose password you want to delete.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to delete.
+     * @param userName Name of the user whose password you want to delete.
      */
     public void setUserName(String userName) {
         this.userName = userName;
     }
     
     /**
-     * Name of the user whose login profile you want to delete.
+     * Name of the user whose password you want to delete.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -97,7 +97,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 64<br/>
      * <b>Pattern: </b>[\w+=,.@-]*<br/>
      *
-     * @param userName Name of the user whose login profile you want to delete.
+     * @param userName Name of the user whose password you want to delete.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

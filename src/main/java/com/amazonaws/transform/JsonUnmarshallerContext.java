@@ -43,7 +43,10 @@ public class JsonUnmarshallerContext {
 
 	private Map<String, String> metadata = new HashMap<String, String>();
 	private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
+
     public JsonToken currentToken;
+    private JsonToken nextToken;
+
 
 	public JsonUnmarshallerContext(JsonParser jsonParser) {
 		this.jsonParser = jsonParser;
@@ -62,6 +65,14 @@ public class JsonUnmarshallerContext {
 		return depth;
 	}
 
+	/**
+	 * Returns the text of the current token, or throws an exception if
+	 * the current token does not contain text (ex: '{', '}', etc.).
+	 *
+	 * @return The text of the current token.
+	 *
+	 * @throws IOException
+	 */
 	public String readText() throws IOException {
 		switch (currentToken) {
 		case VALUE_STRING:
@@ -107,31 +118,46 @@ public class JsonUnmarshallerContext {
 	 *
 	 * @param expression
 	 *            The psuedo-xpath expression to test.
-	 * @param startingStackDepth
+	 * @param stackDepth
 	 *            The depth in the stack representing where the expression must
 	 *            start matching in order for this method to return true.
 	 *
 	 * @return True if the specified expression matches the current position in
 	 *         the JSON document, starting from the specified depth.
 	 */
-	public boolean testExpression(String expression, int startingStackDepth) {
+	public boolean testExpression(String expression, int stackDepth) {
 		if (expression.equals(".")) return true;
 
 		int index = -1;
 		while ((index = expression.indexOf("/", index + 1)) > -1) {
 			// Don't consider attributes a new depth level
 			if (expression.charAt(index + 1) != '@') {
-				startingStackDepth++;
+				stackDepth++;
 			}
 		}
 
-		return stackString.endsWith("/" + expression);
+		return stackString.endsWith("/" + expression) &&
+		       stackDepth == getCurrentDepth();
 	}
 
 	public JsonToken nextToken() throws IOException {
-		JsonToken token = jsonParser.nextToken();
-		updateContext(token);
+	    // Use the value from the nextToken field if
+	    // we've already populated it to peek ahead.
+	    JsonToken token = (nextToken != null) ?
+	            nextToken : jsonParser.nextToken();
+
+	    this.currentToken = token;
+	    nextToken = null;
+
+		updateContext();
 		return token;
+	}
+
+	public JsonToken peek() throws IOException {
+	    if (nextToken != null) return nextToken;
+
+	    nextToken = jsonParser.nextToken();
+	    return nextToken;
 	}
 
 	/**
@@ -185,21 +211,20 @@ public class JsonUnmarshallerContext {
 		}
 	}
 
-	private void updateContext(JsonToken token) throws IOException {
-		if (token == null) return;
-		this.currentToken = token;
+	private void updateContext() throws IOException {
+		if (currentToken == null) return;
 
-		if (token == START_OBJECT || token == START_ARRAY) {
+		if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
 			if (currentField != null) {
 				stack.push(currentField);
 				currentField = null;
-			} else {
-				stack.push(token.toString());
 			}
-		} else if (token == END_OBJECT || token == END_ARRAY) {
-			if (stack.isEmpty() == false) stack.pop();
-			currentField = null;
-		} else if (token == FIELD_NAME) {
+        } else if (currentToken == END_OBJECT || currentToken == END_ARRAY) {
+            if (!stack.isEmpty()) {
+                stack.pop();
+            }
+            currentField = null;
+		} else if (currentToken == FIELD_NAME) {
 			String t = jsonParser.getText();
 			currentField = t;
 		}
@@ -213,7 +238,8 @@ public class JsonUnmarshallerContext {
 	}
 
 	private void rebuildStackString() {
-		stackString = "";
+	    stackString = "";
+
 		for (String s : stack) {
 			stackString += "/" + s;
 		}
@@ -221,5 +247,7 @@ public class JsonUnmarshallerContext {
 		if (currentField != null) {
 			stackString += "/" + currentField;
 		}
+
+		if (stackString == "") stackString = "/";
 	}
 }

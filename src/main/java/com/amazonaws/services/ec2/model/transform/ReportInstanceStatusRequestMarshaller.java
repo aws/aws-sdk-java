@@ -38,7 +38,7 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
 
         Request<ReportInstanceStatusRequest> request = new DefaultRequest<ReportInstanceStatusRequest>(reportInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "ReportInstanceStatus");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
 
         java.util.List<String> instancesList = reportInstanceStatusRequest.getInstances();
@@ -46,7 +46,7 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
 
         for (String instancesListValue : instancesList) {
             if (instancesListValue != null) {
-                request.addParameter("InstancesSet." + instancesListIndex, StringUtils.fromString(instancesListValue));
+                request.addParameter("InstanceId." + instancesListIndex, StringUtils.fromString(instancesListValue));
             }
 
             instancesListIndex++;
@@ -61,15 +61,12 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
             request.addParameter("EndTime", StringUtils.fromDate(reportInstanceStatusRequest.getEndTime()));
         }
 
-        java.util.List<ReasonCode> reasonCodesList = reportInstanceStatusRequest.getReasonCodes();
+        java.util.List<String> reasonCodesList = reportInstanceStatusRequest.getReasonCodes();
         int reasonCodesListIndex = 1;
 
-        for (ReasonCode reasonCodesListValue : reasonCodesList) {
-            ReasonCode reasonCodeMember = reasonCodesListValue;
-            if (reasonCodeMember != null) {
-                if (reasonCodeMember.getReasonCode() != null) {
-                    request.addParameter("ReasonCodesSet." + reasonCodesListIndex + ".ReasonCode", StringUtils.fromString(reasonCodeMember.getReasonCode()));
-                }
+        for (String reasonCodesListValue : reasonCodesList) {
+            if (reasonCodesListValue != null) {
+                request.addParameter("ReasonCode." + reasonCodesListIndex, StringUtils.fromString(reasonCodesListValue));
             }
 
             reasonCodesListIndex++;

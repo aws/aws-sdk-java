@@ -38,7 +38,7 @@ public class ResetDBParameterGroupRequestMarshaller implements Marshaller<Reques
 
         Request<ResetDBParameterGroupRequest> request = new DefaultRequest<ResetDBParameterGroupRequest>(resetDBParameterGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ResetDBParameterGroup");
-        request.addParameter("Version", "2011-04-01");
+        request.addParameter("Version", "2012-01-15");
 
         if (resetDBParameterGroupRequest.getDBParameterGroupName() != null) {
             request.addParameter("DBParameterGroupName", StringUtils.fromString(resetDBParameterGroupRequest.getDBParameterGroupName()));

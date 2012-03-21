@@ -35,7 +35,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
     public TableDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         TableDescription tableDescription = new TableDescription();
         int originalDepth = context.getCurrentDepth();
-        int targetDepth = originalDepth; // + 1;
+        int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
         if (token == null) token = context.nextToken();
@@ -73,7 +73,7 @@ public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescr
                     tableDescription.setItemCount(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() < originalDepth) {
+                if (context.getCurrentDepth() <= originalDepth) {
                     return tableDescription;
                 }
             }

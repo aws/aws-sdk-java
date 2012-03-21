@@ -20,31 +20,34 @@ package com.amazonaws.services.dynamodb.model;
 public class DeleteItemResult {
 
     /**
-     * If the ReturnValues parameter is provided as ALL_OLD in the request,
-     * Amazon DynamoDB returns an array of attribute name-value pairs
-     * (essentially, the deleted item). Otherwise, the response contains an
-     * empty set.
+     * If the <code>ReturnValues</code> parameter is provided as
+     * <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     * of attribute name-value pairs (essentially, the deleted item).
+     * Otherwise, the response contains an empty set.
      */
     private java.util.Map<String,AttributeValue> attributes;
 
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      */
     private Double consumedCapacityUnits;
 
     /**
-     * If the ReturnValues parameter is provided as ALL_OLD in the request,
-     * Amazon DynamoDB returns an array of attribute name-value pairs
-     * (essentially, the deleted item). Otherwise, the response contains an
-     * empty set.
+     * If the <code>ReturnValues</code> parameter is provided as
+     * <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     * of attribute name-value pairs (essentially, the deleted item).
+     * Otherwise, the response contains an empty set.
      *
-     * @return If the ReturnValues parameter is provided as ALL_OLD in the request,
-     *         Amazon DynamoDB returns an array of attribute name-value pairs
-     *         (essentially, the deleted item). Otherwise, the response contains an
-     *         empty set.
+     * @return If the <code>ReturnValues</code> parameter is provided as
+     *         <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     *         of attribute name-value pairs (essentially, the deleted item).
+     *         Otherwise, the response contains an empty set.
      */
     public java.util.Map<String,AttributeValue> getAttributes() {
         
@@ -52,32 +55,32 @@ public class DeleteItemResult {
     }
     
     /**
-     * If the ReturnValues parameter is provided as ALL_OLD in the request,
-     * Amazon DynamoDB returns an array of attribute name-value pairs
-     * (essentially, the deleted item). Otherwise, the response contains an
-     * empty set.
+     * If the <code>ReturnValues</code> parameter is provided as
+     * <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     * of attribute name-value pairs (essentially, the deleted item).
+     * Otherwise, the response contains an empty set.
      *
-     * @param attributes If the ReturnValues parameter is provided as ALL_OLD in the request,
-     *         Amazon DynamoDB returns an array of attribute name-value pairs
-     *         (essentially, the deleted item). Otherwise, the response contains an
-     *         empty set.
+     * @param attributes If the <code>ReturnValues</code> parameter is provided as
+     *         <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     *         of attribute name-value pairs (essentially, the deleted item).
+     *         Otherwise, the response contains an empty set.
      */
     public void setAttributes(java.util.Map<String,AttributeValue> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * If the ReturnValues parameter is provided as ALL_OLD in the request,
-     * Amazon DynamoDB returns an array of attribute name-value pairs
-     * (essentially, the deleted item). Otherwise, the response contains an
-     * empty set.
+     * If the <code>ReturnValues</code> parameter is provided as
+     * <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     * of attribute name-value pairs (essentially, the deleted item).
+     * Otherwise, the response contains an empty set.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes If the ReturnValues parameter is provided as ALL_OLD in the request,
-     *         Amazon DynamoDB returns an array of attribute name-value pairs
-     *         (essentially, the deleted item). Otherwise, the response contains an
-     *         empty set.
+     * @param attributes If the <code>ReturnValues</code> parameter is provided as
+     *         <code>ALL_OLD</code> in the request, Amazon DynamoDB returns an array
+     *         of attribute name-value pairs (essentially, the deleted item).
+     *         Otherwise, the response contains an empty set.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -89,14 +92,20 @@ public class DeleteItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @return The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public Double getConsumedCapacityUnits() {
         return consumedCapacityUnits;
@@ -104,14 +113,20 @@ public class DeleteItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      */
     public void setConsumedCapacityUnits(Double consumedCapacityUnits) {
         this.consumedCapacityUnits = consumedCapacityUnits;
@@ -119,16 +134,22 @@ public class DeleteItemResult {
     
     /**
      * The number of Capacity Units of the provisioned throughput of the
-     * table consumed during the operation. GetItem, BatchGetItem, Query, and
-     * Scan operations consume Read Capacity Units, while PutItem,
-     * UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     * table consumed during the operation. <code>GetItem</code>,
+     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     * operations consume <code>ReadCapacityUnits</code>, while
+     * <code>PutItem</code>, <code>UpdateItem</code>, and
+     * <code>DeleteItem</code> operations consume
+     * <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
-     *         table consumed during the operation. GetItem, BatchGetItem, Query, and
-     *         Scan operations consume Read Capacity Units, while PutItem,
-     *         UpdateItem, and DeleteItem operations consume Write Capacity Units.
+     *         table consumed during the operation. <code>GetItem</code>,
+     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
+     *         operations consume <code>ReadCapacityUnits</code>, while
+     *         <code>PutItem</code>, <code>UpdateItem</code>, and
+     *         <code>DeleteItem</code> operations consume
+     *         <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -53,6 +53,14 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     private String productDescription;
 
     /**
+     * The offering type filter value. Specify this parameter to show only
+     * the available offerings matching the specified offering type. <p>Valid
+     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Utilization" </code>
+     */
+    private String offeringType;
+
+    /**
      * The Multi-AZ filter value. Specify this parameter to show only the
      * available offerings matching the specified Multi-AZ parameter.
      */
@@ -258,6 +266,58 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
     
     
     /**
+     * The offering type filter value. Specify this parameter to show only
+     * the available offerings matching the specified offering type. <p>Valid
+     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Utilization" </code>
+     *
+     * @return The offering type filter value. Specify this parameter to show only
+     *         the available offerings matching the specified offering type. <p>Valid
+     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Utilization" </code>
+     */
+    public String getOfferingType() {
+        return offeringType;
+    }
+    
+    /**
+     * The offering type filter value. Specify this parameter to show only
+     * the available offerings matching the specified offering type. <p>Valid
+     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Utilization" </code>
+     *
+     * @param offeringType The offering type filter value. Specify this parameter to show only
+     *         the available offerings matching the specified offering type. <p>Valid
+     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Utilization" </code>
+     */
+    public void setOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+    }
+    
+    /**
+     * The offering type filter value. Specify this parameter to show only
+     * the available offerings matching the specified offering type. <p>Valid
+     * Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     * Utilization" </code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param offeringType The offering type filter value. Specify this parameter to show only
+     *         the available offerings matching the specified offering type. <p>Valid
+     *         Values: <code>"Light Utilization" | "Medium Utilization" | "Heavy
+     *         Utilization" </code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedDBInstancesOfferingsRequest withOfferingType(String offeringType) {
+        this.offeringType = offeringType;
+        return this;
+    }
+    
+    
+    /**
      * The Multi-AZ filter value. Specify this parameter to show only the
      * available offerings matching the specified Multi-AZ parameter.
      *
@@ -422,6 +482,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
         if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
         if (duration != null) sb.append("Duration: " + duration + ", ");
         if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
+        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
         if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
         if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         if (marker != null) sb.append("Marker: " + marker + ", ");
@@ -438,6 +499,7 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
         hashCode = prime * hashCode + ((getProductDescription() == null) ? 0 : getProductDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
@@ -460,6 +522,8 @@ public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServic
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
         if (other.getProductDescription() == null ^ this.getProductDescription() == null) return false;
         if (other.getProductDescription() != null && other.getProductDescription().equals(this.getProductDescription()) == false) return false; 
+        if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
+        if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
         if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
         if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;

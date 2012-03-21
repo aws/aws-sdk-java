@@ -16,36 +16,35 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * AttributeValue can be String, Number, StringSet, NumberSet.
+ * AttributeValue can be <code>String</code> ,
+ * <code>Number</code> ,
+ * <code>StringSet</code> ,
+ * <code>NumberSet</code> .
  * </p>
  */
 public class AttributeValue {
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     * are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     * the size of the primary key (1024 bytes as a range part of a key or
-     * 2048 bytes as a single part hash key) or the item size (64k).
+     * Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     * limited by the size of the primary key (1024 bytes as a range part of
+     * a key or 2048 bytes as a single part hash key) or the item size (64k).
      */
     private String s;
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     * are positive or negative exact-value decimals and integers. A number
-     * can have up to 38 digits precision and can be between 10^-128 to
-     * 10^+126.
+     * Numbers are positive or negative exact-value decimals and integers. A
+     * number can have up to 38 digits precision and can be between 10^-128
+     * to 10^+126.
      */
     private String n;
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Strings.
+     * A set of strings.
      */
     private java.util.List<String> sS;
 
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Numbers.
+     * A set of numbers.
      */
     private java.util.List<String> nS;
 
@@ -60,10 +59,10 @@ public class AttributeValue {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param s AttributeValue can be String, Number, StringSet, NumberSet.
-     * Strings are Unicode with UTF-8 binary encoding. The maximum size is
-     * limited by the size of the primary key (1024 bytes as a range part of
-     * a key or 2048 bytes as a single part hash key) or the item size (64k).
+     * @param s Strings are Unicode with UTF-8 binary encoding. The maximum
+     * size is limited by the size of the primary key (1024 bytes as a range
+     * part of a key or 2048 bytes as a single part hash key) or the item
+     * size (64k).
      */
     public AttributeValue(String s) {
         this.s = s;
@@ -76,8 +75,7 @@ public class AttributeValue {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param sS AttributeValue can be String, Number, StringSet, NumberSet.
-     * A Set of Strings.
+     * @param sS A set of strings.
      */
     public AttributeValue(java.util.List<String> sS) {
         this.sS = sS;
@@ -86,47 +84,41 @@ public class AttributeValue {
     
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     * are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     * the size of the primary key (1024 bytes as a range part of a key or
-     * 2048 bytes as a single part hash key) or the item size (64k).
+     * Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     * limited by the size of the primary key (1024 bytes as a range part of
+     * a key or 2048 bytes as a single part hash key) or the item size (64k).
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     *         are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     *         the size of the primary key (1024 bytes as a range part of a key or
-     *         2048 bytes as a single part hash key) or the item size (64k).
+     * @return Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     *         limited by the size of the primary key (1024 bytes as a range part of
+     *         a key or 2048 bytes as a single part hash key) or the item size (64k).
      */
     public String getS() {
         return s;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     * are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     * the size of the primary key (1024 bytes as a range part of a key or
-     * 2048 bytes as a single part hash key) or the item size (64k).
+     * Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     * limited by the size of the primary key (1024 bytes as a range part of
+     * a key or 2048 bytes as a single part hash key) or the item size (64k).
      *
-     * @param s AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     *         are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     *         the size of the primary key (1024 bytes as a range part of a key or
-     *         2048 bytes as a single part hash key) or the item size (64k).
+     * @param s Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     *         limited by the size of the primary key (1024 bytes as a range part of
+     *         a key or 2048 bytes as a single part hash key) or the item size (64k).
      */
     public void setS(String s) {
         this.s = s;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     * are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     * the size of the primary key (1024 bytes as a range part of a key or
-     * 2048 bytes as a single part hash key) or the item size (64k).
+     * Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     * limited by the size of the primary key (1024 bytes as a range part of
+     * a key or 2048 bytes as a single part hash key) or the item size (64k).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s AttributeValue can be String, Number, StringSet, NumberSet. Strings
-     *         are Unicode with UTF-8 binary encoding. The maximum size is limited by
-     *         the size of the primary key (1024 bytes as a range part of a key or
-     *         2048 bytes as a single part hash key) or the item size (64k).
+     * @param s Strings are Unicode with UTF-8 binary encoding. The maximum size is
+     *         limited by the size of the primary key (1024 bytes as a range part of
+     *         a key or 2048 bytes as a single part hash key) or the item size (64k).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -138,47 +130,41 @@ public class AttributeValue {
     
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     * are positive or negative exact-value decimals and integers. A number
-     * can have up to 38 digits precision and can be between 10^-128 to
-     * 10^+126.
+     * Numbers are positive or negative exact-value decimals and integers. A
+     * number can have up to 38 digits precision and can be between 10^-128
+     * to 10^+126.
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     *         are positive or negative exact-value decimals and integers. A number
-     *         can have up to 38 digits precision and can be between 10^-128 to
-     *         10^+126.
+     * @return Numbers are positive or negative exact-value decimals and integers. A
+     *         number can have up to 38 digits precision and can be between 10^-128
+     *         to 10^+126.
      */
     public String getN() {
         return n;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     * are positive or negative exact-value decimals and integers. A number
-     * can have up to 38 digits precision and can be between 10^-128 to
-     * 10^+126.
+     * Numbers are positive or negative exact-value decimals and integers. A
+     * number can have up to 38 digits precision and can be between 10^-128
+     * to 10^+126.
      *
-     * @param n AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     *         are positive or negative exact-value decimals and integers. A number
-     *         can have up to 38 digits precision and can be between 10^-128 to
-     *         10^+126.
+     * @param n Numbers are positive or negative exact-value decimals and integers. A
+     *         number can have up to 38 digits precision and can be between 10^-128
+     *         to 10^+126.
      */
     public void setN(String n) {
         this.n = n;
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     * are positive or negative exact-value decimals and integers. A number
-     * can have up to 38 digits precision and can be between 10^-128 to
-     * 10^+126.
+     * Numbers are positive or negative exact-value decimals and integers. A
+     * number can have up to 38 digits precision and can be between 10^-128
+     * to 10^+126.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param n AttributeValue can be String, Number, StringSet, NumberSet. Numbers
-     *         are positive or negative exact-value decimals and integers. A number
-     *         can have up to 38 digits precision and can be between 10^-128 to
-     *         10^+126.
+     * @param n Numbers are positive or negative exact-value decimals and integers. A
+     *         number can have up to 38 digits precision and can be between 10^-128
+     *         to 10^+126.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -190,11 +176,9 @@ public class AttributeValue {
     
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Strings.
+     * A set of strings.
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Strings.
+     * @return A set of strings.
      */
     public java.util.List<String> getSS() {
         
@@ -202,11 +186,9 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Strings.
+     * A set of strings.
      *
-     * @param sS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Strings.
+     * @param sS A set of strings.
      */
     public void setSS(java.util.Collection<String> sS) {
         if (sS == null) {
@@ -220,13 +202,11 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Strings.
+     * A set of strings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Strings.
+     * @param sS A set of strings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -240,13 +220,11 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Strings.
+     * A set of strings.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param sS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Strings.
+     * @param sS A set of strings.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -264,11 +242,9 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Numbers.
+     * A set of numbers.
      *
-     * @return AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Numbers.
+     * @return A set of numbers.
      */
     public java.util.List<String> getNS() {
         
@@ -276,11 +252,9 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Numbers.
+     * A set of numbers.
      *
-     * @param nS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Numbers.
+     * @param nS A set of numbers.
      */
     public void setNS(java.util.Collection<String> nS) {
         if (nS == null) {
@@ -294,13 +268,11 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Numbers.
+     * A set of numbers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Numbers.
+     * @param nS A set of numbers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -314,13 +286,11 @@ public class AttributeValue {
     }
     
     /**
-     * AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     * Numbers.
+     * A set of numbers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param nS AttributeValue can be String, Number, StringSet, NumberSet. A Set of
-     *         Numbers.
+     * @param nS A set of numbers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

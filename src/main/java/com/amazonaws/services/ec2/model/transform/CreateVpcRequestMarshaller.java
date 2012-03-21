@@ -38,7 +38,7 @@ public class CreateVpcRequestMarshaller implements Marshaller<Request<CreateVpcR
 
         Request<CreateVpcRequest> request = new DefaultRequest<CreateVpcRequest>(createVpcRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpc");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
         if (createVpcRequest.getCidrBlock() != null) {
             request.addParameter("CidrBlock", StringUtils.fromString(createVpcRequest.getCidrBlock()));

@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest) CreateDBSecurityGroup operation}.
  * <p>
- * Creates a new database security group. Database Security groups
- * control access to a database instance.
+ * Creates a new DB Security Group. DB Security Groups control access to
+ * a DB Instance.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSecurityGroup(CreateDBSecurityGroupRequest)
@@ -38,6 +38,13 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
      * The description for the DB Security Group.
      */
     private String dBSecurityGroupDescription;
+
+    /**
+     * The Id of VPC. Indicates which VPC this DB Security Group should
+     * belong to. Must be specified to create a DB Security Group for a VPC;
+     * may not be specified otherwise.
+     */
+    private String eC2VpcId;
 
     /**
      * Default constructor for a new CreateDBSecurityGroupRequest object.  Callers should use the
@@ -151,6 +158,52 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The Id of VPC. Indicates which VPC this DB Security Group should
+     * belong to. Must be specified to create a DB Security Group for a VPC;
+     * may not be specified otherwise.
+     *
+     * @return The Id of VPC. Indicates which VPC this DB Security Group should
+     *         belong to. Must be specified to create a DB Security Group for a VPC;
+     *         may not be specified otherwise.
+     */
+    public String getEC2VpcId() {
+        return eC2VpcId;
+    }
+    
+    /**
+     * The Id of VPC. Indicates which VPC this DB Security Group should
+     * belong to. Must be specified to create a DB Security Group for a VPC;
+     * may not be specified otherwise.
+     *
+     * @param eC2VpcId The Id of VPC. Indicates which VPC this DB Security Group should
+     *         belong to. Must be specified to create a DB Security Group for a VPC;
+     *         may not be specified otherwise.
+     */
+    public void setEC2VpcId(String eC2VpcId) {
+        this.eC2VpcId = eC2VpcId;
+    }
+    
+    /**
+     * The Id of VPC. Indicates which VPC this DB Security Group should
+     * belong to. Must be specified to create a DB Security Group for a VPC;
+     * may not be specified otherwise.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eC2VpcId The Id of VPC. Indicates which VPC this DB Security Group should
+     *         belong to. Must be specified to create a DB Security Group for a VPC;
+     *         may not be specified otherwise.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBSecurityGroupRequest withEC2VpcId(String eC2VpcId) {
+        this.eC2VpcId = eC2VpcId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -164,6 +217,7 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         sb.append("{");
         if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
         if (dBSecurityGroupDescription != null) sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
+        if (eC2VpcId != null) sb.append("EC2VpcId: " + eC2VpcId + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -175,6 +229,7 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         
         hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupDescription() == null) ? 0 : getDBSecurityGroupDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getEC2VpcId() == null) ? 0 : getEC2VpcId().hashCode()); 
         return hashCode;
     }
     
@@ -190,6 +245,8 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         if (other.getDBSecurityGroupName() != null && other.getDBSecurityGroupName().equals(this.getDBSecurityGroupName()) == false) return false; 
         if (other.getDBSecurityGroupDescription() == null ^ this.getDBSecurityGroupDescription() == null) return false;
         if (other.getDBSecurityGroupDescription() != null && other.getDBSecurityGroupDescription().equals(this.getDBSecurityGroupDescription()) == false) return false; 
+        if (other.getEC2VpcId() == null ^ this.getEC2VpcId() == null) return false;
+        if (other.getEC2VpcId() != null && other.getEC2VpcId().equals(this.getEC2VpcId()) == false) return false; 
         return true;
     }
     

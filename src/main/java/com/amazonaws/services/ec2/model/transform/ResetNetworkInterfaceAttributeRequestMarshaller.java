@@ -38,7 +38,7 @@ public class ResetNetworkInterfaceAttributeRequestMarshaller implements Marshall
 
         Request<ResetNetworkInterfaceAttributeRequest> request = new DefaultRequest<ResetNetworkInterfaceAttributeRequest>(resetNetworkInterfaceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ResetNetworkInterfaceAttribute");
-        request.addParameter("Version", "2011-12-15");
+        request.addParameter("Version", "2012-03-01");
 
         if (resetNetworkInterfaceAttributeRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(resetNetworkInterfaceAttributeRequest.getNetworkInterfaceId()));

@@ -16,11 +16,13 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * KeySchema: The KeySchema identifies the primary key as a one
- * attribute primary key (hash) or a composite two attribute
- * (hash-and-range) primary key. Single attribute primary keys have one
- * index value: a HashKeyElement. A composite hash-and-range primary key
- * contains two attribute values: a HashKeyElement and a RangeKeyElement.
+ * The KeySchema identifies the primary key as a one attribute primary
+ * key (hash) or a composite two attribute (hash-and-range) primary key.
+ * Single attribute primary keys have one index value: a
+ * <code>HashKeyElement</code> .
+ * A composite hash-and-range primary key contains two attribute
+ * values: a <code>HashKeyElement</code> and a
+ * <code>RangeKeyElement</code> .
  * </p>
  */
 public class KeySchema {
@@ -28,15 +30,17 @@ public class KeySchema {
     /**
      * A hash key element is treated as the primary key, and can be a string
      * or a number. Single attribute primary keys have one index value. The
-     * value can be String, Number, StringSet, NumberSet.
+     * value can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      */
     private KeySchemaElement hashKeyElement;
 
     /**
      * A range key element is treated as a secondary key (used in conjunction
      * with the primary key), and can be a string or a number, and is only
-     * used for hash-and-range primary keys. The value can be String, Number,
-     * StringSet, NumberSet.
+     * used for hash-and-range primary keys. The value can be
+     * <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     * <code>NumberSet</code>.
      */
     private KeySchemaElement rangeKeyElement;
 
@@ -53,8 +57,8 @@ public class KeySchema {
      * 
      * @param hashKeyElement A hash key element is treated as the primary
      * key, and can be a string or a number. Single attribute primary keys
-     * have one index value. The value can be String, Number, StringSet,
-     * NumberSet.
+     * have one index value. The value can be <code>String</code>,
+     * <code>Number</code>, <code>StringSet</code>, <code>NumberSet</code>.
      */
     public KeySchema(KeySchemaElement hashKeyElement) {
         this.hashKeyElement = hashKeyElement;
@@ -65,11 +69,13 @@ public class KeySchema {
     /**
      * A hash key element is treated as the primary key, and can be a string
      * or a number. Single attribute primary keys have one index value. The
-     * value can be String, Number, StringSet, NumberSet.
+     * value can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      *
      * @return A hash key element is treated as the primary key, and can be a string
      *         or a number. Single attribute primary keys have one index value. The
-     *         value can be String, Number, StringSet, NumberSet.
+     *         value can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      */
     public KeySchemaElement getHashKeyElement() {
         return hashKeyElement;
@@ -78,11 +84,13 @@ public class KeySchema {
     /**
      * A hash key element is treated as the primary key, and can be a string
      * or a number. Single attribute primary keys have one index value. The
-     * value can be String, Number, StringSet, NumberSet.
+     * value can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      *
      * @param hashKeyElement A hash key element is treated as the primary key, and can be a string
      *         or a number. Single attribute primary keys have one index value. The
-     *         value can be String, Number, StringSet, NumberSet.
+     *         value can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      */
     public void setHashKeyElement(KeySchemaElement hashKeyElement) {
         this.hashKeyElement = hashKeyElement;
@@ -91,13 +99,15 @@ public class KeySchema {
     /**
      * A hash key element is treated as the primary key, and can be a string
      * or a number. Single attribute primary keys have one index value. The
-     * value can be String, Number, StringSet, NumberSet.
+     * value can be <code>String</code>, <code>Number</code>,
+     * <code>StringSet</code>, <code>NumberSet</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hashKeyElement A hash key element is treated as the primary key, and can be a string
      *         or a number. Single attribute primary keys have one index value. The
-     *         value can be String, Number, StringSet, NumberSet.
+     *         value can be <code>String</code>, <code>Number</code>,
+     *         <code>StringSet</code>, <code>NumberSet</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -111,13 +121,15 @@ public class KeySchema {
     /**
      * A range key element is treated as a secondary key (used in conjunction
      * with the primary key), and can be a string or a number, and is only
-     * used for hash-and-range primary keys. The value can be String, Number,
-     * StringSet, NumberSet.
+     * used for hash-and-range primary keys. The value can be
+     * <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     * <code>NumberSet</code>.
      *
      * @return A range key element is treated as a secondary key (used in conjunction
      *         with the primary key), and can be a string or a number, and is only
-     *         used for hash-and-range primary keys. The value can be String, Number,
-     *         StringSet, NumberSet.
+     *         used for hash-and-range primary keys. The value can be
+     *         <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     *         <code>NumberSet</code>.
      */
     public KeySchemaElement getRangeKeyElement() {
         return rangeKeyElement;
@@ -126,13 +138,15 @@ public class KeySchema {
     /**
      * A range key element is treated as a secondary key (used in conjunction
      * with the primary key), and can be a string or a number, and is only
-     * used for hash-and-range primary keys. The value can be String, Number,
-     * StringSet, NumberSet.
+     * used for hash-and-range primary keys. The value can be
+     * <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     * <code>NumberSet</code>.
      *
      * @param rangeKeyElement A range key element is treated as a secondary key (used in conjunction
      *         with the primary key), and can be a string or a number, and is only
-     *         used for hash-and-range primary keys. The value can be String, Number,
-     *         StringSet, NumberSet.
+     *         used for hash-and-range primary keys. The value can be
+     *         <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     *         <code>NumberSet</code>.
      */
     public void setRangeKeyElement(KeySchemaElement rangeKeyElement) {
         this.rangeKeyElement = rangeKeyElement;
@@ -141,15 +155,17 @@ public class KeySchema {
     /**
      * A range key element is treated as a secondary key (used in conjunction
      * with the primary key), and can be a string or a number, and is only
-     * used for hash-and-range primary keys. The value can be String, Number,
-     * StringSet, NumberSet.
+     * used for hash-and-range primary keys. The value can be
+     * <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     * <code>NumberSet</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param rangeKeyElement A range key element is treated as a secondary key (used in conjunction
      *         with the primary key), and can be a string or a number, and is only
-     *         used for hash-and-range primary keys. The value can be String, Number,
-     *         StringSet, NumberSet.
+     *         used for hash-and-range primary keys. The value can be
+     *         <code>String</code>, <code>Number</code>, <code>StringSet</code>,
+     *         <code>NumberSet</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
