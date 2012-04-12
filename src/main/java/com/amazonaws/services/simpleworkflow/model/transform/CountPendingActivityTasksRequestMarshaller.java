@@ -58,15 +58,13 @@ public class CountPendingActivityTasksRequestMarshaller implements Marshaller<Re
             if (countPendingActivityTasksRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(countPendingActivityTasksRequest.getDomain());
             }
-            if (countPendingActivityTasksRequest != null) {
-                TaskList taskListTaskList = countPendingActivityTasksRequest.getTaskList();
-                if (taskListTaskList != null) {
-                    jsonWriter.key("taskList").object();
-                    if (taskListTaskList.getName() != null) {
-                        jsonWriter.key("name").value(taskListTaskList.getName());
-                    }
-                    jsonWriter.endObject();
+            TaskList taskList = countPendingActivityTasksRequest.getTaskList();
+            if (taskList != null) {
+                jsonWriter.key("taskList").object();
+                if (taskList.getName() != null) {
+                    jsonWriter.key("name").value(taskList.getName());
                 }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

@@ -61,28 +61,24 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
             if (startWorkflowExecutionRequest.getWorkflowId() != null) {
                 jsonWriter.key("workflowId").value(startWorkflowExecutionRequest.getWorkflowId());
             }
-            if (startWorkflowExecutionRequest != null) {
-                WorkflowType workflowTypeWorkflowType = startWorkflowExecutionRequest.getWorkflowType();
-                if (workflowTypeWorkflowType != null) {
-                    jsonWriter.key("workflowType").object();
-                    if (workflowTypeWorkflowType.getName() != null) {
-                        jsonWriter.key("name").value(workflowTypeWorkflowType.getName());
-                    }
-                    if (workflowTypeWorkflowType.getVersion() != null) {
-                        jsonWriter.key("version").value(workflowTypeWorkflowType.getVersion());
-                    }
-                    jsonWriter.endObject();
+            WorkflowType workflowType = startWorkflowExecutionRequest.getWorkflowType();
+            if (workflowType != null) {
+                jsonWriter.key("workflowType").object();
+                if (workflowType.getName() != null) {
+                    jsonWriter.key("name").value(workflowType.getName());
                 }
+                if (workflowType.getVersion() != null) {
+                    jsonWriter.key("version").value(workflowType.getVersion());
+                }
+                jsonWriter.endObject();
             }
-            if (startWorkflowExecutionRequest != null) {
-                TaskList taskListTaskList = startWorkflowExecutionRequest.getTaskList();
-                if (taskListTaskList != null) {
-                    jsonWriter.key("taskList").object();
-                    if (taskListTaskList.getName() != null) {
-                        jsonWriter.key("name").value(taskListTaskList.getName());
-                    }
-                    jsonWriter.endObject();
+            TaskList taskList = startWorkflowExecutionRequest.getTaskList();
+            if (taskList != null) {
+                jsonWriter.key("taskList").object();
+                if (taskList.getName() != null) {
+                    jsonWriter.key("name").value(taskList.getName());
                 }
+                jsonWriter.endObject();
             }
             if (startWorkflowExecutionRequest.getInput() != null) {
                 jsonWriter.key("input").value(startWorkflowExecutionRequest.getInput());
@@ -90,19 +86,14 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
             if (startWorkflowExecutionRequest.getExecutionStartToCloseTimeout() != null) {
                 jsonWriter.key("executionStartToCloseTimeout").value(startWorkflowExecutionRequest.getExecutionStartToCloseTimeout());
             }
-            if (startWorkflowExecutionRequest != null) {
-                java.util.List<String> tagListList = startWorkflowExecutionRequest.getTagList();
-                int tagListListIndex = 0;
-                if (tagListList != null && tagListList.size() > 0) {
-                    jsonWriter.key("tagList").array();
-                    for (String tagListListValue : tagListList) {
-                        if (tagListListValue != null) {
-                            jsonWriter.value(tagListListValue);
-                        } else jsonWriter.value(null);
-                        tagListListIndex++;
-                    }
-                    jsonWriter.endArray();
+
+            java.util.List<String> tagListList = startWorkflowExecutionRequest.getTagList();
+            if (tagListList != null && tagListList.size() > 0) {
+                jsonWriter.key("tagList").array();
+                for (String tagListListValue : tagListList) {
+                    jsonWriter.value(tagListListValue);
                 }
+                jsonWriter.endArray();
             }
             if (startWorkflowExecutionRequest.getTaskStartToCloseTimeout() != null) {
                 jsonWriter.key("taskStartToCloseTimeout").value(startWorkflowExecutionRequest.getTaskStartToCloseTimeout());

@@ -187,7 +187,6 @@ public class SimpleTypeJsonUnmarshallers {
             	return new Date(number.longValue() * 1000);
             } catch (ParseException e) {
                 String errorMessage = "Unable to parse date '" + dateString + "':  " + e.getMessage();
-				log.error(errorMessage, e);
                 throw new AmazonClientException(errorMessage, e);
             }
         }

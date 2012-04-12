@@ -34,6 +34,9 @@ public class BatchResponseJsonUnmarshaller implements Unmarshaller<BatchResponse
 
     public BatchResponse unmarshall(JsonUnmarshallerContext context) throws Exception {
         BatchResponse batchResponse = new BatchResponse();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class BatchResponseJsonUnmarshaller implements Unmarshaller<BatchResponse
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return batchResponse;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Items", targetDepth)) {
@@ -52,12 +55,12 @@ public class BatchResponseJsonUnmarshaller implements Unmarshaller<BatchResponse
                     batchResponse.setConsumedCapacityUnits(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return batchResponse;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return batchResponse;
     }
 
     private static BatchResponseJsonUnmarshaller instance;

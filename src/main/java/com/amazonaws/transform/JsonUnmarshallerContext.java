@@ -27,13 +27,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
-import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.JsonToken;
 
+import com.amazonaws.http.HttpResponse;
+
 public class JsonUnmarshallerContext {
 
-	private final static JsonFactory jsonFactory = new JsonFactory();
 	private final JsonParser jsonParser;
 
 	private final Stack<String> stack = new Stack<String>();
@@ -46,11 +46,38 @@ public class JsonUnmarshallerContext {
 
     public JsonToken currentToken;
     private JsonToken nextToken;
+    private final HttpResponse httpResponse;
 
 
-	public JsonUnmarshallerContext(JsonParser jsonParser) {
-		this.jsonParser = jsonParser;
+    public JsonUnmarshallerContext(JsonParser jsonParser) {
+	    this(jsonParser, null);
 	}
+
+	public JsonUnmarshallerContext(JsonParser jsonParser, HttpResponse httpResponse) {
+	    this.jsonParser = jsonParser;
+        this.httpResponse = httpResponse;
+	}
+
+
+    /**
+     * Returns the value of the header with the specified name from the
+     * response, or null if not present.
+     *
+     * @param header
+     *            The name of the header to lookup.
+     *
+     * @return The value of the header with the specified name from the
+     *         response, or null if not present.
+     */
+    public String getHeader(String header) {
+        if (httpResponse == null) return null;
+
+        return httpResponse.getHeaders().get(header);
+    }
+
+    public HttpResponse getHttpResponse() {
+        return httpResponse;
+    }
 
 	/**
 	 * Returns the element depth of the parser's current position in the JSON

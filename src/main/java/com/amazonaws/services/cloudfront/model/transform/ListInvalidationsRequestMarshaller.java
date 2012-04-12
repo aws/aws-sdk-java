@@ -44,7 +44,7 @@ public class ListInvalidationsRequestMarshaller implements Marshaller<Request<Li
         Request<ListInvalidationsRequest> request = new DefaultRequest<ListInvalidationsRequest>(listInvalidationsRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);        
 
-        String uriResourcePath = "2010-11-01/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2012-03-15/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{DistributionId}", getString(listInvalidationsRequest.getDistributionId())); 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listInvalidationsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listInvalidationsRequest.getMaxItems())); 

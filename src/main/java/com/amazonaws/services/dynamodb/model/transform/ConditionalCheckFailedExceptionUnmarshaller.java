@@ -36,7 +36,6 @@ public class ConditionalCheckFailedExceptionUnmarshaller extends JsonErrorUnmars
         ConditionalCheckFailedException e = (ConditionalCheckFailedException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

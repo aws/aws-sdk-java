@@ -44,7 +44,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
         Request<ChangeResourceRecordSetsRequest> request = new DefaultRequest<ChangeResourceRecordSetsRequest>(changeResourceRecordSetsRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.POST);        
 
-        String uriResourcePath = "/2011-05-05/hostedzone/{Id}/rrset/"; 
+        String uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset/"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(changeResourceRecordSetsRequest.getHostedZoneId())); 
 	    
         if (uriResourcePath.contains("?")) {
@@ -63,7 +63,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
 
         	            
 	        StringWriter stringWriter = new StringWriter();
-	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2011-05-05/");
+	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-02-29/");
 
 			
 			xmlWriter.startElement("ChangeResourceRecordSetsRequest");
@@ -101,6 +101,9 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     }
                                     if (resourceRecordSetResourceRecordSet.getWeight() != null) {
                                         xmlWriter.startElement("Weight").value(resourceRecordSetResourceRecordSet.getWeight()).endElement();
+                                    }
+                                    if (resourceRecordSetResourceRecordSet.getRegion() != null) {
+                                        xmlWriter.startElement("Region").value(resourceRecordSetResourceRecordSet.getRegion()).endElement();
                                     }
                                     if (resourceRecordSetResourceRecordSet.getTTL() != null) {
                                         xmlWriter.startElement("TTL").value(resourceRecordSetResourceRecordSet.getTTL()).endElement();

@@ -100,6 +100,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -252,6 +254,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -266,6 +270,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      *         <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      *         Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     *         <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      *         <code>TXT</code> <p>Values for Alias Resource Record Sets:
      *         <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      *         <code>type</code> without specifying <code>name</code> returns an
@@ -284,6 +290,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -298,6 +306,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      *         <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      *         Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     *         <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      *         <code>TXT</code> <p>Values for Alias Resource Record Sets:
      *         <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      *         <code>type</code> without specifying <code>name</code> returns an
@@ -316,6 +326,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -332,6 +344,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      *         <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      *         Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     *         <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      *         <code>TXT</code> <p>Values for Alias Resource Record Sets:
      *         <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      *         <code>type</code> without specifying <code>name</code> returns an
@@ -355,6 +369,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -369,6 +385,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      *         <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      *         Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     *         <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      *         <code>TXT</code> <p>Values for Alias Resource Record Sets:
      *         <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      *         <code>type</code> without specifying <code>name</code> returns an
@@ -387,6 +405,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      * <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      * Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     * <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     * <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      * <code>TXT</code> <p>Values for Alias Resource Record Sets:
      * <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      * <code>type</code> without specifying <code>name</code> returns an
@@ -403,6 +423,8 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
      *         <code>PTR</code> | <code>SOA</code> | <code>SPF</code> |
      *         <code>SRV</code> | <code>TXT</code> <p>Values for Weighted Resource
      *         Record Sets: <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
+     *         <code>TXT</code> <p> Values for Regional Resource Record Sets:
+     *         <code>A</code> | <code>AAAA</code> | <code>CNAME</code> |
      *         <code>TXT</code> <p>Values for Alias Resource Record Sets:
      *         <code>A</code> | <code>AAAA</code> <p>Constraint: Specifying
      *         <code>type</code> without specifying <code>name</code> returns an

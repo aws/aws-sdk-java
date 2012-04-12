@@ -34,6 +34,9 @@ public class WorkflowExecutionCompletedEventAttributesJsonUnmarshaller implement
 
     public WorkflowExecutionCompletedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowExecutionCompletedEventAttributes workflowExecutionCompletedEventAttributes = new WorkflowExecutionCompletedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class WorkflowExecutionCompletedEventAttributesJsonUnmarshaller implement
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return workflowExecutionCompletedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("result", targetDepth)) {
@@ -53,12 +56,12 @@ public class WorkflowExecutionCompletedEventAttributesJsonUnmarshaller implement
                     workflowExecutionCompletedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return workflowExecutionCompletedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return workflowExecutionCompletedEventAttributes;
     }
 
     private static WorkflowExecutionCompletedEventAttributesJsonUnmarshaller instance;

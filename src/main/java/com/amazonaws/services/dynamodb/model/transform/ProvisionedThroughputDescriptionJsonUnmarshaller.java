@@ -34,6 +34,9 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
 
     public ProvisionedThroughputDescription unmarshall(JsonUnmarshallerContext context) throws Exception {
         ProvisionedThroughputDescription provisionedThroughputDescription = new ProvisionedThroughputDescription();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return provisionedThroughputDescription;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("LastIncreaseDateTime", targetDepth)) {
@@ -61,12 +64,12 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
                     provisionedThroughputDescription.setWriteCapacityUnits(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return provisionedThroughputDescription;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return provisionedThroughputDescription;
     }
 
     private static ProvisionedThroughputDescriptionJsonUnmarshaller instance;

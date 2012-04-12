@@ -34,6 +34,9 @@ public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implemen
 
     public ActivityTaskCancelRequestedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskCancelRequestedEventAttributes activityTaskCancelRequestedEventAttributes = new ActivityTaskCancelRequestedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implemen
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTaskCancelRequestedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("decisionTaskCompletedEventId", targetDepth)) {
@@ -53,12 +56,12 @@ public class ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller implemen
                     activityTaskCancelRequestedEventAttributes.setActivityId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTaskCancelRequestedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTaskCancelRequestedEventAttributes;
     }
 
     private static ActivityTaskCancelRequestedEventAttributesJsonUnmarshaller instance;

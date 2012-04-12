@@ -44,7 +44,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);        
 
-        String uriResourcePath = "2010-11-01/distribution"; 
+        String uriResourcePath = "2012-03-15/distribution"; 
 	    
         if (uriResourcePath.contains("?")) {
 	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -62,7 +62,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         	            
 	        StringWriter stringWriter = new StringWriter();
-	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
+	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
 
 			        if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
@@ -189,6 +189,16 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                 }
                 if (distributionConfigDistributionConfig.getDefaultRootObject() != null) {
                     xmlWriter.startElement("DefaultRootObject").value(distributionConfigDistributionConfig.getDefaultRootObject()).endElement();
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    CachingBehavior cachingBehaviorCachingBehavior = distributionConfigDistributionConfig.getCachingBehavior();
+                    if (cachingBehaviorCachingBehavior != null) {
+                        xmlWriter.startElement("CachingBehavior");
+                        if (cachingBehaviorCachingBehavior.getMinTTL() != null) {
+                            xmlWriter.startElement("MinTTL").value(cachingBehaviorCachingBehavior.getMinTTL()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
                 }
                 xmlWriter.endElement();
             }

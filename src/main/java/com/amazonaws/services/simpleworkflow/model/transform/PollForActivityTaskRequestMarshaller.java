@@ -58,15 +58,13 @@ public class PollForActivityTaskRequestMarshaller implements Marshaller<Request<
             if (pollForActivityTaskRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(pollForActivityTaskRequest.getDomain());
             }
-            if (pollForActivityTaskRequest != null) {
-                TaskList taskListTaskList = pollForActivityTaskRequest.getTaskList();
-                if (taskListTaskList != null) {
-                    jsonWriter.key("taskList").object();
-                    if (taskListTaskList.getName() != null) {
-                        jsonWriter.key("name").value(taskListTaskList.getName());
-                    }
-                    jsonWriter.endObject();
+            TaskList taskList = pollForActivityTaskRequest.getTaskList();
+            if (taskList != null) {
+                jsonWriter.key("taskList").object();
+                if (taskList.getName() != null) {
+                    jsonWriter.key("name").value(taskList.getName());
                 }
+                jsonWriter.endObject();
             }
             if (pollForActivityTaskRequest.getIdentity() != null) {
                 jsonWriter.key("identity").value(pollForActivityTaskRequest.getIdentity());

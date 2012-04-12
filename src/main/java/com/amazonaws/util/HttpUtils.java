@@ -33,6 +33,8 @@ public class HttpUtils {
     private static final String DEFAULT_ENCODING = "UTF-8";
 
     public static String urlEncode(String value, boolean path) {
+        if (value == null) return "";
+
         try {
             String encoded = URLEncoder.encode(value, DEFAULT_ENCODING)
                     .replace("+", "%20").replace("*", "%2A")

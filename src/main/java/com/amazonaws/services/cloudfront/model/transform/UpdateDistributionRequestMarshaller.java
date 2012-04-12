@@ -46,7 +46,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         request.addHeader("If-Match", updateDistributionRequest.getIfMatch());
 	            
 
-        String uriResourcePath = "2010-11-01/distribution/{Id}/config"; 
+        String uriResourcePath = "2012-03-15/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 	    
         if (uriResourcePath.contains("?")) {
@@ -65,7 +65,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
         	            
 	        StringWriter stringWriter = new StringWriter();
-	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
+	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
 
 			        if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
@@ -192,6 +192,16 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                 }
                 if (distributionConfigDistributionConfig.getDefaultRootObject() != null) {
                     xmlWriter.startElement("DefaultRootObject").value(distributionConfigDistributionConfig.getDefaultRootObject()).endElement();
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    CachingBehavior cachingBehaviorCachingBehavior = distributionConfigDistributionConfig.getCachingBehavior();
+                    if (cachingBehaviorCachingBehavior != null) {
+                        xmlWriter.startElement("CachingBehavior");
+                        if (cachingBehaviorCachingBehavior.getMinTTL() != null) {
+                            xmlWriter.startElement("MinTTL").value(cachingBehaviorCachingBehavior.getMinTTL()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
                 }
                 xmlWriter.endElement();
             }

@@ -34,6 +34,9 @@ public class DecisionTaskScheduledEventAttributesJsonUnmarshaller implements Unm
 
     public DecisionTaskScheduledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         DecisionTaskScheduledEventAttributes decisionTaskScheduledEventAttributes = new DecisionTaskScheduledEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class DecisionTaskScheduledEventAttributesJsonUnmarshaller implements Unm
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return decisionTaskScheduledEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskList", targetDepth)) {
@@ -53,12 +56,12 @@ public class DecisionTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     decisionTaskScheduledEventAttributes.setStartToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return decisionTaskScheduledEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return decisionTaskScheduledEventAttributes;
     }
 
     private static DecisionTaskScheduledEventAttributesJsonUnmarshaller instance;

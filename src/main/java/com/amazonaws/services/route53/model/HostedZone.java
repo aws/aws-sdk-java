@@ -60,6 +60,11 @@ public class HostedZone {
     private HostedZoneConfig config;
 
     /**
+     * Total number of resource record sets in the hosted zone.
+     */
+    private Long resourceRecordSetCount;
+
+    /**
      * Default constructor for a new HostedZone object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -303,6 +308,40 @@ public class HostedZone {
     
     
     /**
+     * Total number of resource record sets in the hosted zone.
+     *
+     * @return Total number of resource record sets in the hosted zone.
+     */
+    public Long getResourceRecordSetCount() {
+        return resourceRecordSetCount;
+    }
+    
+    /**
+     * Total number of resource record sets in the hosted zone.
+     *
+     * @param resourceRecordSetCount Total number of resource record sets in the hosted zone.
+     */
+    public void setResourceRecordSetCount(Long resourceRecordSetCount) {
+        this.resourceRecordSetCount = resourceRecordSetCount;
+    }
+    
+    /**
+     * Total number of resource record sets in the hosted zone.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param resourceRecordSetCount Total number of resource record sets in the hosted zone.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public HostedZone withResourceRecordSetCount(Long resourceRecordSetCount) {
+        this.resourceRecordSetCount = resourceRecordSetCount;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -318,6 +357,7 @@ public class HostedZone {
         if (name != null) sb.append("Name: " + name + ", ");
         if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
         if (config != null) sb.append("Config: " + config + ", ");
+        if (resourceRecordSetCount != null) sb.append("ResourceRecordSetCount: " + resourceRecordSetCount + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +371,7 @@ public class HostedZone {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getCallerReference() == null) ? 0 : getCallerReference().hashCode()); 
         hashCode = prime * hashCode + ((getConfig() == null) ? 0 : getConfig().hashCode()); 
+        hashCode = prime * hashCode + ((getResourceRecordSetCount() == null) ? 0 : getResourceRecordSetCount().hashCode()); 
         return hashCode;
     }
     
@@ -350,6 +391,8 @@ public class HostedZone {
         if (other.getCallerReference() != null && other.getCallerReference().equals(this.getCallerReference()) == false) return false; 
         if (other.getConfig() == null ^ this.getConfig() == null) return false;
         if (other.getConfig() != null && other.getConfig().equals(this.getConfig()) == false) return false; 
+        if (other.getResourceRecordSetCount() == null ^ this.getResourceRecordSetCount() == null) return false;
+        if (other.getResourceRecordSetCount() != null && other.getResourceRecordSetCount().equals(this.getResourceRecordSetCount()) == false) return false; 
         return true;
     }
     

@@ -73,15 +73,13 @@ public class RegisterWorkflowTypeRequestMarshaller implements Marshaller<Request
             if (registerWorkflowTypeRequest.getDefaultExecutionStartToCloseTimeout() != null) {
                 jsonWriter.key("defaultExecutionStartToCloseTimeout").value(registerWorkflowTypeRequest.getDefaultExecutionStartToCloseTimeout());
             }
-            if (registerWorkflowTypeRequest != null) {
-                TaskList taskListDefaultTaskList = registerWorkflowTypeRequest.getDefaultTaskList();
-                if (taskListDefaultTaskList != null) {
-                    jsonWriter.key("defaultTaskList").object();
-                    if (taskListDefaultTaskList.getName() != null) {
-                        jsonWriter.key("name").value(taskListDefaultTaskList.getName());
-                    }
-                    jsonWriter.endObject();
+            TaskList defaultTaskList = registerWorkflowTypeRequest.getDefaultTaskList();
+            if (defaultTaskList != null) {
+                jsonWriter.key("defaultTaskList").object();
+                if (defaultTaskList.getName() != null) {
+                    jsonWriter.key("name").value(defaultTaskList.getName());
                 }
+                jsonWriter.endObject();
             }
             if (registerWorkflowTypeRequest.getDefaultChildPolicy() != null) {
                 jsonWriter.key("defaultChildPolicy").value(registerWorkflowTypeRequest.getDefaultChildPolicy());

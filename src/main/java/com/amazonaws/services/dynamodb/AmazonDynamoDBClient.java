@@ -26,6 +26,7 @@ import com.amazonaws.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
@@ -56,7 +57,7 @@ import com.amazonaws.services.dynamodb.model.transform.*;
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
 
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;    
+    private AWSCredentialsProvider awsCredentialsProvider;
 
     /** Long-term credentials used to obtain the session credentials provider */
     private AWSCredentials longTermCredentials;
@@ -219,6 +220,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         setEndpoint("dynamodb.us-east-1.amazonaws.com/");
 
         signer = new AWS3Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -264,7 +266,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public ScanResult scan(ScanRequest scanRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ScanRequest> request = new ScanRequestMarshaller().marshall(scanRequest);
-        return invoke(request, new ScanResultJsonUnmarshaller());
+
+		Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
+        JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -305,7 +313,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public CreateTableResult createTable(CreateTableRequest createTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateTableRequest> request = new CreateTableRequestMarshaller().marshall(createTableRequest);
-        return invoke(request, new CreateTableResultJsonUnmarshaller());
+
+		Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
+        JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -333,7 +347,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public ListTablesResult listTables(ListTablesRequest listTablesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListTablesRequest> request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
-        return invoke(request, new ListTablesResultJsonUnmarshaller());
+
+		Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
+        JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -369,7 +389,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public QueryResult query(QueryRequest queryRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<QueryRequest> request = new QueryRequestMarshaller().marshall(queryRequest);
-        return invoke(request, new QueryResultJsonUnmarshaller());
+
+		Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
+        JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -404,7 +430,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateItemRequest> request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
-        return invoke(request, new UpdateItemResultJsonUnmarshaller());
+
+		Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
+        JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -438,7 +470,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateTableRequest> request = new UpdateTableRequestMarshaller().marshall(updateTableRequest);
-        return invoke(request, new UpdateTableResultJsonUnmarshaller());
+
+		Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
+        JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -476,7 +514,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public PutItemResult putItem(PutItemRequest putItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<PutItemRequest> request = new PutItemRequestMarshaller().marshall(putItemRequest);
-        return invoke(request, new PutItemResultJsonUnmarshaller());
+
+		Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
+        JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -513,7 +557,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteTableRequest> request = new DeleteTableRequestMarshaller().marshall(deleteTableRequest);
-        return invoke(request, new DeleteTableResultJsonUnmarshaller());
+
+		Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
+        JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -547,7 +597,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteItemRequest> request = new DeleteItemRequestMarshaller().marshall(deleteItemRequest);
-        return invoke(request, new DeleteItemResultJsonUnmarshaller());
+
+		Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
+        JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -580,7 +636,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeTableRequest> request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
-        return invoke(request, new DescribeTableResultJsonUnmarshaller());
+
+		Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
+        JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -617,7 +679,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public GetItemResult getItem(GetItemRequest getItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetItemRequest> request = new GetItemRequestMarshaller().marshall(getItemRequest);
-        return invoke(request, new GetItemResultJsonUnmarshaller());
+
+		Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
+        JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -663,7 +731,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<BatchGetItemRequest> request = new BatchGetItemRequestMarshaller().marshall(batchGetItemRequest);
-        return invoke(request, new BatchGetItemResultJsonUnmarshaller());
+
+		Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
+        JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -696,7 +770,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public void setEndpoint(String endpoint) throws IllegalArgumentException {
         super.setEndpoint(endpoint);
-        
+
         if ( this.longTermCredentials != null ) {
             this.awsCredentialsProvider = SessionCredentialsProviderFactory.getSessionCredentialsProvider(
                     this.longTermCredentials, endpoint, clientConfiguration);
@@ -724,7 +798,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, JsonUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler) {
         request.setEndpoint(endpoint);
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
@@ -737,10 +811,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         executionContext.setCustomBackoffStrategy(com.amazonaws.internal.DynamoDBBackoffStrategy.DEFAULT);
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(unmarshaller);
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
+
 }
         

@@ -34,6 +34,9 @@ public class RequestCancelActivityTaskFailedEventAttributesJsonUnmarshaller impl
 
     public RequestCancelActivityTaskFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         RequestCancelActivityTaskFailedEventAttributes requestCancelActivityTaskFailedEventAttributes = new RequestCancelActivityTaskFailedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class RequestCancelActivityTaskFailedEventAttributesJsonUnmarshaller impl
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return requestCancelActivityTaskFailedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityId", targetDepth)) {
@@ -57,12 +60,12 @@ public class RequestCancelActivityTaskFailedEventAttributesJsonUnmarshaller impl
                     requestCancelActivityTaskFailedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return requestCancelActivityTaskFailedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return requestCancelActivityTaskFailedEventAttributes;
     }
 
     private static RequestCancelActivityTaskFailedEventAttributesJsonUnmarshaller instance;

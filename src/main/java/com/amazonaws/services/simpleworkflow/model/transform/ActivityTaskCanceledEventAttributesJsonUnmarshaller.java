@@ -34,6 +34,9 @@ public class ActivityTaskCanceledEventAttributesJsonUnmarshaller implements Unma
 
     public ActivityTaskCanceledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskCanceledEventAttributes activityTaskCanceledEventAttributes = new ActivityTaskCanceledEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTaskCanceledEventAttributesJsonUnmarshaller implements Unma
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTaskCanceledEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("details", targetDepth)) {
@@ -61,12 +64,12 @@ public class ActivityTaskCanceledEventAttributesJsonUnmarshaller implements Unma
                     activityTaskCanceledEventAttributes.setLatestCancelRequestedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTaskCanceledEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTaskCanceledEventAttributes;
     }
 
     private static ActivityTaskCanceledEventAttributesJsonUnmarshaller instance;
