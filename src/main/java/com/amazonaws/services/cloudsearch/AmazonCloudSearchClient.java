@@ -150,6 +150,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         setEndpoint("cloudsearch.us-east-1.amazonaws.com/");
 
         signer = new AWS4Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

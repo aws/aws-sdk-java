@@ -194,6 +194,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
         setEndpoint("monitoring.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

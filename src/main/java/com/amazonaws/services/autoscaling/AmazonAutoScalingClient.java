@@ -176,6 +176,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         setEndpoint("autoscaling.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

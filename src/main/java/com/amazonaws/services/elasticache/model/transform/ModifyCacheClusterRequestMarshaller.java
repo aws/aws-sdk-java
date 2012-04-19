@@ -38,7 +38,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
-        request.addParameter("Version", "2011-07-15");
+        request.addParameter("Version", "2012-03-09");
 
         if (modifyCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(modifyCacheClusterRequest.getCacheClusterId()));

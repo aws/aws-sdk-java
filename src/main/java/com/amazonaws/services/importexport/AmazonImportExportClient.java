@@ -165,6 +165,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         setEndpoint("importexport.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

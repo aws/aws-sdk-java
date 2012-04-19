@@ -39,7 +39,7 @@ public class CreateDistributionResultStaxUnmarshaller implements Unmarshaller<Cr
 
         if (context.isStartOfDocument()) {
             createDistributionResult.setLocation(context.getHeader("Location"));
-            createDistributionResult.setETag(context.getHeader("ETag"));        
+            createDistributionResult.setETag(context.getHeader("ETag"));
         }
         
 

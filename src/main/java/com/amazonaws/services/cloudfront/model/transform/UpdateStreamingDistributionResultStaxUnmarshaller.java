@@ -38,7 +38,7 @@ public class UpdateStreamingDistributionResultStaxUnmarshaller implements Unmars
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            updateStreamingDistributionResult.setETag(context.getHeader("ETag"));        
+            updateStreamingDistributionResult.setETag(context.getHeader("ETag"));
         }
         
 

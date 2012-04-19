@@ -71,6 +71,7 @@ public class AmazonHttpClient {
 
 	private static final String BYTES_PROCESSED_COUNTER = "bytes-processed";
 	private static final String RESPONSE_PROCESSING_SUBMEASUREMENT = "response-processing";
+	public static final String HTTP_REQUEST_TIME = "httprequest";
 
     /** Maximum exponential back-off time before retrying a request */
     private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
@@ -259,7 +260,11 @@ public class AmazonHttpClient {
                 exception = null;
                 retryCount++;
 
+                long start = System.currentTimeMillis();
                 response = httpClient.execute(httpRequest);
+                long end = System.currentTimeMillis();
+                executionContext.getTimingInfo().addSubMeasurement(HTTP_REQUEST_TIME, new TimingInfo(start,end));
+
                 if (isRequestSuccessful(response)) {
                     /*
                      * If we get back any 2xx status code, then we know we should

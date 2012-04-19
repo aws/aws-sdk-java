@@ -149,6 +149,7 @@ public class AmazonRoute53Client extends AmazonWebServiceClient implements Amazo
         setEndpoint("route53.amazonaws.com");
 
         signer = new AWS3Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

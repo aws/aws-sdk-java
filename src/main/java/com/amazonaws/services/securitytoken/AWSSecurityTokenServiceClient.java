@@ -174,6 +174,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         setEndpoint("sts.amazonaws.com");
 
         signer = new AWS4Signer();
+        
+        signer.setServiceName("sts");
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

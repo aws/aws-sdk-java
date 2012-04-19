@@ -170,6 +170,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         setEndpoint("cloudfront.amazonaws.com/");
 
         signer = new CloudFrontSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

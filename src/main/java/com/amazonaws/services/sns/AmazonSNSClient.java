@@ -192,6 +192,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         setEndpoint("sns.us-east-1.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

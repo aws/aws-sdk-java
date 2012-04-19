@@ -178,6 +178,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         setEndpoint("sdb.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

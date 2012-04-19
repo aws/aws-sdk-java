@@ -176,6 +176,7 @@ public class AWSElasticBeanstalkClient extends AmazonWebServiceClient implements
         setEndpoint("elasticbeanstalk.us-east-1.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

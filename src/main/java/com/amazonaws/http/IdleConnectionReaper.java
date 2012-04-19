@@ -51,7 +51,6 @@ public class IdleConnectionReaper extends Thread {
     /** Shared log for any errors during connection reaping. */
     static final Log log = LogFactory.getLog(IdleConnectionReaper.class);
 
-
     /** Private constructor - singleton pattern. */
     private IdleConnectionReaper() {
         super("java-sdk-http-connection-reaper");
@@ -68,6 +67,7 @@ public class IdleConnectionReaper extends Thread {
         connectionManagers.remove(connectionManager);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void run() {
         while (true) {
@@ -78,7 +78,10 @@ public class IdleConnectionReaper extends Thread {
                 // ConcurrentModificationExceptions if registerConnectionManager or
                 // removeConnectionManager are called while we're iterating (rather
                 // than block/lock while this loop executes).
-                List<ClientConnectionManager> connectionManagers = (List<ClientConnectionManager>)this.connectionManagers.clone();
+                List<ClientConnectionManager> connectionManagers = null;
+                synchronized (IdleConnectionReaper.class) {
+                    connectionManagers = (List<ClientConnectionManager>)IdleConnectionReaper.connectionManagers.clone();                    
+                }
                 for (ClientConnectionManager connectionManager : connectionManagers) {
                     // When we release connections, the connection manager leaves them
                     // open so they can be reused.  We want to close out any idle
@@ -89,9 +92,27 @@ public class IdleConnectionReaper extends Thread {
                         log.warn("Unable to close idle connections", t);
                     }
                 }
-            } catch (Throwable t) {
-                log.warn("Unable to close idle connections", t);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                return;
             }
+        }
+    }
+
+    /**
+     * Shuts down the thread, allowing the class and instance to be collected.
+     * <p>
+     * Since this is a daemon thread, its running will not prevent JVM shutdown.
+     * It will, however, prevent this class from being unloaded or garbage
+     * collected, in the context of a long-running application, until it is
+     * interrupted. This method will stop the thread's execution and clear its
+     * state. Any use of a service client will cause the thread to be restarted.
+     */
+    public static synchronized void shutdown() {
+        if ( instance != null ) {
+            instance.interrupt();
+            connectionManagers.clear();
+            instance = null;
         }
     }
 }

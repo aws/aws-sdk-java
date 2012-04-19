@@ -193,6 +193,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         setEndpoint("cloudformation.us-east-1.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

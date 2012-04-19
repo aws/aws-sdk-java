@@ -38,7 +38,7 @@ public class UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller implemen
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            updateCloudFrontOriginAccessIdentityResult.setETag(context.getHeader("ETag"));        
+            updateCloudFrontOriginAccessIdentityResult.setETag(context.getHeader("ETag"));
         }
         
 
