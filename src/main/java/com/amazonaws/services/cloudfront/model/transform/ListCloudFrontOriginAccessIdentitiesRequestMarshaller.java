@@ -37,36 +37,38 @@ import com.amazonaws.util.XMLWriter;
 public class ListCloudFrontOriginAccessIdentitiesRequestMarshaller implements Marshaller<Request<ListCloudFrontOriginAccessIdentitiesRequest>, ListCloudFrontOriginAccessIdentitiesRequest> {
 
     public Request<ListCloudFrontOriginAccessIdentitiesRequest> marshall(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest) {
-        if (listCloudFrontOriginAccessIdentitiesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (listCloudFrontOriginAccessIdentitiesRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListCloudFrontOriginAccessIdentitiesRequest> request = new DefaultRequest<ListCloudFrontOriginAccessIdentitiesRequest>(listCloudFrontOriginAccessIdentitiesRequest, "AmazonCloudFront");
-        request.setHttpMethod(HttpMethodName.GET);        
+        request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2010-11-01/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMaxItems())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
         
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;

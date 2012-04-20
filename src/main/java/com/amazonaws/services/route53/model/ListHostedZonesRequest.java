@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listHostedZones(ListHostedZonesRequest) ListHostedZones operation}.
  * <p>
  * To retrieve a list of your hosted zones, send a <code>GET</code>
- * request to the <code>2011-05-05/hostedzone</code> resource. The
+ * request to the <code>2012-02-29/hostedzone</code> resource. The
  * response to this request includes a <code>HostedZones</code> element
  * with zero, one, or multiple <code>HostedZone</code> child elements. By
  * default, the list of hosted zones is displayed on a single page. You

@@ -58,18 +58,16 @@ public class DescribeActivityTypeRequestMarshaller implements Marshaller<Request
             if (describeActivityTypeRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(describeActivityTypeRequest.getDomain());
             }
-            if (describeActivityTypeRequest != null) {
-                ActivityType activityTypeActivityType = describeActivityTypeRequest.getActivityType();
-                if (activityTypeActivityType != null) {
-                    jsonWriter.key("activityType").object();
-                    if (activityTypeActivityType.getName() != null) {
-                        jsonWriter.key("name").value(activityTypeActivityType.getName());
-                    }
-                    if (activityTypeActivityType.getVersion() != null) {
-                        jsonWriter.key("version").value(activityTypeActivityType.getVersion());
-                    }
-                    jsonWriter.endObject();
+            ActivityType activityType = describeActivityTypeRequest.getActivityType();
+            if (activityType != null) {
+                jsonWriter.key("activityType").object();
+                if (activityType.getName() != null) {
+                    jsonWriter.key("name").value(activityType.getName());
                 }
+                if (activityType.getVersion() != null) {
+                    jsonWriter.key("version").value(activityType.getVersion());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

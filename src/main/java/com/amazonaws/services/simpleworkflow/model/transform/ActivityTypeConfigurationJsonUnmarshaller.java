@@ -34,6 +34,9 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
 
     public ActivityTypeConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTypeConfiguration activityTypeConfiguration = new ActivityTypeConfiguration();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTypeConfiguration;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultTaskStartToCloseTimeout", targetDepth)) {
@@ -65,12 +68,12 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
                     activityTypeConfiguration.setDefaultTaskScheduleToCloseTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTypeConfiguration;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTypeConfiguration;
     }
 
     private static ActivityTypeConfigurationJsonUnmarshaller instance;

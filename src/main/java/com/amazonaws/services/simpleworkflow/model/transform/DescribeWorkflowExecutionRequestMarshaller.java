@@ -58,18 +58,16 @@ public class DescribeWorkflowExecutionRequestMarshaller implements Marshaller<Re
             if (describeWorkflowExecutionRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(describeWorkflowExecutionRequest.getDomain());
             }
-            if (describeWorkflowExecutionRequest != null) {
-                WorkflowExecution workflowExecutionExecution = describeWorkflowExecutionRequest.getExecution();
-                if (workflowExecutionExecution != null) {
-                    jsonWriter.key("execution").object();
-                    if (workflowExecutionExecution.getWorkflowId() != null) {
-                        jsonWriter.key("workflowId").value(workflowExecutionExecution.getWorkflowId());
-                    }
-                    if (workflowExecutionExecution.getRunId() != null) {
-                        jsonWriter.key("runId").value(workflowExecutionExecution.getRunId());
-                    }
-                    jsonWriter.endObject();
+            WorkflowExecution execution = describeWorkflowExecutionRequest.getExecution();
+            if (execution != null) {
+                jsonWriter.key("execution").object();
+                if (execution.getWorkflowId() != null) {
+                    jsonWriter.key("workflowId").value(execution.getWorkflowId());
                 }
+                if (execution.getRunId() != null) {
+                    jsonWriter.key("runId").value(execution.getRunId());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

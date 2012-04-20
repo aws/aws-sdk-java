@@ -38,7 +38,7 @@ public class GetDistributionResultStaxUnmarshaller implements Unmarshaller<GetDi
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            getDistributionResult.setETag(context.getHeader("ETag"));        
+            getDistributionResult.setETag(context.getHeader("ETag"));
         }
         
 

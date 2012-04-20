@@ -58,74 +58,62 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             if (countClosedWorkflowExecutionsRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(countClosedWorkflowExecutionsRequest.getDomain());
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                ExecutionTimeFilter executionTimeFilterStartTimeFilter = countClosedWorkflowExecutionsRequest.getStartTimeFilter();
-                if (executionTimeFilterStartTimeFilter != null) {
-                    jsonWriter.key("startTimeFilter").object();
-                    if (executionTimeFilterStartTimeFilter.getOldestDate() != null) {
-                        jsonWriter.key("oldestDate").value(executionTimeFilterStartTimeFilter.getOldestDate());
-                    }
-                    if (executionTimeFilterStartTimeFilter.getLatestDate() != null) {
-                        jsonWriter.key("latestDate").value(executionTimeFilterStartTimeFilter.getLatestDate());
-                    }
-                    jsonWriter.endObject();
+            ExecutionTimeFilter startTimeFilter = countClosedWorkflowExecutionsRequest.getStartTimeFilter();
+            if (startTimeFilter != null) {
+                jsonWriter.key("startTimeFilter").object();
+                if (startTimeFilter.getOldestDate() != null) {
+                    jsonWriter.key("oldestDate").value(startTimeFilter.getOldestDate());
                 }
+                if (startTimeFilter.getLatestDate() != null) {
+                    jsonWriter.key("latestDate").value(startTimeFilter.getLatestDate());
+                }
+                jsonWriter.endObject();
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                ExecutionTimeFilter executionTimeFilterCloseTimeFilter = countClosedWorkflowExecutionsRequest.getCloseTimeFilter();
-                if (executionTimeFilterCloseTimeFilter != null) {
-                    jsonWriter.key("closeTimeFilter").object();
-                    if (executionTimeFilterCloseTimeFilter.getOldestDate() != null) {
-                        jsonWriter.key("oldestDate").value(executionTimeFilterCloseTimeFilter.getOldestDate());
-                    }
-                    if (executionTimeFilterCloseTimeFilter.getLatestDate() != null) {
-                        jsonWriter.key("latestDate").value(executionTimeFilterCloseTimeFilter.getLatestDate());
-                    }
-                    jsonWriter.endObject();
+            ExecutionTimeFilter closeTimeFilter = countClosedWorkflowExecutionsRequest.getCloseTimeFilter();
+            if (closeTimeFilter != null) {
+                jsonWriter.key("closeTimeFilter").object();
+                if (closeTimeFilter.getOldestDate() != null) {
+                    jsonWriter.key("oldestDate").value(closeTimeFilter.getOldestDate());
                 }
+                if (closeTimeFilter.getLatestDate() != null) {
+                    jsonWriter.key("latestDate").value(closeTimeFilter.getLatestDate());
+                }
+                jsonWriter.endObject();
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                WorkflowExecutionFilter workflowExecutionFilterExecutionFilter = countClosedWorkflowExecutionsRequest.getExecutionFilter();
-                if (workflowExecutionFilterExecutionFilter != null) {
-                    jsonWriter.key("executionFilter").object();
-                    if (workflowExecutionFilterExecutionFilter.getWorkflowId() != null) {
-                        jsonWriter.key("workflowId").value(workflowExecutionFilterExecutionFilter.getWorkflowId());
-                    }
-                    jsonWriter.endObject();
+            WorkflowExecutionFilter executionFilter = countClosedWorkflowExecutionsRequest.getExecutionFilter();
+            if (executionFilter != null) {
+                jsonWriter.key("executionFilter").object();
+                if (executionFilter.getWorkflowId() != null) {
+                    jsonWriter.key("workflowId").value(executionFilter.getWorkflowId());
                 }
+                jsonWriter.endObject();
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                WorkflowTypeFilter workflowTypeFilterTypeFilter = countClosedWorkflowExecutionsRequest.getTypeFilter();
-                if (workflowTypeFilterTypeFilter != null) {
-                    jsonWriter.key("typeFilter").object();
-                    if (workflowTypeFilterTypeFilter.getName() != null) {
-                        jsonWriter.key("name").value(workflowTypeFilterTypeFilter.getName());
-                    }
-                    if (workflowTypeFilterTypeFilter.getVersion() != null) {
-                        jsonWriter.key("version").value(workflowTypeFilterTypeFilter.getVersion());
-                    }
-                    jsonWriter.endObject();
+            WorkflowTypeFilter typeFilter = countClosedWorkflowExecutionsRequest.getTypeFilter();
+            if (typeFilter != null) {
+                jsonWriter.key("typeFilter").object();
+                if (typeFilter.getName() != null) {
+                    jsonWriter.key("name").value(typeFilter.getName());
                 }
+                if (typeFilter.getVersion() != null) {
+                    jsonWriter.key("version").value(typeFilter.getVersion());
+                }
+                jsonWriter.endObject();
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                TagFilter tagFilterTagFilter = countClosedWorkflowExecutionsRequest.getTagFilter();
-                if (tagFilterTagFilter != null) {
-                    jsonWriter.key("tagFilter").object();
-                    if (tagFilterTagFilter.getTag() != null) {
-                        jsonWriter.key("tag").value(tagFilterTagFilter.getTag());
-                    }
-                    jsonWriter.endObject();
+            TagFilter tagFilter = countClosedWorkflowExecutionsRequest.getTagFilter();
+            if (tagFilter != null) {
+                jsonWriter.key("tagFilter").object();
+                if (tagFilter.getTag() != null) {
+                    jsonWriter.key("tag").value(tagFilter.getTag());
                 }
+                jsonWriter.endObject();
             }
-            if (countClosedWorkflowExecutionsRequest != null) {
-                CloseStatusFilter closeStatusFilterCloseStatusFilter = countClosedWorkflowExecutionsRequest.getCloseStatusFilter();
-                if (closeStatusFilterCloseStatusFilter != null) {
-                    jsonWriter.key("closeStatusFilter").object();
-                    if (closeStatusFilterCloseStatusFilter.getStatus() != null) {
-                        jsonWriter.key("status").value(closeStatusFilterCloseStatusFilter.getStatus());
-                    }
-                    jsonWriter.endObject();
+            CloseStatusFilter closeStatusFilter = countClosedWorkflowExecutionsRequest.getCloseStatusFilter();
+            if (closeStatusFilter != null) {
+                jsonWriter.key("closeStatusFilter").object();
+                if (closeStatusFilter.getStatus() != null) {
+                    jsonWriter.key("status").value(closeStatusFilter.getStatus());
                 }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

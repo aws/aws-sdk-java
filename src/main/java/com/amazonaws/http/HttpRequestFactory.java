@@ -63,7 +63,7 @@ class HttpRequestFactory {
 				uri += "/";
 			}
 			uri += request.getResourcePath();
-		} else {
+		} else if (!uri.endsWith("/")) {
 		    uri += "/";
 		}
 

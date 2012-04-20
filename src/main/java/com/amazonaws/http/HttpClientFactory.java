@@ -44,10 +44,10 @@ import org.apache.http.params.HttpProtocolParams;
 
 import com.amazonaws.ClientConfiguration;
 
-/** Responsible for creating and configuring instnaces of Apache HttpClient4. */
+/** Responsible for creating and configuring instances of Apache HttpClient4. */
 class HttpClientFactory {
 
-	/**
+    /**
 	 * Creates a new HttpClient object using the specified AWS
 	 * ClientConfiguration to configure the client.
 	 *
@@ -164,7 +164,7 @@ class HttpClientFactory {
 			return true;
 		}
 
-		public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3) 
+		public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3)
 				throws IOException, UnknownHostException {
 			return getSSLContext().getSocketFactory().createSocket();
 		}

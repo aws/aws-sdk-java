@@ -34,6 +34,9 @@ public class ActivityTaskJsonUnmarshaller implements Unmarshaller<ActivityTask, 
 
     public ActivityTask unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTask activityTask = new ActivityTask();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTaskJsonUnmarshaller implements Unmarshaller<ActivityTask, 
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTask;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskToken", targetDepth)) {
@@ -69,12 +72,12 @@ public class ActivityTaskJsonUnmarshaller implements Unmarshaller<ActivityTask, 
                     activityTask.setInput(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTask;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTask;
     }
 
     private static ActivityTaskJsonUnmarshaller instance;

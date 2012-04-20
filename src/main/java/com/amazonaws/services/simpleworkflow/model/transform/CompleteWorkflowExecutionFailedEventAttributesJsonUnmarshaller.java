@@ -34,6 +34,9 @@ public class CompleteWorkflowExecutionFailedEventAttributesJsonUnmarshaller impl
 
     public CompleteWorkflowExecutionFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         CompleteWorkflowExecutionFailedEventAttributes completeWorkflowExecutionFailedEventAttributes = new CompleteWorkflowExecutionFailedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class CompleteWorkflowExecutionFailedEventAttributesJsonUnmarshaller impl
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return completeWorkflowExecutionFailedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cause", targetDepth)) {
@@ -53,12 +56,12 @@ public class CompleteWorkflowExecutionFailedEventAttributesJsonUnmarshaller impl
                     completeWorkflowExecutionFailedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return completeWorkflowExecutionFailedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return completeWorkflowExecutionFailedEventAttributes;
     }
 
     private static CompleteWorkflowExecutionFailedEventAttributesJsonUnmarshaller instance;

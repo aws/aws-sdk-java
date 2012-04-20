@@ -34,6 +34,9 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
 
     public Key unmarshall(JsonUnmarshallerContext context) throws Exception {
         Key key = new Key();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return key;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HashKeyElement", targetDepth)) {
@@ -53,12 +56,12 @@ public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerCo
                     key.setRangeKeyElement(AttributeValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return key;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return key;
     }
 
     private static KeyJsonUnmarshaller instance;

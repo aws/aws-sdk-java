@@ -37,35 +37,37 @@ import com.amazonaws.util.XMLWriter;
 public class CreateInvalidationRequestMarshaller implements Marshaller<Request<CreateInvalidationRequest>, CreateInvalidationRequest> {
 
     public Request<CreateInvalidationRequest> marshall(CreateInvalidationRequest createInvalidationRequest) {
-        if (createInvalidationRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (createInvalidationRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<CreateInvalidationRequest> request = new DefaultRequest<CreateInvalidationRequest>(createInvalidationRequest, "AmazonCloudFront");
-        request.setHttpMethod(HttpMethodName.POST);        
+        request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2010-11-01/distribution/{DistributionId}/invalidation"; 
+        String uriResourcePath = "2012-03-15/distribution/{DistributionId}/invalidation"; 
         uriResourcePath = uriResourcePath.replace("{DistributionId}", getString(createInvalidationRequest.getDistributionId())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
-        	            
-	        StringWriter stringWriter = new StringWriter();
-	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
+        
+            StringWriter stringWriter = new StringWriter();
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
 
-			        if (createInvalidationRequest != null) {
+                    if (createInvalidationRequest != null) {
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.getInvalidationBatch();
             if (invalidationBatchInvalidationBatch != null) {
                 xmlWriter.startElement("InvalidationBatch");
@@ -92,19 +94,19 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
             }
         }
 
-	
-	        try {
-	            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-	            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes().length));
-	            request.addHeader("Content-Type", "application/xml");
-	        } catch (UnsupportedEncodingException e) {
-	            throw new AmazonClientException("Unable to marshall request to XML", e);
-	        }
-		
+
+            try {
+                request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+                request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes().length));
+                request.addHeader("Content-Type", "application/xml");
+            } catch (UnsupportedEncodingException e) {
+                throw new AmazonClientException("Unable to marshall request to XML", e);
+            }
+        
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;

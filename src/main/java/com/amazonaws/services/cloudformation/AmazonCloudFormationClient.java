@@ -193,6 +193,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         setEndpoint("cloudformation.us-east-1.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -740,7 +741,6 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
         return describeStackResources(new DescribeStackResourcesRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

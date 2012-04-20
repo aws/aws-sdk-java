@@ -73,15 +73,13 @@ public class RegisterActivityTypeRequestMarshaller implements Marshaller<Request
             if (registerActivityTypeRequest.getDefaultTaskHeartbeatTimeout() != null) {
                 jsonWriter.key("defaultTaskHeartbeatTimeout").value(registerActivityTypeRequest.getDefaultTaskHeartbeatTimeout());
             }
-            if (registerActivityTypeRequest != null) {
-                TaskList taskListDefaultTaskList = registerActivityTypeRequest.getDefaultTaskList();
-                if (taskListDefaultTaskList != null) {
-                    jsonWriter.key("defaultTaskList").object();
-                    if (taskListDefaultTaskList.getName() != null) {
-                        jsonWriter.key("name").value(taskListDefaultTaskList.getName());
-                    }
-                    jsonWriter.endObject();
+            TaskList defaultTaskList = registerActivityTypeRequest.getDefaultTaskList();
+            if (defaultTaskList != null) {
+                jsonWriter.key("defaultTaskList").object();
+                if (defaultTaskList.getName() != null) {
+                    jsonWriter.key("name").value(defaultTaskList.getName());
                 }
+                jsonWriter.endObject();
             }
             if (registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout() != null) {
                 jsonWriter.key("defaultTaskScheduleToStartTimeout").value(registerActivityTypeRequest.getDefaultTaskScheduleToStartTimeout());

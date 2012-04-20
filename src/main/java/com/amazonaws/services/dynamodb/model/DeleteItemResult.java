@@ -30,11 +30,11 @@ public class DeleteItemResult {
     /**
      * The number of Capacity Units of the provisioned throughput of the
      * table consumed during the operation. <code>GetItem</code>,
-     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     * operations consume <code>ReadCapacityUnits</code>, while
-     * <code>PutItem</code>, <code>UpdateItem</code>, and
-     * <code>DeleteItem</code> operations consume
-     * <code>WriteCapacityUnits</code>.
+     * <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     * <code>Query</code>, and <code>Scan</code> operations consume
+     * <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     * consume <code>WriteCapacityUnits</code>.
      */
     private Double consumedCapacityUnits;
 
@@ -93,19 +93,19 @@ public class DeleteItemResult {
     /**
      * The number of Capacity Units of the provisioned throughput of the
      * table consumed during the operation. <code>GetItem</code>,
-     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     * operations consume <code>ReadCapacityUnits</code>, while
-     * <code>PutItem</code>, <code>UpdateItem</code>, and
-     * <code>DeleteItem</code> operations consume
-     * <code>WriteCapacityUnits</code>.
+     * <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     * <code>Query</code>, and <code>Scan</code> operations consume
+     * <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     * consume <code>WriteCapacityUnits</code>.
      *
      * @return The number of Capacity Units of the provisioned throughput of the
      *         table consumed during the operation. <code>GetItem</code>,
-     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     *         operations consume <code>ReadCapacityUnits</code>, while
-     *         <code>PutItem</code>, <code>UpdateItem</code>, and
-     *         <code>DeleteItem</code> operations consume
-     *         <code>WriteCapacityUnits</code>.
+     *         <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     *         <code>Query</code>, and <code>Scan</code> operations consume
+     *         <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     *         <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     *         consume <code>WriteCapacityUnits</code>.
      */
     public Double getConsumedCapacityUnits() {
         return consumedCapacityUnits;
@@ -114,19 +114,19 @@ public class DeleteItemResult {
     /**
      * The number of Capacity Units of the provisioned throughput of the
      * table consumed during the operation. <code>GetItem</code>,
-     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     * operations consume <code>ReadCapacityUnits</code>, while
-     * <code>PutItem</code>, <code>UpdateItem</code>, and
-     * <code>DeleteItem</code> operations consume
-     * <code>WriteCapacityUnits</code>.
+     * <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     * <code>Query</code>, and <code>Scan</code> operations consume
+     * <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     * consume <code>WriteCapacityUnits</code>.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
      *         table consumed during the operation. <code>GetItem</code>,
-     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     *         operations consume <code>ReadCapacityUnits</code>, while
-     *         <code>PutItem</code>, <code>UpdateItem</code>, and
-     *         <code>DeleteItem</code> operations consume
-     *         <code>WriteCapacityUnits</code>.
+     *         <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     *         <code>Query</code>, and <code>Scan</code> operations consume
+     *         <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     *         <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     *         consume <code>WriteCapacityUnits</code>.
      */
     public void setConsumedCapacityUnits(Double consumedCapacityUnits) {
         this.consumedCapacityUnits = consumedCapacityUnits;
@@ -135,21 +135,21 @@ public class DeleteItemResult {
     /**
      * The number of Capacity Units of the provisioned throughput of the
      * table consumed during the operation. <code>GetItem</code>,
-     * <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     * operations consume <code>ReadCapacityUnits</code>, while
-     * <code>PutItem</code>, <code>UpdateItem</code>, and
-     * <code>DeleteItem</code> operations consume
-     * <code>WriteCapacityUnits</code>.
+     * <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     * <code>Query</code>, and <code>Scan</code> operations consume
+     * <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     * <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     * consume <code>WriteCapacityUnits</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param consumedCapacityUnits The number of Capacity Units of the provisioned throughput of the
      *         table consumed during the operation. <code>GetItem</code>,
-     *         <code>BatchGetItem</code>, <code>Query</code>, and <code>Scan</code>
-     *         operations consume <code>ReadCapacityUnits</code>, while
-     *         <code>PutItem</code>, <code>UpdateItem</code>, and
-     *         <code>DeleteItem</code> operations consume
-     *         <code>WriteCapacityUnits</code>.
+     *         <code>BatchGetItem</code>, <code>BatchWriteItem</code>,
+     *         <code>Query</code>, and <code>Scan</code> operations consume
+     *         <code>ReadCapacityUnits</code>, while <code>PutItem</code>,
+     *         <code>UpdateItem</code>, and <code>DeleteItem</code> operations
+     *         consume <code>WriteCapacityUnits</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -162,6 +162,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
         setEndpoint("elasticloadbalancing.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

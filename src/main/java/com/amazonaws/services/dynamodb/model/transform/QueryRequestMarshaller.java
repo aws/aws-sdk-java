@@ -58,19 +58,14 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
             if (queryRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(queryRequest.getTableName());
             }
-            if (queryRequest != null) {
-                java.util.List<String> attributesToGetList = queryRequest.getAttributesToGet();
-                int attributesToGetListIndex = 0;
-                if (attributesToGetList != null && attributesToGetList.size() > 0) {
-                    jsonWriter.key("AttributesToGet").array();
-                    for (String attributesToGetListValue : attributesToGetList) {
-                        if (attributesToGetListValue != null) {
-                            jsonWriter.value(attributesToGetListValue);
-                        } else jsonWriter.value(null);
-                        attributesToGetListIndex++;
-                    }
-                    jsonWriter.endArray();
+
+            java.util.List<String> attributesToGetList = queryRequest.getAttributesToGet();
+            if (attributesToGetList != null && attributesToGetList.size() > 0) {
+                jsonWriter.key("AttributesToGet").array();
+                for (String attributesToGetListValue : attributesToGetList) {
+                    jsonWriter.value(attributesToGetListValue);
                 }
+                jsonWriter.endArray();
             }
             if (queryRequest.getLimit() != null) {
                 jsonWriter.key("Limit").value(queryRequest.getLimit());
@@ -81,200 +76,142 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
             if (queryRequest.isCount() != null) {
                 jsonWriter.key("Count").value(queryRequest.isCount());
             }
-            if (queryRequest != null) {
-                AttributeValue attributeValueHashKeyValue = queryRequest.getHashKeyValue();
-                if (attributeValueHashKeyValue != null) {
-                    jsonWriter.key("HashKeyValue").object();
-                    if (attributeValueHashKeyValue.getS() != null) {
-                        jsonWriter.key("S").value(attributeValueHashKeyValue.getS());
+            AttributeValue hashKeyValue = queryRequest.getHashKeyValue();
+            if (hashKeyValue != null) {
+                jsonWriter.key("HashKeyValue").object();
+                if (hashKeyValue.getS() != null) {
+                    jsonWriter.key("S").value(hashKeyValue.getS());
+                }
+                if (hashKeyValue.getN() != null) {
+                    jsonWriter.key("N").value(hashKeyValue.getN());
+                }
+
+                java.util.List<String> sSList = hashKeyValue.getSS();
+                if (sSList != null && sSList.size() > 0) {
+                    jsonWriter.key("SS").array();
+                    for (String sSListValue : sSList) {
+                        jsonWriter.value(sSListValue);
                     }
-                    if (attributeValueHashKeyValue.getN() != null) {
-                        jsonWriter.key("N").value(attributeValueHashKeyValue.getN());
+                    jsonWriter.endArray();
+                }
+
+                java.util.List<String> nSList = hashKeyValue.getNS();
+                if (nSList != null && nSList.size() > 0) {
+                    jsonWriter.key("NS").array();
+                    for (String nSListValue : nSList) {
+                        jsonWriter.value(nSListValue);
                     }
-                    if (attributeValueHashKeyValue != null) {
-                        java.util.List<String> sSList = attributeValueHashKeyValue.getSS();
-                        int sSListIndex = 0;
+                    jsonWriter.endArray();
+                }
+                jsonWriter.endObject();
+            }
+            Condition rangeKeyCondition = queryRequest.getRangeKeyCondition();
+            if (rangeKeyCondition != null) {
+                jsonWriter.key("RangeKeyCondition").object();
+
+                java.util.List<AttributeValue> attributeValueListList = rangeKeyCondition.getAttributeValueList();
+                if (attributeValueListList != null && attributeValueListList.size() > 0) {
+                    jsonWriter.key("AttributeValueList").array();
+                    for (AttributeValue attributeValueListListValue : attributeValueListList) {
+                        jsonWriter.object();
+                        if (attributeValueListListValue.getS() != null) {
+                            jsonWriter.key("S").value(attributeValueListListValue.getS());
+                        }
+                        if (attributeValueListListValue.getN() != null) {
+                            jsonWriter.key("N").value(attributeValueListListValue.getN());
+                        }
+
+                        java.util.List<String> sSList = attributeValueListListValue.getSS();
                         if (sSList != null && sSList.size() > 0) {
                             jsonWriter.key("SS").array();
                             for (String sSListValue : sSList) {
-                                if (sSListValue != null) {
-                                    jsonWriter.value(sSListValue);
-                                } else jsonWriter.value(null);
-                                sSListIndex++;
+                                jsonWriter.value(sSListValue);
                             }
                             jsonWriter.endArray();
                         }
-                    }
-                    if (attributeValueHashKeyValue != null) {
-                        java.util.List<String> nSList = attributeValueHashKeyValue.getNS();
-                        int nSListIndex = 0;
+
+                        java.util.List<String> nSList = attributeValueListListValue.getNS();
                         if (nSList != null && nSList.size() > 0) {
                             jsonWriter.key("NS").array();
                             for (String nSListValue : nSList) {
-                                if (nSListValue != null) {
-                                    jsonWriter.value(nSListValue);
-                                } else jsonWriter.value(null);
-                                nSListIndex++;
+                                jsonWriter.value(nSListValue);
                             }
                             jsonWriter.endArray();
                         }
+                        jsonWriter.endObject();
                     }
-                    jsonWriter.endObject();
+                    jsonWriter.endArray();
                 }
-            }
-            if (queryRequest != null) {
-                Condition conditionRangeKeyCondition = queryRequest.getRangeKeyCondition();
-                if (conditionRangeKeyCondition != null) {
-                    jsonWriter.key("RangeKeyCondition").object();
-
-                    if (conditionRangeKeyCondition != null) {
-                        java.util.List<AttributeValue> attributeValueListList = conditionRangeKeyCondition.getAttributeValueList();
-                        if (attributeValueListList != null && attributeValueListList.size() > 0) {
-                            int attributeValueListListIndex = 1;
-                            jsonWriter.key("AttributeValueList").array();
-                            for (AttributeValue attributeValueListListValue : attributeValueListList) {
-
-
-
-                                jsonWriter.object();
-                                if (attributeValueListListValue.getS() != null) {
-                                    jsonWriter.key("S").value(attributeValueListListValue.getS());
-                                }
-                                if (attributeValueListListValue.getN() != null) {
-                                    jsonWriter.key("N").value(attributeValueListListValue.getN());
-                                }
-                                if (attributeValueListListValue != null) {
-                                    java.util.List<String> sSList = attributeValueListListValue.getSS();
-                                    int sSListIndex = 0;
-                                    if (sSList != null && sSList.size() > 0) {
-                                        jsonWriter.key("SS").array();
-                                        for (String sSListValue : sSList) {
-                                            if (sSListValue != null) {
-                                                jsonWriter.value(sSListValue);
-                                            } else jsonWriter.value(null);
-                                            sSListIndex++;
-                                        }
-                                        jsonWriter.endArray();
-                                    }
-                                }
-                                if (attributeValueListListValue != null) {
-                                    java.util.List<String> nSList = attributeValueListListValue.getNS();
-                                    int nSListIndex = 0;
-                                    if (nSList != null && nSList.size() > 0) {
-                                        jsonWriter.key("NS").array();
-                                        for (String nSListValue : nSList) {
-                                            if (nSListValue != null) {
-                                                jsonWriter.value(nSListValue);
-                                            } else jsonWriter.value(null);
-                                            nSListIndex++;
-                                        }
-                                        jsonWriter.endArray();
-                                    }
-                                }
-                                jsonWriter.endObject();
-
-                                attributeValueListListIndex++;
-                            }
-                            jsonWriter.endArray();
-                        }
-                    }
-                    if (conditionRangeKeyCondition.getComparisonOperator() != null) {
-                        jsonWriter.key("ComparisonOperator").value(conditionRangeKeyCondition.getComparisonOperator());
-                    }
-                    jsonWriter.endObject();
+                if (rangeKeyCondition.getComparisonOperator() != null) {
+                    jsonWriter.key("ComparisonOperator").value(rangeKeyCondition.getComparisonOperator());
                 }
+                jsonWriter.endObject();
             }
             if (queryRequest.isScanIndexForward() != null) {
                 jsonWriter.key("ScanIndexForward").value(queryRequest.isScanIndexForward());
             }
-            if (queryRequest != null) {
-                Key keyExclusiveStartKey = queryRequest.getExclusiveStartKey();
-                if (keyExclusiveStartKey != null) {
-                    jsonWriter.key("ExclusiveStartKey").object();
-                    if (keyExclusiveStartKey != null) {
-                        AttributeValue attributeValueHashKeyElement = keyExclusiveStartKey.getHashKeyElement();
-                        if (attributeValueHashKeyElement != null) {
-                            jsonWriter.key("HashKeyElement").object();
-                            if (attributeValueHashKeyElement.getS() != null) {
-                                jsonWriter.key("S").value(attributeValueHashKeyElement.getS());
-                            }
-                            if (attributeValueHashKeyElement.getN() != null) {
-                                jsonWriter.key("N").value(attributeValueHashKeyElement.getN());
-                            }
-                            if (attributeValueHashKeyElement != null) {
-                                java.util.List<String> sSList = attributeValueHashKeyElement.getSS();
-                                int sSListIndex = 0;
-                                if (sSList != null && sSList.size() > 0) {
-                                    jsonWriter.key("SS").array();
-                                    for (String sSListValue : sSList) {
-                                        if (sSListValue != null) {
-                                            jsonWriter.value(sSListValue);
-                                        } else jsonWriter.value(null);
-                                        sSListIndex++;
-                                    }
-                                    jsonWriter.endArray();
-                                }
-                            }
-                            if (attributeValueHashKeyElement != null) {
-                                java.util.List<String> nSList = attributeValueHashKeyElement.getNS();
-                                int nSListIndex = 0;
-                                if (nSList != null && nSList.size() > 0) {
-                                    jsonWriter.key("NS").array();
-                                    for (String nSListValue : nSList) {
-                                        if (nSListValue != null) {
-                                            jsonWriter.value(nSListValue);
-                                        } else jsonWriter.value(null);
-                                        nSListIndex++;
-                                    }
-                                    jsonWriter.endArray();
-                                }
-                            }
-                            jsonWriter.endObject();
-                        }
+            Key exclusiveStartKey = queryRequest.getExclusiveStartKey();
+            if (exclusiveStartKey != null) {
+                jsonWriter.key("ExclusiveStartKey").object();
+                AttributeValue hashKeyElement = exclusiveStartKey.getHashKeyElement();
+                if (hashKeyElement != null) {
+                    jsonWriter.key("HashKeyElement").object();
+                    if (hashKeyElement.getS() != null) {
+                        jsonWriter.key("S").value(hashKeyElement.getS());
                     }
-                    if (keyExclusiveStartKey != null) {
-                        AttributeValue attributeValueRangeKeyElement = keyExclusiveStartKey.getRangeKeyElement();
-                        if (attributeValueRangeKeyElement != null) {
-                            jsonWriter.key("RangeKeyElement").object();
-                            if (attributeValueRangeKeyElement.getS() != null) {
-                                jsonWriter.key("S").value(attributeValueRangeKeyElement.getS());
-                            }
-                            if (attributeValueRangeKeyElement.getN() != null) {
-                                jsonWriter.key("N").value(attributeValueRangeKeyElement.getN());
-                            }
-                            if (attributeValueRangeKeyElement != null) {
-                                java.util.List<String> sSList = attributeValueRangeKeyElement.getSS();
-                                int sSListIndex = 0;
-                                if (sSList != null && sSList.size() > 0) {
-                                    jsonWriter.key("SS").array();
-                                    for (String sSListValue : sSList) {
-                                        if (sSListValue != null) {
-                                            jsonWriter.value(sSListValue);
-                                        } else jsonWriter.value(null);
-                                        sSListIndex++;
-                                    }
-                                    jsonWriter.endArray();
-                                }
-                            }
-                            if (attributeValueRangeKeyElement != null) {
-                                java.util.List<String> nSList = attributeValueRangeKeyElement.getNS();
-                                int nSListIndex = 0;
-                                if (nSList != null && nSList.size() > 0) {
-                                    jsonWriter.key("NS").array();
-                                    for (String nSListValue : nSList) {
-                                        if (nSListValue != null) {
-                                            jsonWriter.value(nSListValue);
-                                        } else jsonWriter.value(null);
-                                        nSListIndex++;
-                                    }
-                                    jsonWriter.endArray();
-                                }
-                            }
-                            jsonWriter.endObject();
+                    if (hashKeyElement.getN() != null) {
+                        jsonWriter.key("N").value(hashKeyElement.getN());
+                    }
+
+                    java.util.List<String> sSList = hashKeyElement.getSS();
+                    if (sSList != null && sSList.size() > 0) {
+                        jsonWriter.key("SS").array();
+                        for (String sSListValue : sSList) {
+                            jsonWriter.value(sSListValue);
                         }
+                        jsonWriter.endArray();
+                    }
+
+                    java.util.List<String> nSList = hashKeyElement.getNS();
+                    if (nSList != null && nSList.size() > 0) {
+                        jsonWriter.key("NS").array();
+                        for (String nSListValue : nSList) {
+                            jsonWriter.value(nSListValue);
+                        }
+                        jsonWriter.endArray();
                     }
                     jsonWriter.endObject();
                 }
+                AttributeValue rangeKeyElement = exclusiveStartKey.getRangeKeyElement();
+                if (rangeKeyElement != null) {
+                    jsonWriter.key("RangeKeyElement").object();
+                    if (rangeKeyElement.getS() != null) {
+                        jsonWriter.key("S").value(rangeKeyElement.getS());
+                    }
+                    if (rangeKeyElement.getN() != null) {
+                        jsonWriter.key("N").value(rangeKeyElement.getN());
+                    }
+
+                    java.util.List<String> sSList = rangeKeyElement.getSS();
+                    if (sSList != null && sSList.size() > 0) {
+                        jsonWriter.key("SS").array();
+                        for (String sSListValue : sSList) {
+                            jsonWriter.value(sSListValue);
+                        }
+                        jsonWriter.endArray();
+                    }
+
+                    java.util.List<String> nSList = rangeKeyElement.getNS();
+                    if (nSList != null && nSList.size() > 0) {
+                        jsonWriter.key("NS").array();
+                        for (String nSListValue : nSList) {
+                            jsonWriter.value(nSListValue);
+                        }
+                        jsonWriter.endArray();
+                    }
+                    jsonWriter.endObject();
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

@@ -58,18 +58,16 @@ public class DeprecateWorkflowTypeRequestMarshaller implements Marshaller<Reques
             if (deprecateWorkflowTypeRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(deprecateWorkflowTypeRequest.getDomain());
             }
-            if (deprecateWorkflowTypeRequest != null) {
-                WorkflowType workflowTypeWorkflowType = deprecateWorkflowTypeRequest.getWorkflowType();
-                if (workflowTypeWorkflowType != null) {
-                    jsonWriter.key("workflowType").object();
-                    if (workflowTypeWorkflowType.getName() != null) {
-                        jsonWriter.key("name").value(workflowTypeWorkflowType.getName());
-                    }
-                    if (workflowTypeWorkflowType.getVersion() != null) {
-                        jsonWriter.key("version").value(workflowTypeWorkflowType.getVersion());
-                    }
-                    jsonWriter.endObject();
+            WorkflowType workflowType = deprecateWorkflowTypeRequest.getWorkflowType();
+            if (workflowType != null) {
+                jsonWriter.key("workflowType").object();
+                if (workflowType.getName() != null) {
+                    jsonWriter.key("name").value(workflowType.getName());
                 }
+                if (workflowType.getVersion() != null) {
+                    jsonWriter.key("version").value(workflowType.getVersion());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

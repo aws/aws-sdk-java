@@ -34,6 +34,9 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributesJsonUnma
 
     public RequestCancelExternalWorkflowExecutionFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         RequestCancelExternalWorkflowExecutionFailedEventAttributes requestCancelExternalWorkflowExecutionFailedEventAttributes = new RequestCancelExternalWorkflowExecutionFailedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributesJsonUnma
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return requestCancelExternalWorkflowExecutionFailedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowId", targetDepth)) {
@@ -69,12 +72,12 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributesJsonUnma
                     requestCancelExternalWorkflowExecutionFailedEventAttributes.setControl(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return requestCancelExternalWorkflowExecutionFailedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return requestCancelExternalWorkflowExecutionFailedEventAttributes;
     }
 
     private static RequestCancelExternalWorkflowExecutionFailedEventAttributesJsonUnmarshaller instance;

@@ -34,6 +34,9 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
 
     public ActivityTaskScheduledEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskScheduledEventAttributes activityTaskScheduledEventAttributes = new ActivityTaskScheduledEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTaskScheduledEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
@@ -85,12 +88,12 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
                     activityTaskScheduledEventAttributes.setHeartbeatTimeout(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTaskScheduledEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTaskScheduledEventAttributes;
     }
 
     private static ActivityTaskScheduledEventAttributesJsonUnmarshaller instance;

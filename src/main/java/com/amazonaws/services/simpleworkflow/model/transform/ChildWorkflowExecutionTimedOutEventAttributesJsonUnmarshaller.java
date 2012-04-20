@@ -34,6 +34,9 @@ public class ChildWorkflowExecutionTimedOutEventAttributesJsonUnmarshaller imple
 
     public ChildWorkflowExecutionTimedOutEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ChildWorkflowExecutionTimedOutEventAttributes childWorkflowExecutionTimedOutEventAttributes = new ChildWorkflowExecutionTimedOutEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ChildWorkflowExecutionTimedOutEventAttributesJsonUnmarshaller imple
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return childWorkflowExecutionTimedOutEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecution", targetDepth)) {
@@ -65,12 +68,12 @@ public class ChildWorkflowExecutionTimedOutEventAttributesJsonUnmarshaller imple
                     childWorkflowExecutionTimedOutEventAttributes.setStartedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return childWorkflowExecutionTimedOutEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return childWorkflowExecutionTimedOutEventAttributes;
     }
 
     private static ChildWorkflowExecutionTimedOutEventAttributesJsonUnmarshaller instance;

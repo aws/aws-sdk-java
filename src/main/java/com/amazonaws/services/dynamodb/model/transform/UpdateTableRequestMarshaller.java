@@ -58,18 +58,16 @@ public class UpdateTableRequestMarshaller implements Marshaller<Request<UpdateTa
             if (updateTableRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(updateTableRequest.getTableName());
             }
-            if (updateTableRequest != null) {
-                ProvisionedThroughput provisionedThroughputProvisionedThroughput = updateTableRequest.getProvisionedThroughput();
-                if (provisionedThroughputProvisionedThroughput != null) {
-                    jsonWriter.key("ProvisionedThroughput").object();
-                    if (provisionedThroughputProvisionedThroughput.getReadCapacityUnits() != null) {
-                        jsonWriter.key("ReadCapacityUnits").value(provisionedThroughputProvisionedThroughput.getReadCapacityUnits());
-                    }
-                    if (provisionedThroughputProvisionedThroughput.getWriteCapacityUnits() != null) {
-                        jsonWriter.key("WriteCapacityUnits").value(provisionedThroughputProvisionedThroughput.getWriteCapacityUnits());
-                    }
-                    jsonWriter.endObject();
+            ProvisionedThroughput provisionedThroughput = updateTableRequest.getProvisionedThroughput();
+            if (provisionedThroughput != null) {
+                jsonWriter.key("ProvisionedThroughput").object();
+                if (provisionedThroughput.getReadCapacityUnits() != null) {
+                    jsonWriter.key("ReadCapacityUnits").value(provisionedThroughput.getReadCapacityUnits());
                 }
+                if (provisionedThroughput.getWriteCapacityUnits() != null) {
+                    jsonWriter.key("WriteCapacityUnits").value(provisionedThroughput.getWriteCapacityUnits());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

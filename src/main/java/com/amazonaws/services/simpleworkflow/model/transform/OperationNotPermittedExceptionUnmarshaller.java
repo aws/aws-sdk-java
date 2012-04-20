@@ -36,7 +36,6 @@ public class OperationNotPermittedExceptionUnmarshaller extends JsonErrorUnmarsh
         OperationNotPermittedException e = (OperationNotPermittedException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

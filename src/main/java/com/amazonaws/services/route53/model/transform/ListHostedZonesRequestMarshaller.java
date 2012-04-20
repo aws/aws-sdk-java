@@ -37,36 +37,38 @@ import com.amazonaws.util.XMLWriter;
 public class ListHostedZonesRequestMarshaller implements Marshaller<Request<ListHostedZonesRequest>, ListHostedZonesRequest> {
 
     public Request<ListHostedZonesRequest> marshall(ListHostedZonesRequest listHostedZonesRequest) {
-        if (listHostedZonesRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (listHostedZonesRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<ListHostedZonesRequest> request = new DefaultRequest<ListHostedZonesRequest>(listHostedZonesRequest, "AmazonRoute53");
-        request.setHttpMethod(HttpMethodName.GET);        
+        request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2011-05-05/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
+        String uriResourcePath = "/2012-02-29/hostedzone?marker={Marker}&maxitems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listHostedZonesRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listHostedZonesRequest.getMaxItems())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
         
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;

@@ -37,35 +37,37 @@ import com.amazonaws.util.XMLWriter;
 public class GetDistributionConfigRequestMarshaller implements Marshaller<Request<GetDistributionConfigRequest>, GetDistributionConfigRequest> {
 
     public Request<GetDistributionConfigRequest> marshall(GetDistributionConfigRequest getDistributionConfigRequest) {
-        if (getDistributionConfigRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (getDistributionConfigRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetDistributionConfigRequest> request = new DefaultRequest<GetDistributionConfigRequest>(getDistributionConfigRequest, "AmazonCloudFront");
-        request.setHttpMethod(HttpMethodName.GET);        
+        request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2010-11-01/distribution/{Id}/config"; 
+        String uriResourcePath = "2012-03-15/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getDistributionConfigRequest.getId())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
         
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;

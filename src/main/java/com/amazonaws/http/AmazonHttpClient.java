@@ -25,7 +25,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -72,6 +71,7 @@ public class AmazonHttpClient {
 
 	private static final String BYTES_PROCESSED_COUNTER = "bytes-processed";
 	private static final String RESPONSE_PROCESSING_SUBMEASUREMENT = "response-processing";
+	public static final String HTTP_REQUEST_TIME = "httprequest";
 
     /** Maximum exponential back-off time before retrying a request */
     private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
@@ -205,11 +205,6 @@ public class AmazonHttpClient {
          */
         boolean leaveHttpConnectionOpen = false;
 
-        // When we release connections, the connection manager leaves them
-        // open so they can be reused.  We want to close out any idle
-        // connections so that they don't sit around in CLOSE_WAIT.
-        httpClient.getConnectionManager().closeIdleConnections(30, TimeUnit.SECONDS);
-
         if (requestLog.isDebugEnabled()) {
             requestLog.debug("Sending Request: " + request.toString());
         }
@@ -265,7 +260,11 @@ public class AmazonHttpClient {
                 exception = null;
                 retryCount++;
 
+                long start = System.currentTimeMillis();
                 response = httpClient.execute(httpRequest);
+                long end = System.currentTimeMillis();
+                executionContext.getTimingInfo().addSubMeasurement(HTTP_REQUEST_TIME, new TimingInfo(start,end));
+
                 if (isRequestSuccessful(response)) {
                     /*
                      * If we get back any 2xx status code, then we know we should
@@ -345,6 +344,7 @@ public class AmazonHttpClient {
      * Once a client has been shutdown, it cannot be used to make more requests.
      */
     public void shutdown() {
+        IdleConnectionReaper.removeConnectionManager(httpClient.getConnectionManager());
         httpClient.getConnectionManager().shutdown();
     }
 
@@ -490,7 +490,6 @@ public class AmazonHttpClient {
             return awsResponse.getResult();
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + ")";
-            log.warn(errorMessage, e);
             throw new AmazonClientException(errorMessage, e);
         }
     }
@@ -544,7 +543,6 @@ public class AmazonHttpClient {
         		exception.setErrorCode("Service unavailable");
         	} else {
 	            String errorMessage = "Unable to unmarshall error response (" + e.getMessage() + ")";
-	            log.error(errorMessage, e);
 	            throw new AmazonClientException(errorMessage, e);
         	}
         }

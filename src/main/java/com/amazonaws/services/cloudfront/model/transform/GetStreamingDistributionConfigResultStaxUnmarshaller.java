@@ -38,7 +38,7 @@ public class GetStreamingDistributionConfigResultStaxUnmarshaller implements Unm
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            getStreamingDistributionConfigResult.setETag(context.getHeader("ETag"));        
+            getStreamingDistributionConfigResult.setETag(context.getHeader("ETag"));
         }
         
 

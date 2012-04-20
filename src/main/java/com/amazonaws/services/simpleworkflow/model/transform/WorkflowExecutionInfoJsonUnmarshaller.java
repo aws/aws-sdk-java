@@ -34,6 +34,9 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
 
     public WorkflowExecutionInfo unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowExecutionInfo workflowExecutionInfo = new WorkflowExecutionInfo();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return workflowExecutionInfo;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("execution", targetDepth)) {
@@ -80,12 +83,12 @@ public class WorkflowExecutionInfoJsonUnmarshaller implements Unmarshaller<Workf
                     workflowExecutionInfo.setCancelRequested(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return workflowExecutionInfo;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return workflowExecutionInfo;
     }
 
     private static WorkflowExecutionInfoJsonUnmarshaller instance;

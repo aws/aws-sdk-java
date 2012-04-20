@@ -160,6 +160,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         setEndpoint("ec2.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

@@ -39,7 +39,7 @@ public class CreateStreamingDistributionResultStaxUnmarshaller implements Unmars
 
         if (context.isStartOfDocument()) {
             createStreamingDistributionResult.setLocation(context.getHeader("Location"));
-            createStreamingDistributionResult.setETag(context.getHeader("ETag"));        
+            createStreamingDistributionResult.setETag(context.getHeader("ETag"));
         }
         
 

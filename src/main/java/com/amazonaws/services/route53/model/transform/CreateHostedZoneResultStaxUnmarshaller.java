@@ -40,7 +40,7 @@ public class CreateHostedZoneResultStaxUnmarshaller implements Unmarshaller<Crea
         
 
         if (context.isStartOfDocument()) {
-            createHostedZoneResult.setLocation(context.getHeader("Location"));        
+            createHostedZoneResult.setLocation(context.getHeader("Location"));
         }
         
 

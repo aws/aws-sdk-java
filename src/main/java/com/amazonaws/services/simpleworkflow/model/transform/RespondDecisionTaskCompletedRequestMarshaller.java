@@ -59,304 +59,252 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                 jsonWriter.key("taskToken").value(respondDecisionTaskCompletedRequest.getTaskToken());
             }
 
-            if (respondDecisionTaskCompletedRequest != null) {
-                java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
-                if (decisionsList != null && decisionsList.size() > 0) {
-                    int decisionsListIndex = 1;
-                    jsonWriter.key("decisions").array();
-                    for (Decision decisionsListValue : decisionsList) {
-
-
-
-                        jsonWriter.object();
-                        if (decisionsListValue.getDecisionType() != null) {
-                            jsonWriter.key("decisionType").value(decisionsListValue.getDecisionType());
-                        }
-                        if (decisionsListValue != null) {
-                            ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes = decisionsListValue.getScheduleActivityTaskDecisionAttributes();
-                            if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes != null) {
-                                jsonWriter.key("scheduleActivityTaskDecisionAttributes").object();
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes != null) {
-                                    ActivityType activityTypeActivityType = scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getActivityType();
-                                    if (activityTypeActivityType != null) {
-                                        jsonWriter.key("activityType").object();
-                                        if (activityTypeActivityType.getName() != null) {
-                                            jsonWriter.key("name").value(activityTypeActivityType.getName());
-                                        }
-                                        if (activityTypeActivityType.getVersion() != null) {
-                                            jsonWriter.key("version").value(activityTypeActivityType.getVersion());
-                                        }
-                                        jsonWriter.endObject();
-                                    }
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getActivityId() != null) {
-                                    jsonWriter.key("activityId").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getActivityId());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getControl() != null) {
-                                    jsonWriter.key("control").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getControl());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getInput() != null) {
-                                    jsonWriter.key("input").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getInput());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getScheduleToCloseTimeout() != null) {
-                                    jsonWriter.key("scheduleToCloseTimeout").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getScheduleToCloseTimeout());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes != null) {
-                                    TaskList taskListTaskList = scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getTaskList();
-                                    if (taskListTaskList != null) {
-                                        jsonWriter.key("taskList").object();
-                                        if (taskListTaskList.getName() != null) {
-                                            jsonWriter.key("name").value(taskListTaskList.getName());
-                                        }
-                                        jsonWriter.endObject();
-                                    }
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout() != null) {
-                                    jsonWriter.key("scheduleToStartTimeout").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getStartToCloseTimeout() != null) {
-                                    jsonWriter.key("startToCloseTimeout").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getStartToCloseTimeout());
-                                }
-                                if (scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getHeartbeatTimeout() != null) {
-                                    jsonWriter.key("heartbeatTimeout").value(scheduleActivityTaskDecisionAttributesScheduleActivityTaskDecisionAttributes.getHeartbeatTimeout());
-                                }
-                                jsonWriter.endObject();
+            java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
+            if (decisionsList != null && decisionsList.size() > 0) {
+                jsonWriter.key("decisions").array();
+                for (Decision decisionsListValue : decisionsList) {
+                    jsonWriter.object();
+                    if (decisionsListValue.getDecisionType() != null) {
+                        jsonWriter.key("decisionType").value(decisionsListValue.getDecisionType());
+                    }
+                    ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes = decisionsListValue.getScheduleActivityTaskDecisionAttributes();
+                    if (scheduleActivityTaskDecisionAttributes != null) {
+                        jsonWriter.key("scheduleActivityTaskDecisionAttributes").object();
+                        ActivityType activityType = scheduleActivityTaskDecisionAttributes.getActivityType();
+                        if (activityType != null) {
+                            jsonWriter.key("activityType").object();
+                            if (activityType.getName() != null) {
+                                jsonWriter.key("name").value(activityType.getName());
                             }
-                        }
-                        if (decisionsListValue != null) {
-                            RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributesRequestCancelActivityTaskDecisionAttributes = decisionsListValue.getRequestCancelActivityTaskDecisionAttributes();
-                            if (requestCancelActivityTaskDecisionAttributesRequestCancelActivityTaskDecisionAttributes != null) {
-                                jsonWriter.key("requestCancelActivityTaskDecisionAttributes").object();
-                                if (requestCancelActivityTaskDecisionAttributesRequestCancelActivityTaskDecisionAttributes.getActivityId() != null) {
-                                    jsonWriter.key("activityId").value(requestCancelActivityTaskDecisionAttributesRequestCancelActivityTaskDecisionAttributes.getActivityId());
-                                }
-                                jsonWriter.endObject();
+                            if (activityType.getVersion() != null) {
+                                jsonWriter.key("version").value(activityType.getVersion());
                             }
+                            jsonWriter.endObject();
                         }
-                        if (decisionsListValue != null) {
-                            CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributesCompleteWorkflowExecutionDecisionAttributes = decisionsListValue.getCompleteWorkflowExecutionDecisionAttributes();
-                            if (completeWorkflowExecutionDecisionAttributesCompleteWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("completeWorkflowExecutionDecisionAttributes").object();
-                                if (completeWorkflowExecutionDecisionAttributesCompleteWorkflowExecutionDecisionAttributes.getResult() != null) {
-                                    jsonWriter.key("result").value(completeWorkflowExecutionDecisionAttributesCompleteWorkflowExecutionDecisionAttributes.getResult());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getActivityId() != null) {
+                            jsonWriter.key("activityId").value(scheduleActivityTaskDecisionAttributes.getActivityId());
                         }
-                        if (decisionsListValue != null) {
-                            FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes = decisionsListValue.getFailWorkflowExecutionDecisionAttributes();
-                            if (failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("failWorkflowExecutionDecisionAttributes").object();
-                                if (failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes.getReason() != null) {
-                                    jsonWriter.key("reason").value(failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes.getReason());
-                                }
-                                if (failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes.getDetails() != null) {
-                                    jsonWriter.key("details").value(failWorkflowExecutionDecisionAttributesFailWorkflowExecutionDecisionAttributes.getDetails());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getControl() != null) {
+                            jsonWriter.key("control").value(scheduleActivityTaskDecisionAttributes.getControl());
                         }
-                        if (decisionsListValue != null) {
-                            CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributesCancelWorkflowExecutionDecisionAttributes = decisionsListValue.getCancelWorkflowExecutionDecisionAttributes();
-                            if (cancelWorkflowExecutionDecisionAttributesCancelWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("cancelWorkflowExecutionDecisionAttributes").object();
-                                if (cancelWorkflowExecutionDecisionAttributesCancelWorkflowExecutionDecisionAttributes.getDetails() != null) {
-                                    jsonWriter.key("details").value(cancelWorkflowExecutionDecisionAttributesCancelWorkflowExecutionDecisionAttributes.getDetails());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getInput() != null) {
+                            jsonWriter.key("input").value(scheduleActivityTaskDecisionAttributes.getInput());
                         }
-                        if (decisionsListValue != null) {
-                            ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes = decisionsListValue.getContinueAsNewWorkflowExecutionDecisionAttributes();
-                            if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("continueAsNewWorkflowExecutionDecisionAttributes").object();
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getInput() != null) {
-                                    jsonWriter.key("input").value(continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getInput());
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout() != null) {
-                                    jsonWriter.key("executionStartToCloseTimeout").value(continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout());
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes != null) {
-                                    TaskList taskListTaskList = continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getTaskList();
-                                    if (taskListTaskList != null) {
-                                        jsonWriter.key("taskList").object();
-                                        if (taskListTaskList.getName() != null) {
-                                            jsonWriter.key("name").value(taskListTaskList.getName());
-                                        }
-                                        jsonWriter.endObject();
-                                    }
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
-                                    jsonWriter.key("taskStartToCloseTimeout").value(continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getChildPolicy() != null) {
-                                    jsonWriter.key("childPolicy").value(continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getChildPolicy());
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes != null) {
-                                    java.util.List<String> tagListList = continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getTagList();
-                                    int tagListListIndex = 0;
-                                    if (tagListList != null && tagListList.size() > 0) {
-                                        jsonWriter.key("tagList").array();
-                                        for (String tagListListValue : tagListList) {
-                                            if (tagListListValue != null) {
-                                                jsonWriter.value(tagListListValue);
-                                            } else jsonWriter.value(null);
-                                            tagListListIndex++;
-                                        }
-                                        jsonWriter.endArray();
-                                    }
-                                }
-                                if (continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion() != null) {
-                                    jsonWriter.key("workflowTypeVersion").value(continueAsNewWorkflowExecutionDecisionAttributesContinueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getScheduleToCloseTimeout() != null) {
+                            jsonWriter.key("scheduleToCloseTimeout").value(scheduleActivityTaskDecisionAttributes.getScheduleToCloseTimeout());
                         }
-                        if (decisionsListValue != null) {
-                            RecordMarkerDecisionAttributes recordMarkerDecisionAttributesRecordMarkerDecisionAttributes = decisionsListValue.getRecordMarkerDecisionAttributes();
-                            if (recordMarkerDecisionAttributesRecordMarkerDecisionAttributes != null) {
-                                jsonWriter.key("recordMarkerDecisionAttributes").object();
-                                if (recordMarkerDecisionAttributesRecordMarkerDecisionAttributes.getMarkerName() != null) {
-                                    jsonWriter.key("markerName").value(recordMarkerDecisionAttributesRecordMarkerDecisionAttributes.getMarkerName());
-                                }
-                                if (recordMarkerDecisionAttributesRecordMarkerDecisionAttributes.getDetails() != null) {
-                                    jsonWriter.key("details").value(recordMarkerDecisionAttributesRecordMarkerDecisionAttributes.getDetails());
-                                }
-                                jsonWriter.endObject();
+                        TaskList taskList = scheduleActivityTaskDecisionAttributes.getTaskList();
+                        if (taskList != null) {
+                            jsonWriter.key("taskList").object();
+                            if (taskList.getName() != null) {
+                                jsonWriter.key("name").value(taskList.getName());
                             }
+                            jsonWriter.endObject();
                         }
-                        if (decisionsListValue != null) {
-                            StartTimerDecisionAttributes startTimerDecisionAttributesStartTimerDecisionAttributes = decisionsListValue.getStartTimerDecisionAttributes();
-                            if (startTimerDecisionAttributesStartTimerDecisionAttributes != null) {
-                                jsonWriter.key("startTimerDecisionAttributes").object();
-                                if (startTimerDecisionAttributesStartTimerDecisionAttributes.getTimerId() != null) {
-                                    jsonWriter.key("timerId").value(startTimerDecisionAttributesStartTimerDecisionAttributes.getTimerId());
-                                }
-                                if (startTimerDecisionAttributesStartTimerDecisionAttributes.getControl() != null) {
-                                    jsonWriter.key("control").value(startTimerDecisionAttributesStartTimerDecisionAttributes.getControl());
-                                }
-                                if (startTimerDecisionAttributesStartTimerDecisionAttributes.getStartToFireTimeout() != null) {
-                                    jsonWriter.key("startToFireTimeout").value(startTimerDecisionAttributesStartTimerDecisionAttributes.getStartToFireTimeout());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout() != null) {
+                            jsonWriter.key("scheduleToStartTimeout").value(scheduleActivityTaskDecisionAttributes.getScheduleToStartTimeout());
                         }
-                        if (decisionsListValue != null) {
-                            CancelTimerDecisionAttributes cancelTimerDecisionAttributesCancelTimerDecisionAttributes = decisionsListValue.getCancelTimerDecisionAttributes();
-                            if (cancelTimerDecisionAttributesCancelTimerDecisionAttributes != null) {
-                                jsonWriter.key("cancelTimerDecisionAttributes").object();
-                                if (cancelTimerDecisionAttributesCancelTimerDecisionAttributes.getTimerId() != null) {
-                                    jsonWriter.key("timerId").value(cancelTimerDecisionAttributesCancelTimerDecisionAttributes.getTimerId());
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getStartToCloseTimeout() != null) {
+                            jsonWriter.key("startToCloseTimeout").value(scheduleActivityTaskDecisionAttributes.getStartToCloseTimeout());
                         }
-                        if (decisionsListValue != null) {
-                            SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getSignalExternalWorkflowExecutionDecisionAttributes();
-                            if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("signalExternalWorkflowExecutionDecisionAttributes").object();
-                                if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
-                                    jsonWriter.key("workflowId").value(signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
-                                }
-                                if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getRunId() != null) {
-                                    jsonWriter.key("runId").value(signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getRunId());
-                                }
-                                if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getSignalName() != null) {
-                                    jsonWriter.key("signalName").value(signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getSignalName());
-                                }
-                                if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getInput() != null) {
-                                    jsonWriter.key("input").value(signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getInput());
-                                }
-                                if (signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getControl() != null) {
-                                    jsonWriter.key("control").value(signalExternalWorkflowExecutionDecisionAttributesSignalExternalWorkflowExecutionDecisionAttributes.getControl());
-                                }
-                                jsonWriter.endObject();
-                            }
-                        }
-                        if (decisionsListValue != null) {
-                            RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getRequestCancelExternalWorkflowExecutionDecisionAttributes();
-                            if (requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("requestCancelExternalWorkflowExecutionDecisionAttributes").object();
-                                if (requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
-                                    jsonWriter.key("workflowId").value(requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
-                                }
-                                if (requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getRunId() != null) {
-                                    jsonWriter.key("runId").value(requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getRunId());
-                                }
-                                if (requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getControl() != null) {
-                                    jsonWriter.key("control").value(requestCancelExternalWorkflowExecutionDecisionAttributesRequestCancelExternalWorkflowExecutionDecisionAttributes.getControl());
-                                }
-                                jsonWriter.endObject();
-                            }
-                        }
-                        if (decisionsListValue != null) {
-                            StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes = decisionsListValue.getStartChildWorkflowExecutionDecisionAttributes();
-                            if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes != null) {
-                                jsonWriter.key("startChildWorkflowExecutionDecisionAttributes").object();
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes != null) {
-                                    WorkflowType workflowTypeWorkflowType = startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getWorkflowType();
-                                    if (workflowTypeWorkflowType != null) {
-                                        jsonWriter.key("workflowType").object();
-                                        if (workflowTypeWorkflowType.getName() != null) {
-                                            jsonWriter.key("name").value(workflowTypeWorkflowType.getName());
-                                        }
-                                        if (workflowTypeWorkflowType.getVersion() != null) {
-                                            jsonWriter.key("version").value(workflowTypeWorkflowType.getVersion());
-                                        }
-                                        jsonWriter.endObject();
-                                    }
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
-                                    jsonWriter.key("workflowId").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getWorkflowId());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getControl() != null) {
-                                    jsonWriter.key("control").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getControl());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getInput() != null) {
-                                    jsonWriter.key("input").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getInput());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout() != null) {
-                                    jsonWriter.key("executionStartToCloseTimeout").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes != null) {
-                                    TaskList taskListTaskList = startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getTaskList();
-                                    if (taskListTaskList != null) {
-                                        jsonWriter.key("taskList").object();
-                                        if (taskListTaskList.getName() != null) {
-                                            jsonWriter.key("name").value(taskListTaskList.getName());
-                                        }
-                                        jsonWriter.endObject();
-                                    }
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
-                                    jsonWriter.key("taskStartToCloseTimeout").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getChildPolicy() != null) {
-                                    jsonWriter.key("childPolicy").value(startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getChildPolicy());
-                                }
-                                if (startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes != null) {
-                                    java.util.List<String> tagListList = startChildWorkflowExecutionDecisionAttributesStartChildWorkflowExecutionDecisionAttributes.getTagList();
-                                    int tagListListIndex = 0;
-                                    if (tagListList != null && tagListList.size() > 0) {
-                                        jsonWriter.key("tagList").array();
-                                        for (String tagListListValue : tagListList) {
-                                            if (tagListListValue != null) {
-                                                jsonWriter.value(tagListListValue);
-                                            } else jsonWriter.value(null);
-                                            tagListListIndex++;
-                                        }
-                                        jsonWriter.endArray();
-                                    }
-                                }
-                                jsonWriter.endObject();
-                            }
+                        if (scheduleActivityTaskDecisionAttributes.getHeartbeatTimeout() != null) {
+                            jsonWriter.key("heartbeatTimeout").value(scheduleActivityTaskDecisionAttributes.getHeartbeatTimeout());
                         }
                         jsonWriter.endObject();
-
-                        decisionsListIndex++;
                     }
-                    jsonWriter.endArray();
+                    RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes = decisionsListValue.getRequestCancelActivityTaskDecisionAttributes();
+                    if (requestCancelActivityTaskDecisionAttributes != null) {
+                        jsonWriter.key("requestCancelActivityTaskDecisionAttributes").object();
+                        if (requestCancelActivityTaskDecisionAttributes.getActivityId() != null) {
+                            jsonWriter.key("activityId").value(requestCancelActivityTaskDecisionAttributes.getActivityId());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes = decisionsListValue.getCompleteWorkflowExecutionDecisionAttributes();
+                    if (completeWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("completeWorkflowExecutionDecisionAttributes").object();
+                        if (completeWorkflowExecutionDecisionAttributes.getResult() != null) {
+                            jsonWriter.key("result").value(completeWorkflowExecutionDecisionAttributes.getResult());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributes = decisionsListValue.getFailWorkflowExecutionDecisionAttributes();
+                    if (failWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("failWorkflowExecutionDecisionAttributes").object();
+                        if (failWorkflowExecutionDecisionAttributes.getReason() != null) {
+                            jsonWriter.key("reason").value(failWorkflowExecutionDecisionAttributes.getReason());
+                        }
+                        if (failWorkflowExecutionDecisionAttributes.getDetails() != null) {
+                            jsonWriter.key("details").value(failWorkflowExecutionDecisionAttributes.getDetails());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributes = decisionsListValue.getCancelWorkflowExecutionDecisionAttributes();
+                    if (cancelWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("cancelWorkflowExecutionDecisionAttributes").object();
+                        if (cancelWorkflowExecutionDecisionAttributes.getDetails() != null) {
+                            jsonWriter.key("details").value(cancelWorkflowExecutionDecisionAttributes.getDetails());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributes = decisionsListValue.getContinueAsNewWorkflowExecutionDecisionAttributes();
+                    if (continueAsNewWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("continueAsNewWorkflowExecutionDecisionAttributes").object();
+                        if (continueAsNewWorkflowExecutionDecisionAttributes.getInput() != null) {
+                            jsonWriter.key("input").value(continueAsNewWorkflowExecutionDecisionAttributes.getInput());
+                        }
+                        if (continueAsNewWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout() != null) {
+                            jsonWriter.key("executionStartToCloseTimeout").value(continueAsNewWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout());
+                        }
+                        TaskList taskList = continueAsNewWorkflowExecutionDecisionAttributes.getTaskList();
+                        if (taskList != null) {
+                            jsonWriter.key("taskList").object();
+                            if (taskList.getName() != null) {
+                                jsonWriter.key("name").value(taskList.getName());
+                            }
+                            jsonWriter.endObject();
+                        }
+                        if (continueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
+                            jsonWriter.key("taskStartToCloseTimeout").value(continueAsNewWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());
+                        }
+                        if (continueAsNewWorkflowExecutionDecisionAttributes.getChildPolicy() != null) {
+                            jsonWriter.key("childPolicy").value(continueAsNewWorkflowExecutionDecisionAttributes.getChildPolicy());
+                        }
+
+                        java.util.List<String> tagListList = continueAsNewWorkflowExecutionDecisionAttributes.getTagList();
+                        if (tagListList != null && tagListList.size() > 0) {
+                            jsonWriter.key("tagList").array();
+                            for (String tagListListValue : tagListList) {
+                                jsonWriter.value(tagListListValue);
+                            }
+                            jsonWriter.endArray();
+                        }
+                        if (continueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion() != null) {
+                            jsonWriter.key("workflowTypeVersion").value(continueAsNewWorkflowExecutionDecisionAttributes.getWorkflowTypeVersion());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    RecordMarkerDecisionAttributes recordMarkerDecisionAttributes = decisionsListValue.getRecordMarkerDecisionAttributes();
+                    if (recordMarkerDecisionAttributes != null) {
+                        jsonWriter.key("recordMarkerDecisionAttributes").object();
+                        if (recordMarkerDecisionAttributes.getMarkerName() != null) {
+                            jsonWriter.key("markerName").value(recordMarkerDecisionAttributes.getMarkerName());
+                        }
+                        if (recordMarkerDecisionAttributes.getDetails() != null) {
+                            jsonWriter.key("details").value(recordMarkerDecisionAttributes.getDetails());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    StartTimerDecisionAttributes startTimerDecisionAttributes = decisionsListValue.getStartTimerDecisionAttributes();
+                    if (startTimerDecisionAttributes != null) {
+                        jsonWriter.key("startTimerDecisionAttributes").object();
+                        if (startTimerDecisionAttributes.getTimerId() != null) {
+                            jsonWriter.key("timerId").value(startTimerDecisionAttributes.getTimerId());
+                        }
+                        if (startTimerDecisionAttributes.getControl() != null) {
+                            jsonWriter.key("control").value(startTimerDecisionAttributes.getControl());
+                        }
+                        if (startTimerDecisionAttributes.getStartToFireTimeout() != null) {
+                            jsonWriter.key("startToFireTimeout").value(startTimerDecisionAttributes.getStartToFireTimeout());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    CancelTimerDecisionAttributes cancelTimerDecisionAttributes = decisionsListValue.getCancelTimerDecisionAttributes();
+                    if (cancelTimerDecisionAttributes != null) {
+                        jsonWriter.key("cancelTimerDecisionAttributes").object();
+                        if (cancelTimerDecisionAttributes.getTimerId() != null) {
+                            jsonWriter.key("timerId").value(cancelTimerDecisionAttributes.getTimerId());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getSignalExternalWorkflowExecutionDecisionAttributes();
+                    if (signalExternalWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("signalExternalWorkflowExecutionDecisionAttributes").object();
+                        if (signalExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
+                            jsonWriter.key("workflowId").value(signalExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
+                        }
+                        if (signalExternalWorkflowExecutionDecisionAttributes.getRunId() != null) {
+                            jsonWriter.key("runId").value(signalExternalWorkflowExecutionDecisionAttributes.getRunId());
+                        }
+                        if (signalExternalWorkflowExecutionDecisionAttributes.getSignalName() != null) {
+                            jsonWriter.key("signalName").value(signalExternalWorkflowExecutionDecisionAttributes.getSignalName());
+                        }
+                        if (signalExternalWorkflowExecutionDecisionAttributes.getInput() != null) {
+                            jsonWriter.key("input").value(signalExternalWorkflowExecutionDecisionAttributes.getInput());
+                        }
+                        if (signalExternalWorkflowExecutionDecisionAttributes.getControl() != null) {
+                            jsonWriter.key("control").value(signalExternalWorkflowExecutionDecisionAttributes.getControl());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getRequestCancelExternalWorkflowExecutionDecisionAttributes();
+                    if (requestCancelExternalWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("requestCancelExternalWorkflowExecutionDecisionAttributes").object();
+                        if (requestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
+                            jsonWriter.key("workflowId").value(requestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
+                        }
+                        if (requestCancelExternalWorkflowExecutionDecisionAttributes.getRunId() != null) {
+                            jsonWriter.key("runId").value(requestCancelExternalWorkflowExecutionDecisionAttributes.getRunId());
+                        }
+                        if (requestCancelExternalWorkflowExecutionDecisionAttributes.getControl() != null) {
+                            jsonWriter.key("control").value(requestCancelExternalWorkflowExecutionDecisionAttributes.getControl());
+                        }
+                        jsonWriter.endObject();
+                    }
+                    StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes = decisionsListValue.getStartChildWorkflowExecutionDecisionAttributes();
+                    if (startChildWorkflowExecutionDecisionAttributes != null) {
+                        jsonWriter.key("startChildWorkflowExecutionDecisionAttributes").object();
+                        WorkflowType workflowType = startChildWorkflowExecutionDecisionAttributes.getWorkflowType();
+                        if (workflowType != null) {
+                            jsonWriter.key("workflowType").object();
+                            if (workflowType.getName() != null) {
+                                jsonWriter.key("name").value(workflowType.getName());
+                            }
+                            if (workflowType.getVersion() != null) {
+                                jsonWriter.key("version").value(workflowType.getVersion());
+                            }
+                            jsonWriter.endObject();
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
+                            jsonWriter.key("workflowId").value(startChildWorkflowExecutionDecisionAttributes.getWorkflowId());
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getControl() != null) {
+                            jsonWriter.key("control").value(startChildWorkflowExecutionDecisionAttributes.getControl());
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getInput() != null) {
+                            jsonWriter.key("input").value(startChildWorkflowExecutionDecisionAttributes.getInput());
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout() != null) {
+                            jsonWriter.key("executionStartToCloseTimeout").value(startChildWorkflowExecutionDecisionAttributes.getExecutionStartToCloseTimeout());
+                        }
+                        TaskList taskList = startChildWorkflowExecutionDecisionAttributes.getTaskList();
+                        if (taskList != null) {
+                            jsonWriter.key("taskList").object();
+                            if (taskList.getName() != null) {
+                                jsonWriter.key("name").value(taskList.getName());
+                            }
+                            jsonWriter.endObject();
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout() != null) {
+                            jsonWriter.key("taskStartToCloseTimeout").value(startChildWorkflowExecutionDecisionAttributes.getTaskStartToCloseTimeout());
+                        }
+                        if (startChildWorkflowExecutionDecisionAttributes.getChildPolicy() != null) {
+                            jsonWriter.key("childPolicy").value(startChildWorkflowExecutionDecisionAttributes.getChildPolicy());
+                        }
+
+                        java.util.List<String> tagListList = startChildWorkflowExecutionDecisionAttributes.getTagList();
+                        if (tagListList != null && tagListList.size() > 0) {
+                            jsonWriter.key("tagList").array();
+                            for (String tagListListValue : tagListList) {
+                                jsonWriter.value(tagListListValue);
+                            }
+                            jsonWriter.endArray();
+                        }
+                        jsonWriter.endObject();
+                    }
+                    jsonWriter.endObject();
                 }
+                jsonWriter.endArray();
             }
             if (respondDecisionTaskCompletedRequest.getExecutionContext() != null) {
                 jsonWriter.key("executionContext").value(respondDecisionTaskCompletedRequest.getExecutionContext());

@@ -34,6 +34,9 @@ public class WorkflowTypeJsonUnmarshaller implements Unmarshaller<WorkflowType, 
 
     public WorkflowType unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowType workflowType = new WorkflowType();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class WorkflowTypeJsonUnmarshaller implements Unmarshaller<WorkflowType, 
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return workflowType;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("name", targetDepth)) {
@@ -53,12 +56,12 @@ public class WorkflowTypeJsonUnmarshaller implements Unmarshaller<WorkflowType, 
                     workflowType.setVersion(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return workflowType;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return workflowType;
     }
 
     private static WorkflowTypeJsonUnmarshaller instance;

@@ -20,7 +20,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Use this action to create or change your authoritative DNS
  * information. To use this action, send a <code>POST</code> request to
- * the <code>2011-05-05/hostedzone/hosted Zone ID/rrset</code> resource.
+ * the <code>2012-02-29/hostedzone/hosted Zone ID/rrset</code> resource.
  * The request body must include an XML document with a
  * <code>ChangeResourceRecordSetsRequest</code> element.
  * </p>

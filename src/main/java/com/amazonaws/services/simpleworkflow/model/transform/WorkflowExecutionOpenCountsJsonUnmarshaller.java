@@ -34,6 +34,9 @@ public class WorkflowExecutionOpenCountsJsonUnmarshaller implements Unmarshaller
 
     public WorkflowExecutionOpenCounts unmarshall(JsonUnmarshallerContext context) throws Exception {
         WorkflowExecutionOpenCounts workflowExecutionOpenCounts = new WorkflowExecutionOpenCounts();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class WorkflowExecutionOpenCountsJsonUnmarshaller implements Unmarshaller
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return workflowExecutionOpenCounts;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("openActivityTasks", targetDepth)) {
@@ -61,12 +64,12 @@ public class WorkflowExecutionOpenCountsJsonUnmarshaller implements Unmarshaller
                     workflowExecutionOpenCounts.setOpenChildWorkflowExecutions(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return workflowExecutionOpenCounts;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return workflowExecutionOpenCounts;
     }
 
     private static WorkflowExecutionOpenCountsJsonUnmarshaller instance;

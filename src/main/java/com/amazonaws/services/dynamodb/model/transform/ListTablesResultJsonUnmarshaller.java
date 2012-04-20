@@ -34,6 +34,9 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
 
     public ListTablesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         ListTablesResult listTablesResult = new ListTablesResult();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return listTablesResult;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableNames", targetDepth)) {
@@ -52,12 +55,12 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
                     listTablesResult.setLastEvaluatedTableName(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return listTablesResult;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return listTablesResult;
     }
 
     private static ListTablesResultJsonUnmarshaller instance;

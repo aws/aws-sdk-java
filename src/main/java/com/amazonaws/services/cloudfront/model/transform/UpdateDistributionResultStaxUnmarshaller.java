@@ -38,7 +38,7 @@ public class UpdateDistributionResultStaxUnmarshaller implements Unmarshaller<Up
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            updateDistributionResult.setETag(context.getHeader("ETag"));        
+            updateDistributionResult.setETag(context.getHeader("ETag"));
         }
         
 

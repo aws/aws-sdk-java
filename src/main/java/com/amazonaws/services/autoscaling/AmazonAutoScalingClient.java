@@ -176,6 +176,7 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         setEndpoint("autoscaling.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -1536,7 +1537,6 @@ public class AmazonAutoScalingClient extends AmazonWebServiceClient implements A
         return describeMetricCollectionTypes(new DescribeMetricCollectionTypesRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

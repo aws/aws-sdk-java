@@ -34,6 +34,9 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
 
     public AttributeValue unmarshall(JsonUnmarshallerContext context) throws Exception {
         AttributeValue attributeValue = new AttributeValue();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return attributeValue;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S", targetDepth)) {
@@ -59,12 +62,12 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
                     attributeValue.setNS(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return attributeValue;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return attributeValue;
     }
 
     private static AttributeValueJsonUnmarshaller instance;

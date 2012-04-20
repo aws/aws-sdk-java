@@ -39,9 +39,9 @@ public class ResourceRecordSet {
     private String type;
 
     /**
-     * <i>Weighted resource record sets only:</i> An identifier that
-     * differentiates among multiple resource record sets that have the same
-     * combination of DNS name and type.
+     * <i>Weighted resource record sets or Regional resource record sets
+     * only:</i> An identifier that differentiates among multiple resource
+     * record sets that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -58,6 +58,17 @@ public class ResourceRecordSet {
      * <b>Range: </b>0 - 255<br/>
      */
     private Long weight;
+
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     */
+    private String region;
 
     /**
      * The cache time to live for the current resource record set.
@@ -243,50 +254,50 @@ public class ResourceRecordSet {
     }
     
     /**
-     * <i>Weighted resource record sets only:</i> An identifier that
-     * differentiates among multiple resource record sets that have the same
-     * combination of DNS name and type.
+     * <i>Weighted resource record sets or Regional resource record sets
+     * only:</i> An identifier that differentiates among multiple resource
+     * record sets that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @return <i>Weighted resource record sets only:</i> An identifier that
-     *         differentiates among multiple resource record sets that have the same
-     *         combination of DNS name and type.
+     * @return <i>Weighted resource record sets or Regional resource record sets
+     *         only:</i> An identifier that differentiates among multiple resource
+     *         record sets that have the same combination of DNS name and type.
      */
     public String getSetIdentifier() {
         return setIdentifier;
     }
     
     /**
-     * <i>Weighted resource record sets only:</i> An identifier that
-     * differentiates among multiple resource record sets that have the same
-     * combination of DNS name and type.
+     * <i>Weighted resource record sets or Regional resource record sets
+     * only:</i> An identifier that differentiates among multiple resource
+     * record sets that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted resource record sets only:</i> An identifier that
-     *         differentiates among multiple resource record sets that have the same
-     *         combination of DNS name and type.
+     * @param setIdentifier <i>Weighted resource record sets or Regional resource record sets
+     *         only:</i> An identifier that differentiates among multiple resource
+     *         record sets that have the same combination of DNS name and type.
      */
     public void setSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
     }
     
     /**
-     * <i>Weighted resource record sets only:</i> An identifier that
-     * differentiates among multiple resource record sets that have the same
-     * combination of DNS name and type.
+     * <i>Weighted resource record sets or Regional resource record sets
+     * only:</i> An identifier that differentiates among multiple resource
+     * record sets that have the same combination of DNS name and type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted resource record sets only:</i> An identifier that
-     *         differentiates among multiple resource record sets that have the same
-     *         combination of DNS name and type.
+     * @param setIdentifier <i>Weighted resource record sets or Regional resource record sets
+     *         only:</i> An identifier that differentiates among multiple resource
+     *         record sets that have the same combination of DNS name and type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -357,6 +368,114 @@ public class ResourceRecordSet {
         return this;
     }
     
+    
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     *
+     * @return <i>Regional resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         specifies the AWS region for the current resource record set.
+     *
+     * @see ResourceRecordSetRegion
+     */
+    public String getRegion() {
+        return region;
+    }
+    
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     *
+     * @param region <i>Regional resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         specifies the AWS region for the current resource record set.
+     *
+     * @see ResourceRecordSetRegion
+     */
+    public void setRegion(String region) {
+        this.region = region;
+    }
+    
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     *
+     * @param region <i>Regional resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         specifies the AWS region for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceRecordSetRegion
+     */
+    public ResourceRecordSet withRegion(String region) {
+        this.region = region;
+        return this;
+    }
+    
+    
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     *
+     * @param region <i>Regional resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         specifies the AWS region for the current resource record set.
+     *
+     * @see ResourceRecordSetRegion
+     */
+    public void setRegion(ResourceRecordSetRegion region) {
+        this.region = region.toString();
+    }
+    
+    /**
+     * <i>Regional resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * specifies the AWS region for the current resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 64<br/>
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     *
+     * @param region <i>Regional resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         specifies the AWS region for the current resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceRecordSetRegion
+     */
+    public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
+        this.region = region.toString();
+        return this;
+    }
     
     /**
      * The cache time to live for the current resource record set.
@@ -546,6 +665,7 @@ public class ResourceRecordSet {
         if (type != null) sb.append("Type: " + type + ", ");
         if (setIdentifier != null) sb.append("SetIdentifier: " + setIdentifier + ", ");
         if (weight != null) sb.append("Weight: " + weight + ", ");
+        if (region != null) sb.append("Region: " + region + ", ");
         if (tTL != null) sb.append("TTL: " + tTL + ", ");
         if (resourceRecords != null) sb.append("ResourceRecords: " + resourceRecords + ", ");
         if (aliasTarget != null) sb.append("AliasTarget: " + aliasTarget + ", ");
@@ -562,6 +682,7 @@ public class ResourceRecordSet {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getSetIdentifier() == null) ? 0 : getSetIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getWeight() == null) ? 0 : getWeight().hashCode()); 
+        hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
         hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode()); 
         hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode()); 
         hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode()); 
@@ -584,6 +705,8 @@ public class ResourceRecordSet {
         if (other.getSetIdentifier() != null && other.getSetIdentifier().equals(this.getSetIdentifier()) == false) return false; 
         if (other.getWeight() == null ^ this.getWeight() == null) return false;
         if (other.getWeight() != null && other.getWeight().equals(this.getWeight()) == false) return false; 
+        if (other.getRegion() == null ^ this.getRegion() == null) return false;
+        if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
         if (other.getTTL() == null ^ this.getTTL() == null) return false;
         if (other.getTTL() != null && other.getTTL().equals(this.getTTL()) == false) return false; 
         if (other.getResourceRecords() == null ^ this.getResourceRecords() == null) return false;

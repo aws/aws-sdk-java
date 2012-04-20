@@ -165,6 +165,7 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         setEndpoint("importexport.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -386,7 +387,6 @@ public class AmazonImportExportClient extends AmazonWebServiceClient implements 
         return listJobs(new ListJobsRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

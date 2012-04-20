@@ -58,18 +58,16 @@ public class GetWorkflowExecutionHistoryRequestMarshaller implements Marshaller<
             if (getWorkflowExecutionHistoryRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(getWorkflowExecutionHistoryRequest.getDomain());
             }
-            if (getWorkflowExecutionHistoryRequest != null) {
-                WorkflowExecution workflowExecutionExecution = getWorkflowExecutionHistoryRequest.getExecution();
-                if (workflowExecutionExecution != null) {
-                    jsonWriter.key("execution").object();
-                    if (workflowExecutionExecution.getWorkflowId() != null) {
-                        jsonWriter.key("workflowId").value(workflowExecutionExecution.getWorkflowId());
-                    }
-                    if (workflowExecutionExecution.getRunId() != null) {
-                        jsonWriter.key("runId").value(workflowExecutionExecution.getRunId());
-                    }
-                    jsonWriter.endObject();
+            WorkflowExecution execution = getWorkflowExecutionHistoryRequest.getExecution();
+            if (execution != null) {
+                jsonWriter.key("execution").object();
+                if (execution.getWorkflowId() != null) {
+                    jsonWriter.key("workflowId").value(execution.getWorkflowId());
                 }
+                if (execution.getRunId() != null) {
+                    jsonWriter.key("runId").value(execution.getRunId());
+                }
+                jsonWriter.endObject();
             }
             if (getWorkflowExecutionHistoryRequest.getNextPageToken() != null) {
                 jsonWriter.key("nextPageToken").value(getWorkflowExecutionHistoryRequest.getNextPageToken());

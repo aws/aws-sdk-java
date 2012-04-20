@@ -17,21 +17,16 @@
  */
 package com.amazonaws.services.s3.internal;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
@@ -46,6 +41,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.util.BinaryUtils;
 import com.amazonaws.util.DateUtils;
+import com.amazonaws.util.Md5Utils;
 
 /**
  * General utility methods used throughout the AWS S3 Java client.
@@ -105,45 +101,7 @@ public class ServiceUtils {
         }
     }
 
-    /**
-     * Computes the MD5 hash of the data in the given input stream and returns
-     * it as a hex string.
-     *
-     * @param is
-     * @return MD5 hash
-     * @throws NoSuchAlgorithmException
-     * @throws IOException
-     */
-    public static byte[] computeMD5Hash(InputStream is) throws NoSuchAlgorithmException, IOException {
-        BufferedInputStream bis = new BufferedInputStream(is);
-        try {
-            MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-            byte[] buffer = new byte[16384];
-            int bytesRead = -1;
-            while ((bytesRead = bis.read(buffer, 0, buffer.length)) != -1) {
-                messageDigest.update(buffer, 0, bytesRead);
-            }
-            return messageDigest.digest();
-        } finally {
-            try {
-                bis.close();
-            } catch (Exception e) {
-                System.err.println("Unable to close input stream of hash candidate: " + e);
-            }
-        }
-    }
 
-    /**
-     * Computes the MD5 hash of the given data and returns it as a hex string.
-     *
-     * @param data
-     * @return MD5 hash.
-     * @throws NoSuchAlgorithmException
-     * @throws IOException
-     */
-    public static byte[] computeMD5Hash(byte[] data) throws NoSuchAlgorithmException, IOException {
-        return computeMD5Hash(new ByteArrayInputStream(data));
-    }
 
     /**
      * Removes any surrounding quotes from the specified string and returns a
@@ -291,7 +249,7 @@ public class ServiceUtils {
         try {
             // Multipart Uploads don't have an MD5 calculated on the service side
             if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
-                byte[] clientSideHash = ServiceUtils.computeMD5Hash(new FileInputStream(destinationFile));
+                byte[] clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(destinationFile));
                 byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
 
                 if (!Arrays.equals(clientSideHash, serverSideHash)) {

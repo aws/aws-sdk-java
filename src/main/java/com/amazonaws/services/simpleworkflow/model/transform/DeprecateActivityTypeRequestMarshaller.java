@@ -58,18 +58,16 @@ public class DeprecateActivityTypeRequestMarshaller implements Marshaller<Reques
             if (deprecateActivityTypeRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(deprecateActivityTypeRequest.getDomain());
             }
-            if (deprecateActivityTypeRequest != null) {
-                ActivityType activityTypeActivityType = deprecateActivityTypeRequest.getActivityType();
-                if (activityTypeActivityType != null) {
-                    jsonWriter.key("activityType").object();
-                    if (activityTypeActivityType.getName() != null) {
-                        jsonWriter.key("name").value(activityTypeActivityType.getName());
-                    }
-                    if (activityTypeActivityType.getVersion() != null) {
-                        jsonWriter.key("version").value(activityTypeActivityType.getVersion());
-                    }
-                    jsonWriter.endObject();
+            ActivityType activityType = deprecateActivityTypeRequest.getActivityType();
+            if (activityType != null) {
+                jsonWriter.key("activityType").object();
+                if (activityType.getName() != null) {
+                    jsonWriter.key("name").value(activityType.getName());
                 }
+                if (activityType.getVersion() != null) {
+                    jsonWriter.key("version").value(activityType.getVersion());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

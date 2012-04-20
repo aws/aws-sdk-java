@@ -37,35 +37,37 @@ import com.amazonaws.util.XMLWriter;
 public class GetChangeRequestMarshaller implements Marshaller<Request<GetChangeRequest>, GetChangeRequest> {
 
     public Request<GetChangeRequest> marshall(GetChangeRequest getChangeRequest) {
-        if (getChangeRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (getChangeRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<GetChangeRequest> request = new DefaultRequest<GetChangeRequest>(getChangeRequest, "AmazonRoute53");
-        request.setHttpMethod(HttpMethodName.GET);        
+        request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2011-05-05/change/{Id}"; 
+        String uriResourcePath = "/2012-02-29/change/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getChangeRequest.getId())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
         
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;

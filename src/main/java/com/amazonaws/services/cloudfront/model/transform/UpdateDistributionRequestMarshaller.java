@@ -37,37 +37,40 @@ import com.amazonaws.util.XMLWriter;
 public class UpdateDistributionRequestMarshaller implements Marshaller<Request<UpdateDistributionRequest>, UpdateDistributionRequest> {
 
     public Request<UpdateDistributionRequest> marshall(UpdateDistributionRequest updateDistributionRequest) {
-        if (updateDistributionRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+        if (updateDistributionRequest == null) { 
+            throw new AmazonClientException("Invalid argument passed to marshall(...)");
+        }
 
         Request<UpdateDistributionRequest> request = new DefaultRequest<UpdateDistributionRequest>(updateDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
-        request.addHeader("If-Match", updateDistributionRequest.getIfMatch());
-	            
+        if (updateDistributionRequest.getIfMatch() != null) 
+        	request.addHeader("If-Match", updateDistributionRequest.getIfMatch());
+        
 
-        String uriResourcePath = "2010-11-01/distribution/{Id}/config"; 
+        String uriResourcePath = "2012-03-15/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
-	    
+
         if (uriResourcePath.contains("?")) {
-	        String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
-	        uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
-	
-	        for (String s : queryString.split("&")) {
-	            String[] nameValuePair = s.split("=");
-	            if (nameValuePair.length == 2) {
-	                request.addParameter(nameValuePair[0], nameValuePair[1]);
-	            }
-	        }
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[ &]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
         }
-	    
+
         request.setResourcePath(uriResourcePath);
 
-        	            
-	        StringWriter stringWriter = new StringWriter();
-	        XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2010-11-01/");
+        
+            StringWriter stringWriter = new StringWriter();
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
 
-			        if (updateDistributionRequest != null) {
+                    if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfigDistributionConfig != null) {
                 xmlWriter.startElement("DistributionConfig");
@@ -193,23 +196,33 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                 if (distributionConfigDistributionConfig.getDefaultRootObject() != null) {
                     xmlWriter.startElement("DefaultRootObject").value(distributionConfigDistributionConfig.getDefaultRootObject()).endElement();
                 }
+                if (distributionConfigDistributionConfig != null) {
+                    CachingBehavior cachingBehaviorCachingBehavior = distributionConfigDistributionConfig.getCachingBehavior();
+                    if (cachingBehaviorCachingBehavior != null) {
+                        xmlWriter.startElement("CachingBehavior");
+                        if (cachingBehaviorCachingBehavior.getMinTTL() != null) {
+                            xmlWriter.startElement("MinTTL").value(cachingBehaviorCachingBehavior.getMinTTL()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
                 xmlWriter.endElement();
             }
         }
 
-	
-	        try {
-	            request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
-	            request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes().length));
-	            request.addHeader("Content-Type", "application/xml");
-	        } catch (UnsupportedEncodingException e) {
-	            throw new AmazonClientException("Unable to marshall request to XML", e);
-	        }
-		
+
+            try {
+                request.setContent(new StringInputStream(stringWriter.getBuffer().toString()));
+                request.addHeader("Content-Length", Integer.toString(stringWriter.getBuffer().toString().getBytes().length));
+                request.addHeader("Content-Type", "application/xml");
+            } catch (UnsupportedEncodingException e) {
+                throw new AmazonClientException("Unable to marshall request to XML", e);
+            }
+        
 
         return request;
     }
-    
+
     private String getString(String s) {
         if (s == null) return "";
         return s;
