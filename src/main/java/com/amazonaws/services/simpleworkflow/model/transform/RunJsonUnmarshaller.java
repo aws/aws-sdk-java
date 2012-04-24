@@ -34,6 +34,9 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
 
     public Run unmarshall(JsonUnmarshallerContext context) throws Exception {
         Run run = new Run();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return run;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("runId", targetDepth)) {
@@ -49,12 +52,12 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
                     run.setRunId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return run;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return run;
     }
 
     private static RunJsonUnmarshaller instance;

@@ -36,7 +36,6 @@ public class TypeAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshalle
         TypeAlreadyExistsException e = (TypeAlreadyExistsException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

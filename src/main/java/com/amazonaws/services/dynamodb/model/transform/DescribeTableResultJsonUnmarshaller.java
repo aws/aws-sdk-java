@@ -34,6 +34,9 @@ public class DescribeTableResultJsonUnmarshaller implements Unmarshaller<Describ
 
     public DescribeTableResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DescribeTableResult describeTableResult = new DescribeTableResult();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class DescribeTableResultJsonUnmarshaller implements Unmarshaller<Describ
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return describeTableResult;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Table", targetDepth)) {
@@ -49,12 +52,12 @@ public class DescribeTableResultJsonUnmarshaller implements Unmarshaller<Describ
                     describeTableResult.setTable(TableDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return describeTableResult;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return describeTableResult;
     }
 
     private static DescribeTableResultJsonUnmarshaller instance;

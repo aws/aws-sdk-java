@@ -206,6 +206,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         setEndpoint("rds.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -1560,7 +1561,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         return describeDBSnapshots(new DescribeDBSnapshotsRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

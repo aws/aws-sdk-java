@@ -176,6 +176,9 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         setEndpoint("iam.amazonaws.com");
 
         signer = new AWS4Signer();
+        
+        signer.setServiceName("iam");
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

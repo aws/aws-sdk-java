@@ -38,7 +38,7 @@ public class RevokeCacheSecurityGroupIngressRequestMarshaller implements Marshal
 
         Request<RevokeCacheSecurityGroupIngressRequest> request = new DefaultRequest<RevokeCacheSecurityGroupIngressRequest>(revokeCacheSecurityGroupIngressRequest, "AmazonElastiCache");
         request.addParameter("Action", "RevokeCacheSecurityGroupIngress");
-        request.addParameter("Version", "2011-07-15");
+        request.addParameter("Version", "2012-03-09");
 
         if (revokeCacheSecurityGroupIngressRequest.getCacheSecurityGroupName() != null) {
             request.addParameter("CacheSecurityGroupName", StringUtils.fromString(revokeCacheSecurityGroupIngressRequest.getCacheSecurityGroupName()));

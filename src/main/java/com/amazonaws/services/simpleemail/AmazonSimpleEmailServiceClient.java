@@ -152,6 +152,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         setEndpoint("email.us-east-1.amazonaws.com");
 
         signer = new AWS3Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -435,7 +436,6 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
         return getSendStatistics(new GetSendStatisticsRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

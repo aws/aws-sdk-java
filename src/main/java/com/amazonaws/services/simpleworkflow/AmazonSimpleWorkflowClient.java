@@ -26,6 +26,7 @@ import com.amazonaws.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
@@ -351,7 +352,7 @@ import com.amazonaws.services.simpleworkflow.model.transform.*;
 public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implements AmazonSimpleWorkflow {
 
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;    
+    private AWSCredentialsProvider awsCredentialsProvider;
 
     private static final Log log = LogFactory.getLog(AmazonSimpleWorkflow.class);
 
@@ -460,6 +461,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         setEndpoint("swf.us-east-1.amazonaws.com");
 
         signer = new AWS3Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -511,7 +513,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void deprecateWorkflowType(DeprecateWorkflowTypeRequest deprecateWorkflowTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeprecateWorkflowTypeRequest> request = new DeprecateWorkflowTypeRequestMarshaller().marshall(deprecateWorkflowTypeRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -546,7 +550,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void deprecateDomain(DeprecateDomainRequest deprecateDomainRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeprecateDomainRequest> request = new DeprecateDomainRequestMarshaller().marshall(deprecateDomainRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -581,7 +587,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void registerWorkflowType(RegisterWorkflowTypeRequest registerWorkflowTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RegisterWorkflowTypeRequest> request = new RegisterWorkflowTypeRequestMarshaller().marshall(registerWorkflowTypeRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -612,7 +620,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowTypeInfos listWorkflowTypes(ListWorkflowTypesRequest listWorkflowTypesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListWorkflowTypesRequest> request = new ListWorkflowTypesRequestMarshaller().marshall(listWorkflowTypesRequest);
-        return invoke(request, new WorkflowTypeInfosJsonUnmarshaller());
+
+		Unmarshaller<WorkflowTypeInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowTypeInfosJsonUnmarshaller();
+        JsonResponseHandler<WorkflowTypeInfos> responseHandler = new JsonResponseHandler<WorkflowTypeInfos>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -649,7 +663,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public Run startWorkflowExecution(StartWorkflowExecutionRequest startWorkflowExecutionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<StartWorkflowExecutionRequest> request = new StartWorkflowExecutionRequestMarshaller().marshall(startWorkflowExecutionRequest);
-        return invoke(request, new RunJsonUnmarshaller());
+
+		Unmarshaller<Run, JsonUnmarshallerContext> unmarshaller = new RunJsonUnmarshaller();
+        JsonResponseHandler<Run> responseHandler = new JsonResponseHandler<Run>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -688,7 +708,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void signalWorkflowExecution(SignalWorkflowExecutionRequest signalWorkflowExecutionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<SignalWorkflowExecutionRequest> request = new SignalWorkflowExecutionRequestMarshaller().marshall(signalWorkflowExecutionRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -721,7 +743,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public DomainInfos listDomains(ListDomainsRequest listDomainsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListDomainsRequest> request = new ListDomainsRequestMarshaller().marshall(listDomainsRequest);
-        return invoke(request, new DomainInfosJsonUnmarshaller());
+
+		Unmarshaller<DomainInfos, JsonUnmarshallerContext> unmarshaller = new DomainInfosJsonUnmarshaller();
+        JsonResponseHandler<DomainInfos> responseHandler = new JsonResponseHandler<DomainInfos>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -763,7 +791,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest requestCancelWorkflowExecutionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RequestCancelWorkflowExecutionRequest> request = new RequestCancelWorkflowExecutionRequestMarshaller().marshall(requestCancelWorkflowExecutionRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -794,7 +824,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowTypeDetail describeWorkflowType(DescribeWorkflowTypeRequest describeWorkflowTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeWorkflowTypeRequest> request = new DescribeWorkflowTypeRequestMarshaller().marshall(describeWorkflowTypeRequest);
-        return invoke(request, new WorkflowTypeDetailJsonUnmarshaller());
+
+		Unmarshaller<WorkflowTypeDetail, JsonUnmarshallerContext> unmarshaller = new WorkflowTypeDetailJsonUnmarshaller();
+        JsonResponseHandler<WorkflowTypeDetail> responseHandler = new JsonResponseHandler<WorkflowTypeDetail>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -828,7 +864,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void deprecateActivityType(DeprecateActivityTypeRequest deprecateActivityTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeprecateActivityTypeRequest> request = new DeprecateActivityTypeRequestMarshaller().marshall(deprecateActivityTypeRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -862,7 +900,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowExecutionCount countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CountClosedWorkflowExecutionsRequest> request = new CountClosedWorkflowExecutionsRequestMarshaller().marshall(countClosedWorkflowExecutionsRequest);
-        return invoke(request, new WorkflowExecutionCountJsonUnmarshaller());
+
+		Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionCountJsonUnmarshaller();
+        JsonResponseHandler<WorkflowExecutionCount> responseHandler = new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -894,7 +938,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public PendingTaskCount countPendingActivityTasks(CountPendingActivityTasksRequest countPendingActivityTasksRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CountPendingActivityTasksRequest> request = new CountPendingActivityTasksRequestMarshaller().marshall(countPendingActivityTasksRequest);
-        return invoke(request, new PendingTaskCountJsonUnmarshaller());
+
+		Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller = new PendingTaskCountJsonUnmarshaller();
+        JsonResponseHandler<PendingTaskCount> responseHandler = new JsonResponseHandler<PendingTaskCount>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -932,7 +982,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void respondActivityTaskCanceled(RespondActivityTaskCanceledRequest respondActivityTaskCanceledRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RespondActivityTaskCanceledRequest> request = new RespondActivityTaskCanceledRequestMarshaller().marshall(respondActivityTaskCanceledRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -967,7 +1019,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RespondDecisionTaskCompletedRequest> request = new RespondDecisionTaskCompletedRequestMarshaller().marshall(respondDecisionTaskCompletedRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1006,7 +1060,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void respondActivityTaskCompleted(RespondActivityTaskCompletedRequest respondActivityTaskCompletedRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RespondActivityTaskCompletedRequest> request = new RespondActivityTaskCompletedRequestMarshaller().marshall(respondActivityTaskCompletedRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1049,7 +1105,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public ActivityTask pollForActivityTask(PollForActivityTaskRequest pollForActivityTaskRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<PollForActivityTaskRequest> request = new PollForActivityTaskRequestMarshaller().marshall(pollForActivityTaskRequest);
-        return invoke(request, new ActivityTaskJsonUnmarshaller());
+
+		Unmarshaller<ActivityTask, JsonUnmarshallerContext> unmarshaller = new ActivityTaskJsonUnmarshaller();
+        JsonResponseHandler<ActivityTask> responseHandler = new JsonResponseHandler<ActivityTask>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1083,7 +1145,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowExecutionCount countOpenWorkflowExecutions(CountOpenWorkflowExecutionsRequest countOpenWorkflowExecutionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CountOpenWorkflowExecutionsRequest> request = new CountOpenWorkflowExecutionsRequestMarshaller().marshall(countOpenWorkflowExecutionsRequest);
-        return invoke(request, new WorkflowExecutionCountJsonUnmarshaller());
+
+		Unmarshaller<WorkflowExecutionCount, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionCountJsonUnmarshaller();
+        JsonResponseHandler<WorkflowExecutionCount> responseHandler = new JsonResponseHandler<WorkflowExecutionCount>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1114,7 +1182,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public ActivityTypeDetail describeActivityType(DescribeActivityTypeRequest describeActivityTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeActivityTypeRequest> request = new DescribeActivityTypeRequestMarshaller().marshall(describeActivityTypeRequest);
-        return invoke(request, new ActivityTypeDetailJsonUnmarshaller());
+
+		Unmarshaller<ActivityTypeDetail, JsonUnmarshallerContext> unmarshaller = new ActivityTypeDetailJsonUnmarshaller();
+        JsonResponseHandler<ActivityTypeDetail> responseHandler = new JsonResponseHandler<ActivityTypeDetail>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1150,7 +1224,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowExecutionInfos listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListOpenWorkflowExecutionsRequest> request = new ListOpenWorkflowExecutionsRequestMarshaller().marshall(listOpenWorkflowExecutionsRequest);
-        return invoke(request, new WorkflowExecutionInfosJsonUnmarshaller());
+
+		Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionInfosJsonUnmarshaller();
+        JsonResponseHandler<WorkflowExecutionInfos> responseHandler = new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1186,7 +1266,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public History getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest getWorkflowExecutionHistoryRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetWorkflowExecutionHistoryRequest> request = new GetWorkflowExecutionHistoryRequestMarshaller().marshall(getWorkflowExecutionHistoryRequest);
-        return invoke(request, new HistoryJsonUnmarshaller());
+
+		Unmarshaller<History, JsonUnmarshallerContext> unmarshaller = new HistoryJsonUnmarshaller();
+        JsonResponseHandler<History> responseHandler = new JsonResponseHandler<History>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1212,7 +1298,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void registerDomain(RegisterDomainRequest registerDomainRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RegisterDomainRequest> request = new RegisterDomainRequestMarshaller().marshall(registerDomainRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1247,7 +1335,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void registerActivityType(RegisterActivityTypeRequest registerActivityTypeRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RegisterActivityTypeRequest> request = new RegisterActivityTypeRequestMarshaller().marshall(registerActivityTypeRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1283,7 +1373,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowExecutionInfos listClosedWorkflowExecutions(ListClosedWorkflowExecutionsRequest listClosedWorkflowExecutionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListClosedWorkflowExecutionsRequest> request = new ListClosedWorkflowExecutionsRequestMarshaller().marshall(listClosedWorkflowExecutionsRequest);
-        return invoke(request, new WorkflowExecutionInfosJsonUnmarshaller());
+
+		Unmarshaller<WorkflowExecutionInfos, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionInfosJsonUnmarshaller();
+        JsonResponseHandler<WorkflowExecutionInfos> responseHandler = new JsonResponseHandler<WorkflowExecutionInfos>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1350,7 +1446,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public ActivityTaskStatus recordActivityTaskHeartbeat(RecordActivityTaskHeartbeatRequest recordActivityTaskHeartbeatRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RecordActivityTaskHeartbeatRequest> request = new RecordActivityTaskHeartbeatRequestMarshaller().marshall(recordActivityTaskHeartbeatRequest);
-        return invoke(request, new ActivityTaskStatusJsonUnmarshaller());
+
+		Unmarshaller<ActivityTaskStatus, JsonUnmarshallerContext> unmarshaller = new ActivityTaskStatusJsonUnmarshaller();
+        JsonResponseHandler<ActivityTaskStatus> responseHandler = new JsonResponseHandler<ActivityTaskStatus>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1406,7 +1508,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public DecisionTask pollForDecisionTask(PollForDecisionTaskRequest pollForDecisionTaskRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<PollForDecisionTaskRequest> request = new PollForDecisionTaskRequestMarshaller().marshall(pollForDecisionTaskRequest);
-        return invoke(request, new DecisionTaskJsonUnmarshaller());
+
+		Unmarshaller<DecisionTask, JsonUnmarshallerContext> unmarshaller = new DecisionTaskJsonUnmarshaller();
+        JsonResponseHandler<DecisionTask> responseHandler = new JsonResponseHandler<DecisionTask>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1440,7 +1548,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public ActivityTypeInfos listActivityTypes(ListActivityTypesRequest listActivityTypesRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ListActivityTypesRequest> request = new ListActivityTypesRequestMarshaller().marshall(listActivityTypesRequest);
-        return invoke(request, new ActivityTypeInfosJsonUnmarshaller());
+
+		Unmarshaller<ActivityTypeInfos, JsonUnmarshallerContext> unmarshaller = new ActivityTypeInfosJsonUnmarshaller();
+        JsonResponseHandler<ActivityTypeInfos> responseHandler = new JsonResponseHandler<ActivityTypeInfos>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1469,7 +1583,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public DomainDetail describeDomain(DescribeDomainRequest describeDomainRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeDomainRequest> request = new DescribeDomainRequestMarshaller().marshall(describeDomainRequest);
-        return invoke(request, new DomainDetailJsonUnmarshaller());
+
+		Unmarshaller<DomainDetail, JsonUnmarshallerContext> unmarshaller = new DomainDetailJsonUnmarshaller();
+        JsonResponseHandler<DomainDetail> responseHandler = new JsonResponseHandler<DomainDetail>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1501,7 +1621,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void respondActivityTaskFailed(RespondActivityTaskFailedRequest respondActivityTaskFailedRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RespondActivityTaskFailedRequest> request = new RespondActivityTaskFailedRequestMarshaller().marshall(respondActivityTaskFailedRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1533,7 +1655,13 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public PendingTaskCount countPendingDecisionTasks(CountPendingDecisionTasksRequest countPendingDecisionTasksRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CountPendingDecisionTasksRequest> request = new CountPendingDecisionTasksRequestMarshaller().marshall(countPendingDecisionTasksRequest);
-        return invoke(request, new PendingTaskCountJsonUnmarshaller());
+
+		Unmarshaller<PendingTaskCount, JsonUnmarshallerContext> unmarshaller = new PendingTaskCountJsonUnmarshaller();
+        JsonResponseHandler<PendingTaskCount> responseHandler = new JsonResponseHandler<PendingTaskCount>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -1577,7 +1705,9 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public void terminateWorkflowExecution(TerminateWorkflowExecutionRequest terminateWorkflowExecutionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<TerminateWorkflowExecutionRequest> request = new TerminateWorkflowExecutionRequestMarshaller().marshall(terminateWorkflowExecutionRequest);
-        invoke(request, null);
+
+        JsonResponseHandler<Void> responseHandler = new JsonResponseHandler<Void>(null);
+        invoke(request, responseHandler);
     }
     
     /**
@@ -1611,9 +1741,15 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     public WorkflowExecutionDetail describeWorkflowExecution(DescribeWorkflowExecutionRequest describeWorkflowExecutionRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeWorkflowExecutionRequest> request = new DescribeWorkflowExecutionRequestMarshaller().marshall(describeWorkflowExecutionRequest);
-        return invoke(request, new WorkflowExecutionDetailJsonUnmarshaller());
+
+		Unmarshaller<WorkflowExecutionDetail, JsonUnmarshallerContext> unmarshaller = new WorkflowExecutionDetailJsonUnmarshaller();
+        JsonResponseHandler<WorkflowExecutionDetail> responseHandler = new JsonResponseHandler<WorkflowExecutionDetail>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
-        
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
@@ -1635,7 +1771,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, JsonUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler) {
         request.setEndpoint(endpoint);
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
@@ -1648,10 +1784,10 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(unmarshaller);
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
+
 }
         

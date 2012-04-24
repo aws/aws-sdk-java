@@ -36,7 +36,6 @@ public class DomainDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller
         DomainDeprecatedException e = (DomainDeprecatedException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

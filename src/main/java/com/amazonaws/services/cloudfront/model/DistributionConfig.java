@@ -103,6 +103,13 @@ public class DistributionConfig {
     private String defaultRootObject;
 
     /**
+     * Determines the minimum TTL for objects in the CloudFront cache. This
+     * value specifies a lower bound for values in the headers for an object,
+     * for example, in the Cache-Control max-age directive.
+     */
+    private CachingBehavior cachingBehavior;
+
+    /**
      * Default constructor for a new DistributionConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -715,6 +722,52 @@ public class DistributionConfig {
     
     
     /**
+     * Determines the minimum TTL for objects in the CloudFront cache. This
+     * value specifies a lower bound for values in the headers for an object,
+     * for example, in the Cache-Control max-age directive.
+     *
+     * @return Determines the minimum TTL for objects in the CloudFront cache. This
+     *         value specifies a lower bound for values in the headers for an object,
+     *         for example, in the Cache-Control max-age directive.
+     */
+    public CachingBehavior getCachingBehavior() {
+        return cachingBehavior;
+    }
+    
+    /**
+     * Determines the minimum TTL for objects in the CloudFront cache. This
+     * value specifies a lower bound for values in the headers for an object,
+     * for example, in the Cache-Control max-age directive.
+     *
+     * @param cachingBehavior Determines the minimum TTL for objects in the CloudFront cache. This
+     *         value specifies a lower bound for values in the headers for an object,
+     *         for example, in the Cache-Control max-age directive.
+     */
+    public void setCachingBehavior(CachingBehavior cachingBehavior) {
+        this.cachingBehavior = cachingBehavior;
+    }
+    
+    /**
+     * Determines the minimum TTL for objects in the CloudFront cache. This
+     * value specifies a lower bound for values in the headers for an object,
+     * for example, in the Cache-Control max-age directive.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cachingBehavior Determines the minimum TTL for objects in the CloudFront cache. This
+     *         value specifies a lower bound for values in the headers for an object,
+     *         for example, in the Cache-Control max-age directive.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DistributionConfig withCachingBehavior(CachingBehavior cachingBehavior) {
+        this.cachingBehavior = cachingBehavior;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -736,6 +789,7 @@ public class DistributionConfig {
         if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
         if (requiredProtocols != null) sb.append("RequiredProtocols: " + requiredProtocols + ", ");
         if (defaultRootObject != null) sb.append("DefaultRootObject: " + defaultRootObject + ", ");
+        if (cachingBehavior != null) sb.append("CachingBehavior: " + cachingBehavior + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -755,6 +809,7 @@ public class DistributionConfig {
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
         hashCode = prime * hashCode + ((getRequiredProtocols() == null) ? 0 : getRequiredProtocols().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultRootObject() == null) ? 0 : getDefaultRootObject().hashCode()); 
+        hashCode = prime * hashCode + ((getCachingBehavior() == null) ? 0 : getCachingBehavior().hashCode()); 
         return hashCode;
     }
     
@@ -786,6 +841,8 @@ public class DistributionConfig {
         if (other.getRequiredProtocols() != null && other.getRequiredProtocols().equals(this.getRequiredProtocols()) == false) return false; 
         if (other.getDefaultRootObject() == null ^ this.getDefaultRootObject() == null) return false;
         if (other.getDefaultRootObject() != null && other.getDefaultRootObject().equals(this.getDefaultRootObject()) == false) return false; 
+        if (other.getCachingBehavior() == null ^ this.getCachingBehavior() == null) return false;
+        if (other.getCachingBehavior() != null && other.getCachingBehavior().equals(this.getCachingBehavior()) == false) return false; 
         return true;
     }
     

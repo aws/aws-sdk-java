@@ -58,51 +58,43 @@ public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTa
             if (createTableRequest.getTableName() != null) {
                 jsonWriter.key("TableName").value(createTableRequest.getTableName());
             }
-            if (createTableRequest != null) {
-                KeySchema keySchemaKeySchema = createTableRequest.getKeySchema();
-                if (keySchemaKeySchema != null) {
-                    jsonWriter.key("KeySchema").object();
-                    if (keySchemaKeySchema != null) {
-                        KeySchemaElement keySchemaElementHashKeyElement = keySchemaKeySchema.getHashKeyElement();
-                        if (keySchemaElementHashKeyElement != null) {
-                            jsonWriter.key("HashKeyElement").object();
-                            if (keySchemaElementHashKeyElement.getAttributeName() != null) {
-                                jsonWriter.key("AttributeName").value(keySchemaElementHashKeyElement.getAttributeName());
-                            }
-                            if (keySchemaElementHashKeyElement.getAttributeType() != null) {
-                                jsonWriter.key("AttributeType").value(keySchemaElementHashKeyElement.getAttributeType());
-                            }
-                            jsonWriter.endObject();
-                        }
+            KeySchema keySchema = createTableRequest.getKeySchema();
+            if (keySchema != null) {
+                jsonWriter.key("KeySchema").object();
+                KeySchemaElement hashKeyElement = keySchema.getHashKeyElement();
+                if (hashKeyElement != null) {
+                    jsonWriter.key("HashKeyElement").object();
+                    if (hashKeyElement.getAttributeName() != null) {
+                        jsonWriter.key("AttributeName").value(hashKeyElement.getAttributeName());
                     }
-                    if (keySchemaKeySchema != null) {
-                        KeySchemaElement keySchemaElementRangeKeyElement = keySchemaKeySchema.getRangeKeyElement();
-                        if (keySchemaElementRangeKeyElement != null) {
-                            jsonWriter.key("RangeKeyElement").object();
-                            if (keySchemaElementRangeKeyElement.getAttributeName() != null) {
-                                jsonWriter.key("AttributeName").value(keySchemaElementRangeKeyElement.getAttributeName());
-                            }
-                            if (keySchemaElementRangeKeyElement.getAttributeType() != null) {
-                                jsonWriter.key("AttributeType").value(keySchemaElementRangeKeyElement.getAttributeType());
-                            }
-                            jsonWriter.endObject();
-                        }
+                    if (hashKeyElement.getAttributeType() != null) {
+                        jsonWriter.key("AttributeType").value(hashKeyElement.getAttributeType());
                     }
                     jsonWriter.endObject();
                 }
+                KeySchemaElement rangeKeyElement = keySchema.getRangeKeyElement();
+                if (rangeKeyElement != null) {
+                    jsonWriter.key("RangeKeyElement").object();
+                    if (rangeKeyElement.getAttributeName() != null) {
+                        jsonWriter.key("AttributeName").value(rangeKeyElement.getAttributeName());
+                    }
+                    if (rangeKeyElement.getAttributeType() != null) {
+                        jsonWriter.key("AttributeType").value(rangeKeyElement.getAttributeType());
+                    }
+                    jsonWriter.endObject();
+                }
+                jsonWriter.endObject();
             }
-            if (createTableRequest != null) {
-                ProvisionedThroughput provisionedThroughputProvisionedThroughput = createTableRequest.getProvisionedThroughput();
-                if (provisionedThroughputProvisionedThroughput != null) {
-                    jsonWriter.key("ProvisionedThroughput").object();
-                    if (provisionedThroughputProvisionedThroughput.getReadCapacityUnits() != null) {
-                        jsonWriter.key("ReadCapacityUnits").value(provisionedThroughputProvisionedThroughput.getReadCapacityUnits());
-                    }
-                    if (provisionedThroughputProvisionedThroughput.getWriteCapacityUnits() != null) {
-                        jsonWriter.key("WriteCapacityUnits").value(provisionedThroughputProvisionedThroughput.getWriteCapacityUnits());
-                    }
-                    jsonWriter.endObject();
+            ProvisionedThroughput provisionedThroughput = createTableRequest.getProvisionedThroughput();
+            if (provisionedThroughput != null) {
+                jsonWriter.key("ProvisionedThroughput").object();
+                if (provisionedThroughput.getReadCapacityUnits() != null) {
+                    jsonWriter.key("ReadCapacityUnits").value(provisionedThroughput.getReadCapacityUnits());
                 }
+                if (provisionedThroughput.getWriteCapacityUnits() != null) {
+                    jsonWriter.key("WriteCapacityUnits").value(provisionedThroughput.getWriteCapacityUnits());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

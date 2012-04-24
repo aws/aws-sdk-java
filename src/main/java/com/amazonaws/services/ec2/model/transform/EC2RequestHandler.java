@@ -57,8 +57,12 @@ public class EC2RequestHandler extends AbstractRequestHandler {
     	    }
 
     	    // Remove any of the incorrect parameters.
+    	    List<String> keysToRemove = new ArrayList<String>();
     	    for (String parameter : request.getParameters().keySet()) {
-    	        if (parameter.startsWith("LaunchSpecification.GroupSet.")) request.getParameters().remove(parameter);
+    	        if (parameter.startsWith("LaunchSpecification.GroupSet.")) keysToRemove.add(parameter);
+    	    }
+    	    for (String key : keysToRemove) {
+    	        request.getParameters().remove(key);
     	    }
     	}
     }

@@ -34,6 +34,9 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
 
     public HistoryEvent unmarshall(JsonUnmarshallerContext context) throws Exception {
         HistoryEvent historyEvent = new HistoryEvent();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return historyEvent;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTimestamp", targetDepth)) {
@@ -241,12 +244,12 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     historyEvent.setStartChildWorkflowExecutionFailedEventAttributes(StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return historyEvent;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return historyEvent;
     }
 
     private static HistoryEventJsonUnmarshaller instance;

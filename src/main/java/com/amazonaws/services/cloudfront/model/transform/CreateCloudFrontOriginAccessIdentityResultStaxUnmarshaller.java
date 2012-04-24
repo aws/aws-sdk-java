@@ -39,7 +39,7 @@ public class CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller implemen
 
         if (context.isStartOfDocument()) {
             createCloudFrontOriginAccessIdentityResult.setLocation(context.getHeader("Location"));
-            createCloudFrontOriginAccessIdentityResult.setETag(context.getHeader("ETag"));        
+            createCloudFrontOriginAccessIdentityResult.setETag(context.getHeader("ETag"));
         }
         
 

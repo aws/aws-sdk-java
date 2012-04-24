@@ -34,6 +34,9 @@ public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTab
 
     public DeleteTableResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteTableResult deleteTableResult = new DeleteTableResult();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTab
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return deleteTableResult;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableDescription", targetDepth)) {
@@ -49,12 +52,12 @@ public class DeleteTableResultJsonUnmarshaller implements Unmarshaller<DeleteTab
                     deleteTableResult.setTableDescription(TableDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return deleteTableResult;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return deleteTableResult;
     }
 
     private static DeleteTableResultJsonUnmarshaller instance;

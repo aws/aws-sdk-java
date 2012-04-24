@@ -71,7 +71,8 @@ public class StepFactory {
     public static enum HiveVersion {
     	Hive_0_5("0.5"),
     	Hive_0_7("0.7"),
-    	Hive_0_7_1("0.7.1");
+    	Hive_0_7_1("0.7.1"),
+    	Hive_Latest("latest");
 
       private String stringVal;
 
@@ -145,14 +146,14 @@ public class StepFactory {
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
     public HadoopJarStepConfig newInstallHiveStep(HiveVersion... hiveVersions) {
-    	if (hiveVersions.length > 0) {
-        String[] versionStrings = new String[hiveVersions.length];
-        for (int i = 0; i < hiveVersions.length; i++) {
-          versionStrings[i] = hiveVersions[i].toString();
+        if (hiveVersions.length > 0) {
+            String[] versionStrings = new String[hiveVersions.length];
+            for (int i = 0; i < hiveVersions.length; i++) {
+                versionStrings[i] = hiveVersions[i].toString();
+            }
+            return newInstallHiveStep(versionStrings);
         }
-        return newInstallHiveStep(versionStrings);
-    	}
-    	return newHivePigStep("hive", "--install-hive");
+        return newHivePigStep("hive", "--install-hive", "--hive-versions", "latest");
     }
     
     /**
@@ -166,7 +167,7 @@ public class StepFactory {
         return newHivePigStep("hive", "--install-hive", "--hive-versions",
                 StringUtils.join(",", hiveVersions));
       }
-      return newHivePigStep("hive", "--install-hive");
+      return newHivePigStep("hive", "--install-hive", "--hive-versions", "latest");
     }
 
     /**
@@ -199,12 +200,27 @@ public class StepFactory {
     }
 
     /**
-     * Step that installs Pig on your job flow.
+     * Step that installs the default version of Pig on your job flow.
      *
      * @return HadoopJarStepConfig that can be passed to your job flow.
      */
     public HadoopJarStepConfig newInstallPigStep() {
-        return newHivePigStep("pig", "--install-pig");
+        return newInstallPigStep(new String[0]);
+    }
+    
+    /**
+     * Step that installs Pig on your job flow.
+     *
+     * @param pigVersions the versions of Pig to install.
+     * 
+     * @return HadoopJarStepConfig that can be passed to your job flow.
+     */
+    public HadoopJarStepConfig newInstallPigStep(String... pigVersions) {
+        if (pigVersions != null && pigVersions.length > 0) {
+            return newHivePigStep("pig", "--install-pig", "--pig-versions",
+                    StringUtils.join(",", pigVersions));
+        }
+        return newHivePigStep("pig", "--install-pig", "--pig-versions", "latest");
     }
 
     /**

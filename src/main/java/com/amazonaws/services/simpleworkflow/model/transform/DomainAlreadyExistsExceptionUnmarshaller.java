@@ -36,7 +36,6 @@ public class DomainAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshal
         DomainAlreadyExistsException e = (DomainAlreadyExistsException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

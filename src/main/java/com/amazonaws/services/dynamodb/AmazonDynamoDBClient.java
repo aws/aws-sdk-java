@@ -26,6 +26,7 @@ import com.amazonaws.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.ExecutionContext;
@@ -56,7 +57,7 @@ import com.amazonaws.services.dynamodb.model.transform.*;
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
 
     /** Provider for AWS credentials. */
-    private AWSCredentialsProvider awsCredentialsProvider;    
+    private AWSCredentialsProvider awsCredentialsProvider;
 
     /** Long-term credentials used to obtain the session credentials provider */
     private AWSCredentials longTermCredentials;
@@ -219,6 +220,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         setEndpoint("dynamodb.us-east-1.amazonaws.com/");
 
         signer = new AWS3Signer();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -233,6 +235,246 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         setConfiguration(clientConfiguration);
     }
 
+    
+    /**
+     * <p>
+     * Retrieves a paginated list of table names created by the AWS Account
+     * of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
+     * </p>
+     *
+     * @param listTablesRequest Container for the necessary parameters to
+     *           execute the ListTables service method on AmazonDynamoDB.
+     * 
+     * @return The response from the ListTables service method, as returned
+     *         by AmazonDynamoDB.
+     * 
+     * @throws InternalServerErrorException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListTablesResult listTables(ListTablesRequest listTablesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListTablesRequest> request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
+
+		Unmarshaller<ListTablesResult, JsonUnmarshallerContext> unmarshaller = new ListTablesResultJsonUnmarshaller();
+        JsonResponseHandler<ListTablesResult> responseHandler = new JsonResponseHandler<ListTablesResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
+    
+    /**
+     * <p>
+     * Gets the values of one or more items and its attributes by primary key
+     * (composite primary key, only).
+     * </p>
+     * <p>
+     * Narrow the scope of the query using comparison operators on the
+     * <code>RangeKeyValue</code> of the composite key. Use the
+     * <code>ScanIndexForward</code> parameter to get results in forward or
+     * reverse order by range key.
+     * </p>
+     *
+     * @param queryRequest Container for the necessary parameters to execute
+     *           the Query service method on AmazonDynamoDB.
+     * 
+     * @return The response from the Query service method, as returned by
+     *         AmazonDynamoDB.
+     * 
+     * @throws ProvisionedThroughputExceededException
+     * @throws InternalServerErrorException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public QueryResult query(QueryRequest queryRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<QueryRequest> request = new QueryRequestMarshaller().marshall(queryRequest);
+
+		Unmarshaller<QueryResult, JsonUnmarshallerContext> unmarshaller = new QueryResultJsonUnmarshaller();
+        JsonResponseHandler<QueryResult> responseHandler = new JsonResponseHandler<QueryResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
+    
+    /**
+     * <p>
+     * Allows to execute a batch of Put and/or Delete Requests for many
+     * tables in a single call. A total of 25 requests are allowed.
+     * </p>
+     * <p>
+     * There are no transaction guarantees provided by this API. It does not
+     * allow conditional puts nor does it support return values.
+     * </p>
+     *
+     * @param batchWriteItemRequest Container for the necessary parameters to
+     *           execute the BatchWriteItem service method on AmazonDynamoDB.
+     * 
+     * @return The response from the BatchWriteItem service method, as
+     *         returned by AmazonDynamoDB.
+     * 
+     * @throws ProvisionedThroughputExceededException
+     * @throws InternalServerErrorException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<BatchWriteItemRequest> request = new BatchWriteItemRequestMarshaller().marshall(batchWriteItemRequest);
+
+		Unmarshaller<BatchWriteItemResult, JsonUnmarshallerContext> unmarshaller = new BatchWriteItemResultJsonUnmarshaller();
+        JsonResponseHandler<BatchWriteItemResult> responseHandler = new JsonResponseHandler<BatchWriteItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
+    
+    /**
+     * <p>
+     * Edits an existing item's attributes.
+     * </p>
+     * <p>
+     * You can perform a conditional update (insert a new attribute
+     * name-value pair if it doesn't exist, or replace an existing name-value
+     * pair if it has certain expected attribute values).
+     * </p>
+     *
+     * @param updateItemRequest Container for the necessary parameters to
+     *           execute the UpdateItem service method on AmazonDynamoDB.
+     * 
+     * @return The response from the UpdateItem service method, as returned
+     *         by AmazonDynamoDB.
+     * 
+     * @throws ProvisionedThroughputExceededException
+     * @throws ConditionalCheckFailedException
+     * @throws InternalServerErrorException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UpdateItemRequest> request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
+
+		Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> unmarshaller = new UpdateItemResultJsonUnmarshaller();
+        JsonResponseHandler<UpdateItemResult> responseHandler = new JsonResponseHandler<UpdateItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
+    
+    /**
+     * <p>
+     * Creates a new item, or replaces an old item with a new item (including
+     * all the attributes).
+     * </p>
+     * <p>
+     * If an item already exists in the specified table with the same primary
+     * key, the new item completely replaces the existing item. You can
+     * perform a conditional put (insert a new item if one with the specified
+     * primary key doesn't exist), or replace an existing item if it has
+     * certain attribute values.
+     * </p>
+     *
+     * @param putItemRequest Container for the necessary parameters to
+     *           execute the PutItem service method on AmazonDynamoDB.
+     * 
+     * @return The response from the PutItem service method, as returned by
+     *         AmazonDynamoDB.
+     * 
+     * @throws ProvisionedThroughputExceededException
+     * @throws ConditionalCheckFailedException
+     * @throws InternalServerErrorException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public PutItemResult putItem(PutItemRequest putItemRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<PutItemRequest> request = new PutItemRequestMarshaller().marshall(putItemRequest);
+
+		Unmarshaller<PutItemResult, JsonUnmarshallerContext> unmarshaller = new PutItemResultJsonUnmarshaller();
+        JsonResponseHandler<PutItemResult> responseHandler = new JsonResponseHandler<PutItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
+    
+    /**
+     * <p>
+     * Retrieves information about the table, including the current status of
+     * the table, the primary key schema and when the table was created.
+     * </p>
+     * <p>
+     * If the table does not exist, Amazon DynamoDB returns a
+     * <code>ResourceNotFoundException</code> .
+     * </p>
+     *
+     * @param describeTableRequest Container for the necessary parameters to
+     *           execute the DescribeTable service method on AmazonDynamoDB.
+     * 
+     * @return The response from the DescribeTable service method, as
+     *         returned by AmazonDynamoDB.
+     * 
+     * @throws InternalServerErrorException
+     * @throws ResourceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonDynamoDB indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeTableRequest> request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
+
+		Unmarshaller<DescribeTableResult, JsonUnmarshallerContext> unmarshaller = new DescribeTableResultJsonUnmarshaller();
+        JsonResponseHandler<DescribeTableResult> responseHandler = new JsonResponseHandler<DescribeTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
+    }
     
     /**
      * <p>
@@ -264,7 +506,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public ScanResult scan(ScanRequest scanRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<ScanRequest> request = new ScanRequestMarshaller().marshall(scanRequest);
-        return invoke(request, new ScanResultJsonUnmarshaller());
+
+		Unmarshaller<ScanResult, JsonUnmarshallerContext> unmarshaller = new ScanResultJsonUnmarshaller();
+        JsonResponseHandler<ScanResult> responseHandler = new JsonResponseHandler<ScanResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -305,106 +553,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public CreateTableResult createTable(CreateTableRequest createTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CreateTableRequest> request = new CreateTableRequestMarshaller().marshall(createTableRequest);
-        return invoke(request, new CreateTableResultJsonUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Retrieves a paginated list of table names created by the AWS Account
-     * of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
-     * </p>
-     *
-     * @param listTablesRequest Container for the necessary parameters to
-     *           execute the ListTables service method on AmazonDynamoDB.
-     * 
-     * @return The response from the ListTables service method, as returned
-     *         by AmazonDynamoDB.
-     * 
-     * @throws InternalServerErrorException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDynamoDB indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListTablesResult listTables(ListTablesRequest listTablesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListTablesRequest> request = new ListTablesRequestMarshaller().marshall(listTablesRequest);
-        return invoke(request, new ListTablesResultJsonUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Gets the values of one or more items and its attributes by primary key
-     * (composite primary key, only).
-     * </p>
-     * <p>
-     * Narrow the scope of the query using comparison operators on the
-     * <code>RangeKeyValue</code> of the composite key. Use the
-     * <code>ScanIndexForward</code> parameter to get results in forward or
-     * reverse order by range key.
-     * </p>
-     *
-     * @param queryRequest Container for the necessary parameters to execute
-     *           the Query service method on AmazonDynamoDB.
-     * 
-     * @return The response from the Query service method, as returned by
-     *         AmazonDynamoDB.
-     * 
-     * @throws ProvisionedThroughputExceededException
-     * @throws InternalServerErrorException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDynamoDB indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public QueryResult query(QueryRequest queryRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<QueryRequest> request = new QueryRequestMarshaller().marshall(queryRequest);
-        return invoke(request, new QueryResultJsonUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Edits an existing item's attributes.
-     * </p>
-     * <p>
-     * You can perform a conditional update (insert a new attribute
-     * name-value pair if it doesn't exist, or replace an existing name-value
-     * pair if it has certain expected attribute values).
-     * </p>
-     *
-     * @param updateItemRequest Container for the necessary parameters to
-     *           execute the UpdateItem service method on AmazonDynamoDB.
-     * 
-     * @return The response from the UpdateItem service method, as returned
-     *         by AmazonDynamoDB.
-     * 
-     * @throws ProvisionedThroughputExceededException
-     * @throws ConditionalCheckFailedException
-     * @throws InternalServerErrorException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDynamoDB indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateItemRequest> request = new UpdateItemRequestMarshaller().marshall(updateItemRequest);
-        return invoke(request, new UpdateItemResultJsonUnmarshaller());
+
+		Unmarshaller<CreateTableResult, JsonUnmarshallerContext> unmarshaller = new CreateTableResultJsonUnmarshaller();
+        JsonResponseHandler<CreateTableResult> responseHandler = new JsonResponseHandler<CreateTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -438,45 +593,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateTableRequest> request = new UpdateTableRequestMarshaller().marshall(updateTableRequest);
-        return invoke(request, new UpdateTableResultJsonUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Creates a new item, or replaces an old item with a new item (including
-     * all the attributes).
-     * </p>
-     * <p>
-     * If an item already exists in the specified table with the same primary
-     * key, the new item completely replaces the existing item. You can
-     * perform a conditional put (insert a new item if one with the specified
-     * primary key doesn't exist), or replace an existing item if it has
-     * certain attribute values.
-     * </p>
-     *
-     * @param putItemRequest Container for the necessary parameters to
-     *           execute the PutItem service method on AmazonDynamoDB.
-     * 
-     * @return The response from the PutItem service method, as returned by
-     *         AmazonDynamoDB.
-     * 
-     * @throws ProvisionedThroughputExceededException
-     * @throws ConditionalCheckFailedException
-     * @throws InternalServerErrorException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDynamoDB indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public PutItemResult putItem(PutItemRequest putItemRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<PutItemRequest> request = new PutItemRequestMarshaller().marshall(putItemRequest);
-        return invoke(request, new PutItemResultJsonUnmarshaller());
+
+		Unmarshaller<UpdateTableResult, JsonUnmarshallerContext> unmarshaller = new UpdateTableResultJsonUnmarshaller();
+        JsonResponseHandler<UpdateTableResult> responseHandler = new JsonResponseHandler<UpdateTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -513,7 +636,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteTableRequest> request = new DeleteTableRequestMarshaller().marshall(deleteTableRequest);
-        return invoke(request, new DeleteTableResultJsonUnmarshaller());
+
+		Unmarshaller<DeleteTableResult, JsonUnmarshallerContext> unmarshaller = new DeleteTableResultJsonUnmarshaller();
+        JsonResponseHandler<DeleteTableResult> responseHandler = new JsonResponseHandler<DeleteTableResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -547,40 +676,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteItemRequest> request = new DeleteItemRequestMarshaller().marshall(deleteItemRequest);
-        return invoke(request, new DeleteItemResultJsonUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Retrieves information about the table, including the current status of
-     * the table, the primary key schema and when the table was created.
-     * </p>
-     * <p>
-     * If the table does not exist, Amazon DynamoDB returns a
-     * <code>ResourceNotFoundException</code> .
-     * </p>
-     *
-     * @param describeTableRequest Container for the necessary parameters to
-     *           execute the DescribeTable service method on AmazonDynamoDB.
-     * 
-     * @return The response from the DescribeTable service method, as
-     *         returned by AmazonDynamoDB.
-     * 
-     * @throws InternalServerErrorException
-     * @throws ResourceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonDynamoDB indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DescribeTableRequest> request = new DescribeTableRequestMarshaller().marshall(describeTableRequest);
-        return invoke(request, new DescribeTableResultJsonUnmarshaller());
+
+		Unmarshaller<DeleteItemResult, JsonUnmarshallerContext> unmarshaller = new DeleteItemResultJsonUnmarshaller();
+        JsonResponseHandler<DeleteItemResult> responseHandler = new JsonResponseHandler<DeleteItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -617,7 +719,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public GetItemResult getItem(GetItemRequest getItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<GetItemRequest> request = new GetItemRequestMarshaller().marshall(getItemRequest);
-        return invoke(request, new GetItemResultJsonUnmarshaller());
+
+		Unmarshaller<GetItemResult, JsonUnmarshallerContext> unmarshaller = new GetItemResultJsonUnmarshaller();
+        JsonResponseHandler<GetItemResult> responseHandler = new JsonResponseHandler<GetItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -663,7 +771,13 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<BatchGetItemRequest> request = new BatchGetItemRequestMarshaller().marshall(batchGetItemRequest);
-        return invoke(request, new BatchGetItemResultJsonUnmarshaller());
+
+		Unmarshaller<BatchGetItemResult, JsonUnmarshallerContext> unmarshaller = new BatchGetItemResultJsonUnmarshaller();
+        JsonResponseHandler<BatchGetItemResult> responseHandler = new JsonResponseHandler<BatchGetItemResult>(unmarshaller);
+
+		
+
+        return invoke(request, responseHandler);
     }
     
     /**
@@ -696,7 +810,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     @Override
     public void setEndpoint(String endpoint) throws IllegalArgumentException {
         super.setEndpoint(endpoint);
-        
+
         if ( this.longTermCredentials != null ) {
             this.awsCredentialsProvider = SessionCredentialsProviderFactory.getSessionCredentialsProvider(
                     this.longTermCredentials, endpoint, clientConfiguration);
@@ -724,7 +838,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         return client.getResponseMetadataForRequest(request);
     }
 
-    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, JsonUnmarshallerContext> unmarshaller) {
+    private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, HttpResponseHandler<AmazonWebServiceResponse<X>> responseHandler) {
         request.setEndpoint(endpoint);
 
         AWSCredentials credentials = awsCredentialsProvider.getCredentials();
@@ -737,10 +851,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         executionContext.setSigner(signer);
         executionContext.setCredentials(credentials);
         executionContext.setCustomBackoffStrategy(com.amazonaws.internal.DynamoDBBackoffStrategy.DEFAULT);
-        JsonResponseHandler<X> responseHandler = new JsonResponseHandler<X>(unmarshaller);
         JsonErrorResponseHandler errorResponseHandler = new JsonErrorResponseHandler(exceptionUnmarshallers);
 
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
+
 }
         

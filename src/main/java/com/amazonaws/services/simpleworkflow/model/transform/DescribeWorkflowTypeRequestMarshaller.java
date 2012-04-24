@@ -58,18 +58,16 @@ public class DescribeWorkflowTypeRequestMarshaller implements Marshaller<Request
             if (describeWorkflowTypeRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(describeWorkflowTypeRequest.getDomain());
             }
-            if (describeWorkflowTypeRequest != null) {
-                WorkflowType workflowTypeWorkflowType = describeWorkflowTypeRequest.getWorkflowType();
-                if (workflowTypeWorkflowType != null) {
-                    jsonWriter.key("workflowType").object();
-                    if (workflowTypeWorkflowType.getName() != null) {
-                        jsonWriter.key("name").value(workflowTypeWorkflowType.getName());
-                    }
-                    if (workflowTypeWorkflowType.getVersion() != null) {
-                        jsonWriter.key("version").value(workflowTypeWorkflowType.getVersion());
-                    }
-                    jsonWriter.endObject();
+            WorkflowType workflowType = describeWorkflowTypeRequest.getWorkflowType();
+            if (workflowType != null) {
+                jsonWriter.key("workflowType").object();
+                if (workflowType.getName() != null) {
+                    jsonWriter.key("name").value(workflowType.getName());
                 }
+                if (workflowType.getVersion() != null) {
+                    jsonWriter.key("version").value(workflowType.getVersion());
+                }
+                jsonWriter.endObject();
             }
 
     	    jsonWriter.endObject();

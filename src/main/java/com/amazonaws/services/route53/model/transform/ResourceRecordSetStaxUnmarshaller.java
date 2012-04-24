@@ -60,6 +60,10 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     resourceRecordSet.setWeight(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Region", targetDepth)) {
+                    resourceRecordSet.setRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("TTL", targetDepth)) {
                     resourceRecordSet.setTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

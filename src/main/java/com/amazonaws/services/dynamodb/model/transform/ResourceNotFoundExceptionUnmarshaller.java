@@ -36,7 +36,6 @@ public class ResourceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller
         ResourceNotFoundException e = (ResourceNotFoundException)super.unmarshall(json);
         
         
-        
         return e;
     }
 }

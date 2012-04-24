@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -149,6 +150,7 @@ import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteM
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.util.BinaryUtils;
+import com.amazonaws.util.Md5Utils;
 
 /**
  * <p>
@@ -538,6 +540,28 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT);
         if (acl != null) request.addHeader(Headers.S3_CANNED_ACL, acl.toString());
 
+        /*
+         * If we're talking to a region-specific endpoint other than the US, we
+         * *must* specify a location constraint. Try to derive the region from
+         * the endpoint.
+         */
+        if ( region == null ) {
+            String endpoint = this.endpoint.getHost();
+            if ( endpoint.contains("us-west-1") ) {
+                region = Region.US_West.toString();
+            } else if ( endpoint.contains("us-west-2") ) {
+                region = Region.US_West_2.toString();
+            } else if ( endpoint.contains("eu-west-1") ) {
+                region = Region.EU_Ireland.toString();
+            } else if ( endpoint.contains("ap-southeast-1") ) {
+                region = Region.AP_Singapore.toString();
+            } else if ( endpoint.contains("ap-northeast-1") ) {
+                region = Region.AP_Tokyo.toString();
+            } else if ( endpoint.contains("sa-east-1") ) {
+                region = Region.SA_SaoPaulo.toString();
+            }
+        }
+        
         /*
          * We can only send the CreateBucketConfiguration if we're *not*
          * creating a bucket in the US region.
@@ -943,7 +967,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             FileInputStream fileInputStream = null;
             try {
                 fileInputStream = new FileInputStream(file);
-                byte[] md5Hash = ServiceUtils.computeMD5Hash(fileInputStream);
+                byte[] md5Hash = Md5Utils.computeMD5Hash(fileInputStream);
                 metadata.setContentMD5(BinaryUtils.toBase64(md5Hash));
             } catch (Exception e) {
                 throw new AmazonClientException(
@@ -1329,7 +1353,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
         try {
-            byte[] md5 = ServiceUtils.computeMD5Hash(content);
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
             String md5Base64 = BinaryUtils.toBase64(md5);
             request.addHeader("Content-MD5", md5Base64);
         } catch ( Exception e ) {
@@ -1492,7 +1516,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addHeader("Content-Type", "application/xml");
         request.setContent(new ByteArrayInputStream(content));
         try {
-            byte[] md5 = ServiceUtils.computeMD5Hash(content);
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
             String md5Base64 = BinaryUtils.toBase64(md5);
             request.addHeader("Content-MD5", md5Base64);
         } catch ( Exception e ) {
@@ -2515,6 +2539,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
     }
 
+    /**
+     * Returns the URL to the key in the bucket given, using the client's scheme
+     * and endpoint. Returns null if the given bucket and key cannot be
+     * converted to a URL.
+     */
+    public String getResourceUrl(String bucketName, String key) {
+        
+        URI requestEndpoint = null;
+        String path = null;
+        if ( bucketNameUtils.isDNSBucketName(bucketName) ) {
+            requestEndpoint = convertToVirtualHostEndpoint(bucketName);
+            path = ServiceUtils.urlEncode(key);
+        } else {
+            requestEndpoint = endpoint;
+
+            if ( bucketName != null ) {
+                path = bucketName + "/" + (key != null ? ServiceUtils.urlEncode(key) : "");
+            }
+        }
+
+        try {
+            return new URI(requestEndpoint.getScheme(), requestEndpoint.getHost(), "/" + path, null).toURL().toString();
+        } catch ( Exception e ) {
+            return null;
+        } 
+    }
+    
     /**
      * Creates and initializes a new request object for the specified S3
      * resource. This method is responsible for determining the right way to

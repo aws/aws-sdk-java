@@ -34,6 +34,9 @@ public class ScheduleActivityTaskFailedEventAttributesJsonUnmarshaller implement
 
     public ScheduleActivityTaskFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         ScheduleActivityTaskFailedEventAttributes scheduleActivityTaskFailedEventAttributes = new ScheduleActivityTaskFailedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ScheduleActivityTaskFailedEventAttributesJsonUnmarshaller implement
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return scheduleActivityTaskFailedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
@@ -61,12 +64,12 @@ public class ScheduleActivityTaskFailedEventAttributesJsonUnmarshaller implement
                     scheduleActivityTaskFailedEventAttributes.setDecisionTaskCompletedEventId(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return scheduleActivityTaskFailedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return scheduleActivityTaskFailedEventAttributes;
     }
 
     private static ScheduleActivityTaskFailedEventAttributesJsonUnmarshaller instance;

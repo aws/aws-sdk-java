@@ -175,6 +175,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         setEndpoint("queue.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -732,7 +733,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         return listQueues(new ListQueuesRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

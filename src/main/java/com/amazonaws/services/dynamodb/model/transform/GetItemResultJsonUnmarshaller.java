@@ -34,6 +34,9 @@ public class GetItemResultJsonUnmarshaller implements Unmarshaller<GetItemResult
 
     public GetItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         GetItemResult getItemResult = new GetItemResult();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class GetItemResultJsonUnmarshaller implements Unmarshaller<GetItemResult
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return getItemResult;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Item", targetDepth)) {
@@ -52,12 +55,12 @@ public class GetItemResultJsonUnmarshaller implements Unmarshaller<GetItemResult
                     getItemResult.setConsumedCapacityUnits(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return getItemResult;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return getItemResult;
     }
 
     private static GetItemResultJsonUnmarshaller instance;

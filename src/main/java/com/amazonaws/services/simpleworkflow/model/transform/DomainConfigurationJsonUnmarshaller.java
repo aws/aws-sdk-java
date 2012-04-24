@@ -34,6 +34,9 @@ public class DomainConfigurationJsonUnmarshaller implements Unmarshaller<DomainC
 
     public DomainConfiguration unmarshall(JsonUnmarshallerContext context) throws Exception {
         DomainConfiguration domainConfiguration = new DomainConfiguration();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class DomainConfigurationJsonUnmarshaller implements Unmarshaller<DomainC
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return domainConfiguration;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecutionRetentionPeriodInDays", targetDepth)) {
@@ -49,12 +52,12 @@ public class DomainConfigurationJsonUnmarshaller implements Unmarshaller<DomainC
                     domainConfiguration.setWorkflowExecutionRetentionPeriodInDays(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return domainConfiguration;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return domainConfiguration;
     }
 
     private static DomainConfigurationJsonUnmarshaller instance;

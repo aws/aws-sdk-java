@@ -77,6 +77,12 @@ public class DistributionSummary {
     private TrustedSigners trustedSigners;
 
     /**
+     * Specifies options that affects caching behavior, such as minimum TTL
+     * values.
+     */
+    private CachingBehavior cachingBehavior;
+
+    /**
      * Default constructor for a new DistributionSummary object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -499,6 +505,46 @@ public class DistributionSummary {
     
     
     /**
+     * Specifies options that affects caching behavior, such as minimum TTL
+     * values.
+     *
+     * @return Specifies options that affects caching behavior, such as minimum TTL
+     *         values.
+     */
+    public CachingBehavior getCachingBehavior() {
+        return cachingBehavior;
+    }
+    
+    /**
+     * Specifies options that affects caching behavior, such as minimum TTL
+     * values.
+     *
+     * @param cachingBehavior Specifies options that affects caching behavior, such as minimum TTL
+     *         values.
+     */
+    public void setCachingBehavior(CachingBehavior cachingBehavior) {
+        this.cachingBehavior = cachingBehavior;
+    }
+    
+    /**
+     * Specifies options that affects caching behavior, such as minimum TTL
+     * values.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cachingBehavior Specifies options that affects caching behavior, such as minimum TTL
+     *         values.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DistributionSummary withCachingBehavior(CachingBehavior cachingBehavior) {
+        this.cachingBehavior = cachingBehavior;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -520,6 +566,7 @@ public class DistributionSummary {
         if (comment != null) sb.append("Comment: " + comment + ", ");
         if (enabled != null) sb.append("Enabled: " + enabled + ", ");
         if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
+        if (cachingBehavior != null) sb.append("CachingBehavior: " + cachingBehavior + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +586,7 @@ public class DistributionSummary {
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
+        hashCode = prime * hashCode + ((getCachingBehavior() == null) ? 0 : getCachingBehavior().hashCode()); 
         return hashCode;
     }
     
@@ -570,6 +618,8 @@ public class DistributionSummary {
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null) return false;
         if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
+        if (other.getCachingBehavior() == null ^ this.getCachingBehavior() == null) return false;
+        if (other.getCachingBehavior() != null && other.getCachingBehavior().equals(this.getCachingBehavior()) == false) return false; 
         return true;
     }
     

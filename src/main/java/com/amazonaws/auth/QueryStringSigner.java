@@ -31,6 +31,9 @@ import com.amazonaws.Request;
  */
 public class QueryStringSigner extends AbstractAWSSigner implements Signer {
 
+    /** Date override for testing only */
+    private Date overriddenDate;
+
 	/**
 	 * This signer will add "Signature" parameter to the request. Default
 	 * signature version is "2" and default signing algorithm is "HmacSHA256".
@@ -124,9 +127,37 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         StringBuilder data = new StringBuilder();
         data.append("POST").append("\n");
         data.append(getCanonicalizedEndpoint(endpoint)).append("\n");
-        data.append(getCanonicalizedResourcePath(request.getResourcePath())).append("\n");
+        data.append(getCanonicalizedResourcePath(request)).append("\n");
         data.append(getCanonicalizedQueryString(parameters));
         return data.toString();
+    }
+
+    private String getCanonicalizedResourcePath(Request<?> request) {
+        String resourcePath = "";
+
+        if (request.getEndpoint().getPath() != null) {
+            resourcePath += request.getEndpoint().getPath();
+        }
+
+        if (request.getResourcePath() != null) {
+            if (resourcePath.length() > 0 &&
+                !resourcePath.endsWith("/") &&
+                !request.getResourcePath().startsWith("/")) {
+                resourcePath += "/";
+            }
+
+            resourcePath += request.getResourcePath();
+        }
+
+        if (!resourcePath.startsWith("/")) {
+            resourcePath = "/" + resourcePath;
+        }
+
+        if (resourcePath.startsWith("//")) {
+            resourcePath = resourcePath.substring(1);
+        }
+
+        return resourcePath;
     }
 
     /**
@@ -136,7 +167,17 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         SimpleDateFormat df = new SimpleDateFormat(
                 "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         df.setTimeZone(TimeZone.getTimeZone("UTC"));
-        return df.format(new Date());
+
+        if (overriddenDate != null) {
+            return df.format(overriddenDate);
+        } else {
+            return df.format(new Date());
+        }
+    }
+
+    /** For testing purposes only, to control the date used in signing. */
+    void overrideDate(Date date) {
+        this.overriddenDate = date;
     }
 
     @Override

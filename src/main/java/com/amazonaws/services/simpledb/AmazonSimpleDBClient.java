@@ -178,6 +178,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         setEndpoint("sdb.amazonaws.com");
 
         signer = new QueryStringSigner();
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
@@ -723,7 +724,6 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         return listDomains(new ListDomainsRequest());
     }
     
-
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

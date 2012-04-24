@@ -38,7 +38,7 @@ public class CreateInvalidationResultStaxUnmarshaller implements Unmarshaller<Cr
         int targetDepth = originalDepth + 1;
 
         if (context.isStartOfDocument()) {
-            createInvalidationResult.setLocation(context.getHeader("Location"));        
+            createInvalidationResult.setLocation(context.getHeader("Location"));
         }
         
 

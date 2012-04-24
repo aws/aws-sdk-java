@@ -34,6 +34,9 @@ public class ActivityTaskStatusJsonUnmarshaller implements Unmarshaller<Activity
 
     public ActivityTaskStatus unmarshall(JsonUnmarshallerContext context) throws Exception {
         ActivityTaskStatus activityTaskStatus = new ActivityTaskStatus();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class ActivityTaskStatusJsonUnmarshaller implements Unmarshaller<Activity
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return activityTaskStatus;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("cancelRequested", targetDepth)) {
@@ -49,12 +52,12 @@ public class ActivityTaskStatusJsonUnmarshaller implements Unmarshaller<Activity
                     activityTaskStatus.setCancelRequested(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return activityTaskStatus;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return activityTaskStatus;
     }
 
     private static ActivityTaskStatusJsonUnmarshaller instance;

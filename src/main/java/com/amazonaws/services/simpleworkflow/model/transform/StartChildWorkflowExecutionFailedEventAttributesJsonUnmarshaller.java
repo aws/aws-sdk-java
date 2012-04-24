@@ -34,6 +34,9 @@ public class StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller im
 
     public StartChildWorkflowExecutionFailedEventAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
         StartChildWorkflowExecutionFailedEventAttributes startChildWorkflowExecutionFailedEventAttributes = new StartChildWorkflowExecutionFailedEventAttributes();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller im
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return startChildWorkflowExecutionFailedEventAttributes;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowType", targetDepth)) {
@@ -69,12 +72,12 @@ public class StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller im
                     startChildWorkflowExecutionFailedEventAttributes.setControl(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return startChildWorkflowExecutionFailedEventAttributes;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return startChildWorkflowExecutionFailedEventAttributes;
     }
 
     private static StartChildWorkflowExecutionFailedEventAttributesJsonUnmarshaller instance;

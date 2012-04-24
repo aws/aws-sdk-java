@@ -34,6 +34,9 @@ public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItem
 
     public DeleteItemResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         DeleteItemResult deleteItemResult = new DeleteItemResult();
+
+        
+        
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -41,7 +44,7 @@ public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItem
         if (token == null) token = context.nextToken();
 
         while (true) {
-            if (token == null) return deleteItemResult;
+            if (token == null) break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
@@ -52,12 +55,12 @@ public class DeleteItemResultJsonUnmarshaller implements Unmarshaller<DeleteItem
                     deleteItemResult.setConsumedCapacityUnits(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) {
-                    return deleteItemResult;
-                }
+                if (context.getCurrentDepth() <= originalDepth) break;
             }
             token = context.nextToken();
         }
+        
+        return deleteItemResult;
     }
 
     private static DeleteItemResultJsonUnmarshaller instance;

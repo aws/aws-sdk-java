@@ -38,7 +38,7 @@ public class DeleteCacheParameterGroupRequestMarshaller implements Marshaller<Re
 
         Request<DeleteCacheParameterGroupRequest> request = new DefaultRequest<DeleteCacheParameterGroupRequest>(deleteCacheParameterGroupRequest, "AmazonElastiCache");
         request.addParameter("Action", "DeleteCacheParameterGroup");
-        request.addParameter("Version", "2011-07-15");
+        request.addParameter("Version", "2012-03-09");
 
         if (deleteCacheParameterGroupRequest.getCacheParameterGroupName() != null) {
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(deleteCacheParameterGroupRequest.getCacheParameterGroupName()));
