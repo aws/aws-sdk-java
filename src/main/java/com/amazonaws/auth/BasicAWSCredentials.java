@@ -33,6 +33,12 @@ public class BasicAWSCredentials implements AWSCredentials {
      *            The AWS secret access key.
      */
     public BasicAWSCredentials(String accessKey, String secretKey) {
+        if (accessKey == null) {
+            throw new IllegalArgumentException("Access Key cannot be null.");
+        }
+        if (secretKey == null) {
+            throw new IllegalArgumentException("Secret Key cannot be null.");
+        }
         this.accessKey = accessKey;
         this.secretKey = secretKey;
     }
