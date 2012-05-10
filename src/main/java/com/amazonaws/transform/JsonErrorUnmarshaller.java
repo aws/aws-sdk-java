@@ -42,7 +42,7 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
     }
 
     public String parseErrorCode(JSONObject json) throws Exception {
-        if (json.getString("__type") != null) {
+        if (json.has("__type")) {
             String type = json.getString("__type");
             int separator = type.lastIndexOf("#");
             if (separator > 0) {

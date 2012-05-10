@@ -317,6 +317,10 @@ public class AmazonHttpClient {
      * Applies any additional options set in the request.
      */
     private void applyRequestData(Request<?> request) {
+        if ( config.getUserAgent() != null ) {
+            request.addHeader("User-Agent", config.getUserAgent());
+        }
+
         if ( request.getOriginalRequest() != null && request.getOriginalRequest().getRequestClientOptions() != null
                 && request.getOriginalRequest().getRequestClientOptions().getClientMarker() != null ) {
             request.addHeader(
@@ -333,7 +337,7 @@ public class AmazonHttpClient {
         if (existingUserAgentString.contains(userAgent)) {
             return existingUserAgentString;
         } else {
-            return existingUserAgentString + " " + userAgent;
+            return existingUserAgentString.trim() + " " + userAgent.trim();
         }
     }
 
